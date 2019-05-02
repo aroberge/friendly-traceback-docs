@@ -5,6 +5,10 @@ Change Log
 
     Unless otherwise noted, "with translation" means with French translation.
 
+- Changed method to collect and print traceback, so that the information
+  could be presented differently by other formatters.
+- Moved docs to separate repository
+- Added KeyError, with translation
 - Added value of variables found on lines that are specific to the traceback
 - Added IndexError, with translation
 - Added LookupError, with translation

@@ -360,7 +360,7 @@ It is very likely that the information below is not up to date.
           |    +-- ModuleNotFoundError *
           +-- LookupError *
           |    +-- IndexError *
-          |    +-- KeyError
+          |    +-- KeyError *
           +-- MemoryError
           +-- NameError  *
           |    +-- UnboundLocalError *

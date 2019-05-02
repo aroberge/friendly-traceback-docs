@@ -174,7 +174,7 @@ will be able to improve the descriptions based on their feedback,
 and not based on our own pre-conceptions.
 
 Generic information about given exceptions is found in file
-``friendly_traceback/generic_info.py``.
+``friendly_traceback/info_generic.py``.
 Here are the relevant parts of that file for the UnboundLocalError
 exception, followed by some explications::
 
@@ -287,7 +287,7 @@ certainly be different when another user encounters a similar error.
 Thus, our specific information should include this as a variable.
 
 Specific information about given exceptions is found in file
-``friendly_traceback/specific_info.py``.
+``friendly_traceback/info_specific.py``.
 Here are the relevant parts of that file for the UnboundLocalError
 exception::
 

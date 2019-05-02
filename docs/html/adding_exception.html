@@ -260,7 +260,7 @@ It is expected that we will hear from actual users
 will be able to improve the descriptions based on their feedback,
 and not based on our own pre-conceptions.</p>
 <p>Generic information about given exceptions is found in file
-<code class="docutils literal notranslate"><span class="pre">friendly_traceback/generic_info.py</span></code>.
+<code class="docutils literal notranslate"><span class="pre">friendly_traceback/info_generic.py</span></code>.
 Here are the relevant parts of that file for the UnboundLocalError
 exception, followed by some explications:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unbound_local_error</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
@@ -361,7 +361,7 @@ see that it refers to a variable name, <code class="docutils literal notranslate
 certainly be different when another user encounters a similar error.
 Thus, our specific information should include this as a variable.</p>
 <p>Specific information about given exceptions is found in file
-<code class="docutils literal notranslate"><span class="pre">friendly_traceback/specific_info.py</span></code>.
+<code class="docutils literal notranslate"><span class="pre">friendly_traceback/info_specific.py</span></code>.
 Here are the relevant parts of that file for the UnboundLocalError
 exception:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unbound_local_error</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
