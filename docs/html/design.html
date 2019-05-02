@@ -42,17 +42,25 @@
 <li><a class="reference internal" href="#purpose">Purpose</a></li>
 <li><a class="reference internal" href="#open-questions">Open questions</a></li>
 <li><a class="reference internal" href="#basic-usage">Basic usage</a></li>
+<li><a class="reference internal" href="#using-sys-stderr">Using sys.stderr</a></li>
+<li><a class="reference internal" href="#anatomy-of-a-standard-python-traceback">Anatomy of a standard Python traceback</a></li>
+<li><a class="reference internal" href="#basic-anatomy-of-a-friendly-traceback">Basic anatomy of a friendly traceback</a><ul>
+<li><a class="reference internal" href="#other-parts-of-a-friendly-traceback">Other parts of a friendly traceback</a></li>
+<li><a class="reference internal" href="#variable-information">Variable information</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#syntaxerror-invalid-syntax">SyntaxError: invalid syntax</a></li>
 <li><a class="reference internal" href="#localization">Localization</a></li>
 <li><a class="reference internal" href="#verbosity">Verbosity</a><ul>
-<li><a class="reference internal" href="#basic">1. Basic</a></li>
-<li><a class="reference internal" href="#intermediate">2. Intermediate</a></li>
-<li><a class="reference internal" href="#advanced">3. Advanced</a></li>
+<li><a class="reference internal" href="#level-0">Level 0</a></li>
+<li><a class="reference internal" href="#level-1">Level 1</a></li>
+<li><a class="reference internal" href="#level-2">Level 2</a></li>
+<li><a class="reference internal" href="#level-9">Level 9</a></li>
+<li><a class="reference internal" href="#level-3">Level 3</a></li>
 <li><a class="reference internal" href="#setting-the-verbosity-level">Setting the verbosity level</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#variable-information">Variable information</a></li>
 <li><a class="reference internal" href="#extensibility">Extensibility</a></li>
-<li><a class="reference internal" href="#about-the-likely-cause">About the likely cause</a></li>
 <li><a class="reference internal" href="#additional-configuration">Additional configuration</a></li>
 <li><a class="reference internal" href="#other-similar-projects">Other similar projects</a></li>
 <li><a class="reference internal" href="#reference-known-exceptions">Reference: known exceptions</a></li>
@@ -101,19 +109,20 @@ The content of this file <strong>will</strong> be changed as this project evolve
 <p class="first admonition-title">Warning</p>
 <p class="last">It is likely that experimentations with features will
 proceed faster and in slightly different ways than the content
-of this page would suggest. Our current focus is on code development,
+of this page would suggest.
+Our current focus is primarily on code development,
 and not on keeping this document up to date.</p>
 </div>
 <div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
-<p>friendly-traceback primary purpose is to make it easier for
+<p>Friendly-traceback primary purpose is to make it easier for
 beginners and/or for people that have limited knowledge of English
-to understand what caused a program to generate a traceback.
-A secondary goal is to help them learn how to decipher a normal Python
+to understand what caused a program to generate a traceback.</p>
+<p>A secondary goal is to help them learn how to decipher a normal Python
 traceback and use the information to understand what went wrong and how
 to fix it.</p>
 <div class="sidebar">
-<p class="first sidebar-title">Thought…</p>
+<p class="first sidebar-title">Thought …</p>
 <p class="last">The success of this module is predicated on contributions (mostly to
 translations) by intermediate or advanced programmers.
 For this reason, it might make sense to include some “advanced” features
@@ -124,32 +133,41 @@ that could be of interest to them, such as the example of
 <div class="section" id="open-questions">
 <h2>Open questions<a class="headerlink" href="#open-questions" title="Permalink to this headline">¶</a></h2>
 <p>Normally, an open section would be included at the end, but this document
-is getting so long that nobody would read it. Furthermore,
-it might be useful to have these in mind while reading the rest of
+is getting so long that few people might read it to the very end.
+Furthermore, it might be useful to have these in mind while reading the rest of
 this document.</p>
-<ul class="simple">
-<li>In addition to showing the line of code where an exception is raised, how
-many other lines of code should be shown?
-Python’s <a class="reference external" href="https://docs.python.org/3/library/cgitb.html">cgitb module</a>
+<ul>
+<li><p class="first">In addition to showing the line of code where an exception is raised,
+should we include other lines of code for contextual information and,
+if so, how many?</p>
+<p>Python’s <a class="reference external" href="https://docs.python.org/3/library/cgitb.html">cgitb module</a>
 shows five lines of context for each “item” in a traceback. We currently
-show only four.</li>
-<li>Should we aim to provide information about <strong>all</strong> standard Python
-Exceptions, or just a subset?  Should we include also Warnings?
-The full list of exceptions and warnings is included at the end of
+show only four.</p>
+</li>
+<li><p class="first">Should we aim to provide information about <strong>all</strong> standard Python
+Exceptions, or just a subset?  Should we include also Warnings?</p>
+<p>The full list of exceptions and warnings is included at the end of
 this document as well as some notes about some Exceptions that have
-been purposely excluded.</li>
-<li>Should translations (<code class="docutils literal notranslate"><span class="pre">.po</span></code> files) be limited to general translations
+been purposely excluded.</p>
+</li>
+<li><p class="first">Should translations (<code class="docutils literal notranslate"><span class="pre">.po</span></code> files) be limited to general translations
 for a given language (e.g. <code class="docutils literal notranslate"><span class="pre">fr</span></code>) and not include region-specific version
-(e.g. <code class="docutils literal notranslate"><span class="pre">fr_CA</span></code>)?</li>
-<li>Should we offer a single explanation as to the likely cause of the error,
+(e.g. <code class="docutils literal notranslate"><span class="pre">fr_CA</span></code>)?</p>
+</li>
+<li><p class="first">Should we offer a single explanation as to the likely cause of the error,
 or do like Thonny and offer weighted alternatives?
-See <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/8">Issue8</a>
-for a discussion.</li>
+See <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/8">Issue8</a> for a discussion.</p>
+</li>
+<li><p class="first">Giving too much information (“wall of text”) can be overwhelming;
+giving a limited amount of information might not be helpful enough to help
+beginners understand what went wrong and how to fix their program.
+How do we find the right balance?</p>
+</li>
 </ul>
 </div>
 <div class="section" id="basic-usage">
 <h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
-<p>There should be three ways of using friendly-traceback.</p>
+<p>There are three ways of using friendly-traceback.</p>
 <ol class="arabic">
 <li><p class="first">As an exception hook:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
@@ -171,13 +189,121 @@ for a discussion.</li>
 </div>
 </li>
 </ol>
-<p>By default, friendly tracebacks will be written to <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>.
-However, it should be possible to override this choice.</p>
+</div>
+<div class="section" id="using-sys-stderr">
+<h2>Using sys.stderr<a class="headerlink" href="#using-sys-stderr" title="Permalink to this headline">¶</a></h2>
+<p>By default, friendly tracebacks are written to <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>.
+However, it is possible to override this choice.</p>
+</div>
+<div class="section" id="anatomy-of-a-standard-python-traceback">
+<h2>Anatomy of a standard Python traceback<a class="headerlink" href="#anatomy-of-a-standard-python-traceback" title="Permalink to this headline">¶</a></h2>
+<p>Here’s an annotated screen capture of a standard somewhat typical Python traceback:</p>
+<a class="reference internal image-reference" href="_images/standard_traceback.png"><img alt="Standard Python traceback" src="_images/standard_traceback.png" style="width: 619.0px; height: 156.5px;" /></a>
+<ol class="arabic simple">
+<li>Some information about the exception raised which often includes a terse message.</li>
+<li>The line of code which was executed and eventually led to an exception
+being raised. Most often, this will be code written by the end-user.</li>
+<li>The actual line of code where the exception was raised.</li>
+<li>“(most recent last call)” informs us how about the order in which the
+execution occurred.</li>
+</ol>
+<p>In some cases, there can be many calls in between 2 and 3; this can contribute
+to the confusion experienced by beginners when they are confronted with
+similar tracebacks.</p>
+</div>
+<div class="section" id="basic-anatomy-of-a-friendly-traceback">
+<h2>Basic anatomy of a friendly traceback<a class="headerlink" href="#basic-anatomy-of-a-friendly-traceback" title="Permalink to this headline">¶</a></h2>
+<p>Let’s have a look at a “friendly traceback” by focusing first on the items
+corresponding to those we have highlighted above for a standard traceback.</p>
+<a class="reference internal image-reference" href="_images/friendly_traceback_en.png"><img alt="Friendly Python traceback" src="_images/friendly_traceback_en.png" style="width: 614.0px; height: 569.5px;" /></a>
+<ol class="arabic simple">
+<li>The exact same terse information provided by Python about the exception raised.</li>
+<li>The line of code which was executed and eventually led to an exception
+being raised, shown with a few additional lines.</li>
+<li>The actual line of code where the exception was raised, shown with a few
+additional lines.</li>
+<li>and 5. Instead of relying simply on the “(most recent last call)” note
+given by Python, we explicitly state which was the line of code where
+the program stopped, and which one where the exception was raised.
+This is something that can be translated, as shown for the corresponding
+French version.</li>
+</ol>
+<a class="reference internal image-reference" href="_images/friendly_traceback_fr.png"><img alt="Friendly Python traceback" src="_images/friendly_traceback_fr.png" style="width: 543.0px; height: 254.0px;" /></a>
+<p>Note that, contrarily to standard Python tracebacks, only the first and last
+call made are shown.  In most cases, this should be sufficient to figure out
+the cause of the exception, and how to fix it, while avoiding overwhelming
+the user with too much information.</p>
+<div class="section" id="other-parts-of-a-friendly-traceback">
+<h3>Other parts of a friendly traceback<a class="headerlink" href="#other-parts-of-a-friendly-traceback" title="Permalink to this headline">¶</a></h3>
+<p>In addition to what was mentioned above, here’s an annotated screen capture
+highlighting the other information included in a “friendly traceback”, all
+of which can be translated.</p>
+<a class="reference internal image-reference" href="_images/friendly_traceback_en2.png"><img alt="Friendly Python traceback" src="_images/friendly_traceback_en2.png" style="width: 614.0px; height: 569.5px;" /></a>
+<ol class="arabic simple">
+<li>A header. This could be customized if a third-party module implemented
+its own custom exceptions.</li>
+<li>Some generic information about a given exception, simply based on its
+name.</li>
+<li>Some specific information about this exception. For many exceptions, this
+information is obtained from the message included in a standard Python
+traceback. Sometimes, like in the above, it can include a suggestion as
+to how to fix the problem.
+Other times (see an example below for <code class="docutils literal notranslate"><span class="pre">NameError</span></code>), it is
+simply rephrasing the information in the Python message which can then
+be translated.</li>
+<li>and 5. This shows the value of all known variables (local and global) which
+are found on the lines where problems have been noted.</li>
+</ol>
+<p>Below is an example where the standard Python message [1] for a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>
+is simply rewritten [2] in English, so that it could be translated.</p>
+<a class="reference internal image-reference" href="_images/name_error.png"><img alt="NameError traceback in English" src="_images/name_error.png" style="width: 478.5px; height: 197.5px;" /></a>
+<p>And here is the corresponding French version:</p>
+<a class="reference internal image-reference" href="_images/name_error_fr.png"><img alt="NameError traceback in French" src="_images/name_error_fr.png" style="width: 513.0px; height: 195.5px;" /></a>
+</div>
+<div class="section" id="variable-information">
+<h3>Variable information<a class="headerlink" href="#variable-information" title="Permalink to this headline">¶</a></h3>
+<p>As mentioned above, we include the value of all known variables found
+on the offending line. In the example below (<code class="docutils literal notranslate"><span class="pre">IndexError</span></code>), this
+information [1] together with the reminder [2] and the code from
+the offending line [3] give enough information to properly diagnose the error.</p>
+<a class="reference internal image-reference" href="_images/index_error.png"><img alt="IndexError traceback" src="_images/index_error.png" style="width: 577.0px; height: 350.0px;" /></a>
+<p>In some cases, the value of some variables could, in principle,
+yield an enormous amount of text.
+To avoid this situation, we truncate any value that exceeds a predetermined
+length. However, when we do so, if the variable has a <code class="docutils literal notranslate"><span class="pre">__len__</span></code> attribute,
+we show its value as it can sometimes be helpful in identifying the problem.</p>
+<a class="reference internal image-reference" href="_images/index_error2.png"><img alt="IndexError traceback" src="_images/index_error2.png" style="width: 561.0px; height: 123.5px;" /></a>
+</div>
+</div>
+<div class="section" id="syntaxerror-invalid-syntax">
+<h2>SyntaxError: invalid syntax<a class="headerlink" href="#syntaxerror-invalid-syntax" title="Permalink to this headline">¶</a></h2>
+<p>For <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, Python often offers very little useful information
+beyond where it finally identified that a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurred.
+Sometimes, the offending code actually occurred well before: for example,
+an open bracket might have been inserted many lines prior to where
+the absence of the corresponding closing bracket was noted to cause an error.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, friendly-traceback does a fairly simple analysis
+of the code and tries to identify a single cause which produced the
+error.</p>
+<a class="reference internal image-reference" href="_images/syntax_error.png"><img alt="SyntaxError traceback" src="_images/syntax_error.png" style="width: 556.0px; height: 275.0px;" /></a>
+<p>The idea of showing a single possible cause for a given error is different
+than that taken by <a class="reference external" href="https://thonny.org/">Thonny</a> which, in some cases, attempts to identify more than
+one possible cause giving rise to an exception, as well as ordering them
+in order of likelihood, based on its own analysis of the code.
+Those interested by what Thonny does might want to
+<a class="reference external" href="https://github.com/thonny/thonny/blob/master/thonny/plugins/stdlib_error_helpers.py">have a look here</a>.</p>
+<p>The idea of showing more than one possible cause for an error
+is discuss in <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/8">Issue8</a>.</p>
+<p>As a concrete example, in the image below,
+Thonny shows the normal Python traceback [1],
+and offers some additional explanations [2], parts of which can be hidden
+or revealed by clicking on a button.</p>
+<a class="reference internal image-reference" href="_images/thonny.png"><img alt="Level 0" src="_images/thonny.png" style="width: 767.0px; height: 540.0px;" /></a>
 </div>
 <div class="section" id="localization">
 <h2>Localization<a class="headerlink" href="#localization" title="Permalink to this headline">¶</a></h2>
-<p>It should be possible to translate almost all the text provided.
-Some exceptions and examples will be given below.</p>
+<p>As noted above, it is possible to translate almost all the text provided
+by friendly-traceback.</p>
 <p>The determination of which language is used to provide translations
 is normally determined by using Python’s <code class="docutils literal notranslate"><span class="pre">locale.getdefaultlocale()</span></code>.
 However, it can be over-ridden in the following way, in order
@@ -206,7 +332,7 @@ characters, and attempt to load the translation while using
 gettext’s option of falling back to the hard-coded version if needed.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">By default, we should ask translators to provide generic 2-letter code
+<p class="last">By default, we should perhaps ask translators to provide generic 2-letter code
 versions for translations, so that a better fallback than the default
 English version could be found.  See the related open question above, as to
 whether or not this should be provided in addition to any region
@@ -215,82 +341,60 @@ specific version.</p>
 </div>
 <div class="section" id="verbosity">
 <h2>Verbosity<a class="headerlink" href="#verbosity" title="Permalink to this headline">¶</a></h2>
-<p>There should be different levels of verbosity.</p>
-<div class="section" id="basic">
-<h3>1. Basic<a class="headerlink" href="#basic" title="Permalink to this headline">¶</a></h3>
-<p>A basic level would include five parts:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li>A single line, introduced by “<em>Python Exception:</em>”, or its equivalent in
-some other language, and showing the <strong>untranslated</strong> information from Python.</li>
-<li>A section explaining what is normally meant by that Exception</li>
-<li>A section explaining the likely cause of the error. For the English version,
-other than for SyntaxError, it often will be just rephrasing the standard
-Python message.</li>
-<li>and 5. Unlike normal Python tracebacks, which shows the entire calling
-history, we only show where the program stopped, and where the exception
-was generated. Also, instead of showing a single line of code, we
-provide a few additional lines. [See open question above.]</li>
-</ol>
-</div></blockquote>
-<p>For example, in English:</p>
-<a class="reference internal image-reference" href="_images/name_error.png"><img alt="NameError traceback in English" src="_images/name_error.png" style="width: 503.0px; height: 429.5px;" /></a>
-<p>The corresponding French version, where the highlighted blocks 1 and 3 are
-translated, and the block 2 is the same as that given by Python in English.</p>
-<a class="reference internal image-reference" href="_images/name_error_fr.png"><img alt="NameError traceback in French" src="_images/name_error_fr.png" style="width: 598.5px; height: 403.0px;" /></a>
-<p>This basic level should be such that a user is never shown an overwhelming
+<p>The useful amount of information to be provided by Friendly-traceback
+will be <strong>determined from the feedback from actual users.</strong>
+Our current thoughts are that a user should never be shown an overwhelming
 amount of information; ideally, when using a REPL, no scrolling should be
 required to display all the information.</p>
+<p>Currently, the amount of information provided can be controlled via
+a “level”.  Here are the current levels available, with a sample output.</p>
+<div class="section" id="level-0">
+<h3>Level 0<a class="headerlink" href="#level-0" title="Permalink to this headline">¶</a></h3>
+<p>This disables friendly-traceback and just shows the normal Python traceback.
+It can be set from the commmand line as shown below:</p>
+<a class="reference internal image-reference" href="_images/level0.png"><img alt="Level 0" src="_images/level0.png" style="width: 776.5px; height: 174.5px;" /></a>
 </div>
-<div class="section" id="intermediate">
-<h3>2. Intermediate<a class="headerlink" href="#intermediate" title="Permalink to this headline">¶</a></h3>
-<p>In addition to what would be provided by the intermediate version,
-the intermediate version would have the normal Python traceback appended at the end.</p>
-<a class="reference internal image-reference" href="_images/name_error_with_tb.png"><img alt="NameError traceback in English" src="_images/name_error_with_tb.png" style="width: 507.5px; height: 545.5px;" /></a>
-<p>In the example given above, it is easy to see the relation between the
-standard Python traceback and the additional information we provide.
-In more general situations, the Python traceback will be much longer,
-and likely much more confusing to beginners.  Still, by giving the
-option of including it, we believe it might ease the learning curve for students.</p>
+<div class="section" id="level-1">
+<h3>Level 1<a class="headerlink" href="#level-1" title="Permalink to this headline">¶</a></h3>
+<p>This is the default, showing all the information mentioned previously.
+The screen capture below shows that we set the value explictly to 1; however,
+we could have not included the option <code class="docutils literal notranslate"><span class="pre">--level</span> <span class="pre">1</span></code> and the result would
+have been the same</p>
+<a class="reference internal image-reference" href="_images/level1.png"><img alt="Level 0" src="_images/level1.png" style="width: 738.5px; height: 613.0px;" /></a>
+</div>
+<div class="section" id="level-2">
+<h3>Level 2<a class="headerlink" href="#level-2" title="Permalink to this headline">¶</a></h3>
+<p>Same as level 1 but with the normal Python traceback printed <strong>before</strong>.</p>
+<a class="reference internal image-reference" href="_images/level2.png"><img alt="Level 0" src="_images/level2.png" style="width: 777.0px; height: 737.0px;" /></a>
+</div>
+<div class="section" id="level-9">
+<h3>Level 9<a class="headerlink" href="#level-9" title="Permalink to this headline">¶</a></h3>
+<p>Same as level 1 but with the normal Python traceback printed <strong>after</strong>.
+The value “9” is there for historical reasons and may be subject to change.</p>
+<a class="reference internal image-reference" href="_images/level9.png"><img alt="Level 0" src="_images/level9.png" style="width: 759.5px; height: 749.0px;" /></a>
+</div>
+<div class="section" id="level-3">
+<h3>Level 3<a class="headerlink" href="#level-3" title="Permalink to this headline">¶</a></h3>
+<p>The normal Python traceback followed by some generic information about
+this type of error and the likely cause that was identified (if any).</p>
+<a class="reference internal image-reference" href="_images/level3.png"><img alt="Level 0" src="_images/level3.png" style="width: 805.5px; height: 424.0px;" /></a>
+</div>
+<div class="section" id="setting-the-verbosity-level">
+<h3>Setting the verbosity level<a class="headerlink" href="#setting-the-verbosity-level" title="Permalink to this headline">¶</a></h3>
+<p>This can be done when using <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code> explicitly in the
+program with <code class="docutils literal notranslate"><span class="pre">friendly_traceback.set_level()</span></code>,
+or as an option from the command line.</p>
+<p>If no such option is provided, then it should be set either from
+the local environment variables (as for the language) or from a global
+<code class="docutils literal notranslate"><span class="pre">.ini</span></code> file.</p>
 <div class="sidebar">
 <p class="first sidebar-title">Additional open question</p>
-<p>It might be interesting to see if the normal Python traceback in the advanced
-or the intermediate version could be replaced by something that looks like what
+<p>It might be interesting to see if the normal Python traceback could be replaced by something that looks like what
 <a class="reference external" href="https://github.com/Qix-/better-exceptions">better-exceptions</a> provides,
 but perhaps without added colours, at least initially.</p>
 <a class="last reference internal image-reference" href="_images/better-exceptions.png"><img alt="traceback from better-exceptions" src="_images/better-exceptions.png" style="width: 326.0px; height: 210.5px;" /></a>
 </div>
 </div>
-<div class="section" id="advanced">
-<h3>3. Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline">¶</a></h3>
-<p>In the advanced version, the normal Python traceback is shown, in addition
-to the basic information given by Friendly.</p>
-</div>
-<div class="section" id="setting-the-verbosity-level">
-<h3>Setting the verbosity level<a class="headerlink" href="#setting-the-verbosity-level" title="Permalink to this headline">¶</a></h3>
-<p>This could be done when using <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code> explicitly in the
-program, as an option in the calling function.</p>
-<p>If no such option is provided, then it should be set either from
-the local environment variables (as for the language) or from a global
-<code class="docutils literal notranslate"><span class="pre">.ini</span></code> file.</p>
-</div>
-</div>
-<div class="section" id="variable-information">
-<h2>Variable information<a class="headerlink" href="#variable-information" title="Permalink to this headline">¶</a></h2>
-<p>It is often useful to know the values of named objects (variables, functions,
-etc.) where an exception occurs.
-Various enhanced traceback formatters, such as Python’s
-<a class="reference external" href="https://docs.python.org/3/library/cgitb.html">cgitb</a> module and a few
-others listed near the end of this document, provide such information.
-Whenever it is possible to do so, we provide such information.
-(Note that this was not the case when the screenshots included in
-this document were made.)
-To avoid having too much text displayed, we truncate the string representation
-of such objects if it exceeds a certain value. However, when we do so,
-if the object has a <code class="docutils literal notranslate"><span class="pre">__len__</span></code> method, such as tuple or a list, we
-then show the len of the object as well as its truncated value.
-This information can be useful when dealing with <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>.
-See <a class="reference external" href="https://aroberge.github.io/friendly-traceback/docs/html/tracebacks_en.html#indexerror-long-list">this</a> for a concrete example.</p>
 </div>
 <div class="section" id="extensibility">
 <h2>Extensibility<a class="headerlink" href="#extensibility" title="Permalink to this headline">¶</a></h2>
@@ -306,25 +410,6 @@ exceptions include a special method, like:</p>
 </div>
 <p>Friendly-tracebacks could then first look to see if this special method
 exists for a given exception; if so, it would just use it “as is”.</p>
-</div>
-<div class="section" id="about-the-likely-cause">
-<h2>About the likely cause<a class="headerlink" href="#about-the-likely-cause" title="Permalink to this headline">¶</a></h2>
-<p>For some exceptions, such as <code class="docutils literal notranslate"><span class="pre">NameError</span></code>, it might be easy to find the
-original cause and report it in a way that is easy to understand
-as shown in the example above. However, that might not be the case
-for <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>.  These could normally be found by using pylint
-or flake8 before running the code. It should be possible to either
-use one of these packages to do this analysis when an error is found,
-or to develop a simplified version that focuses on syntax errors,
-and is designed from the start to provide localized (i.e. translated)
-information.  We note that <a class="reference external" href="https://github.com/pyta-uoft/pyta">PyTA</a> does
-something similar. Also, Thonny <a class="reference external" href="https://github.com/thonny/thonny/blob/master/thonny/plugins/stdlib_error_helpers.py">implements something similar</a> to
-what we have in mind.</p>
-<p>We have already implemented a basic framework for examining <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>
-which can handle a few cases and can be a good starting point for further
-explorations.</p>
-<p>As discussed in <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/8">Issue8</a>, <a class="reference external" href="https://thonny.org/">Thonny</a> presents more than one possible cause for
-a given error. This is something to be considered.</p>
 </div>
 <div class="section" id="additional-configuration">
 <h2>Additional configuration<a class="headerlink" href="#additional-configuration" title="Permalink to this headline">¶</a></h2>
@@ -342,11 +427,9 @@ a way that might be counter productive)</li>
 <p class="last">This additional colour feature should only be implemented after all other
 issues have been dealt with.</p>
 </div>
-<ol class="arabic simple" start="3">
-<li>It might be potentially useful to save the information in some “structured”
-form, as suggested in <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/8">Issue8</a>, so that it could be formatted differently
-by any program using Friendly-traceback.</li>
-</ol>
+<p>Note that the information obtained by Friendly-traceback is collected
+in a “structured” form, as suggested in <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/8">Issue8</a> and noted in <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/10">Issue10</a>,
+so that it could be formatted differently by any program using Friendly-traceback.</p>
 </div>
 <div class="section" id="other-similar-projects">
 <h2>Other similar projects<a class="headerlink" href="#other-similar-projects" title="Permalink to this headline">¶</a></h2>
