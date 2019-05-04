@@ -241,8 +241,8 @@ IndexError - long list
        20:     try:
     -->21:         print(a[50], b[0])
        22:     except Exception:
-    a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1... ]  | len(a): 40
-    b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1... )  | len(b): 50
+    a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
+    b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
 
 
 ModuleNotFoundError
@@ -320,6 +320,33 @@ TabError
     --> 7: 	pass
                 ^
 
+TypeError - 1: concatenate two different types
+----------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception: 
+        TypeError: can only concatenate str (not "int") to str
+
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    or by calling a function with the wrong type of object.
+
+    Likely cause:
+        You tried to concatenate (add) two different types of objects:
+        a string ('str') and an integer ('int')
+
+    Execution stopped on line 9 of file 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'.
+
+        7:         a = 'a'
+        8:         one = 1
+    --> 9:         result = a + one
+       10:     except Exception:
+    a: 'a'
+    one: 1
+
+
 UnboundLocalError
 -----------------
 
@@ -340,24 +367,24 @@ UnboundLocalError
 
     Likely cause:
         The variable that appears to cause the problem is 'a'.
-        Try inserting the statement
+        Perhaps the statement
             global a
-        as the first line inside your function.
+        should have been included as the first line inside your function.
 
-    Execution stopped on line 16 of file 'C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py'.
+    Execution stopped on line 21 of file 'C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py'.
 
-       14: 
-       15:     try:
-    -->16:         inner()
-       17:     except Exception:
-    inner: <function test_unbound_local_error.<loca... >
+       19: 
+       20:     try:
+    -->21:         outer()
+       22:     except Exception:
+    global outer: <function outer at 0x000002AE020B2488>
 
     Exception raised on line 13 of file 'C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py'.
 
        11:     def inner():
        12:         c = 3
     -->13:         a = a + b + c
-       14: 
+       14:     inner()
     global b: 2
     c: 3
 

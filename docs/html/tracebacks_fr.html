@@ -51,6 +51,7 @@
 <li><a class="reference internal" href="#modulenotfounderror">ModuleNotFoundError</a></li>
 <li><a class="reference internal" href="#nameerror">NameError</a></li>
 <li><a class="reference internal" href="#taberror">TabError</a></li>
+<li><a class="reference internal" href="#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
 <li><a class="reference internal" href="#unboundlocalerror">UnboundLocalError</a></li>
 <li><a class="reference internal" href="#unknown-exception">Unknown exception</a></li>
 <li><a class="reference internal" href="#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
@@ -310,8 +311,8 @@ L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;C:\Users\and
    20:     try:
 --&gt;21:         print(a[50], b[0])
    22:     except Exception:
-a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1... ]  | len(a): 40
-b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1... )  | len(b): 50
+a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
+b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
 </pre></div>
 </div>
 </div>
@@ -384,6 +385,30 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 </pre></div>
 </div>
 </div>
+<div class="section" id="typeerror-1-concatenate-two-different-types">
+<h2>TypeError - 1: concatenate two different types<a class="headerlink" href="#typeerror-1-concatenate-two-different-types" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: can only concatenate str (not &quot;int&quot;) to str
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+ou en invoquant une fonction avec le mauvais type d’objet.
+
+Cause probable :
+    Vous avez essayé de concaténer (additionner) deux types d’objets différents:
+    une chaîne (&#39;str&#39;) et un entier (&#39;int&#39;)
+
+L&#39;exécution s&#39;est arrêtée à la ligne 9 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+
+    7:         a = &#39;a&#39;
+    8:         one = 1
+--&gt; 9:         result = a + one
+   10:     except Exception:
+a: &#39;a&#39;
+one: 1
+</pre></div>
+</div>
+</div>
 <div class="section" id="unboundlocalerror">
 <h2>UnboundLocalError<a class="headerlink" href="#unboundlocalerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
@@ -401,24 +426,24 @@ qu’il s’agit d’une variable globale, sinon vous verrez une exception Unbou
 
 Cause probable :
     La variable qui semble causer le problème est&#39; a &#39;.
-    Essayez d’insérer l’instruction
+    Il est possible que vous avez oublié d&#39;écrire l’instruction
         global a
     comme première ligne à l’intérieur de votre fonction.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 16 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py&#39;
 
-   14:
-   15:     try:
---&gt;16:         inner()
-   17:     except Exception:
-inner: &lt;function test_unbound_local_error.&lt;loca... &gt;
+   19:
+   20:     try:
+--&gt;21:         outer()
+   22:     except Exception:
+global outer: &lt;function outer at 0x00000215D2027E18&gt;
 
 Exception levée à la ligne du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py&#39;.
 
    11:     def inner():
    12:         c = 3
 --&gt;13:         a = a + b + c
-   14:
+   14:     inner()
 global b: 2
 c: 3
 </pre></div>

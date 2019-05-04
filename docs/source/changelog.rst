@@ -5,6 +5,12 @@ Change Log
 
     Unless otherwise noted, "with translation" means with French translation.
 
+- Added one case for TypeError, with translation
+
+Version 0.0.5
+-------------
+
+- Added different levels of verbosity
 - Changed method to collect and print traceback, so that the information
   could be presented differently by other formatters.
 - Moved docs to separate repository
