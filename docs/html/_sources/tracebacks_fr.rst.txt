@@ -350,6 +350,114 @@ TypeError - 1: concatenate two different types
     one: 1
 
 
+TypeError - 2: unsupported operand type(s) for +
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        Vous avez essayé d’additionner deux types d’objets incompatibles:
+        un entier ('int') et une variable de valeur 'None' ('NoteType')
+
+    L'exécution s'est arrêtée à la ligne 21 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       19:         one = 1
+       20:         none = None
+    -->21:         result = one + none
+       22:     except Exception:
+    one: 1
+    none: None
+
+
+TypeError - 3: unsupported operand type(s) for -
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: unsupported operand type(s) for -: 'tuple' and 'list'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        Vous avez tenté de soustraire deux types d’objets incompatibles:
+        un tuple et une liste ('list')
+
+    L'exécution s'est arrêtée à la ligne 33 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       31:         a = (1, 2)
+       32:         b = [3, 4]
+    -->33:         result = a - b
+       34:     except Exception:
+    a: (1, 2)
+    b: [3, 4]
+
+
+TypeError - 4: unsupported operand type(s) for *
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: unsupported operand type(s) for *: 'complex' and 'set'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        Vous avez essayé de multiplier deux types d’objets différents:
+        un nombre complexe ('complex') et un ensemble ('set')
+
+    L'exécution s'est arrêtée à la ligne 45 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       43:         a = 1j
+       44:         b = {2, 3}
+    -->45:         result = a * b
+       46:     except Exception:
+    a: 1j
+    b: {2, 3}
+
+
+TypeError - 5: unsupported operand type(s) for /
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: unsupported operand type(s) for /: 'dict' and 'float'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        Vous avez essayé de diviser deux types d’objets différents:
+        un dictionnaire ('dict') et un nombre ('float')
+
+    L'exécution s'est arrêtée à la ligne 57 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       55:         a = {1: 1, 2: 2}
+       56:         b = 3.1416
+    -->57:         result = a / b
+       58:     except Exception:
+    a: {1: 1, 2: 2}
+    b: 3.1416
+
+
 UnboundLocalError
 -----------------
 
@@ -381,7 +489,7 @@ UnboundLocalError
        20:     try:
     -->21:         outer()
        22:     except Exception:
-    global outer: <function outer at 0x00000215D2027E18>
+    global outer: <function outer at 0x000001FDEB331158>
 
     Exception levée à la ligne du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py'.
 

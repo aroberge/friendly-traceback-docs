@@ -52,6 +52,10 @@
 <li><a class="reference internal" href="#nameerror">NameError</a></li>
 <li><a class="reference internal" href="#taberror">TabError</a></li>
 <li><a class="reference internal" href="#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
+<li><a class="reference internal" href="#typeerror-2-unsupported-operand-type-s-for">TypeError - 2: unsupported operand type(s) for +</a></li>
+<li><a class="reference internal" href="#typeerror-3-unsupported-operand-type-s-for">TypeError - 3: unsupported operand type(s) for -</a></li>
+<li><a class="reference internal" href="#typeerror-4-unsupported-operand-type-s-for">TypeError - 4: unsupported operand type(s) for *</a></li>
+<li><a class="reference internal" href="#typeerror-5-unsupported-operand-type-s-for">TypeError - 5: unsupported operand type(s) for /</a></li>
 <li><a class="reference internal" href="#unboundlocalerror">UnboundLocalError</a></li>
 <li><a class="reference internal" href="#unknown-exception">Unknown exception</a></li>
 <li><a class="reference internal" href="#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
@@ -409,6 +413,102 @@ one: 1
 </pre></div>
 </div>
 </div>
+<div class="section" id="typeerror-2-unsupported-operand-type-s-for">
+<h2>TypeError - 2: unsupported operand type(s) for +<a class="headerlink" href="#typeerror-2-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;NoneType&#39;
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+ou en invoquant une fonction avec le mauvais type d’objet.
+
+Cause probable :
+    Vous avez essayé d’additionner deux types d’objets incompatibles:
+    un entier (&#39;int&#39;) et une variable de valeur &#39;None&#39; (&#39;NoteType&#39;)
+
+L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+
+   19:         one = 1
+   20:         none = None
+--&gt;21:         result = one + none
+   22:     except Exception:
+one: 1
+none: None
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-3-unsupported-operand-type-s-for">
+<h2>TypeError - 3: unsupported operand type(s) for -<a class="headerlink" href="#typeerror-3-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: unsupported operand type(s) for -: &#39;tuple&#39; and &#39;list&#39;
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+ou en invoquant une fonction avec le mauvais type d’objet.
+
+Cause probable :
+    Vous avez tenté de soustraire deux types d’objets incompatibles:
+    un tuple et une liste (&#39;list&#39;)
+
+L&#39;exécution s&#39;est arrêtée à la ligne 33 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+
+   31:         a = (1, 2)
+   32:         b = [3, 4]
+--&gt;33:         result = a - b
+   34:     except Exception:
+a: (1, 2)
+b: [3, 4]
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-4-unsupported-operand-type-s-for">
+<h2>TypeError - 4: unsupported operand type(s) for *<a class="headerlink" href="#typeerror-4-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: unsupported operand type(s) for *: &#39;complex&#39; and &#39;set&#39;
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+ou en invoquant une fonction avec le mauvais type d’objet.
+
+Cause probable :
+    Vous avez essayé de multiplier deux types d’objets différents:
+    un nombre complexe (&#39;complex&#39;) et un ensemble (&#39;set&#39;)
+
+L&#39;exécution s&#39;est arrêtée à la ligne 45 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+
+   43:         a = 1j
+   44:         b = {2, 3}
+--&gt;45:         result = a * b
+   46:     except Exception:
+a: 1j
+b: {2, 3}
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-5-unsupported-operand-type-s-for">
+<h2>TypeError - 5: unsupported operand type(s) for /<a class="headerlink" href="#typeerror-5-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: unsupported operand type(s) for /: &#39;dict&#39; and &#39;float&#39;
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+ou en invoquant une fonction avec le mauvais type d’objet.
+
+Cause probable :
+    Vous avez essayé de diviser deux types d’objets différents:
+    un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
+
+L&#39;exécution s&#39;est arrêtée à la ligne 57 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+
+   55:         a = {1: 1, 2: 2}
+   56:         b = 3.1416
+--&gt;57:         result = a / b
+   58:     except Exception:
+a: {1: 1, 2: 2}
+b: 3.1416
+</pre></div>
+</div>
+</div>
 <div class="section" id="unboundlocalerror">
 <h2>UnboundLocalError<a class="headerlink" href="#unboundlocalerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
@@ -436,7 +536,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;C:\Users\and
    20:     try:
 --&gt;21:         outer()
    22:     except Exception:
-global outer: &lt;function outer at 0x00000215D2027E18&gt;
+global outer: &lt;function outer at 0x000001FDEB331158&gt;
 
 Exception levée à la ligne du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py&#39;.
 

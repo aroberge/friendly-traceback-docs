@@ -347,6 +347,114 @@ TypeError - 1: concatenate two different types
     one: 1
 
 
+TypeError - 2: unsupported operand type(s) for +
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception: 
+        TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    or by calling a function with the wrong type of object.
+
+    Likely cause:
+        You tried to add two incompatible types of objects:
+        an integer ('int') and a variable equal to None ('NoneType')
+
+    Execution stopped on line 21 of file 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'.
+
+       19:         one = 1
+       20:         none = None
+    -->21:         result = one + none
+       22:     except Exception:
+    one: 1
+    none: None
+
+
+TypeError - 3: unsupported operand type(s) for -
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception: 
+        TypeError: unsupported operand type(s) for -: 'tuple' and 'list'
+
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    or by calling a function with the wrong type of object.
+
+    Likely cause:
+        You tried to subtract two incompatible types of objects:
+        a tuple and a list
+
+    Execution stopped on line 33 of file 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'.
+
+       31:         a = (1, 2)
+       32:         b = [3, 4]
+    -->33:         result = a - b
+       34:     except Exception:
+    a: (1, 2)
+    b: [3, 4]
+
+
+TypeError - 4: unsupported operand type(s) for *
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception: 
+        TypeError: unsupported operand type(s) for *: 'complex' and 'set'
+
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    or by calling a function with the wrong type of object.
+
+    Likely cause:
+        You tried to multiply two incompatible types of objects:
+        a complex number and a set
+
+    Execution stopped on line 45 of file 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'.
+
+       43:         a = 1j
+       44:         b = {2, 3}
+    -->45:         result = a * b
+       46:     except Exception:
+    a: 1j
+    b: {2, 3}
+
+
+TypeError - 5: unsupported operand type(s) for /
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception: 
+        TypeError: unsupported operand type(s) for /: 'dict' and 'float'
+
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    or by calling a function with the wrong type of object.
+
+    Likely cause:
+        You tried to divide two incompatible types of objects:
+        a dictionary ('dict') and a number ('float')
+
+    Execution stopped on line 57 of file 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'.
+
+       55:         a = {1: 1, 2: 2}
+       56:         b = 3.1416
+    -->57:         result = a / b
+       58:     except Exception:
+    a: {1: 1, 2: 2}
+    b: 3.1416
+
+
 UnboundLocalError
 -----------------
 
@@ -377,7 +485,7 @@ UnboundLocalError
        20:     try:
     -->21:         outer()
        22:     except Exception:
-    global outer: <function outer at 0x000002AE020B2488>
+    global outer: <function outer at 0x00000282E3832730>
 
     Exception raised on line 13 of file 'C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py'.
 
