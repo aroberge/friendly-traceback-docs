@@ -23,8 +23,9 @@ for a description of the goal of this project.
 
     Usage <usage>
     Design <design>
+    Suggest an addition <suggest>
     Adding an Exception <adding_exception>
-    Dealing with Syntax Errors <syntax_error.rst>
+    Dealing with Syntax Errors <syntax_error>
     Friendly tracebacks - in English <tracebacks_en>
     Friendly SyntaxError tracebacks - in English <syntax_tracebacks_en>
     Friendly tracebacks - en Français <tracebacks_fr>

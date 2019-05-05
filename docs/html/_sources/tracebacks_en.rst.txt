@@ -455,6 +455,118 @@ TypeError - 5: unsupported operand type(s) for /
     b: 3.1416
 
 
+TypeError - 6: unsupported operand type(s) for &
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception: 
+        TypeError: unsupported operand type(s) for &: 'str' and 'int'
+
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    or by calling a function with the wrong type of object.
+
+    Likely cause:
+        You tried to perform the bitwise operation &
+        on two incompatible types of objects:
+        a string ('str') and an integer ('int')
+
+    Execution stopped on line 69 of file 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'.
+
+       67:         a = 'a'
+       68:         b = 2
+    -->69:         result = a & b
+       70:     except Exception:
+    a: 'a'
+    b: 2
+
+
+TypeError - 7: unsupported operand type(s) for **
+-------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception: 
+        TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
+
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    or by calling a function with the wrong type of object.
+
+    Likely cause:
+        You tried to exponentiate (raise to a power)
+        using two incompatible types of objects:
+        a dictionary ('dict') and a number ('float')
+
+    Execution stopped on line 81 of file 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'.
+
+       79:         a = {1: 1, 2: 2}
+       80:         b = 3.1416
+    -->81:         result = a ** b
+       82:     except Exception:
+    a: {1: 1, 2: 2}
+    b: 3.1416
+
+
+TypeError - 8: unsupported operand type(s) for >>
+-------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception: 
+        TypeError: unsupported operand type(s) for >>: 'str' and 'int'
+
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    or by calling a function with the wrong type of object.
+
+    Likely cause:
+        You tried to perform the bit shifting operation >>
+        on two incompatible types of objects:
+        a string ('str') and an integer ('int')
+
+    Execution stopped on line 93 of file 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'.
+
+       91:         a = 'a'
+       92:         b = 42
+    -->93:         result = a >> b
+       94:     except Exception:
+    a: 'a'
+    b: 42
+
+
+TypeError - 9: comparison between incompatible types
+----------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception: 
+        TypeError: '<' not supported between instances of 'int' and 'str'
+
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    or by calling a function with the wrong type of object.
+
+    Likely cause:
+        You tried to do an order comparison (<)
+        between two incompatible types of objects:
+        an integer ('int') and a string ('str')
+
+    Execution stopped on line 105 of file 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'.
+
+       103:         a = 'a'
+       104:         b = 42
+    -->105:         b < a
+       106:     except Exception:
+    b: 42
+    a: 'a'
+
+
 UnboundLocalError
 -----------------
 
@@ -485,7 +597,7 @@ UnboundLocalError
        20:     try:
     -->21:         outer()
        22:     except Exception:
-    global outer: <function outer at 0x00000282E3832730>
+    global outer: <function outer at 0x000001F620E63AE8>
 
     Exception raised on line 13 of file 'C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py'.
 

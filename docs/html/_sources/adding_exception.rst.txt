@@ -1,3 +1,5 @@
+.. _adding_exception:
+
 Adding an Exception
 ===================
 

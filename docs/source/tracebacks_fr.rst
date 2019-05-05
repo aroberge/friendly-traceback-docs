@@ -338,7 +338,7 @@ TypeError - 1: concatenate two different types
 
     Cause probable : 
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
-        une chaîne ('str') et un entier ('int')
+        une chaîne de caractères ('str') et un entier ('int')
 
     L'exécution s'est arrêtée à la ligne 9 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
 
@@ -458,6 +458,118 @@ TypeError - 5: unsupported operand type(s) for /
     b: 3.1416
 
 
+TypeError - 6: unsupported operand type(s) for &
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: unsupported operand type(s) for &: 'str' and 'int'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        Vous avez essayé d’effectuer l’opération binaire bit à bit &
+        sur deux types d’objets incompatibles:
+        une chaîne de caractères ('str') et un entier ('int')
+
+    L'exécution s'est arrêtée à la ligne 69 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       67:         a = 'a'
+       68:         b = 2
+    -->69:         result = a & b
+       70:     except Exception:
+    a: 'a'
+    b: 2
+
+
+TypeError - 7: unsupported operand type(s) for **
+-------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        Vous avez essayé d'élever à une puissance
+        en utilisant deux types d’objets incompatibles:
+        un dictionnaire ('dict') et un nombre ('float')
+
+    L'exécution s'est arrêtée à la ligne 81 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       79:         a = {1: 1, 2: 2}
+       80:         b = 3.1416
+    -->81:         result = a ** b
+       82:     except Exception:
+    a: {1: 1, 2: 2}
+    b: 3.1416
+
+
+TypeError - 8: unsupported operand type(s) for >>
+-------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: unsupported operand type(s) for >>: 'str' and 'int'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        Vous avez essayé d’effectuer l’opération de décalage >>
+        sur deux types d’objets incompatibles:
+        une chaîne de caractères ('str') et un entier ('int')
+
+    L'exécution s'est arrêtée à la ligne 93 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       91:         a = 'a'
+       92:         b = 42
+    -->93:         result = a >> b
+       94:     except Exception:
+    a: 'a'
+    b: 42
+
+
+TypeError - 9: comparison between incompatible types
+----------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: '<' not supported between instances of 'int' and 'str'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        En utilisant <, vous avez tenté de comparer
+        deux types d’objets incompatibles:
+        un entier ('int') et une chaîne de caractères ('str')
+
+    L'exécution s'est arrêtée à la ligne 105 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       103:         a = 'a'
+       104:         b = 42
+    -->105:         b < a
+       106:     except Exception:
+    b: 42
+    a: 'a'
+
+
 UnboundLocalError
 -----------------
 
@@ -489,7 +601,7 @@ UnboundLocalError
        20:     try:
     -->21:         outer()
        22:     except Exception:
-    global outer: <function outer at 0x000001FDEB331158>
+    global outer: <function outer at 0x000002E3EF453510>
 
     Exception levée à la ligne du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py'.
 
