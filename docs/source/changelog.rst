@@ -5,7 +5,7 @@ Change Log
 
     Unless otherwise noted, "with translation" means with French translation.
 
-- Added one case for TypeError, with translation
+- Added multiple cases for TypeError, with translation
 
 Version 0.0.5
 -------------
