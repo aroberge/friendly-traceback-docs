@@ -19,7 +19,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.5 - dev
+Friendly-traceback version: 0.0.6alpha
 Python version: 3.7.0
 
 
@@ -367,18 +367,18 @@ TypeError - 2: unsupported operand type(s) for +
         Vous avez essayé d’additionner deux types d’objets incompatibles:
         un entier ('int') et une variable de valeur 'None' ('NoteType')
 
-    L'exécution s'est arrêtée à la ligne 21 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 23 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
 
-       19:         one = 1
-       20:         none = None
-    -->21:         result = one + none
-       22:     except Exception:
+       21:         one = 1
+       22:         none = None
+    -->23:         result = one + none
+       24:     except Exception:
     one: 1
     none: None
 
 
-TypeError - 2a: augmented assignment [more examples possible]
--------------------------------------------------------------
+TypeError - 2a: unsupported operand type(s) for +=
+--------------------------------------------------
 
 .. code-block:: none
 
@@ -394,12 +394,12 @@ TypeError - 2a: augmented assignment [more examples possible]
         Vous avez essayé d’additionner deux types d’objets incompatibles:
         un entier ('int') et une chaîne de caractères ('str')
 
-    L'exécution s'est arrêtée à la ligne 33 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 35 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
 
-       31:         one = 1
-       32:         two = "two"
-    -->33:         one += two
-       34:     except Exception:
+       33:         one = 1
+       34:         two = "two"
+    -->35:         one += two
+       36:     except Exception:
     one: 1
     two: 'two'
 
@@ -421,12 +421,39 @@ TypeError - 3: unsupported operand type(s) for -
         Vous avez tenté de soustraire deux types d’objets incompatibles:
         un tuple et une liste ('list')
 
-    L'exécution s'est arrêtée à la ligne 45 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 47 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
 
-       43:         a = (1, 2)
-       44:         b = [3, 4]
-    -->45:         result = a - b
-       46:     except Exception:
+       45:         a = (1, 2)
+       46:         b = [3, 4]
+    -->47:         result = a - b
+       48:     except Exception:
+    a: (1, 2)
+    b: [3, 4]
+
+
+TypeError - 3a: unsupported operand type(s) for -=
+--------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: unsupported operand type(s) for -=: 'tuple' and 'list'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        Vous avez tenté de soustraire deux types d’objets incompatibles:
+        un tuple et une liste ('list')
+
+    L'exécution s'est arrêtée à la ligne 59 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       57:         a = (1, 2)
+       58:         b = [3, 4]
+    -->59:         a -= b
+       60:     except Exception:
     a: (1, 2)
     b: [3, 4]
 
@@ -448,12 +475,39 @@ TypeError - 4: unsupported operand type(s) for *
         Vous avez essayé de multiplier deux types d’objets différents:
         un nombre complexe ('complex') et un ensemble ('set')
 
-    L'exécution s'est arrêtée à la ligne 57 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 71 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
 
-       55:         a = 1j
-       56:         b = {2, 3}
-    -->57:         result = a * b
-       58:     except Exception:
+       69:         a = 1j
+       70:         b = {2, 3}
+    -->71:         result = a * b
+       72:     except Exception:
+    a: 1j
+    b: {2, 3}
+
+
+TypeError - 4a: unsupported operand type(s) for ``*=``
+------------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: unsupported operand type(s) for *=: 'complex' and 'set'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        Vous avez essayé de multiplier deux types d’objets différents:
+        un nombre complexe ('complex') et un ensemble ('set')
+
+    L'exécution s'est arrêtée à la ligne 83 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       81:         a = 1j
+       82:         b = {2, 3}
+    -->83:         a *= b
+       84:     except Exception:
     a: 1j
     b: {2, 3}
 
@@ -475,15 +529,92 @@ TypeError - 5: unsupported operand type(s) for /
         Vous avez essayé de diviser deux types d’objets différents:
         un dictionnaire ('dict') et un nombre ('float')
 
-    L'exécution s'est arrêtée à la ligne 69 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 95 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
 
-       67:         a = {1: 1, 2: 2}
-       68:         b = 3.1416
-    -->69:         result = a / b
-       70:     except Exception:
+       93:         a = {1: 1, 2: 2}
+       94:         b = 3.1416
+    -->95:         result = a / b
+       96:     except Exception:
     a: {1: 1, 2: 2}
     b: 3.1416
 
+
+TypeError - 5a: unsupported operand type(s) for /=
+--------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: unsupported operand type(s) for /=: 'dict' and 'float'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        Vous avez essayé de diviser deux types d’objets différents:
+        un dictionnaire ('dict') et un nombre ('float')
+
+    L'exécution s'est arrêtée à la ligne 107 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       105:         a = {1: 1, 2: 2}
+       106:         b = 3.1416
+    -->107:         a /= b
+       108:     except Exception:
+    a: {1: 1, 2: 2}
+    b: 3.1416
+
+
+TypeError - 5b: unsupported operand type(s) for //
+--------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: unsupported operand type(s) for //: 'dict' and 'float'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        Vous avez essayé de diviser deux types d’objets différents:
+        un dictionnaire ('dict') et un nombre ('float')
+
+    L'exécution s'est arrêtée à la ligne 119 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       117:         a = {1: 1, 2: 2}
+       118:         b = 3.1416
+    -->119:         result = a // b
+       120:     except Exception:
+    a: {1: 1, 2: 2}
+    b: 3.1416
+
+
+TypeError - 5c: unsupported operand type(s) for //=
+---------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        AttributeError: module 'test_type_error' has no attribute 'test_type_error5c'
+
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
+
+    L'exécution s'est arrêtée à la ligne 139 du fichier 'C:\Users\andre\github\friendly-traceback\tests\trb_common.py'
+
+       137:                     mod = __import__(name)
+       138:                     if function is not None:
+    -->139:                         result = getattr(mod, function)()
+       140:                         write(result)
+    result: "\n    Exception Python: \n        TypeError:..."  | len(result): 724
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error5c'
 
 TypeError - 6: unsupported operand type(s) for &
 ------------------------------------------------
@@ -503,12 +634,39 @@ TypeError - 6: unsupported operand type(s) for &
         sur deux types d’objets incompatibles:
         une chaîne de caractères ('str') et un entier ('int')
 
-    L'exécution s'est arrêtée à la ligne 81 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 143 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
 
-       79:         a = 'a'
-       80:         b = 2
-    -->81:         result = a & b
-       82:     except Exception:
+       141:         a = 'a'
+       142:         b = 2
+    -->143:         result = a & b
+       144:     except Exception:
+    a: 'a'
+    b: 2
+
+
+TypeError - 6a: unsupported operand type(s) for &=
+--------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: unsupported operand type(s) for &=: 'str' and 'int'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        Je ne reconnais pas ce cas. Veuillez le signaler à
+        https://github.com/aroberge/friendly-traceback/issues
+
+    L'exécution s'est arrêtée à la ligne 155 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       153:         a = 'a'
+       154:         b = 2
+    -->155:         a &= b
+       156:     except Exception:
     a: 'a'
     b: 2
 
@@ -531,12 +689,40 @@ TypeError - 7: unsupported operand type(s) for **
         en utilisant deux types d’objets incompatibles:
         un dictionnaire ('dict') et un nombre ('float')
 
-    L'exécution s'est arrêtée à la ligne 93 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 167 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
 
-       91:         a = {1: 1, 2: 2}
-       92:         b = 3.1416
-    -->93:         result = a ** b
-       94:     except Exception:
+       165:         a = {1: 1, 2: 2}
+       166:         b = 3.1416
+    -->167:         result = a ** b
+       168:     except Exception:
+    a: {1: 1, 2: 2}
+    b: 3.1416
+
+
+TypeError - 7a: unsupported operand type(s) for ``**=``
+-------------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        Vous avez essayé d'élever à une puissance
+        en utilisant deux types d’objets incompatibles:
+        un dictionnaire ('dict') et un nombre ('float')
+
+    L'exécution s'est arrêtée à la ligne 179 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       177:         a = {1: 1, 2: 2}
+       178:         b = 3.1416
+    -->179:         a **= b
+       180:     except Exception:
     a: {1: 1, 2: 2}
     b: 3.1416
 
@@ -559,46 +745,45 @@ TypeError - 8: unsupported operand type(s) for >>
         sur deux types d’objets incompatibles:
         une chaîne de caractères ('str') et un entier ('int')
 
-    L'exécution s'est arrêtée à la ligne 105 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
 
-       103:         a = 'a'
-       104:         b = 42
-    -->105:         result = a >> b
-       106:     except Exception:
+       189:         a = 'a'
+       190:         b = 42
+    -->191:         result = a >> b
+       192:     except Exception:
     a: 'a'
     b: 42
 
 
-TypeError - 9: comparison between incompatible types
-----------------------------------------------------
+TypeError - 8a: unsupported operand type(s) for >>=
+---------------------------------------------------
 
 .. code-block:: none
 
 
     Exception Python: 
-        TypeError: '<' not supported between instances of 'int' and 'str'
+        TypeError: unsupported operand type(s) for >>=: 'str' and 'int'
 
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
     Cause probable : 
-        En utilisant <, vous avez tenté de comparer
-        deux types d’objets incompatibles:
-        un entier ('int') et une chaîne de caractères ('str')
+        Je ne reconnais pas ce cas. Veuillez le signaler à
+        https://github.com/aroberge/friendly-traceback/issues
 
-    L'exécution s'est arrêtée à la ligne 117 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 203 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
 
-       115:         a = 'a'
-       116:         b = 42
-    -->117:         b < a
-       118:     except Exception:
-    b: 42
+       201:         a = 'a'
+       202:         b = 42
+    -->203:         a >>= b
+       204:     except Exception:
     a: 'a'
+    b: 42
 
 
-TypeError - 10: unsupported operand type(s) for @
--------------------------------------------------
+TypeError - 9: unsupported operand type(s) for @
+------------------------------------------------
 
 .. code-block:: none
 
@@ -617,14 +802,69 @@ TypeError - 10: unsupported operand type(s) for @
         Cet opérateur est normalement utilisé uniquement
         pour la multiplication des matrices.
 
-    L'exécution s'est arrêtée à la ligne 129 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 215 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
 
-       127:         a = 'a'
-       128:         b = 2
-    -->129:         result = a @ b
-       130:     except Exception:
+       213:         a = 'a'
+       214:         b = 2
+    -->215:         result = a @ b
+       216:     except Exception:
     a: 'a'
     b: 2
+
+
+TypeError - 9a: unsupported operand type(s) for @=
+--------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: unsupported operand type(s) for @=: 'str' and 'int'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        Je ne reconnais pas ce cas. Veuillez le signaler à
+        https://github.com/aroberge/friendly-traceback/issues
+
+    L'exécution s'est arrêtée à la ligne 227 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       225:         a = 'a'
+       226:         b = 2
+    -->227:         a @= b
+       228:     except Exception:
+    a: 'a'
+    b: 2
+
+
+TypeError - 10: comparison between incompatible types
+-----------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: '<' not supported between instances of 'int' and 'str'
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        En utilisant <, vous avez tenté de comparer
+        deux types d’objets incompatibles:
+        un entier ('int') et une chaîne de caractères ('str')
+
+    L'exécution s'est arrêtée à la ligne 239 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       237:         a = 'a'
+       238:         b = 42
+    -->239:         b < a
+       240:     except Exception:
+    b: 42
+    a: 'a'
 
 
 UnboundLocalError
@@ -658,7 +898,7 @@ UnboundLocalError
        20:     try:
     -->21:         outer()
        22:     except Exception:
-    global outer: <function outer at 0x000001FEB29D4620>
+    global outer: <function outer at 0x0000026F63D68BF8>
 
     Exception levée à la ligne du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py'.
 

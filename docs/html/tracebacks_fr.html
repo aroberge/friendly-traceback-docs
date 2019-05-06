@@ -16,7 +16,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Friendly SyntaxError tracebacks - en Français" href="syntax_tracebacks_fr.html" />
+    <link rel="next" title="Friendly tracebacks - in French (Python 3.6)" href="tracebacks_fr36.html" />
     <link rel="prev" title="Friendly SyntaxError tracebacks - in English" href="syntax_tracebacks_en.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -26,7 +26,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="syntax_tracebacks_fr.html" title="Friendly SyntaxError tracebacks - en Français"
+          <a href="tracebacks_fr36.html" title="Friendly tracebacks - in French (Python 3.6)"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="syntax_tracebacks_en.html" title="Friendly SyntaxError tracebacks - in English"
@@ -53,15 +53,24 @@
 <li><a class="reference internal" href="#taberror">TabError</a></li>
 <li><a class="reference internal" href="#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
 <li><a class="reference internal" href="#typeerror-2-unsupported-operand-type-s-for">TypeError - 2: unsupported operand type(s) for +</a></li>
-<li><a class="reference internal" href="#typeerror-2a-augmented-assignment-more-examples-possible">TypeError - 2a: augmented assignment [more examples possible]</a></li>
+<li><a class="reference internal" href="#typeerror-2a-unsupported-operand-type-s-for">TypeError - 2a: unsupported operand type(s) for +=</a></li>
 <li><a class="reference internal" href="#typeerror-3-unsupported-operand-type-s-for">TypeError - 3: unsupported operand type(s) for -</a></li>
+<li><a class="reference internal" href="#typeerror-3a-unsupported-operand-type-s-for">TypeError - 3a: unsupported operand type(s) for -=</a></li>
 <li><a class="reference internal" href="#typeerror-4-unsupported-operand-type-s-for">TypeError - 4: unsupported operand type(s) for *</a></li>
+<li><a class="reference internal" href="#typeerror-4a-unsupported-operand-type-s-for">TypeError - 4a: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">*=</span></code></a></li>
 <li><a class="reference internal" href="#typeerror-5-unsupported-operand-type-s-for">TypeError - 5: unsupported operand type(s) for /</a></li>
+<li><a class="reference internal" href="#typeerror-5a-unsupported-operand-type-s-for">TypeError - 5a: unsupported operand type(s) for /=</a></li>
+<li><a class="reference internal" href="#typeerror-5b-unsupported-operand-type-s-for">TypeError - 5b: unsupported operand type(s) for //</a></li>
+<li><a class="reference internal" href="#typeerror-5c-unsupported-operand-type-s-for">TypeError - 5c: unsupported operand type(s) for //=</a></li>
 <li><a class="reference internal" href="#typeerror-6-unsupported-operand-type-s-for">TypeError - 6: unsupported operand type(s) for &amp;</a></li>
+<li><a class="reference internal" href="#typeerror-6a-unsupported-operand-type-s-for">TypeError - 6a: unsupported operand type(s) for &amp;=</a></li>
 <li><a class="reference internal" href="#typeerror-7-unsupported-operand-type-s-for">TypeError - 7: unsupported operand type(s) for **</a></li>
+<li><a class="reference internal" href="#typeerror-7a-unsupported-operand-type-s-for">TypeError - 7a: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">**=</span></code></a></li>
 <li><a class="reference internal" href="#typeerror-8-unsupported-operand-type-s-for">TypeError - 8: unsupported operand type(s) for &gt;&gt;</a></li>
-<li><a class="reference internal" href="#typeerror-9-comparison-between-incompatible-types">TypeError - 9: comparison between incompatible types</a></li>
-<li><a class="reference internal" href="#typeerror-10-unsupported-operand-type-s-for">TypeError - 10: unsupported operand type(s) for &#64;</a></li>
+<li><a class="reference internal" href="#typeerror-8a-unsupported-operand-type-s-for">TypeError - 8a: unsupported operand type(s) for &gt;&gt;=</a></li>
+<li><a class="reference internal" href="#typeerror-9-unsupported-operand-type-s-for">TypeError - 9: unsupported operand type(s) for &#64;</a></li>
+<li><a class="reference internal" href="#typeerror-9a-unsupported-operand-type-s-for">TypeError - 9a: unsupported operand type(s) for &#64;=</a></li>
+<li><a class="reference internal" href="#typeerror-10-comparison-between-incompatible-types">TypeError - 10: comparison between incompatible types</a></li>
 <li><a class="reference internal" href="#unboundlocalerror">UnboundLocalError</a></li>
 <li><a class="reference internal" href="#unknown-exception">Unknown exception</a></li>
 <li><a class="reference internal" href="#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
@@ -74,8 +83,8 @@
   <p class="topless"><a href="syntax_tracebacks_en.html"
                         title="previous chapter">Friendly SyntaxError tracebacks - in English</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="syntax_tracebacks_fr.html"
-                        title="next chapter">Friendly SyntaxError tracebacks - en Français</a></p>
+  <p class="topless"><a href="tracebacks_fr36.html"
+                        title="next chapter">Friendly tracebacks - in French (Python 3.6)</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -121,7 +130,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.0.5 - dev
+<p>Friendly-traceback version: 0.0.6alpha
 Python version: 3.7.0</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -432,19 +441,19 @@ Cause probable :
     Vous avez essayé d’additionner deux types d’objets incompatibles:
     un entier (&#39;int&#39;) et une variable de valeur &#39;None&#39; (&#39;NoteType&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 23 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
 
-   19:         one = 1
-   20:         none = None
---&gt;21:         result = one + none
-   22:     except Exception:
+   21:         one = 1
+   22:         none = None
+--&gt;23:         result = one + none
+   24:     except Exception:
 one: 1
 none: None
 </pre></div>
 </div>
 </div>
-<div class="section" id="typeerror-2a-augmented-assignment-more-examples-possible">
-<h2>TypeError - 2a: augmented assignment [more examples possible]<a class="headerlink" href="#typeerror-2a-augmented-assignment-more-examples-possible" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="typeerror-2a-unsupported-operand-type-s-for">
+<h2>TypeError - 2a: unsupported operand type(s) for +=<a class="headerlink" href="#typeerror-2a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
     TypeError: unsupported operand type(s) for +=: &#39;int&#39; and &#39;str&#39;
 
@@ -456,12 +465,12 @@ Cause probable :
     Vous avez essayé d’additionner deux types d’objets incompatibles:
     un entier (&#39;int&#39;) et une chaîne de caractères (&#39;str&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 33 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 35 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
 
-   31:         one = 1
-   32:         two = &quot;two&quot;
---&gt;33:         one += two
-   34:     except Exception:
+   33:         one = 1
+   34:         two = &quot;two&quot;
+--&gt;35:         one += two
+   36:     except Exception:
 one: 1
 two: &#39;two&#39;
 </pre></div>
@@ -480,12 +489,36 @@ Cause probable :
     Vous avez tenté de soustraire deux types d’objets incompatibles:
     un tuple et une liste (&#39;list&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 45 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 47 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
 
-   43:         a = (1, 2)
-   44:         b = [3, 4]
---&gt;45:         result = a - b
-   46:     except Exception:
+   45:         a = (1, 2)
+   46:         b = [3, 4]
+--&gt;47:         result = a - b
+   48:     except Exception:
+a: (1, 2)
+b: [3, 4]
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-3a-unsupported-operand-type-s-for">
+<h2>TypeError - 3a: unsupported operand type(s) for -=<a class="headerlink" href="#typeerror-3a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: unsupported operand type(s) for -=: &#39;tuple&#39; and &#39;list&#39;
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+ou en invoquant une fonction avec le mauvais type d’objet.
+
+Cause probable :
+    Vous avez tenté de soustraire deux types d’objets incompatibles:
+    un tuple et une liste (&#39;list&#39;)
+
+L&#39;exécution s&#39;est arrêtée à la ligne 59 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+
+   57:         a = (1, 2)
+   58:         b = [3, 4]
+--&gt;59:         a -= b
+   60:     except Exception:
 a: (1, 2)
 b: [3, 4]
 </pre></div>
@@ -504,12 +537,36 @@ Cause probable :
     Vous avez essayé de multiplier deux types d’objets différents:
     un nombre complexe (&#39;complex&#39;) et un ensemble (&#39;set&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 57 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 71 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
 
-   55:         a = 1j
-   56:         b = {2, 3}
---&gt;57:         result = a * b
-   58:     except Exception:
+   69:         a = 1j
+   70:         b = {2, 3}
+--&gt;71:         result = a * b
+   72:     except Exception:
+a: 1j
+b: {2, 3}
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-4a-unsupported-operand-type-s-for">
+<h2>TypeError - 4a: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">*=</span></code><a class="headerlink" href="#typeerror-4a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: unsupported operand type(s) for *=: &#39;complex&#39; and &#39;set&#39;
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+ou en invoquant une fonction avec le mauvais type d’objet.
+
+Cause probable :
+    Vous avez essayé de multiplier deux types d’objets différents:
+    un nombre complexe (&#39;complex&#39;) et un ensemble (&#39;set&#39;)
+
+L&#39;exécution s&#39;est arrêtée à la ligne 83 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+
+   81:         a = 1j
+   82:         b = {2, 3}
+--&gt;83:         a *= b
+   84:     except Exception:
 a: 1j
 b: {2, 3}
 </pre></div>
@@ -528,14 +585,83 @@ Cause probable :
     Vous avez essayé de diviser deux types d’objets différents:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 69 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 95 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
 
-   67:         a = {1: 1, 2: 2}
-   68:         b = 3.1416
---&gt;69:         result = a / b
-   70:     except Exception:
+   93:         a = {1: 1, 2: 2}
+   94:         b = 3.1416
+--&gt;95:         result = a / b
+   96:     except Exception:
 a: {1: 1, 2: 2}
 b: 3.1416
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-5a-unsupported-operand-type-s-for">
+<h2>TypeError - 5a: unsupported operand type(s) for /=<a class="headerlink" href="#typeerror-5a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: unsupported operand type(s) for /=: &#39;dict&#39; and &#39;float&#39;
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+ou en invoquant une fonction avec le mauvais type d’objet.
+
+Cause probable :
+    Vous avez essayé de diviser deux types d’objets différents:
+    un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
+
+L&#39;exécution s&#39;est arrêtée à la ligne 107 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+
+   105:         a = {1: 1, 2: 2}
+   106:         b = 3.1416
+--&gt;107:         a /= b
+   108:     except Exception:
+a: {1: 1, 2: 2}
+b: 3.1416
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-5b-unsupported-operand-type-s-for">
+<h2>TypeError - 5b: unsupported operand type(s) for //<a class="headerlink" href="#typeerror-5b-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: unsupported operand type(s) for //: &#39;dict&#39; and &#39;float&#39;
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+ou en invoquant une fonction avec le mauvais type d’objet.
+
+Cause probable :
+    Vous avez essayé de diviser deux types d’objets différents:
+    un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
+
+L&#39;exécution s&#39;est arrêtée à la ligne 119 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+
+   117:         a = {1: 1, 2: 2}
+   118:         b = 3.1416
+--&gt;119:         result = a // b
+   120:     except Exception:
+a: {1: 1, 2: 2}
+b: 3.1416
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-5c-unsupported-operand-type-s-for">
+<h2>TypeError - 5c: unsupported operand type(s) for //=<a class="headerlink" href="#typeerror-5c-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    AttributeError: module &#39;test_type_error&#39; has no attribute &#39;test_type_error5c&#39;
+
+Aucune information n’est connue à propos de cette exception.
+Veuillez signaler cet exemple à
+https://github.com/aroberge/friendly-traceback/issues
+
+L&#39;exécution s&#39;est arrêtée à la ligne 139 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\trb_common.py&#39;
+
+   137:                     mod = __import__(name)
+   138:                     if function is not None:
+--&gt;139:                         result = getattr(mod, function)()
+   140:                         write(result)
+result: &quot;\n    Exception Python: \n        TypeError:...&quot;  | len(result): 724
+mod: &lt;module &#39;test_type_error&#39; from &#39;C:\\Users\\an...&gt;
+function: &#39;test_type_error5c&#39;
 </pre></div>
 </div>
 </div>
@@ -553,12 +679,36 @@ Cause probable :
     sur deux types d’objets incompatibles:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 81 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 143 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
 
-   79:         a = &#39;a&#39;
-   80:         b = 2
---&gt;81:         result = a &amp; b
-   82:     except Exception:
+   141:         a = &#39;a&#39;
+   142:         b = 2
+--&gt;143:         result = a &amp; b
+   144:     except Exception:
+a: &#39;a&#39;
+b: 2
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-6a-unsupported-operand-type-s-for">
+<h2>TypeError - 6a: unsupported operand type(s) for &amp;=<a class="headerlink" href="#typeerror-6a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: unsupported operand type(s) for &amp;=: &#39;str&#39; and &#39;int&#39;
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+ou en invoquant une fonction avec le mauvais type d’objet.
+
+Cause probable :
+    Je ne reconnais pas ce cas. Veuillez le signaler à
+    https://github.com/aroberge/friendly-traceback/issues
+
+L&#39;exécution s&#39;est arrêtée à la ligne 155 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+
+   153:         a = &#39;a&#39;
+   154:         b = 2
+--&gt;155:         a &amp;= b
+   156:     except Exception:
 a: &#39;a&#39;
 b: 2
 </pre></div>
@@ -578,12 +728,37 @@ Cause probable :
     en utilisant deux types d’objets incompatibles:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 93 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 167 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
 
-   91:         a = {1: 1, 2: 2}
-   92:         b = 3.1416
---&gt;93:         result = a ** b
-   94:     except Exception:
+   165:         a = {1: 1, 2: 2}
+   166:         b = 3.1416
+--&gt;167:         result = a ** b
+   168:     except Exception:
+a: {1: 1, 2: 2}
+b: 3.1416
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-7a-unsupported-operand-type-s-for">
+<h2>TypeError - 7a: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">**=</span></code><a class="headerlink" href="#typeerror-7a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: unsupported operand type(s) for ** or pow(): &#39;dict&#39; and &#39;float&#39;
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+ou en invoquant une fonction avec le mauvais type d’objet.
+
+Cause probable :
+    Vous avez essayé d&#39;élever à une puissance
+    en utilisant deux types d’objets incompatibles:
+    un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
+
+L&#39;exécution s&#39;est arrêtée à la ligne 179 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+
+   177:         a = {1: 1, 2: 2}
+   178:         b = 3.1416
+--&gt;179:         a **= b
+   180:     except Exception:
 a: {1: 1, 2: 2}
 b: 3.1416
 </pre></div>
@@ -603,44 +778,43 @@ Cause probable :
     sur deux types d’objets incompatibles:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 105 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 191 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
 
-   103:         a = &#39;a&#39;
-   104:         b = 42
---&gt;105:         result = a &gt;&gt; b
-   106:     except Exception:
+   189:         a = &#39;a&#39;
+   190:         b = 42
+--&gt;191:         result = a &gt;&gt; b
+   192:     except Exception:
 a: &#39;a&#39;
 b: 42
 </pre></div>
 </div>
 </div>
-<div class="section" id="typeerror-9-comparison-between-incompatible-types">
-<h2>TypeError - 9: comparison between incompatible types<a class="headerlink" href="#typeerror-9-comparison-between-incompatible-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="typeerror-8a-unsupported-operand-type-s-for">
+<h2>TypeError - 8a: unsupported operand type(s) for &gt;&gt;=<a class="headerlink" href="#typeerror-8a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
+    TypeError: unsupported operand type(s) for &gt;&gt;=: &#39;str&#39; and &#39;int&#39;
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
 ou en invoquant une fonction avec le mauvais type d’objet.
 
 Cause probable :
-    En utilisant &lt;, vous avez tenté de comparer
-    deux types d’objets incompatibles:
-    un entier (&#39;int&#39;) et une chaîne de caractères (&#39;str&#39;)
+    Je ne reconnais pas ce cas. Veuillez le signaler à
+    https://github.com/aroberge/friendly-traceback/issues
 
-L&#39;exécution s&#39;est arrêtée à la ligne 117 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 203 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
 
-   115:         a = &#39;a&#39;
-   116:         b = 42
---&gt;117:         b &lt; a
-   118:     except Exception:
-b: 42
+   201:         a = &#39;a&#39;
+   202:         b = 42
+--&gt;203:         a &gt;&gt;= b
+   204:     except Exception:
 a: &#39;a&#39;
+b: 42
 </pre></div>
 </div>
 </div>
-<div class="section" id="typeerror-10-unsupported-operand-type-s-for">
-<h2>TypeError - 10: unsupported operand type(s) for &#64;<a class="headerlink" href="#typeerror-10-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="typeerror-9-unsupported-operand-type-s-for">
+<h2>TypeError - 9: unsupported operand type(s) for &#64;<a class="headerlink" href="#typeerror-9-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
     TypeError: unsupported operand type(s) for @: &#39;str&#39; and &#39;int&#39;
 
@@ -655,14 +829,63 @@ Cause probable :
     Cet opérateur est normalement utilisé uniquement
     pour la multiplication des matrices.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 129 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 215 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
 
-   127:         a = &#39;a&#39;
-   128:         b = 2
---&gt;129:         result = a @ b
-   130:     except Exception:
+   213:         a = &#39;a&#39;
+   214:         b = 2
+--&gt;215:         result = a @ b
+   216:     except Exception:
 a: &#39;a&#39;
 b: 2
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-9a-unsupported-operand-type-s-for">
+<h2>TypeError - 9a: unsupported operand type(s) for &#64;=<a class="headerlink" href="#typeerror-9a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: unsupported operand type(s) for @=: &#39;str&#39; and &#39;int&#39;
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+ou en invoquant une fonction avec le mauvais type d’objet.
+
+Cause probable :
+    Je ne reconnais pas ce cas. Veuillez le signaler à
+    https://github.com/aroberge/friendly-traceback/issues
+
+L&#39;exécution s&#39;est arrêtée à la ligne 227 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+
+   225:         a = &#39;a&#39;
+   226:         b = 2
+--&gt;227:         a @= b
+   228:     except Exception:
+a: &#39;a&#39;
+b: 2
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-10-comparison-between-incompatible-types">
+<h2>TypeError - 10: comparison between incompatible types<a class="headerlink" href="#typeerror-10-comparison-between-incompatible-types" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+ou en invoquant une fonction avec le mauvais type d’objet.
+
+Cause probable :
+    En utilisant &lt;, vous avez tenté de comparer
+    deux types d’objets incompatibles:
+    un entier (&#39;int&#39;) et une chaîne de caractères (&#39;str&#39;)
+
+L&#39;exécution s&#39;est arrêtée à la ligne 239 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+
+   237:         a = &#39;a&#39;
+   238:         b = 42
+--&gt;239:         b &lt; a
+   240:     except Exception:
+b: 42
+a: &#39;a&#39;
 </pre></div>
 </div>
 </div>
@@ -693,7 +916,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;C:\Users\and
    20:     try:
 --&gt;21:         outer()
    22:     except Exception:
-global outer: &lt;function outer at 0x000001FEB29D4620&gt;
+global outer: &lt;function outer at 0x0000026F63D68BF8&gt;
 
 Exception levée à la ligne du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py&#39;.
 
@@ -782,7 +1005,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 17 du fichier &#39;C:\Users\and
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="syntax_tracebacks_fr.html" title="Friendly SyntaxError tracebacks - en Français"
+          <a href="tracebacks_fr36.html" title="Friendly tracebacks - in French (Python 3.6)"
              >next</a> |</li>
         <li class="right" >
           <a href="syntax_tracebacks_en.html" title="Friendly SyntaxError tracebacks - in English"

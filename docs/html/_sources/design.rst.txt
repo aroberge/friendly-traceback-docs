@@ -109,10 +109,10 @@ corresponding to those we have highlighted above for a standard traceback.
 1. The exact same terse information provided by Python about the exception raised.
 
 2. The line of code which was executed and eventually led to an exception
-   being raised, shown with a few additional lines.
+   being raised, shown with a few additional lines to help understand the context.
 
 3. The actual line of code where the exception was raised, shown with a few
-   additional lines.
+   additional lines to help understand the context.
 
 4. and 5. Instead of relying simply on the "(most recent last call)" note
    given by Python, we explicitly state which was the line of code where
@@ -220,7 +220,7 @@ Those interested by what Thonny does might want to
 `have a look here <https://github.com/thonny/thonny/blob/master/thonny/plugins/stdlib_error_helpers.py>`_.
 
 The idea of showing more than one possible cause for an error
-is discuss in Issue8_.
+is discussed in Issue8_.
 
 .. _Thonny: https://thonny.org/
 

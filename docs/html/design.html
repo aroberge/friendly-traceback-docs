@@ -187,9 +187,9 @@ corresponding to those we have highlighted above for a standard traceback.</p>
 <ol class="arabic simple">
 <li>The exact same terse information provided by Python about the exception raised.</li>
 <li>The line of code which was executed and eventually led to an exception
-being raised, shown with a few additional lines.</li>
+being raised, shown with a few additional lines to help understand the context.</li>
 <li>The actual line of code where the exception was raised, shown with a few
-additional lines.</li>
+additional lines to help understand the context.</li>
 <li>and 5. Instead of relying simply on the “(most recent last call)” note
 given by Python, we explicitly state which was the line of code where
 the program stopped, and which one where the exception was raised.
@@ -261,7 +261,7 @@ in order of likelihood, based on its own analysis of the code.
 Those interested by what Thonny does might want to
 <a class="reference external" href="https://github.com/thonny/thonny/blob/master/thonny/plugins/stdlib_error_helpers.py">have a look here</a>.</p>
 <p>The idea of showing more than one possible cause for an error
-is discuss in <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/8">Issue8</a>.</p>
+is discussed in <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/8">Issue8</a>.</p>
 <p>As a concrete example, in the image below,
 Thonny shows the normal Python traceback [1],
 and offers some additional explanations [2], parts of which can be hidden
