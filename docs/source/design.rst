@@ -72,35 +72,6 @@ this document.
 .. _Issue8: https://github.com/aroberge/friendly-traceback/issues/8
 .. _Issue10: https://github.com/aroberge/friendly-traceback/issues/10
 
-Basic usage
---------------
-
-There are three ways of using friendly-traceback.
-
-1. As an exception hook::
-
-    import friendly_traceback
-    friendly_traceback.install()  # sys.excepthook = friendly_traceback.explain
-
-
-2. Catching exceptions locally::
-
-    try:
-        # Some code
-    except Exception:
-        friendly_traceback.explain(*sys.exc_info())
-
-
-3. When launching a Python script (or the REPL)::
-
-    python -m friendly_traceback myscript.py
-
-
-Using sys.stderr
-----------------
-
-By default, friendly tracebacks are written to ``sys.stderr``.
-However, it is possible to override this choice.
 
 Anatomy of a standard Python traceback
 --------------------------------------
@@ -138,10 +109,10 @@ corresponding to those we have highlighted above for a standard traceback.
 1. The exact same terse information provided by Python about the exception raised.
 
 2. The line of code which was executed and eventually led to an exception
-   being raised, shown with a few additional lines.
+   being raised, shown with a few additional lines to help understand the context.
 
 3. The actual line of code where the exception was raised, shown with a few
-   additional lines.
+   additional lines to help understand the context.
 
 4. and 5. Instead of relying simply on the "(most recent last call)" note
    given by Python, we explicitly state which was the line of code where
@@ -249,7 +220,7 @@ Those interested by what Thonny does might want to
 `have a look here <https://github.com/thonny/thonny/blob/master/thonny/plugins/stdlib_error_helpers.py>`_.
 
 The idea of showing more than one possible cause for an error
-is discuss in Issue8_.
+is discussed in Issue8_.
 
 .. _Thonny: https://thonny.org/
 
@@ -276,14 +247,18 @@ However, it can be over-ridden in the following way, in order
 of precedence:
 
 1. Using ``friendly_traceback.set_lang(lang)``
-2. Using the environment variable ``os.environ['FriendlyTracebackLang']``
-3. Using variables found in a ``friendly.ini`` file
+2. Using the environment variable ``os.environ['FriendlyTracebackLang']``.
+   This can be useful for temporarily overriding other settings.
+3. Using variables found in a ``friendly.ini`` file located in the user's
+   home directory.  As an example, my OS locale is ``fr_CA``.
+   Since I prefer to view the English version as a default,
+   here is the content of my friendly.ini file::
+
+    [friendly]
+    lang = en
+
 4. As mentioned above, and last in priority, the default is to use
    the information provided by ``locale.getdefaultlocale()``.
-
-.. todo::
-
-    Document how to use friendly.ini
 
 The information provided by ``locale.getdefaultlocale()`` includes
 not only a language code, but information about a specific region as well.
@@ -346,6 +321,12 @@ Level 2
 ~~~~~~~
 
 Same as level 1 but with the normal Python traceback printed **before**.
+
+.. important:: Which level to use by default?
+
+    Currently, level 1 is the default. Since the secondary aim of
+    Friendly-traceback is to help users learn how to use the information
+    from normal traceback, perhaps the default should be level 2.
 
 
 .. image:: images/level2.png
