@@ -52,10 +52,37 @@ TypeError - 1: must be str, not int
 
     L'exécution s'est arrêtée à la ligne 9 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
 
-        7:         a = 'a'
+        7:         a = "a"
         8:         one = 1
     --> 9:         result = a + one
        10:     except Exception:
     a: 'a'
     one: 1
+
+
+TypeError - 1a: must be str, not list
+-------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python: 
+        TypeError: must be str, not list
+
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
+
+    Cause probable : 
+        Vous avez essayé de concaténer (additionner) deux types d’objets différents:
+        une chaîne de caractères ('str') et une liste ('list')
+
+    L'exécution s'est arrêtée à la ligne 23 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       21:         a = "a"
+       22:         a_list = [1, 2, 3]
+    -->23:         result = a + a_list
+       24:     except Exception:
+    a: 'a'
+    a_list: [1, 2, 3]
 

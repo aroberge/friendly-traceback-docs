@@ -19,7 +19,7 @@ should be included here.
      similar files for all languages *and* update the documentation.
 
 Friendly-traceback version: 0.0.6alpha
-Python version: 3.7.0
+Python version: 3.7.3
 
 
 

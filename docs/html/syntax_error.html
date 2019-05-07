@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Dealing with Syntax Errors &#8212; Friendly tracebacks 0.0.6alpha documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -69,8 +67,6 @@
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -93,29 +89,28 @@ In order to create test cases, we need a two-step process.</p>
 add test cases for other exceptions, and <strong>I will only focus on differences</strong>
 from the other situation.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p><strong>Checklist</strong></p>
 <p>The following are the required steps before a pull request.
 Each item is explained in a different section below. If you find
 the instructions unclear, please do not hesitate to reach out.</p>
-<blockquote class="last">
+<blockquote>
 <div><ul class="simple">
-<li>File an issue indicating that you are planning to work on a
-given exception.</li>
-<li><dl class="first docutils">
-<dt>Add test case</dt>
-<dd><ul class="first last">
-<li>Add raise_some_exception.py file</li>
-<li>Add catch_some_exception.py file</li>
+<li><p>File an issue indicating that you are planning to work on a
+given exception.</p></li>
+<li><dl class="simple">
+<dt>Add test case</dt><dd><ul>
+<li><p>Add raise_some_exception.py file</p></li>
+<li><p>Add catch_some_exception.py file</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>Add generic information</li>
-<li>Add specific information</li>
-<li>Execute catch_some_exception.py and confirm visually it works as expected</li>
-<li>Run pytest and confirm that your new test is included</li>
-<li>Make a pull request</li>
+<li><p>Add generic information</p></li>
+<li><p>Add specific information</p></li>
+<li><p>Execute catch_some_exception.py and confirm visually it works as expected</p></li>
+<li><p>Run pytest and confirm that your new test is included</p></li>
+<li><p>Make a pull request</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -177,10 +172,10 @@ with some numbered comments added, to which we refer below:</p>
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li>Importing a test using pytest is done differently than importing it when
-running this file as standalone</li>
-<li>There are three possible cases of <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code>. We try to be
-as specific as possible in terms of which case will be indicated by Python.</li>
+<li><p>Importing a test using pytest is done differently than importing it when
+running this file as standalone</p></li>
+<li><p>There are three possible cases of <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code>. We try to be
+as specific as possible in terms of which case will be indicated by Python.</p></li>
 </ol>
 <p>At this point, running pytest from the root directory should
 work, and you should see your test case included.  You can also
@@ -204,8 +199,8 @@ this is also the case for <code class="docutils literal notranslate"><span class
 code, analyze it and see if we can make an educated guess as to the
 cause of the error and give proper feedback.</p>
 <div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Add code example for providing specific information for SyntaxError</p>
+<p class="admonition-title">Todo</p>
+<p>Add code example for providing specific information for SyntaxError</p>
 </div>
 </div>
 </div>
@@ -233,7 +228,7 @@ cause of the error and give proper feedback.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, André Roberge.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
   </body>
 </html>

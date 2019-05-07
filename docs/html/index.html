@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨 &#8212; Friendly tracebacks 0.0.6alpha documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -48,8 +46,6 @@
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -68,8 +64,8 @@
 any language.</p>
 <p><a class="reference external" href="https://github.com/aroberge/friendly-traceback">Code on Github</a></p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This is alpha software, currently in development. We’re focusing
+<p class="admonition-title">Warning</p>
+<p>This is alpha software, currently in development. We’re focusing
 on breadth of coverage (i.e. the number of Exceptions explained in
 simple language) over quality of code and its documentation.
 However, everything included should work.</p>
@@ -131,6 +127,8 @@ for a description of the goal of this project.</p>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#nameerror">NameError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#taberror">TabError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-1a-concatenate-two-different-types">TypeError - 1a: concatenate two different types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-1b-concatenate-two-different-types">TypeError - 1b: concatenate two different types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-2-unsupported-operand-type-s-for">TypeError - 2: unsupported operand type(s) for +</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-2a-unsupported-operand-type-s-for">TypeError - 2a: unsupported operand type(s) for +=</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-3-unsupported-operand-type-s-for">TypeError - 3: unsupported operand type(s) for -</a></li>
@@ -159,6 +157,7 @@ for a description of the goal of this project.</p>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en36.html"> Friendly tracebacks - in English (Python 3.6)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_en36.html#importerror">ImportError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_en36.html#typeerror-1-must-be-str-not-int">TypeError - 1: must be str, not int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracebacks_en36.html#typeerror-1a-must-be-str-not-list">TypeError - 1a: must be str, not list</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en.html"> Friendly SyntaxError tracebacks - in English</a><ul>
@@ -188,6 +187,8 @@ for a description of the goal of this project.</p>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#nameerror">NameError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#taberror">TabError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-1a-concatenate-two-different-types">TypeError - 1a: concatenate two different types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-1b-concatenate-two-different-types">TypeError - 1b: concatenate two different types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-2-unsupported-operand-type-s-for">TypeError - 2: unsupported operand type(s) for +</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-2a-unsupported-operand-type-s-for">TypeError - 2a: unsupported operand type(s) for +=</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-3-unsupported-operand-type-s-for">TypeError - 3: unsupported operand type(s) for -</a></li>
@@ -216,6 +217,7 @@ for a description of the goal of this project.</p>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_fr36.html"> Friendly tracebacks - in French (Python 3.6)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_fr36.html#importerror">ImportError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_fr36.html#typeerror-1-must-be-str-not-int">TypeError - 1: must be str, not int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr36.html#typeerror-1a-must-be-str-not-list">TypeError - 1a: must be str, not list</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a><ul>
@@ -252,18 +254,18 @@ for a description of the goal of this project.</p>
 </ul>
 </div>
 <div class="admonition-todo admonition">
-<p class="first admonition-title">Todo</p>
-<p class="last">Explain why we do not install gettext globally.</p>
+<p class="admonition-title">Todo</p>
+<p>Explain why we do not install gettext globally.</p>
 </div>
 <p class="todo-source">(The <a class="reference internal" href="adding_exception.html#index-0"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\adding_exception.rst, line 213.)</p>
 <div class="admonition-todo admonition">
-<p class="first admonition-title">Todo</p>
-<p class="last">To be written</p>
+<p class="admonition-title">Todo</p>
+<p>To be written</p>
 </div>
 <p class="todo-source">(The <a class="reference internal" href="adding_exception.html#index-1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\adding_exception.rst, line 375.)</p>
 <div class="admonition-todo admonition">
-<p class="first admonition-title">Todo</p>
-<p class="last">Add code example for providing specific information for SyntaxError</p>
+<p class="admonition-title">Todo</p>
+<p>Add code example for providing specific information for SyntaxError</p>
 </div>
 <p class="todo-source">(The <a class="reference internal" href="syntax_error.html#index-0"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\syntax_error.rst, line 131.)</p>
 </div>
@@ -288,7 +290,7 @@ for a description of the goal of this project.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, André Roberge.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
   </body>
 </html>

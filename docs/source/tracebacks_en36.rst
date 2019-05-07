@@ -52,10 +52,37 @@ TypeError - 1: must be str, not int
 
     Execution stopped on line 9 of file 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'.
 
-        7:         a = 'a'
+        7:         a = "a"
         8:         one = 1
     --> 9:         result = a + one
        10:     except Exception:
     a: 'a'
     one: 1
+
+
+TypeError - 1a: must be str, not list
+-------------------------------------
+
+.. code-block:: none
+
+
+    Python exception: 
+        TypeError: must be str, not list
+
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    or by calling a function with the wrong type of object.
+
+    Likely cause:
+        You tried to concatenate (add) two different types of objects:
+        a string ('str') and a list
+
+    Execution stopped on line 23 of file 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'.
+
+       21:         a = "a"
+       22:         a_list = [1, 2, 3]
+    -->23:         result = a + a_list
+       24:     except Exception:
+    a: 'a'
+    a_list: [1, 2, 3]
 

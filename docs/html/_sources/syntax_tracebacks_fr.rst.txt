@@ -22,7 +22,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      toutes les langues sera automatiquement mise à jour.
 
 Friendly-traceback version: 0.0.6alpha
-Python version: 3.7.0
+Python version: 3.7.3
 
 
 
