@@ -46,6 +46,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#syntaxerror-invalid-syntax">SyntaxError: invalid syntax</a></li>
+<li><a class="reference internal" href="#how-many-possible-causes">How many possible causes?</a></li>
 <li><a class="reference internal" href="#localization">Localization</a></li>
 <li><a class="reference internal" href="#verbosity">Verbosity</a><ul>
 <li><a class="reference internal" href="#level-0">Level 0</a></li>
@@ -247,6 +248,9 @@ the absence of the corresponding closing bracket was noted to cause an error.</p
 of the code and tries to identify a single cause which produced the
 error.</p>
 <a class="reference internal image-reference" href="_images/syntax_error.png"><img alt="SyntaxError traceback" src="_images/syntax_error.png" style="width: 556.0px; height: 275.0px;" /></a>
+</div>
+<div class="section" id="how-many-possible-causes">
+<h2>How many possible causes?<a class="headerlink" href="#how-many-possible-causes" title="Permalink to this headline">¶</a></h2>
 <p>The idea of showing a single possible cause for a given error is different
 than that taken by <a class="reference external" href="https://thonny.org/">Thonny</a> which, in some cases, attempts to identify more than
 one possible cause giving rise to an exception, as well as ordering them
@@ -260,6 +264,43 @@ Thonny shows the normal Python traceback [1],
 and offers some additional explanations [2], parts of which can be hidden
 or revealed by clicking on a button.</p>
 <a class="reference internal image-reference" href="_images/thonny.png"><img alt="Level 0" src="_images/thonny.png" style="width: 767.0px; height: 540.0px;" /></a>
+<p>Our current thinking is as follows:</p>
+<ol class="arabic">
+<li><p>Friendly-traceback aims to supplement the information provided by Python
+in a normal traceback, in order to make it easier to understand.
+Therefore, it should not second-guess the information given by Python
+when the information is specific enough. For exemple, if we see an
+<code class="docutils literal notranslate"><span class="pre">UnboundLocalError</span></code>, it could very well be that the cause is really
+a <code class="docutils literal notranslate"><span class="pre">NameError</span></code> in disguise. However, trying to figure out if that is the
+case would go beyond explaining and/or translating what a given
+traceback includes as information.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, Python very often includes the rather useless
+<code class="docutils literal notranslate"><span class="pre">invalid</span> <span class="pre">syntax</span></code> message. Nonetheless, we still try to make an educated
+guess as to what the cause is.  We note however that many programming
+environment (editor or IDE) will include linters that will catch
+syntax errors before a program is run,
+thus helping to prevent <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> tracebacks from happening.
+While we could, in theory, use third-party linters as
+tools in Friendly-traceback, we believe that such tools more properly
+belong in a programming environment, and that it would be a duplicated
+and largely wasted effort to incorporate such tools in Friendly-traceback.</p></li>
+<li><p>We generally distinguish cases where we can use the information given by Python
+from those where we have to guess by having a different header
+(“Likely cause” vs “My best guess”).</p></li>
+<li><p>Trying to provide explanations and translations for all possible
+exceptions will require a considerable amount of work.
+For those, like Thonny, that wishes to
+explore the possibility of suggesting more than one cause, it makes sense
+to add functions in Friendly-tracebacks that could perform this task
+in addition to its current design, so that the community can focus on this
+one package and enhance it as needed. So, Friendly-traceback must be
+designed to easily allow extensions of its core capabilities.</p>
+<p>By default, Friendly-traceback will only print at most one likely cause.
+However, some programming environment
+could use the additional information about possible causes if and when
+it becomes available in Friendly-traceback.</p>
+</li>
+</ol>
 </div>
 <div class="section" id="localization">
 <h2>Localization<a class="headerlink" href="#localization" title="Permalink to this headline">¶</a></h2>

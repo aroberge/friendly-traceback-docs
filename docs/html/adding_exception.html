@@ -258,7 +258,8 @@ and not based on our own pre-conceptions.</p>
 <code class="docutils literal notranslate"><span class="pre">friendly_traceback/info_generic.py</span></code>.
 Here are the relevant parts of that file for the UnboundLocalError
 exception, followed by some explications:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unbound_local_error</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@register</span><span class="p">(</span><span class="s2">&quot;UnboundLocalError&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">unbound_local_error</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">lang</span>
     <span class="k">return</span> <span class="n">_</span><span class="p">(</span>
         <span class="s2">&quot;    In Python, variables that are used inside a function are known as </span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -270,15 +271,6 @@ exception, followed by some explications:</p>
         <span class="s2">&quot;    Python that this is a global variable, otherwise you will see</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="s2">&quot;    an UnboundLocalError.</span><span class="se">\n</span><span class="s2">&quot;</span>
     <span class="p">)</span>
-
-<span class="n">generic</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;IndentationError&quot;</span><span class="p">:</span> <span class="n">indentation_error</span><span class="p">,</span>
-    <span class="s2">&quot;NameError&quot;</span><span class="p">:</span> <span class="n">name_error</span><span class="p">,</span>
-    <span class="s2">&quot;SyntaxError&quot;</span><span class="p">:</span> <span class="n">syntax_error</span><span class="p">,</span>
-    <span class="s2">&quot;TabError&quot;</span><span class="p">:</span> <span class="n">tab_error</span><span class="p">,</span>
-    <span class="s2">&quot;UnboundLocalError&quot;</span><span class="p">:</span> <span class="n">unbound_local_error</span><span class="p">,</span>
-    <span class="s2">&quot;Unknown&quot;</span><span class="p">:</span> <span class="n">unknown</span><span class="p">,</span>
-<span class="p">}</span>
 </pre></div>
 </div>
 <p>We use gettext for providing translations. You do not need to be
@@ -293,10 +285,12 @@ in this project.</p>
 <p>Explain why we do not install gettext globally.</p>
 </div>
 <p>We first define a function whose name reflects the exception
-we wish to explain. Thus, for <code class="docutils literal notranslate"><span class="pre">UnboundLocalError</span></code>,
-we defined <code class="docutils literal notranslate"><span class="pre">unbound_local_error()</span></code>.
+we wish to explain.
 This is not strictly required but it makes it easier to find the
-information when looking at the code.
+information when looking at the code. Thus, for <code class="docutils literal notranslate"><span class="pre">UnboundLocalError</span></code>,
+we defined <code class="docutils literal notranslate"><span class="pre">unbound_local_error()</span></code>.
+We use <code class="docutils literal notranslate"><span class="pre">register</span></code> as a decorator to add it to the known
+cases.
 This function will receive some positional arguments that
 may be useful for some exceptions.  For the first run through, you can
 assume that you can ignore these arguments.</p>
@@ -319,13 +313,6 @@ In addition, <strong>each such string should start with four spaces.</strong>
 The latter both makes it easier to read the explanation when using
 an REPL, and allows for automatic embedding with correct formatting
 in the documentation using Sphinx.</p>
-<p>Finally, at the very bottom of that file, you need to add an
-entry to the dict of the form:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;MyException&quot;</span><span class="p">:</span> <span class="n">my_exception</span><span class="p">,</span>
-</pre></div>
-</div>
-<p>This entry should be added so as to respect the alphabetical order
-used.</p>
 </div>
 <div class="section" id="add-specific-information">
 <h2>Add specific information<a class="headerlink" href="#add-specific-information" title="Permalink to this headline">¶</a></h2>
@@ -359,7 +346,8 @@ Thus, our specific information should include this as a variable.</p>
 <code class="docutils literal notranslate"><span class="pre">friendly_traceback/info_specific.py</span></code>.
 Here are the relevant parts of that file for the UnboundLocalError
 exception:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unbound_local_error</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@register</span><span class="p">(</span><span class="s2">&quot;UnboundLocalError&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">unbound_local_error</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">lang</span>
     <span class="c1"># value is expected to be something like</span>
     <span class="c1">#</span>
@@ -372,21 +360,12 @@ exception:</p>
              <span class="s2">&quot;        as the first line inside your function.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
         <span class="n">var_name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
     <span class="p">)</span>
-
-
-<span class="n">get_cause</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;IndentationError&quot;</span><span class="p">:</span> <span class="n">indentation_error</span><span class="p">,</span>
-    <span class="s2">&quot;NameError&quot;</span><span class="p">:</span> <span class="n">name_error</span><span class="p">,</span>
-    <span class="s2">&quot;SyntaxError&quot;</span><span class="p">:</span> <span class="n">syntax_error</span><span class="p">,</span>
-    <span class="s2">&quot;TabError&quot;</span><span class="p">:</span> <span class="n">tab_error</span><span class="p">,</span>
-    <span class="s2">&quot;UnboundLocalError&quot;</span><span class="p">:</span> <span class="n">unbound_local_error</span><span class="p">,</span>
-<span class="p">}</span>
 </pre></div>
 </div>
 <p>I assume that this is similar enough to the situation for the
 generic information case that it does not warrant additional
 explanation.  <strong>The only difference is that each line of text should
-be indented by 8 spaces.</strong></p>
+be indented by either 6 or 8 spaces.</strong></p>
 <p>If you find that some additional explanation is needed,
 please contact us or file an issue.</p>
 </div>

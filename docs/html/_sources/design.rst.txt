@@ -212,6 +212,9 @@ error.
    :scale: 50 %
    :alt: SyntaxError traceback
 
+How many possible causes?
+---------------------------
+
 The idea of showing a single possible cause for a given error is different
 than that taken by Thonny_ which, in some cases, attempts to identify more than
 one possible cause giving rise to an exception, as well as ordering them
@@ -233,6 +236,47 @@ or revealed by clicking on a button.
 .. image:: images/thonny.png
    :scale: 100 %
    :alt: Level 0
+
+
+Our current thinking is as follows:
+
+1. Friendly-traceback aims to supplement the information provided by Python
+   in a normal traceback, in order to make it easier to understand.
+   Therefore, it should not second-guess the information given by Python
+   when the information is specific enough. For exemple, if we see an
+   ``UnboundLocalError``, it could very well be that the cause is really
+   a ``NameError`` in disguise. However, trying to figure out if that is the
+   case would go beyond explaining and/or translating what a given
+   traceback includes as information.
+
+2. For ``SyntaxError``, Python very often includes the rather useless
+   ``invalid syntax`` message. Nonetheless, we still try to make an educated
+   guess as to what the cause is.  We note however that many programming
+   environment (editor or IDE) will include linters that will catch
+   syntax errors before a program is run,
+   thus helping to prevent ``SyntaxError`` tracebacks from happening.
+   While we could, in theory, use third-party linters as
+   tools in Friendly-traceback, we believe that such tools more properly
+   belong in a programming environment, and that it would be a duplicated
+   and largely wasted effort to incorporate such tools in Friendly-traceback.
+
+3. We generally distinguish cases where we can use the information given by Python
+   from those where we have to guess by having a different header
+   ("Likely cause" vs "My best guess").
+
+4. Trying to provide explanations and translations for all possible
+   exceptions will require a considerable amount of work.
+   For those, like Thonny, that wishes to
+   explore the possibility of suggesting more than one cause, it makes sense
+   to add functions in Friendly-tracebacks that could perform this task
+   in addition to its current design, so that the community can focus on this
+   one package and enhance it as needed. So, Friendly-traceback must be
+   designed to easily allow extensions of its core capabilities.
+
+   By default, Friendly-traceback will only print at most one likely cause.
+   However, some programming environment
+   could use the additional information about possible causes if and when
+   it becomes available in Friendly-traceback.
 
 
 Localization

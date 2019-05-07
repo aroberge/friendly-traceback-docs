@@ -180,6 +180,7 @@ Generic information about given exceptions is found in file
 Here are the relevant parts of that file for the UnboundLocalError
 exception, followed by some explications::
 
+    @register("UnboundLocalError")
     def unbound_local_error(*args):
         _ = current_lang.lang
         return _(
@@ -192,15 +193,6 @@ exception, followed by some explications::
             "    Python that this is a global variable, otherwise you will see\n"
             "    an UnboundLocalError.\n"
         )
-
-    generic = {
-        "IndentationError": indentation_error,
-        "NameError": name_error,
-        "SyntaxError": syntax_error,
-        "TabError": tab_error,
-        "UnboundLocalError": unbound_local_error,
-        "Unknown": unknown,
-    }
 
 We use gettext for providing translations. You do not need to be
 familiar with gettext for this doing this work.
@@ -215,10 +207,12 @@ in this project.
     Explain why we do not install gettext globally.
 
 We first define a function whose name reflects the exception
-we wish to explain. Thus, for ``UnboundLocalError``,
-we defined ``unbound_local_error()``.
+we wish to explain.
 This is not strictly required but it makes it easier to find the
-information when looking at the code.
+information when looking at the code. Thus, for ``UnboundLocalError``,
+we defined ``unbound_local_error()``.
+We use ``register`` as a decorator to add it to the known
+cases.
 This function will receive some positional arguments that
 may be useful for some exceptions.  For the first run through, you can
 assume that you can ignore these arguments.
@@ -246,13 +240,6 @@ The latter both makes it easier to read the explanation when using
 an REPL, and allows for automatic embedding with correct formatting
 in the documentation using Sphinx.
 
-Finally, at the very bottom of that file, you need to add an
-entry to the dict of the form::
-
-    "MyException": my_exception,
-
-This entry should be added so as to respect the alphabetical order
-used.
 
 Add specific information
 ------------------------
@@ -293,7 +280,7 @@ Specific information about given exceptions is found in file
 Here are the relevant parts of that file for the UnboundLocalError
 exception::
 
-
+    @register("UnboundLocalError")
     def unbound_local_error(etype, value):
         _ = current_lang.lang
         # value is expected to be something like
@@ -308,19 +295,10 @@ exception::
             var_name=str(value).split("'")[1]
         )
 
-
-    get_cause = {
-        "IndentationError": indentation_error,
-        "NameError": name_error,
-        "SyntaxError": syntax_error,
-        "TabError": tab_error,
-        "UnboundLocalError": unbound_local_error,
-    }
-
 I assume that this is similar enough to the situation for the
 generic information case that it does not warrant additional
 explanation.  **The only difference is that each line of text should
-be indented by 8 spaces.**
+be indented by either 6 or 8 spaces.**
 
 If you find that some additional explanation is needed,
 please contact us or file an issue.
