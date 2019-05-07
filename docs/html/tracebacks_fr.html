@@ -705,7 +705,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 147 du fichier &#39;C:\Users\an
    146:                     if function is not None:
 --&gt;147:                         result = getattr(mod, function)()
    148:                         write(result)
-result: &quot;\n    Exception Python: \n        TypeError:...&quot;  | len(result): 724
+result: &quot;\n    Exception Python: \n        TypeError:...&quot;  | len(result): 723
 mod: &lt;module &#39;test_type_error&#39; from &#39;C:\\Users\\an...&gt;
 function: &#39;test_type_error5c&#39;
 </pre></div>
@@ -746,8 +746,9 @@ de combiner deux types d’objets incompatibles,
 ou en invoquant une fonction avec le mauvais type d’objet.
 
 Cause probable :
-    Je ne reconnais pas ce cas. Veuillez le signaler à
-    https://github.com/aroberge/friendly-traceback/issues
+    Vous avez essayé d’effectuer l’opération binaire bit à bit &amp;=
+    sur deux types d’objets incompatibles:
+    une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
 
 L&#39;exécution s&#39;est arrêtée à la ligne 181 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
 
@@ -845,8 +846,9 @@ de combiner deux types d’objets incompatibles,
 ou en invoquant une fonction avec le mauvais type d’objet.
 
 Cause probable :
-    Je ne reconnais pas ce cas. Veuillez le signaler à
-    https://github.com/aroberge/friendly-traceback/issues
+    Vous avez essayé d’effectuer l’opération de décalage &gt;&gt;=
+    sur deux types d’objets incompatibles:
+    une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
 
 L&#39;exécution s&#39;est arrêtée à la ligne 229 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
 
@@ -896,8 +898,11 @@ de combiner deux types d’objets incompatibles,
 ou en invoquant une fonction avec le mauvais type d’objet.
 
 Cause probable :
-    Je ne reconnais pas ce cas. Veuillez le signaler à
-    https://github.com/aroberge/friendly-traceback/issues
+    Vous avez essayé d’utiliser l’opérateur @=
+    à l’aide de deux types d’objets incompatibles:
+    une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;).
+    Cet opérateur est normalement utilisé uniquement
+    pour la multiplication des matrices.
 
 L&#39;exécution s&#39;est arrêtée à la ligne 253 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
 
@@ -962,7 +967,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;C:\Users\and
    20:     try:
 --&gt;21:         outer()
    22:     except Exception:
-global outer: &lt;function outer at 0x035B4D20&gt;
+global outer: &lt;function outer at 0x03105CD8&gt;
 
 Exception levée à la ligne du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py&#39;.
 

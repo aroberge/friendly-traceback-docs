@@ -44,8 +44,10 @@ SyntaxError - Assign to keyword
        2: 
     -->3: pass = 2
                ^
-    Ma meilleure hypothèse: vous essayiez d’assigner une valeur à un mot clé Python.
-    Ceci n’est pas permis.
+
+    Ma meilleure hypothèse :
+      Vous essayiez d’assigner une valeur à un mot clé Python.
+      Ceci n’est pas permis.
 
 
 SyntaxError - Missing colon 1
@@ -66,8 +68,10 @@ SyntaxError - Missing colon 1
        2: 
     -->3: if True
                  ^
-    Ma meilleure hypothèse: vous avez écrit un énoncé débutant avec
-    'if' mais vous avez oublié d’ajouter deux points ':' à la fin.
+
+    Ma meilleure hypothèse :
+      Vous avez écrit un énoncé débutant avec
+      'if' mais vous avez oublié d’ajouter deux points ':' à la fin.
 
 
 SyntaxError - Missing colon 2
@@ -88,8 +92,10 @@ SyntaxError - Missing colon 2
        2: 
     -->3: while True  # a comment
                                  ^
-    Ma meilleure hypothèse: vous vouliez débuter une boucle 'while'
-    mais vous avez oublié d’ajouter deux points ':' à la fin.
+
+    Ma meilleure hypothèse :
+      Vous vouliez débuter une boucle 'while'
+      mais vous avez oublié d’ajouter deux points ':' à la fin.
 
 
 SyntaxError - elif, not else if
@@ -111,8 +117,10 @@ SyntaxError - elif, not else if
        4:     pass
     -->5: else if True:
                 ^
-    Ma meilleure hypothèse: vous avez écrit 'else if'
-    au lieu d'utiliser le mot-clé 'elif'.
+
+    Ma meilleure hypothèse :
+      Vous avez écrit 'else if'
+      au lieu d'utiliser le mot-clé 'elif'.
 
 
 SyntaxError - elif, not elseif
@@ -134,8 +142,10 @@ SyntaxError - elif, not elseif
        4:     pass
     -->5: elseif True:
                     ^
-    Ma meilleure hypothèse: vous avez écrit 'elseif'
-    au lieu d'utiliser le mot-clé 'elif'.
+
+    Ma meilleure hypothèse :
+      Vous avez écrit 'elseif'
+      au lieu d'utiliser le mot-clé 'elif'.
 
 
 SyntaxError - malformed def statment - 1
@@ -156,10 +166,12 @@ SyntaxError - malformed def statment - 1
        2: 
     -->3: def :
               ^
-    Ma meilleure hypothèse: vous vouliez définir une fonction ou une méthode,
-    mais vous avez fait des erreurs de syntaxe.
-    La syntaxe correcte est:
-        def nom ( arguments_optionnels ) :
+
+    Ma meilleure hypothèse :
+      Vous vouliez définir une fonction ou une méthode,
+      mais vous avez fait des erreurs de syntaxe.
+      La syntaxe correcte est:
+          def nom ( arguments_optionnels ) :
 
 
 SyntaxError - malformed def statment - 2
@@ -180,10 +192,12 @@ SyntaxError - malformed def statment - 2
        2: 
     -->3: def name  :
                     ^
-    Ma meilleure hypothèse: vous vouliez définir une fonction ou une méthode,
-    mais vous avez fait des erreurs de syntaxe.
-    La syntaxe correcte est:
-        def nom ( arguments_optionnels ) :
+
+    Ma meilleure hypothèse :
+      Vous vouliez définir une fonction ou une méthode,
+      mais vous avez fait des erreurs de syntaxe.
+      La syntaxe correcte est:
+          def nom ( arguments_optionnels ) :
 
 
 SyntaxError - malformed def statment - 3
@@ -204,10 +218,12 @@ SyntaxError - malformed def statment - 3
        2: 
     -->3: def ( arg )  :
               ^
-    Ma meilleure hypothèse: vous vouliez définir une fonction ou une méthode,
-    mais vous avez fait des erreurs de syntaxe.
-    La syntaxe correcte est:
-        def nom ( arguments_optionnels ) :
+
+    Ma meilleure hypothèse :
+      Vous vouliez définir une fonction ou une méthode,
+      mais vous avez fait des erreurs de syntaxe.
+      La syntaxe correcte est:
+          def nom ( arguments_optionnels ) :
 
 
 SyntaxError - can't assign to literal
@@ -228,12 +244,14 @@ SyntaxError - can't assign to literal
        2: 
     -->3: 1 = a
          ^
-    Ma meilleure hypothèse: vous avez écrit une expression comme
-        1 = variable
-    où < 1 >, sur le côté gauche du signe égal, est ce que Python
-    appelle un 'literal', c'est-à dire soit soit une chaîne de caractères ou un nombre,
-    et non le nom d’une variable. Peut-être que vous vouliez plutôt écrire:
-        variable = 1
+
+    Ma meilleure hypothèse :
+      Vous avez écrit une expression comme
+          1 = variable
+      où < 1 >, sur le côté gauche du signe égal, est ce que Python
+      appelle un 'literal', c'est-à dire soit soit une chaîne de caractères ou un nombre,
+      et non le nom d’une variable. Peut-être que vous vouliez plutôt écrire:
+          variable = 1
 
 
 SyntaxError - import X from Y
@@ -254,9 +272,11 @@ SyntaxError - import X from Y
        2: 
     -->3: import pen from turtle
                         ^
-    Ma meilleure hypothèse: vous avez écrit quelque chose comme
-        import X from Y
-    au lieu de
-        from Y import X
+
+    Ma meilleure hypothèse :
+      Vous avez écrit quelque chose comme
+          import X from Y
+      au lieu de
+          from Y import X
 
 

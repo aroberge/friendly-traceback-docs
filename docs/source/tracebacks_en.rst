@@ -709,8 +709,9 @@ TypeError - 6a: unsupported operand type(s) for &=
     or by calling a function with the wrong type of object.
 
     Likely cause:
-        I do not recognize this case. Please report it to
-        https://github.com/aroberge/friendly-traceback/issues
+        You tried to perform the bitwise operation &=
+        on two incompatible types of objects:
+        a string ('str') and an integer ('int')
 
     Execution stopped on line 181 of file 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'.
 
@@ -820,8 +821,9 @@ TypeError - 8a: unsupported operand type(s) for >>=
     or by calling a function with the wrong type of object.
 
     Likely cause:
-        I do not recognize this case. Please report it to
-        https://github.com/aroberge/friendly-traceback/issues
+        You tried to perform the bit shifting operation >>=
+        on two incompatible types of objects:
+        a string ('str') and an integer ('int')
 
     Execution stopped on line 229 of file 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'.
 
@@ -877,8 +879,11 @@ TypeError - 9a: unsupported operand type(s) for @=
     or by calling a function with the wrong type of object.
 
     Likely cause:
-        I do not recognize this case. Please report it to
-        https://github.com/aroberge/friendly-traceback/issues
+        You tried to use the operator @=
+        using two incompatible types of objects:
+        a string ('str') and an integer ('int').
+        This operator is normally used only
+        for multiplication of matrices.
 
     Execution stopped on line 253 of file 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'.
 
@@ -948,7 +953,7 @@ UnboundLocalError
        20:     try:
     -->21:         outer()
        22:     except Exception:
-    global outer: <function outer at 0x02F2C618>
+    global outer: <function outer at 0x0304B588>
 
     Exception raised on line 13 of file 'C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py'.
 

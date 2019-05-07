@@ -743,8 +743,9 @@ to combine two incompatible types of objects,
 or by calling a function with the wrong type of object.
 
 Likely cause:
-    I do not recognize this case. Please report it to
-    https://github.com/aroberge/friendly-traceback/issues
+    You tried to perform the bitwise operation &amp;=
+    on two incompatible types of objects:
+    a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
 Execution stopped on line 181 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
 
@@ -842,8 +843,9 @@ to combine two incompatible types of objects,
 or by calling a function with the wrong type of object.
 
 Likely cause:
-    I do not recognize this case. Please report it to
-    https://github.com/aroberge/friendly-traceback/issues
+    You tried to perform the bit shifting operation &gt;&gt;=
+    on two incompatible types of objects:
+    a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
 Execution stopped on line 229 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
 
@@ -893,8 +895,11 @@ to combine two incompatible types of objects,
 or by calling a function with the wrong type of object.
 
 Likely cause:
-    I do not recognize this case. Please report it to
-    https://github.com/aroberge/friendly-traceback/issues
+    You tried to use the operator @=
+    using two incompatible types of objects:
+    a string (&#39;str&#39;) and an integer (&#39;int&#39;).
+    This operator is normally used only
+    for multiplication of matrices.
 
 Execution stopped on line 253 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
 
@@ -958,7 +963,7 @@ Execution stopped on line 21 of file &#39;C:\Users\andre\github\friendly-traceba
    20:     try:
 --&gt;21:         outer()
    22:     except Exception:
-global outer: &lt;function outer at 0x02F2C618&gt;
+global outer: &lt;function outer at 0x0304B588&gt;
 
 Exception raised on line 13 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py&#39;.
 

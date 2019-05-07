@@ -58,7 +58,7 @@ ImportError
     être importé à partir d’un module ou d’un paquet. Très souvent, c’est
     parce que le nom de l’objet n’est pas écrit correctement.
 
-    Cause probable : 
+    Cause probable :
         L’objet qui n’a pas pu être importé est 'Pi'.
         Le module ou le paquet d'où il devait être importé est 'math'.
 
@@ -90,7 +90,7 @@ IndentationError - 1: expected an indented block
     -->4: pass
              ^
 
-    Cause probable : 
+    Cause probable :
         Dans ce cas-ci, la ligne indiquée ci-dessus par --> devrait
         normalement commencer un nouveau bloc de code indenté.
 
@@ -115,7 +115,7 @@ IndentationError - 2: unexpected indent
     -->4:       pass
                ^
 
-    Cause probable : 
+    Cause probable :
         Dans ce cas-ci, la ligne indiquée ci-dessus par -->
         est plus indentée que ce qui était attendu et ne
         correspond pas à l'indentation de la ligne précédente.
@@ -141,7 +141,7 @@ IndentationError - 3: unindent does not match ...
     -->4:     pass
                   ^
 
-    Cause probable : 
+    Cause probable :
         Dans ce cas-ci, la ligne indiquée ci-dessus par -->
         est moins indentée que la ligne précédente
         et n’est pas alignée verticalement avec un autre bloc de code.
@@ -158,7 +158,7 @@ KeyError
     Une erreur KeyError est levée lorsqu’une valeur n’est pas trouvée
     en tant que clé dans un dictionnaire (dict) Python.
 
-    Cause probable : 
+    Cause probable :
         Dans votre programme, le nom de la clé inconnue est 'c'.
 
     L'exécution s'est arrêtée à la ligne 8 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_key_error.py'
@@ -206,7 +206,7 @@ IndexError - short tuple
     Rappel: le premier élément d'une séquence est à l'index 0.
 
 
-    Cause probable : 
+    Cause probable :
         Dans ce cas, la séquence est un tuple.
 
     L'exécution s'est arrêtée à la ligne 9 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_index_error.py'
@@ -235,7 +235,7 @@ IndexError - long list
     Rappel: le premier élément d'une séquence est à l'index 0.
 
 
-    Cause probable : 
+    Cause probable :
         Dans ce cas, la séquence est une liste.
 
     L'exécution s'est arrêtée à la ligne 21 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_index_error.py'
@@ -262,7 +262,7 @@ ModuleNotFoundError
     Cela pourrait être parce que vous fait une faute d'orthographe
     écrivant le nom du module, ou parce qu’il n’est pas installé sur votre ordinateur.
 
-    Cause probable : 
+    Cause probable :
         Dans votre programme, le nom du module inconnu est 'does_not_exist'.
 
     L'exécution s'est arrêtée à la ligne 7 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_module_not_found_error.py'
@@ -287,7 +287,7 @@ NameError
     Cependant, cela peut également indiquer que le nom a été
     utilisé avant qu'on ne lui ait associé une valeur.
 
-    Cause probable : 
+    Cause probable :
         Dans votre programme, le nom inconnu est 'c'.
 
     L'exécution s'est arrêtée à la ligne 7 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_name_error.py'
@@ -336,7 +336,7 @@ TypeError - 1: concatenate two different types
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
         une chaîne de caractères ('str') et un entier ('int')
 
@@ -363,7 +363,7 @@ TypeError - 1a: concatenate two different types
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
         une chaîne de caractères ('str') et une liste ('list')
 
@@ -390,7 +390,7 @@ TypeError - 1b: concatenate two different types
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
         un tuple et une liste ('list')
 
@@ -417,7 +417,7 @@ TypeError - 2: unsupported operand type(s) for +
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé d’additionner deux types d’objets incompatibles:
         un entier ('int') et une variable de valeur 'None' ('NoteType')
 
@@ -444,7 +444,7 @@ TypeError - 2a: unsupported operand type(s) for +=
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé d’additionner deux types d’objets incompatibles:
         un entier ('int') et une chaîne de caractères ('str')
 
@@ -471,7 +471,7 @@ TypeError - 3: unsupported operand type(s) for -
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez tenté de soustraire deux types d’objets incompatibles:
         un tuple et une liste ('list')
 
@@ -498,7 +498,7 @@ TypeError - 3a: unsupported operand type(s) for -=
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez tenté de soustraire deux types d’objets incompatibles:
         un tuple et une liste ('list')
 
@@ -525,7 +525,7 @@ TypeError - 4: unsupported operand type(s) for *
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé de multiplier deux types d’objets différents:
         un nombre complexe ('complex') et un ensemble ('set')
 
@@ -552,7 +552,7 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé de multiplier deux types d’objets différents:
         un nombre complexe ('complex') et un ensemble ('set')
 
@@ -579,7 +579,7 @@ TypeError - 5: unsupported operand type(s) for /
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé de diviser deux types d’objets différents:
         un dictionnaire ('dict') et un nombre ('float')
 
@@ -606,7 +606,7 @@ TypeError - 5a: unsupported operand type(s) for /=
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé de diviser deux types d’objets différents:
         un dictionnaire ('dict') et un nombre ('float')
 
@@ -633,7 +633,7 @@ TypeError - 5b: unsupported operand type(s) for //
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé de diviser deux types d’objets différents:
         un dictionnaire ('dict') et un nombre ('float')
 
@@ -666,7 +666,7 @@ TypeError - 5c: unsupported operand type(s) for //=
        146:                     if function is not None:
     -->147:                         result = getattr(mod, function)()
        148:                         write(result)
-    result: "\n    Exception Python: \n        TypeError:..."  | len(result): 724
+    result: "\n    Exception Python: \n        TypeError:..."  | len(result): 723
     mod: <module 'test_type_error' from 'C:\\Users\\an...>
     function: 'test_type_error5c'
 
@@ -683,7 +683,7 @@ TypeError - 6: unsupported operand type(s) for &
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé d’effectuer l’opération binaire bit à bit &
         sur deux types d’objets incompatibles:
         une chaîne de caractères ('str') et un entier ('int')
@@ -711,9 +711,10 @@ TypeError - 6a: unsupported operand type(s) for &=
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
-        Je ne reconnais pas ce cas. Veuillez le signaler à
-        https://github.com/aroberge/friendly-traceback/issues
+    Cause probable :
+        Vous avez essayé d’effectuer l’opération binaire bit à bit &=
+        sur deux types d’objets incompatibles:
+        une chaîne de caractères ('str') et un entier ('int')
 
     L'exécution s'est arrêtée à la ligne 181 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
 
@@ -738,7 +739,7 @@ TypeError - 7: unsupported operand type(s) for **
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé d'élever à une puissance
         en utilisant deux types d’objets incompatibles:
         un dictionnaire ('dict') et un nombre ('float')
@@ -766,7 +767,7 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé d'élever à une puissance
         en utilisant deux types d’objets incompatibles:
         un dictionnaire ('dict') et un nombre ('float')
@@ -794,7 +795,7 @@ TypeError - 8: unsupported operand type(s) for >>
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé d’effectuer l’opération de décalage >>
         sur deux types d’objets incompatibles:
         une chaîne de caractères ('str') et un entier ('int')
@@ -822,9 +823,10 @@ TypeError - 8a: unsupported operand type(s) for >>=
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
-        Je ne reconnais pas ce cas. Veuillez le signaler à
-        https://github.com/aroberge/friendly-traceback/issues
+    Cause probable :
+        Vous avez essayé d’effectuer l’opération de décalage >>=
+        sur deux types d’objets incompatibles:
+        une chaîne de caractères ('str') et un entier ('int')
 
     L'exécution s'est arrêtée à la ligne 229 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
 
@@ -849,7 +851,7 @@ TypeError - 9: unsupported operand type(s) for @
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé d’utiliser l’opérateur @
         à l’aide de deux types d’objets incompatibles:
         une chaîne de caractères ('str') et un entier ('int').
@@ -879,9 +881,12 @@ TypeError - 9a: unsupported operand type(s) for @=
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
-        Je ne reconnais pas ce cas. Veuillez le signaler à
-        https://github.com/aroberge/friendly-traceback/issues
+    Cause probable :
+        Vous avez essayé d’utiliser l’opérateur @=
+        à l’aide de deux types d’objets incompatibles:
+        une chaîne de caractères ('str') et un entier ('int').
+        Cet opérateur est normalement utilisé uniquement
+        pour la multiplication des matrices.
 
     L'exécution s'est arrêtée à la ligne 253 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
 
@@ -906,7 +911,7 @@ TypeError - 10: comparison between incompatible types
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         En utilisant <, vous avez tenté de comparer
         deux types d’objets incompatibles:
         un entier ('int') et une chaîne de caractères ('str')
@@ -940,7 +945,7 @@ UnboundLocalError
     à l’intérieur d’une fonction sans d’abord confirmer à python
     qu’il s’agit d’une variable globale, sinon vous verrez une exception UnboundLocalError.
 
-    Cause probable : 
+    Cause probable :
         La variable qui semble causer le problème est' a '.
         Il est possible que vous avez oublié d'écrire l’instruction
             global a
@@ -952,7 +957,7 @@ UnboundLocalError
        20:     try:
     -->21:         outer()
        22:     except Exception:
-    global outer: <function outer at 0x035B4D20>
+    global outer: <function outer at 0x03105CD8>
 
     Exception levée à la ligne du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py'.
 

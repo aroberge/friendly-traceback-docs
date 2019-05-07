@@ -23,7 +23,7 @@ ImportError
     être importé à partir d’un module ou d’un paquet. Très souvent, c’est
     parce que le nom de l’objet n’est pas écrit correctement.
 
-    Cause probable : 
+    Cause probable :
         L’objet qui n’a pas pu être importé est' Pi '.
 
     L'exécution s'est arrêtée à la ligne 7 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_import_error.py'
@@ -46,7 +46,7 @@ TypeError - 1: must be str, not int
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
         une chaîne de caractères ('str') et un entier ('int')
 
@@ -73,7 +73,7 @@ TypeError - 1a: must be str, not list
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
 
-    Cause probable : 
+    Cause probable :
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
         une chaîne de caractères ('str') et une liste ('list')
 

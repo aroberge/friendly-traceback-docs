@@ -41,9 +41,10 @@ SyntaxError - Assign to keyword
        2: 
     -->3: pass = 2
                ^
-    My best guess: you were trying
-    to assign a value to a Python keyword.
-    This is not allowed.
+
+    My best guess:
+      You were trying to assign a value to a Python keyword.
+      This is not allowed.
 
 
 SyntaxError - Missing colon 1
@@ -64,8 +65,10 @@ SyntaxError - Missing colon 1
        2: 
     -->3: if True
                  ^
-    My best guess: you wrote a statement beginning with
-    'if' but forgot to add a colon ':' at the end
+
+    My best guess:
+      You wrote a statement beginning with
+      'if' but forgot to add a colon ':' at the end
 
 
 SyntaxError - Missing colon 2
@@ -86,8 +89,10 @@ SyntaxError - Missing colon 2
        2: 
     -->3: while True  # a comment
                                  ^
-    My best guess: you wrote a 'while' loop but
-    forgot to add a colon ':' at the end
+
+    My best guess:
+      You wrote a 'while' loop but
+      forgot to add a colon ':' at the end
 
 
 SyntaxError - elif, not else if
@@ -109,8 +114,10 @@ SyntaxError - elif, not else if
        4:     pass
     -->5: else if True:
                 ^
-    My best guess: you meant to use Python's 'elif' keyword
-    but wrote 'else if' instead
+
+    My best guess:
+      You meant to use Python's 'elif' keyword
+      but wrote 'else if' instead
 
 
 SyntaxError - elif, not elseif
@@ -132,8 +139,10 @@ SyntaxError - elif, not elseif
        4:     pass
     -->5: elseif True:
                     ^
-    My best guess: you meant to use Python's 'elif' keyword
-    but wrote 'elseif' instead
+
+    My best guess:
+      You meant to use Python's 'elif' keyword
+      but wrote 'elseif' instead
 
 
 SyntaxError - malformed def statment - 1
@@ -154,10 +163,12 @@ SyntaxError - malformed def statment - 1
        2: 
     -->3: def :
               ^
-    My best guess: you tried to define a function or method
-    and did not use the correct syntax.
-    The correct syntax is:
-        def name ( optional_arguments ):
+
+    My best guess:
+      You tried to define a function or method
+      and did not use the correct syntax.
+      The correct syntax is:
+          def name ( optional_arguments ):
 
 SyntaxError - malformed def statment - 2
 ----------------------------------------
@@ -177,10 +188,12 @@ SyntaxError - malformed def statment - 2
        2: 
     -->3: def name  :
                     ^
-    My best guess: you tried to define a function or method
-    and did not use the correct syntax.
-    The correct syntax is:
-        def name ( optional_arguments ):
+
+    My best guess:
+      You tried to define a function or method
+      and did not use the correct syntax.
+      The correct syntax is:
+          def name ( optional_arguments ):
 
 SyntaxError - malformed def statment - 3
 ----------------------------------------
@@ -200,10 +213,12 @@ SyntaxError - malformed def statment - 3
        2: 
     -->3: def ( arg )  :
               ^
-    My best guess: you tried to define a function or method
-    and did not use the correct syntax.
-    The correct syntax is:
-        def name ( optional_arguments ):
+
+    My best guess:
+      You tried to define a function or method
+      and did not use the correct syntax.
+      The correct syntax is:
+          def name ( optional_arguments ):
 
 SyntaxError - can't assign to literal
 -------------------------------------
@@ -223,12 +238,14 @@ SyntaxError - can't assign to literal
        2: 
     -->3: 1 = a
          ^
-    My best guess: you wrote an expression like
-        1 = something
-    where <1>, on the left hand-side of the equal sign, is
-    an actual number or string (what Python calls a 'literal'),
-    and not the name of a variable.  Perhaps you meant to write:
-        something = 1
+
+    My best guess:
+      You wrote an expression like
+          1 = something
+      where <1>, on the left hand-side of the equal sign, is
+      an actual number or string (what Python calls a 'literal'),
+      and not the name of a variable.  Perhaps you meant to write:
+          something = 1
 
 
 SyntaxError - import X from Y
@@ -249,8 +266,10 @@ SyntaxError - import X from Y
        2: 
     -->3: import pen from turtle
                         ^
-    My best guess: you wrote something like
-        import X from Y
-    instead of
-        from Y import X
+
+    My best guess:
+      You wrote something like
+          import X from Y
+      instead of
+          from Y import X
 
