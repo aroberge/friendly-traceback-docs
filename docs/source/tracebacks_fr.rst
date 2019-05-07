@@ -654,21 +654,25 @@ TypeError - 5c: unsupported operand type(s) for //=
 
 
     Exception Python: 
-        AttributeError: module 'test_type_error' has no attribute 'test_type_error5c'
+        TypeError: unsupported operand type(s) for //=: 'dict' and 'float'
 
-    Aucune information n’est connue à propos de cette exception.
-    Veuillez signaler cet exemple à
-    https://github.com/aroberge/friendly-traceback/issues
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    ou en invoquant une fonction avec le mauvais type d’objet.
 
-    L'exécution s'est arrêtée à la ligne 147 du fichier 'C:\Users\andre\github\friendly-traceback\tests\trb_common.py'
+    Cause probable :
+        Vous avez essayé de diviser deux types d’objets différents:
+        un dictionnaire ('dict') et un nombre ('float')
 
-       145:                     mod = __import__(name)
-       146:                     if function is not None:
-    -->147:                         result = getattr(mod, function)()
-       148:                         write(result)
-    result: "\n    Exception Python: \n        TypeError:..."  | len(result): 723
-    mod: <module 'test_type_error' from 'C:\\Users\\an...>
-    function: 'test_type_error5c'
+    L'exécution s'est arrêtée à la ligne 157 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
+
+       155:         a = {1: 1, 2: 2}
+       156:         b = 3.1416
+    -->157:         a //= b
+       158:     except Exception:
+    a: {1: 1, 2: 2}
+    b: 3.1416
+
 
 TypeError - 6: unsupported operand type(s) for &
 ------------------------------------------------
@@ -957,7 +961,7 @@ UnboundLocalError
        20:     try:
     -->21:         outer()
        22:     except Exception:
-    global outer: <function outer at 0x03105CD8>
+    global outer: <function outer at 0x02F25CD8>
 
     Exception levée à la ligne du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py'.
 
@@ -1030,9 +1034,11 @@ ZeroDivisionError - 2
     à l’aide de l’opérateur modulo '%'
         résultat = ma_variable % 0
 
-    L'exécution s'est arrêtée à la ligne 17 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_zero_division_error.py'
+    L'exécution s'est arrêtée à la ligne 18 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_zero_division_error.py'
 
-       15: def test_zero_division_error2():
-       16:     try:
-    -->17:         1 % 0
-       18:     except Exception:
+       16:     zero = 0
+       17:     try:
+    -->18:         1 % zero
+       19:     except Exception:
+    zero: 0
+

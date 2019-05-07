@@ -651,21 +651,25 @@ TypeError - 5c: unsupported operand type(s) for //=
 
 
     Python exception: 
-        AttributeError: module 'test_type_error' has no attribute 'test_type_error5c'
+        TypeError: unsupported operand type(s) for //=: 'dict' and 'float'
 
-    No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly-traceback/issues
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    or by calling a function with the wrong type of object.
 
-    Execution stopped on line 147 of file 'C:\Users\andre\github\friendly-traceback\tests\trb_common.py'.
+    Likely cause:
+        You tried to divide two incompatible types of objects:
+        a dictionary ('dict') and a number ('float')
 
-       145:                     mod = __import__(name)
-       146:                     if function is not None:
-    -->147:                         result = getattr(mod, function)()
-       148:                         write(result)
-    result: "\n    Python exception: \n        TypeError:..."  | len(result): 673
-    mod: <module 'test_type_error' from 'C:\\Users\\an...>
-    function: 'test_type_error5c'
+    Execution stopped on line 157 of file 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'.
+
+       155:         a = {1: 1, 2: 2}
+       156:         b = 3.1416
+    -->157:         a //= b
+       158:     except Exception:
+    a: {1: 1, 2: 2}
+    b: 3.1416
+
 
 TypeError - 6: unsupported operand type(s) for &
 ------------------------------------------------
@@ -953,7 +957,7 @@ UnboundLocalError
        20:     try:
     -->21:         outer()
        22:     except Exception:
-    global outer: <function outer at 0x0304B588>
+    global outer: <function outer at 0x02EDB588>
 
     Exception raised on line 13 of file 'C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py'.
 
@@ -1026,9 +1030,11 @@ ZeroDivisionError - 2
     using the modulo operator '%'
         result = my_variable % 0
 
-    Execution stopped on line 17 of file 'C:\Users\andre\github\friendly-traceback\tests\test_zero_division_error.py'.
+    Execution stopped on line 18 of file 'C:\Users\andre\github\friendly-traceback\tests\test_zero_division_error.py'.
 
-       15: def test_zero_division_error2():
-       16:     try:
-    -->17:         1 % 0
-       18:     except Exception:
+       16:     zero = 0
+       17:     try:
+    -->18:         1 % zero
+       19:     except Exception:
+    zero: 0
+

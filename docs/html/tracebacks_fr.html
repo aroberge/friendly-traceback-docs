@@ -693,21 +693,24 @@ b: 3.1416
 <div class="section" id="typeerror-5c-unsupported-operand-type-s-for">
 <h2>TypeError - 5c: unsupported operand type(s) for //=<a class="headerlink" href="#typeerror-5c-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    AttributeError: module &#39;test_type_error&#39; has no attribute &#39;test_type_error5c&#39;
+    TypeError: unsupported operand type(s) for //=: &#39;dict&#39; and &#39;float&#39;
 
-Aucune information n’est connue à propos de cette exception.
-Veuillez signaler cet exemple à
-https://github.com/aroberge/friendly-traceback/issues
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+ou en invoquant une fonction avec le mauvais type d’objet.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 147 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\trb_common.py&#39;
+Cause probable :
+    Vous avez essayé de diviser deux types d’objets différents:
+    un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
-   145:                     mod = __import__(name)
-   146:                     if function is not None:
---&gt;147:                         result = getattr(mod, function)()
-   148:                         write(result)
-result: &quot;\n    Exception Python: \n        TypeError:...&quot;  | len(result): 723
-mod: &lt;module &#39;test_type_error&#39; from &#39;C:\\Users\\an...&gt;
-function: &#39;test_type_error5c&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 157 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+
+   155:         a = {1: 1, 2: 2}
+   156:         b = 3.1416
+--&gt;157:         a //= b
+   158:     except Exception:
+a: {1: 1, 2: 2}
+b: 3.1416
 </pre></div>
 </div>
 </div>
@@ -967,7 +970,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;C:\Users\and
    20:     try:
 --&gt;21:         outer()
    22:     except Exception:
-global outer: &lt;function outer at 0x03105CD8&gt;
+global outer: &lt;function outer at 0x02F25CD8&gt;
 
 Exception levée à la ligne du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py&#39;.
 
@@ -1032,12 +1035,13 @@ Ceci peut également se produire si vous calculez le reste d’une division
 à l’aide de l’opérateur modulo &#39;%&#39;
     résultat = ma_variable % 0
 
-L&#39;exécution s&#39;est arrêtée à la ligne 17 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_zero_division_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 18 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_zero_division_error.py&#39;
 
-   15: def test_zero_division_error2():
-   16:     try:
---&gt;17:         1 % 0
-   18:     except Exception:
+   16:     zero = 0
+   17:     try:
+--&gt;18:         1 % zero
+   19:     except Exception:
+zero: 0
 </pre></div>
 </div>
 </div>
