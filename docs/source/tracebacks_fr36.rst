@@ -18,16 +18,16 @@ ImportError
 
     Exception Python: 
         ImportError: cannot import name 'Pi'
-
+    
     Cette exception indique qu’un certain objet n’a pas pu
     être importé à partir d’un module ou d’un paquet. Très souvent, c’est
     parce que le nom de l’objet n’est pas écrit correctement.
-
+    
     Cause probable :
         L’objet qui n’a pas pu être importé est' Pi '.
-
-    L'exécution s'est arrêtée à la ligne 7 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_import_error.py'
-
+        
+    L'exécution s'est arrêtée à la ligne 7 du fichier 'TESTS:\test_import_error.py'
+    
        5: def test_import_error():
        6:     try:
     -->7:         from math import Pi
@@ -41,17 +41,17 @@ TypeError - 1: must be str, not int
 
     Exception Python: 
         TypeError: must be str, not int
-
+    
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
-
+    
     Cause probable :
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
         une chaîne de caractères ('str') et un entier ('int')
-
-    L'exécution s'est arrêtée à la ligne 9 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
-
+        
+    L'exécution s'est arrêtée à la ligne 9 du fichier 'TESTS:\test_type_error.py'
+    
         7:         a = "a"
         8:         one = 1
     --> 9:         result = a + one
@@ -68,17 +68,17 @@ TypeError - 1a: must be str, not list
 
     Exception Python: 
         TypeError: must be str, not list
-
+    
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
     ou en invoquant une fonction avec le mauvais type d’objet.
-
+    
     Cause probable :
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
         une chaîne de caractères ('str') et une liste ('list')
-
-    L'exécution s'est arrêtée à la ligne 23 du fichier 'C:\Users\andre\github\friendly-traceback\tests\test_type_error.py'
-
+        
+    L'exécution s'est arrêtée à la ligne 23 du fichier 'TESTS:\test_type_error.py'
+    
        21:         a = "a"
        22:         a_list = [1, 2, 3]
     -->23:         result = a + a_list

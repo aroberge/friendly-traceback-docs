@@ -140,7 +140,7 @@ qui sont soulevées pour diverses erreurs arithmétiques.
 Il est inhabituel que vous voyiez cette exception;
 normalement, une exception plus spécifique aurait dû être soulevée.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 10 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_arithmetic_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 10 du fichier &#39;TESTS:\test_arithmetic_error.py&#39;
 
     8:         # Usually, a subclass such as ZeroDivisionError, etc., would
     9:         # likely be raised.
@@ -162,7 +162,7 @@ Cause probable :
     L’objet qui n’a pas pu être importé est &#39;Pi&#39;.
     Le module ou le paquet d&#39;où il devait être importé est &#39;math&#39;.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 7 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_import_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 7 du fichier &#39;TESTS:\test_import_error.py&#39;
 
    5: def test_import_error():
    6:     try:
@@ -182,11 +182,11 @@ de la façon attendue.
 Python peut seulement analyser le fichier &#39;raise_indentation_error1.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
-   2:
-   3: if True:
---&gt;4: pass
-         ^
+       1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
+       2:
+       3: if True:
+    --&gt;4: pass
+             ^
 
 Cause probable :
     Dans ce cas-ci, la ligne indiquée ci-dessus par --&gt; devrait
@@ -205,11 +205,11 @@ de la façon attendue.
 Python peut seulement analyser le fichier &#39;raise_indentation_error2.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
-   2: if True:
-   3:     pass
---&gt;4:       pass
-           ^
+       1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
+       2: if True:
+       3:     pass
+    --&gt;4:       pass
+               ^
 
 Cause probable :
     Dans ce cas-ci, la ligne indiquée ci-dessus par --&gt;
@@ -229,11 +229,11 @@ de la façon attendue.
 Python peut seulement analyser le fichier &#39;raise_indentation_error3.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
-   2: if True:
-   3:       pass
---&gt;4:     pass
-              ^
+       1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
+       2: if True:
+       3:       pass
+    --&gt;4:     pass
+                  ^
 
 Cause probable :
     Dans ce cas-ci, la ligne indiquée ci-dessus par --&gt;
@@ -253,7 +253,7 @@ en tant que clé dans un dictionnaire (dict) Python.
 Cause probable :
     Dans votre programme, le nom de la clé inconnue est &#39;c&#39;.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 8 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_key_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 8 du fichier &#39;TESTS:\test_key_error.py&#39;
 
     6:     d = {&#39;a&#39;: 1, &#39;b&#39;: 2}
     7:     try:
@@ -272,7 +272,7 @@ LookupError est la classe de base pour les exceptions qui sont levées
 lorsqu’une clé ou un index utilisé sur un tableau de correspondance ou une séquence est invalide.
 Elle peut également être levée directement par codecs.lookup().
 
-L&#39;exécution s&#39;est arrêtée à la ligne 11 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_lookup_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 11 du fichier &#39;TESTS:\test_lookup_error.py&#39;
 
     9:         # other than possibly codecs.lookup(), which is why we raise
    10:         # it directly here for our example.
@@ -296,7 +296,7 @@ Rappel: le premier élément d&#39;une séquence est à l&#39;index 0.
 Cause probable :
     Dans ce cas, la séquence est un tuple.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 9 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_index_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 9 du fichier &#39;TESTS:\test_index_error.py&#39;
 
     7:     b = [1, 2, 3]
     8:     try:
@@ -322,7 +322,7 @@ Rappel: le premier élément d&#39;une séquence est à l&#39;index 0.
 Cause probable :
     Dans ce cas, la séquence est une liste.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_index_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;TESTS:\test_index_error.py&#39;
 
    19:     b = tuple(range(50))
    20:     try:
@@ -346,7 +346,7 @@ Cela pourrait être parce que vous fait une faute d&#39;orthographe
 Cause probable :
     Dans votre programme, le nom du module inconnu est &#39;does_not_exist&#39;.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 7 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_module_not_found_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 7 du fichier &#39;TESTS:\test_module_not_found_error.py&#39;
 
    5: def test_module_not_found_error():
    6:     try:
@@ -369,7 +369,7 @@ utilisé avant qu&#39;on ne lui ait associé une valeur.
 Cause probable :
     Dans votre programme, le nom inconnu est &#39;c&#39;.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 7 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_name_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 7 du fichier &#39;TESTS:\test_name_error.py&#39;
 
    5: def test_name_error():
    6:     try:
@@ -394,11 +394,11 @@ pour indenter votre code.
 Python peut seulement analyser le fichier &#39;raise_tab_error.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-    4:
-    5: def test_tab_error():
-    6:     if True:
---&gt; 7:      pass
-            ^
+        4:
+        5: def test_tab_error():
+        6:     if True:
+    --&gt; 7:  pass
+                ^
 </pre></div>
 </div>
 </div>
@@ -415,7 +415,7 @@ Cause probable :
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 9 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 9 du fichier &#39;TESTS:\test_type_error.py&#39;
 
     7:         a = &quot;a&quot;
     8:         one = 1
@@ -439,7 +439,7 @@ Cause probable :
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
     une chaîne de caractères (&#39;str&#39;) et une liste (&#39;list&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 23 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 23 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    21:         a = &quot;a&quot;
    22:         a_list = [1, 2, 3]
@@ -463,7 +463,7 @@ Cause probable :
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
     un tuple et une liste (&#39;list&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 37 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 37 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    35:         a_tuple = (1, 2, 3)
    36:         a_list = [1, 2, 3]
@@ -487,7 +487,7 @@ Cause probable :
     Vous avez essayé d’additionner deux types d’objets incompatibles:
     un entier (&#39;int&#39;) et une variable de valeur &#39;None&#39; (&#39;NoteType&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 49 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 49 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    47:         one = 1
    48:         none = None
@@ -511,7 +511,7 @@ Cause probable :
     Vous avez essayé d’additionner deux types d’objets incompatibles:
     un entier (&#39;int&#39;) et une chaîne de caractères (&#39;str&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 61 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 61 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    59:         one = 1
    60:         two = &quot;two&quot;
@@ -535,7 +535,7 @@ Cause probable :
     Vous avez tenté de soustraire deux types d’objets incompatibles:
     un tuple et une liste (&#39;list&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 73 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 73 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    71:         a = (1, 2)
    72:         b = [3, 4]
@@ -559,7 +559,7 @@ Cause probable :
     Vous avez tenté de soustraire deux types d’objets incompatibles:
     un tuple et une liste (&#39;list&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 85 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 85 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    83:         a = (1, 2)
    84:         b = [3, 4]
@@ -583,7 +583,7 @@ Cause probable :
     Vous avez essayé de multiplier deux types d’objets différents:
     un nombre complexe (&#39;complex&#39;) et un ensemble (&#39;set&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 97 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 97 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    95:         a = 1j
    96:         b = {2, 3}
@@ -607,7 +607,7 @@ Cause probable :
     Vous avez essayé de multiplier deux types d’objets différents:
     un nombre complexe (&#39;complex&#39;) et un ensemble (&#39;set&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 109 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 109 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    107:         a = 1j
    108:         b = {2, 3}
@@ -631,7 +631,7 @@ Cause probable :
     Vous avez essayé de diviser deux types d’objets différents:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 121 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 121 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    119:         a = {1: 1, 2: 2}
    120:         b = 3.1416
@@ -655,7 +655,7 @@ Cause probable :
     Vous avez essayé de diviser deux types d’objets différents:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 133 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 133 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    131:         a = {1: 1, 2: 2}
    132:         b = 3.1416
@@ -679,7 +679,7 @@ Cause probable :
     Vous avez essayé de diviser deux types d’objets différents:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 145 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 145 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    143:         a = {1: 1, 2: 2}
    144:         b = 3.1416
@@ -703,7 +703,7 @@ Cause probable :
     Vous avez essayé de diviser deux types d’objets différents:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 157 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 157 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    155:         a = {1: 1, 2: 2}
    156:         b = 3.1416
@@ -728,7 +728,7 @@ Cause probable :
     sur deux types d’objets incompatibles:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 169 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 169 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    167:         a = &quot;a&quot;
    168:         b = 2
@@ -753,7 +753,7 @@ Cause probable :
     sur deux types d’objets incompatibles:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 181 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 181 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    179:         a = &quot;a&quot;
    180:         b = 2
@@ -778,7 +778,7 @@ Cause probable :
     en utilisant deux types d’objets incompatibles:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 193 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 193 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    191:         a = {1: 1, 2: 2}
    192:         b = 3.1416
@@ -803,7 +803,7 @@ Cause probable :
     en utilisant deux types d’objets incompatibles:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 205 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 205 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    203:         a = {1: 1, 2: 2}
    204:         b = 3.1416
@@ -828,7 +828,7 @@ Cause probable :
     sur deux types d’objets incompatibles:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 217 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 217 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    215:         a = &quot;a&quot;
    216:         b = 42
@@ -853,7 +853,7 @@ Cause probable :
     sur deux types d’objets incompatibles:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 229 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 229 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    227:         a = &quot;a&quot;
    228:         b = 42
@@ -880,7 +880,7 @@ Cause probable :
     Cet opérateur est normalement utilisé uniquement
     pour la multiplication des matrices.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 241 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 241 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    239:         a = &quot;a&quot;
    240:         b = 2
@@ -907,7 +907,7 @@ Cause probable :
     Cet opérateur est normalement utilisé uniquement
     pour la multiplication des matrices.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 253 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 253 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    251:         a = &quot;a&quot;
    252:         b = 2
@@ -932,7 +932,7 @@ Cause probable :
     deux types d’objets incompatibles:
     un entier (&#39;int&#39;) et une chaîne de caractères (&#39;str&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 265 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 265 du fichier &#39;TESTS:\test_type_error.py&#39;
 
    263:         a = &quot;a&quot;
    264:         b = 42
@@ -964,15 +964,15 @@ Cause probable :
         global a
     comme première ligne à l’intérieur de votre fonction.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;TESTS:\test_unbound_local_error.py&#39;
 
    19:
    20:     try:
 --&gt;21:         outer()
    22:     except Exception:
-global outer: &lt;function outer at 0x02F25CD8&gt;
+global outer: &lt;function outer at 0x03A0AB70&gt;
 
-Exception levée à la ligne du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py&#39;.
+Exception levée à la ligne du fichier &#39;TESTS:\test_unbound_local_error.py&#39;.
 
    11:     def inner():
    12:         c = 3
@@ -992,7 +992,7 @@ Aucune information n’est connue à propos de cette exception.
 Veuillez signaler cet exemple à
 https://github.com/aroberge/friendly-traceback/issues
 
-L&#39;exécution s&#39;est arrêtée à la ligne 11 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_unknown_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 11 du fichier &#39;TESTS:\test_unknown_error.py&#39;
 
     9: def test_unknown_error():
    10:     try:
@@ -1014,7 +1014,7 @@ Ceci peut également se produire si vous calculez le reste d’une division
 à l’aide de l’opérateur modulo &#39;%&#39;
     résultat = ma_variable % 0
 
-L&#39;exécution s&#39;est arrêtée à la ligne 7 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_zero_division_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 7 du fichier &#39;TESTS:\test_zero_division_error.py&#39;
 
    5: def test_zero_division_error():
    6:     try:
@@ -1035,7 +1035,7 @@ Ceci peut également se produire si vous calculez le reste d’une division
 à l’aide de l’opérateur modulo &#39;%&#39;
     résultat = ma_variable % 0
 
-L&#39;exécution s&#39;est arrêtée à la ligne 18 du fichier &#39;C:\Users\andre\github\friendly-traceback\tests\test_zero_division_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 18 du fichier &#39;TESTS:\test_zero_division_error.py&#39;
 
    16:     zero = 0
    17:     try:

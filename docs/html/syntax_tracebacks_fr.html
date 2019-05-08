@@ -114,14 +114,14 @@ Une exception de type SyntaxError se produit lorsque python ne peut pas comprend
 Python peut seulement analyser le fichier &#39;raise_syntax_error1.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-   1: &quot;&quot;&quot; Should raise SyntaxError&quot;&quot;&quot;
-   2:
---&gt;3: pass = 2
-           ^
+       1: &quot;&quot;&quot; Should raise SyntaxError&quot;&quot;&quot;
+       2:
+    --&gt;3: pass = 2
+               ^
 
 Ma meilleure hypothèse :
-  Vous essayiez d’assigner une valeur à un mot clé Python.
-  Ceci n’est pas permis.
+    Vous essayiez d’assigner une valeur à un mot clé Python.
+    Ceci n’est pas permis.
 </pre></div>
 </div>
 </div>
@@ -135,14 +135,14 @@ Une exception de type SyntaxError se produit lorsque python ne peut pas comprend
 Python peut seulement analyser le fichier &#39;raise_syntax_error2.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
-   2:
---&gt;3: if True
-             ^
+       1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+       2:
+    --&gt;3: if True
+                 ^
 
 Ma meilleure hypothèse :
-  Vous avez écrit un énoncé débutant avec
-  &#39;if&#39; mais vous avez oublié d’ajouter deux points &#39;:&#39; à la fin.
+    Vous avez écrit un énoncé débutant avec
+    &#39;if&#39; mais vous avez oublié d’ajouter deux points &#39;:&#39; à la fin.
 </pre></div>
 </div>
 </div>
@@ -156,14 +156,14 @@ Une exception de type SyntaxError se produit lorsque python ne peut pas comprend
 Python peut seulement analyser le fichier &#39;raise_syntax_error3.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
-   2:
---&gt;3: while True  # a comment
-                             ^
+       1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+       2:
+    --&gt;3: while True  # a comment
+                                 ^
 
 Ma meilleure hypothèse :
-  Vous vouliez débuter une boucle &#39;while&#39;
-  mais vous avez oublié d’ajouter deux points &#39;:&#39; à la fin.
+    Vous vouliez débuter une boucle &#39;while&#39;
+    mais vous avez oublié d’ajouter deux points &#39;:&#39; à la fin.
 </pre></div>
 </div>
 </div>
@@ -177,15 +177,15 @@ Une exception de type SyntaxError se produit lorsque python ne peut pas comprend
 Python peut seulement analyser le fichier &#39;raise_syntax_error4.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-   2:
-   3: if False:
-   4:     pass
---&gt;5: else if True:
-            ^
+       2:
+       3: if False:
+       4:     pass
+    --&gt;5: else if True:
+                ^
 
 Ma meilleure hypothèse :
-  Vous avez écrit &#39;else if&#39;
-  au lieu d&#39;utiliser le mot-clé &#39;elif&#39;.
+    Vous avez écrit &#39;else if&#39;
+    au lieu d&#39;utiliser le mot-clé &#39;elif&#39;.
 </pre></div>
 </div>
 </div>
@@ -199,15 +199,15 @@ Une exception de type SyntaxError se produit lorsque python ne peut pas comprend
 Python peut seulement analyser le fichier &#39;raise_syntax_error5.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-   2:
-   3: if False:
-   4:     pass
---&gt;5: elseif True:
-                ^
+       2:
+       3: if False:
+       4:     pass
+    --&gt;5: elseif True:
+                    ^
 
 Ma meilleure hypothèse :
-  Vous avez écrit &#39;elseif&#39;
-  au lieu d&#39;utiliser le mot-clé &#39;elif&#39;.
+    Vous avez écrit &#39;elseif&#39;
+    au lieu d&#39;utiliser le mot-clé &#39;elif&#39;.
 </pre></div>
 </div>
 </div>
@@ -221,16 +221,16 @@ Une exception de type SyntaxError se produit lorsque python ne peut pas comprend
 Python peut seulement analyser le fichier &#39;raise_syntax_error6.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
-   2:
---&gt;3: def :
-          ^
+       1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+       2:
+    --&gt;3: def :
+              ^
 
 Ma meilleure hypothèse :
-  Vous vouliez définir une fonction ou une méthode,
-  mais vous avez fait des erreurs de syntaxe.
-  La syntaxe correcte est:
-      def nom ( arguments_optionnels ) :
+    Vous vouliez définir une fonction ou une méthode,
+    mais vous avez fait des erreurs de syntaxe.
+    La syntaxe correcte est:
+        def nom ( arguments_optionnels ) :
 </pre></div>
 </div>
 </div>
@@ -244,16 +244,16 @@ Une exception de type SyntaxError se produit lorsque python ne peut pas comprend
 Python peut seulement analyser le fichier &#39;raise_syntax_error7.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
-   2:
---&gt;3: def name  :
-                ^
+       1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+       2:
+    --&gt;3: def name  :
+                    ^
 
 Ma meilleure hypothèse :
-  Vous vouliez définir une fonction ou une méthode,
-  mais vous avez fait des erreurs de syntaxe.
-  La syntaxe correcte est:
-      def nom ( arguments_optionnels ) :
+    Vous vouliez définir une fonction ou une méthode,
+    mais vous avez fait des erreurs de syntaxe.
+    La syntaxe correcte est:
+        def nom ( arguments_optionnels ) :
 </pre></div>
 </div>
 </div>
@@ -267,16 +267,16 @@ Une exception de type SyntaxError se produit lorsque python ne peut pas comprend
 Python peut seulement analyser le fichier &#39;raise_syntax_error8.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
-   2:
---&gt;3: def ( arg )  :
-          ^
+       1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+       2:
+    --&gt;3: def ( arg )  :
+              ^
 
 Ma meilleure hypothèse :
-  Vous vouliez définir une fonction ou une méthode,
-  mais vous avez fait des erreurs de syntaxe.
-  La syntaxe correcte est:
-      def nom ( arguments_optionnels ) :
+    Vous vouliez définir une fonction ou une méthode,
+    mais vous avez fait des erreurs de syntaxe.
+    La syntaxe correcte est:
+        def nom ( arguments_optionnels ) :
 </pre></div>
 </div>
 </div>
@@ -290,18 +290,18 @@ Une exception de type SyntaxError se produit lorsque python ne peut pas comprend
 Python peut seulement analyser le fichier &#39;raise_syntax_error9.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal&quot;&quot;&quot;
-   2:
---&gt;3: 1 = a
-     ^
+       1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal&quot;&quot;&quot;
+       2:
+    --&gt;3: 1 = a
+         ^
 
 Ma meilleure hypothèse :
-  Vous avez écrit une expression comme
-      1 = variable
-  où &lt; 1 &gt;, sur le côté gauche du signe égal, est ce que Python
-  appelle un &#39;literal&#39;, c&#39;est-à dire soit soit une chaîne de caractères ou un nombre,
-  et non le nom d’une variable. Peut-être que vous vouliez plutôt écrire:
-      variable = 1
+    Vous avez écrit une expression comme
+        1 = variable
+    où &lt; 1 &gt;, sur le côté gauche du signe égal, est ce que Python
+    appelle un &#39;literal&#39;, c&#39;est-à dire soit soit une chaîne de caractères ou un nombre,
+    et non le nom d’une variable. Peut-être que vous vouliez plutôt écrire:
+        variable = 1
 </pre></div>
 </div>
 </div>
@@ -315,16 +315,16 @@ Une exception de type SyntaxError se produit lorsque python ne peut pas comprend
 Python peut seulement analyser le fichier &#39;raise_syntax_error10.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
-   2:
---&gt;3: import pen from turtle
-                    ^
+       1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+       2:
+    --&gt;3: import pen from turtle
+                        ^
 
 Ma meilleure hypothèse :
-  Vous avez écrit quelque chose comme
-      import X from Y
-  au lieu de
-      from Y import X
+    Vous avez écrit quelque chose comme
+        import X from Y
+    au lieu de
+        from Y import X
 </pre></div>
 </div>
 </div>

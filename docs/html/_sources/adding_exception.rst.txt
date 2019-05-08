@@ -121,18 +121,18 @@ So, let's see what happens if we do run this test by itself.
 
         Execution stopped on line 15 of file 'test_unbound_local_error.py'.
 
-          13:
-          14:     try:
+           13:
+           14:     try:
         -->15:         inner()
-          16:     except Exception:
+           16:     except Exception:
 
 
         Exception raised on line 12 of file 'test_unbound_local_error.py'.
 
-          10:
-          11:     def inner():
+           10:
+           11:     def inner():
         -->12:         a += 1
-          13:
+           13:
 
 Note the line:
 
@@ -184,14 +184,14 @@ exception, followed by some explications::
     def unbound_local_error(*args):
         _ = current_lang.lang
         return _(
-            "    In Python, variables that are used inside a function are known as \n"
-            "    local variables. Before they are used, they must be assigned a value.\n"
-            "    A variable that is used before it is assigned a value is assumed to\n"
-            "    be defined outside that function; it is known as a 'global'\n"
-            "    (or sometimes 'nonlocal') variable. You cannot assign a value to such\n"
-            "    a global variable inside a function without first indicating to\n"
-            "    Python that this is a global variable, otherwise you will see\n"
-            "    an UnboundLocalError.\n"
+            "In Python, variables that are used inside a function are known as \n"
+            "local variables. Before they are used, they must be assigned a value.\n"
+            "A variable that is used before it is assigned a value is assumed to\n"
+            "be defined outside that function; it is known as a 'global'\n"
+            "(or sometimes 'nonlocal') variable. You cannot assign a value to such\n"
+            "a global variable inside a function without first indicating to\n"
+            "Python that this is a global variable, otherwise you will see\n"
+            "an UnboundLocalError.\n"
         )
 
 We use gettext for providing translations. You do not need to be
@@ -235,10 +235,6 @@ Experience has shown us that this makes it much easier to
 write the corresponding translations using Poedit.
 Each string should represent a single line of text, and end with
 a single ``\n``.
-In addition, **each such string should start with four spaces.**
-The latter both makes it easier to read the explanation when using
-an REPL, and allows for automatic embedding with correct formatting
-in the documentation using Sphinx.
 
 
 Add specific information
@@ -288,17 +284,16 @@ exception::
         # UnboundLocalError: local variable 'a' referenced before assignment
         #
         # By splitting value using ', we can extract the variable name.
-        return _("        The variable that appears to cause the problem is '{var_name}'.\n"
-                 "        Try inserting the statement\n"
-                 "            global {var_name}\n"
-                 "        as the first line inside your function.").format(
+        return _("The variable that appears to cause the problem is '{var_name}'.\n"
+                 "Try inserting the statement\n"
+                 "    global {var_name}\n"
+                 "as the first line inside your function.").format(
             var_name=str(value).split("'")[1]
         )
 
 I assume that this is similar enough to the situation for the
 generic information case that it does not warrant additional
-explanation.  **The only difference is that each line of text should
-be indented by either 6 or 8 spaces.**
+explanation.
 
 If you find that some additional explanation is needed,
 please contact us or file an issue.
@@ -332,8 +327,8 @@ code.  Here's an example that we currently have in our code::
     # fmt: off
     return _(
         "\n"
-        "    Python exception: \n"
-        "        {name}: {value}\n"
+        "Python exception: \n"
+        "    {name}: {value}\n"
         "\n"
         "{explanation}"
     ).format(name=name, value=value, explanation=explanation)

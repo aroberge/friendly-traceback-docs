@@ -140,7 +140,7 @@ that are raised for various arithmetic errors.
 It is unusual that you are seeing this exception;
 normally, a more specific exception should have been raised.
 
-Execution stopped on line 10 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_arithmetic_error.py&#39;.
+Execution stopped on line 10 of file &#39;TESTS:\test_arithmetic_error.py&#39;.
 
     8:         # Usually, a subclass such as ZeroDivisionError, etc., would
     9:         # likely be raised.
@@ -163,7 +163,7 @@ Likely cause:
     The module or package where it was
     expected to be found is &#39;math&#39;.
 
-Execution stopped on line 7 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_import_error.py&#39;.
+Execution stopped on line 7 of file &#39;TESTS:\test_import_error.py&#39;.
 
    5: def test_import_error():
    6:     try:
@@ -182,11 +182,11 @@ not indented (aligned vertically with other lines) as expected.
 Python could not parse the file &#39;raise_indentation_error1.py&#39;
 beyond the location indicated below by --&gt; and ^.
 
-   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
-   2:
-   3: if True:
---&gt;4: pass
-         ^
+       1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
+       2:
+       3: if True:
+    --&gt;4: pass
+             ^
 
 Likely cause:
     In this case, the line identified above
@@ -204,11 +204,11 @@ not indented (aligned vertically with other lines) as expected.
 Python could not parse the file &#39;raise_indentation_error2.py&#39;
 beyond the location indicated below by --&gt; and ^.
 
-   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
-   2: if True:
-   3:     pass
---&gt;4:       pass
-           ^
+       1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
+       2: if True:
+       3:     pass
+    --&gt;4:       pass
+               ^
 
 Likely cause:
     In this case, the line identified above
@@ -227,11 +227,11 @@ not indented (aligned vertically with other lines) as expected.
 Python could not parse the file &#39;raise_indentation_error3.py&#39;
 beyond the location indicated below by --&gt; and ^.
 
-   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
-   2: if True:
-   3:       pass
---&gt;4:     pass
-              ^
+       1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
+       2: if True:
+       3:       pass
+    --&gt;4:     pass
+                  ^
 
 Likely cause:
     In this case, the line identified above is
@@ -252,7 +252,7 @@ Likely cause:
     In your program, the name of the key
     that cannot be found is &#39;c&#39;.
 
-Execution stopped on line 8 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_key_error.py&#39;.
+Execution stopped on line 8 of file &#39;TESTS:\test_key_error.py&#39;.
 
     6:     d = {&#39;a&#39;: 1, &#39;b&#39;: 2}
     7:     try:
@@ -271,7 +271,7 @@ LookupError is the base class for the exceptions that are raised
 when a key or index used on a mapping or sequence is invalid.
 It can also be raised directly by codecs.lookup().
 
-Execution stopped on line 11 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_lookup_error.py&#39;.
+Execution stopped on line 11 of file &#39;TESTS:\test_lookup_error.py&#39;.
 
     9:         # other than possibly codecs.lookup(), which is why we raise
    10:         # it directly here for our example.
@@ -294,7 +294,7 @@ Reminder: the first item of a sequence is at index 0.
 Likely cause:
     In this case, the sequence is a tuple.
 
-Execution stopped on line 9 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_index_error.py&#39;.
+Execution stopped on line 9 of file &#39;TESTS:\test_index_error.py&#39;.
 
     7:     b = [1, 2, 3]
     8:     try:
@@ -319,7 +319,7 @@ Reminder: the first item of a sequence is at index 0.
 Likely cause:
     In this case, the sequence is a list.
 
-Execution stopped on line 21 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_index_error.py&#39;.
+Execution stopped on line 21 of file &#39;TESTS:\test_index_error.py&#39;.
 
    19:     b = tuple(range(50))
    20:     try:
@@ -344,7 +344,7 @@ Likely cause:
     In your program, the name of the
     module that cannot be found is &#39;does_not_exist&#39;.
 
-Execution stopped on line 7 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_module_not_found_error.py&#39;.
+Execution stopped on line 7 of file &#39;TESTS:\test_module_not_found_error.py&#39;.
 
    5: def test_module_not_found_error():
    6:     try:
@@ -367,7 +367,7 @@ before being defined or given a value.
 Likely cause:
     In your program, the unknown name is &#39;c&#39;.
 
-Execution stopped on line 7 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_name_error.py&#39;.
+Execution stopped on line 7 of file &#39;TESTS:\test_name_error.py&#39;.
 
    5: def test_name_error():
    6:     try:
@@ -391,11 +391,11 @@ Python&#39;s recommendation is to always use spaces to indent your code.
 Python could not parse the file &#39;raise_tab_error.py&#39;
 beyond the location indicated below by --&gt; and ^.
 
-    4:
-    5: def test_tab_error():
-    6:     if True:
---&gt; 7:      pass
-            ^
+        4:
+        5: def test_tab_error():
+        6:     if True:
+    --&gt; 7:  pass
+                ^
 </pre></div>
 </div>
 </div>
@@ -412,7 +412,7 @@ Likely cause:
     You tried to concatenate (add) two different types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
-Execution stopped on line 9 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 9 of file &#39;TESTS:\test_type_error.py&#39;.
 
     7:         a = &quot;a&quot;
     8:         one = 1
@@ -436,7 +436,7 @@ Likely cause:
     You tried to concatenate (add) two different types of objects:
     a string (&#39;str&#39;) and a list
 
-Execution stopped on line 23 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 23 of file &#39;TESTS:\test_type_error.py&#39;.
 
    21:         a = &quot;a&quot;
    22:         a_list = [1, 2, 3]
@@ -460,7 +460,7 @@ Likely cause:
     You tried to concatenate (add) two different types of objects:
     a tuple and a list
 
-Execution stopped on line 37 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 37 of file &#39;TESTS:\test_type_error.py&#39;.
 
    35:         a_tuple = (1, 2, 3)
    36:         a_list = [1, 2, 3]
@@ -484,7 +484,7 @@ Likely cause:
     You tried to add two incompatible types of objects:
     an integer (&#39;int&#39;) and a variable equal to None (&#39;NoneType&#39;)
 
-Execution stopped on line 49 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 49 of file &#39;TESTS:\test_type_error.py&#39;.
 
    47:         one = 1
    48:         none = None
@@ -508,7 +508,7 @@ Likely cause:
     You tried to add two incompatible types of objects:
     an integer (&#39;int&#39;) and a string (&#39;str&#39;)
 
-Execution stopped on line 61 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 61 of file &#39;TESTS:\test_type_error.py&#39;.
 
    59:         one = 1
    60:         two = &quot;two&quot;
@@ -532,7 +532,7 @@ Likely cause:
     You tried to subtract two incompatible types of objects:
     a tuple and a list
 
-Execution stopped on line 73 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 73 of file &#39;TESTS:\test_type_error.py&#39;.
 
    71:         a = (1, 2)
    72:         b = [3, 4]
@@ -556,7 +556,7 @@ Likely cause:
     You tried to subtract two incompatible types of objects:
     a tuple and a list
 
-Execution stopped on line 85 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 85 of file &#39;TESTS:\test_type_error.py&#39;.
 
    83:         a = (1, 2)
    84:         b = [3, 4]
@@ -580,7 +580,7 @@ Likely cause:
     You tried to multiply two incompatible types of objects:
     a complex number and a set
 
-Execution stopped on line 97 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 97 of file &#39;TESTS:\test_type_error.py&#39;.
 
    95:         a = 1j
    96:         b = {2, 3}
@@ -604,7 +604,7 @@ Likely cause:
     You tried to multiply two incompatible types of objects:
     a complex number and a set
 
-Execution stopped on line 109 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 109 of file &#39;TESTS:\test_type_error.py&#39;.
 
    107:         a = 1j
    108:         b = {2, 3}
@@ -628,7 +628,7 @@ Likely cause:
     You tried to divide two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
-Execution stopped on line 121 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 121 of file &#39;TESTS:\test_type_error.py&#39;.
 
    119:         a = {1: 1, 2: 2}
    120:         b = 3.1416
@@ -652,7 +652,7 @@ Likely cause:
     You tried to divide two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
-Execution stopped on line 133 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 133 of file &#39;TESTS:\test_type_error.py&#39;.
 
    131:         a = {1: 1, 2: 2}
    132:         b = 3.1416
@@ -676,7 +676,7 @@ Likely cause:
     You tried to divide two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
-Execution stopped on line 145 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 145 of file &#39;TESTS:\test_type_error.py&#39;.
 
    143:         a = {1: 1, 2: 2}
    144:         b = 3.1416
@@ -700,7 +700,7 @@ Likely cause:
     You tried to divide two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
-Execution stopped on line 157 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 157 of file &#39;TESTS:\test_type_error.py&#39;.
 
    155:         a = {1: 1, 2: 2}
    156:         b = 3.1416
@@ -725,7 +725,7 @@ Likely cause:
     on two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
-Execution stopped on line 169 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 169 of file &#39;TESTS:\test_type_error.py&#39;.
 
    167:         a = &quot;a&quot;
    168:         b = 2
@@ -750,7 +750,7 @@ Likely cause:
     on two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
-Execution stopped on line 181 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 181 of file &#39;TESTS:\test_type_error.py&#39;.
 
    179:         a = &quot;a&quot;
    180:         b = 2
@@ -775,7 +775,7 @@ Likely cause:
     using two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
-Execution stopped on line 193 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 193 of file &#39;TESTS:\test_type_error.py&#39;.
 
    191:         a = {1: 1, 2: 2}
    192:         b = 3.1416
@@ -800,7 +800,7 @@ Likely cause:
     using two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
-Execution stopped on line 205 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 205 of file &#39;TESTS:\test_type_error.py&#39;.
 
    203:         a = {1: 1, 2: 2}
    204:         b = 3.1416
@@ -825,7 +825,7 @@ Likely cause:
     on two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
-Execution stopped on line 217 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 217 of file &#39;TESTS:\test_type_error.py&#39;.
 
    215:         a = &quot;a&quot;
    216:         b = 42
@@ -850,7 +850,7 @@ Likely cause:
     on two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
-Execution stopped on line 229 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 229 of file &#39;TESTS:\test_type_error.py&#39;.
 
    227:         a = &quot;a&quot;
    228:         b = 42
@@ -877,7 +877,7 @@ Likely cause:
     This operator is normally used only
     for multiplication of matrices.
 
-Execution stopped on line 241 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 241 of file &#39;TESTS:\test_type_error.py&#39;.
 
    239:         a = &quot;a&quot;
    240:         b = 2
@@ -904,7 +904,7 @@ Likely cause:
     This operator is normally used only
     for multiplication of matrices.
 
-Execution stopped on line 253 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 253 of file &#39;TESTS:\test_type_error.py&#39;.
 
    251:         a = &quot;a&quot;
    252:         b = 2
@@ -929,7 +929,7 @@ Likely cause:
     between two incompatible types of objects:
     an integer (&#39;int&#39;) and a string (&#39;str&#39;)
 
-Execution stopped on line 265 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_type_error.py&#39;.
+Execution stopped on line 265 of file &#39;TESTS:\test_type_error.py&#39;.
 
    263:         a = &quot;a&quot;
    264:         b = 42
@@ -960,15 +960,15 @@ Likely cause:
         global a
     should have been included as the first line inside your function.
 
-Execution stopped on line 21 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py&#39;.
+Execution stopped on line 21 of file &#39;TESTS:\test_unbound_local_error.py&#39;.
 
    19:
    20:     try:
 --&gt;21:         outer()
    22:     except Exception:
-global outer: &lt;function outer at 0x02EDB588&gt;
+global outer: &lt;function outer at 0x02F506A8&gt;
 
-Exception raised on line 13 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_unbound_local_error.py&#39;.
+Exception raised on line 13 of file &#39;TESTS:\test_unbound_local_error.py&#39;.
 
    11:     def inner():
    12:         c = 3
@@ -988,7 +988,7 @@ No information is known about this exception.
 Please report this example to
 https://github.com/aroberge/friendly-traceback/issues
 
-Execution stopped on line 11 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_unknown_error.py&#39;.
+Execution stopped on line 11 of file &#39;TESTS:\test_unknown_error.py&#39;.
 
     9: def test_unknown_error():
    10:     try:
@@ -1010,7 +1010,7 @@ It can also happen if you calculate the remainder of a division
 using the modulo operator &#39;%&#39;
     result = my_variable % 0
 
-Execution stopped on line 7 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_zero_division_error.py&#39;.
+Execution stopped on line 7 of file &#39;TESTS:\test_zero_division_error.py&#39;.
 
    5: def test_zero_division_error():
    6:     try:
@@ -1031,7 +1031,7 @@ It can also happen if you calculate the remainder of a division
 using the modulo operator &#39;%&#39;
     result = my_variable % 0
 
-Execution stopped on line 18 of file &#39;C:\Users\andre\github\friendly-traceback\tests\test_zero_division_error.py&#39;.
+Execution stopped on line 18 of file &#39;TESTS:\test_zero_division_error.py&#39;.
 
    16:     zero = 0
    17:     try:

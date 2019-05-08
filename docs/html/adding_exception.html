@@ -204,18 +204,18 @@ testing.</p></li>
 
     Execution stopped on line 15 of file &#39;test_unbound_local_error.py&#39;.
 
-      13:
-      14:     try:
+       13:
+       14:     try:
     --&gt;15:         inner()
-      16:     except Exception:
+       16:     except Exception:
 
 
     Exception raised on line 12 of file &#39;test_unbound_local_error.py&#39;.
 
-      10:
-      11:     def inner():
+       10:
+       11:     def inner():
     --&gt;12:         a += 1
-      13:
+       13:
 </pre></div>
 </div>
 <p>Note the line:</p>
@@ -262,14 +262,14 @@ exception, followed by some explications:</p>
 <span class="k">def</span> <span class="nf">unbound_local_error</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">lang</span>
     <span class="k">return</span> <span class="n">_</span><span class="p">(</span>
-        <span class="s2">&quot;    In Python, variables that are used inside a function are known as </span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;    local variables. Before they are used, they must be assigned a value.</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;    A variable that is used before it is assigned a value is assumed to</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;    be defined outside that function; it is known as a &#39;global&#39;</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;    (or sometimes &#39;nonlocal&#39;) variable. You cannot assign a value to such</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;    a global variable inside a function without first indicating to</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;    Python that this is a global variable, otherwise you will see</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;    an UnboundLocalError.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;In Python, variables that are used inside a function are known as </span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;local variables. Before they are used, they must be assigned a value.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;A variable that is used before it is assigned a value is assumed to</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;be defined outside that function; it is known as a &#39;global&#39;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;(or sometimes &#39;nonlocal&#39;) variable. You cannot assign a value to such</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;a global variable inside a function without first indicating to</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;Python that this is a global variable, otherwise you will see</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;an UnboundLocalError.</span><span class="se">\n</span><span class="s2">&quot;</span>
     <span class="p">)</span>
 </pre></div>
 </div>
@@ -308,11 +308,7 @@ automatic concatenation of adjacent strings to format the text.
 Experience has shown us that this makes it much easier to
 write the corresponding translations using Poedit.
 Each string should represent a single line of text, and end with
-a single <code class="docutils literal notranslate"><span class="pre">\n</span></code>.
-In addition, <strong>each such string should start with four spaces.</strong>
-The latter both makes it easier to read the explanation when using
-an REPL, and allows for automatic embedding with correct formatting
-in the documentation using Sphinx.</p>
+a single <code class="docutils literal notranslate"><span class="pre">\n</span></code>.</p>
 </div>
 <div class="section" id="add-specific-information">
 <h2>Add specific information<a class="headerlink" href="#add-specific-information" title="Permalink to this headline">¶</a></h2>
@@ -354,18 +350,17 @@ exception:</p>
     <span class="c1"># UnboundLocalError: local variable &#39;a&#39; referenced before assignment</span>
     <span class="c1">#</span>
     <span class="c1"># By splitting value using &#39;, we can extract the variable name.</span>
-    <span class="k">return</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;        The variable that appears to cause the problem is &#39;</span><span class="si">{var_name}</span><span class="s2">&#39;.</span><span class="se">\n</span><span class="s2">&quot;</span>
-             <span class="s2">&quot;        Try inserting the statement</span><span class="se">\n</span><span class="s2">&quot;</span>
-             <span class="s2">&quot;            global </span><span class="si">{var_name}</span><span class="se">\n</span><span class="s2">&quot;</span>
-             <span class="s2">&quot;        as the first line inside your function.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="k">return</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;The variable that appears to cause the problem is &#39;</span><span class="si">{var_name}</span><span class="s2">&#39;.</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="s2">&quot;Try inserting the statement</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="s2">&quot;    global </span><span class="si">{var_name}</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="s2">&quot;as the first line inside your function.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
         <span class="n">var_name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
     <span class="p">)</span>
 </pre></div>
 </div>
 <p>I assume that this is similar enough to the situation for the
 generic information case that it does not warrant additional
-explanation.  <strong>The only difference is that each line of text should
-be indented by either 6 or 8 spaces.</strong></p>
+explanation.</p>
 <p>If you find that some additional explanation is needed,
 please contact us or file an issue.</p>
 </div>
@@ -392,8 +387,8 @@ code.  Here’s an example that we currently have in our code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># fmt: off</span>
 <span class="k">return</span> <span class="n">_</span><span class="p">(</span>
     <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
-    <span class="s2">&quot;    Python exception: </span><span class="se">\n</span><span class="s2">&quot;</span>
-    <span class="s2">&quot;        </span><span class="si">{name}</span><span class="s2">: </span><span class="si">{value}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Python exception: </span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;    </span><span class="si">{name}</span><span class="s2">: </span><span class="si">{value}</span><span class="se">\n</span><span class="s2">&quot;</span>
     <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
     <span class="s2">&quot;</span><span class="si">{explanation}</span><span class="s2">&quot;</span>
 <span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">explanation</span><span class="o">=</span><span class="n">explanation</span><span class="p">)</span>

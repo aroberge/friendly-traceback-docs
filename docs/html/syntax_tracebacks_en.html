@@ -111,14 +111,14 @@ A SyntaxError occurs when Python cannot understand your code.
 Python could not parse the file &#39;raise_syntax_error1.py&#39;
 beyond the location indicated below by --&gt; and ^.
 
-   1: &quot;&quot;&quot; Should raise SyntaxError&quot;&quot;&quot;
-   2:
---&gt;3: pass = 2
-           ^
+       1: &quot;&quot;&quot; Should raise SyntaxError&quot;&quot;&quot;
+       2:
+    --&gt;3: pass = 2
+               ^
 
 My best guess:
-  You were trying to assign a value to a Python keyword.
-  This is not allowed.
+    You were trying to assign a value to a Python keyword.
+    This is not allowed.
 </pre></div>
 </div>
 </div>
@@ -132,14 +132,14 @@ A SyntaxError occurs when Python cannot understand your code.
 Python could not parse the file &#39;raise_syntax_error2.py&#39;
 beyond the location indicated below by --&gt; and ^.
 
-   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
-   2:
---&gt;3: if True
-             ^
+       1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+       2:
+    --&gt;3: if True
+                 ^
 
 My best guess:
-  You wrote a statement beginning with
-  &#39;if&#39; but forgot to add a colon &#39;:&#39; at the end
+    You wrote a statement beginning with
+    &#39;if&#39; but forgot to add a colon &#39;:&#39; at the end
 </pre></div>
 </div>
 </div>
@@ -153,14 +153,14 @@ A SyntaxError occurs when Python cannot understand your code.
 Python could not parse the file &#39;raise_syntax_error3.py&#39;
 beyond the location indicated below by --&gt; and ^.
 
-   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
-   2:
---&gt;3: while True  # a comment
-                             ^
+       1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+       2:
+    --&gt;3: while True  # a comment
+                                 ^
 
 My best guess:
-  You wrote a &#39;while&#39; loop but
-  forgot to add a colon &#39;:&#39; at the end
+    You wrote a &#39;while&#39; loop but
+    forgot to add a colon &#39;:&#39; at the end
 </pre></div>
 </div>
 </div>
@@ -174,15 +174,15 @@ A SyntaxError occurs when Python cannot understand your code.
 Python could not parse the file &#39;raise_syntax_error4.py&#39;
 beyond the location indicated below by --&gt; and ^.
 
-   2:
-   3: if False:
-   4:     pass
---&gt;5: else if True:
-            ^
+       2:
+       3: if False:
+       4:     pass
+    --&gt;5: else if True:
+                ^
 
 My best guess:
-  You meant to use Python&#39;s &#39;elif&#39; keyword
-  but wrote &#39;else if&#39; instead
+    You meant to use Python&#39;s &#39;elif&#39; keyword
+    but wrote &#39;else if&#39; instead
 </pre></div>
 </div>
 </div>
@@ -196,15 +196,15 @@ A SyntaxError occurs when Python cannot understand your code.
 Python could not parse the file &#39;raise_syntax_error5.py&#39;
 beyond the location indicated below by --&gt; and ^.
 
-   2:
-   3: if False:
-   4:     pass
---&gt;5: elseif True:
-                ^
+       2:
+       3: if False:
+       4:     pass
+    --&gt;5: elseif True:
+                    ^
 
 My best guess:
-  You meant to use Python&#39;s &#39;elif&#39; keyword
-  but wrote &#39;elseif&#39; instead
+    You meant to use Python&#39;s &#39;elif&#39; keyword
+    but wrote &#39;elseif&#39; instead
 </pre></div>
 </div>
 </div>
@@ -218,16 +218,16 @@ A SyntaxError occurs when Python cannot understand your code.
 Python could not parse the file &#39;raise_syntax_error6.py&#39;
 beyond the location indicated below by --&gt; and ^.
 
-   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
-   2:
---&gt;3: def :
-          ^
+       1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+       2:
+    --&gt;3: def :
+              ^
 
 My best guess:
-  You tried to define a function or method
-  and did not use the correct syntax.
-  The correct syntax is:
-      def name ( optional_arguments ):
+    You tried to define a function or method
+    and did not use the correct syntax.
+    The correct syntax is:
+        def name ( optional_arguments ):
 </pre></div>
 </div>
 </div>
@@ -241,16 +241,16 @@ A SyntaxError occurs when Python cannot understand your code.
 Python could not parse the file &#39;raise_syntax_error7.py&#39;
 beyond the location indicated below by --&gt; and ^.
 
-   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
-   2:
---&gt;3: def name  :
-                ^
+       1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+       2:
+    --&gt;3: def name  :
+                    ^
 
 My best guess:
-  You tried to define a function or method
-  and did not use the correct syntax.
-  The correct syntax is:
-      def name ( optional_arguments ):
+    You tried to define a function or method
+    and did not use the correct syntax.
+    The correct syntax is:
+        def name ( optional_arguments ):
 </pre></div>
 </div>
 </div>
@@ -264,16 +264,16 @@ A SyntaxError occurs when Python cannot understand your code.
 Python could not parse the file &#39;raise_syntax_error8.py&#39;
 beyond the location indicated below by --&gt; and ^.
 
-   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
-   2:
---&gt;3: def ( arg )  :
-          ^
+       1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+       2:
+    --&gt;3: def ( arg )  :
+              ^
 
 My best guess:
-  You tried to define a function or method
-  and did not use the correct syntax.
-  The correct syntax is:
-      def name ( optional_arguments ):
+    You tried to define a function or method
+    and did not use the correct syntax.
+    The correct syntax is:
+        def name ( optional_arguments ):
 </pre></div>
 </div>
 </div>
@@ -287,18 +287,18 @@ A SyntaxError occurs when Python cannot understand your code.
 Python could not parse the file &#39;raise_syntax_error9.py&#39;
 beyond the location indicated below by --&gt; and ^.
 
-   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal&quot;&quot;&quot;
-   2:
---&gt;3: 1 = a
-     ^
+       1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal&quot;&quot;&quot;
+       2:
+    --&gt;3: 1 = a
+         ^
 
 My best guess:
-  You wrote an expression like
-      1 = something
-  where &lt;1&gt;, on the left hand-side of the equal sign, is
-  an actual number or string (what Python calls a &#39;literal&#39;),
-  and not the name of a variable.  Perhaps you meant to write:
-      something = 1
+    You wrote an expression like
+        1 = something
+    where &lt;1&gt;, on the left hand-side of the equal sign, is
+    an actual number or string (what Python calls a &#39;literal&#39;),
+    and not the name of a variable.  Perhaps you meant to write:
+        something = 1
 </pre></div>
 </div>
 </div>
@@ -312,16 +312,16 @@ A SyntaxError occurs when Python cannot understand your code.
 Python could not parse the file &#39;raise_syntax_error10.py&#39;
 beyond the location indicated below by --&gt; and ^.
 
-   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
-   2:
---&gt;3: import pen from turtle
-                    ^
+       1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+       2:
+    --&gt;3: import pen from turtle
+                        ^
 
 My best guess:
-  You wrote something like
-      import X from Y
-  instead of
-      from Y import X
+    You wrote something like
+        import X from Y
+    instead of
+        from Y import X
 </pre></div>
 </div>
 </div>
