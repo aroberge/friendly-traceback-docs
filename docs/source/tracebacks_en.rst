@@ -30,9 +30,9 @@ ArithmeticError
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         ArithmeticError: 
-    
+        
     ArithmeticError is the base class for those built-in exceptions
     that are raised for various arithmetic errors.
     It is unusual that you are seeing this exception;
@@ -51,9 +51,9 @@ ImportError
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         ImportError: cannot import name 'Pi' from 'math' (unknown location)
-    
+        
     This exception indicates that a certain object could not
     be imported from a module or package. Most often, this is
     because the name of the object is not spelled correctly.
@@ -76,20 +76,21 @@ IndentationError - 1: expected an indented block
 .. code-block:: none
 
 
-    Python exception: 
-        IndentationError: expected an indented block (raise_indentation_error1.py, line 4)
-    
+    Python exception:
+        IndentationError: expected an indented block
+        
     An IndentationError occurs when a given line of code is
     not indented (aligned vertically with other lines) as expected.
-    Python could not parse the file 'raise_indentation_error1.py'
+    
+    Python could not parse the file 'TESTS:\syntax\raise_indentation_error1.py'
     beyond the location indicated below by --> and ^.
     
-           1: '''Should raise IndentationError'''
-           2: 
-           3: if True:
-        -->4: pass
-                 ^
-    
+       1: '''Should raise IndentationError'''
+       2: 
+       3: if True:
+    -->4: pass
+             ^
+
     Likely cause:
         In this case, the line identified above
         was expected to begin a new indented block.
@@ -100,20 +101,21 @@ IndentationError - 2: unexpected indent
 .. code-block:: none
 
 
-    Python exception: 
-        IndentationError: unexpected indent (raise_indentation_error2.py, line 4)
-    
+    Python exception:
+        IndentationError: unexpected indent
+        
     An IndentationError occurs when a given line of code is
     not indented (aligned vertically with other lines) as expected.
-    Python could not parse the file 'raise_indentation_error2.py'
+    
+    Python could not parse the file 'TESTS:\syntax\raise_indentation_error2.py'
     beyond the location indicated below by --> and ^.
     
-           1: '''Should raise IndentationError'''
-           2: if True:
-           3:     pass
-        -->4:       pass
-                   ^
-    
+       1: '''Should raise IndentationError'''
+       2: if True:
+       3:     pass
+    -->4:       pass
+               ^
+
     Likely cause:
         In this case, the line identified above
         is more indented than expected and 
@@ -125,20 +127,21 @@ IndentationError - 3: unindent does not match ...
 .. code-block:: none
 
 
-    Python exception: 
-        IndentationError: unindent does not match any outer indentation level (raise_indentation_error3.py, line 4)
-    
+    Python exception:
+        IndentationError: unindent does not match any outer indentation level
+        
     An IndentationError occurs when a given line of code is
     not indented (aligned vertically with other lines) as expected.
-    Python could not parse the file 'raise_indentation_error3.py'
+    
+    Python could not parse the file 'TESTS:\syntax\raise_indentation_error3.py'
     beyond the location indicated below by --> and ^.
     
-           1: '''Should raise IndentationError'''
-           2: if True:
-           3:       pass
-        -->4:     pass
-                      ^
-    
+       1: '''Should raise IndentationError'''
+       2: if True:
+       3:       pass
+    -->4:     pass
+                  ^
+
     Likely cause:
         In this case, the line identified above is
         less indented than the preceding one,
@@ -150,9 +153,9 @@ KeyError
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         KeyError: 'c'
-    
+        
     A KeyError is raised when a value is not found as a
     key in a Python dict.
     
@@ -175,9 +178,9 @@ LookupError
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         LookupError: 
-    
+        
     LookupError is the base class for the exceptions that are raised
     when a key or index used on a mapping or sequence is invalid.
     It can also be raised directly by codecs.lookup().
@@ -195,9 +198,9 @@ IndexError - short tuple
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         IndexError: tuple index out of range
-    
+        
     An IndexError occurs when you are try to get an item from a list,
     a tuple, or a similar object (sequence), by using an index which
     does not exists; typically, this is because the index you give
@@ -223,9 +226,9 @@ IndexError - long list
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         IndexError: list index out of range
-    
+        
     An IndexError occurs when you are try to get an item from a list,
     a tuple, or a similar object (sequence), by using an index which
     does not exists; typically, this is because the index you give
@@ -251,9 +254,9 @@ ModuleNotFoundError
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         ModuleNotFoundError: No module named 'does_not_exist'
-    
+        
     A ModuleNotFoundError exception indicates that you
     are trying to import a module that cannot be found by Python.
     This could be because you misspelled the name of the module
@@ -276,9 +279,9 @@ NameError
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         NameError: name 'c' is not defined
-    
+        
     A NameError exception indicates that a variable or
     function name is not known to Python.
     Most often, this is because there is a spelling mistake.
@@ -301,9 +304,9 @@ TabError
 .. code-block:: none
 
 
-    Python exception: 
-        TabError: inconsistent use of tabs and spaces in indentation (raise_tab_error.py, line 7)
-    
+    Python exception:
+        TabError: inconsistent use of tabs and spaces in indentation
+        
     A TabError indicates that you have used both spaces
     and tab characters to indent your code.
     This is not allowed in Python.
@@ -311,24 +314,24 @@ TabError
     by inserting either spaces or tab characters at the beginning of lines.
     Python's recommendation is to always use spaces to indent your code.
     
-    Python could not parse the file 'raise_tab_error.py'
+    Python could not parse the file 'TESTS:\syntax\raise_tab_error.py'
     beyond the location indicated below by --> and ^.
     
-            4: 
-            5: def test_tab_error():
-            6:     if True:
-        --> 7: 	pass
-                    ^
-    
+        4: 
+        5: def test_tab_error():
+        6:     if True:
+    --> 7: 	pass
+                ^
+
 TypeError - 1: concatenate two different types
 ----------------------------------------------
 
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: can only concatenate str (not "int") to str
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -353,9 +356,9 @@ TypeError - 1a: concatenate two different types
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: can only concatenate str (not "list") to str
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -380,9 +383,9 @@ TypeError - 1b: concatenate two different types
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: can only concatenate tuple (not "list") to tuple
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -407,9 +410,9 @@ TypeError - 2: unsupported operand type(s) for +
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -434,9 +437,9 @@ TypeError - 2a: unsupported operand type(s) for +=
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for +=: 'int' and 'str'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -461,9 +464,9 @@ TypeError - 3: unsupported operand type(s) for -
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for -: 'tuple' and 'list'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -488,9 +491,9 @@ TypeError - 3a: unsupported operand type(s) for -=
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for -=: 'tuple' and 'list'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -515,9 +518,9 @@ TypeError - 4: unsupported operand type(s) for *
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for *: 'complex' and 'set'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -542,9 +545,9 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for *=: 'complex' and 'set'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -569,9 +572,9 @@ TypeError - 5: unsupported operand type(s) for /
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for /: 'dict' and 'float'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -596,9 +599,9 @@ TypeError - 5a: unsupported operand type(s) for /=
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for /=: 'dict' and 'float'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -623,9 +626,9 @@ TypeError - 5b: unsupported operand type(s) for //
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for //: 'dict' and 'float'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -650,9 +653,9 @@ TypeError - 5c: unsupported operand type(s) for //=
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for //=: 'dict' and 'float'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -677,9 +680,9 @@ TypeError - 6: unsupported operand type(s) for &
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for &: 'str' and 'int'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -705,9 +708,9 @@ TypeError - 6a: unsupported operand type(s) for &=
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for &=: 'str' and 'int'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -733,9 +736,9 @@ TypeError - 7: unsupported operand type(s) for **
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -761,9 +764,9 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -789,9 +792,9 @@ TypeError - 8: unsupported operand type(s) for >>
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for >>: 'str' and 'int'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -817,9 +820,9 @@ TypeError - 8a: unsupported operand type(s) for >>=
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for >>=: 'str' and 'int'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -845,9 +848,9 @@ TypeError - 9: unsupported operand type(s) for @
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for @: 'str' and 'int'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -875,9 +878,9 @@ TypeError - 9a: unsupported operand type(s) for @=
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: unsupported operand type(s) for @=: 'str' and 'int'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -905,9 +908,9 @@ TypeError - 10: comparison between incompatible types
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: '<' not supported between instances of 'int' and 'str'
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -933,9 +936,9 @@ UnboundLocalError
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         UnboundLocalError: local variable 'a' referenced before assignment
-    
+        
     In Python, variables that are used inside a function are known as 
     local variables. Before they are used, they must be assigned a value.
     A variable that is used before it is assigned a value is assumed to
@@ -957,7 +960,7 @@ UnboundLocalError
        20:     try:
     -->21:         outer()
        22:     except Exception:
-    global outer: <function outer at 0x02F506A8>
+    global outer: <function outer at 0x03A92078>
 
     Exception raised on line 13 of file 'TESTS:\test_unbound_local_error.py'.
     
@@ -975,9 +978,9 @@ Unknown exception
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         MyException: Some informative message
-    
+        
     No information is known about this exception.
     Please report this example to
     https://github.com/aroberge/friendly-traceback/issues
@@ -997,9 +1000,9 @@ ZeroDivisionError - 1
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         ZeroDivisionError: division by zero
-    
+        
     A ZeroDivisionError occurs when you are attempting to divide
     a value by zero:
         result = my_variable / 0
@@ -1020,9 +1023,9 @@ ZeroDivisionError - 2
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         ZeroDivisionError: integer division or modulo by zero
-    
+        
     A ZeroDivisionError occurs when you are attempting to divide
     a value by zero:
         result = my_variable / 0

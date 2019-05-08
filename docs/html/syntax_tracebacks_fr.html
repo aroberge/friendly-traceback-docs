@@ -107,17 +107,17 @@ Python version: 3.7.3</p>
 <div class="section" id="syntaxerror-assign-to-keyword">
 <h2>SyntaxError - Assign to keyword<a class="headerlink" href="#syntaxerror-assign-to-keyword" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax (raise_syntax_error1.py, line 3)
+    SyntaxError: invalid syntax
 
 Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
 
-Python peut seulement analyser le fichier &#39;raise_syntax_error1.py&#39;
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error1.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-       1: &quot;&quot;&quot; Should raise SyntaxError&quot;&quot;&quot;
-       2:
-    --&gt;3: pass = 2
-               ^
+   1: &quot;&quot;&quot; Should raise SyntaxError&quot;&quot;&quot;
+   2:
+--&gt;3: pass = 2
+           ^
 
 Ma meilleure hypothèse :
     Vous essayiez d’assigner une valeur à un mot clé Python.
@@ -128,17 +128,17 @@ Ma meilleure hypothèse :
 <div class="section" id="syntaxerror-missing-colon-1">
 <h2>SyntaxError - Missing colon 1<a class="headerlink" href="#syntaxerror-missing-colon-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax (raise_syntax_error2.py, line 3)
+    SyntaxError: invalid syntax
 
 Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
 
-Python peut seulement analyser le fichier &#39;raise_syntax_error2.py&#39;
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error2.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-       1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
-       2:
-    --&gt;3: if True
-                 ^
+   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+   2:
+--&gt;3: if True
+             ^
 
 Ma meilleure hypothèse :
     Vous avez écrit un énoncé débutant avec
@@ -149,17 +149,17 @@ Ma meilleure hypothèse :
 <div class="section" id="syntaxerror-missing-colon-2">
 <h2>SyntaxError - Missing colon 2<a class="headerlink" href="#syntaxerror-missing-colon-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax (raise_syntax_error3.py, line 3)
+    SyntaxError: invalid syntax
 
 Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
 
-Python peut seulement analyser le fichier &#39;raise_syntax_error3.py&#39;
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error3.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-       1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
-       2:
-    --&gt;3: while True  # a comment
-                                 ^
+   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+   2:
+--&gt;3: while True  # a comment
+                             ^
 
 Ma meilleure hypothèse :
     Vous vouliez débuter une boucle &#39;while&#39;
@@ -170,18 +170,18 @@ Ma meilleure hypothèse :
 <div class="section" id="syntaxerror-elif-not-else-if">
 <h2>SyntaxError - elif, not else if<a class="headerlink" href="#syntaxerror-elif-not-else-if" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax (raise_syntax_error4.py, line 5)
+    SyntaxError: invalid syntax
 
 Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
 
-Python peut seulement analyser le fichier &#39;raise_syntax_error4.py&#39;
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error4.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-       2:
-       3: if False:
-       4:     pass
-    --&gt;5: else if True:
-                ^
+   2:
+   3: if False:
+   4:     pass
+--&gt;5: else if True:
+            ^
 
 Ma meilleure hypothèse :
     Vous avez écrit &#39;else if&#39;
@@ -192,18 +192,18 @@ Ma meilleure hypothèse :
 <div class="section" id="syntaxerror-elif-not-elseif">
 <h2>SyntaxError - elif, not elseif<a class="headerlink" href="#syntaxerror-elif-not-elseif" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax (raise_syntax_error5.py, line 5)
+    SyntaxError: invalid syntax
 
 Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
 
-Python peut seulement analyser le fichier &#39;raise_syntax_error5.py&#39;
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error5.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-       2:
-       3: if False:
-       4:     pass
-    --&gt;5: elseif True:
-                    ^
+   2:
+   3: if False:
+   4:     pass
+--&gt;5: elseif True:
+                ^
 
 Ma meilleure hypothèse :
     Vous avez écrit &#39;elseif&#39;
@@ -214,17 +214,17 @@ Ma meilleure hypothèse :
 <div class="section" id="syntaxerror-malformed-def-statment-1">
 <h2>SyntaxError - malformed def statment - 1<a class="headerlink" href="#syntaxerror-malformed-def-statment-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax (raise_syntax_error6.py, line 3)
+    SyntaxError: invalid syntax
 
 Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
 
-Python peut seulement analyser le fichier &#39;raise_syntax_error6.py&#39;
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error6.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-       1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
-       2:
-    --&gt;3: def :
-              ^
+   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+   2:
+--&gt;3: def :
+          ^
 
 Ma meilleure hypothèse :
     Vous vouliez définir une fonction ou une méthode,
@@ -237,17 +237,17 @@ Ma meilleure hypothèse :
 <div class="section" id="syntaxerror-malformed-def-statment-2">
 <h2>SyntaxError - malformed def statment - 2<a class="headerlink" href="#syntaxerror-malformed-def-statment-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax (raise_syntax_error7.py, line 3)
+    SyntaxError: invalid syntax
 
 Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
 
-Python peut seulement analyser le fichier &#39;raise_syntax_error7.py&#39;
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error7.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-       1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
-       2:
-    --&gt;3: def name  :
-                    ^
+   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+   2:
+--&gt;3: def name  :
+                ^
 
 Ma meilleure hypothèse :
     Vous vouliez définir une fonction ou une méthode,
@@ -260,17 +260,17 @@ Ma meilleure hypothèse :
 <div class="section" id="syntaxerror-malformed-def-statment-3">
 <h2>SyntaxError - malformed def statment - 3<a class="headerlink" href="#syntaxerror-malformed-def-statment-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax (raise_syntax_error8.py, line 3)
+    SyntaxError: invalid syntax
 
 Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
 
-Python peut seulement analyser le fichier &#39;raise_syntax_error8.py&#39;
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error8.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-       1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
-       2:
-    --&gt;3: def ( arg )  :
-              ^
+   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+   2:
+--&gt;3: def ( arg )  :
+          ^
 
 Ma meilleure hypothèse :
     Vous vouliez définir une fonction ou une méthode,
@@ -283,17 +283,17 @@ Ma meilleure hypothèse :
 <div class="section" id="syntaxerror-can-t-assign-to-literal">
 <h2>SyntaxError - can’t assign to literal<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: can&#39;t assign to literal (raise_syntax_error9.py, line 3)
+    SyntaxError: can&#39;t assign to literal
 
 Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
 
-Python peut seulement analyser le fichier &#39;raise_syntax_error9.py&#39;
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error9.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-       1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal&quot;&quot;&quot;
-       2:
-    --&gt;3: 1 = a
-         ^
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal&quot;&quot;&quot;
+   2:
+--&gt;3: 1 = a
+     ^
 
 Ma meilleure hypothèse :
     Vous avez écrit une expression comme
@@ -308,17 +308,17 @@ Ma meilleure hypothèse :
 <div class="section" id="syntaxerror-import-x-from-y">
 <h2>SyntaxError - import X from Y<a class="headerlink" href="#syntaxerror-import-x-from-y" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax (raise_syntax_error10.py, line 3)
+    SyntaxError: invalid syntax
 
 Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
 
-Python peut seulement analyser le fichier &#39;raise_syntax_error10.py&#39;
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error10.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-       1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
-       2:
-    --&gt;3: import pen from turtle
-                        ^
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: import pen from turtle
+                    ^
 
 Ma meilleure hypothèse :
     Vous avez écrit quelque chose comme

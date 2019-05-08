@@ -29,19 +29,19 @@ SyntaxError - Assign to keyword
 .. code-block:: none
 
 
-    Python exception: 
-        SyntaxError: invalid syntax (raise_syntax_error1.py, line 3)
-    
+    Python exception:
+        SyntaxError: invalid syntax
+        
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'raise_syntax_error1.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error1.py'
     beyond the location indicated below by --> and ^.
     
-           1: """ Should raise SyntaxError"""
-           2: 
-        -->3: pass = 2
-                   ^
-    
+       1: """ Should raise SyntaxError"""
+       2: 
+    -->3: pass = 2
+               ^
+
     My best guess:
         You were trying to assign a value to a Python keyword.
         This is not allowed.
@@ -53,19 +53,19 @@ SyntaxError - Missing colon 1
 .. code-block:: none
 
 
-    Python exception: 
-        SyntaxError: invalid syntax (raise_syntax_error2.py, line 3)
-    
+    Python exception:
+        SyntaxError: invalid syntax
+        
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'raise_syntax_error2.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error2.py'
     beyond the location indicated below by --> and ^.
     
-           1: """Should raise SyntaxError"""
-           2: 
-        -->3: if True
-                     ^
-    
+       1: """Should raise SyntaxError"""
+       2: 
+    -->3: if True
+                 ^
+
     My best guess:
         You wrote a statement beginning with
         'if' but forgot to add a colon ':' at the end
@@ -77,19 +77,19 @@ SyntaxError - Missing colon 2
 .. code-block:: none
 
 
-    Python exception: 
-        SyntaxError: invalid syntax (raise_syntax_error3.py, line 3)
-    
+    Python exception:
+        SyntaxError: invalid syntax
+        
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'raise_syntax_error3.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error3.py'
     beyond the location indicated below by --> and ^.
     
-           1: """Should raise SyntaxError"""
-           2: 
-        -->3: while True  # a comment
-                                     ^
-    
+       1: """Should raise SyntaxError"""
+       2: 
+    -->3: while True  # a comment
+                                 ^
+
     My best guess:
         You wrote a 'while' loop but
         forgot to add a colon ':' at the end
@@ -101,20 +101,20 @@ SyntaxError - elif, not else if
 .. code-block:: none
 
 
-    Python exception: 
-        SyntaxError: invalid syntax (raise_syntax_error4.py, line 5)
-    
+    Python exception:
+        SyntaxError: invalid syntax
+        
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'raise_syntax_error4.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error4.py'
     beyond the location indicated below by --> and ^.
     
-           2: 
-           3: if False:
-           4:     pass
-        -->5: else if True:
-                    ^
-    
+       2: 
+       3: if False:
+       4:     pass
+    -->5: else if True:
+                ^
+
     My best guess:
         You meant to use Python's 'elif' keyword
         but wrote 'else if' instead
@@ -126,20 +126,20 @@ SyntaxError - elif, not elseif
 .. code-block:: none
 
 
-    Python exception: 
-        SyntaxError: invalid syntax (raise_syntax_error5.py, line 5)
-    
+    Python exception:
+        SyntaxError: invalid syntax
+        
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'raise_syntax_error5.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error5.py'
     beyond the location indicated below by --> and ^.
     
-           2: 
-           3: if False:
-           4:     pass
-        -->5: elseif True:
-                        ^
-    
+       2: 
+       3: if False:
+       4:     pass
+    -->5: elseif True:
+                    ^
+
     My best guess:
         You meant to use Python's 'elif' keyword
         but wrote 'elseif' instead
@@ -151,19 +151,19 @@ SyntaxError - malformed def statment - 1
 .. code-block:: none
 
 
-    Python exception: 
-        SyntaxError: invalid syntax (raise_syntax_error6.py, line 3)
-    
+    Python exception:
+        SyntaxError: invalid syntax
+        
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'raise_syntax_error6.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error6.py'
     beyond the location indicated below by --> and ^.
     
-           1: """Should raise SyntaxError"""
-           2: 
-        -->3: def :
-                  ^
-    
+       1: """Should raise SyntaxError"""
+       2: 
+    -->3: def :
+              ^
+
     My best guess:
         You tried to define a function or method
         and did not use the correct syntax.
@@ -176,19 +176,19 @@ SyntaxError - malformed def statment - 2
 .. code-block:: none
 
 
-    Python exception: 
-        SyntaxError: invalid syntax (raise_syntax_error7.py, line 3)
-    
+    Python exception:
+        SyntaxError: invalid syntax
+        
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'raise_syntax_error7.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error7.py'
     beyond the location indicated below by --> and ^.
     
-           1: """Should raise SyntaxError"""
-           2: 
-        -->3: def name  :
-                        ^
-    
+       1: """Should raise SyntaxError"""
+       2: 
+    -->3: def name  :
+                    ^
+
     My best guess:
         You tried to define a function or method
         and did not use the correct syntax.
@@ -201,19 +201,19 @@ SyntaxError - malformed def statment - 3
 .. code-block:: none
 
 
-    Python exception: 
-        SyntaxError: invalid syntax (raise_syntax_error8.py, line 3)
-    
+    Python exception:
+        SyntaxError: invalid syntax
+        
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'raise_syntax_error8.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error8.py'
     beyond the location indicated below by --> and ^.
     
-           1: """Should raise SyntaxError"""
-           2: 
-        -->3: def ( arg )  :
-                  ^
-    
+       1: """Should raise SyntaxError"""
+       2: 
+    -->3: def ( arg )  :
+              ^
+
     My best guess:
         You tried to define a function or method
         and did not use the correct syntax.
@@ -226,19 +226,19 @@ SyntaxError - can't assign to literal
 .. code-block:: none
 
 
-    Python exception: 
-        SyntaxError: can't assign to literal (raise_syntax_error9.py, line 3)
-    
+    Python exception:
+        SyntaxError: can't assign to literal
+        
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'raise_syntax_error9.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error9.py'
     beyond the location indicated below by --> and ^.
     
-           1: """Should raise SyntaxError: can't assign to literal"""
-           2: 
-        -->3: 1 = a
-             ^
-    
+       1: """Should raise SyntaxError: can't assign to literal"""
+       2: 
+    -->3: 1 = a
+         ^
+
     My best guess:
         You wrote an expression like
             1 = something
@@ -254,19 +254,19 @@ SyntaxError - import X from Y
 .. code-block:: none
 
 
-    Python exception: 
-        SyntaxError: invalid syntax (raise_syntax_error10.py, line 3)
-    
+    Python exception:
+        SyntaxError: invalid syntax
+        
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'raise_syntax_error10.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error10.py'
     beyond the location indicated below by --> and ^.
     
-           1: """Should raise SyntaxError: invalid syntax"""
-           2: 
-        -->3: import pen from turtle
-                            ^
-    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: import pen from turtle
+                        ^
+
     My best guess:
         You wrote something like
             import X from Y

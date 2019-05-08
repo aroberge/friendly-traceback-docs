@@ -16,9 +16,9 @@ ImportError
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         ImportError: cannot import name 'Pi'
-    
+        
     This exception indicates that a certain object could not
     be imported from a module or package. Most often, this is
     because the name of the object is not spelled correctly.
@@ -39,9 +39,9 @@ TypeError - 1: must be str, not int
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: must be str, not int
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.
@@ -66,9 +66,9 @@ TypeError - 1a: must be str, not list
 .. code-block:: none
 
 
-    Python exception: 
+    Python exception:
         TypeError: must be str, not list
-    
+        
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
     or by calling a function with the wrong type of object.

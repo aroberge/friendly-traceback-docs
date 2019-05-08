@@ -32,19 +32,19 @@ SyntaxError - Assign to keyword
 .. code-block:: none
 
 
-    Exception Python: 
-        SyntaxError: invalid syntax (raise_syntax_error1.py, line 3)
-    
+    Exception Python:
+        SyntaxError: invalid syntax
+        
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'raise_syntax_error1.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error1.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-           1: """ Should raise SyntaxError"""
-           2: 
-        -->3: pass = 2
-                   ^
-    
+       1: """ Should raise SyntaxError"""
+       2: 
+    -->3: pass = 2
+               ^
+
     Ma meilleure hypothèse :
         Vous essayiez d’assigner une valeur à un mot clé Python.
         Ceci n’est pas permis.
@@ -56,19 +56,19 @@ SyntaxError - Missing colon 1
 .. code-block:: none
 
 
-    Exception Python: 
-        SyntaxError: invalid syntax (raise_syntax_error2.py, line 3)
-    
+    Exception Python:
+        SyntaxError: invalid syntax
+        
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'raise_syntax_error2.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error2.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-           1: """Should raise SyntaxError"""
-           2: 
-        -->3: if True
-                     ^
-    
+       1: """Should raise SyntaxError"""
+       2: 
+    -->3: if True
+                 ^
+
     Ma meilleure hypothèse :
         Vous avez écrit un énoncé débutant avec
         'if' mais vous avez oublié d’ajouter deux points ':' à la fin.
@@ -80,19 +80,19 @@ SyntaxError - Missing colon 2
 .. code-block:: none
 
 
-    Exception Python: 
-        SyntaxError: invalid syntax (raise_syntax_error3.py, line 3)
-    
+    Exception Python:
+        SyntaxError: invalid syntax
+        
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'raise_syntax_error3.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error3.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-           1: """Should raise SyntaxError"""
-           2: 
-        -->3: while True  # a comment
-                                     ^
-    
+       1: """Should raise SyntaxError"""
+       2: 
+    -->3: while True  # a comment
+                                 ^
+
     Ma meilleure hypothèse :
         Vous vouliez débuter une boucle 'while'
         mais vous avez oublié d’ajouter deux points ':' à la fin.
@@ -104,20 +104,20 @@ SyntaxError - elif, not else if
 .. code-block:: none
 
 
-    Exception Python: 
-        SyntaxError: invalid syntax (raise_syntax_error4.py, line 5)
-    
+    Exception Python:
+        SyntaxError: invalid syntax
+        
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'raise_syntax_error4.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error4.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-           2: 
-           3: if False:
-           4:     pass
-        -->5: else if True:
-                    ^
-    
+       2: 
+       3: if False:
+       4:     pass
+    -->5: else if True:
+                ^
+
     Ma meilleure hypothèse :
         Vous avez écrit 'else if'
         au lieu d'utiliser le mot-clé 'elif'.
@@ -129,20 +129,20 @@ SyntaxError - elif, not elseif
 .. code-block:: none
 
 
-    Exception Python: 
-        SyntaxError: invalid syntax (raise_syntax_error5.py, line 5)
-    
+    Exception Python:
+        SyntaxError: invalid syntax
+        
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'raise_syntax_error5.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error5.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-           2: 
-           3: if False:
-           4:     pass
-        -->5: elseif True:
-                        ^
-    
+       2: 
+       3: if False:
+       4:     pass
+    -->5: elseif True:
+                    ^
+
     Ma meilleure hypothèse :
         Vous avez écrit 'elseif'
         au lieu d'utiliser le mot-clé 'elif'.
@@ -154,19 +154,19 @@ SyntaxError - malformed def statment - 1
 .. code-block:: none
 
 
-    Exception Python: 
-        SyntaxError: invalid syntax (raise_syntax_error6.py, line 3)
-    
+    Exception Python:
+        SyntaxError: invalid syntax
+        
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'raise_syntax_error6.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error6.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-           1: """Should raise SyntaxError"""
-           2: 
-        -->3: def :
-                  ^
-    
+       1: """Should raise SyntaxError"""
+       2: 
+    -->3: def :
+              ^
+
     Ma meilleure hypothèse :
         Vous vouliez définir une fonction ou une méthode,
         mais vous avez fait des erreurs de syntaxe.
@@ -180,19 +180,19 @@ SyntaxError - malformed def statment - 2
 .. code-block:: none
 
 
-    Exception Python: 
-        SyntaxError: invalid syntax (raise_syntax_error7.py, line 3)
-    
+    Exception Python:
+        SyntaxError: invalid syntax
+        
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'raise_syntax_error7.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error7.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-           1: """Should raise SyntaxError"""
-           2: 
-        -->3: def name  :
-                        ^
-    
+       1: """Should raise SyntaxError"""
+       2: 
+    -->3: def name  :
+                    ^
+
     Ma meilleure hypothèse :
         Vous vouliez définir une fonction ou une méthode,
         mais vous avez fait des erreurs de syntaxe.
@@ -206,19 +206,19 @@ SyntaxError - malformed def statment - 3
 .. code-block:: none
 
 
-    Exception Python: 
-        SyntaxError: invalid syntax (raise_syntax_error8.py, line 3)
-    
+    Exception Python:
+        SyntaxError: invalid syntax
+        
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'raise_syntax_error8.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error8.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-           1: """Should raise SyntaxError"""
-           2: 
-        -->3: def ( arg )  :
-                  ^
-    
+       1: """Should raise SyntaxError"""
+       2: 
+    -->3: def ( arg )  :
+              ^
+
     Ma meilleure hypothèse :
         Vous vouliez définir une fonction ou une méthode,
         mais vous avez fait des erreurs de syntaxe.
@@ -232,19 +232,19 @@ SyntaxError - can't assign to literal
 .. code-block:: none
 
 
-    Exception Python: 
-        SyntaxError: can't assign to literal (raise_syntax_error9.py, line 3)
-    
+    Exception Python:
+        SyntaxError: can't assign to literal
+        
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'raise_syntax_error9.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error9.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-           1: """Should raise SyntaxError: can't assign to literal"""
-           2: 
-        -->3: 1 = a
-             ^
-    
+       1: """Should raise SyntaxError: can't assign to literal"""
+       2: 
+    -->3: 1 = a
+         ^
+
     Ma meilleure hypothèse :
         Vous avez écrit une expression comme
             1 = variable
@@ -260,19 +260,19 @@ SyntaxError - import X from Y
 .. code-block:: none
 
 
-    Exception Python: 
-        SyntaxError: invalid syntax (raise_syntax_error10.py, line 3)
-    
+    Exception Python:
+        SyntaxError: invalid syntax
+        
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'raise_syntax_error10.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error10.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-           1: """Should raise SyntaxError: invalid syntax"""
-           2: 
-        -->3: import pen from turtle
-                            ^
-    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: import pen from turtle
+                        ^
+
     Ma meilleure hypothèse :
         Vous avez écrit quelque chose comme
             import X from Y
