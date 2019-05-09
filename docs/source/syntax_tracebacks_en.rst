@@ -47,6 +47,7 @@ SyntaxError - Assign to keyword
         This is not allowed.
         
         
+
 SyntaxError - Missing colon 1
 -----------------------------
 
@@ -71,6 +72,7 @@ SyntaxError - Missing colon 1
         'if' but forgot to add a colon ':' at the end
         
         
+
 SyntaxError - Missing colon 2
 -----------------------------
 
@@ -95,6 +97,7 @@ SyntaxError - Missing colon 2
         forgot to add a colon ':' at the end
         
         
+
 SyntaxError - elif, not else if
 -------------------------------
 
@@ -120,6 +123,7 @@ SyntaxError - elif, not else if
         but wrote 'else if' instead
         
         
+
 SyntaxError - elif, not elseif
 ------------------------------
 
@@ -145,6 +149,7 @@ SyntaxError - elif, not elseif
         but wrote 'elseif' instead
         
         
+
 SyntaxError - malformed def statment - 1
 ----------------------------------------
 
@@ -170,6 +175,7 @@ SyntaxError - malformed def statment - 1
         The correct syntax is:
             def name ( optional_arguments ):
         
+
 SyntaxError - malformed def statment - 2
 ----------------------------------------
 
@@ -195,6 +201,7 @@ SyntaxError - malformed def statment - 2
         The correct syntax is:
             def name ( optional_arguments ):
         
+
 SyntaxError - malformed def statment - 3
 ----------------------------------------
 
@@ -220,6 +227,7 @@ SyntaxError - malformed def statment - 3
         The correct syntax is:
             def name ( optional_arguments ):
         
+
 SyntaxError - can't assign to literal
 -------------------------------------
 
@@ -248,6 +256,7 @@ SyntaxError - can't assign to literal
             something = 1
         
         
+
 SyntaxError - import X from Y
 -----------------------------
 

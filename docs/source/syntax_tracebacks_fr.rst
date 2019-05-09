@@ -50,6 +50,7 @@ SyntaxError - Assign to keyword
         Ceci n’est pas permis.
         
         
+
 SyntaxError - Missing colon 1
 -----------------------------
 
@@ -74,6 +75,7 @@ SyntaxError - Missing colon 1
         'if' mais vous avez oublié d’ajouter deux points ':' à la fin.
         
         
+
 SyntaxError - Missing colon 2
 -----------------------------
 
@@ -98,6 +100,7 @@ SyntaxError - Missing colon 2
         mais vous avez oublié d’ajouter deux points ':' à la fin.
         
         
+
 SyntaxError - elif, not else if
 -------------------------------
 
@@ -123,6 +126,7 @@ SyntaxError - elif, not else if
         au lieu d'utiliser le mot-clé 'elif'.
         
         
+
 SyntaxError - elif, not elseif
 ------------------------------
 
@@ -148,6 +152,7 @@ SyntaxError - elif, not elseif
         au lieu d'utiliser le mot-clé 'elif'.
         
         
+
 SyntaxError - malformed def statment - 1
 ----------------------------------------
 
@@ -174,6 +179,7 @@ SyntaxError - malformed def statment - 1
             def nom ( arguments_optionnels ) :
         
         
+
 SyntaxError - malformed def statment - 2
 ----------------------------------------
 
@@ -200,6 +206,7 @@ SyntaxError - malformed def statment - 2
             def nom ( arguments_optionnels ) :
         
         
+
 SyntaxError - malformed def statment - 3
 ----------------------------------------
 
@@ -226,6 +233,7 @@ SyntaxError - malformed def statment - 3
             def nom ( arguments_optionnels ) :
         
         
+
 SyntaxError - can't assign to literal
 -------------------------------------
 
@@ -254,6 +262,7 @@ SyntaxError - can't assign to literal
             variable = 1
         
         
+
 SyntaxError - import X from Y
 -----------------------------
 

@@ -262,6 +262,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 8 du fichier &#39;TESTS:\test_k
     7:     try:
 --&gt; 8:         d[&#39;c&#39;]
     9:     except Exception:
+
 d: {&#39;a&#39;: 1, &#39;b&#39;: 2}
 </pre></div>
 </div>
@@ -305,6 +306,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 9 du fichier &#39;TESTS:\test_i
     8:     try:
 --&gt; 9:         print(a[3], b[2])
    10:     except Exception:
+
 a: (1, 2, 3)
 b: [1, 2, 3]
 </pre></div>
@@ -331,6 +333,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;TESTS:\test_
    20:     try:
 --&gt;21:         print(a[50], b[0])
    22:     except Exception:
+
 a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
 b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
 </pre></div>
@@ -424,6 +427,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 9 du fichier &#39;TESTS:\test_t
     8:         one = 1
 --&gt; 9:         result = a + one
    10:     except Exception:
+
 a: &#39;a&#39;
 one: 1
 </pre></div>
@@ -448,6 +452,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 23 du fichier &#39;TESTS:\test_
    22:         a_list = [1, 2, 3]
 --&gt;23:         result = a + a_list
    24:     except Exception:
+
 a: &#39;a&#39;
 a_list: [1, 2, 3]
 </pre></div>
@@ -472,6 +477,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 37 du fichier &#39;TESTS:\test_
    36:         a_list = [1, 2, 3]
 --&gt;37:         result = a_tuple + a_list
    38:     except Exception:
+
 a_tuple: (1, 2, 3)
 a_list: [1, 2, 3]
 </pre></div>
@@ -496,6 +502,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 49 du fichier &#39;TESTS:\test_
    48:         none = None
 --&gt;49:         result = one + none
    50:     except Exception:
+
 one: 1
 none: None
 </pre></div>
@@ -520,6 +527,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 61 du fichier &#39;TESTS:\test_
    60:         two = &quot;two&quot;
 --&gt;61:         one += two
    62:     except Exception:
+
 one: 1
 two: &#39;two&#39;
 </pre></div>
@@ -544,6 +552,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 73 du fichier &#39;TESTS:\test_
    72:         b = [3, 4]
 --&gt;73:         result = a - b
    74:     except Exception:
+
 a: (1, 2)
 b: [3, 4]
 </pre></div>
@@ -568,6 +577,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 85 du fichier &#39;TESTS:\test_
    84:         b = [3, 4]
 --&gt;85:         a -= b
    86:     except Exception:
+
 a: (1, 2)
 b: [3, 4]
 </pre></div>
@@ -592,6 +602,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 97 du fichier &#39;TESTS:\test_
    96:         b = {2, 3}
 --&gt;97:         result = a * b
    98:     except Exception:
+
 a: 1j
 b: {2, 3}
 </pre></div>
@@ -616,6 +627,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 109 du fichier &#39;TESTS:\test
    108:         b = {2, 3}
 --&gt;109:         a *= b
    110:     except Exception:
+
 a: 1j
 b: {2, 3}
 </pre></div>
@@ -640,6 +652,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 121 du fichier &#39;TESTS:\test
    120:         b = 3.1416
 --&gt;121:         result = a / b
    122:     except Exception:
+
 a: {1: 1, 2: 2}
 b: 3.1416
 </pre></div>
@@ -664,6 +677,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 133 du fichier &#39;TESTS:\test
    132:         b = 3.1416
 --&gt;133:         a /= b
    134:     except Exception:
+
 a: {1: 1, 2: 2}
 b: 3.1416
 </pre></div>
@@ -688,6 +702,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 145 du fichier &#39;TESTS:\test
    144:         b = 3.1416
 --&gt;145:         result = a // b
    146:     except Exception:
+
 a: {1: 1, 2: 2}
 b: 3.1416
 </pre></div>
@@ -712,6 +727,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 157 du fichier &#39;TESTS:\test
    156:         b = 3.1416
 --&gt;157:         a //= b
    158:     except Exception:
+
 a: {1: 1, 2: 2}
 b: 3.1416
 </pre></div>
@@ -737,6 +753,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 169 du fichier &#39;TESTS:\test
    168:         b = 2
 --&gt;169:         result = a &amp; b
    170:     except Exception:
+
 a: &#39;a&#39;
 b: 2
 </pre></div>
@@ -762,6 +779,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 181 du fichier &#39;TESTS:\test
    180:         b = 2
 --&gt;181:         a &amp;= b
    182:     except Exception:
+
 a: &#39;a&#39;
 b: 2
 </pre></div>
@@ -787,6 +805,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 193 du fichier &#39;TESTS:\test
    192:         b = 3.1416
 --&gt;193:         result = a ** b
    194:     except Exception:
+
 a: {1: 1, 2: 2}
 b: 3.1416
 </pre></div>
@@ -812,6 +831,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 205 du fichier &#39;TESTS:\test
    204:         b = 3.1416
 --&gt;205:         a **= b
    206:     except Exception:
+
 a: {1: 1, 2: 2}
 b: 3.1416
 </pre></div>
@@ -837,6 +857,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 217 du fichier &#39;TESTS:\test
    216:         b = 42
 --&gt;217:         result = a &gt;&gt; b
    218:     except Exception:
+
 a: &#39;a&#39;
 b: 42
 </pre></div>
@@ -862,6 +883,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 229 du fichier &#39;TESTS:\test
    228:         b = 42
 --&gt;229:         a &gt;&gt;= b
    230:     except Exception:
+
 a: &#39;a&#39;
 b: 42
 </pre></div>
@@ -889,6 +911,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 241 du fichier &#39;TESTS:\test
    240:         b = 2
 --&gt;241:         result = a @ b
    242:     except Exception:
+
 a: &#39;a&#39;
 b: 2
 </pre></div>
@@ -916,6 +939,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 253 du fichier &#39;TESTS:\test
    252:         b = 2
 --&gt;253:         a @= b
    254:     except Exception:
+
 a: &#39;a&#39;
 b: 2
 </pre></div>
@@ -941,6 +965,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 265 du fichier &#39;TESTS:\test
    264:         b = 42
 --&gt;265:         b &lt; a
    266:     except Exception:
+
 b: 42
 a: &#39;a&#39;
 </pre></div>
@@ -973,7 +998,8 @@ L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;TESTS:\test_
    20:     try:
 --&gt;21:         outer()
    22:     except Exception:
-global outer: &lt;function outer at 0x032716A8&gt;
+
+global outer: &lt;function outer at 0x030CE420&gt;
 
 Exception levée à la ligne du fichier &#39;TESTS:\test_unbound_local_error.py&#39;.
 
@@ -981,6 +1007,7 @@ Exception levée à la ligne du fichier &#39;TESTS:\test_unbound_local_error.py&
    12:         c = 3
 --&gt;13:         a = a + b + c
    14:     inner()
+
 global b: 2
 c: 3
 </pre></div>
@@ -1001,6 +1028,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 11 du fichier &#39;TESTS:\test_
    10:     try:
 --&gt;11:         raise MyException(&quot;Some informative message&quot;)
    12:     except Exception:
+
 global MyException: &lt;class &#39;test_unknown_error.MyException&#39;&gt;
 </pre></div>
 </div>
@@ -1044,6 +1072,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 18 du fichier &#39;TESTS:\test_
    17:     try:
 --&gt;18:         1 % zero
    19:     except Exception:
+
 zero: 0
 </pre></div>
 </div>

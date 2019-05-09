@@ -33,6 +33,7 @@ ImportError
     -->7:         from math import Pi
        8:     except Exception:
 
+
 TypeError - 1: must be str, not int
 -----------------------------------
 
@@ -56,6 +57,7 @@ TypeError - 1: must be str, not int
         8:         one = 1
     --> 9:         result = a + one
        10:     except Exception:
+
     a: 'a'
     one: 1
 
@@ -83,6 +85,7 @@ TypeError - 1a: must be str, not list
        22:         a_list = [1, 2, 3]
     -->23:         result = a + a_list
        24:     except Exception:
+
     a: 'a'
     a_list: [1, 2, 3]
 

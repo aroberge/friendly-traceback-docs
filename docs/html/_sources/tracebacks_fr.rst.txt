@@ -45,6 +45,7 @@ ArithmeticError
     -->10:         raise ArithmeticError
        11:     except Exception:
 
+
 ImportError
 -----------
 
@@ -68,6 +69,7 @@ ImportError
        6:     try:
     -->7:         from math import Pi
        8:     except Exception:
+
 
 IndentationError - 1: expected an indented block
 ------------------------------------------------
@@ -95,6 +97,7 @@ IndentationError - 1: expected an indented block
         Dans ce cas-ci, la ligne indiquée ci-dessus par --> devrait
         normalement commencer un nouveau bloc de code indenté.
         
+
 IndentationError - 2: unexpected indent
 ---------------------------------------
 
@@ -122,6 +125,7 @@ IndentationError - 2: unexpected indent
         est plus indentée que ce qui était attendu et ne
         correspond pas à l'indentation de la ligne précédente.
         
+
 IndentationError - 3: unindent does not match ...
 -------------------------------------------------
 
@@ -149,6 +153,7 @@ IndentationError - 3: unindent does not match ...
         est moins indentée que la ligne précédente
         et n’est pas alignée verticalement avec un autre bloc de code.
         
+
 KeyError
 --------
 
@@ -170,6 +175,7 @@ KeyError
         7:     try:
     --> 8:         d['c']
         9:     except Exception:
+
     d: {'a': 1, 'b': 2}
 
 
@@ -192,6 +198,7 @@ LookupError
        10:         # it directly here for our example.
     -->11:         raise LookupError
        12:     except Exception:
+
 
 IndexError - short tuple
 ------------------------
@@ -218,6 +225,7 @@ IndexError - short tuple
         8:     try:
     --> 9:         print(a[3], b[2])
        10:     except Exception:
+
     a: (1, 2, 3)
     b: [1, 2, 3]
 
@@ -247,6 +255,7 @@ IndexError - long list
        20:     try:
     -->21:         print(a[50], b[0])
        22:     except Exception:
+
     a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
     b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
 
@@ -275,6 +284,7 @@ ModuleNotFoundError
     -->7:         import does_not_exist
        8:     except Exception:
 
+
 NameError
 ---------
 
@@ -299,6 +309,7 @@ NameError
        6:     try:
     -->7:         b = c
        8:     except Exception:
+
 
 TabError
 --------
@@ -349,6 +360,7 @@ TypeError - 1: concatenate two different types
         8:         one = 1
     --> 9:         result = a + one
        10:     except Exception:
+
     a: 'a'
     one: 1
 
@@ -376,6 +388,7 @@ TypeError - 1a: concatenate two different types
        22:         a_list = [1, 2, 3]
     -->23:         result = a + a_list
        24:     except Exception:
+
     a: 'a'
     a_list: [1, 2, 3]
 
@@ -403,6 +416,7 @@ TypeError - 1b: concatenate two different types
        36:         a_list = [1, 2, 3]
     -->37:         result = a_tuple + a_list
        38:     except Exception:
+
     a_tuple: (1, 2, 3)
     a_list: [1, 2, 3]
 
@@ -430,6 +444,7 @@ TypeError - 2: unsupported operand type(s) for +
        48:         none = None
     -->49:         result = one + none
        50:     except Exception:
+
     one: 1
     none: None
 
@@ -457,6 +472,7 @@ TypeError - 2a: unsupported operand type(s) for +=
        60:         two = "two"
     -->61:         one += two
        62:     except Exception:
+
     one: 1
     two: 'two'
 
@@ -484,6 +500,7 @@ TypeError - 3: unsupported operand type(s) for -
        72:         b = [3, 4]
     -->73:         result = a - b
        74:     except Exception:
+
     a: (1, 2)
     b: [3, 4]
 
@@ -511,6 +528,7 @@ TypeError - 3a: unsupported operand type(s) for -=
        84:         b = [3, 4]
     -->85:         a -= b
        86:     except Exception:
+
     a: (1, 2)
     b: [3, 4]
 
@@ -538,6 +556,7 @@ TypeError - 4: unsupported operand type(s) for *
        96:         b = {2, 3}
     -->97:         result = a * b
        98:     except Exception:
+
     a: 1j
     b: {2, 3}
 
@@ -565,6 +584,7 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
        108:         b = {2, 3}
     -->109:         a *= b
        110:     except Exception:
+
     a: 1j
     b: {2, 3}
 
@@ -592,6 +612,7 @@ TypeError - 5: unsupported operand type(s) for /
        120:         b = 3.1416
     -->121:         result = a / b
        122:     except Exception:
+
     a: {1: 1, 2: 2}
     b: 3.1416
 
@@ -619,6 +640,7 @@ TypeError - 5a: unsupported operand type(s) for /=
        132:         b = 3.1416
     -->133:         a /= b
        134:     except Exception:
+
     a: {1: 1, 2: 2}
     b: 3.1416
 
@@ -646,6 +668,7 @@ TypeError - 5b: unsupported operand type(s) for //
        144:         b = 3.1416
     -->145:         result = a // b
        146:     except Exception:
+
     a: {1: 1, 2: 2}
     b: 3.1416
 
@@ -673,6 +696,7 @@ TypeError - 5c: unsupported operand type(s) for //=
        156:         b = 3.1416
     -->157:         a //= b
        158:     except Exception:
+
     a: {1: 1, 2: 2}
     b: 3.1416
 
@@ -701,6 +725,7 @@ TypeError - 6: unsupported operand type(s) for &
        168:         b = 2
     -->169:         result = a & b
        170:     except Exception:
+
     a: 'a'
     b: 2
 
@@ -729,6 +754,7 @@ TypeError - 6a: unsupported operand type(s) for &=
        180:         b = 2
     -->181:         a &= b
        182:     except Exception:
+
     a: 'a'
     b: 2
 
@@ -757,6 +783,7 @@ TypeError - 7: unsupported operand type(s) for **
        192:         b = 3.1416
     -->193:         result = a ** b
        194:     except Exception:
+
     a: {1: 1, 2: 2}
     b: 3.1416
 
@@ -785,6 +812,7 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
        204:         b = 3.1416
     -->205:         a **= b
        206:     except Exception:
+
     a: {1: 1, 2: 2}
     b: 3.1416
 
@@ -813,6 +841,7 @@ TypeError - 8: unsupported operand type(s) for >>
        216:         b = 42
     -->217:         result = a >> b
        218:     except Exception:
+
     a: 'a'
     b: 42
 
@@ -841,6 +870,7 @@ TypeError - 8a: unsupported operand type(s) for >>=
        228:         b = 42
     -->229:         a >>= b
        230:     except Exception:
+
     a: 'a'
     b: 42
 
@@ -871,6 +901,7 @@ TypeError - 9: unsupported operand type(s) for @
        240:         b = 2
     -->241:         result = a @ b
        242:     except Exception:
+
     a: 'a'
     b: 2
 
@@ -901,6 +932,7 @@ TypeError - 9a: unsupported operand type(s) for @=
        252:         b = 2
     -->253:         a @= b
        254:     except Exception:
+
     a: 'a'
     b: 2
 
@@ -929,6 +961,7 @@ TypeError - 10: comparison between incompatible types
        264:         b = 42
     -->265:         b < a
        266:     except Exception:
+
     b: 42
     a: 'a'
 
@@ -964,7 +997,8 @@ UnboundLocalError
        20:     try:
     -->21:         outer()
        22:     except Exception:
-    global outer: <function outer at 0x032716A8>
+
+    global outer: <function outer at 0x030CE420>
 
     Exception levée à la ligne du fichier 'TESTS:\test_unbound_local_error.py'.
     
@@ -972,6 +1006,7 @@ UnboundLocalError
        12:         c = 3
     -->13:         a = a + b + c
        14:     inner()
+
     global b: 2
     c: 3
 
@@ -995,6 +1030,7 @@ Unknown exception
        10:     try:
     -->11:         raise MyException("Some informative message")
        12:     except Exception:
+
     global MyException: <class 'test_unknown_error.MyException'>
 
 
@@ -1021,6 +1057,7 @@ ZeroDivisionError - 1
     -->7:         1 / 0
        8:     except Exception:
 
+
 ZeroDivisionError - 2
 ---------------------
 
@@ -1043,5 +1080,6 @@ ZeroDivisionError - 2
        17:     try:
     -->18:         1 % zero
        19:     except Exception:
+
     zero: 0
 
