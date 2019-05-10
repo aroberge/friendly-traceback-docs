@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Usage &#8212; Friendly tracebacks 0.0.7a documentation</title>
+    <title>Usage &#8212; Friendly tracebacks 0.0.8a documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,7 +29,7 @@
         <li class="right" >
           <a href="index.html" title="Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.7a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.8a documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -37,6 +37,9 @@
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Usage</a><ul>
+<li><a class="reference internal" href="#where-the-output-is-written">Where the output is written?</a></li>
+<li><a class="reference internal" href="#how-much-information-is-printed">How much information is printed?</a></li>
+<li><a class="reference internal" href="#language-used">Language used</a></li>
 <li><a class="reference internal" href="#as-an-exception-hook">As an exception hook</a></li>
 <li><a class="reference internal" href="#catching-exception-locally">Catching exception locally</a></li>
 <li><a class="reference internal" href="#from-the-command-line">From the command line</a></li>
@@ -77,7 +80,7 @@
             
   <div class="section" id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
-<p>There are three basic ways of using friendly-traceback.</p>
+<p>There are three <strong>basic</strong> ways of using friendly-traceback.</p>
 <ol class="arabic">
 <li><p>As an exception hook:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
@@ -89,7 +92,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="c1"># Some code</span>
 <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">())</span>
+    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">()</span>
 </pre></div>
 </div>
 </li>
@@ -99,19 +102,19 @@
 </div>
 </li>
 </ol>
+<div class="section" id="where-the-output-is-written">
+<h2>Where the output is written?<a class="headerlink" href="#where-the-output-is-written" title="Permalink to this headline">¶</a></h2>
 <p>By default, friendly tracebacks are written to <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>.
-However, it is possible to override this choice.</p>
-<p>Let’s look at each of these three cases in a bit more detail.</p>
-<div class="section" id="as-an-exception-hook">
-<h2>As an exception hook<a class="headerlink" href="#as-an-exception-hook" title="Permalink to this headline">¶</a></h2>
-<p>By default, installing Friendly-traceback as an exception hook has all the
-output printed in stderr. This can be redirected to any writable stream
-by using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="n">stream</span><span class="p">)</span>
+However, it is possible to override this choice, as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_stream</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>A special option is available where the output is captured instead:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="s2">&quot;capture&quot;</span><span class="p">)</span>
+<p>Thus, the default amounts to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_stream</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A special option exists to capture the output as a string:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_stream</span><span class="p">(</span><span class="s2">&quot;capture&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Later, this captured output can be retrieved using:</p>
@@ -122,29 +125,94 @@ by using:</p>
 the output will be cleared once it has been retrieved. If this is not the
 desired behaviour, simply use <code class="docutils literal notranslate"><span class="pre">flush=False</span></code>.</p>
 </div>
+<div class="section" id="how-much-information-is-printed">
+<h2>How much information is printed?<a class="headerlink" href="#how-much-information-is-printed" title="Permalink to this headline">¶</a></h2>
+<p>The amount of information shown to the user can be changed using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_level</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What each level correspond to is shown later in this documentation.
+The level currently used can be obtained as follows:</p>
+<blockquote>
+<div><p>level = friendly_traceback.get_level()</p>
+</div></blockquote>
+</div>
+<div class="section" id="language-used">
+<h2>Language used<a class="headerlink" href="#language-used" title="Permalink to this headline">¶</a></h2>
+<p>The language used can be explicitly set as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="s2">&quot;fr&quot;</span><span class="p">)</span>  <span class="c1"># two-letter code for French</span>
+</pre></div>
+</div>
+<p>The language currently used can be obtained using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lang</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_lang</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>If the language requested does not exist, no error is raised nor any warning
+given, but the choice reverts to the default (English).
+More information on the choice of language (localization) can be found
+in the section about design.</p>
+</div>
+<div class="section" id="as-an-exception-hook">
+<h2>As an exception hook<a class="headerlink" href="#as-an-exception-hook" title="Permalink to this headline">¶</a></h2>
+<p>When “installing” friendly-traceback, one can use various optional
+parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="s2">&quot;fr&quot;</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="s2">&quot;capture&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is equivalent to writing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">install</span><span class="p">()</span>
+<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="s2">&quot;fr&quot;</span><span class="p">)</span>
+<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_stream</span><span class="p">(</span><span class="s2">&quot;capture&quot;</span><span class="p">)</span>
+<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_level</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="catching-exception-locally">
 <h2>Catching exception locally<a class="headerlink" href="#catching-exception-locally" title="Permalink to this headline">¶</a></h2>
-<p>Another way to use Friendly-traceback is to catch exceptions where they
-are expected to arise, such as:</p>
+<p>As mentioned before, another way to use Friendly-traceback is to catch
+exceptions where they are expected to arise, such as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="c1"># Some code</span>
 <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">())</span>
+    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>This uses the default of writing to <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>.
-One can also redirect the output to any stream, as mentioned before.
-The full set of arguments is:</p>
+One can also <strong>temporarily</strong> redirect the output to any stream:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="c1"># Some code</span>
 <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="n">stream</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>where the default of <code class="docutils literal notranslate"><span class="pre">None</span></code> indicates that <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code> will be used.</p>
+<p>By default, friendly-traceback takes its information from <code class="docutils literal notranslate"><span class="pre">sys.exc_info()</span></code>.
+It may happen that this is not what we want to show.
+For example, the <code class="docutils literal notranslate"><span class="pre">showtraceback</span> <span class="pre">method</span> <span class="pre">in</span> <span class="pre">Python's</span> <span class="pre">code.py</span> <span class="pre">&lt;https://github.com/python/cpython/blob/3.7/Lib/code.py#L131&gt;`_</span> <span class="pre">replaces</span> <span class="pre">one</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">items</span> <span class="pre">prior</span> <span class="pre">to</span>
+<span class="pre">showing</span> <span class="pre">the</span> <span class="pre">traceback</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">user;</span> <span class="pre">we</span> <span class="pre">currently</span> <span class="pre">also</span> <span class="pre">do</span> <span class="pre">the</span> <span class="pre">same</span> <span class="pre">in</span>
+<span class="pre">friendly-traceback's</span> <span class="pre">own</span> <span class="pre">console.</span>&#160; <span class="pre">If</span> <span class="pre">this</span> <span class="pre">is</span> <span class="pre">something</span> <span class="pre">desired,</span>
+<span class="pre">instead</span> <span class="pre">of</span> <span class="pre">``explain()</span></code>, one can use the “private” function
+<code class="docutils literal notranslate"><span class="pre">_explain()</span></code> instead.  Ignoring optional parameters,
+what we currently have is essentially the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">explain</span><span class="p">():</span>
+    <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
+    <span class="n">_explain</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If one wishes to temporarily change some other option mentioned above,
+it can be done as in the following example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Some code</span>
+<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+    <span class="n">lang</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_lang</span><span class="p">()</span>
+    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="s2">&quot;fr&quot;</span><span class="p">)</span>
+    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">()</span>
+    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="from-the-command-line">
 <h2>From the command line<a class="headerlink" href="#from-the-command-line" title="Permalink to this headline">¶</a></h2>
+<p>The following is subject to change.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback -h
 usage: -m [-h] [--lang LANG] [--level LEVEL] [--as_main] [source]
 
@@ -153,6 +221,7 @@ Friendly-traceback makes Python tracebacks easier to understand.
         Note: the values of the verbosity level described below are:
             0: Normal Python tracebacks
             1: Default - does not need to be specified
+            2: Normal Python tracebacks appear before the friendly display
             9: Normal Python tracebacks appended at the end of the friendly
             display.
 
@@ -194,7 +263,7 @@ optional arguments:
         <li class="right" >
           <a href="index.html" title="Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.7a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.8a documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

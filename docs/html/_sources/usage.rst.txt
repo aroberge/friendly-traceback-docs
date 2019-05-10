@@ -1,7 +1,7 @@
 Usage
 =====
 
-There are three basic ways of using friendly-traceback.
+There are three **basic** ways of using friendly-traceback.
 
 1. As an exception hook::
 
@@ -14,7 +14,7 @@ There are three basic ways of using friendly-traceback.
     try:
         # Some code
     except Exception:
-        friendly_traceback.explain(*sys.exc_info())
+        friendly_traceback.explain()
 
 
 3. When launching a Python script (or the REPL)::
@@ -22,23 +22,21 @@ There are three basic ways of using friendly-traceback.
     python -m friendly_traceback myscript.py
 
 
+Where the output is written?
+----------------------------
+
 By default, friendly tracebacks are written to ``sys.stderr``.
-However, it is possible to override this choice.
+However, it is possible to override this choice, as follows::
 
-Let's look at each of these three cases in a bit more detail.
+    friendly_traceback.set_stream(stream)
 
-As an exception hook
----------------------
+Thus, the default amounts to::
 
-By default, installing Friendly-traceback as an exception hook has all the
-output printed in stderr. This can be redirected to any writable stream
-by using::
+    friendly_traceback.set_stream(sys.stderr)
 
-    friendly_traceback.install(redirect=stream)
+A special option exists to capture the output as a string::
 
-A special option is available where the output is captured instead::
-
-    friendly_traceback.install(redirect="capture")
+    friendly_traceback.set_stream("capture")
 
 Later, this captured output can be retrieved using::
 
@@ -48,31 +46,102 @@ The value shown for the ``flush`` parameter is the default; this means that
 the output will be cleared once it has been retrieved. If this is not the
 desired behaviour, simply use ``flush=False``.
 
+
+How much information is printed?
+--------------------------------
+
+The amount of information shown to the user can be changed using::
+
+    friendly_traceback.set_level(level)
+
+What each level correspond to is shown later in this documentation.
+The level currently used can be obtained as follows:
+
+    level = friendly_traceback.get_level()
+
+
+Language used
+-------------
+
+The language used can be explicitly set as follows::
+
+    friendly_traceback.set_lang("fr")  # two-letter code for French
+
+The language currently used can be obtained using::
+
+    lang = friendly_traceback.get_lang()
+
+If the language requested does not exist, no error is raised nor any warning
+given, but the choice reverts to the default (English).
+More information on the choice of language (localization) can be found
+in the section about design.
+
+As an exception hook
+---------------------
+
+When "installing" friendly-traceback, one can use various optional
+parameters::
+
+    friendly_traceback.install(lang="fr", redirect="capture", level=1)
+
+This is equivalent to writing::
+
+    friendly_traceback.install()
+    friendly_traceback.set_lang("fr")
+    friendly_traceback.set_stream("capture")
+    friendly_traceback.set_level(1)
+
+
 Catching exception locally
 --------------------------
 
-Another way to use Friendly-traceback is to catch exceptions where they
-are expected to arise, such as::
+As mentioned before, another way to use Friendly-traceback is to catch
+exceptions where they are expected to arise, such as::
 
 
     try:
         # Some code
     except Exception:
-        friendly_traceback.explain(*sys.exc_info())
+        friendly_traceback.explain()
 
 This uses the default of writing to ``sys.stderr``.
-One can also redirect the output to any stream, as mentioned before.
-The full set of arguments is::
+One can also **temporarily** redirect the output to any stream::
 
     try:
         # Some code
     except Exception:
-        friendly_traceback.explain(etype, value, tb, redirect=None)
+        friendly_traceback.explain(redirect=stream)
 
-where the default of ``None`` indicates that ``sys.stderr`` will be used.
+By default, friendly-traceback takes its information from ``sys.exc_info()``.
+It may happen that this is not what we want to show.
+For example, the ``showtraceback method in Python's code.py <https://github.com/python/cpython/blob/3.7/Lib/code.py#L131>`_ replaces one of the items prior to
+showing the traceback to the user; we currently also do the same in
+friendly-traceback's own console.  If this is something desired,
+instead of ``explain()``, one can use the "private" function
+``_explain()`` instead.  Ignoring optional parameters,
+what we currently have is essentially the following::
+
+    def explain():
+        etype, value, tb = sys.exc_info()
+        _explain(etype, value, tb)
+
+
+If one wishes to temporarily change some other option mentioned above,
+it can be done as in the following example::
+
+    try:
+        # Some code
+    except Exception:
+        lang = friendly_traceback.get_lang()
+        friendly_traceback.set_lang("fr")
+        friendly_traceback.explain()
+        friendly_traceback.set_lang(lang)
+
 
 From the command line
 ----------------------
+
+The following is subject to change.
 
 .. code-block:: none
 
@@ -84,6 +153,7 @@ From the command line
             Note: the values of the verbosity level described below are:
                 0: Normal Python tracebacks
                 1: Default - does not need to be specified
+                2: Normal Python tracebacks appear before the friendly display
                 9: Normal Python tracebacks appended at the end of the friendly
                 display.
 

@@ -6,6 +6,11 @@ Change Log
     Unless otherwise noted, "with translation" means with French translation.
 
 
+Version 0.0.8
+-------------
+
+- Changed (simplified) the API for calling explain()
+- Added test for console
 - Added new SyntaxError case
 - Added custom formatter demo
 - Improved custom exception demo

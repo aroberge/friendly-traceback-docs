@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨 &#8212; Friendly tracebacks 0.0.7a documentation</title>
+    <title>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨 &#8212; Friendly tracebacks 0.0.8a documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -25,11 +25,19 @@
         <li class="right" >
           <a href="usage.html" title="Usage"
              accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Friendly tracebacks 0.0.7a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">Friendly tracebacks 0.0.8a documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Bienvenue 환영합니다 Bienvenido - ようこそ Welcome  歡迎光臨</a><ul>
+<li><a class="reference internal" href="#in-a-nutshell">In a nutshell</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Next topic</h4>
   <p class="topless"><a href="usage.html"
                         title="next chapter">Usage</a></p>
@@ -65,17 +73,25 @@ any language.</p>
 <p><a class="reference external" href="https://github.com/aroberge/friendly-traceback">Code on Github</a></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is alpha software, currently in development. We’re focusing
-on breadth of coverage (i.e. the number of Exceptions explained in
-simple language) over quality of code and its documentation.
-However, everything included should work.</p>
+<p>This is alpha software, currently in development. This documentation
+is almost certainly not up to date, but it should be enough to get
+you started.</p>
 </div>
-<p>More info to be added soon.  But, please, see the Design section
-for a description of the goal of this project.</p>
+<div class="section" id="in-a-nutshell">
+<h2>In a nutshell<a class="headerlink" href="#in-a-nutshell" title="Permalink to this headline">¶</a></h2>
+<p>There exists many Python projects intended to supplement the information
+given by Python traceback to make them more useful for advanced programmers.</p>
+<p>Friendly-traceback is <strong>not</strong> one of these projects.</p>
+<p>Friendly-traceback is aimed primarily at <strong>beginners</strong> and/or at users
+who would like to get information about traceback in their own language.</p>
+<p>Please, see the Design section for a complete description of the goals of this project.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage.html"> Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#where-the-output-is-written">Where the output is written?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#how-much-information-is-printed">How much information is printed?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#language-used">Language used</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usage.html#as-an-exception-hook">As an exception hook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usage.html#catching-exception-locally">Catching exception locally</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usage.html#from-the-command-line">From the command line</a></li>
@@ -251,6 +267,7 @@ for a description of the goal of this project.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html"> Change Log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-8">Version 0.0.8</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-7">Version 0.0.7</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-6">Version 0.0.6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-5">Version 0.0.5</a></li>
@@ -264,11 +281,6 @@ for a description of the goal of this project.</p>
 </div>
 <div class="admonition-todo admonition">
 <p class="admonition-title">Todo</p>
-<p>Add code example for providing specific information for SyntaxError</p>
-</div>
-<p class="todo-source">(The <a class="reference internal" href="syntax_error.html#index-0"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\syntax_error.rst, line 131.)</p>
-<div class="admonition-todo admonition">
-<p class="admonition-title">Todo</p>
 <p>Explain why we do not install gettext globally.</p>
 </div>
 <p class="todo-source">(The <a class="reference internal" href="adding_exception.html#index-0"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\adding_exception.rst, line 210.)</p>
@@ -277,6 +289,12 @@ for a description of the goal of this project.</p>
 <p>To be written</p>
 </div>
 <p class="todo-source">(The <a class="reference internal" href="adding_exception.html#index-1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\adding_exception.rst, line 353.)</p>
+<div class="admonition-todo admonition">
+<p class="admonition-title">Todo</p>
+<p>Add code example for providing specific information for SyntaxError</p>
+</div>
+<p class="todo-source">(The <a class="reference internal" href="syntax_error.html#index-0"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\syntax_error.rst, line 131.)</p>
+</div>
 </div>
 
 
@@ -294,7 +312,7 @@ for a description of the goal of this project.</p>
         <li class="right" >
           <a href="usage.html" title="Usage"
              >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Friendly tracebacks 0.0.7a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">Friendly tracebacks 0.0.8a documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

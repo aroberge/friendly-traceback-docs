@@ -9,13 +9,23 @@ any language.
 
 .. warning::
 
-    This is alpha software, currently in development. We're focusing
-    on breadth of coverage (i.e. the number of Exceptions explained in
-    simple language) over quality of code and its documentation.
-    However, everything included should work.
+    This is alpha software, currently in development. This documentation
+    is almost certainly not up to date, but it should be enough to get
+    you started.
 
-More info to be added soon.  But, please, see the Design section
-for a description of the goal of this project.
+
+In a nutshell
+--------------
+
+There exists many Python projects intended to supplement the information
+given by Python traceback to make them more useful for advanced programmers.
+
+Friendly-traceback is **not** one of these projects.
+
+Friendly-traceback is aimed primarily at **beginners** and/or at users
+who would like to get information about traceback in their own language.
+
+Please, see the Design section for a complete description of the goals of this project.
 
 .. toctree::
    :maxdepth: 2
