@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Some thoughts on the design of friendly-traceback &#8212; Friendly tracebacks 0.0.6alpha documentation</title>
+    <title>Some thoughts on the design of friendly-traceback &#8212; Friendly tracebacks 0.0.7a documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -14,7 +14,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Suggest an addition" href="suggest.html" />
+    <link rel="next" title="Custom exceptions and formatting" href="custom.html" />
     <link rel="prev" title="Usage" href="usage.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -24,12 +24,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="suggest.html" title="Suggest an addition"
+          <a href="custom.html" title="Custom exceptions and formatting"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="usage.html" title="Usage"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.6alpha documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.7a documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -58,7 +58,6 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#extensibility">Extensibility</a></li>
-<li><a class="reference internal" href="#additional-configuration">Additional configuration</a></li>
 <li><a class="reference internal" href="#other-similar-projects">Other similar projects</a></li>
 <li><a class="reference internal" href="#reference-known-exceptions">Reference: known exceptions</a></li>
 </ul>
@@ -69,8 +68,8 @@
   <p class="topless"><a href="usage.html"
                         title="previous chapter">Usage</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="suggest.html"
-                        title="next chapter">Suggest an addition</a></p>
+  <p class="topless"><a href="custom.html"
+                        title="next chapter">Custom exceptions and formatting</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -140,7 +139,8 @@ shows five lines of context for each “item” in a traceback. We currently
 show only four.</p>
 </li>
 <li><p>Should we aim to provide information about <strong>all</strong> standard Python
-Exceptions, or just a subset?  Should we include also Warnings?</p>
+Exceptions, or just a subset?</p></li>
+<li><p>Should we include also Warnings?</p>
 <p>The full list of exceptions and warnings is included at the end of
 this document as well as some notes about some Exceptions that have
 been purposely excluded.</p>
@@ -412,38 +412,11 @@ but perhaps without added colours, at least initially.</p>
 </div>
 <div class="section" id="extensibility">
 <h2>Extensibility<a class="headerlink" href="#extensibility" title="Permalink to this headline">¶</a></h2>
-<p>For projects that have their custom Exceptions, like AvantPy, it should
+<p>For projects that have their custom Exceptions, like
+<a class="reference external" href="https://aroberge.github.io/avantpy/docs/html/">AvantPy</a>, it is
 be possible to add the custom exceptions to those handled by
-friendly-traceback.  This could perhaps be achieved by having custom
-exceptions include a special method, like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Some detailed explanation&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Friendly-tracebacks could then first look to see if this special method
-exists for a given exception; if so, it would just use it “as is”.</p>
-</div>
-<div class="section" id="additional-configuration">
-<h2>Additional configuration<a class="headerlink" href="#additional-configuration" title="Permalink to this headline">¶</a></h2>
-<p>It should be possible to add some colours to various parts of the
-traceback information; however, this should likely be done only:</p>
-<ol class="arabic simple">
-<li><p>if friendly_traceback is embedded in another application which has
-full control over its display (some terminal emulators might not
-support control characters required for colours - or do so in
-a way that might be counter productive)</p></li>
-<li><p>Based on values found in a <code class="docutils literal notranslate"><span class="pre">.ini</span></code> file.</p></li>
-</ol>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>This additional colour feature should only be implemented after all other
-issues have been dealt with.</p>
-</div>
-<p>Note that the information obtained by Friendly-traceback is collected
-in a “structured” form, as suggested in <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/8">Issue8</a> and noted in <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/10">Issue10</a>,
-so that it could be formatted differently by any program using Friendly-traceback.</p>
+friendly-traceback.  See the <code class="docutils literal notranslate"><span class="pre">demo</span></code> directory for an example.</p>
+<p>It is also possible to use a different formatter.</p>
 </div>
 <div class="section" id="other-similar-projects">
 <h2>Other similar projects<a class="headerlink" href="#other-similar-projects" title="Permalink to this headline">¶</a></h2>
@@ -529,7 +502,7 @@ Furthermore, in the case of <code class="docutils literal notranslate"><span cla
       |    +-- IndentationError *
       |         +-- TabError *
       +-- SystemError
-      +-- TypeError
+      +-- TypeError *
       +-- ValueError
       |    +-- UnicodeError
       |         +-- UnicodeDecodeError
@@ -564,12 +537,12 @@ Furthermore, in the case of <code class="docutils literal notranslate"><span cla
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="suggest.html" title="Suggest an addition"
+          <a href="custom.html" title="Custom exceptions and formatting"
              >next</a> |</li>
         <li class="right" >
           <a href="usage.html" title="Usage"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.6alpha documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.7a documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

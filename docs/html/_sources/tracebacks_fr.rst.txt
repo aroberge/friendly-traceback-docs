@@ -19,7 +19,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.6alpha
+Friendly-traceback version: 0.0.7a
 Python version: 3.7.3
 
 
@@ -998,7 +998,7 @@ UnboundLocalError
     -->21:         outer()
        22:     except Exception:
 
-    global outer: <function outer at 0x030CE420>
+    global outer: <function outer at 0x030AF3D8>
 
     Exception levée à la ligne du fichier 'TESTS:\test_unbound_local_error.py'.
     

@@ -19,7 +19,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.6alpha
+Friendly-traceback version: 0.0.7a
 Python version: 3.7.3
 
 
@@ -994,7 +994,7 @@ UnboundLocalError
     -->21:         outer()
        22:     except Exception:
 
-    global outer: <function outer at 0x03626F60>
+    global outer: <function outer at 0x03812F60>
 
     Exception raised on line 13 of file 'TESTS:\test_unbound_local_error.py'.
     

@@ -23,6 +23,7 @@ for a description of the goal of this project.
 
     Usage <usage>
     Design <design>
+    Custom exceptions and formatting <custom>
     Suggest an addition <suggest>
     Adding an Exception <adding_exception>
     Dealing with Syntax Errors <syntax_error>

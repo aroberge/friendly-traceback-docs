@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨 &#8212; Friendly tracebacks 0.0.6alpha documentation</title>
+    <title>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨 &#8212; Friendly tracebacks 0.0.7a documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -25,7 +25,7 @@
         <li class="right" >
           <a href="usage.html" title="Usage"
              accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Friendly tracebacks 0.0.6alpha documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">Friendly tracebacks 0.0.7a documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -91,9 +91,13 @@ for a description of the goal of this project.</p>
 <li class="toctree-l2"><a class="reference internal" href="design.html#localization">Localization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="design.html#verbosity">Verbosity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="design.html#extensibility">Extensibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="design.html#additional-configuration">Additional configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="design.html#other-similar-projects">Other similar projects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="design.html#reference-known-exceptions">Reference: known exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="custom.html"> Custom exceptions and formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="custom.html#example-output-from-the-custom-html-formatter-demo">Example output from the custom html formatter demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom.html#acknowledgement">Acknowledgement</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="suggest.html"> Suggest an addition</a></li>
@@ -172,6 +176,7 @@ for a description of the goal of this project.</p>
 <li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-malformed-def-statment-3">SyntaxError - malformed def statment - 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-can-t-assign-to-literal">SyntaxError - can’t assign to literal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-import-x-from-y">SyntaxError - import X from Y</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-eol-while-scanning-string-literal">SyntaxError - EOL while scanning string literal</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - en Français</a><ul>
@@ -232,6 +237,7 @@ for a description of the goal of this project.</p>
 <li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-malformed-def-statment-3">SyntaxError - malformed def statment - 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-can-t-assign-to-literal">SyntaxError - can’t assign to literal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-import-x-from-y">SyntaxError - import X from Y</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-eol-while-scanning-string-literal">SyntaxError - EOL while scanning string literal</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html"> Notes on translations - using gettext</a><ul>
@@ -245,6 +251,8 @@ for a description of the goal of this project.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html"> Change Log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-7">Version 0.0.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-6">Version 0.0.6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-5">Version 0.0.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-4">Version 0.0.4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-3">Version 0.0.3</a></li>
@@ -263,12 +271,12 @@ for a description of the goal of this project.</p>
 <p class="admonition-title">Todo</p>
 <p>Explain why we do not install gettext globally.</p>
 </div>
-<p class="todo-source">(The <a class="reference internal" href="adding_exception.html#index-0"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\adding_exception.rst, line 205.)</p>
+<p class="todo-source">(The <a class="reference internal" href="adding_exception.html#index-0"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\adding_exception.rst, line 210.)</p>
 <div class="admonition-todo admonition">
 <p class="admonition-title">Todo</p>
 <p>To be written</p>
 </div>
-<p class="todo-source">(The <a class="reference internal" href="adding_exception.html#index-1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\adding_exception.rst, line 348.)</p>
+<p class="todo-source">(The <a class="reference internal" href="adding_exception.html#index-1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\adding_exception.rst, line 353.)</p>
 </div>
 
 
@@ -286,7 +294,7 @@ for a description of the goal of this project.</p>
         <li class="right" >
           <a href="usage.html" title="Usage"
              >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Friendly tracebacks 0.0.6alpha documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">Friendly tracebacks 0.0.7a documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

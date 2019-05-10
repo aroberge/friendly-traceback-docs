@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Friendly SyntaxError tracebacks - in English &#8212; Friendly tracebacks 0.0.6alpha documentation</title>
+    <title>Friendly SyntaxError tracebacks - in English &#8212; Friendly tracebacks 0.0.7a documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,7 +29,7 @@
         <li class="right" >
           <a href="tracebacks_en36.html" title="Friendly tracebacks - in English (Python 3.6)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.6alpha documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.7a documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -47,6 +47,7 @@
 <li><a class="reference internal" href="#syntaxerror-malformed-def-statment-3">SyntaxError - malformed def statment - 3</a></li>
 <li><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal">SyntaxError - can’t assign to literal</a></li>
 <li><a class="reference internal" href="#syntaxerror-import-x-from-y">SyntaxError - import X from Y</a></li>
+<li><a class="reference internal" href="#syntaxerror-eol-while-scanning-string-literal">SyntaxError - EOL while scanning string literal</a></li>
 </ul>
 </li>
 </ul>
@@ -99,7 +100,7 @@ On Windows, if Sphinx is installed on your computer, it is suggested
 instead to run make_trb.bat in the root directory as it will create
 similar files for all languages <em>and</em> update the documentation.</p>
 </div>
-<p>Friendly-traceback version: 0.0.6alpha
+<p>Friendly-traceback version: 0.0.7a
 Python version: 3.7.3</p>
 <div class="section" id="syntaxerror-assign-to-keyword">
 <h2>SyntaxError - Assign to keyword<a class="headerlink" href="#syntaxerror-assign-to-keyword" title="Permalink to this headline">¶</a></h2>
@@ -325,6 +326,27 @@ My best guess:
 </pre></div>
 </div>
 </div>
+<div class="section" id="syntaxerror-eol-while-scanning-string-literal">
+<h2>SyntaxError - EOL while scanning string literal<a class="headerlink" href="#syntaxerror-eol-while-scanning-string-literal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: EOL while scanning string literal
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error11.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: EOL while scanning string literal&quot;&quot;&quot;
+   2:
+--&gt;3: alphabet = &#39;abc
+                     ^
+
+My best guess:
+    You starting writing a string with a single or double quote
+    but never ended the string with another quote on that line.
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -345,7 +367,7 @@ My best guess:
         <li class="right" >
           <a href="tracebacks_en36.html" title="Friendly tracebacks - in English (Python 3.6)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.6alpha documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.7a documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

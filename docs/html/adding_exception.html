@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Adding an Exception &#8212; Friendly tracebacks 0.0.6alpha documentation</title>
+    <title>Adding an Exception &#8212; Friendly tracebacks 0.0.7a documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,7 +29,7 @@
         <li class="right" >
           <a href="suggest.html" title="Suggest an addition"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.6alpha documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.7a documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -167,7 +167,12 @@ with some numbered comments added:</p>
 <li><p>Test functions should start with <cite>test_</cite>, so as to be recognized by pytest.</p></li>
 <li><p>The code raising an error is inserted in a try/except clause.
 Friendly-traceback can be installed globally as an exception hook but
-this would not work when using pytest.</p></li>
+this would not work when using pytest. <strong>Important:</strong> unless there is no
+other way, you should not trigger an exception by an explicit call
+using the <code class="docutils literal notranslate"><span class="pre">raise</span></code> keyword, so that the message included is produce
+by Python and not artificially written. Whenever possible, friendly-traceback
+provides some specific information about an exception based on the content
+of the message included by Python.</p></li>
 <li><p>By default, friendly_traceback outputs its result to sys.stderr.
 However, this can be redirected to any other user provided
 function. In addition, there is a “capture” mode, as indicated,
@@ -436,7 +441,7 @@ not hesitate to ask for clarification.</p>
         <li class="right" >
           <a href="suggest.html" title="Suggest an addition"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.6alpha documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.7a documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

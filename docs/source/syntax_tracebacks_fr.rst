@@ -21,7 +21,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.6alpha
+Friendly-traceback version: 0.0.7a
 Python version: 3.7.3
 
 
@@ -289,4 +289,29 @@ SyntaxError - import X from Y
             from Y import X
         
         
+        
+
+SyntaxError - EOL while scanning string literal
+-----------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: EOL while scanning string literal
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error11.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: EOL while scanning string literal"""
+       2: 
+    -->3: alphabet = 'abc
+                         ^
+
+    Ma meilleure hypothèse :
+        Vous aviez commencer à écrire une chaîne de caractères
+        avec un guillemet simple ou double, mais n'avez jamais
+        terminé la chaîne avec un autre guillemet sur cette ligne.
         

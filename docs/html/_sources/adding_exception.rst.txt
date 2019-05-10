@@ -81,7 +81,12 @@ with some numbered comments added::
 1. Test functions should start with `test_`, so as to be recognized by pytest.
 2. The code raising an error is inserted in a try/except clause.
    Friendly-traceback can be installed globally as an exception hook but
-   this would not work when using pytest.
+   this would not work when using pytest. **Important:** unless there is no
+   other way, you should not trigger an exception by an explicit call
+   using the ``raise`` keyword, so that the message included is produce
+   by Python and not artificially written. Whenever possible, friendly-traceback
+   provides some specific information about an exception based on the content
+   of the message included by Python.
 3. By default, friendly_traceback outputs its result to sys.stderr.
    However, this can be redirected to any other user provided
    function. In addition, there is a "capture" mode, as indicated,

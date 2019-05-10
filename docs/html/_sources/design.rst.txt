@@ -49,7 +49,9 @@ this document.
   show only four.
 
 - Should we aim to provide information about **all** standard Python
-  Exceptions, or just a subset?  Should we include also Warnings?
+  Exceptions, or just a subset?
+
+- Should we include also Warnings?
 
   The full list of exceptions and warnings is included at the end of
   this document as well as some notes about some Exceptions that have
@@ -425,46 +427,16 @@ the local environment variables (as for the language) or from a global
        :alt: traceback from better-exceptions
 
 
-
 Extensibility
 --------------
 
-For projects that have their custom Exceptions, like AvantPy, it should
+For projects that have their custom Exceptions, like
+`AvantPy <https://aroberge.github.io/avantpy/docs/html/>`_, it is
 be possible to add the custom exceptions to those handled by
-friendly-traceback.  This could perhaps be achieved by having custom
-exceptions include a special method, like::
+friendly-traceback.  See the ``demo`` directory for an example.
 
-    class MyException(Exception):
+It is also possible to use a different formatter.
 
-        def explain(self):
-            return _("Some detailed explanation")
-
-Friendly-tracebacks could then first look to see if this special method
-exists for a given exception; if so, it would just use it "as is".
-
-
-
-Additional configuration
--------------------------
-
-It should be possible to add some colours to various parts of the
-traceback information; however, this should likely be done only:
-
-1. if friendly_traceback is embedded in another application which has
-   full control over its display (some terminal emulators might not
-   support control characters required for colours - or do so in
-   a way that might be counter productive)
-
-2. Based on values found in a ``.ini`` file.
-
-.. important::
-
-    This additional colour feature should only be implemented after all other
-    issues have been dealt with.
-
-Note that the information obtained by Friendly-traceback is collected
-in a "structured" form, as suggested in Issue8_ and noted in Issue10_,
-so that it could be formatted differently by any program using Friendly-traceback.
 
 Other similar projects
 ------------------------
@@ -558,7 +530,7 @@ It is very likely that the information below is not up to date.
           |    +-- IndentationError *
           |         +-- TabError *
           +-- SystemError
-          +-- TypeError
+          +-- TypeError *
           +-- ValueError
           |    +-- UnicodeError
           |         +-- UnicodeDecodeError

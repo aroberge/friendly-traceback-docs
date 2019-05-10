@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.6alpha
+Friendly-traceback version: 0.0.7a
 Python version: 3.7.3
 
 
@@ -282,4 +282,28 @@ SyntaxError - import X from Y
         instead of
             from Y import X
         
+        
+
+SyntaxError - EOL while scanning string literal
+-----------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: EOL while scanning string literal
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error11.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: EOL while scanning string literal"""
+       2: 
+    -->3: alphabet = 'abc
+                         ^
+
+    My best guess:
+        You starting writing a string with a single or double quote
+        but never ended the string with another quote on that line.
         

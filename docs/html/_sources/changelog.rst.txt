@@ -5,6 +5,22 @@ Change Log
 
     Unless otherwise noted, "with translation" means with French translation.
 
+
+- Added new SyntaxError case
+- Added custom formatter demo
+- Improved custom exception demo
+
+Version 0.0.7
+-------------
+
+- Bug fix
+
+Version 0.0.6
+-------------
+
+- Added custom exception demo
+- Improved formatting method
+- Made it compatible with Python 3.6 and 3.8(alpha), in addition to the 3.7 default
 - Added multiple cases for TypeError, with translation
 
 Version 0.0.5
