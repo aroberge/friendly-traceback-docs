@@ -79,7 +79,7 @@
 <h1>Friendly tracebacks - in French (Python 3.6)<a class="headerlink" href="#friendly-tracebacks-in-french-python-3-6" title="Permalink to this headline">¶</a></h1>
 <p>Nous incluons seulement les cas pour lesquels l’information
 donnée par Python 3.6 diffère de celle donnée par Python 3.7.</p>
-<p>Friendly-traceback version: 0.0.7a
+<p>Friendly-traceback version: 0.0.8a
 Python version: 3.6.8</p>
 <div class="section" id="importerror">
 <h2>ImportError<a class="headerlink" href="#importerror" title="Permalink to this headline">¶</a></h2>
@@ -93,12 +93,12 @@ parce que le nom de l’objet n’est pas écrit correctement.
 Cause probable :
     L’objet qui n’a pas pu être importé est&#39; Pi &#39;.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 7 du fichier &#39;TESTS:\test_import_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 6 du fichier &#39;TESTS:\test_import_error.py&#39;
 
-   5: def test_import_error():
-   6:     try:
---&gt;7:         from math import Pi
-   8:     except Exception:
+   4: def test_import_error():
+   5:     try:
+--&gt;6:         from math import Pi
+   7:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -115,12 +115,12 @@ Cause probable :
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 9 du fichier &#39;TESTS:\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 8 du fichier &#39;TESTS:\test_type_error.py&#39;
 
-    7:         a = &quot;a&quot;
-    8:         one = 1
---&gt; 9:         result = a + one
-   10:     except Exception:
+    6:         a = &quot;a&quot;
+    7:         one = 1
+--&gt; 8:         result = a + one
+    9:     except Exception:
 
 a: &#39;a&#39;
 one: 1
@@ -140,12 +140,12 @@ Cause probable :
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
     une chaîne de caractères (&#39;str&#39;) et une liste (&#39;list&#39;)
 
-L&#39;exécution s&#39;est arrêtée à la ligne 23 du fichier &#39;TESTS:\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 22 du fichier &#39;TESTS:\test_type_error.py&#39;
 
-   21:         a = &quot;a&quot;
-   22:         a_list = [1, 2, 3]
---&gt;23:         result = a + a_list
-   24:     except Exception:
+   20:         a = &quot;a&quot;
+   21:         a_list = [1, 2, 3]
+--&gt;22:         result = a + a_list
+   23:     except Exception:
 
 a: &#39;a&#39;
 a_list: [1, 2, 3]

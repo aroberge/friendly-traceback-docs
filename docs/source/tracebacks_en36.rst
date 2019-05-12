@@ -5,7 +5,7 @@ Friendly tracebacks - in English (Python 3.6)
 Cases for which the information given by Python 3.6 differs from that
 given by Python 3.7
 
-Friendly-traceback version: 0.0.7a
+Friendly-traceback version: 0.0.8a
 Python version: 3.6.8
 
 
@@ -26,12 +26,12 @@ ImportError
     Likely cause:
         The object that could not be imported is 'Pi'.
         
-    Execution stopped on line 7 of file 'TESTS:\test_import_error.py'.
+    Execution stopped on line 6 of file 'TESTS:\test_import_error.py'.
     
-       5: def test_import_error():
-       6:     try:
-    -->7:         from math import Pi
-       8:     except Exception:
+       4: def test_import_error():
+       5:     try:
+    -->6:         from math import Pi
+       7:     except Exception:
 
 
 TypeError - 1: must be str, not int
@@ -51,12 +51,12 @@ TypeError - 1: must be str, not int
         You tried to concatenate (add) two different types of objects:
         a string ('str') and an integer ('int')
         
-    Execution stopped on line 9 of file 'TESTS:\test_type_error.py'.
+    Execution stopped on line 8 of file 'TESTS:\test_type_error.py'.
     
-        7:         a = "a"
-        8:         one = 1
-    --> 9:         result = a + one
-       10:     except Exception:
+        6:         a = "a"
+        7:         one = 1
+    --> 8:         result = a + one
+        9:     except Exception:
 
     a: 'a'
     one: 1
@@ -79,12 +79,12 @@ TypeError - 1a: must be str, not list
         You tried to concatenate (add) two different types of objects:
         a string ('str') and a list
         
-    Execution stopped on line 23 of file 'TESTS:\test_type_error.py'.
+    Execution stopped on line 22 of file 'TESTS:\test_type_error.py'.
     
-       21:         a = "a"
-       22:         a_list = [1, 2, 3]
-    -->23:         result = a + a_list
-       24:     except Exception:
+       20:         a = "a"
+       21:         a_list = [1, 2, 3]
+    -->22:         result = a + a_list
+       23:     except Exception:
 
     a: 'a'
     a_list: [1, 2, 3]

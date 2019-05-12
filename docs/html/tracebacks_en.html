@@ -128,7 +128,7 @@ On Windows, if Sphinx is installed on your computer, it is suggested
 instead to run make_trb.bat in the root directory as it will create
 similar files for all languages <em>and</em> update the documentation.</p>
 </div>
-<p>Friendly-traceback version: 0.0.7a
+<p>Friendly-traceback version: 0.0.8a
 Python version: 3.7.3</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -140,12 +140,12 @@ that are raised for various arithmetic errors.
 It is unusual that you are seeing this exception;
 normally, a more specific exception should have been raised.
 
-Execution stopped on line 10 of file &#39;TESTS:\test_arithmetic_error.py&#39;.
+Execution stopped on line 8 of file &#39;TESTS:\test_arithmetic_error.py&#39;.
 
-    8:         # Usually, a subclass such as ZeroDivisionError, etc., would
-    9:         # likely be raised.
---&gt;10:         raise ArithmeticError
-   11:     except Exception:
+    6:         # Usually, a subclass such as ZeroDivisionError, etc., would
+    7:         # likely be raised.
+--&gt; 8:         raise ArithmeticError
+    9:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -163,12 +163,12 @@ Likely cause:
     The module or package where it was
     expected to be found is &#39;math&#39;.
 
-Execution stopped on line 7 of file &#39;TESTS:\test_import_error.py&#39;.
+Execution stopped on line 6 of file &#39;TESTS:\test_import_error.py&#39;.
 
-   5: def test_import_error():
-   6:     try:
---&gt;7:         from math import Pi
-   8:     except Exception:
+   4: def test_import_error():
+   5:     try:
+--&gt;6:         from math import Pi
+   7:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -255,12 +255,12 @@ Likely cause:
     In your program, the name of the key
     that cannot be found is &#39;c&#39;.
 
-Execution stopped on line 8 of file &#39;TESTS:\test_key_error.py&#39;.
+Execution stopped on line 7 of file &#39;TESTS:\test_key_error.py&#39;.
 
-    6:     d = {&#39;a&#39;: 1, &#39;b&#39;: 2}
-    7:     try:
---&gt; 8:         d[&#39;c&#39;]
-    9:     except Exception:
+   5:     d = {&#39;a&#39;: 1, &#39;b&#39;: 2}
+   6:     try:
+--&gt;7:         d[&#39;c&#39;]
+   8:     except Exception:
 
 d: {&#39;a&#39;: 1, &#39;b&#39;: 2}
 </pre></div>
@@ -275,12 +275,12 @@ LookupError is the base class for the exceptions that are raised
 when a key or index used on a mapping or sequence is invalid.
 It can also be raised directly by codecs.lookup().
 
-Execution stopped on line 11 of file &#39;TESTS:\test_lookup_error.py&#39;.
+Execution stopped on line 10 of file &#39;TESTS:\test_lookup_error.py&#39;.
 
-    9:         # other than possibly codecs.lookup(), which is why we raise
-   10:         # it directly here for our example.
---&gt;11:         raise LookupError
-   12:     except Exception:
+    8:         # other than possibly codecs.lookup(), which is why we raise
+    9:         # it directly here for our example.
+--&gt;10:         raise LookupError
+   11:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -298,12 +298,12 @@ Reminder: the first item of a sequence is at index 0.
 Likely cause:
     In this case, the sequence is a tuple.
 
-Execution stopped on line 9 of file &#39;TESTS:\test_index_error.py&#39;.
+Execution stopped on line 8 of file &#39;TESTS:\test_index_error.py&#39;.
 
-    7:     b = [1, 2, 3]
-    8:     try:
---&gt; 9:         print(a[3], b[2])
-   10:     except Exception:
+    6:     b = [1, 2, 3]
+    7:     try:
+--&gt; 8:         print(a[3], b[2])
+    9:     except Exception:
 
 a: (1, 2, 3)
 b: [1, 2, 3]
@@ -324,12 +324,12 @@ Reminder: the first item of a sequence is at index 0.
 Likely cause:
     In this case, the sequence is a list.
 
-Execution stopped on line 21 of file &#39;TESTS:\test_index_error.py&#39;.
+Execution stopped on line 20 of file &#39;TESTS:\test_index_error.py&#39;.
 
-   19:     b = tuple(range(50))
-   20:     try:
---&gt;21:         print(a[50], b[0])
-   22:     except Exception:
+   18:     b = tuple(range(50))
+   19:     try:
+--&gt;20:         print(a[50], b[0])
+   21:     except Exception:
 
 a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
 b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
@@ -350,12 +350,12 @@ Likely cause:
     In your program, the name of the
     module that cannot be found is &#39;does_not_exist&#39;.
 
-Execution stopped on line 7 of file &#39;TESTS:\test_module_not_found_error.py&#39;.
+Execution stopped on line 5 of file &#39;TESTS:\test_module_not_found_error.py&#39;.
 
-   5: def test_module_not_found_error():
-   6:     try:
---&gt;7:         import does_not_exist
-   8:     except Exception:
+   3: def test_module_not_found_error():
+   4:     try:
+--&gt;5:         import does_not_exist
+   6:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -373,12 +373,12 @@ before being defined or given a value.
 Likely cause:
     In your program, the unknown name is &#39;c&#39;.
 
-Execution stopped on line 7 of file &#39;TESTS:\test_name_error.py&#39;.
+Execution stopped on line 6 of file &#39;TESTS:\test_name_error.py&#39;.
 
-   5: def test_name_error():
-   6:     try:
---&gt;7:         b = c
-   8:     except Exception:
+   4: def test_name_error():
+   5:     try:
+--&gt;6:         b = c
+   7:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -418,12 +418,12 @@ Likely cause:
     You tried to concatenate (add) two different types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
-Execution stopped on line 9 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 8 of file &#39;TESTS:\test_type_error.py&#39;.
 
-    7:         a = &quot;a&quot;
-    8:         one = 1
---&gt; 9:         result = a + one
-   10:     except Exception:
+    6:         a = &quot;a&quot;
+    7:         one = 1
+--&gt; 8:         result = a + one
+    9:     except Exception:
 
 a: &#39;a&#39;
 one: 1
@@ -443,12 +443,12 @@ Likely cause:
     You tried to concatenate (add) two different types of objects:
     a string (&#39;str&#39;) and a list
 
-Execution stopped on line 23 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 22 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   21:         a = &quot;a&quot;
-   22:         a_list = [1, 2, 3]
---&gt;23:         result = a + a_list
-   24:     except Exception:
+   20:         a = &quot;a&quot;
+   21:         a_list = [1, 2, 3]
+--&gt;22:         result = a + a_list
+   23:     except Exception:
 
 a: &#39;a&#39;
 a_list: [1, 2, 3]
@@ -468,12 +468,12 @@ Likely cause:
     You tried to concatenate (add) two different types of objects:
     a tuple and a list
 
-Execution stopped on line 37 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 36 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   35:         a_tuple = (1, 2, 3)
-   36:         a_list = [1, 2, 3]
---&gt;37:         result = a_tuple + a_list
-   38:     except Exception:
+   34:         a_tuple = (1, 2, 3)
+   35:         a_list = [1, 2, 3]
+--&gt;36:         result = a_tuple + a_list
+   37:     except Exception:
 
 a_tuple: (1, 2, 3)
 a_list: [1, 2, 3]
@@ -493,12 +493,12 @@ Likely cause:
     You tried to add two incompatible types of objects:
     an integer (&#39;int&#39;) and a variable equal to None (&#39;NoneType&#39;)
 
-Execution stopped on line 49 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 48 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   47:         one = 1
-   48:         none = None
---&gt;49:         result = one + none
-   50:     except Exception:
+   46:         one = 1
+   47:         none = None
+--&gt;48:         result = one + none
+   49:     except Exception:
 
 one: 1
 none: None
@@ -518,12 +518,12 @@ Likely cause:
     You tried to add two incompatible types of objects:
     an integer (&#39;int&#39;) and a string (&#39;str&#39;)
 
-Execution stopped on line 61 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 60 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   59:         one = 1
-   60:         two = &quot;two&quot;
---&gt;61:         one += two
-   62:     except Exception:
+   58:         one = 1
+   59:         two = &quot;two&quot;
+--&gt;60:         one += two
+   61:     except Exception:
 
 one: 1
 two: &#39;two&#39;
@@ -543,12 +543,12 @@ Likely cause:
     You tried to subtract two incompatible types of objects:
     a tuple and a list
 
-Execution stopped on line 73 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 72 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   71:         a = (1, 2)
-   72:         b = [3, 4]
---&gt;73:         result = a - b
-   74:     except Exception:
+   70:         a = (1, 2)
+   71:         b = [3, 4]
+--&gt;72:         result = a - b
+   73:     except Exception:
 
 a: (1, 2)
 b: [3, 4]
@@ -568,12 +568,12 @@ Likely cause:
     You tried to subtract two incompatible types of objects:
     a tuple and a list
 
-Execution stopped on line 85 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 84 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   83:         a = (1, 2)
-   84:         b = [3, 4]
---&gt;85:         a -= b
-   86:     except Exception:
+   82:         a = (1, 2)
+   83:         b = [3, 4]
+--&gt;84:         a -= b
+   85:     except Exception:
 
 a: (1, 2)
 b: [3, 4]
@@ -593,12 +593,12 @@ Likely cause:
     You tried to multiply two incompatible types of objects:
     a complex number and a set
 
-Execution stopped on line 97 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 96 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   95:         a = 1j
-   96:         b = {2, 3}
---&gt;97:         result = a * b
-   98:     except Exception:
+   94:         a = 1j
+   95:         b = {2, 3}
+--&gt;96:         result = a * b
+   97:     except Exception:
 
 a: 1j
 b: {2, 3}
@@ -618,12 +618,12 @@ Likely cause:
     You tried to multiply two incompatible types of objects:
     a complex number and a set
 
-Execution stopped on line 109 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 108 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   107:         a = 1j
-   108:         b = {2, 3}
---&gt;109:         a *= b
-   110:     except Exception:
+   106:         a = 1j
+   107:         b = {2, 3}
+--&gt;108:         a *= b
+   109:     except Exception:
 
 a: 1j
 b: {2, 3}
@@ -643,12 +643,12 @@ Likely cause:
     You tried to divide two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
-Execution stopped on line 121 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 120 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   119:         a = {1: 1, 2: 2}
-   120:         b = 3.1416
---&gt;121:         result = a / b
-   122:     except Exception:
+   118:         a = {1: 1, 2: 2}
+   119:         b = 3.1416
+--&gt;120:         result = a / b
+   121:     except Exception:
 
 a: {1: 1, 2: 2}
 b: 3.1416
@@ -668,12 +668,12 @@ Likely cause:
     You tried to divide two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
-Execution stopped on line 133 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 132 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   131:         a = {1: 1, 2: 2}
-   132:         b = 3.1416
---&gt;133:         a /= b
-   134:     except Exception:
+   130:         a = {1: 1, 2: 2}
+   131:         b = 3.1416
+--&gt;132:         a /= b
+   133:     except Exception:
 
 a: {1: 1, 2: 2}
 b: 3.1416
@@ -693,12 +693,12 @@ Likely cause:
     You tried to divide two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
-Execution stopped on line 145 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 144 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   143:         a = {1: 1, 2: 2}
-   144:         b = 3.1416
---&gt;145:         result = a // b
-   146:     except Exception:
+   142:         a = {1: 1, 2: 2}
+   143:         b = 3.1416
+--&gt;144:         result = a // b
+   145:     except Exception:
 
 a: {1: 1, 2: 2}
 b: 3.1416
@@ -718,12 +718,12 @@ Likely cause:
     You tried to divide two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
-Execution stopped on line 157 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 156 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   155:         a = {1: 1, 2: 2}
-   156:         b = 3.1416
---&gt;157:         a //= b
-   158:     except Exception:
+   154:         a = {1: 1, 2: 2}
+   155:         b = 3.1416
+--&gt;156:         a //= b
+   157:     except Exception:
 
 a: {1: 1, 2: 2}
 b: 3.1416
@@ -744,12 +744,12 @@ Likely cause:
     on two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
-Execution stopped on line 169 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 168 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   167:         a = &quot;a&quot;
-   168:         b = 2
---&gt;169:         result = a &amp; b
-   170:     except Exception:
+   166:         a = &quot;a&quot;
+   167:         b = 2
+--&gt;168:         result = a &amp; b
+   169:     except Exception:
 
 a: &#39;a&#39;
 b: 2
@@ -770,12 +770,12 @@ Likely cause:
     on two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
-Execution stopped on line 181 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 180 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   179:         a = &quot;a&quot;
-   180:         b = 2
---&gt;181:         a &amp;= b
-   182:     except Exception:
+   178:         a = &quot;a&quot;
+   179:         b = 2
+--&gt;180:         a &amp;= b
+   181:     except Exception:
 
 a: &#39;a&#39;
 b: 2
@@ -796,12 +796,12 @@ Likely cause:
     using two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
-Execution stopped on line 193 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 192 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   191:         a = {1: 1, 2: 2}
-   192:         b = 3.1416
---&gt;193:         result = a ** b
-   194:     except Exception:
+   190:         a = {1: 1, 2: 2}
+   191:         b = 3.1416
+--&gt;192:         result = a ** b
+   193:     except Exception:
 
 a: {1: 1, 2: 2}
 b: 3.1416
@@ -822,12 +822,12 @@ Likely cause:
     using two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
-Execution stopped on line 205 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 204 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   203:         a = {1: 1, 2: 2}
-   204:         b = 3.1416
---&gt;205:         a **= b
-   206:     except Exception:
+   202:         a = {1: 1, 2: 2}
+   203:         b = 3.1416
+--&gt;204:         a **= b
+   205:     except Exception:
 
 a: {1: 1, 2: 2}
 b: 3.1416
@@ -848,12 +848,12 @@ Likely cause:
     on two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
-Execution stopped on line 217 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 216 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   215:         a = &quot;a&quot;
-   216:         b = 42
---&gt;217:         result = a &gt;&gt; b
-   218:     except Exception:
+   214:         a = &quot;a&quot;
+   215:         b = 42
+--&gt;216:         result = a &gt;&gt; b
+   217:     except Exception:
 
 a: &#39;a&#39;
 b: 42
@@ -874,12 +874,12 @@ Likely cause:
     on two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
-Execution stopped on line 229 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 228 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   227:         a = &quot;a&quot;
-   228:         b = 42
---&gt;229:         a &gt;&gt;= b
-   230:     except Exception:
+   226:         a = &quot;a&quot;
+   227:         b = 42
+--&gt;228:         a &gt;&gt;= b
+   229:     except Exception:
 
 a: &#39;a&#39;
 b: 42
@@ -902,12 +902,12 @@ Likely cause:
     This operator is normally used only
     for multiplication of matrices.
 
-Execution stopped on line 241 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 240 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   239:         a = &quot;a&quot;
-   240:         b = 2
---&gt;241:         result = a @ b
-   242:     except Exception:
+   238:         a = &quot;a&quot;
+   239:         b = 2
+--&gt;240:         result = a @ b
+   241:     except Exception:
 
 a: &#39;a&#39;
 b: 2
@@ -930,12 +930,12 @@ Likely cause:
     This operator is normally used only
     for multiplication of matrices.
 
-Execution stopped on line 253 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 252 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   251:         a = &quot;a&quot;
-   252:         b = 2
---&gt;253:         a @= b
-   254:     except Exception:
+   250:         a = &quot;a&quot;
+   251:         b = 2
+--&gt;252:         a @= b
+   253:     except Exception:
 
 a: &#39;a&#39;
 b: 2
@@ -956,12 +956,12 @@ Likely cause:
     between two incompatible types of objects:
     an integer (&#39;int&#39;) and a string (&#39;str&#39;)
 
-Execution stopped on line 265 of file &#39;TESTS:\test_type_error.py&#39;.
+Execution stopped on line 264 of file &#39;TESTS:\test_type_error.py&#39;.
 
-   263:         a = &quot;a&quot;
-   264:         b = 42
---&gt;265:         b &lt; a
-   266:     except Exception:
+   262:         a = &quot;a&quot;
+   263:         b = 42
+--&gt;264:         b &lt; a
+   265:     except Exception:
 
 b: 42
 a: &#39;a&#39;
@@ -988,21 +988,21 @@ Likely cause:
         global a
     should have been included as the first line inside your function.
 
-Execution stopped on line 21 of file &#39;TESTS:\test_unbound_local_error.py&#39;.
+Execution stopped on line 20 of file &#39;TESTS:\test_unbound_local_error.py&#39;.
 
-   19:
-   20:     try:
---&gt;21:         outer()
-   22:     except Exception:
+   18:
+   19:     try:
+--&gt;20:         outer()
+   21:     except Exception:
 
-global outer: &lt;function outer at 0x03812F60&gt;
+global outer: &lt;function outer at 0x02F53ED0&gt;
 
-Exception raised on line 13 of file &#39;TESTS:\test_unbound_local_error.py&#39;.
+Exception raised on line 12 of file &#39;TESTS:\test_unbound_local_error.py&#39;.
 
-   11:     def inner():
-   12:         c = 3
---&gt;13:         a = a + b + c
-   14:     inner()
+   10:     def inner():
+   11:         c = 3
+--&gt;12:         a = a + b + c
+   13:     inner()
 
 global b: 2
 c: 3
@@ -1018,12 +1018,12 @@ No information is known about this exception.
 Please report this example to
 https://github.com/aroberge/friendly-traceback/issues
 
-Execution stopped on line 11 of file &#39;TESTS:\test_unknown_error.py&#39;.
+Execution stopped on line 10 of file &#39;TESTS:\test_unknown_error.py&#39;.
 
-    9: def test_unknown_error():
-   10:     try:
---&gt;11:         raise MyException(&quot;Some informative message&quot;)
-   12:     except Exception:
+    8: def test_unknown_error():
+    9:     try:
+--&gt;10:         raise MyException(&quot;Some informative message&quot;)
+   11:     except Exception:
 
 global MyException: &lt;class &#39;test_unknown_error.MyException&#39;&gt;
 </pre></div>
@@ -1041,12 +1041,12 @@ It can also happen if you calculate the remainder of a division
 using the modulo operator &#39;%&#39;
     result = my_variable % 0
 
-Execution stopped on line 7 of file &#39;TESTS:\test_zero_division_error.py&#39;.
+Execution stopped on line 6 of file &#39;TESTS:\test_zero_division_error.py&#39;.
 
-   5: def test_zero_division_error():
-   6:     try:
---&gt;7:         1 / 0
-   8:     except Exception:
+   4: def test_zero_division_error():
+   5:     try:
+--&gt;6:         1 / 0
+   7:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -1062,12 +1062,12 @@ It can also happen if you calculate the remainder of a division
 using the modulo operator &#39;%&#39;
     result = my_variable % 0
 
-Execution stopped on line 18 of file &#39;TESTS:\test_zero_division_error.py&#39;.
+Execution stopped on line 17 of file &#39;TESTS:\test_zero_division_error.py&#39;.
 
-   16:     zero = 0
-   17:     try:
---&gt;18:         1 % zero
-   19:     except Exception:
+   15:     zero = 0
+   16:     try:
+--&gt;17:         1 % zero
+   18:     except Exception:
 
 zero: 0
 </pre></div>

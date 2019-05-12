@@ -5,7 +5,7 @@ Friendly tracebacks - in French (Python 3.6)
 Nous incluons seulement les cas pour lesquels l'information
 donnée par Python 3.6 diffère de celle donnée par Python 3.7.
 
-Friendly-traceback version: 0.0.7a
+Friendly-traceback version: 0.0.8a
 Python version: 3.6.8
 
 
@@ -26,12 +26,12 @@ ImportError
     Cause probable :
         L’objet qui n’a pas pu être importé est' Pi '.
         
-    L'exécution s'est arrêtée à la ligne 7 du fichier 'TESTS:\test_import_error.py'
+    L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\test_import_error.py'
     
-       5: def test_import_error():
-       6:     try:
-    -->7:         from math import Pi
-       8:     except Exception:
+       4: def test_import_error():
+       5:     try:
+    -->6:         from math import Pi
+       7:     except Exception:
 
 
 TypeError - 1: must be str, not int
@@ -51,12 +51,12 @@ TypeError - 1: must be str, not int
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
         une chaîne de caractères ('str') et un entier ('int')
         
-    L'exécution s'est arrêtée à la ligne 9 du fichier 'TESTS:\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 8 du fichier 'TESTS:\test_type_error.py'
     
-        7:         a = "a"
-        8:         one = 1
-    --> 9:         result = a + one
-       10:     except Exception:
+        6:         a = "a"
+        7:         one = 1
+    --> 8:         result = a + one
+        9:     except Exception:
 
     a: 'a'
     one: 1
@@ -79,12 +79,12 @@ TypeError - 1a: must be str, not list
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
         une chaîne de caractères ('str') et une liste ('list')
         
-    L'exécution s'est arrêtée à la ligne 23 du fichier 'TESTS:\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 22 du fichier 'TESTS:\test_type_error.py'
     
-       21:         a = "a"
-       22:         a_list = [1, 2, 3]
-    -->23:         result = a + a_list
-       24:     except Exception:
+       20:         a = "a"
+       21:         a_list = [1, 2, 3]
+    -->22:         result = a + a_list
+       23:     except Exception:
 
     a: 'a'
     a_list: [1, 2, 3]
