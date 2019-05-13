@@ -994,7 +994,7 @@ UnboundLocalError
     -->20:         outer()
        21:     except Exception:
 
-    global outer: <function outer at 0x02F53ED0>
+    global outer: <function outer>
 
     Exception raised on line 12 of file 'TESTS:\test_unbound_local_error.py'.
     
