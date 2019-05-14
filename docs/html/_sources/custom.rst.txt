@@ -56,6 +56,20 @@ Various GUI elements that do not depend on either `demo_gettext.py` or
 `friendly_traceback` and would only clutter the code of demos if they were
 included in the script to be run.
 
+Example from the GUI demo running a Custom exception demo
+---------------------------------------------------------
+
+.. image:: images/gui_demo.png
+   :scale: 25 %
+   :alt: GUI demo
+
+
+The "simulated" Python traceback is shown in the console on the left; the program
+pause periodically and ask the user to proceed to the next example.
+
+On the right, we can see the file "custom_exception_demo.py" loaded in
+the editor at the top; at the bottom, we see the custom exception information.
+
 
 Example output from the custom html formatter demo
 --------------------------------------------------
