@@ -19,19 +19,29 @@ In a nutshell
 
 There exists many Python projects intended to supplement the information
 given by Python traceback to make them more useful for advanced programmers.
-
 Friendly-traceback is **not** one of these projects.
 
 Friendly-traceback is aimed primarily at **beginners** and/or at users
 who would like to get information about traceback in their own language.
+Please, see the Design section for a complete description of the goals
+of this project.
 
-Please, see the Design section for a complete description of the goals of this project.
+About the version
+-----------------
+
+Typically, the version shown at the top will have the letter "a" at the end.
+This means that the latest version available from Pypi is the version number
+without the "a", and that we are working towards the next release, so that
+some features may be slightly different from the version available from Pypi.
+
+Contents
+--------
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
     Usage <usage>
+    Occasional lies <lies>
     Design <design>
     Custom exceptions and formatting <custom>
     Suggest an addition <suggest>

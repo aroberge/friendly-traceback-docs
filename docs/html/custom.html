@@ -37,6 +37,12 @@
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Custom exceptions and formatting</a><ul>
+<li><a class="reference internal" href="#custom-exception-py">custom_exception.py</a></li>
+<li><a class="reference internal" href="#custom-exception-demo-py">custom_exception_demo.py</a></li>
+<li><a class="reference internal" href="#gui-demo-py">gui_demo.py</a></li>
+<li><a class="reference internal" href="#custom-formatter-py">custom_formatter.py</a></li>
+<li><a class="reference internal" href="#demo-gettext-py">demo_gettext.py</a></li>
+<li><a class="reference internal" href="#gui-py"><code class="docutils literal notranslate"><span class="pre">_gui.py</span></code></a></li>
 <li><a class="reference internal" href="#example-output-from-the-custom-html-formatter-demo">Example output from the custom html formatter demo</a></li>
 <li><a class="reference internal" href="#acknowledgement">Acknowledgement</a></li>
 </ul>
@@ -76,12 +82,49 @@
             
   <div class="section" id="custom-exceptions-and-formatting">
 <h1>Custom exceptions and formatting<a class="headerlink" href="#custom-exceptions-and-formatting" title="Permalink to this headline">¶</a></h1>
-<p>In the <code class="docutils literal notranslate"><span class="pre">demo</span></code> directory, there are two different examples which show</p>
-<ul class="simple">
-<li><p>How to create your custom exceptions so that a “friendly” traceback
-can be shown.</p></li>
-<li><p>How to create a custom formatter; the example given creates an html file.</p></li>
-</ul>
+<p>In the <a class="reference external" href="https://github.com/aroberge/friendly-traceback/tree/master/demos">demos</a> directory, there are a few different files, including the following.</p>
+<div class="section" id="custom-exception-py">
+<h2>custom_exception.py<a class="headerlink" href="#custom-exception-py" title="Permalink to this headline">¶</a></h2>
+<p>Shows how to define custom exceptions that are ready to be used by
+Friendly-traceback. While this is not required, we showed how to
+support translations.</p>
+<p>There is no point in running this file as a script.</p>
+</div>
+<div class="section" id="custom-exception-demo-py">
+<h2>custom_exception_demo.py<a class="headerlink" href="#custom-exception-demo-py" title="Permalink to this headline">¶</a></h2>
+<p>This is a demo that generates a few exceptions (most of which are imported
+from custom_exception.py), process them with Friendly-traceback, and
+shows the result.</p>
+<p>This script can be run from a command line.</p>
+</div>
+<div class="section" id="gui-demo-py">
+<h2>gui_demo.py<a class="headerlink" href="#gui-demo-py" title="Permalink to this headline">¶</a></h2>
+<p>This is a demo GUI that should be run from a command line.</p>
+<p>When importing a script and running it, any normal Python traceback is shown
+in the console (command line) and the “friendly traceback” counterpart is
+shown in a text window.</p>
+<p>It is suggested that you open “custom_exception_demo.py” and run it; you
+will need to interact from the console (command line) as if you were executing
+that script from Python.</p>
+<p>Note that this GUI could likely be significantly improved; it is included
+only as a proof of concept.
+Experienced GUI programmers should feel most welcome to contribute their
+expertise and make this a more user-friendly demonstration.</p>
+</div>
+<div class="section" id="custom-formatter-py">
+<h2>custom_formatter.py<a class="headerlink" href="#custom-formatter-py" title="Permalink to this headline">¶</a></h2>
+<p>A custom formatter which creates an html file from a given exception.</p>
+</div>
+<div class="section" id="demo-gettext-py">
+<h2>demo_gettext.py<a class="headerlink" href="#demo-gettext-py" title="Permalink to this headline">¶</a></h2>
+<p>Provides translation support for the demos</p>
+</div>
+<div class="section" id="gui-py">
+<h2><code class="docutils literal notranslate"><span class="pre">_gui.py</span></code><a class="headerlink" href="#gui-py" title="Permalink to this headline">¶</a></h2>
+<p>Various GUI elements that do not depend on either <cite>demo_gettext.py</cite> or
+<cite>friendly_traceback</cite> and would only clutter the code of demos if they were
+included in the script to be run.</p>
+</div>
 <div class="section" id="example-output-from-the-custom-html-formatter-demo">
 <h2>Example output from the custom html formatter demo<a class="headerlink" href="#example-output-from-the-custom-html-formatter-demo" title="Permalink to this headline">¶</a></h2>
 <style>
@@ -90,11 +133,11 @@ can be shown.</p></li>
 .pre2 {color:yellow; background: #321; width:600px}
 </style>
 <h2 class="main">Python exception:</h2>
-<h4>NameError: name 'a' is not defined</h4>
+<h4 class="main">NameError: name 'a' is not defined</h4>
 <h3 class="sub">Likely cause:</h3>
 <p>In your program, the unknown name is 'a'.
 </p>
-<h4>Execution stopped on line 72 of file 'custom_formatter.py'.
+<h4 class="main">Execution stopped on line 72 of file 'custom_formatter.py'.
 <h4>
 <pre class="pre2">       70:
        71: try:

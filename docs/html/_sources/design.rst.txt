@@ -4,14 +4,6 @@ Some thoughts on the design of friendly-traceback
 The following are thoughts on the design of this project.
 The content of this file **will** be changed as this project evolve.
 
-.. warning::
-
-  It is likely that experimentations with features will
-  proceed faster and in slightly different ways than the content
-  of this page would suggest.
-  Our current focus is primarily on code development,
-  and not on keeping this document up to date.
-
 Purpose
 -------
 
@@ -120,7 +112,7 @@ corresponding to those we have highlighted above for a standard traceback.
    given by Python, we explicitly state which was the line of code where
    the program stopped, and which one where the exception was raised.
    This is something that can be translated, as shown for the corresponding
-   French version.
+   French version (screenshot taken with an earlier version of Friendly-traceback.)
 
 .. image:: images/friendly_traceback_fr.png
    :scale: 50 %
@@ -355,18 +347,20 @@ Level 1
 
 This is the default, showing all the information mentioned previously.
 The screen capture below shows that we set the value explictly to 1; however,
-we could have not included the option ``--level 1`` and the result would
+we could have omitted the option ``--level 1`` and the result would
 have been the same
 
 
 .. image:: images/level1.png
    :scale: 50 %
-   :alt: Level 0
+   :alt: Level 1
 
 Level 2
 ~~~~~~~
 
-Same as level 1 but with the normal Python traceback printed **before**.
+Same as level 1 but with the "simulated" Python traceback printed **before**
+the rest of the information. Note that, in this case, the "simulated"
+Python traceback is identical to the normal Python traceback.
 
 .. important:: Which level to use by default?
 
@@ -377,32 +371,63 @@ Same as level 1 but with the normal Python traceback printed **before**.
 
 .. image:: images/level2.png
    :scale: 50 %
-   :alt: Level 0
-
-
-Level 9
-~~~~~~~
-
-Same as level 1 but with the normal Python traceback printed **after**.
-The value "9" is there for historical reasons and may be subject to change.
-
-
-.. image:: images/level9.png
-   :scale: 50 %
-   :alt: Level 0
+   :alt: Level 2
 
 
 Level 3
 ~~~~~~~
 
-The normal Python traceback followed by some generic information about
-this type of error and the likely cause that was identified (if any).
+Same as level 1 but with the simulated Python traceback printed **after**
+the complete friendly traceback.
 
 
 .. image:: images/level3.png
    :scale: 50 %
-   :alt: Level 0
+   :alt: Level 3
 
+
+Level 4
+~~~~~~~
+
+The simulated Python traceback followed by some generic information about
+this type of error and the likely cause that was identified (if any),
+but without showing where in the code the error occurred, nor the variables
+involved.
+
+
+.. image:: images/level4.png
+   :scale: 50 %
+   :alt: Level 4
+
+
+Level 5
+~~~~~~~
+
+Like level 4, but without the simulated Python traceback.
+
+
+.. image:: images/level5.png
+   :scale: 50 %
+   :alt: Level 5
+
+Level 9
+~~~~~~~
+
+Only the simulated Python traceback. In this specific case, it is
+identical to the normal Python traceback.
+
+
+.. image:: images/level9.png
+   :scale: 50 %
+   :alt: Level 9
+
+Negative values
+---------------
+
+For all the cases above for which the "simulated" Python traceback appears,
+asking for a negative level number means to replace the "simulated" Python
+traceback by the real Python traceback. As a result of this, level -9 is
+identical to level 0.
 
 Setting the verbosity level
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -418,7 +443,8 @@ the local environment variables (as for the language) or from a global
 
 .. sidebar:: Additional open question
 
-    It might be interesting to see if the normal Python traceback could be replaced by something that looks like what
+    It might be interesting to see if the simulated Python traceback could be
+    replaced by something that looks like what
     `better-exceptions <https://github.com/Qix-/better-exceptions>`_ provides,
     but perhaps without added colours, at least initially.
 
@@ -433,7 +459,7 @@ Extensibility
 For projects that have their custom Exceptions, like
 `AvantPy <https://aroberge.github.io/avantpy/docs/html/>`_, it is
 be possible to add the custom exceptions to those handled by
-friendly-traceback.  See the ``demo`` directory for an example.
+friendly-traceback.  See the ``demos`` directory for an example.
 
 It is also possible to use a different formatter.
 

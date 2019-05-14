@@ -14,7 +14,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Some thoughts on the design of friendly-traceback" href="design.html" />
+    <link rel="next" title="Occasional lies" href="lies.html" />
     <link rel="prev" title="Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨" href="index.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -24,7 +24,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="design.html" title="Some thoughts on the design of friendly-traceback"
+          <a href="lies.html" title="Occasional lies"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨"
@@ -51,8 +51,8 @@
   <p class="topless"><a href="index.html"
                         title="previous chapter">Bienvenue 환영합니다 Bienvenido - ようこそ Welcome  歡迎光臨</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="design.html"
-                        title="next chapter">Some thoughts on the design of friendly-traceback</a></p>
+  <p class="topless"><a href="lies.html"
+                        title="next chapter">Occasional lies</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -212,24 +212,34 @@ it can be done as in the following example:</p>
 </div>
 <div class="section" id="from-the-command-line">
 <h2>From the command line<a class="headerlink" href="#from-the-command-line" title="Permalink to this headline">¶</a></h2>
-<p>The following is subject to change.</p>
+<p>The following is subject to change; this was copied from version 0.0.8a</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback -h
-usage: -m [-h] [--lang LANG] [--level LEVEL] [--as_main] [source]
+usage: __main__.py [-h] [--lang LANG] [--level LEVEL] [--import_only]
+                   [--version]
+                   [source]
 
 Friendly-traceback makes Python tracebacks easier to understand.
 
         Note: the values of the verbosity level described below are:
             0: Normal Python tracebacks
             1: Default - does not need to be specified
-            2: Normal Python tracebacks appear before the friendly display
-            9: Normal Python tracebacks appended at the end of the friendly
-            display.
+            2: Python tracebacks appear before the friendly display
+            3: Python tracebacks appended at the end of the friendly display.
+            4: Python traceback followed by basic explanation
+            5: Only basic explanation
+            9: Python traceback
+
+        The Python traceback for level &gt;= 1 are the simulated version.
+        You can use negative values to show the true Python traceback which
+        will likely include function calls from friendly-traceback itself.
+        Thus level -9 is equivalent to level 0.
 
         Other values may be available, as we try to find the most useful
         settings for beginners.
 
 positional arguments:
-  source
+  source         Name of the script to be run as though it was the main module
+                 run by Python, so that __name__ does equal &#39;__main__&#39;.
 
 optional arguments:
   -h, --help     show this help message and exit
@@ -237,9 +247,8 @@ optional arguments:
                  this is a two-letter code such as &#39;fr&#39; for French.
   --level LEVEL  This sets the &quot;verbosity&quot; level, that is the amount of
                  information provided.
-  --as_main      Runs the program as though it was the main script. In case of
-                 problems with the code, it can lead to some difficult to
-                 understand tracebacks.
+  --import_only  Imports the module instead of running it as a script.
+  --version      Displays the current version.
 </pre></div>
 </div>
 </div>
@@ -258,7 +267,7 @@ optional arguments:
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="design.html" title="Some thoughts on the design of friendly-traceback"
+          <a href="lies.html" title="Occasional lies"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨"

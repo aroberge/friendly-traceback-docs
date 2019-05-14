@@ -15,7 +15,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Custom exceptions and formatting" href="custom.html" />
-    <link rel="prev" title="Usage" href="usage.html" /> 
+    <link rel="prev" title="Occasional lies" href="lies.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -27,7 +27,7 @@
           <a href="custom.html" title="Custom exceptions and formatting"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="usage.html" title="Usage"
+          <a href="lies.html" title="Occasional lies"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.8a documentation</a> &#187;</li> 
       </ul>
@@ -52,8 +52,13 @@
 <li><a class="reference internal" href="#level-0">Level 0</a></li>
 <li><a class="reference internal" href="#level-1">Level 1</a></li>
 <li><a class="reference internal" href="#level-2">Level 2</a></li>
-<li><a class="reference internal" href="#level-9">Level 9</a></li>
 <li><a class="reference internal" href="#level-3">Level 3</a></li>
+<li><a class="reference internal" href="#level-4">Level 4</a></li>
+<li><a class="reference internal" href="#level-5">Level 5</a></li>
+<li><a class="reference internal" href="#level-9">Level 9</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#negative-values">Negative values</a><ul>
 <li><a class="reference internal" href="#setting-the-verbosity-level">Setting the verbosity level</a></li>
 </ul>
 </li>
@@ -65,8 +70,8 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="usage.html"
-                        title="previous chapter">Usage</a></p>
+  <p class="topless"><a href="lies.html"
+                        title="previous chapter">Occasional lies</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="custom.html"
                         title="next chapter">Custom exceptions and formatting</a></p>
@@ -99,14 +104,6 @@
 <h1>Some thoughts on the design of friendly-traceback<a class="headerlink" href="#some-thoughts-on-the-design-of-friendly-traceback" title="Permalink to this headline">¶</a></h1>
 <p>The following are thoughts on the design of this project.
 The content of this file <strong>will</strong> be changed as this project evolve.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>It is likely that experimentations with features will
-proceed faster and in slightly different ways than the content
-of this page would suggest.
-Our current focus is primarily on code development,
-and not on keeping this document up to date.</p>
-</div>
 <div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
 <p>Friendly-traceback primary purpose is to make it easier for
@@ -160,7 +157,7 @@ How do we find the right balance?</p></li>
 <div class="section" id="anatomy-of-a-standard-python-traceback">
 <h2>Anatomy of a standard Python traceback<a class="headerlink" href="#anatomy-of-a-standard-python-traceback" title="Permalink to this headline">¶</a></h2>
 <p>Here’s an annotated screen capture of a standard somewhat typical Python traceback:</p>
-<a class="reference internal image-reference" href="_images/standard_traceback.png"><img alt="Standard Python traceback" src="_images/standard_traceback.png" style="width: 619.0px; height: 156.5px;" /></a>
+<a class="reference internal image-reference" href="_images/standard_traceback.png"><img alt="Standard Python traceback" src="_images/standard_traceback.png" style="width: 579.5px; height: 155.0px;" /></a>
 <ol class="arabic simple">
 <li><p>Some information about the exception raised which often includes a terse message.</p></li>
 <li><p>The line of code which was executed and eventually led to an exception
@@ -177,7 +174,7 @@ similar tracebacks.</p>
 <h2>Basic anatomy of a friendly traceback<a class="headerlink" href="#basic-anatomy-of-a-friendly-traceback" title="Permalink to this headline">¶</a></h2>
 <p>Let’s have a look at a “friendly traceback” by focusing first on the items
 corresponding to those we have highlighted above for a standard traceback.</p>
-<a class="reference internal image-reference" href="_images/friendly_traceback_en.png"><img alt="Friendly Python traceback" src="_images/friendly_traceback_en.png" style="width: 614.0px; height: 569.5px;" /></a>
+<a class="reference internal image-reference" href="_images/friendly_traceback_en.png"><img alt="Friendly Python traceback" src="_images/friendly_traceback_en.png" style="width: 572.5px; height: 694.5px;" /></a>
 <ol class="arabic simple">
 <li><p>The exact same terse information provided by Python about the exception raised.</p></li>
 <li><p>The line of code which was executed and eventually led to an exception
@@ -188,7 +185,7 @@ additional lines to help understand the context.</p></li>
 given by Python, we explicitly state which was the line of code where
 the program stopped, and which one where the exception was raised.
 This is something that can be translated, as shown for the corresponding
-French version.</p></li>
+French version (screenshot taken with an earlier version of Friendly-traceback.)</p></li>
 </ol>
 <a class="reference internal image-reference" href="_images/friendly_traceback_fr.png"><img alt="Friendly Python traceback" src="_images/friendly_traceback_fr.png" style="width: 543.0px; height: 254.0px;" /></a>
 <p>Note that, contrarily to standard Python tracebacks, only the first and last
@@ -200,7 +197,7 @@ the user with too much information.</p>
 <p>In addition to what was mentioned above, here’s an annotated screen capture
 highlighting the other information included in a “friendly traceback”, all
 of which can be translated.</p>
-<a class="reference internal image-reference" href="_images/friendly_traceback_en2.png"><img alt="Friendly Python traceback" src="_images/friendly_traceback_en2.png" style="width: 614.0px; height: 569.5px;" /></a>
+<a class="reference internal image-reference" href="_images/friendly_traceback_en2.png"><img alt="Friendly Python traceback" src="_images/friendly_traceback_en2.png" style="width: 572.5px; height: 694.5px;" /></a>
 <ol class="arabic simple">
 <li><p>A header. This could be customized if a third-party module implemented
 its own custom exceptions.</p></li>
@@ -359,19 +356,21 @@ a “level”.  Here are the current levels available, with a sample output.</p>
 <h3>Level 0<a class="headerlink" href="#level-0" title="Permalink to this headline">¶</a></h3>
 <p>This disables friendly-traceback and just shows the normal Python traceback.
 It can be set from the commmand line as shown below:</p>
-<a class="reference internal image-reference" href="_images/level0.png"><img alt="Level 0" src="_images/level0.png" style="width: 776.5px; height: 174.5px;" /></a>
+<a class="reference internal image-reference" href="_images/level0.png"><img alt="Level 0" src="_images/level0.png" style="width: 615.5px; height: 218.5px;" /></a>
 </div>
 <div class="section" id="level-1">
 <h3>Level 1<a class="headerlink" href="#level-1" title="Permalink to this headline">¶</a></h3>
 <p>This is the default, showing all the information mentioned previously.
 The screen capture below shows that we set the value explictly to 1; however,
-we could have not included the option <code class="docutils literal notranslate"><span class="pre">--level</span> <span class="pre">1</span></code> and the result would
+we could have omitted the option <code class="docutils literal notranslate"><span class="pre">--level</span> <span class="pre">1</span></code> and the result would
 have been the same</p>
-<a class="reference internal image-reference" href="_images/level1.png"><img alt="Level 0" src="_images/level1.png" style="width: 738.5px; height: 613.0px;" /></a>
+<a class="reference internal image-reference" href="_images/level1.png"><img alt="Level 1" src="_images/level1.png" style="width: 610.0px; height: 698.5px;" /></a>
 </div>
 <div class="section" id="level-2">
 <h3>Level 2<a class="headerlink" href="#level-2" title="Permalink to this headline">¶</a></h3>
-<p>Same as level 1 but with the normal Python traceback printed <strong>before</strong>.</p>
+<p>Same as level 1 but with the “simulated” Python traceback printed <strong>before</strong>
+the rest of the information. Note that, in this case, the “simulated”
+Python traceback is identical to the normal Python traceback.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Which level to use by default?</p>
@@ -379,20 +378,40 @@ have been the same</p>
 Friendly-traceback is to help users learn how to use the information
 from normal traceback, perhaps the default should be level 2.</p>
 </div>
-<a class="reference internal image-reference" href="_images/level2.png"><img alt="Level 0" src="_images/level2.png" style="width: 777.0px; height: 737.0px;" /></a>
-</div>
-<div class="section" id="level-9">
-<h3>Level 9<a class="headerlink" href="#level-9" title="Permalink to this headline">¶</a></h3>
-<p>Same as level 1 but with the normal Python traceback printed <strong>after</strong>.
-The value “9” is there for historical reasons and may be subject to change.</p>
-<a class="reference internal image-reference" href="_images/level9.png"><img alt="Level 0" src="_images/level9.png" style="width: 759.5px; height: 749.0px;" /></a>
+<a class="reference internal image-reference" href="_images/level2.png"><img alt="Level 2" src="_images/level2.png" style="width: 600.5px; height: 820.5px;" /></a>
 </div>
 <div class="section" id="level-3">
 <h3>Level 3<a class="headerlink" href="#level-3" title="Permalink to this headline">¶</a></h3>
-<p>The normal Python traceback followed by some generic information about
-this type of error and the likely cause that was identified (if any).</p>
-<a class="reference internal image-reference" href="_images/level3.png"><img alt="Level 0" src="_images/level3.png" style="width: 805.5px; height: 424.0px;" /></a>
+<p>Same as level 1 but with the simulated Python traceback printed <strong>after</strong>
+the complete friendly traceback.</p>
+<a class="reference internal image-reference" href="_images/level3.png"><img alt="Level 3" src="_images/level3.png" style="width: 603.5px; height: 835.0px;" /></a>
 </div>
+<div class="section" id="level-4">
+<h3>Level 4<a class="headerlink" href="#level-4" title="Permalink to this headline">¶</a></h3>
+<p>The simulated Python traceback followed by some generic information about
+this type of error and the likely cause that was identified (if any),
+but without showing where in the code the error occurred, nor the variables
+involved.</p>
+<a class="reference internal image-reference" href="_images/level4.png"><img alt="Level 4" src="_images/level4.png" style="width: 600.5px; height: 479.0px;" /></a>
+</div>
+<div class="section" id="level-5">
+<h3>Level 5<a class="headerlink" href="#level-5" title="Permalink to this headline">¶</a></h3>
+<p>Like level 4, but without the simulated Python traceback.</p>
+<a class="reference internal image-reference" href="_images/level5.png"><img alt="Level 5" src="_images/level5.png" style="width: 593.5px; height: 373.5px;" /></a>
+</div>
+<div class="section" id="level-9">
+<h3>Level 9<a class="headerlink" href="#level-9" title="Permalink to this headline">¶</a></h3>
+<p>Only the simulated Python traceback. In this specific case, it is
+identical to the normal Python traceback.</p>
+<a class="reference internal image-reference" href="_images/level9.png"><img alt="Level 9" src="_images/level9.png" style="width: 612.5px; height: 211.0px;" /></a>
+</div>
+</div>
+<div class="section" id="negative-values">
+<h2>Negative values<a class="headerlink" href="#negative-values" title="Permalink to this headline">¶</a></h2>
+<p>For all the cases above for which the “simulated” Python traceback appears,
+asking for a negative level number means to replace the “simulated” Python
+traceback by the real Python traceback. As a result of this, level -9 is
+identical to level 0.</p>
 <div class="section" id="setting-the-verbosity-level">
 <h3>Setting the verbosity level<a class="headerlink" href="#setting-the-verbosity-level" title="Permalink to this headline">¶</a></h3>
 <p>This can be done when using <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code> explicitly in the
@@ -403,7 +422,8 @@ the local environment variables (as for the language) or from a global
 <code class="docutils literal notranslate"><span class="pre">.ini</span></code> file.</p>
 <div class="sidebar">
 <p class="sidebar-title">Additional open question</p>
-<p>It might be interesting to see if the normal Python traceback could be replaced by something that looks like what
+<p>It might be interesting to see if the simulated Python traceback could be
+replaced by something that looks like what
 <a class="reference external" href="https://github.com/Qix-/better-exceptions">better-exceptions</a> provides,
 but perhaps without added colours, at least initially.</p>
 <a class="reference internal image-reference" href="_images/better-exceptions.png"><img alt="traceback from better-exceptions" src="_images/better-exceptions.png" style="width: 326.0px; height: 210.5px;" /></a>
@@ -415,7 +435,7 @@ but perhaps without added colours, at least initially.</p>
 <p>For projects that have their custom Exceptions, like
 <a class="reference external" href="https://aroberge.github.io/avantpy/docs/html/">AvantPy</a>, it is
 be possible to add the custom exceptions to those handled by
-friendly-traceback.  See the <code class="docutils literal notranslate"><span class="pre">demo</span></code> directory for an example.</p>
+friendly-traceback.  See the <code class="docutils literal notranslate"><span class="pre">demos</span></code> directory for an example.</p>
 <p>It is also possible to use a different formatter.</p>
 </div>
 <div class="section" id="other-similar-projects">
@@ -540,7 +560,7 @@ Furthermore, in the case of <code class="docutils literal notranslate"><span cla
           <a href="custom.html" title="Custom exceptions and formatting"
              >next</a> |</li>
         <li class="right" >
-          <a href="usage.html" title="Usage"
+          <a href="lies.html" title="Occasional lies"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.8a documentation</a> &#187;</li> 
       </ul>

@@ -141,27 +141,37 @@ it can be done as in the following example::
 From the command line
 ----------------------
 
-The following is subject to change.
+The following is subject to change; this was copied from version 0.0.8a
 
 .. code-block:: none
 
     $ python -m friendly_traceback -h
-    usage: -m [-h] [--lang LANG] [--level LEVEL] [--as_main] [source]
+    usage: __main__.py [-h] [--lang LANG] [--level LEVEL] [--import_only]
+                       [--version]
+                       [source]
 
     Friendly-traceback makes Python tracebacks easier to understand.
 
             Note: the values of the verbosity level described below are:
                 0: Normal Python tracebacks
                 1: Default - does not need to be specified
-                2: Normal Python tracebacks appear before the friendly display
-                9: Normal Python tracebacks appended at the end of the friendly
-                display.
+                2: Python tracebacks appear before the friendly display
+                3: Python tracebacks appended at the end of the friendly display.
+                4: Python traceback followed by basic explanation
+                5: Only basic explanation
+                9: Python traceback
+
+            The Python traceback for level >= 1 are the simulated version.
+            You can use negative values to show the true Python traceback which
+            will likely include function calls from friendly-traceback itself.
+            Thus level -9 is equivalent to level 0.
 
             Other values may be available, as we try to find the most useful
             settings for beginners.
 
     positional arguments:
-      source
+      source         Name of the script to be run as though it was the main module
+                     run by Python, so that __name__ does equal '__main__'.
 
     optional arguments:
       -h, --help     show this help message and exit
@@ -169,6 +179,5 @@ The following is subject to change.
                      this is a two-letter code such as 'fr' for French.
       --level LEVEL  This sets the "verbosity" level, that is the amount of
                      information provided.
-      --as_main      Runs the program as though it was the main script. In case of
-                     problems with the code, it can lead to some difficult to
-                     understand tracebacks.
+      --import_only  Imports the module instead of running it as a script.
+      --version      Displays the current version.
