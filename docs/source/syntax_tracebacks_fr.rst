@@ -21,7 +21,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.8a
+Friendly-traceback version: 0.0.9a
 Python version: 3.7.3
 
 
@@ -255,11 +255,11 @@ SyntaxError - can't assign to literal
 
     Ma meilleure hypothèse :
         Vous avez écrit une expression comme
-            1 = variable
-        où < 1 >, sur le côté gauche du signe égal, est ce que Python
+            1 =  a
+        où <1>, sur le côté gauche du signe égal, est ce que Python
         appelle un 'literal', c'est-à dire soit soit une chaîne de caractères ou un nombre,
         et non le nom d’une variable. Peut-être que vous vouliez plutôt écrire:
-            variable = 1
+            a = 1
         
         
 

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Friendly tracebacks - en Français &#8212; Friendly tracebacks 0.0.8a documentation</title>
+    <title>Friendly tracebacks - en Français &#8212; Friendly tracebacks 0.0.9a documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,7 +29,7 @@
         <li class="right" >
           <a href="syntax_tracebacks_en.html" title="Friendly SyntaxError tracebacks - in English"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.8a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.9a documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -71,6 +71,10 @@
 <li><a class="reference internal" href="#typeerror-9-unsupported-operand-type-s-for">TypeError - 9: unsupported operand type(s) for &#64;</a></li>
 <li><a class="reference internal" href="#typeerror-9a-unsupported-operand-type-s-for">TypeError - 9a: unsupported operand type(s) for &#64;=</a></li>
 <li><a class="reference internal" href="#typeerror-10-comparison-between-incompatible-types">TypeError - 10: comparison between incompatible types</a></li>
+<li><a class="reference internal" href="#typeerror-11-bad-operand-type-for-unary">TypeError - 11: bad operand type for unary +</a></li>
+<li><a class="reference internal" href="#typeerror-11a-bad-operand-type-for-unary">TypeError - 11a: bad operand type for unary -</a></li>
+<li><a class="reference internal" href="#typeerror-11b-bad-operand-type-for-unary">TypeError - 11b: bad operand type for unary ~</a></li>
+<li><a class="reference internal" href="#typeerror-12-object-does-not-support-item-assignment">TypeError - 12: object does not support item assignment</a></li>
 <li><a class="reference internal" href="#unboundlocalerror">UnboundLocalError</a></li>
 <li><a class="reference internal" href="#unknown-exception">Unknown exception</a></li>
 <li><a class="reference internal" href="#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
@@ -128,7 +132,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.0.8a
+<p>Friendly-traceback version: 0.0.9a
 Python version: 3.7.3</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -296,7 +300,6 @@ n’existe pas; typiquement, c’est parce que l’index que vous donnez
 est plus grand que la longueur de la séquence.
 Rappel: le premier élément d&#39;une séquence est à l&#39;index 0.
 
-
 Cause probable :
     Dans ce cas, la séquence est un tuple.
 
@@ -322,7 +325,6 @@ d&#39;une liste, d&#39;un tuple, ou d&#39;un objet similaire (séquence), à l�
 n’existe pas; typiquement, c’est parce que l’index que vous donnez
 est plus grand que la longueur de la séquence.
 Rappel: le premier élément d&#39;une séquence est à l&#39;index 0.
-
 
 Cause probable :
     Dans ce cas, la séquence est une liste.
@@ -415,7 +417,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
@@ -440,7 +443,8 @@ one: 1
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
@@ -465,7 +469,8 @@ a_list: [1, 2, 3]
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
@@ -490,7 +495,8 @@ a_list: [1, 2, 3]
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé d’additionner deux types d’objets incompatibles:
@@ -515,7 +521,8 @@ none: None
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé d’additionner deux types d’objets incompatibles:
@@ -540,7 +547,8 @@ two: &#39;two&#39;
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez tenté de soustraire deux types d’objets incompatibles:
@@ -565,7 +573,8 @@ b: [3, 4]
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez tenté de soustraire deux types d’objets incompatibles:
@@ -590,7 +599,8 @@ b: [3, 4]
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé de multiplier deux types d’objets différents:
@@ -615,7 +625,8 @@ b: {2, 3}
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé de multiplier deux types d’objets différents:
@@ -640,7 +651,8 @@ b: {2, 3}
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé de diviser deux types d’objets différents:
@@ -665,7 +677,8 @@ b: 3.1416
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé de diviser deux types d’objets différents:
@@ -690,7 +703,8 @@ b: 3.1416
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé de diviser deux types d’objets différents:
@@ -715,7 +729,8 @@ b: 3.1416
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé de diviser deux types d’objets différents:
@@ -740,7 +755,8 @@ b: 3.1416
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé d’effectuer l’opération binaire bit à bit &amp;
@@ -766,7 +782,8 @@ b: 2
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé d’effectuer l’opération binaire bit à bit &amp;=
@@ -792,7 +809,8 @@ b: 2
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé d&#39;élever à une puissance
@@ -818,7 +836,8 @@ b: 3.1416
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé d&#39;élever à une puissance
@@ -844,7 +863,8 @@ b: 3.1416
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé d’effectuer l’opération de décalage &gt;&gt;
@@ -870,7 +890,8 @@ b: 42
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé d’effectuer l’opération de décalage &gt;&gt;=
@@ -896,7 +917,8 @@ b: 42
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé d’utiliser l’opérateur @
@@ -924,7 +946,8 @@ b: 2
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     Vous avez essayé d’utiliser l’opérateur @=
@@ -952,7 +975,8 @@ b: 2
 
 Une exception TypeError est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
-ou en invoquant une fonction avec le mauvais type d’objet.
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable :
     En utilisant &lt;, vous avez tenté de comparer
@@ -968,6 +992,105 @@ L&#39;exécution s&#39;est arrêtée à la ligne 264 du fichier &#39;TESTS:\test
 
 b: 42
 a: &#39;a&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-11-bad-operand-type-for-unary">
+<h2>TypeError - 11: bad operand type for unary +<a class="headerlink" href="#typeerror-11-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: bad operand type for unary +: &#39;str&#39;
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+Cause probable :
+    Vous avez essayé d’utiliser l’opérateur unaire &#39;+&#39;
+    avec le type d’objet suivant: une chaîne de caractères (&#39;str&#39;).
+    Cette opération n’est pas définie pour ce type d’objet.
+
+L&#39;exécution s&#39;est arrêtée à la ligne 274 du fichier &#39;TESTS:\test_type_error.py&#39;
+
+   272: def test_type_error11():
+   273:     try:
+--&gt;274:         a = +&quot;abc&quot;
+   275:         print(a)
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-11a-bad-operand-type-for-unary">
+<h2>TypeError - 11a: bad operand type for unary -<a class="headerlink" href="#typeerror-11a-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: bad operand type for unary -: &#39;list&#39;
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+Cause probable :
+    Vous avez essayé d’utiliser l’opérateur unaire &#39;-&#39;
+    avec le type d’objet suivant: une liste (&#39;list&#39;).
+    Cette opération n’est pas définie pour ce type d’objet.
+
+L&#39;exécution s&#39;est arrêtée à la ligne 285 du fichier &#39;TESTS:\test_type_error.py&#39;
+
+   283: def test_type_error11a():
+   284:     try:
+--&gt;285:         a = - [1, 2, 3]
+   286:         print(a)
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-11b-bad-operand-type-for-unary">
+<h2>TypeError - 11b: bad operand type for unary ~<a class="headerlink" href="#typeerror-11b-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: bad operand type for unary ~: &#39;tuple&#39;
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+Cause probable :
+    Vous avez essayé d’utiliser l’opérateur unaire &#39;~&#39;
+    avec le type d’objet suivant: un tuple.
+    Cette opération n’est pas définie pour ce type d’objet.
+
+L&#39;exécution s&#39;est arrêtée à la ligne 296 du fichier &#39;TESTS:\test_type_error.py&#39;
+
+   294: def test_type_error11b():
+   295:     try:
+--&gt;296:         a = ~ (1, 2, 3)
+   297:         print(a)
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-12-object-does-not-support-item-assignment">
+<h2>TypeError - 12: object does not support item assignment<a class="headerlink" href="#typeerror-12-object-does-not-support-item-assignment" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: &#39;tuple&#39; object does not support item assignment
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+Cause probable :
+    Dans Python, certains objets sont connus comme immuables:
+    une fois définis, leur valeur ne peut pas être modifiée.
+    Vous avez essayé de modifier une partie d’un tel objet immuable: un tuple,
+    probablement en utilisant une opération d’indexation.
+
+L&#39;exécution s&#39;est arrêtée à la ligne 308 du fichier &#39;TESTS:\test_type_error.py&#39;
+
+   306:     a = (1, 2, 3)
+   307:     try:
+--&gt;308:         a[0] = 0
+   309:     except Exception:
+
+a: (1, 2, 3)
 </pre></div>
 </div>
 </div>
@@ -1001,7 +1124,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 20 du fichier &#39;TESTS:\test_
 
 global outer: &lt;function outer&gt;
 
-Exception levée à la ligne du fichier &#39;TESTS:\test_unbound_local_error.py&#39;.
+Exception levée à la ligne 12 du fichier &#39;TESTS:\test_unbound_local_error.py&#39;.
 
    10:     def inner():
    11:         c = 3
@@ -1097,7 +1220,7 @@ zero: 0
         <li class="right" >
           <a href="syntax_tracebacks_en.html" title="Friendly SyntaxError tracebacks - in English"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.8a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.9a documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

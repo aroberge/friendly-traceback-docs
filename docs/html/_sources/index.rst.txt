@@ -24,15 +24,39 @@ Friendly-traceback is **not** one of these projects.
 Friendly-traceback is aimed primarily at **beginners** and/or at users
 who would like to get information about traceback in their own language.
 Please, see the Design section for a complete description of the goals
-of this project.
+of this project. But for now, let's have a quick look at a standard
+Python traceback when using the REPL.
+
+.. image:: images/python_indexerror.png
+   :scale: 50 %
+   :alt: Python IndexError
+
+Not exactly the most helpful information for beginners ...
+
+Here's the corresponding version from Friendly-traceback's REPL
+
+.. image:: images/friendly_indexerror_en.png
+   :scale: 50 %
+   :alt: Friendly IndexError in English
+
+The only thing that is shown in exactly the same way is the line showing
+the exception name and a message.  Everything else can be made available
+in other languages.
+
+
+.. image:: images/friendly_indexerror_fr.png
+   :scale: 50 %
+   :alt: Friendly IndexError in French
 
 About the version
 -----------------
 
 Typically, the version shown at the top will have the letter "a" at the end.
-This means that the latest version available from Pypi is the version number
-without the "a", and that we are working towards the next release, so that
-some features may be slightly different from the version available from Pypi.
+This means that the latest update to the documentation was made after
+a release with a version number without the "a" was uploaded to Pypi,
+and that we are working towards the next release.
+As a result, some features shown here may be slightly different
+from the version available from Pypi.
 
 Contents
 --------

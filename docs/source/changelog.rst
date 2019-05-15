@@ -6,6 +6,15 @@ Change Log
     Unless otherwise noted, "with translation" means with French translation.
 
 
+- Removed memory location from repr of functions and similar objects
+- Removed --as_main option and added --import_only
+- Added --version option
+- Many minor code improvements
+- Added translations for demos
+- GUI based demo
+- Redefined formatting options and added new ones (including negative levels)
+- Added text about simulated Python traceback
+
 Version 0.0.8
 -------------
 

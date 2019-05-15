@@ -19,7 +19,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.8a
+Friendly-traceback version: 0.0.9a
 Python version: 3.7.3
 
 
@@ -215,7 +215,6 @@ IndexError - short tuple
     est plus grand que la longueur de la séquence.
     Rappel: le premier élément d'une séquence est à l'index 0.
     
-    
     Cause probable :
         Dans ce cas, la séquence est un tuple.
         
@@ -244,7 +243,6 @@ IndexError - long list
     n’existe pas; typiquement, c’est parce que l’index que vous donnez
     est plus grand que la longueur de la séquence.
     Rappel: le premier élément d'une séquence est à l'index 0.
-    
     
     Cause probable :
         Dans ce cas, la séquence est une liste.
@@ -348,7 +346,8 @@ TypeError - 1: concatenate two different types
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
@@ -376,7 +375,8 @@ TypeError - 1a: concatenate two different types
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
@@ -404,7 +404,8 @@ TypeError - 1b: concatenate two different types
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
@@ -432,7 +433,8 @@ TypeError - 2: unsupported operand type(s) for +
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé d’additionner deux types d’objets incompatibles:
@@ -460,7 +462,8 @@ TypeError - 2a: unsupported operand type(s) for +=
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé d’additionner deux types d’objets incompatibles:
@@ -488,7 +491,8 @@ TypeError - 3: unsupported operand type(s) for -
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez tenté de soustraire deux types d’objets incompatibles:
@@ -516,7 +520,8 @@ TypeError - 3a: unsupported operand type(s) for -=
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez tenté de soustraire deux types d’objets incompatibles:
@@ -544,7 +549,8 @@ TypeError - 4: unsupported operand type(s) for *
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé de multiplier deux types d’objets différents:
@@ -572,7 +578,8 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé de multiplier deux types d’objets différents:
@@ -600,7 +607,8 @@ TypeError - 5: unsupported operand type(s) for /
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé de diviser deux types d’objets différents:
@@ -628,7 +636,8 @@ TypeError - 5a: unsupported operand type(s) for /=
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé de diviser deux types d’objets différents:
@@ -656,7 +665,8 @@ TypeError - 5b: unsupported operand type(s) for //
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé de diviser deux types d’objets différents:
@@ -684,7 +694,8 @@ TypeError - 5c: unsupported operand type(s) for //=
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé de diviser deux types d’objets différents:
@@ -712,7 +723,8 @@ TypeError - 6: unsupported operand type(s) for &
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé d’effectuer l’opération binaire bit à bit &
@@ -741,7 +753,8 @@ TypeError - 6a: unsupported operand type(s) for &=
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé d’effectuer l’opération binaire bit à bit &=
@@ -770,7 +783,8 @@ TypeError - 7: unsupported operand type(s) for **
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé d'élever à une puissance
@@ -799,7 +813,8 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé d'élever à une puissance
@@ -828,7 +843,8 @@ TypeError - 8: unsupported operand type(s) for >>
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé d’effectuer l’opération de décalage >>
@@ -857,7 +873,8 @@ TypeError - 8a: unsupported operand type(s) for >>=
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé d’effectuer l’opération de décalage >>=
@@ -886,7 +903,8 @@ TypeError - 9: unsupported operand type(s) for @
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé d’utiliser l’opérateur @
@@ -917,7 +935,8 @@ TypeError - 9a: unsupported operand type(s) for @=
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         Vous avez essayé d’utiliser l’opérateur @=
@@ -948,7 +967,8 @@ TypeError - 10: comparison between incompatible types
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
-    ou en invoquant une fonction avec le mauvais type d’objet.
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
         En utilisant <, vous avez tenté de comparer
@@ -964,6 +984,117 @@ TypeError - 10: comparison between incompatible types
 
     b: 42
     a: 'a'
+
+
+TypeError - 11: bad operand type for unary +
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        TypeError: bad operand type for unary +: 'str'
+        
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    
+    Cause probable :
+        Vous avez essayé d’utiliser l’opérateur unaire '+'
+        avec le type d’objet suivant: une chaîne de caractères ('str').
+        Cette opération n’est pas définie pour ce type d’objet.
+        
+    L'exécution s'est arrêtée à la ligne 274 du fichier 'TESTS:\test_type_error.py'
+    
+       272: def test_type_error11():
+       273:     try:
+    -->274:         a = +"abc"
+       275:         print(a)
+
+
+TypeError - 11a: bad operand type for unary -
+---------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        TypeError: bad operand type for unary -: 'list'
+        
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    
+    Cause probable :
+        Vous avez essayé d’utiliser l’opérateur unaire '-'
+        avec le type d’objet suivant: une liste ('list').
+        Cette opération n’est pas définie pour ce type d’objet.
+        
+    L'exécution s'est arrêtée à la ligne 285 du fichier 'TESTS:\test_type_error.py'
+    
+       283: def test_type_error11a():
+       284:     try:
+    -->285:         a = - [1, 2, 3]
+       286:         print(a)
+
+
+TypeError - 11b: bad operand type for unary ~
+---------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        TypeError: bad operand type for unary ~: 'tuple'
+        
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    
+    Cause probable :
+        Vous avez essayé d’utiliser l’opérateur unaire '~'
+        avec le type d’objet suivant: un tuple.
+        Cette opération n’est pas définie pour ce type d’objet.
+        
+    L'exécution s'est arrêtée à la ligne 296 du fichier 'TESTS:\test_type_error.py'
+    
+       294: def test_type_error11b():
+       295:     try:
+    -->296:         a = ~ (1, 2, 3)
+       297:         print(a)
+
+
+TypeError - 12: object does not support item assignment
+-------------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        TypeError: 'tuple' object does not support item assignment
+        
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    
+    Cause probable :
+        Dans Python, certains objets sont connus comme immuables:
+        une fois définis, leur valeur ne peut pas être modifiée.
+        Vous avez essayé de modifier une partie d’un tel objet immuable: un tuple,
+        probablement en utilisant une opération d’indexation.
+        
+    L'exécution s'est arrêtée à la ligne 308 du fichier 'TESTS:\test_type_error.py'
+    
+       306:     a = (1, 2, 3)
+       307:     try:
+    -->308:         a[0] = 0
+       309:     except Exception:
+
+    a: (1, 2, 3)
 
 
 UnboundLocalError
@@ -1000,7 +1131,7 @@ UnboundLocalError
 
     global outer: <function outer>
 
-    Exception levée à la ligne du fichier 'TESTS:\test_unbound_local_error.py'.
+    Exception levée à la ligne 12 du fichier 'TESTS:\test_unbound_local_error.py'.
     
        10:     def inner():
        11:         c = 3

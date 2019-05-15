@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨 &#8212; Friendly tracebacks 0.0.8a documentation</title>
+    <title>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨 &#8212; Friendly tracebacks 0.0.9a documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -25,7 +25,7 @@
         <li class="right" >
           <a href="usage.html" title="Usage"
              accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Friendly tracebacks 0.0.8a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">Friendly tracebacks 0.0.9a documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -87,14 +87,25 @@ Friendly-traceback is <strong>not</strong> one of these projects.</p>
 <p>Friendly-traceback is aimed primarily at <strong>beginners</strong> and/or at users
 who would like to get information about traceback in their own language.
 Please, see the Design section for a complete description of the goals
-of this project.</p>
+of this project. But for now, let’s have a quick look at a standard
+Python traceback when using the REPL.</p>
+<a class="reference internal image-reference" href="_images/python_indexerror.png"><img alt="Python IndexError" src="_images/python_indexerror.png" style="width: 702.5px; height: 213.0px;" /></a>
+<p>Not exactly the most helpful information for beginners …</p>
+<p>Here’s the corresponding version from Friendly-traceback’s REPL</p>
+<a class="reference internal image-reference" href="_images/friendly_indexerror_en.png"><img alt="Friendly IndexError in English" src="_images/friendly_indexerror_en.png" style="width: 613.5px; height: 626.0px;" /></a>
+<p>The only thing that is shown in exactly the same way is the line showing
+the exception name and a message.  Everything else can be made available
+in other languages.</p>
+<a class="reference internal image-reference" href="_images/friendly_indexerror_fr.png"><img alt="Friendly IndexError in French" src="_images/friendly_indexerror_fr.png" style="width: 670.0px; height: 513.5px;" /></a>
 </div>
 <div class="section" id="about-the-version">
 <h2>About the version<a class="headerlink" href="#about-the-version" title="Permalink to this headline">¶</a></h2>
 <p>Typically, the version shown at the top will have the letter “a” at the end.
-This means that the latest version available from Pypi is the version number
-without the “a”, and that we are working towards the next release, so that
-some features may be slightly different from the version available from Pypi.</p>
+This means that the latest update to the documentation was made after
+a release with a version number without the “a” was uploaded to Pypi,
+and that we are working towards the next release.
+As a result, some features shown here may be slightly different
+from the version available from Pypi.</p>
 </div>
 <div class="section" id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
@@ -193,6 +204,10 @@ some features may be slightly different from the version available from Pypi.</p
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-9-unsupported-operand-type-s-for">TypeError - 9: unsupported operand type(s) for &#64;</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-9a-unsupported-operand-type-s-for">TypeError - 9a: unsupported operand type(s) for &#64;=</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-10-comparison-between-incompatible-types">TypeError - 10: comparison between incompatible types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-11-bad-operand-type-for-unary">TypeError - 11: bad operand type for unary +</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-11a-bad-operand-type-for-unary">TypeError - 11a: bad operand type for unary -</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-11b-bad-operand-type-for-unary">TypeError - 11b: bad operand type for unary ~</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-12-object-does-not-support-item-assignment">TypeError - 12: object does not support item assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#unboundlocalerror">UnboundLocalError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#unknown-exception">Unknown exception</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
@@ -254,6 +269,10 @@ some features may be slightly different from the version available from Pypi.</p
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-9-unsupported-operand-type-s-for">TypeError - 9: unsupported operand type(s) for &#64;</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-9a-unsupported-operand-type-s-for">TypeError - 9a: unsupported operand type(s) for &#64;=</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-10-comparison-between-incompatible-types">TypeError - 10: comparison between incompatible types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-11-bad-operand-type-for-unary">TypeError - 11: bad operand type for unary +</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-11a-bad-operand-type-for-unary">TypeError - 11a: bad operand type for unary -</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-11b-bad-operand-type-for-unary">TypeError - 11b: bad operand type for unary ~</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-12-object-does-not-support-item-assignment">TypeError - 12: object does not support item assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#unboundlocalerror">UnboundLocalError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#unknown-exception">Unknown exception</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
@@ -336,7 +355,7 @@ some features may be slightly different from the version available from Pypi.</p
         <li class="right" >
           <a href="usage.html" title="Usage"
              >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Friendly tracebacks 0.0.8a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">Friendly tracebacks 0.0.9a documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

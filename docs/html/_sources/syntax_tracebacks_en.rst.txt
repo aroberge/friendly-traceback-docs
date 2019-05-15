@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.8a
+Friendly-traceback version: 0.0.9a
 Python version: 3.7.3
 
 
@@ -249,11 +249,11 @@ SyntaxError - can't assign to literal
 
     My best guess:
         You wrote an expression like
-            1 = something
+            1 = a
         where <1>, on the left hand-side of the equal sign, is
         an actual number or string (what Python calls a 'literal'),
-        and not the name of a variable.  Perhaps you meant to write:
-            something = 1
+        and not the name of a variable. Perhaps you meant to write:
+            a = 1
         
         
 

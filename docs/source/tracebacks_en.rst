@@ -19,7 +19,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.8a
+Friendly-traceback version: 0.0.9a
 Python version: 3.7.3
 
 
@@ -345,7 +345,8 @@ TypeError - 1: concatenate two different types
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to concatenate (add) two different types of objects:
@@ -373,7 +374,8 @@ TypeError - 1a: concatenate two different types
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to concatenate (add) two different types of objects:
@@ -401,7 +403,8 @@ TypeError - 1b: concatenate two different types
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to concatenate (add) two different types of objects:
@@ -429,7 +432,8 @@ TypeError - 2: unsupported operand type(s) for +
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to add two incompatible types of objects:
@@ -457,7 +461,8 @@ TypeError - 2a: unsupported operand type(s) for +=
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to add two incompatible types of objects:
@@ -485,7 +490,8 @@ TypeError - 3: unsupported operand type(s) for -
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to subtract two incompatible types of objects:
@@ -513,7 +519,8 @@ TypeError - 3a: unsupported operand type(s) for -=
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to subtract two incompatible types of objects:
@@ -541,7 +548,8 @@ TypeError - 4: unsupported operand type(s) for *
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to multiply two incompatible types of objects:
@@ -569,7 +577,8 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to multiply two incompatible types of objects:
@@ -597,7 +606,8 @@ TypeError - 5: unsupported operand type(s) for /
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to divide two incompatible types of objects:
@@ -625,7 +635,8 @@ TypeError - 5a: unsupported operand type(s) for /=
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to divide two incompatible types of objects:
@@ -653,7 +664,8 @@ TypeError - 5b: unsupported operand type(s) for //
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to divide two incompatible types of objects:
@@ -681,7 +693,8 @@ TypeError - 5c: unsupported operand type(s) for //=
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to divide two incompatible types of objects:
@@ -709,7 +722,8 @@ TypeError - 6: unsupported operand type(s) for &
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to perform the bitwise operation &
@@ -738,7 +752,8 @@ TypeError - 6a: unsupported operand type(s) for &=
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to perform the bitwise operation &=
@@ -767,7 +782,8 @@ TypeError - 7: unsupported operand type(s) for **
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to exponentiate (raise to a power)
@@ -796,7 +812,8 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to exponentiate (raise to a power)
@@ -825,7 +842,8 @@ TypeError - 8: unsupported operand type(s) for >>
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to perform the bit shifting operation >>
@@ -854,7 +872,8 @@ TypeError - 8a: unsupported operand type(s) for >>=
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to perform the bit shifting operation >>=
@@ -883,7 +902,8 @@ TypeError - 9: unsupported operand type(s) for @
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to use the operator @
@@ -914,7 +934,8 @@ TypeError - 9a: unsupported operand type(s) for @=
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to use the operator @=
@@ -945,7 +966,8 @@ TypeError - 10: comparison between incompatible types
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to do an order comparison (<)
@@ -961,6 +983,117 @@ TypeError - 10: comparison between incompatible types
 
     b: 42
     a: 'a'
+
+
+TypeError - 11: bad operand type for unary +
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        TypeError: bad operand type for unary +: 'str'
+        
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
+    
+    Likely cause:
+        You tried to use the unary operator '+'
+        with the following type of object: a string ('str').
+        This operation is not defined for this type of object.
+        
+    Execution stopped on line 274 of file 'TESTS:\test_type_error.py'.
+    
+       272: def test_type_error11():
+       273:     try:
+    -->274:         a = +"abc"
+       275:         print(a)
+
+
+TypeError - 11a: bad operand type for unary -
+---------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        TypeError: bad operand type for unary -: 'list'
+        
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
+    
+    Likely cause:
+        You tried to use the unary operator '-'
+        with the following type of object: a list.
+        This operation is not defined for this type of object.
+        
+    Execution stopped on line 285 of file 'TESTS:\test_type_error.py'.
+    
+       283: def test_type_error11a():
+       284:     try:
+    -->285:         a = - [1, 2, 3]
+       286:         print(a)
+
+
+TypeError - 11b: bad operand type for unary ~
+---------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        TypeError: bad operand type for unary ~: 'tuple'
+        
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
+    
+    Likely cause:
+        You tried to use the unary operator '~'
+        with the following type of object: a tuple.
+        This operation is not defined for this type of object.
+        
+    Execution stopped on line 296 of file 'TESTS:\test_type_error.py'.
+    
+       294: def test_type_error11b():
+       295:     try:
+    -->296:         a = ~ (1, 2, 3)
+       297:         print(a)
+
+
+TypeError - 12: object does not support item assignment
+-------------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        TypeError: 'tuple' object does not support item assignment
+        
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
+    
+    Likely cause:
+        In Python, some objects are known as immutable:
+        once defined, their value cannot be changed.
+        You tried change part of such an immutable object: a tuple,
+        most likely by using an indexing operation.
+        
+    Execution stopped on line 308 of file 'TESTS:\test_type_error.py'.
+    
+       306:     a = (1, 2, 3)
+       307:     try:
+    -->308:         a[0] = 0
+       309:     except Exception:
+
+    a: (1, 2, 3)
 
 
 UnboundLocalError

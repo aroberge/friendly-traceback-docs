@@ -5,7 +5,7 @@ Friendly tracebacks - in English (Python 3.6)
 Cases for which the information given by Python 3.6 differs from that
 given by Python 3.7
 
-Friendly-traceback version: 0.0.8a
+Friendly-traceback version: 0.0.9a
 Python version: 3.6.8
 
 
@@ -45,7 +45,8 @@ TypeError - 1: must be str, not int
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to concatenate (add) two different types of objects:
@@ -73,7 +74,8 @@ TypeError - 1a: must be str, not list
         
     A TypeError is usually caused by trying
     to combine two incompatible types of objects,
-    or by calling a function with the wrong type of object.
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
     Likely cause:
         You tried to concatenate (add) two different types of objects:

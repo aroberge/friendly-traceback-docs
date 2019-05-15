@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Friendly tracebacks - in English &#8212; Friendly tracebacks 0.0.8a documentation</title>
+    <title>Friendly tracebacks - in English &#8212; Friendly tracebacks 0.0.9a documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,7 +29,7 @@
         <li class="right" >
           <a href="syntax_error.html" title="Dealing with Syntax Errors"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.8a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.9a documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -71,6 +71,10 @@
 <li><a class="reference internal" href="#typeerror-9-unsupported-operand-type-s-for">TypeError - 9: unsupported operand type(s) for &#64;</a></li>
 <li><a class="reference internal" href="#typeerror-9a-unsupported-operand-type-s-for">TypeError - 9a: unsupported operand type(s) for &#64;=</a></li>
 <li><a class="reference internal" href="#typeerror-10-comparison-between-incompatible-types">TypeError - 10: comparison between incompatible types</a></li>
+<li><a class="reference internal" href="#typeerror-11-bad-operand-type-for-unary">TypeError - 11: bad operand type for unary +</a></li>
+<li><a class="reference internal" href="#typeerror-11a-bad-operand-type-for-unary">TypeError - 11a: bad operand type for unary -</a></li>
+<li><a class="reference internal" href="#typeerror-11b-bad-operand-type-for-unary">TypeError - 11b: bad operand type for unary ~</a></li>
+<li><a class="reference internal" href="#typeerror-12-object-does-not-support-item-assignment">TypeError - 12: object does not support item assignment</a></li>
 <li><a class="reference internal" href="#unboundlocalerror">UnboundLocalError</a></li>
 <li><a class="reference internal" href="#unknown-exception">Unknown exception</a></li>
 <li><a class="reference internal" href="#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
@@ -128,7 +132,7 @@ On Windows, if Sphinx is installed on your computer, it is suggested
 instead to run make_trb.bat in the root directory as it will create
 similar files for all languages <em>and</em> update the documentation.</p>
 </div>
-<p>Friendly-traceback version: 0.0.8a
+<p>Friendly-traceback version: 0.0.9a
 Python version: 3.7.3</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -412,7 +416,8 @@ beyond the location indicated below by --&gt; and ^.
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to concatenate (add) two different types of objects:
@@ -437,7 +442,8 @@ one: 1
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to concatenate (add) two different types of objects:
@@ -462,7 +468,8 @@ a_list: [1, 2, 3]
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to concatenate (add) two different types of objects:
@@ -487,7 +494,8 @@ a_list: [1, 2, 3]
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to add two incompatible types of objects:
@@ -512,7 +520,8 @@ none: None
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to add two incompatible types of objects:
@@ -537,7 +546,8 @@ two: &#39;two&#39;
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to subtract two incompatible types of objects:
@@ -562,7 +572,8 @@ b: [3, 4]
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to subtract two incompatible types of objects:
@@ -587,7 +598,8 @@ b: [3, 4]
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to multiply two incompatible types of objects:
@@ -612,7 +624,8 @@ b: {2, 3}
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to multiply two incompatible types of objects:
@@ -637,7 +650,8 @@ b: {2, 3}
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to divide two incompatible types of objects:
@@ -662,7 +676,8 @@ b: 3.1416
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to divide two incompatible types of objects:
@@ -687,7 +702,8 @@ b: 3.1416
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to divide two incompatible types of objects:
@@ -712,7 +728,8 @@ b: 3.1416
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to divide two incompatible types of objects:
@@ -737,7 +754,8 @@ b: 3.1416
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to perform the bitwise operation &amp;
@@ -763,7 +781,8 @@ b: 2
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to perform the bitwise operation &amp;=
@@ -789,7 +808,8 @@ b: 2
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to exponentiate (raise to a power)
@@ -815,7 +835,8 @@ b: 3.1416
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to exponentiate (raise to a power)
@@ -841,7 +862,8 @@ b: 3.1416
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to perform the bit shifting operation &gt;&gt;
@@ -867,7 +889,8 @@ b: 42
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to perform the bit shifting operation &gt;&gt;=
@@ -893,7 +916,8 @@ b: 42
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to use the operator @
@@ -921,7 +945,8 @@ b: 2
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to use the operator @=
@@ -949,7 +974,8 @@ b: 2
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
-or by calling a function with the wrong type of object.
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
 
 Likely cause:
     You tried to do an order comparison (&lt;)
@@ -965,6 +991,105 @@ Execution stopped on line 264 of file &#39;TESTS:\test_type_error.py&#39;.
 
 b: 42
 a: &#39;a&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-11-bad-operand-type-for-unary">
+<h2>TypeError - 11: bad operand type for unary +<a class="headerlink" href="#typeerror-11-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: bad operand type for unary +: &#39;str&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to use the unary operator &#39;+&#39;
+    with the following type of object: a string (&#39;str&#39;).
+    This operation is not defined for this type of object.
+
+Execution stopped on line 274 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   272: def test_type_error11():
+   273:     try:
+--&gt;274:         a = +&quot;abc&quot;
+   275:         print(a)
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-11a-bad-operand-type-for-unary">
+<h2>TypeError - 11a: bad operand type for unary -<a class="headerlink" href="#typeerror-11a-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: bad operand type for unary -: &#39;list&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to use the unary operator &#39;-&#39;
+    with the following type of object: a list.
+    This operation is not defined for this type of object.
+
+Execution stopped on line 285 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   283: def test_type_error11a():
+   284:     try:
+--&gt;285:         a = - [1, 2, 3]
+   286:         print(a)
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-11b-bad-operand-type-for-unary">
+<h2>TypeError - 11b: bad operand type for unary ~<a class="headerlink" href="#typeerror-11b-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: bad operand type for unary ~: &#39;tuple&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to use the unary operator &#39;~&#39;
+    with the following type of object: a tuple.
+    This operation is not defined for this type of object.
+
+Execution stopped on line 296 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   294: def test_type_error11b():
+   295:     try:
+--&gt;296:         a = ~ (1, 2, 3)
+   297:         print(a)
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-12-object-does-not-support-item-assignment">
+<h2>TypeError - 12: object does not support item assignment<a class="headerlink" href="#typeerror-12-object-does-not-support-item-assignment" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: &#39;tuple&#39; object does not support item assignment
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    In Python, some objects are known as immutable:
+    once defined, their value cannot be changed.
+    You tried change part of such an immutable object: a tuple,
+    most likely by using an indexing operation.
+
+Execution stopped on line 308 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   306:     a = (1, 2, 3)
+   307:     try:
+--&gt;308:         a[0] = 0
+   309:     except Exception:
+
+a: (1, 2, 3)
 </pre></div>
 </div>
 </div>
@@ -1093,7 +1218,7 @@ zero: 0
         <li class="right" >
           <a href="syntax_error.html" title="Dealing with Syntax Errors"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.8a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.9a documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
