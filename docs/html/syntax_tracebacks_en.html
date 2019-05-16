@@ -114,11 +114,11 @@ beyond the location indicated below by --&gt; and ^.
 
    1: &quot;&quot;&quot; Should raise SyntaxError&quot;&quot;&quot;
    2:
---&gt;3: pass = 2
-           ^
+--&gt;3: def = 2
+          ^
 
 My best guess:
-    You were trying to assign a value to a Python keyword.
+    You were trying to assign a value to the Python keyword &#39;def&#39;.
     This is not allowed.
 </pre></div>
 </div>
@@ -320,9 +320,9 @@ beyond the location indicated below by --&gt; and ^.
 
 My best guess:
     You wrote something like
-        import X from Y
+        import pen from turtle
     instead of
-        from Y import X
+        from turtle import pen
 </pre></div>
 </div>
 </div>

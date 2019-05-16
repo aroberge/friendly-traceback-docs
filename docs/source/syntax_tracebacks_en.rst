@@ -39,11 +39,11 @@ SyntaxError - Assign to keyword
     
        1: """ Should raise SyntaxError"""
        2: 
-    -->3: pass = 2
-               ^
+    -->3: def = 2
+              ^
 
     My best guess:
-        You were trying to assign a value to a Python keyword.
+        You were trying to assign a value to the Python keyword 'def'.
         This is not allowed.
         
         
@@ -278,9 +278,9 @@ SyntaxError - import X from Y
 
     My best guess:
         You wrote something like
-            import X from Y
+            import pen from turtle
         instead of
-            from Y import X
+            from turtle import pen
         
         
 

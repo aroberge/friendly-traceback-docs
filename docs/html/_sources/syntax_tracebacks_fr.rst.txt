@@ -42,11 +42,11 @@ SyntaxError - Assign to keyword
     
        1: """ Should raise SyntaxError"""
        2: 
-    -->3: pass = 2
-               ^
+    -->3: def = 2
+              ^
 
     Ma meilleure hypothèse :
-        Vous essayiez d’assigner une valeur à un mot clé Python.
+        Vous essayiez d’assigner une valeur au mot clé Python 'def'.
         Ceci n’est pas permis.
         
         
@@ -284,9 +284,9 @@ SyntaxError - import X from Y
 
     Ma meilleure hypothèse :
         Vous avez écrit quelque chose comme
-            import X from Y
+            import pen from turtle
         au lieu de
-            from Y import X
+            from turtle import pen
         
         
         

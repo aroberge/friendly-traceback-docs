@@ -117,11 +117,11 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
    1: &quot;&quot;&quot; Should raise SyntaxError&quot;&quot;&quot;
    2:
---&gt;3: pass = 2
-           ^
+--&gt;3: def = 2
+          ^
 
 Ma meilleure hypothèse :
-    Vous essayiez d’assigner une valeur à un mot clé Python.
+    Vous essayiez d’assigner une valeur au mot clé Python &#39;def&#39;.
     Ceci n’est pas permis.
 </pre></div>
 </div>
@@ -323,9 +323,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Ma meilleure hypothèse :
     Vous avez écrit quelque chose comme
-        import X from Y
+        import pen from turtle
     au lieu de
-        from Y import X
+        from turtle import pen
 </pre></div>
 </div>
 </div>
