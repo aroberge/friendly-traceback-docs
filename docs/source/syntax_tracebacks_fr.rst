@@ -315,3 +315,53 @@ SyntaxError - EOL while scanning string literal
         avec un guillemet simple ou double, mais n'avez jamais
         terminé la chaîne avec un autre guillemet sur cette ligne.
         
+
+SyntaxError - assignment to keyword (None)
+------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: can't assign to keyword
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error12.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: cannot assign to None in Py 3.8
+       2:    and can't assign to keyword before."""
+       3: 
+    -->4: None = 1
+         ^
+
+    Ma meilleure hypothèse :
+        None est une constante dans python; vous ne pouvez pas lui assigner une valeur.
+        
+        
+
+SyntaxError - assignment to keyword (__debug__)
+-----------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: assignment to keyword
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error13.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
+       2:    and assignment to keyword before."""
+       3: 
+    -->4: __debug__ = 1
+         ^
+
+    Ma meilleure hypothèse :
+        __debug__ est une constante dans python; vous ne pouvez pas lui assigner une valeur.
+        
+        

@@ -48,6 +48,8 @@
 <li><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal">SyntaxError - can’t assign to literal</a></li>
 <li><a class="reference internal" href="#syntaxerror-import-x-from-y">SyntaxError - import X from Y</a></li>
 <li><a class="reference internal" href="#syntaxerror-eol-while-scanning-string-literal">SyntaxError - EOL while scanning string literal</a></li>
+<li><a class="reference internal" href="#syntaxerror-assignment-to-keyword-none">SyntaxError - assignment to keyword (None)</a></li>
+<li><a class="reference internal" href="#syntaxerror-assignment-to-keyword-debug">SyntaxError - assignment to keyword (__debug__)</a></li>
 </ul>
 </li>
 </ul>
@@ -344,6 +346,48 @@ beyond the location indicated below by --&gt; and ^.
 My best guess:
     You starting writing a string with a single or double quote
     but never ended the string with another quote on that line.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assignment-to-keyword-none">
+<h2>SyntaxError - assignment to keyword (None)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-none" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: can&#39;t assign to keyword
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error12.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: cannot assign to None in Py 3.8
+   2:    and can&#39;t assign to keyword before.&quot;&quot;&quot;
+   3:
+--&gt;4: None = 1
+     ^
+
+My best guess:
+    None is a constant in Python; you cannot assign it a value.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assignment-to-keyword-debug">
+<h2>SyntaxError - assignment to keyword (__debug__)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-debug" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: assignment to keyword
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error13.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
+   2:    and assignment to keyword before.&quot;&quot;&quot;
+   3:
+--&gt;4: __debug__ = 1
+     ^
+
+My best guess:
+    __debug__ is a constant in Python; you cannot assign it a value.
 </pre></div>
 </div>
 </div>

@@ -307,3 +307,53 @@ SyntaxError - EOL while scanning string literal
         You starting writing a string with a single or double quote
         but never ended the string with another quote on that line.
         
+
+SyntaxError - assignment to keyword (None)
+------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: can't assign to keyword
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error12.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: cannot assign to None in Py 3.8
+       2:    and can't assign to keyword before."""
+       3: 
+    -->4: None = 1
+         ^
+
+    My best guess:
+        None is a constant in Python; you cannot assign it a value.
+        
+        
+
+SyntaxError - assignment to keyword (__debug__)
+-----------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: assignment to keyword
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error13.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
+       2:    and assignment to keyword before."""
+       3: 
+    -->4: __debug__ = 1
+         ^
+
+    My best guess:
+        __debug__ is a constant in Python; you cannot assign it a value.
+        
+        
