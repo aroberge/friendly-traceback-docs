@@ -495,29 +495,38 @@ Reference: known exceptions
 In the following, those that are followed by an * had been implemented
 when this page was last updated.
 
-Those followed by ``**``, namely ``SystemExit`` and ``KeyboardInterrupt``,
+Those followed by ``!!``, namely ``SystemExit`` and ``KeyboardInterrupt``,
 have been excluded as it seemed rather counter-productive to intercept them.
 
-Those followed by ``#``, namely ``GeneratorExit``, ``StopIteration``, and
+Those followed by ``#``, namely ``GeneratorExit``, ``StopIteration``,
+``FloatingPointError``, and
 ``StopAsyncIteration``, are excluded as they should not normally be
 seen by an end user - at least, not by beginners who would need
 additional explanation about the meaning of such exceptions.
 Furthermore, in the case of ``StopIteration``, see
-`PEP 479 <https://www.python.org/dev/peps/pep-0479/>`_
+`PEP 479 <https://www.python.org/dev/peps/pep-0479/>`_.
+``FloatingPointError`` is actually
+`not used by Python <https://docs.python.org/3.7/library/exceptions.html#FloatingPointError>`_.
+
+``BaseException``, ``Exception``, and ``ArithmeticError`` are base classes which
+are not normally seen: some derived classes are normally used instead.
+They are denoted by ``**``.
+
+
 
 It is very likely that the information below is not up to date.
 
 .. code-block:: none
 
-    BaseException
-     +-- SystemExit **
-     +-- KeyboardInterrupt **
+    BaseException **
+     +-- SystemExit !!
+     +-- KeyboardInterrupt !!
      +-- GeneratorExit #
-     +-- Exception
+     +-- Exception **
           +-- StopIteration #
           +-- StopAsyncIteration #
-          +-- ArithmeticError *
-          |    +-- FloatingPointError
+          +-- ArithmeticError **
+          |    +-- FloatingPointError #
           |    +-- OverflowError
           |    +-- ZeroDivisionError *
           +-- AssertionError

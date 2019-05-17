@@ -48,6 +48,7 @@
 <li><a class="reference internal" href="#indexerror-long-list">IndexError - long list</a></li>
 <li><a class="reference internal" href="#modulenotfounderror">ModuleNotFoundError</a></li>
 <li><a class="reference internal" href="#nameerror">NameError</a></li>
+<li><a class="reference internal" href="#overflowerror">OverflowError</a></li>
 <li><a class="reference internal" href="#taberror">TabError</a></li>
 <li><a class="reference internal" href="#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
 <li><a class="reference internal" href="#typeerror-1a-concatenate-two-different-types">TypeError - 1a: concatenate two different types</a></li>
@@ -382,6 +383,23 @@ L&#39;exécution s&#39;est arrêtée à la ligne 6 du fichier &#39;TESTS:\test_n
    4: def test_name_error():
    5:     try:
 --&gt;6:         b = c
+   7:     except Exception:
+</pre></div>
+</div>
+</div>
+<div class="section" id="overflowerror">
+<h2>OverflowError<a class="headerlink" href="#overflowerror" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    OverflowError: (34, &#39;Result too large&#39;)
+
+Une exception de type OverflowError est levée lorsque le résultat d’une opération arithmétique
+est trop grand pour être manipulé par le processeur de l’ordinateur.
+
+L&#39;exécution s&#39;est arrêtée à la ligne 6 du fichier &#39;TESTS:\test_overflow_error.py&#39;
+
+   4: def test_overflow_error():
+   5:     try:
+--&gt;6:         2. ** 1600
    7:     except Exception:
 </pre></div>
 </div>

@@ -309,6 +309,26 @@ NameError
        7:     except Exception:
 
 
+OverflowError
+-------------
+
+.. code-block:: none
+
+
+    Python exception:
+        OverflowError: (34, 'Result too large')
+        
+    An OverflowError is raised when the result of an arithmetic operation
+    is too large to be handled by the computer's processor.
+    
+    Execution stopped on line 6 of file 'TESTS:\test_overflow_error.py'.
+    
+       4: def test_overflow_error():
+       5:     try:
+    -->6:         2. ** 1600
+       7:     except Exception:
+
+
 TabError
 --------
 
