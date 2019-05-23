@@ -159,6 +159,9 @@ The following is subject to change; this was copied from version 0.0.8a
                 3: Python tracebacks appended at the end of the friendly display.
                 4: Python traceback followed by basic explanation
                 5: Only basic explanation
+                6: No generic explanation
+                7: Python tracebacks appear before the friendly display but
+                   no generic explanation is included.
                 9: Python traceback
 
             The Python traceback for level >= 1 are the simulated version.

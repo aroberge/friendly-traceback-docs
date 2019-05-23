@@ -5,7 +5,7 @@ Friendly tracebacks - in French (Python 3.6)
 Nous incluons seulement les cas pour lesquels l'information
 donnée par Python 3.6 diffère de celle donnée par Python 3.7.
 
-Friendly-traceback version: 0.0.9a
+Friendly-traceback version: 0.0.10a
 Python version: 3.6.8
 
 

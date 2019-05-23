@@ -9,9 +9,9 @@ any language.
 
 .. warning::
 
-    This is alpha software, currently in development. This documentation
-    is almost certainly not up to date, but it should be enough to get
-    you started.
+    This is alpha software, currently in development.
+    The API is subject to change without notice; such changes may not
+    be included (yet) in this documentation.
 
 
 In a nutshell

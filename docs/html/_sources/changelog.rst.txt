@@ -6,6 +6,9 @@ Change Log
     Unless otherwise noted, "with translation" means with French translation.
 
 
+
+- Improved one case for SyntaxError
+- Added 5 new cases for TypeError
 - Removed memory location from repr of functions and similar objects
 - Removed --as_main option and added --import_only
 - Added --version option
