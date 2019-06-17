@@ -14,8 +14,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Friendly tracebacks - en Français" href="tracebacks_fr.html" />
-    <link rel="prev" title="Friendly tracebacks - in English (Python 3.6)" href="tracebacks_en36.html" /> 
+    <link rel="next" title="Friendly tracebacks - in English" href="tracebacks_en_3.7.html" />
+    <link rel="prev" title="Friendly tracebacks - in English" href="tracebacks_en_3.6.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -24,10 +24,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="tracebacks_fr.html" title="Friendly tracebacks - en Français"
+          <a href="tracebacks_en_3.7.html" title="Friendly tracebacks - in English"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="tracebacks_en36.html" title="Friendly tracebacks - in English (Python 3.6)"
+          <a href="tracebacks_en_3.6.html" title="Friendly tracebacks - in English"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li> 
       </ul>
@@ -50,20 +50,23 @@
 <li><a class="reference internal" href="#syntaxerror-eol-while-scanning-string-literal">SyntaxError - EOL while scanning string literal</a></li>
 <li><a class="reference internal" href="#syntaxerror-assignment-to-keyword-none">SyntaxError - assignment to keyword (None)</a></li>
 <li><a class="reference internal" href="#syntaxerror-assignment-to-keyword-debug">SyntaxError - assignment to keyword (__debug__)</a></li>
+<li><a class="reference internal" href="#syntaxerror-unmatched-closing-parenthesis">SyntaxError - unmatched closing parenthesis</a></li>
+<li><a class="reference internal" href="#syntaxerror-unclosed-parenthesis">SyntaxError - unclosed parenthesis</a></li>
+<li><a class="reference internal" href="#syntaxerror-mismatched-brackets">SyntaxError - mismatched brackets</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="tracebacks_en36.html"
-                        title="previous chapter">Friendly tracebacks - in English (Python 3.6)</a></p>
+  <p class="topless"><a href="tracebacks_en_3.6.html"
+                        title="previous chapter">Friendly tracebacks - in English</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="tracebacks_fr.html"
-                        title="next chapter">Friendly tracebacks - en Français</a></p>
+  <p class="topless"><a href="tracebacks_en_3.7.html"
+                        title="next chapter">Friendly tracebacks - in English</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/syntax_tracebacks_en.rst.txt"
+      <li><a href="_sources/syntax_tracebacks_en_3.6.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -103,7 +106,7 @@ instead to run make_trb.bat in the root directory as it will create
 similar files for all languages <em>and</em> update the documentation.</p>
 </div>
 <p>Friendly-traceback version: 0.0.10a
-Python version: 3.7.3</p>
+Python version: 3.6.8</p>
 <div class="section" id="syntaxerror-assign-to-keyword">
 <h2>SyntaxError - Assign to keyword<a class="headerlink" href="#syntaxerror-assign-to-keyword" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
@@ -391,6 +394,66 @@ My best guess:
 </pre></div>
 </div>
 </div>
+<div class="section" id="syntaxerror-unmatched-closing-parenthesis">
+<h2>SyntaxError - unmatched closing parenthesis<a class="headerlink" href="#syntaxerror-unmatched-closing-parenthesis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error14.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   3: &quot;&quot;&quot;
+   4: a = (1,
+   5:     2,
+--&gt;6:     3, 4,))
+                ^
+
+My best guess:
+    The closing parenthesis &#39;)&#39; on line 6 does not match anything.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-unclosed-parenthesis">
+<h2>SyntaxError - unclosed parenthesis<a class="headerlink" href="#syntaxerror-unclosed-parenthesis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error15.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2: x = int(&#39;1&#39;
+--&gt;3: if x == 1:
+               ^
+
+My best guess:
+    The opening parenthesis &#39;(&#39; on line 2 is not closed.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-mismatched-brackets">
+<h2>SyntaxError - mismatched brackets<a class="headerlink" href="#syntaxerror-mismatched-brackets" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error16.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+--&gt;2: x = (1, 2, 3]
+                  ^
+
+My best guess:
+    The closing square bracket &#39;]&#39; on line 2 does not match the opening parenthesis &#39;(&#39; on line 2.
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -406,10 +469,10 @@ My best guess:
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="tracebacks_fr.html" title="Friendly tracebacks - en Français"
+          <a href="tracebacks_en_3.7.html" title="Friendly tracebacks - in English"
              >next</a> |</li>
         <li class="right" >
-          <a href="tracebacks_en36.html" title="Friendly tracebacks - in English (Python 3.6)"
+          <a href="tracebacks_en_3.6.html" title="Friendly tracebacks - in English"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li> 
       </ul>

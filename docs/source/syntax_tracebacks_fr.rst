@@ -365,3 +365,72 @@ SyntaxError - assignment to keyword (__debug__)
         __debug__ est une constante dans python; vous ne pouvez pas lui assigner une valeur.
         
         
+
+SyntaxError - unmatched closing parenthesis
+-------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error14.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       3: """
+       4: a = (1,
+       5:     2,
+    -->6:     3, 4,))
+                    ^
+
+    Ma meilleure hypothèse :
+        The closing parenthesis ')' on line 6 does not match anything.
+        
+
+SyntaxError - unclosed parenthesis
+----------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error15.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: x = int('1'
+    -->3: if x == 1:
+                   ^
+
+    Ma meilleure hypothèse :
+        The opening parenthesis '(' on line 2 is not closed.
+        
+
+SyntaxError - mismatched brackets
+---------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error16.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+    -->2: x = (1, 2, 3]
+                      ^
+
+    Ma meilleure hypothèse :
+        The closing square bracket ']' on line 2 does not match the opening parenthesis '(' on line 2.
+        

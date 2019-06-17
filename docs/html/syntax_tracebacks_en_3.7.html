@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Friendly SyntaxError tracebacks - en Français &#8212; Friendly tracebacks 0.0.10a documentation</title>
+    <title>Friendly SyntaxError tracebacks - in English &#8212; Friendly tracebacks 0.0.10a documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -14,8 +14,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Notes on translations - using gettext" href="translation_notes.html" />
-    <link rel="prev" title="Friendly tracebacks - en Français" href="tracebacks_fr.html" /> 
+    <link rel="next" title="Friendly tracebacks - in English" href="tracebacks_en_3.8.html" />
+    <link rel="prev" title="Friendly tracebacks - in English" href="tracebacks_en_3.7.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -24,10 +24,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="translation_notes.html" title="Notes on translations - using gettext"
+          <a href="tracebacks_en_3.8.html" title="Friendly tracebacks - in English"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="tracebacks_fr.html" title="Friendly tracebacks - en Français"
+          <a href="tracebacks_en_3.7.html" title="Friendly tracebacks - in English"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li> 
       </ul>
@@ -36,7 +36,7 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Friendly SyntaxError tracebacks - en Français</a><ul>
+<li><a class="reference internal" href="#">Friendly SyntaxError tracebacks - in English</a><ul>
 <li><a class="reference internal" href="#syntaxerror-assign-to-keyword">SyntaxError - Assign to keyword</a></li>
 <li><a class="reference internal" href="#syntaxerror-missing-colon-1">SyntaxError - Missing colon 1</a></li>
 <li><a class="reference internal" href="#syntaxerror-missing-colon-2">SyntaxError - Missing colon 2</a></li>
@@ -58,15 +58,15 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="tracebacks_fr.html"
-                        title="previous chapter">Friendly tracebacks - en Français</a></p>
+  <p class="topless"><a href="tracebacks_en_3.7.html"
+                        title="previous chapter">Friendly tracebacks - in English</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="translation_notes.html"
-                        title="next chapter">Notes on translations - using gettext</a></p>
+  <p class="topless"><a href="tracebacks_en_3.8.html"
+                        title="next chapter">Friendly tracebacks - in English</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/syntax_tracebacks_fr.rst.txt"
+      <li><a href="_sources/syntax_tracebacks_en_3.7.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -88,100 +88,97 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="friendly-syntaxerror-tracebacks-en-francais">
-<h1>Friendly SyntaxError tracebacks - en Français<a class="headerlink" href="#friendly-syntaxerror-tracebacks-en-francais" title="Permalink to this headline">¶</a></h1>
-<p>Le but principal de friendly-traceback est de fournir des rétroactions plus
-conviviales que les fameux <strong>tracebacks</strong> de Python lorsqu’une exception survient.
-Ci-dessous, on peut voir quelques exemples, uniquement pour les
-exceptions de type SyntaxError; les autres sont couvertes dans une autre page.
-Le but éventuel est de documenter
-ici tous les exemples possibles tels qu’interprétés par friendly-traceback.</p>
+  <div class="section" id="friendly-syntaxerror-tracebacks-in-english">
+<h1>Friendly SyntaxError tracebacks - in English<a class="headerlink" href="#friendly-syntaxerror-tracebacks-in-english" title="Permalink to this headline">¶</a></h1>
+<p>Friendly-traceback aims to provide friendlier feedback when an exception
+is raised than what is done by Python.
+This file contains only examples of SyntaxError.
+Ideally, an example of each case handled by friendly-traceback
+should be included here.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Le contenu de cette page a été généré par l’exécution de
-trb_syntax_french.py situé dans le répertoire <code class="docutils literal notranslate"><span class="pre">tests/</span></code>.
-Ceci a besoin d’être fait de manière explicite lorsqu’on veut
-faire des corrections ou des ajouts, avant de faire la mise
-à jour du reste de la documentation avec Sphinx.
-Sous Windows, si Sphinx est installé sur votre ordinateur, il est
-plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
-du répertoire de fichier. Si vous faites ceci, la documentation pour
-toutes les langues sera automatiquement mise à jour.</p>
+<p>The content of this page is generated by running
+trb_syntax_english.py located in the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory.
+This needs to be done explicitly, independently of updating the
+documentation using Sphinx.
+On Windows, if Sphinx is installed on your computer, it is suggested
+instead to run make_trb.bat in the root directory as it will create
+similar files for all languages <em>and</em> update the documentation.</p>
 </div>
 <p>Friendly-traceback version: 0.0.10a
 Python version: 3.7.3</p>
 <div class="section" id="syntaxerror-assign-to-keyword">
 <h2>SyntaxError - Assign to keyword<a class="headerlink" href="#syntaxerror-assign-to-keyword" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: invalid syntax
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error1.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error1.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    1: &quot;&quot;&quot; Should raise SyntaxError&quot;&quot;&quot;
    2:
 --&gt;3: def = 2
           ^
 
-Ma meilleure hypothèse :
-    Vous essayiez d’assigner une valeur au mot clé Python &#39;def&#39;.
-    Ceci n’est pas permis.
+My best guess:
+    You were trying to assign a value to the Python keyword &#39;def&#39;.
+    This is not allowed.
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-missing-colon-1">
 <h2>SyntaxError - Missing colon 1<a class="headerlink" href="#syntaxerror-missing-colon-1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: invalid syntax
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error2.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error2.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
 --&gt;3: if True
              ^
 
-Ma meilleure hypothèse :
-    Vous avez écrit un énoncé débutant avec
-    &#39;if&#39; mais vous avez oublié d’ajouter deux points &#39;:&#39; à la fin.
+My best guess:
+    You wrote a statement beginning with
+    &#39;if&#39; but forgot to add a colon &#39;:&#39; at the end
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-missing-colon-2">
 <h2>SyntaxError - Missing colon 2<a class="headerlink" href="#syntaxerror-missing-colon-2" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: invalid syntax
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error3.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error3.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
 --&gt;3: while True  # a comment
                              ^
 
-Ma meilleure hypothèse :
-    Vous vouliez débuter une boucle &#39;while&#39;
-    mais vous avez oublié d’ajouter deux points &#39;:&#39; à la fin.
+My best guess:
+    You wrote a &#39;while&#39; loop but
+    forgot to add a colon &#39;:&#39; at the end
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-elif-not-else-if">
 <h2>SyntaxError - elif, not else if<a class="headerlink" href="#syntaxerror-elif-not-else-if" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: invalid syntax
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error4.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error4.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    2:
    3: if False:
@@ -189,21 +186,21 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: else if True:
             ^
 
-Ma meilleure hypothèse :
-    Vous avez écrit &#39;else if&#39;
-    au lieu d&#39;utiliser le mot-clé &#39;elif&#39;.
+My best guess:
+    You meant to use Python&#39;s &#39;elif&#39; keyword
+    but wrote &#39;else if&#39; instead
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-elif-not-elseif">
 <h2>SyntaxError - elif, not elseif<a class="headerlink" href="#syntaxerror-elif-not-elseif" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: invalid syntax
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error5.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error5.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    2:
    3: if False:
@@ -211,160 +208,159 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: elseif True:
                 ^
 
-Ma meilleure hypothèse :
-    Vous avez écrit &#39;elseif&#39;
-    au lieu d&#39;utiliser le mot-clé &#39;elif&#39;.
+My best guess:
+    You meant to use Python&#39;s &#39;elif&#39; keyword
+    but wrote &#39;elseif&#39; instead
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-malformed-def-statment-1">
 <h2>SyntaxError - malformed def statment - 1<a class="headerlink" href="#syntaxerror-malformed-def-statment-1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: invalid syntax
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error6.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error6.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
 --&gt;3: def :
           ^
 
-Ma meilleure hypothèse :
-    Vous vouliez définir une fonction ou une méthode,
-    mais vous avez fait des erreurs de syntaxe.
-    La syntaxe correcte est:
-        def nom ( arguments_optionnels ) :
+My best guess:
+    You tried to define a function or method
+    and did not use the correct syntax.
+    The correct syntax is:
+        def name ( optional_arguments ):
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-malformed-def-statment-2">
 <h2>SyntaxError - malformed def statment - 2<a class="headerlink" href="#syntaxerror-malformed-def-statment-2" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: invalid syntax
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error7.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error7.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
 --&gt;3: def name  :
                 ^
 
-Ma meilleure hypothèse :
-    Vous vouliez définir une fonction ou une méthode,
-    mais vous avez fait des erreurs de syntaxe.
-    La syntaxe correcte est:
-        def nom ( arguments_optionnels ) :
+My best guess:
+    You tried to define a function or method
+    and did not use the correct syntax.
+    The correct syntax is:
+        def name ( optional_arguments ):
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-malformed-def-statment-3">
 <h2>SyntaxError - malformed def statment - 3<a class="headerlink" href="#syntaxerror-malformed-def-statment-3" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: invalid syntax
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error8.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error8.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
 --&gt;3: def ( arg )  :
           ^
 
-Ma meilleure hypothèse :
-    Vous vouliez définir une fonction ou une méthode,
-    mais vous avez fait des erreurs de syntaxe.
-    La syntaxe correcte est:
-        def nom ( arguments_optionnels ) :
+My best guess:
+    You tried to define a function or method
+    and did not use the correct syntax.
+    The correct syntax is:
+        def name ( optional_arguments ):
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-can-t-assign-to-literal">
 <h2>SyntaxError - can’t assign to literal<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: can&#39;t assign to literal
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error9.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error9.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal&quot;&quot;&quot;
    2:
 --&gt;3: 1 = a
      ^
 
-Ma meilleure hypothèse :
-    Vous avez écrit une expression comme
-        1 =  a
-    où &lt;1&gt;, sur le côté gauche du signe égal, est ce que Python
-    appelle un &#39;literal&#39;, c&#39;est-à dire soit soit une chaîne de caractères ou un nombre,
-    et non le nom d’une variable. Peut-être que vous vouliez plutôt écrire:
+My best guess:
+    You wrote an expression like
+        1 = a
+    where &lt;1&gt;, on the left hand-side of the equal sign, is
+    an actual number or string (what Python calls a &#39;literal&#39;),
+    and not the name of a variable. Perhaps you meant to write:
         a = 1
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-import-x-from-y">
 <h2>SyntaxError - import X from Y<a class="headerlink" href="#syntaxerror-import-x-from-y" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: invalid syntax
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error10.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error10.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2:
 --&gt;3: import pen from turtle
                     ^
 
-Ma meilleure hypothèse :
-    Vous avez écrit quelque chose comme
+My best guess:
+    You wrote something like
         import pen from turtle
-    au lieu de
+    instead of
         from turtle import pen
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-eol-while-scanning-string-literal">
 <h2>SyntaxError - EOL while scanning string literal<a class="headerlink" href="#syntaxerror-eol-while-scanning-string-literal" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: EOL while scanning string literal
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error11.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error11.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: EOL while scanning string literal&quot;&quot;&quot;
    2:
 --&gt;3: alphabet = &#39;abc
                      ^
 
-Ma meilleure hypothèse :
-    Vous aviez commencer à écrire une chaîne de caractères
-    avec un guillemet simple ou double, mais n&#39;avez jamais
-    terminé la chaîne avec un autre guillemet sur cette ligne.
+My best guess:
+    You starting writing a string with a single or double quote
+    but never ended the string with another quote on that line.
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-assignment-to-keyword-none">
 <h2>SyntaxError - assignment to keyword (None)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-none" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: can&#39;t assign to keyword
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error12.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error12.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: cannot assign to None in Py 3.8
    2:    and can&#39;t assign to keyword before.&quot;&quot;&quot;
@@ -372,20 +368,20 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: None = 1
      ^
 
-Ma meilleure hypothèse :
-    None est une constante dans python; vous ne pouvez pas lui assigner une valeur.
+My best guess:
+    None is a constant in Python; you cannot assign it a value.
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-assignment-to-keyword-debug">
 <h2>SyntaxError - assignment to keyword (__debug__)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-debug" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: assignment to keyword
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error13.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error13.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
    2:    and assignment to keyword before.&quot;&quot;&quot;
@@ -393,20 +389,20 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: __debug__ = 1
      ^
 
-Ma meilleure hypothèse :
-    __debug__ est une constante dans python; vous ne pouvez pas lui assigner une valeur.
+My best guess:
+    __debug__ is a constant in Python; you cannot assign it a value.
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-unmatched-closing-parenthesis">
 <h2>SyntaxError - unmatched closing parenthesis<a class="headerlink" href="#syntaxerror-unmatched-closing-parenthesis" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: invalid syntax
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error14.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error14.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    3: &quot;&quot;&quot;
    4: a = (1,
@@ -414,46 +410,46 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6:     3, 4,))
                 ^
 
-Ma meilleure hypothèse :
+My best guess:
     The closing parenthesis &#39;)&#39; on line 6 does not match anything.
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-unclosed-parenthesis">
 <h2>SyntaxError - unclosed parenthesis<a class="headerlink" href="#syntaxerror-unclosed-parenthesis" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: invalid syntax
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error15.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error15.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2: x = int(&#39;1&#39;
 --&gt;3: if x == 1:
                ^
 
-Ma meilleure hypothèse :
+My best guess:
     The opening parenthesis &#39;(&#39; on line 2 is not closed.
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-mismatched-brackets">
 <h2>SyntaxError - mismatched brackets<a class="headerlink" href="#syntaxerror-mismatched-brackets" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     SyntaxError: invalid syntax
 
-Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+A SyntaxError occurs when Python cannot understand your code.
 
-Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error16.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error16.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: x = (1, 2, 3]
                   ^
 
-Ma meilleure hypothèse :
+My best guess:
     The closing square bracket &#39;]&#39; on line 2 does not match the opening parenthesis &#39;(&#39; on line 2.
 </pre></div>
 </div>
@@ -473,10 +469,10 @@ Ma meilleure hypothèse :
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="translation_notes.html" title="Notes on translations - using gettext"
+          <a href="tracebacks_en_3.8.html" title="Friendly tracebacks - in English"
              >next</a> |</li>
         <li class="right" >
-          <a href="tracebacks_fr.html" title="Friendly tracebacks - en Français"
+          <a href="tracebacks_en_3.7.html" title="Friendly tracebacks - in English"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li> 
       </ul>

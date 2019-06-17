@@ -357,3 +357,72 @@ SyntaxError - assignment to keyword (__debug__)
         __debug__ is a constant in Python; you cannot assign it a value.
         
         
+
+SyntaxError - unmatched closing parenthesis
+-------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error14.py'
+    beyond the location indicated below by --> and ^.
+    
+       3: """
+       4: a = (1,
+       5:     2,
+    -->6:     3, 4,))
+                    ^
+
+    My best guess:
+        The closing parenthesis ')' on line 6 does not match anything.
+        
+
+SyntaxError - unclosed parenthesis
+----------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error15.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: x = int('1'
+    -->3: if x == 1:
+                   ^
+
+    My best guess:
+        The opening parenthesis '(' on line 2 is not closed.
+        
+
+SyntaxError - mismatched brackets
+---------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error16.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+    -->2: x = (1, 2, 3]
+                      ^
+
+    My best guess:
+        The closing square bracket ']' on line 2 does not match the opening parenthesis '(' on line 2.
+        

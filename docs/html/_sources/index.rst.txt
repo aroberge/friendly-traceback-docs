@@ -62,7 +62,7 @@ Contents
 --------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
     Usage <usage>
     Occasional lies <lies>
@@ -71,12 +71,14 @@ Contents
     Suggest an addition <suggest>
     Adding an Exception <adding_exception>
     Dealing with Syntax Errors <syntax_error>
-    Friendly tracebacks - in English <tracebacks_en>
-    Friendly tracebacks - in English (Python 3.6) <tracebacks_en36>
-    Friendly SyntaxError tracebacks - in English <syntax_tracebacks_en>
-    Friendly tracebacks - en Français <tracebacks_fr>
-    Friendly tracebacks - in French (Python 3.6) <tracebacks_fr36>
-    Friendly SyntaxError tracebacks - en Français <syntax_tracebacks_fr>
+    Friendly tracebacks - Python 3.6 in English <tracebacks_en_3.6>
+    SyntaxError - Python 3.6 in English <syntax_tracebacks_en_3.6>
+    Friendly tracebacks - Python 3.7 in English <tracebacks_en_3.7>
+    SyntaxError - Python 3.7 in English <syntax_tracebacks_en_3.7>
+    Friendly tracebacks - Python 3.8 in English <tracebacks_en_3.8>
+    SyntaxError - Python 3.8 in English <syntax_tracebacks_en_3.8>
+    Friendly tracebacks - Python 3.7 en Français <tracebacks_fr>
+    SyntaxError - Python 3.7 en Français <syntax_tracebacks_fr>
     Notes on translations - using gettext <translation_notes>
     Change Log <changelog>
 

@@ -111,221 +111,23 @@ from the version available from Pypi.</p>
 <h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html"> Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#where-the-output-is-written">Where the output is written?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#how-much-information-is-printed">How much information is printed?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#language-used">Language used</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#as-an-exception-hook">As an exception hook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#catching-exception-locally">Catching exception locally</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#from-the-command-line">From the command line</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lies.html"> Occasional lies</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lies.html#you-can-lie-too">You can lie too</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="design.html"> Design</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="design.html#purpose">Purpose</a></li>
-<li class="toctree-l2"><a class="reference internal" href="design.html#open-questions">Open questions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="design.html#anatomy-of-a-standard-python-traceback">Anatomy of a standard Python traceback</a></li>
-<li class="toctree-l2"><a class="reference internal" href="design.html#basic-anatomy-of-a-friendly-traceback">Basic anatomy of a friendly traceback</a></li>
-<li class="toctree-l2"><a class="reference internal" href="design.html#syntaxerror-invalid-syntax">SyntaxError: invalid syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="design.html#how-many-possible-causes">How many possible causes?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="design.html#localization">Localization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="design.html#verbosity">Verbosity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="design.html#negative-values">Negative values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="design.html#extensibility">Extensibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="design.html#other-similar-projects">Other similar projects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="design.html#reference-known-exceptions">Reference: known exceptions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="custom.html"> Custom exceptions and formatting</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="custom.html#custom-exception-py">custom_exception.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom.html#custom-exception-demo-py">custom_exception_demo.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom.html#gui-demo-py">gui_demo.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom.html#custom-formatter-py">custom_formatter.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom.html#demo-gettext-py">demo_gettext.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom.html#gui-py"><code class="docutils literal notranslate"><span class="pre">_gui.py</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom.html#example-from-the-gui-demo-running-a-custom-exception-demo">Example from the GUI demo running a Custom exception demo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom.html#example-output-from-the-custom-html-formatter-demo">Example output from the custom html formatter demo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom.html#acknowledgement">Acknowledgement</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html"> Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html"> Occasional lies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html"> Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom.html"> Custom exceptions and formatting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="suggest.html"> Suggest an addition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adding_exception.html"> Adding an Exception</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="adding_exception.html#adding-a-test-case">Adding a test case</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adding_exception.html#running-with-pytest">Running with pytest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adding_exception.html#adding-generic-information">Adding generic information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adding_exception.html#add-specific-information">Add specific information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adding_exception.html#test-your-work">Test your work</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adding_exception.html#make-a-pull-request">Make a pull request</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adding_exception.html#adding-to-an-existing-exception">Adding to an existing exception</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adding_exception.html#additional-optional-steps">Additional optional steps</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_error.html"> Dealing with Syntax Errors</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="syntax_error.html#adding-a-test-case">Adding a test case</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_error.html#adding-generic-information">Adding generic information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_error.html#add-specific-information">Add specific information</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks_en.html"> Friendly tracebacks - in English</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#arithmeticerror">ArithmeticError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#importerror">ImportError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#indentationerror-1-expected-an-indented-block">IndentationError - 1: expected an indented block</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#indentationerror-2-unexpected-indent">IndentationError - 2: unexpected indent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#indentationerror-3-unindent-does-not-match">IndentationError - 3: unindent does not match …</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#keyerror">KeyError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#lookuperror">LookupError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#indexerror-short-tuple">IndexError - short tuple</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#indexerror-long-list">IndexError - long list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#modulenotfounderror">ModuleNotFoundError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#nameerror">NameError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#overflowerror">OverflowError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#taberror">TabError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-1a-concatenate-two-different-types">TypeError - 1a: concatenate two different types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-1b-concatenate-two-different-types">TypeError - 1b: concatenate two different types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-2-unsupported-operand-type-s-for">TypeError - 2: unsupported operand type(s) for +</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-2a-unsupported-operand-type-s-for">TypeError - 2a: unsupported operand type(s) for +=</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-3-unsupported-operand-type-s-for">TypeError - 3: unsupported operand type(s) for -</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-3a-unsupported-operand-type-s-for">TypeError - 3a: unsupported operand type(s) for -=</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-4-unsupported-operand-type-s-for">TypeError - 4: unsupported operand type(s) for *</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-4a-unsupported-operand-type-s-for">TypeError - 4a: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">*=</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-5-unsupported-operand-type-s-for">TypeError - 5: unsupported operand type(s) for /</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-5a-unsupported-operand-type-s-for">TypeError - 5a: unsupported operand type(s) for /=</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-5b-unsupported-operand-type-s-for">TypeError - 5b: unsupported operand type(s) for //</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-5c-unsupported-operand-type-s-for">TypeError - 5c: unsupported operand type(s) for //=</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-6-unsupported-operand-type-s-for">TypeError - 6: unsupported operand type(s) for &amp;</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-6a-unsupported-operand-type-s-for">TypeError - 6a: unsupported operand type(s) for &amp;=</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-7-unsupported-operand-type-s-for">TypeError - 7: unsupported operand type(s) for **</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-7a-unsupported-operand-type-s-for">TypeError - 7a: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">**=</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-8-unsupported-operand-type-s-for">TypeError - 8: unsupported operand type(s) for &gt;&gt;</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-8a-unsupported-operand-type-s-for">TypeError - 8a: unsupported operand type(s) for &gt;&gt;=</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-9-unsupported-operand-type-s-for">TypeError - 9: unsupported operand type(s) for &#64;</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-9a-unsupported-operand-type-s-for">TypeError - 9a: unsupported operand type(s) for &#64;=</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-10-comparison-between-incompatible-types">TypeError - 10: comparison between incompatible types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-11-bad-operand-type-for-unary">TypeError - 11: bad operand type for unary +</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-11a-bad-operand-type-for-unary">TypeError - 11a: bad operand type for unary -</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-11b-bad-operand-type-for-unary">TypeError - 11b: bad operand type for unary ~</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#typeerror-12-object-does-not-support-item-assignment">TypeError - 12: object does not support item assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#unboundlocalerror">UnboundLocalError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#unknown-exception">Unknown exception</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en.html#zerodivisionerror-2">ZeroDivisionError - 2</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks_en36.html"> Friendly tracebacks - in English (Python 3.6)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en36.html#importerror">ImportError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en36.html#typeerror-1-must-be-str-not-int">TypeError - 1: must be str, not int</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_en36.html#typeerror-1a-must-be-str-not-list">TypeError - 1a: must be str, not list</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en.html"> Friendly SyntaxError tracebacks - in English</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-assign-to-keyword">SyntaxError - Assign to keyword</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-missing-colon-1">SyntaxError - Missing colon 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-missing-colon-2">SyntaxError - Missing colon 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-elif-not-else-if">SyntaxError - elif, not else if</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-elif-not-elseif">SyntaxError - elif, not elseif</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-malformed-def-statment-1">SyntaxError - malformed def statment - 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-malformed-def-statment-2">SyntaxError - malformed def statment - 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-malformed-def-statment-3">SyntaxError - malformed def statment - 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-can-t-assign-to-literal">SyntaxError - can’t assign to literal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-import-x-from-y">SyntaxError - import X from Y</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-eol-while-scanning-string-literal">SyntaxError - EOL while scanning string literal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-assignment-to-keyword-none">SyntaxError - assignment to keyword (None)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_en.html#syntaxerror-assignment-to-keyword-debug">SyntaxError - assignment to keyword (__debug__)</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - en Français</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#arithmeticerror">ArithmeticError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#importerror">ImportError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#indentationerror-1-expected-an-indented-block">IndentationError - 1: expected an indented block</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#indentationerror-2-unexpected-indent">IndentationError - 2: unexpected indent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#indentationerror-3-unindent-does-not-match">IndentationError - 3: unindent does not match …</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#keyerror">KeyError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#lookuperror">LookupError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#indexerror-short-tuple">IndexError - short tuple</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#indexerror-long-list">IndexError - long list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#modulenotfounderror">ModuleNotFoundError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#nameerror">NameError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#overflowerror">OverflowError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#taberror">TabError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-1a-concatenate-two-different-types">TypeError - 1a: concatenate two different types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-1b-concatenate-two-different-types">TypeError - 1b: concatenate two different types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-2-unsupported-operand-type-s-for">TypeError - 2: unsupported operand type(s) for +</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-2a-unsupported-operand-type-s-for">TypeError - 2a: unsupported operand type(s) for +=</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-3-unsupported-operand-type-s-for">TypeError - 3: unsupported operand type(s) for -</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-3a-unsupported-operand-type-s-for">TypeError - 3a: unsupported operand type(s) for -=</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-4-unsupported-operand-type-s-for">TypeError - 4: unsupported operand type(s) for *</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-4a-unsupported-operand-type-s-for">TypeError - 4a: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">*=</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-5-unsupported-operand-type-s-for">TypeError - 5: unsupported operand type(s) for /</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-5a-unsupported-operand-type-s-for">TypeError - 5a: unsupported operand type(s) for /=</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-5b-unsupported-operand-type-s-for">TypeError - 5b: unsupported operand type(s) for //</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-5c-unsupported-operand-type-s-for">TypeError - 5c: unsupported operand type(s) for //=</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-6-unsupported-operand-type-s-for">TypeError - 6: unsupported operand type(s) for &amp;</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-6a-unsupported-operand-type-s-for">TypeError - 6a: unsupported operand type(s) for &amp;=</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-7-unsupported-operand-type-s-for">TypeError - 7: unsupported operand type(s) for **</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-7a-unsupported-operand-type-s-for">TypeError - 7a: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">**=</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-8-unsupported-operand-type-s-for">TypeError - 8: unsupported operand type(s) for &gt;&gt;</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-8a-unsupported-operand-type-s-for">TypeError - 8a: unsupported operand type(s) for &gt;&gt;=</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-9-unsupported-operand-type-s-for">TypeError - 9: unsupported operand type(s) for &#64;</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-9a-unsupported-operand-type-s-for">TypeError - 9a: unsupported operand type(s) for &#64;=</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-10-comparison-between-incompatible-types">TypeError - 10: comparison between incompatible types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-11-bad-operand-type-for-unary">TypeError - 11: bad operand type for unary +</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-11a-bad-operand-type-for-unary">TypeError - 11a: bad operand type for unary -</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-11b-bad-operand-type-for-unary">TypeError - 11b: bad operand type for unary ~</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#typeerror-12-object-does-not-support-item-assignment">TypeError - 12: object does not support item assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#unboundlocalerror">UnboundLocalError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#unknown-exception">Unknown exception</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr.html#zerodivisionerror-2">ZeroDivisionError - 2</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr36.html"> Friendly tracebacks - in French (Python 3.6)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr36.html#importerror">ImportError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr36.html#typeerror-1-must-be-str-not-int">TypeError - 1: must be str, not int</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracebacks_fr36.html#typeerror-1a-must-be-str-not-list">TypeError - 1a: must be str, not list</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-assign-to-keyword">SyntaxError - Assign to keyword</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-missing-colon-1">SyntaxError - Missing colon 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-missing-colon-2">SyntaxError - Missing colon 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-elif-not-else-if">SyntaxError - elif, not else if</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-elif-not-elseif">SyntaxError - elif, not elseif</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-malformed-def-statment-1">SyntaxError - malformed def statment - 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-malformed-def-statment-2">SyntaxError - malformed def statment - 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-malformed-def-statment-3">SyntaxError - malformed def statment - 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-can-t-assign-to-literal">SyntaxError - can’t assign to literal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-import-x-from-y">SyntaxError - import X from Y</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-eol-while-scanning-string-literal">SyntaxError - EOL while scanning string literal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-assignment-to-keyword-none">SyntaxError - assignment to keyword (None)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntax_tracebacks_fr.html#syntaxerror-assignment-to-keyword-debug">SyntaxError - assignment to keyword (__debug__)</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="translation_notes.html"> Notes on translations - using gettext</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="translation_notes.html#what-is-gettext">What is gettext?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="translation_notes.html#structure-of-this-project">Structure of this project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="translation_notes.html#how-to-use-gettext">How to use gettext</a></li>
-<li class="toctree-l2"><a class="reference internal" href="translation_notes.html#using-poedit">Using Poedit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="translation_notes.html#telling-python-to-use-the-translations">Telling Python to use the translations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="translation_notes.html#why-are-mo-files-in-the-repository">Why are .mo files in the repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="translation_notes.html#additional-considerations">Additional considerations</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html"> Change Log</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-8">Version 0.0.8</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-7">Version 0.0.7</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-6">Version 0.0.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-5">Version 0.0.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-4">Version 0.0.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-3">Version 0.0.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-2">Version 0.0.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-1">Version 0.0.1</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="adding_exception.html"> Adding an Exception</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_error.html"> Dealing with Syntax Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html"> Friendly tracebacks - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html"> SyntaxError - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html"> Friendly tracebacks - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.7.html"> SyntaxError - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html"> Friendly tracebacks - Python 3.8 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html"> SyntaxError - Python 3.8 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - Python 3.7 en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> SyntaxError - Python 3.7 en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation_notes.html"> Notes on translations - using gettext</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html"> Change Log</a></li>
 </ul>
 </div>
 <div class="admonition-todo admonition">

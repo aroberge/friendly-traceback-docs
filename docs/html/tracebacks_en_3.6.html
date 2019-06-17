@@ -1,0 +1,1245 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Friendly tracebacks - in English &#8212; Friendly tracebacks 0.0.10a documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Friendly SyntaxError tracebacks - in English" href="syntax_tracebacks_en_3.6.html" />
+    <link rel="prev" title="Dealing with Syntax Errors" href="syntax_error.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="syntax_tracebacks_en_3.6.html" title="Friendly SyntaxError tracebacks - in English"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="syntax_error.html" title="Dealing with Syntax Errors"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Friendly tracebacks - in English</a><ul>
+<li><a class="reference internal" href="#arithmeticerror">ArithmeticError</a></li>
+<li><a class="reference internal" href="#importerror">ImportError</a></li>
+<li><a class="reference internal" href="#indentationerror-1-expected-an-indented-block">IndentationError - 1: expected an indented block</a></li>
+<li><a class="reference internal" href="#indentationerror-2-unexpected-indent">IndentationError - 2: unexpected indent</a></li>
+<li><a class="reference internal" href="#indentationerror-3-unindent-does-not-match">IndentationError - 3: unindent does not match …</a></li>
+<li><a class="reference internal" href="#keyerror">KeyError</a></li>
+<li><a class="reference internal" href="#lookuperror">LookupError</a></li>
+<li><a class="reference internal" href="#indexerror-short-tuple">IndexError - short tuple</a></li>
+<li><a class="reference internal" href="#indexerror-long-list">IndexError - long list</a></li>
+<li><a class="reference internal" href="#modulenotfounderror">ModuleNotFoundError</a></li>
+<li><a class="reference internal" href="#nameerror">NameError</a></li>
+<li><a class="reference internal" href="#overflowerror">OverflowError</a></li>
+<li><a class="reference internal" href="#taberror">TabError</a></li>
+<li><a class="reference internal" href="#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
+<li><a class="reference internal" href="#typeerror-1a-concatenate-two-different-types">TypeError - 1a: concatenate two different types</a></li>
+<li><a class="reference internal" href="#typeerror-1b-concatenate-two-different-types">TypeError - 1b: concatenate two different types</a></li>
+<li><a class="reference internal" href="#typeerror-2-unsupported-operand-type-s-for">TypeError - 2: unsupported operand type(s) for +</a></li>
+<li><a class="reference internal" href="#typeerror-2a-unsupported-operand-type-s-for">TypeError - 2a: unsupported operand type(s) for +=</a></li>
+<li><a class="reference internal" href="#typeerror-3-unsupported-operand-type-s-for">TypeError - 3: unsupported operand type(s) for -</a></li>
+<li><a class="reference internal" href="#typeerror-3a-unsupported-operand-type-s-for">TypeError - 3a: unsupported operand type(s) for -=</a></li>
+<li><a class="reference internal" href="#typeerror-4-unsupported-operand-type-s-for">TypeError - 4: unsupported operand type(s) for *</a></li>
+<li><a class="reference internal" href="#typeerror-4a-unsupported-operand-type-s-for">TypeError - 4a: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">*=</span></code></a></li>
+<li><a class="reference internal" href="#typeerror-5-unsupported-operand-type-s-for">TypeError - 5: unsupported operand type(s) for /</a></li>
+<li><a class="reference internal" href="#typeerror-5a-unsupported-operand-type-s-for">TypeError - 5a: unsupported operand type(s) for /=</a></li>
+<li><a class="reference internal" href="#typeerror-5b-unsupported-operand-type-s-for">TypeError - 5b: unsupported operand type(s) for //</a></li>
+<li><a class="reference internal" href="#typeerror-5c-unsupported-operand-type-s-for">TypeError - 5c: unsupported operand type(s) for //=</a></li>
+<li><a class="reference internal" href="#typeerror-6-unsupported-operand-type-s-for">TypeError - 6: unsupported operand type(s) for &amp;</a></li>
+<li><a class="reference internal" href="#typeerror-6a-unsupported-operand-type-s-for">TypeError - 6a: unsupported operand type(s) for &amp;=</a></li>
+<li><a class="reference internal" href="#typeerror-7-unsupported-operand-type-s-for">TypeError - 7: unsupported operand type(s) for **</a></li>
+<li><a class="reference internal" href="#typeerror-7a-unsupported-operand-type-s-for">TypeError - 7a: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">**=</span></code></a></li>
+<li><a class="reference internal" href="#typeerror-8-unsupported-operand-type-s-for">TypeError - 8: unsupported operand type(s) for &gt;&gt;</a></li>
+<li><a class="reference internal" href="#typeerror-8a-unsupported-operand-type-s-for">TypeError - 8a: unsupported operand type(s) for &gt;&gt;=</a></li>
+<li><a class="reference internal" href="#typeerror-9-unsupported-operand-type-s-for">TypeError - 9: unsupported operand type(s) for &#64;</a></li>
+<li><a class="reference internal" href="#typeerror-9a-unsupported-operand-type-s-for">TypeError - 9a: unsupported operand type(s) for &#64;=</a></li>
+<li><a class="reference internal" href="#typeerror-10-comparison-between-incompatible-types">TypeError - 10: comparison between incompatible types</a></li>
+<li><a class="reference internal" href="#typeerror-11-bad-operand-type-for-unary">TypeError - 11: bad operand type for unary +</a></li>
+<li><a class="reference internal" href="#typeerror-11a-bad-operand-type-for-unary">TypeError - 11a: bad operand type for unary -</a></li>
+<li><a class="reference internal" href="#typeerror-11b-bad-operand-type-for-unary">TypeError - 11b: bad operand type for unary ~</a></li>
+<li><a class="reference internal" href="#typeerror-12-object-does-not-support-item-assignment">TypeError - 12: object does not support item assignment</a></li>
+<li><a class="reference internal" href="#unboundlocalerror">UnboundLocalError</a></li>
+<li><a class="reference internal" href="#unknown-exception">Unknown exception</a></li>
+<li><a class="reference internal" href="#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
+<li><a class="reference internal" href="#zerodivisionerror-2">ZeroDivisionError - 2</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="syntax_error.html"
+                        title="previous chapter">Dealing with Syntax Errors</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="syntax_tracebacks_en_3.6.html"
+                        title="next chapter">Friendly SyntaxError tracebacks - in English</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tracebacks_en_3.6.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="friendly-tracebacks-in-english">
+<h1>Friendly tracebacks - in English<a class="headerlink" href="#friendly-tracebacks-in-english" title="Permalink to this headline">¶</a></h1>
+<p>Friendly-traceback aims to provide friendlier feedback when an exception
+is raised than what is done by Python.
+Below, we can find some examples. SyntaxError cases are
+shown in a separate page.
+Ideally, an example of each case handled by friendly-traceback
+should be included here.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The content of this page is generated by running
+trb_english.py located in the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory.
+This needs to be done explicitly, independently of updating the
+documentation using Sphinx.
+On Windows, if Sphinx is installed on your computer, it is suggested
+instead to run make_trb.bat in the root directory as it will create
+similar files for all languages <em>and</em> update the documentation.</p>
+</div>
+<p>Friendly-traceback version: 0.0.10a
+Python version: 3.6.8</p>
+<div class="section" id="arithmeticerror">
+<h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    ArithmeticError:
+
+ArithmeticError is the base class for those built-in exceptions
+that are raised for various arithmetic errors.
+It is unusual that you are seeing this exception;
+normally, a more specific exception should have been raised.
+
+Execution stopped on line 8 of file &#39;TESTS:\test_arithmetic_error.py&#39;.
+
+    6:         # Usually, a subclass such as ZeroDivisionError, etc., would
+    7:         # likely be raised.
+--&gt; 8:         raise ArithmeticError
+    9:     except Exception:
+</pre></div>
+</div>
+</div>
+<div class="section" id="importerror">
+<h2>ImportError<a class="headerlink" href="#importerror" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    ImportError: cannot import name &#39;Pi&#39;
+
+This exception indicates that a certain object could not
+be imported from a module or package. Most often, this is
+because the name of the object is not spelled correctly.
+
+Likely cause:
+    The object that could not be imported is &#39;Pi&#39;.
+
+Execution stopped on line 6 of file &#39;TESTS:\test_import_error.py&#39;.
+
+   4: def test_import_error():
+   5:     try:
+--&gt;6:         from math import Pi
+   7:     except Exception:
+</pre></div>
+</div>
+</div>
+<div class="section" id="indentationerror-1-expected-an-indented-block">
+<h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    IndentationError: expected an indented block
+
+An IndentationError occurs when a given line of code is
+not indented (aligned vertically with other lines) as expected.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_indentation_error1.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
+   2:
+   3: if True:
+--&gt;4: pass
+         ^
+
+Likely cause:
+    In this case, the line identified above
+    was expected to begin a new indented block.
+</pre></div>
+</div>
+</div>
+<div class="section" id="indentationerror-2-unexpected-indent">
+<h2>IndentationError - 2: unexpected indent<a class="headerlink" href="#indentationerror-2-unexpected-indent" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    IndentationError: unexpected indent
+
+An IndentationError occurs when a given line of code is
+not indented (aligned vertically with other lines) as expected.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_indentation_error2.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
+   2: if True:
+   3:     pass
+--&gt;4:       pass
+           ^
+
+Likely cause:
+    In this case, the line identified above
+    is more indented than expected and
+    does not match the indentation of the previous line.
+</pre></div>
+</div>
+</div>
+<div class="section" id="indentationerror-3-unindent-does-not-match">
+<h2>IndentationError - 3: unindent does not match …<a class="headerlink" href="#indentationerror-3-unindent-does-not-match" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    IndentationError: unindent does not match any outer indentation level
+
+An IndentationError occurs when a given line of code is
+not indented (aligned vertically with other lines) as expected.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_indentation_error3.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
+   2: if True:
+   3:       pass
+--&gt;4:     pass
+              ^
+
+Likely cause:
+    In this case, the line identified above is
+    less indented than the preceding one,
+    and is not aligned vertically with another block of code.
+</pre></div>
+</div>
+</div>
+<div class="section" id="keyerror">
+<h2>KeyError<a class="headerlink" href="#keyerror" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    KeyError: &#39;c&#39;
+
+A KeyError is raised when a value is not found as a
+key in a Python dict.
+
+Likely cause:
+    In your program, the name of the key
+    that cannot be found is &#39;c&#39;.
+
+Execution stopped on line 7 of file &#39;TESTS:\test_key_error.py&#39;.
+
+   5:     d = {&#39;a&#39;: 1, &#39;b&#39;: 2}
+   6:     try:
+--&gt;7:         d[&#39;c&#39;]
+   8:     except Exception:
+
+d: {&#39;a&#39;: 1, &#39;b&#39;: 2}
+</pre></div>
+</div>
+</div>
+<div class="section" id="lookuperror">
+<h2>LookupError<a class="headerlink" href="#lookuperror" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    LookupError:
+
+LookupError is the base class for the exceptions that are raised
+when a key or index used on a mapping or sequence is invalid.
+It can also be raised directly by codecs.lookup().
+
+Execution stopped on line 10 of file &#39;TESTS:\test_lookup_error.py&#39;.
+
+    8:         # other than possibly codecs.lookup(), which is why we raise
+    9:         # it directly here for our example.
+--&gt;10:         raise LookupError
+   11:     except Exception:
+</pre></div>
+</div>
+</div>
+<div class="section" id="indexerror-short-tuple">
+<h2>IndexError - short tuple<a class="headerlink" href="#indexerror-short-tuple" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    IndexError: tuple index out of range
+
+An IndexError occurs when you are try to get an item from a list,
+a tuple, or a similar object (sequence), by using an index which
+does not exists; typically, this is because the index you give
+is greater than the length of the sequence.
+Reminder: the first item of a sequence is at index 0.
+
+Likely cause:
+    In this case, the sequence is a tuple.
+
+Execution stopped on line 8 of file &#39;TESTS:\test_index_error.py&#39;.
+
+    6:     b = [1, 2, 3]
+    7:     try:
+--&gt; 8:         print(a[3], b[2])
+    9:     except Exception:
+
+a: (1, 2, 3)
+b: [1, 2, 3]
+</pre></div>
+</div>
+</div>
+<div class="section" id="indexerror-long-list">
+<h2>IndexError - long list<a class="headerlink" href="#indexerror-long-list" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    IndexError: list index out of range
+
+An IndexError occurs when you are try to get an item from a list,
+a tuple, or a similar object (sequence), by using an index which
+does not exists; typically, this is because the index you give
+is greater than the length of the sequence.
+Reminder: the first item of a sequence is at index 0.
+
+Likely cause:
+    In this case, the sequence is a list.
+
+Execution stopped on line 20 of file &#39;TESTS:\test_index_error.py&#39;.
+
+   18:     b = tuple(range(50))
+   19:     try:
+--&gt;20:         print(a[50], b[0])
+   21:     except Exception:
+
+a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
+b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
+</pre></div>
+</div>
+</div>
+<div class="section" id="modulenotfounderror">
+<h2>ModuleNotFoundError<a class="headerlink" href="#modulenotfounderror" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    ModuleNotFoundError: No module named &#39;does_not_exist&#39;
+
+A ModuleNotFoundError exception indicates that you
+are trying to import a module that cannot be found by Python.
+This could be because you misspelled the name of the module
+or because it is not installed on your computer.
+
+Likely cause:
+    In your program, the name of the
+    module that cannot be found is &#39;does_not_exist&#39;.
+
+Execution stopped on line 5 of file &#39;TESTS:\test_module_not_found_error.py&#39;.
+
+   3: def test_module_not_found_error():
+   4:     try:
+--&gt;5:         import does_not_exist
+   6:     except Exception:
+</pre></div>
+</div>
+</div>
+<div class="section" id="nameerror">
+<h2>NameError<a class="headerlink" href="#nameerror" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    NameError: name &#39;c&#39; is not defined
+
+A NameError exception indicates that a variable or
+function name is not known to Python.
+Most often, this is because there is a spelling mistake.
+However, sometimes it is because the name is used
+before being defined or given a value.
+
+Likely cause:
+    In your program, the unknown name is &#39;c&#39;.
+
+Execution stopped on line 6 of file &#39;TESTS:\test_name_error.py&#39;.
+
+   4: def test_name_error():
+   5:     try:
+--&gt;6:         b = c
+   7:     except Exception:
+</pre></div>
+</div>
+</div>
+<div class="section" id="overflowerror">
+<h2>OverflowError<a class="headerlink" href="#overflowerror" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    OverflowError: (34, &#39;Result too large&#39;)
+
+An OverflowError is raised when the result of an arithmetic operation
+is too large to be handled by the computer&#39;s processor.
+
+Execution stopped on line 6 of file &#39;TESTS:\test_overflow_error.py&#39;.
+
+   4: def test_overflow_error():
+   5:     try:
+--&gt;6:         2. ** 1600
+   7:     except Exception:
+</pre></div>
+</div>
+</div>
+<div class="section" id="taberror">
+<h2>TabError<a class="headerlink" href="#taberror" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TabError: inconsistent use of tabs and spaces in indentation
+
+A TabError indicates that you have used both spaces
+and tab characters to indent your code.
+This is not allowed in Python.
+Indenting your code means to have block of codes aligned vertically
+by inserting either spaces or tab characters at the beginning of lines.
+Python&#39;s recommendation is to always use spaces to indent your code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_tab_error.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    4:
+    5: def test_tab_error():
+    6:     if True:
+--&gt; 7:      pass
+            ^
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-1-concatenate-two-different-types">
+<h2>TypeError - 1: concatenate two different types<a class="headerlink" href="#typeerror-1-concatenate-two-different-types" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: must be str, not int
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to concatenate (add) two different types of objects:
+    a string (&#39;str&#39;) and an integer (&#39;int&#39;)
+
+Execution stopped on line 8 of file &#39;TESTS:\test_type_error.py&#39;.
+
+    6:         a = &quot;a&quot;
+    7:         one = 1
+--&gt; 8:         result = a + one
+    9:     except Exception:
+
+a: &#39;a&#39;
+one: 1
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-1a-concatenate-two-different-types">
+<h2>TypeError - 1a: concatenate two different types<a class="headerlink" href="#typeerror-1a-concatenate-two-different-types" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: must be str, not list
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to concatenate (add) two different types of objects:
+    a string (&#39;str&#39;) and a list
+
+Execution stopped on line 22 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   20:         a = &quot;a&quot;
+   21:         a_list = [1, 2, 3]
+--&gt;22:         result = a + a_list
+   23:     except Exception:
+
+a: &#39;a&#39;
+a_list: [1, 2, 3]
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-1b-concatenate-two-different-types">
+<h2>TypeError - 1b: concatenate two different types<a class="headerlink" href="#typeerror-1b-concatenate-two-different-types" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: can only concatenate tuple (not &quot;list&quot;) to tuple
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to concatenate (add) two different types of objects:
+    a tuple and a list
+
+Execution stopped on line 36 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   34:         a_tuple = (1, 2, 3)
+   35:         a_list = [1, 2, 3]
+--&gt;36:         result = a_tuple + a_list
+   37:     except Exception:
+
+a_tuple: (1, 2, 3)
+a_list: [1, 2, 3]
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-2-unsupported-operand-type-s-for">
+<h2>TypeError - 2: unsupported operand type(s) for +<a class="headerlink" href="#typeerror-2-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;NoneType&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to add two incompatible types of objects:
+    an integer (&#39;int&#39;) and a variable equal to None (&#39;NoneType&#39;)
+
+Execution stopped on line 48 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   46:         one = 1
+   47:         none = None
+--&gt;48:         result = one + none
+   49:     except Exception:
+
+one: 1
+none: None
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-2a-unsupported-operand-type-s-for">
+<h2>TypeError - 2a: unsupported operand type(s) for +=<a class="headerlink" href="#typeerror-2a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for +=: &#39;int&#39; and &#39;str&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to add two incompatible types of objects:
+    an integer (&#39;int&#39;) and a string (&#39;str&#39;)
+
+Execution stopped on line 60 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   58:         one = 1
+   59:         two = &quot;two&quot;
+--&gt;60:         one += two
+   61:     except Exception:
+
+one: 1
+two: &#39;two&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-3-unsupported-operand-type-s-for">
+<h2>TypeError - 3: unsupported operand type(s) for -<a class="headerlink" href="#typeerror-3-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for -: &#39;tuple&#39; and &#39;list&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to subtract two incompatible types of objects:
+    a tuple and a list
+
+Execution stopped on line 72 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   70:         a = (1, 2)
+   71:         b = [3, 4]
+--&gt;72:         result = a - b
+   73:     except Exception:
+
+a: (1, 2)
+b: [3, 4]
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-3a-unsupported-operand-type-s-for">
+<h2>TypeError - 3a: unsupported operand type(s) for -=<a class="headerlink" href="#typeerror-3a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for -=: &#39;tuple&#39; and &#39;list&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to subtract two incompatible types of objects:
+    a tuple and a list
+
+Execution stopped on line 84 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   82:         a = (1, 2)
+   83:         b = [3, 4]
+--&gt;84:         a -= b
+   85:     except Exception:
+
+a: (1, 2)
+b: [3, 4]
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-4-unsupported-operand-type-s-for">
+<h2>TypeError - 4: unsupported operand type(s) for *<a class="headerlink" href="#typeerror-4-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for *: &#39;complex&#39; and &#39;set&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to multiply two incompatible types of objects:
+    a complex number and a set
+
+Execution stopped on line 96 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   94:         a = 1j
+   95:         b = {2, 3}
+--&gt;96:         result = a * b
+   97:     except Exception:
+
+a: 1j
+b: {2, 3}
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-4a-unsupported-operand-type-s-for">
+<h2>TypeError - 4a: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">*=</span></code><a class="headerlink" href="#typeerror-4a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for *=: &#39;complex&#39; and &#39;set&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to multiply two incompatible types of objects:
+    a complex number and a set
+
+Execution stopped on line 108 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   106:         a = 1j
+   107:         b = {2, 3}
+--&gt;108:         a *= b
+   109:     except Exception:
+
+a: 1j
+b: {2, 3}
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-5-unsupported-operand-type-s-for">
+<h2>TypeError - 5: unsupported operand type(s) for /<a class="headerlink" href="#typeerror-5-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for /: &#39;dict&#39; and &#39;float&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to divide two incompatible types of objects:
+    a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
+
+Execution stopped on line 120 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   118:         a = {1: 1, 2: 2}
+   119:         b = 3.1416
+--&gt;120:         result = a / b
+   121:     except Exception:
+
+a: {1: 1, 2: 2}
+b: 3.1416
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-5a-unsupported-operand-type-s-for">
+<h2>TypeError - 5a: unsupported operand type(s) for /=<a class="headerlink" href="#typeerror-5a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for /=: &#39;dict&#39; and &#39;float&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to divide two incompatible types of objects:
+    a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
+
+Execution stopped on line 132 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   130:         a = {1: 1, 2: 2}
+   131:         b = 3.1416
+--&gt;132:         a /= b
+   133:     except Exception:
+
+a: {1: 1, 2: 2}
+b: 3.1416
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-5b-unsupported-operand-type-s-for">
+<h2>TypeError - 5b: unsupported operand type(s) for //<a class="headerlink" href="#typeerror-5b-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for //: &#39;dict&#39; and &#39;float&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to divide two incompatible types of objects:
+    a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
+
+Execution stopped on line 144 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   142:         a = {1: 1, 2: 2}
+   143:         b = 3.1416
+--&gt;144:         result = a // b
+   145:     except Exception:
+
+a: {1: 1, 2: 2}
+b: 3.1416
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-5c-unsupported-operand-type-s-for">
+<h2>TypeError - 5c: unsupported operand type(s) for //=<a class="headerlink" href="#typeerror-5c-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for //=: &#39;dict&#39; and &#39;float&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to divide two incompatible types of objects:
+    a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
+
+Execution stopped on line 156 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   154:         a = {1: 1, 2: 2}
+   155:         b = 3.1416
+--&gt;156:         a //= b
+   157:     except Exception:
+
+a: {1: 1, 2: 2}
+b: 3.1416
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-6-unsupported-operand-type-s-for">
+<h2>TypeError - 6: unsupported operand type(s) for &amp;<a class="headerlink" href="#typeerror-6-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for &amp;: &#39;str&#39; and &#39;int&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to perform the bitwise operation &amp;
+    on two incompatible types of objects:
+    a string (&#39;str&#39;) and an integer (&#39;int&#39;)
+
+Execution stopped on line 168 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   166:         a = &quot;a&quot;
+   167:         b = 2
+--&gt;168:         result = a &amp; b
+   169:     except Exception:
+
+a: &#39;a&#39;
+b: 2
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-6a-unsupported-operand-type-s-for">
+<h2>TypeError - 6a: unsupported operand type(s) for &amp;=<a class="headerlink" href="#typeerror-6a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for &amp;=: &#39;str&#39; and &#39;int&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to perform the bitwise operation &amp;=
+    on two incompatible types of objects:
+    a string (&#39;str&#39;) and an integer (&#39;int&#39;)
+
+Execution stopped on line 180 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   178:         a = &quot;a&quot;
+   179:         b = 2
+--&gt;180:         a &amp;= b
+   181:     except Exception:
+
+a: &#39;a&#39;
+b: 2
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-7-unsupported-operand-type-s-for">
+<h2>TypeError - 7: unsupported operand type(s) for **<a class="headerlink" href="#typeerror-7-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for ** or pow(): &#39;dict&#39; and &#39;float&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to exponentiate (raise to a power)
+    using two incompatible types of objects:
+    a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
+
+Execution stopped on line 192 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   190:         a = {1: 1, 2: 2}
+   191:         b = 3.1416
+--&gt;192:         result = a ** b
+   193:     except Exception:
+
+a: {1: 1, 2: 2}
+b: 3.1416
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-7a-unsupported-operand-type-s-for">
+<h2>TypeError - 7a: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">**=</span></code><a class="headerlink" href="#typeerror-7a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for ** or pow(): &#39;dict&#39; and &#39;float&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to exponentiate (raise to a power)
+    using two incompatible types of objects:
+    a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
+
+Execution stopped on line 204 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   202:         a = {1: 1, 2: 2}
+   203:         b = 3.1416
+--&gt;204:         a **= b
+   205:     except Exception:
+
+a: {1: 1, 2: 2}
+b: 3.1416
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-8-unsupported-operand-type-s-for">
+<h2>TypeError - 8: unsupported operand type(s) for &gt;&gt;<a class="headerlink" href="#typeerror-8-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for &gt;&gt;: &#39;str&#39; and &#39;int&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to perform the bit shifting operation &gt;&gt;
+    on two incompatible types of objects:
+    a string (&#39;str&#39;) and an integer (&#39;int&#39;)
+
+Execution stopped on line 216 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   214:         a = &quot;a&quot;
+   215:         b = 42
+--&gt;216:         result = a &gt;&gt; b
+   217:     except Exception:
+
+a: &#39;a&#39;
+b: 42
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-8a-unsupported-operand-type-s-for">
+<h2>TypeError - 8a: unsupported operand type(s) for &gt;&gt;=<a class="headerlink" href="#typeerror-8a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for &gt;&gt;=: &#39;str&#39; and &#39;int&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to perform the bit shifting operation &gt;&gt;=
+    on two incompatible types of objects:
+    a string (&#39;str&#39;) and an integer (&#39;int&#39;)
+
+Execution stopped on line 228 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   226:         a = &quot;a&quot;
+   227:         b = 42
+--&gt;228:         a &gt;&gt;= b
+   229:     except Exception:
+
+a: &#39;a&#39;
+b: 42
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-9-unsupported-operand-type-s-for">
+<h2>TypeError - 9: unsupported operand type(s) for &#64;<a class="headerlink" href="#typeerror-9-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for @: &#39;str&#39; and &#39;int&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to use the operator @
+    using two incompatible types of objects:
+    a string (&#39;str&#39;) and an integer (&#39;int&#39;).
+    This operator is normally used only
+    for multiplication of matrices.
+
+Execution stopped on line 240 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   238:         a = &quot;a&quot;
+   239:         b = 2
+--&gt;240:         result = a @ b
+   241:     except Exception:
+
+a: &#39;a&#39;
+b: 2
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-9a-unsupported-operand-type-s-for">
+<h2>TypeError - 9a: unsupported operand type(s) for &#64;=<a class="headerlink" href="#typeerror-9a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: unsupported operand type(s) for @=: &#39;str&#39; and &#39;int&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to use the operator @=
+    using two incompatible types of objects:
+    a string (&#39;str&#39;) and an integer (&#39;int&#39;).
+    This operator is normally used only
+    for multiplication of matrices.
+
+Execution stopped on line 252 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   250:         a = &quot;a&quot;
+   251:         b = 2
+--&gt;252:         a @= b
+   253:     except Exception:
+
+a: &#39;a&#39;
+b: 2
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-10-comparison-between-incompatible-types">
+<h2>TypeError - 10: comparison between incompatible types<a class="headerlink" href="#typeerror-10-comparison-between-incompatible-types" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to do an order comparison (&lt;)
+    between two incompatible types of objects:
+    an integer (&#39;int&#39;) and a string (&#39;str&#39;)
+
+Execution stopped on line 264 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   262:         a = &quot;a&quot;
+   263:         b = 42
+--&gt;264:         b &lt; a
+   265:     except Exception:
+
+b: 42
+a: &#39;a&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-11-bad-operand-type-for-unary">
+<h2>TypeError - 11: bad operand type for unary +<a class="headerlink" href="#typeerror-11-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: bad operand type for unary +: &#39;str&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to use the unary operator &#39;+&#39;
+    with the following type of object: a string (&#39;str&#39;).
+    This operation is not defined for this type of object.
+
+Execution stopped on line 274 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   272: def test_type_error11():
+   273:     try:
+--&gt;274:         a = +&quot;abc&quot;
+   275:         print(a)
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-11a-bad-operand-type-for-unary">
+<h2>TypeError - 11a: bad operand type for unary -<a class="headerlink" href="#typeerror-11a-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: bad operand type for unary -: &#39;list&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to use the unary operator &#39;-&#39;
+    with the following type of object: a list.
+    This operation is not defined for this type of object.
+
+Execution stopped on line 285 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   283: def test_type_error11a():
+   284:     try:
+--&gt;285:         a = - [1, 2, 3]
+   286:         print(a)
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-11b-bad-operand-type-for-unary">
+<h2>TypeError - 11b: bad operand type for unary ~<a class="headerlink" href="#typeerror-11b-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: bad operand type for unary ~: &#39;tuple&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You tried to use the unary operator &#39;~&#39;
+    with the following type of object: a tuple.
+    This operation is not defined for this type of object.
+
+Execution stopped on line 296 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   294: def test_type_error11b():
+   295:     try:
+--&gt;296:         a = ~ (1, 2, 3)
+   297:         print(a)
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-12-object-does-not-support-item-assignment">
+<h2>TypeError - 12: object does not support item assignment<a class="headerlink" href="#typeerror-12-object-does-not-support-item-assignment" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: &#39;tuple&#39; object does not support item assignment
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    In Python, some objects are known as immutable:
+    once defined, their value cannot be changed.
+    You tried change part of such an immutable object: a tuple,
+    most likely by using an indexing operation.
+
+Execution stopped on line 308 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   306:     a = (1, 2, 3)
+   307:     try:
+--&gt;308:         a[0] = 0
+   309:     except Exception:
+
+a: (1, 2, 3)
+</pre></div>
+</div>
+</div>
+<div class="section" id="unboundlocalerror">
+<h2>UnboundLocalError<a class="headerlink" href="#unboundlocalerror" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    UnboundLocalError: local variable &#39;a&#39; referenced before assignment
+
+In Python, variables that are used inside a function are known as
+local variables. Before they are used, they must be assigned a value.
+A variable that is used before it is assigned a value is assumed to
+be defined outside that function; it is known as a &#39;global&#39;
+(or sometimes &#39;nonlocal&#39;) variable. You cannot assign a value to such
+a global variable inside a function without first indicating to
+Python that this is a global variable, otherwise you will see
+an UnboundLocalError.
+
+Likely cause:
+    The variable that appears to cause the problem is &#39;a&#39;.
+    Perhaps the statement
+        global a
+    should have been included as the first line inside your function.
+
+Execution stopped on line 20 of file &#39;TESTS:\test_unbound_local_error.py&#39;.
+
+   18:
+   19:     try:
+--&gt;20:         outer()
+   21:     except Exception:
+
+global outer: &lt;function outer&gt;
+
+Exception raised on line 12 of file &#39;TESTS:\test_unbound_local_error.py&#39;.
+
+   10:     def inner():
+   11:         c = 3
+--&gt;12:         a = a + b + c
+   13:     inner()
+
+global b: 2
+c: 3
+</pre></div>
+</div>
+</div>
+<div class="section" id="unknown-exception">
+<h2>Unknown exception<a class="headerlink" href="#unknown-exception" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    MyException: Some informative message
+
+No information is known about this exception.
+Please report this example to
+https://github.com/aroberge/friendly-traceback/issues
+
+Execution stopped on line 10 of file &#39;TESTS:\test_unknown_error.py&#39;.
+
+    8: def test_unknown_error():
+    9:     try:
+--&gt;10:         raise MyException(&quot;Some informative message&quot;)
+   11:     except Exception:
+
+global MyException: &lt;class &#39;test_unknown_error.MyException&#39;&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="zerodivisionerror-1">
+<h2>ZeroDivisionError - 1<a class="headerlink" href="#zerodivisionerror-1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    ZeroDivisionError: division by zero
+
+A ZeroDivisionError occurs when you are attempting to divide
+a value by zero:
+    result = my_variable / 0
+It can also happen if you calculate the remainder of a division
+using the modulo operator &#39;%&#39;
+    result = my_variable % 0
+
+Execution stopped on line 6 of file &#39;TESTS:\test_zero_division_error.py&#39;.
+
+   4: def test_zero_division_error():
+   5:     try:
+--&gt;6:         1 / 0
+   7:     except Exception:
+</pre></div>
+</div>
+</div>
+<div class="section" id="zerodivisionerror-2">
+<h2>ZeroDivisionError - 2<a class="headerlink" href="#zerodivisionerror-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    ZeroDivisionError: integer division or modulo by zero
+
+A ZeroDivisionError occurs when you are attempting to divide
+a value by zero:
+    result = my_variable / 0
+It can also happen if you calculate the remainder of a division
+using the modulo operator &#39;%&#39;
+    result = my_variable % 0
+
+Execution stopped on line 17 of file &#39;TESTS:\test_zero_division_error.py&#39;.
+
+   15:     zero = 0
+   16:     try:
+--&gt;17:         1 % zero
+   18:     except Exception:
+
+zero: 0
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="syntax_tracebacks_en_3.6.html" title="Friendly SyntaxError tracebacks - in English"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="syntax_error.html" title="Dealing with Syntax Errors"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, André Roberge.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
+    </div>
+  </body>
+</html>
