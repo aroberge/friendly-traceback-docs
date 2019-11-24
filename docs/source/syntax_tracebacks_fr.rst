@@ -176,7 +176,7 @@ SyntaxError - malformed def statment - 1
         Vous vouliez définir une fonction ou une méthode,
         mais vous avez fait des erreurs de syntaxe.
         La syntaxe correcte est:
-            def nom ( arguments_optionnels ) :
+            def nom ( arguments_optionnels ):
         
         
 
@@ -203,7 +203,7 @@ SyntaxError - malformed def statment - 2
         Vous vouliez définir une fonction ou une méthode,
         mais vous avez fait des erreurs de syntaxe.
         La syntaxe correcte est:
-            def nom ( arguments_optionnels ) :
+            def nom ( arguments_optionnels ):
         
         
 
@@ -230,7 +230,7 @@ SyntaxError - malformed def statment - 3
         Vous vouliez définir une fonction ou une méthode,
         mais vous avez fait des erreurs de syntaxe.
         La syntaxe correcte est:
-            def nom ( arguments_optionnels ) :
+            def nom ( arguments_optionnels ):
         
         
 
@@ -257,7 +257,7 @@ SyntaxError - can't assign to literal
         Vous avez écrit une expression comme
             1 =  a
         où <1>, sur le côté gauche du signe égal, est ce que Python
-        appelle un 'literal', c'est-à dire soit soit une chaîne de caractères ou un nombre,
+        appelle un 'literal', c'est-à-dire soit une chaîne de caractères ou un nombre,
         et non le nom d’une variable. Peut-être que vous vouliez plutôt écrire:
             a = 1
         
@@ -311,7 +311,7 @@ SyntaxError - EOL while scanning string literal
                          ^
 
     Ma meilleure hypothèse :
-        Vous aviez commencer à écrire une chaîne de caractères
+        Vous aviez commencé à écrire une chaîne de caractères
         avec un guillemet simple ou double, mais n'avez jamais
         terminé la chaîne avec un autre guillemet sur cette ligne.
         
@@ -387,7 +387,7 @@ SyntaxError - unmatched closing parenthesis
                     ^
 
     Ma meilleure hypothèse :
-        The closing parenthesis ')' on line 6 does not match anything.
+        Le symbole parenthèse ')' à la ligne 6 n'a pas de symbole ouvrant qui lui correspond.
         
 
 SyntaxError - unclosed parenthesis
@@ -410,7 +410,7 @@ SyntaxError - unclosed parenthesis
                    ^
 
     Ma meilleure hypothèse :
-        The opening parenthesis '(' on line 2 is not closed.
+        Le symbole parenthèse '(' à la ligne 2 n'est pas fermé par le symbole correspondant.
         
 
 SyntaxError - mismatched brackets
@@ -432,5 +432,5 @@ SyntaxError - mismatched brackets
                       ^
 
     Ma meilleure hypothèse :
-        The closing square bracket ']' on line 2 does not match the opening parenthesis '(' on line 2.
+        Le symbole crochet ']' à la ligne 2 ne correspond pas au symbole parenthèse '(' à la ligne 2.
         

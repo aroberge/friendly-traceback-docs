@@ -269,7 +269,7 @@ ModuleNotFoundError
         
     Une exception ModuleNotFoundError indique que vous
     essayez d’importer un module qui ne peut pas être trouvé par Python.
-    Cela pourrait être parce que vous fait une faute d'orthographe
+    Cela pourrait être parce que vous fait une faute d'orthographe en
     écrivant le nom du module, ou parce qu’il n’est pas installé sur votre ordinateur.
     
     Cause probable :
@@ -338,7 +338,7 @@ TabError
     Exception Python:
         TabError: inconsistent use of tabs and spaces in indentation
         
-    Un exception de type TabError indique que vous avez utilisé des espaces
+    Une exception de type TabError indique que vous avez utilisé des espaces
     ainsi que des caractères de tabulation pour indenter votre code.
     Cela n’est pas autorisé dans Python.
     L’indentation de votre code signifie que le bloc de codes est aligné

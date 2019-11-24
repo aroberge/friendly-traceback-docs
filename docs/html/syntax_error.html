@@ -62,10 +62,10 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -198,7 +198,7 @@ this is also the case for <code class="docutils literal notranslate"><span class
 <p>For <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, we actually need to get access to the offending
 code, analyze it and see if we can make an educated guess as to the
 cause of the error and give proper feedback.</p>
-<div class="admonition-todo admonition" id="index-0">
+<div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
 <p>Add code example for providing specific information for SyntaxError</p>
 </div>
@@ -228,7 +228,7 @@ cause of the error and give proper feedback.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, André Roberge.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>

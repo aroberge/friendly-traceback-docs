@@ -98,10 +98,10 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -349,7 +349,7 @@ b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
 
 Une exception ModuleNotFoundError indique que vous
 essayez d’importer un module qui ne peut pas être trouvé par Python.
-Cela pourrait être parce que vous fait une faute d&#39;orthographe
+Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 écrivant le nom du module, ou parce qu’il n’est pas installé sur votre ordinateur.
 
 Cause probable :
@@ -409,7 +409,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 6 du fichier &#39;TESTS:\test_o
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
     TabError: inconsistent use of tabs and spaces in indentation
 
-Un exception de type TabError indique que vous avez utilisé des espaces
+Une exception de type TabError indique que vous avez utilisé des espaces
 ainsi que des caractères de tabulation pour indenter votre code.
 Cela n’est pas autorisé dans Python.
 L’indentation de votre code signifie que le bloc de codes est aligné
@@ -1243,7 +1243,7 @@ zero: 0
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, André Roberge.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>
