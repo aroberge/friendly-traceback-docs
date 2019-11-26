@@ -502,3 +502,26 @@ SyntaxError - print is a function
         In older version of Python, 'print' was a keyword.
         Now, 'print' is a function; you need to use parentheses to call it.
         
+
+SyntaxError - Python keyword as function name
+---------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error18.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: def pass():
+                 ^
+
+    My best guess:
+        You tried to use the Python keyword 'pass' as a function name.
+        

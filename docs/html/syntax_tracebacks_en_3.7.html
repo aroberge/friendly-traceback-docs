@@ -56,6 +56,7 @@
 <li><a class="reference internal" href="#syntaxerror-unclosed-parenthesis-2">SyntaxError - unclosed parenthesis - 2</a></li>
 <li><a class="reference internal" href="#syntaxerror-mismatched-brackets">SyntaxError - mismatched brackets</a></li>
 <li><a class="reference internal" href="#syntaxerror-print-is-a-function">SyntaxError - print is a function</a></li>
+<li><a class="reference internal" href="#syntaxerror-python-keyword-as-function-name">SyntaxError - Python keyword as function name</a></li>
 </ul>
 </li>
 </ul>
@@ -520,6 +521,26 @@ My best guess:
 
     In older version of Python, &#39;print&#39; was a keyword.
     Now, &#39;print&#39; is a function; you need to use parentheses to call it.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-python-keyword-as-function-name">
+<h2>SyntaxError - Python keyword as function name<a class="headerlink" href="#syntaxerror-python-keyword-as-function-name" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error18.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: def pass():
+             ^
+
+My best guess:
+    You tried to use the Python keyword &#39;pass&#39; as a function name.
 </pre></div>
 </div>
 </div>
