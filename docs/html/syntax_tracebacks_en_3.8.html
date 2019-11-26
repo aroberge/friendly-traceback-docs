@@ -46,13 +46,16 @@
 <li><a class="reference internal" href="#syntaxerror-malformed-def-statment-2">SyntaxError - malformed def statment - 2</a></li>
 <li><a class="reference internal" href="#syntaxerror-malformed-def-statment-3">SyntaxError - malformed def statment - 3</a></li>
 <li><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal">SyntaxError - can’t assign to literal</a></li>
+<li><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-2">SyntaxError - can’t assign to literal - 2</a></li>
 <li><a class="reference internal" href="#syntaxerror-import-x-from-y">SyntaxError - import X from Y</a></li>
 <li><a class="reference internal" href="#syntaxerror-eol-while-scanning-string-literal">SyntaxError - EOL while scanning string literal</a></li>
 <li><a class="reference internal" href="#syntaxerror-assignment-to-keyword-none">SyntaxError - assignment to keyword (None)</a></li>
 <li><a class="reference internal" href="#syntaxerror-assignment-to-keyword-debug">SyntaxError - assignment to keyword (__debug__)</a></li>
 <li><a class="reference internal" href="#syntaxerror-unmatched-closing-parenthesis">SyntaxError - unmatched closing parenthesis</a></li>
 <li><a class="reference internal" href="#syntaxerror-unclosed-parenthesis">SyntaxError - unclosed parenthesis</a></li>
+<li><a class="reference internal" href="#syntaxerror-unclosed-parenthesis-2">SyntaxError - unclosed parenthesis - 2</a></li>
 <li><a class="reference internal" href="#syntaxerror-mismatched-brackets">SyntaxError - mismatched brackets</a></li>
+<li><a class="reference internal" href="#syntaxerror-print-is-a-function">SyntaxError - print is a function</a></li>
 </ul>
 </li>
 </ul>
@@ -308,6 +311,30 @@ My best guess:
 </pre></div>
 </div>
 </div>
+<div class="section" id="syntaxerror-can-t-assign-to-literal-2">
+<h2>SyntaxError - can’t assign to literal - 2<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: cannot assign to literal
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error9a.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal&quot;&quot;&quot;
+   2:
+--&gt;3: 1 = 2
+      ^
+
+My best guess:
+    You wrote an expression like
+        1 = 2
+    where &lt;1&gt;, on the left hand-side of the equal sign, is
+    an actual number or string (what Python calls a &#39;literal&#39;),
+    and not the name of a variable.
+</pre></div>
+</div>
+</div>
 <div class="section" id="syntaxerror-import-x-from-y">
 <h2>SyntaxError - import X from Y<a class="headerlink" href="#syntaxerror-import-x-from-y" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
@@ -435,6 +462,26 @@ My best guess:
 </pre></div>
 </div>
 </div>
+<div class="section" id="syntaxerror-unclosed-parenthesis-2">
+<h2>SyntaxError - unclosed parenthesis - 2<a class="headerlink" href="#syntaxerror-unclosed-parenthesis-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error15a.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2: a = (b+c
+--&gt;3: d = a*a
+      ^
+
+My best guess:
+    The opening parenthesis &#39;(&#39; on line 2 is not closed.
+</pre></div>
+</div>
+</div>
 <div class="section" id="syntaxerror-mismatched-brackets">
 <h2>SyntaxError - mismatched brackets<a class="headerlink" href="#syntaxerror-mismatched-brackets" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
@@ -451,6 +498,28 @@ beyond the location indicated below by --&gt; and ^.
 
 My best guess:
     The closing square bracket &#39;]&#39; on line 2 does not match the opening parenthesis &#39;(&#39; on line 2.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-print-is-a-function">
+<h2>SyntaxError - print is a function<a class="headerlink" href="#syntaxerror-print-is-a-function" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: Missing parentheses in call to &#39;print&#39;. Did you mean print(&#39;hello&#39;)?
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error17.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: Missing parentheses in call to &#39;print&#39; ...&quot;&quot;&quot;
+--&gt;2: print &#39;hello&#39;
+            ^
+
+My best guess:
+    Perhaps you need to type print(&#39;hello&#39;)?
+
+    In older version of Python, &#39;print&#39; was a keyword.
+    Now, &#39;print&#39; is a function; you need to use parentheses to call it.
 </pre></div>
 </div>
 </div>

@@ -258,8 +258,36 @@ SyntaxError - can't assign to literal
             1 =  a
         où <1>, sur le côté gauche du signe égal, est ce que Python
         appelle un 'literal', c'est-à-dire soit une chaîne de caractères ou un nombre,
-        et non le nom d’une variable. Peut-être que vous vouliez plutôt écrire:
+        et non le nom d’une variable.  Peut-être que vous vouliez plutôt écrire :
             a = 1
+        
+        
+
+SyntaxError - can't assign to literal - 2
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: can't assign to literal
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error9a.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: can't assign to literal"""
+       2: 
+    -->3: 1 = 2
+         ^
+
+    Ma meilleure hypothèse :
+        Vous avez écrit une expression comme
+            1 =  2
+        où <1>, sur le côté gauche du signe égal, est ce que Python
+        appelle un 'literal', c'est-à-dire soit une chaîne de caractères ou un nombre,
+        et non le nom d’une variable.
         
         
 
@@ -413,6 +441,29 @@ SyntaxError - unclosed parenthesis
         Le symbole parenthèse '(' à la ligne 2 n'est pas fermé par le symbole correspondant.
         
 
+SyntaxError - unclosed parenthesis - 2
+--------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error15a.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: a = (b+c
+    -->3: d = a*a
+          ^
+
+    Ma meilleure hypothèse :
+        Le symbole parenthèse '(' à la ligne 2 n'est pas fermé par le symbole correspondant.
+        
+
 SyntaxError - mismatched brackets
 ---------------------------------
 
@@ -433,4 +484,29 @@ SyntaxError - mismatched brackets
 
     Ma meilleure hypothèse :
         Le symbole crochet ']' à la ligne 2 ne correspond pas au symbole parenthèse '(' à la ligne 2.
+        
+
+SyntaxError - print is a function
+---------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello')?
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error17.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: Missing parentheses in call to 'print' ..."""
+    -->2: print 'hello'
+                      ^
+
+    Ma meilleure hypothèse :
+        Peut-être que vous avez besoin d'écrire print('hello') ?
+        
+        Dans l'ancienne version de Python, «print» était un mot clé.
+        Maintenant, «print» est une fonction; vous devez utiliser des parenthèses pour l'invoquer.
         

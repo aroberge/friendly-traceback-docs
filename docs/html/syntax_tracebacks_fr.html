@@ -46,13 +46,16 @@
 <li><a class="reference internal" href="#syntaxerror-malformed-def-statment-2">SyntaxError - malformed def statment - 2</a></li>
 <li><a class="reference internal" href="#syntaxerror-malformed-def-statment-3">SyntaxError - malformed def statment - 3</a></li>
 <li><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal">SyntaxError - can’t assign to literal</a></li>
+<li><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-2">SyntaxError - can’t assign to literal - 2</a></li>
 <li><a class="reference internal" href="#syntaxerror-import-x-from-y">SyntaxError - import X from Y</a></li>
 <li><a class="reference internal" href="#syntaxerror-eol-while-scanning-string-literal">SyntaxError - EOL while scanning string literal</a></li>
 <li><a class="reference internal" href="#syntaxerror-assignment-to-keyword-none">SyntaxError - assignment to keyword (None)</a></li>
 <li><a class="reference internal" href="#syntaxerror-assignment-to-keyword-debug">SyntaxError - assignment to keyword (__debug__)</a></li>
 <li><a class="reference internal" href="#syntaxerror-unmatched-closing-parenthesis">SyntaxError - unmatched closing parenthesis</a></li>
 <li><a class="reference internal" href="#syntaxerror-unclosed-parenthesis">SyntaxError - unclosed parenthesis</a></li>
+<li><a class="reference internal" href="#syntaxerror-unclosed-parenthesis-2">SyntaxError - unclosed parenthesis - 2</a></li>
 <li><a class="reference internal" href="#syntaxerror-mismatched-brackets">SyntaxError - mismatched brackets</a></li>
+<li><a class="reference internal" href="#syntaxerror-print-is-a-function">SyntaxError - print is a function</a></li>
 </ul>
 </li>
 </ul>
@@ -306,8 +309,32 @@ Ma meilleure hypothèse :
         1 =  a
     où &lt;1&gt;, sur le côté gauche du signe égal, est ce que Python
     appelle un &#39;literal&#39;, c&#39;est-à-dire soit une chaîne de caractères ou un nombre,
-    et non le nom d’une variable. Peut-être que vous vouliez plutôt écrire:
+    et non le nom d’une variable.  Peut-être que vous vouliez plutôt écrire :
         a = 1
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-can-t-assign-to-literal-2">
+<h2>SyntaxError - can’t assign to literal - 2<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: can&#39;t assign to literal
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error9a.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal&quot;&quot;&quot;
+   2:
+--&gt;3: 1 = 2
+     ^
+
+Ma meilleure hypothèse :
+    Vous avez écrit une expression comme
+        1 =  2
+    où &lt;1&gt;, sur le côté gauche du signe égal, est ce que Python
+    appelle un &#39;literal&#39;, c&#39;est-à-dire soit une chaîne de caractères ou un nombre,
+    et non le nom d’une variable.
 </pre></div>
 </div>
 </div>
@@ -439,6 +466,26 @@ Ma meilleure hypothèse :
 </pre></div>
 </div>
 </div>
+<div class="section" id="syntaxerror-unclosed-parenthesis-2">
+<h2>SyntaxError - unclosed parenthesis - 2<a class="headerlink" href="#syntaxerror-unclosed-parenthesis-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: invalid syntax
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error15a.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2: a = (b+c
+--&gt;3: d = a*a
+      ^
+
+Ma meilleure hypothèse :
+    Le symbole parenthèse &#39;(&#39; à la ligne 2 n&#39;est pas fermé par le symbole correspondant.
+</pre></div>
+</div>
+</div>
 <div class="section" id="syntaxerror-mismatched-brackets">
 <h2>SyntaxError - mismatched brackets<a class="headerlink" href="#syntaxerror-mismatched-brackets" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
@@ -455,6 +502,28 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Ma meilleure hypothèse :
     Le symbole crochet &#39;]&#39; à la ligne 2 ne correspond pas au symbole parenthèse &#39;(&#39; à la ligne 2.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-print-is-a-function">
+<h2>SyntaxError - print is a function<a class="headerlink" href="#syntaxerror-print-is-a-function" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: Missing parentheses in call to &#39;print&#39;. Did you mean print(&#39;hello&#39;)?
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error17.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: Missing parentheses in call to &#39;print&#39; ...&quot;&quot;&quot;
+--&gt;2: print &#39;hello&#39;
+                  ^
+
+Ma meilleure hypothèse :
+    Peut-être que vous avez besoin d&#39;écrire print(&#39;hello&#39;) ?
+
+    Dans l&#39;ancienne version de Python, «print» était un mot clé.
+    Maintenant, «print» est une fonction; vous devez utiliser des parenthèses pour l&#39;invoquer.
 </pre></div>
 </div>
 </div>

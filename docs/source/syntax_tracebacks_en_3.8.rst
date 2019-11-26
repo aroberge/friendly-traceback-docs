@@ -257,6 +257,34 @@ SyntaxError - can't assign to literal
         
         
 
+SyntaxError - can't assign to literal - 2
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: cannot assign to literal
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error9a.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: can't assign to literal"""
+       2: 
+    -->3: 1 = 2
+          ^
+
+    My best guess:
+        You wrote an expression like
+            1 = 2
+        where <1>, on the left hand-side of the equal sign, is
+        an actual number or string (what Python calls a 'literal'),
+        and not the name of a variable.
+        
+        
+
 SyntaxError - import X from Y
 -----------------------------
 
@@ -405,6 +433,29 @@ SyntaxError - unclosed parenthesis
         The opening parenthesis '(' on line 2 is not closed.
         
 
+SyntaxError - unclosed parenthesis - 2
+--------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error15a.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: a = (b+c
+    -->3: d = a*a
+          ^
+
+    My best guess:
+        The opening parenthesis '(' on line 2 is not closed.
+        
+
 SyntaxError - mismatched brackets
 ---------------------------------
 
@@ -425,4 +476,29 @@ SyntaxError - mismatched brackets
 
     My best guess:
         The closing square bracket ']' on line 2 does not match the opening parenthesis '(' on line 2.
+        
+
+SyntaxError - print is a function
+---------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello')?
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error17.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: Missing parentheses in call to 'print' ..."""
+    -->2: print 'hello'
+                ^
+
+    My best guess:
+        Perhaps you need to type print('hello')?
+        
+        In older version of Python, 'print' was a keyword.
+        Now, 'print' is a function; you need to use parentheses to call it.
         
