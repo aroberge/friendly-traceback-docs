@@ -535,3 +535,77 @@ SyntaxError - Python keyword as function name
         Ceci n’est pas permis.
         
         
+
+SyntaxError - break outside loop
+--------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: 'break' outside loop
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error19.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: 'break' outside loop"""
+       2: 
+       3: if True:
+    -->4:     break
+             ^
+
+    Ma meilleure hypothèse :
+        Le mot-clé Python 'break' ne peut être utilisé qu'à l'intérieur d'une boucle 'for' ou à l'intérieur d'une boucle 'while'.
+        
+
+SyntaxError - continue outside loop
+-----------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: 'continue' not properly in loop
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error20.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: 'continue' outside loop"""
+       2: 
+       3: if True:
+    -->4:     continue
+             ^
+
+    Ma meilleure hypothèse :
+        Le mot-clé Python 'continue' ne peut être utilisé qu'à l'intérieur d'une boucle 'for' ou à l'intérieur d'une boucle 'while'.
+        
+
+SyntaxError - quote inside a string
+-----------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error21.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: message = 'don't'
+                         ^
+
+    Ma meilleure hypothèse :
+        Il semble y avoir un identificateur Python (nom de variable)
+        immédiatement après une chaîne.
+        Je soupçonne que vous essayiez d'utiliser un apostrophe ou un guillemet
+        à l'intérieur d'une chaîne qui était délimitée par ces mêmes caractères.
+        

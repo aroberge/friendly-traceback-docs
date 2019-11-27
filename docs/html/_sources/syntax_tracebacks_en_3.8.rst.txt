@@ -525,3 +525,77 @@ SyntaxError - Python keyword as function name
     My best guess:
         You tried to use the Python keyword 'pass' as a function name.
         
+
+SyntaxError - break outside loop
+--------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: 'break' outside loop
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error19.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: 'break' outside loop"""
+       2: 
+       3: if True:
+    -->4:     break
+              ^
+
+    My best guess:
+        The Python keyword 'break' can only be used inside a for loop or inside a while loop.
+        
+
+SyntaxError - continue outside loop
+-----------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: 'continue' not properly in loop
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error20.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: 'continue' outside loop"""
+       2: 
+       3: if True:
+    -->4:     continue
+              ^
+
+    My best guess:
+        The Python keyword 'continue' can only be used inside a for loop or inside a while loop.
+        
+
+SyntaxError - quote inside a string
+-----------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error21.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: message = 'don't'
+                         ^
+
+    My best guess:
+        There appears to be a Python identifier (variable name)
+        immediately following a string.
+        I suspect that you were trying to use a quote inside a string
+        that was enclosed in quotes of the same kind.
+        
