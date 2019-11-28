@@ -609,3 +609,125 @@ SyntaxError - quote inside a string
         Je soupçonne que vous essayiez d'utiliser un apostrophe ou un guillemet
         à l'intérieur d'une chaîne qui était délimitée par ces mêmes caractères.
         
+
+SyntaxError - missing comma in a dict
+-------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error22.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       2: 
+       3: a = {'a': 1,
+       4:      'b': 2
+    -->5:      'c': 3,
+                 ^
+
+    Ma meilleure hypothèse :
+        Vous avez probablement oublié une virgule entre les éléments d'un ensemble (set)
+        ou un dict avant la position indiquée par --> et ^.
+        
+
+SyntaxError - missing comma in a set
+------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error23.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: a = {1, 2  3}
+                     ^
+
+    Ma meilleure hypothèse :
+        Vous avez probablement oublié une virgule entre les éléments d'un ensemble (set)
+        ou un dict avant la position indiquée par --> et ^.
+        
+
+SyntaxError - missing comma in a list
+-------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error24.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: a = [1, 2  3]
+                     ^
+
+    Ma meilleure hypothèse :
+        Vous avez probablement oublié une virgule entre les éléments d'une liste
+        avant la position indiquée par --> et ^.
+        
+
+SyntaxError - missing comma in a tuple
+--------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error25.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: a = (1, 2  3)
+                     ^
+
+    Ma meilleure hypothèse :
+        Vous avez probablement oublié une virgule entre les éléments d'un tuple,
+        ou entre les arguments d'une fonction, avant la position indiquée par --> et ^.
+        
+
+SyntaxError - missing comma between function args
+-------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error26.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+       3: 
+    -->4: def a(b, c d):
+                     ^
+
+    Ma meilleure hypothèse :
+        Vous avez probablement oublié une virgule entre les éléments d'un tuple,
+        ou entre les arguments d'une fonction, avant la position indiquée par --> et ^.
+        

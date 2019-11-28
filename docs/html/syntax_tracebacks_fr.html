@@ -60,6 +60,11 @@
 <li><a class="reference internal" href="#syntaxerror-break-outside-loop">SyntaxError - break outside loop</a></li>
 <li><a class="reference internal" href="#syntaxerror-continue-outside-loop">SyntaxError - continue outside loop</a></li>
 <li><a class="reference internal" href="#syntaxerror-quote-inside-a-string">SyntaxError - quote inside a string</a></li>
+<li><a class="reference internal" href="#syntaxerror-missing-comma-in-a-dict">SyntaxError - missing comma in a dict</a></li>
+<li><a class="reference internal" href="#syntaxerror-missing-comma-in-a-set">SyntaxError - missing comma in a set</a></li>
+<li><a class="reference internal" href="#syntaxerror-missing-comma-in-a-list">SyntaxError - missing comma in a list</a></li>
+<li><a class="reference internal" href="#syntaxerror-missing-comma-in-a-tuple">SyntaxError - missing comma in a tuple</a></li>
+<li><a class="reference internal" href="#syntaxerror-missing-comma-between-function-args">SyntaxError - missing comma between function args</a></li>
 </ul>
 </li>
 </ul>
@@ -614,6 +619,113 @@ Ma meilleure hypothèse :
     immédiatement après une chaîne.
     Je soupçonne que vous essayiez d&#39;utiliser un apostrophe ou un guillemet
     à l&#39;intérieur d&#39;une chaîne qui était délimitée par ces mêmes caractères.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-missing-comma-in-a-dict">
+<h2>SyntaxError - missing comma in a dict<a class="headerlink" href="#syntaxerror-missing-comma-in-a-dict" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: invalid syntax
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error22.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   2:
+   3: a = {&#39;a&#39;: 1,
+   4:      &#39;b&#39;: 2
+--&gt;5:      &#39;c&#39;: 3,
+             ^
+
+Ma meilleure hypothèse :
+    Vous avez probablement oublié une virgule entre les éléments d&#39;un ensemble (set)
+    ou un dict avant la position indiquée par --&gt; et ^.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-missing-comma-in-a-set">
+<h2>SyntaxError - missing comma in a set<a class="headerlink" href="#syntaxerror-missing-comma-in-a-set" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: invalid syntax
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error23.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: a = {1, 2  3}
+                 ^
+
+Ma meilleure hypothèse :
+    Vous avez probablement oublié une virgule entre les éléments d&#39;un ensemble (set)
+    ou un dict avant la position indiquée par --&gt; et ^.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-missing-comma-in-a-list">
+<h2>SyntaxError - missing comma in a list<a class="headerlink" href="#syntaxerror-missing-comma-in-a-list" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: invalid syntax
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error24.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: a = [1, 2  3]
+                 ^
+
+Ma meilleure hypothèse :
+    Vous avez probablement oublié une virgule entre les éléments d&#39;une liste
+    avant la position indiquée par --&gt; et ^.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-missing-comma-in-a-tuple">
+<h2>SyntaxError - missing comma in a tuple<a class="headerlink" href="#syntaxerror-missing-comma-in-a-tuple" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: invalid syntax
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error25.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: a = (1, 2  3)
+                 ^
+
+Ma meilleure hypothèse :
+    Vous avez probablement oublié une virgule entre les éléments d&#39;un tuple,
+    ou entre les arguments d&#39;une fonction, avant la position indiquée par --&gt; et ^.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-missing-comma-between-function-args">
+<h2>SyntaxError - missing comma between function args<a class="headerlink" href="#syntaxerror-missing-comma-between-function-args" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: invalid syntax
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error26.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+   3:
+--&gt;4: def a(b, c d):
+                 ^
+
+Ma meilleure hypothèse :
+    Vous avez probablement oublié une virgule entre les éléments d&#39;un tuple,
+    ou entre les arguments d&#39;une fonction, avant la position indiquée par --&gt; et ^.
 </pre></div>
 </div>
 </div>

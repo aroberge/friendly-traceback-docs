@@ -599,3 +599,127 @@ SyntaxError - quote inside a string
         I suspect that you were trying to use a quote inside a string
         that was enclosed in quotes of the same kind.
         
+
+SyntaxError - missing comma in a dict
+-------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error22.py'
+    beyond the location indicated below by --> and ^.
+    
+       2: 
+       3: a = {'a': 1,
+       4:      'b': 2
+    -->5:      'c': 3,
+                 ^
+
+    My best guess:
+        You likely forgot a comma between items in a set or dict.
+        before the position indicated by --> and ^.
+        
+
+SyntaxError - missing comma in a set
+------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error23.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: a = {1, 2  3}
+                     ^
+
+    My best guess:
+        You likely forgot a comma between items in a set or dict.
+        before the position indicated by --> and ^.
+        
+
+SyntaxError - missing comma in a list
+-------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error24.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: a = [1, 2  3]
+                     ^
+
+    My best guess:
+        You likely forgot a comma between items in a list
+        before the position indicated by --> and ^.
+        
+
+SyntaxError - missing comma in a tuple
+--------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error25.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: a = (1, 2  3)
+                     ^
+
+    My best guess:
+        You likely forgot a comma between items in a tuple, 
+        or between function arguments, 
+        before the position indicated by --> and ^.
+        
+
+SyntaxError - missing comma between function args
+-------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error26.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+       3: 
+    -->4: def a(b, c d):
+                     ^
+
+    My best guess:
+        You likely forgot a comma between items in a tuple, 
+        or between function arguments, 
+        before the position indicated by --> and ^.
+        
