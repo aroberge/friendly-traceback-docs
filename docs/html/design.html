@@ -303,26 +303,12 @@ it becomes available in Friendly-traceback.</p>
 <h2>Localization<a class="headerlink" href="#localization" title="Permalink to this headline">¶</a></h2>
 <p>As noted above, it is possible to translate almost all the text provided
 by friendly-traceback.</p>
-<p>The determination of which language is used to provide translations
-is normally determined by using Python’s <code class="docutils literal notranslate"><span class="pre">locale.getdefaultlocale()</span></code>.
-However, it can be over-ridden in the following way, in order
-of precedence:</p>
-<ol class="arabic">
-<li><p>Using <code class="docutils literal notranslate"><span class="pre">friendly_traceback.set_lang(lang)</span></code></p></li>
-<li><p>Using the environment variable <code class="docutils literal notranslate"><span class="pre">os.environ['FriendlyTracebackLang']</span></code>.
-This can be useful for temporarily overriding other settings.</p></li>
-<li><p>Using variables found in a <code class="docutils literal notranslate"><span class="pre">friendly.ini</span></code> file located in the user’s
-home directory.  As an example, my OS locale is <code class="docutils literal notranslate"><span class="pre">fr_CA</span></code>.
-Since I prefer to view the English version as a default,
-here is the content of my friendly.ini file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">friendly</span><span class="p">]</span>
-<span class="n">lang</span> <span class="o">=</span> <span class="n">en</span>
-</pre></div>
-</div>
-</li>
-<li><p>As mentioned above, and last in priority, the default is to use
-the information provided by <code class="docutils literal notranslate"><span class="pre">locale.getdefaultlocale()</span></code>.</p></li>
-</ol>
+<p>When using Python, it is customary to determine which language should
+be used to provide translations by a call to
+<code class="docutils literal notranslate"><span class="pre">locale.getdefaultlocale()</span></code>.  In an earlier version, we did this
+but have decided to use English as the default and let the user
+(which could be another program that imports friendly-traceback)
+decide what language should be used.</p>
 <p>The information provided by <code class="docutils literal notranslate"><span class="pre">locale.getdefaultlocale()</span></code> includes
 not only a language code, but information about a specific region as well.
 For example, on my computer, this is <code class="docutils literal notranslate"><span class="pre">fr_CA</span></code>. As far as I can tell,

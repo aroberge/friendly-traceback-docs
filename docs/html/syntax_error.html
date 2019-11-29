@@ -138,7 +138,7 @@ Here is the content of that file:</p>
 includes files whose names begin with <code class="docutils literal notranslate"><span class="pre">test_</span></code> or <code class="docutils literal notranslate"><span class="pre">catch_</span></code>.
 Therefore, it will ignore this file.</p>
 <p>You can nonetheless test it directly, by doing:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m friendly_traceback tests.syntax.raise_indentation_error1
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m friendly_traceback tests/syntax/raise_indentation_error1.py
 </pre></div>
 </div>
 <p>from the root directory of the repository.</p>
@@ -197,11 +197,13 @@ Feel free to suggest improvements to the explanation given.</p>
 this is also the case for <code class="docutils literal notranslate"><span class="pre">TabError</span></code>.</p>
 <p>For <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, we actually need to get access to the offending
 code, analyze it and see if we can make an educated guess as to the
-cause of the error and give proper feedback.</p>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Add code example for providing specific information for SyntaxError</p>
-</div>
+cause of the error and give proper feedback. This is done in a
+separate module, <code class="docutils literal notranslate"><span class="pre">analyze_syntax.py</span></code>.
+Adding support for a new case is often not straightforward.
+If you wish to do so, I suggest you actually look at the code
+in that module: any attempt at adding something useful in this
+documentation would likely be doomed to be hopelessly out of
+date and possibly misleading.</p>
 </div>
 </div>
 

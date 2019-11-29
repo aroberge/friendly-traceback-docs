@@ -46,6 +46,31 @@ ArithmeticError
         9:     except Exception:
 
 
+FileNotFoundError
+-----------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        FileNotFoundError: [Errno 2] No such file or directory: 'does_not_exist'
+        
+    A FileNotFoundError exception indicates that you
+    are trying to open a file that cannot be found by Python.
+    This could be because you misspelled the name of the file.
+    
+    Cause probable :
+        In your program, the name of the
+        file that cannot be found is 'does_not_exist'.
+        
+    L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\test_file_not_found_error.py'
+    
+       4: def test_file_not_found_error():
+       5:     try:
+    -->6:         open("does_not_exist")
+       7:     except Exception:
+
+
 ImportError
 -----------
 
@@ -1115,6 +1140,63 @@ TypeError - 12: object does not support item assignment
        309:     except Exception:
 
     a: (1, 2, 3)
+
+
+TypeError - 13: wrong number of positional arguments
+----------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        TypeError: fn() takes 0 positional arguments but 1 was given
+        
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    
+    Cause probable :
+        You apparently have called the function 'fn()' with
+        1 positional argument while it requires 0
+        such positional arguments.
+        
+    L'exécution s'est arrêtée à la ligne 320 du fichier 'TESTS:\test_type_error.py'
+    
+       318:         pass
+       319:     try:
+    -->320:         fn(1)
+       321:     except Exception:
+
+    fn: <function test_type_error13.<locals>.fn>
+
+
+TypeError - 14: missing positional arguments
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        TypeError: fn() missing 2 required positional arguments: 'b' and 'c'
+        
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    
+    Cause probable :
+        You apparently have called the function 'fn()' with
+        fewer positional arguments than it requires (2 missing).
+        
+    L'exécution s'est arrêtée à la ligne 332 du fichier 'TESTS:\test_type_error.py'
+    
+       330:         pass
+       331:     try:
+    -->332:         fn(1)
+       333:     except Exception:
+
+    fn: <function test_type_error14.<locals>.fn>
 
 
 UnboundLocalError

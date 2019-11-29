@@ -18,7 +18,7 @@ In a nutshell
 --------------
 
 There exists many Python projects intended to supplement the information
-given by Python traceback to make them more useful for advanced programmers.
+given by Python traceback to make them more useful for **advanced** programmers.
 Friendly-traceback is **not** one of these projects.
 
 Friendly-traceback is aimed primarily at **beginners** and/or at users

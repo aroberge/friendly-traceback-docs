@@ -26,13 +26,18 @@ tracebacks for an Exception that is not already included.
         - Run pytest and confirm that your new test is included
         - Make a pull request
 
+    If you want to contribute and do not know how to do a pull request,
+    or find it too complicated, please contact us: we'll find a way to help you
+    contribute.
+
+
     The following are optional steps; they will need to be done at some point
     but, apart for possible translations in languages other than French,
     I can definitely take care of this.
 
         - Add case to tests/tb_common.py
             - Run tests/tb_english.py and ensure docs/tracebacks_en.rst shows
-              the expected result
+              the expected result for all Python versions.
         - Run make_tb.bat or do the equivalent on non Windows computer
         - Confirm that all docs/tracebacks_xx.rst include the new exception
         - Add translation
@@ -79,6 +84,9 @@ with some numbered comments added::
 
 
 1. Test functions should start with `test_`, so as to be recognized by pytest.
+   I like to use a name written that reflects the name of the exception,
+   replacing any uppercase letter in the exception name by an underscore
+   followed by a lowercase version of the letter.
 2. The code raising an error is inserted in a try/except clause.
    Friendly-traceback can be installed globally as an exception hook but
    this would not work when using pytest. **Important:** unless there is no
@@ -161,7 +169,7 @@ Running with pytest
 This assumes that pytest is installed on your computer.
 From the root directory, simply run::
 
-    pytest
+    python -m pytest
 
 You should see your test file listed, and no test failures reported by pytest.
 
@@ -172,7 +180,7 @@ The main goal of friendly_tracebacks is to help beginners and/or
 programmers whose knowledge of English is limited,
 to understand what a given exception means.
 So, your first goal is to imagine that you are helping a beginner
-understand what SomeException means, writing in English with
+understand what ``SomeException`` means, writing in English with
 as little Python-specific jargon as possible.  Try to do
 so in a short paragraph. Do not strive for perfection.
 It is expected that we will hear from actual users
@@ -274,7 +282,7 @@ For now, we assume that this is not the case.
 Examining the line ``UnboundLocalError: local variable 'a' referenced before assignment``, we
 see that it refers to a variable name, ``a``, which will almost
 certainly be different when another user encounters a similar error.
-Thus, our specific information should include this as a variable.
+Thus, our specific information should probably include this as a variable.
 
 Specific information about given exceptions is found in file
 ``friendly_traceback/info_specific.py``.
@@ -352,14 +360,18 @@ Adding to an existing exception
 
 .. todo::
 
-   To be written
+   Adding to an existing exception to be written
 
 Additional optional steps
 -------------------------
 
-To be written.
+.. todo::
+
+    Additional optional steps to be written.
 
 Adding to tb_common
 ~~~~~~~~~~~~~~~~~~~
 
-To be written.
+.. todo::
+
+    Adding to tb_common steps to be written.

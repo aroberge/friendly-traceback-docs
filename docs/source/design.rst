@@ -279,24 +279,12 @@ Localization
 As noted above, it is possible to translate almost all the text provided
 by friendly-traceback.
 
-The determination of which language is used to provide translations
-is normally determined by using Python's ``locale.getdefaultlocale()``.
-However, it can be over-ridden in the following way, in order
-of precedence:
-
-1. Using ``friendly_traceback.set_lang(lang)``
-2. Using the environment variable ``os.environ['FriendlyTracebackLang']``.
-   This can be useful for temporarily overriding other settings.
-3. Using variables found in a ``friendly.ini`` file located in the user's
-   home directory.  As an example, my OS locale is ``fr_CA``.
-   Since I prefer to view the English version as a default,
-   here is the content of my friendly.ini file::
-
-    [friendly]
-    lang = en
-
-4. As mentioned above, and last in priority, the default is to use
-   the information provided by ``locale.getdefaultlocale()``.
+When using Python, it is customary to determine which language should
+be used to provide translations by a call to 
+``locale.getdefaultlocale()``.  In an earlier version, we did this 
+but have decided to use English as the default and let the user
+(which could be another program that imports friendly-traceback)
+decide what language should be used.
 
 The information provided by ``locale.getdefaultlocale()`` includes
 not only a language code, but information about a specific region as well.

@@ -1,7 +1,18 @@
 Usage
 =====
 
-There are three **basic** ways of using friendly-traceback.
+There are various ways of using friendly-traceback.
+
+.. note::
+
+    In some of the examples below, we use the program ``hello.py`` found 
+    in the ``demos`` directory, containing the following::
+
+        print("\nHello world!")
+
+        if __name__ == '__main__':
+            print("Running as main!")
+
 
 1. As an exception hook::
 
@@ -11,16 +22,79 @@ There are three **basic** ways of using friendly-traceback.
 
 2. Catching exceptions locally::
 
+    import friendly_traceback
+
+    ...
+
     try:
         # Some code
     except Exception:
         friendly_traceback.explain()
 
 
-3. When launching a Python script (or the REPL)::
+3. When launching a Python script::
 
-    python -m friendly_traceback myscript.py
+    $ python -m friendly_traceback demos/hello.py
 
+    Hello world!
+    Running as main!
+
+4. Launching the friendly console after running a script::
+
+    $ python -im friendly_traceback demos.hello
+
+    Hello world!
+    Running as main!
+    Friendly Console version 0.0.10a. [Python version: 3.7.3]
+
+    >>>
+
+5. Only importing a Python script::
+
+    $ python -m friendly_traceback --import_only demos.hello
+
+    Hello world!
+
+6. Importing a script and starting the console::
+
+    $ python -im friendly_traceback --import_only demos.hello
+
+    Hello world!
+    Friendly Console version 0.0.10a. [Python version: 3.7.3]
+
+    >>>
+
+7. Only starting the console::
+
+    $ python -m friendly_traceback
+
+8. Starting the console from an interpreter::
+
+    >>> import friendly_traceback
+    >>> friendly_traceback.start_console()
+
+9. To see if there are syntax errors, with attempts to provide an 
+   explanation as to what they mean, in a file specified by 
+   its path (assumed to be relative to the current working directory)::
+
+       import friendly_traceback
+       friendly_traceback.check_syntax(path="demos/hello.py")
+
+10. To see if there are syntax errors in some code submitted as 
+    a string, with an optional file name supplied::
+
+       import friendly_traceback
+       friendly_traceback.check_syntax(source=some_code, filename="hello.py")
+   
+
+You can also specify the verbosity level as well as the language 
+to be used, either as command line arguments::
+
+    $ python -m friendly_traceback --lang fr --level 5
+
+or as optional arguments when using check_syntax::
+
+    friendly_traceback.check_syntax(..., lang='fr', level=5)
 
 Where the output is written?
 ----------------------------
@@ -40,7 +114,11 @@ A special option exists to capture the output as a string::
 
 Later, this captured output can be retrieved using::
 
+    output = friendly_traceback.get_output()
+
+    # equivalent to
     output = friendly_traceback.get_output(flush=True)
+
 
 The value shown for the ``flush`` parameter is the default; this means that
 the output will be cleared once it has been retrieved. If this is not the

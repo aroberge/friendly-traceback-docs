@@ -46,6 +46,31 @@ ArithmeticError
         9:     except Exception:
 
 
+FileNotFoundError
+-----------------
+
+.. code-block:: none
+
+
+    Python exception:
+        FileNotFoundError: [Errno 2] No such file or directory: 'does_not_exist'
+        
+    A FileNotFoundError exception indicates that you
+    are trying to open a file that cannot be found by Python.
+    This could be because you misspelled the name of the file.
+    
+    Likely cause:
+        In your program, the name of the
+        file that cannot be found is 'does_not_exist'.
+        
+    Execution stopped on line 6 of file 'TESTS:\test_file_not_found_error.py'.
+    
+       4: def test_file_not_found_error():
+       5:     try:
+    -->6:         open("does_not_exist")
+       7:     except Exception:
+
+
 ImportError
 -----------
 
@@ -1112,6 +1137,63 @@ TypeError - 12: object does not support item assignment
        309:     except Exception:
 
     a: (1, 2, 3)
+
+
+TypeError - 13: wrong number of positional arguments
+----------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        TypeError: fn() takes 0 positional arguments but 1 was given
+        
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
+    
+    Likely cause:
+        You apparently have called the function 'fn()' with
+        1 positional argument while it requires 0
+        such positional arguments.
+        
+    Execution stopped on line 320 of file 'TESTS:\test_type_error.py'.
+    
+       318:         pass
+       319:     try:
+    -->320:         fn(1)
+       321:     except Exception:
+
+    fn: <function test_type_error13.<locals>.fn>
+
+
+TypeError - 14: missing positional arguments
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        TypeError: fn() missing 2 required positional arguments: 'b' and 'c'
+        
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
+    
+    Likely cause:
+        You apparently have called the function 'fn()' with
+        fewer positional arguments than it requires (2 missing).
+        
+    Execution stopped on line 332 of file 'TESTS:\test_type_error.py'.
+    
+       330:         pass
+       331:     try:
+    -->332:         fn(1)
+       333:     except Exception:
+
+    fn: <function test_type_error14.<locals>.fn>
 
 
 UnboundLocalError

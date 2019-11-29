@@ -80,7 +80,18 @@
             
   <div class="section" id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
-<p>There are three <strong>basic</strong> ways of using friendly-traceback.</p>
+<p>There are various ways of using friendly-traceback.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In some of the examples below, we use the program <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> found
+in the <code class="docutils literal notranslate"><span class="pre">demos</span></code> directory, containing the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Hello world!&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running as main!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <ol class="arabic">
 <li><p>As an exception hook:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
@@ -89,19 +100,89 @@
 </div>
 </li>
 <li><p>Catching exceptions locally:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
+
+<span class="o">...</span>
+
+<span class="k">try</span><span class="p">:</span>
     <span class="c1"># Some code</span>
 <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
     <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">()</span>
 </pre></div>
 </div>
 </li>
-<li><p>When launching a Python script (or the REPL):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">friendly_traceback</span> <span class="n">myscript</span><span class="o">.</span><span class="n">py</span>
+<li><p>When launching a Python script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback demos/hello.py
+
+Hello world!
+Running as main!
+</pre></div>
+</div>
+</li>
+<li><p>Launching the friendly console after running a script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -im friendly_traceback demos.hello
+
+Hello world!
+Running as main!
+Friendly Console version 0.0.10a. [Python version: 3.7.3]
+
+&gt;&gt;&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Only importing a Python script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback --import_only demos.hello
+
+Hello world!
+</pre></div>
+</div>
+</li>
+<li><p>Importing a script and starting the console:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -im friendly_traceback --import_only demos.hello
+
+Hello world!
+Friendly Console version 0.0.10a. [Python version: 3.7.3]
+
+&gt;&gt;&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Only starting the console:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback
+</pre></div>
+</div>
+</li>
+<li><p>Starting the console from an interpreter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">start_console</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>To see if there are syntax errors, with attempts to provide an
+explanation as to what they mean, in a file specified by
+its path (assumed to be relative to the current working directory):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
+<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">check_syntax</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s2">&quot;demos/hello.py&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>To see if there are syntax errors in some code submitted as
+a string, with an optional file name supplied:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
+<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">check_syntax</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">some_code</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;hello.py&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 </ol>
+<p>You can also specify the verbosity level as well as the language
+to be used, either as command line arguments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback --lang fr --level 5
+</pre></div>
+</div>
+<p>or as optional arguments when using check_syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">check_syntax</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;fr&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="section" id="where-the-output-is-written">
 <h2>Where the output is written?<a class="headerlink" href="#where-the-output-is-written" title="Permalink to this headline">¶</a></h2>
 <p>By default, friendly tracebacks are written to <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>.
@@ -118,7 +199,10 @@ However, it is possible to override this choice, as follows:</p>
 </pre></div>
 </div>
 <p>Later, this captured output can be retrieved using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_output</span><span class="p">(</span><span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_output</span><span class="p">()</span>
+
+<span class="c1"># equivalent to</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_output</span><span class="p">(</span><span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The value shown for the <code class="docutils literal notranslate"><span class="pre">flush</span></code> parameter is the default; this means that

@@ -38,6 +38,7 @@
   <ul>
 <li><a class="reference internal" href="#">Friendly tracebacks - in English</a><ul>
 <li><a class="reference internal" href="#arithmeticerror">ArithmeticError</a></li>
+<li><a class="reference internal" href="#filenotfounderror">FileNotFoundError</a></li>
 <li><a class="reference internal" href="#importerror">ImportError</a></li>
 <li><a class="reference internal" href="#indentationerror-1-expected-an-indented-block">IndentationError - 1: expected an indented block</a></li>
 <li><a class="reference internal" href="#indentationerror-2-unexpected-indent">IndentationError - 2: unexpected indent</a></li>
@@ -76,6 +77,8 @@
 <li><a class="reference internal" href="#typeerror-11a-bad-operand-type-for-unary">TypeError - 11a: bad operand type for unary -</a></li>
 <li><a class="reference internal" href="#typeerror-11b-bad-operand-type-for-unary">TypeError - 11b: bad operand type for unary ~</a></li>
 <li><a class="reference internal" href="#typeerror-12-object-does-not-support-item-assignment">TypeError - 12: object does not support item assignment</a></li>
+<li><a class="reference internal" href="#typeerror-13-wrong-number-of-positional-arguments">TypeError - 13: wrong number of positional arguments</a></li>
+<li><a class="reference internal" href="#typeerror-14-missing-positional-arguments">TypeError - 14: missing positional arguments</a></li>
 <li><a class="reference internal" href="#unboundlocalerror">UnboundLocalError</a></li>
 <li><a class="reference internal" href="#unknown-exception">Unknown exception</a></li>
 <li><a class="reference internal" href="#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
@@ -151,6 +154,28 @@ Execution stopped on line 8 of file &#39;TESTS:\test_arithmetic_error.py&#39;.
     7:         # likely be raised.
 --&gt; 8:         raise ArithmeticError
     9:     except Exception:
+</pre></div>
+</div>
+</div>
+<div class="section" id="filenotfounderror">
+<h2>FileNotFoundError<a class="headerlink" href="#filenotfounderror" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    FileNotFoundError: [Errno 2] No such file or directory: &#39;does_not_exist&#39;
+
+A FileNotFoundError exception indicates that you
+are trying to open a file that cannot be found by Python.
+This could be because you misspelled the name of the file.
+
+Likely cause:
+    In your program, the name of the
+    file that cannot be found is &#39;does_not_exist&#39;.
+
+Execution stopped on line 6 of file &#39;TESTS:\test_file_not_found_error.py&#39;.
+
+   4: def test_file_not_found_error():
+   5:     try:
+--&gt;6:         open(&quot;does_not_exist&quot;)
+   7:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -1106,6 +1131,57 @@ Execution stopped on line 308 of file &#39;TESTS:\test_type_error.py&#39;.
    309:     except Exception:
 
 a: (1, 2, 3)
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-13-wrong-number-of-positional-arguments">
+<h2>TypeError - 13: wrong number of positional arguments<a class="headerlink" href="#typeerror-13-wrong-number-of-positional-arguments" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: fn() takes 0 positional arguments but 1 was given
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You apparently have called the function &#39;fn()&#39; with
+    1 positional argument while it requires 0
+    such positional arguments.
+
+Execution stopped on line 320 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   318:         pass
+   319:     try:
+--&gt;320:         fn(1)
+   321:     except Exception:
+
+fn: &lt;function test_type_error13.&lt;locals&gt;.fn&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-14-missing-positional-arguments">
+<h2>TypeError - 14: missing positional arguments<a class="headerlink" href="#typeerror-14-missing-positional-arguments" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: fn() missing 2 required positional arguments: &#39;b&#39; and &#39;c&#39;
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause:
+    You apparently have called the function &#39;fn()&#39; with
+    fewer positional arguments than it requires (2 missing).
+
+Execution stopped on line 332 of file &#39;TESTS:\test_type_error.py&#39;.
+
+   330:         pass
+   331:     try:
+--&gt;332:         fn(1)
+   333:     except Exception:
+
+fn: &lt;function test_type_error14.&lt;locals&gt;.fn&gt;
 </pre></div>
 </div>
 </div>

@@ -108,6 +108,9 @@ given exception.</p></li>
 <li><p>Make a pull request</p></li>
 </ul>
 </div></blockquote>
+<p>If you want to contribute and do not know how to do a pull request,
+or find it too complicated, please contact us: we’ll find a way to help you
+contribute.</p>
 <p>The following are optional steps; they will need to be done at some point
 but, apart for possible translations in languages other than French,
 I can definitely take care of this.</p>
@@ -116,7 +119,7 @@ I can definitely take care of this.</p>
 <li><dl class="simple">
 <dt>Add case to tests/tb_common.py</dt><dd><ul>
 <li><p>Run tests/tb_english.py and ensure docs/tracebacks_en.rst shows
-the expected result</p></li>
+the expected result for all Python versions.</p></li>
 </ul>
 </dd>
 </dl>
@@ -164,7 +167,10 @@ with some numbered comments added:</p>
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li><p>Test functions should start with <cite>test_</cite>, so as to be recognized by pytest.</p></li>
+<li><p>Test functions should start with <cite>test_</cite>, so as to be recognized by pytest.
+I like to use a name written that reflects the name of the exception,
+replacing any uppercase letter in the exception name by an underscore
+followed by a lowercase version of the letter.</p></li>
 <li><p>The code raising an error is inserted in a try/except clause.
 Friendly-traceback can be installed globally as an exception hook but
 this would not work when using pytest. <strong>Important:</strong> unless there is no
@@ -241,7 +247,7 @@ in order to make our test more accurate, we replace the line:</p>
 <h2>Running with pytest<a class="headerlink" href="#running-with-pytest" title="Permalink to this headline">¶</a></h2>
 <p>This assumes that pytest is installed on your computer.
 From the root directory, simply run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pytest</span>
 </pre></div>
 </div>
 <p>You should see your test file listed, and no test failures reported by pytest.</p>
@@ -252,7 +258,7 @@ From the root directory, simply run:</p>
 programmers whose knowledge of English is limited,
 to understand what a given exception means.
 So, your first goal is to imagine that you are helping a beginner
-understand what SomeException means, writing in English with
+understand what <code class="docutils literal notranslate"><span class="pre">SomeException</span></code> means, writing in English with
 as little Python-specific jargon as possible.  Try to do
 so in a short paragraph. Do not strive for perfection.
 It is expected that we will hear from actual users
@@ -342,7 +348,7 @@ For now, we assume that this is not the case.</p>
 <p>Examining the line <code class="docutils literal notranslate"><span class="pre">UnboundLocalError:</span> <span class="pre">local</span> <span class="pre">variable</span> <span class="pre">'a'</span> <span class="pre">referenced</span> <span class="pre">before</span> <span class="pre">assignment</span></code>, we
 see that it refers to a variable name, <code class="docutils literal notranslate"><span class="pre">a</span></code>, which will almost
 certainly be different when another user encounters a similar error.
-Thus, our specific information should include this as a variable.</p>
+Thus, our specific information should probably include this as a variable.</p>
 <p>Specific information about given exceptions is found in file
 <code class="docutils literal notranslate"><span class="pre">friendly_traceback/info_specific.py</span></code>.
 Here are the relevant parts of that file for the UnboundLocalError
@@ -410,15 +416,21 @@ not hesitate to ask for clarification.</p>
 <h2>Adding to an existing exception<a class="headerlink" href="#adding-to-an-existing-exception" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">Todo</p>
-<p>To be written</p>
+<p>Adding to an existing exception to be written</p>
 </div>
 </div>
 <div class="section" id="additional-optional-steps">
 <h2>Additional optional steps<a class="headerlink" href="#additional-optional-steps" title="Permalink to this headline">¶</a></h2>
-<p>To be written.</p>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>Additional optional steps to be written.</p>
+</div>
 <div class="section" id="adding-to-tb-common">
 <h3>Adding to tb_common<a class="headerlink" href="#adding-to-tb-common" title="Permalink to this headline">¶</a></h3>
-<p>To be written.</p>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>Adding to tb_common steps to be written.</p>
+</div>
 </div>
 </div>
 </div>

@@ -64,7 +64,7 @@ You can nonetheless test it directly, by doing:
 
 .. code-block:: none
 
-    python -m friendly_traceback tests.syntax.raise_indentation_error1
+    python -m friendly_traceback tests/syntax/raise_indentation_error1.py
 
 from the root directory of the repository.
 
@@ -126,8 +126,10 @@ this is also the case for ``TabError``.
 
 For ``SyntaxError``, we actually need to get access to the offending
 code, analyze it and see if we can make an educated guess as to the
-cause of the error and give proper feedback.
-
-.. todo::
-
-    Add code example for providing specific information for SyntaxError
+cause of the error and give proper feedback. This is done in a 
+separate module, ``analyze_syntax.py``.  
+Adding support for a new case is often not straightforward.
+If you wish to do so, I suggest you actually look at the code 
+in that module: any attempt at adding something useful in this
+documentation would likely be doomed to be hopelessly out of 
+date and possibly misleading.
