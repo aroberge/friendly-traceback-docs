@@ -109,6 +109,30 @@ call. The original values are restored at the end.</p>
 <p>If friendly-traceback exception hook has not been set up prior
 to calling check_syntax, it will only be used for the duration
 of this function call.</p>
+<p>Returns a tuple containing a code object and a filename if no exception
+has been raised, False otherwise.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="friendly_traceback.public_api.run_code">
+<code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">run_code</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">source=None</em>, <em class="sig-param">filename='Fake filename'</em>, <em class="sig-param">path=None</em>, <em class="sig-param">level=None</em>, <em class="sig-param">lang=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/core.html#run_code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.run_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>This uses check_syntax to see if the code is valid and, if so,
+executes it into an empty dict as globals. If no exception is
+raised, this dict is returned. If an exception is raised, False
+is returned.</p>
+<p>It can either be used on a file, using the <code class="docutils literal notranslate"><span class="pre">path</span></code> argument, or
+on some code passed as a string, using the <code class="docutils literal notranslate"><span class="pre">source</span></code> argument.
+For the latter case, one can also specify a corresponding <code class="docutils literal notranslate"><span class="pre">filename</span></code>:
+this could be useful if this function is invoked from a GUI-based
+editor.</p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">path</span></code> argument, if provided, takes precedence
+over the <code class="docutils literal notranslate"><span class="pre">source</span></code> argument.</p>
+<p>Two additional named arguments, <code class="docutils literal notranslate"><span class="pre">level</span></code> and <code class="docutils literal notranslate"><span class="pre">lang</span></code>, can be
+provided to temporarily set the values to be used during this function
+call. The original values are restored at the end.</p>
+<p>If friendly-traceback exception hook has not been set up prior
+to calling check_syntax, it will only be used for the duration
+of this function call.</p>
 </dd></dl>
 
 <dl class="function">
@@ -252,16 +276,19 @@ the default English strings are used.</p>
 <dt id="friendly_traceback.public_api.set_level">
 <code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">set_level</code><span class="sig-paren">(</span><em class="sig-param">level</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/public_api.html#set_level"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.set_level" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the verbosity level to be used. The values are as follows:</p>
-<blockquote>
-<div><p>0: Normal Python tracebacks
-1: Default - does not need to be specified
-2: Python tracebacks appear before the friendly display
-3: Python tracebacks appended at the end of the friendly display.
-4: Python traceback followed by basic explanation
-5: Only basic explanation
-9: Python traceback</p>
-</div></blockquote>
-<p>The Python traceback for level &gt;= 1 are the simulated version.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">:</span> <span class="n">Normal</span> <span class="n">Python</span> <span class="n">tracebacks</span>
+<span class="mi">1</span><span class="p">:</span> <span class="n">Default</span> <span class="o">-</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">need</span> <span class="n">to</span> <span class="n">be</span> <span class="n">specified</span>
+<span class="mi">2</span><span class="p">:</span> <span class="n">Python</span> <span class="n">tracebacks</span> <span class="n">appear</span> <span class="n">before</span> <span class="n">the</span> <span class="n">friendly</span> <span class="n">display</span>
+<span class="mi">3</span><span class="p">:</span> <span class="n">Python</span> <span class="n">tracebacks</span> <span class="n">appended</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">the</span> <span class="n">friendly</span> <span class="n">display</span><span class="o">.</span>
+<span class="mi">4</span><span class="p">:</span> <span class="n">Python</span> <span class="n">traceback</span> <span class="n">followed</span> <span class="n">by</span> <span class="n">basic</span> <span class="n">explanation</span>
+<span class="mi">5</span><span class="p">:</span> <span class="n">Only</span> <span class="n">basic</span> <span class="n">explanation</span>
+<span class="mi">6</span><span class="p">:</span> <span class="n">No</span> <span class="n">generic</span> <span class="n">explanation</span>
+<span class="mi">7</span><span class="p">:</span> <span class="n">Python</span> <span class="n">tracebacks</span> <span class="n">appear</span> <span class="n">before</span> <span class="n">the</span> <span class="n">friendly</span> <span class="n">display</span> <span class="n">but</span>
+   <span class="n">no</span> <span class="n">generic</span> <span class="n">explanation</span> <span class="ow">is</span> <span class="n">included</span><span class="o">.</span>
+<span class="mi">9</span><span class="p">:</span> <span class="n">Python</span> <span class="n">traceback</span>
+</pre></div>
+</div>
+<p>The Python tracebacks for level &gt;= 1 are the simulated version.
 You can use negative values to show the true Python traceback which
 will likely include function calls from friendly-traceback itself.
 Thus level -9 is equivalent to level 0.</p>
