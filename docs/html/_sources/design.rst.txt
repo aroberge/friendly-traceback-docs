@@ -424,10 +424,6 @@ This can be done when using ``friendly_traceback`` explicitly in the
 program with ``friendly_traceback.set_level()``,
 or as an option from the command line.
 
-If no such option is provided, then it should be set either from
-the local environment variables (as for the language) or from a global
-``.ini`` file.
-
 
 .. sidebar:: Additional open question
 
@@ -500,8 +496,6 @@ Furthermore, in the case of ``StopIteration``, see
 are not normally seen: some derived classes are normally used instead.
 They are denoted by ``**``.
 
-
-
 It is very likely that the information below is not up to date.
 
 .. code-block:: none
@@ -515,7 +509,7 @@ It is very likely that the information below is not up to date.
           +-- StopAsyncIteration #
           +-- ArithmeticError **
           |    +-- FloatingPointError #
-          |    +-- OverflowError
+          |    +-- OverflowError *
           |    +-- ZeroDivisionError *
           +-- AssertionError
           +-- AttributeError
@@ -538,7 +532,7 @@ It is very likely that the information below is not up to date.
           |    |    +-- ConnectionRefusedError
           |    |    +-- ConnectionResetError
           |    +-- FileExistsError
-          |    +-- FileNotFoundError
+          |    +-- FileNotFoundError *
           |    +-- InterruptedError
           |    +-- IsADirectoryError
           |    +-- NotADirectoryError
@@ -549,11 +543,11 @@ It is very likely that the information below is not up to date.
           +-- RuntimeError
           |    +-- NotImplementedError
           |    +-- RecursionError
-          +-- SyntaxError *
+          +-- SyntaxError * (partial: many more cases to include)
           |    +-- IndentationError *
           |         +-- TabError *
           +-- SystemError
-          +-- TypeError *
+          +-- TypeError * (partial: many more cases to include)
           +-- ValueError
           |    +-- UnicodeError
           |         +-- UnicodeDecodeError

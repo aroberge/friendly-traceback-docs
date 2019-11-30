@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>friendly_traceback.source_cache &#8212; Friendly tracebacks 0.0.10a documentation</title>
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for friendly_traceback.source_cache</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;source_cache.py</span>
+
+<span class="sd">Used to cache and retrieve source code.</span>
+<span class="sd">This is especially useful when a custom REPL is used.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Some comments below refer to avant-idle. avant-idle is currently a</span>
+<span class="c1"># project (currently unpublished) where we integrated Friendly-traceback</span>
+<span class="c1"># and AvantPy into a modified version of Python&#39;s IDLE. This was done</span>
+<span class="c1"># both to use as a demonstration and also to determine what functionality</span>
+<span class="c1"># should be part of a public API.</span>
+
+<span class="kn">import</span> <span class="nn">os.path</span>
+
+
+<span class="k">class</span> <span class="nc">Cache</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Class used to store source of files and similar objects&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="mi">4</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ages</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># only for physical files</span>
+
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Adds a source (as a string) corresponding to a filename in the cache.</span>
+
+<span class="sd">           The filename can be a true file name, or a fake one, like</span>
+<span class="sd">           &lt;console:42&gt;, used for saving an REPL entry.</span>
+
+<span class="sd">           If it is a true file, we record the last time it was modified.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">filename</span><span class="p">]</span> <span class="o">=</span> <span class="n">source</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ages</span><span class="p">[</span><span class="n">filename</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>  <span class="c1"># modification time</span>
+
+    <span class="k">def</span> <span class="nf">get_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets a copy of the entire cache&quot;&quot;&quot;</span>
+        <span class="c1"># This is used in avant-idle to pass the content of a cache in</span>
+        <span class="c1"># the main process to a second process where an exception has been</span>
+        <span class="c1"># raised.</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span>
+
+    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_cache</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Replaces the current cache by another&quot;&quot;&quot;</span>
+        <span class="c1"># This is used in avant-idle to replace the content of the cache</span>
+        <span class="c1"># in a process (where no storage normally takes place) by</span>
+        <span class="c1"># that of another where the actual caching of the source is done.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">other_cache</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">other_cache</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">get_source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Given a filename, returns the corresponding source, either</span>
+<span class="sd">           from the cache or from actually opening the file.</span>
+
+<span class="sd">           If the filename corresponds to a true file, and the last time</span>
+<span class="sd">           it was modified differs from the recorded value, a fresh copy</span>
+<span class="sd">           is retrieved.</span>
+
+<span class="sd">           The contents is stored a a string and returned as a list of lines.</span>
+<span class="sd">           If no source can be found, an empty list is returned.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># The main reason we care about ensuring we have the latest version</span>
+        <span class="c1"># of a given file is for the &#39;avant-idle&#39; project where we could</span>
+        <span class="c1"># &#39;edit and run&#39; multiple times a given file. We need to ensure that</span>
+        <span class="c1"># the content shown by the traceback is accurate.</span>
+
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+            <span class="n">last_modified</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>  <span class="c1"># modification time</span>
+            <span class="k">if</span> <span class="n">filename</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">:</span>
+                <span class="n">source</span><span class="p">,</span> <span class="n">lines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_file_source</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">source</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">filename</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ages</span> <span class="ow">and</span> <span class="n">last_modified</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ages</span><span class="p">[</span><span class="n">filename</span><span class="p">]:</span>
+                <span class="c1"># modified; get fresh copy</span>
+                <span class="n">source</span><span class="p">,</span> <span class="n">lines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_file_source</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">source</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>  <span class="c1"># had problems retrieving fresh copy</span>
+                    <span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">filename</span><span class="p">]</span>
+                    <span class="n">lines</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">filename</span><span class="p">]</span>
+                <span class="n">lines</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">filename</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">filename</span><span class="p">]</span>
+            <span class="n">lines</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">return</span> <span class="n">lines</span>
+
+    <span class="k">def</span> <span class="nf">_get_file_source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Helper function to retrieve a file&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+                <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">source</span><span class="p">,</span> <span class="n">lines</span>
+
+    <span class="k">def</span> <span class="nf">get_formatted_partial_source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">linenumber</span><span class="p">,</span> <span class="n">offset</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Formats a few lines around a &#39;bad line&#39;, and returns</span>
+<span class="sd">           the formatted source as well as the content of the &#39;bad line&#39;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_source</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">lines</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="n">begin</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">linenumber</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="p">)</span>
+        <span class="n">partial_source</span><span class="p">,</span> <span class="n">bad_line</span> <span class="o">=</span> <span class="n">highlight_source</span><span class="p">(</span>
+            <span class="n">linenumber</span><span class="p">,</span>
+            <span class="n">linenumber</span> <span class="o">-</span> <span class="n">begin</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="n">lines</span><span class="p">[</span><span class="n">begin</span> <span class="p">:</span> <span class="n">linenumber</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span>
+            <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">partial_source</span><span class="p">,</span> <span class="n">bad_line</span>
+
+
+<span class="n">cache</span> <span class="o">=</span> <span class="n">Cache</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="highlight_source"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.highlight_source">[docs]</a><span class="k">def</span> <span class="nf">highlight_source</span><span class="p">(</span><span class="n">linenumber</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Extracts a few relevant lines from a file content given as a list</span>
+<span class="sd">        of lines, adding line number information and identifying</span>
+<span class="sd">        a particular line.</span>
+
+<span class="sd">        When dealing with a ``SyntaxError`` or its subclasses, offset is an</span>
+<span class="sd">        integer normally used by Python to indicate the position of</span>
+<span class="sd">        the error with a ``^``, like::</span>
+
+<span class="sd">            if True</span>
+<span class="sd">                  ^</span>
+
+<span class="sd">        which, in this case, points to a missing colon. We use the same</span>
+<span class="sd">        representation in this case.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># The following if statements are left-over diagnostic</span>
+    <span class="c1"># from the hack to integrate into Idle.</span>
+    <span class="c1"># they are harmless tests which could potentially be useful.</span>
+    <span class="k">if</span> <span class="n">lines</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;problem in highlight_source(): index is None&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># The weird index arithmetic below is based on the information returned</span>
+    <span class="c1"># by Python&#39;s inspect.getinnerframes()</span>
+
+    <span class="n">new_lines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">problem_line</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">nb_digits</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">linenumber</span> <span class="o">+</span> <span class="n">index</span><span class="p">))</span>
+    <span class="n">no_mark</span> <span class="o">=</span> <span class="s2">&quot;       {:</span><span class="si">%d</span><span class="s2">}: &quot;</span> <span class="o">%</span> <span class="n">nb_digits</span>
+    <span class="n">with_mark</span> <span class="o">=</span> <span class="s2">&quot;    --&gt;{:</span><span class="si">%d</span><span class="s2">}: &quot;</span> <span class="o">%</span> <span class="n">nb_digits</span>
+    <span class="k">if</span> <span class="n">offset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">offset_mark</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">8</span> <span class="o">+</span> <span class="n">nb_digits</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;^&quot;</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">linenumber</span> <span class="o">-</span> <span class="n">index</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">linenumber</span><span class="p">:</span>
+            <span class="n">num</span> <span class="o">=</span> <span class="n">with_mark</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">problem_line</span> <span class="o">=</span> <span class="n">line</span>
+            <span class="k">if</span> <span class="n">offset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">new_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+                <span class="n">new_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">offset_mark</span><span class="p">)</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">num</span> <span class="o">=</span> <span class="n">no_mark</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">new_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_lines</span><span class="p">),</span> <span class="n">problem_line</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, André Roberge.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>

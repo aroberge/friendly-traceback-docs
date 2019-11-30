@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>friendly_traceback.public_api &#8212; Friendly tracebacks 0.0.10a documentation</title>
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for friendly_traceback.public_api</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;public_api.py</span>
+
+<span class="sd">With the exception of 1) this package version and 2) some Friendly-console</span>
+<span class="sd">related classes or functions, this module includes **all** the functions</span>
+<span class="sd">that are part of the public API and can be directly used, as in::</span>
+
+<span class="sd">    import friendly_traceback</span>
+<span class="sd">    friendly_traceback.some_function()</span>
+
+<span class="sd">instead of::</span>
+
+<span class="sd">    import friendly_traceback</span>
+<span class="sd">    friendly_traceback.some_inner_module.some_function()</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">wraps</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">core</span>
+
+<span class="kn">from</span> <span class="nn">.core</span> <span class="k">import</span> <span class="n">check_syntax</span>
+<span class="kn">from</span> <span class="nn">.session</span> <span class="k">import</span> <span class="n">session</span>
+<span class="kn">from</span> <span class="nn">.source_cache</span> <span class="k">import</span> <span class="n">cache</span><span class="p">,</span> <span class="n">highlight_source</span>
+<span class="kn">from</span> <span class="nn">.path_info</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">exclude_file_from_traceback</span><span class="p">,</span>
+    <span class="n">is_excluded_file</span><span class="p">,</span>
+    <span class="n">include_file_in_traceback</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;cache&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;check_syntax&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;highlight_source&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;exclude_file_from_traceback&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;is_excluded_file&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;include_file_in_traceback&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="c1"># Note: more content is added to __all__ below</span>
+
+
+<span class="k">def</span> <span class="nf">make_public</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="n">__all__</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<div class="viewcode-block" id="explain"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.explain">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Replaces a standard traceback by a friendlier one, giving more</span>
+<span class="sd">       information about a given exception than a standard traceback.</span>
+<span class="sd">       Note that this excludes ``SystemExit`` and ``KeyboardInterrupt``</span>
+<span class="sd">       which are re-raised.</span>
+
+<span class="sd">       By default, the output goes to ``sys.stderr`` or to some other stream</span>
+<span class="sd">       set to be the default by another API call. However, if::</span>
+
+<span class="sd">          redirect = some_stream</span>
+
+<span class="sd">       is specified, the output goes to that stream, but without changing</span>
+<span class="sd">       the global settings.</span>
+
+<span class="sd">       If the string ``&quot;capture&quot;`` is given as the value for ``redirect``, the</span>
+<span class="sd">       output is saved and can be later retrieved by ``get_output()``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">core</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="n">redirect</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="install"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.install">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Replaces ``sys.excepthook`` by friendly_traceback&#39;s own version.</span>
+<span class="sd">    Intercepts, and provides an explanation for all Python exceptions except</span>
+<span class="sd">    for ``SystemExist`` and ``KeyboardInterrupt``.</span>
+
+<span class="sd">    The optional arguments are:</span>
+
+<span class="sd">        lang: language to be used for translations. If not available,</span>
+<span class="sd">              English will be used as a default.</span>
+
+<span class="sd">        redirect: stream to be used to send the output.</span>
+<span class="sd">                  The default is sys.stderr</span>
+
+<span class="sd">        level: verbosity level.  See set_level() for details.</span>
+
+<span class="sd">        hook: exception_hook - if one wants to experiment using</span>
+<span class="sd">              a different one.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="n">redirect</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="uninstall"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.uninstall">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">uninstall</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Resets sys.excepthook to Python&#39;s default&quot;&quot;&quot;</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">uninstall</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="get_output"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.get_output">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">get_output</span><span class="p">(</span><span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the result of captured output as a string which can be</span>
+<span class="sd">       written anywhere desired.</span>
+
+<span class="sd">       By default, flushes all the captured content.</span>
+<span class="sd">       However, this can be overriden if desired.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get_captured</span><span class="p">(</span><span class="n">flush</span><span class="o">=</span><span class="n">flush</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="set_formatter"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.set_formatter">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">set_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the default formatter. If no argument is given, the default</span>
+<span class="sd">       formatter, based on the level, is used.</span>
+
+<span class="sd">       A custom formatter must accept ``info`` as a required arguments</span>
+<span class="sd">       as well as arbitrary keyword-based arguments - these are currently</span>
+<span class="sd">       subject to change but include ``level``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">)</span></div>
+
+
+<span class="c1"># =========================================================================</span>
+<span class="c1"># Below, we have many set_X()/get_X() pairs. The only reason why we include</span>
+<span class="c1"># the get_X() type of functions is to make it possible to make some</span>
+<span class="c1"># temporary changes, i.e.</span>
+<span class="c1">#</span>
+<span class="c1">#     saved = get_x()</span>
+<span class="c1">#     set_X(something)</span>
+<span class="c1">#     do_something()</span>
+<span class="c1">#     set_X(saved)</span>
+<span class="c1"># =========================================================================</span>
+
+
+<div class="viewcode-block" id="set_lang"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.set_lang">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the language to be used by gettext.</span>
+
+<span class="sd">       If no translations exist for that language, the original</span>
+<span class="sd">       English strings will be used.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">install_gettext</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_lang"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.get_lang">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">get_lang</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Returns the current language that had been set for translations.</span>
+
+<span class="sd">       Note that the value returned may not reflect truly what is being</span>
+<span class="sd">       see by the end user: if the translations do not exist for that language,</span>
+<span class="sd">       the default English strings are used.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">lang</span></div>
+
+
+<div class="viewcode-block" id="set_level"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.set_level">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">set_level</span><span class="p">(</span><span class="n">level</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the verbosity level to be used. The values are as follows:</span>
+
+<span class="sd">            0: Normal Python tracebacks</span>
+<span class="sd">            1: Default - does not need to be specified</span>
+<span class="sd">            2: Python tracebacks appear before the friendly display</span>
+<span class="sd">            3: Python tracebacks appended at the end of the friendly display.</span>
+<span class="sd">            4: Python traceback followed by basic explanation</span>
+<span class="sd">            5: Only basic explanation</span>
+<span class="sd">            9: Python traceback</span>
+
+<span class="sd">        The Python traceback for level &gt;= 1 are the simulated version.</span>
+<span class="sd">        You can use negative values to show the true Python traceback which</span>
+<span class="sd">        will likely include function calls from friendly-traceback itself.</span>
+<span class="sd">        Thus level -9 is equivalent to level 0.</span>
+
+<span class="sd">        Other values may be available, as we try to find the most useful</span>
+<span class="sd">        settings for beginners.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">set_level</span><span class="p">(</span><span class="n">level</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_level"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.get_level">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">get_level</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Returns the verbosity level currently used.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">level</span></div>
+
+
+<div class="viewcode-block" id="set_stream"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.set_stream">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">set_stream</span><span class="p">(</span><span class="n">stream</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the stream to which the output should be directed.</span>
+
+<span class="sd">       If the string ``&quot;capture&quot;`` is given as argument, the</span>
+<span class="sd">       output is saved and can be later retrieved by ``get_output()``.&quot;&quot;&quot;</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">set_redirect</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="n">stream</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_stream"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.get_stream">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">get_stream</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Returns the value of the current stream used for output.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">write_err</span></div>
+
+
+<div class="viewcode-block" id="clear_traceback"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.clear_traceback">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">clear_traceback</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Clears the existing traceback.&quot;&quot;&quot;</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">clear_traceback</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="copy_traceback_info"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.copy_traceback_info">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">copy_traceback_info</span><span class="p">(</span><span class="n">info</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Copy the traceback info obtained from another source.&quot;&quot;&quot;</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">traceback_info</span> <span class="o">=</span> <span class="n">info</span></div>
+
+
+<div class="viewcode-block" id="show_traceback_info_again"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.show_traceback_info_again">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">show_traceback_info_again</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Shows the traceback info again, on the default stream.</span>
+
+<span class="sd">    Primarily intended to use with GUI based program, where the user changes</span>
+<span class="sd">    a verbosity level to view the traceback again.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">show_traceback_info_again</span><span class="p">()</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, André Roberge.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>

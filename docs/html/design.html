@@ -14,7 +14,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Custom exceptions and formatting" href="custom.html" />
+    <link rel="next" title="Public API" href="api.html" />
     <link rel="prev" title="Occasional lies" href="lies.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -24,7 +24,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="custom.html" title="Custom exceptions and formatting"
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="Public API"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="lies.html" title="Occasional lies"
@@ -73,8 +76,8 @@
   <p class="topless"><a href="lies.html"
                         title="previous chapter">Occasional lies</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="custom.html"
-                        title="next chapter">Custom exceptions and formatting</a></p>
+  <p class="topless"><a href="api.html"
+                        title="next chapter">Public API</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -403,9 +406,6 @@ identical to level 0.</p>
 <p>This can be done when using <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code> explicitly in the
 program with <code class="docutils literal notranslate"><span class="pre">friendly_traceback.set_level()</span></code>,
 or as an option from the command line.</p>
-<p>If no such option is provided, then it should be set either from
-the local environment variables (as for the language) or from a global
-<code class="docutils literal notranslate"><span class="pre">.ini</span></code> file.</p>
 <div class="sidebar">
 <p class="sidebar-title">Additional open question</p>
 <p>It might be interesting to see if the simulated Python traceback could be
@@ -476,7 +476,7 @@ They are denoted by <code class="docutils literal notranslate"><span class="pre"
       +-- StopAsyncIteration #
       +-- ArithmeticError **
       |    +-- FloatingPointError #
-      |    +-- OverflowError
+      |    +-- OverflowError *
       |    +-- ZeroDivisionError *
       +-- AssertionError
       +-- AttributeError
@@ -499,7 +499,7 @@ They are denoted by <code class="docutils literal notranslate"><span class="pre"
       |    |    +-- ConnectionRefusedError
       |    |    +-- ConnectionResetError
       |    +-- FileExistsError
-      |    +-- FileNotFoundError
+      |    +-- FileNotFoundError *
       |    +-- InterruptedError
       |    +-- IsADirectoryError
       |    +-- NotADirectoryError
@@ -510,11 +510,11 @@ They are denoted by <code class="docutils literal notranslate"><span class="pre"
       +-- RuntimeError
       |    +-- NotImplementedError
       |    +-- RecursionError
-      +-- SyntaxError *
+      +-- SyntaxError * (partial: many more cases to include)
       |    +-- IndentationError *
       |         +-- TabError *
       +-- SystemError
-      +-- TypeError *
+      +-- TypeError * (partial: many more cases to include)
       +-- ValueError
       |    +-- UnicodeError
       |         +-- UnicodeDecodeError
@@ -549,7 +549,10 @@ They are denoted by <code class="docutils literal notranslate"><span class="pre"
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="custom.html" title="Custom exceptions and formatting"
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="Public API"
              >next</a> |</li>
         <li class="right" >
           <a href="lies.html" title="Occasional lies"

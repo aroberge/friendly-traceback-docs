@@ -67,6 +67,7 @@ Contents
     Usage <usage>
     Occasional lies <lies>
     Design <design>
+    Public API <api>
     Custom exceptions and formatting <custom>
     Suggest an addition <suggest>
     Adding an Exception <adding_exception>

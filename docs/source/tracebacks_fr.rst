@@ -55,13 +55,13 @@ FileNotFoundError
     Exception Python:
         FileNotFoundError: [Errno 2] No such file or directory: 'does_not_exist'
         
-    A FileNotFoundError exception indicates that you
-    are trying to open a file that cannot be found by Python.
-    This could be because you misspelled the name of the file.
+    Une exception FileNotFoundError indique que vous
+    essayez d’importer un module qui ne peut pas être trouvé par Python.
+    Cela pourrait être parce que vous fait une faute d'orthographe en
+    écrivant le nom du fichier.
     
     Cause probable :
-        In your program, the name of the
-        file that cannot be found is 'does_not_exist'.
+        Dans votre programme, le nom du fichier inconnu est 'does_not_exist'.
         
     L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\test_file_not_found_error.py'
     
@@ -1157,9 +1157,8 @@ TypeError - 13: wrong number of positional arguments
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
-        You apparently have called the function 'fn()' with
-        1 positional argument while it requires 0
-        such positional arguments.
+        Vous avez apparemment invoqué la fonction 'fn()' avec
+        1 arguments positionnels alors qu'elle en requiert 0.
         
     L'exécution s'est arrêtée à la ligne 320 du fichier 'TESTS:\test_type_error.py'
     
@@ -1186,8 +1185,8 @@ TypeError - 14: missing positional arguments
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
-        You apparently have called the function 'fn()' with
-        fewer positional arguments than it requires (2 missing).
+        Vous avez apparemment invoqué la fonction 'fn()' avec
+        moins d'arguments positionnels qu'il n'en faut (2 manquent).
         
     L'exécution s'est arrêtée à la ligne 332 du fichier 'TESTS:\test_type_error.py'
     
