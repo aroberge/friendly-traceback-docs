@@ -176,13 +176,22 @@ a string, with an optional file name supplied:</p>
 </pre></div>
 </div>
 </li>
+<li><p>Instead of simply checking the syntax, one can run the code to see
+if there are runtime errors; this is done by calling <code class="docutils literal notranslate"><span class="pre">run_code</span></code>
+which first calls <code class="docutils literal notranslate"><span class="pre">check_syntax</span></code> and will execute the code if
+no exception are raised; for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
+<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">run_code</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">some_code</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;hello.py&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
 </ol>
 <p>You can also specify the verbosity level as well as the language
 to be used, either as command line arguments:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback --lang fr --level 5
 </pre></div>
 </div>
-<p>or as optional arguments when using check_syntax:</p>
+<p>or as optional arguments when using <code class="docutils literal notranslate"><span class="pre">check_syntax</span></code> or <code class="docutils literal notranslate"><span class="pre">run_code</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">check_syntax</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;fr&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>

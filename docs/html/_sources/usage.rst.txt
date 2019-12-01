@@ -87,12 +87,21 @@ There are various ways of using friendly-traceback.
        friendly_traceback.check_syntax(source=some_code, filename="hello.py")
    
 
+11. Instead of simply checking the syntax, one can run the code to see
+    if there are runtime errors; this is done by calling ``run_code``
+    which first calls ``check_syntax`` and will execute the code if 
+    no exception are raised; for example::
+
+        import friendly_traceback
+        friendly_traceback.run_code(source=some_code, filename="hello.py")
+
+
 You can also specify the verbosity level as well as the language 
 to be used, either as command line arguments::
 
     $ python -m friendly_traceback --lang fr --level 5
 
-or as optional arguments when using check_syntax::
+or as optional arguments when using ``check_syntax`` or ``run_code``::
 
     friendly_traceback.check_syntax(..., lang='fr', level=5)
 
