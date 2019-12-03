@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.10a
+Friendly-traceback version: 0.0.17
 Python version: 3.7.3
 
 
@@ -409,6 +409,9 @@ SyntaxError - unmatched closing parenthesis
     My best guess:
         The closing parenthesis ')' on line 6 does not match anything.
         
+            6:     3, 4,))
+        
+        
 
 SyntaxError - unclosed parenthesis
 ----------------------------------
@@ -431,6 +434,9 @@ SyntaxError - unclosed parenthesis
 
     My best guess:
         The opening parenthesis '(' on line 2 is not closed.
+        
+            2: x = int('1'
+        
         
 
 SyntaxError - unclosed parenthesis - 2
@@ -455,6 +461,9 @@ SyntaxError - unclosed parenthesis - 2
     My best guess:
         The opening parenthesis '(' on line 2 is not closed.
         
+            2: a = (b+c
+        
+        
 
 SyntaxError - mismatched brackets
 ---------------------------------
@@ -476,6 +485,36 @@ SyntaxError - mismatched brackets
 
     My best guess:
         The closing square bracket ']' on line 2 does not match the opening parenthesis '(' on line 2.
+        
+            2: x = (1, 2, 3]
+        
+
+SyntaxError - mismatched brackets - 2
+-------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error16a.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: x = (1,
+       3:      2,
+    -->4:      3]
+                ^
+
+    My best guess:
+        The closing square bracket ']' on line 4 does not match the opening parenthesis '(' on line 2.
+        
+            2: x = (1,
+        
+            4:      3]
         
 
 SyntaxError - print is a function
@@ -621,7 +660,7 @@ SyntaxError - missing comma in a dict
                  ^
 
     My best guess:
-        You likely forgot a comma between items in a set or dict.
+        It is possible that you forgot a comma between items in a set or dict
         before the position indicated by --> and ^.
         
 
@@ -645,7 +684,7 @@ SyntaxError - missing comma in a set
                      ^
 
     My best guess:
-        You likely forgot a comma between items in a set or dict.
+        It is possible that you forgot a comma between items in a set or dict
         before the position indicated by --> and ^.
         
 
@@ -669,7 +708,7 @@ SyntaxError - missing comma in a list
                      ^
 
     My best guess:
-        You likely forgot a comma between items in a list
+        It is possible that you forgot a comma between items in a list
         before the position indicated by --> and ^.
         
 
@@ -693,7 +732,7 @@ SyntaxError - missing comma in a tuple
                      ^
 
     My best guess:
-        You likely forgot a comma between items in a tuple, 
+        It is possible that you forgot a comma between items in a tuple, 
         or between function arguments, 
         before the position indicated by --> and ^.
         
@@ -719,7 +758,237 @@ SyntaxError - missing comma between function args
                      ^
 
     My best guess:
-        You likely forgot a comma between items in a tuple, 
+        It is possible that you forgot a comma between items in a tuple, 
         or between function arguments, 
         before the position indicated by --> and ^.
+        
+
+SyntaxError - can't assign to function call - 1
+-----------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: can't assign to function call
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error27.py'
+    beyond the location indicated below by --> and ^.
+    
+       3: Python 3.8: SyntaxError: cannot assign to function call
+       4: """
+       5: 
+    -->6: len('a') = 3
+         ^
+
+    My best guess:
+        You wrote an expression like
+            len('a') = 3
+        where len('a'), on the left hand-side of the equal sign, is
+        a function call and not the name of a variable.
+
+SyntaxError - can't assign to function call - 2
+-----------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: can't assign to function call
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error28.py'
+    beyond the location indicated below by --> and ^.
+    
+       3: Python 3.8: SyntaxError: cannot assign to function call
+       4: """
+       5: 
+    -->6: func(a, b=3) = 4
+         ^
+
+    My best guess:
+        You wrote an expression like
+            my_function(...) = some value
+        where my_function(...), on the left hand-side of the equal sign, is
+        a function call and not the name of a variable.
+
+SyntaxError - used equal sign instead of colon
+----------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error29.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax
+       2: """
+       3: 
+    -->4: ages = {'Alice'=22, 'Bob'=24}
+                         ^
+
+    My best guess:
+        It is possible that you used an equal sign '=' instead of a colon ':'
+        to assign values to keys in a dict
+        before or at the position indicated by --> and ^.
+        
+
+SyntaxError - non-default argument follows default argument
+-----------------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: non-default argument follows default argument
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error30.py'
+    beyond the location indicated below by --> and ^.
+    
+       2: """
+       3: 
+       4: 
+    -->5: def test(a=1, b):
+                  ^
+
+    My best guess:
+        In Python, you can define functions with only positional arguments
+        
+            def test(a, b, c): ...
+        
+        or only keyword arguments
+        
+            def test(a=1, b=2, c=3): ...
+        
+        or a combination of the two
+        
+            def test(a, b, c=3): ...
+        
+        but with the keyword arguments appearing after all the positional ones.
+        According to Python, you used positional arguments after keyword ones.
+        
+
+SyntaxError - positional argument follows keyword argument
+----------------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: positional argument follows keyword argument
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error31.py'
+    beyond the location indicated below by --> and ^.
+    
+       2: """
+       3: 
+       4: 
+    -->5: test(a=1, b)
+                   ^
+
+    My best guess:
+        In Python, you can call functions with only positional arguments
+        
+            test(1, 2, 3)
+        
+        or only keyword arguments
+        
+            test(a=1, b=2, c=3)
+        
+        or a combination of the two
+        
+            test(1, 2, c=3)
+        
+        but with the keyword arguments appearing after all the positional ones.
+        According to Python, you used positional arguments after keyword ones.
+        
+
+SyntaxError - f-string: unterminated string
+-------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: f-string: unterminated string
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error32.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: f-string: unterminated string
+       2: """
+       3: 
+    -->4: print(f"Bob is {age['Bob]} years old.")
+               ^
+
+    My best guess:
+        Inside an f-string, which is a string prefixed by the letter f, 
+        you have another string, which starts with either a
+        single quote (') or double quote ("), without a matching closing one.
+        
+
+SyntaxError - unclosed bracket
+------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error33.py'
+    beyond the location indicated below by --> and ^.
+    
+        4: def foo():
+        5:     return [1, 2, 3
+        6: 
+    --> 7: print(foo())
+               ^
+
+    My best guess:
+        The opening square bracket '[' on line 5 is not closed.
+        
+            5:     return [1, 2, 3
+        
+        
+
+SyntaxError - unexpected EOF while parsing
+------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: unexpected EOF while parsing
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error34.py'.
+    It reached the end of the file and expected more content.
+    
+        5:     return [1, 2, 3,
+        6: 
+        7: print(foo())
+
+    My best guess:
+        The opening square bracket '[' on line 5 is not closed.
+        
+            5:     return [1, 2, 3,
+        
         

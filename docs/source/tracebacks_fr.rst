@@ -19,7 +19,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.10a
+Friendly-traceback version: 0.0.17
 Python version: 3.7.3
 
 
@@ -1196,6 +1196,62 @@ TypeError - 14: missing positional arguments
        333:     except Exception:
 
     fn: <function test_type_error14.<locals>.fn>
+
+
+TypeError - 15: tuple object is not callable
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        TypeError: 'tuple' object is not callable
+        
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    
+    Cause probable :
+        I suspect that you had an object of this type, <un tuple>,
+        followed by what looked like a tuple, '(...)',
+        which Python took as an indication of a function call.
+        Perhaps you had a missing comma before the tuple.
+        
+    L'exécution s'est arrêtée à la ligne 342 du fichier 'TESTS:\test_type_error.py'
+    
+       340: def test_type_error15():
+       341:     try:
+    -->342:         _ = (1, 2)(3, 4)
+       343:     except Exception:
+
+
+TypeError - 15a: list object is not callable
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        TypeError: 'list' object is not callable
+        
+    Une exception TypeError est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    
+    Cause probable :
+        I suspect that you had an object of this type, <une liste ('list')>,
+        followed by what looked like a tuple, '(...)',
+        which Python took as an indication of a function call.
+        Perhaps you had a missing comma before the tuple.
+        
+    L'exécution s'est arrêtée à la ligne 352 du fichier 'TESTS:\test_type_error.py'
+    
+       350: def test_type_error15a():
+       351:     try:
+    -->352:         _ = [1, 2](3, 4)
+       353:     except Exception:
 
 
 UnboundLocalError

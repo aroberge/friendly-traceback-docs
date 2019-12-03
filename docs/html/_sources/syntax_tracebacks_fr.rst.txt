@@ -21,7 +21,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.10a
+Friendly-traceback version: 0.0.17
 Python version: 3.7.3
 
 
@@ -417,6 +417,9 @@ SyntaxError - unmatched closing parenthesis
     Ma meilleure hypothèse :
         Le symbole parenthèse ')' à la ligne 6 n'a pas de symbole ouvrant qui lui correspond.
         
+            6:     3, 4,))
+        
+        
 
 SyntaxError - unclosed parenthesis
 ----------------------------------
@@ -439,6 +442,9 @@ SyntaxError - unclosed parenthesis
 
     Ma meilleure hypothèse :
         Le symbole parenthèse '(' à la ligne 2 n'est pas fermé par le symbole correspondant.
+        
+            2: x = int('1'
+        
         
 
 SyntaxError - unclosed parenthesis - 2
@@ -463,6 +469,9 @@ SyntaxError - unclosed parenthesis - 2
     Ma meilleure hypothèse :
         Le symbole parenthèse '(' à la ligne 2 n'est pas fermé par le symbole correspondant.
         
+            2: a = (b+c
+        
+        
 
 SyntaxError - mismatched brackets
 ---------------------------------
@@ -484,6 +493,36 @@ SyntaxError - mismatched brackets
 
     Ma meilleure hypothèse :
         Le symbole crochet ']' à la ligne 2 ne correspond pas au symbole parenthèse '(' à la ligne 2.
+        
+            2: x = (1, 2, 3]
+        
+
+SyntaxError - mismatched brackets - 2
+-------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error16a.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: x = (1,
+       3:      2,
+    -->4:      3]
+                ^
+
+    Ma meilleure hypothèse :
+        Le symbole crochet ']' à la ligne 4 ne correspond pas au symbole parenthèse '(' à la ligne 2.
+        
+            2: x = (1,
+        
+            4:      3]
         
 
 SyntaxError - print is a function
@@ -631,8 +670,8 @@ SyntaxError - missing comma in a dict
                  ^
 
     Ma meilleure hypothèse :
-        Vous avez probablement oublié une virgule entre les éléments d'un ensemble (set)
-        ou un dict avant la position indiquée par --> et ^.
+        It is possible that you forgot a comma between items in a set or dict
+        before the position indicated by --> and ^.
         
 
 SyntaxError - missing comma in a set
@@ -655,8 +694,8 @@ SyntaxError - missing comma in a set
                      ^
 
     Ma meilleure hypothèse :
-        Vous avez probablement oublié une virgule entre les éléments d'un ensemble (set)
-        ou un dict avant la position indiquée par --> et ^.
+        It is possible that you forgot a comma between items in a set or dict
+        before the position indicated by --> and ^.
         
 
 SyntaxError - missing comma in a list
@@ -679,7 +718,7 @@ SyntaxError - missing comma in a list
                      ^
 
     Ma meilleure hypothèse :
-        Vous avez probablement oublié une virgule entre les éléments d'une liste
+        Il est possible que vous ayez oublié une virgule entre les éléments d'une liste
         avant la position indiquée par --> et ^.
         
 
@@ -703,7 +742,7 @@ SyntaxError - missing comma in a tuple
                      ^
 
     Ma meilleure hypothèse :
-        Vous avez probablement oublié une virgule entre les éléments d'un tuple,
+        Il est possible que vous ayez oublié une virgule entre les éléments d'un tuple,
         ou entre les arguments d'une fonction, avant la position indiquée par --> et ^.
         
 
@@ -728,6 +767,236 @@ SyntaxError - missing comma between function args
                      ^
 
     Ma meilleure hypothèse :
-        Vous avez probablement oublié une virgule entre les éléments d'un tuple,
+        Il est possible que vous ayez oublié une virgule entre les éléments d'un tuple,
         ou entre les arguments d'une fonction, avant la position indiquée par --> et ^.
+        
+
+SyntaxError - can't assign to function call - 1
+-----------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: can't assign to function call
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error27.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       3: Python 3.8: SyntaxError: cannot assign to function call
+       4: """
+       5: 
+    -->6: len('a') = 3
+         ^
+
+    Ma meilleure hypothèse :
+        You wrote an expression like
+            len('a') = 3
+        where len('a'), on the left hand-side of the equal sign, is
+        a function call and not the name of a variable.
+
+SyntaxError - can't assign to function call - 2
+-----------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: can't assign to function call
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error28.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       3: Python 3.8: SyntaxError: cannot assign to function call
+       4: """
+       5: 
+    -->6: func(a, b=3) = 4
+         ^
+
+    Ma meilleure hypothèse :
+        You wrote an expression like
+            my_function(...) = some value
+        where my_function(...), on the left hand-side of the equal sign, is
+        a function call and not the name of a variable.
+
+SyntaxError - used equal sign instead of colon
+----------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error29.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid syntax
+       2: """
+       3: 
+    -->4: ages = {'Alice'=22, 'Bob'=24}
+                         ^
+
+    Ma meilleure hypothèse :
+        It is possible that you used an equal sign '=' instead of a colon ':'
+        to assign values to keys in a dict
+        before or at the position indicated by --> and ^.
+        
+
+SyntaxError - non-default argument follows default argument
+-----------------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: non-default argument follows default argument
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error30.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       2: """
+       3: 
+       4: 
+    -->5: def test(a=1, b):
+                  ^
+
+    Ma meilleure hypothèse :
+        In Python, you can define functions with only positional arguments
+        
+            def test(a, b, c): ...
+        
+        or only keyword arguments
+        
+            def test(a=1, b=2, c=3): ...
+        
+        or a combination of the two
+        
+            def test(a, b, c=3): ...
+        
+        but with the keyword arguments appearing after all the positional ones.
+        According to Python, you used positional arguments after keyword ones.
+        
+
+SyntaxError - positional argument follows keyword argument
+----------------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: positional argument follows keyword argument
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error31.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       2: """
+       3: 
+       4: 
+    -->5: test(a=1, b)
+                   ^
+
+    Ma meilleure hypothèse :
+        In Python, you can call functions with only positional arguments
+        
+            test(1, 2, 3)
+        
+        or only keyword arguments
+        
+            test(a=1, b=2, c=3)
+        
+        or a combination of the two
+        
+            test(1, 2, c=3)
+        
+        but with the keyword arguments appearing after all the positional ones.
+        According to Python, you used positional arguments after keyword ones.
+        
+
+SyntaxError - f-string: unterminated string
+-------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: f-string: unterminated string
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error32.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: f-string: unterminated string
+       2: """
+       3: 
+    -->4: print(f"Bob is {age['Bob]} years old.")
+               ^
+
+    Ma meilleure hypothèse :
+        Inside an f-string, which is a string prefixed by the letter f, 
+        you have another string, which starts with either a
+        single quote (') or double quote ("), without a matching closing one.
+        
+
+SyntaxError - unclosed bracket
+------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error33.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+        4: def foo():
+        5:     return [1, 2, 3
+        6: 
+    --> 7: print(foo())
+               ^
+
+    Ma meilleure hypothèse :
+        Le symbole crochet '[' à la ligne 5 n'est pas fermé par le symbole correspondant.
+        
+            5:     return [1, 2, 3
+        
+        
+
+SyntaxError - unexpected EOF while parsing
+------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: unexpected EOF while parsing
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error34.py'.
+    It reached the end of the file and expected more content.
+    
+        5:     return [1, 2, 3,
+        6: 
+        7: print(foo())
+
+    Ma meilleure hypothèse :
+        Le symbole crochet '[' à la ligne 5 n'est pas fermé par le symbole correspondant.
+        
+            5:     return [1, 2, 3,
+        
         

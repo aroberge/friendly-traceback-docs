@@ -19,7 +19,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.10a
+Friendly-traceback version: 0.0.17
 Python version: 3.7.3
 
 
@@ -1196,6 +1196,62 @@ TypeError - 14: missing positional arguments
        333:     except Exception:
 
     fn: <function test_type_error14.<locals>.fn>
+
+
+TypeError - 15: tuple object is not callable
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        TypeError: 'tuple' object is not callable
+        
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
+    
+    Likely cause:
+        I suspect that you had an object of this type, <a tuple>,
+        followed by what looked like a tuple, '(...)',
+        which Python took as an indication of a function call.
+        Perhaps you had a missing comma before the tuple.
+        
+    Execution stopped on line 342 of file 'TESTS:\test_type_error.py'.
+    
+       340: def test_type_error15():
+       341:     try:
+    -->342:         _ = (1, 2)(3, 4)
+       343:     except Exception:
+
+
+TypeError - 15a: list object is not callable
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        TypeError: 'list' object is not callable
+        
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
+    
+    Likely cause:
+        I suspect that you had an object of this type, <a list>,
+        followed by what looked like a tuple, '(...)',
+        which Python took as an indication of a function call.
+        Perhaps you had a missing comma before the tuple.
+        
+    Execution stopped on line 352 of file 'TESTS:\test_type_error.py'.
+    
+       350: def test_type_error15a():
+       351:     try:
+    -->352:         _ = [1, 2](3, 4)
+       353:     except Exception:
 
 
 UnboundLocalError

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Friendly SyntaxError tracebacks - en Français &#8212; Friendly tracebacks 0.0.10a documentation</title>
+    <title>Friendly SyntaxError tracebacks - en Français &#8212; Friendly tracebacks 0.0.17 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -32,7 +32,7 @@
         <li class="right" >
           <a href="tracebacks_fr.html" title="Friendly tracebacks - en Français"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.17 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -58,6 +58,7 @@
 <li><a class="reference internal" href="#syntaxerror-unclosed-parenthesis">SyntaxError - unclosed parenthesis</a></li>
 <li><a class="reference internal" href="#syntaxerror-unclosed-parenthesis-2">SyntaxError - unclosed parenthesis - 2</a></li>
 <li><a class="reference internal" href="#syntaxerror-mismatched-brackets">SyntaxError - mismatched brackets</a></li>
+<li><a class="reference internal" href="#syntaxerror-mismatched-brackets-2">SyntaxError - mismatched brackets - 2</a></li>
 <li><a class="reference internal" href="#syntaxerror-print-is-a-function">SyntaxError - print is a function</a></li>
 <li><a class="reference internal" href="#syntaxerror-python-keyword-as-function-name">SyntaxError - Python keyword as function name</a></li>
 <li><a class="reference internal" href="#syntaxerror-break-outside-loop">SyntaxError - break outside loop</a></li>
@@ -68,6 +69,14 @@
 <li><a class="reference internal" href="#syntaxerror-missing-comma-in-a-list">SyntaxError - missing comma in a list</a></li>
 <li><a class="reference internal" href="#syntaxerror-missing-comma-in-a-tuple">SyntaxError - missing comma in a tuple</a></li>
 <li><a class="reference internal" href="#syntaxerror-missing-comma-between-function-args">SyntaxError - missing comma between function args</a></li>
+<li><a class="reference internal" href="#syntaxerror-can-t-assign-to-function-call-1">SyntaxError - can’t assign to function call - 1</a></li>
+<li><a class="reference internal" href="#syntaxerror-can-t-assign-to-function-call-2">SyntaxError - can’t assign to function call - 2</a></li>
+<li><a class="reference internal" href="#syntaxerror-used-equal-sign-instead-of-colon">SyntaxError - used equal sign instead of colon</a></li>
+<li><a class="reference internal" href="#syntaxerror-non-default-argument-follows-default-argument">SyntaxError - non-default argument follows default argument</a></li>
+<li><a class="reference internal" href="#syntaxerror-positional-argument-follows-keyword-argument">SyntaxError - positional argument follows keyword argument</a></li>
+<li><a class="reference internal" href="#syntaxerror-f-string-unterminated-string">SyntaxError - f-string: unterminated string</a></li>
+<li><a class="reference internal" href="#syntaxerror-unclosed-bracket">SyntaxError - unclosed bracket</a></li>
+<li><a class="reference internal" href="#syntaxerror-unexpected-eof-while-parsing">SyntaxError - unexpected EOF while parsing</a></li>
 </ul>
 </li>
 </ul>
@@ -123,7 +132,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.0.10a
+<p>Friendly-traceback version: 0.0.17
 Python version: 3.7.3</p>
 <div class="section" id="syntaxerror-assign-to-keyword">
 <h2>SyntaxError - Assign to keyword<a class="headerlink" href="#syntaxerror-assign-to-keyword" title="Permalink to this headline">¶</a></h2>
@@ -455,6 +464,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Ma meilleure hypothèse :
     Le symbole parenthèse &#39;)&#39; à la ligne 6 n&#39;a pas de symbole ouvrant qui lui correspond.
+
+        6:     3, 4,))
 </pre></div>
 </div>
 </div>
@@ -475,6 +486,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Ma meilleure hypothèse :
     Le symbole parenthèse &#39;(&#39; à la ligne 2 n&#39;est pas fermé par le symbole correspondant.
+
+        2: x = int(&#39;1&#39;
 </pre></div>
 </div>
 </div>
@@ -495,6 +508,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Ma meilleure hypothèse :
     Le symbole parenthèse &#39;(&#39; à la ligne 2 n&#39;est pas fermé par le symbole correspondant.
+
+        2: a = (b+c
 </pre></div>
 </div>
 </div>
@@ -514,6 +529,33 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Ma meilleure hypothèse :
     Le symbole crochet &#39;]&#39; à la ligne 2 ne correspond pas au symbole parenthèse &#39;(&#39; à la ligne 2.
+
+        2: x = (1, 2, 3]
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-mismatched-brackets-2">
+<h2>SyntaxError - mismatched brackets - 2<a class="headerlink" href="#syntaxerror-mismatched-brackets-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: invalid syntax
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error16a.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2: x = (1,
+   3:      2,
+--&gt;4:      3]
+            ^
+
+Ma meilleure hypothèse :
+    Le symbole crochet &#39;]&#39; à la ligne 4 ne correspond pas au symbole parenthèse &#39;(&#39; à la ligne 2.
+
+        2: x = (1,
+
+        4:      3]
 </pre></div>
 </div>
 </div>
@@ -642,8 +684,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
              ^
 
 Ma meilleure hypothèse :
-    Vous avez probablement oublié une virgule entre les éléments d&#39;un ensemble (set)
-    ou un dict avant la position indiquée par --&gt; et ^.
+    It is possible that you forgot a comma between items in a set or dict
+    before the position indicated by --&gt; and ^.
 </pre></div>
 </div>
 </div>
@@ -663,8 +705,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                  ^
 
 Ma meilleure hypothèse :
-    Vous avez probablement oublié une virgule entre les éléments d&#39;un ensemble (set)
-    ou un dict avant la position indiquée par --&gt; et ^.
+    It is possible that you forgot a comma between items in a set or dict
+    before the position indicated by --&gt; and ^.
 </pre></div>
 </div>
 </div>
@@ -684,7 +726,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                  ^
 
 Ma meilleure hypothèse :
-    Vous avez probablement oublié une virgule entre les éléments d&#39;une liste
+    Il est possible que vous ayez oublié une virgule entre les éléments d&#39;une liste
     avant la position indiquée par --&gt; et ^.
 </pre></div>
 </div>
@@ -705,7 +747,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                  ^
 
 Ma meilleure hypothèse :
-    Vous avez probablement oublié une virgule entre les éléments d&#39;un tuple,
+    Il est possible que vous ayez oublié une virgule entre les éléments d&#39;un tuple,
     ou entre les arguments d&#39;une fonction, avant la position indiquée par --&gt; et ^.
 </pre></div>
 </div>
@@ -727,8 +769,214 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                  ^
 
 Ma meilleure hypothèse :
-    Vous avez probablement oublié une virgule entre les éléments d&#39;un tuple,
+    Il est possible que vous ayez oublié une virgule entre les éléments d&#39;un tuple,
     ou entre les arguments d&#39;une fonction, avant la position indiquée par --&gt; et ^.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-can-t-assign-to-function-call-1">
+<h2>SyntaxError - can’t assign to function call - 1<a class="headerlink" href="#syntaxerror-can-t-assign-to-function-call-1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: can&#39;t assign to function call
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error27.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   3: Python 3.8: SyntaxError: cannot assign to function call
+   4: &quot;&quot;&quot;
+   5:
+--&gt;6: len(&#39;a&#39;) = 3
+     ^
+
+Ma meilleure hypothèse :
+    You wrote an expression like
+        len(&#39;a&#39;) = 3
+    where len(&#39;a&#39;), on the left hand-side of the equal sign, is
+    a function call and not the name of a variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-can-t-assign-to-function-call-2">
+<h2>SyntaxError - can’t assign to function call - 2<a class="headerlink" href="#syntaxerror-can-t-assign-to-function-call-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: can&#39;t assign to function call
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error28.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   3: Python 3.8: SyntaxError: cannot assign to function call
+   4: &quot;&quot;&quot;
+   5:
+--&gt;6: func(a, b=3) = 4
+     ^
+
+Ma meilleure hypothèse :
+    You wrote an expression like
+        my_function(...) = some value
+    where my_function(...), on the left hand-side of the equal sign, is
+    a function call and not the name of a variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-used-equal-sign-instead-of-colon">
+<h2>SyntaxError - used equal sign instead of colon<a class="headerlink" href="#syntaxerror-used-equal-sign-instead-of-colon" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: invalid syntax
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error29.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
+   2: &quot;&quot;&quot;
+   3:
+--&gt;4: ages = {&#39;Alice&#39;=22, &#39;Bob&#39;=24}
+                     ^
+
+Ma meilleure hypothèse :
+    It is possible that you used an equal sign &#39;=&#39; instead of a colon &#39;:&#39;
+    to assign values to keys in a dict
+    before or at the position indicated by --&gt; and ^.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-non-default-argument-follows-default-argument">
+<h2>SyntaxError - non-default argument follows default argument<a class="headerlink" href="#syntaxerror-non-default-argument-follows-default-argument" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: non-default argument follows default argument
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error30.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   2: &quot;&quot;&quot;
+   3:
+   4:
+--&gt;5: def test(a=1, b):
+              ^
+
+Ma meilleure hypothèse :
+    In Python, you can define functions with only positional arguments
+
+        def test(a, b, c): ...
+
+    or only keyword arguments
+
+        def test(a=1, b=2, c=3): ...
+
+    or a combination of the two
+
+        def test(a, b, c=3): ...
+
+    but with the keyword arguments appearing after all the positional ones.
+    According to Python, you used positional arguments after keyword ones.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-positional-argument-follows-keyword-argument">
+<h2>SyntaxError - positional argument follows keyword argument<a class="headerlink" href="#syntaxerror-positional-argument-follows-keyword-argument" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: positional argument follows keyword argument
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error31.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   2: &quot;&quot;&quot;
+   3:
+   4:
+--&gt;5: test(a=1, b)
+               ^
+
+Ma meilleure hypothèse :
+    In Python, you can call functions with only positional arguments
+
+        test(1, 2, 3)
+
+    or only keyword arguments
+
+        test(a=1, b=2, c=3)
+
+    or a combination of the two
+
+        test(1, 2, c=3)
+
+    but with the keyword arguments appearing after all the positional ones.
+    According to Python, you used positional arguments after keyword ones.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-f-string-unterminated-string">
+<h2>SyntaxError - f-string: unterminated string<a class="headerlink" href="#syntaxerror-f-string-unterminated-string" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: f-string: unterminated string
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error32.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: f-string: unterminated string
+   2: &quot;&quot;&quot;
+   3:
+--&gt;4: print(f&quot;Bob is {age[&#39;Bob]} years old.&quot;)
+           ^
+
+Ma meilleure hypothèse :
+    Inside an f-string, which is a string prefixed by the letter f,
+    you have another string, which starts with either a
+    single quote (&#39;) or double quote (&quot;), without a matching closing one.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-unclosed-bracket">
+<h2>SyntaxError - unclosed bracket<a class="headerlink" href="#syntaxerror-unclosed-bracket" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: invalid syntax
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error33.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+    4: def foo():
+    5:     return [1, 2, 3
+    6:
+--&gt; 7: print(foo())
+           ^
+
+Ma meilleure hypothèse :
+    Le symbole crochet &#39;[&#39; à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
+
+        5:     return [1, 2, 3
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-unexpected-eof-while-parsing">
+<h2>SyntaxError - unexpected EOF while parsing<a class="headerlink" href="#syntaxerror-unexpected-eof-while-parsing" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: unexpected EOF while parsing
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error34.py&#39;.
+It reached the end of the file and expected more content.
+
+    5:     return [1, 2, 3,
+    6:
+    7: print(foo())
+
+Ma meilleure hypothèse :
+    Le symbole crochet &#39;[&#39; à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
+
+        5:     return [1, 2, 3,
 </pre></div>
 </div>
 </div>
@@ -755,7 +1003,7 @@ Ma meilleure hypothèse :
         <li class="right" >
           <a href="tracebacks_fr.html" title="Friendly tracebacks - en Français"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.17 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

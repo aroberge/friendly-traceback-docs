@@ -88,7 +88,7 @@ There are various ways of using friendly-traceback.
    
 
 11. Instead of simply checking the syntax, one can run the code to see
-    if there are runtime errors; this is done by calling ``run_code``
+    if there are also runtime errors; this is done by calling ``run_code``
     which first calls ``check_syntax`` and will execute the code if 
     no exception are raised; for example::
 

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>friendly_traceback.core &#8212; Friendly tracebacks 0.0.10a documentation</title>
+    <title>friendly_traceback.core &#8212; Friendly tracebacks 0.0.17 documentation</title>
     <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -24,7 +24,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Friendly tracebacks 0.0.17 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
       </ul>
     </div>
@@ -176,12 +176,13 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
 
-    <span class="n">saved_lang</span> <span class="o">=</span> <span class="n">_temp_set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
+    <span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_level</span> <span class="o">=</span> <span class="n">_save_settings</span><span class="p">()</span>
+    <span class="c1"># saved_lang = _temp_set_lang(lang)</span>
 
-    <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">installed</span><span class="p">:</span>
-        <span class="n">saved_level</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">level</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">saved_level</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># normal Python traceback</span>
+    <span class="c1"># if session.installed:</span>
+    <span class="c1">#     saved_level = session.level</span>
+    <span class="c1"># else:</span>
+    <span class="c1">#     saved_level = 0  # normal Python traceback</span>
 
     <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
@@ -198,7 +199,7 @@
             <span class="n">explain_traceback</span><span class="p">()</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">finally</span><span class="p">:</span>
-            <span class="n">_reset</span><span class="p">(</span><span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_level</span><span class="p">)</span>
+            <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_level</span><span class="p">)</span>
 
     <span class="n">cache</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
@@ -211,7 +212,7 @@
         <span class="n">explain_traceback</span><span class="p">()</span>
         <span class="k">return</span> <span class="kc">False</span>
     <span class="k">finally</span><span class="p">:</span>
-        <span class="n">_reset</span><span class="p">(</span><span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_level</span><span class="p">)</span>
+        <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_level</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">code</span><span class="p">,</span> <span class="n">filename</span></div>
 
@@ -247,14 +248,10 @@
     <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
 
+    <span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_level</span> <span class="o">=</span> <span class="n">_save_settings</span><span class="p">()</span>
+
     <span class="n">my_globals</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">code</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-    <span class="n">saved_lang</span> <span class="o">=</span> <span class="n">_temp_set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">installed</span><span class="p">:</span>
-        <span class="n">saved_level</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">level</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">saved_level</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># normal Python traceback</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="n">exec</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">my_globals</span><span class="p">)</span>
@@ -266,7 +263,8 @@
         <span class="n">explain_traceback</span><span class="p">()</span>
         <span class="k">return</span> <span class="kc">False</span>
     <span class="k">finally</span><span class="p">:</span>
-        <span class="n">_reset</span><span class="p">(</span><span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_level</span><span class="p">)</span>
+        <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_level</span><span class="p">)</span>
+
     <span class="k">return</span> <span class="n">my_globals</span></div>
 
 
@@ -287,11 +285,22 @@
     <span class="k">return</span> <span class="n">saved_lang</span>
 
 
-<span class="k">def</span> <span class="nf">_reset</span><span class="p">(</span><span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_level</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_save_settings</span><span class="p">():</span>
+    <span class="n">current_except_hook</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">excepthook</span>
+    <span class="n">current_lang</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">lang</span>
+    <span class="n">current_level</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">level</span>
+
+    <span class="k">return</span> <span class="n">current_except_hook</span><span class="p">,</span> <span class="n">current_lang</span><span class="p">,</span> <span class="n">current_level</span>
+
+
+<span class="k">def</span> <span class="nf">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_level</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Resets both level and lang to their original values&quot;&quot;&quot;</span>
-    <span class="n">session</span><span class="o">.</span><span class="n">set_level</span><span class="p">(</span><span class="n">saved_level</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">saved_lang</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">session</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="n">saved_lang</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">install_gettext</span><span class="p">(</span><span class="n">saved_lang</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">set_level</span><span class="p">(</span><span class="n">saved_level</span><span class="p">)</span>
+    <span class="c1"># set_level(0) restores sys.excepthook to sys.__excepthook__</span>
+    <span class="c1"># which might not be what is wanted. So, we reset sys.excepthook last</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">excepthook</span> <span class="o">=</span> <span class="n">saved_except_hook</span>
 
 
 <span class="c1"># ====================</span>
@@ -747,7 +756,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Friendly tracebacks 0.0.17 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
       </ul>
     </div>

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Friendly tracebacks - en Français &#8212; Friendly tracebacks 0.0.10a documentation</title>
+    <title>Friendly tracebacks - en Français &#8212; Friendly tracebacks 0.0.17 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -32,7 +32,7 @@
         <li class="right" >
           <a href="syntax_tracebacks_en_3.8.html" title="Friendly SyntaxError tracebacks - in English"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.17 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -82,6 +82,8 @@
 <li><a class="reference internal" href="#typeerror-12-object-does-not-support-item-assignment">TypeError - 12: object does not support item assignment</a></li>
 <li><a class="reference internal" href="#typeerror-13-wrong-number-of-positional-arguments">TypeError - 13: wrong number of positional arguments</a></li>
 <li><a class="reference internal" href="#typeerror-14-missing-positional-arguments">TypeError - 14: missing positional arguments</a></li>
+<li><a class="reference internal" href="#typeerror-15-tuple-object-is-not-callable">TypeError - 15: tuple object is not callable</a></li>
+<li><a class="reference internal" href="#typeerror-15a-list-object-is-not-callable">TypeError - 15a: list object is not callable</a></li>
 <li><a class="reference internal" href="#unboundlocalerror">UnboundLocalError</a></li>
 <li><a class="reference internal" href="#unknown-exception">Unknown exception</a></li>
 <li><a class="reference internal" href="#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
@@ -139,7 +141,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.0.10a
+<p>Friendly-traceback version: 0.0.17
 Python version: 3.7.3</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -1190,6 +1192,56 @@ fn: &lt;function test_type_error14.&lt;locals&gt;.fn&gt;
 </pre></div>
 </div>
 </div>
+<div class="section" id="typeerror-15-tuple-object-is-not-callable">
+<h2>TypeError - 15: tuple object is not callable<a class="headerlink" href="#typeerror-15-tuple-object-is-not-callable" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: &#39;tuple&#39; object is not callable
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+Cause probable :
+    I suspect that you had an object of this type, &lt;un tuple&gt;,
+    followed by what looked like a tuple, &#39;(...)&#39;,
+    which Python took as an indication of a function call.
+    Perhaps you had a missing comma before the tuple.
+
+L&#39;exécution s&#39;est arrêtée à la ligne 342 du fichier &#39;TESTS:\test_type_error.py&#39;
+
+   340: def test_type_error15():
+   341:     try:
+--&gt;342:         _ = (1, 2)(3, 4)
+   343:     except Exception:
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-15a-list-object-is-not-callable">
+<h2>TypeError - 15a: list object is not callable<a class="headerlink" href="#typeerror-15a-list-object-is-not-callable" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: &#39;list&#39; object is not callable
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+Cause probable :
+    I suspect that you had an object of this type, &lt;une liste (&#39;list&#39;)&gt;,
+    followed by what looked like a tuple, &#39;(...)&#39;,
+    which Python took as an indication of a function call.
+    Perhaps you had a missing comma before the tuple.
+
+L&#39;exécution s&#39;est arrêtée à la ligne 352 du fichier &#39;TESTS:\test_type_error.py&#39;
+
+   350: def test_type_error15a():
+   351:     try:
+--&gt;352:         _ = [1, 2](3, 4)
+   353:     except Exception:
+</pre></div>
+</div>
+</div>
 <div class="section" id="unboundlocalerror">
 <h2>UnboundLocalError<a class="headerlink" href="#unboundlocalerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
@@ -1319,7 +1371,7 @@ zero: 0
         <li class="right" >
           <a href="syntax_tracebacks_en_3.8.html" title="Friendly SyntaxError tracebacks - in English"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.10a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.17 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
