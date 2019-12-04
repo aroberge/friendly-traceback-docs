@@ -21,7 +21,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.17
+Friendly-traceback version: 0.0.18a
 Python version: 3.7.3
 
 
@@ -1000,3 +1000,32 @@ SyntaxError - unexpected EOF while parsing
             5:     return [1, 2, 3,
         
         
+
+SyntaxError - name is parameter and global
+------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: name 'x' is parameter and global
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error35.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       3: 
+       4: 
+       5: def f(x):
+    -->6:     global x
+             ^
+
+    Ma meilleure hypothèse :
+        You are including the statement
+        
+                global x
+        indicating that 'x' is a variable defined outside a function.
+        At the same time, you are using 'x' as an argument for that
+        function, thus indicating that it should be variable known only
+        inside that function.

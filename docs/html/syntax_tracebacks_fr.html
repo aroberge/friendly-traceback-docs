@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Friendly SyntaxError tracebacks - en Français &#8212; Friendly tracebacks 0.0.17 documentation</title>
+    <title>Friendly SyntaxError tracebacks - en Français &#8212; Friendly tracebacks 0.0.18a documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -32,7 +32,7 @@
         <li class="right" >
           <a href="tracebacks_fr.html" title="Friendly tracebacks - en Français"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.17 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.18a documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -77,6 +77,7 @@
 <li><a class="reference internal" href="#syntaxerror-f-string-unterminated-string">SyntaxError - f-string: unterminated string</a></li>
 <li><a class="reference internal" href="#syntaxerror-unclosed-bracket">SyntaxError - unclosed bracket</a></li>
 <li><a class="reference internal" href="#syntaxerror-unexpected-eof-while-parsing">SyntaxError - unexpected EOF while parsing</a></li>
+<li><a class="reference internal" href="#syntaxerror-name-is-parameter-and-global">SyntaxError - name is parameter and global</a></li>
 </ul>
 </li>
 </ul>
@@ -132,7 +133,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.0.17
+<p>Friendly-traceback version: 0.0.18a
 Python version: 3.7.3</p>
 <div class="section" id="syntaxerror-assign-to-keyword">
 <h2>SyntaxError - Assign to keyword<a class="headerlink" href="#syntaxerror-assign-to-keyword" title="Permalink to this headline">¶</a></h2>
@@ -980,6 +981,33 @@ Ma meilleure hypothèse :
 </pre></div>
 </div>
 </div>
+<div class="section" id="syntaxerror-name-is-parameter-and-global">
+<h2>SyntaxError - name is parameter and global<a class="headerlink" href="#syntaxerror-name-is-parameter-and-global" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: name &#39;x&#39; is parameter and global
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error35.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   3:
+   4:
+   5: def f(x):
+--&gt;6:     global x
+         ^
+
+Ma meilleure hypothèse :
+    You are including the statement
+
+            global x
+    indicating that &#39;x&#39; is a variable defined outside a function.
+    At the same time, you are using &#39;x&#39; as an argument for that
+    function, thus indicating that it should be variable known only
+    inside that function.
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -1003,7 +1031,7 @@ Ma meilleure hypothèse :
         <li class="right" >
           <a href="tracebacks_fr.html" title="Friendly tracebacks - en Français"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.17 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.18a documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

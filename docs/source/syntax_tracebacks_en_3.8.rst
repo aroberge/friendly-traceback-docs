@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.17
+Friendly-traceback version: 0.0.18a
 Python version: 3.8.0
 
 
@@ -989,3 +989,32 @@ SyntaxError - unexpected EOF while parsing
             5:     return [1, 2, 3,
         
         
+
+SyntaxError - name is parameter and global
+------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: name 'x' is parameter and global
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error35.py'
+    beyond the location indicated below by --> and ^.
+    
+       3: 
+       4: 
+       5: def f(x):
+    -->6:     global x
+              ^
+
+    My best guess:
+        You are including the statement
+        
+                global x
+        indicating that 'x' is a variable defined outside a function.
+        At the same time, you are using 'x' as an argument for that
+        function, thus indicating that it should be variable known only
+        inside that function.
