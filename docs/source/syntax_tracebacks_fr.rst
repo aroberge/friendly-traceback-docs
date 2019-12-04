@@ -46,6 +46,10 @@ SyntaxError - Assign to keyword
               ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Vous essayiez d’assigner une valeur au mot clé Python 'def'.
         Ceci n’est pas permis.
         
@@ -71,6 +75,10 @@ SyntaxError - Missing colon 1
                  ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Vous avez écrit un énoncé débutant avec
         'if' mais vous avez oublié d’ajouter deux points ':' à la fin.
         
@@ -96,6 +104,10 @@ SyntaxError - Missing colon 2
                                  ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Vous vouliez débuter une boucle 'while'
         mais vous avez oublié d’ajouter deux points ':' à la fin.
         
@@ -122,6 +134,10 @@ SyntaxError - elif, not else if
                 ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Vous avez écrit 'else if'
         au lieu d'utiliser le mot-clé 'elif'.
         
@@ -148,6 +164,10 @@ SyntaxError - elif, not elseif
                     ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Vous avez écrit 'elseif'
         au lieu d'utiliser le mot-clé 'elif'.
         
@@ -173,6 +193,10 @@ SyntaxError - malformed def statment - 1
               ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Vous vouliez définir une fonction ou une méthode,
         mais vous avez fait des erreurs de syntaxe.
         La syntaxe correcte est:
@@ -200,6 +224,10 @@ SyntaxError - malformed def statment - 2
                     ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Vous vouliez définir une fonction ou une méthode,
         mais vous avez fait des erreurs de syntaxe.
         La syntaxe correcte est:
@@ -227,6 +255,10 @@ SyntaxError - malformed def statment - 3
               ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Vous vouliez définir une fonction ou une méthode,
         mais vous avez fait des erreurs de syntaxe.
         La syntaxe correcte est:
@@ -256,9 +288,9 @@ SyntaxError - can't assign to literal
     Ma meilleure hypothèse :
         Vous avez écrit une expression comme
             1 =  a
-        où <1>, sur le côté gauche du signe égal, est ce que Python
+        où <1>, sur le côté gauche du signe égal, est soit ce que Python
         appelle un 'literal', c'est-à-dire soit une chaîne de caractères ou un nombre,
-        et non le nom d’une variable.  Peut-être que vous vouliez plutôt écrire :
+        ou soit inclus un tel 'literal', et n'est pas un simple nom d’une variable.  Peut-être que vous vouliez plutôt écrire :
             a = 1
         
         
@@ -285,10 +317,9 @@ SyntaxError - can't assign to literal - 2
     Ma meilleure hypothèse :
         Vous avez écrit une expression comme
             1 =  2
-        où <1>, sur le côté gauche du signe égal, est ce que Python
+        où <1>, sur le côté gauche du signe égal, est soit ce que Python
         appelle un 'literal', c'est-à-dire soit une chaîne de caractères ou un nombre,
-        et non le nom d’une variable.
-        
+        ou soit inclus un tel 'literal', et n'est pas un simple nom d’une variable.
         
 
 SyntaxError - import X from Y
@@ -311,6 +342,10 @@ SyntaxError - import X from Y
                         ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Vous avez écrit quelque chose comme
             import pen from turtle
         au lieu de
@@ -415,6 +450,10 @@ SyntaxError - unmatched closing parenthesis
                     ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Le symbole parenthèse ')' à la ligne 6 n'a pas de symbole ouvrant qui lui correspond.
         
             6:     3, 4,))
@@ -441,6 +480,10 @@ SyntaxError - unclosed parenthesis
                    ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Le symbole parenthèse '(' à la ligne 2 n'est pas fermé par le symbole correspondant.
         
             2: x = int('1'
@@ -467,6 +510,10 @@ SyntaxError - unclosed parenthesis - 2
           ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Le symbole parenthèse '(' à la ligne 2 n'est pas fermé par le symbole correspondant.
         
             2: a = (b+c
@@ -492,6 +539,10 @@ SyntaxError - mismatched brackets
                       ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Le symbole crochet ']' à la ligne 2 ne correspond pas au symbole parenthèse '(' à la ligne 2.
         
             2: x = (1, 2, 3]
@@ -518,6 +569,10 @@ SyntaxError - mismatched brackets - 2
                 ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Le symbole crochet ']' à la ligne 4 ne correspond pas au symbole parenthèse '(' à la ligne 2.
         
             2: x = (1,
@@ -570,6 +625,10 @@ SyntaxError - Python keyword as function name
                  ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Vous avez tenté d'utiliser le mot clé Python 'pass' comme nom de fonction.
         Ceci n’est pas permis.
         
@@ -643,6 +702,10 @@ SyntaxError - quote inside a string
                          ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Il semble y avoir un identificateur Python (nom de variable)
         immédiatement après une chaîne.
         Je soupçonne que vous essayiez d'utiliser un apostrophe ou un guillemet
@@ -670,8 +733,12 @@ SyntaxError - missing comma in a dict
                  ^
 
     Ma meilleure hypothèse :
-        It is possible that you forgot a comma between items in a set or dict
-        before the position indicated by --> and ^.
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
+        Il est possible que vous ayez oublié une virgule entre les éléments d'un ensemble (set)
+        ou un dict avant la position indiquée par --> et ^.
         
 
 SyntaxError - missing comma in a set
@@ -694,8 +761,12 @@ SyntaxError - missing comma in a set
                      ^
 
     Ma meilleure hypothèse :
-        It is possible that you forgot a comma between items in a set or dict
-        before the position indicated by --> and ^.
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
+        Il est possible que vous ayez oublié une virgule entre les éléments d'un ensemble (set)
+        ou un dict avant la position indiquée par --> et ^.
         
 
 SyntaxError - missing comma in a list
@@ -718,6 +789,10 @@ SyntaxError - missing comma in a list
                      ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Il est possible que vous ayez oublié une virgule entre les éléments d'une liste
         avant la position indiquée par --> et ^.
         
@@ -742,6 +817,10 @@ SyntaxError - missing comma in a tuple
                      ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Il est possible que vous ayez oublié une virgule entre les éléments d'un tuple,
         ou entre les arguments d'une fonction, avant la position indiquée par --> et ^.
         
@@ -767,6 +846,10 @@ SyntaxError - missing comma between function args
                      ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Il est possible que vous ayez oublié une virgule entre les éléments d'un tuple,
         ou entre les arguments d'une fonction, avant la position indiquée par --> et ^.
         
@@ -792,10 +875,12 @@ SyntaxError - can't assign to function call - 1
          ^
 
     Ma meilleure hypothèse :
-        You wrote an expression like
-            len('a') = 3
-        where len('a'), on the left hand-side of the equal sign, is
-        a function call and not the name of a variable.
+        Vous avez écrit une expression comme
+            len('a') =  3
+        où len('a'), à la gauche du signe d'égalité est soit l'invocation
+        d'une fonction, ou inclus une telle invocation,
+        et n'est pas simplement le nom d'une variable.
+        
 
 SyntaxError - can't assign to function call - 2
 -----------------------------------------------
@@ -818,10 +903,11 @@ SyntaxError - can't assign to function call - 2
          ^
 
     Ma meilleure hypothèse :
-        You wrote an expression like
-            my_function(...) = some value
-        where my_function(...), on the left hand-side of the equal sign, is
-        a function call and not the name of a variable.
+        Vous avez écrit une expression comme
+            ma_fonction(…) =  une certaine valeur
+        où ma_fonction(…), du côté gauche du signe d'égalité
+        est une fonction et non le nom d’une variable.
+        
 
 SyntaxError - used equal sign instead of colon
 ----------------------------------------------
@@ -844,9 +930,13 @@ SyntaxError - used equal sign instead of colon
                          ^
 
     Ma meilleure hypothèse :
-        It is possible that you used an equal sign '=' instead of a colon ':'
-        to assign values to keys in a dict
-        before or at the position indicated by --> and ^.
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
+        Il est possible que vous ayez utilisé un signe d'égalité (=) au lieu de deux points (:)
+        pour attribuer des valeurs à une clé d'un dictionnaire
+        avant ou exactement à la position indiquée par --> et ^.
         
 
 SyntaxError - non-default argument follows default argument
@@ -870,20 +960,22 @@ SyntaxError - non-default argument follows default argument
                   ^
 
     Ma meilleure hypothèse :
-        In Python, you can define functions with only positional arguments
+        Dans Python, vous pouvez définir les fonctions avec seulement des arguments de position
         
             def test(a, b, c): ...
         
-        or only keyword arguments
+        
+        ou seulement des arguments nommés
         
             def test(a=1, b=2, c=3): ...
         
-        or a combination of the two
+        ou une combinaison des deux
         
             def test(a, b, c=3): ...
         
-        but with the keyword arguments appearing after all the positional ones.
-        According to Python, you used positional arguments after keyword ones.
+        
+        mais avec les arguments nommés apparaissant après tous les arguments positionnels.
+        Selon Python, vous avez utilisé des arguments positionnels après des arguments nommés.
         
 
 SyntaxError - positional argument follows keyword argument
@@ -907,20 +999,20 @@ SyntaxError - positional argument follows keyword argument
                    ^
 
     Ma meilleure hypothèse :
-        In Python, you can call functions with only positional arguments
+        Dans Python, vous pouvez invoquer les fonctions avec seulement des arguments de position
         
             test(1, 2, 3)
         
-        or only keyword arguments
+        ou seulement des arguments nommés
         
-            test(a=1, b=2, c=3)
+            test (a=1, b=2, c=3)
         
-        or a combination of the two
+        ou une combinaison des deux
         
             test(1, 2, c=3)
         
-        but with the keyword arguments appearing after all the positional ones.
-        According to Python, you used positional arguments after keyword ones.
+        mais avec les arguments nommés apparaissant après tous les arguments positionnels.
+        Selon Python, vous avez utilisé des arguments positionnels après des arguments nommés.
         
 
 SyntaxError - f-string: unterminated string
@@ -944,9 +1036,9 @@ SyntaxError - f-string: unterminated string
                ^
 
     Ma meilleure hypothèse :
-        Inside an f-string, which is a string prefixed by the letter f, 
-        you have another string, which starts with either a
-        single quote (') or double quote ("), without a matching closing one.
+        À l'intérieur d'une "f-string", qui est une chaîne de caractères préfixée de la lettre f,
+        vous avez une autre chaîne de caractère qui débute soit avec un apostrophe (')
+        ou des guillemets ("), mais n'est pas terminé par un autre caractère semblable.
         
 
 SyntaxError - unclosed bracket
@@ -970,6 +1062,10 @@ SyntaxError - unclosed bracket
                ^
 
     Ma meilleure hypothèse :
+        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
         Le symbole crochet '[' à la ligne 5 n'est pas fermé par le symbole correspondant.
         
             5:     return [1, 2, 3
@@ -987,14 +1083,23 @@ SyntaxError - unexpected EOF while parsing
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error34.py'.
-    It reached the end of the file and expected more content.
+    Python ne peut pas analyser correctement le fichier 'TESTS:\syntax\raise_syntax_error34.py'.
+    La fin du fichier a été atteinte et Python s'attendait à voir plus de code.
+    
     
         5:     return [1, 2, 3,
         6: 
         7: print(foo())
 
     Ma meilleure hypothèse :
+        Important: Python nous a donné le message d'information suivant
+        sur la cause possible de l'erreur :
+        
+            unexpected EOF while parsing
+        
+        Cependant, nous ne reconnaissons pas cette information.
+        Nous allons tenter ce deviner la cause de l'erreur
+        mais il est possible que nous allons deviner incorrectement.
         Le symbole crochet '[' à la ligne 5 n'est pas fermé par le symbole correspondant.
         
             5:     return [1, 2, 3,
@@ -1022,10 +1127,12 @@ SyntaxError - name is parameter and global
              ^
 
     Ma meilleure hypothèse :
-        You are including the statement
+        Vous avec inclus l'énoncé
         
                 global x
-        indicating that 'x' is a variable defined outside a function.
-        At the same time, you are using 'x' as an argument for that
-        function, thus indicating that it should be variable known only
-        inside that function.
+        
+        indiquant que 'x' est une variable définie en dehors d'une fonction.
+        Vous utilisez également le même 'x' comme un argument pour cette
+        fonction; un argument de fonction est une variable locale connue seulement
+        à l'intérieur de cette fonction, ce qui est le contraire de ce que «global» sous-entendait.
+        

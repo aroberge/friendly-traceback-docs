@@ -43,6 +43,10 @@ SyntaxError - Assign to keyword
               ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         You were trying to assign a value to the Python keyword 'def'.
         This is not allowed.
         
@@ -68,6 +72,10 @@ SyntaxError - Missing colon 1
                  ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         You wrote a statement beginning with
         'if' but forgot to add a colon ':' at the end
         
@@ -93,6 +101,10 @@ SyntaxError - Missing colon 2
                       ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         You wrote a 'while' loop but
         forgot to add a colon ':' at the end
         
@@ -119,6 +131,10 @@ SyntaxError - elif, not else if
                ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         You meant to use Python's 'elif' keyword
         but wrote 'else if' instead
         
@@ -145,6 +161,10 @@ SyntaxError - elif, not elseif
                  ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         You meant to use Python's 'elif' keyword
         but wrote 'elseif' instead
         
@@ -170,6 +190,10 @@ SyntaxError - malformed def statment - 1
               ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         You tried to define a function or method
         and did not use the correct syntax.
         The correct syntax is:
@@ -196,6 +220,10 @@ SyntaxError - malformed def statment - 2
                     ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         You tried to define a function or method
         and did not use the correct syntax.
         The correct syntax is:
@@ -222,6 +250,10 @@ SyntaxError - malformed def statment - 3
               ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         You tried to define a function or method
         and did not use the correct syntax.
         The correct syntax is:
@@ -251,7 +283,7 @@ SyntaxError - can't assign to literal
         You wrote an expression like
             1 = a
         where <1>, on the left hand-side of the equal sign, is
-        an actual number or string (what Python calls a 'literal'),
+        or includes an actual number or string (what Python calls a 'literal'),
         and not the name of a variable. Perhaps you meant to write:
             a = 1
         
@@ -280,9 +312,8 @@ SyntaxError - can't assign to literal - 2
         You wrote an expression like
             1 = 2
         where <1>, on the left hand-side of the equal sign, is
-        an actual number or string (what Python calls a 'literal'),
+        or includes an actual number or string (what Python calls a 'literal'),
         and not the name of a variable.
-        
         
 
 SyntaxError - import X from Y
@@ -305,6 +336,10 @@ SyntaxError - import X from Y
                      ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         You wrote something like
             import pen from turtle
         instead of
@@ -430,6 +465,10 @@ SyntaxError - unclosed parenthesis
                    ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         The opening parenthesis '(' on line 2 is not closed.
         
             2: x = int('1'
@@ -456,6 +495,10 @@ SyntaxError - unclosed parenthesis - 2
           ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         The opening parenthesis '(' on line 2 is not closed.
         
             2: a = (b+c
@@ -481,6 +524,14 @@ SyntaxError - mismatched brackets
                       ^
 
     My best guess:
+        Important: Python gave us the following informative message
+        about the possible cause of the error:
+        
+            closing parenthesis ']' does not match opening parenthesis '('
+        
+        However, we do not recognize this information and we have
+        to guess what went wrong, but we might guess incorrectly.
+        
         The closing square bracket ']' on line 2 does not match the opening parenthesis '(' on line 2.
         
             2: x = (1, 2, 3]
@@ -507,6 +558,14 @@ SyntaxError - mismatched brackets - 2
                 ^
 
     My best guess:
+        Important: Python gave us the following informative message
+        about the possible cause of the error:
+        
+            closing parenthesis ']' does not match opening parenthesis '(' on line 2
+        
+        However, we do not recognize this information and we have
+        to guess what went wrong, but we might guess incorrectly.
+        
         The closing square bracket ']' on line 4 does not match the opening parenthesis '(' on line 2.
         
             2: x = (1,
@@ -559,6 +618,10 @@ SyntaxError - Python keyword as function name
               ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         You tried to use the Python keyword 'pass' as a function name.
         
 
@@ -630,6 +693,10 @@ SyntaxError - quote inside a string
                          ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         There appears to be a Python identifier (variable name)
         immediately following a string.
         I suspect that you were trying to use a quote inside a string
@@ -657,6 +724,10 @@ SyntaxError - missing comma in a dict
                ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         It is possible that you forgot a comma between items in a set or dict
         before the position indicated by --> and ^.
         
@@ -681,6 +752,10 @@ SyntaxError - missing comma in a set
                      ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         It is possible that you forgot a comma between items in a set or dict
         before the position indicated by --> and ^.
         
@@ -705,6 +780,10 @@ SyntaxError - missing comma in a list
                      ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         It is possible that you forgot a comma between items in a list
         before the position indicated by --> and ^.
         
@@ -729,6 +808,10 @@ SyntaxError - missing comma in a tuple
                      ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         It is possible that you forgot a comma between items in a tuple, 
         or between function arguments, 
         before the position indicated by --> and ^.
@@ -755,6 +838,10 @@ SyntaxError - missing comma between function args
                      ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         It is possible that you forgot a comma between items in a tuple, 
         or between function arguments, 
         before the position indicated by --> and ^.
@@ -781,10 +868,11 @@ SyntaxError - can't assign to function call - 1
           ^
 
     My best guess:
-        You wrote an expression like
+        You wrote the expression
             len('a') = 3
-        where len('a'), on the left hand-side of the equal sign, is
-        a function call and not the name of a variable.
+        where len('a'), on the left hand-side of the equal sign, either is
+        or includes a function call and is not simply the name of a variable.
+        
 
 SyntaxError - can't assign to function call - 2
 -----------------------------------------------
@@ -811,6 +899,7 @@ SyntaxError - can't assign to function call - 2
             my_function(...) = some value
         where my_function(...), on the left hand-side of the equal sign, is
         a function call and not the name of a variable.
+        
 
 SyntaxError - used equal sign instead of colon
 ----------------------------------------------
@@ -833,6 +922,10 @@ SyntaxError - used equal sign instead of colon
                          ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         It is possible that you used an equal sign '=' instead of a colon ':'
         to assign values to keys in a dict
         before or at the position indicated by --> and ^.
@@ -959,6 +1052,10 @@ SyntaxError - unclosed bracket
            ^
 
     My best guess:
+        Important: Python did not give us much information regarding
+        the cause of the error. We make an effort below to guess what
+        went wrong, but we might guess incorrectly.
+        
         The opening square bracket '[' on line 5 is not closed.
         
             5:     return [1, 2, 3
@@ -984,6 +1081,14 @@ SyntaxError - unexpected EOF while parsing
         7: print(foo())
 
     My best guess:
+        Important: Python gave us the following informative message
+        about the possible cause of the error:
+        
+            unexpected EOF while parsing
+        
+        However, we do not recognize this information and we have
+        to guess what went wrong, but we might guess incorrectly.
+        
         The opening square bracket '[' on line 5 is not closed.
         
             5:     return [1, 2, 3,
@@ -1014,7 +1119,9 @@ SyntaxError - name is parameter and global
         You are including the statement
         
                 global x
+        
         indicating that 'x' is a variable defined outside a function.
-        At the same time, you are using 'x' as an argument for that
+        You are also using the same 'x' as an argument for that
         function, thus indicating that it should be variable known only
-        inside that function.
+        inside that function, which is the contrary of what 'global' implied.
+        

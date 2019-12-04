@@ -1213,10 +1213,10 @@ TypeError - 15: tuple object is not callable
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
-        I suspect that you had an object of this type, <un tuple>,
-        followed by what looked like a tuple, '(...)',
-        which Python took as an indication of a function call.
-        Perhaps you had a missing comma before the tuple.
+        Je soupçonne que vous aviez un objet du type <un tuple>,
+        suivi de ce qui ressemblait à un tuple, '(...) ',
+        que Python a pris comme indiquant une invocation de fonction.
+        Il est possible que vous ayez oublié d'écrire une virgule avant le tuple.
         
     L'exécution s'est arrêtée à la ligne 342 du fichier 'TESTS:\test_type_error.py'
     
@@ -1241,10 +1241,10 @@ TypeError - 15a: list object is not callable
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable :
-        I suspect that you had an object of this type, <une liste ('list')>,
-        followed by what looked like a tuple, '(...)',
-        which Python took as an indication of a function call.
-        Perhaps you had a missing comma before the tuple.
+        Je soupçonne que vous aviez un objet du type <une liste ('list')>,
+        suivi de ce qui ressemblait à un tuple, '(...) ',
+        que Python a pris comme indiquant une invocation de fonction.
+        Il est possible que vous ayez oublié d'écrire une virgule avant le tuple.
         
     L'exécution s'est arrêtée à la ligne 352 du fichier 'TESTS:\test_type_error.py'
     
