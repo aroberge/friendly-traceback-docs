@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Friendly SyntaxError tracebacks - in English &#8212; Friendly tracebacks 0.0.18a documentation</title>
+    <title>Friendly SyntaxError tracebacks - in English &#8212; Friendly tracebacks 0.0.19a documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -32,7 +32,7 @@
         <li class="right" >
           <a href="tracebacks_en_3.7.html" title="Friendly tracebacks - in English"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.18a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.19a documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -78,6 +78,8 @@
 <li><a class="reference internal" href="#syntaxerror-unclosed-bracket">SyntaxError - unclosed bracket</a></li>
 <li><a class="reference internal" href="#syntaxerror-unexpected-eof-while-parsing">SyntaxError - unexpected EOF while parsing</a></li>
 <li><a class="reference internal" href="#syntaxerror-name-is-parameter-and-global">SyntaxError - name is parameter and global</a></li>
+<li><a class="reference internal" href="#syntaxerror-keyword-as-attribute">SyntaxError - keyword as attribute</a></li>
+<li><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
 </ul>
@@ -130,7 +132,7 @@ On Windows, if Sphinx is installed on your computer, it is suggested
 instead to run make_trb.bat in the root directory as it will create
 similar files for all languages <em>and</em> update the documentation.</p>
 </div>
-<p>Friendly-traceback version: 0.0.18a
+<p>Friendly-traceback version: 0.0.19a
 Python version: 3.7.3</p>
 <div class="section" id="syntaxerror-assign-to-keyword">
 <h2>SyntaxError - Assign to keyword<a class="headerlink" href="#syntaxerror-assign-to-keyword" title="Permalink to this headline">¶</a></h2>
@@ -148,9 +150,9 @@ beyond the location indicated below by --&gt; and ^.
           ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     You were trying to assign a value to the Python keyword &#39;def&#39;.
     This is not allowed.
@@ -173,9 +175,9 @@ beyond the location indicated below by --&gt; and ^.
              ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     You wrote a statement beginning with
     &#39;if&#39; but forgot to add a colon &#39;:&#39; at the end
@@ -198,9 +200,9 @@ beyond the location indicated below by --&gt; and ^.
                              ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     You wrote a &#39;while&#39; loop but
     forgot to add a colon &#39;:&#39; at the end
@@ -224,9 +226,9 @@ beyond the location indicated below by --&gt; and ^.
             ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     You meant to use Python&#39;s &#39;elif&#39; keyword
     but wrote &#39;else if&#39; instead
@@ -250,9 +252,9 @@ beyond the location indicated below by --&gt; and ^.
                 ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     You meant to use Python&#39;s &#39;elif&#39; keyword
     but wrote &#39;elseif&#39; instead
@@ -275,9 +277,9 @@ beyond the location indicated below by --&gt; and ^.
           ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     You tried to define a function or method
     and did not use the correct syntax.
@@ -302,9 +304,9 @@ beyond the location indicated below by --&gt; and ^.
                 ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     You tried to define a function or method
     and did not use the correct syntax.
@@ -329,9 +331,9 @@ beyond the location indicated below by --&gt; and ^.
           ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     You tried to define a function or method
     and did not use the correct syntax.
@@ -405,9 +407,9 @@ beyond the location indicated below by --&gt; and ^.
                     ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     You wrote something like
         import pen from turtle
@@ -496,9 +498,9 @@ beyond the location indicated below by --&gt; and ^.
                 ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     The closing parenthesis &#39;)&#39; on line 6 does not match anything.
 
@@ -522,9 +524,9 @@ beyond the location indicated below by --&gt; and ^.
                ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     The opening parenthesis &#39;(&#39; on line 2 is not closed.
 
@@ -548,9 +550,9 @@ beyond the location indicated below by --&gt; and ^.
       ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     The opening parenthesis &#39;(&#39; on line 2 is not closed.
 
@@ -573,9 +575,9 @@ beyond the location indicated below by --&gt; and ^.
                   ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     The closing square bracket &#39;]&#39; on line 2 does not match the opening parenthesis &#39;(&#39; on line 2.
 
@@ -600,9 +602,9 @@ beyond the location indicated below by --&gt; and ^.
             ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     The closing square bracket &#39;]&#39; on line 4 does not match the opening parenthesis &#39;(&#39; on line 2.
 
@@ -650,9 +652,9 @@ beyond the location indicated below by --&gt; and ^.
              ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     You tried to use the Python keyword &#39;pass&#39; as a function name.
 </pre></div>
@@ -716,9 +718,9 @@ beyond the location indicated below by --&gt; and ^.
                      ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     There appears to be a Python identifier (variable name)
     immediately following a string.
@@ -744,9 +746,9 @@ beyond the location indicated below by --&gt; and ^.
              ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     It is possible that you forgot a comma between items in a set or dict
     before the position indicated by --&gt; and ^.
@@ -769,9 +771,9 @@ beyond the location indicated below by --&gt; and ^.
                  ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     It is possible that you forgot a comma between items in a set or dict
     before the position indicated by --&gt; and ^.
@@ -794,9 +796,9 @@ beyond the location indicated below by --&gt; and ^.
                  ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     It is possible that you forgot a comma between items in a list
     before the position indicated by --&gt; and ^.
@@ -819,9 +821,9 @@ beyond the location indicated below by --&gt; and ^.
                  ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     It is possible that you forgot a comma between items in a tuple,
     or between function arguments,
@@ -846,9 +848,9 @@ beyond the location indicated below by --&gt; and ^.
                  ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     It is possible that you forgot a comma between items in a tuple,
     or between function arguments,
@@ -921,9 +923,9 @@ beyond the location indicated below by --&gt; and ^.
                      ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     It is possible that you used an equal sign &#39;=&#39; instead of a colon &#39;:&#39;
     to assign values to keys in a dict
@@ -1039,9 +1041,9 @@ beyond the location indicated below by --&gt; and ^.
            ^
 
 My best guess:
-    Important: Python did not give us much information regarding
-    the cause of the error. We make an effort below to guess what
-    went wrong, but we might guess incorrectly.
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
 
     The opening square bracket &#39;[&#39; on line 5 is not closed.
 
@@ -1064,13 +1066,13 @@ It reached the end of the file and expected more content.
     7: print(foo())
 
 My best guess:
-    Important: Python gave us the following informative message
+    Python gave us the following informative message
     about the possible cause of the error:
 
         unexpected EOF while parsing
 
-    However, we do not recognize this information and we have
-    to guess what went wrong, but we might guess incorrectly.
+    However, I do not recognize this information and I have
+    to guess what went wrong, but I might guess incorrectly.
 
     The opening square bracket &#39;[&#39; on line 5 is not closed.
 
@@ -1106,6 +1108,57 @@ My best guess:
 </pre></div>
 </div>
 </div>
+<div class="section" id="syntaxerror-keyword-as-attribute">
+<h2>SyntaxError - keyword as attribute<a class="headerlink" href="#syntaxerror-keyword-as-attribute" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error36.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    9: a = A()
+   10:
+   11: a.x = 1
+--&gt;12: a.pass = 2
+            ^
+
+My best guess:
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
+
+    You cannot use the Python keyword pass as an attribute.
+</pre></div>
+</div>
+</div>
+<div class="section" id="walrus-operator-does-not-exist-yet">
+<h2>Walrus operator does not exist - yet<a class="headerlink" href="#walrus-operator-does-not-exist-yet" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error_walrus.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Prior to Python 3.8, this should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: print(walrus := True)
+                   ^
+
+My best guess:
+    Python did not give us much information regarding
+    the cause of the error. I make an effort below to guess what
+    went wrong, but I might guess incorrectly.
+
+    You appear to be using the operator :=, sometimes called
+    the walrus operator. This operator requires the use of
+    Python 3.8 or newer. You are using version 3.7.
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -1129,7 +1182,7 @@ My best guess:
         <li class="right" >
           <a href="tracebacks_en_3.7.html" title="Friendly tracebacks - in English"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.18a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.19a documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

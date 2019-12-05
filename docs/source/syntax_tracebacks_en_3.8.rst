@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.18a
+Friendly-traceback version: 0.0.19a
 Python version: 3.8.0
 
 
@@ -43,9 +43,9 @@ SyntaxError - Assign to keyword
               ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         You were trying to assign a value to the Python keyword 'def'.
         This is not allowed.
@@ -72,9 +72,9 @@ SyntaxError - Missing colon 1
                  ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         You wrote a statement beginning with
         'if' but forgot to add a colon ':' at the end
@@ -101,9 +101,9 @@ SyntaxError - Missing colon 2
                       ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         You wrote a 'while' loop but
         forgot to add a colon ':' at the end
@@ -131,9 +131,9 @@ SyntaxError - elif, not else if
                ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         You meant to use Python's 'elif' keyword
         but wrote 'else if' instead
@@ -161,9 +161,9 @@ SyntaxError - elif, not elseif
                  ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         You meant to use Python's 'elif' keyword
         but wrote 'elseif' instead
@@ -190,9 +190,9 @@ SyntaxError - malformed def statment - 1
               ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         You tried to define a function or method
         and did not use the correct syntax.
@@ -220,9 +220,9 @@ SyntaxError - malformed def statment - 2
                     ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         You tried to define a function or method
         and did not use the correct syntax.
@@ -250,9 +250,9 @@ SyntaxError - malformed def statment - 3
               ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         You tried to define a function or method
         and did not use the correct syntax.
@@ -336,9 +336,9 @@ SyntaxError - import X from Y
                      ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         You wrote something like
             import pen from turtle
@@ -465,9 +465,9 @@ SyntaxError - unclosed parenthesis
                    ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         The opening parenthesis '(' on line 2 is not closed.
         
@@ -495,9 +495,9 @@ SyntaxError - unclosed parenthesis - 2
           ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         The opening parenthesis '(' on line 2 is not closed.
         
@@ -524,13 +524,13 @@ SyntaxError - mismatched brackets
                       ^
 
     My best guess:
-        Important: Python gave us the following informative message
+        Python gave us the following informative message
         about the possible cause of the error:
         
             closing parenthesis ']' does not match opening parenthesis '('
         
-        However, we do not recognize this information and we have
-        to guess what went wrong, but we might guess incorrectly.
+        However, I do not recognize this information and I have
+        to guess what went wrong, but I might guess incorrectly.
         
         The closing square bracket ']' on line 2 does not match the opening parenthesis '(' on line 2.
         
@@ -558,13 +558,13 @@ SyntaxError - mismatched brackets - 2
                 ^
 
     My best guess:
-        Important: Python gave us the following informative message
+        Python gave us the following informative message
         about the possible cause of the error:
         
             closing parenthesis ']' does not match opening parenthesis '(' on line 2
         
-        However, we do not recognize this information and we have
-        to guess what went wrong, but we might guess incorrectly.
+        However, I do not recognize this information and I have
+        to guess what went wrong, but I might guess incorrectly.
         
         The closing square bracket ']' on line 4 does not match the opening parenthesis '(' on line 2.
         
@@ -618,9 +618,9 @@ SyntaxError - Python keyword as function name
               ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         You tried to use the Python keyword 'pass' as a function name.
         
@@ -693,9 +693,9 @@ SyntaxError - quote inside a string
                          ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         There appears to be a Python identifier (variable name)
         immediately following a string.
@@ -724,9 +724,9 @@ SyntaxError - missing comma in a dict
                ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         It is possible that you forgot a comma between items in a set or dict
         before the position indicated by --> and ^.
@@ -752,9 +752,9 @@ SyntaxError - missing comma in a set
                      ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         It is possible that you forgot a comma between items in a set or dict
         before the position indicated by --> and ^.
@@ -780,9 +780,9 @@ SyntaxError - missing comma in a list
                      ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         It is possible that you forgot a comma between items in a list
         before the position indicated by --> and ^.
@@ -808,9 +808,9 @@ SyntaxError - missing comma in a tuple
                      ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         It is possible that you forgot a comma between items in a tuple, 
         or between function arguments, 
@@ -838,9 +838,9 @@ SyntaxError - missing comma between function args
                      ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         It is possible that you forgot a comma between items in a tuple, 
         or between function arguments, 
@@ -922,9 +922,9 @@ SyntaxError - used equal sign instead of colon
                          ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         It is possible that you used an equal sign '=' instead of a colon ':'
         to assign values to keys in a dict
@@ -1052,9 +1052,9 @@ SyntaxError - unclosed bracket
            ^
 
     My best guess:
-        Important: Python did not give us much information regarding
-        the cause of the error. We make an effort below to guess what
-        went wrong, but we might guess incorrectly.
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
         
         The opening square bracket '[' on line 5 is not closed.
         
@@ -1081,13 +1081,13 @@ SyntaxError - unexpected EOF while parsing
         7: print(foo())
 
     My best guess:
-        Important: Python gave us the following informative message
+        Python gave us the following informative message
         about the possible cause of the error:
         
             unexpected EOF while parsing
         
-        However, we do not recognize this information and we have
-        to guess what went wrong, but we might guess incorrectly.
+        However, I do not recognize this information and I have
+        to guess what went wrong, but I might guess incorrectly.
         
         The opening square bracket '[' on line 5 is not closed.
         
@@ -1124,4 +1124,33 @@ SyntaxError - name is parameter and global
         You are also using the same 'x' as an argument for that
         function, thus indicating that it should be variable known only
         inside that function, which is the contrary of what 'global' implied.
+        
+
+SyntaxError - keyword as attribute
+----------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error36.py'
+    beyond the location indicated below by --> and ^.
+    
+        9: a = A()
+       10: 
+       11: a.x = 1
+    -->12: a.pass = 2
+             ^
+
+    My best guess:
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
+        
+        You cannot use the Python keyword pass as an attribute.
+        
         

@@ -1,11 +1,15 @@
 Change Log
 ============
 
-.. note::
+Version < 0.1
+-------------
 
-    Unless otherwise noted, "with translation" means with French translation.
+Recording of changes interrupted until Version 0.1 as it is found 
+to not add value to the development nor to any users of this
+pre-alpha version.
 
-
+Version 0.0.9
+-------------
 
 - Improved one case for SyntaxError
 - Added 5 new cases for TypeError

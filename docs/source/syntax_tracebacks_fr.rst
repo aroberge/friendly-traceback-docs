@@ -21,7 +21,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.18a
+Friendly-traceback version: 0.0.19a
 Python version: 3.7.3
 
 
@@ -46,7 +46,7 @@ SyntaxError - Assign to keyword
               ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -75,7 +75,7 @@ SyntaxError - Missing colon 1
                  ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -104,7 +104,7 @@ SyntaxError - Missing colon 2
                                  ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -134,7 +134,7 @@ SyntaxError - elif, not else if
                 ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -164,7 +164,7 @@ SyntaxError - elif, not elseif
                     ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -193,7 +193,7 @@ SyntaxError - malformed def statment - 1
               ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -224,7 +224,7 @@ SyntaxError - malformed def statment - 2
                     ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -255,7 +255,7 @@ SyntaxError - malformed def statment - 3
               ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -342,7 +342,7 @@ SyntaxError - import X from Y
                         ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -450,7 +450,7 @@ SyntaxError - unmatched closing parenthesis
                     ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -480,7 +480,7 @@ SyntaxError - unclosed parenthesis
                    ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -510,7 +510,7 @@ SyntaxError - unclosed parenthesis - 2
           ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -539,7 +539,7 @@ SyntaxError - mismatched brackets
                       ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -569,7 +569,7 @@ SyntaxError - mismatched brackets - 2
                 ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -625,7 +625,7 @@ SyntaxError - Python keyword as function name
                  ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -702,7 +702,7 @@ SyntaxError - quote inside a string
                          ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -733,7 +733,7 @@ SyntaxError - missing comma in a dict
                  ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -761,7 +761,7 @@ SyntaxError - missing comma in a set
                      ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -789,7 +789,7 @@ SyntaxError - missing comma in a list
                      ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -817,7 +817,7 @@ SyntaxError - missing comma in a tuple
                      ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -846,7 +846,7 @@ SyntaxError - missing comma between function args
                      ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -930,7 +930,7 @@ SyntaxError - used equal sign instead of colon
                          ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -1062,7 +1062,7 @@ SyntaxError - unclosed bracket
                ^
 
     Ma meilleure hypothèse :
-        Important: Python ne nous a pas donné beaucoup d'informations concernant
+        Python ne nous a pas donné beaucoup d'informations concernant
         la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
@@ -1092,7 +1092,7 @@ SyntaxError - unexpected EOF while parsing
         7: print(foo())
 
     Ma meilleure hypothèse :
-        Important: Python nous a donné le message d'information suivant
+        Python nous a donné le message d'information suivant
         sur la cause possible de l'erreur :
         
             unexpected EOF while parsing
@@ -1100,6 +1100,7 @@ SyntaxError - unexpected EOF while parsing
         Cependant, nous ne reconnaissons pas cette information.
         Nous allons tenter ce deviner la cause de l'erreur
         mais il est possible que nous allons deviner incorrectement.
+        
         Le symbole crochet '[' à la ligne 5 n'est pas fermé par le symbole correspondant.
         
             5:     return [1, 2, 3,
@@ -1135,4 +1136,64 @@ SyntaxError - name is parameter and global
         Vous utilisez également le même 'x' comme un argument pour cette
         fonction; un argument de fonction est une variable locale connue seulement
         à l'intérieur de cette fonction, ce qui est le contraire de ce que «global» sous-entendait.
+        
+
+SyntaxError - keyword as attribute
+----------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error36.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+        9: a = A()
+       10: 
+       11: a.x = 1
+    -->12: a.pass = 2
+                ^
+
+    Ma meilleure hypothèse :
+        Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
+        Vous avez tenté d'utiliser le mot clé Python 'pass' comme attribut.
+        Ceci n’est pas permis.
+        
+        
+
+Walrus operator does not exist - yet
+------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error_walrus.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Prior to Python 3.8, this should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: print(walrus := True)
+                       ^
+
+    Ma meilleure hypothèse :
+        Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
+        Vous semblez utiliser l'opérateur :=, parfois appelé l'opérateur morse
+        (walrus operator, en anglais). Cet opérateur nécessite l'utilisation de
+        Python 3.8 ou une version plus récente. Vous utilisez la version  3.7.
+        
         

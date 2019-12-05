@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Friendly SyntaxError tracebacks - en Français &#8212; Friendly tracebacks 0.0.18a documentation</title>
+    <title>Friendly SyntaxError tracebacks - en Français &#8212; Friendly tracebacks 0.0.19a documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -32,7 +32,7 @@
         <li class="right" >
           <a href="tracebacks_fr.html" title="Friendly tracebacks - en Français"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.18a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.19a documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -78,6 +78,8 @@
 <li><a class="reference internal" href="#syntaxerror-unclosed-bracket">SyntaxError - unclosed bracket</a></li>
 <li><a class="reference internal" href="#syntaxerror-unexpected-eof-while-parsing">SyntaxError - unexpected EOF while parsing</a></li>
 <li><a class="reference internal" href="#syntaxerror-name-is-parameter-and-global">SyntaxError - name is parameter and global</a></li>
+<li><a class="reference internal" href="#syntaxerror-keyword-as-attribute">SyntaxError - keyword as attribute</a></li>
+<li><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
 </ul>
@@ -133,7 +135,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.0.18a
+<p>Friendly-traceback version: 0.0.19a
 Python version: 3.7.3</p>
 <div class="section" id="syntaxerror-assign-to-keyword">
 <h2>SyntaxError - Assign to keyword<a class="headerlink" href="#syntaxerror-assign-to-keyword" title="Permalink to this headline">¶</a></h2>
@@ -151,7 +153,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
           ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -176,7 +178,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
              ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -201,7 +203,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                              ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -227,7 +229,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
             ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -253,7 +255,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                 ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -278,7 +280,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
           ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -305,7 +307,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                 ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -332,7 +334,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
           ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -408,7 +410,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                     ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -500,7 +502,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                 ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -526,7 +528,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -552,7 +554,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
       ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -577,7 +579,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                   ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -604,7 +606,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
             ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -654,7 +656,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
              ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -721,7 +723,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                      ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -749,7 +751,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
              ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -774,7 +776,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                  ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -799,7 +801,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                  ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -824,7 +826,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                  ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -850,7 +852,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                  ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -925,7 +927,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                      ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -1045,7 +1047,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
            ^
 
 Ma meilleure hypothèse :
-    Important: Python ne nous a pas donné beaucoup d&#39;informations concernant
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
     la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
     a mal tourné, mais nous pourrions deviner incorrectement.
 
@@ -1071,7 +1073,7 @@ La fin du fichier a été atteinte et Python s&#39;attendait à voir plus de cod
     7: print(foo())
 
 Ma meilleure hypothèse :
-    Important: Python nous a donné le message d&#39;information suivant
+    Python nous a donné le message d&#39;information suivant
     sur la cause possible de l&#39;erreur :
 
         unexpected EOF while parsing
@@ -1079,6 +1081,7 @@ Ma meilleure hypothèse :
     Cependant, nous ne reconnaissons pas cette information.
     Nous allons tenter ce deviner la cause de l&#39;erreur
     mais il est possible que nous allons deviner incorrectement.
+
     Le symbole crochet &#39;[&#39; à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
 
         5:     return [1, 2, 3,
@@ -1113,6 +1116,58 @@ Ma meilleure hypothèse :
 </pre></div>
 </div>
 </div>
+<div class="section" id="syntaxerror-keyword-as-attribute">
+<h2>SyntaxError - keyword as attribute<a class="headerlink" href="#syntaxerror-keyword-as-attribute" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: invalid syntax
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error36.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+    9: a = A()
+   10:
+   11: a.x = 1
+--&gt;12: a.pass = 2
+            ^
+
+Ma meilleure hypothèse :
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
+    la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    a mal tourné, mais nous pourrions deviner incorrectement.
+
+    Vous avez tenté d&#39;utiliser le mot clé Python &#39;pass&#39; comme attribut.
+    Ceci n’est pas permis.
+</pre></div>
+</div>
+</div>
+<div class="section" id="walrus-operator-does-not-exist-yet">
+<h2>Walrus operator does not exist - yet<a class="headerlink" href="#walrus-operator-does-not-exist-yet" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: invalid syntax
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error_walrus.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Prior to Python 3.8, this should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: print(walrus := True)
+                   ^
+
+Ma meilleure hypothèse :
+    Python ne nous a pas donné beaucoup d&#39;informations concernant
+    la cause de l&#39;erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    a mal tourné, mais nous pourrions deviner incorrectement.
+
+    Vous semblez utiliser l&#39;opérateur :=, parfois appelé l&#39;opérateur morse
+    (walrus operator, en anglais). Cet opérateur nécessite l&#39;utilisation de
+    Python 3.8 ou une version plus récente. Vous utilisez la version  3.7.
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -1136,7 +1191,7 @@ Ma meilleure hypothèse :
         <li class="right" >
           <a href="tracebacks_fr.html" title="Friendly tracebacks - en Français"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.18a documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.19a documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
