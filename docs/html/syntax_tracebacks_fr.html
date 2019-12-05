@@ -79,6 +79,7 @@
 <li><a class="reference internal" href="#syntaxerror-unexpected-eof-while-parsing">SyntaxError - unexpected EOF while parsing</a></li>
 <li><a class="reference internal" href="#syntaxerror-name-is-parameter-and-global">SyntaxError - name is parameter and global</a></li>
 <li><a class="reference internal" href="#syntaxerror-keyword-as-attribute">SyntaxError - keyword as attribute</a></li>
+<li><a class="reference internal" href="#syntaxerror-content-passed-continuation-line-character">SyntaxError - content passed continuation line character</a></li>
 <li><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
@@ -1139,6 +1140,29 @@ Ma meilleure hypothèse :
 
     Vous avez tenté d&#39;utiliser le mot clé Python &#39;pass&#39; comme attribut.
     Ceci n’est pas permis.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-content-passed-continuation-line-character">
+<h2>SyntaxError - content passed continuation line character<a class="headerlink" href="#syntaxerror-content-passed-continuation-line-character" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: unexpected character after line continuation character
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error37.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   2: SyntaxError: unexpected character after line continuation character
+   3: &quot;&quot;&quot;
+   4:
+--&gt;5: print(\t)
+               ^
+
+Ma meilleure hypothèse :
+    You are using the continuation character &#39;\&#39; outside of a string,
+    and it is followed by some other character(s).
+    I am guessing that you forgot to enclose some content in a string.
 </pre></div>
 </div>
 </div>

@@ -79,6 +79,7 @@
 <li><a class="reference internal" href="#syntaxerror-unexpected-eof-while-parsing">SyntaxError - unexpected EOF while parsing</a></li>
 <li><a class="reference internal" href="#syntaxerror-name-is-parameter-and-global">SyntaxError - name is parameter and global</a></li>
 <li><a class="reference internal" href="#syntaxerror-keyword-as-attribute">SyntaxError - keyword as attribute</a></li>
+<li><a class="reference internal" href="#syntaxerror-content-passed-continuation-line-character">SyntaxError - content passed continuation line character</a></li>
 </ul>
 </li>
 </ul>
@@ -1131,6 +1132,29 @@ My best guess:
     went wrong, but I might guess incorrectly.
 
     You cannot use the Python keyword pass as an attribute.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-content-passed-continuation-line-character">
+<h2>SyntaxError - content passed continuation line character<a class="headerlink" href="#syntaxerror-content-passed-continuation-line-character" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: unexpected character after line continuation character
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error37.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   2: SyntaxError: unexpected character after line continuation character
+   3: &quot;&quot;&quot;
+   4:
+--&gt;5: print(\t)
+               ^
+
+My best guess:
+    You are using the continuation character &#39;\&#39; outside of a string,
+    and it is followed by some other character(s).
+    I am guessing that you forgot to enclose some content in a string.
 </pre></div>
 </div>
 </div>

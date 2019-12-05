@@ -1154,6 +1154,33 @@ SyntaxError - keyword as attribute
         
         
 
+SyntaxError - content passed continuation line character
+--------------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: unexpected character after line continuation character
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error37.py'
+    beyond the location indicated below by --> and ^.
+    
+       2: SyntaxError: unexpected character after line continuation character
+       3: """
+       4: 
+    -->5: print(\t)
+                   ^
+
+    My best guess:
+        You are using the continuation character '\' outside of a string,
+        and it is followed by some other character(s).
+        I am guessing that you forgot to enclose some content in a string.
+        
+        
+
 Walrus operator does not exist - yet
 ------------------------------------
 
