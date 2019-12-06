@@ -80,6 +80,7 @@
 <li><a class="reference internal" href="#syntaxerror-name-is-parameter-and-global">SyntaxError - name is parameter and global</a></li>
 <li><a class="reference internal" href="#syntaxerror-keyword-as-attribute">SyntaxError - keyword as attribute</a></li>
 <li><a class="reference internal" href="#syntaxerror-content-passed-continuation-line-character">SyntaxError - content passed continuation line character</a></li>
+<li><a class="reference internal" href="#syntaxerror-keyword-can-t-be-an-expression">SyntaxError - keyword can’t be an expression</a></li>
 <li><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
@@ -1154,6 +1155,33 @@ My best guess:
     You are using the continuation character &#39;\&#39; outside of a string,
     and it is followed by some other character(s).
     I am guessing that you forgot to enclose some content in a string.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-keyword-can-t-be-an-expression">
+<h2>SyntaxError - keyword can’t be an expression<a class="headerlink" href="#syntaxerror-keyword-can-t-be-an-expression" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: keyword can&#39;t be an expression
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not parse the file &#39;TESTS:\syntax\raise_syntax_error38.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   3: Python 3.8:  expression cannot contain assignment, perhaps you meant &quot;==&quot;?
+   4: &quot;&quot;&quot;
+   5:
+--&gt;6: a = dict(&#39;key&#39;=1)
+              ^
+
+My best guess:
+    You likely called a function with a named argument:
+
+       a_function(invalid=something)
+
+    where &#39;invalid&#39; is not a valid variable name in Python
+    either because it starts with a number, or is a string,
+    or contain a period, etc.
 </pre></div>
 </div>
 </div>

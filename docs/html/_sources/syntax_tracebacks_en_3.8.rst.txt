@@ -1181,3 +1181,36 @@ SyntaxError - content passed continuation line character
         I am guessing that you forgot to enclose some content in a string.
         
         
+
+SyntaxError - keyword can't be an expression
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error38.py'
+    beyond the location indicated below by --> and ^.
+    
+       3: Python 3.8:  expression cannot contain assignment, perhaps you meant "=="?
+       4: """
+       5: 
+    -->6: a = dict('key'=1)
+                   ^
+
+    My best guess:
+        One of the following two possibilities could be the cause:
+        1. You meant to do a comparison with == and wrote = instead.
+        2. You called a function with a named argument:
+        
+               a_function(invalid=something)
+        
+        where 'invalid' is not a valid variable name in Python
+        either because it starts with a number, or is a string,
+        or contains a period, etc.
+        
+        

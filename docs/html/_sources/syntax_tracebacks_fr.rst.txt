@@ -1189,9 +1189,41 @@ SyntaxError - content passed continuation line character
                    ^
 
     Ma meilleure hypothèse :
-        You are using the continuation character '\' outside of a string,
-        and it is followed by some other character(s).
-        I am guessing that you forgot to enclose some content in a string.
+        Vous utilisez le caractère de continuation '\' en dehors d'une chaîne de caractères,
+        et il est suivi par au moins un autre caractère.
+        Je suppose que vous avez oublié de terminer la chaîne par un guillemet
+        ou un apostrophe.
+        
+        
+
+SyntaxError - keyword can't be an expression
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: keyword can't be an expression
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error38.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       3: Python 3.8:  expression cannot contain assignment, perhaps you meant "=="?
+       4: """
+       5: 
+    -->6: a = dict('key'=1)
+                  ^
+
+    Ma meilleure hypothèse :
+        Vous avez probablement appelé une fonction avec un argument nommé:
+        
+            une_fonction (invalide=quelque_chose)
+        
+        où «invalide» n'est pas un nom de variable valide dans Python
+        soit parce qu'il commence par un nombre, soit est une chaîne,
+        ou contenir un point, etc.
         
         
 

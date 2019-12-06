@@ -1181,6 +1181,37 @@ SyntaxError - content passed continuation line character
         
         
 
+SyntaxError - keyword can't be an expression
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: keyword can't be an expression
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error38.py'
+    beyond the location indicated below by --> and ^.
+    
+       3: Python 3.8:  expression cannot contain assignment, perhaps you meant "=="?
+       4: """
+       5: 
+    -->6: a = dict('key'=1)
+                  ^
+
+    My best guess:
+        You likely called a function with a named argument:
+        
+           a_function(invalid=something)
+        
+        where 'invalid' is not a valid variable name in Python
+        either because it starts with a number, or is a string,
+        or contain a period, etc.
+        
+        
+
 Walrus operator does not exist - yet
 ------------------------------------
 

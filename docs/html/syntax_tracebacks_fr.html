@@ -80,6 +80,7 @@
 <li><a class="reference internal" href="#syntaxerror-name-is-parameter-and-global">SyntaxError - name is parameter and global</a></li>
 <li><a class="reference internal" href="#syntaxerror-keyword-as-attribute">SyntaxError - keyword as attribute</a></li>
 <li><a class="reference internal" href="#syntaxerror-content-passed-continuation-line-character">SyntaxError - content passed continuation line character</a></li>
+<li><a class="reference internal" href="#syntaxerror-keyword-can-t-be-an-expression">SyntaxError - keyword can’t be an expression</a></li>
 <li><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
@@ -1160,9 +1161,37 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                ^
 
 Ma meilleure hypothèse :
-    You are using the continuation character &#39;\&#39; outside of a string,
-    and it is followed by some other character(s).
-    I am guessing that you forgot to enclose some content in a string.
+    Vous utilisez le caractère de continuation &#39;\&#39; en dehors d&#39;une chaîne de caractères,
+    et il est suivi par au moins un autre caractère.
+    Je suppose que vous avez oublié de terminer la chaîne par un guillemet
+    ou un apostrophe.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-keyword-can-t-be-an-expression">
+<h2>SyntaxError - keyword can’t be an expression<a class="headerlink" href="#syntaxerror-keyword-can-t-be-an-expression" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: keyword can&#39;t be an expression
+
+Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+
+Python peut seulement analyser le fichier &#39;TESTS:\syntax\raise_syntax_error38.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   3: Python 3.8:  expression cannot contain assignment, perhaps you meant &quot;==&quot;?
+   4: &quot;&quot;&quot;
+   5:
+--&gt;6: a = dict(&#39;key&#39;=1)
+              ^
+
+Ma meilleure hypothèse :
+    Vous avez probablement appelé une fonction avec un argument nommé:
+
+        une_fonction (invalide=quelque_chose)
+
+    où «invalide» n&#39;est pas un nom de variable valide dans Python
+    soit parce qu&#39;il commence par un nombre, soit est une chaîne,
+    ou contenir un point, etc.
 </pre></div>
 </div>
 </div>
