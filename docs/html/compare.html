@@ -1,0 +1,835 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Comparison between versions &#8212; Friendly tracebacks 0.0.19a documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Change Log" href="changelog.html" />
+    <link rel="prev" title="Notes on translations - using gettext" href="translation_notes.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="changelog.html" title="Change Log"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="translation_notes.html" title="Notes on translations - using gettext"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.19a documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="translation_notes.html"
+                        title="previous chapter">Notes on translations - using gettext</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="changelog.html"
+                        title="next chapter">Change Log</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/compare.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="comparison-between-versions">
+<h1>Comparison between versions<a class="headerlink" href="#comparison-between-versions" title="Permalink to this headline">¶</a></h1>
+<p>In this file, we highlight differences between the information
+given by different versions of Python when it comes to <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>.
+The content of this file is likely of no use to anyone except for
+people who write code to include new <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> cases.</p>
+<p>The differences between Python versions can be:</p>
+<ol class="arabic simple">
+<li><p>The error message itself.</p></li>
+<li><p>The location of the error as indicated by Python with <code class="docutils literal notranslate"><span class="pre">^</span></code>.</p></li>
+</ol>
+<p>As a consequence, the information as to what we guess is the
+cause can be slightly different.  So, we also show when we
+assign a different cause.</p>
+<p>Note that the content below is extracted automaticaly by
+a simple program we wrote for this purpose.
+If the information is the same for Python 3.6 and
+3.7, but changes for Python 3.8, we only show the differences
+between 3.7 and 3.8.</p>
+<pre>
+
+==================================================
+raise_indentation_error1
+--------------------------------------------------
+
+3.7:
+       1: '''Should raise IndentationError'''
+       2: 
+       3: if True:
+    -->4: pass
+             ^
+
+
+3.8:
+       1: '''Should raise IndentationError'''
+       2: 
+       3: if True:
+    -->4: pass
+          ^
+
+
+==================================================
+raise_syntax_error10
+--------------------------------------------------
+
+3.7:
+SyntaxError: can't assign to literal
+
+
+3.8:
+SyntaxError: cannot assign to literal
+
+
+3.7:
+       1: """Should raise SyntaxError: can't assign to literal"""
+       2: 
+    -->3: 1 = 2
+         ^
+
+
+3.8:
+       1: """Should raise SyntaxError: can't assign to literal"""
+       2: 
+    -->3: 1 = 2
+          ^
+
+
+==================================================
+raise_syntax_error11
+--------------------------------------------------
+
+3.7:
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: import pen from turtle
+                        ^
+
+
+3.8:
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: import pen from turtle
+                     ^
+
+
+==================================================
+raise_syntax_error13
+--------------------------------------------------
+
+3.7:
+SyntaxError: can't assign to keyword
+
+
+3.8:
+SyntaxError: cannot assign to None
+
+
+3.7:
+       1: """Should raise SyntaxError: cannot assign to None in Py 3.8
+       2:    and can't assign to keyword before."""
+       3: 
+    -->4: None = 1
+         ^
+
+
+3.8:
+       1: """Should raise SyntaxError: cannot assign to None in Py 3.8
+       2:    and can't assign to keyword before."""
+       3: 
+    -->4: None = 1
+          ^
+
+
+==================================================
+raise_syntax_error14
+--------------------------------------------------
+
+3.7:
+SyntaxError: assignment to keyword
+
+
+3.8:
+SyntaxError: cannot assign to __debug__
+
+
+3.7:
+       1: """Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
+       2:    and assignment to keyword before."""
+       3: 
+    -->4: __debug__ = 1
+         ^
+
+
+3.8:
+       1: """Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
+       2:    and assignment to keyword before."""
+       3: 
+    -->4: __debug__ = 1
+          ^
+
+
+==================================================
+raise_syntax_error15
+--------------------------------------------------
+
+3.7:
+SyntaxError: invalid syntax
+
+
+3.8:
+SyntaxError: unmatched ')'
+
+
+3.7:
+Python did not give us much information regarding
+the cause of the error. I make an effort below to guess what
+went wrong, but I might guess incorrectly.
+
+The closing parenthesis ')' on line 6 does not match anything.
+
+    6:     3, 4,))
+
+
+
+3.8:
+The closing parenthesis ')' on line 6 does not match anything.
+
+
+==================================================
+raise_syntax_error18
+--------------------------------------------------
+
+3.7:
+SyntaxError: invalid syntax
+
+
+3.8:
+SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
+
+
+3.7:
+Python did not give us much information regarding
+the cause of the error. I make an effort below to guess what
+went wrong, but I might guess incorrectly.
+
+The closing square bracket ']' on line 2 does not match the opening parenthesis '(' on line 2.
+
+    2: x = (1, 2, 3]
+
+
+3.8:
+Python gave us the following informative message
+about the possible cause of the error:
+
+    closing parenthesis ']' does not match opening parenthesis '('
+
+However, I do not recognize this information and I have
+to guess what went wrong, but I might guess incorrectly.
+
+The closing square bracket ']' on line 2 does not match the opening parenthesis '(' on line 2.
+
+    2: x = (1, 2, 3]
+
+
+==================================================
+raise_syntax_error19
+--------------------------------------------------
+
+3.7:
+SyntaxError: invalid syntax
+
+
+3.8:
+SyntaxError: closing parenthesis ']' does not match opening parenthesis '(' on line 2
+
+
+3.7:
+Python did not give us much information regarding
+the cause of the error. I make an effort below to guess what
+went wrong, but I might guess incorrectly.
+
+The closing square bracket ']' on line 4 does not match the opening parenthesis '(' on line 2.
+
+    2: x = (1,
+
+    4:      3]
+
+
+3.8:
+Python gave us the following informative message
+about the possible cause of the error:
+
+    closing parenthesis ']' does not match opening parenthesis '(' on line 2
+
+However, I do not recognize this information and I have
+to guess what went wrong, but I might guess incorrectly.
+
+The closing square bracket ']' on line 4 does not match the opening parenthesis '(' on line 2.
+
+    2: x = (1,
+
+    4:      3]
+
+
+==================================================
+raise_syntax_error20
+--------------------------------------------------
+
+3.7:
+       1: """Should raise SyntaxError: Missing parentheses in call to 'print' ..."""
+    -->2: print 'hello'
+                      ^
+
+
+3.8:
+       1: """Should raise SyntaxError: Missing parentheses in call to 'print' ..."""
+    -->2: print 'hello'
+                ^
+
+
+==================================================
+raise_syntax_error21
+--------------------------------------------------
+
+3.7:
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: def pass():
+                 ^
+
+
+3.8:
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: def pass():
+              ^
+
+
+==================================================
+raise_syntax_error22
+--------------------------------------------------
+
+3.7:
+       1: """Should raise SyntaxError: 'break' outside loop"""
+       2: 
+       3: if True:
+    -->4:     break
+             ^
+
+
+3.8:
+       1: """Should raise SyntaxError: 'break' outside loop"""
+       2: 
+       3: if True:
+    -->4:     break
+              ^
+
+
+==================================================
+raise_syntax_error23
+--------------------------------------------------
+
+3.7:
+       1: """Should raise SyntaxError: 'continue' outside loop"""
+       2: 
+       3: if True:
+    -->4:     continue
+             ^
+
+
+3.8:
+       1: """Should raise SyntaxError: 'continue' outside loop"""
+       2: 
+       3: if True:
+    -->4:     continue
+              ^
+
+
+==================================================
+raise_syntax_error25
+--------------------------------------------------
+
+3.7:
+       2: 
+       3: a = {'a': 1,
+       4:      'b': 2
+    -->5:      'c': 3,
+                 ^
+
+
+3.8:
+       2: 
+       3: a = {'a': 1,
+       4:      'b': 2
+    -->5:      'c': 3,
+               ^
+
+
+==================================================
+raise_syntax_error3
+--------------------------------------------------
+
+3.7:
+       1: """Should raise SyntaxError"""
+       2: 
+    -->3: while True  # a comment
+                                 ^
+
+
+3.8:
+       1: """Should raise SyntaxError"""
+       2: 
+    -->3: while True  # a comment
+                      ^
+
+
+==================================================
+raise_syntax_error30
+--------------------------------------------------
+
+3.7:
+SyntaxError: can't assign to function call
+
+
+3.8:
+SyntaxError: cannot assign to function call
+
+
+3.7:
+       3: Python 3.8: SyntaxError: cannot assign to function call
+       4: """
+       5: 
+    -->6: len('a') = 3
+         ^
+
+
+3.8:
+       3: Python 3.8: SyntaxError: cannot assign to function call
+       4: """
+       5: 
+    -->6: len('a') = 3
+          ^
+
+
+==================================================
+raise_syntax_error31
+--------------------------------------------------
+
+3.7:
+SyntaxError: can't assign to function call
+
+
+3.8:
+SyntaxError: cannot assign to function call
+
+
+3.7:
+       3: Python 3.8: SyntaxError: cannot assign to function call
+       4: """
+       5: 
+    -->6: func(a, b=3) = 4
+         ^
+
+
+3.8:
+       3: Python 3.8: SyntaxError: cannot assign to function call
+       4: """
+       5: 
+    -->6: func(a, b=3) = 4
+          ^
+
+
+==================================================
+raise_syntax_error33
+--------------------------------------------------
+
+3.7:
+       2: """
+       3: 
+       4: 
+    -->5: def test(a=1, b):
+                  ^
+
+
+3.8:
+       2: """
+       3: 
+       4: 
+    -->5: def test(a=1, b):
+                   ^
+
+
+==================================================
+raise_syntax_error34
+--------------------------------------------------
+
+3.7:
+       2: """
+       3: 
+       4: 
+    -->5: test(a=1, b)
+                   ^
+
+
+3.8:
+       2: """
+       3: 
+       4: 
+    -->5: test(a=1, b)
+                    ^
+
+
+==================================================
+raise_syntax_error35
+--------------------------------------------------
+
+3.7:
+       1: """Should raise SyntaxError: f-string: unterminated string
+       2: """
+       3: 
+    -->4: print(f"Bob is {age['Bob]} years old.")
+               ^
+
+
+3.8:
+       1: """Should raise SyntaxError: f-string: unterminated string
+       2: """
+       3: 
+    -->4: print(f"Bob is {age['Bob]} years old.")
+                ^
+
+
+==================================================
+raise_syntax_error36
+--------------------------------------------------
+
+3.7:
+        4: def foo():
+        5:     return [1, 2, 3
+        6: 
+    --> 7: print(foo())
+               ^
+
+
+3.8:
+        4: def foo():
+        5:     return [1, 2, 3
+        6: 
+    --> 7: print(foo())
+           ^
+
+
+==================================================
+raise_syntax_error38
+--------------------------------------------------
+
+3.7:
+       3: 
+       4: 
+       5: def f(x):
+    -->6:     global x
+             ^
+
+
+3.8:
+       3: 
+       4: 
+       5: def f(x):
+    -->6:     global x
+              ^
+
+
+==================================================
+raise_syntax_error39
+--------------------------------------------------
+
+3.7:
+        9: a = A()
+       10: 
+       11: a.x = 1
+    -->12: a.pass = 2
+                ^
+
+
+3.8:
+        9: a = A()
+       10: 
+       11: a.x = 1
+    -->12: a.pass = 2
+             ^
+
+
+==================================================
+raise_syntax_error4
+--------------------------------------------------
+
+3.7:
+       2: 
+       3: if False:
+       4:     pass
+    -->5: else if True:
+                ^
+
+
+3.8:
+       2: 
+       3: if False:
+       4:     pass
+    -->5: else if True:
+               ^
+
+
+==================================================
+raise_syntax_error41
+--------------------------------------------------
+
+3.7:
+SyntaxError: keyword can't be an expression
+
+
+3.8:
+SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
+
+
+3.7:
+        4: """
+        5: 
+        6: 
+    --> 7: a = dict('key'=1)
+                   ^
+
+
+3.8:
+        4: """
+        5: 
+        6: 
+    --> 7: a = dict('key'=1)
+                    ^
+
+
+3.7:
+You likely called a function with a named argument:
+
+   a_function(invalid=something)
+
+where 'invalid' is not a valid variable name in Python
+either because it starts with a number, or is a string,
+or contains a period, etc.
+
+
+
+3.8:
+One of the following two possibilities could be the cause:
+1. You meant to do a comparison with == and wrote = instead.
+2. You called a function with a named argument:
+
+       a_function(invalid=something)
+
+where 'invalid' is not a valid variable name in Python
+either because it starts with a number, or is a string,
+or contains a period, etc.
+
+
+
+==================================================
+raise_syntax_error43
+--------------------------------------------------
+
+3.7:
+       2: """
+       3: 
+       4: 
+    -->5: def f(None=1):
+                   ^
+
+
+3.8:
+       2: """
+       3: 
+       4: 
+    -->5: def f(None=1):
+                ^
+
+
+==================================================
+raise_syntax_error44
+--------------------------------------------------
+
+3.7:
+       2: """
+       3: 
+       4: 
+    -->5: def f(x, True):
+                      ^
+
+
+3.8:
+       2: """
+       3: 
+       4: 
+    -->5: def f(x, True):
+                   ^
+
+
+==================================================
+raise_syntax_error45
+--------------------------------------------------
+
+3.7:
+       2: """
+       3: 
+       4: 
+    -->5: def f(*None):
+                    ^
+
+
+3.8:
+       2: """
+       3: 
+       4: 
+    -->5: def f(*None):
+                 ^
+
+
+==================================================
+raise_syntax_error46
+--------------------------------------------------
+
+3.7:
+       2: """
+       3: 
+       4: 
+    -->5: def f(**None):
+                     ^
+
+
+3.8:
+       2: """
+       3: 
+       4: 
+    -->5: def f(**None):
+                  ^
+
+
+==================================================
+raise_syntax_error5
+--------------------------------------------------
+
+3.7:
+       2: 
+       3: if False:
+       4:     pass
+    -->5: elseif True:
+                    ^
+
+
+3.8:
+       2: 
+       3: if False:
+       4:     pass
+    -->5: elseif True:
+                 ^
+
+
+==================================================
+raise_syntax_error9
+--------------------------------------------------
+
+3.7:
+SyntaxError: can't assign to literal
+
+
+3.8:
+SyntaxError: cannot assign to literal
+
+
+3.7:
+       1: """Should raise SyntaxError: can't assign to literal"""
+       2: 
+    -->3: 1 = a
+         ^
+
+
+3.8:
+       1: """Should raise SyntaxError: can't assign to literal"""
+       2: 
+    -->3: 1 = a
+          ^
+
+==================================================
+entry does not exist in one data file for  raise_syntax_error_walrus
+==================================================
+</pre>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="changelog.html" title="Change Log"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="translation_notes.html" title="Notes on translations - using gettext"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Friendly tracebacks 0.0.19a documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, André Roberge.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>

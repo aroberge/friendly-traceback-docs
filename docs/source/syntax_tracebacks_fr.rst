@@ -306,7 +306,7 @@ SyntaxError - can't assign to literal - 2
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error9a.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error10.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: can't assign to literal"""
@@ -333,7 +333,7 @@ SyntaxError - import X from Y
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error10.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error11.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -365,7 +365,7 @@ SyntaxError - EOL while scanning string literal
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error11.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error12.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: EOL while scanning string literal"""
@@ -390,7 +390,7 @@ SyntaxError - assignment to keyword (None)
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error12.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error13.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: cannot assign to None in Py 3.8
@@ -415,7 +415,7 @@ SyntaxError - assignment to keyword (__debug__)
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error13.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error14.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
@@ -440,7 +440,7 @@ SyntaxError - unmatched closing parenthesis
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error14.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error15.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        3: """
@@ -471,7 +471,7 @@ SyntaxError - unclosed parenthesis
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error15.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error16.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -501,7 +501,7 @@ SyntaxError - unclosed parenthesis - 2
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error15a.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error17.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -531,7 +531,7 @@ SyntaxError - mismatched brackets
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error16.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error18.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -559,7 +559,7 @@ SyntaxError - mismatched brackets - 2
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error16a.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error19.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -591,7 +591,7 @@ SyntaxError - print is a function
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error17.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error20.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: Missing parentheses in call to 'print' ..."""
@@ -616,7 +616,7 @@ SyntaxError - Python keyword as function name
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error18.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error21.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -645,7 +645,7 @@ SyntaxError - break outside loop
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error19.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error22.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: 'break' outside loop"""
@@ -669,7 +669,7 @@ SyntaxError - continue outside loop
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error20.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error23.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: 'continue' outside loop"""
@@ -693,7 +693,7 @@ SyntaxError - quote inside a string
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error21.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error24.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -723,7 +723,7 @@ SyntaxError - missing comma in a dict
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error22.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error25.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        2: 
@@ -752,7 +752,7 @@ SyntaxError - missing comma in a set
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error23.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error26.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -780,7 +780,7 @@ SyntaxError - missing comma in a list
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error24.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error27.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -808,7 +808,7 @@ SyntaxError - missing comma in a tuple
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error25.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error28.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -836,7 +836,7 @@ SyntaxError - missing comma between function args
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error26.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error29.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -865,7 +865,7 @@ SyntaxError - can't assign to function call - 1
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error27.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error30.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        3: Python 3.8: SyntaxError: cannot assign to function call
@@ -893,7 +893,7 @@ SyntaxError - can't assign to function call - 2
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error28.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error31.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        3: Python 3.8: SyntaxError: cannot assign to function call
@@ -920,7 +920,7 @@ SyntaxError - used equal sign instead of colon
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error29.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error32.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: invalid syntax
@@ -950,7 +950,7 @@ SyntaxError - non-default argument follows default argument
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error30.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error33.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        2: """
@@ -989,7 +989,7 @@ SyntaxError - positional argument follows keyword argument
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error31.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error34.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        2: """
@@ -1026,7 +1026,7 @@ SyntaxError - f-string: unterminated string
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error32.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error35.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: """Should raise SyntaxError: f-string: unterminated string
@@ -1052,7 +1052,7 @@ SyntaxError - unclosed bracket
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error33.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error36.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
         4: def foo():
@@ -1083,7 +1083,7 @@ SyntaxError - unexpected EOF while parsing
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python ne peut pas analyser correctement le fichier 'TESTS:\syntax\raise_syntax_error34.py'.
+    Python ne peut pas analyser correctement le fichier 'TESTS:\syntax\raise_syntax_error37.py'.
     La fin du fichier a été atteinte et Python s'attendait à voir plus de code.
     
     
@@ -1118,7 +1118,7 @@ SyntaxError - name is parameter and global
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error35.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error38.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        3: 
@@ -1149,7 +1149,7 @@ SyntaxError - keyword as attribute
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error36.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error39.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
         9: a = A()
@@ -1179,7 +1179,7 @@ SyntaxError - content passed continuation line character
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error37.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error40.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        2: SyntaxError: unexpected character after line continuation character
@@ -1207,7 +1207,7 @@ SyntaxError - keyword can't be an expression
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error38.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error41.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        3: Python 3.8:  expression cannot contain assignment, perhaps you meant "=="?
@@ -1217,13 +1217,13 @@ SyntaxError - keyword can't be an expression
                   ^
 
     Ma meilleure hypothèse :
-        Vous avez probablement appelé une fonction avec un argument nommé:
+        You likely called a function with a named argument:
         
-            une_fonction (invalide=quelque_chose)
+           a_function(invalid=something)
         
-        où «invalide» n'est pas un nom de variable valide dans Python
-        soit parce qu'il commence par un nombre, soit est une chaîne,
-        ou contenir un point, etc.
+        where 'invalid' is not a valid variable name in Python
+        either because it starts with a number, or is a string,
+        or contains a period, etc.
         
         
 
@@ -1238,7 +1238,7 @@ SyntaxError - invalid character in identifier
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error39.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error42.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        3: 
@@ -1265,7 +1265,7 @@ SyntaxError - keyword cannot be argument in def - 1
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error40.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error43.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        2: """
@@ -1296,7 +1296,7 @@ SyntaxError - keyword cannot be argument in def - 2
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error41.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error44.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        2: """
@@ -1327,7 +1327,7 @@ SyntaxError - keyword cannot be argument in def - 3
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error42.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error45.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        2: """
@@ -1358,7 +1358,7 @@ SyntaxError - keyword cannot be argument in def - 4
         
     Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error43.py'
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error46.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
        2: """

@@ -300,7 +300,7 @@ SyntaxError - can't assign to literal - 2
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error9a.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error10.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: can't assign to literal"""
@@ -327,7 +327,7 @@ SyntaxError - import X from Y
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error10.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error11.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -358,7 +358,7 @@ SyntaxError - EOL while scanning string literal
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error11.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error12.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: EOL while scanning string literal"""
@@ -382,7 +382,7 @@ SyntaxError - assignment to keyword (None)
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error12.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error13.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: cannot assign to None in Py 3.8
@@ -407,7 +407,7 @@ SyntaxError - assignment to keyword (__debug__)
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error13.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error14.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
@@ -432,7 +432,7 @@ SyntaxError - unmatched closing parenthesis
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error14.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error15.py'
     beyond the location indicated below by --> and ^.
     
        3: """
@@ -456,7 +456,7 @@ SyntaxError - unclosed parenthesis
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error15.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error16.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -486,7 +486,7 @@ SyntaxError - unclosed parenthesis - 2
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error15a.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error17.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -516,7 +516,7 @@ SyntaxError - mismatched brackets
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error16.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error18.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -548,7 +548,7 @@ SyntaxError - mismatched brackets - 2
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error16a.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error19.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -584,7 +584,7 @@ SyntaxError - print is a function
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error17.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error20.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: Missing parentheses in call to 'print' ..."""
@@ -609,7 +609,7 @@ SyntaxError - Python keyword as function name
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error18.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error21.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -636,7 +636,7 @@ SyntaxError - break outside loop
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error19.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error22.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: 'break' outside loop"""
@@ -660,7 +660,7 @@ SyntaxError - continue outside loop
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error20.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error23.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: 'continue' outside loop"""
@@ -684,7 +684,7 @@ SyntaxError - quote inside a string
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error21.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error24.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -714,7 +714,7 @@ SyntaxError - missing comma in a dict
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error22.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error25.py'
     beyond the location indicated below by --> and ^.
     
        2: 
@@ -743,7 +743,7 @@ SyntaxError - missing comma in a set
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error23.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error26.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -771,7 +771,7 @@ SyntaxError - missing comma in a list
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error24.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error27.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -799,7 +799,7 @@ SyntaxError - missing comma in a tuple
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error25.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error28.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -828,7 +828,7 @@ SyntaxError - missing comma between function args
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error26.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error29.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
@@ -858,7 +858,7 @@ SyntaxError - can't assign to function call - 1
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error27.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error30.py'
     beyond the location indicated below by --> and ^.
     
        3: Python 3.8: SyntaxError: cannot assign to function call
@@ -885,7 +885,7 @@ SyntaxError - can't assign to function call - 2
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error28.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error31.py'
     beyond the location indicated below by --> and ^.
     
        3: Python 3.8: SyntaxError: cannot assign to function call
@@ -912,7 +912,7 @@ SyntaxError - used equal sign instead of colon
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error29.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error32.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax
@@ -942,7 +942,7 @@ SyntaxError - non-default argument follows default argument
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error30.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error33.py'
     beyond the location indicated below by --> and ^.
     
        2: """
@@ -979,7 +979,7 @@ SyntaxError - positional argument follows keyword argument
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error31.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error34.py'
     beyond the location indicated below by --> and ^.
     
        2: """
@@ -1016,7 +1016,7 @@ SyntaxError - f-string: unterminated string
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error32.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error35.py'
     beyond the location indicated below by --> and ^.
     
        1: """Should raise SyntaxError: f-string: unterminated string
@@ -1042,7 +1042,7 @@ SyntaxError - unclosed bracket
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error33.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error36.py'
     beyond the location indicated below by --> and ^.
     
         4: def foo():
@@ -1073,7 +1073,7 @@ SyntaxError - unexpected EOF while parsing
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error34.py'.
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error37.py'.
     It reached the end of the file and expected more content.
     
         5:     return [1, 2, 3,
@@ -1106,7 +1106,7 @@ SyntaxError - name is parameter and global
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error35.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error38.py'
     beyond the location indicated below by --> and ^.
     
        3: 
@@ -1137,7 +1137,7 @@ SyntaxError - keyword as attribute
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error36.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error39.py'
     beyond the location indicated below by --> and ^.
     
         9: a = A()
@@ -1166,7 +1166,7 @@ SyntaxError - content passed continuation line character
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error37.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error40.py'
     beyond the location indicated below by --> and ^.
     
        2: SyntaxError: unexpected character after line continuation character
@@ -1193,7 +1193,7 @@ SyntaxError - keyword can't be an expression
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error38.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error41.py'
     beyond the location indicated below by --> and ^.
     
        3: Python 3.8:  expression cannot contain assignment, perhaps you meant "=="?
@@ -1226,7 +1226,7 @@ SyntaxError - invalid character in identifier
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error39.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error42.py'
     beyond the location indicated below by --> and ^.
     
        3: 
@@ -1253,7 +1253,7 @@ SyntaxError - keyword cannot be argument in def - 1
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error40.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error43.py'
     beyond the location indicated below by --> and ^.
     
        2: """
@@ -1282,7 +1282,7 @@ SyntaxError - keyword cannot be argument in def - 2
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error41.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error44.py'
     beyond the location indicated below by --> and ^.
     
        2: """
@@ -1311,7 +1311,7 @@ SyntaxError - keyword cannot be argument in def - 3
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error42.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error45.py'
     beyond the location indicated below by --> and ^.
     
        2: """
@@ -1340,7 +1340,7 @@ SyntaxError - keyword cannot be argument in def - 4
         
     A SyntaxError occurs when Python cannot understand your code.
     
-    Python could not parse the file 'TESTS:\syntax\raise_syntax_error43.py'
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error46.py'
     beyond the location indicated below by --> and ^.
     
        2: """
