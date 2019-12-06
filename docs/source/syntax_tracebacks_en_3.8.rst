@@ -1214,3 +1214,146 @@ SyntaxError - keyword can't be an expression
         or contains a period, etc.
         
         
+
+SyntaxError - invalid character in identifier
+---------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid character in identifier
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error39.py'
+    beyond the location indicated below by --> and ^.
+    
+       3: 
+       4: # Robot-face character below
+       5: 
+    -->6: 🤖 = 'Reeborg'
+          ^
+
+    My best guess:
+        You likely used some unicode character that is not allowed
+        as part of a variable name in Python.
+        This includes many emojis.
+        
+        
+
+SyntaxError - keyword cannot be argument in def - 1
+---------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error40.py'
+    beyond the location indicated below by --> and ^.
+    
+       2: """
+       3: 
+       4: 
+    -->5: def f(None=1):
+                ^
+
+    My best guess:
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
+        
+        I am guessing that you tried to use the Python keyword
+        None as an argument in the definition of a function.
+        
+
+SyntaxError - keyword cannot be argument in def - 2
+---------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error41.py'
+    beyond the location indicated below by --> and ^.
+    
+       2: """
+       3: 
+       4: 
+    -->5: def f(x, True):
+                   ^
+
+    My best guess:
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
+        
+        I am guessing that you tried to use the Python keyword
+        True as an argument in the definition of a function.
+        
+
+SyntaxError - keyword cannot be argument in def - 3
+---------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error42.py'
+    beyond the location indicated below by --> and ^.
+    
+       2: """
+       3: 
+       4: 
+    -->5: def f(*None):
+                 ^
+
+    My best guess:
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
+        
+        I am guessing that you tried to use the Python keyword
+        None as an argument in the definition of a function.
+        
+
+SyntaxError - keyword cannot be argument in def - 4
+---------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error43.py'
+    beyond the location indicated below by --> and ^.
+    
+       2: """
+       3: 
+       4: 
+    -->5: def f(**None):
+                  ^
+
+    My best guess:
+        Python did not give us much information regarding
+        the cause of the error. I make an effort below to guess what
+        went wrong, but I might guess incorrectly.
+        
+        I am guessing that you tried to use the Python keyword
+        None as an argument in the definition of a function.
+        

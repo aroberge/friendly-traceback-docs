@@ -1227,6 +1227,157 @@ SyntaxError - keyword can't be an expression
         
         
 
+SyntaxError - invalid character in identifier
+---------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid character in identifier
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error39.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       3: 
+       4: # Robot-face character below
+       5: 
+    -->6: 🤖 = 'Reeborg'
+          ^
+
+    Ma meilleure hypothèse :
+        Vous avez probablement utilisé un caractère unicode qui n'est pas autorisé
+        dans le nom d'une variable dans Python.
+        Cela comprend de nombreux emojis.
+        
+        
+
+SyntaxError - keyword cannot be argument in def - 1
+---------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error40.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       2: """
+       3: 
+       4: 
+    -->5: def f(None=1):
+                   ^
+
+    Ma meilleure hypothèse :
+        Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
+        Vous avez tenté d'utiliser le mot clé Python 'None' comme argument
+        dans la définition d'une fonction.
+        Ceci n’est pas permis.
+        
+        
+
+SyntaxError - keyword cannot be argument in def - 2
+---------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error41.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       2: """
+       3: 
+       4: 
+    -->5: def f(x, True):
+                      ^
+
+    Ma meilleure hypothèse :
+        Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
+        Vous avez tenté d'utiliser le mot clé Python 'True' comme argument
+        dans la définition d'une fonction.
+        Ceci n’est pas permis.
+        
+        
+
+SyntaxError - keyword cannot be argument in def - 3
+---------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error42.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       2: """
+       3: 
+       4: 
+    -->5: def f(*None):
+                    ^
+
+    Ma meilleure hypothèse :
+        Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
+        Vous avez tenté d'utiliser le mot clé Python 'None' comme argument
+        dans la définition d'une fonction.
+        Ceci n’est pas permis.
+        
+        
+
+SyntaxError - keyword cannot be argument in def - 4
+---------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque python ne peut pas comprendre votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error43.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       2: """
+       3: 
+       4: 
+    -->5: def f(**None):
+                     ^
+
+    Ma meilleure hypothèse :
+        Python ne nous a pas donné beaucoup d'informations concernant
+        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+        a mal tourné, mais nous pourrions deviner incorrectement.
+        
+        Vous avez tenté d'utiliser le mot clé Python 'None' comme argument
+        dans la définition d'une fonction.
+        Ceci n’est pas permis.
+        
+        
+
 Walrus operator does not exist - yet
 ------------------------------------
 
