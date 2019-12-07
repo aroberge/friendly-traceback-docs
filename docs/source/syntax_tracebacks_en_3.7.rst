@@ -439,7 +439,7 @@ SyntaxError - unmatched closing parenthesis
         The closing parenthesis ')' on line 6 does not match anything.
         
             6:     3, 4,))
-        
+                         ^
         
 
 SyntaxError - unclosed parenthesis
@@ -468,7 +468,7 @@ SyntaxError - unclosed parenthesis
         The opening parenthesis '(' on line 2 is not closed.
         
             2: x = int('1'
-        
+                      ^
         
 
 SyntaxError - unclosed parenthesis - 2
@@ -497,7 +497,7 @@ SyntaxError - unclosed parenthesis - 2
         The opening parenthesis '(' on line 2 is not closed.
         
             2: a = (b+c
-        
+                   ^
         
 
 SyntaxError - mismatched brackets
@@ -525,6 +525,7 @@ SyntaxError - mismatched brackets
         The closing square bracket ']' on line 2 does not match the opening parenthesis '(' on line 2.
         
             2: x = (1, 2, 3]
+                   ^       ^
         
 
 SyntaxError - mismatched brackets - 2
@@ -554,8 +555,9 @@ SyntaxError - mismatched brackets - 2
         The closing square bracket ']' on line 4 does not match the opening parenthesis '(' on line 2.
         
             2: x = (1,
-        
+                   ^
             4:      3]
+                     ^
         
 
 SyntaxError - print is a function
@@ -1035,7 +1037,7 @@ SyntaxError - unclosed bracket
         The opening square bracket '[' on line 5 is not closed.
         
             5:     return [1, 2, 3
-        
+                          ^
         
 
 SyntaxError - unexpected EOF while parsing
@@ -1068,7 +1070,7 @@ SyntaxError - unexpected EOF while parsing
         The opening square bracket '[' on line 5 is not closed.
         
             5:     return [1, 2, 3,
-        
+                          ^
         
 
 SyntaxError - name is parameter and global

@@ -447,7 +447,7 @@ SyntaxError - unmatched closing parenthesis
         Le symbole parenthèse ')' à la ligne 6 n'a pas de symbole ouvrant qui lui correspond.
         
             6:     3, 4,))
-        
+                         ^
         
 
 SyntaxError - unclosed parenthesis
@@ -476,7 +476,7 @@ SyntaxError - unclosed parenthesis
         Le symbole parenthèse '(' à la ligne 2 n'est pas fermé par le symbole correspondant.
         
             2: x = int('1'
-        
+                      ^
         
 
 SyntaxError - unclosed parenthesis - 2
@@ -505,7 +505,7 @@ SyntaxError - unclosed parenthesis - 2
         Le symbole parenthèse '(' à la ligne 2 n'est pas fermé par le symbole correspondant.
         
             2: a = (b+c
-        
+                   ^
         
 
 SyntaxError - mismatched brackets
@@ -533,6 +533,7 @@ SyntaxError - mismatched brackets
         Le symbole crochet ']' à la ligne 2 ne correspond pas au symbole parenthèse '(' à la ligne 2.
         
             2: x = (1, 2, 3]
+                   ^       ^
         
 
 SyntaxError - mismatched brackets - 2
@@ -562,8 +563,9 @@ SyntaxError - mismatched brackets - 2
         Le symbole crochet ']' à la ligne 4 ne correspond pas au symbole parenthèse '(' à la ligne 2.
         
             2: x = (1,
-        
+                   ^
             4:      3]
+                     ^
         
 
 SyntaxError - print is a function
@@ -1046,7 +1048,7 @@ SyntaxError - unclosed bracket
         Le symbole crochet '[' à la ligne 5 n'est pas fermé par le symbole correspondant.
         
             5:     return [1, 2, 3
-        
+                          ^
         
 
 SyntaxError - unexpected EOF while parsing
@@ -1081,7 +1083,7 @@ SyntaxError - unexpected EOF while parsing
         Le symbole crochet '[' à la ligne 5 n'est pas fermé par le symbole correspondant.
         
             5:     return [1, 2, 3,
-        
+                          ^
         
 
 SyntaxError - name is parameter and global

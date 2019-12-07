@@ -506,6 +506,7 @@ Je n&#39;ai pas assez d&#39;informations de Python:
     Le symbole parenthèse &#39;)&#39; à la ligne 6 n&#39;a pas de symbole ouvrant qui lui correspond.
 
         6:     3, 4,))
+                     ^
 </pre></div>
 </div>
 </div>
@@ -531,6 +532,7 @@ Je n&#39;ai pas assez d&#39;informations de Python:
     Le symbole parenthèse &#39;(&#39; à la ligne 2 n&#39;est pas fermé par le symbole correspondant.
 
         2: x = int(&#39;1&#39;
+                  ^
 </pre></div>
 </div>
 </div>
@@ -556,6 +558,7 @@ Je n&#39;ai pas assez d&#39;informations de Python:
     Le symbole parenthèse &#39;(&#39; à la ligne 2 n&#39;est pas fermé par le symbole correspondant.
 
         2: a = (b+c
+               ^
 </pre></div>
 </div>
 </div>
@@ -580,6 +583,7 @@ Je n&#39;ai pas assez d&#39;informations de Python:
     Le symbole crochet &#39;]&#39; à la ligne 2 ne correspond pas au symbole parenthèse &#39;(&#39; à la ligne 2.
 
         2: x = (1, 2, 3]
+               ^       ^
 </pre></div>
 </div>
 </div>
@@ -606,8 +610,9 @@ Je n&#39;ai pas assez d&#39;informations de Python:
     Le symbole crochet &#39;]&#39; à la ligne 4 ne correspond pas au symbole parenthèse &#39;(&#39; à la ligne 2.
 
         2: x = (1,
-
+               ^
         4:      3]
+                 ^
 </pre></div>
 </div>
 </div>
@@ -1038,6 +1043,7 @@ Je n&#39;ai pas assez d&#39;informations de Python:
     Le symbole crochet &#39;[&#39; à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
 
         5:     return [1, 2, 3
+                      ^
 </pre></div>
 </div>
 </div>
@@ -1069,6 +1075,7 @@ Cause probable basée sur les informations données par Python :
     Le symbole crochet &#39;[&#39; à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
 
         5:     return [1, 2, 3,
+                      ^
 </pre></div>
 </div>
 </div>

@@ -521,6 +521,7 @@ I don&#39;t have enough information from Python:
     The opening parenthesis &#39;(&#39; on line 2 is not closed.
 
         2: x = int(&#39;1&#39;
+                  ^
 </pre></div>
 </div>
 </div>
@@ -546,6 +547,7 @@ I don&#39;t have enough information from Python:
     The opening parenthesis &#39;(&#39; on line 2 is not closed.
 
         2: a = (b+c
+               ^
 </pre></div>
 </div>
 </div>
@@ -575,6 +577,7 @@ Likely cause based on the information given by Python:
     The closing square bracket &#39;]&#39; on line 2 does not match the opening parenthesis &#39;(&#39; on line 2.
 
         2: x = (1, 2, 3]
+               ^       ^
 </pre></div>
 </div>
 </div>
@@ -606,8 +609,9 @@ Likely cause based on the information given by Python:
     The closing square bracket &#39;]&#39; on line 4 does not match the opening parenthesis &#39;(&#39; on line 2.
 
         2: x = (1,
-
+               ^
         4:      3]
+                 ^
 </pre></div>
 </div>
 </div>
@@ -1036,6 +1040,7 @@ I don&#39;t have enough information from Python:
     The opening square bracket &#39;[&#39; on line 5 is not closed.
 
         5:     return [1, 2, 3
+                      ^
 </pre></div>
 </div>
 </div>
@@ -1065,6 +1070,7 @@ Likely cause based on the information given by Python:
     The opening square bracket &#39;[&#39; on line 5 is not closed.
 
         5:     return [1, 2, 3,
+                      ^
 </pre></div>
 </div>
 </div>
