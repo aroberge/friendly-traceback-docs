@@ -42,10 +42,9 @@ SyntaxError - Assign to keyword
     -->3: def = 2
               ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         You were trying to assign a value to the Python keyword 'def'.
         This is not allowed.
@@ -71,10 +70,9 @@ SyntaxError - Missing colon 1
     -->3: if True
                  ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         You wrote a statement beginning with
         'if' but forgot to add a colon ':' at the end
@@ -100,10 +98,9 @@ SyntaxError - Missing colon 2
     -->3: while True  # a comment
                                  ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         You wrote a 'while' loop but
         forgot to add a colon ':' at the end
@@ -130,10 +127,9 @@ SyntaxError - elif, not else if
     -->5: else if True:
                 ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         You meant to use Python's 'elif' keyword
         but wrote 'else if' instead
@@ -160,10 +156,9 @@ SyntaxError - elif, not elseif
     -->5: elseif True:
                     ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         You meant to use Python's 'elif' keyword
         but wrote 'elseif' instead
@@ -189,10 +184,9 @@ SyntaxError - malformed def statment - 1
     -->3: def :
               ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         You tried to define a function or method
         and did not use the correct syntax.
@@ -219,10 +213,9 @@ SyntaxError - malformed def statment - 2
     -->3: def name  :
                     ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         You tried to define a function or method
         and did not use the correct syntax.
@@ -249,10 +242,9 @@ SyntaxError - malformed def statment - 3
     -->3: def ( arg )  :
               ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         You tried to define a function or method
         and did not use the correct syntax.
@@ -279,7 +271,7 @@ SyntaxError - can't assign to literal
     -->3: 1 = a
          ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         You wrote an expression like
             1 = a
         where <1>, on the left hand-side of the equal sign, is
@@ -308,7 +300,7 @@ SyntaxError - can't assign to literal - 2
     -->3: 1 = 2
          ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         You wrote an expression like
             1 = 2
         where <1>, on the left hand-side of the equal sign, is
@@ -335,10 +327,9 @@ SyntaxError - import X from Y
     -->3: import pen from turtle
                         ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         You wrote something like
             import pen from turtle
@@ -366,7 +357,7 @@ SyntaxError - EOL while scanning string literal
     -->3: alphabet = 'abc
                          ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         You starting writing a string with a single or double quote
         but never ended the string with another quote on that line.
         
@@ -391,7 +382,7 @@ SyntaxError - assignment to keyword (None)
     -->4: None = 1
          ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         None is a constant in Python; you cannot assign it a value.
         
         
@@ -416,7 +407,7 @@ SyntaxError - assignment to keyword (__debug__)
     -->4: __debug__ = 1
          ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         __debug__ is a constant in Python; you cannot assign it a value.
         
         
@@ -441,10 +432,9 @@ SyntaxError - unmatched closing parenthesis
     -->6:     3, 4,))
                     ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         The closing parenthesis ')' on line 6 does not match anything.
         
@@ -471,10 +461,9 @@ SyntaxError - unclosed parenthesis
     -->3: if x == 1:
                    ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         The opening parenthesis '(' on line 2 is not closed.
         
@@ -501,10 +490,9 @@ SyntaxError - unclosed parenthesis - 2
     -->3: d = a*a
           ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         The opening parenthesis '(' on line 2 is not closed.
         
@@ -530,10 +518,9 @@ SyntaxError - mismatched brackets
     -->2: x = (1, 2, 3]
                       ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         The closing square bracket ']' on line 2 does not match the opening parenthesis '(' on line 2.
         
@@ -560,10 +547,9 @@ SyntaxError - mismatched brackets - 2
     -->4:      3]
                 ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         The closing square bracket ']' on line 4 does not match the opening parenthesis '(' on line 2.
         
@@ -590,7 +576,7 @@ SyntaxError - print is a function
     -->2: print 'hello'
                       ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         Perhaps you need to type print('hello')?
         
         In older version of Python, 'print' was a keyword.
@@ -616,10 +602,9 @@ SyntaxError - Python keyword as function name
     -->3: def pass():
                  ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         You tried to use the Python keyword 'pass' as a function name.
         
@@ -644,7 +629,7 @@ SyntaxError - break outside loop
     -->4:     break
              ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         The Python keyword 'break' can only be used inside a for loop or inside a while loop.
         
 
@@ -668,7 +653,7 @@ SyntaxError - continue outside loop
     -->4:     continue
              ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         The Python keyword 'continue' can only be used inside a for loop or inside a while loop.
         
 
@@ -691,10 +676,9 @@ SyntaxError - quote inside a string
     -->3: message = 'don't'
                          ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         There appears to be a Python identifier (variable name)
         immediately following a string.
@@ -722,10 +706,9 @@ SyntaxError - missing comma in a dict
     -->5:      'c': 3,
                  ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         It is possible that you forgot a comma between items in a set or dict
         before the position indicated by --> and ^.
@@ -750,10 +733,9 @@ SyntaxError - missing comma in a set
     -->3: a = {1, 2  3}
                      ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         It is possible that you forgot a comma between items in a set or dict
         before the position indicated by --> and ^.
@@ -778,10 +760,9 @@ SyntaxError - missing comma in a list
     -->3: a = [1, 2  3]
                      ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         It is possible that you forgot a comma between items in a list
         before the position indicated by --> and ^.
@@ -806,10 +787,9 @@ SyntaxError - missing comma in a tuple
     -->3: a = (1, 2  3)
                      ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         It is possible that you forgot a comma between items in a tuple, 
         or between function arguments, 
@@ -836,10 +816,9 @@ SyntaxError - missing comma between function args
     -->4: def a(b, c d):
                      ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         It is possible that you forgot a comma between items in a tuple, 
         or between function arguments, 
@@ -866,7 +845,7 @@ SyntaxError - can't assign to function call - 1
     -->6: len('a') = 3
          ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         You wrote the expression
             len('a') = 3
         where len('a'), on the left hand-side of the equal sign, either is
@@ -893,7 +872,7 @@ SyntaxError - can't assign to function call - 2
     -->6: func(a, b=3) = 4
          ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         You wrote an expression like
             my_function(...) = some value
         where my_function(...), on the left hand-side of the equal sign, is
@@ -920,10 +899,9 @@ SyntaxError - used equal sign instead of colon
     -->4: ages = {'Alice'=22, 'Bob'=24}
                          ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         It is possible that you used an equal sign '=' instead of a colon ':'
         to assign values to keys in a dict
@@ -950,7 +928,7 @@ SyntaxError - non-default argument follows default argument
     -->5: def test(a=1, b):
                   ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         In Python, you can define functions with only positional arguments
         
             def test(a, b, c): ...
@@ -987,7 +965,7 @@ SyntaxError - positional argument follows keyword argument
     -->5: test(a=1, b)
                    ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         In Python, you can call functions with only positional arguments
         
             test(1, 2, 3)
@@ -1024,7 +1002,7 @@ SyntaxError - f-string: unterminated string
     -->4: print(f"Bob is {age['Bob]} years old.")
                ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         Inside an f-string, which is a string prefixed by the letter f, 
         you have another string, which starts with either a
         single quote (') or double quote ("), without a matching closing one.
@@ -1050,10 +1028,9 @@ SyntaxError - unclosed bracket
     --> 7: print(foo())
                ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         The opening square bracket '[' on line 5 is not closed.
         
@@ -1079,14 +1056,14 @@ SyntaxError - unexpected EOF while parsing
         6: 
         7: print(foo())
 
-    My best guess:
+    Likely cause based on the information given by Python:
         Python gave us the following informative message
         about the possible cause of the error:
         
             unexpected EOF while parsing
         
         However, I do not recognize this information and I have
-        to guess what went wrong, but I might guess incorrectly.
+        to guess what caused the problem, but I might be wrong.
         
         The opening square bracket '[' on line 5 is not closed.
         
@@ -1114,7 +1091,7 @@ SyntaxError - name is parameter and global
     -->6:     global x
              ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         You are including the statement
         
                 global x
@@ -1145,10 +1122,9 @@ SyntaxError - keyword as attribute
     -->12: a.pass = 2
                 ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         You cannot use the Python keyword pass as an attribute.
         
@@ -1174,7 +1150,7 @@ SyntaxError - content passed continuation line character
     -->5: print(\t)
                    ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         You are using the continuation character '\' outside of a string,
         and it is followed by some other character(s).
         I am guessing that you forgot to enclose some content in a string.
@@ -1195,13 +1171,13 @@ SyntaxError - keyword can't be an expression
     Python could not parse the file 'TESTS:\syntax\raise_syntax_error41.py'
     beyond the location indicated below by --> and ^.
     
-       3: Python 3.8:  expression cannot contain assignment, perhaps you meant "=="?
-       4: """
-       5: 
-    -->6: a = dict('key'=1)
-                  ^
+        4: """
+        5: 
+        6: 
+    --> 7: a = dict('key'=1)
+                   ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         You likely called a function with a named argument:
         
            a_function(invalid=something)
@@ -1232,7 +1208,7 @@ SyntaxError - invalid character in identifier
     -->6: 🤖 = 'Reeborg'
           ^
 
-    My best guess:
+    Likely cause based on the information given by Python:
         You likely used some unicode character that is not allowed
         as part of a variable name in Python.
         This includes many emojis.
@@ -1259,10 +1235,9 @@ SyntaxError - keyword cannot be argument in def - 1
     -->5: def f(None=1):
                    ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         I am guessing that you tried to use the Python keyword
         None as an argument in the definition of a function.
@@ -1288,10 +1263,9 @@ SyntaxError - keyword cannot be argument in def - 2
     -->5: def f(x, True):
                       ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         I am guessing that you tried to use the Python keyword
         True as an argument in the definition of a function.
@@ -1317,10 +1291,9 @@ SyntaxError - keyword cannot be argument in def - 3
     -->5: def f(*None):
                     ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         I am guessing that you tried to use the Python keyword
         None as an argument in the definition of a function.
@@ -1346,10 +1319,9 @@ SyntaxError - keyword cannot be argument in def - 4
     -->5: def f(**None):
                      ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         I am guessing that you tried to use the Python keyword
         None as an argument in the definition of a function.
@@ -1374,10 +1346,9 @@ Walrus operator does not exist - yet
     -->3: print(walrus := True)
                        ^
 
-    My best guess:
-        Python did not give us much information regarding
-        the cause of the error. I make an effort below to guess what
-        went wrong, but I might guess incorrectly.
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
         
         You appear to be using the operator :=, sometimes called
         the walrus operator. This operator requires the use of

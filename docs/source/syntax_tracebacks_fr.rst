@@ -45,9 +45,8 @@ SyntaxError - Assign to keyword
     -->3: def = 2
               ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous essayiez d’assigner une valeur au mot clé Python 'def'.
@@ -74,9 +73,8 @@ SyntaxError - Missing colon 1
     -->3: if True
                  ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous avez écrit un énoncé débutant avec
@@ -103,9 +101,8 @@ SyntaxError - Missing colon 2
     -->3: while True  # a comment
                                  ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous vouliez débuter une boucle 'while'
@@ -133,9 +130,8 @@ SyntaxError - elif, not else if
     -->5: else if True:
                 ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous avez écrit 'else if'
@@ -163,9 +159,8 @@ SyntaxError - elif, not elseif
     -->5: elseif True:
                     ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous avez écrit 'elseif'
@@ -192,9 +187,8 @@ SyntaxError - malformed def statment - 1
     -->3: def :
               ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous vouliez définir une fonction ou une méthode,
@@ -223,9 +217,8 @@ SyntaxError - malformed def statment - 2
     -->3: def name  :
                     ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous vouliez définir une fonction ou une méthode,
@@ -254,9 +247,8 @@ SyntaxError - malformed def statment - 3
     -->3: def ( arg )  :
               ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous vouliez définir une fonction ou une méthode,
@@ -285,7 +277,7 @@ SyntaxError - can't assign to literal
     -->3: 1 = a
          ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         Vous avez écrit une expression comme
             1 =  a
         où <1>, sur le côté gauche du signe égal, est soit ce que Python
@@ -314,7 +306,7 @@ SyntaxError - can't assign to literal - 2
     -->3: 1 = 2
          ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         Vous avez écrit une expression comme
             1 =  2
         où <1>, sur le côté gauche du signe égal, est soit ce que Python
@@ -341,9 +333,8 @@ SyntaxError - import X from Y
     -->3: import pen from turtle
                         ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous avez écrit quelque chose comme
@@ -373,7 +364,7 @@ SyntaxError - EOL while scanning string literal
     -->3: alphabet = 'abc
                          ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         Vous aviez commencé à écrire une chaîne de caractères
         avec un guillemet simple ou double, mais n'avez jamais
         terminé la chaîne avec un autre guillemet sur cette ligne.
@@ -399,7 +390,7 @@ SyntaxError - assignment to keyword (None)
     -->4: None = 1
          ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         None est une constante dans python; vous ne pouvez pas lui assigner une valeur.
         
         
@@ -424,7 +415,7 @@ SyntaxError - assignment to keyword (__debug__)
     -->4: __debug__ = 1
          ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         __debug__ est une constante dans python; vous ne pouvez pas lui assigner une valeur.
         
         
@@ -449,9 +440,8 @@ SyntaxError - unmatched closing parenthesis
     -->6:     3, 4,))
                     ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Le symbole parenthèse ')' à la ligne 6 n'a pas de symbole ouvrant qui lui correspond.
@@ -479,9 +469,8 @@ SyntaxError - unclosed parenthesis
     -->3: if x == 1:
                    ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Le symbole parenthèse '(' à la ligne 2 n'est pas fermé par le symbole correspondant.
@@ -509,9 +498,8 @@ SyntaxError - unclosed parenthesis - 2
     -->3: d = a*a
           ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Le symbole parenthèse '(' à la ligne 2 n'est pas fermé par le symbole correspondant.
@@ -538,9 +526,8 @@ SyntaxError - mismatched brackets
     -->2: x = (1, 2, 3]
                       ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Le symbole crochet ']' à la ligne 2 ne correspond pas au symbole parenthèse '(' à la ligne 2.
@@ -568,9 +555,8 @@ SyntaxError - mismatched brackets - 2
     -->4:      3]
                 ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Le symbole crochet ']' à la ligne 4 ne correspond pas au symbole parenthèse '(' à la ligne 2.
@@ -598,7 +584,7 @@ SyntaxError - print is a function
     -->2: print 'hello'
                       ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         Peut-être que vous avez besoin d'écrire print('hello') ?
         
         Dans l'ancienne version de Python, «print» était un mot clé.
@@ -624,9 +610,8 @@ SyntaxError - Python keyword as function name
     -->3: def pass():
                  ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous avez tenté d'utiliser le mot clé Python 'pass' comme nom de fonction.
@@ -654,7 +639,7 @@ SyntaxError - break outside loop
     -->4:     break
              ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         Le mot-clé Python 'break' ne peut être utilisé qu'à l'intérieur d'une boucle 'for' ou à l'intérieur d'une boucle 'while'.
         
 
@@ -678,7 +663,7 @@ SyntaxError - continue outside loop
     -->4:     continue
              ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         Le mot-clé Python 'continue' ne peut être utilisé qu'à l'intérieur d'une boucle 'for' ou à l'intérieur d'une boucle 'while'.
         
 
@@ -701,9 +686,8 @@ SyntaxError - quote inside a string
     -->3: message = 'don't'
                          ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Il semble y avoir un identificateur Python (nom de variable)
@@ -732,9 +716,8 @@ SyntaxError - missing comma in a dict
     -->5:      'c': 3,
                  ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Il est possible que vous ayez oublié une virgule entre les éléments d'un ensemble (set)
@@ -760,9 +743,8 @@ SyntaxError - missing comma in a set
     -->3: a = {1, 2  3}
                      ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Il est possible que vous ayez oublié une virgule entre les éléments d'un ensemble (set)
@@ -788,9 +770,8 @@ SyntaxError - missing comma in a list
     -->3: a = [1, 2  3]
                      ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Il est possible que vous ayez oublié une virgule entre les éléments d'une liste
@@ -816,9 +797,8 @@ SyntaxError - missing comma in a tuple
     -->3: a = (1, 2  3)
                      ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Il est possible que vous ayez oublié une virgule entre les éléments d'un tuple,
@@ -845,9 +825,8 @@ SyntaxError - missing comma between function args
     -->4: def a(b, c d):
                      ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Il est possible que vous ayez oublié une virgule entre les éléments d'un tuple,
@@ -874,7 +853,7 @@ SyntaxError - can't assign to function call - 1
     -->6: len('a') = 3
          ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         Vous avez écrit une expression comme
             len('a') =  3
         où len('a'), à la gauche du signe d'égalité est soit l'invocation
@@ -902,7 +881,7 @@ SyntaxError - can't assign to function call - 2
     -->6: func(a, b=3) = 4
          ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         Vous avez écrit une expression comme
             ma_fonction(…) =  une certaine valeur
         où ma_fonction(…), du côté gauche du signe d'égalité
@@ -929,9 +908,8 @@ SyntaxError - used equal sign instead of colon
     -->4: ages = {'Alice'=22, 'Bob'=24}
                          ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Il est possible que vous ayez utilisé un signe d'égalité (=) au lieu de deux points (:)
@@ -959,7 +937,7 @@ SyntaxError - non-default argument follows default argument
     -->5: def test(a=1, b):
                   ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         Dans Python, vous pouvez définir les fonctions avec seulement des arguments de position
         
             def test(a, b, c): ...
@@ -998,7 +976,7 @@ SyntaxError - positional argument follows keyword argument
     -->5: test(a=1, b)
                    ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         Dans Python, vous pouvez invoquer les fonctions avec seulement des arguments de position
         
             test(1, 2, 3)
@@ -1035,7 +1013,7 @@ SyntaxError - f-string: unterminated string
     -->4: print(f"Bob is {age['Bob]} years old.")
                ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         À l'intérieur d'une "f-string", qui est une chaîne de caractères préfixée de la lettre f,
         vous avez une autre chaîne de caractère qui débute soit avec un apostrophe (')
         ou des guillemets ("), mais n'est pas terminé par un autre caractère semblable.
@@ -1061,9 +1039,8 @@ SyntaxError - unclosed bracket
     --> 7: print(foo())
                ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Le symbole crochet '[' à la ligne 5 n'est pas fermé par le symbole correspondant.
@@ -1091,7 +1068,7 @@ SyntaxError - unexpected EOF while parsing
         6: 
         7: print(foo())
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         Python nous a donné le message d'information suivant
         sur la cause possible de l'erreur :
         
@@ -1127,7 +1104,7 @@ SyntaxError - name is parameter and global
     -->6:     global x
              ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         Vous avec inclus l'énoncé
         
                 global x
@@ -1158,9 +1135,8 @@ SyntaxError - keyword as attribute
     -->12: a.pass = 2
                 ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous avez tenté d'utiliser le mot clé Python 'pass' comme attribut.
@@ -1188,7 +1164,7 @@ SyntaxError - content passed continuation line character
     -->5: print(\t)
                    ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         Vous utilisez le caractère de continuation '\' en dehors d'une chaîne de caractères,
         et il est suivi par au moins un autre caractère.
         Je suppose que vous avez oublié de terminer la chaîne par un guillemet
@@ -1210,20 +1186,20 @@ SyntaxError - keyword can't be an expression
     Python peut seulement analyser le fichier 'TESTS:\syntax\raise_syntax_error41.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-       3: Python 3.8:  expression cannot contain assignment, perhaps you meant "=="?
-       4: """
-       5: 
-    -->6: a = dict('key'=1)
-                  ^
+        4: """
+        5: 
+        6: 
+    --> 7: a = dict('key'=1)
+                   ^
 
-    Ma meilleure hypothèse :
-        You likely called a function with a named argument:
+    Cause probable basée sur les informations données par Python :
+        Vous avez probablement appelé une fonction avec un argument :
         
-           a_function(invalid=something)
+            une_fonction (invalide=quelque_chose)
         
-        where 'invalid' is not a valid variable name in Python
-        either because it starts with a number, or is a string,
-        or contains a period, etc.
+        où «invalide» n'est pas un nom de variable valide dans Python
+        soit parce qu'il commence par un nombre, soit est une chaîne,
+        ou contenir un point, etc.
         
         
 
@@ -1247,7 +1223,7 @@ SyntaxError - invalid character in identifier
     -->6: 🤖 = 'Reeborg'
           ^
 
-    Ma meilleure hypothèse :
+    Cause probable basée sur les informations données par Python :
         Vous avez probablement utilisé un caractère unicode qui n'est pas autorisé
         dans le nom d'une variable dans Python.
         Cela comprend de nombreux emojis.
@@ -1274,9 +1250,8 @@ SyntaxError - keyword cannot be argument in def - 1
     -->5: def f(None=1):
                    ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous avez tenté d'utiliser le mot clé Python 'None' comme argument
@@ -1305,9 +1280,8 @@ SyntaxError - keyword cannot be argument in def - 2
     -->5: def f(x, True):
                       ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous avez tenté d'utiliser le mot clé Python 'True' comme argument
@@ -1336,9 +1310,8 @@ SyntaxError - keyword cannot be argument in def - 3
     -->5: def f(*None):
                     ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous avez tenté d'utiliser le mot clé Python 'None' comme argument
@@ -1367,9 +1340,8 @@ SyntaxError - keyword cannot be argument in def - 4
     -->5: def f(**None):
                      ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous avez tenté d'utiliser le mot clé Python 'None' comme argument
@@ -1397,9 +1369,8 @@ Walrus operator does not exist - yet
     -->3: print(walrus := True)
                        ^
 
-    Ma meilleure hypothèse :
-        Python ne nous a pas donné beaucoup d'informations concernant
-        la cause de l'erreur. Nous faisons un effort ci-dessous pour deviner ce que
+    Je n'ai pas assez d'informations de Python:
+        Nous faisons un effort ci-dessous pour deviner ce que
         a mal tourné, mais nous pourrions deviner incorrectement.
         
         Vous semblez utiliser l'opérateur :=, parfois appelé l'opérateur morse

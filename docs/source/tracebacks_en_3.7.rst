@@ -59,7 +59,7 @@ FileNotFoundError
     are trying to open a file that cannot be found by Python.
     This could be because you misspelled the name of the file.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         In your program, the name of the
         file that cannot be found is 'does_not_exist'.
         
@@ -84,7 +84,7 @@ ImportError
     be imported from a module or package. Most often, this is
     because the name of the object is not spelled correctly.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         The object that could not be imported is 'Pi'.
         The module or package where it was 
         expected to be found is 'math'.
@@ -118,7 +118,7 @@ IndentationError - 1: expected an indented block
     -->4: pass
              ^
 
-    Likely cause:
+    Likely cause based on the information given by Python:
         In this case, the line identified above
         was expected to begin a new indented block.
         
@@ -144,7 +144,7 @@ IndentationError - 2: unexpected indent
     -->4:       pass
                ^
 
-    Likely cause:
+    Likely cause based on the information given by Python:
         In this case, the line identified above
         is more indented than expected and 
         does not match the indentation of the previous line.
@@ -171,7 +171,7 @@ IndentationError - 3: unindent does not match ...
     -->4:     pass
                   ^
 
-    Likely cause:
+    Likely cause based on the information given by Python:
         In this case, the line identified above is
         less indented than the preceding one,
         and is not aligned vertically with another block of code.
@@ -189,7 +189,7 @@ KeyError
     A KeyError is raised when a value is not found as a
     key in a Python dict.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         In your program, the name of the key
         that cannot be found is 'c'.
         
@@ -239,7 +239,7 @@ IndexError - short tuple
     is greater than the length of the sequence.
     Reminder: the first item of a sequence is at index 0.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         In this case, the sequence is a tuple.
         
     Execution stopped on line 8 of file 'TESTS:\except\test_index_error.py'.
@@ -268,7 +268,7 @@ IndexError - long list
     is greater than the length of the sequence.
     Reminder: the first item of a sequence is at index 0.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         In this case, the sequence is a list.
         
     Execution stopped on line 20 of file 'TESTS:\except\test_index_error.py'.
@@ -296,7 +296,7 @@ ModuleNotFoundError
     This could be because you misspelled the name of the module
     or because it is not installed on your computer.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         In your program, the name of the
         module that cannot be found is 'does_not_exist'.
         
@@ -323,7 +323,7 @@ NameError
     However, sometimes it is because the name is used
     before being defined or given a value.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         In your program, the unknown name is 'c'.
         
     Execution stopped on line 6 of file 'TESTS:\except\test_name_error.py'.
@@ -393,7 +393,7 @@ TypeError - 1: concatenate two different types
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to concatenate (add) two different types of objects:
         a string ('str') and an integer ('int')
         
@@ -422,7 +422,7 @@ TypeError - 1a: concatenate two different types
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to concatenate (add) two different types of objects:
         a string ('str') and a list
         
@@ -451,7 +451,7 @@ TypeError - 1b: concatenate two different types
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to concatenate (add) two different types of objects:
         a tuple and a list
         
@@ -480,7 +480,7 @@ TypeError - 2: unsupported operand type(s) for +
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to add two incompatible types of objects:
         an integer ('int') and a variable equal to None ('NoneType')
         
@@ -509,7 +509,7 @@ TypeError - 2a: unsupported operand type(s) for +=
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to add two incompatible types of objects:
         an integer ('int') and a string ('str')
         
@@ -538,7 +538,7 @@ TypeError - 3: unsupported operand type(s) for -
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to subtract two incompatible types of objects:
         a tuple and a list
         
@@ -567,7 +567,7 @@ TypeError - 3a: unsupported operand type(s) for -=
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to subtract two incompatible types of objects:
         a tuple and a list
         
@@ -596,7 +596,7 @@ TypeError - 4: unsupported operand type(s) for *
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to multiply two incompatible types of objects:
         a complex number and a set
         
@@ -625,7 +625,7 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to multiply two incompatible types of objects:
         a complex number and a set
         
@@ -654,7 +654,7 @@ TypeError - 5: unsupported operand type(s) for /
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to divide two incompatible types of objects:
         a dictionary ('dict') and a number ('float')
         
@@ -683,7 +683,7 @@ TypeError - 5a: unsupported operand type(s) for /=
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to divide two incompatible types of objects:
         a dictionary ('dict') and a number ('float')
         
@@ -712,7 +712,7 @@ TypeError - 5b: unsupported operand type(s) for //
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to divide two incompatible types of objects:
         a dictionary ('dict') and a number ('float')
         
@@ -741,7 +741,7 @@ TypeError - 5c: unsupported operand type(s) for //=
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to divide two incompatible types of objects:
         a dictionary ('dict') and a number ('float')
         
@@ -770,7 +770,7 @@ TypeError - 6: unsupported operand type(s) for &
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to perform the bitwise operation &
         on two incompatible types of objects:
         a string ('str') and an integer ('int')
@@ -800,7 +800,7 @@ TypeError - 6a: unsupported operand type(s) for &=
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to perform the bitwise operation &=
         on two incompatible types of objects:
         a string ('str') and an integer ('int')
@@ -830,7 +830,7 @@ TypeError - 7: unsupported operand type(s) for **
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to exponentiate (raise to a power)
         using two incompatible types of objects:
         a dictionary ('dict') and a number ('float')
@@ -860,7 +860,7 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to exponentiate (raise to a power)
         using two incompatible types of objects:
         a dictionary ('dict') and a number ('float')
@@ -890,7 +890,7 @@ TypeError - 8: unsupported operand type(s) for >>
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to perform the bit shifting operation >>
         on two incompatible types of objects:
         a string ('str') and an integer ('int')
@@ -920,7 +920,7 @@ TypeError - 8a: unsupported operand type(s) for >>=
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to perform the bit shifting operation >>=
         on two incompatible types of objects:
         a string ('str') and an integer ('int')
@@ -950,7 +950,7 @@ TypeError - 9: unsupported operand type(s) for @
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to use the operator @
         using two incompatible types of objects:
         a string ('str') and an integer ('int').
@@ -982,7 +982,7 @@ TypeError - 9a: unsupported operand type(s) for @=
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to use the operator @=
         using two incompatible types of objects:
         a string ('str') and an integer ('int').
@@ -1014,7 +1014,7 @@ TypeError - 10: comparison between incompatible types
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to do an order comparison (<)
         between two incompatible types of objects:
         an integer ('int') and a string ('str')
@@ -1044,7 +1044,7 @@ TypeError - 11: bad operand type for unary +
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to use the unary operator '+'
         with the following type of object: a string ('str').
         This operation is not defined for this type of object.
@@ -1071,7 +1071,7 @@ TypeError - 11a: bad operand type for unary -
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to use the unary operator '-'
         with the following type of object: a list.
         This operation is not defined for this type of object.
@@ -1098,7 +1098,7 @@ TypeError - 11b: bad operand type for unary ~
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You tried to use the unary operator '~'
         with the following type of object: a tuple.
         This operation is not defined for this type of object.
@@ -1125,7 +1125,7 @@ TypeError - 12: object does not support item assignment
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         In Python, some objects are known as immutable:
         once defined, their value cannot be changed.
         You tried change part of such an immutable object: a tuple,
@@ -1155,7 +1155,7 @@ TypeError - 13: wrong number of positional arguments
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You apparently have called the function 'fn()' with
         1 positional argument while it requires 0
         such positional arguments.
@@ -1184,7 +1184,7 @@ TypeError - 14: missing positional arguments
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         You apparently have called the function 'fn()' with
         fewer positional arguments than it requires (2 missing).
         
@@ -1212,7 +1212,7 @@ TypeError - 15: tuple object is not callable
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         I suspect that you had an object of this type, <a tuple>,
         followed by what looked like a tuple, '(...)',
         which Python took as an indication of a function call.
@@ -1240,7 +1240,7 @@ TypeError - 15a: list object is not callable
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         I suspect that you had an object of this type, <a list>,
         followed by what looked like a tuple, '(...)',
         which Python took as an indication of a function call.
@@ -1272,7 +1272,7 @@ UnboundLocalError
     Python that this is a global variable, otherwise you will see
     an UnboundLocalError.
     
-    Likely cause:
+    Likely cause based on the information given by Python:
         The variable that appears to cause the problem is 'a'.
         Perhaps the statement
             global a

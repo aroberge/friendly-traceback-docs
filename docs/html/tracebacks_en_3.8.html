@@ -171,7 +171,7 @@ A FileNotFoundError exception indicates that you
 are trying to open a file that cannot be found by Python.
 This could be because you misspelled the name of the file.
 
-Likely cause:
+Likely cause based on the information given by Python:
     In your program, the name of the
     file that cannot be found is &#39;does_not_exist&#39;.
 
@@ -193,7 +193,7 @@ This exception indicates that a certain object could not
 be imported from a module or package. Most often, this is
 because the name of the object is not spelled correctly.
 
-Likely cause:
+Likely cause based on the information given by Python:
     The object that could not be imported is &#39;Pi&#39;.
     The module or package where it was
     expected to be found is &#39;math&#39;.
@@ -224,7 +224,7 @@ beyond the location indicated below by --&gt; and ^.
 --&gt;4: pass
       ^
 
-Likely cause:
+Likely cause based on the information given by Python:
     In this case, the line identified above
     was expected to begin a new indented block.
 </pre></div>
@@ -247,7 +247,7 @@ beyond the location indicated below by --&gt; and ^.
 --&gt;4:       pass
            ^
 
-Likely cause:
+Likely cause based on the information given by Python:
     In this case, the line identified above
     is more indented than expected and
     does not match the indentation of the previous line.
@@ -271,7 +271,7 @@ beyond the location indicated below by --&gt; and ^.
 --&gt;4:     pass
               ^
 
-Likely cause:
+Likely cause based on the information given by Python:
     In this case, the line identified above is
     less indented than the preceding one,
     and is not aligned vertically with another block of code.
@@ -286,7 +286,7 @@ Likely cause:
 A KeyError is raised when a value is not found as a
 key in a Python dict.
 
-Likely cause:
+Likely cause based on the information given by Python:
     In your program, the name of the key
     that cannot be found is &#39;c&#39;.
 
@@ -330,7 +330,7 @@ does not exists; typically, this is because the index you give
 is greater than the length of the sequence.
 Reminder: the first item of a sequence is at index 0.
 
-Likely cause:
+Likely cause based on the information given by Python:
     In this case, the sequence is a tuple.
 
 Execution stopped on line 8 of file &#39;TESTS:\except\test_index_error.py&#39;.
@@ -356,7 +356,7 @@ does not exists; typically, this is because the index you give
 is greater than the length of the sequence.
 Reminder: the first item of a sequence is at index 0.
 
-Likely cause:
+Likely cause based on the information given by Python:
     In this case, the sequence is a list.
 
 Execution stopped on line 20 of file &#39;TESTS:\except\test_index_error.py&#39;.
@@ -381,7 +381,7 @@ are trying to import a module that cannot be found by Python.
 This could be because you misspelled the name of the module
 or because it is not installed on your computer.
 
-Likely cause:
+Likely cause based on the information given by Python:
     In your program, the name of the
     module that cannot be found is &#39;does_not_exist&#39;.
 
@@ -405,7 +405,7 @@ Most often, this is because there is a spelling mistake.
 However, sometimes it is because the name is used
 before being defined or given a value.
 
-Likely cause:
+Likely cause based on the information given by Python:
     In your program, the unknown name is &#39;c&#39;.
 
 Execution stopped on line 6 of file &#39;TESTS:\except\test_name_error.py&#39;.
@@ -467,7 +467,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to concatenate (add) two different types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
@@ -493,7 +493,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to concatenate (add) two different types of objects:
     a string (&#39;str&#39;) and a list
 
@@ -519,7 +519,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to concatenate (add) two different types of objects:
     a tuple and a list
 
@@ -545,7 +545,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to add two incompatible types of objects:
     an integer (&#39;int&#39;) and a variable equal to None (&#39;NoneType&#39;)
 
@@ -571,7 +571,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to add two incompatible types of objects:
     an integer (&#39;int&#39;) and a string (&#39;str&#39;)
 
@@ -597,7 +597,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to subtract two incompatible types of objects:
     a tuple and a list
 
@@ -623,7 +623,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to subtract two incompatible types of objects:
     a tuple and a list
 
@@ -649,7 +649,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to multiply two incompatible types of objects:
     a complex number and a set
 
@@ -675,7 +675,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to multiply two incompatible types of objects:
     a complex number and a set
 
@@ -701,7 +701,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
@@ -727,7 +727,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
@@ -753,7 +753,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
@@ -779,7 +779,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
@@ -805,7 +805,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to perform the bitwise operation &amp;
     on two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
@@ -832,7 +832,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to perform the bitwise operation &amp;=
     on two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
@@ -859,7 +859,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to exponentiate (raise to a power)
     using two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
@@ -886,7 +886,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to exponentiate (raise to a power)
     using two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
@@ -913,7 +913,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to perform the bit shifting operation &gt;&gt;
     on two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
@@ -940,7 +940,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to perform the bit shifting operation &gt;&gt;=
     on two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
@@ -967,7 +967,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to use the operator @
     using two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;).
@@ -996,7 +996,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to use the operator @=
     using two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;).
@@ -1025,7 +1025,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to do an order comparison (&lt;)
     between two incompatible types of objects:
     an integer (&#39;int&#39;) and a string (&#39;str&#39;)
@@ -1052,7 +1052,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to use the unary operator &#39;+&#39;
     with the following type of object: a string (&#39;str&#39;).
     This operation is not defined for this type of object.
@@ -1076,7 +1076,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to use the unary operator &#39;-&#39;
     with the following type of object: a list.
     This operation is not defined for this type of object.
@@ -1100,7 +1100,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You tried to use the unary operator &#39;~&#39;
     with the following type of object: a tuple.
     This operation is not defined for this type of object.
@@ -1124,7 +1124,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     In Python, some objects are known as immutable:
     once defined, their value cannot be changed.
     You tried change part of such an immutable object: a tuple,
@@ -1151,7 +1151,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You apparently have called the function &#39;fn()&#39; with
     1 positional argument while it requires 0
     such positional arguments.
@@ -1177,7 +1177,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     You apparently have called the function &#39;fn()&#39; with
     fewer positional arguments than it requires (2 missing).
 
@@ -1202,7 +1202,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     I suspect that you had an object of this type, &lt;a tuple&gt;,
     followed by what looked like a tuple, &#39;(...)&#39;,
     which Python took as an indication of a function call.
@@ -1227,7 +1227,7 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause:
+Likely cause based on the information given by Python:
     I suspect that you had an object of this type, &lt;a list&gt;,
     followed by what looked like a tuple, &#39;(...)&#39;,
     which Python took as an indication of a function call.
@@ -1256,7 +1256,7 @@ a global variable inside a function without first indicating to
 Python that this is a global variable, otherwise you will see
 an UnboundLocalError.
 
-Likely cause:
+Likely cause based on the information given by Python:
     The variable that appears to cause the problem is &#39;a&#39;.
     Perhaps the statement
         global a

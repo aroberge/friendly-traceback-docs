@@ -60,7 +60,7 @@ FileNotFoundError
     Cela pourrait être parce que vous fait une faute d'orthographe en
     écrivant le nom du fichier.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom du fichier inconnu est 'does_not_exist'.
         
     L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\except\test_file_not_found_error.py'
@@ -84,7 +84,7 @@ ImportError
     être importé à partir d’un module ou d’un paquet. Très souvent, c’est
     parce que le nom de l’objet n’est pas écrit correctement.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         L’objet qui n’a pas pu être importé est 'Pi'.
         Le module ou le paquet d'où il devait être importé est 'math'.
         
@@ -118,7 +118,7 @@ IndentationError - 1: expected an indented block
     -->4: pass
              ^
 
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Dans ce cas-ci, la ligne indiquée ci-dessus par --> devrait
         normalement commencer un nouveau bloc de code indenté.
         
@@ -145,7 +145,7 @@ IndentationError - 2: unexpected indent
     -->4:       pass
                ^
 
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Dans ce cas-ci, la ligne indiquée ci-dessus par -->
         est plus indentée que ce qui était attendu et ne
         correspond pas à l'indentation de la ligne précédente.
@@ -173,7 +173,7 @@ IndentationError - 3: unindent does not match ...
     -->4:     pass
                   ^
 
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Dans ce cas-ci, la ligne indiquée ci-dessus par -->
         est moins indentée que la ligne précédente
         et n’est pas alignée verticalement avec un autre bloc de code.
@@ -191,7 +191,7 @@ KeyError
     Une erreur KeyError est levée lorsqu’une valeur n’est pas trouvée
     en tant que clé dans un dictionnaire (dict) Python.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom de la clé inconnue est 'c'.
         
     L'exécution s'est arrêtée à la ligne 7 du fichier 'TESTS:\except\test_key_error.py'
@@ -240,7 +240,7 @@ IndexError - short tuple
     est plus grand que la longueur de la séquence.
     Rappel: le premier élément d'une séquence est à l'index 0.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Dans ce cas, la séquence est un tuple.
         
     L'exécution s'est arrêtée à la ligne 8 du fichier 'TESTS:\except\test_index_error.py'
@@ -269,7 +269,7 @@ IndexError - long list
     est plus grand que la longueur de la séquence.
     Rappel: le premier élément d'une séquence est à l'index 0.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Dans ce cas, la séquence est une liste.
         
     L'exécution s'est arrêtée à la ligne 20 du fichier 'TESTS:\except\test_index_error.py'
@@ -297,7 +297,7 @@ ModuleNotFoundError
     Cela pourrait être parce que vous fait une faute d'orthographe en
     écrivant le nom du module, ou parce qu’il n’est pas installé sur votre ordinateur.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom du module inconnu est 'does_not_exist'.
         
     L'exécution s'est arrêtée à la ligne 5 du fichier 'TESTS:\except\test_module_not_found_error.py'
@@ -323,7 +323,7 @@ NameError
     Cependant, cela peut également indiquer que le nom a été
     utilisé avant qu'on ne lui ait associé une valeur.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom inconnu est 'c'.
         
     L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\except\test_name_error.py'
@@ -394,7 +394,7 @@ TypeError - 1: concatenate two different types
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
         une chaîne de caractères ('str') et un entier ('int')
         
@@ -423,7 +423,7 @@ TypeError - 1a: concatenate two different types
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
         une chaîne de caractères ('str') et une liste ('list')
         
@@ -452,7 +452,7 @@ TypeError - 1b: concatenate two different types
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
         un tuple et une liste ('list')
         
@@ -481,7 +481,7 @@ TypeError - 2: unsupported operand type(s) for +
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé d’additionner deux types d’objets incompatibles:
         un entier ('int') et une variable de valeur 'None' ('NoteType')
         
@@ -510,7 +510,7 @@ TypeError - 2a: unsupported operand type(s) for +=
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé d’additionner deux types d’objets incompatibles:
         un entier ('int') et une chaîne de caractères ('str')
         
@@ -539,7 +539,7 @@ TypeError - 3: unsupported operand type(s) for -
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez tenté de soustraire deux types d’objets incompatibles:
         un tuple et une liste ('list')
         
@@ -568,7 +568,7 @@ TypeError - 3a: unsupported operand type(s) for -=
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez tenté de soustraire deux types d’objets incompatibles:
         un tuple et une liste ('list')
         
@@ -597,7 +597,7 @@ TypeError - 4: unsupported operand type(s) for *
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé de multiplier deux types d’objets différents:
         un nombre complexe ('complex') et un ensemble ('set')
         
@@ -626,7 +626,7 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé de multiplier deux types d’objets différents:
         un nombre complexe ('complex') et un ensemble ('set')
         
@@ -655,7 +655,7 @@ TypeError - 5: unsupported operand type(s) for /
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé de diviser deux types d’objets différents:
         un dictionnaire ('dict') et un nombre ('float')
         
@@ -684,7 +684,7 @@ TypeError - 5a: unsupported operand type(s) for /=
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé de diviser deux types d’objets différents:
         un dictionnaire ('dict') et un nombre ('float')
         
@@ -713,7 +713,7 @@ TypeError - 5b: unsupported operand type(s) for //
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé de diviser deux types d’objets différents:
         un dictionnaire ('dict') et un nombre ('float')
         
@@ -742,7 +742,7 @@ TypeError - 5c: unsupported operand type(s) for //=
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé de diviser deux types d’objets différents:
         un dictionnaire ('dict') et un nombre ('float')
         
@@ -771,7 +771,7 @@ TypeError - 6: unsupported operand type(s) for &
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé d’effectuer l’opération binaire bit à bit &
         sur deux types d’objets incompatibles:
         une chaîne de caractères ('str') et un entier ('int')
@@ -801,7 +801,7 @@ TypeError - 6a: unsupported operand type(s) for &=
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé d’effectuer l’opération binaire bit à bit &=
         sur deux types d’objets incompatibles:
         une chaîne de caractères ('str') et un entier ('int')
@@ -831,7 +831,7 @@ TypeError - 7: unsupported operand type(s) for **
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé d'élever à une puissance
         en utilisant deux types d’objets incompatibles:
         un dictionnaire ('dict') et un nombre ('float')
@@ -861,7 +861,7 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé d'élever à une puissance
         en utilisant deux types d’objets incompatibles:
         un dictionnaire ('dict') et un nombre ('float')
@@ -891,7 +891,7 @@ TypeError - 8: unsupported operand type(s) for >>
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé d’effectuer l’opération de décalage >>
         sur deux types d’objets incompatibles:
         une chaîne de caractères ('str') et un entier ('int')
@@ -921,7 +921,7 @@ TypeError - 8a: unsupported operand type(s) for >>=
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé d’effectuer l’opération de décalage >>=
         sur deux types d’objets incompatibles:
         une chaîne de caractères ('str') et un entier ('int')
@@ -951,7 +951,7 @@ TypeError - 9: unsupported operand type(s) for @
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé d’utiliser l’opérateur @
         à l’aide de deux types d’objets incompatibles:
         une chaîne de caractères ('str') et un entier ('int').
@@ -983,7 +983,7 @@ TypeError - 9a: unsupported operand type(s) for @=
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé d’utiliser l’opérateur @=
         à l’aide de deux types d’objets incompatibles:
         une chaîne de caractères ('str') et un entier ('int').
@@ -1015,7 +1015,7 @@ TypeError - 10: comparison between incompatible types
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         En utilisant <, vous avez tenté de comparer
         deux types d’objets incompatibles:
         un entier ('int') et une chaîne de caractères ('str')
@@ -1045,7 +1045,7 @@ TypeError - 11: bad operand type for unary +
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé d’utiliser l’opérateur unaire '+'
         avec le type d’objet suivant: une chaîne de caractères ('str').
         Cette opération n’est pas définie pour ce type d’objet.
@@ -1072,7 +1072,7 @@ TypeError - 11a: bad operand type for unary -
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé d’utiliser l’opérateur unaire '-'
         avec le type d’objet suivant: une liste ('list').
         Cette opération n’est pas définie pour ce type d’objet.
@@ -1099,7 +1099,7 @@ TypeError - 11b: bad operand type for unary ~
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez essayé d’utiliser l’opérateur unaire '~'
         avec le type d’objet suivant: un tuple.
         Cette opération n’est pas définie pour ce type d’objet.
@@ -1126,7 +1126,7 @@ TypeError - 12: object does not support item assignment
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Dans Python, certains objets sont connus comme immuables:
         une fois définis, leur valeur ne peut pas être modifiée.
         Vous avez essayé de modifier une partie d’un tel objet immuable: un tuple,
@@ -1156,7 +1156,7 @@ TypeError - 13: wrong number of positional arguments
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez apparemment invoqué la fonction 'fn()' avec
         1 arguments positionnels alors qu'elle en requiert 0.
         
@@ -1184,7 +1184,7 @@ TypeError - 14: missing positional arguments
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Vous avez apparemment invoqué la fonction 'fn()' avec
         moins d'arguments positionnels qu'il n'en faut (2 manquent).
         
@@ -1212,7 +1212,7 @@ TypeError - 15: tuple object is not callable
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Je soupçonne que vous aviez un objet du type <un tuple>,
         suivi de ce qui ressemblait à un tuple, '(...) ',
         que Python a pris comme indiquant une invocation de fonction.
@@ -1240,7 +1240,7 @@ TypeError - 15a: list object is not callable
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         Je soupçonne que vous aviez un objet du type <une liste ('list')>,
         suivi de ce qui ressemblait à un tuple, '(...) ',
         que Python a pris comme indiquant une invocation de fonction.
@@ -1273,7 +1273,7 @@ UnboundLocalError
     à l’intérieur d’une fonction sans d’abord confirmer à python
     qu’il s’agit d’une variable globale, sinon vous verrez une exception UnboundLocalError.
     
-    Cause probable :
+    Cause probable basée sur les informations données par Python :
         La variable qui semble causer le problème est' a '.
         Il est possible que vous avez oublié d'écrire l’instruction
             global a

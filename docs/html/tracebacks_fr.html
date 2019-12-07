@@ -172,7 +172,7 @@ essayez d’importer un module qui ne peut pas être trouvé par Python.
 Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 écrivant le nom du fichier.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom du fichier inconnu est &#39;does_not_exist&#39;.
 
 L&#39;exécution s&#39;est arrêtée à la ligne 6 du fichier &#39;TESTS:\except\test_file_not_found_error.py&#39;
@@ -193,7 +193,7 @@ Cette exception indique qu’un certain objet n’a pas pu
 être importé à partir d’un module ou d’un paquet. Très souvent, c’est
 parce que le nom de l’objet n’est pas écrit correctement.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     L’objet qui n’a pas pu être importé est &#39;Pi&#39;.
     Le module ou le paquet d&#39;où il devait être importé est &#39;math&#39;.
 
@@ -224,7 +224,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: pass
          ^
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Dans ce cas-ci, la ligne indiquée ci-dessus par --&gt; devrait
     normalement commencer un nouveau bloc de code indenté.
 </pre></div>
@@ -248,7 +248,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:       pass
            ^
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Dans ce cas-ci, la ligne indiquée ci-dessus par --&gt;
     est plus indentée que ce qui était attendu et ne
     correspond pas à l&#39;indentation de la ligne précédente.
@@ -273,7 +273,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:     pass
               ^
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Dans ce cas-ci, la ligne indiquée ci-dessus par --&gt;
     est moins indentée que la ligne précédente
     et n’est pas alignée verticalement avec un autre bloc de code.
@@ -288,7 +288,7 @@ Cause probable :
 Une erreur KeyError est levée lorsqu’une valeur n’est pas trouvée
 en tant que clé dans un dictionnaire (dict) Python.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom de la clé inconnue est &#39;c&#39;.
 
 L&#39;exécution s&#39;est arrêtée à la ligne 7 du fichier &#39;TESTS:\except\test_key_error.py&#39;
@@ -331,7 +331,7 @@ n’existe pas; typiquement, c’est parce que l’index que vous donnez
 est plus grand que la longueur de la séquence.
 Rappel: le premier élément d&#39;une séquence est à l&#39;index 0.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Dans ce cas, la séquence est un tuple.
 
 L&#39;exécution s&#39;est arrêtée à la ligne 8 du fichier &#39;TESTS:\except\test_index_error.py&#39;
@@ -357,7 +357,7 @@ n’existe pas; typiquement, c’est parce que l’index que vous donnez
 est plus grand que la longueur de la séquence.
 Rappel: le premier élément d&#39;une séquence est à l&#39;index 0.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Dans ce cas, la séquence est une liste.
 
 L&#39;exécution s&#39;est arrêtée à la ligne 20 du fichier &#39;TESTS:\except\test_index_error.py&#39;
@@ -382,7 +382,7 @@ essayez d’importer un module qui ne peut pas être trouvé par Python.
 Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 écrivant le nom du module, ou parce qu’il n’est pas installé sur votre ordinateur.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom du module inconnu est &#39;does_not_exist&#39;.
 
 L&#39;exécution s&#39;est arrêtée à la ligne 5 du fichier &#39;TESTS:\except\test_module_not_found_error.py&#39;
@@ -405,7 +405,7 @@ Habituellement, ceci indique une simple faute d&#39;orthographe.
 Cependant, cela peut également indiquer que le nom a été
 utilisé avant qu&#39;on ne lui ait associé une valeur.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom inconnu est &#39;c&#39;.
 
 L&#39;exécution s&#39;est arrêtée à la ligne 6 du fichier &#39;TESTS:\except\test_name_error.py&#39;
@@ -468,7 +468,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
 
@@ -494,7 +494,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
     une chaîne de caractères (&#39;str&#39;) et une liste (&#39;list&#39;)
 
@@ -520,7 +520,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
     un tuple et une liste (&#39;list&#39;)
 
@@ -546,7 +546,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé d’additionner deux types d’objets incompatibles:
     un entier (&#39;int&#39;) et une variable de valeur &#39;None&#39; (&#39;NoteType&#39;)
 
@@ -572,7 +572,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé d’additionner deux types d’objets incompatibles:
     un entier (&#39;int&#39;) et une chaîne de caractères (&#39;str&#39;)
 
@@ -598,7 +598,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez tenté de soustraire deux types d’objets incompatibles:
     un tuple et une liste (&#39;list&#39;)
 
@@ -624,7 +624,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez tenté de soustraire deux types d’objets incompatibles:
     un tuple et une liste (&#39;list&#39;)
 
@@ -650,7 +650,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé de multiplier deux types d’objets différents:
     un nombre complexe (&#39;complex&#39;) et un ensemble (&#39;set&#39;)
 
@@ -676,7 +676,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé de multiplier deux types d’objets différents:
     un nombre complexe (&#39;complex&#39;) et un ensemble (&#39;set&#39;)
 
@@ -702,7 +702,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé de diviser deux types d’objets différents:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
@@ -728,7 +728,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé de diviser deux types d’objets différents:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
@@ -754,7 +754,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé de diviser deux types d’objets différents:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
@@ -780,7 +780,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé de diviser deux types d’objets différents:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
@@ -806,7 +806,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé d’effectuer l’opération binaire bit à bit &amp;
     sur deux types d’objets incompatibles:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
@@ -833,7 +833,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé d’effectuer l’opération binaire bit à bit &amp;=
     sur deux types d’objets incompatibles:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
@@ -860,7 +860,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé d&#39;élever à une puissance
     en utilisant deux types d’objets incompatibles:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
@@ -887,7 +887,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé d&#39;élever à une puissance
     en utilisant deux types d’objets incompatibles:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
@@ -914,7 +914,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé d’effectuer l’opération de décalage &gt;&gt;
     sur deux types d’objets incompatibles:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
@@ -941,7 +941,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé d’effectuer l’opération de décalage &gt;&gt;=
     sur deux types d’objets incompatibles:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
@@ -968,7 +968,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé d’utiliser l’opérateur @
     à l’aide de deux types d’objets incompatibles:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;).
@@ -997,7 +997,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé d’utiliser l’opérateur @=
     à l’aide de deux types d’objets incompatibles:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;).
@@ -1026,7 +1026,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     En utilisant &lt;, vous avez tenté de comparer
     deux types d’objets incompatibles:
     un entier (&#39;int&#39;) et une chaîne de caractères (&#39;str&#39;)
@@ -1053,7 +1053,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé d’utiliser l’opérateur unaire &#39;+&#39;
     avec le type d’objet suivant: une chaîne de caractères (&#39;str&#39;).
     Cette opération n’est pas définie pour ce type d’objet.
@@ -1077,7 +1077,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé d’utiliser l’opérateur unaire &#39;-&#39;
     avec le type d’objet suivant: une liste (&#39;list&#39;).
     Cette opération n’est pas définie pour ce type d’objet.
@@ -1101,7 +1101,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez essayé d’utiliser l’opérateur unaire &#39;~&#39;
     avec le type d’objet suivant: un tuple.
     Cette opération n’est pas définie pour ce type d’objet.
@@ -1125,7 +1125,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Dans Python, certains objets sont connus comme immuables:
     une fois définis, leur valeur ne peut pas être modifiée.
     Vous avez essayé de modifier une partie d’un tel objet immuable: un tuple,
@@ -1152,7 +1152,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez apparemment invoqué la fonction &#39;fn()&#39; avec
     1 arguments positionnels alors qu&#39;elle en requiert 0.
 
@@ -1177,7 +1177,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Vous avez apparemment invoqué la fonction &#39;fn()&#39; avec
     moins d&#39;arguments positionnels qu&#39;il n&#39;en faut (2 manquent).
 
@@ -1202,7 +1202,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Je soupçonne que vous aviez un objet du type &lt;un tuple&gt;,
     suivi de ce qui ressemblait à un tuple, &#39;(...) &#39;,
     que Python a pris comme indiquant une invocation de fonction.
@@ -1227,7 +1227,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     Je soupçonne que vous aviez un objet du type &lt;une liste (&#39;list&#39;)&gt;,
     suivi de ce qui ressemblait à un tuple, &#39;(...) &#39;,
     que Python a pris comme indiquant une invocation de fonction.
@@ -1257,7 +1257,7 @@ Vous ne pouvez pas assigner une valeur à une telle variable globale
 à l’intérieur d’une fonction sans d’abord confirmer à python
 qu’il s’agit d’une variable globale, sinon vous verrez une exception UnboundLocalError.
 
-Cause probable :
+Cause probable basée sur les informations données par Python :
     La variable qui semble causer le problème est&#39; a &#39;.
     Il est possible que vous avez oublié d&#39;écrire l’instruction
         global a
