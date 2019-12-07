@@ -188,8 +188,7 @@ SyntaxError - malformed def statment - 1
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        You tried to define a function or method
-        and did not use the correct syntax.
+        You tried to define a function or method and did not use the correct syntax.
         The correct syntax is:
             def name ( optional_arguments ):
         
@@ -217,8 +216,7 @@ SyntaxError - malformed def statment - 2
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        You tried to define a function or method
-        and did not use the correct syntax.
+        You tried to define a function or method and did not use the correct syntax.
         The correct syntax is:
             def name ( optional_arguments ):
         
@@ -246,8 +244,7 @@ SyntaxError - malformed def statment - 3
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        You tried to define a function or method
-        and did not use the correct syntax.
+        You tried to define a function or method and did not use the correct syntax.
         The correct syntax is:
             def name ( optional_arguments ):
         
@@ -1059,13 +1056,10 @@ SyntaxError - unexpected EOF while parsing
         7: print(foo())
 
     Likely cause based on the information given by Python:
-        Python gave us the following informative message
-        about the possible cause of the error:
+        Python tells us that the it reached the end of the file
+        and expected more content.
         
-            unexpected EOF while parsing
-        
-        However, I do not recognize this information and I have
-        to guess what caused the problem, but I might be wrong.
+        I will attempt to be give a bit more information.
         
         The opening square bracket '[' on line 5 is not closed.
         

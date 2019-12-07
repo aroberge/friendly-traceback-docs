@@ -1071,14 +1071,10 @@ SyntaxError - unexpected EOF while parsing
         7: print(foo())
 
     Cause probable basée sur les informations données par Python :
-        Python nous a donné le message d'information suivant
-        sur la cause possible de l'erreur :
+        Python nous dit que le il a atteint la fin du fichier
+        et s'attendait à plus de contenu.
         
-            unexpected EOF while parsing
-        
-        Cependant, nous ne reconnaissons pas cette information.
-        Nous allons tenter ce deviner la cause de l'erreur
-        mais il est possible que nous allons deviner incorrectement.
+        Je vais essayer de donner un peu plus d'informations.
         
         Le symbole crochet '[' à la ligne 5 n'est pas fermé par le symbole correspondant.
         
