@@ -10,9 +10,14 @@ tracebacks for an Exception that is not already included.
 
 .. note::
 
+    Any contribution, no matter how small, is welcome. The following checklist
+    is provided for those that are ambitious and want to do all the required 
+    steps by themselves to include a new case.
+
     **Checklist**
 
-    The following are the required steps before a pull request.
+    The following are the include all the steps that have to be done 
+    to consider that a new case has been completely covered.
     Each item is explained in a different section below. If you find
     the instructions unclear, please do not hesitate to reach out.
 
@@ -22,22 +27,32 @@ tracebacks for an Exception that is not already included.
         - Run pytest and confirm that your new test is included
         - Add generic information
         - Add specific information
+        - Add another assertion in test case, based on specific information
         - Execute test_some_exception.py and confirm visually it works as expected
         - Run pytest and confirm that your new test is included
-        - Make a pull request
+    
+    After completing any of the above steps (other than the first one),
+    feel free to make a pull request so that your code can be included.
 
     If you want to contribute and do not know how to do a pull request,
     or find it too complicated, please contact us: we'll find a way to help you
     contribute.
 
 
-    The following are optional steps; they will need to be done at some point
+    The following are additional optional steps, dealing with the documentation
+    rather than the code itself.
+    They will need to be done at some point
     but, apart for possible translations in languages other than French,
     I can definitely take care of this.
 
+
+        - Ensure that you have a copy of the friendly-traceceback-docs 
+          repository; it should be located at the same directory level
+          as friendly-traceback on your computer.
         - Add case to tests/tb_common.py
-            - Run tests/tb_english.py and ensure docs/tracebacks_en.rst shows
-              the expected result for all Python versions.
+            - Run tests/tb_english.py and ensure that
+              ``../friendly-traceceback-docs/docs/source/tracebacks_en.rst``
+              shows the expected result for all Python versions.
         - Run make_tb.bat or do the equivalent on non Windows computer
         - Confirm that all docs/tracebacks_xx.rst include the new exception
         - Add translation
@@ -54,9 +69,10 @@ As an example throughout, I will use the existing one for
 In this project, we use `pytest <https://docs.pytest.org/en/latest/>`_ and
 simple assertion-based tests.
 
-
+For named exceptions, test files are located in the ``tests/except`` directory.
 Your test file name should start with ``test_``,
-such as ``test_unbound_local_error.py``.  Here is the content of that file,
+such as ``test_unbound_local_error.py``.
+Here is what was the **initial** content of that file,
 with some numbered comments added::
 
     import friendly_traceback
@@ -112,10 +128,7 @@ with some numbered comments added::
    previously. For reliability, we should include more than
    just the name of the Exception. Just leave any information
    about the line and file number out, to avoid making the tests
-   brittle if we were to change either. For example, we might
-   discover that a given exception has more than one case
-   (``IndentationError``, for example, has three cases) and we
-   might want to number each individual test file.
+   brittle if we were to change either.
 6. We must return the previously captured result for independent
    testing.
 7. This enables us to run this test by itself, without Pytest.
@@ -124,7 +137,7 @@ So, let's see what happens if we do run this test by itself.
 
 .. code-block:: none
 
-    $ python tests/test_unbound_local_error.py
+    $ python tests/except/test_unbound_local_error.py
 
         Python exception:
            UnboundLocalError: local variable 'a' referenced before assignment
@@ -207,6 +220,11 @@ exception, followed by some explications::
             "an UnboundLocalError.\n"
         )
 
+This generic explanation is rather long. 
+As mentioned before, if possible, you should make it 
+as short as possible while giving enough information so that a beginner 
+would understand what such an exception means.
+
 We use gettext for providing translations. You do not need to be
 familiar with gettext for this doing this work.
 For those that are familiar with gettext, the most common way
@@ -258,7 +276,7 @@ Add specific information
     In some cases, it could happen that no specific information, as
     described below, is needed. In this case, you should still define
     a function for the specific information, so that we know it has
-    not been overlooked, but have that function simply return None.
+    not been overlooked, but have that function simply return ``None``.
 
 Let's look again at the output for UnboundLocalError.
 At the top of the feedback given by friendly_traceback, we
@@ -277,7 +295,7 @@ It should also follow naturally from your generic information.
 
 In some cases, such as ``SyntaxError``, we might need the actual
 source code in order to provide some very specific information.
-For now, we assume that this is not the case.
+For now, we assume here that this is not the case.
 
 Examining the line ``UnboundLocalError: local variable 'a' referenced before assignment``, we
 see that it refers to a variable name, ``a``, which will almost
@@ -309,7 +327,108 @@ generic information case that it does not warrant additional
 explanation.
 
 If you find that some additional explanation is needed,
-please contact us or file an issue.
+please contact me or file an issue.
+
+Add another assertion 
+---------------------
+
+To ensure that Friendly-traceback does not misidentify a given case,
+include another assertion in the test,
+this one based on the specific information given in your test case.
+This test should not pass simply based on the 
+information given by Python: it should rely on the specificity of the 
+explanation you provide.  In the example I give above, the additional 
+assertion is::
+
+    assert "The variable that appears to cause the problem is 'a'." in result
+
+And here, after quite a few revisions,
+is the **final** content of that file, where the initial 
+single very basic assertion has been replaced by two longer ones.
+While this was not necessary, I also moved the offending Python code out
+of the test function, and made is slightly more complicated as it 
+gave a more interesting traceback, showing the values of
+local and global variables, which was not something 
+that could be done when I first created this example::
+
+    # More complex example than needed - used for documentation
+    import friendly_traceback
+
+    b = 2
+
+    def outer():
+        a = 1
+
+        def inner():
+            c = 3
+            a = a + b + c
+        inner()
+
+
+    def test_unbound_local_error():
+        """Should raise UnboundLocalError"""
+
+        try:
+            outer()
+        except Exception:
+            friendly_traceback.explain(redirect="capture")
+        result = friendly_traceback.get_output()
+        assert "UnboundLocalError: local variable 'a' referenced" in result
+        assert "The variable that appears to cause the problem is 'a'." in result
+        return result
+
+    if __name__ == "__main__":
+        print(test_unbound_local_error())
+
+
+The following is the output for this revised example::
+                                                            
+    Python exception:                                                                
+        UnboundLocalError: local variable 'a' referenced before assignment           
+                                                                                     
+    In Python, variables that are used inside a function are known as                
+    local variables. Before they are used, they must be assigned a value.            
+    A variable that is used before it is assigned a value is assumed to              
+    be defined outside that function; it is known as a 'global'                      
+    (or sometimes 'nonlocal') variable. You cannot assign a value to such            
+    a global variable inside a function without first indicating to                  
+    Python that this is a global variable, otherwise you will see                    
+    an UnboundLocalError.                                                            
+                                                                                     
+    Likely cause based on the information given by Python:                           
+        The variable that appears to cause the problem is 'a'.                       
+        Perhaps the statement                                                        
+            global a                                                                 
+        should have been included as the first line inside your function.            
+                                                                                     
+    Execution stopped on line 20 of file 'tests\except\test_unbound_local_error.py'. 
+                                                                                     
+       18:                                                                           
+       19:     try:                                                                  
+    -->20:         outer()                                                           
+       21:     except Exception:                                                     
+                                                                                     
+    global outer: <function outer>                                                   
+                                                                                     
+    Exception raised on line 12 of file 'tests\except\test_unbound_local_error.py'.  
+                                                                                     
+       10:     def inner():                                                          
+       11:         c = 3                                                             
+    -->12:         a = a + b + c                                                     
+       13:     inner()                                                               
+                                                                                     
+    global b: 2                                                                      
+    c: 3                                                                             
+
+
+
+.. important::
+
+    Each test case should contain at least two distinct assertions:
+
+    1. One based on the information given by Python about the exception.
+    2. One or more based on the specific information information provided by
+       Friendly-traceback.
 
 
 Test your work
@@ -318,7 +437,7 @@ Test your work
 Now that you have added the generic and specific information,
 you should test again by running something like::
 
-    python tests/test_my_exception.py
+    python tests/except/test_my_exception.py
 
 and confirm that the result is acceptable.
 

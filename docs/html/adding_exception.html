@@ -44,6 +44,7 @@
 <li><a class="reference internal" href="#running-with-pytest">Running with pytest</a></li>
 <li><a class="reference internal" href="#adding-generic-information">Adding generic information</a></li>
 <li><a class="reference internal" href="#add-specific-information">Add specific information</a></li>
+<li><a class="reference internal" href="#add-another-assertion">Add another assertion</a></li>
 <li><a class="reference internal" href="#test-your-work">Test your work</a></li>
 <li><a class="reference internal" href="#make-a-pull-request">Make a pull request</a></li>
 <li><a class="reference internal" href="#adding-to-an-existing-exception">Adding to an existing exception</a></li>
@@ -94,8 +95,12 @@ tracebacks for an Exception that is not already included.
 <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> and <code class="docutils literal notranslate"><span class="pre">TabError</span></code>, <strong>which need to be dealt separately.</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
+<p>Any contribution, no matter how small, is welcome. The following checklist
+is provided for those that are ambitious and want to do all the required
+steps by themselves to include a new case.</p>
 <p><strong>Checklist</strong></p>
-<p>The following are the required steps before a pull request.
+<p>The following are the include all the steps that have to be done
+to consider that a new case has been completely covered.
 Each item is explained in a different section below. If you find
 the instructions unclear, please do not hesitate to reach out.</p>
 <blockquote>
@@ -106,23 +111,31 @@ given exception.</p></li>
 <li><p>Run pytest and confirm that your new test is included</p></li>
 <li><p>Add generic information</p></li>
 <li><p>Add specific information</p></li>
+<li><p>Add another assertion in test case, based on specific information</p></li>
 <li><p>Execute test_some_exception.py and confirm visually it works as expected</p></li>
 <li><p>Run pytest and confirm that your new test is included</p></li>
-<li><p>Make a pull request</p></li>
 </ul>
 </div></blockquote>
+<p>After completing any of the above steps (other than the first one),
+feel free to make a pull request so that your code can be included.</p>
 <p>If you want to contribute and do not know how to do a pull request,
 or find it too complicated, please contact us: we’ll find a way to help you
 contribute.</p>
-<p>The following are optional steps; they will need to be done at some point
+<p>The following are additional optional steps, dealing with the documentation
+rather than the code itself.
+They will need to be done at some point
 but, apart for possible translations in languages other than French,
 I can definitely take care of this.</p>
 <blockquote>
 <div><ul class="simple">
+<li><p>Ensure that you have a copy of the friendly-traceceback-docs
+repository; it should be located at the same directory level
+as friendly-traceback on your computer.</p></li>
 <li><dl class="simple">
 <dt>Add case to tests/tb_common.py</dt><dd><ul>
-<li><p>Run tests/tb_english.py and ensure docs/tracebacks_en.rst shows
-the expected result for all Python versions.</p></li>
+<li><p>Run tests/tb_english.py and ensure that
+<code class="docutils literal notranslate"><span class="pre">../friendly-traceceback-docs/docs/source/tracebacks_en.rst</span></code>
+shows the expected result for all Python versions.</p></li>
 </ul>
 </dd>
 </dl>
@@ -142,8 +155,10 @@ As an example throughout, I will use the existing one for
 <code class="docutils literal notranslate"><span class="pre">UnboundLocalError</span></code>. I am documenting the process as I go through.</p>
 <p>In this project, we use <a class="reference external" href="https://docs.pytest.org/en/latest/">pytest</a> and
 simple assertion-based tests.</p>
-<p>Your test file name should start with <code class="docutils literal notranslate"><span class="pre">test_</span></code>,
-such as <code class="docutils literal notranslate"><span class="pre">test_unbound_local_error.py</span></code>.  Here is the content of that file,
+<p>For named exceptions, test files are located in the <code class="docutils literal notranslate"><span class="pre">tests/except</span></code> directory.
+Your test file name should start with <code class="docutils literal notranslate"><span class="pre">test_</span></code>,
+such as <code class="docutils literal notranslate"><span class="pre">test_unbound_local_error.py</span></code>.
+Here is what was the <strong>initial</strong> content of that file,
 with some numbered comments added:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -199,16 +214,13 @@ was shown when running something like <code class="docutils literal notranslate"
 previously. For reliability, we should include more than
 just the name of the Exception. Just leave any information
 about the line and file number out, to avoid making the tests
-brittle if we were to change either. For example, we might
-discover that a given exception has more than one case
-(<code class="docutils literal notranslate"><span class="pre">IndentationError</span></code>, for example, has three cases) and we
-might want to number each individual test file.</p></li>
+brittle if we were to change either.</p></li>
 <li><p>We must return the previously captured result for independent
 testing.</p></li>
 <li><p>This enables us to run this test by itself, without Pytest.</p></li>
 </ol>
 <p>So, let’s see what happens if we do run this test by itself.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python tests/test_unbound_local_error.py
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python tests/except/test_unbound_local_error.py
 
     Python exception:
        UnboundLocalError: local variable &#39;a&#39; referenced before assignment
@@ -287,6 +299,10 @@ exception, followed by some explications:</p>
     <span class="p">)</span>
 </pre></div>
 </div>
+<p>This generic explanation is rather long.
+As mentioned before, if possible, you should make it
+as short as possible while giving enough information so that a beginner
+would understand what such an exception means.</p>
 <p>We use gettext for providing translations. You do not need to be
 familiar with gettext for this doing this work.
 For those that are familiar with gettext, the most common way
@@ -331,7 +347,7 @@ a single <code class="docutils literal notranslate"><span class="pre">\n</span><
 <p>In some cases, it could happen that no specific information, as
 described below, is needed. In this case, you should still define
 a function for the specific information, so that we know it has
-not been overlooked, but have that function simply return None.</p>
+not been overlooked, but have that function simply return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </div>
 <p>Let’s look again at the output for UnboundLocalError.
 At the top of the feedback given by friendly_traceback, we
@@ -347,7 +363,7 @@ be translated into languages other than English.
 It should also follow naturally from your generic information.</p>
 <p>In some cases, such as <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, we might need the actual
 source code in order to provide some very specific information.
-For now, we assume that this is not the case.</p>
+For now, we assume here that this is not the case.</p>
 <p>Examining the line <code class="docutils literal notranslate"><span class="pre">UnboundLocalError:</span> <span class="pre">local</span> <span class="pre">variable</span> <span class="pre">'a'</span> <span class="pre">referenced</span> <span class="pre">before</span> <span class="pre">assignment</span></code>, we
 see that it refers to a variable name, <code class="docutils literal notranslate"><span class="pre">a</span></code>, which will almost
 certainly be different when another user encounters a similar error.
@@ -376,13 +392,112 @@ exception:</p>
 generic information case that it does not warrant additional
 explanation.</p>
 <p>If you find that some additional explanation is needed,
-please contact us or file an issue.</p>
+please contact me or file an issue.</p>
+</div>
+<div class="section" id="add-another-assertion">
+<h2>Add another assertion<a class="headerlink" href="#add-another-assertion" title="Permalink to this headline">¶</a></h2>
+<p>To ensure that Friendly-traceback does not misidentify a given case,
+include another assertion in the test,
+this one based on the specific information given in your test case.
+This test should not pass simply based on the
+information given by Python: it should rely on the specificity of the
+explanation you provide.  In the example I give above, the additional
+assertion is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="s2">&quot;The variable that appears to cause the problem is &#39;a&#39;.&quot;</span> <span class="ow">in</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>And here, after quite a few revisions,
+is the <strong>final</strong> content of that file, where the initial
+single very basic assertion has been replaced by two longer ones.
+While this was not necessary, I also moved the offending Python code out
+of the test function, and made is slightly more complicated as it
+gave a more interesting traceback, showing the values of
+local and global variables, which was not something
+that could be done when I first created this example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># More complex example than needed - used for documentation</span>
+<span class="kn">import</span> <span class="nn">friendly_traceback</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+    <span class="n">inner</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">test_unbound_local_error</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Should raise UnboundLocalError&quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">outer</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="s2">&quot;capture&quot;</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_output</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="s2">&quot;UnboundLocalError: local variable &#39;a&#39; referenced&quot;</span> <span class="ow">in</span> <span class="n">result</span>
+    <span class="k">assert</span> <span class="s2">&quot;The variable that appears to cause the problem is &#39;a&#39;.&quot;</span> <span class="ow">in</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">test_unbound_local_error</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>The following is the output for this revised example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="n">exception</span><span class="p">:</span>
+    <span class="ne">UnboundLocalError</span><span class="p">:</span> <span class="n">local</span> <span class="n">variable</span> <span class="s1">&#39;a&#39;</span> <span class="n">referenced</span> <span class="n">before</span> <span class="n">assignment</span>
+
+<span class="n">In</span> <span class="n">Python</span><span class="p">,</span> <span class="n">variables</span> <span class="n">that</span> <span class="n">are</span> <span class="n">used</span> <span class="n">inside</span> <span class="n">a</span> <span class="n">function</span> <span class="n">are</span> <span class="n">known</span> <span class="k">as</span>
+<span class="n">local</span> <span class="n">variables</span><span class="o">.</span> <span class="n">Before</span> <span class="n">they</span> <span class="n">are</span> <span class="n">used</span><span class="p">,</span> <span class="n">they</span> <span class="n">must</span> <span class="n">be</span> <span class="n">assigned</span> <span class="n">a</span> <span class="n">value</span><span class="o">.</span>
+<span class="n">A</span> <span class="n">variable</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">before</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">assigned</span> <span class="n">a</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">assumed</span> <span class="n">to</span>
+<span class="n">be</span> <span class="n">defined</span> <span class="n">outside</span> <span class="n">that</span> <span class="n">function</span><span class="p">;</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">known</span> <span class="k">as</span> <span class="n">a</span> <span class="s1">&#39;global&#39;</span>
+<span class="p">(</span><span class="ow">or</span> <span class="n">sometimes</span> <span class="s1">&#39;nonlocal&#39;</span><span class="p">)</span> <span class="n">variable</span><span class="o">.</span> <span class="n">You</span> <span class="n">cannot</span> <span class="n">assign</span> <span class="n">a</span> <span class="n">value</span> <span class="n">to</span> <span class="n">such</span>
+<span class="n">a</span> <span class="k">global</span> <span class="n">variable</span> <span class="n">inside</span> <span class="n">a</span> <span class="n">function</span> <span class="n">without</span> <span class="n">first</span> <span class="n">indicating</span> <span class="n">to</span>
+<span class="n">Python</span> <span class="n">that</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">a</span> <span class="k">global</span> <span class="n">variable</span><span class="p">,</span> <span class="n">otherwise</span> <span class="n">you</span> <span class="n">will</span> <span class="n">see</span>
+<span class="n">an</span> <span class="ne">UnboundLocalError</span><span class="o">.</span>
+
+<span class="n">Likely</span> <span class="n">cause</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">information</span> <span class="n">given</span> <span class="n">by</span> <span class="n">Python</span><span class="p">:</span>
+    <span class="n">The</span> <span class="n">variable</span> <span class="n">that</span> <span class="n">appears</span> <span class="n">to</span> <span class="n">cause</span> <span class="n">the</span> <span class="n">problem</span> <span class="ow">is</span> <span class="s1">&#39;a&#39;</span><span class="o">.</span>
+    <span class="n">Perhaps</span> <span class="n">the</span> <span class="n">statement</span>
+        <span class="k">global</span> <span class="n">a</span>
+    <span class="n">should</span> <span class="n">have</span> <span class="n">been</span> <span class="n">included</span> <span class="k">as</span> <span class="n">the</span> <span class="n">first</span> <span class="n">line</span> <span class="n">inside</span> <span class="n">your</span> <span class="n">function</span><span class="o">.</span>
+
+<span class="n">Execution</span> <span class="n">stopped</span> <span class="n">on</span> <span class="n">line</span> <span class="mi">20</span> <span class="n">of</span> <span class="n">file</span> <span class="s1">&#39;tests\except</span><span class="se">\t</span><span class="s1">est_unbound_local_error.py&#39;</span><span class="o">.</span>
+
+   <span class="mi">18</span><span class="p">:</span>
+   <span class="mi">19</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+<span class="o">--&gt;</span><span class="mi">20</span><span class="p">:</span>         <span class="n">outer</span><span class="p">()</span>
+   <span class="mi">21</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+
+<span class="k">global</span> <span class="n">outer</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">outer</span><span class="o">&gt;</span>
+
+<span class="ne">Exception</span> <span class="n">raised</span> <span class="n">on</span> <span class="n">line</span> <span class="mi">12</span> <span class="n">of</span> <span class="n">file</span> <span class="s1">&#39;tests\except</span><span class="se">\t</span><span class="s1">est_unbound_local_error.py&#39;</span><span class="o">.</span>
+
+   <span class="mi">10</span><span class="p">:</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+   <span class="mi">11</span><span class="p">:</span>         <span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="o">--&gt;</span><span class="mi">12</span><span class="p">:</span>         <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+   <span class="mi">13</span><span class="p">:</span>     <span class="n">inner</span><span class="p">()</span>
+
+<span class="k">global</span> <span class="n">b</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">c</span><span class="p">:</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Each test case should contain at least two distinct assertions:</p>
+<ol class="arabic simple">
+<li><p>One based on the information given by Python about the exception.</p></li>
+<li><p>One or more based on the specific information information provided by
+Friendly-traceback.</p></li>
+</ol>
+</div>
 </div>
 <div class="section" id="test-your-work">
 <h2>Test your work<a class="headerlink" href="#test-your-work" title="Permalink to this headline">¶</a></h2>
 <p>Now that you have added the generic and specific information,
 you should test again by running something like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">tests</span><span class="o">/</span><span class="n">test_my_exception</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">tests</span><span class="o">/</span><span class="k">except</span><span class="o">/</span><span class="n">test_my_exception</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>and confirm that the result is acceptable.</p>

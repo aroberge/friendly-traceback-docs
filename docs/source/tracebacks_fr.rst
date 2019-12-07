@@ -31,20 +31,30 @@ ArithmeticError
 
 
     Exception Python:
-        ArithmeticError: 
+        AssertionError: 
         
-    ArithmeticError est la classe de base pour les exceptions
-    qui sont soulevées pour diverses erreurs arithmétiques.
-    Il est inhabituel que vous voyiez cette exception;
-    normalement, une exception plus spécifique aurait dû être soulevée.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    L'exécution s'est arrêtée à la ligne 8 du fichier 'TESTS:\except\test_arithmetic_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-        6:         # Usually, a subclass such as ZeroDivisionError, etc., would
-        7:         # likely be raised.
-    --> 8:         raise ArithmeticError
-        9:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
+    mod: <module 'test_arithmetic_error' from 'C:\\Use...>
+    function: 'test_arithmetic_error'
+
+    Exception levée à la ligne 14 du fichier 'TESTS:\except\test_arithmetic_error.py'.
+    
+       12:     result = friendly_traceback.get_output()
+       13:     assert "ArithmeticError" in result
+    -->14:     assert "ArithmeticError is the base class" in result
+       15:     return result
+
+    result: "\n    Exception Python:\n        ArithmeticE..."  | len(result): 605
 
 FileNotFoundError
 -----------------
@@ -53,23 +63,30 @@ FileNotFoundError
 
 
     Exception Python:
-        FileNotFoundError: [Errno 2] No such file or directory: 'does_not_exist'
+        AssertionError: 
         
-    Une exception FileNotFoundError indique que vous
-    essayez d’importer un module qui ne peut pas être trouvé par Python.
-    Cela pourrait être parce que vous fait une faute d'orthographe en
-    écrivant le nom du fichier.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Dans votre programme, le nom du fichier inconnu est 'does_not_exist'.
-        
-    L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\except\test_file_not_found_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       4: def test_file_not_found_error():
-       5:     try:
-    -->6:         open("does_not_exist")
-       7:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
+    mod: <module 'test_file_not_found_error' from 'C:\...>
+    function: 'test_file_not_found_error'
+
+    Exception levée à la ligne 14 du fichier 'TESTS:\except\test_file_not_found_error.py'.
+    
+       12:         in result
+       13:     )
+    -->14:     assert "that cannot be found is 'does_not_exist'." in result
+       15:     return result
+
+    result: '\n    Exception Python:\n        FileNotFoun...'  | len(result): 739
 
 ImportError
 -----------
@@ -78,106 +95,30 @@ ImportError
 
 
     Exception Python:
-        ImportError: cannot import name 'Pi' from 'math' (unknown location)
+        AssertionError: 
         
-    Cette exception indique qu’un certain objet n’a pas pu
-    être importé à partir d’un module ou d’un paquet. Très souvent, c’est
-    parce que le nom de l’objet n’est pas écrit correctement.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        L’objet qui n’a pas pu être importé est 'Pi'.
-        Le module ou le paquet d'où il devait être importé est 'math'.
-        
-    L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\except\test_import_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       4: def test_import_error():
-       5:     try:
-    -->6:         from math import Pi
-       7:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
+    mod: <module 'test_import_error' from 'C:\\Users\\...>
+    function: 'test_import_error'
 
-IndentationError - 1: expected an indented block
-------------------------------------------------
-
-.. code-block:: none
-
-
-    Exception Python:
-        IndentationError: expected an indented block
-        
-    Une exception de type IndentationError se produit lorsqu'une ligne de code
-    n'est pas indentée (c'est-à-dire alignée verticalement avec les autres lignes)
-    de la façon attendue.
+    Exception levée à la ligne 11 du fichier 'TESTS:\except\test_import_error.py'.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_indentation_error1.py'
-    jusqu'à l'endroit indiqué par --> et ^.
-    
-       1: '''Should raise IndentationError'''
-       2: 
-       3: if True:
-    -->4: pass
-             ^
+        9:     result = friendly_traceback.get_output()
+       10:     assert "ImportError: cannot import name 'Pi'" in result
+    -->11:     assert "The object that could not be imported is 'Pi'." in result
+       12:     return result
 
-    Cause probable basée sur les informations données par Python :
-        Dans ce cas-ci, la ligne indiquée ci-dessus par --> devrait
-        normalement commencer un nouveau bloc de code indenté.
-        
-
-IndentationError - 2: unexpected indent
----------------------------------------
-
-.. code-block:: none
-
-
-    Exception Python:
-        IndentationError: unexpected indent
-        
-    Une exception de type IndentationError se produit lorsqu'une ligne de code
-    n'est pas indentée (c'est-à-dire alignée verticalement avec les autres lignes)
-    de la façon attendue.
-    
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_indentation_error2.py'
-    jusqu'à l'endroit indiqué par --> et ^.
-    
-       1: '''Should raise IndentationError'''
-       2: if True:
-       3:     pass
-    -->4:       pass
-               ^
-
-    Cause probable basée sur les informations données par Python :
-        Dans ce cas-ci, la ligne indiquée ci-dessus par -->
-        est plus indentée que ce qui était attendu et ne
-        correspond pas à l'indentation de la ligne précédente.
-        
-
-IndentationError - 3: unindent does not match ...
--------------------------------------------------
-
-.. code-block:: none
-
-
-    Exception Python:
-        IndentationError: unindent does not match any outer indentation level
-        
-    Une exception de type IndentationError se produit lorsqu'une ligne de code
-    n'est pas indentée (c'est-à-dire alignée verticalement avec les autres lignes)
-    de la façon attendue.
-    
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_indentation_error3.py'
-    jusqu'à l'endroit indiqué par --> et ^.
-    
-       1: '''Should raise IndentationError'''
-       2: if True:
-       3:       pass
-    -->4:     pass
-                  ^
-
-    Cause probable basée sur les informations données par Python :
-        Dans ce cas-ci, la ligne indiquée ci-dessus par -->
-        est moins indentée que la ligne précédente
-        et n’est pas alignée verticalement avec un autre bloc de code.
-        
+    result: "\n    Exception Python:\n        ImportError..."  | len(result): 729
 
 KeyError
 --------
@@ -186,23 +127,30 @@ KeyError
 
 
     Exception Python:
-        KeyError: 'c'
+        AssertionError: 
         
-    Une erreur KeyError est levée lorsqu’une valeur n’est pas trouvée
-    en tant que clé dans un dictionnaire (dict) Python.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Dans votre programme, le nom de la clé inconnue est 'c'.
-        
-    L'exécution s'est arrêtée à la ligne 7 du fichier 'TESTS:\except\test_key_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       5:     d = {'a': 1, 'b': 2}
-       6:     try:
-    -->7:         d['c']
-       8:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    d: {'a': 1, 'b': 2}
+    mod: <module 'test_key_error' from 'C:\\Users\\and...>
+    function: 'test_key_error'
 
+    Exception levée à la ligne 12 du fichier 'TESTS:\except\test_key_error.py'.
+    
+       10:     result = friendly_traceback.get_output()
+       11:     assert "KeyError: 'c'" in result
+    -->12:     assert "that cannot be found is 'c'." in result
+       13:     return result
+
+    result: "\n    Exception Python:\n        KeyError: '..."  | len(result): 555
 
 LookupError
 -----------
@@ -211,19 +159,30 @@ LookupError
 
 
     Exception Python:
-        LookupError: 
+        AssertionError: 
         
-    LookupError est la classe de base pour les exceptions qui sont levées
-    lorsqu’une clé ou un index utilisé sur un tableau de correspondance ou une séquence est invalide.
-    Elle peut également être levée directement par codecs.lookup().
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    L'exécution s'est arrêtée à la ligne 10 du fichier 'TESTS:\except\test_lookup_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-        8:         # other than possibly codecs.lookup(), which is why we raise
-        9:         # it directly here for our example.
-    -->10:         raise LookupError
-       11:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
+    mod: <module 'test_lookup_error' from 'C:\\Users\\...>
+    function: 'test_lookup_error'
+
+    Exception levée à la ligne 15 du fichier 'TESTS:\except\test_lookup_error.py'.
+    
+       13:     result = friendly_traceback.get_output()
+       14:     assert "LookupError" in result
+    -->15:     assert "LookupError is the base class for" in result
+       16:     return result
+
+    result: "\n    Exception Python:\n        LookupError..."  | len(result): 605
 
 IndexError - short tuple
 ------------------------
@@ -232,27 +191,30 @@ IndexError - short tuple
 
 
     Exception Python:
-        IndexError: tuple index out of range
+        AssertionError: 
         
-    Un IndexError se produit lorsque vous essayez d’obtenir un élément
-    d'une liste, d'un tuple, ou d'un objet similaire (séquence), à l’aide d’un index qui
-    n’existe pas; typiquement, c’est parce que l’index que vous donnez
-    est plus grand que la longueur de la séquence.
-    Rappel: le premier élément d'une séquence est à l'index 0.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Dans ce cas, la séquence est un tuple.
-        
-    L'exécution s'est arrêtée à la ligne 8 du fichier 'TESTS:\except\test_index_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-        6:     b = [1, 2, 3]
-        7:     try:
-    --> 8:         print(a[3], b[2])
-        9:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: (1, 2, 3)
-    b: [1, 2, 3]
+    mod: <module 'test_index_error' from 'C:\\Users\\a...>
+    function: 'test_index_error1'
 
+    Exception levée à la ligne 13 du fichier 'TESTS:\except\test_index_error.py'.
+    
+       11:     result = friendly_traceback.get_output()
+       12:     assert "IndexError: tuple index out of range" in result
+    -->13:     assert "In this case, the sequence is a tuple." in result
+       14:     return result
+
+    result: "\n    Exception Python:\n        IndexError:..."  | len(result): 799
 
 IndexError - long list
 ----------------------
@@ -261,27 +223,30 @@ IndexError - long list
 
 
     Exception Python:
-        IndexError: list index out of range
+        AssertionError: 
         
-    Un IndexError se produit lorsque vous essayez d’obtenir un élément
-    d'une liste, d'un tuple, ou d'un objet similaire (séquence), à l’aide d’un index qui
-    n’existe pas; typiquement, c’est parce que l’index que vous donnez
-    est plus grand que la longueur de la séquence.
-    Rappel: le premier élément d'une séquence est à l'index 0.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Dans ce cas, la séquence est une liste.
-        
-    L'exécution s'est arrêtée à la ligne 20 du fichier 'TESTS:\except\test_index_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       18:     b = tuple(range(50))
-       19:     try:
-    -->20:         print(a[50], b[0])
-       21:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
-    b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
+    mod: <module 'test_index_error' from 'C:\\Users\\a...>
+    function: 'test_index_error2'
 
+    Exception levée à la ligne 26 du fichier 'TESTS:\except\test_index_error.py'.
+    
+       24:     result = friendly_traceback.get_output()
+       25:     assert "IndexError: list index out of range" in result
+    -->26:     assert "In this case, the sequence is a list." in result
+       27:     return result
+
+    result: "\n    Exception Python:\n        IndexError:..."  | len(result): 916
 
 ModuleNotFoundError
 -------------------
@@ -290,23 +255,30 @@ ModuleNotFoundError
 
 
     Exception Python:
-        ModuleNotFoundError: No module named 'does_not_exist'
+        AssertionError: 
         
-    Une exception ModuleNotFoundError indique que vous
-    essayez d’importer un module qui ne peut pas être trouvé par Python.
-    Cela pourrait être parce que vous fait une faute d'orthographe en
-    écrivant le nom du module, ou parce qu’il n’est pas installé sur votre ordinateur.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Dans votre programme, le nom du module inconnu est 'does_not_exist'.
-        
-    L'exécution s'est arrêtée à la ligne 5 du fichier 'TESTS:\except\test_module_not_found_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       3: def test_module_not_found_error():
-       4:     try:
-    -->5:         import does_not_exist
-       6:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
+    mod: <module 'test_module_not_found_error' from 'C...>
+    function: 'test_module_not_found_error'
+
+    Exception levée à la ligne 11 du fichier 'TESTS:\except\test_module_not_found_error.py'.
+    
+        9:     result = friendly_traceback.get_output()
+       10:     assert "ModuleNotFoundError: No module named 'does_not_exist'" in result
+    -->11:     assert "module that cannot be found is 'does_not_exist'." in result
+       12:     return result
+
+    result: "\n    Exception Python:\n        ModuleNotFo..."  | len(result): 779
 
 NameError
 ---------
@@ -315,24 +287,30 @@ NameError
 
 
     Exception Python:
-        NameError: name 'c' is not defined
+        AssertionError: 
         
-    Une exception NameError indique que le nom d'une variable
-    ou d'une fonction n'est pas connue par Python.
-    Habituellement, ceci indique une simple faute d'orthographe.
-    Cependant, cela peut également indiquer que le nom a été
-    utilisé avant qu'on ne lui ait associé une valeur.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Dans votre programme, le nom inconnu est 'c'.
-        
-    L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\except\test_name_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       4: def test_name_error():
-       5:     try:
-    -->6:         b = c
-       7:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
+    mod: <module 'test_name_error' from 'C:\\Users\\an...>
+    function: 'test_name_error'
+
+    Exception levée à la ligne 11 du fichier 'TESTS:\except\test_name_error.py'.
+    
+        9:     result = friendly_traceback.get_output()
+       10:     assert "NameError: name 'c' is not defined" in result
+    -->11:     assert "In your program, the unknown name is 'c'." in result
+       12:     return result
+
+    result: "\n    Exception Python:\n        NameError: ..."  | len(result): 706
 
 OverflowError
 -------------
@@ -341,44 +319,30 @@ OverflowError
 
 
     Exception Python:
-        OverflowError: (34, 'Result too large')
+        AssertionError: 
         
-    Une exception de type OverflowError est levée lorsque le résultat d’une opération arithmétique
-    est trop grand pour être manipulé par le processeur de l’ordinateur.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\except\test_overflow_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       4: def test_overflow_error():
-       5:     try:
-    -->6:         2. ** 1600
-       7:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
+    mod: <module 'test_overflow_error' from 'C:\\Users...>
+    function: 'test_overflow_error'
 
-TabError
---------
-
-.. code-block:: none
-
-
-    Exception Python:
-        TabError: inconsistent use of tabs and spaces in indentation
-        
-    Une exception de type TabError indique que vous avez utilisé des espaces
-    ainsi que des caractères de tabulation pour indenter votre code.
-    Cela n’est pas autorisé dans Python.
-    L’indentation de votre code signifie que le bloc de codes est aligné
-    verticalement en insérant des espaces ou des tabulations au début des lignes.
-    La recommandation de Python est de toujours utiliser des espaces
-    pour indenter votre code.
+    Exception levée à la ligne 11 du fichier 'TESTS:\except\test_overflow_error.py'.
     
-    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_tab_error.py'
-    jusqu'à l'endroit indiqué par --> et ^.
-    
-        4: 
-        5: def test_tab_error():
-        6:     if True:
-    --> 7: 	pass
-                ^
+        9:     result = friendly_traceback.get_output()
+       10:     assert "OverflowError: (34, 'Result too large')" in result
+    -->11:     assert "OverflowError is raised when the result" in result
+       12:     return result
+
+    result: "\n    Exception Python:\n        OverflowErr..."  | len(result): 472
 
 TypeError - 1: concatenate two different types
 ----------------------------------------------
@@ -387,27 +351,30 @@ TypeError - 1: concatenate two different types
 
 
     Exception Python:
-        TypeError: can only concatenate str (not "int") to str
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé de concaténer (additionner) deux types d’objets différents:
-        une chaîne de caractères ('str') et un entier ('int')
-        
-    L'exécution s'est arrêtée à la ligne 8 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-        6:         a = "a"
-        7:         one = 1
-    --> 8:         result = a + one
-        9:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: 'a'
-    one: 1
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error1'
 
+    Exception levée à la ligne 15 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       13:     py36 = "must be str, not int" in result
+       14:     assert py37 or py36
+    -->15:     assert "a string ('str') and an integer ('int')" in result
+       16:     return result
+
+    result: '\n    Exception Python:\n        TypeError: ...'  | len(result): 823
 
 TypeError - 1a: concatenate two different types
 -----------------------------------------------
@@ -416,27 +383,30 @@ TypeError - 1a: concatenate two different types
 
 
     Exception Python:
-        TypeError: can only concatenate str (not "list") to str
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé de concaténer (additionner) deux types d’objets différents:
-        une chaîne de caractères ('str') et une liste ('list')
-        
-    L'exécution s'est arrêtée à la ligne 22 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       20:         a = "a"
-       21:         a_list = [1, 2, 3]
-    -->22:         result = a + a_list
-       23:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: 'a'
-    a_list: [1, 2, 3]
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error1a'
 
+    Exception levée à la ligne 30 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       28:     py36 = "must be str, not list" in result
+       29:     assert py37 or py36
+    -->30:     assert "a string ('str') and a list" in result
+       31:     return result
+
+    result: '\n    Exception Python:\n        TypeError: ...'  | len(result): 851
 
 TypeError - 1b: concatenate two different types
 -----------------------------------------------
@@ -445,27 +415,30 @@ TypeError - 1b: concatenate two different types
 
 
     Exception Python:
-        TypeError: can only concatenate tuple (not "list") to tuple
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé de concaténer (additionner) deux types d’objets différents:
-        un tuple et une liste ('list')
-        
-    L'exécution s'est arrêtée à la ligne 36 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       34:         a_tuple = (1, 2, 3)
-       35:         a_list = [1, 2, 3]
-    -->36:         result = a_tuple + a_list
-       37:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a_tuple: (1, 2, 3)
-    a_list: [1, 2, 3]
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error1b'
 
+    Exception levée à la ligne 43 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       41:     result = friendly_traceback.get_output()
+       42:     assert "TypeError: can only concatenate" in result
+    -->43:     assert "a tuple and a list" in result
+       44:     return result
+
+    result: '\n    Exception Python:\n        TypeError: ...'  | len(result): 861
 
 TypeError - 2: unsupported operand type(s) for +
 ------------------------------------------------
@@ -474,27 +447,30 @@ TypeError - 2: unsupported operand type(s) for +
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé d’additionner deux types d’objets incompatibles:
-        un entier ('int') et une variable de valeur 'None' ('NoteType')
-        
-    L'exécution s'est arrêtée à la ligne 48 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       46:         one = 1
-       47:         none = None
-    -->48:         result = one + none
-       49:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    one: 1
-    none: None
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error2'
 
+    Exception levée à la ligne 56 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       54:     result = friendly_traceback.get_output()
+       55:     assert "TypeError: unsupported operand type(s) for +:" in result
+    -->56:     assert "an integer ('int') and a variable equal to None ('NoneType')" in result
+       57:     return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 846
 
 TypeError - 2a: unsupported operand type(s) for +=
 --------------------------------------------------
@@ -503,27 +479,30 @@ TypeError - 2a: unsupported operand type(s) for +=
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for +=: 'int' and 'str'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé d’additionner deux types d’objets incompatibles:
-        un entier ('int') et une chaîne de caractères ('str')
-        
-    L'exécution s'est arrêtée à la ligne 60 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       58:         one = 1
-       59:         two = "two"
-    -->60:         one += two
-       61:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    one: 1
-    two: 'two'
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error2a'
 
+    Exception levée à la ligne 69 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       67:     result = friendly_traceback.get_output()
+       68:     assert "TypeError: unsupported operand type(s) for +=:" in result
+    -->69:     assert "an integer ('int') and a string ('str')" in result
+       70:     return result
+
+    result: '\n    Exception Python:\n        TypeError: ...'  | len(result): 823
 
 TypeError - 3: unsupported operand type(s) for -
 ------------------------------------------------
@@ -532,27 +511,30 @@ TypeError - 3: unsupported operand type(s) for -
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for -: 'tuple' and 'list'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez tenté de soustraire deux types d’objets incompatibles:
-        un tuple et une liste ('list')
-        
-    L'exécution s'est arrêtée à la ligne 72 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       70:         a = (1, 2)
-       71:         b = [3, 4]
-    -->72:         result = a - b
-       73:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: (1, 2)
-    b: [3, 4]
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error3'
 
+    Exception levée à la ligne 82 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       80:     result = friendly_traceback.get_output()
+       81:     assert "TypeError: unsupported operand type(s) for -:" in result
+    -->82:     assert "a tuple and a list" in result
+       83:     return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 809
 
 TypeError - 3a: unsupported operand type(s) for -=
 --------------------------------------------------
@@ -561,27 +543,30 @@ TypeError - 3a: unsupported operand type(s) for -=
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for -=: 'tuple' and 'list'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez tenté de soustraire deux types d’objets incompatibles:
-        un tuple et une liste ('list')
-        
-    L'exécution s'est arrêtée à la ligne 84 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       82:         a = (1, 2)
-       83:         b = [3, 4]
-    -->84:         a -= b
-       85:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: (1, 2)
-    b: [3, 4]
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error3a'
 
+    Exception levée à la ligne 95 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       93:     result = friendly_traceback.get_output()
+       94:     assert "TypeError: unsupported operand type(s) for -=:" in result
+    -->95:     assert "a list and a tuple" in result
+       96:     return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 802
 
 TypeError - 4: unsupported operand type(s) for *
 ------------------------------------------------
@@ -590,27 +575,30 @@ TypeError - 4: unsupported operand type(s) for *
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for *: 'complex' and 'set'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé de multiplier deux types d’objets différents:
-        un nombre complexe ('complex') et un ensemble ('set')
-        
-    L'exécution s'est arrêtée à la ligne 96 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       94:         a = 1j
-       95:         b = {2, 3}
-    -->96:         result = a * b
-       97:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: 1j
-    b: {2, 3}
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error4'
 
+    Exception levée à la ligne 108 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       106:     result = friendly_traceback.get_output()
+       107:     assert "TypeError: unsupported operand type(s) for *:" in result
+    -->108:     assert "a complex number and a set" in result
+       109:     return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 828
 
 TypeError - 4a: unsupported operand type(s) for ``*=``
 ------------------------------------------------------
@@ -619,27 +607,30 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for *=: 'complex' and 'set'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé de multiplier deux types d’objets différents:
-        un nombre complexe ('complex') et un ensemble ('set')
-        
-    L'exécution s'est arrêtée à la ligne 108 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       106:         a = 1j
-       107:         b = {2, 3}
-    -->108:         a *= b
-       109:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: 1j
-    b: {2, 3}
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error4a'
 
+    Exception levée à la ligne 121 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       119:     result = friendly_traceback.get_output()
+       120:     assert "TypeError: unsupported operand type(s) for *=:" in result
+    -->121:     assert "a set and a complex number" in result
+       122:     return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 821
 
 TypeError - 5: unsupported operand type(s) for /
 ------------------------------------------------
@@ -648,27 +639,30 @@ TypeError - 5: unsupported operand type(s) for /
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for /: 'dict' and 'float'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé de diviser deux types d’objets différents:
-        un dictionnaire ('dict') et un nombre ('float')
-        
-    L'exécution s'est arrêtée à la ligne 120 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       118:         a = {1: 1, 2: 2}
-       119:         b = 3.1416
-    -->120:         result = a / b
-       121:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: {1: 1, 2: 2}
-    b: 3.1416
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error5'
 
+    Exception levée à la ligne 134 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       132:     result = friendly_traceback.get_output()
+       133:     assert "TypeError: unsupported operand type(s) for /:" in result
+    -->134:     assert "a dictionary ('dict') and a number ('float')" in result
+       135:     return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 838
 
 TypeError - 5a: unsupported operand type(s) for /=
 --------------------------------------------------
@@ -677,27 +671,30 @@ TypeError - 5a: unsupported operand type(s) for /=
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for /=: 'dict' and 'float'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé de diviser deux types d’objets différents:
-        un dictionnaire ('dict') et un nombre ('float')
-        
-    L'exécution s'est arrêtée à la ligne 132 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       130:         a = {1: 1, 2: 2}
-       131:         b = 3.1416
-    -->132:         a /= b
-       133:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: {1: 1, 2: 2}
-    b: 3.1416
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error5a'
 
+    Exception levée à la ligne 147 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       145:     result = friendly_traceback.get_output()
+       146:     assert "TypeError: unsupported operand type(s) for /=:" in result
+    -->147:     assert "a number ('float') and a dictionary ('dict')" in result
+       148:     return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 831
 
 TypeError - 5b: unsupported operand type(s) for //
 --------------------------------------------------
@@ -706,27 +703,30 @@ TypeError - 5b: unsupported operand type(s) for //
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for //: 'dict' and 'float'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé de diviser deux types d’objets différents:
-        un dictionnaire ('dict') et un nombre ('float')
-        
-    L'exécution s'est arrêtée à la ligne 144 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       142:         a = {1: 1, 2: 2}
-       143:         b = 3.1416
-    -->144:         result = a // b
-       145:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: {1: 1, 2: 2}
-    b: 3.1416
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error5b'
 
+    Exception levée à la ligne 160 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       158:     result = friendly_traceback.get_output()
+       159:     assert "TypeError: unsupported operand type(s) for //:" in result
+    -->160:     assert "a dictionary ('dict') and an integer ('int')" in result
+       161:     return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 826
 
 TypeError - 5c: unsupported operand type(s) for //=
 ---------------------------------------------------
@@ -735,7 +735,7 @@ TypeError - 5c: unsupported operand type(s) for //=
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for //=: 'dict' and 'float'
+        TypeError: unsupported operand type(s) for //=: 'float' and 'dict'
         
     Une exception TypeError est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
@@ -744,17 +744,17 @@ TypeError - 5c: unsupported operand type(s) for //=
     
     Cause probable basée sur les informations données par Python :
         Vous avez essayé de diviser deux types d’objets différents:
-        un dictionnaire ('dict') et un nombre ('float')
+        un nombre ('float') et un dictionnaire ('dict')
         
-    L'exécution s'est arrêtée à la ligne 156 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 168 du fichier 'TESTS:\except\test_type_error.py'
     
-       154:         a = {1: 1, 2: 2}
-       155:         b = 3.1416
-    -->156:         a //= b
-       157:     except Exception:
+       166:         a = {1: 1, 2: 2}
+       167:         b = 3.1416
+    -->168:         b //= a
+       169:     except Exception:
 
-    a: {1: 1, 2: 2}
     b: 3.1416
+    a: {1: 1, 2: 2}
 
 
 TypeError - 6: unsupported operand type(s) for &
@@ -764,28 +764,31 @@ TypeError - 6: unsupported operand type(s) for &
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for &: 'str' and 'int'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé d’effectuer l’opération binaire bit à bit &
-        sur deux types d’objets incompatibles:
-        une chaîne de caractères ('str') et un entier ('int')
-        
-    L'exécution s'est arrêtée à la ligne 168 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       166:         a = "a"
-       167:         b = 2
-    -->168:         result = a & b
-       169:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: 'a'
-    b: 2
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error6'
 
+    Exception levée à la ligne 186 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       184:     result = friendly_traceback.get_output()
+       185:     assert "TypeError: unsupported operand type(s) for &:" in result
+    -->186:     assert "a string ('str') and an integer ('int')" in result
+       187:     return result
+
+    result: '\n    Exception Python:\n        TypeError: ...'  | len(result): 861
 
 TypeError - 6a: unsupported operand type(s) for &=
 --------------------------------------------------
@@ -794,28 +797,31 @@ TypeError - 6a: unsupported operand type(s) for &=
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for &=: 'str' and 'int'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé d’effectuer l’opération binaire bit à bit &=
-        sur deux types d’objets incompatibles:
-        une chaîne de caractères ('str') et un entier ('int')
-        
-    L'exécution s'est arrêtée à la ligne 180 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       178:         a = "a"
-       179:         b = 2
-    -->180:         a &= b
-       181:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: 'a'
-    b: 2
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error6a'
 
+    Exception levée à la ligne 199 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       197:     result = friendly_traceback.get_output()
+       198:     assert "TypeError: unsupported operand type(s) for &=:" in result
+    -->199:     assert "an integer ('int') and a string ('str')" in result
+       200:     return result
+
+    result: '\n    Exception Python:\n        TypeError: ...'  | len(result): 855
 
 TypeError - 7: unsupported operand type(s) for **
 -------------------------------------------------
@@ -824,28 +830,31 @@ TypeError - 7: unsupported operand type(s) for **
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé d'élever à une puissance
-        en utilisant deux types d’objets incompatibles:
-        un dictionnaire ('dict') et un nombre ('float')
-        
-    L'exécution s'est arrêtée à la ligne 192 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       190:         a = {1: 1, 2: 2}
-       191:         b = 3.1416
-    -->192:         result = a ** b
-       193:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: {1: 1, 2: 2}
-    b: 3.1416
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error7'
 
+    Exception levée à la ligne 212 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       210:     result = friendly_traceback.get_output()
+       211:     assert "TypeError: unsupported operand type(s) for ** or pow():" in result
+    -->212:     assert "You tried to exponentiate (raise to a power)" in result
+       213:     return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 887
 
 TypeError - 7a: unsupported operand type(s) for ``**=``
 -------------------------------------------------------
@@ -854,28 +863,31 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé d'élever à une puissance
-        en utilisant deux types d’objets incompatibles:
-        un dictionnaire ('dict') et un nombre ('float')
-        
-    L'exécution s'est arrêtée à la ligne 204 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       202:         a = {1: 1, 2: 2}
-       203:         b = 3.1416
-    -->204:         a **= b
-       205:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: {1: 1, 2: 2}
-    b: 3.1416
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error7a'
 
+    Exception levée à la ligne 225 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       223:     result = friendly_traceback.get_output()
+       224:     assert "TypeError: unsupported operand type(s) for ** or pow():" in result
+    -->225:     assert "You tried to exponentiate (raise to a power)" in result
+       226:     return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 879
 
 TypeError - 8: unsupported operand type(s) for >>
 -------------------------------------------------
@@ -884,28 +896,31 @@ TypeError - 8: unsupported operand type(s) for >>
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for >>: 'str' and 'int'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé d’effectuer l’opération de décalage >>
-        sur deux types d’objets incompatibles:
-        une chaîne de caractères ('str') et un entier ('int')
-        
-    L'exécution s'est arrêtée à la ligne 216 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       214:         a = "a"
-       215:         b = 42
-    -->216:         result = a >> b
-       217:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: 'a'
-    b: 42
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error8'
 
+    Exception levée à la ligne 238 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       236:     result = friendly_traceback.get_output()
+       237:     assert "TypeError: unsupported operand type(s) for >>:" in result
+    -->238:     assert "You tried to perform the bit shifting operation >>" in result
+       239:     return result
+
+    result: '\n    Exception Python:\n        TypeError: ...'  | len(result): 860
 
 TypeError - 8a: unsupported operand type(s) for >>=
 ---------------------------------------------------
@@ -914,28 +929,31 @@ TypeError - 8a: unsupported operand type(s) for >>=
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for >>=: 'str' and 'int'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé d’effectuer l’opération de décalage >>=
-        sur deux types d’objets incompatibles:
-        une chaîne de caractères ('str') et un entier ('int')
-        
-    L'exécution s'est arrêtée à la ligne 228 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       226:         a = "a"
-       227:         b = 42
-    -->228:         a >>= b
-       229:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: 'a'
-    b: 42
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error8a'
 
+    Exception levée à la ligne 251 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       249:     result = friendly_traceback.get_output()
+       250:     assert "TypeError: unsupported operand type(s) for >>=:" in result
+    -->251:     assert "You tried to perform the bit shifting operation >>" in result
+       252:     return result
+
+    result: '\n    Exception Python:\n        TypeError: ...'  | len(result): 854
 
 TypeError - 9: unsupported operand type(s) for @
 ------------------------------------------------
@@ -944,30 +962,31 @@ TypeError - 9: unsupported operand type(s) for @
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for @: 'str' and 'int'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé d’utiliser l’opérateur @
-        à l’aide de deux types d’objets incompatibles:
-        une chaîne de caractères ('str') et un entier ('int').
-        Cet opérateur est normalement utilisé uniquement
-        pour la multiplication des matrices.
-        
-    L'exécution s'est arrêtée à la ligne 240 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       238:         a = "a"
-       239:         b = 2
-    -->240:         result = a @ b
-       241:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: 'a'
-    b: 2
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error9'
 
+    Exception levée à la ligne 264 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       262:     result = friendly_traceback.get_output()
+       263:     assert "TypeError: unsupported operand type(s) for @:" in result
+    -->264:     assert "You tried to use the operator @" in result
+       265:     return result
+
+    result: '\n    Exception Python:\n        TypeError: ...'  | len(result): 953
 
 TypeError - 9a: unsupported operand type(s) for @=
 --------------------------------------------------
@@ -976,30 +995,31 @@ TypeError - 9a: unsupported operand type(s) for @=
 
 
     Exception Python:
-        TypeError: unsupported operand type(s) for @=: 'str' and 'int'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé d’utiliser l’opérateur @=
-        à l’aide de deux types d’objets incompatibles:
-        une chaîne de caractères ('str') et un entier ('int').
-        Cet opérateur est normalement utilisé uniquement
-        pour la multiplication des matrices.
-        
-    L'exécution s'est arrêtée à la ligne 252 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       250:         a = "a"
-       251:         b = 2
-    -->252:         a @= b
-       253:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: 'a'
-    b: 2
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error9a'
 
+    Exception levée à la ligne 277 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       275:     result = friendly_traceback.get_output()
+       276:     assert "TypeError: unsupported operand type(s) for @=:" in result
+    -->277:     assert "You tried to use the operator @" in result
+       278:     return result
+
+    result: '\n    Exception Python:\n        TypeError: ...'  | len(result): 947
 
 TypeError - 10: comparison between incompatible types
 -----------------------------------------------------
@@ -1008,28 +1028,31 @@ TypeError - 10: comparison between incompatible types
 
 
     Exception Python:
-        TypeError: '<' not supported between instances of 'int' and 'str'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        En utilisant <, vous avez tenté de comparer
-        deux types d’objets incompatibles:
-        un entier ('int') et une chaîne de caractères ('str')
-        
-    L'exécution s'est arrêtée à la ligne 264 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       262:         a = "a"
-       263:         b = 42
-    -->264:         b < a
-       265:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    b: 42
-    a: 'a'
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error10'
 
+    Exception levée à la ligne 290 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       288:     result = friendly_traceback.get_output()
+       289:     assert "TypeError: '<' not supported between instances of 'int' and 'str'" in result
+    -->290:     assert "You tried to do an order comparison (<)" in result
+       291:     return result
+
+    result: '\n    Exception Python:\n        TypeError: ...'  | len(result): 837
 
 TypeError - 11: bad operand type for unary +
 --------------------------------------------
@@ -1038,25 +1061,31 @@ TypeError - 11: bad operand type for unary +
 
 
     Exception Python:
-        TypeError: bad operand type for unary +: 'str'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé d’utiliser l’opérateur unaire '+'
-        avec le type d’objet suivant: une chaîne de caractères ('str').
-        Cette opération n’est pas définie pour ce type d’objet.
-        
-    L'exécution s'est arrêtée à la ligne 274 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       272: def test_type_error11():
-       273:     try:
-    -->274:         a = +"abc"
-       275:         print(a)
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error11'
+
+    Exception levée à la ligne 302 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       300:     result = friendly_traceback.get_output()
+       301:     assert "TypeError: bad operand type for unary +: 'str'" in result
+    -->302:     assert "You tried to use the unary operator '+'" in result
+       303:     return result
+
+    result: '\n    Exception Python:\n        TypeError: ...'  | len(result): 837
 
 TypeError - 11a: bad operand type for unary -
 ---------------------------------------------
@@ -1065,25 +1094,31 @@ TypeError - 11a: bad operand type for unary -
 
 
     Exception Python:
-        TypeError: bad operand type for unary -: 'list'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé d’utiliser l’opérateur unaire '-'
-        avec le type d’objet suivant: une liste ('list').
-        Cette opération n’est pas définie pour ce type d’objet.
-        
-    L'exécution s'est arrêtée à la ligne 285 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       283: def test_type_error11a():
-       284:     try:
-    -->285:         a = - [1, 2, 3]
-       286:         print(a)
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error11a'
+
+    Exception levée à la ligne 314 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       312:     result = friendly_traceback.get_output()
+       313:     assert "TypeError: bad operand type for unary -: 'list'" in result
+    -->314:     assert "You tried to use the unary operator '-'" in result
+       315:     return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 830
 
 TypeError - 11b: bad operand type for unary ~
 ---------------------------------------------
@@ -1092,25 +1127,31 @@ TypeError - 11b: bad operand type for unary ~
 
 
     Exception Python:
-        TypeError: bad operand type for unary ~: 'tuple'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez essayé d’utiliser l’opérateur unaire '~'
-        avec le type d’objet suivant: un tuple.
-        Cette opération n’est pas définie pour ce type d’objet.
-        
-    L'exécution s'est arrêtée à la ligne 296 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       294: def test_type_error11b():
-       295:     try:
-    -->296:         a = ~ (1, 2, 3)
-       297:         print(a)
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error11b'
+
+    Exception levée à la ligne 326 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       324:     result = friendly_traceback.get_output()
+       325:     assert "TypeError: bad operand type for unary ~: 'tuple'" in result
+    -->326:     assert "You tried to use the unary operator '~'" in result
+       327:     return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 821
 
 TypeError - 12: object does not support item assignment
 -------------------------------------------------------
@@ -1119,28 +1160,31 @@ TypeError - 12: object does not support item assignment
 
 
     Exception Python:
-        TypeError: 'tuple' object does not support item assignment
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Dans Python, certains objets sont connus comme immuables:
-        une fois définis, leur valeur ne peut pas être modifiée.
-        Vous avez essayé de modifier une partie d’un tel objet immuable: un tuple,
-        probablement en utilisant une opération d’indexation.
-        
-    L'exécution s'est arrêtée à la ligne 308 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       306:     a = (1, 2, 3)
-       307:     try:
-    -->308:         a[0] = 0
-       309:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    a: (1, 2, 3)
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error12'
 
+    Exception levée à la ligne 338 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       336:     result = friendly_traceback.get_output()
+       337:     assert "TypeError: 'tuple' object does not support item assignment" in result
+    -->338:     assert "In Python, some objects are known as immutable:" in result
+       339:     return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 944
 
 TypeError - 13: wrong number of positional arguments
 ----------------------------------------------------
@@ -1149,26 +1193,31 @@ TypeError - 13: wrong number of positional arguments
 
 
     Exception Python:
-        TypeError: fn() takes 0 positional arguments but 1 was given
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez apparemment invoqué la fonction 'fn()' avec
-        1 arguments positionnels alors qu'elle en requiert 0.
-        
-    L'exécution s'est arrêtée à la ligne 320 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       318:         pass
-       319:     try:
-    -->320:         fn(1)
-       321:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    fn: <function test_type_error13.<locals>.fn>
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error13'
 
+    Exception levée à la ligne 351 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       349:         result = friendly_traceback.get_output()
+       350:         assert "TypeError: fn() takes 0 positional arguments but 1 was given" in result
+    -->351:         assert "1 positional argument while it requires 0" in result
+       352:         return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 818
 
 TypeError - 14: missing positional arguments
 --------------------------------------------
@@ -1177,26 +1226,31 @@ TypeError - 14: missing positional arguments
 
 
     Exception Python:
-        TypeError: fn() missing 2 required positional arguments: 'b' and 'c'
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Vous avez apparemment invoqué la fonction 'fn()' avec
-        moins d'arguments positionnels qu'il n'en faut (2 manquent).
-        
-    L'exécution s'est arrêtée à la ligne 332 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       330:         pass
-       331:     try:
-    -->332:         fn(1)
-       333:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    fn: <function test_type_error14.<locals>.fn>
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error14'
 
+    Exception levée à la ligne 364 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       362:         result = friendly_traceback.get_output()
+       363:         assert "TypeError: fn() missing 2 required positional argument" in result
+    -->364:         assert "fewer positional arguments than it requires (2 missing)." in result
+       365:         return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
 
 TypeError - 15: tuple object is not callable
 --------------------------------------------
@@ -1205,26 +1259,31 @@ TypeError - 15: tuple object is not callable
 
 
     Exception Python:
-        TypeError: 'tuple' object is not callable
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Je soupçonne que vous aviez un objet du type <un tuple>,
-        suivi de ce qui ressemblait à un tuple, '(...) ',
-        que Python a pris comme indiquant une invocation de fonction.
-        Il est possible que vous ayez oublié d'écrire une virgule avant le tuple.
-        
-    L'exécution s'est arrêtée à la ligne 342 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       340: def test_type_error15():
-       341:     try:
-    -->342:         _ = (1, 2)(3, 4)
-       343:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error15'
+
+    Exception levée à la ligne 375 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       373:         result = friendly_traceback.get_output()
+       374:         assert "TypeError: 'tuple' object is not callable" in result
+    -->375:         assert "I suspect that you had an object of this type, <a tuple>," in result
+       376:         return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 923
 
 TypeError - 15a: list object is not callable
 --------------------------------------------
@@ -1233,26 +1292,31 @@ TypeError - 15a: list object is not callable
 
 
     Exception Python:
-        TypeError: 'list' object is not callable
+        AssertionError: 
         
-    Une exception TypeError est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        Je soupçonne que vous aviez un objet du type <une liste ('list')>,
-        suivi de ce qui ressemblait à un tuple, '(...) ',
-        que Python a pris comme indiquant une invocation de fonction.
-        Il est possible que vous ayez oublié d'écrire une virgule avant le tuple.
-        
-    L'exécution s'est arrêtée à la ligne 352 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       350: def test_type_error15a():
-       351:     try:
-    -->352:         _ = [1, 2](3, 4)
-       353:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_type_error' from 'C:\\Users\\an...>
+    function: 'test_type_error15a'
+
+    Exception levée à la ligne 386 du fichier 'TESTS:\except\test_type_error.py'.
+    
+       384:         result = friendly_traceback.get_output()
+       385:         assert "TypeError: 'list' object is not callable" in result
+    -->386:         assert "I suspect that you had an object of this type, <a list>," in result
+       387:         return result
+
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 933
 
 UnboundLocalError
 -----------------
@@ -1261,43 +1325,31 @@ UnboundLocalError
 
 
     Exception Python:
-        UnboundLocalError: local variable 'a' referenced before assignment
+        AssertionError: 
         
-    En Python, les variables utilisées à l’intérieur d’une fonction sont appelées
-    variables «locales».
-    Avant d’utiliser une variable locale, une valeur doit lui être attribuée.
-    Une variable utilisée avant l’attribution d’une valeur est supposée
-    être définie en dehors de cette fonction;
-    elle est connu comme une variable «globale» ('global' ou parfois 'nonlocal').
-    Vous ne pouvez pas assigner une valeur à une telle variable globale
-    à l’intérieur d’une fonction sans d’abord confirmer à python
-    qu’il s’agit d’une variable globale, sinon vous verrez une exception UnboundLocalError.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Cause probable basée sur les informations données par Python :
-        La variable qui semble causer le problème est' a '.
-        Il est possible que vous avez oublié d'écrire l’instruction
-            global a
-        comme première ligne à l’intérieur de votre fonction.
-        
-    L'exécution s'est arrêtée à la ligne 20 du fichier 'TESTS:\except\test_unbound_local_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       18: 
-       19:     try:
-    -->20:         outer()
-       21:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    global outer: <function outer>
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_unbound_local_error' from 'C:\\...>
+    function: 'test_unbound_local_error'
 
-    Exception levée à la ligne 12 du fichier 'TESTS:\except\test_unbound_local_error.py'.
+    Exception levée à la ligne 25 du fichier 'TESTS:\except\test_unbound_local_error.py'.
     
-       10:     def inner():
-       11:         c = 3
-    -->12:         a = a + b + c
-       13:     inner()
+       23:     result = friendly_traceback.get_output()
+       24:     assert "UnboundLocalError: local variable 'a' referenced" in result
+    -->25:     assert "The variable that appears to cause the problem is 'a'." in result
+       26:     return result
 
-    global b: 2
-    c: 3
-
+    result: "\n    Exception Python:\n        UnboundLoca..."  | len(result): 1476
 
 Unknown exception
 -----------------
@@ -1306,21 +1358,31 @@ Unknown exception
 
 
     Exception Python:
-        MyException: Some informative message
+        AssertionError: 
         
     Aucune information n’est connue à propos de cette exception.
     Veuillez signaler cet exemple à
     https://github.com/aroberge/friendly-traceback/issues
     
-    L'exécution s'est arrêtée à la ligne 10 du fichier 'TESTS:\except\test_unknown_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-        8: def test_unknown_error():
-        9:     try:
-    -->10:         raise MyException("Some informative message")
-       11:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    global MyException: <class 'test_unknown_error.MyException'>
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_unknown_error' from 'C:\\Users\...>
+    function: 'test_unknown_error'
 
+    Exception levée à la ligne 15 du fichier 'TESTS:\except\test_unknown_error.py'.
+    
+       13:     result = friendly_traceback.get_output()
+       14:     assert "Some informative message" in result
+    -->15:     assert "Please report this example" in result
+       16:     return result
+
+    result: '\n    Exception Python:\n        MyException...'  | len(result): 561
 
 ZeroDivisionError - 1
 ---------------------
@@ -1329,22 +1391,31 @@ ZeroDivisionError - 1
 
 
     Exception Python:
-        ZeroDivisionError: division by zero
+        AssertionError: 
         
-    Une exception de type ZeroDivisionError se produit lorsque
-    vous tentez de diviser une valeur par zéro:
-        résultat = ma_variable / 0
-    Ceci peut également se produire si vous calculez le reste d’une division 
-    à l’aide de l’opérateur modulo '%'
-        résultat = ma_variable % 0
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\except\test_zero_division_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       4: def test_zero_division_error():
-       5:     try:
-    -->6:         1 / 0
-       7:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_zero_division_error' from 'C:\\...>
+    function: 'test_zero_division_error'
+
+    Exception levée à la ligne 11 du fichier 'TESTS:\except\test_zero_division_error.py'.
+    
+        9:     result = friendly_traceback.get_output()
+       10:     assert "ZeroDivisionError: division by zero" in result
+    -->11:     assert "A ZeroDivisionError occurs when" in result
+       12:     return result
+
+    result: "\n    Exception Python:\n        ZeroDivisio..."  | len(result): 599
 
 ZeroDivisionError - 2
 ---------------------
@@ -1353,21 +1424,28 @@ ZeroDivisionError - 2
 
 
     Exception Python:
-        ZeroDivisionError: integer division or modulo by zero
+        AssertionError: 
         
-    Une exception de type ZeroDivisionError se produit lorsque
-    vous tentez de diviser une valeur par zéro:
-        résultat = ma_variable / 0
-    Ceci peut également se produire si vous calculez le reste d’une division 
-    à l’aide de l’opérateur modulo '%'
-        résultat = ma_variable % 0
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
-    L'exécution s'est arrêtée à la ligne 17 du fichier 'TESTS:\except\test_zero_division_error.py'
+    L'exécution s'est arrêtée à la ligne 191 du fichier 'TESTS:\trb_common.py'
     
-       15:     zero = 0
-       16:     try:
-    -->17:         1 % zero
-       18:     except Exception:
+       189:                     mod = __import__(name)
+       190:                     if function is not None:
+    -->191:                         result = getattr(mod, function)()
+       192:                         write(result)
 
-    zero: 0
+    result: "\n    Exception Python:\n        TypeError: ..."  | len(result): 833
+    mod: <module 'test_zero_division_error' from 'C:\\...>
+    function: 'test_zero_division_error2'
 
+    Exception levée à la ligne 23 du fichier 'TESTS:\except\test_zero_division_error.py'.
+    
+       21:     result = friendly_traceback.get_output()
+       22:     assert "ZeroDivisionError: integer division or modulo by zero" in result
+    -->23:     assert "A ZeroDivisionError occurs when" in result
+       24:     return result
+
+    result: "\n    Exception Python:\n        ZeroDivisio..."  | len(result): 619

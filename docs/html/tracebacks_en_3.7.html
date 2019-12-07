@@ -43,9 +43,6 @@
 <li><a class="reference internal" href="#arithmeticerror">ArithmeticError</a></li>
 <li><a class="reference internal" href="#filenotfounderror">FileNotFoundError</a></li>
 <li><a class="reference internal" href="#importerror">ImportError</a></li>
-<li><a class="reference internal" href="#indentationerror-1-expected-an-indented-block">IndentationError - 1: expected an indented block</a></li>
-<li><a class="reference internal" href="#indentationerror-2-unexpected-indent">IndentationError - 2: unexpected indent</a></li>
-<li><a class="reference internal" href="#indentationerror-3-unindent-does-not-match">IndentationError - 3: unindent does not match …</a></li>
 <li><a class="reference internal" href="#keyerror">KeyError</a></li>
 <li><a class="reference internal" href="#lookuperror">LookupError</a></li>
 <li><a class="reference internal" href="#indexerror-short-tuple">IndexError - short tuple</a></li>
@@ -53,7 +50,6 @@
 <li><a class="reference internal" href="#modulenotfounderror">ModuleNotFoundError</a></li>
 <li><a class="reference internal" href="#nameerror">NameError</a></li>
 <li><a class="reference internal" href="#overflowerror">OverflowError</a></li>
-<li><a class="reference internal" href="#taberror">TabError</a></li>
 <li><a class="reference internal" href="#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
 <li><a class="reference internal" href="#typeerror-1a-concatenate-two-different-types">TypeError - 1a: concatenate two different types</a></li>
 <li><a class="reference internal" href="#typeerror-1b-concatenate-two-different-types">TypeError - 1b: concatenate two different types</a></li>
@@ -127,8 +123,8 @@
 <h1>Friendly tracebacks - in English<a class="headerlink" href="#friendly-tracebacks-in-english" title="Permalink to this headline">¶</a></h1>
 <p>Friendly-traceback aims to provide friendlier feedback when an exception
 is raised than what is done by Python.
-Below, we can find some examples. SyntaxError cases are
-shown in a separate page.
+Below, we can find some examples. SyntaxError cases, as well as TabError and
+IndentationError cases, are shown in a separate page.
 Ideally, an example of each case handled by friendly-traceback
 should be included here.</p>
 <div class="admonition note">
@@ -153,12 +149,12 @@ that are raised for various arithmetic errors.
 It is unusual that you are seeing this exception;
 normally, a more specific exception should have been raised.
 
-Execution stopped on line 8 of file &#39;TESTS:\except\test_arithmetic_error.py&#39;.
+Execution stopped on line 9 of file &#39;TESTS:\except\test_arithmetic_error.py&#39;.
 
-    6:         # Usually, a subclass such as ZeroDivisionError, etc., would
-    7:         # likely be raised.
---&gt; 8:         raise ArithmeticError
-    9:     except Exception:
+    7:         # Usually, a subclass such as ZeroDivisionError, etc., would
+    8:         # likely be raised.
+--&gt; 9:         raise ArithmeticError
+   10:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -204,77 +200,6 @@ Execution stopped on line 6 of file &#39;TESTS:\except\test_import_error.py&#39;
    5:     try:
 --&gt;6:         from math import Pi
    7:     except Exception:
-</pre></div>
-</div>
-</div>
-<div class="section" id="indentationerror-1-expected-an-indented-block">
-<h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    IndentationError: expected an indented block
-
-An IndentationError occurs when a given line of code is
-not indented (aligned vertically with other lines) as expected.
-
-Python could not parse the file &#39;TESTS:\syntax\raise_indentation_error1.py&#39;
-beyond the location indicated below by --&gt; and ^.
-
-   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
-   2:
-   3: if True:
---&gt;4: pass
-         ^
-
-Likely cause based on the information given by Python:
-    In this case, the line identified above
-    was expected to begin a new indented block.
-</pre></div>
-</div>
-</div>
-<div class="section" id="indentationerror-2-unexpected-indent">
-<h2>IndentationError - 2: unexpected indent<a class="headerlink" href="#indentationerror-2-unexpected-indent" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    IndentationError: unexpected indent
-
-An IndentationError occurs when a given line of code is
-not indented (aligned vertically with other lines) as expected.
-
-Python could not parse the file &#39;TESTS:\syntax\raise_indentation_error2.py&#39;
-beyond the location indicated below by --&gt; and ^.
-
-   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
-   2: if True:
-   3:     pass
---&gt;4:       pass
-           ^
-
-Likely cause based on the information given by Python:
-    In this case, the line identified above
-    is more indented than expected and
-    does not match the indentation of the previous line.
-</pre></div>
-</div>
-</div>
-<div class="section" id="indentationerror-3-unindent-does-not-match">
-<h2>IndentationError - 3: unindent does not match …<a class="headerlink" href="#indentationerror-3-unindent-does-not-match" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    IndentationError: unindent does not match any outer indentation level
-
-An IndentationError occurs when a given line of code is
-not indented (aligned vertically with other lines) as expected.
-
-Python could not parse the file &#39;TESTS:\syntax\raise_indentation_error3.py&#39;
-beyond the location indicated below by --&gt; and ^.
-
-   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
-   2: if True:
-   3:       pass
---&gt;4:     pass
-              ^
-
-Likely cause based on the information given by Python:
-    In this case, the line identified above is
-    less indented than the preceding one,
-    and is not aligned vertically with another block of code.
 </pre></div>
 </div>
 </div>
@@ -359,12 +284,12 @@ Reminder: the first item of a sequence is at index 0.
 Likely cause based on the information given by Python:
     In this case, the sequence is a list.
 
-Execution stopped on line 20 of file &#39;TESTS:\except\test_index_error.py&#39;.
+Execution stopped on line 21 of file &#39;TESTS:\except\test_index_error.py&#39;.
 
-   18:     b = tuple(range(50))
-   19:     try:
---&gt;20:         print(a[50], b[0])
-   21:     except Exception:
+   19:     b = tuple(range(50))
+   20:     try:
+--&gt;21:         print(a[50], b[0])
+   22:     except Exception:
 
 a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
 b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
@@ -385,12 +310,12 @@ Likely cause based on the information given by Python:
     In your program, the name of the
     module that cannot be found is &#39;does_not_exist&#39;.
 
-Execution stopped on line 5 of file &#39;TESTS:\except\test_module_not_found_error.py&#39;.
+Execution stopped on line 6 of file &#39;TESTS:\except\test_module_not_found_error.py&#39;.
 
-   3: def test_module_not_found_error():
-   4:     try:
---&gt;5:         import does_not_exist
-   6:     except Exception:
+   4: def test_module_not_found_error():
+   5:     try:
+--&gt;6:         import does_not_exist
+   7:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -434,29 +359,6 @@ Execution stopped on line 6 of file &#39;TESTS:\except\test_overflow_error.py&#3
 </pre></div>
 </div>
 </div>
-<div class="section" id="taberror">
-<h2>TabError<a class="headerlink" href="#taberror" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TabError: inconsistent use of tabs and spaces in indentation
-
-A TabError indicates that you have used both spaces
-and tab characters to indent your code.
-This is not allowed in Python.
-Indenting your code means to have block of codes aligned vertically
-by inserting either spaces or tab characters at the beginning of lines.
-Python&#39;s recommendation is to always use spaces to indent your code.
-
-Python could not parse the file &#39;TESTS:\syntax\raise_tab_error.py&#39;
-beyond the location indicated below by --&gt; and ^.
-
-    4:
-    5: def test_tab_error():
-    6:     if True:
---&gt; 7:      pass
-            ^
-</pre></div>
-</div>
-</div>
 <div class="section" id="typeerror-1-concatenate-two-different-types">
 <h2>TypeError - 1: concatenate two different types<a class="headerlink" href="#typeerror-1-concatenate-two-different-types" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
@@ -497,12 +399,12 @@ Likely cause based on the information given by Python:
     You tried to concatenate (add) two different types of objects:
     a string (&#39;str&#39;) and a list
 
-Execution stopped on line 22 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 23 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   20:         a = &quot;a&quot;
-   21:         a_list = [1, 2, 3]
---&gt;22:         result = a + a_list
-   23:     except Exception:
+   21:         a = &quot;a&quot;
+   22:         a_list = [1, 2, 3]
+--&gt;23:         result = a + a_list
+   24:     except Exception:
 
 a: &#39;a&#39;
 a_list: [1, 2, 3]
@@ -523,12 +425,12 @@ Likely cause based on the information given by Python:
     You tried to concatenate (add) two different types of objects:
     a tuple and a list
 
-Execution stopped on line 36 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 38 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   34:         a_tuple = (1, 2, 3)
-   35:         a_list = [1, 2, 3]
---&gt;36:         result = a_tuple + a_list
-   37:     except Exception:
+   36:         a_tuple = (1, 2, 3)
+   37:         a_list = [1, 2, 3]
+--&gt;38:         result = a_tuple + a_list
+   39:     except Exception:
 
 a_tuple: (1, 2, 3)
 a_list: [1, 2, 3]
@@ -549,12 +451,12 @@ Likely cause based on the information given by Python:
     You tried to add two incompatible types of objects:
     an integer (&#39;int&#39;) and a variable equal to None (&#39;NoneType&#39;)
 
-Execution stopped on line 48 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 51 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   46:         one = 1
-   47:         none = None
---&gt;48:         result = one + none
-   49:     except Exception:
+   49:         one = 1
+   50:         none = None
+--&gt;51:         result = one + none
+   52:     except Exception:
 
 one: 1
 none: None
@@ -575,12 +477,12 @@ Likely cause based on the information given by Python:
     You tried to add two incompatible types of objects:
     an integer (&#39;int&#39;) and a string (&#39;str&#39;)
 
-Execution stopped on line 60 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 64 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   58:         one = 1
-   59:         two = &quot;two&quot;
---&gt;60:         one += two
-   61:     except Exception:
+   62:         one = 1
+   63:         two = &quot;two&quot;
+--&gt;64:         one += two
+   65:     except Exception:
 
 one: 1
 two: &#39;two&#39;
@@ -601,12 +503,12 @@ Likely cause based on the information given by Python:
     You tried to subtract two incompatible types of objects:
     a tuple and a list
 
-Execution stopped on line 72 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 77 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   70:         a = (1, 2)
-   71:         b = [3, 4]
---&gt;72:         result = a - b
-   73:     except Exception:
+   75:         a = (1, 2)
+   76:         b = [3, 4]
+--&gt;77:         result = a - b
+   78:     except Exception:
 
 a: (1, 2)
 b: [3, 4]
@@ -616,7 +518,7 @@ b: [3, 4]
 <div class="section" id="typeerror-3a-unsupported-operand-type-s-for">
 <h2>TypeError - 3a: unsupported operand type(s) for -=<a class="headerlink" href="#typeerror-3a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for -=: &#39;tuple&#39; and &#39;list&#39;
+    TypeError: unsupported operand type(s) for -=: &#39;list&#39; and &#39;tuple&#39;
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
@@ -625,17 +527,17 @@ or by tring to do an operation not allowed on a given type of object.
 
 Likely cause based on the information given by Python:
     You tried to subtract two incompatible types of objects:
-    a tuple and a list
+    a list and a tuple
 
-Execution stopped on line 84 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 90 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   82:         a = (1, 2)
-   83:         b = [3, 4]
---&gt;84:         a -= b
-   85:     except Exception:
+   88:         a = (1, 2)
+   89:         b = [3, 4]
+--&gt;90:         b -= a
+   91:     except Exception:
 
-a: (1, 2)
 b: [3, 4]
+a: (1, 2)
 </pre></div>
 </div>
 </div>
@@ -653,12 +555,12 @@ Likely cause based on the information given by Python:
     You tried to multiply two incompatible types of objects:
     a complex number and a set
 
-Execution stopped on line 96 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 103 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   94:         a = 1j
-   95:         b = {2, 3}
---&gt;96:         result = a * b
-   97:     except Exception:
+   101:         a = 1j
+   102:         b = {2, 3}
+--&gt;103:         result = a * b
+   104:     except Exception:
 
 a: 1j
 b: {2, 3}
@@ -668,7 +570,7 @@ b: {2, 3}
 <div class="section" id="typeerror-4a-unsupported-operand-type-s-for">
 <h2>TypeError - 4a: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">*=</span></code><a class="headerlink" href="#typeerror-4a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for *=: &#39;complex&#39; and &#39;set&#39;
+    TypeError: unsupported operand type(s) for *=: &#39;set&#39; and &#39;complex&#39;
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
@@ -677,17 +579,17 @@ or by tring to do an operation not allowed on a given type of object.
 
 Likely cause based on the information given by Python:
     You tried to multiply two incompatible types of objects:
-    a complex number and a set
+    a set and a complex number
 
-Execution stopped on line 108 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 116 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   106:         a = 1j
-   107:         b = {2, 3}
---&gt;108:         a *= b
-   109:     except Exception:
+   114:         a = 1j
+   115:         b = {2, 3}
+--&gt;116:         b *= a
+   117:     except Exception:
 
-a: 1j
 b: {2, 3}
+a: 1j
 </pre></div>
 </div>
 </div>
@@ -705,12 +607,12 @@ Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
-Execution stopped on line 120 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 129 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   118:         a = {1: 1, 2: 2}
-   119:         b = 3.1416
---&gt;120:         result = a / b
-   121:     except Exception:
+   127:         a = {1: 1, 2: 2}
+   128:         b = 3.1416
+--&gt;129:         result = a / b
+   130:     except Exception:
 
 a: {1: 1, 2: 2}
 b: 3.1416
@@ -720,7 +622,7 @@ b: 3.1416
 <div class="section" id="typeerror-5a-unsupported-operand-type-s-for">
 <h2>TypeError - 5a: unsupported operand type(s) for /=<a class="headerlink" href="#typeerror-5a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for /=: &#39;dict&#39; and &#39;float&#39;
+    TypeError: unsupported operand type(s) for /=: &#39;float&#39; and &#39;dict&#39;
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
@@ -729,24 +631,24 @@ or by tring to do an operation not allowed on a given type of object.
 
 Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
-    a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
+    a number (&#39;float&#39;) and a dictionary (&#39;dict&#39;)
 
-Execution stopped on line 132 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 142 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   130:         a = {1: 1, 2: 2}
-   131:         b = 3.1416
---&gt;132:         a /= b
-   133:     except Exception:
+   140:         a = {1: 1, 2: 2}
+   141:         b = 3.1416
+--&gt;142:         b /= a
+   143:     except Exception:
 
-a: {1: 1, 2: 2}
 b: 3.1416
+a: {1: 1, 2: 2}
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-5b-unsupported-operand-type-s-for">
 <h2>TypeError - 5b: unsupported operand type(s) for //<a class="headerlink" href="#typeerror-5b-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for //: &#39;dict&#39; and &#39;float&#39;
+    TypeError: unsupported operand type(s) for //: &#39;dict&#39; and &#39;int&#39;
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
@@ -755,24 +657,24 @@ or by tring to do an operation not allowed on a given type of object.
 
 Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
-    a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
+    a dictionary (&#39;dict&#39;) and an integer (&#39;int&#39;)
 
-Execution stopped on line 144 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 155 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   142:         a = {1: 1, 2: 2}
-   143:         b = 3.1416
---&gt;144:         result = a // b
-   145:     except Exception:
+   153:         a = {1: 1, 2: 2}
+   154:         b = 1
+--&gt;155:         result = a // b
+   156:     except Exception:
 
 a: {1: 1, 2: 2}
-b: 3.1416
+b: 1
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-5c-unsupported-operand-type-s-for">
 <h2>TypeError - 5c: unsupported operand type(s) for //=<a class="headerlink" href="#typeerror-5c-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for //=: &#39;dict&#39; and &#39;float&#39;
+    TypeError: unsupported operand type(s) for //=: &#39;float&#39; and &#39;dict&#39;
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
@@ -781,17 +683,17 @@ or by tring to do an operation not allowed on a given type of object.
 
 Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
-    a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
+    a number (&#39;float&#39;) and a dictionary (&#39;dict&#39;)
 
-Execution stopped on line 156 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 168 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   154:         a = {1: 1, 2: 2}
-   155:         b = 3.1416
---&gt;156:         a //= b
-   157:     except Exception:
+   166:         a = {1: 1, 2: 2}
+   167:         b = 3.1416
+--&gt;168:         b //= a
+   169:     except Exception:
 
-a: {1: 1, 2: 2}
 b: 3.1416
+a: {1: 1, 2: 2}
 </pre></div>
 </div>
 </div>
@@ -810,12 +712,12 @@ Likely cause based on the information given by Python:
     on two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
-Execution stopped on line 168 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 181 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   166:         a = &quot;a&quot;
-   167:         b = 2
---&gt;168:         result = a &amp; b
-   169:     except Exception:
+   179:         a = &quot;a&quot;
+   180:         b = 2
+--&gt;181:         result = a &amp; b
+   182:     except Exception:
 
 a: &#39;a&#39;
 b: 2
@@ -825,7 +727,7 @@ b: 2
 <div class="section" id="typeerror-6a-unsupported-operand-type-s-for">
 <h2>TypeError - 6a: unsupported operand type(s) for &amp;=<a class="headerlink" href="#typeerror-6a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for &amp;=: &#39;str&#39; and &#39;int&#39;
+    TypeError: unsupported operand type(s) for &amp;=: &#39;int&#39; and &#39;str&#39;
 
 A TypeError is usually caused by trying
 to combine two incompatible types of objects,
@@ -835,17 +737,17 @@ or by tring to do an operation not allowed on a given type of object.
 Likely cause based on the information given by Python:
     You tried to perform the bitwise operation &amp;=
     on two incompatible types of objects:
-    a string (&#39;str&#39;) and an integer (&#39;int&#39;)
+    an integer (&#39;int&#39;) and a string (&#39;str&#39;)
 
-Execution stopped on line 180 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 194 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   178:         a = &quot;a&quot;
-   179:         b = 2
---&gt;180:         a &amp;= b
-   181:     except Exception:
+   192:         a = &quot;a&quot;
+   193:         b = 2
+--&gt;194:         b &amp;= a
+   195:     except Exception:
 
-a: &#39;a&#39;
 b: 2
+a: &#39;a&#39;
 </pre></div>
 </div>
 </div>
@@ -864,12 +766,12 @@ Likely cause based on the information given by Python:
     using two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
-Execution stopped on line 192 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 207 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   190:         a = {1: 1, 2: 2}
-   191:         b = 3.1416
---&gt;192:         result = a ** b
-   193:     except Exception:
+   205:         a = {1: 1, 2: 2}
+   206:         b = 3.1416
+--&gt;207:         result = a ** b
+   208:     except Exception:
 
 a: {1: 1, 2: 2}
 b: 3.1416
@@ -891,12 +793,12 @@ Likely cause based on the information given by Python:
     using two incompatible types of objects:
     a dictionary (&#39;dict&#39;) and a number (&#39;float&#39;)
 
-Execution stopped on line 204 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 220 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   202:         a = {1: 1, 2: 2}
-   203:         b = 3.1416
---&gt;204:         a **= b
-   205:     except Exception:
+   218:         a = {1: 1, 2: 2}
+   219:         b = 3.1416
+--&gt;220:         a **= b
+   221:     except Exception:
 
 a: {1: 1, 2: 2}
 b: 3.1416
@@ -918,12 +820,12 @@ Likely cause based on the information given by Python:
     on two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
-Execution stopped on line 216 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 233 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   214:         a = &quot;a&quot;
-   215:         b = 42
---&gt;216:         result = a &gt;&gt; b
-   217:     except Exception:
+   231:         a = &quot;a&quot;
+   232:         b = 42
+--&gt;233:         result = a &gt;&gt; b
+   234:     except Exception:
 
 a: &#39;a&#39;
 b: 42
@@ -945,12 +847,12 @@ Likely cause based on the information given by Python:
     on two incompatible types of objects:
     a string (&#39;str&#39;) and an integer (&#39;int&#39;)
 
-Execution stopped on line 228 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 246 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   226:         a = &quot;a&quot;
-   227:         b = 42
---&gt;228:         a &gt;&gt;= b
-   229:     except Exception:
+   244:         a = &quot;a&quot;
+   245:         b = 42
+--&gt;246:         a &gt;&gt;= b
+   247:     except Exception:
 
 a: &#39;a&#39;
 b: 42
@@ -974,12 +876,12 @@ Likely cause based on the information given by Python:
     This operator is normally used only
     for multiplication of matrices.
 
-Execution stopped on line 240 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 259 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   238:         a = &quot;a&quot;
-   239:         b = 2
---&gt;240:         result = a @ b
-   241:     except Exception:
+   257:         a = &quot;a&quot;
+   258:         b = 2
+--&gt;259:         result = a @ b
+   260:     except Exception:
 
 a: &#39;a&#39;
 b: 2
@@ -1003,12 +905,12 @@ Likely cause based on the information given by Python:
     This operator is normally used only
     for multiplication of matrices.
 
-Execution stopped on line 252 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 272 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   250:         a = &quot;a&quot;
-   251:         b = 2
---&gt;252:         a @= b
-   253:     except Exception:
+   270:         a = &quot;a&quot;
+   271:         b = 2
+--&gt;272:         a @= b
+   273:     except Exception:
 
 a: &#39;a&#39;
 b: 2
@@ -1030,12 +932,12 @@ Likely cause based on the information given by Python:
     between two incompatible types of objects:
     an integer (&#39;int&#39;) and a string (&#39;str&#39;)
 
-Execution stopped on line 264 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 285 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   262:         a = &quot;a&quot;
-   263:         b = 42
---&gt;264:         b &lt; a
-   265:     except Exception:
+   283:         a = &quot;a&quot;
+   284:         b = 42
+--&gt;285:         b &lt; a
+   286:     except Exception:
 
 b: 42
 a: &#39;a&#39;
@@ -1057,12 +959,12 @@ Likely cause based on the information given by Python:
     with the following type of object: a string (&#39;str&#39;).
     This operation is not defined for this type of object.
 
-Execution stopped on line 274 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 296 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   272: def test_type_error11():
-   273:     try:
---&gt;274:         a = +&quot;abc&quot;
-   275:         print(a)
+   294: def test_type_error11():
+   295:     try:
+--&gt;296:         a = +&quot;abc&quot;
+   297:         print(a)
 </pre></div>
 </div>
 </div>
@@ -1081,12 +983,12 @@ Likely cause based on the information given by Python:
     with the following type of object: a list.
     This operation is not defined for this type of object.
 
-Execution stopped on line 285 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 308 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   283: def test_type_error11a():
-   284:     try:
---&gt;285:         a = - [1, 2, 3]
-   286:         print(a)
+   306: def test_type_error11a():
+   307:     try:
+--&gt;308:         a = - [1, 2, 3]
+   309:         print(a)
 </pre></div>
 </div>
 </div>
@@ -1105,12 +1007,12 @@ Likely cause based on the information given by Python:
     with the following type of object: a tuple.
     This operation is not defined for this type of object.
 
-Execution stopped on line 296 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 320 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   294: def test_type_error11b():
-   295:     try:
---&gt;296:         a = ~ (1, 2, 3)
-   297:         print(a)
+   318: def test_type_error11b():
+   319:     try:
+--&gt;320:         a = ~ (1, 2, 3)
+   321:         print(a)
 </pre></div>
 </div>
 </div>
@@ -1130,12 +1032,12 @@ Likely cause based on the information given by Python:
     You tried change part of such an immutable object: a tuple,
     most likely by using an indexing operation.
 
-Execution stopped on line 308 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 333 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   306:     a = (1, 2, 3)
-   307:     try:
---&gt;308:         a[0] = 0
-   309:     except Exception:
+   331:     a = (1, 2, 3)
+   332:     try:
+--&gt;333:         a[0] = 0
+   334:     except Exception:
 
 a: (1, 2, 3)
 </pre></div>
@@ -1156,12 +1058,12 @@ Likely cause based on the information given by Python:
     1 positional argument while it requires 0
     such positional arguments.
 
-Execution stopped on line 320 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 346 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   318:         pass
-   319:     try:
---&gt;320:         fn(1)
-   321:     except Exception:
+   344:         pass
+   345:     try:
+--&gt;346:         fn(1)
+   347:     except Exception:
 
 fn: &lt;function test_type_error13.&lt;locals&gt;.fn&gt;
 </pre></div>
@@ -1181,12 +1083,12 @@ Likely cause based on the information given by Python:
     You apparently have called the function &#39;fn()&#39; with
     fewer positional arguments than it requires (2 missing).
 
-Execution stopped on line 332 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 359 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   330:         pass
-   331:     try:
---&gt;332:         fn(1)
-   333:     except Exception:
+   357:         pass
+   358:     try:
+--&gt;359:         fn(1)
+   360:     except Exception:
 
 fn: &lt;function test_type_error14.&lt;locals&gt;.fn&gt;
 </pre></div>
@@ -1208,12 +1110,12 @@ Likely cause based on the information given by Python:
     which Python took as an indication of a function call.
     Perhaps you had a missing comma before the tuple.
 
-Execution stopped on line 342 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 370 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   340: def test_type_error15():
-   341:     try:
---&gt;342:         _ = (1, 2)(3, 4)
-   343:     except Exception:
+   368: def test_type_error15():
+   369:     try:
+--&gt;370:         _ = (1, 2)(3, 4)
+   371:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -1233,12 +1135,12 @@ Likely cause based on the information given by Python:
     which Python took as an indication of a function call.
     Perhaps you had a missing comma before the tuple.
 
-Execution stopped on line 352 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Execution stopped on line 381 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   350: def test_type_error15a():
-   351:     try:
---&gt;352:         _ = [1, 2](3, 4)
-   353:     except Exception:
+   379: def test_type_error15a():
+   380:     try:
+--&gt;381:         _ = [1, 2](3, 4)
+   382:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -1336,12 +1238,12 @@ It can also happen if you calculate the remainder of a division
 using the modulo operator &#39;%&#39;
     result = my_variable % 0
 
-Execution stopped on line 17 of file &#39;TESTS:\except\test_zero_division_error.py&#39;.
+Execution stopped on line 18 of file &#39;TESTS:\except\test_zero_division_error.py&#39;.
 
-   15:     zero = 0
-   16:     try:
---&gt;17:         1 % zero
-   18:     except Exception:
+   16:     zero = 0
+   17:     try:
+--&gt;18:         1 % zero
+   19:     except Exception:
 
 zero: 0
 </pre></div>

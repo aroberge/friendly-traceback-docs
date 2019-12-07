@@ -5,9 +5,10 @@ Friendly SyntaxError tracebacks - en Français
 Le but principal de friendly-traceback est de fournir des rétroactions plus
 conviviales que les fameux **tracebacks** de Python lorsqu'une exception survient.
 Ci-dessous, on peut voir quelques exemples, uniquement pour les
-exceptions de type SyntaxError; les autres sont couvertes dans une autre page.
-Le but éventuel est de documenter
-ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
+exceptions de type SyntaxError et des classes dérivées;
+les autres sont couvertes dans une autre page.
+Le but est de documenter ici tous les exemples possibles
+tels qu'interprétés par friendly-traceback.
 
 .. note::
 
@@ -25,6 +26,115 @@ Friendly-traceback version: 0.0.19a
 Python version: 3.7.3
 
 
+
+IndentationError - 1: expected an indented block
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        IndentationError: expected an indented block
+        
+    Une exception de type IndentationError se produit lorsqu'une ligne de code
+    n'est pas indentée (c'est-à-dire alignée verticalement avec les autres lignes)
+    de la façon attendue.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_indentation_error1.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: '''Should raise IndentationError'''
+       2: 
+       3: if True:
+    -->4: pass
+             ^
+
+    Cause probable basée sur les informations données par Python :
+        Dans ce cas-ci, la ligne indiquée ci-dessus par --> devrait
+        normalement commencer un nouveau bloc de code indenté.
+        
+
+IndentationError - 2: unexpected indent
+---------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        IndentationError: unexpected indent
+        
+    Une exception de type IndentationError se produit lorsqu'une ligne de code
+    n'est pas indentée (c'est-à-dire alignée verticalement avec les autres lignes)
+    de la façon attendue.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_indentation_error2.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: '''Should raise IndentationError'''
+       2: if True:
+       3:     pass
+    -->4:       pass
+               ^
+
+    Cause probable basée sur les informations données par Python :
+        Dans ce cas-ci, la ligne indiquée ci-dessus par -->
+        est plus indentée que ce qui était attendu et ne
+        correspond pas à l'indentation de la ligne précédente.
+        
+
+IndentationError - 3: unindent does not match ...
+-------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        IndentationError: unindent does not match any outer indentation level
+        
+    Une exception de type IndentationError se produit lorsqu'une ligne de code
+    n'est pas indentée (c'est-à-dire alignée verticalement avec les autres lignes)
+    de la façon attendue.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_indentation_error3.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: '''Should raise IndentationError'''
+       2: if True:
+       3:       pass
+    -->4:     pass
+                  ^
+
+    Cause probable basée sur les informations données par Python :
+        Dans ce cas-ci, la ligne indiquée ci-dessus par -->
+        est moins indentée que la ligne précédente
+        et n’est pas alignée verticalement avec un autre bloc de code.
+        
+
+TabError
+--------
+
+.. code-block:: none
+
+
+    Exception Python:
+        TabError: inconsistent use of tabs and spaces in indentation
+        
+    Une exception de type TabError indique que vous avez utilisé des espaces
+    ainsi que des caractères de tabulation pour indenter votre code.
+    Cela n’est pas autorisé dans Python.
+    L’indentation de votre code signifie que le bloc de codes est aligné
+    verticalement en insérant des espaces ou des tabulations au début des lignes.
+    La recommandation de Python est de toujours utiliser des espaces
+    pour indenter votre code.
+    
+    Python peut seulement analyser le fichier 'TESTS:\syntax\raise_tab_error.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+        4: 
+        5: def test_tab_error():
+        6:     if True:
+    --> 7: 	pass
+                ^
 
 SyntaxError - Assign to keyword
 -------------------------------

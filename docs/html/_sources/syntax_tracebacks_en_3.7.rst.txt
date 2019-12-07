@@ -4,7 +4,7 @@ Friendly SyntaxError tracebacks - in English
 
 Friendly-traceback aims to provide friendlier feedback when an exception
 is raised than what is done by Python.
-This file contains only examples of SyntaxError.
+This file contains only examples of SyntaxError and its sub-classes.
 Ideally, an example of each case handled by friendly-traceback
 should be included here.
 
@@ -22,6 +22,111 @@ Friendly-traceback version: 0.0.19a
 Python version: 3.7.3
 
 
+
+IndentationError - 1: expected an indented block
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        IndentationError: expected an indented block
+        
+    An IndentationError occurs when a given line of code is
+    not indented (aligned vertically with other lines) as expected.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_indentation_error1.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: '''Should raise IndentationError'''
+       2: 
+       3: if True:
+    -->4: pass
+             ^
+
+    Likely cause based on the information given by Python:
+        In this case, the line identified above
+        was expected to begin a new indented block.
+        
+
+IndentationError - 2: unexpected indent
+---------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        IndentationError: unexpected indent
+        
+    An IndentationError occurs when a given line of code is
+    not indented (aligned vertically with other lines) as expected.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_indentation_error2.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: '''Should raise IndentationError'''
+       2: if True:
+       3:     pass
+    -->4:       pass
+               ^
+
+    Likely cause based on the information given by Python:
+        In this case, the line identified above
+        is more indented than expected and 
+        does not match the indentation of the previous line.
+        
+
+IndentationError - 3: unindent does not match ...
+-------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        IndentationError: unindent does not match any outer indentation level
+        
+    An IndentationError occurs when a given line of code is
+    not indented (aligned vertically with other lines) as expected.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_indentation_error3.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: '''Should raise IndentationError'''
+       2: if True:
+       3:       pass
+    -->4:     pass
+                  ^
+
+    Likely cause based on the information given by Python:
+        In this case, the line identified above is
+        less indented than the preceding one,
+        and is not aligned vertically with another block of code.
+        
+
+TabError
+--------
+
+.. code-block:: none
+
+
+    Python exception:
+        TabError: inconsistent use of tabs and spaces in indentation
+        
+    A TabError indicates that you have used both spaces
+    and tab characters to indent your code.
+    This is not allowed in Python.
+    Indenting your code means to have block of codes aligned vertically
+    by inserting either spaces or tab characters at the beginning of lines.
+    Python's recommendation is to always use spaces to indent your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_tab_error.py'
+    beyond the location indicated below by --> and ^.
+    
+        4: 
+        5: def test_tab_error():
+        6:     if True:
+    --> 7: 	pass
+                ^
 
 SyntaxError - Assign to keyword
 -------------------------------
