@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.source_cache &mdash; Friendly tracebacks 0.0.19a documentation</title>
+  <title>friendly_traceback.source_cache &mdash; Friendly tracebacks 0.0.20a documentation</title>
   
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.0.19a
+                0.0.20a
               </div>
             
           
@@ -331,10 +331,10 @@
         <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">linenumber</span><span class="p">:</span>
             <span class="n">num</span> <span class="o">=</span> <span class="n">with_mark</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
             <span class="n">problem_line</span> <span class="o">=</span> <span class="n">line</span>
+            <span class="n">new_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
             <span class="k">if</span> <span class="n">offset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">new_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
                 <span class="n">new_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">offset_mark</span><span class="p">)</span>
-                <span class="k">break</span>
+            <span class="k">break</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">num</span> <span class="o">=</span> <span class="n">no_mark</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
         <span class="n">new_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
