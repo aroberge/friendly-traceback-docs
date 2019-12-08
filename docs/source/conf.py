@@ -90,6 +90,10 @@ html_theme = "sphinx_rtd_theme"
 # documentation.
 #
 # html_theme_options = {}
+html_theme_options = {
+    'prev_next_buttons_location': 'both',
+    'style_external_links': True,
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
