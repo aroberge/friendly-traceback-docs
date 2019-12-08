@@ -501,6 +501,9 @@ assertion is:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="s2">&quot;The variable that appears to cause the problem is &#39;a&#39;.&quot;</span> <span class="ow">in</span> <span class="n">result</span>
 </pre></div>
 </div>
+<p>To ensure that this will not cause problems when creating sample tracebacks
+for languages other than English, we make sure to check this assertion
+only if the language set is English.</p>
 <p>And here, after quite a few revisions,
 is the <strong>final</strong> content of that file, where the initial
 single very basic assertion has been replaced by two longer ones.
@@ -532,7 +535,8 @@ that could be done when I first created this example:</p>
         <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="s2">&quot;capture&quot;</span><span class="p">)</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_output</span><span class="p">()</span>
     <span class="k">assert</span> <span class="s2">&quot;UnboundLocalError: local variable &#39;a&#39; referenced&quot;</span> <span class="ow">in</span> <span class="n">result</span>
-    <span class="k">assert</span> <span class="s2">&quot;The variable that appears to cause the problem is &#39;a&#39;.&quot;</span> <span class="ow">in</span> <span class="n">result</span>
+    <span class="k">if</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_lang</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;en&#39;</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="s2">&quot;The variable that appears to cause the problem is &#39;a&#39;.&quot;</span> <span class="ow">in</span> <span class="n">result</span>
     <span class="k">return</span> <span class="n">result</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -584,7 +588,8 @@ that could be done when I first created this example:</p>
 <ol class="arabic simple">
 <li><p>One based on the information given by Python about the exception.</p></li>
 <li><p>One or more based on the specific information information provided by
-Friendly-traceback.</p></li>
+Friendly-traceback. These should be only checked if the language
+is set to English (<code class="docutils literal notranslate"><span class="pre">'en'</span></code>)</p></li>
 </ol>
 </div>
 </div>

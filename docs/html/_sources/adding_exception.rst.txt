@@ -342,6 +342,10 @@ assertion is::
 
     assert "The variable that appears to cause the problem is 'a'." in result
 
+To ensure that this will not cause problems when creating sample tracebacks 
+for languages other than English, we make sure to check this assertion
+only if the language set is English.
+
 And here, after quite a few revisions,
 is the **final** content of that file, where the initial 
 single very basic assertion has been replaced by two longer ones.
@@ -374,7 +378,8 @@ that could be done when I first created this example::
             friendly_traceback.explain(redirect="capture")
         result = friendly_traceback.get_output()
         assert "UnboundLocalError: local variable 'a' referenced" in result
-        assert "The variable that appears to cause the problem is 'a'." in result
+        if friendly_traceback.get_lang() == 'en':
+            assert "The variable that appears to cause the problem is 'a'." in result
         return result
 
     if __name__ == "__main__":
@@ -428,7 +433,8 @@ The following is the output for this revised example::
 
     1. One based on the information given by Python about the exception.
     2. One or more based on the specific information information provided by
-       Friendly-traceback.
+       Friendly-traceback. These should be only checked if the language 
+       is set to English (``'en'``)
 
 
 Test your work

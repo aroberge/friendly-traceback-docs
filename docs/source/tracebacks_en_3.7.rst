@@ -191,12 +191,12 @@ IndexError - long list
     Likely cause based on the information given by Python:
         In this case, the sequence is a list.
         
-    Execution stopped on line 21 of file 'TESTS:\except\test_index_error.py'.
+    Execution stopped on line 22 of file 'TESTS:\except\test_index_error.py'.
     
-       19:     b = tuple(range(50))
-       20:     try:
-    -->21:         print(a[50], b[0])
-       22:     except Exception:
+       20:     b = tuple(range(50))
+       21:     try:
+    -->22:         print(a[50], b[0])
+       23:     except Exception:
 
     a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
     b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
@@ -321,12 +321,12 @@ TypeError - 1a: concatenate two different types
         You tried to concatenate (add) two different types of objects:
         a string ('str') and a list
         
-    Execution stopped on line 23 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 24 of file 'TESTS:\except\test_type_error.py'.
     
-       21:         a = "a"
-       22:         a_list = [1, 2, 3]
-    -->23:         result = a + a_list
-       24:     except Exception:
+       22:         a = "a"
+       23:         a_list = [1, 2, 3]
+    -->24:         result = a + a_list
+       25:     except Exception:
 
     a: 'a'
     a_list: [1, 2, 3]
@@ -350,12 +350,12 @@ TypeError - 1b: concatenate two different types
         You tried to concatenate (add) two different types of objects:
         a tuple and a list
         
-    Execution stopped on line 38 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 40 of file 'TESTS:\except\test_type_error.py'.
     
-       36:         a_tuple = (1, 2, 3)
-       37:         a_list = [1, 2, 3]
-    -->38:         result = a_tuple + a_list
-       39:     except Exception:
+       38:         a_tuple = (1, 2, 3)
+       39:         a_list = [1, 2, 3]
+    -->40:         result = a_tuple + a_list
+       41:     except Exception:
 
     a_tuple: (1, 2, 3)
     a_list: [1, 2, 3]
@@ -379,12 +379,12 @@ TypeError - 2: unsupported operand type(s) for +
         You tried to add two incompatible types of objects:
         an integer ('int') and a variable equal to None ('NoneType')
         
-    Execution stopped on line 51 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 54 of file 'TESTS:\except\test_type_error.py'.
     
-       49:         one = 1
-       50:         none = None
-    -->51:         result = one + none
-       52:     except Exception:
+       52:         one = 1
+       53:         none = None
+    -->54:         result = one + none
+       55:     except Exception:
 
     one: 1
     none: None
@@ -408,12 +408,12 @@ TypeError - 2a: unsupported operand type(s) for +=
         You tried to add two incompatible types of objects:
         an integer ('int') and a string ('str')
         
-    Execution stopped on line 64 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 68 of file 'TESTS:\except\test_type_error.py'.
     
-       62:         one = 1
-       63:         two = "two"
-    -->64:         one += two
-       65:     except Exception:
+       66:         one = 1
+       67:         two = "two"
+    -->68:         one += two
+       69:     except Exception:
 
     one: 1
     two: 'two'
@@ -437,12 +437,12 @@ TypeError - 3: unsupported operand type(s) for -
         You tried to subtract two incompatible types of objects:
         a tuple and a list
         
-    Execution stopped on line 77 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 82 of file 'TESTS:\except\test_type_error.py'.
     
-       75:         a = (1, 2)
-       76:         b = [3, 4]
-    -->77:         result = a - b
-       78:     except Exception:
+       80:         a = (1, 2)
+       81:         b = [3, 4]
+    -->82:         result = a - b
+       83:     except Exception:
 
     a: (1, 2)
     b: [3, 4]
@@ -466,12 +466,12 @@ TypeError - 3a: unsupported operand type(s) for -=
         You tried to subtract two incompatible types of objects:
         a list and a tuple
         
-    Execution stopped on line 90 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 96 of file 'TESTS:\except\test_type_error.py'.
     
-       88:         a = (1, 2)
-       89:         b = [3, 4]
-    -->90:         b -= a
-       91:     except Exception:
+       94:         a = (1, 2)
+       95:         b = [3, 4]
+    -->96:         b -= a
+       97:     except Exception:
 
     b: [3, 4]
     a: (1, 2)
@@ -495,12 +495,12 @@ TypeError - 4: unsupported operand type(s) for *
         You tried to multiply two incompatible types of objects:
         a complex number and a set
         
-    Execution stopped on line 103 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 110 of file 'TESTS:\except\test_type_error.py'.
     
-       101:         a = 1j
-       102:         b = {2, 3}
-    -->103:         result = a * b
-       104:     except Exception:
+       108:         a = 1j
+       109:         b = {2, 3}
+    -->110:         result = a * b
+       111:     except Exception:
 
     a: 1j
     b: {2, 3}
@@ -524,12 +524,12 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
         You tried to multiply two incompatible types of objects:
         a set and a complex number
         
-    Execution stopped on line 116 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 124 of file 'TESTS:\except\test_type_error.py'.
     
-       114:         a = 1j
-       115:         b = {2, 3}
-    -->116:         b *= a
-       117:     except Exception:
+       122:         a = 1j
+       123:         b = {2, 3}
+    -->124:         b *= a
+       125:     except Exception:
 
     b: {2, 3}
     a: 1j
@@ -553,12 +553,12 @@ TypeError - 5: unsupported operand type(s) for /
         You tried to divide two incompatible types of objects:
         a dictionary ('dict') and a number ('float')
         
-    Execution stopped on line 129 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 138 of file 'TESTS:\except\test_type_error.py'.
     
-       127:         a = {1: 1, 2: 2}
-       128:         b = 3.1416
-    -->129:         result = a / b
-       130:     except Exception:
+       136:         a = {1: 1, 2: 2}
+       137:         b = 3.1416
+    -->138:         result = a / b
+       139:     except Exception:
 
     a: {1: 1, 2: 2}
     b: 3.1416
@@ -582,12 +582,12 @@ TypeError - 5a: unsupported operand type(s) for /=
         You tried to divide two incompatible types of objects:
         a number ('float') and a dictionary ('dict')
         
-    Execution stopped on line 142 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 152 of file 'TESTS:\except\test_type_error.py'.
     
-       140:         a = {1: 1, 2: 2}
-       141:         b = 3.1416
-    -->142:         b /= a
-       143:     except Exception:
+       150:         a = {1: 1, 2: 2}
+       151:         b = 3.1416
+    -->152:         b /= a
+       153:     except Exception:
 
     b: 3.1416
     a: {1: 1, 2: 2}
@@ -611,12 +611,12 @@ TypeError - 5b: unsupported operand type(s) for //
         You tried to divide two incompatible types of objects:
         a dictionary ('dict') and an integer ('int')
         
-    Execution stopped on line 155 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 166 of file 'TESTS:\except\test_type_error.py'.
     
-       153:         a = {1: 1, 2: 2}
-       154:         b = 1
-    -->155:         result = a // b
-       156:     except Exception:
+       164:         a = {1: 1, 2: 2}
+       165:         b = 1
+    -->166:         result = a // b
+       167:     except Exception:
 
     a: {1: 1, 2: 2}
     b: 1
@@ -640,12 +640,12 @@ TypeError - 5c: unsupported operand type(s) for //=
         You tried to divide two incompatible types of objects:
         a number ('float') and a dictionary ('dict')
         
-    Execution stopped on line 168 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 180 of file 'TESTS:\except\test_type_error.py'.
     
-       166:         a = {1: 1, 2: 2}
-       167:         b = 3.1416
-    -->168:         b //= a
-       169:     except Exception:
+       178:         a = {1: 1, 2: 2}
+       179:         b = 3.1416
+    -->180:         b //= a
+       181:     except Exception:
 
     b: 3.1416
     a: {1: 1, 2: 2}
@@ -670,12 +670,12 @@ TypeError - 6: unsupported operand type(s) for &
         on two incompatible types of objects:
         a string ('str') and an integer ('int')
         
-    Execution stopped on line 181 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 194 of file 'TESTS:\except\test_type_error.py'.
     
-       179:         a = "a"
-       180:         b = 2
-    -->181:         result = a & b
-       182:     except Exception:
+       192:         a = "a"
+       193:         b = 2
+    -->194:         result = a & b
+       195:     except Exception:
 
     a: 'a'
     b: 2
@@ -700,12 +700,12 @@ TypeError - 6a: unsupported operand type(s) for &=
         on two incompatible types of objects:
         an integer ('int') and a string ('str')
         
-    Execution stopped on line 194 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 208 of file 'TESTS:\except\test_type_error.py'.
     
-       192:         a = "a"
-       193:         b = 2
-    -->194:         b &= a
-       195:     except Exception:
+       206:         a = "a"
+       207:         b = 2
+    -->208:         b &= a
+       209:     except Exception:
 
     b: 2
     a: 'a'
@@ -730,12 +730,12 @@ TypeError - 7: unsupported operand type(s) for **
         using two incompatible types of objects:
         a dictionary ('dict') and a number ('float')
         
-    Execution stopped on line 207 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 222 of file 'TESTS:\except\test_type_error.py'.
     
-       205:         a = {1: 1, 2: 2}
-       206:         b = 3.1416
-    -->207:         result = a ** b
-       208:     except Exception:
+       220:         a = {1: 1, 2: 2}
+       221:         b = 3.1416
+    -->222:         result = a ** b
+       223:     except Exception:
 
     a: {1: 1, 2: 2}
     b: 3.1416
@@ -760,12 +760,12 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
         using two incompatible types of objects:
         a dictionary ('dict') and a number ('float')
         
-    Execution stopped on line 220 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 236 of file 'TESTS:\except\test_type_error.py'.
     
-       218:         a = {1: 1, 2: 2}
-       219:         b = 3.1416
-    -->220:         a **= b
-       221:     except Exception:
+       234:         a = {1: 1, 2: 2}
+       235:         b = 3.1416
+    -->236:         a **= b
+       237:     except Exception:
 
     a: {1: 1, 2: 2}
     b: 3.1416
@@ -790,12 +790,12 @@ TypeError - 8: unsupported operand type(s) for >>
         on two incompatible types of objects:
         a string ('str') and an integer ('int')
         
-    Execution stopped on line 233 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 250 of file 'TESTS:\except\test_type_error.py'.
     
-       231:         a = "a"
-       232:         b = 42
-    -->233:         result = a >> b
-       234:     except Exception:
+       248:         a = "a"
+       249:         b = 42
+    -->250:         result = a >> b
+       251:     except Exception:
 
     a: 'a'
     b: 42
@@ -820,12 +820,12 @@ TypeError - 8a: unsupported operand type(s) for >>=
         on two incompatible types of objects:
         a string ('str') and an integer ('int')
         
-    Execution stopped on line 246 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 264 of file 'TESTS:\except\test_type_error.py'.
     
-       244:         a = "a"
-       245:         b = 42
-    -->246:         a >>= b
-       247:     except Exception:
+       262:         a = "a"
+       263:         b = 42
+    -->264:         a >>= b
+       265:     except Exception:
 
     a: 'a'
     b: 42
@@ -852,12 +852,12 @@ TypeError - 9: unsupported operand type(s) for @
         This operator is normally used only
         for multiplication of matrices.
         
-    Execution stopped on line 259 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 278 of file 'TESTS:\except\test_type_error.py'.
     
-       257:         a = "a"
-       258:         b = 2
-    -->259:         result = a @ b
-       260:     except Exception:
+       276:         a = "a"
+       277:         b = 2
+    -->278:         result = a @ b
+       279:     except Exception:
 
     a: 'a'
     b: 2
@@ -884,12 +884,12 @@ TypeError - 9a: unsupported operand type(s) for @=
         This operator is normally used only
         for multiplication of matrices.
         
-    Execution stopped on line 272 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 292 of file 'TESTS:\except\test_type_error.py'.
     
-       270:         a = "a"
-       271:         b = 2
-    -->272:         a @= b
-       273:     except Exception:
+       290:         a = "a"
+       291:         b = 2
+    -->292:         a @= b
+       293:     except Exception:
 
     a: 'a'
     b: 2
@@ -914,12 +914,12 @@ TypeError - 10: comparison between incompatible types
         between two incompatible types of objects:
         an integer ('int') and a string ('str')
         
-    Execution stopped on line 285 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 306 of file 'TESTS:\except\test_type_error.py'.
     
-       283:         a = "a"
-       284:         b = 42
-    -->285:         b < a
-       286:     except Exception:
+       304:         a = "a"
+       305:         b = 42
+    -->306:         b < a
+       307:     except Exception:
 
     b: 42
     a: 'a'
@@ -944,12 +944,12 @@ TypeError - 11: bad operand type for unary +
         with the following type of object: a string ('str').
         This operation is not defined for this type of object.
         
-    Execution stopped on line 296 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 318 of file 'TESTS:\except\test_type_error.py'.
     
-       294: def test_type_error11():
-       295:     try:
-    -->296:         a = +"abc"
-       297:         print(a)
+       316: def test_type_error11():
+       317:     try:
+    -->318:         a = +"abc"
+       319:         print(a)
 
 
 TypeError - 11a: bad operand type for unary -
@@ -971,12 +971,12 @@ TypeError - 11a: bad operand type for unary -
         with the following type of object: a list.
         This operation is not defined for this type of object.
         
-    Execution stopped on line 308 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 331 of file 'TESTS:\except\test_type_error.py'.
     
-       306: def test_type_error11a():
-       307:     try:
-    -->308:         a = - [1, 2, 3]
-       309:         print(a)
+       329: def test_type_error11a():
+       330:     try:
+    -->331:         a = - [1, 2, 3]
+       332:         print(a)
 
 
 TypeError - 11b: bad operand type for unary ~
@@ -998,12 +998,12 @@ TypeError - 11b: bad operand type for unary ~
         with the following type of object: a tuple.
         This operation is not defined for this type of object.
         
-    Execution stopped on line 320 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 344 of file 'TESTS:\except\test_type_error.py'.
     
-       318: def test_type_error11b():
-       319:     try:
-    -->320:         a = ~ (1, 2, 3)
-       321:         print(a)
+       342: def test_type_error11b():
+       343:     try:
+    -->344:         a = ~ (1, 2, 3)
+       345:         print(a)
 
 
 TypeError - 12: object does not support item assignment
@@ -1026,12 +1026,12 @@ TypeError - 12: object does not support item assignment
         You tried change part of such an immutable object: a tuple,
         most likely by using an indexing operation.
         
-    Execution stopped on line 333 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 358 of file 'TESTS:\except\test_type_error.py'.
     
-       331:     a = (1, 2, 3)
-       332:     try:
-    -->333:         a[0] = 0
-       334:     except Exception:
+       356:     a = (1, 2, 3)
+       357:     try:
+    -->358:         a[0] = 0
+       359:     except Exception:
 
     a: (1, 2, 3)
 
@@ -1055,12 +1055,12 @@ TypeError - 13: wrong number of positional arguments
         1 positional argument while it requires 0
         such positional arguments.
         
-    Execution stopped on line 346 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 372 of file 'TESTS:\except\test_type_error.py'.
     
-       344:         pass
-       345:     try:
-    -->346:         fn(1)
-       347:     except Exception:
+       370:         pass
+       371:     try:
+    -->372:         fn(1)
+       373:     except Exception:
 
     fn: <function test_type_error13.<locals>.fn>
 
@@ -1083,12 +1083,12 @@ TypeError - 14: missing positional arguments
         You apparently have called the function 'fn()' with
         fewer positional arguments than it requires (2 missing).
         
-    Execution stopped on line 359 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 386 of file 'TESTS:\except\test_type_error.py'.
     
-       357:         pass
-       358:     try:
-    -->359:         fn(1)
-       360:     except Exception:
+       384:         pass
+       385:     try:
+    -->386:         fn(1)
+       387:     except Exception:
 
     fn: <function test_type_error14.<locals>.fn>
 
@@ -1113,12 +1113,12 @@ TypeError - 15: tuple object is not callable
         which Python took as an indication of a function call.
         Perhaps you had a missing comma before the tuple.
         
-    Execution stopped on line 370 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 398 of file 'TESTS:\except\test_type_error.py'.
     
-       368: def test_type_error15():
-       369:     try:
-    -->370:         _ = (1, 2)(3, 4)
-       371:     except Exception:
+       396: def test_type_error15():
+       397:     try:
+    -->398:         _ = (1, 2)(3, 4)
+       399:     except Exception:
 
 
 TypeError - 15a: list object is not callable
@@ -1141,12 +1141,12 @@ TypeError - 15a: list object is not callable
         which Python took as an indication of a function call.
         Perhaps you had a missing comma before the tuple.
         
-    Execution stopped on line 381 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 410 of file 'TESTS:\except\test_type_error.py'.
     
-       379: def test_type_error15a():
-       380:     try:
-    -->381:         _ = [1, 2](3, 4)
-       382:     except Exception:
+       408: def test_type_error15a():
+       409:     try:
+    -->410:         _ = [1, 2](3, 4)
+       411:     except Exception:
 
 
 UnboundLocalError
@@ -1200,7 +1200,7 @@ Unknown exception
 
 
     Python exception:
-        MyException: Some informative message
+        MyException: Some informative message about an unknown exception.
         
     No information is known about this exception.
     Please report this example to
@@ -1210,7 +1210,7 @@ Unknown exception
     
         8: def test_unknown_error():
         9:     try:
-    -->10:         raise MyException("Some informative message")
+    -->10:         raise MyException("Some informative message about an unknown exception.")
        11:     except Exception:
 
     global MyException: <class 'test_unknown_error.MyException'>
@@ -1256,12 +1256,12 @@ ZeroDivisionError - 2
     using the modulo operator '%'
         result = my_variable % 0
     
-    Execution stopped on line 18 of file 'TESTS:\except\test_zero_division_error.py'.
+    Execution stopped on line 19 of file 'TESTS:\except\test_zero_division_error.py'.
     
-       16:     zero = 0
-       17:     try:
-    -->18:         1 % zero
-       19:     except Exception:
+       17:     zero = 0
+       18:     try:
+    -->19:         1 % zero
+       20:     except Exception:
 
     zero: 0
 
