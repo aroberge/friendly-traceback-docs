@@ -81,6 +81,7 @@ Contents
     Friendly tracebacks - Python 3.7 en Français <tracebacks_fr>
     SyntaxError - Python 3.7 en Français <syntax_tracebacks_fr>
     Notes on translations - using gettext <translation_notes>
+    Project files <graph>
     Comparison between versions <compare>
     Change Log <changelog>
 
