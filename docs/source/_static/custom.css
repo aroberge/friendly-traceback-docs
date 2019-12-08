@@ -1,0 +1,16 @@
+.wy-nav-side {background-color: maroon;}
+.wy-nav-side a:hover {background-color: #a00000;}
+
+.wy-side-nav-search {background-color: #503010;}
+.highlight {background-color: #fffce8;}
+.friendly-small-pre {
+    font-size: 80%;
+    margin:0;
+}
+.filename-header {
+    margin: 6px 0;
+    padding: 6px 0;
+    background-color: #e8f0f8;
+    border-top: solid 3px #3080c0;
+    color:black;
+}

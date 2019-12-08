@@ -33,6 +33,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Change Log" href="changelog.html" />
@@ -196,43 +197,52 @@ a simple program we wrote for this purpose.
 If the information is the same for Python 3.6 and
 3.7, but changes for Python 3.8, we only show the differences
 between 3.7 and 3.8.</p>
-<pre>
-==================================================
+<div>
+<div class='filename-header'>
 raise_syntax_error10
---------------------------------------------------
+</div>
+<pre class='highlight friendly-small-pre'>
 3.7:
 SyntaxError: can't assign to literal
 
 3.8:
 SyntaxError: cannot assign to literal
 
-==================================================
+</pre>
+<div class='filename-header'>
 raise_syntax_error13
---------------------------------------------------
+</div>
+<pre class='highlight friendly-small-pre'>
 3.7:
 SyntaxError: can't assign to keyword
 
 3.8:
 SyntaxError: cannot assign to None
 
-==================================================
+</pre>
+<div class='filename-header'>
 raise_syntax_error14
---------------------------------------------------
+</div>
+<pre class='highlight friendly-small-pre'>
 3.7:
 SyntaxError: assignment to keyword
 
 3.8:
 SyntaxError: cannot assign to __debug__
 
-==================================================
+</pre>
+<div class='filename-header'>
 raise_syntax_error15
---------------------------------------------------
+</div>
+<pre class='highlight friendly-small-pre'>
 3.7:
 SyntaxError: invalid syntax
 
 3.8:
 SyntaxError: unmatched ')'
 
+</pre>
+<pre class='highlight friendly-small-pre'>
 3.7:
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
@@ -245,15 +255,19 @@ The closing parenthesis ')' on line 6 does not match anything.
 3.8:
 The closing parenthesis ')' on line 6 does not match anything.
 
-==================================================
+</pre>
+<div class='filename-header'>
 raise_syntax_error18
---------------------------------------------------
+</div>
+<pre class='highlight friendly-small-pre'>
 3.7:
 SyntaxError: invalid syntax
 
 3.8:
 SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
 
+</pre>
+<pre class='highlight friendly-small-pre'>
 3.7:
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
@@ -273,15 +287,19 @@ The closing square bracket ']' on line 2 does not match the opening parenthesis 
     2: x = (1, 2, 3]
            ^       ^
 
-==================================================
+</pre>
+<div class='filename-header'>
 raise_syntax_error19
---------------------------------------------------
+</div>
+<pre class='highlight friendly-small-pre'>
 3.7:
 SyntaxError: invalid syntax
 
 3.8:
 SyntaxError: closing parenthesis ']' does not match opening parenthesis '(' on line 2
 
+</pre>
+<pre class='highlight friendly-small-pre'>
 3.7:
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
@@ -305,33 +323,41 @@ The closing square bracket ']' on line 4 does not match the opening parenthesis 
     4:      3]
              ^
 
-==================================================
+</pre>
+<div class='filename-header'>
 raise_syntax_error30
---------------------------------------------------
+</div>
+<pre class='highlight friendly-small-pre'>
 3.7:
 SyntaxError: can't assign to function call
 
 3.8:
 SyntaxError: cannot assign to function call
 
-==================================================
+</pre>
+<div class='filename-header'>
 raise_syntax_error31
---------------------------------------------------
+</div>
+<pre class='highlight friendly-small-pre'>
 3.7:
 SyntaxError: can't assign to function call
 
 3.8:
 SyntaxError: cannot assign to function call
 
-==================================================
+</pre>
+<div class='filename-header'>
 raise_syntax_error41
---------------------------------------------------
+</div>
+<pre class='highlight friendly-small-pre'>
 3.7:
 SyntaxError: keyword can't be an expression
 
 3.8:
 SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
 
+</pre>
+<pre class='highlight friendly-small-pre'>
 3.7:
 You likely called a function with a named argument:
 
@@ -354,28 +380,33 @@ either because it starts with a number, or is a string,
 or contains a period, etc.
 
 
-==================================================
+</pre>
+<div class='filename-header'>
 raise_syntax_error47
---------------------------------------------------
+</div>
+<pre class='highlight friendly-small-pre'>
 3.7:
 SyntaxError: can't delete function call
 
 3.8:
 SyntaxError: cannot delete function call
 
-==================================================
+</pre>
+<div class='filename-header'>
 raise_syntax_error9
---------------------------------------------------
+</div>
+<pre class='highlight friendly-small-pre'>
 3.7:
 SyntaxError: can't assign to literal
 
 3.8:
 SyntaxError: cannot assign to literal
 
-==================================================
-entry does not exist in one data file for  raise_syntax_error_walrus
-==================================================
 </pre>
+<div class='filename-header'>
+entry does not exist in one data file for  raise_syntax_error_walrus
+</div>
+</div>
 </div>
 
 
