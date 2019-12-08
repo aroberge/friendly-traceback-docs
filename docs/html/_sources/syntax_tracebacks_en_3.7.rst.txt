@@ -1428,6 +1428,33 @@ SyntaxError - keyword cannot be argument in def - 4
         None as an argument in the definition of a function.
         
 
+SyntaxError - delete function call
+----------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: can't delete function call
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not parse the file 'TESTS:\syntax\raise_syntax_error47.py'
+    beyond the location indicated below by --> and ^.
+    
+       2: """
+       3: 
+       4: 
+    -->5: del f(a)
+             ^
+
+    Likely cause based on the information given by Python:
+        You attempted to delete a function call
+            del f(a)
+        instead of deleting the function's name
+            del f
+        
+
 Walrus operator does not exist - yet
 ------------------------------------
 

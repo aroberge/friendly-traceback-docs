@@ -5,7 +5,7 @@ There are various ways of using friendly-traceback.
 
 .. note::
 
-    In some of the examples below, we use the program ``hello.py`` found 
+    In some of the examples below, we use the program ``hello.py`` found
     in the ``demos`` directory, containing the following::
 
         print("\nHello world!")
@@ -73,30 +73,30 @@ There are various ways of using friendly-traceback.
     >>> import friendly_traceback
     >>> friendly_traceback.start_console()
 
-9. To see if there are syntax errors, with attempts to provide an 
-   explanation as to what they mean, in a file specified by 
+9. To see if there are syntax errors, with attempts to provide an
+   explanation as to what they mean, in a file specified by
    its path (assumed to be relative to the current working directory)::
 
        import friendly_traceback
        friendly_traceback.check_syntax(path="demos/hello.py")
 
-10. To see if there are syntax errors in some code submitted as 
+10. To see if there are syntax errors in some code submitted as
     a string, with an optional file name supplied::
 
        import friendly_traceback
        friendly_traceback.check_syntax(source=some_code, filename="hello.py")
-   
+
 
 11. Instead of simply checking the syntax, one can run the code to see
     if there are also runtime errors; this is done by calling ``run_code``
-    which first calls ``check_syntax`` and will execute the code if 
+    which first calls ``check_syntax`` and will execute the code if
     no exception are raised; for example::
 
         import friendly_traceback
         friendly_traceback.run_code(source=some_code, filename="hello.py")
 
 
-You can also specify the verbosity level as well as the language 
+You can also specify the verbosity level as well as the language
 to be used, either as command line arguments::
 
     $ python -m friendly_traceback --lang fr --level 5
@@ -201,7 +201,7 @@ One can also **temporarily** redirect the output to any stream::
 
 By default, friendly-traceback takes its information from ``sys.exc_info()``.
 It may happen that this is not what we want to show.
-For example, the ``showtraceback method in Python's code.py <https://github.com/python/cpython/blob/3.7/Lib/code.py#L131>`_ replaces one of the items prior to
+For example, the `showtraceback method in Python's code.py <https://github.com/python/cpython/blob/3.7/Lib/code.py#L131>`_ replaces one of the items prior to
 showing the traceback to the user; we currently also do the same in
 friendly-traceback's own console.  If this is something desired,
 instead of ``explain()``, one can use the "private" function
