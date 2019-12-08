@@ -259,7 +259,6 @@ Execution stopped on line 9 of file &#39;TESTS:\except\test_arithmetic_error.py&
     7:         # Usually, a subclass such as ZeroDivisionError, etc., would
     8:         # likely be raised.
 --&gt; 9:         raise ArithmeticError
-   10:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -281,7 +280,6 @@ Execution stopped on line 6 of file &#39;TESTS:\except\test_file_not_found_error
    4: def test_file_not_found_error():
    5:     try:
 --&gt;6:         open(&quot;does_not_exist&quot;)
-   7:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -302,7 +300,6 @@ Execution stopped on line 6 of file &#39;TESTS:\except\test_import_error.py&#39;
    4: def test_import_error():
    5:     try:
 --&gt;6:         from math import Pi
-   7:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -323,7 +320,6 @@ Execution stopped on line 7 of file &#39;TESTS:\except\test_key_error.py&#39;.
    5:     d = {&#39;a&#39;: 1, &#39;b&#39;: 2}
    6:     try:
 --&gt;7:         d[&#39;c&#39;]
-   8:     except Exception:
 
 d: {&#39;a&#39;: 1, &#39;b&#39;: 2}
 </pre></div>
@@ -343,7 +339,6 @@ Execution stopped on line 10 of file &#39;TESTS:\except\test_lookup_error.py&#39
     8:         # other than possibly codecs.lookup(), which is why we raise
     9:         # it directly here for our example.
 --&gt;10:         raise LookupError
-   11:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -366,7 +361,6 @@ Execution stopped on line 8 of file &#39;TESTS:\except\test_index_error.py&#39;.
     6:     b = [1, 2, 3]
     7:     try:
 --&gt; 8:         print(a[3], b[2])
-    9:     except Exception:
 
 a: (1, 2, 3)
 b: [1, 2, 3]
@@ -392,7 +386,6 @@ Execution stopped on line 22 of file &#39;TESTS:\except\test_index_error.py&#39;
    20:     b = tuple(range(50))
    21:     try:
 --&gt;22:         print(a[50], b[0])
-   23:     except Exception:
 
 a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
 b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
@@ -418,7 +411,6 @@ Execution stopped on line 6 of file &#39;TESTS:\except\test_module_not_found_err
    4: def test_module_not_found_error():
    5:     try:
 --&gt;6:         import does_not_exist
-   7:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -441,7 +433,6 @@ Execution stopped on line 6 of file &#39;TESTS:\except\test_name_error.py&#39;.
    4: def test_name_error():
    5:     try:
 --&gt;6:         b = c
-   7:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -458,7 +449,6 @@ Execution stopped on line 6 of file &#39;TESTS:\except\test_overflow_error.py&#3
    4: def test_overflow_error():
    5:     try:
 --&gt;6:         2. ** 1600
-   7:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -481,7 +471,6 @@ Execution stopped on line 8 of file &#39;TESTS:\except\test_type_error.py&#39;.
     6:         a = &quot;a&quot;
     7:         one = 1
 --&gt; 8:         result = a + one
-    9:     except Exception:
 
 a: &#39;a&#39;
 one: 1
@@ -507,7 +496,6 @@ Execution stopped on line 24 of file &#39;TESTS:\except\test_type_error.py&#39;.
    22:         a = &quot;a&quot;
    23:         a_list = [1, 2, 3]
 --&gt;24:         result = a + a_list
-   25:     except Exception:
 
 a: &#39;a&#39;
 a_list: [1, 2, 3]
@@ -533,7 +521,6 @@ Execution stopped on line 40 of file &#39;TESTS:\except\test_type_error.py&#39;.
    38:         a_tuple = (1, 2, 3)
    39:         a_list = [1, 2, 3]
 --&gt;40:         result = a_tuple + a_list
-   41:     except Exception:
 
 a_tuple: (1, 2, 3)
 a_list: [1, 2, 3]
@@ -559,7 +546,6 @@ Execution stopped on line 54 of file &#39;TESTS:\except\test_type_error.py&#39;.
    52:         one = 1
    53:         none = None
 --&gt;54:         result = one + none
-   55:     except Exception:
 
 one: 1
 none: None
@@ -585,7 +571,6 @@ Execution stopped on line 68 of file &#39;TESTS:\except\test_type_error.py&#39;.
    66:         one = 1
    67:         two = &quot;two&quot;
 --&gt;68:         one += two
-   69:     except Exception:
 
 one: 1
 two: &#39;two&#39;
@@ -611,7 +596,6 @@ Execution stopped on line 82 of file &#39;TESTS:\except\test_type_error.py&#39;.
    80:         a = (1, 2)
    81:         b = [3, 4]
 --&gt;82:         result = a - b
-   83:     except Exception:
 
 a: (1, 2)
 b: [3, 4]
@@ -637,7 +621,6 @@ Execution stopped on line 96 of file &#39;TESTS:\except\test_type_error.py&#39;.
    94:         a = (1, 2)
    95:         b = [3, 4]
 --&gt;96:         b -= a
-   97:     except Exception:
 
 b: [3, 4]
 a: (1, 2)
@@ -663,7 +646,6 @@ Execution stopped on line 110 of file &#39;TESTS:\except\test_type_error.py&#39;
    108:         a = 1j
    109:         b = {2, 3}
 --&gt;110:         result = a * b
-   111:     except Exception:
 
 a: 1j
 b: {2, 3}
@@ -689,7 +671,6 @@ Execution stopped on line 124 of file &#39;TESTS:\except\test_type_error.py&#39;
    122:         a = 1j
    123:         b = {2, 3}
 --&gt;124:         b *= a
-   125:     except Exception:
 
 b: {2, 3}
 a: 1j
@@ -715,7 +696,6 @@ Execution stopped on line 138 of file &#39;TESTS:\except\test_type_error.py&#39;
    136:         a = {1: 1, 2: 2}
    137:         b = 3.1416
 --&gt;138:         result = a / b
-   139:     except Exception:
 
 a: {1: 1, 2: 2}
 b: 3.1416
@@ -741,7 +721,6 @@ Execution stopped on line 152 of file &#39;TESTS:\except\test_type_error.py&#39;
    150:         a = {1: 1, 2: 2}
    151:         b = 3.1416
 --&gt;152:         b /= a
-   153:     except Exception:
 
 b: 3.1416
 a: {1: 1, 2: 2}
@@ -767,7 +746,6 @@ Execution stopped on line 166 of file &#39;TESTS:\except\test_type_error.py&#39;
    164:         a = {1: 1, 2: 2}
    165:         b = 1
 --&gt;166:         result = a // b
-   167:     except Exception:
 
 a: {1: 1, 2: 2}
 b: 1
@@ -793,7 +771,6 @@ Execution stopped on line 180 of file &#39;TESTS:\except\test_type_error.py&#39;
    178:         a = {1: 1, 2: 2}
    179:         b = 3.1416
 --&gt;180:         b //= a
-   181:     except Exception:
 
 b: 3.1416
 a: {1: 1, 2: 2}
@@ -820,7 +797,6 @@ Execution stopped on line 194 of file &#39;TESTS:\except\test_type_error.py&#39;
    192:         a = &quot;a&quot;
    193:         b = 2
 --&gt;194:         result = a &amp; b
-   195:     except Exception:
 
 a: &#39;a&#39;
 b: 2
@@ -847,7 +823,6 @@ Execution stopped on line 208 of file &#39;TESTS:\except\test_type_error.py&#39;
    206:         a = &quot;a&quot;
    207:         b = 2
 --&gt;208:         b &amp;= a
-   209:     except Exception:
 
 b: 2
 a: &#39;a&#39;
@@ -874,7 +849,6 @@ Execution stopped on line 222 of file &#39;TESTS:\except\test_type_error.py&#39;
    220:         a = {1: 1, 2: 2}
    221:         b = 3.1416
 --&gt;222:         result = a ** b
-   223:     except Exception:
 
 a: {1: 1, 2: 2}
 b: 3.1416
@@ -901,7 +875,6 @@ Execution stopped on line 236 of file &#39;TESTS:\except\test_type_error.py&#39;
    234:         a = {1: 1, 2: 2}
    235:         b = 3.1416
 --&gt;236:         a **= b
-   237:     except Exception:
 
 a: {1: 1, 2: 2}
 b: 3.1416
@@ -928,7 +901,6 @@ Execution stopped on line 250 of file &#39;TESTS:\except\test_type_error.py&#39;
    248:         a = &quot;a&quot;
    249:         b = 42
 --&gt;250:         result = a &gt;&gt; b
-   251:     except Exception:
 
 a: &#39;a&#39;
 b: 42
@@ -955,7 +927,6 @@ Execution stopped on line 264 of file &#39;TESTS:\except\test_type_error.py&#39;
    262:         a = &quot;a&quot;
    263:         b = 42
 --&gt;264:         a &gt;&gt;= b
-   265:     except Exception:
 
 a: &#39;a&#39;
 b: 42
@@ -984,7 +955,6 @@ Execution stopped on line 278 of file &#39;TESTS:\except\test_type_error.py&#39;
    276:         a = &quot;a&quot;
    277:         b = 2
 --&gt;278:         result = a @ b
-   279:     except Exception:
 
 a: &#39;a&#39;
 b: 2
@@ -1013,7 +983,6 @@ Execution stopped on line 292 of file &#39;TESTS:\except\test_type_error.py&#39;
    290:         a = &quot;a&quot;
    291:         b = 2
 --&gt;292:         a @= b
-   293:     except Exception:
 
 a: &#39;a&#39;
 b: 2
@@ -1040,7 +1009,6 @@ Execution stopped on line 306 of file &#39;TESTS:\except\test_type_error.py&#39;
    304:         a = &quot;a&quot;
    305:         b = 42
 --&gt;306:         b &lt; a
-   307:     except Exception:
 
 b: 42
 a: &#39;a&#39;
@@ -1067,7 +1035,6 @@ Execution stopped on line 318 of file &#39;TESTS:\except\test_type_error.py&#39;
    316: def test_type_error11():
    317:     try:
 --&gt;318:         a = +&quot;abc&quot;
-   319:         print(a)
 </pre></div>
 </div>
 </div>
@@ -1091,7 +1058,6 @@ Execution stopped on line 331 of file &#39;TESTS:\except\test_type_error.py&#39;
    329: def test_type_error11a():
    330:     try:
 --&gt;331:         a = - [1, 2, 3]
-   332:         print(a)
 </pre></div>
 </div>
 </div>
@@ -1115,7 +1081,6 @@ Execution stopped on line 344 of file &#39;TESTS:\except\test_type_error.py&#39;
    342: def test_type_error11b():
    343:     try:
 --&gt;344:         a = ~ (1, 2, 3)
-   345:         print(a)
 </pre></div>
 </div>
 </div>
@@ -1140,7 +1105,6 @@ Execution stopped on line 358 of file &#39;TESTS:\except\test_type_error.py&#39;
    356:     a = (1, 2, 3)
    357:     try:
 --&gt;358:         a[0] = 0
-   359:     except Exception:
 
 a: (1, 2, 3)
 </pre></div>
@@ -1166,7 +1130,6 @@ Execution stopped on line 372 of file &#39;TESTS:\except\test_type_error.py&#39;
    370:         pass
    371:     try:
 --&gt;372:         fn(1)
-   373:     except Exception:
 
 fn: &lt;function test_type_error13.&lt;locals&gt;.fn&gt;
 </pre></div>
@@ -1191,7 +1154,6 @@ Execution stopped on line 386 of file &#39;TESTS:\except\test_type_error.py&#39;
    384:         pass
    385:     try:
 --&gt;386:         fn(1)
-   387:     except Exception:
 
 fn: &lt;function test_type_error14.&lt;locals&gt;.fn&gt;
 </pre></div>
@@ -1218,7 +1180,6 @@ Execution stopped on line 398 of file &#39;TESTS:\except\test_type_error.py&#39;
    396: def test_type_error15():
    397:     try:
 --&gt;398:         _ = (1, 2)(3, 4)
-   399:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -1243,7 +1204,6 @@ Execution stopped on line 410 of file &#39;TESTS:\except\test_type_error.py&#39;
    408: def test_type_error15a():
    409:     try:
 --&gt;410:         _ = [1, 2](3, 4)
-   411:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -1272,7 +1232,6 @@ Execution stopped on line 20 of file &#39;TESTS:\except\test_unbound_local_error
    18:
    19:     try:
 --&gt;20:         outer()
-   21:     except Exception:
 
 global outer: &lt;function outer&gt;
 
@@ -1281,7 +1240,6 @@ Exception raised on line 12 of file &#39;TESTS:\except\test_unbound_local_error.
    10:     def inner():
    11:         c = 3
 --&gt;12:         a = a + b + c
-   13:     inner()
 
 global b: 2
 c: 3
@@ -1302,7 +1260,6 @@ Execution stopped on line 10 of file &#39;TESTS:\except\test_unknown_error.py&#3
     8: def test_unknown_error():
     9:     try:
 --&gt;10:         raise MyException(&quot;Some informative message about an unknown exception.&quot;)
-   11:     except Exception:
 
 global MyException: &lt;class &#39;test_unknown_error.MyException&#39;&gt;
 </pre></div>
@@ -1325,7 +1282,6 @@ Execution stopped on line 6 of file &#39;TESTS:\except\test_zero_division_error.
    4: def test_zero_division_error():
    5:     try:
 --&gt;6:         1 / 0
-   7:     except Exception:
 </pre></div>
 </div>
 </div>
@@ -1346,7 +1302,6 @@ Execution stopped on line 19 of file &#39;TESTS:\except\test_zero_division_error
    17:     zero = 0
    18:     try:
 --&gt;19:         1 % zero
-   20:     except Exception:
 
 zero: 0
 </pre></div>

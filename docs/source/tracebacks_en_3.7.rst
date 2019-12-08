@@ -43,7 +43,6 @@ ArithmeticError
         7:         # Usually, a subclass such as ZeroDivisionError, etc., would
         8:         # likely be raised.
     --> 9:         raise ArithmeticError
-       10:     except Exception:
 
 
 FileNotFoundError
@@ -68,7 +67,6 @@ FileNotFoundError
        4: def test_file_not_found_error():
        5:     try:
     -->6:         open("does_not_exist")
-       7:     except Exception:
 
 
 ImportError
@@ -94,7 +92,6 @@ ImportError
        4: def test_import_error():
        5:     try:
     -->6:         from math import Pi
-       7:     except Exception:
 
 
 KeyError
@@ -118,7 +115,6 @@ KeyError
        5:     d = {'a': 1, 'b': 2}
        6:     try:
     -->7:         d['c']
-       8:     except Exception:
 
     d: {'a': 1, 'b': 2}
 
@@ -141,7 +137,6 @@ LookupError
         8:         # other than possibly codecs.lookup(), which is why we raise
         9:         # it directly here for our example.
     -->10:         raise LookupError
-       11:     except Exception:
 
 
 IndexError - short tuple
@@ -167,7 +162,6 @@ IndexError - short tuple
         6:     b = [1, 2, 3]
         7:     try:
     --> 8:         print(a[3], b[2])
-        9:     except Exception:
 
     a: (1, 2, 3)
     b: [1, 2, 3]
@@ -196,7 +190,6 @@ IndexError - long list
        20:     b = tuple(range(50))
        21:     try:
     -->22:         print(a[50], b[0])
-       23:     except Exception:
 
     a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
     b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
@@ -225,7 +218,6 @@ ModuleNotFoundError
        4: def test_module_not_found_error():
        5:     try:
     -->6:         import does_not_exist
-       7:     except Exception:
 
 
 NameError
@@ -251,7 +243,6 @@ NameError
        4: def test_name_error():
        5:     try:
     -->6:         b = c
-       7:     except Exception:
 
 
 OverflowError
@@ -271,7 +262,6 @@ OverflowError
        4: def test_overflow_error():
        5:     try:
     -->6:         2. ** 1600
-       7:     except Exception:
 
 
 TypeError - 1: concatenate two different types
@@ -297,7 +287,6 @@ TypeError - 1: concatenate two different types
         6:         a = "a"
         7:         one = 1
     --> 8:         result = a + one
-        9:     except Exception:
 
     a: 'a'
     one: 1
@@ -326,7 +315,6 @@ TypeError - 1a: concatenate two different types
        22:         a = "a"
        23:         a_list = [1, 2, 3]
     -->24:         result = a + a_list
-       25:     except Exception:
 
     a: 'a'
     a_list: [1, 2, 3]
@@ -355,7 +343,6 @@ TypeError - 1b: concatenate two different types
        38:         a_tuple = (1, 2, 3)
        39:         a_list = [1, 2, 3]
     -->40:         result = a_tuple + a_list
-       41:     except Exception:
 
     a_tuple: (1, 2, 3)
     a_list: [1, 2, 3]
@@ -384,7 +371,6 @@ TypeError - 2: unsupported operand type(s) for +
        52:         one = 1
        53:         none = None
     -->54:         result = one + none
-       55:     except Exception:
 
     one: 1
     none: None
@@ -413,7 +399,6 @@ TypeError - 2a: unsupported operand type(s) for +=
        66:         one = 1
        67:         two = "two"
     -->68:         one += two
-       69:     except Exception:
 
     one: 1
     two: 'two'
@@ -442,7 +427,6 @@ TypeError - 3: unsupported operand type(s) for -
        80:         a = (1, 2)
        81:         b = [3, 4]
     -->82:         result = a - b
-       83:     except Exception:
 
     a: (1, 2)
     b: [3, 4]
@@ -471,7 +455,6 @@ TypeError - 3a: unsupported operand type(s) for -=
        94:         a = (1, 2)
        95:         b = [3, 4]
     -->96:         b -= a
-       97:     except Exception:
 
     b: [3, 4]
     a: (1, 2)
@@ -500,7 +483,6 @@ TypeError - 4: unsupported operand type(s) for *
        108:         a = 1j
        109:         b = {2, 3}
     -->110:         result = a * b
-       111:     except Exception:
 
     a: 1j
     b: {2, 3}
@@ -529,7 +511,6 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
        122:         a = 1j
        123:         b = {2, 3}
     -->124:         b *= a
-       125:     except Exception:
 
     b: {2, 3}
     a: 1j
@@ -558,7 +539,6 @@ TypeError - 5: unsupported operand type(s) for /
        136:         a = {1: 1, 2: 2}
        137:         b = 3.1416
     -->138:         result = a / b
-       139:     except Exception:
 
     a: {1: 1, 2: 2}
     b: 3.1416
@@ -587,7 +567,6 @@ TypeError - 5a: unsupported operand type(s) for /=
        150:         a = {1: 1, 2: 2}
        151:         b = 3.1416
     -->152:         b /= a
-       153:     except Exception:
 
     b: 3.1416
     a: {1: 1, 2: 2}
@@ -616,7 +595,6 @@ TypeError - 5b: unsupported operand type(s) for //
        164:         a = {1: 1, 2: 2}
        165:         b = 1
     -->166:         result = a // b
-       167:     except Exception:
 
     a: {1: 1, 2: 2}
     b: 1
@@ -645,7 +623,6 @@ TypeError - 5c: unsupported operand type(s) for //=
        178:         a = {1: 1, 2: 2}
        179:         b = 3.1416
     -->180:         b //= a
-       181:     except Exception:
 
     b: 3.1416
     a: {1: 1, 2: 2}
@@ -675,7 +652,6 @@ TypeError - 6: unsupported operand type(s) for &
        192:         a = "a"
        193:         b = 2
     -->194:         result = a & b
-       195:     except Exception:
 
     a: 'a'
     b: 2
@@ -705,7 +681,6 @@ TypeError - 6a: unsupported operand type(s) for &=
        206:         a = "a"
        207:         b = 2
     -->208:         b &= a
-       209:     except Exception:
 
     b: 2
     a: 'a'
@@ -735,7 +710,6 @@ TypeError - 7: unsupported operand type(s) for **
        220:         a = {1: 1, 2: 2}
        221:         b = 3.1416
     -->222:         result = a ** b
-       223:     except Exception:
 
     a: {1: 1, 2: 2}
     b: 3.1416
@@ -765,7 +739,6 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
        234:         a = {1: 1, 2: 2}
        235:         b = 3.1416
     -->236:         a **= b
-       237:     except Exception:
 
     a: {1: 1, 2: 2}
     b: 3.1416
@@ -795,7 +768,6 @@ TypeError - 8: unsupported operand type(s) for >>
        248:         a = "a"
        249:         b = 42
     -->250:         result = a >> b
-       251:     except Exception:
 
     a: 'a'
     b: 42
@@ -825,7 +797,6 @@ TypeError - 8a: unsupported operand type(s) for >>=
        262:         a = "a"
        263:         b = 42
     -->264:         a >>= b
-       265:     except Exception:
 
     a: 'a'
     b: 42
@@ -857,7 +828,6 @@ TypeError - 9: unsupported operand type(s) for @
        276:         a = "a"
        277:         b = 2
     -->278:         result = a @ b
-       279:     except Exception:
 
     a: 'a'
     b: 2
@@ -889,7 +859,6 @@ TypeError - 9a: unsupported operand type(s) for @=
        290:         a = "a"
        291:         b = 2
     -->292:         a @= b
-       293:     except Exception:
 
     a: 'a'
     b: 2
@@ -919,7 +888,6 @@ TypeError - 10: comparison between incompatible types
        304:         a = "a"
        305:         b = 42
     -->306:         b < a
-       307:     except Exception:
 
     b: 42
     a: 'a'
@@ -949,7 +917,6 @@ TypeError - 11: bad operand type for unary +
        316: def test_type_error11():
        317:     try:
     -->318:         a = +"abc"
-       319:         print(a)
 
 
 TypeError - 11a: bad operand type for unary -
@@ -976,7 +943,6 @@ TypeError - 11a: bad operand type for unary -
        329: def test_type_error11a():
        330:     try:
     -->331:         a = - [1, 2, 3]
-       332:         print(a)
 
 
 TypeError - 11b: bad operand type for unary ~
@@ -1003,7 +969,6 @@ TypeError - 11b: bad operand type for unary ~
        342: def test_type_error11b():
        343:     try:
     -->344:         a = ~ (1, 2, 3)
-       345:         print(a)
 
 
 TypeError - 12: object does not support item assignment
@@ -1031,7 +996,6 @@ TypeError - 12: object does not support item assignment
        356:     a = (1, 2, 3)
        357:     try:
     -->358:         a[0] = 0
-       359:     except Exception:
 
     a: (1, 2, 3)
 
@@ -1060,7 +1024,6 @@ TypeError - 13: wrong number of positional arguments
        370:         pass
        371:     try:
     -->372:         fn(1)
-       373:     except Exception:
 
     fn: <function test_type_error13.<locals>.fn>
 
@@ -1088,7 +1051,6 @@ TypeError - 14: missing positional arguments
        384:         pass
        385:     try:
     -->386:         fn(1)
-       387:     except Exception:
 
     fn: <function test_type_error14.<locals>.fn>
 
@@ -1118,7 +1080,6 @@ TypeError - 15: tuple object is not callable
        396: def test_type_error15():
        397:     try:
     -->398:         _ = (1, 2)(3, 4)
-       399:     except Exception:
 
 
 TypeError - 15a: list object is not callable
@@ -1146,7 +1107,6 @@ TypeError - 15a: list object is not callable
        408: def test_type_error15a():
        409:     try:
     -->410:         _ = [1, 2](3, 4)
-       411:     except Exception:
 
 
 UnboundLocalError
@@ -1178,7 +1138,6 @@ UnboundLocalError
        18: 
        19:     try:
     -->20:         outer()
-       21:     except Exception:
 
     global outer: <function outer>
 
@@ -1187,7 +1146,6 @@ UnboundLocalError
        10:     def inner():
        11:         c = 3
     -->12:         a = a + b + c
-       13:     inner()
 
     global b: 2
     c: 3
@@ -1211,7 +1169,6 @@ Unknown exception
         8: def test_unknown_error():
         9:     try:
     -->10:         raise MyException("Some informative message about an unknown exception.")
-       11:     except Exception:
 
     global MyException: <class 'test_unknown_error.MyException'>
 
@@ -1237,7 +1194,6 @@ ZeroDivisionError - 1
        4: def test_zero_division_error():
        5:     try:
     -->6:         1 / 0
-       7:     except Exception:
 
 
 ZeroDivisionError - 2
@@ -1261,7 +1217,6 @@ ZeroDivisionError - 2
        17:     zero = 0
        18:     try:
     -->19:         1 % zero
-       20:     except Exception:
 
     zero: 0
 
