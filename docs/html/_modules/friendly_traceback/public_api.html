@@ -184,6 +184,7 @@
 <span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">wraps</span>
 
 <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">core</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">utils</span>
 
 <span class="kn">from</span> <span class="nn">.core</span> <span class="k">import</span> <span class="n">check_syntax</span><span class="p">,</span> <span class="n">run_code</span>
 <span class="kn">from</span> <span class="nn">.session</span> <span class="k">import</span> <span class="n">session</span>
@@ -203,7 +204,7 @@
     <span class="s2">&quot;exclude_file_from_traceback&quot;</span><span class="p">,</span>
     <span class="s2">&quot;is_excluded_file&quot;</span><span class="p">,</span>
     <span class="s2">&quot;include_file_in_traceback&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;__version__&quot;</span>
+    <span class="s2">&quot;__version__&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 <span class="c1"># Note: more content is added to __all__ below</span>
 
@@ -295,6 +296,15 @@
 <span class="sd">       subject to change but include ``level``.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">session</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">)</span></div>
+
+
+<span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">_tokenize</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Prints tokens found in source, excluding spaces and comments.</span>
+
+<span class="sd">       This is occasionally useful to use at the console during development.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">utils</span><span class="o">.</span><span class="n">_tokenize</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
 
 
 <span class="c1"># =========================================================================</span>
