@@ -1506,6 +1506,110 @@ SyntaxError - delete function call
             del f
         
 
+SyntaxError - assigned prior to global declaration
+--------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: name 'p' is assigned to before global declaration
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error48.py'
+    beyond the location indicated below by --> and ^.
+    
+        4: 
+        5: def fn():
+        6:     p = 1
+    --> 7:     global p
+              ^
+
+    Likely cause based on the information given by Python:
+        You assigned a value to the variable 'p'
+        before declaring it as a global variable.
+        
+
+SyntaxError - used prior to global declaration
+----------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: name 'r' is used prior to global declaration
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error49.py'
+    beyond the location indicated below by --> and ^.
+    
+        4: 
+        5: def fn():
+        6:     print(r)
+    --> 7:     global r
+              ^
+
+    Likely cause based on the information given by Python:
+        You used the variable 'r'
+        before declaring it as a global variable.
+        
+
+SyntaxError - assigned prior to nonlocal declaration
+----------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        ModuleNotFoundError: No module named 'raise_syntax_error5-'
+        
+    A ModuleNotFoundError exception indicates that you
+    are trying to import a module that cannot be found by Python.
+    This could be because you misspelled the name of the module
+    or because it is not installed on your computer.
+    
+    Likely cause based on the information given by Python:
+        In your program, the name of the
+        module that cannot be found is 'raise_syntax_error5-'.
+        
+    Execution stopped on line 102 of file 'TESTS:\trb_syntax_common.py'.
+    
+       100:                 make_title(title)
+       101:                 try:
+    -->102:                     mod = __import__(name)
+
+    name: 'raise_syntax_error5-'
+
+SyntaxError - used prior to nonlocal declaration
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: name 's' is assigned to before nonlocal declaration
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error51.py'
+    beyond the location indicated below by --> and ^.
+    
+        6: 
+        7:     def g():
+        8:         s = 2
+    --> 9:         nonlocal s
+                  ^
+
+    Likely cause based on the information given by Python:
+        You assigned a value to the variable 's'
+        before declaring it as a nonlocal variable.
+        
+
 Walrus operator does not exist - yet
 ------------------------------------
 

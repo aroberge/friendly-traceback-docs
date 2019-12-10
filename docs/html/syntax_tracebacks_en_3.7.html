@@ -149,6 +149,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-cannot-be-argument-in-def-3">SyntaxError - keyword cannot be argument in def - 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-cannot-be-argument-in-def-4">SyntaxError - keyword cannot be argument in def - 4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-delete-function-call">SyntaxError - delete function call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assigned-prior-to-global-declaration">SyntaxError - assigned prior to global declaration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-used-prior-to-global-declaration">SyntaxError - used prior to global declaration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assigned-prior-to-nonlocal-declaration">SyntaxError - assigned prior to nonlocal declaration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-used-prior-to-nonlocal-declaration">SyntaxError - used prior to nonlocal declaration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
@@ -158,7 +162,7 @@
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> SyntaxError - Python 3.7 en Français</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html"> Notes on translations - using gettext</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html"> Project files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compare.html"> Comparison between versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare.html"> Comparison between Python versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html"> Change Log</a></li>
 </ul>
 
@@ -1567,6 +1571,99 @@ Likely cause based on the information given by Python:
         del f(a)
     instead of deleting the function&#39;s name
         del f
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assigned-prior-to-global-declaration">
+<h2>SyntaxError - assigned prior to global declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-global-declaration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: name &#39;p&#39; is assigned to before global declaration
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error48.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    4:
+    5: def fn():
+    6:     p = 1
+--&gt; 7:     global p
+          ^
+
+Likely cause based on the information given by Python:
+    You assigned a value to the variable &#39;p&#39;
+    before declaring it as a global variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-used-prior-to-global-declaration">
+<h2>SyntaxError - used prior to global declaration<a class="headerlink" href="#syntaxerror-used-prior-to-global-declaration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: name &#39;r&#39; is used prior to global declaration
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error49.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    4:
+    5: def fn():
+    6:     print(r)
+--&gt; 7:     global r
+          ^
+
+Likely cause based on the information given by Python:
+    You used the variable &#39;r&#39;
+    before declaring it as a global variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assigned-prior-to-nonlocal-declaration">
+<h2>SyntaxError - assigned prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    ModuleNotFoundError: No module named &#39;raise_syntax_error5-&#39;
+
+A ModuleNotFoundError exception indicates that you
+are trying to import a module that cannot be found by Python.
+This could be because you misspelled the name of the module
+or because it is not installed on your computer.
+
+Likely cause based on the information given by Python:
+    In your program, the name of the
+    module that cannot be found is &#39;raise_syntax_error5-&#39;.
+
+Execution stopped on line 102 of file &#39;TESTS:\trb_syntax_common.py&#39;.
+
+   100:                 make_title(title)
+   101:                 try:
+--&gt;102:                     mod = __import__(name)
+
+name: &#39;raise_syntax_error5-&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-used-prior-to-nonlocal-declaration">
+<h2>SyntaxError - used prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-used-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: name &#39;s&#39; is assigned to before nonlocal declaration
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error51.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    6:
+    7:     def g():
+    8:         s = 2
+--&gt; 9:         nonlocal s
+              ^
+
+Likely cause based on the information given by Python:
+    You assigned a value to the variable &#39;s&#39;
+    before declaring it as a nonlocal variable.
 </pre></div>
 </div>
 </div>

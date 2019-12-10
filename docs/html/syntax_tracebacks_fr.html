@@ -153,12 +153,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-cannot-be-argument-in-def-3">SyntaxError - keyword cannot be argument in def - 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-cannot-be-argument-in-def-4">SyntaxError - keyword cannot be argument in def - 4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-delete-function-call">SyntaxError - delete function call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assigned-prior-to-global-declaration">SyntaxError - assigned prior to global declaration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-used-prior-to-global-declaration">SyntaxError - used prior to global declaration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assigned-prior-to-nonlocal-declaration">SyntaxError - assigned prior to nonlocal declaration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-used-prior-to-nonlocal-declaration">SyntaxError - used prior to nonlocal declaration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html"> Notes on translations - using gettext</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html"> Project files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compare.html"> Comparison between versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare.html"> Comparison between Python versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html"> Change Log</a></li>
 </ul>
 
@@ -1588,6 +1592,98 @@ Cause probable basée sur les informations données par Python :
         del f(a)
     au lieu de supprimer le nom de la fonction
         del f
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assigned-prior-to-global-declaration">
+<h2>SyntaxError - assigned prior to global declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-global-declaration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: name &#39;p&#39; is assigned to before global declaration
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error48.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+    4:
+    5: def fn():
+    6:     p = 1
+--&gt; 7:     global p
+          ^
+
+Cause probable basée sur les informations données par Python :
+    Vous avez attribué une valeur à la variable  &#39;p&#39;
+    avant de la déclarer comme une variable globale.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-used-prior-to-global-declaration">
+<h2>SyntaxError - used prior to global declaration<a class="headerlink" href="#syntaxerror-used-prior-to-global-declaration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: name &#39;r&#39; is used prior to global declaration
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error49.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+    4:
+    5: def fn():
+    6:     print(r)
+--&gt; 7:     global r
+          ^
+
+Cause probable basée sur les informations données par Python :
+    Vous avez utilisé la variable &#39;r&#39;
+    avant de la déclarer comme une variable globale.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assigned-prior-to-nonlocal-declaration">
+<h2>SyntaxError - assigned prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    ModuleNotFoundError: No module named &#39;raise_syntax_error5-&#39;
+
+Une exception ModuleNotFoundError indique que vous
+essayez d’importer un module qui ne peut pas être trouvé par Python.
+Cela pourrait être parce que vous fait une faute d&#39;orthographe en
+écrivant le nom du module, ou parce qu’il n’est pas installé sur votre ordinateur.
+
+Cause probable basée sur les informations données par Python :
+    Dans votre programme, le nom du module inconnu est &#39;raise_syntax_error5-&#39;.
+
+L&#39;exécution s&#39;est arrêtée à la ligne 102 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
+
+   100:                 make_title(title)
+   101:                 try:
+--&gt;102:                     mod = __import__(name)
+
+name: &#39;raise_syntax_error5-&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-used-prior-to-nonlocal-declaration">
+<h2>SyntaxError - used prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-used-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: name &#39;s&#39; is assigned to before nonlocal declaration
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error51.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+    6:
+    7:     def g():
+    8:         s = 2
+--&gt; 9:         nonlocal s
+              ^
+
+Cause probable basée sur les informations données par Python :
+    Vous avez attribué une valeur à la variable &#39;s&#39;
+    avant de la déclarer comme variable non locale.
 </pre></div>
 </div>
 </div>

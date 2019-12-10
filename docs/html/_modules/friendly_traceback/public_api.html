@@ -102,7 +102,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_fr.html"> SyntaxError - Python 3.7 en Français</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../translation_notes.html"> Notes on translations - using gettext</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../graph.html"> Project files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../compare.html"> Comparison between versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compare.html"> Comparison between Python versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html"> Change Log</a></li>
 </ul>
 
@@ -298,11 +298,15 @@
     <span class="n">session</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">)</span></div>
 
 
-<span class="nd">@make_public</span>
 <span class="k">def</span> <span class="nf">_tokenize</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Prints tokens found in source, excluding spaces and comments.</span>
 
 <span class="sd">       This is occasionally useful to use at the console during development.</span>
+
+<span class="sd">       It is not part of the * import, and is really meant to be used</span>
+<span class="sd">       only by developers. It has been added in this public_api.py module</span>
+<span class="sd">       in order to give us more flexibility to change other modules</span>
+<span class="sd">       (such as utils.py) if needed.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">utils</span><span class="o">.</span><span class="n">_tokenize</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
 

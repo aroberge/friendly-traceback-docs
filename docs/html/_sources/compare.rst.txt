@@ -1,5 +1,5 @@
-Comparison between versions
-===========================
+Comparison between Python versions
+==================================
 
 In this file, we highlight differences between the information 
 given by different versions of Python when it comes to ``SyntaxError``.
