@@ -637,7 +637,8 @@ SyntaxError - mismatched brackets
                       ^
 
     Likely cause based on the information given by Python:
-        Python tells us that the closing ']' does not match the opening '('.
+        Python tells us that the closing ']' on the last line shown
+        does not match the opening '('.
         
         I will attempt to be give a bit more information.
         
@@ -669,7 +670,8 @@ SyntaxError - mismatched brackets - 2
                 ^
 
     Likely cause based on the information given by Python:
-        Python tells us that the closing ']' does not match the opening '(' on line 2.
+        Python tells us that the closing ']' on the last line shown
+        does not match the opening '(' on line 2.
         
         I will attempt to be give a bit more information.
         
