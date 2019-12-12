@@ -1,7 +1,17 @@
-.wy-nav-side {background-color: maroon;}
-.wy-nav-side a:hover {background-color: #a00000;}
+.wy-nav-side {background-color: #e0f0e0; 
+    color:black; 
+    border-right: solid 1px #c9c9c9;
+}
+.wy-nav-side a:hover {background-color: #2db862; color:white;}
+.wy-menu-vertical a {color: black;}
 
-.wy-side-nav-search {background-color: #503010;}
+.wy-menu-vertical li.toctree-l2 a, 
+    .wy-menu-vertical li.toctree-l3 a, 
+    .wy-menu-vertical li.toctree-l4 a {background-color: #f0f0f0;}
+
+
+.wy-side-nav-search {background-color: #2db862;}
+
 .highlight {background-color: #fffce8;}
 .friendly-small-pre {
     font-size: 80%;

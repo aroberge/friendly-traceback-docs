@@ -186,6 +186,7 @@
 
 <span class="kn">from</span> <span class="nn">.source_cache</span> <span class="k">import</span> <span class="n">cache</span><span class="p">,</span> <span class="n">highlight_source</span>
 <span class="kn">from</span> <span class="nn">.path_info</span> <span class="k">import</span> <span class="n">is_excluded_file</span>
+<span class="kn">from</span> <span class="nn">.friendly_exception</span> <span class="k">import</span> <span class="n">FriendlyException</span>
 
 
 <span class="c1"># The following is the function called `explain` in public_api.py</span>
@@ -247,10 +248,15 @@
             <span class="n">session</span><span class="o">.</span><span class="n">set_redirect</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="n">saved_current_redirect</span><span class="p">)</span>
         <span class="k">return</span>
 
-    <span class="n">session</span><span class="o">.</span><span class="n">traceback_info</span> <span class="o">=</span> <span class="n">info</span> <span class="o">=</span> <span class="n">get_traceback_info</span><span class="p">(</span>
-        <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">session</span><span class="o">.</span><span class="n">write_err</span>
-    <span class="p">)</span>
-    <span class="n">explanation</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">formatter</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">session</span><span class="o">.</span><span class="n">level</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">traceback_info</span> <span class="o">=</span> <span class="n">info</span> <span class="o">=</span> <span class="n">get_traceback_info</span><span class="p">(</span>
+            <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">session</span><span class="o">.</span><span class="n">write_err</span>
+        <span class="p">)</span>
+        <span class="n">explanation</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">formatter</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">session</span><span class="o">.</span><span class="n">level</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">FriendlyException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span>
+
     <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="n">explanation</span><span class="p">)</span>
     <span class="c1"># Ensures that we start on a new line; essential for the console</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">explanation</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>
@@ -473,6 +479,10 @@
 <span class="sd">    returns the result in a dict.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+
+    <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="n">FriendlyException</span><span class="p">):</span>
+        <span class="n">write_err</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        <span class="k">return</span> <span class="p">{}</span>
 
     <span class="n">info</span> <span class="o">=</span> <span class="p">{}</span>
 

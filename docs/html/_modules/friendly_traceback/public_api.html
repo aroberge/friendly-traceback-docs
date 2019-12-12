@@ -298,8 +298,9 @@
     <span class="n">session</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">)</span></div>
 
 
-<span class="k">def</span> <span class="nf">_tokenize</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Prints tokens found in source, excluding spaces and comments.</span>
+<span class="k">def</span> <span class="nf">make_token_table</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Prints tokens found in source, excluding spaces and comments</span>
+<span class="sd">       formatted in a table.</span>
 
 <span class="sd">       This is occasionally useful to use at the console during development.</span>
 
@@ -308,7 +309,7 @@
 <span class="sd">       in order to give us more flexibility to change other modules</span>
 <span class="sd">       (such as utils.py) if needed.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">utils</span><span class="o">.</span><span class="n">_tokenize</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">utils</span><span class="o">.</span><span class="n">make_token_table</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
 
 
 <span class="c1"># =========================================================================</span>
