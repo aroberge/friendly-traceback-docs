@@ -1,7 +1,7 @@
 .. _adding_exception:
 
-Adding an Exception
-===================
+Developer: Adding a new Exception case
+======================================
 
 This primarily describes the situation where you wish to add friendly
 tracebacks for an Exception that is not already included.
@@ -23,14 +23,15 @@ tracebacks for an Exception that is not already included.
 
         - File an issue indicating that you are planning to work on a
           given exception.
-        - Add test case
+        - Add /tests/except/test_new_error.py
         - Run pytest and confirm that your new test is included
         - Add generic information
         - Add specific information
         - Add another assertion in test case, based on specific information
-        - Execute test_some_exception.py and confirm visually it works as expected
+        - Execute test_new_error.py and confirm visually it works as expected
         - Run pytest and confirm that your new test is included
-    
+        - Optional: Modify /tests/trb_syntax_common.py to include this case
+
     After completing any of the above steps (other than the first one),
     feel free to make a pull request so that your code can be included.
 
@@ -50,6 +51,7 @@ tracebacks for an Exception that is not already included.
           repository; it should be located at the same directory level
           as friendly-traceback on your computer.
         - Add case to tests/tb_common.py
+        
             - Run tests/tb_english.py and ensure that
               ``../friendly-traceceback-docs/docs/source/tracebacks_en.rst``
               shows the expected result for all Python versions.

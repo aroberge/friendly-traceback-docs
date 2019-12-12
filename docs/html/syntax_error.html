@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Dealing with Syntax Errors &mdash; Friendly tracebacks 0.0.20a documentation</title>
+  <title>Developer: Adding a new SyntaxError case &mdash; Friendly tracebacks 0.0.20a documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Friendly tracebacks - in English" href="tracebacks_en_3.6.html" />
-    <link rel="prev" title="Adding an Exception" href="adding_exception.html" /> 
+    <link rel="next" title="Project files" href="graph.html" />
+    <link rel="prev" title="Developer: Adding a new Exception case" href="adding_exception.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,11 +89,11 @@
 <li class="toctree-l1"><a class="reference internal" href="usage.html"> Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lies.html"> Occasional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="design.html"> Design</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html"> Public API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="custom.html"> Custom exceptions and formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html"> Friendly tracebacks - Python 3.8 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html"> SyntaxError - Python 3.8 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="suggest.html"> Suggest an addition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adding_exception.html"> Adding an Exception</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#"> Dealing with Syntax Errors</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_exception.html"> Developer: Adding a new Exception</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"> Developer: Adding a new SyntaxError</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#adding-a-test-case">Adding a test case</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#raising-an-exception">Raising an exception</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#catching-an-exception">Catching an exception</a></li>
@@ -103,17 +103,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#add-specific-information">Add specific information</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="graph.html"> Project files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html"> Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom.html"> Demos: how to use in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation_notes.html"> Notes on translations - using gettext</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare.html"> Comparison between Python versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html"> Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html"> SyntaxError - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html"> Friendly tracebacks - Python 3.7 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.7.html"> SyntaxError - Python 3.7 in English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html"> Friendly tracebacks - Python 3.8 in English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html"> SyntaxError - Python 3.8 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - Python 3.7 en Français</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> SyntaxError - Python 3.7 en Français</a></li>
-<li class="toctree-l1"><a class="reference internal" href="translation_notes.html"> Notes on translations - using gettext</a></li>
-<li class="toctree-l1"><a class="reference internal" href="graph.html"> Project files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compare.html"> Comparison between Python versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html"> Change Log</a></li>
 </ul>
 
@@ -160,7 +160,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Dealing with Syntax Errors</li>
+      <li>Developer: Adding a new SyntaxError case</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -176,10 +176,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="tracebacks_en_3.6.html" class="btn btn-neutral float-right" title="Friendly tracebacks - in English" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="graph.html" class="btn btn-neutral float-right" title="Project files" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="adding_exception.html" class="btn btn-neutral float-left" title="Adding an Exception" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="adding_exception.html" class="btn btn-neutral float-left" title="Developer: Adding a new Exception case" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -188,8 +188,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dealing-with-syntax-errors">
-<h1>Dealing with Syntax Errors<a class="headerlink" href="#dealing-with-syntax-errors" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="developer-adding-a-new-syntaxerror-case">
+<h1>Developer: Adding a new SyntaxError case<a class="headerlink" href="#developer-adding-a-new-syntaxerror-case" title="Permalink to this headline">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, and its subclasses, <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> and <code class="docutils literal notranslate"><span class="pre">TabError</span></code>,
 are particular cases in that arise when a file cannot be parsed properly
 by Python. Such files cannot be imported by pytest.
@@ -204,22 +204,47 @@ from the other situation.</p>
 Each item is explained in a different section below. If you find
 the instructions unclear, please do not hesitate to reach out.</p>
 <blockquote>
-<div><ul class="simple">
+<div><ul>
 <li><p>File an issue indicating that you are planning to work on a
 given exception.</p></li>
-<li><dl class="simple">
-<dt>Add test case</dt><dd><ul>
-<li><p>Add raise_some_exception.py file</p></li>
-<li><p>Add catch_some_exception.py file</p></li>
+<li><p>Add test case</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Add /tests/syntax/raise_syntax_errorXX.py</p></li>
+<li><p>Modify /tests/syntax/catch_syntax_error.py to include this new case</p></li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </li>
 <li><p>Add generic information</p></li>
 <li><p>Add specific information</p></li>
 <li><p>Execute catch_some_exception.py and confirm visually it works as expected</p></li>
 <li><p>Run pytest and confirm that your new test is included</p></li>
 <li><p>Make a pull request</p></li>
+</ul>
+</div></blockquote>
+<p>The following are additional <strong>optional</strong> steps,
+dealing with the documentation
+rather than the code itself.
+They will need to be done at some point
+but, apart for possible translations in languages other than French,
+I can definitely take care of this.</p>
+<blockquote>
+<div><ul>
+<li><p>Ensure that you have a copy of the friendly-traceceback-docs
+repository; it should be located at the same directory level
+as friendly-traceback on your computer.</p></li>
+<li><p>Add case to tests/tb_syntax_common.py</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Run tests/tb_english.py and ensure that
+<code class="docutils literal notranslate"><span class="pre">../friendly-traceceback-docs/docs/source/tracebacks_en.rst</span></code>
+shows the expected result for all Python versions.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Run make_tb.bat or do the equivalent on non Windows computer</p></li>
+<li><p>Confirm that all docs/tracebacks_xx.rst include the new exception</p></li>
+<li><p>Add translation</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -324,10 +349,10 @@ date and possibly misleading.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tracebacks_en_3.6.html" class="btn btn-neutral float-right" title="Friendly tracebacks - in English" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="graph.html" class="btn btn-neutral float-right" title="Project files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="adding_exception.html" class="btn btn-neutral float-left" title="Adding an Exception" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="adding_exception.html" class="btn btn-neutral float-left" title="Developer: Adding a new Exception case" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

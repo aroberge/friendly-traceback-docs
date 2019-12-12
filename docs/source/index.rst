@@ -67,22 +67,22 @@ Contents
     Usage <usage>
     Occasional lies <lies>
     Design <design>
-    Public API <api>
-    Custom exceptions and formatting <custom>
+    Friendly tracebacks - Python 3.8 in English <tracebacks_en_3.8>
+    SyntaxError - Python 3.8 in English <syntax_tracebacks_en_3.8>     
     Suggest an addition <suggest>
-    Adding an Exception <adding_exception>
-    Dealing with Syntax Errors <syntax_error>
+    Developer: Adding a new Exception <adding_exception>
+    Developer: Adding a new SyntaxError <syntax_error>
+    Project files <graph>
+    Public API <api>
+    Demos: how to use in your own project <custom>
+    Notes on translations - using gettext <translation_notes>    
+    Comparison between Python versions <compare>   
     Friendly tracebacks - Python 3.6 in English <tracebacks_en_3.6>
     SyntaxError - Python 3.6 in English <syntax_tracebacks_en_3.6>
     Friendly tracebacks - Python 3.7 in English <tracebacks_en_3.7>
     SyntaxError - Python 3.7 in English <syntax_tracebacks_en_3.7>
-    Friendly tracebacks - Python 3.8 in English <tracebacks_en_3.8>
-    SyntaxError - Python 3.8 in English <syntax_tracebacks_en_3.8>
     Friendly tracebacks - Python 3.7 en Français <tracebacks_fr>
     SyntaxError - Python 3.7 en Français <syntax_tracebacks_fr>
-    Notes on translations - using gettext <translation_notes>
-    Project files <graph>
-    Comparison between Python versions <compare>
     Change Log <changelog>
 
 .. todolist::

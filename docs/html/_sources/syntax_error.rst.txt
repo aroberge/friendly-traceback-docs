@@ -1,5 +1,5 @@
-Dealing with Syntax Errors
-=======================================
+Developer: Adding a new SyntaxError case
+========================================
 
 ``SyntaxError``, and its subclasses, ``IndentationError`` and ``TabError``,
 are particular cases in that arise when a file cannot be parsed properly
@@ -21,13 +21,36 @@ from the other situation.
         - File an issue indicating that you are planning to work on a
           given exception.
         - Add test case
-            - Add raise_some_exception.py file
-            - Add catch_some_exception.py file
+
+            - Add /tests/syntax/raise_syntax_errorXX.py
+            - Modify /tests/syntax/catch_syntax_error.py to include this new case
+        
         - Add generic information
         - Add specific information
         - Execute catch_some_exception.py and confirm visually it works as expected
         - Run pytest and confirm that your new test is included
         - Make a pull request
+
+
+    The following are additional **optional** steps, 
+    dealing with the documentation
+    rather than the code itself.
+    They will need to be done at some point
+    but, apart for possible translations in languages other than French,
+    I can definitely take care of this.
+
+
+        - Ensure that you have a copy of the friendly-traceceback-docs 
+          repository; it should be located at the same directory level
+          as friendly-traceback on your computer.
+        - Add case to tests/tb_syntax_common.py
+
+            - Run tests/tb_english.py and ensure that
+              ``../friendly-traceceback-docs/docs/source/tracebacks_en.rst``
+              shows the expected result for all Python versions.
+        - Run make_tb.bat or do the equivalent on non Windows computer
+        - Confirm that all docs/tracebacks_xx.rst include the new exception
+        - Add translation
 
 
 Adding a test case
