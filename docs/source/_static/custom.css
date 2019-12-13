@@ -4,6 +4,7 @@
 }
 .wy-nav-side a:hover {background-color: #2db862; color:white;}
 .wy-menu-vertical a {color: black;}
+.wy-menu-vertical p.caption {color: #10a030;}
 
 .wy-menu-vertical li.toctree-l2 a, 
     .wy-menu-vertical li.toctree-l3 a, 

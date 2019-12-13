@@ -30,15 +30,16 @@ Below, I make references to various files. Here's a simplified view of the
 directory structure of this project, showing only a few relevant files::
 
     friendly-traceback/
-        docs/
+        demos/
         friendly_traceback/
             locales/
                 fr/
                     LC_MESSAGES/
                         fr.mo
                         fr.po
-                messages.pot
-            core.py
+                friendly.pot
+            my_gettext.py
+            session.py
             make_pot.bat
         tests/
         setup.py
@@ -82,7 +83,7 @@ Python's REPL and do the following::
 
     >>> import sys
     >>> print(sys.prefix)
-    C:\Users\andre\AppData\Local\Programs\Python\Python37
+    path\to\python
 
 You can then navigate to the directory containing the Python version
 you are using and will almost certainly
@@ -93,7 +94,7 @@ input file you specify and create a "template" file (identified by a ``.pot``
 extension). To make my life easier, I simply type ``make_pot`` at the prompt
 which executes the content of ``make_pot.bat`` (I'm using Windows)::
 
-    python c:\users\andre\appdata\local\programs\python\python37\tools\i18n\pygettext.py -p locales *.py
+    py -3.7 path\to\python\tools\i18n\pygettext.py -p locales -d friendly *.py
 
 
 - ``make_pot.bat`` is located in the same directory where the Python source files
@@ -104,8 +105,8 @@ which executes the content of ``make_pot.bat`` (I'm using Windows)::
 - The ``-p locales`` option specifies that the template file is going to be
   created (or updated) in the ``locales/`` directory
   (see above for the directory structure).
-- Since I did not specify a name to be used for the template file, the default
-  ``messages.pot`` will be used (again, see above).
+- Using the -d flag, I specified ``friendly`` as the name for the template file,
+  ``friendly.pot``, instead of the default ``messages.pot``.
 - The source files scanned by pygettext (``*.py``) will be all the
   Python files in that directory.
 
@@ -171,70 +172,73 @@ have to edit the created file by hand.
 Telling Python to use the translations
 --------------------------------------
 
-In this project, the language selection is done in the file ``core.py``.
+In this project, the language selection is done in the file ``session.py``.
 (See directory structure above.)
-At the top of ``core.py``, ``gettext`` is imported.  Changing language
-is done using the ``install_gettext`` method; the relevant parts are as follows::
+At the top of ``session.py``, ``my_gettext`` is imported.
+As I am writing this documentation, this is the content of ``my_gettext.py``::
+
+    import gettext
+    import os
+
+    class LangState:
+        def __init__(self):
+            self.translate = None
+            self.lang = "en"
+
+        def install(self, lang=None):
+            """Sets the language to be used for translations"""
+            if lang is None:
+                lang = "en"
+            try:
+                # We first look for the exact language requested.
+                _lang = gettext.translation(
+                    "friendly",
+                    localedir=os.path.normpath(  # 1
+                        os.path.join(os.path.dirname(__file__), "locales")
+                    ),
+                    languages=[lang],
+                    fallback=False,  # 2
+                )
+            except FileNotFoundError:
+                # If it is not available, we make it possible to replace a
+                # language specific to a region, as in fr_CA, by a more
+                # generic version, such as fr, defined by a two-letter code.
+                lang = lang[:2]  # 3
+                _lang = gettext.translation(
+                    "friendly",
+                    localedir=os.path.normpath(
+                        os.path.join(os.path.dirname(__file__), "locales")
+                    ),
+                    languages=[lang],
+                    fallback=True,  # 4 This means that the hard-coded strings in
+                    # the source file will be used if the requested language
+                    # is not available.
+                )
+            self.lang = lang
+            self.translate = _lang.gettext
 
 
-    def install_gettext(self, lang):
-        """Sets the current language for gettext."""
-        try:
-            gettext_lang = gettext.translation(
-                lang,  # 1
-                localedir=os.path.normpath(
-                    os.path.join(os.path.dirname(__file__), "locales")  # 2
-                ),
-                languages=[lang],
-                fallback=False,  # 3
-            )
-        except FileNotFoundError:
-            lang = lang[:2]  # 4
-            gettext_lang = gettext.translation(
-                lang,
-                localedir=os.path.normpath(
-                    os.path.join(os.path.dirname(__file__), "locales")
-                ),
-                languages=[lang],
-                fallback=True,  # 5
-            )
-        gettext_lang.install()  # 6
+    current_lang = LangState()  # 3
 
 
 Here is an explanation for the numbered comments above:
 
-    1. Indicates that translations will be found in files named ``lang + ".mo"``
+    1. "Foolproof" way of locating the translation directory
 
-    2. "Foolproof" way of locating the translation directory
-
-    3. By default, fallback is ``False``; for clarity, we explicitly set it.
+    2. By default, fallback is ``False``; for clarity, we explicitly set it.
        If a request is made to use a non-existing translation, an exception is raised.
 
-    4. If an exception is raised, we try again under the assumption that the
-       value for ``lang`` was specific to a region (for example ``fr_CA``)
-       and that we might have a translation for the generic version
-       of that language.
-
-    5. By using ``fallback=True``, the untranslated string (as it exists in
-       the source file) is used instead.
-
-    6. This adds the function named ``_`` to the builtins. So, it will be known
-       to all other modules.  ``gettext_lang.install`` takes an
-       optional argument which makes it possible to use different behaviour.
-       By using the default, we do not provide any support for dealing with
-       alternative translations based on quantity (singular/plural).
+    3. This is the instance we use elsewhere; see below.
 
 
-.. warning::
+When we want to make use of translations inside a given function,
+we do the following::
 
-    When using flake8 (or likely other similar linters), ``_`` will be flagged
-    as an unknown function.  This is taken care of in this project by adding::
+    from . import my_gettext
 
-        builtins =
-            _
-
-    to the ``.flake8`` configuration file.
-
+    def international_greeting(name):
+        _ = current_lang.translate
+        return _("Hello {name}").format(name=name)
 
 .. warning::
 
@@ -256,24 +260,10 @@ If someone clones the project, and needs to upload a version somewhere (e.g. pyp
 these generated files (at least the ``.mo`` files) need to be included.
 
 
-Additional considerations
--------------------------
+Packaging
+---------
 
-The description above accurately reflected what was in the code at the time
-it was written.  At that time, I was also planning to have a way to allow
-other programs (for example, a modified version of Turtle) to use
-friendly-traceback but also add its own exceptions with its own set
-of translations. However, when using gettext in the way described above,
-the function ``_`` is added to the Python builtins and points to a single
-source for the catalogs.
+.. todo::
 
-There is a different way to use gettext to deal with these situations.
-I plan to do this. It could happen that I have already done this with the
-code but not updated the information in this file.
-If you notice that this is the case, feel free to file an issue.
+   Explain how to package language files together with Python files.
 
-
-.. warning::
-
-    Using gettext with the default `_` as a builtin clashes with
-    an interactive console where `_` is redefined.

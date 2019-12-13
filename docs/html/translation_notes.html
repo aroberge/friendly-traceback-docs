@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Comparison between Python versions" href="compare.html" />
-    <link rel="prev" title="Demos: how to use in your own project" href="custom.html" /> 
+    <link rel="prev" title="Occasional lies" href="lies.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,36 +85,52 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="usage.html"> Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lies.html"> Occasional lies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="design.html"> Design</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html"> Friendly tracebacks - Python 3.8 in English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html"> SyntaxError - Python 3.8 in English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="suggest.html"> Suggest an addition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adding_exception.html"> Developer: Adding a new Exception</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_error.html"> Developer: Adding a new SyntaxError</a></li>
-<li class="toctree-l1"><a class="reference internal" href="graph.html"> Project files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html"> Public API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="custom.html"> Demos: how to use in your own project</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#"> Notes on translations - using gettext</a><ul>
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html">Friendly tracebacks - in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">Friendly SyntaxError tracebacks - in English</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="suggest.html">Suggest an addition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Adding a new Exception case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Adding a new SyntaxError case</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Use in your project</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="custom.html">Demos: how to use in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph.html">Project files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Occasional lies</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Notes on translations - using gettext</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#what-is-gettext">What is gettext?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#structure-of-this-project">Structure of this project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-use-gettext">How to use gettext</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-poedit">Using Poedit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#telling-python-to-use-the-translations">Telling Python to use the translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#why-are-mo-files-in-the-repository">Why are .mo files in the repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#additional-considerations">Additional considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#packaging">Packaging</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="compare.html"> Comparison between Python versions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html"> Friendly tracebacks - Python 3.6 in English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html"> SyntaxError - Python 3.6 in English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html"> Friendly tracebacks - Python 3.7 in English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.7.html"> SyntaxError - Python 3.7 in English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - Python 3.7 en Français</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> SyntaxError - Python 3.7 en Français</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html"> Change Log</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other versions and languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.7.html">SyntaxError - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html">Friendly tracebacks - en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html">Friendly SyntaxError tracebacks - en Français</a></li>
+</ul>
+<p class="caption"><span class="caption-text">varia</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a></li>
 </ul>
 
             
@@ -179,7 +195,7 @@
         <a href="compare.html" class="btn btn-neutral float-right" title="Comparison between Python versions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="custom.html" class="btn btn-neutral float-left" title="Demos: how to use in your own project" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="lies.html" class="btn btn-neutral float-left" title="Occasional lies" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -212,15 +228,16 @@ to the user in their preferred language.</p>
 <p>Below, I make references to various files. Here’s a simplified view of the
 directory structure of this project, showing only a few relevant files:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly</span><span class="o">-</span><span class="n">traceback</span><span class="o">/</span>
-    <span class="n">docs</span><span class="o">/</span>
+    <span class="n">demos</span><span class="o">/</span>
     <span class="n">friendly_traceback</span><span class="o">/</span>
         <span class="n">locales</span><span class="o">/</span>
             <span class="n">fr</span><span class="o">/</span>
                 <span class="n">LC_MESSAGES</span><span class="o">/</span>
                     <span class="n">fr</span><span class="o">.</span><span class="n">mo</span>
                     <span class="n">fr</span><span class="o">.</span><span class="n">po</span>
-            <span class="n">messages</span><span class="o">.</span><span class="n">pot</span>
-        <span class="n">core</span><span class="o">.</span><span class="n">py</span>
+            <span class="n">friendly</span><span class="o">.</span><span class="n">pot</span>
+        <span class="n">my_gettext</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">py</span>
         <span class="n">make_pot</span><span class="o">.</span><span class="n">bat</span>
     <span class="n">tests</span><span class="o">/</span>
     <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
@@ -261,7 +278,7 @@ If you don’t know where your python files are located, you can use
 Python’s REPL and do the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">prefix</span><span class="p">)</span>
-<span class="go">C:\Users\andre\AppData\Local\Programs\Python\Python37</span>
+<span class="go">path\to\python</span>
 </pre></div>
 </div>
 <p>You can then navigate to the directory containing the Python version
@@ -271,7 +288,7 @@ find <code class="docutils literal notranslate"><span class="pre">pygettext.py</
 input file you specify and create a “template” file (identified by a <code class="docutils literal notranslate"><span class="pre">.pot</span></code>
 extension). To make my life easier, I simply type <code class="docutils literal notranslate"><span class="pre">make_pot</span></code> at the prompt
 which executes the content of <code class="docutils literal notranslate"><span class="pre">make_pot.bat</span></code> (I’m using Windows):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">andre</span>\<span class="n">appdata</span>\<span class="n">local</span>\<span class="n">programs</span>\<span class="n">python</span>\<span class="n">python37</span>\<span class="n">tools</span>\<span class="n">i18n</span>\<span class="n">pygettext</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">p</span> <span class="n">locales</span> <span class="o">*.</span><span class="n">py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">py</span> <span class="o">-</span><span class="mf">3.7</span> <span class="n">path</span>\<span class="n">to</span>\<span class="n">python</span>\<span class="n">tools</span>\<span class="n">i18n</span>\<span class="n">pygettext</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">p</span> <span class="n">locales</span> <span class="o">-</span><span class="n">d</span> <span class="n">friendly</span> <span class="o">*.</span><span class="n">py</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -283,8 +300,8 @@ executing them.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">locales</span></code> option specifies that the template file is going to be
 created (or updated) in the <code class="docutils literal notranslate"><span class="pre">locales/</span></code> directory
 (see above for the directory structure).</p></li>
-<li><p>Since I did not specify a name to be used for the template file, the default
-<code class="docutils literal notranslate"><span class="pre">messages.pot</span></code> will be used (again, see above).</p></li>
+<li><p>Using the -d flag, I specified <code class="docutils literal notranslate"><span class="pre">friendly</span></code> as the name for the template file,
+<code class="docutils literal notranslate"><span class="pre">friendly.pot</span></code>, instead of the default <code class="docutils literal notranslate"><span class="pre">messages.pot</span></code>.</p></li>
 <li><p>The source files scanned by pygettext (<code class="docutils literal notranslate"><span class="pre">*.py</span></code>) will be all the
 Python files in that directory.</p></li>
 </ul>
@@ -342,63 +359,71 @@ or attribute it to the Friendly-traceback project.</p>
 </div>
 <div class="section" id="telling-python-to-use-the-translations">
 <h2>Telling Python to use the translations<a class="headerlink" href="#telling-python-to-use-the-translations" title="Permalink to this headline">¶</a></h2>
-<p>In this project, the language selection is done in the file <code class="docutils literal notranslate"><span class="pre">core.py</span></code>.
+<p>In this project, the language selection is done in the file <code class="docutils literal notranslate"><span class="pre">session.py</span></code>.
 (See directory structure above.)
-At the top of <code class="docutils literal notranslate"><span class="pre">core.py</span></code>, <code class="docutils literal notranslate"><span class="pre">gettext</span></code> is imported.  Changing language
-is done using the <code class="docutils literal notranslate"><span class="pre">install_gettext</span></code> method; the relevant parts are as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">install_gettext</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lang</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Sets the current language for gettext.&quot;&quot;&quot;</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">gettext_lang</span> <span class="o">=</span> <span class="n">gettext</span><span class="o">.</span><span class="n">translation</span><span class="p">(</span>
-            <span class="n">lang</span><span class="p">,</span>  <span class="c1"># 1</span>
-            <span class="n">localedir</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s2">&quot;locales&quot;</span><span class="p">)</span>  <span class="c1"># 2</span>
-            <span class="p">),</span>
-            <span class="n">languages</span><span class="o">=</span><span class="p">[</span><span class="n">lang</span><span class="p">],</span>
-            <span class="n">fallback</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># 3</span>
-        <span class="p">)</span>
-    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-        <span class="n">lang</span> <span class="o">=</span> <span class="n">lang</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># 4</span>
-        <span class="n">gettext_lang</span> <span class="o">=</span> <span class="n">gettext</span><span class="o">.</span><span class="n">translation</span><span class="p">(</span>
-            <span class="n">lang</span><span class="p">,</span>
-            <span class="n">localedir</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s2">&quot;locales&quot;</span><span class="p">)</span>
-            <span class="p">),</span>
-            <span class="n">languages</span><span class="o">=</span><span class="p">[</span><span class="n">lang</span><span class="p">],</span>
-            <span class="n">fallback</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># 5</span>
-        <span class="p">)</span>
-    <span class="n">gettext_lang</span><span class="o">.</span><span class="n">install</span><span class="p">()</span>  <span class="c1"># 6</span>
+At the top of <code class="docutils literal notranslate"><span class="pre">session.py</span></code>, <code class="docutils literal notranslate"><span class="pre">my_gettext</span></code> is imported.
+As I am writing this documentation, this is the content of <code class="docutils literal notranslate"><span class="pre">my_gettext.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gettext</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">class</span> <span class="nc">LangState</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">translate</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lang</span> <span class="o">=</span> <span class="s2">&quot;en&quot;</span>
+
+    <span class="k">def</span> <span class="nf">install</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sets the language to be used for translations&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">lang</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">lang</span> <span class="o">=</span> <span class="s2">&quot;en&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># We first look for the exact language requested.</span>
+            <span class="n">_lang</span> <span class="o">=</span> <span class="n">gettext</span><span class="o">.</span><span class="n">translation</span><span class="p">(</span>
+                <span class="s2">&quot;friendly&quot;</span><span class="p">,</span>
+                <span class="n">localedir</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span>  <span class="c1"># 1</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s2">&quot;locales&quot;</span><span class="p">)</span>
+                <span class="p">),</span>
+                <span class="n">languages</span><span class="o">=</span><span class="p">[</span><span class="n">lang</span><span class="p">],</span>
+                <span class="n">fallback</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># 2</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+            <span class="c1"># If it is not available, we make it possible to replace a</span>
+            <span class="c1"># language specific to a region, as in fr_CA, by a more</span>
+            <span class="c1"># generic version, such as fr, defined by a two-letter code.</span>
+            <span class="n">lang</span> <span class="o">=</span> <span class="n">lang</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># 3</span>
+            <span class="n">_lang</span> <span class="o">=</span> <span class="n">gettext</span><span class="o">.</span><span class="n">translation</span><span class="p">(</span>
+                <span class="s2">&quot;friendly&quot;</span><span class="p">,</span>
+                <span class="n">localedir</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s2">&quot;locales&quot;</span><span class="p">)</span>
+                <span class="p">),</span>
+                <span class="n">languages</span><span class="o">=</span><span class="p">[</span><span class="n">lang</span><span class="p">],</span>
+                <span class="n">fallback</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># 4 This means that the hard-coded strings in</span>
+                <span class="c1"># the source file will be used if the requested language</span>
+                <span class="c1"># is not available.</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lang</span> <span class="o">=</span> <span class="n">lang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">translate</span> <span class="o">=</span> <span class="n">_lang</span><span class="o">.</span><span class="n">gettext</span>
+
+
+<span class="n">current_lang</span> <span class="o">=</span> <span class="n">LangState</span><span class="p">()</span>  <span class="c1"># 3</span>
 </pre></div>
 </div>
 <p>Here is an explanation for the numbered comments above:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>Indicates that translations will be found in files named <code class="docutils literal notranslate"><span class="pre">lang</span> <span class="pre">+</span> <span class="pre">&quot;.mo&quot;</span></code></p></li>
 <li><p>“Foolproof” way of locating the translation directory</p></li>
 <li><p>By default, fallback is <code class="docutils literal notranslate"><span class="pre">False</span></code>; for clarity, we explicitly set it.
 If a request is made to use a non-existing translation, an exception is raised.</p></li>
-<li><p>If an exception is raised, we try again under the assumption that the
-value for <code class="docutils literal notranslate"><span class="pre">lang</span></code> was specific to a region (for example <code class="docutils literal notranslate"><span class="pre">fr_CA</span></code>)
-and that we might have a translation for the generic version
-of that language.</p></li>
-<li><p>By using <code class="docutils literal notranslate"><span class="pre">fallback=True</span></code>, the untranslated string (as it exists in
-the source file) is used instead.</p></li>
-<li><p>This adds the function named <code class="docutils literal notranslate"><span class="pre">_</span></code> to the builtins. So, it will be known
-to all other modules.  <code class="docutils literal notranslate"><span class="pre">gettext_lang.install</span></code> takes an
-optional argument which makes it possible to use different behaviour.
-By using the default, we do not provide any support for dealing with
-alternative translations based on quantity (singular/plural).</p></li>
+<li><p>This is the instance we use elsewhere; see below.</p></li>
 </ol>
 </div></blockquote>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>When using flake8 (or likely other similar linters), <code class="docutils literal notranslate"><span class="pre">_</span></code> will be flagged
-as an unknown function.  This is taken care of in this project by adding:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">builtins</span> <span class="o">=</span>
-    <span class="n">_</span>
+<p>When we want to make use of translations inside a given function,
+we do the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">my_gettext</span>
+
+<span class="k">def</span> <span class="nf">international_greeting</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Hello </span><span class="si">{name}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>to the <code class="docutils literal notranslate"><span class="pre">.flake8</span></code> configuration file.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -417,23 +442,11 @@ programs) and it is generally suggested that such files not be included.</p>
 If someone clones the project, and needs to upload a version somewhere (e.g. pypi.org),
 these generated files (at least the <code class="docutils literal notranslate"><span class="pre">.mo</span></code> files) need to be included.</p>
 </div>
-<div class="section" id="additional-considerations">
-<h2>Additional considerations<a class="headerlink" href="#additional-considerations" title="Permalink to this headline">¶</a></h2>
-<p>The description above accurately reflected what was in the code at the time
-it was written.  At that time, I was also planning to have a way to allow
-other programs (for example, a modified version of Turtle) to use
-friendly-traceback but also add its own exceptions with its own set
-of translations. However, when using gettext in the way described above,
-the function <code class="docutils literal notranslate"><span class="pre">_</span></code> is added to the Python builtins and points to a single
-source for the catalogs.</p>
-<p>There is a different way to use gettext to deal with these situations.
-I plan to do this. It could happen that I have already done this with the
-code but not updated the information in this file.
-If you notice that this is the case, feel free to file an issue.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Using gettext with the default <cite>_</cite> as a builtin clashes with
-an interactive console where <cite>_</cite> is redefined.</p>
+<div class="section" id="packaging">
+<h2>Packaging<a class="headerlink" href="#packaging" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Explain how to package language files together with Python files.</p>
 </div>
 </div>
 </div>
@@ -449,7 +462,7 @@ an interactive console where <cite>_</cite> is redefined.</p>
         <a href="compare.html" class="btn btn-neutral float-right" title="Comparison between Python versions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="custom.html" class="btn btn-neutral float-left" title="Demos: how to use in your own project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="lies.html" class="btn btn-neutral float-left" title="Occasional lies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
