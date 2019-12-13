@@ -1,14 +1,14 @@
 Occasional lies
 ===============
 
-Let's get something immediately out of the way:
+Let me let you in on a secret:
 [very occasionally] Friendly-traceback will lie to you.
 When it does so, it will indicate it to you;
 however, it will do so in a way that might be easily overlooked.
 
 Have a look at the following screen captures, all taken using
-version 0.0.8a  (Python version: 3.7.3 on Win 32). (Later screenshots
-will normally include Friendly-traceback version.)
+version 0.0.8a  (Python version: 3.7.3 on Win 32). (Most other screenshots
+normally include Friendly-traceback version.)
 
 First, we show a traceback generated with ``level`` set to 0:
 with this choice, the output only includes the normal

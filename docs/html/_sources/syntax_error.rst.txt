@@ -1,4 +1,4 @@
-Developer: Adding a new SyntaxError case
+Developer: Add a new SyntaxError case
 ========================================
 
 ``SyntaxError``, and its subclasses, ``IndentationError`` and ``TabError``,

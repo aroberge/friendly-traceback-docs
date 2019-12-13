@@ -1,6 +1,6 @@
 .. _adding_exception:
 
-Developer: Adding a new Exception case
+Developer: Add a new Exception case
 ======================================
 
 This primarily describes the situation where you wish to add friendly

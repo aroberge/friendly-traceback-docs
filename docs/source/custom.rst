@@ -1,5 +1,5 @@
-Demos: how to use in your own project
-======================================
+Description of demos
+=====================
 
 .. note::
 
