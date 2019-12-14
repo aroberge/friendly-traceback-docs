@@ -2,6 +2,15 @@
 Known exceptions
 =================
 
+.. note::
+
+    I am currently focusing on adding more cases of ``SyntaxError``,
+    and possibly ``TypeError``, rather than other other specific 
+    types of exceptions, as I believe that these are the most
+    likely ones to be encountered by beginners and include so 
+    many different possible cases.
+
+
 .. warning::
 
     This documentation is not updated as often as the actual 
