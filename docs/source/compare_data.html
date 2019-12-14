@@ -229,6 +229,41 @@ SyntaxError: cannot assign to literal
 
 </pre>
 <div class='filename-header'>
+raise_syntax_error55
+</div>
+<pre class='highlight friendly-small-pre'>
+3.7:
+SyntaxError: invalid syntax
+
+3.8:
+SyntaxError: cannot use named assignment with True
+
+</pre>
+<pre class='highlight friendly-small-pre'>
+3.6:
+I make an effort below to guess what caused the problem
+but I might guess incorrectly.
+
+You appear to be using the operator :=, sometimes called
+the walrus operator. This operator requires the use of
+Python 3.8 or newer. You are using version 3.6.
+
+3.7:
+I make an effort below to guess what caused the problem
+but I might guess incorrectly.
+
+You appear to be using the operator :=, sometimes called
+the walrus operator. This operator requires the use of
+Python 3.8 or newer. You are using version 3.7.
+
+</pre>
+<pre class='highlight friendly-small-pre'>
+3.8:
+True is a constant in Python; you cannot assign it a value.
+
+
+</pre>
+<div class='filename-header'>
 raise_syntax_error9
 </div>
 <pre class='highlight friendly-small-pre'>
