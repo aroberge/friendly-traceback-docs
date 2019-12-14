@@ -110,9 +110,9 @@ KeyError
         
     Execution stopped on line 7 of file 'TESTS:\except\test_key_error.py'.
     
-       5:     d = {'a': 1, 'b': 2}
+       5:     d = {"a": 1, "b": 2}
        6:     try:
-    -->7:         d['c']
+    -->7:         d["c"]
 
     d: {'a': 1, 'b': 2}
 
@@ -259,7 +259,7 @@ OverflowError
     
        4: def test_overflow_error():
        5:     try:
-    -->6:         2. ** 1600
+    -->6:         2.0 ** 1600
 
 
 TypeError - 1: concatenate two different types
@@ -940,7 +940,7 @@ TypeError - 11a: bad operand type for unary -
     
        329: def test_type_error11a():
        330:     try:
-    -->331:         a = - [1, 2, 3]
+    -->331:         a = -[1, 2, 3]
 
 
 TypeError - 11b: bad operand type for unary ~
@@ -966,7 +966,7 @@ TypeError - 11b: bad operand type for unary ~
     
        342: def test_type_error11b():
        343:     try:
-    -->344:         a = ~ (1, 2, 3)
+    -->344:         a = ~(1, 2, 3)
 
 
 TypeError - 12: object does not support item assignment
@@ -1017,11 +1017,11 @@ TypeError - 13: wrong number of positional arguments
         1 positional argument while it requires 0
         such positional arguments.
         
-    Execution stopped on line 372 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 373 of file 'TESTS:\except\test_type_error.py'.
     
-       370:         pass
-       371:     try:
-    -->372:         fn(1)
+       371: 
+       372:     try:
+    -->373:         fn(1)
 
     fn: <function test_type_error13.<locals>.fn>
 
@@ -1044,11 +1044,11 @@ TypeError - 14: missing positional arguments
         You apparently have called the function 'fn()' with
         fewer positional arguments than it requires (2 missing).
         
-    Execution stopped on line 386 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 388 of file 'TESTS:\except\test_type_error.py'.
     
-       384:         pass
-       385:     try:
-    -->386:         fn(1)
+       386: 
+       387:     try:
+    -->388:         fn(1)
 
     fn: <function test_type_error14.<locals>.fn>
 
@@ -1073,11 +1073,11 @@ TypeError - 15: tuple object is not callable
         which Python took as an indication of a function call.
         Perhaps you had a missing comma before the tuple.
         
-    Execution stopped on line 398 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 400 of file 'TESTS:\except\test_type_error.py'.
     
-       396: def test_type_error15():
-       397:     try:
-    -->398:         _ = (1, 2)(3, 4)
+       398: def test_type_error15():
+       399:     try:
+    -->400:         _ = (1, 2)(3, 4)
 
 
 TypeError - 15a: list object is not callable
@@ -1100,11 +1100,11 @@ TypeError - 15a: list object is not callable
         which Python took as an indication of a function call.
         Perhaps you had a missing comma before the tuple.
         
-    Execution stopped on line 410 of file 'TESTS:\except\test_type_error.py'.
+    Execution stopped on line 412 of file 'TESTS:\except\test_type_error.py'.
     
-       408: def test_type_error15a():
-       409:     try:
-    -->410:         _ = [1, 2](3, 4)
+       410: def test_type_error15a():
+       411:     try:
+    -->412:         _ = [1, 2](3, 4)
 
 
 UnboundLocalError
@@ -1131,11 +1131,11 @@ UnboundLocalError
             global a
         should have been included as the first line inside your function.
         
-    Execution stopped on line 20 of file 'TESTS:\except\test_unbound_local_error.py'.
+    Execution stopped on line 21 of file 'TESTS:\except\test_unbound_local_error.py'.
     
-       18: 
-       19:     try:
-    -->20:         outer()
+       19: 
+       20:     try:
+    -->21:         outer()
 
     global outer: <function outer>
 

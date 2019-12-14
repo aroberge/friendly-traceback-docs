@@ -110,9 +110,9 @@ KeyError
         
     L'exécution s'est arrêtée à la ligne 7 du fichier 'TESTS:\except\test_key_error.py'
     
-       5:     d = {'a': 1, 'b': 2}
+       5:     d = {"a": 1, "b": 2}
        6:     try:
-    -->7:         d['c']
+    -->7:         d["c"]
 
     d: {'a': 1, 'b': 2}
 
@@ -258,7 +258,7 @@ OverflowError
     
        4: def test_overflow_error():
        5:     try:
-    -->6:         2. ** 1600
+    -->6:         2.0 ** 1600
 
 
 TypeError - 1: concatenate two different types
@@ -939,7 +939,7 @@ TypeError - 11a: bad operand type for unary -
     
        329: def test_type_error11a():
        330:     try:
-    -->331:         a = - [1, 2, 3]
+    -->331:         a = -[1, 2, 3]
 
 
 TypeError - 11b: bad operand type for unary ~
@@ -965,7 +965,7 @@ TypeError - 11b: bad operand type for unary ~
     
        342: def test_type_error11b():
        343:     try:
-    -->344:         a = ~ (1, 2, 3)
+    -->344:         a = ~(1, 2, 3)
 
 
 TypeError - 12: object does not support item assignment
@@ -1015,11 +1015,11 @@ TypeError - 13: wrong number of positional arguments
         Vous avez apparemment invoqué la fonction 'fn()' avec
         1 arguments positionnels alors qu'elle en requiert 0.
         
-    L'exécution s'est arrêtée à la ligne 372 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 373 du fichier 'TESTS:\except\test_type_error.py'
     
-       370:         pass
-       371:     try:
-    -->372:         fn(1)
+       371: 
+       372:     try:
+    -->373:         fn(1)
 
     fn: <function test_type_error13.<locals>.fn>
 
@@ -1042,11 +1042,11 @@ TypeError - 14: missing positional arguments
         Vous avez apparemment invoqué la fonction 'fn()' avec
         moins d'arguments positionnels qu'il n'en faut (2 manquent).
         
-    L'exécution s'est arrêtée à la ligne 386 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 388 du fichier 'TESTS:\except\test_type_error.py'
     
-       384:         pass
-       385:     try:
-    -->386:         fn(1)
+       386: 
+       387:     try:
+    -->388:         fn(1)
 
     fn: <function test_type_error14.<locals>.fn>
 
@@ -1071,11 +1071,11 @@ TypeError - 15: tuple object is not callable
         que Python a pris comme indiquant une invocation de fonction.
         Il est possible que vous ayez oublié d'écrire une virgule avant le tuple.
         
-    L'exécution s'est arrêtée à la ligne 398 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 400 du fichier 'TESTS:\except\test_type_error.py'
     
-       396: def test_type_error15():
-       397:     try:
-    -->398:         _ = (1, 2)(3, 4)
+       398: def test_type_error15():
+       399:     try:
+    -->400:         _ = (1, 2)(3, 4)
 
 
 TypeError - 15a: list object is not callable
@@ -1098,11 +1098,11 @@ TypeError - 15a: list object is not callable
         que Python a pris comme indiquant une invocation de fonction.
         Il est possible que vous ayez oublié d'écrire une virgule avant le tuple.
         
-    L'exécution s'est arrêtée à la ligne 410 du fichier 'TESTS:\except\test_type_error.py'
+    L'exécution s'est arrêtée à la ligne 412 du fichier 'TESTS:\except\test_type_error.py'
     
-       408: def test_type_error15a():
-       409:     try:
-    -->410:         _ = [1, 2](3, 4)
+       410: def test_type_error15a():
+       411:     try:
+    -->412:         _ = [1, 2](3, 4)
 
 
 UnboundLocalError
@@ -1130,11 +1130,11 @@ UnboundLocalError
             global a
         comme première ligne à l’intérieur de votre fonction.
         
-    L'exécution s'est arrêtée à la ligne 20 du fichier 'TESTS:\except\test_unbound_local_error.py'
+    L'exécution s'est arrêtée à la ligne 21 du fichier 'TESTS:\except\test_unbound_local_error.py'
     
-       18: 
-       19:     try:
-    -->20:         outer()
+       19: 
+       20:     try:
+    -->21:         outer()
 
     global outer: <function outer>
 

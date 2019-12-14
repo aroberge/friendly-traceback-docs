@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Intentional lies &mdash; Friendly tracebacks 0.0.20a documentation</title>
+  <title>Known exceptions &mdash; Friendly tracebacks 0.0.20a documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Notes on translations - using gettext" href="translation_notes.html" />
-    <link rel="prev" title="Project files" href="graph.html" /> 
+    <link rel="next" title="Friendly tracebacks - in English" href="tracebacks_en_3.8.html" />
+    <link rel="prev" title="Some thoughts on the design of friendly-traceback" href="design.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,8 +91,8 @@
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html">Friendly tracebacks - in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">Friendly SyntaxError tracebacks - in English</a></li>
 </ul>
@@ -103,14 +103,11 @@
 <li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="custom.html">Description of demos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html">Project files</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Intentional lies</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#you-can-lie-too">You can lie too</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Occasional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other versions and languages</span></p>
@@ -171,13 +168,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Intentional lies</li>
+      <li>Known exceptions</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/lies.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/known.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -187,10 +184,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="translation_notes.html" class="btn btn-neutral float-right" title="Notes on translations - using gettext" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tracebacks_en_3.8.html" class="btn btn-neutral float-right" title="Friendly tracebacks - in English" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="graph.html" class="btn btn-neutral float-left" title="Project files" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of friendly-traceback" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -199,59 +196,162 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="intentional-lies">
-<h1>Intentional lies<a class="headerlink" href="#intentional-lies" title="Permalink to this headline">¶</a></h1>
-<p>Let me let you in on a secret:
-occasionally, Friendly-traceback will lie to you.
-When it does so, it will indicate it to you;
-however, it will do so in a way that might be easily overlooked.</p>
-<p>Have a look at the following screen captures, all taken using
-version 0.0.8a  (Python version: 3.7.3 on Win 32). (Most other screenshots
-normally include Friendly-traceback version.)</p>
-<p>First, we show a traceback generated with <code class="docutils literal notranslate"><span class="pre">level</span></code> set to 0:
-with this choice, the output only includes the normal
-Python traceback.</p>
-<a class="reference internal image-reference" href="_images/name_error_0.png"><img alt="Friendly Python traceback" src="_images/name_error_0.png" style="width: 598.1999999999999px; height: 106.2px;" /></a>
-<p>Next, we show a traceback generated with <code class="docutils literal notranslate"><span class="pre">level</span></code> set to 9:
-this corresponds to the “simulated” Python traceback as
-determined by Friendly-traceback.  The traceback is
-identical to the true Python traceback as above.</p>
-<a class="reference internal image-reference" href="_images/name_error_9.png"><img alt="Friendly Python traceback" src="_images/name_error_9.png" style="width: 592.8px; height: 108.6px;" /></a>
-<p>So far, Friendly-traceback has not lied. Let’s look at another
-example, first run directly with Python.</p>
-<a class="reference internal image-reference" href="_images/syntax_error1_py.png"><img alt="Friendly Python traceback" src="_images/syntax_error1_py.png" style="width: 598.1999999999999px; height: 111.6px;" /></a>
-<p>Because the traceback contains only a single step, Python did not
-include the standard header <code class="docutils literal notranslate"><span class="pre">Traceback</span> <span class="pre">(most</span> <span class="pre">recent</span> <span class="pre">call</span> <span class="pre">last):</span></code>.</p>
-<p>Here’s the “simulated” Python traceback generated by Friendly-traceback.</p>
-<a class="reference internal image-reference" href="_images/syntax_error1_9.png"><img alt="Friendly Python traceback" src="_images/syntax_error1_9.png" style="width: 601.8px; height: 126.6px;" /></a>
-<p>Notice how the standard header appears, but preceeded by the word
-“Simulated”.</p>
-<p>Here’s the <strong>true</strong> Python traceback generated (displayed with <code class="docutils literal notranslate"><span class="pre">level</span></code> 0)
-while this same script is run by Friendly-traceback:</p>
-<a class="reference internal image-reference" href="_images/syntax_error1_0.png"><img alt="Friendly Python traceback" src="_images/syntax_error1_0.png" style="width: 854.0px; height: 336.0px;" /></a>
-<p>This traceback contains a lot more information, as Friendly-traceback
-uses Python’s <code class="docutils literal notranslate"><span class="pre">runpy</span></code> module as well as its own functions to run this
-script - all of which are shown in this traceback.
-To avoid confusing users, when it is desired to include a Python traceback
-in the information provided by Friendly-traceback, the default will
-be to include a “simulated” traceback, where all traces of
-Friendly-traceback’s own functions, as well as Python’s <code class="docutils literal notranslate"><span class="pre">runpy</span></code> module,
-will be removed.  When such calls are removed, the traceback header
-will have the word “Simulated” inserted first.  If no calls are removed,
-like in the very first example, then the word “Simulated” does not appear.</p>
-<div class="section" id="you-can-lie-too">
-<h2>You can lie too<a class="headerlink" href="#you-can-lie-too" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes, you might wish to exclude other modules from the
-simulated Python traceback. For example, in Friendly-traceback’s console,
-the Python <code class="docutils literal notranslate"><span class="pre">codeop.py</span></code> module might sometimes appear due to the
-way we process the users’ code. To instruct Friendly-traceback
-from including this module in the “simulated” traceback,
-we need to have the following two lines of code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">codeop</span>
-<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">add_excluded_path</span><span class="p">(</span><span class="n">codeop</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
+  <div class="section" id="known-exceptions">
+<h1>Known exceptions<a class="headerlink" href="#known-exceptions" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This documentation is not updated as often as the actual
+content of the program.
+The content of the following two pages <strong>is</strong> updated
+a lot more frequently than the rest of the documentation
+and might be a more useful reference than what is
+written below.</p>
+</div>
+<p>In the following, those that are followed by an * had been implemented
+when this page was last updated.</p>
+<p>Those followed by <code class="docutils literal notranslate"><span class="pre">!!</span></code>, namely <code class="docutils literal notranslate"><span class="pre">SystemExit</span></code> and <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code>,
+have been excluded as it seemed rather counter-productive to intercept them.</p>
+<p>Those followed by <code class="docutils literal notranslate"><span class="pre">#</span></code>, namely <code class="docutils literal notranslate"><span class="pre">GeneratorExit</span></code>, <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>,
+<code class="docutils literal notranslate"><span class="pre">FloatingPointError</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">StopAsyncIteration</span></code>, are excluded as they should not normally be
+seen by an end user - at least, not by beginners who would need
+additional explanation about the meaning of such exceptions.
+Furthermore, in the case of <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>, see
+<a class="reference external" href="https://www.python.org/dev/peps/pep-0479/">PEP 479</a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">FloatingPointError</span></code> is actually
+<a class="reference external" href="https://docs.python.org/3.7/library/exceptions.html#FloatingPointError">not used by Python</a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">BaseException</span></code>, <code class="docutils literal notranslate"><span class="pre">Exception</span></code>, and <code class="docutils literal notranslate"><span class="pre">ArithmeticError</span></code> are base classes which
+are not normally seen: some derived classes are normally used instead.
+They are denoted by <code class="docutils literal notranslate"><span class="pre">**</span></code>.</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</pre></div></td><td class="code"><div class="highlight"><pre><span></span>BaseException **
+ +-- SystemExit !!
+ +-- KeyboardInterrupt !!
+ +-- GeneratorExit #
+ +-- Exception **
+      +-- StopIteration #
+      +-- StopAsyncIteration #
+<span class="hll">      +-- ArithmeticError **
+</span>      |    +-- FloatingPointError #
+<span class="hll">      |    +-- OverflowError *
+</span><span class="hll">      |    +-- ZeroDivisionError *
+</span>      +-- AssertionError
+      +-- AttributeError
+      +-- BufferError
+      +-- EOFError
+<span class="hll">      +-- ImportError *
+</span><span class="hll">      |    +-- ModuleNotFoundError *
+</span><span class="hll">      +-- LookupError *
+</span><span class="hll">      |    +-- IndexError *
+</span><span class="hll">      |    +-- KeyError *
+</span>      +-- MemoryError
+<span class="hll">      +-- NameError  *
+</span><span class="hll">      |    +-- UnboundLocalError *
+</span>      +-- OSError
+      |    +-- BlockingIOError
+      |    +-- ChildProcessError
+      |    +-- ConnectionError
+      |    |    +-- BrokenPipeError
+      |    |    +-- ConnectionAbortedError
+      |    |    +-- ConnectionRefusedError
+      |    |    +-- ConnectionResetError
+      |    +-- FileExistsError
+<span class="hll">      |    +-- FileNotFoundError *
+</span>      |    +-- InterruptedError
+      |    +-- IsADirectoryError
+      |    +-- NotADirectoryError
+      |    +-- PermissionError
+      |    +-- ProcessLookupError
+      |    +-- TimeoutError
+      +-- ReferenceError
+      +-- RuntimeError
+      |    +-- NotImplementedError
+      |    +-- RecursionError
+<span class="hll">      +-- SyntaxError * (partial: many more cases to include)
+</span><span class="hll">      |    +-- IndentationError *
+</span><span class="hll">      |         +-- TabError *
+</span>      +-- SystemError
+<span class="hll">      +-- TypeError * (partial: many more cases to include)
+</span>      +-- ValueError
+      |    +-- UnicodeError
+      |         +-- UnicodeDecodeError
+      |         +-- UnicodeEncodeError
+      |         +-- UnicodeTranslateError
+      +-- Warning
+           +-- DeprecationWarning
+           +-- PendingDeprecationWarning
+           +-- RuntimeWarning
+           +-- SyntaxWarning
+           +-- UserWarning
+           +-- FutureWarning
+           +-- ImportWarning
+           +-- UnicodeWarning
+           +-- BytesWarning
+           +-- ResourceWarning
 </pre></div>
-</div>
-</div>
+</td></tr></table></div>
 </div>
 
 
@@ -262,10 +362,10 @@ we need to have the following two lines of code:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="translation_notes.html" class="btn btn-neutral float-right" title="Notes on translations - using gettext" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tracebacks_en_3.8.html" class="btn btn-neutral float-right" title="Friendly tracebacks - in English" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="graph.html" class="btn btn-neutral float-left" title="Project files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of friendly-traceback" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

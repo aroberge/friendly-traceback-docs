@@ -169,8 +169,8 @@ SyntaxError - Assign to keyword
         
         
 
-SyntaxError - Missing colon 1
------------------------------
+SyntaxError - Missing colon - 1
+-------------------------------
 
 .. code-block:: none
 
@@ -198,8 +198,8 @@ SyntaxError - Missing colon 1
         
         
 
-SyntaxError - Missing colon 2
------------------------------
+SyntaxError - Missing colon - 2
+-------------------------------
 
 .. code-block:: none
 
@@ -380,8 +380,8 @@ SyntaxError - malformed def statment - 3
         
         
 
-SyntaxError - can't assign to literal
--------------------------------------
+SyntaxError - can't assign to literal - 1
+-----------------------------------------
 
 .. code-block:: none
 
@@ -402,10 +402,10 @@ SyntaxError - can't assign to literal
 
     Cause probable basée sur les informations données par Python :
         Vous avez écrit une expression comme
-            1 =  a
-        où <1>, sur le côté gauche du signe égal, est soit ce que Python
-        appelle un 'literal', c'est-à-dire soit une chaîne de caractères ou un nombre,
-        ou soit inclus un tel 'literal', et n'est pas un simple nom d’une variable.  Peut-être que vous vouliez plutôt écrire :
+            1 = a
+        où <1>, sur le côté gauche du signe d'égalité
+        est ou inclut un objet de type 'int'
+        et n'est pas simplement le nom d'une variable.  Peut-être que vous vouliez plutôt écrire :
             a = 1
         
         
@@ -432,10 +432,97 @@ SyntaxError - can't assign to literal - 2
 
     Cause probable basée sur les informations données par Python :
         Vous avez écrit une expression comme
-            1 =  2
-        où <1>, sur le côté gauche du signe égal, est soit ce que Python
-        appelle un 'literal', c'est-à-dire soit une chaîne de caractères ou un nombre,
-        ou soit inclus un tel 'literal', et n'est pas un simple nom d’une variable.
+            1 = 2
+        où <1>, sur le côté gauche du signe d'égalité
+        est ou inclut un objet de type 'int'
+        et n'est pas simplement le nom d'une variable.
+        
+
+SyntaxError - can't assign to literal - 3
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: can't assign to literal
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error52.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+        4: 
+        5:  """
+        6: 
+    --> 7: {1, 2, 3} = 4
+          ^
+
+    Cause probable basée sur les informations données par Python :
+        Vous avez écrit une expression comme
+            {1, 2, 3} = 4
+        où <{1, 2, 3}>, sur le côté gauche du signe d'égalité
+        est ou inclut un objet de type 'set'
+        et n'est pas simplement le nom d'une variable.
+        
+
+SyntaxError - can't assign to literal - 4
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: can't assign to literal
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error53.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+        4: 
+        5:  """
+        6: 
+    --> 7: {1 : 2, 2 : 4} = 5
+          ^
+
+    Cause probable basée sur les informations données par Python :
+        Vous avez écrit une expression comme
+            {1 : 2, 2 : 4} = 5
+        où <{1 : 2, 2 : 4}>, sur le côté gauche du signe d'égalité
+        est ou inclut un objet de type 'dict'
+        et n'est pas simplement le nom d'une variable.
+        
+
+SyntaxError - can't assign to literal - 5
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: can't assign to literal
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error54.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: can't assign to literal
+       2: or (Python 3.8) cannot assign to literal"""
+       3: 
+    -->4: 1 = a = b
+         ^
+
+    Cause probable basée sur les informations données par Python :
+        Vous avez écrit une expression comme
+            ... = nom_de_variable
+        où <...>, sur le côté gauche du signe d'égalité
+        est ou inclut un objet 
+        et n'est pas simplement le nom d'une variable.
         
 
 SyntaxError - import X from Y
@@ -579,8 +666,8 @@ SyntaxError - unmatched closing parenthesis
                          ^
         
 
-SyntaxError - unclosed parenthesis
-----------------------------------
+SyntaxError - unclosed parenthesis- 1
+-------------------------------------
 
 .. code-block:: none
 
@@ -1605,11 +1692,11 @@ SyntaxError - assigned prior to nonlocal declaration
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom du module inconnu est 'raise_syntax_error5-'.
         
-    L'exécution s'est arrêtée à la ligne 102 du fichier 'TESTS:\trb_syntax_common.py'
+    L'exécution s'est arrêtée à la ligne 103 du fichier 'TESTS:\trb_syntax_common.py'
     
-       100:                 make_title(title)
-       101:                 try:
-    -->102:                     mod = __import__(name)
+       101:                 make_title(title)
+       102:                 try:
+    -->103:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 

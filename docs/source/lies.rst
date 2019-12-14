@@ -1,8 +1,8 @@
-Occasional lies
-===============
+Intentional lies
+================
 
 Let me let you in on a secret:
-[very occasionally] Friendly-traceback will lie to you.
+occasionally, Friendly-traceback will lie to you.
 When it does so, it will indicate it to you;
 however, it will do so in a way that might be easily overlooked.
 

@@ -29,6 +29,9 @@
     background-color: #a5d8ff;}
 
 .highlight {background-color: #fffff8;}
+
+.highlight .hll {background-color: #e7f5ff;}
+
 .friendly-small-pre {
     font-size: 80%;
     margin:0;
@@ -39,4 +42,10 @@
     background-color: #e8f0f8;
     border-top: solid 3px #3080c0;
     color:black;
+}
+
+.rst-content tt.literal, 
+.rst-content tt.literal, 
+.rst-content code.literal {
+    color: purple;
 }

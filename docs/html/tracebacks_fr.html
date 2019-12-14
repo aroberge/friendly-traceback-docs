@@ -92,6 +92,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html">Friendly tracebacks - in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">Friendly SyntaxError tracebacks - in English</a></li>
 </ul>
@@ -106,7 +107,7 @@
 <li class="toctree-l1"><a class="reference internal" href="custom.html">Description of demos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html">Project files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Occasional lies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other versions and languages</span></p>
@@ -334,9 +335,9 @@ Cause probable basée sur les informations données par Python :
 
 L&#39;exécution s&#39;est arrêtée à la ligne 7 du fichier &#39;TESTS:\except\test_key_error.py&#39;
 
-   5:     d = {&#39;a&#39;: 1, &#39;b&#39;: 2}
+   5:     d = {&quot;a&quot;: 1, &quot;b&quot;: 2}
    6:     try:
---&gt;7:         d[&#39;c&#39;]
+--&gt;7:         d[&quot;c&quot;]
 
 d: {&#39;a&#39;: 1, &#39;b&#39;: 2}
 </pre></div>
@@ -464,7 +465,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 6 du fichier &#39;TESTS:\except
 
    4: def test_overflow_error():
    5:     try:
---&gt;6:         2. ** 1600
+--&gt;6:         2.0 ** 1600
 </pre></div>
 </div>
 </div>
@@ -1073,7 +1074,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 331 du fichier &#39;TESTS:\exce
 
    329: def test_type_error11a():
    330:     try:
---&gt;331:         a = - [1, 2, 3]
+--&gt;331:         a = -[1, 2, 3]
 </pre></div>
 </div>
 </div>
@@ -1096,7 +1097,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 344 du fichier &#39;TESTS:\exce
 
    342: def test_type_error11b():
    343:     try:
---&gt;344:         a = ~ (1, 2, 3)
+--&gt;344:         a = ~(1, 2, 3)
 </pre></div>
 </div>
 </div>
@@ -1140,11 +1141,11 @@ Cause probable basée sur les informations données par Python :
     Vous avez apparemment invoqué la fonction &#39;fn()&#39; avec
     1 arguments positionnels alors qu&#39;elle en requiert 0.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 372 du fichier &#39;TESTS:\except\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 373 du fichier &#39;TESTS:\except\test_type_error.py&#39;
 
-   370:         pass
-   371:     try:
---&gt;372:         fn(1)
+   371:
+   372:     try:
+--&gt;373:         fn(1)
 
 fn: &lt;function test_type_error13.&lt;locals&gt;.fn&gt;
 </pre></div>
@@ -1164,11 +1165,11 @@ Cause probable basée sur les informations données par Python :
     Vous avez apparemment invoqué la fonction &#39;fn()&#39; avec
     moins d&#39;arguments positionnels qu&#39;il n&#39;en faut (2 manquent).
 
-L&#39;exécution s&#39;est arrêtée à la ligne 386 du fichier &#39;TESTS:\except\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 388 du fichier &#39;TESTS:\except\test_type_error.py&#39;
 
-   384:         pass
-   385:     try:
---&gt;386:         fn(1)
+   386:
+   387:     try:
+--&gt;388:         fn(1)
 
 fn: &lt;function test_type_error14.&lt;locals&gt;.fn&gt;
 </pre></div>
@@ -1190,11 +1191,11 @@ Cause probable basée sur les informations données par Python :
     que Python a pris comme indiquant une invocation de fonction.
     Il est possible que vous ayez oublié d&#39;écrire une virgule avant le tuple.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 398 du fichier &#39;TESTS:\except\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 400 du fichier &#39;TESTS:\except\test_type_error.py&#39;
 
-   396: def test_type_error15():
-   397:     try:
---&gt;398:         _ = (1, 2)(3, 4)
+   398: def test_type_error15():
+   399:     try:
+--&gt;400:         _ = (1, 2)(3, 4)
 </pre></div>
 </div>
 </div>
@@ -1214,11 +1215,11 @@ Cause probable basée sur les informations données par Python :
     que Python a pris comme indiquant une invocation de fonction.
     Il est possible que vous ayez oublié d&#39;écrire une virgule avant le tuple.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 410 du fichier &#39;TESTS:\except\test_type_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 412 du fichier &#39;TESTS:\except\test_type_error.py&#39;
 
-   408: def test_type_error15a():
-   409:     try:
---&gt;410:         _ = [1, 2](3, 4)
+   410: def test_type_error15a():
+   411:     try:
+--&gt;412:         _ = [1, 2](3, 4)
 </pre></div>
 </div>
 </div>
@@ -1243,11 +1244,11 @@ Cause probable basée sur les informations données par Python :
         global a
     comme première ligne à l’intérieur de votre fonction.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 20 du fichier &#39;TESTS:\except\test_unbound_local_error.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;TESTS:\except\test_unbound_local_error.py&#39;
 
-   18:
-   19:     try:
---&gt;20:         outer()
+   19:
+   20:     try:
+--&gt;21:         outer()
 
 global outer: &lt;function outer&gt;
 

@@ -74,6 +74,7 @@ Contents
    :hidden:
    :caption: Known exceptions (Python 3.8)
 
+   known
    tracebacks_en_3.8
    syntax_tracebacks_en_3.8
 

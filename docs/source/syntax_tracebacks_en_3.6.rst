@@ -161,8 +161,8 @@ SyntaxError - Assign to keyword
         
         
 
-SyntaxError - Missing colon 1
------------------------------
+SyntaxError - Missing colon - 1
+-------------------------------
 
 .. code-block:: none
 
@@ -190,8 +190,8 @@ SyntaxError - Missing colon 1
         
         
 
-SyntaxError - Missing colon 2
------------------------------
+SyntaxError - Missing colon - 2
+-------------------------------
 
 .. code-block:: none
 
@@ -366,8 +366,8 @@ SyntaxError - malformed def statment - 3
             def name ( optional_arguments ):
         
 
-SyntaxError - can't assign to literal
--------------------------------------
+SyntaxError - can't assign to literal - 1
+-----------------------------------------
 
 .. code-block:: none
 
@@ -389,9 +389,9 @@ SyntaxError - can't assign to literal
     Likely cause based on the information given by Python:
         You wrote an expression like
             1 = a
-        where <1>, on the left hand-side of the equal sign, is
-        or includes an actual number or string (what Python calls a 'literal'),
-        and not the name of a variable. Perhaps you meant to write:
+        where <1>, on the left hand-side of the equal sign,
+        is or includes an actual object of type 'int'
+        and is not simply the name of a variable. Perhaps you meant to write:
             a = 1
         
         
@@ -419,9 +419,96 @@ SyntaxError - can't assign to literal - 2
     Likely cause based on the information given by Python:
         You wrote an expression like
             1 = 2
-        where <1>, on the left hand-side of the equal sign, is
-        or includes an actual number or string (what Python calls a 'literal'),
-        and not the name of a variable.
+        where <1>, on the left hand-side of the equal sign,
+        is or includes an actual object of type 'int'
+        and is not simply the name of a variable.
+        
+
+SyntaxError - can't assign to literal - 3
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: can't assign to literal
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error52.py'
+    beyond the location indicated below by --> and ^.
+    
+        4: 
+        5:  """
+        6: 
+    --> 7: {1, 2, 3} = 4
+          ^
+
+    Likely cause based on the information given by Python:
+        You wrote an expression like
+            {1, 2, 3} = 4
+        where <{1, 2, 3}>, on the left hand-side of the equal sign,
+        is or includes an actual object of type 'set'
+        and is not simply the name of a variable.
+        
+
+SyntaxError - can't assign to literal - 4
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: can't assign to literal
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error53.py'
+    beyond the location indicated below by --> and ^.
+    
+        4: 
+        5:  """
+        6: 
+    --> 7: {1 : 2, 2 : 4} = 5
+          ^
+
+    Likely cause based on the information given by Python:
+        You wrote an expression like
+            {1 : 2, 2 : 4} = 5
+        where <{1 : 2, 2 : 4}>, on the left hand-side of the equal sign,
+        is or includes an actual object of type 'dict'
+        and is not simply the name of a variable.
+        
+
+SyntaxError - can't assign to literal - 5
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: can't assign to literal
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error54.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: can't assign to literal
+       2: or (Python 3.8) cannot assign to literal"""
+       3: 
+    -->4: 1 = a = b
+         ^
+
+    Likely cause based on the information given by Python:
+        You wrote an expression like
+            ... = variable_name
+        where <...>, on the left hand-side of the equal sign,
+        is or includes an actual object 
+        and is not simply the name of a variable.
         
 
 SyntaxError - import X from Y
@@ -563,8 +650,8 @@ SyntaxError - unmatched closing parenthesis
                          ^
         
 
-SyntaxError - unclosed parenthesis
-----------------------------------
+SyntaxError - unclosed parenthesis- 1
+-------------------------------------
 
 .. code-block:: none
 
@@ -1576,11 +1663,11 @@ SyntaxError - assigned prior to nonlocal declaration
         In your program, the name of the
         module that cannot be found is 'raise_syntax_error5-'.
         
-    Execution stopped on line 102 of file 'TESTS:\trb_syntax_common.py'.
+    Execution stopped on line 103 of file 'TESTS:\trb_syntax_common.py'.
     
-       100:                 make_title(title)
-       101:                 try:
-    -->102:                     mod = __import__(name)
+       101:                 make_title(title)
+       102:                 try:
+    -->103:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 

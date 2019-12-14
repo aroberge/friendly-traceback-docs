@@ -92,6 +92,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html">Friendly tracebacks - in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">Friendly SyntaxError tracebacks - in English</a></li>
 </ul>
@@ -106,7 +107,7 @@
 <li class="toctree-l1"><a class="reference internal" href="custom.html">Description of demos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html">Project files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Occasional lies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other versions and languages</span></p>
@@ -123,21 +124,24 @@
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-3-unindent-does-not-match">IndentationError - 3: unindent does not match …</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#taberror">TabError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assign-to-keyword">SyntaxError - Assign to keyword</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-colon-1">SyntaxError - Missing colon 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-colon-2">SyntaxError - Missing colon 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-colon-1">SyntaxError - Missing colon - 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-colon-2">SyntaxError - Missing colon - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-elif-not-else-if">SyntaxError - elif, not else if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-elif-not-elseif">SyntaxError - elif, not elseif</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-malformed-def-statment-1">SyntaxError - malformed def statment - 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-malformed-def-statment-2">SyntaxError - malformed def statment - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-malformed-def-statment-3">SyntaxError - malformed def statment - 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal">SyntaxError - can’t assign to literal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-1">SyntaxError - can’t assign to literal - 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-2">SyntaxError - can’t assign to literal - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-3">SyntaxError - can’t assign to literal - 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-4">SyntaxError - can’t assign to literal - 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-5">SyntaxError - can’t assign to literal - 5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-import-x-from-y">SyntaxError - import X from Y</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-eol-while-scanning-string-literal">SyntaxError - EOL while scanning string literal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assignment-to-keyword-none">SyntaxError - assignment to keyword (None)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assignment-to-keyword-debug">SyntaxError - assignment to keyword (__debug__)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unmatched-closing-parenthesis">SyntaxError - unmatched closing parenthesis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unclosed-parenthesis">SyntaxError - unclosed parenthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unclosed-parenthesis-1">SyntaxError - unclosed parenthesis- 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unclosed-parenthesis-2">SyntaxError - unclosed parenthesis - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-mismatched-brackets">SyntaxError - mismatched brackets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-mismatched-brackets-2">SyntaxError - mismatched brackets - 2</a></li>
@@ -404,7 +408,7 @@ Je n&#39;ai pas assez d&#39;informations de Python:
 </div>
 </div>
 <div class="section" id="syntaxerror-missing-colon-1">
-<h2>SyntaxError - Missing colon 1<a class="headerlink" href="#syntaxerror-missing-colon-1" title="Permalink to this headline">¶</a></h2>
+<h2>SyntaxError - Missing colon - 1<a class="headerlink" href="#syntaxerror-missing-colon-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
     SyntaxError: invalid syntax
 
@@ -429,7 +433,7 @@ Je n&#39;ai pas assez d&#39;informations de Python:
 </div>
 </div>
 <div class="section" id="syntaxerror-missing-colon-2">
-<h2>SyntaxError - Missing colon 2<a class="headerlink" href="#syntaxerror-missing-colon-2" title="Permalink to this headline">¶</a></h2>
+<h2>SyntaxError - Missing colon - 2<a class="headerlink" href="#syntaxerror-missing-colon-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
     SyntaxError: invalid syntax
 
@@ -586,8 +590,8 @@ Je n&#39;ai pas assez d&#39;informations de Python:
 </pre></div>
 </div>
 </div>
-<div class="section" id="syntaxerror-can-t-assign-to-literal">
-<h2>SyntaxError - can’t assign to literal<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="syntaxerror-can-t-assign-to-literal-1">
+<h2>SyntaxError - can’t assign to literal - 1<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
     SyntaxError: can&#39;t assign to literal
 
@@ -604,10 +608,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
-        1 =  a
-    où &lt;1&gt;, sur le côté gauche du signe égal, est soit ce que Python
-    appelle un &#39;literal&#39;, c&#39;est-à-dire soit une chaîne de caractères ou un nombre,
-    ou soit inclus un tel &#39;literal&#39;, et n&#39;est pas un simple nom d’une variable.  Peut-être que vous vouliez plutôt écrire :
+        1 = a
+    où &lt;1&gt;, sur le côté gauche du signe d&#39;égalité
+    est ou inclut un objet de type &#39;int&#39;
+    et n&#39;est pas simplement le nom d&#39;une variable.  Peut-être que vous vouliez plutôt écrire :
         a = 1
 </pre></div>
 </div>
@@ -630,10 +634,88 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
-        1 =  2
-    où &lt;1&gt;, sur le côté gauche du signe égal, est soit ce que Python
-    appelle un &#39;literal&#39;, c&#39;est-à-dire soit une chaîne de caractères ou un nombre,
-    ou soit inclus un tel &#39;literal&#39;, et n&#39;est pas un simple nom d’une variable.
+        1 = 2
+    où &lt;1&gt;, sur le côté gauche du signe d&#39;égalité
+    est ou inclut un objet de type &#39;int&#39;
+    et n&#39;est pas simplement le nom d&#39;une variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-can-t-assign-to-literal-3">
+<h2>SyntaxError - can’t assign to literal - 3<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: can&#39;t assign to literal
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error52.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+    4:
+    5:  &quot;&quot;&quot;
+    6:
+--&gt; 7: {1, 2, 3} = 4
+      ^
+
+Cause probable basée sur les informations données par Python :
+    Vous avez écrit une expression comme
+        {1, 2, 3} = 4
+    où &lt;{1, 2, 3}&gt;, sur le côté gauche du signe d&#39;égalité
+    est ou inclut un objet de type &#39;set&#39;
+    et n&#39;est pas simplement le nom d&#39;une variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-can-t-assign-to-literal-4">
+<h2>SyntaxError - can’t assign to literal - 4<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: can&#39;t assign to literal
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error53.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+    4:
+    5:  &quot;&quot;&quot;
+    6:
+--&gt; 7: {1 : 2, 2 : 4} = 5
+      ^
+
+Cause probable basée sur les informations données par Python :
+    Vous avez écrit une expression comme
+        {1 : 2, 2 : 4} = 5
+    où &lt;{1 : 2, 2 : 4}&gt;, sur le côté gauche du signe d&#39;égalité
+    est ou inclut un objet de type &#39;dict&#39;
+    et n&#39;est pas simplement le nom d&#39;une variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-can-t-assign-to-literal-5">
+<h2>SyntaxError - can’t assign to literal - 5<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: can&#39;t assign to literal
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error54.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal
+   2: or (Python 3.8) cannot assign to literal&quot;&quot;&quot;
+   3:
+--&gt;4: 1 = a = b
+     ^
+
+Cause probable basée sur les informations données par Python :
+    Vous avez écrit une expression comme
+        ... = nom_de_variable
+    où &lt;...&gt;, sur le côté gauche du signe d&#39;égalité
+    est ou inclut un objet
+    et n&#39;est pas simplement le nom d&#39;une variable.
 </pre></div>
 </div>
 </div>
@@ -759,8 +841,8 @@ Je n&#39;ai pas assez d&#39;informations de Python:
 </pre></div>
 </div>
 </div>
-<div class="section" id="syntaxerror-unclosed-parenthesis">
-<h2>SyntaxError - unclosed parenthesis<a class="headerlink" href="#syntaxerror-unclosed-parenthesis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="syntaxerror-unclosed-parenthesis-1">
+<h2>SyntaxError - unclosed parenthesis- 1<a class="headerlink" href="#syntaxerror-unclosed-parenthesis-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
     SyntaxError: invalid syntax
 
@@ -1670,11 +1752,11 @@ Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom du module inconnu est &#39;raise_syntax_error5-&#39;.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 102 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 103 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
 
-   100:                 make_title(title)
-   101:                 try:
---&gt;102:                     mod = __import__(name)
+   101:                 make_title(title)
+   102:                 try:
+--&gt;103:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>

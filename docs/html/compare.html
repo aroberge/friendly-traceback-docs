@@ -92,6 +92,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html">Friendly tracebacks - in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">Friendly SyntaxError tracebacks - in English</a></li>
 </ul>
@@ -106,7 +107,7 @@
 <li class="toctree-l1"><a class="reference internal" href="custom.html">Description of demos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html">Project files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Occasional lies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other versions and languages</span></p>
@@ -295,7 +296,8 @@ The closing square bracket ']' on line 2 does not match the opening parenthesis 
            ^       ^
 
 3.8:
-Python tells us that the closing ']' does not match the opening '('.
+Python tells us that the closing ']' on the last line shown
+does not match the opening '('.
 
 I will attempt to be give a bit more information.
 
@@ -329,7 +331,8 @@ The closing square bracket ']' on line 4 does not match the opening parenthesis 
              ^
 
 3.8:
-Python tells us that the closing ']' does not match the opening '(' on line 2.
+Python tells us that the closing ']' on the last line shown
+does not match the opening '(' on line 2.
 
 I will attempt to be give a bit more information.
 
@@ -407,6 +410,39 @@ SyntaxError: can't delete function call
 
 3.8:
 SyntaxError: cannot delete function call
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error52
+</div>
+<pre class='highlight friendly-small-pre'>
+3.7:
+SyntaxError: can't assign to literal
+
+3.8:
+SyntaxError: cannot assign to set display
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error53
+</div>
+<pre class='highlight friendly-small-pre'>
+3.7:
+SyntaxError: can't assign to literal
+
+3.8:
+SyntaxError: cannot assign to dict display
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error54
+</div>
+<pre class='highlight friendly-small-pre'>
+3.7:
+SyntaxError: can't assign to literal
+
+3.8:
+SyntaxError: cannot assign to literal
 
 </pre>
 <div class='filename-header'>
