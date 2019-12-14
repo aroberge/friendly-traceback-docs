@@ -175,6 +175,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-used-prior-to-global-declaration">SyntaxError - used prior to global declaration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assigned-prior-to-nonlocal-declaration">SyntaxError - assigned prior to nonlocal declaration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-used-prior-to-nonlocal-declaration">SyntaxError - used prior to nonlocal declaration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-named-assignment-with-python-constant">SyntaxError - named assignment with Python constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assignment-to-operator">SyntaxError - assignment to operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-using-the-backquote-character">SyntaxError - using the backquote character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assign-to-generator-expression">SyntaxError - assign to generator expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
@@ -598,7 +602,7 @@ beyond the location indicated below by --&gt; and ^.
 Likely cause based on the information given by Python:
     You wrote an expression like
         1 = a
-    where &lt;1&gt;, on the left hand-side of the equal sign,
+    where &lt;1&gt;, on the left-hand side of the equal sign,
     is or includes an actual object of type &#39;int&#39;
     and is not simply the name of a variable. Perhaps you meant to write:
         a = 1
@@ -624,7 +628,7 @@ beyond the location indicated below by --&gt; and ^.
 Likely cause based on the information given by Python:
     You wrote an expression like
         1 = 2
-    where &lt;1&gt;, on the left hand-side of the equal sign,
+    where &lt;1&gt;, on the left-hand side of the equal sign,
     is or includes an actual object of type &#39;int&#39;
     and is not simply the name of a variable.
 </pre></div>
@@ -650,7 +654,7 @@ beyond the location indicated below by --&gt; and ^.
 Likely cause based on the information given by Python:
     You wrote an expression like
         {1, 2, 3} = 4
-    where &lt;{1, 2, 3}&gt;, on the left hand-side of the equal sign,
+    where &lt;{1, 2, 3}&gt;, on the left-hand side of the equal sign,
     is or includes an actual object of type &#39;set&#39;
     and is not simply the name of a variable.
 </pre></div>
@@ -676,7 +680,7 @@ beyond the location indicated below by --&gt; and ^.
 Likely cause based on the information given by Python:
     You wrote an expression like
         {1 : 2, 2 : 4} = 5
-    where &lt;{1 : 2, 2 : 4}&gt;, on the left hand-side of the equal sign,
+    where &lt;{1 : 2, 2 : 4}&gt;, on the left-hand side of the equal sign,
     is or includes an actual object of type &#39;dict&#39;
     and is not simply the name of a variable.
 </pre></div>
@@ -702,7 +706,7 @@ beyond the location indicated below by --&gt; and ^.
 Likely cause based on the information given by Python:
     You wrote an expression like
         ... = variable_name
-    where &lt;...&gt;, on the left hand-side of the equal sign,
+    where &lt;...&gt;, on the left-hand side of the equal sign,
     is or includes an actual object
     and is not simply the name of a variable.
 </pre></div>
@@ -1206,7 +1210,7 @@ beyond the location indicated below by --&gt; and ^.
 Likely cause based on the information given by Python:
     You wrote the expression
         len(&#39;a&#39;) = 3
-    where len(&#39;a&#39;), on the left hand-side of the equal sign, either is
+    where len(&#39;a&#39;), on the left-hand side of the equal sign, either is
     or includes a function call and is not simply the name of a variable.
 </pre></div>
 </div>
@@ -1231,7 +1235,7 @@ beyond the location indicated below by --&gt; and ^.
 Likely cause based on the information given by Python:
     You wrote an expression like
         my_function(...) = some value
-    where my_function(...), on the left hand-side of the equal sign, is
+    where my_function(...), on the left-hand side of the equal sign, is
     a function call and not the name of a variable.
 </pre></div>
 </div>
@@ -1732,11 +1736,11 @@ Likely cause based on the information given by Python:
     In your program, the name of the
     module that cannot be found is &#39;raise_syntax_error5-&#39;.
 
-Execution stopped on line 103 of file &#39;TESTS:\trb_syntax_common.py&#39;.
+Execution stopped on line 107 of file &#39;TESTS:\trb_syntax_common.py&#39;.
 
-   101:                 make_title(title)
-   102:                 try:
---&gt;103:                     mod = __import__(name)
+   105:                 make_title(title)
+   106:                 try:
+--&gt;107:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>
@@ -1762,6 +1766,105 @@ beyond the location indicated below by --&gt; and ^.
 Likely cause based on the information given by Python:
     You assigned a value to the variable &#39;s&#39;
     before declaring it as a nonlocal variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-named-assignment-with-python-constant">
+<h2>SyntaxError - named assignment with Python constant<a class="headerlink" href="#syntaxerror-named-assignment-with-python-constant" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error55.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
+   2: or (Python 3.8) cannot use named assignment with True&quot;&quot;&quot;
+   3:
+--&gt;4: (True := 1)
+            ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    You appear to be using the operator :=, sometimes called
+    the walrus operator. This operator requires the use of
+    Python 3.8 or newer. You are using version 3.7.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assignment-to-operator">
+<h2>SyntaxError - assignment to operator<a class="headerlink" href="#syntaxerror-assignment-to-operator" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: can&#39;t assign to operator
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error56.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to operator
+   2: or (Python 3.8) cannot assign to operator&quot;&quot;&quot;
+   3:
+--&gt;4: a + 1 = 2
+     ^
+
+Likely cause based on the information given by Python:
+    You wrote an expression that includes some mathematical operations
+    on the left-hand side of the equal sign which should be
+    only used to assign a value to a variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-using-the-backquote-character">
+<h2>SyntaxError - using the backquote character<a class="headerlink" href="#syntaxerror-using-the-backquote-character" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error57.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: a = `1`
+          ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    You are using the backquote character `.
+    This was allowed in Python 2 but is no longer allowed.
+    Use the function repr(x) instead of `x`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assign-to-generator-expression">
+<h2>SyntaxError - assign to generator expression<a class="headerlink" href="#syntaxerror-assign-to-generator-expression" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: can&#39;t assign to generator expression
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error58.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t [cannot] assign to generator expression&quot;&quot;&quot;
+   2:
+--&gt;3: (x for x in x) = 1
+     ^
+
+Likely cause based on the information given by Python:
+    On the left-hand side of an equal sign, you have a
+    generator expression instead of the name of a variable.
 </pre></div>
 </div>
 </div>

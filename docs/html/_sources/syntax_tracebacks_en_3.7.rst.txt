@@ -389,7 +389,7 @@ SyntaxError - can't assign to literal - 1
     Likely cause based on the information given by Python:
         You wrote an expression like
             1 = a
-        where <1>, on the left hand-side of the equal sign,
+        where <1>, on the left-hand side of the equal sign,
         is or includes an actual object of type 'int'
         and is not simply the name of a variable. Perhaps you meant to write:
             a = 1
@@ -419,7 +419,7 @@ SyntaxError - can't assign to literal - 2
     Likely cause based on the information given by Python:
         You wrote an expression like
             1 = 2
-        where <1>, on the left hand-side of the equal sign,
+        where <1>, on the left-hand side of the equal sign,
         is or includes an actual object of type 'int'
         and is not simply the name of a variable.
         
@@ -448,7 +448,7 @@ SyntaxError - can't assign to literal - 3
     Likely cause based on the information given by Python:
         You wrote an expression like
             {1, 2, 3} = 4
-        where <{1, 2, 3}>, on the left hand-side of the equal sign,
+        where <{1, 2, 3}>, on the left-hand side of the equal sign,
         is or includes an actual object of type 'set'
         and is not simply the name of a variable.
         
@@ -477,7 +477,7 @@ SyntaxError - can't assign to literal - 4
     Likely cause based on the information given by Python:
         You wrote an expression like
             {1 : 2, 2 : 4} = 5
-        where <{1 : 2, 2 : 4}>, on the left hand-side of the equal sign,
+        where <{1 : 2, 2 : 4}>, on the left-hand side of the equal sign,
         is or includes an actual object of type 'dict'
         and is not simply the name of a variable.
         
@@ -506,7 +506,7 @@ SyntaxError - can't assign to literal - 5
     Likely cause based on the information given by Python:
         You wrote an expression like
             ... = variable_name
-        where <...>, on the left hand-side of the equal sign,
+        where <...>, on the left-hand side of the equal sign,
         is or includes an actual object 
         and is not simply the name of a variable.
         
@@ -1073,7 +1073,7 @@ SyntaxError - can't assign to function call - 1
     Likely cause based on the information given by Python:
         You wrote the expression
             len('a') = 3
-        where len('a'), on the left hand-side of the equal sign, either is
+        where len('a'), on the left-hand side of the equal sign, either is
         or includes a function call and is not simply the name of a variable.
         
 
@@ -1101,7 +1101,7 @@ SyntaxError - can't assign to function call - 2
     Likely cause based on the information given by Python:
         You wrote an expression like
             my_function(...) = some value
-        where my_function(...), on the left hand-side of the equal sign, is
+        where my_function(...), on the left-hand side of the equal sign, is
         a function call and not the name of a variable.
         
 
@@ -1663,11 +1663,11 @@ SyntaxError - assigned prior to nonlocal declaration
         In your program, the name of the
         module that cannot be found is 'raise_syntax_error5-'.
         
-    Execution stopped on line 103 of file 'TESTS:\trb_syntax_common.py'.
+    Execution stopped on line 107 of file 'TESTS:\trb_syntax_common.py'.
     
-       101:                 make_title(title)
-       102:                 try:
-    -->103:                     mod = __import__(name)
+       105:                 make_title(title)
+       106:                 try:
+    -->107:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -1695,6 +1695,115 @@ SyntaxError - used prior to nonlocal declaration
     Likely cause based on the information given by Python:
         You assigned a value to the variable 's'
         before declaring it as a nonlocal variable.
+        
+
+SyntaxError - named assignment with Python constant
+---------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error55.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax
+       2: or (Python 3.8) cannot use named assignment with True"""
+       3: 
+    -->4: (True := 1)
+                ^
+
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
+        
+        You appear to be using the operator :=, sometimes called
+        the walrus operator. This operator requires the use of
+        Python 3.8 or newer. You are using version 3.7.
+        
+
+SyntaxError - assignment to operator
+------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: can't assign to operator
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error56.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: can't assign to operator
+       2: or (Python 3.8) cannot assign to operator"""
+       3: 
+    -->4: a + 1 = 2
+         ^
+
+    Likely cause based on the information given by Python:
+        You wrote an expression that includes some mathematical operations
+        on the left-hand side of the equal sign which should be
+        only used to assign a value to a variable.
+
+SyntaxError - using the backquote character
+-------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error57.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: a = `1`
+              ^
+
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
+        
+        You are using the backquote character `.
+        This was allowed in Python 2 but is no longer allowed.
+        Use the function repr(x) instead of `x`.
+
+SyntaxError - assign to generator expression
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: can't assign to generator expression
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error58.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: can't [cannot] assign to generator expression"""
+       2: 
+    -->3: (x for x in x) = 1
+         ^
+
+    Likely cause based on the information given by Python:
+        On the left-hand side of an equal sign, you have a
+        generator expression instead of the name of a variable.
         
 
 Walrus operator does not exist - yet
