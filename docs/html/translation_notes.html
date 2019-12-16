@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Notes on translations - using gettext &mdash; Friendly tracebacks 0.0.20a documentation</title>
+  <title>Notes on translations - using gettext &mdash; Friendly tracebacks 0.0.25 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Comparison between Python versions" href="compare.html" />
-    <link rel="prev" title="Occasional lies" href="lies.html" /> 
+    <link rel="prev" title="Intentional lies" href="lies.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.0.20a
+                0.0.25
               </div>
             
           
@@ -88,6 +88,7 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
@@ -107,7 +108,7 @@
 <li class="toctree-l1"><a class="reference internal" href="custom.html">Description of demos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html">Project files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Occasional lies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Notes on translations - using gettext</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#what-is-gettext">What is gettext?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#structure-of-this-project">Structure of this project</a></li>
@@ -196,7 +197,7 @@
         <a href="compare.html" class="btn btn-neutral float-right" title="Comparison between Python versions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="lies.html" class="btn btn-neutral float-left" title="Occasional lies" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="lies.html" class="btn btn-neutral float-left" title="Intentional lies" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -336,7 +337,9 @@ first so that this can be discussed and the impact on the rest of
 the code can be properly evaluated.</p>
 <p>One of the goals of this project is to provide easier to understand
 tracebacks than those provided by Python. These do not need to be
-absolutely perfect.</p>
+absolutely perfect. For example, we follow
+<a class="reference external" href="https://translatewiki.net/wiki/Translating:Blockly">Blockly’s practice</a>
+in not supporting <a class="reference external" href="https://translatewiki.net/wiki/Plural">plural formatting</a></p>
 </div>
 <p>When it comes time to save the <code class="docutils literal notranslate"><span class="pre">.po</span></code> file, use a similar structure
 as that shown above and save
@@ -463,7 +466,7 @@ these generated files (at least the <code class="docutils literal notranslate"><
         <a href="compare.html" class="btn btn-neutral float-right" title="Comparison between Python versions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="lies.html" class="btn btn-neutral float-left" title="Occasional lies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="lies.html" class="btn btn-neutral float-left" title="Intentional lies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

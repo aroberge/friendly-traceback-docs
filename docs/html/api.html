@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Public API &mdash; Friendly tracebacks 0.0.20a documentation</title>
+  <title>Public API &mdash; Friendly tracebacks 0.0.25 documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.0.20a
+                0.0.25
               </div>
             
           
@@ -88,6 +88,7 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
@@ -107,7 +108,7 @@
 <li class="toctree-l1"><a class="reference internal" href="custom.html">Description of demos</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html">Project files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Occasional lies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other versions and languages</span></p>
@@ -242,8 +243,8 @@ has been raised, False otherwise.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="friendly_traceback.public_api.run_code">
-<code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">run_code</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">source=None</em>, <em class="sig-param">filename='Fake filename'</em>, <em class="sig-param">path=None</em>, <em class="sig-param">level=None</em>, <em class="sig-param">lang=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/core.html#run_code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.run_code" title="Permalink to this definition">¶</a></dt>
+<dt id="friendly_traceback.public_api.exec_code">
+<code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">exec_code</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">source=None</em>, <em class="sig-param">filename='Fake filename'</em>, <em class="sig-param">path=None</em>, <em class="sig-param">level=None</em>, <em class="sig-param">lang=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/core.html#exec_code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.exec_code" title="Permalink to this definition">¶</a></dt>
 <dd><p>This uses check_syntax to see if the code is valid and, if so,
 executes it into an empty dict as globals. If no exception is
 raised, this dict is returned. If an exception is raised, False
@@ -468,6 +469,12 @@ output is saved and can be later retrieved by <code class="docutils literal notr
 <dd><p>Shows the traceback info again, on the default stream.</p>
 <p>Primarily intended to use with GUI based program, where the user changes
 a verbosity level to view the traceback again.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="friendly_traceback.public_api.run_program">
+<code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">run_program</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">exclude=''</em>, <em class="sig-param">lang=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/public_api.html#run_program"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.run_program" title="Permalink to this definition">¶</a></dt>
+<dd><p>Experimental code to make program run with Mu</p>
 </dd></dl>
 
 </div>

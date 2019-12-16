@@ -67,6 +67,7 @@ Contents
    :caption: About
 
    usage
+   mu
    design
 
 .. toctree::

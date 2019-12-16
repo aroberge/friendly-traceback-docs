@@ -1664,11 +1664,11 @@ SyntaxError - assigned prior to nonlocal declaration
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom du module inconnu est 'raise_syntax_error5-'.
         
-    L'exécution s'est arrêtée à la ligne 107 du fichier 'TESTS:\trb_syntax_common.py'
+    L'exécution s'est arrêtée à la ligne 109 du fichier 'TESTS:\trb_syntax_common.py'
     
-       105:                 make_title(title)
-       106:                 try:
-    -->107:                     mod = __import__(name)
+       107:                 make_title(title)
+       108:                 try:
+    -->109:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -1804,6 +1804,60 @@ SyntaxError - assign to generator expression
     Cause probable basée sur les informations données par Python :
         Du côté gauche d'un signe d'égalité, vous avez une
         expression génératrice au lieu du nom d'une variable.
+        
+
+SyntaxError - assign to conditional expression
+----------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: can't assign to conditional expression
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error59.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: can't [cannot] assign to conditional expression"""
+       2: 
+    -->3: a if 1 else b = 1
+         ^
+
+    Cause probable basée sur les informations données par Python :
+        Du côté gauche d'un signe d'égalité, vous avez une
+        expression conditionnelle au lieu du nom d'une variable.
+        Une expression conditionnelle doit avoir la forme suivante:
+        
+            variable = objet si condition else autre_objet
+
+SyntaxError - name is parameter and nonlocal
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: name 'x' is parameter and nonlocal
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error60.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       2: 
+       3: 
+       4: def f(x):
+    -->5:     nonlocal x
+             ^
+
+    Cause probable basée sur les informations données par Python :
+        Vous avez utilisé 'x' comme paramètre pour une fonction
+        avant de la déclarer également comme une variable non locale :
+        'x' ne peut pas être les deux en même temps.
         
 
 Walrus operator does not exist - yet

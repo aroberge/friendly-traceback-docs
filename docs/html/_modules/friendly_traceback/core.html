@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.core &mdash; Friendly tracebacks 0.0.20a documentation</title>
+  <title>friendly_traceback.core &mdash; Friendly tracebacks 0.0.25 documentation</title>
   
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.0.20a
+                0.0.25
               </div>
             
           
@@ -86,6 +86,7 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../design.html">Some thoughts on the design of friendly-traceback</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
@@ -358,7 +359,7 @@
     <span class="k">return</span> <span class="n">code</span><span class="p">,</span> <span class="n">filename</span></div>
 
 
-<div class="viewcode-block" id="run_code"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.run_code">[docs]</a><span class="k">def</span> <span class="nf">run_code</span><span class="p">(</span>
+<div class="viewcode-block" id="exec_code"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.exec_code">[docs]</a><span class="k">def</span> <span class="nf">exec_code</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;Fake filename&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This uses check_syntax to see if the code is valid and, if so,</span>

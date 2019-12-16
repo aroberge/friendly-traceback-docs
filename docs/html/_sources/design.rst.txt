@@ -7,13 +7,13 @@ The content of this file **will** be changed as this project evolve.
 Purpose
 -------
 
-Friendly-traceback primary purpose is to make it easier for
+Friendly-traceback's primary purpose is to make it easier for
 beginners and/or for people that have limited knowledge of English
 to understand what caused a program to generate a traceback.
 
 A secondary goal is to help them learn how to decipher a normal Python
-traceback and use the information to understand what went wrong and how
-to fix it.
+traceback and use the information **provided by Python** 
+to understand what went wrong and how to fix it.
 
 
 .. sidebar:: Thought ...
@@ -24,13 +24,15 @@ to fix it.
     that could be of interest to them, such as the example of
     **better-exceptions** mentioned below.
 
-Open questions
---------------
+Semi-open questions
+-------------------
 
-Normally, an open section would be included at the end, but this document
+Normally, an "open questions" section would be included at the end, but this document
 is getting so long that few people might read it to the very end.
 Furthermore, it might be useful to have these in mind while reading the rest of
-this document.
+this document. They are called "semi-open" as we have made explicit choices
+about some of them, choices which could change given some feedback from 
+actual users.
 
 - In addition to showing the line of code where an exception is raised,
   should we include other lines of code for contextual information and,
@@ -38,15 +40,24 @@ this document.
 
   Python's `cgitb module <https://docs.python.org/3/library/cgitb.html>`_
   shows five lines of context for each "item" in a traceback. We currently
-  show only four.
+  show at most three, ending with the line where the exception occurred.
+  (The screenshots below do not reflect the actual stage of the project.)
 
 - Should we aim to provide information about **all** standard Python
-  Exceptions, or just a subset?
+  Exceptions, or just a subset?  Some exceptions are going to occur only 
+  because some really advanced features of Python are used (for example:
+  ``ConnectionRefusedError``) and it would be likely that users writing
+  such code are already experienced enough to not need supplementary help 
+  from Friendly-traceback.
+
+- Should exceptions from specific modules in the standard library also 
+  be included? As a specific example, perhaps exceptions raised in the 
+  ``turtle`` module should be considered.
 
 - Should we include also Warnings?
 
-  The full list of exceptions and warnings is included at the end of
-  this document as well as some notes about some Exceptions that have
+  The full list of exceptions and warnings is included in
+  :ref:`known` as well as some notes about some Exceptions that have
   been purposely excluded.
 
 - Should translations (``.po`` files) be limited to general translations
@@ -55,7 +66,8 @@ this document.
 
 - Should we offer a single explanation as to the likely cause of the error,
   or do like Thonny and offer weighted alternatives?
-  See Issue8_ for a discussion.
+  See Issue8_ for a discussion, as well as the section about multiple
+  causes below.
 
 - Giving too much information ("wall of text") can be overwhelming;
   giving a limited amount of information might not be helpful enough to help
@@ -65,7 +77,6 @@ this document.
 
 .. _Issue8: https://github.com/aroberge/friendly-traceback/issues/8
 .. _Issue10: https://github.com/aroberge/friendly-traceback/issues/10
-
 
 Anatomy of a standard Python traceback
 --------------------------------------
@@ -256,9 +267,9 @@ Our current thinking is as follows:
 
 3. We generally distinguish cases where we can use the information given by Python
    from those where we have to guess by having a different header
-   ("Likely cause" vs "My best guess").
+   ("Likely cause" vs "best guess").
 
-4. Trying to provide explanations and translations for all possible
+4. Trying to provide explanations and translations for all relevant
    exceptions will require a considerable amount of work.
    For those, like Thonny, that wishes to
    explore the possibility of suggesting more than one cause, it makes sense
@@ -267,10 +278,10 @@ Our current thinking is as follows:
    one package and enhance it as needed. So, Friendly-traceback must be
    designed to easily allow extensions of its core capabilities.
 
-   By default, Friendly-traceback will only print at most one likely cause.
-   However, some programming environment
-   could use the additional information about possible causes if and when
-   it becomes available in Friendly-traceback.
+So, the choice we have made is that Friendly-traceback will only print 
+at most one likely cause.
+However, some programming environment could use the additional information
+about possible causes if and when it becomes available in Friendly-traceback.
 
 
 Localization

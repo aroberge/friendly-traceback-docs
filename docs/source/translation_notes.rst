@@ -146,7 +146,9 @@ two-letter code (fr) as it is assumed to be the case in various places.
 
     One of the goals of this project is to provide easier to understand
     tracebacks than those provided by Python. These do not need to be
-    absolutely perfect.
+    absolutely perfect. For example, we follow 
+    `Blockly's practice <https://translatewiki.net/wiki/Translating:Blockly>`_ 
+    in not supporting `plural formatting <https://translatewiki.net/wiki/Plural>`_
 
 When it comes time to save the ``.po`` file, use a similar structure
 as that shown above and save

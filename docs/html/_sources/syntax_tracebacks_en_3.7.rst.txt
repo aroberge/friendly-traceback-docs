@@ -1663,11 +1663,11 @@ SyntaxError - assigned prior to nonlocal declaration
         In your program, the name of the
         module that cannot be found is 'raise_syntax_error5-'.
         
-    Execution stopped on line 107 of file 'TESTS:\trb_syntax_common.py'.
+    Execution stopped on line 109 of file 'TESTS:\trb_syntax_common.py'.
     
-       105:                 make_title(title)
-       106:                 try:
-    -->107:                     mod = __import__(name)
+       107:                 make_title(title)
+       108:                 try:
+    -->109:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -1804,6 +1804,60 @@ SyntaxError - assign to generator expression
     Likely cause based on the information given by Python:
         On the left-hand side of an equal sign, you have a
         generator expression instead of the name of a variable.
+        
+
+SyntaxError - assign to conditional expression
+----------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: can't assign to conditional expression
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error59.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: can't [cannot] assign to conditional expression"""
+       2: 
+    -->3: a if 1 else b = 1
+         ^
+
+    Likely cause based on the information given by Python:
+        On the left-hand side of an equal sign, you have a
+        conditional expression instead of the name of a variable.
+        A conditional expression has the following form:
+        
+            variable = object if condition else other_object
+
+SyntaxError - name is parameter and nonlocal
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: name 'x' is parameter and nonlocal
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error60.py'
+    beyond the location indicated below by --> and ^.
+    
+       2: 
+       3: 
+       4: def f(x):
+    -->5:     nonlocal x
+             ^
+
+    Likely cause based on the information given by Python:
+        You used 'x' as a parameter for a function
+        before declaring it also as a nonlocal variable:
+        'x' cannot be both at the same time.
         
 
 Walrus operator does not exist - yet

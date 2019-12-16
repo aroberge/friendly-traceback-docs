@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using with Mu &mdash; Friendly tracebacks 0.0.25 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Some thoughts on the design of friendly-traceback" href="design.html" />
+    <link rel="prev" title="Usage" href="usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Friendly tracebacks
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.25
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using with Mu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#before-using-friendly-traceback-with-mu">Before using Friendly-traceback with Mu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-friendly-traceback-with-mu">Using Friendly-traceback with Mu</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html">Friendly tracebacks - in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">Friendly SyntaxError tracebacks - in English</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="suggest.html">Suggest an addition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Add a new Exception case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Use in your project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="custom.html">Description of demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph.html">Project files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other versions and languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.7.html">SyntaxError - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html">Friendly tracebacks - en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html">Friendly SyntaxError tracebacks - en Français</a></li>
+</ul>
+<p class="caption"><span class="caption-text">varia</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Friendly tracebacks</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Using with Mu</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mu.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="design.html" class="btn btn-neutral float-right" title="Some thoughts on the design of friendly-traceback" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-with-mu">
+<h1>Using with Mu<a class="headerlink" href="#using-with-mu" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://codewith.mu/">Mu</a> is a fantastic editors for beginners.
+In the future, when Friendly-traceback is a bit more mature,
+it appears very likely that Mu will incorporate
+Friendly-traceback natively.
+For now, it is nonetheless possible to use
+Friendly-traceback productively with Mu at the cost of writing
+a 3-line program whose syntax is unfortunately not very user
+friendly. This is described below. But first, one has to
+install Friendly-traceback in Mu’s environment.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>I assume that you have installed Mu on your computer.
+Mu picks up the language to use from the computer default settings,
+which explains why French appears on the screen capture below.</p>
+<p>After you start it, you should see a gear icon at the bottom right
+corner.</p>
+<a class="reference internal image-reference" href="_images/mu.png"><img alt="Mu" src="_images/mu.png" style="width: 752.0px; height: 530.0px;" /></a>
+<p>If you click on it, it will bring the following dialog.</p>
+<img alt="Mu dialog" src="_images/mu_dialog1.png" />
+<p>Click on the triangular “arrow” until the Third Party Packages tab is shown.</p>
+<img alt="Mu dialog" src="_images/mu_dialog2.png" />
+<p>Enter “friendly-traceback” and click “ok”.  Friendly-traceback should
+be installed. Version 0.0.25 or newer is required.
+Note that until version 0.1 is released, Friendly-traceback is considered
+pre-alpha, and anything you see in this documentation could be
+rapidly obsolete.</p>
+<img alt="Mu dialog" src="_images/mu_dialog3.png" />
+</div>
+<div class="section" id="before-using-friendly-traceback-with-mu">
+<h2>Before using Friendly-traceback with Mu<a class="headerlink" href="#before-using-friendly-traceback-with-mu" title="Permalink to this headline">¶</a></h2>
+<p>I have created two test files named respectively test_ok.py and test_problem.py.</p>
+<p>First, I will run them with Mu on its own.  Below you can see what
+happens when I run test_ok.py, and enter one more instruction in
+the interpreter.</p>
+<a class="reference internal image-reference" href="_images/test_ok.png"><img alt="Mu running test_ok" src="_images/test_ok.png" style="width: 752.0px; height: 530.0px;" /></a>
+<p>I’ve chosen this simple program as it illustrates two important
+features of running programs with Mu:</p>
+<ol class="arabic simple">
+<li><p>User programs are run as the main script … as expected.</p></li>
+<li><p>After a program terminates, the user has the opportunity to
+continue interacting, using an interpreter fully aware of
+the value of the variables in the user’s program.</p></li>
+</ol>
+<p>Next, I show what happens when I run test_problem.py with Mu.</p>
+<a class="reference internal image-reference" href="_images/test_problem.png"><img alt="Mu running test_problem" src="_images/test_problem.png" style="width: 752.0px; height: 530.0px;" /></a>
+</div>
+<div class="section" id="using-friendly-traceback-with-mu">
+<h2>Using Friendly-traceback with Mu<a class="headerlink" href="#using-friendly-traceback-with-mu" title="Permalink to this headline">¶</a></h2>
+<p>To use Friendly-traceback with Mu, I need to create a program
+which is located in the same directory as the user program I wish
+to run.  The name for that script can be anything, but it might
+be useful to choose something that helps to identify it as
+being related to Friendly-traceback.</p>
+<a class="reference internal image-reference" href="_images/mu_open.png"><img alt="Mu open dialog" src="_images/mu_open.png" style="width: 614.0px; height: 444.5px;" /></a>
+<p>As mentioned before, the content of this program is only
+three lines of code … but their meaning will not be obvious.</p>
+<a class="reference internal image-reference" href="_images/test_ok_friendly.png"><img alt="Mu with friendly running test_ok" src="_images/test_ok_friendly.png" style="width: 752.0px; height: 530.0px;" /></a>
+<p>Even though I am not running the user’s program directly, it is
+nonetheless executed as though it was the main programs, which
+replicates the expectations created by running programs directly with Mu.
+Also, the values of the variables used in that programs are
+available in the interpreter (albeit with a few extra ones.)</p>
+<p>Next, I show what happens when I run test_problem.py with Mu.
+The only thing that will need to change, is the name of
+the user program.</p>
+<a class="reference internal image-reference" href="_images/test_problem_friendly.png"><img alt="Mu with friendly running test_problem" src="_images/test_problem_friendly.png" style="width: 752.0px; height: 708.0px;" /></a>
+<p>As should be expected, a friendlier traceback is shown.</p>
+<p>And, of course, I can ask Friendly-traceback to provide
+explanations in French instead:</p>
+<a class="reference internal image-reference" href="_images/test_problem_fr.png"><img alt="Mu with friendly running test_problem" src="_images/test_problem_fr.png" style="width: 800.5px; height: 708.0px;" /></a>
+<p>Ideally, more languages would be supported.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="design.html" class="btn btn-neutral float-right" title="Some thoughts on the design of friendly-traceback" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, André Roberge
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

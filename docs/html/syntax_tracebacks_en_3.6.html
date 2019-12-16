@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly tracebacks 0.0.20a documentation</title>
+  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly tracebacks 0.0.25 documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.0.20a
+                0.0.25
               </div>
             
           
@@ -88,6 +88,7 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
@@ -177,6 +178,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assignment-to-operator">SyntaxError - assignment to operator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-using-the-backquote-character">SyntaxError - using the backquote character</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assign-to-generator-expression">SyntaxError - assign to generator expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assign-to-conditional-expression">SyntaxError - assign to conditional expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-name-is-parameter-and-nonlocal">SyntaxError - name is parameter and nonlocal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
@@ -1736,11 +1739,11 @@ Likely cause based on the information given by Python:
     In your program, the name of the
     module that cannot be found is &#39;raise_syntax_error5-&#39;.
 
-Execution stopped on line 107 of file &#39;TESTS:\trb_syntax_common.py&#39;.
+Execution stopped on line 109 of file &#39;TESTS:\trb_syntax_common.py&#39;.
 
-   105:                 make_title(title)
-   106:                 try:
---&gt;107:                     mod = __import__(name)
+   107:                 make_title(title)
+   108:                 try:
+--&gt;109:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>
@@ -1865,6 +1868,55 @@ beyond the location indicated below by --&gt; and ^.
 Likely cause based on the information given by Python:
     On the left-hand side of an equal sign, you have a
     generator expression instead of the name of a variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assign-to-conditional-expression">
+<h2>SyntaxError - assign to conditional expression<a class="headerlink" href="#syntaxerror-assign-to-conditional-expression" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: can&#39;t assign to conditional expression
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error59.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t [cannot] assign to conditional expression&quot;&quot;&quot;
+   2:
+--&gt;3: a if 1 else b = 1
+     ^
+
+Likely cause based on the information given by Python:
+    On the left-hand side of an equal sign, you have a
+    conditional expression instead of the name of a variable.
+    A conditional expression has the following form:
+
+        variable = object if condition else other_object
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-name-is-parameter-and-nonlocal">
+<h2>SyntaxError - name is parameter and nonlocal<a class="headerlink" href="#syntaxerror-name-is-parameter-and-nonlocal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: name &#39;x&#39; is parameter and nonlocal
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error60.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   2:
+   3:
+   4: def f(x):
+--&gt;5:     nonlocal x
+         ^
+
+Likely cause based on the information given by Python:
+    You used &#39;x&#39; as a parameter for a function
+    before declaring it also as a nonlocal variable:
+    &#39;x&#39; cannot be both at the same time.
 </pre></div>
 </div>
 </div>

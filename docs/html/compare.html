@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Comparison between Python versions &mdash; Friendly tracebacks 0.0.20a documentation</title>
+  <title>Comparison between Python versions &mdash; Friendly tracebacks 0.0.25 documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.0.20a
+                0.0.25
               </div>
             
           
@@ -88,6 +88,7 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
@@ -500,6 +501,17 @@ SyntaxError: can't assign to generator expression
 
 3.8:
 SyntaxError: cannot assign to generator expression
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error59
+</div>
+<pre class='highlight friendly-small-pre'>
+3.7:
+SyntaxError: can't assign to conditional expression
+
+3.8:
+SyntaxError: cannot assign to conditional expression
 
 </pre>
 <div class='filename-header'>
