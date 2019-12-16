@@ -1,6 +1,12 @@
 Using with Mu
 =============
 
+.. sidebar:: What about Thonny or IDLE?
+
+    Unfortunately, because IDLE and Thonny use their own 
+    quirky ways to run execute programs, the approach described
+    here to use Friendly-traceback is not possible with them.
+
 `Mu <https://codewith.mu/>`_ is a fantastic editor for beginners.
 In the future, when Friendly-traceback is a bit more mature,
 it appears very likely that Mu will incorporate
