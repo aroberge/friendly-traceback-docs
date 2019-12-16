@@ -92,7 +92,9 @@ being related to Friendly-traceback.
    :alt: Mu open dialog 
 
 As mentioned before, the content of this program is only
-three lines of code ... but their meaning will not be obvious.
+three lines of code ... but their meaning will not be obvious to 
+beginners.  
+
 
 .. image:: images/test_ok_friendly.png
    :scale: 50 %
@@ -104,6 +106,17 @@ replicates the expectations created by running programs directly with Mu.
 Also, the values of the variables used in that programs are
 available in the interpreter (albeit with a few extra ones.)
 
+.. note::
+
+    You can copy the required three lines from here,
+    and change the name of your program as needed::
+
+        from friendly_traceback import run_program
+
+        result = run_program("my_program", __file__)
+        locals().update(result)
+
+
 Next, I show what happens when I run test_problem.py with Mu.
 The only thing that will need to change, is the name of 
 the user program.
@@ -114,11 +127,32 @@ the user program.
 
 As should be expected, a friendlier traceback is shown.
 
-And, of course, I can ask Friendly-traceback to provide
-explanations in French instead:
+
+Of course, it is more helpful if we select the tab corresponding to 
+the user code rather than the friendly runner one.
+
+   .. image:: images/test_problem_friendly2.png
+      :scale: 50 %
+      :alt: Mu running test_problem
+
+You likely will not be surprised to know that 
+I can ask Friendly-traceback to provide explanations in French instead:
 
 .. image:: images/test_problem_fr.png
    :scale: 50 %
    :alt: Mu with friendly running test_problem
 
 Ideally, more languages would be supported. 
+
+
+Additional details
+-------------------
+
+If we leave out the argument ``__file__`` from ``run_program``,
+the information given includes some code from the "friendly runner",
+which would be unhelpful.
+
+.. image:: images/mu_friendly_file.png
+   :scale: 50 %
+   :alt: leaving out the __file__ argument
+
