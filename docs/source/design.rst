@@ -479,7 +479,8 @@ The following is an incomplete list of projects or modules to look at:
 - https://github.com/ipython/ipython/blob/master/IPython/core/ultratb.py
 - https://github.com/patrys/great-justice
 - https://github.com/Qix-/better-exceptions
-- As mentioned in Issue8_, Thonny_ already has something
-  similar implemented.
 - https://github.com/cknd/stackprinter
-
+- https://github.com/onelivesleft/PrettyErrors/
+- And, as mentioned in Issue8_, Thonny_ has a widget called
+  "Assistant" whose purpose is helping beginners identify the 
+  cause of a traceback.
