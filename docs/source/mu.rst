@@ -53,26 +53,9 @@ rapidly obsolete.
 Before using Friendly-traceback with Mu 
 ----------------------------------------
 
-I have created two test files named respectively test_ok.py and test_problem.py.
-
-First, I will run them with Mu on its own.  Below you can see what
-happens when I run test_ok.py, and enter one more instruction in 
-the interpreter.  
-
-.. image:: images/test_ok.png
-   :scale: 50 %
-   :alt: Mu running test_ok
-
-I've chosen this simple program as it illustrates two important 
-features of running programs with Mu:
-
-1. User programs are run as the main script ... as expected.
-
-2. After a program terminates, the user has the opportunity to 
-   continue interacting, using an interpreter fully aware of
-   the value of the variables in the user's program. 
-
-Next, I show what happens when I run test_problem.py with Mu.
+I have created a test module, called test_problem.py, that raises
+and exception.
+First, I show what happens when I run test_problem.py with Mu.
 
 .. image:: images/test_problem.png
    :scale: 50 %
@@ -82,13 +65,15 @@ Using Friendly-traceback with Mu
 --------------------------------
 
 To use Friendly-traceback with Mu, I need to add one line 
-of code at the top. I first do this with a program that does not 
-generate tracebacks to show that nothing appears to be changed.
+of code at the top, and run it as usual.
 
 
-.. image:: images/test_ok_friendly.png
+.. image:: images/test_problem_friendly.png
    :scale: 50 %
-   :alt: Mu with friendly running test_ok
+   :alt: Mu with friendly running test_problem
+
+As should be expected, a friendlier traceback is shown.
+
 
 .. note::
 
@@ -101,14 +86,7 @@ generate tracebacks to show that nothing appears to be changed.
         import friendly_traceback
         friendly_traceback.install()
 
-Next, I show what happens when I run test_problem.py after doing 
-the required import from ``friendly_traceback``.
 
-.. image:: images/test_problem_friendly.png
-   :scale: 50 %
-   :alt: Mu with friendly running test_problem
-
-As should be expected, a friendlier traceback is shown.
 
 You likely will not be surprised to know that 
 I can ask Friendly-traceback to provide explanations in French instead:

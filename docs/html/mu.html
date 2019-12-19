@@ -240,28 +240,17 @@ rapidly obsolete.</p>
 </div>
 <div class="section" id="before-using-friendly-traceback-with-mu">
 <h2>Before using Friendly-traceback with Mu<a class="headerlink" href="#before-using-friendly-traceback-with-mu" title="Permalink to this headline">¶</a></h2>
-<p>I have created two test files named respectively test_ok.py and test_problem.py.</p>
-<p>First, I will run them with Mu on its own.  Below you can see what
-happens when I run test_ok.py, and enter one more instruction in
-the interpreter.</p>
-<a class="reference internal image-reference" href="_images/test_ok.png"><img alt="Mu running test_ok" src="_images/test_ok.png" style="width: 752.0px; height: 530.0px;" /></a>
-<p>I’ve chosen this simple program as it illustrates two important
-features of running programs with Mu:</p>
-<ol class="arabic simple">
-<li><p>User programs are run as the main script … as expected.</p></li>
-<li><p>After a program terminates, the user has the opportunity to
-continue interacting, using an interpreter fully aware of
-the value of the variables in the user’s program.</p></li>
-</ol>
-<p>Next, I show what happens when I run test_problem.py with Mu.</p>
+<p>I have created a test module, called test_problem.py, that raises
+and exception.
+First, I show what happens when I run test_problem.py with Mu.</p>
 <a class="reference internal image-reference" href="_images/test_problem.png"><img alt="Mu running test_problem" src="_images/test_problem.png" style="width: 752.0px; height: 530.0px;" /></a>
 </div>
 <div class="section" id="using-friendly-traceback-with-mu">
 <h2>Using Friendly-traceback with Mu<a class="headerlink" href="#using-friendly-traceback-with-mu" title="Permalink to this headline">¶</a></h2>
 <p>To use Friendly-traceback with Mu, I need to add one line
-of code at the top. I first do this with a program that does not
-generate tracebacks to show that nothing appears to be changed.</p>
-<a class="reference internal image-reference" href="_images/test_ok_friendly.png"><img alt="Mu with friendly running test_ok" src="_images/test_ok_friendly.png" style="width: 752.0px; height: 530.0px;" /></a>
+of code at the top, and run it as usual.</p>
+<a class="reference internal image-reference" href="_images/test_problem_friendly.png"><img alt="Mu with friendly running test_problem" src="_images/test_problem_friendly.png" style="width: 752.0px; height: 691.0px;" /></a>
+<p>As should be expected, a friendlier traceback is shown.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can copy the required line from this:</p>
@@ -274,10 +263,6 @@ generate tracebacks to show that nothing appears to be changed.</p>
 </pre></div>
 </div>
 </div>
-<p>Next, I show what happens when I run test_problem.py after doing
-the required import from <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>.</p>
-<a class="reference internal image-reference" href="_images/test_problem_friendly.png"><img alt="Mu with friendly running test_problem" src="_images/test_problem_friendly.png" style="width: 752.0px; height: 691.0px;" /></a>
-<p>As should be expected, a friendlier traceback is shown.</p>
 <p>You likely will not be surprised to know that
 I can ask Friendly-traceback to provide explanations in French instead:</p>
 <a class="reference internal image-reference" href="_images/test_problem_fr.png"><img alt="Mu with friendly running test_problem" src="_images/test_problem_fr.png" style="width: 752.0px; height: 690.5px;" /></a>
