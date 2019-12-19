@@ -12,9 +12,9 @@ In the future, when Friendly-traceback is a bit more mature,
 it appears very likely that Mu will incorporate
 Friendly-traceback natively. 
 For now, it is nonetheless possible to use
-Friendly-traceback productively with Mu at the cost of writing
-a 3-line program whose syntax is unfortunately not very user 
-friendly. This is described below. But first, one has to 
+Friendly-traceback productively with Mu by of adding 
+a single line at the top of the program to be execute. 
+This is described below. But first, one has to 
 install Friendly-traceback in Mu's environment.
 
 Installation
@@ -42,7 +42,7 @@ Click on the triangular "arrow" until the Third Party Packages tab is shown.
    :alt: Mu dialog
 
 Enter "friendly-traceback" and click "ok".  Friendly-traceback should
-be installed. Version 0.0.25 or newer is required.
+be installed. Version 0.0.26 or newer is required.
 Note that until version 0.1 is released, Friendly-traceback is considered
 pre-alpha, and anything you see in this documentation could be 
 rapidly obsolete.
@@ -81,59 +81,34 @@ Next, I show what happens when I run test_problem.py with Mu.
 Using Friendly-traceback with Mu
 --------------------------------
 
-To use Friendly-traceback with Mu, I need to create a program 
-which is located in the same directory as the user program I wish
-to run.  The name for that script can be anything, but it might
-be useful to choose something that helps to identify it as 
-being related to Friendly-traceback.
-
-.. image:: images/mu_open.png
-   :scale: 50 %
-   :alt: Mu open dialog 
-
-As mentioned before, the content of this program is only
-three lines of code ... but their meaning will not be obvious to 
-beginners.  
+To use Friendly-traceback with Mu, I need to add one line 
+of code at the top. I first do this with a program that does not 
+generate tracebacks to show that nothing appears to be changed.
 
 
 .. image:: images/test_ok_friendly.png
    :scale: 50 %
    :alt: Mu with friendly running test_ok
 
-Even though I am not running the user's program directly, it is 
-nonetheless executed as though it was the main programs, which 
-replicates the expectations created by running programs directly with Mu.
-Also, the values of the variables used in that programs are
-available in the interpreter (albeit with a few extra ones.)
-
 .. note::
 
-    You can copy the required three lines from here,
-    and change the name of your program as needed::
+    You can copy the required line from this::
 
-        from friendly_traceback import run_program
+        from friendly_traceback import explanations
+        
+    This is equivalent to the following::
 
-        result = run_program("my_program", __file__)
-        locals().update(result)
+        import friendly_traceback
+        friendly_traceback.install()
 
-
-Next, I show what happens when I run test_problem.py with Mu.
-The only thing that will need to change, is the name of 
-the user program.
+Next, I show what happens when I run test_problem.py after doing 
+the required import from ``friendly_traceback``.
 
 .. image:: images/test_problem_friendly.png
    :scale: 50 %
    :alt: Mu with friendly running test_problem
 
 As should be expected, a friendlier traceback is shown.
-
-
-Of course, it is more helpful if we select the tab corresponding to 
-the user code rather than the friendly runner one.
-
-   .. image:: images/test_problem_friendly2.png
-      :scale: 50 %
-      :alt: Mu running test_problem
 
 You likely will not be surprised to know that 
 I can ask Friendly-traceback to provide explanations in French instead:
@@ -142,17 +117,10 @@ I can ask Friendly-traceback to provide explanations in French instead:
    :scale: 50 %
    :alt: Mu with friendly running test_problem
 
+The single line of code at the top is equivalent to the following::
+
+    import friendly_traceback
+    friendly_traceback.install(lang="fr")
+
+
 Ideally, more languages would be supported. 
-
-
-Additional details
--------------------
-
-If we leave out the argument ``__file__`` from ``run_program``,
-the information given includes some code from the "friendly runner",
-which would be unhelpful.
-
-.. image:: images/mu_friendly_file.png
-   :scale: 50 %
-   :alt: leaving out the __file__ argument
-

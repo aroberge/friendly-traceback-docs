@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Public API &mdash; Friendly tracebacks 0.0.25a documentation</title>
+  <title>Public API &mdash; Friendly tracebacks 0.0.26 documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.0.25a
+                0.0.26
               </div>
             
           
@@ -223,6 +223,12 @@ that are part of the public API and can be directly used, as in:</p>
 <p>instead of:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
 <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">public_api</span><span class="o">.</span><span class="n">some_function</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Note that this excludes a few modules that are used to install
+friendly-traceback upon importing it, such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly_traceback</span> <span class="k">import</span> <span class="n">explanations</span>
+<span class="kn">from</span> <span class="nn">friendly_traceback</span> <span class="k">import</span> <span class="n">explications</span>  <span class="c1"># French version</span>
 </pre></div>
 </div>
 <dl class="function">
@@ -476,12 +482,6 @@ output is saved and can be later retrieved by <code class="docutils literal notr
 <dd><p>Shows the traceback info again, on the default stream.</p>
 <p>Primarily intended to use with GUI based program, where the user changes
 a verbosity level to view the traceback again.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="friendly_traceback.public_api.run_program">
-<code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">run_program</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">exclude=''</em>, <em class="sig-param">lang=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/public_api.html#run_program"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.run_program" title="Permalink to this definition">¶</a></dt>
-<dd><p>Experimental code to make program run with Mu</p>
 </dd></dl>
 
 </div>

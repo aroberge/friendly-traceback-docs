@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.public_api &mdash; Friendly tracebacks 0.0.25a documentation</title>
+  <title>friendly_traceback.public_api &mdash; Friendly tracebacks 0.0.26 documentation</title>
   
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.0.25a
+                0.0.26
               </div>
             
           
@@ -198,9 +198,15 @@
 
 <span class="sd">    import friendly_traceback</span>
 <span class="sd">    friendly_traceback.public_api.some_function()</span>
+
+
+<span class="sd">Note that this excludes a few modules that are used to install</span>
+<span class="sd">friendly-traceback upon importing it, such as::</span>
+
+<span class="sd">    from friendly_traceback import explanations</span>
+<span class="sd">    from friendly_traceback import explications  # French version</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">wraps</span>
-<span class="kn">import</span> <span class="nn">runpy</span>
 
 <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">core</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">utils</span>
@@ -214,7 +220,7 @@
     <span class="n">include_file_in_traceback</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.0.25a&quot;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.0.26&quot;</span>
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;cache&quot;</span><span class="p">,</span>
     <span class="s2">&quot;check_syntax&quot;</span><span class="p">,</span>
@@ -431,15 +437,6 @@
 <span class="sd">    a verbosity level to view the traceback again.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">session</span><span class="o">.</span><span class="n">show_traceback_info_again</span><span class="p">()</span></div>
-
-
-<div class="viewcode-block" id="run_program"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.run_program">[docs]</a><span class="nd">@make_public</span>
-<span class="k">def</span> <span class="nf">run_program</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Experimental code to make program run with Mu&quot;&quot;&quot;</span>
-    <span class="n">exclude_file_from_traceback</span><span class="p">(</span><span class="n">exclude</span><span class="p">)</span>
-    <span class="n">exclude_file_from_traceback</span><span class="p">(</span><span class="n">runpy</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
-    <span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">runpy</span><span class="o">.</span><span class="n">run_module</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">run_name</span><span class="o">=</span><span class="s2">&quot;__main__&quot;</span><span class="p">)</span></div>
 </pre></div>
 
            </div>
