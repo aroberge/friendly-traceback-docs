@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using with Mu &mdash; Friendly tracebacks 0.0.26a documentation</title>
+  <title>Using with Mu &mdash; Friendly tracebacks 0.0.28a documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Some thoughts on the design of friendly-traceback" href="design.html" />
-    <link rel="prev" title="Usage" href="usage.html" /> 
+    <link rel="next" title="Using with Thonny" href="thonny.html" />
+    <link rel="prev" title="About Mu and Thonny" href="mu_thonny.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.0.26a
+                0.0.28a
               </div>
             
           
@@ -88,12 +88,15 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_thonny.html">About Mu and Thonny</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Using with Mu</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#before-using-friendly-traceback-with-mu">Before using Friendly-traceback with Mu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-friendly-traceback-with-mu">Using Friendly-traceback with Mu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dealing-with-syntaxerror">Dealing with <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
@@ -190,10 +193,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="design.html" class="btn btn-neutral float-right" title="Some thoughts on the design of friendly-traceback" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="thonny.html" class="btn btn-neutral float-right" title="Using with Thonny" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mu_thonny.html" class="btn btn-neutral float-left" title="About Mu and Thonny" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -204,20 +207,22 @@
             
   <div class="section" id="using-with-mu">
 <h1>Using with Mu<a class="headerlink" href="#using-with-mu" title="Permalink to this headline">¶</a></h1>
-<div class="sidebar">
-<p class="sidebar-title">What about Thonny or IDLE?</p>
-<p>Unfortunately, because IDLE and Thonny use their own
-quirky ways to run execute programs, the approach described
-here to use Friendly-traceback is not possible with them.</p>
-</div>
-<p><a class="reference external" href="https://codewith.mu/">Mu</a> is a fantastic editor for beginners.
-In the future, when Friendly-traceback is a bit more mature,
+<p>As mentioned previously,
+<a class="reference external" href="https://codewith.mu/">Mu</a> is a fantastic editor for absolute beginners.
+Its design philosophy is to enable beginners to download a single
+program that comes with everything they need to begin their programming
+journey.</p>
+<p>In the future, when Friendly-traceback is a bit more mature,
 it appears very likely that Mu will incorporate
 Friendly-traceback natively.
 For now, it is nonetheless possible to use
 Friendly-traceback productively with Mu by of adding
-a single line at the top of the program to be execute.
-This is described below. But first, one has to
+a single line at the top of the program to be execute to catch
+most exceptions. For some others, unfortunately including
+<code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> which beginners likely encounter most frequently,
+one must do something slightly more complicated in order to benefit from
+Friendly-traceback while using Mu.</p>
+<p>The way to do all this is described below. But first, one has to
 install Friendly-traceback in Mu’s environment.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
@@ -232,10 +237,11 @@ corner.</p>
 <p>Click on the triangular “arrow” until the Third Party Packages tab is shown.</p>
 <img alt="Mu dialog" src="_images/mu_dialog2.png" />
 <p>Enter “friendly-traceback” and click “ok”.  Friendly-traceback should
-be installed. Version 0.0.26 or newer is required.
+be installed. Version 0.0.28 or newer is required.
 Note that until version 0.1 is released, Friendly-traceback is considered
 pre-alpha, and anything you see in this documentation could be
-rapidly obsolete.</p>
+rapidly obsolete. If somethings does not work, please do not
+hesitate to file an issue.</p>
 <img alt="Mu dialog" src="_images/mu_dialog3.png" />
 </div>
 <div class="section" id="before-using-friendly-traceback-with-mu">
@@ -247,7 +253,8 @@ First, I show what happens when I run test_problem.py with Mu.</p>
 </div>
 <div class="section" id="using-friendly-traceback-with-mu">
 <h2>Using Friendly-traceback with Mu<a class="headerlink" href="#using-friendly-traceback-with-mu" title="Permalink to this headline">¶</a></h2>
-<p>To use Friendly-traceback with Mu, I need to add one line
+<p>With the exception of <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> as mentioned before,
+to use Friendly-traceback with Mu, I need to add one line
 of code at the top, and run it as usual.</p>
 <a class="reference internal image-reference" href="_images/test_problem_friendly.png"><img alt="Mu with friendly running test_problem" src="_images/test_problem_friendly.png" style="width: 752.0px; height: 691.0px;" /></a>
 <p>As should be expected, a friendlier traceback is shown.</p>
@@ -273,6 +280,20 @@ I can ask Friendly-traceback to provide explanations in French instead:</p>
 </div>
 <p>Ideally, more languages would be supported.</p>
 </div>
+<div class="section" id="dealing-with-syntaxerror">
+<h2>Dealing with <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code><a class="headerlink" href="#dealing-with-syntaxerror" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> cases can be really problematic for beginners.</p>
+<a class="reference internal image-reference" href="_images/mu_syntax_problem1.png"><img alt="Mu with syntax problem 1" src="_images/mu_syntax_problem1.png" style="width: 752.0px; height: 530.0px;" /></a>
+<p>Importing Friendly-traceback as described above does not help.</p>
+<a class="reference internal image-reference" href="_images/mu_syntax_problem2.png"><img alt="Mu with syntax problem 2" src="_images/mu_syntax_problem2.png" style="width: 752.0px; height: 530.0px;" /></a>
+<p>What one must do is create another program, and run that program
+to perform the analysis on the target.</p>
+<a class="reference internal image-reference" href="_images/mu_syntax_problem3.png"><img alt="Mu with syntax problem 3" src="_images/mu_syntax_problem3.png" style="width: 752.0px; height: 530.0px;" /></a>
+<p>As usual, the default language used to provide the explanation is
+English. However, this can be changed by using an additional parameter
+when calling the function.</p>
+<a class="reference internal image-reference" href="_images/mu_syntax_problem4.png"><img alt="Mu with syntax problem 4" src="_images/mu_syntax_problem4.png" style="width: 752.0px; height: 530.0px;" /></a>
+</div>
 </div>
 
 
@@ -283,10 +304,10 @@ I can ask Friendly-traceback to provide explanations in French instead:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="design.html" class="btn btn-neutral float-right" title="Some thoughts on the design of friendly-traceback" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="thonny.html" class="btn btn-neutral float-right" title="Using with Thonny" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mu_thonny.html" class="btn btn-neutral float-left" title="About Mu and Thonny" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

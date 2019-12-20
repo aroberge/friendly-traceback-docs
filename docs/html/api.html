@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Public API &mdash; Friendly tracebacks 0.0.26a documentation</title>
+  <title>Public API &mdash; Friendly tracebacks 0.0.28a documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.0.26a
+                0.0.28a
               </div>
             
           
@@ -88,7 +88,9 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_thonny.html">About Mu and Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
@@ -232,13 +234,16 @@ friendly-traceback upon importing it, such as:</p>
 </pre></div>
 </div>
 <dl class="function">
-<dt id="friendly_traceback.public_api.check_syntax">
-<code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">check_syntax</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">source=None</em>, <em class="sig-param">filename='Fake filename'</em>, <em class="sig-param">path=None</em>, <em class="sig-param">level=None</em>, <em class="sig-param">lang=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/core.html#check_syntax"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.check_syntax" title="Permalink to this definition">¶</a></dt>
+<dt id="friendly_traceback.public_api.advanced_check_syntax">
+<code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">advanced_check_syntax</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">source=None</em>, <em class="sig-param">filename='Fake filename'</em>, <em class="sig-param">path=None</em>, <em class="sig-param">level=None</em>, <em class="sig-param">lang=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/core.html#advanced_check_syntax"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.advanced_check_syntax" title="Permalink to this definition">¶</a></dt>
 <dd><p>This uses Python’s <code class="docutils literal notranslate"><span class="pre">compile()</span></code> builtin which does some analysis of
-the its code argument and will raise an exception if it identifies
+its code argument and will raise an exception if it identifies
 some syntax errors, but also some less common “overflow” and “value”
 errors.</p>
-<p>It can either be used on a file, using the <code class="docutils literal notranslate"><span class="pre">path</span></code> argument, or
+<p>Compared with <code class="docutils literal notranslate"><span class="pre">check_syntax()</span></code>, the prefix <code class="docutils literal notranslate"><span class="pre">advanced_</span></code> simply refers
+to the greater number of arguments, which are specified as
+keywords-only arguments.</p>
+<p>This function can either be used on a file, using the <code class="docutils literal notranslate"><span class="pre">path</span></code> argument, or
 on some code passed as a string, using the <code class="docutils literal notranslate"><span class="pre">source</span></code> argument.
 For the latter case, one can also specify a corresponding <code class="docutils literal notranslate"><span class="pre">filename</span></code>:
 this could be useful if this function is invoked from a GUI-based
@@ -253,6 +258,20 @@ to calling check_syntax, it will only be used for the duration
 of this function call.</p>
 <p>Returns a tuple containing a code object and a filename if no exception
 has been raised, False otherwise.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="friendly_traceback.public_api.check_syntax">
+<code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">check_syntax</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">lang=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/core.html#check_syntax"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.check_syntax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a filename (relative or absolute path), this function calls the
+more keyword-based advanced_check_syntax(),
+and will raise an exception if it identifies
+some syntax errors, but also some less common “overflow” and “value”
+errors.  advanced_check_syntax() provides a more flexibility</p>
+<p>If friendly-traceback exception hook has not been set up prior
+to calling check_syntax, it will only be used for the duration
+of this function call.</p>
+<p>Returns False if problems have been found, None otherwise.</p>
 </dd></dl>
 
 <dl class="function">
@@ -482,6 +501,12 @@ output is saved and can be later retrieved by <code class="docutils literal notr
 <dd><p>Shows the traceback info again, on the default stream.</p>
 <p>Primarily intended to use with GUI based program, where the user changes
 a verbosity level to view the traceback again.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="friendly_traceback.public_api.run_program">
+<code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">run_program</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">exclude=''</em>, <em class="sig-param">lang=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/public_api.html#run_program"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.run_program" title="Permalink to this definition">¶</a></dt>
+<dd><p>Experimental code to make program run with Mu</p>
 </dd></dl>
 
 </div>

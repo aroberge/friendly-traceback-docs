@@ -24,7 +24,20 @@ Friendly-traceback is **not** one of these projects.
 Friendly-traceback is aimed primarily at **beginners** and/or at users
 who would like to get information about traceback in their own language.
 Please, see the Design section for a complete description of the goals
-of this project. But for now, let's have a quick look at a standard
+of this project. 
+
+While Friendly-traceback can be used on its own with a specially 
+designed REPL, a better option is to use it together with GUI editors/IDE 
+that are especially designed with beginners in mind. We know of 
+two excellent such programs: `Mu <https://codewith.mu/>`_ and
+`Thonny <https://thonny.org/>`_. This documentation includes a specific 
+page for each of these two editors
+which explain how to use Friendly-traceback.
+
+A quick look
+------------
+
+Let's have a quick look at a standard
 Python traceback when using the REPL.
 
 .. image:: images/python_indexerror.png
@@ -67,7 +80,9 @@ Contents
    :caption: About
 
    usage
+   mu_thonny
    mu
+   thonny
    design
 
 .. toctree::

@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using with Thonny &mdash; Friendly tracebacks 0.0.28a documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Some thoughts on the design of friendly-traceback" href="design.html" />
+    <link rel="prev" title="Using with Mu" href="mu.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Friendly tracebacks
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.28a
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_thonny.html">About Mu and Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using with Thonny</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-friendly-traceback">Using Friendly-traceback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#french-version">French version</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html">Friendly tracebacks - in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">Friendly SyntaxError tracebacks - in English</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="suggest.html">Suggest an addition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Add a new Exception case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Use in your project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="custom.html">Description of demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph.html">Project files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other versions and languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.7.html">SyntaxError - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html">Friendly tracebacks - en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html">Friendly SyntaxError tracebacks - en Français</a></li>
+</ul>
+<p class="caption"><span class="caption-text">varia</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Friendly tracebacks</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Using with Thonny</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/thonny.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="design.html" class="btn btn-neutral float-right" title="Some thoughts on the design of friendly-traceback" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mu.html" class="btn btn-neutral float-left" title="Using with Mu" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-with-thonny">
+<h1>Using with Thonny<a class="headerlink" href="#using-with-thonny" title="Permalink to this headline">¶</a></h1>
+<p>Starting with version 3.2.5, Thonny will include
+some support for Friendly-traceback.
+This is briefly described on
+<a class="reference external" href="https://github.com/thonny/thonny/wiki/Friendly-traceback">Thonny’s wiki</a>
+which gives the required steps to using Friendly-traceback with Thonny.
+The current document is a longer description that goes into more details,
+with screenshots taken with a pre-released version.</p>
+<p>As mentioned earlier, Thonny is highly configurable. Among the tools
+it provides is the ability to install packages either from pypi or
+others found locally.</p>
+<a class="reference internal image-reference" href="_images/thonny_manage_packages1.png"><img alt="thonny manage packages" src="_images/thonny_manage_packages1.png" style="width: 812.0px; height: 701.5px;" /></a>
+<p>The first step is to ensure that Thonny can see that Friendly-traceback
+is installed. If not, one can install it with pip or with Thonny itself.
+As you can see, Friendly-traceback is indeed installed on my
+computer, along with many other packages.</p>
+<a class="reference internal image-reference" href="_images/thonny_manage_packages2.png"><img alt="thonny manage packages" src="_images/thonny_manage_packages2.png" style="width: 666.5px; height: 422.0px;" /></a>
+<p>Next, we need to set up at least one essential option in order
+to actually use Friendly-traceback.</p>
+<a class="reference internal image-reference" href="_images/thonny_options.png"><img alt="thonny options" src="_images/thonny_options.png" style="width: 381.5px; height: 183.5px;" /></a>
+<p>But before getting to the essential option for Friendly traceback,
+while the option dialog is open, I suggest you explore what
+is available.
+Personally, I like to change the default fonts used
+for the output shell. I mention this in case you wonder why
+the results on your computer look different from the
+screenshots here.</p>
+<a class="reference internal image-reference" href="_images/thonny_options_output.png"><img alt="thonny options io" src="_images/thonny_options_output.png" style="width: 558.5px; height: 481.5px;" /></a>
+<p>Note that many options require to restart Thonny.</p>
+<div class="section" id="using-friendly-traceback">
+<h2>Using Friendly-traceback<a class="headerlink" href="#using-friendly-traceback" title="Permalink to this headline">¶</a></h2>
+<p>Next, we need to tell Thonny to actually use Friendly-traceback.
+As mentioned in a few places in this documentation, Friendly-traceback
+has different “levels”. Level 0 correspond to disactivating
+Friendly-traceback: this is the starting value for Thonny.
+To see Friendly traceback in action, I suggest to use the
+default value of 1.</p>
+<a class="reference internal image-reference" href="_images/thonny_friendly_levels.png"><img alt="thonny friendly levels" src="_images/thonny_friendly_levels.png" style="width: 396.5px; height: 240.5px;" /></a>
+<p>With this choice set, we can run a program that raises an exception
+and have a look at the output.</p>
+<a class="reference internal image-reference" href="_images/thonny_friendly_error.png"><img alt="thonny friendly error" src="_images/thonny_friendly_error.png" style="width: 877.5px; height: 701.5px;" /></a>
+<p>As you can see in (1), the familiar friendly traceback is shown.
+At the bottom (2), Thonny replaces the passive text that
+states where an error is found by an actual link: clicking
+on this link would bring us to the place in the file
+where the exception was actually generated.
+This is, in my opinion, a highly remarkable feature of Thonny.</p>
+<p>You might also note the side bar (3) known as the “Assistant”.
+It is, if you wish, Thonny’s own version of a traceback interpreter
+designed to help users figure out what may have caused
+the problem. If Thonny finds some possible causes of the
+error, it shows one or more clickable one-liners.</p>
+<p>Below you can see what happens if one expand on the
+information provided by Thonny by clicking on each
+individual cause:</p>
+<img alt="thonny assistant" src="_images/thonny_assistant.png" />
+</div>
+<div class="section" id="french-version">
+<h2>French version<a class="headerlink" href="#french-version" title="Permalink to this headline">¶</a></h2>
+<p>Next, I want to see the same traceback explanation
+in a different language - French being, for now,
+my only other choice.</p>
+<a class="reference internal image-reference" href="_images/thonny_options_language.png"><img alt="thonny option languages" src="_images/thonny_options_language.png" style="width: 558.5px; height: 481.5px;" /></a>
+<p>Doing this will require to close and restart Thonny:
+its UI (not shown) including the text on various menus
+will change to French.</p>
+<p>After doing this change, we can see that Friendly-traceback’s
+output is indeed in French.</p>
+<a class="reference internal image-reference" href="_images/thonny_francais.png"><img alt="thonny francais" src="_images/thonny_francais.png" style="width: 687.0px; height: 338.0px;" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="design.html" class="btn btn-neutral float-right" title="Some thoughts on the design of friendly-traceback" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mu.html" class="btn btn-neutral float-left" title="Using with Mu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, André Roberge
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
