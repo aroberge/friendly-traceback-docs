@@ -32,6 +32,11 @@ There are various ways of using friendly-traceback.
         friendly_traceback.explain()
 
 
+.. sidebar:: Important
+
+   Note the ``.py`` extension required here, but not for other cases.
+
+
 3. When launching a Python script::
 
     $ python -m friendly_traceback demos/hello.py

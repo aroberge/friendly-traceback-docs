@@ -481,6 +481,8 @@ The following is an incomplete list of projects or modules to look at:
 - https://github.com/Qix-/better-exceptions
 - https://github.com/cknd/stackprinter
 - https://github.com/onelivesleft/PrettyErrors/
+- https://github.com/skorokithakis/tbvaccine
+- https://github.com/alexmojaki/stack_data
 - And, as mentioned in Issue8_, Thonny_ has a widget called
   "Assistant" whose purpose is helping beginners identify the 
   cause of a traceback.
