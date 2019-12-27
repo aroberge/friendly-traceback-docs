@@ -18,8 +18,8 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.20a
-Python version: 3.8.0
+Friendly-traceback version: 0.0.28a
+Python version: 3.8.1
 
 
 
@@ -1663,11 +1663,11 @@ SyntaxError - assigned prior to nonlocal declaration
         In your program, the name of the
         module that cannot be found is 'raise_syntax_error5-'.
         
-    Execution stopped on line 109 of file 'TESTS:\trb_syntax_common.py'.
+    Execution stopped on line 112 of file 'TESTS:\trb_syntax_common.py'.
     
-       107:                 make_title(title)
-       108:                 try:
-    -->109:                     mod = __import__(name)
+       110:                 make_title(title)
+       111:                 try:
+    -->112:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -1855,3 +1855,81 @@ SyntaxError - name is parameter and nonlocal
         before declaring it also as a nonlocal variable:
         'x' cannot be both at the same time.
         
+
+SyntaxError - name is global and nonlocal
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: name 'xy' is nonlocal and global
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error61.py'
+    beyond the location indicated below by --> and ^.
+    
+        4: 
+        5: 
+        6: def f():
+    --> 7:     global xy
+               ^
+
+    Likely cause based on the information given by Python:
+        You declared 'xy' as being both a global and nonlocal variable.
+        A variable can be global, or nonlocal, but not both at the same time.
+        
+
+SyntaxError - nonlocal variable not found
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: no binding for nonlocal 'ab' found
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error62.py'
+    beyond the location indicated below by --> and ^.
+    
+       2: 
+       3: 
+       4: def f():
+    -->5:     nonlocal ab
+              ^
+
+    Likely cause based on the information given by Python:
+        You declared the variable 'ab' as being a
+        nonlocal variable but it cannot be found.
+        
+
+SyntaxError - nonlocal variable not found at module level
+---------------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: nonlocal declaration not allowed at module level
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error63.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError:  nonlocal declaration not allowed at module level"""
+       2: 
+       3: 
+    -->4: nonlocal cd
+          ^
+
+    Likely cause based on the information given by Python:
+        You used the nonlocal keyword at a module level.
+        The nonlocal keyword refers to a variable inside a function
+        given a value outside that function.

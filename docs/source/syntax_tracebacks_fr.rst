@@ -22,7 +22,7 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.20a
+Friendly-traceback version: 0.0.28a
 Python version: 3.7.3
 
 
@@ -1664,11 +1664,11 @@ SyntaxError - assigned prior to nonlocal declaration
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom du module inconnu est 'raise_syntax_error5-'.
         
-    L'exécution s'est arrêtée à la ligne 109 du fichier 'TESTS:\trb_syntax_common.py'
+    L'exécution s'est arrêtée à la ligne 112 du fichier 'TESTS:\trb_syntax_common.py'
     
-       107:                 make_title(title)
-       108:                 try:
-    -->109:                     mod = __import__(name)
+       110:                 make_title(title)
+       111:                 try:
+    -->112:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -1859,6 +1859,84 @@ SyntaxError - name is parameter and nonlocal
         avant de la déclarer également comme une variable non locale :
         'x' ne peut pas être les deux en même temps.
         
+
+SyntaxError - name is global and nonlocal
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: name 'xy' is nonlocal and global
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error61.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+        4: 
+        5: 
+        6: def f():
+    --> 7:     global xy
+              ^
+
+    Cause probable basée sur les informations données par Python :
+        Vous avez utilisé 'xy' comme étant une variable non locale et globale.
+        Une variable peut être d'un seul type à la fois: soit globale, soit non locale, ou soit locale.
+        
+
+SyntaxError - nonlocal variable not found
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: no binding for nonlocal 'ab' found
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error62.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       2: 
+       3: 
+       4: def f():
+    -->5:     nonlocal ab
+             ^
+
+    Cause probable basée sur les informations données par Python :
+        Vous avez déclaré la variable 'ab' comme non locale
+        mais elle n'existe pas ailleurs.
+        
+
+SyntaxError - nonlocal variable not found at module level
+---------------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: nonlocal declaration not allowed at module level
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error63.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError:  nonlocal declaration not allowed at module level"""
+       2: 
+       3: 
+    -->4: nonlocal cd
+         ^
+
+    Cause probable basée sur les informations données par Python :
+        Vous avez utilisé le mot clé nonlocal au niveau d'un module.
+        Le mot clé nonlocal fait référence à une variable à l'intérieur d'une fonction
+        qui a une valeur attribuée à l'extérieur de cette fonction.
 
 Walrus operator does not exist - yet
 ------------------------------------

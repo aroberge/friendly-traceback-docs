@@ -186,6 +186,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assign-to-generator-expression">SyntaxError - assign to generator expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assign-to-conditional-expression">SyntaxError - assign to conditional expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-name-is-parameter-and-nonlocal">SyntaxError - name is parameter and nonlocal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-name-is-global-and-nonlocal">SyntaxError - name is global and nonlocal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-nonlocal-variable-not-found">SyntaxError - nonlocal variable not found</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-nonlocal-variable-not-found-at-module-level">SyntaxError - nonlocal variable not found at module level</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
@@ -287,7 +290,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.0.20a
+<p>Friendly-traceback version: 0.0.28a
 Python version: 3.7.3</p>
 <div class="section" id="indentationerror-1-expected-an-indented-block">
 <h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -1733,11 +1736,11 @@ Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom du module inconnu est &#39;raise_syntax_error5-&#39;.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 109 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 112 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
 
-   107:                 make_title(title)
-   108:                 try:
---&gt;109:                     mod = __import__(name)
+   110:                 make_title(title)
+   111:                 try:
+--&gt;112:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>
@@ -1909,6 +1912,76 @@ Cause probable basée sur les informations données par Python :
     Vous avez utilisé &#39;x&#39; comme paramètre pour une fonction
     avant de la déclarer également comme une variable non locale :
     &#39;x&#39; ne peut pas être les deux en même temps.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-name-is-global-and-nonlocal">
+<h2>SyntaxError - name is global and nonlocal<a class="headerlink" href="#syntaxerror-name-is-global-and-nonlocal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: name &#39;xy&#39; is nonlocal and global
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error61.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+    4:
+    5:
+    6: def f():
+--&gt; 7:     global xy
+          ^
+
+Cause probable basée sur les informations données par Python :
+    Vous avez utilisé &#39;xy&#39; comme étant une variable non locale et globale.
+    Une variable peut être d&#39;un seul type à la fois: soit globale, soit non locale, ou soit locale.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-nonlocal-variable-not-found">
+<h2>SyntaxError - nonlocal variable not found<a class="headerlink" href="#syntaxerror-nonlocal-variable-not-found" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: no binding for nonlocal &#39;ab&#39; found
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error62.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   2:
+   3:
+   4: def f():
+--&gt;5:     nonlocal ab
+         ^
+
+Cause probable basée sur les informations données par Python :
+    Vous avez déclaré la variable &#39;ab&#39; comme non locale
+    mais elle n&#39;existe pas ailleurs.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-nonlocal-variable-not-found-at-module-level">
+<h2>SyntaxError - nonlocal variable not found at module level<a class="headerlink" href="#syntaxerror-nonlocal-variable-not-found-at-module-level" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: nonlocal declaration not allowed at module level
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error63.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError:  nonlocal declaration not allowed at module level&quot;&quot;&quot;
+   2:
+   3:
+--&gt;4: nonlocal cd
+     ^
+
+Cause probable basée sur les informations données par Python :
+    Vous avez utilisé le mot clé nonlocal au niveau d&#39;un module.
+    Le mot clé nonlocal fait référence à une variable à l&#39;intérieur d&#39;une fonction
+    qui a une valeur attribuée à l&#39;extérieur de cette fonction.
 </pre></div>
 </div>
 </div>
