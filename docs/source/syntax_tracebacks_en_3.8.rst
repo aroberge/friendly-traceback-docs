@@ -1663,11 +1663,11 @@ SyntaxError - assigned prior to nonlocal declaration
         In your program, the name of the
         module that cannot be found is 'raise_syntax_error5-'.
         
-    Execution stopped on line 112 of file 'TESTS:\trb_syntax_common.py'.
+    Execution stopped on line 114 of file 'TESTS:\trb_syntax_common.py'.
     
-       110:                 make_title(title)
-       111:                 try:
-    -->112:                     mod = __import__(name)
+       112:                 make_title(title)
+       113:                 try:
+    -->114:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -1933,3 +1933,56 @@ SyntaxError - nonlocal variable not found at module level
         You used the nonlocal keyword at a module level.
         The nonlocal keyword refers to a variable inside a function
         given a value outside that function.
+
+SyntaxError - keyword arg only once in function definition
+----------------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: duplicate argument 'aa' in function definition
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error64.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: duplicate argument 'aa' in function definition"""
+       2: 
+       3: 
+    -->4: def f(aa=1, aa=2):
+          ^
+
+    Likely cause based on the information given by Python:
+        You have defined a function repeating the keyword argument
+            'aa'
+        twice; each keyword argument should appear only once in a function definition.
+        
+
+SyntaxError - keyword arg only once in function call
+----------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: keyword argument repeated
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error65.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError:  keyword argument repeated"""
+       2: 
+       3: 
+    -->4: f(ad=1, ad=2)
+                  ^
+
+    Likely cause based on the information given by Python:
+        You have called a function repeating the same keyword argument.
+        Each keyword argument should appear only once in a function call.
+        

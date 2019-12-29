@@ -1664,11 +1664,11 @@ SyntaxError - assigned prior to nonlocal declaration
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom du module inconnu est 'raise_syntax_error5-'.
         
-    L'exécution s'est arrêtée à la ligne 112 du fichier 'TESTS:\trb_syntax_common.py'
+    L'exécution s'est arrêtée à la ligne 114 du fichier 'TESTS:\trb_syntax_common.py'
     
-       110:                 make_title(title)
-       111:                 try:
-    -->112:                     mod = __import__(name)
+       112:                 make_title(title)
+       113:                 try:
+    -->114:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -1937,6 +1937,59 @@ SyntaxError - nonlocal variable not found at module level
         Vous avez utilisé le mot clé nonlocal au niveau d'un module.
         Le mot clé nonlocal fait référence à une variable à l'intérieur d'une fonction
         qui a une valeur attribuée à l'extérieur de cette fonction.
+
+SyntaxError - keyword arg only once in function definition
+----------------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: duplicate argument 'aa' in function definition
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error64.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: duplicate argument 'aa' in function definition"""
+       2: 
+       3: 
+    -->4: def f(aa=1, aa=2):
+         ^
+
+    Cause probable basée sur les informations données par Python :
+        Vous avez défini une fonction répétant l'argument nommé
+            'aa'
+        deux fois; chaque argument nommé ne doit apparaître qu'une seule fois dans une définition de fonction.
+        
+
+SyntaxError - keyword arg only once in function call
+----------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: keyword argument repeated
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error65.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError:  keyword argument repeated"""
+       2: 
+       3: 
+    -->4: f(ad=1, ad=2)
+                 ^
+
+    Cause probable basée sur les informations données par Python :
+        Vous avez invoqué une fonction en répétant le même argument nommé.
+        Chaque argument de ce type ne peut apparaître qu'une seule fois.
+        
 
 Walrus operator does not exist - yet
 ------------------------------------

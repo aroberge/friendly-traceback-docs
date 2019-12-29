@@ -187,6 +187,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-name-is-global-and-nonlocal">SyntaxError - name is global and nonlocal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-nonlocal-variable-not-found">SyntaxError - nonlocal variable not found</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-nonlocal-variable-not-found-at-module-level">SyntaxError - nonlocal variable not found at module level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-definition">SyntaxError - keyword arg only once in function definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-call">SyntaxError - keyword arg only once in function call</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
@@ -1744,11 +1746,11 @@ Likely cause based on the information given by Python:
     In your program, the name of the
     module that cannot be found is &#39;raise_syntax_error5-&#39;.
 
-Execution stopped on line 112 of file &#39;TESTS:\trb_syntax_common.py&#39;.
+Execution stopped on line 114 of file &#39;TESTS:\trb_syntax_common.py&#39;.
 
-   110:                 make_title(title)
-   111:                 try:
---&gt;112:                     mod = __import__(name)
+   112:                 make_title(title)
+   113:                 try:
+--&gt;114:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>
@@ -1992,6 +1994,53 @@ Likely cause based on the information given by Python:
     You used the nonlocal keyword at a module level.
     The nonlocal keyword refers to a variable inside a function
     given a value outside that function.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-keyword-arg-only-once-in-function-definition">
+<h2>SyntaxError - keyword arg only once in function definition<a class="headerlink" href="#syntaxerror-keyword-arg-only-once-in-function-definition" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: duplicate argument &#39;aa&#39; in function definition
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error64.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: duplicate argument &#39;aa&#39; in function definition&quot;&quot;&quot;
+   2:
+   3:
+--&gt;4: def f(aa=1, aa=2):
+     ^
+
+Likely cause based on the information given by Python:
+    You have defined a function repeating the keyword argument
+        &#39;aa&#39;
+    twice; each keyword argument should appear only once in a function definition.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-keyword-arg-only-once-in-function-call">
+<h2>SyntaxError - keyword arg only once in function call<a class="headerlink" href="#syntaxerror-keyword-arg-only-once-in-function-call" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: keyword argument repeated
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error65.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError:  keyword argument repeated&quot;&quot;&quot;
+   2:
+   3:
+--&gt;4: f(ad=1, ad=2)
+             ^
+
+Likely cause based on the information given by Python:
+    You have called a function repeating the same keyword argument.
+    Each keyword argument should appear only once in a function call.
 </pre></div>
 </div>
 </div>
