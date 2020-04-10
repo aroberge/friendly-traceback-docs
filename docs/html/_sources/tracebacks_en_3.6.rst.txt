@@ -45,6 +45,31 @@ ArithmeticError
     --> 9:         raise ArithmeticError
 
 
+AttributeError
+--------------
+
+.. code-block:: none
+
+
+    Python exception:
+        AttributeError: type object 'A' has no attribute 'x'
+        
+    An attribute error occurs when the code contains something like
+        object.x
+    and 'x' is not a method or attribute (variable) belonging to 'object'
+    
+    Likely cause based on the information given by Python:
+        In your program, the object is 'A' and the attribute is 'x'.
+        
+    Execution stopped on line 10 of file 'TESTS:\except\test_attribute_error.py'.
+    
+        8:     A()
+        9:     try:
+    -->10:         A.x
+
+    A: <class 'test_attribute_error.test_attribute_e...>
+
+
 FileNotFoundError
 -----------------
 

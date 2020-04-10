@@ -122,6 +122,7 @@
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.7.html">SyntaxError - Python 3.7 in English</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Friendly tracebacks - en Français</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#arithmeticerror">ArithmeticError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attributeerror">AttributeError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#filenotfounderror">FileNotFoundError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#importerror">ImportError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#keyerror">KeyError</a></li>
@@ -280,6 +281,28 @@ L&#39;exécution s&#39;est arrêtée à la ligne 9 du fichier &#39;TESTS:\except
     7:         # Usually, a subclass such as ZeroDivisionError, etc., would
     8:         # likely be raised.
 --&gt; 9:         raise ArithmeticError
+</pre></div>
+</div>
+</div>
+<div class="section" id="attributeerror">
+<h2>AttributeError<a class="headerlink" href="#attributeerror" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    AttributeError: type object &#39;A&#39; has no attribute &#39;x&#39;
+
+Une erreur d’attribut se produit lorsque le code contient quelque chose comme
+    objet.x
+et &#39;x&#39; n’est pas une méthode ou un attribut (variable) appartenant à &#39;objet&#39;
+
+Cause probable basée sur les informations données par Python :
+    Dans votre programme, l’objet est &#39;A&#39; et l’attribut est &#39;x&#39;.
+
+L&#39;exécution s&#39;est arrêtée à la ligne 10 du fichier &#39;TESTS:\except\test_attribute_error.py&#39;
+
+    8:     A()
+    9:     try:
+--&gt;10:         A.x
+
+A: &lt;class &#39;test_attribute_error.test_attribute_e...&gt;
 </pre></div>
 </div>
 </div>

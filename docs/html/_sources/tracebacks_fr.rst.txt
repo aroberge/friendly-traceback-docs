@@ -45,6 +45,31 @@ ArithmeticError
     --> 9:         raise ArithmeticError
 
 
+AttributeError
+--------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        AttributeError: type object 'A' has no attribute 'x'
+        
+    Une erreur d’attribut se produit lorsque le code contient quelque chose comme
+        objet.x
+    et 'x' n’est pas une méthode ou un attribut (variable) appartenant à 'objet'
+    
+    Cause probable basée sur les informations données par Python :
+        Dans votre programme, l’objet est 'A' et l’attribut est 'x'.
+        
+    L'exécution s'est arrêtée à la ligne 10 du fichier 'TESTS:\except\test_attribute_error.py'
+    
+        8:     A()
+        9:     try:
+    -->10:         A.x
+
+    A: <class 'test_attribute_error.test_attribute_e...>
+
+
 FileNotFoundError
 -----------------
 
