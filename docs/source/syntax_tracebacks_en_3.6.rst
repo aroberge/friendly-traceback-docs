@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.28a
+Friendly-traceback version: 0.0.29a
 Python version: 3.6.8
 
 
@@ -1289,7 +1289,7 @@ SyntaxError - unexpected EOF while parsing
         7: print(foo())
 
     Likely cause based on the information given by Python:
-        Python tells us that the it reached the end of the file
+        Python tells us that it reached the end of the file
         and expected more content.
         
         I will attempt to be give a bit more information.
@@ -1663,11 +1663,11 @@ SyntaxError - assigned prior to nonlocal declaration
         In your program, the name of the
         module that cannot be found is 'raise_syntax_error5-'.
         
-    Execution stopped on line 114 of file 'TESTS:\trb_syntax_common.py'.
+    Execution stopped on line 115 of file 'TESTS:\trb_syntax_common.py'.
     
-       112:                 make_title(title)
-       113:                 try:
-    -->114:                     mod = __import__(name)
+       113:                 make_title(title)
+       114:                 try:
+    -->115:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -1989,6 +1989,31 @@ SyntaxError - keyword arg only once in function call
     Likely cause based on the information given by Python:
         You have called a function repeating the same keyword argument.
         Each keyword argument should appear only once in a function call.
+        
+
+SyntaxError - SyntaxError - unexpected EOF while parsing 2
+----------------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: unexpected EOF while parsing
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code the file
+    'TESTS:\syntax\raise_syntax_error66.py'.
+    It reached the end of the file and expected more content.
+    
+       1: '''Should raise SyntaxError: unexpected EOF while parsing'''
+       2: 
+       3: for i in range(10):
+
+    Likely cause based on the information given by Python:
+        Python tells us that it reached the end of the file
+        and expected more content.
+        
         
 
 Walrus operator does not exist - yet

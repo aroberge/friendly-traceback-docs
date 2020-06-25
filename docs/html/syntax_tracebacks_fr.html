@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.0.28a documentation</title>
+  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.0.29a documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.0.28a
+                0.0.29a
               </div>
             
           
@@ -191,6 +191,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-nonlocal-variable-not-found-at-module-level">SyntaxError - nonlocal variable not found at module level</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-definition">SyntaxError - keyword arg only once in function definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-call">SyntaxError - keyword arg only once in function call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-unexpected-eof-while-parsing-2">SyntaxError - SyntaxError - unexpected EOF while parsing 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
@@ -292,7 +293,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.0.28a
+<p>Friendly-traceback version: 0.0.29a
 Python version: 3.7.3</p>
 <div class="section" id="indentationerror-1-expected-an-indented-block">
 <h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -1407,10 +1408,11 @@ La fin du fichier a été atteinte et Python s&#39;attendait à voir plus de cod
     7: print(foo())
 
 Cause probable basée sur les informations données par Python :
-    Python nous dit que le il a atteint la fin du fichier
+    Python nous dit qu&#39;il a atteint la fin du fichier
     et s&#39;attendait à plus de contenu.
 
     Je vais essayer de donner un peu plus d&#39;informations.
+
 
     Le symbole crochet &#39;[&#39; à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
 
@@ -1738,11 +1740,11 @@ Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom du module inconnu est &#39;raise_syntax_error5-&#39;.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 114 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 115 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
 
-   112:                 make_title(title)
-   113:                 try:
---&gt;114:                     mod = __import__(name)
+   113:                 make_title(title)
+   114:                 try:
+--&gt;115:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>
@@ -2031,6 +2033,28 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 Cause probable basée sur les informations données par Python :
     Vous avez invoqué une fonction en répétant le même argument nommé.
     Chaque argument de ce type ne peut apparaître qu&#39;une seule fois.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-syntaxerror-unexpected-eof-while-parsing-2">
+<h2>SyntaxError - SyntaxError - unexpected EOF while parsing 2<a class="headerlink" href="#syntaxerror-syntaxerror-unexpected-eof-while-parsing-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: unexpected EOF while parsing
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python ne peut pas comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error66.py&#39;.
+La fin du fichier a été atteinte et Python s&#39;attendait à voir plus de code.
+
+
+   1: &#39;&#39;&#39;Should raise SyntaxError: unexpected EOF while parsing&#39;&#39;&#39;
+   2:
+   3: for i in range(10):
+
+Cause probable basée sur les informations données par Python :
+    Python nous dit qu&#39;il a atteint la fin du fichier
+    et s&#39;attendait à plus de contenu.
 </pre></div>
 </div>
 </div>

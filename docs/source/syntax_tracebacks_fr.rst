@@ -22,7 +22,7 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.28a
+Friendly-traceback version: 0.0.29a
 Python version: 3.7.3
 
 
@@ -1286,10 +1286,11 @@ SyntaxError - unexpected EOF while parsing
         7: print(foo())
 
     Cause probable basée sur les informations données par Python :
-        Python nous dit que le il a atteint la fin du fichier
+        Python nous dit qu'il a atteint la fin du fichier
         et s'attendait à plus de contenu.
         
         Je vais essayer de donner un peu plus d'informations.
+        
         
         Le symbole crochet '[' à la ligne 5 n'est pas fermé par le symbole correspondant.
         
@@ -1664,11 +1665,11 @@ SyntaxError - assigned prior to nonlocal declaration
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom du module inconnu est 'raise_syntax_error5-'.
         
-    L'exécution s'est arrêtée à la ligne 114 du fichier 'TESTS:\trb_syntax_common.py'
+    L'exécution s'est arrêtée à la ligne 115 du fichier 'TESTS:\trb_syntax_common.py'
     
-       112:                 make_title(title)
-       113:                 try:
-    -->114:                     mod = __import__(name)
+       113:                 make_title(title)
+       114:                 try:
+    -->115:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -1989,6 +1990,32 @@ SyntaxError - keyword arg only once in function call
     Cause probable basée sur les informations données par Python :
         Vous avez invoqué une fonction en répétant le même argument nommé.
         Chaque argument de ce type ne peut apparaître qu'une seule fois.
+        
+
+SyntaxError - SyntaxError - unexpected EOF while parsing 2
+----------------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: unexpected EOF while parsing
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python ne peut pas comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error66.py'.
+    La fin du fichier a été atteinte et Python s'attendait à voir plus de code.
+    
+    
+       1: '''Should raise SyntaxError: unexpected EOF while parsing'''
+       2: 
+       3: for i in range(10):
+
+    Cause probable basée sur les informations données par Python :
+        Python nous dit qu'il a atteint la fin du fichier
+        et s'attendait à plus de contenu.
+        
         
 
 Walrus operator does not exist - yet

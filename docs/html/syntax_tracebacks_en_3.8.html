@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly tracebacks 0.0.28a documentation</title>
+  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly tracebacks 0.0.29a documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.0.28a
+                0.0.29a
               </div>
             
           
@@ -167,6 +167,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-nonlocal-variable-not-found-at-module-level">SyntaxError - nonlocal variable not found at module level</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-definition">SyntaxError - keyword arg only once in function definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-call">SyntaxError - keyword arg only once in function call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-unexpected-eof-while-parsing-2">SyntaxError - SyntaxError - unexpected EOF while parsing 2</a></li>
 </ul>
 </li>
 </ul>
@@ -287,7 +288,7 @@ On Windows, if Sphinx is installed on your computer, it is suggested
 instead to run make_trb.bat in the root directory as it will create
 similar files for all languages <em>and</em> update the documentation.</p>
 </div>
-<p>Friendly-traceback version: 0.0.28a
+<p>Friendly-traceback version: 0.0.29a
 Python version: 3.8.1</p>
 <div class="section" id="indentationerror-1-expected-an-indented-block">
 <h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -1412,7 +1413,7 @@ It reached the end of the file and expected more content.
     7: print(foo())
 
 Likely cause based on the information given by Python:
-    Python tells us that the it reached the end of the file
+    Python tells us that it reached the end of the file
     and expected more content.
 
     I will attempt to be give a bit more information.
@@ -1745,11 +1746,11 @@ Likely cause based on the information given by Python:
     In your program, the name of the
     module that cannot be found is &#39;raise_syntax_error5-&#39;.
 
-Execution stopped on line 114 of file &#39;TESTS:\trb_syntax_common.py&#39;.
+Execution stopped on line 115 of file &#39;TESTS:\trb_syntax_common.py&#39;.
 
-   112:                 make_title(title)
-   113:                 try:
---&gt;114:                     mod = __import__(name)
+   113:                 make_title(title)
+   114:                 try:
+--&gt;115:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>
@@ -2035,6 +2036,27 @@ beyond the location indicated below by --&gt; and ^.
 Likely cause based on the information given by Python:
     You have called a function repeating the same keyword argument.
     Each keyword argument should appear only once in a function call.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-syntaxerror-unexpected-eof-while-parsing-2">
+<h2>SyntaxError - SyntaxError - unexpected EOF while parsing 2<a class="headerlink" href="#syntaxerror-syntaxerror-unexpected-eof-while-parsing-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: unexpected EOF while parsing
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code the file
+&#39;TESTS:\syntax\raise_syntax_error66.py&#39;.
+It reached the end of the file and expected more content.
+
+   1: &#39;&#39;&#39;Should raise SyntaxError: unexpected EOF while parsing&#39;&#39;&#39;
+   2:
+   3: for i in range(10):
+
+Likely cause based on the information given by Python:
+    Python tells us that it reached the end of the file
+    and expected more content.
 </pre></div>
 </div>
 </div>

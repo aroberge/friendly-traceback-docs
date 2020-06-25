@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.core &mdash; Friendly tracebacks 0.0.28a documentation</title>
+  <title>friendly_traceback.core &mdash; Friendly tracebacks 0.0.29a documentation</title>
   
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.0.28a
+                0.0.29a
               </div>
             
           
@@ -557,10 +557,14 @@
         <span class="k">return</span> <span class="n">info</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">records</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="ne">FileNotFoundError</span><span class="p">):</span>
+            <span class="n">set_cause</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">friendly</span><span class="p">,</span> <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">info</span>
+
         <span class="n">info</span><span class="p">[</span><span class="s2">&quot;cause&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span>
-            <span class="s2">&quot;        I suspect that you are using a regular</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;        Python console after importing</span><span class="se">\n</span><span class="s2">Friendly-traceback.</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;        Unfortunately, no further processing can be done.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;I suspect that you are using a regular</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;Python console after importing Friendly-traceback.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;Unfortunately, no further processing can be done.</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">info</span>
 
