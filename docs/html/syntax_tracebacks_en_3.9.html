@@ -1,0 +1,2152 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly tracebacks 0.0.30 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Friendly tracebacks - en Français" href="tracebacks_fr.html" />
+    <link rel="prev" title="Friendly tracebacks - in English" href="tracebacks_en_3.9.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly tracebacks
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.30
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_thonny.html">About Mu and Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html">Friendly tracebacks - in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">Friendly SyntaxError tracebacks - in English</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="suggest.html">Suggest an addition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Add a new Exception case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Use in your project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="custom.html">Description of demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph.html">Project files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other versions and languages</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.7.html">SyntaxError - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SyntaxError - Python 3.9 in English</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#indentationerror-1-expected-an-indented-block">IndentationError - 1: expected an indented block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#indentationerror-2-unexpected-indent">IndentationError - 2: unexpected indent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#indentationerror-3-unindent-does-not-match">IndentationError - 3: unindent does not match …</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#taberror">TabError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assign-to-keyword">SyntaxError - Assign to keyword</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-colon-1">SyntaxError - Missing colon - 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-colon-2">SyntaxError - Missing colon - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-elif-not-else-if">SyntaxError - elif, not else if</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-elif-not-elseif">SyntaxError - elif, not elseif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-malformed-def-statment-1">SyntaxError - malformed def statment - 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-malformed-def-statment-2">SyntaxError - malformed def statment - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-malformed-def-statment-3">SyntaxError - malformed def statment - 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-1">SyntaxError - can’t assign to literal - 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-2">SyntaxError - can’t assign to literal - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-3">SyntaxError - can’t assign to literal - 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-4">SyntaxError - can’t assign to literal - 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-5">SyntaxError - can’t assign to literal - 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-import-x-from-y">SyntaxError - import X from Y</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-eol-while-scanning-string-literal">SyntaxError - EOL while scanning string literal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assignment-to-keyword-none">SyntaxError - assignment to keyword (None)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assignment-to-keyword-debug">SyntaxError - assignment to keyword (__debug__)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unmatched-closing-parenthesis">SyntaxError - unmatched closing parenthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unclosed-parenthesis-1">SyntaxError - unclosed parenthesis- 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unclosed-parenthesis-2">SyntaxError - unclosed parenthesis - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-mismatched-brackets">SyntaxError - mismatched brackets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-mismatched-brackets-2">SyntaxError - mismatched brackets - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-print-is-a-function">SyntaxError - print is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-python-keyword-as-function-name">SyntaxError - Python keyword as function name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-break-outside-loop">SyntaxError - break outside loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-continue-outside-loop">SyntaxError - continue outside loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-quote-inside-a-string">SyntaxError - quote inside a string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-comma-in-a-dict">SyntaxError - missing comma in a dict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-comma-in-a-set">SyntaxError - missing comma in a set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-comma-in-a-list">SyntaxError - missing comma in a list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-comma-in-a-tuple">SyntaxError - missing comma in a tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-comma-between-function-args">SyntaxError - missing comma between function args</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-function-call-1">SyntaxError - can’t assign to function call - 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-function-call-2">SyntaxError - can’t assign to function call - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-used-equal-sign-instead-of-colon">SyntaxError - used equal sign instead of colon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-non-default-argument-follows-default-argument">SyntaxError - non-default argument follows default argument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-positional-argument-follows-keyword-argument">SyntaxError - positional argument follows keyword argument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-f-string-unterminated-string">SyntaxError - f-string: unterminated string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unclosed-bracket">SyntaxError - unclosed bracket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unexpected-eof-while-parsing">SyntaxError - unexpected EOF while parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-name-is-parameter-and-global">SyntaxError - name is parameter and global</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-as-attribute">SyntaxError - keyword as attribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-content-passed-continuation-line-character">SyntaxError - content passed continuation line character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-can-t-be-an-expression">SyntaxError - keyword can’t be an expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-invalid-character-in-identifier">SyntaxError - invalid character in identifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-cannot-be-argument-in-def-1">SyntaxError - keyword cannot be argument in def - 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-cannot-be-argument-in-def-2">SyntaxError - keyword cannot be argument in def - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-cannot-be-argument-in-def-3">SyntaxError - keyword cannot be argument in def - 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-cannot-be-argument-in-def-4">SyntaxError - keyword cannot be argument in def - 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-delete-function-call">SyntaxError - delete function call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assigned-prior-to-global-declaration">SyntaxError - assigned prior to global declaration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-used-prior-to-global-declaration">SyntaxError - used prior to global declaration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assigned-prior-to-nonlocal-declaration">SyntaxError - assigned prior to nonlocal declaration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-used-prior-to-nonlocal-declaration">SyntaxError - used prior to nonlocal declaration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-named-assignment-with-python-constant">SyntaxError - named assignment with Python constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assignment-to-operator">SyntaxError - assignment to operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-using-the-backquote-character">SyntaxError - using the backquote character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assign-to-generator-expression">SyntaxError - assign to generator expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assign-to-conditional-expression">SyntaxError - assign to conditional expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-name-is-parameter-and-nonlocal">SyntaxError - name is parameter and nonlocal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-name-is-global-and-nonlocal">SyntaxError - name is global and nonlocal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-nonlocal-variable-not-found">SyntaxError - nonlocal variable not found</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-nonlocal-variable-not-found-at-module-level">SyntaxError - nonlocal variable not found at module level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-definition">SyntaxError - keyword arg only once in function definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-call">SyntaxError - keyword arg only once in function call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-unexpected-eof-while-parsing-2">SyntaxError - SyntaxError - unexpected EOF while parsing 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-print-is-a-function-2">SyntaxError - SyntaxError - print is a function 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html">Friendly tracebacks - en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html">Friendly SyntaxError tracebacks - en Français</a></li>
+</ul>
+<p class="caption"><span class="caption-text">varia</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Friendly tracebacks</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Friendly SyntaxError tracebacks - in English</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/syntax_tracebacks_en_3.9.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="tracebacks_fr.html" class="btn btn-neutral float-right" title="Friendly tracebacks - en Français" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tracebacks_en_3.9.html" class="btn btn-neutral float-left" title="Friendly tracebacks - in English" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="friendly-syntaxerror-tracebacks-in-english">
+<h1>Friendly SyntaxError tracebacks - in English<a class="headerlink" href="#friendly-syntaxerror-tracebacks-in-english" title="Permalink to this headline">¶</a></h1>
+<p>Friendly-traceback aims to provide friendlier feedback when an exception
+is raised than what is done by Python.
+This file contains only examples of SyntaxError and its sub-classes.
+Ideally, an example of each case handled by friendly-traceback
+should be included here.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The content of this page is generated by running
+C:Usersandregithubfriendly-tracebackteststrb_syntax_english.py located in the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory.
+This needs to be done explicitly, independently of updating the
+documentation using Sphinx.
+On Windows, if Sphinx is installed on your computer, it is suggested
+instead to run make_trb.bat in the root directory as it will create
+similar files for all languages <em>and</em> update the documentation.</p>
+</div>
+<p>Friendly-traceback version: 0.0.30
+Python version: 3.9.0b4</p>
+<div class="section" id="indentationerror-1-expected-an-indented-block">
+<h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    IndentationError: expected an indented block
+
+An IndentationError occurs when a given line of code is
+not indented (aligned vertically with other lines) as expected.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_indentation_error1.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
+   2:
+   3: if True:
+--&gt;4: pass
+      ^
+
+Likely cause based on the information given by Python:
+    In this case, the line identified above
+    was expected to begin a new indented block.
+</pre></div>
+</div>
+</div>
+<div class="section" id="indentationerror-2-unexpected-indent">
+<h2>IndentationError - 2: unexpected indent<a class="headerlink" href="#indentationerror-2-unexpected-indent" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    IndentationError: unexpected indent
+
+An IndentationError occurs when a given line of code is
+not indented (aligned vertically with other lines) as expected.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_indentation_error2.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
+   2: if True:
+   3:     pass
+--&gt;4:       pass
+           ^
+
+Likely cause based on the information given by Python:
+    In this case, the line identified above
+    is more indented than expected and
+    does not match the indentation of the previous line.
+</pre></div>
+</div>
+</div>
+<div class="section" id="indentationerror-3-unindent-does-not-match">
+<h2>IndentationError - 3: unindent does not match …<a class="headerlink" href="#indentationerror-3-unindent-does-not-match" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    IndentationError: unindent does not match any outer indentation level
+
+An IndentationError occurs when a given line of code is
+not indented (aligned vertically with other lines) as expected.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_indentation_error3.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
+   2: if True:
+   3:       pass
+--&gt;4:     pass
+              ^
+
+Likely cause based on the information given by Python:
+    In this case, the line identified above is
+    less indented than the preceding one,
+    and is not aligned vertically with another block of code.
+</pre></div>
+</div>
+</div>
+<div class="section" id="taberror">
+<h2>TabError<a class="headerlink" href="#taberror" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TabError: inconsistent use of tabs and spaces in indentation
+
+A TabError indicates that you have used both spaces
+and tab characters to indent your code.
+This is not allowed in Python.
+Indenting your code means to have block of codes aligned vertically
+by inserting either spaces or tab characters at the beginning of lines.
+Python&#39;s recommendation is to always use spaces to indent your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_tab_error.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    4:
+    5: def test_tab_error():
+    6:     if True:
+--&gt; 7:      pass
+      ^
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assign-to-keyword">
+<h2>SyntaxError - Assign to keyword<a class="headerlink" href="#syntaxerror-assign-to-keyword" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error1.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot; Should raise SyntaxError&quot;&quot;&quot;
+   2:
+--&gt;3: def = 2
+          ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    You were trying to assign a value to the Python keyword &#39;def&#39;.
+    This is not allowed.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-missing-colon-1">
+<h2>SyntaxError - Missing colon - 1<a class="headerlink" href="#syntaxerror-missing-colon-1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error2.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+   2:
+--&gt;3: if True
+             ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    You wrote a statement beginning with
+    &#39;if&#39; but forgot to add a colon &#39;:&#39; at the end
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-missing-colon-2">
+<h2>SyntaxError - Missing colon - 2<a class="headerlink" href="#syntaxerror-missing-colon-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error3.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+   2:
+--&gt;3: while True  # a comment
+                  ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    You wrote a &#39;while&#39; loop but
+    forgot to add a colon &#39;:&#39; at the end
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-elif-not-else-if">
+<h2>SyntaxError - elif, not else if<a class="headerlink" href="#syntaxerror-elif-not-else-if" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error4.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   2:
+   3: if False:
+   4:     pass
+--&gt;5: else if True:
+           ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    You meant to use Python&#39;s &#39;elif&#39; keyword
+    but wrote &#39;else if&#39; instead
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-elif-not-elseif">
+<h2>SyntaxError - elif, not elseif<a class="headerlink" href="#syntaxerror-elif-not-elseif" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error5.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   2:
+   3: if False:
+   4:     pass
+--&gt;5: elseif True:
+             ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    You meant to use Python&#39;s &#39;elif&#39; keyword
+    but wrote &#39;elseif&#39; instead
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-malformed-def-statment-1">
+<h2>SyntaxError - malformed def statment - 1<a class="headerlink" href="#syntaxerror-malformed-def-statment-1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error6.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+   2:
+--&gt;3: def :
+          ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    You tried to define a function or method and did not use the correct syntax.
+    The correct syntax is:
+        def name ( optional_arguments ):
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-malformed-def-statment-2">
+<h2>SyntaxError - malformed def statment - 2<a class="headerlink" href="#syntaxerror-malformed-def-statment-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error7.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+   2:
+--&gt;3: def name  :
+                ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    You tried to define a function or method and did not use the correct syntax.
+    The correct syntax is:
+        def name ( optional_arguments ):
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-malformed-def-statment-3">
+<h2>SyntaxError - malformed def statment - 3<a class="headerlink" href="#syntaxerror-malformed-def-statment-3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error8.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
+   2:
+--&gt;3: def ( arg )  :
+          ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    You tried to define a function or method and did not use the correct syntax.
+    The correct syntax is:
+        def name ( optional_arguments ):
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-can-t-assign-to-literal-1">
+<h2>SyntaxError - can’t assign to literal - 1<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: cannot assign to literal
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error9.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal&quot;&quot;&quot;
+   2:
+--&gt;3: 1 = a
+      ^
+
+Likely cause based on the information given by Python:
+    You wrote an expression like
+        1 = a
+    where &lt;1&gt;, on the left-hand side of the equal sign,
+    is or includes an actual object of type &#39;int&#39;
+    and is not simply the name of a variable. Perhaps you meant to write:
+        a = 1
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-can-t-assign-to-literal-2">
+<h2>SyntaxError - can’t assign to literal - 2<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: cannot assign to literal
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error10.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal&quot;&quot;&quot;
+   2:
+--&gt;3: 1 = 2
+      ^
+
+Likely cause based on the information given by Python:
+    You wrote an expression like
+        1 = 2
+    where &lt;1&gt;, on the left-hand side of the equal sign,
+    is or includes an actual object of type &#39;int&#39;
+    and is not simply the name of a variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-can-t-assign-to-literal-3">
+<h2>SyntaxError - can’t assign to literal - 3<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: cannot assign to set display
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error52.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    4:
+    5:  &quot;&quot;&quot;
+    6:
+--&gt; 7: {1, 2, 3} = 4
+       ^
+
+Likely cause based on the information given by Python:
+    You wrote an expression like
+        {1, 2, 3} = 4
+    where &lt;{1, 2, 3}&gt;, on the left-hand side of the equal sign,
+    is or includes an actual object of type &#39;set&#39;
+    and is not simply the name of a variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-can-t-assign-to-literal-4">
+<h2>SyntaxError - can’t assign to literal - 4<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: cannot assign to dict display
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error53.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    4:
+    5:  &quot;&quot;&quot;
+    6:
+--&gt; 7: {1 : 2, 2 : 4} = 5
+       ^
+
+Likely cause based on the information given by Python:
+    You wrote an expression like
+        {1 : 2, 2 : 4} = 5
+    where &lt;{1 : 2, 2 : 4}&gt;, on the left-hand side of the equal sign,
+    is or includes an actual object of type &#39;dict&#39;
+    and is not simply the name of a variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-can-t-assign-to-literal-5">
+<h2>SyntaxError - can’t assign to literal - 5<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: cannot assign to literal
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error54.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal
+   2: or (Python 3.8) cannot assign to literal&quot;&quot;&quot;
+   3:
+--&gt;4: 1 = a = b
+      ^
+
+Likely cause based on the information given by Python:
+    You wrote an expression like
+        ... = variable_name
+    where &lt;...&gt;, on the left-hand side of the equal sign,
+    is or includes an actual object
+    and is not simply the name of a variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-import-x-from-y">
+<h2>SyntaxError - import X from Y<a class="headerlink" href="#syntaxerror-import-x-from-y" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error11.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: import pen from turtle
+                 ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    You wrote something like
+        import pen from turtle
+    instead of
+        from turtle import pen
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-eol-while-scanning-string-literal">
+<h2>SyntaxError - EOL while scanning string literal<a class="headerlink" href="#syntaxerror-eol-while-scanning-string-literal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: EOL while scanning string literal
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error12.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: EOL while scanning string literal&quot;&quot;&quot;
+   2:
+--&gt;3: alphabet = &#39;abc
+                     ^
+
+Likely cause based on the information given by Python:
+    You starting writing a string with a single or double quote
+    but never ended the string with another quote on that line.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assignment-to-keyword-none">
+<h2>SyntaxError - assignment to keyword (None)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-none" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: cannot assign to None
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error13.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: cannot assign to None in Py 3.8
+   2:    and can&#39;t assign to keyword before.&quot;&quot;&quot;
+   3:
+--&gt;4: None = 1
+      ^
+
+Likely cause based on the information given by Python:
+    None is a constant in Python; you cannot assign it a value.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assignment-to-keyword-debug">
+<h2>SyntaxError - assignment to keyword (__debug__)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-debug" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: cannot assign to __debug__
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error14.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
+   2:    and assignment to keyword before.&quot;&quot;&quot;
+   3:
+--&gt;4: __debug__ = 1
+      ^
+
+Likely cause based on the information given by Python:
+    __debug__ is a constant in Python; you cannot assign it a value.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-unmatched-closing-parenthesis">
+<h2>SyntaxError - unmatched closing parenthesis<a class="headerlink" href="#syntaxerror-unmatched-closing-parenthesis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: unmatched &#39;)&#39;
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error15.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   3: &quot;&quot;&quot;
+   4: a = (1,
+   5:     2,
+--&gt;6:     3, 4,))
+                ^
+
+Likely cause based on the information given by Python:
+    The closing parenthesis &#39;)&#39; on line 6 does not match anything.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-unclosed-parenthesis-1">
+<h2>SyntaxError - unclosed parenthesis- 1<a class="headerlink" href="#syntaxerror-unclosed-parenthesis-1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error16.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2: x = int(&#39;1&#39;
+--&gt;3: if x == 1:
+               ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    The opening parenthesis &#39;(&#39; on line 2 is not closed.
+
+        2: x = int(&#39;1&#39;
+                  ^
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-unclosed-parenthesis-2">
+<h2>SyntaxError - unclosed parenthesis - 2<a class="headerlink" href="#syntaxerror-unclosed-parenthesis-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error17.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2: a = (b+c
+--&gt;3: d = a*a
+      ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    The opening parenthesis &#39;(&#39; on line 2 is not closed.
+
+        2: a = (b+c
+               ^
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-mismatched-brackets">
+<h2>SyntaxError - mismatched brackets<a class="headerlink" href="#syntaxerror-mismatched-brackets" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: closing parenthesis &#39;]&#39; does not match opening parenthesis &#39;(&#39;
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error18.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+--&gt;2: x = (1, 2, 3]
+                  ^
+
+Likely cause based on the information given by Python:
+    Python tells us that the closing &#39;]&#39; on the last line shown
+    does not match the opening &#39;(&#39;.
+
+    I will attempt to be give a bit more information.
+
+    The closing square bracket &#39;]&#39; on line 2 does not match the opening parenthesis &#39;(&#39; on line 2.
+
+        2: x = (1, 2, 3]
+               ^       ^
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-mismatched-brackets-2">
+<h2>SyntaxError - mismatched brackets - 2<a class="headerlink" href="#syntaxerror-mismatched-brackets-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: closing parenthesis &#39;]&#39; does not match opening parenthesis &#39;(&#39; on line 2
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error19.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2: x = (1,
+   3:      2,
+--&gt;4:      3]
+            ^
+
+Likely cause based on the information given by Python:
+    Python tells us that the closing &#39;]&#39; on the last line shown
+    does not match the opening &#39;(&#39; on line 2.
+
+    I will attempt to be give a bit more information.
+
+    The closing square bracket &#39;]&#39; on line 4 does not match the opening parenthesis &#39;(&#39; on line 2.
+
+        2: x = (1,
+               ^
+        4:      3]
+                 ^
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-print-is-a-function">
+<h2>SyntaxError - print is a function<a class="headerlink" href="#syntaxerror-print-is-a-function" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: Missing parentheses in call to &#39;print&#39;. Did you mean print(&#39;hello&#39;)?
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error20.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: Missing parentheses in call to &#39;print&#39; ...&quot;&quot;&quot;
+--&gt;2: print &#39;hello&#39;
+            ^
+
+Likely cause based on the information given by Python:
+    Perhaps you need to type print(&#39;hello&#39;)?
+
+    In older version of Python, &#39;print&#39; was a keyword.
+    Now, &#39;print&#39; is a function; you need to use parentheses to call it.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-python-keyword-as-function-name">
+<h2>SyntaxError - Python keyword as function name<a class="headerlink" href="#syntaxerror-python-keyword-as-function-name" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error21.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: def pass():
+          ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    You tried to use the Python keyword &#39;pass&#39; as a function name.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-break-outside-loop">
+<h2>SyntaxError - break outside loop<a class="headerlink" href="#syntaxerror-break-outside-loop" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: &#39;break&#39; outside loop
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error22.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: &#39;break&#39; outside loop&quot;&quot;&quot;
+   2:
+   3: if True:
+--&gt;4:     break
+          ^
+
+Likely cause based on the information given by Python:
+    The Python keyword &#39;break&#39; can only be used inside a for loop or inside a while loop.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-continue-outside-loop">
+<h2>SyntaxError - continue outside loop<a class="headerlink" href="#syntaxerror-continue-outside-loop" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: &#39;continue&#39; not properly in loop
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error23.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: &#39;continue&#39; outside loop&quot;&quot;&quot;
+   2:
+   3: if True:
+--&gt;4:     continue
+          ^
+
+Likely cause based on the information given by Python:
+    The Python keyword &#39;continue&#39; can only be used inside a for loop or inside a while loop.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-quote-inside-a-string">
+<h2>SyntaxError - quote inside a string<a class="headerlink" href="#syntaxerror-quote-inside-a-string" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error24.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: message = &#39;don&#39;t&#39;
+                     ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    There appears to be a Python identifier (variable name)
+    immediately following a string.
+    I suspect that you were trying to use a quote inside a string
+    that was enclosed in quotes of the same kind.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-missing-comma-in-a-dict">
+<h2>SyntaxError - missing comma in a dict<a class="headerlink" href="#syntaxerror-missing-comma-in-a-dict" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error25.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   2:
+   3: a = {&#39;a&#39;: 1,
+   4:      &#39;b&#39;: 2
+--&gt;5:      &#39;c&#39;: 3,
+           ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    It is possible that you forgot a comma between items in a set or dict
+    before the position indicated by --&gt; and ^.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-missing-comma-in-a-set">
+<h2>SyntaxError - missing comma in a set<a class="headerlink" href="#syntaxerror-missing-comma-in-a-set" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error26.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: a = {1, 2  3}
+                 ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    It is possible that you forgot a comma between items in a set or dict
+    before the position indicated by --&gt; and ^.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-missing-comma-in-a-list">
+<h2>SyntaxError - missing comma in a list<a class="headerlink" href="#syntaxerror-missing-comma-in-a-list" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error27.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: a = [1, 2  3]
+                 ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    It is possible that you forgot a comma between items in a list
+    before the position indicated by --&gt; and ^.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-missing-comma-in-a-tuple">
+<h2>SyntaxError - missing comma in a tuple<a class="headerlink" href="#syntaxerror-missing-comma-in-a-tuple" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error28.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: a = (1, 2  3)
+                 ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    It is possible that you forgot a comma between items in a tuple,
+    or between function arguments,
+    before the position indicated by --&gt; and ^.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-missing-comma-between-function-args">
+<h2>SyntaxError - missing comma between function args<a class="headerlink" href="#syntaxerror-missing-comma-between-function-args" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error29.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+   3:
+--&gt;4: def a(b, c d):
+                 ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    It is possible that you forgot a comma between items in a tuple,
+    or between function arguments,
+    before the position indicated by --&gt; and ^.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-can-t-assign-to-function-call-1">
+<h2>SyntaxError - can’t assign to function call - 1<a class="headerlink" href="#syntaxerror-can-t-assign-to-function-call-1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: cannot assign to function call
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error30.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   3: Python 3.8: SyntaxError: cannot assign to function call
+   4: &quot;&quot;&quot;
+   5:
+--&gt;6: len(&#39;a&#39;) = 3
+      ^
+
+Likely cause based on the information given by Python:
+    You wrote the expression
+        len(&#39;a&#39;) = 3
+    where len(&#39;a&#39;), on the left-hand side of the equal sign, either is
+    or includes a function call and is not simply the name of a variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-can-t-assign-to-function-call-2">
+<h2>SyntaxError - can’t assign to function call - 2<a class="headerlink" href="#syntaxerror-can-t-assign-to-function-call-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: cannot assign to function call
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error31.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   3: Python 3.8: SyntaxError: cannot assign to function call
+   4: &quot;&quot;&quot;
+   5:
+--&gt;6: func(a, b=3) = 4
+      ^
+
+Likely cause based on the information given by Python:
+    You wrote an expression like
+        my_function(...) = some value
+    where my_function(...), on the left-hand side of the equal sign, is
+    a function call and not the name of a variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-used-equal-sign-instead-of-colon">
+<h2>SyntaxError - used equal sign instead of colon<a class="headerlink" href="#syntaxerror-used-equal-sign-instead-of-colon" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error32.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
+   2: &quot;&quot;&quot;
+   3:
+--&gt;4: ages = {&#39;Alice&#39;=22, &#39;Bob&#39;=24}
+                     ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    It is possible that you used an equal sign &#39;=&#39; instead of a colon &#39;:&#39;
+    to assign values to keys in a dict
+    before or at the position indicated by --&gt; and ^.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-non-default-argument-follows-default-argument">
+<h2>SyntaxError - non-default argument follows default argument<a class="headerlink" href="#syntaxerror-non-default-argument-follows-default-argument" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: non-default argument follows default argument
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error33.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   2: &quot;&quot;&quot;
+   3:
+   4:
+--&gt;5: def test(a=1, b):
+                     ^
+
+Likely cause based on the information given by Python:
+    In Python, you can define functions with only positional arguments
+
+        def test(a, b, c): ...
+
+    or only keyword arguments
+
+        def test(a=1, b=2, c=3): ...
+
+    or a combination of the two
+
+        def test(a, b, c=3): ...
+
+    but with the keyword arguments appearing after all the positional ones.
+    According to Python, you used positional arguments after keyword ones.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-positional-argument-follows-keyword-argument">
+<h2>SyntaxError - positional argument follows keyword argument<a class="headerlink" href="#syntaxerror-positional-argument-follows-keyword-argument" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: positional argument follows keyword argument
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error34.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   2: &quot;&quot;&quot;
+   3:
+   4:
+--&gt;5: test(a=1, b)
+                 ^
+
+Likely cause based on the information given by Python:
+    In Python, you can call functions with only positional arguments
+
+        test(1, 2, 3)
+
+    or only keyword arguments
+
+        test(a=1, b=2, c=3)
+
+    or a combination of the two
+
+        test(1, 2, c=3)
+
+    but with the keyword arguments appearing after all the positional ones.
+    According to Python, you used positional arguments after keyword ones.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-f-string-unterminated-string">
+<h2>SyntaxError - f-string: unterminated string<a class="headerlink" href="#syntaxerror-f-string-unterminated-string" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: f-string: unterminated string
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error35.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: f-string: unterminated string
+   2: &quot;&quot;&quot;
+   3:
+--&gt;4: print(f&quot;Bob is {age[&#39;Bob]} years old.&quot;)
+                                            ^
+
+Likely cause based on the information given by Python:
+    Inside an f-string, which is a string prefixed by the letter f,
+    you have another string, which starts with either a
+    single quote (&#39;) or double quote (&quot;), without a matching closing one.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-unclosed-bracket">
+<h2>SyntaxError - unclosed bracket<a class="headerlink" href="#syntaxerror-unclosed-bracket" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error36.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    4: def foo():
+    5:     return [1, 2, 3
+    6:
+--&gt; 7: print(foo())
+       ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    The opening square bracket &#39;[&#39; on line 5 is not closed.
+
+        5:     return [1, 2, 3
+                      ^
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-unexpected-eof-while-parsing">
+<h2>SyntaxError - unexpected EOF while parsing<a class="headerlink" href="#syntaxerror-unexpected-eof-while-parsing" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: unexpected EOF while parsing
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code the file
+&#39;TESTS:\syntax\raise_syntax_error37.py&#39;.
+It reached the end of the file and expected more content.
+
+    5:     return [1, 2, 3,
+    6:
+    7: print(foo())
+
+Likely cause based on the information given by Python:
+    Python tells us that it reached the end of the file
+    and expected more content.
+
+    I will attempt to be give a bit more information.
+
+    The opening square bracket &#39;[&#39; on line 5 is not closed.
+
+        5:     return [1, 2, 3,
+                      ^
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-name-is-parameter-and-global">
+<h2>SyntaxError - name is parameter and global<a class="headerlink" href="#syntaxerror-name-is-parameter-and-global" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: name &#39;x&#39; is parameter and global
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error38.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   3:
+   4:
+   5: def f(x):
+--&gt;6:     global x
+          ^
+
+Likely cause based on the information given by Python:
+    You are including the statement
+
+            global x
+
+    indicating that &#39;x&#39; is a variable defined outside a function.
+    You are also using the same &#39;x&#39; as an argument for that
+    function, thus indicating that it should be variable known only
+    inside that function, which is the contrary of what &#39;global&#39; implied.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-keyword-as-attribute">
+<h2>SyntaxError - keyword as attribute<a class="headerlink" href="#syntaxerror-keyword-as-attribute" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error39.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    9: a = A()
+   10:
+   11: a.x = 1
+--&gt;12: a.pass = 2
+         ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    You cannot use the Python keyword pass as an attribute.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-content-passed-continuation-line-character">
+<h2>SyntaxError - content passed continuation line character<a class="headerlink" href="#syntaxerror-content-passed-continuation-line-character" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: unexpected character after line continuation character
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error40.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   2: SyntaxError: unexpected character after line continuation character
+   3: &quot;&quot;&quot;
+   4:
+--&gt;5: print(\t)
+     ^
+
+Likely cause based on the information given by Python:
+    You are using the continuation character &#39;\&#39; outside of a string,
+    and it is followed by some other character(s).
+    I am guessing that you forgot to enclose some content in a string.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-keyword-can-t-be-an-expression">
+<h2>SyntaxError - keyword can’t be an expression<a class="headerlink" href="#syntaxerror-keyword-can-t-be-an-expression" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: expression cannot contain assignment, perhaps you meant &quot;==&quot;?
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error41.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    4: &quot;&quot;&quot;
+    5:
+    6:
+--&gt; 7: a = dict(&#39;key&#39;=1)
+                ^
+
+Likely cause based on the information given by Python:
+    One of the following two possibilities could be the cause:
+    1. You meant to do a comparison with == and wrote = instead.
+    2. You called a function with a named argument:
+
+           a_function(invalid=something)
+
+    where &#39;invalid&#39; is not a valid variable name in Python
+    either because it starts with a number, or is a string,
+    or contains a period, etc.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-invalid-character-in-identifier">
+<h2>SyntaxError - invalid character in identifier<a class="headerlink" href="#syntaxerror-invalid-character-in-identifier" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid character &#39;🤖&#39; (U+1F916)
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error42.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   3:
+   4: # Robot-face character below
+   5:
+--&gt;6: 🤖 = &#39;Reeborg&#39;
+      ^
+
+Likely cause based on the information given by Python:
+    You likely used some unicode character that is not allowed
+    as part of a variable name in Python.
+    This includes many emojis.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-1">
+<h2>SyntaxError - keyword cannot be argument in def - 1<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error43.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   2: &quot;&quot;&quot;
+   3:
+   4:
+--&gt;5: def f(None=1):
+            ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    I am guessing that you tried to use the Python keyword
+    None as an argument in the definition of a function.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-2">
+<h2>SyntaxError - keyword cannot be argument in def - 2<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error44.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   2: &quot;&quot;&quot;
+   3:
+   4:
+--&gt;5: def f(x, True):
+               ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    I am guessing that you tried to use the Python keyword
+    True as an argument in the definition of a function.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-3">
+<h2>SyntaxError - keyword cannot be argument in def - 3<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error45.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   2: &quot;&quot;&quot;
+   3:
+   4:
+--&gt;5: def f(*None):
+             ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    I am guessing that you tried to use the Python keyword
+    None as an argument in the definition of a function.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-4">
+<h2>SyntaxError - keyword cannot be argument in def - 4<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error46.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   2: &quot;&quot;&quot;
+   3:
+   4:
+--&gt;5: def f(**None):
+              ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    I am guessing that you tried to use the Python keyword
+    None as an argument in the definition of a function.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-delete-function-call">
+<h2>SyntaxError - delete function call<a class="headerlink" href="#syntaxerror-delete-function-call" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: cannot delete function call
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error47.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   2: &quot;&quot;&quot;
+   3:
+   4:
+--&gt;5: del f(a)
+          ^
+
+Likely cause based on the information given by Python:
+    You attempted to delete a function call
+        del f(a)
+    instead of deleting the function&#39;s name
+        del f
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assigned-prior-to-global-declaration">
+<h2>SyntaxError - assigned prior to global declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-global-declaration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: name &#39;p&#39; is assigned to before global declaration
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error48.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    4:
+    5: def fn():
+    6:     p = 1
+--&gt; 7:     global p
+           ^
+
+Likely cause based on the information given by Python:
+    You assigned a value to the variable &#39;p&#39;
+    before declaring it as a global variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-used-prior-to-global-declaration">
+<h2>SyntaxError - used prior to global declaration<a class="headerlink" href="#syntaxerror-used-prior-to-global-declaration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: name &#39;r&#39; is used prior to global declaration
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error49.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    4:
+    5: def fn():
+    6:     print(r)
+--&gt; 7:     global r
+           ^
+
+Likely cause based on the information given by Python:
+    You used the variable &#39;r&#39;
+    before declaring it as a global variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assigned-prior-to-nonlocal-declaration">
+<h2>SyntaxError - assigned prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    ModuleNotFoundError: No module named &#39;raise_syntax_error5-&#39;
+
+A ModuleNotFoundError exception indicates that you
+are trying to import a module that cannot be found by Python.
+This could be because you misspelled the name of the module
+or because it is not installed on your computer.
+
+Likely cause based on the information given by Python:
+    In your program, the name of the
+    module that cannot be found is &#39;raise_syntax_error5-&#39;.
+
+Execution stopped on line 116 of file &#39;TESTS:\trb_syntax_common.py&#39;.
+
+   114:                 make_title(title)
+   115:                 try:
+--&gt;116:                     mod = __import__(name)
+
+name: &#39;raise_syntax_error5-&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-used-prior-to-nonlocal-declaration">
+<h2>SyntaxError - used prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-used-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: name &#39;s&#39; is assigned to before nonlocal declaration
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error51.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    6:
+    7:     def g():
+    8:         s = 2
+--&gt; 9:         nonlocal s
+               ^
+
+Likely cause based on the information given by Python:
+    You assigned a value to the variable &#39;s&#39;
+    before declaring it as a nonlocal variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-named-assignment-with-python-constant">
+<h2>SyntaxError - named assignment with Python constant<a class="headerlink" href="#syntaxerror-named-assignment-with-python-constant" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: cannot use assignment expressions with True
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error55.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
+   2: or (Python 3.8) cannot use named assignment with True&quot;&quot;&quot;
+   3:
+--&gt;4: (True := 1)
+       ^
+
+Likely cause based on the information given by Python:
+    True is a constant in Python; you cannot assign it a value.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assignment-to-operator">
+<h2>SyntaxError - assignment to operator<a class="headerlink" href="#syntaxerror-assignment-to-operator" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: cannot assign to operator
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error56.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to operator
+   2: or (Python 3.8) cannot assign to operator&quot;&quot;&quot;
+   3:
+--&gt;4: a + 1 = 2
+      ^
+
+Likely cause based on the information given by Python:
+    You wrote an expression that includes some mathematical operations
+    on the left-hand side of the equal sign which should be
+    only used to assign a value to a variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-using-the-backquote-character">
+<h2>SyntaxError - using the backquote character<a class="headerlink" href="#syntaxerror-using-the-backquote-character" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error57.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: a = `1`
+          ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    You are using the backquote character `.
+    This was allowed in Python 2 but is no longer allowed.
+    Use the function repr(x) instead of `x`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assign-to-generator-expression">
+<h2>SyntaxError - assign to generator expression<a class="headerlink" href="#syntaxerror-assign-to-generator-expression" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: cannot assign to generator expression
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error58.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t [cannot] assign to generator expression&quot;&quot;&quot;
+   2:
+--&gt;3: (x for x in x) = 1
+      ^
+
+Likely cause based on the information given by Python:
+    On the left-hand side of an equal sign, you have a
+    generator expression instead of the name of a variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-assign-to-conditional-expression">
+<h2>SyntaxError - assign to conditional expression<a class="headerlink" href="#syntaxerror-assign-to-conditional-expression" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: cannot assign to conditional expression
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error59.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t [cannot] assign to conditional expression&quot;&quot;&quot;
+   2:
+--&gt;3: a if 1 else b = 1
+      ^
+
+Likely cause based on the information given by Python:
+    On the left-hand side of an equal sign, you have a
+    conditional expression instead of the name of a variable.
+    A conditional expression has the following form:
+
+        variable = object if condition else other_object
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-name-is-parameter-and-nonlocal">
+<h2>SyntaxError - name is parameter and nonlocal<a class="headerlink" href="#syntaxerror-name-is-parameter-and-nonlocal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: name &#39;x&#39; is parameter and nonlocal
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error60.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   2:
+   3:
+   4: def f(x):
+--&gt;5:     nonlocal x
+          ^
+
+Likely cause based on the information given by Python:
+    You used &#39;x&#39; as a parameter for a function
+    before declaring it also as a nonlocal variable:
+    &#39;x&#39; cannot be both at the same time.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-name-is-global-and-nonlocal">
+<h2>SyntaxError - name is global and nonlocal<a class="headerlink" href="#syntaxerror-name-is-global-and-nonlocal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: name &#39;xy&#39; is nonlocal and global
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error61.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    4:
+    5:
+    6: def f():
+--&gt; 7:     global xy
+           ^
+
+Likely cause based on the information given by Python:
+    You declared &#39;xy&#39; as being both a global and nonlocal variable.
+    A variable can be global, or nonlocal, but not both at the same time.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-nonlocal-variable-not-found">
+<h2>SyntaxError - nonlocal variable not found<a class="headerlink" href="#syntaxerror-nonlocal-variable-not-found" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: no binding for nonlocal &#39;ab&#39; found
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error62.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   2:
+   3:
+   4: def f():
+--&gt;5:     nonlocal ab
+          ^
+
+Likely cause based on the information given by Python:
+    You declared the variable &#39;ab&#39; as being a
+    nonlocal variable but it cannot be found.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-nonlocal-variable-not-found-at-module-level">
+<h2>SyntaxError - nonlocal variable not found at module level<a class="headerlink" href="#syntaxerror-nonlocal-variable-not-found-at-module-level" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: nonlocal declaration not allowed at module level
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error63.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError:  nonlocal declaration not allowed at module level&quot;&quot;&quot;
+   2:
+   3:
+--&gt;4: nonlocal cd
+      ^
+
+Likely cause based on the information given by Python:
+    You used the nonlocal keyword at a module level.
+    The nonlocal keyword refers to a variable inside a function
+    given a value outside that function.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-keyword-arg-only-once-in-function-definition">
+<h2>SyntaxError - keyword arg only once in function definition<a class="headerlink" href="#syntaxerror-keyword-arg-only-once-in-function-definition" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: duplicate argument &#39;aa&#39; in function definition
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error64.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: duplicate argument &#39;aa&#39; in function definition&quot;&quot;&quot;
+   2:
+   3:
+--&gt;4: def f(aa=1, aa=2):
+      ^
+
+Likely cause based on the information given by Python:
+    You have defined a function repeating the keyword argument
+        &#39;aa&#39;
+    twice; each keyword argument should appear only once in a function definition.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-keyword-arg-only-once-in-function-call">
+<h2>SyntaxError - keyword arg only once in function call<a class="headerlink" href="#syntaxerror-keyword-arg-only-once-in-function-call" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: keyword argument repeated: ad
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error65.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError:  keyword argument repeated&quot;&quot;&quot;
+   2:
+   3:
+--&gt;4: f(ad=1, ad=2)
+              ^
+
+Likely cause based on the information given by Python:
+    You have called a function repeating the same keyword argument.
+    Each keyword argument should appear only once in a function call.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-syntaxerror-unexpected-eof-while-parsing-2">
+<h2>SyntaxError - SyntaxError - unexpected EOF while parsing 2<a class="headerlink" href="#syntaxerror-syntaxerror-unexpected-eof-while-parsing-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    IndentationError: expected an indented block
+
+An IndentationError occurs when a given line of code is
+not indented (aligned vertically with other lines) as expected.
+
+Python could not understand the code the file
+&#39;TESTS:\syntax\raise_syntax_error66.py&#39;
+for an unspecified reason.
+
+   1: &#39;&#39;&#39;Should raise SyntaxError: unexpected EOF while parsing&#39;&#39;&#39;
+   2:
+   3: for i in range(10):
+
+Likely cause based on the information given by Python:
+    In this case, the line identified above
+    was expected to begin a new indented block.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-syntaxerror-print-is-a-function-2">
+<h2>SyntaxError - SyntaxError - print is a function 2<a class="headerlink" href="#syntaxerror-syntaxerror-print-is-a-function-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error67.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+--&gt;2: print len(&#39;hello&#39;)
+            ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    In older version of Python, &#39;print&#39; was a keyword.
+    Now, &#39;print&#39; is a function; you need to use parentheses to call it.
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tracebacks_fr.html" class="btn btn-neutral float-right" title="Friendly tracebacks - en Français" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tracebacks_en_3.9.html" class="btn btn-neutral float-left" title="Friendly tracebacks - in English" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, André Roberge
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
