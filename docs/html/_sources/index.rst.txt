@@ -24,13 +24,13 @@ Friendly-traceback is **not** one of these projects.
 Friendly-traceback is aimed primarily at **beginners** and/or at users
 who would like to get information about traceback in their own language.
 Please, see the Design section for a complete description of the goals
-of this project. 
+of this project.
 
-While Friendly-traceback can be used on its own with a specially 
-designed REPL, a better option is to use it together with GUI editors/IDE 
-that are especially designed with beginners in mind. We know of 
+While Friendly-traceback can be used on its own with a specially
+designed REPL, a better option is to use it together with GUI editors/IDE
+that are especially designed with beginners in mind. We know of
 two excellent such programs: `Mu <https://codewith.mu/>`_ and
-`Thonny <https://thonny.org/>`_. This documentation includes a specific 
+`Thonny <https://thonny.org/>`_. This documentation includes a specific
 page for each of these two editors
 which explain how to use Friendly-traceback.
 
@@ -106,7 +106,7 @@ Contents
 .. toctree::
    :maxdepth: 1
    :hidden:
-   :caption: Use in your project 
+   :caption: Use in your project
 
    custom
    api
@@ -124,6 +124,8 @@ Contents
    SyntaxError - Python 3.6 in English <syntax_tracebacks_en_3.6>
    Friendly tracebacks - Python 3.7 in English <tracebacks_en_3.7>
    SyntaxError - Python 3.7 in English <syntax_tracebacks_en_3.7>
+   Friendly tracebacks - Python 3.9 in English <tracebacks_en_3.9>
+   SyntaxError - Python 3.9 in English <syntax_tracebacks_en_3.9>
    tracebacks_fr
    syntax_tracebacks_fr
 

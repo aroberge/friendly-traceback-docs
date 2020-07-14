@@ -1,39 +1,40 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.0.29a documentation</title>
+  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.0.30 documentation</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Change Log" href="changelog.html" />
@@ -51,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Friendly tracebacks
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly tracebacks
           
 
           
@@ -61,7 +62,7 @@
             
             
               <div class="version">
-                0.0.29a
+                0.0.30
               </div>
             
           
@@ -78,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -120,6 +122,8 @@
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.7.html">SyntaxError - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html">Friendly tracebacks - en Français</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Friendly SyntaxError tracebacks - en Français</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-1-expected-an-indented-block">IndentationError - 1: expected an indented block</a></li>
@@ -192,7 +196,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-definition">SyntaxError - keyword arg only once in function definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-call">SyntaxError - keyword arg only once in function call</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-unexpected-eof-while-parsing-2">SyntaxError - SyntaxError - unexpected EOF while parsing 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-print-is-a-function-2">SyntaxError - SyntaxError - print is a function 2</a></li>
 </ul>
 </li>
 </ul>
@@ -204,6 +208,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -242,7 +247,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Friendly SyntaxError tracebacks - en Français</li>
     
@@ -293,8 +298,8 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.0.29a
-Python version: 3.7.3</p>
+<p>Friendly-traceback version: 0.0.30
+Python version: 3.8.4</p>
 <div class="section" id="indentationerror-1-expected-an-indented-block">
 <h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
@@ -312,7 +317,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
    3: if True:
 --&gt;4: pass
-         ^
+      ^
 
 Cause probable basée sur les informations données par Python :
     Dans ce cas-ci, la ligne indiquée ci-dessus par --&gt; devrait
@@ -459,7 +464,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
 --&gt;3: while True  # a comment
-                             ^
+                  ^
 
 Je n&#39;ai pas assez d&#39;informations de Python:
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -484,7 +489,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3: if False:
    4:     pass
 --&gt;5: else if True:
-            ^
+           ^
 
 Je n&#39;ai pas assez d&#39;informations de Python:
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -509,7 +514,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3: if False:
    4:     pass
 --&gt;5: elseif True:
-                ^
+             ^
 
 Je n&#39;ai pas assez d&#39;informations de Python:
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -600,7 +605,7 @@ Je n&#39;ai pas assez d&#39;informations de Python:
 <div class="section" id="syntaxerror-can-t-assign-to-literal-1">
 <h2>SyntaxError - can’t assign to literal - 1<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: can&#39;t assign to literal
+    SyntaxError: cannot assign to literal
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -611,7 +616,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal&quot;&quot;&quot;
    2:
 --&gt;3: 1 = a
-     ^
+      ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
@@ -626,7 +631,7 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-can-t-assign-to-literal-2">
 <h2>SyntaxError - can’t assign to literal - 2<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: can&#39;t assign to literal
+    SyntaxError: cannot assign to literal
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -637,7 +642,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal&quot;&quot;&quot;
    2:
 --&gt;3: 1 = 2
-     ^
+      ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
@@ -651,7 +656,7 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-can-t-assign-to-literal-3">
 <h2>SyntaxError - can’t assign to literal - 3<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: can&#39;t assign to literal
+    SyntaxError: cannot assign to set display
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -663,7 +668,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     5:  &quot;&quot;&quot;
     6:
 --&gt; 7: {1, 2, 3} = 4
-      ^
+       ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
@@ -677,7 +682,7 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-can-t-assign-to-literal-4">
 <h2>SyntaxError - can’t assign to literal - 4<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-4" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: can&#39;t assign to literal
+    SyntaxError: cannot assign to dict display
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -689,7 +694,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     5:  &quot;&quot;&quot;
     6:
 --&gt; 7: {1 : 2, 2 : 4} = 5
-      ^
+       ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
@@ -703,7 +708,7 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-can-t-assign-to-literal-5">
 <h2>SyntaxError - can’t assign to literal - 5<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-5" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: can&#39;t assign to literal
+    SyntaxError: cannot assign to literal
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -715,7 +720,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2: or (Python 3.8) cannot assign to literal&quot;&quot;&quot;
    3:
 --&gt;4: 1 = a = b
-     ^
+      ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
@@ -740,7 +745,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2:
 --&gt;3: import pen from turtle
-                    ^
+                 ^
 
 Je n&#39;ai pas assez d&#39;informations de Python:
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -778,7 +783,7 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-assignment-to-keyword-none">
 <h2>SyntaxError - assignment to keyword (None)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-none" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: can&#39;t assign to keyword
+    SyntaxError: cannot assign to None
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -790,7 +795,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:    and can&#39;t assign to keyword before.&quot;&quot;&quot;
    3:
 --&gt;4: None = 1
-     ^
+      ^
 
 Cause probable basée sur les informations données par Python :
     None est une constante dans python; vous ne pouvez pas lui assigner une valeur.
@@ -800,7 +805,7 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-assignment-to-keyword-debug">
 <h2>SyntaxError - assignment to keyword (__debug__)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-debug" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: assignment to keyword
+    SyntaxError: cannot assign to __debug__
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -812,7 +817,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:    and assignment to keyword before.&quot;&quot;&quot;
    3:
 --&gt;4: __debug__ = 1
-     ^
+      ^
 
 Cause probable basée sur les informations données par Python :
     __debug__ est une constante dans python; vous ne pouvez pas lui assigner une valeur.
@@ -822,7 +827,7 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-unmatched-closing-parenthesis">
 <h2>SyntaxError - unmatched closing parenthesis<a class="headerlink" href="#syntaxerror-unmatched-closing-parenthesis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+    SyntaxError: unmatched &#39;)&#39;
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -836,13 +841,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6:     3, 4,))
                 ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-
+Cause probable basée sur les informations données par Python :
     Le symbole parenthèse &#39;)&#39; à la ligne 6 n&#39;a pas de symbole ouvrant qui lui correspond.
-
-        6:     3, 4,))
-                     ^
 </pre></div>
 </div>
 </div>
@@ -901,7 +901,7 @@ Je n&#39;ai pas assez d&#39;informations de Python:
 <div class="section" id="syntaxerror-mismatched-brackets">
 <h2>SyntaxError - mismatched brackets<a class="headerlink" href="#syntaxerror-mismatched-brackets" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+    SyntaxError: closing parenthesis &#39;]&#39; does not match opening parenthesis &#39;(&#39;
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -913,8 +913,12 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;2: x = (1, 2, 3]
                   ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+Cause probable basée sur les informations données par Python :
+    Python nous dit que la parenthèse de droite &#39;]&#39; ne correspond pas
+    à la parenthèse de gauche &#39;&#39;(&#39;.
+
+    Je vais essayer de donner un peu plus d&#39;informations.
+
 
     Le symbole crochet &#39;]&#39; à la ligne 2 ne correspond pas au symbole parenthèse &#39;(&#39; à la ligne 2.
 
@@ -926,7 +930,7 @@ Je n&#39;ai pas assez d&#39;informations de Python:
 <div class="section" id="syntaxerror-mismatched-brackets-2">
 <h2>SyntaxError - mismatched brackets - 2<a class="headerlink" href="#syntaxerror-mismatched-brackets-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+    SyntaxError: closing parenthesis &#39;]&#39; does not match opening parenthesis &#39;(&#39; on line 2
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -940,8 +944,12 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:      3]
             ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+Cause probable basée sur les informations données par Python :
+    Python nous dit que la parenthèse de droite &#39;]&#39; sur la dernière ligne
+    ne correspond pas à la parenthèse de gauche &#39;&#39;(&#39; sur la ligne 2.
+
+    Je vais essayer de donner un peu plus d&#39;informations.
+
 
     Le symbole crochet &#39;]&#39; à la ligne 4 ne correspond pas au symbole parenthèse &#39;(&#39; à la ligne 2.
 
@@ -965,7 +973,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: Missing parentheses in call to &#39;print&#39; ...&quot;&quot;&quot;
 --&gt;2: print &#39;hello&#39;
-                  ^
+            ^
 
 Cause probable basée sur les informations données par Python :
     Peut-être que vous avez besoin d&#39;écrire print(&#39;hello&#39;) ?
@@ -989,7 +997,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2:
 --&gt;3: def pass():
-             ^
+          ^
 
 Je n&#39;ai pas assez d&#39;informations de Python:
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -1014,7 +1022,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
    3: if True:
 --&gt;4:     break
-         ^
+          ^
 
 Cause probable basée sur les informations données par Python :
     Le mot-clé Python &#39;break&#39; ne peut être utilisé qu&#39;à l&#39;intérieur d&#39;une boucle &#39;for&#39; ou à l&#39;intérieur d&#39;une boucle &#39;while&#39;.
@@ -1036,7 +1044,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
    3: if True:
 --&gt;4:     continue
-         ^
+          ^
 
 Cause probable basée sur les informations données par Python :
     Le mot-clé Python &#39;continue&#39; ne peut être utilisé qu&#39;à l&#39;intérieur d&#39;une boucle &#39;for&#39; ou à l&#39;intérieur d&#39;une boucle &#39;while&#39;.
@@ -1084,7 +1092,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3: a = {&#39;a&#39;: 1,
    4:      &#39;b&#39;: 2
 --&gt;5:      &#39;c&#39;: 3,
-             ^
+           ^
 
 Je n&#39;ai pas assez d&#39;informations de Python:
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -1194,7 +1202,7 @@ Je n&#39;ai pas assez d&#39;informations de Python:
 <div class="section" id="syntaxerror-can-t-assign-to-function-call-1">
 <h2>SyntaxError - can’t assign to function call - 1<a class="headerlink" href="#syntaxerror-can-t-assign-to-function-call-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: can&#39;t assign to function call
+    SyntaxError: cannot assign to function call
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -1206,7 +1214,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    4: &quot;&quot;&quot;
    5:
 --&gt;6: len(&#39;a&#39;) = 3
-     ^
+      ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
@@ -1220,7 +1228,7 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-can-t-assign-to-function-call-2">
 <h2>SyntaxError - can’t assign to function call - 2<a class="headerlink" href="#syntaxerror-can-t-assign-to-function-call-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: can&#39;t assign to function call
+    SyntaxError: cannot assign to function call
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -1232,7 +1240,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    4: &quot;&quot;&quot;
    5:
 --&gt;6: func(a, b=3) = 4
-     ^
+      ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
@@ -1283,7 +1291,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
    4:
 --&gt;5: def test(a=1, b):
-              ^
+               ^
 
 Cause probable basée sur les informations données par Python :
     Dans Python, vous pouvez définir les fonctions avec seulement des arguments de position
@@ -1320,7 +1328,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
    4:
 --&gt;5: test(a=1, b)
-               ^
+                ^
 
 Cause probable basée sur les informations données par Python :
     Dans Python, vous pouvez invoquer les fonctions avec seulement des arguments de position
@@ -1355,7 +1363,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2: &quot;&quot;&quot;
    3:
 --&gt;4: print(f&quot;Bob is {age[&#39;Bob]} years old.&quot;)
-           ^
+            ^
 
 Cause probable basée sur les informations données par Python :
     À l&#39;intérieur d&#39;une &quot;f-string&quot;, qui est une chaîne de caractères préfixée de la lettre f,
@@ -1379,7 +1387,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     5:     return [1, 2, 3
     6:
 --&gt; 7: print(foo())
-           ^
+       ^
 
 Je n&#39;ai pas assez d&#39;informations de Python:
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -1436,7 +1444,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    4:
    5: def f(x):
 --&gt;6:     global x
-         ^
+          ^
 
 Cause probable basée sur les informations données par Python :
     Vous avec inclus l&#39;énoncé
@@ -1465,7 +1473,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    10:
    11: a.x = 1
 --&gt;12: a.pass = 2
-            ^
+         ^
 
 Je n&#39;ai pas assez d&#39;informations de Python:
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -1503,7 +1511,7 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-keyword-can-t-be-an-expression">
 <h2>SyntaxError - keyword can’t be an expression<a class="headerlink" href="#syntaxerror-keyword-can-t-be-an-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: keyword can&#39;t be an expression
+    SyntaxError: expression cannot contain assignment, perhaps you meant &quot;==&quot;?
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -1515,16 +1523,18 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     5:
     6:
 --&gt; 7: a = dict(&#39;key&#39;=1)
-               ^
+                ^
 
 Cause probable basée sur les informations données par Python :
-    Vous avez probablement appelé une fonction avec un argument :
+    L&#39;une des deux possibilités suivantes pourrait être la cause:
+    1. Vous vouliez faire une comparaison avec == et vous avez écrit = à sa place.
+    2. Vous avez appelé une fonction avec un argument nommé:
 
-        une_fonction (invalide=quelque_chose)
+            une_fonction (invalide=quelque_chose)
 
     où «invalide» n&#39;est pas un nom de variable valide dans Python
-    soit parce qu&#39;il commence par un nombre, soit est une chaîne,
-    ou contenir un point, etc.
+    soit parce qu&#39;il commence par un nombre, soit qu&#39;il est une chaîne,
+    ou contient un point, etc.
 </pre></div>
 </div>
 </div>
@@ -1567,7 +1577,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
    4:
 --&gt;5: def f(None=1):
-               ^
+            ^
 
 Je n&#39;ai pas assez d&#39;informations de Python:
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -1593,7 +1603,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
    4:
 --&gt;5: def f(x, True):
-                  ^
+               ^
 
 Je n&#39;ai pas assez d&#39;informations de Python:
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -1619,7 +1629,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
    4:
 --&gt;5: def f(*None):
-                ^
+             ^
 
 Je n&#39;ai pas assez d&#39;informations de Python:
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -1645,7 +1655,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
    4:
 --&gt;5: def f(**None):
-                 ^
+              ^
 
 Je n&#39;ai pas assez d&#39;informations de Python:
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -1659,7 +1669,7 @@ Je n&#39;ai pas assez d&#39;informations de Python:
 <div class="section" id="syntaxerror-delete-function-call">
 <h2>SyntaxError - delete function call<a class="headerlink" href="#syntaxerror-delete-function-call" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: can&#39;t delete function call
+    SyntaxError: cannot delete function call
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -1671,7 +1681,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
    4:
 --&gt;5: del f(a)
-         ^
+          ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez tenté de supprimer un appel de fonction
@@ -1696,7 +1706,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     5: def fn():
     6:     p = 1
 --&gt; 7:     global p
-          ^
+           ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez attribué une valeur à la variable  &#39;p&#39;
@@ -1719,7 +1729,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     5: def fn():
     6:     print(r)
 --&gt; 7:     global r
-          ^
+           ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez utilisé la variable &#39;r&#39;
@@ -1740,11 +1750,11 @@ Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom du module inconnu est &#39;raise_syntax_error5-&#39;.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 115 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 116 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
 
-   113:                 make_title(title)
-   114:                 try:
---&gt;115:                     mod = __import__(name)
+   114:                 make_title(title)
+   115:                 try:
+--&gt;116:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>
@@ -1765,7 +1775,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     7:     def g():
     8:         s = 2
 --&gt; 9:         nonlocal s
-              ^
+               ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez attribué une valeur à la variable &#39;s&#39;
@@ -1776,7 +1786,7 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-named-assignment-with-python-constant">
 <h2>SyntaxError - named assignment with Python constant<a class="headerlink" href="#syntaxerror-named-assignment-with-python-constant" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+    SyntaxError: cannot use assignment expressions with True
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -1788,21 +1798,17 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2: or (Python 3.8) cannot use named assignment with True&quot;&quot;&quot;
    3:
 --&gt;4: (True := 1)
-            ^
+       ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-
-    Vous semblez utiliser l&#39;opérateur :=, parfois appelé l&#39;opérateur morse
-    (walrus operator, en anglais). Cet opérateur nécessite l&#39;utilisation de
-    Python 3.8 ou une version plus récente. Vous utilisez la version  3.7.
+Cause probable basée sur les informations données par Python :
+    True est une constante dans python; vous ne pouvez pas lui assigner une valeur.
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-assignment-to-operator">
 <h2>SyntaxError - assignment to operator<a class="headerlink" href="#syntaxerror-assignment-to-operator" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: can&#39;t assign to operator
+    SyntaxError: cannot assign to operator
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -1814,7 +1820,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2: or (Python 3.8) cannot assign to operator&quot;&quot;&quot;
    3:
 --&gt;4: a + 1 = 2
-     ^
+      ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression qui inclut des opérations mathématiques
@@ -1851,7 +1857,7 @@ Je n&#39;ai pas assez d&#39;informations de Python:
 <div class="section" id="syntaxerror-assign-to-generator-expression">
 <h2>SyntaxError - assign to generator expression<a class="headerlink" href="#syntaxerror-assign-to-generator-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: can&#39;t assign to generator expression
+    SyntaxError: cannot assign to generator expression
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -1862,7 +1868,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t [cannot] assign to generator expression&quot;&quot;&quot;
    2:
 --&gt;3: (x for x in x) = 1
-     ^
+      ^
 
 Cause probable basée sur les informations données par Python :
     Du côté gauche d&#39;un signe d&#39;égalité, vous avez une
@@ -1873,7 +1879,7 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-assign-to-conditional-expression">
 <h2>SyntaxError - assign to conditional expression<a class="headerlink" href="#syntaxerror-assign-to-conditional-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: can&#39;t assign to conditional expression
+    SyntaxError: cannot assign to conditional expression
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -1884,7 +1890,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t [cannot] assign to conditional expression&quot;&quot;&quot;
    2:
 --&gt;3: a if 1 else b = 1
-     ^
+      ^
 
 Cause probable basée sur les informations données par Python :
     Du côté gauche d&#39;un signe d&#39;égalité, vous avez une
@@ -1910,7 +1916,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
    4: def f(x):
 --&gt;5:     nonlocal x
-         ^
+          ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez utilisé &#39;x&#39; comme paramètre pour une fonction
@@ -1934,7 +1940,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     5:
     6: def f():
 --&gt; 7:     global xy
-          ^
+           ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez utilisé &#39;xy&#39; comme étant une variable non locale et globale.
@@ -1957,7 +1963,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
    4: def f():
 --&gt;5:     nonlocal ab
-         ^
+          ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez déclaré la variable &#39;ab&#39; comme non locale
@@ -1980,7 +1986,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
    3:
 --&gt;4: nonlocal cd
-     ^
+      ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez utilisé le mot clé nonlocal au niveau d&#39;un module.
@@ -2004,7 +2010,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
    3:
 --&gt;4: def f(aa=1, aa=2):
-     ^
+      ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez défini une fonction répétant l&#39;argument nommé
@@ -2028,7 +2034,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
    3:
 --&gt;4: f(ad=1, ad=2)
-             ^
+              ^
 
 Cause probable basée sur les informations données par Python :
     Vous avez invoqué une fonction en répétant le même argument nommé.
@@ -2058,28 +2064,26 @@ Cause probable basée sur les informations données par Python :
 </pre></div>
 </div>
 </div>
-<div class="section" id="walrus-operator-does-not-exist-yet">
-<h2>Walrus operator does not exist - yet<a class="headerlink" href="#walrus-operator-does-not-exist-yet" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="syntaxerror-syntaxerror-print-is-a-function-2">
+<h2>SyntaxError - SyntaxError - print is a function 2<a class="headerlink" href="#syntaxerror-syntaxerror-print-is-a-function-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
     SyntaxError: invalid syntax
 
 Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
 
 Python peut seulement comprendre le code du fichier
-&#39;TESTS:\syntax\raise_syntax_error_walrus.py&#39;
+&#39;TESTS:\syntax\raise_syntax_error67.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-   1: &quot;&quot;&quot;Prior to Python 3.8, this should raise SyntaxError: invalid syntax&quot;&quot;&quot;
-   2:
---&gt;3: print(walrus := True)
-                   ^
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+--&gt;2: print len(&#39;hello&#39;)
+            ^
 
 Je n&#39;ai pas assez d&#39;informations de Python:
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
-    Vous semblez utiliser l&#39;opérateur :=, parfois appelé l&#39;opérateur morse
-    (walrus operator, en anglais). Cet opérateur nécessite l&#39;utilisation de
-    Python 3.8 ou une version plus récente. Vous utilisez la version  3.7.
+    Dans l&#39;ancienne version de Python, «print» était un mot clé.
+    Maintenant, «print» est une fonction; vous devez utiliser des parenthèses pour l&#39;invoquer.
 </pre></div>
 </div>
 </div>
@@ -2105,11 +2109,19 @@ Je n&#39;ai pas assez d&#39;informations de Python:
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, André Roberge
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -2120,7 +2132,6 @@ Je n&#39;ai pas assez d&#39;informations de Python:
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

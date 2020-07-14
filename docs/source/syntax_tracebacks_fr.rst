@@ -22,8 +22,8 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.29a
-Python version: 3.7.3
+Friendly-traceback version: 0.0.30
+Python version: 3.8.4
 
 
 
@@ -48,7 +48,7 @@ IndentationError - 1: expected an indented block
        2: 
        3: if True:
     -->4: pass
-             ^
+          ^
 
     Cause probable basée sur les informations données par Python :
         Dans ce cas-ci, la ligne indiquée ci-dessus par --> devrait
@@ -214,7 +214,7 @@ SyntaxError - Missing colon - 2
        1: """Should raise SyntaxError"""
        2: 
     -->3: while True  # a comment
-                                 ^
+                      ^
 
     Je n'ai pas assez d'informations de Python:
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -243,7 +243,7 @@ SyntaxError - elif, not else if
        3: if False:
        4:     pass
     -->5: else if True:
-                ^
+               ^
 
     Je n'ai pas assez d'informations de Python:
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -272,7 +272,7 @@ SyntaxError - elif, not elseif
        3: if False:
        4:     pass
     -->5: elseif True:
-                    ^
+                 ^
 
     Je n'ai pas assez d'informations de Python:
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -379,7 +379,7 @@ SyntaxError - can't assign to literal - 1
 
 
     Exception Python:
-        SyntaxError: can't assign to literal
+        SyntaxError: cannot assign to literal
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -390,7 +390,7 @@ SyntaxError - can't assign to literal - 1
        1: """Should raise SyntaxError: can't assign to literal"""
        2: 
     -->3: 1 = a
-         ^
+          ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez écrit une expression comme
@@ -409,7 +409,7 @@ SyntaxError - can't assign to literal - 2
 
 
     Exception Python:
-        SyntaxError: can't assign to literal
+        SyntaxError: cannot assign to literal
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -420,7 +420,7 @@ SyntaxError - can't assign to literal - 2
        1: """Should raise SyntaxError: can't assign to literal"""
        2: 
     -->3: 1 = 2
-         ^
+          ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez écrit une expression comme
@@ -437,7 +437,7 @@ SyntaxError - can't assign to literal - 3
 
 
     Exception Python:
-        SyntaxError: can't assign to literal
+        SyntaxError: cannot assign to set display
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -449,7 +449,7 @@ SyntaxError - can't assign to literal - 3
         5:  """
         6: 
     --> 7: {1, 2, 3} = 4
-          ^
+           ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez écrit une expression comme
@@ -466,7 +466,7 @@ SyntaxError - can't assign to literal - 4
 
 
     Exception Python:
-        SyntaxError: can't assign to literal
+        SyntaxError: cannot assign to dict display
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -478,7 +478,7 @@ SyntaxError - can't assign to literal - 4
         5:  """
         6: 
     --> 7: {1 : 2, 2 : 4} = 5
-          ^
+           ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez écrit une expression comme
@@ -495,7 +495,7 @@ SyntaxError - can't assign to literal - 5
 
 
     Exception Python:
-        SyntaxError: can't assign to literal
+        SyntaxError: cannot assign to literal
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -507,7 +507,7 @@ SyntaxError - can't assign to literal - 5
        2: or (Python 3.8) cannot assign to literal"""
        3: 
     -->4: 1 = a = b
-         ^
+          ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez écrit une expression comme
@@ -535,7 +535,7 @@ SyntaxError - import X from Y
        1: """Should raise SyntaxError: invalid syntax"""
        2: 
     -->3: import pen from turtle
-                        ^
+                     ^
 
     Je n'ai pas assez d'informations de Python:
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -581,7 +581,7 @@ SyntaxError - assignment to keyword (None)
 
 
     Exception Python:
-        SyntaxError: can't assign to keyword
+        SyntaxError: cannot assign to None
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -593,7 +593,7 @@ SyntaxError - assignment to keyword (None)
        2:    and can't assign to keyword before."""
        3: 
     -->4: None = 1
-         ^
+          ^
 
     Cause probable basée sur les informations données par Python :
         None est une constante dans python; vous ne pouvez pas lui assigner une valeur.
@@ -607,7 +607,7 @@ SyntaxError - assignment to keyword (__debug__)
 
 
     Exception Python:
-        SyntaxError: assignment to keyword
+        SyntaxError: cannot assign to __debug__
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -619,7 +619,7 @@ SyntaxError - assignment to keyword (__debug__)
        2:    and assignment to keyword before."""
        3: 
     -->4: __debug__ = 1
-         ^
+          ^
 
     Cause probable basée sur les informations données par Python :
         __debug__ est une constante dans python; vous ne pouvez pas lui assigner une valeur.
@@ -633,7 +633,7 @@ SyntaxError - unmatched closing parenthesis
 
 
     Exception Python:
-        SyntaxError: invalid syntax
+        SyntaxError: unmatched ')'
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -647,13 +647,8 @@ SyntaxError - unmatched closing parenthesis
     -->6:     3, 4,))
                     ^
 
-    Je n'ai pas assez d'informations de Python:
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
+    Cause probable basée sur les informations données par Python :
         Le symbole parenthèse ')' à la ligne 6 n'a pas de symbole ouvrant qui lui correspond.
-        
-            6:     3, 4,))
-                         ^
         
 
 SyntaxError - unclosed parenthesis- 1
@@ -721,7 +716,7 @@ SyntaxError - mismatched brackets
 
 
     Exception Python:
-        SyntaxError: invalid syntax
+        SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -733,8 +728,12 @@ SyntaxError - mismatched brackets
     -->2: x = (1, 2, 3]
                       ^
 
-    Je n'ai pas assez d'informations de Python:
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+    Cause probable basée sur les informations données par Python :
+        Python nous dit que la parenthèse de droite ']' ne correspond pas
+        à la parenthèse de gauche ''('.
+        
+        Je vais essayer de donner un peu plus d'informations.
+        
         
         Le symbole crochet ']' à la ligne 2 ne correspond pas au symbole parenthèse '(' à la ligne 2.
         
@@ -749,7 +748,7 @@ SyntaxError - mismatched brackets - 2
 
 
     Exception Python:
-        SyntaxError: invalid syntax
+        SyntaxError: closing parenthesis ']' does not match opening parenthesis '(' on line 2
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -763,8 +762,12 @@ SyntaxError - mismatched brackets - 2
     -->4:      3]
                 ^
 
-    Je n'ai pas assez d'informations de Python:
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+    Cause probable basée sur les informations données par Python :
+        Python nous dit que la parenthèse de droite ']' sur la dernière ligne
+        ne correspond pas à la parenthèse de gauche ''(' sur la ligne 2.
+        
+        Je vais essayer de donner un peu plus d'informations.
+        
         
         Le symbole crochet ']' à la ligne 4 ne correspond pas au symbole parenthèse '(' à la ligne 2.
         
@@ -791,7 +794,7 @@ SyntaxError - print is a function
     
        1: """Should raise SyntaxError: Missing parentheses in call to 'print' ..."""
     -->2: print 'hello'
-                      ^
+                ^
 
     Cause probable basée sur les informations données par Python :
         Peut-être que vous avez besoin d'écrire print('hello') ?
@@ -818,7 +821,7 @@ SyntaxError - Python keyword as function name
        1: """Should raise SyntaxError: invalid syntax"""
        2: 
     -->3: def pass():
-                 ^
+              ^
 
     Je n'ai pas assez d'informations de Python:
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -847,7 +850,7 @@ SyntaxError - break outside loop
        2: 
        3: if True:
     -->4:     break
-             ^
+              ^
 
     Cause probable basée sur les informations données par Python :
         Le mot-clé Python 'break' ne peut être utilisé qu'à l'intérieur d'une boucle 'for' ou à l'intérieur d'une boucle 'while'.
@@ -872,7 +875,7 @@ SyntaxError - continue outside loop
        2: 
        3: if True:
     -->4:     continue
-             ^
+              ^
 
     Cause probable basée sur les informations données par Python :
         Le mot-clé Python 'continue' ne peut être utilisé qu'à l'intérieur d'une boucle 'for' ou à l'intérieur d'une boucle 'while'.
@@ -926,7 +929,7 @@ SyntaxError - missing comma in a dict
        3: a = {'a': 1,
        4:      'b': 2
     -->5:      'c': 3,
-                 ^
+               ^
 
     Je n'ai pas assez d'informations de Python:
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -1051,7 +1054,7 @@ SyntaxError - can't assign to function call - 1
 
 
     Exception Python:
-        SyntaxError: can't assign to function call
+        SyntaxError: cannot assign to function call
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1063,7 +1066,7 @@ SyntaxError - can't assign to function call - 1
        4: """
        5: 
     -->6: len('a') = 3
-         ^
+          ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez écrit une expression comme
@@ -1080,7 +1083,7 @@ SyntaxError - can't assign to function call - 2
 
 
     Exception Python:
-        SyntaxError: can't assign to function call
+        SyntaxError: cannot assign to function call
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1092,7 +1095,7 @@ SyntaxError - can't assign to function call - 2
        4: """
        5: 
     -->6: func(a, b=3) = 4
-         ^
+          ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez écrit une expression comme
@@ -1149,7 +1152,7 @@ SyntaxError - non-default argument follows default argument
        3: 
        4: 
     -->5: def test(a=1, b):
-                  ^
+                   ^
 
     Cause probable basée sur les informations données par Python :
         Dans Python, vous pouvez définir les fonctions avec seulement des arguments de position
@@ -1189,7 +1192,7 @@ SyntaxError - positional argument follows keyword argument
        3: 
        4: 
     -->5: test(a=1, b)
-                   ^
+                    ^
 
     Cause probable basée sur les informations données par Python :
         Dans Python, vous pouvez invoquer les fonctions avec seulement des arguments de position
@@ -1227,7 +1230,7 @@ SyntaxError - f-string: unterminated string
        2: """
        3: 
     -->4: print(f"Bob is {age['Bob]} years old.")
-               ^
+                ^
 
     Cause probable basée sur les informations données par Python :
         À l'intérieur d'une "f-string", qui est une chaîne de caractères préfixée de la lettre f,
@@ -1254,7 +1257,7 @@ SyntaxError - unclosed bracket
         5:     return [1, 2, 3
         6: 
     --> 7: print(foo())
-               ^
+           ^
 
     Je n'ai pas assez d'informations de Python:
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -1317,7 +1320,7 @@ SyntaxError - name is parameter and global
        4: 
        5: def f(x):
     -->6:     global x
-             ^
+              ^
 
     Cause probable basée sur les informations données par Python :
         Vous avec inclus l'énoncé
@@ -1349,7 +1352,7 @@ SyntaxError - keyword as attribute
        10: 
        11: a.x = 1
     -->12: a.pass = 2
-                ^
+             ^
 
     Je n'ai pas assez d'informations de Python:
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -1395,7 +1398,7 @@ SyntaxError - keyword can't be an expression
 
 
     Exception Python:
-        SyntaxError: keyword can't be an expression
+        SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1407,16 +1410,18 @@ SyntaxError - keyword can't be an expression
         5: 
         6: 
     --> 7: a = dict('key'=1)
-                   ^
+                    ^
 
     Cause probable basée sur les informations données par Python :
-        Vous avez probablement appelé une fonction avec un argument :
+        L'une des deux possibilités suivantes pourrait être la cause:
+        1. Vous vouliez faire une comparaison avec == et vous avez écrit = à sa place.
+        2. Vous avez appelé une fonction avec un argument nommé:
         
-            une_fonction (invalide=quelque_chose)
+                une_fonction (invalide=quelque_chose)
         
         où «invalide» n'est pas un nom de variable valide dans Python
-        soit parce qu'il commence par un nombre, soit est une chaîne,
-        ou contenir un point, etc.
+        soit parce qu'il commence par un nombre, soit qu'il est une chaîne,
+        ou contient un point, etc.
         
         
 
@@ -1467,7 +1472,7 @@ SyntaxError - keyword cannot be argument in def - 1
        3: 
        4: 
     -->5: def f(None=1):
-                   ^
+                ^
 
     Je n'ai pas assez d'informations de Python:
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -1497,7 +1502,7 @@ SyntaxError - keyword cannot be argument in def - 2
        3: 
        4: 
     -->5: def f(x, True):
-                      ^
+                   ^
 
     Je n'ai pas assez d'informations de Python:
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -1527,7 +1532,7 @@ SyntaxError - keyword cannot be argument in def - 3
        3: 
        4: 
     -->5: def f(*None):
-                    ^
+                 ^
 
     Je n'ai pas assez d'informations de Python:
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -1557,7 +1562,7 @@ SyntaxError - keyword cannot be argument in def - 4
        3: 
        4: 
     -->5: def f(**None):
-                     ^
+                  ^
 
     Je n'ai pas assez d'informations de Python:
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
@@ -1575,7 +1580,7 @@ SyntaxError - delete function call
 
 
     Exception Python:
-        SyntaxError: can't delete function call
+        SyntaxError: cannot delete function call
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1587,7 +1592,7 @@ SyntaxError - delete function call
        3: 
        4: 
     -->5: del f(a)
-             ^
+              ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez tenté de supprimer un appel de fonction
@@ -1615,7 +1620,7 @@ SyntaxError - assigned prior to global declaration
         5: def fn():
         6:     p = 1
     --> 7:     global p
-              ^
+               ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez attribué une valeur à la variable  'p'
@@ -1641,7 +1646,7 @@ SyntaxError - used prior to global declaration
         5: def fn():
         6:     print(r)
     --> 7:     global r
-              ^
+               ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez utilisé la variable 'r'
@@ -1665,11 +1670,11 @@ SyntaxError - assigned prior to nonlocal declaration
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom du module inconnu est 'raise_syntax_error5-'.
         
-    L'exécution s'est arrêtée à la ligne 115 du fichier 'TESTS:\trb_syntax_common.py'
+    L'exécution s'est arrêtée à la ligne 116 du fichier 'TESTS:\trb_syntax_common.py'
     
-       113:                 make_title(title)
-       114:                 try:
-    -->115:                     mod = __import__(name)
+       114:                 make_title(title)
+       115:                 try:
+    -->116:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -1692,7 +1697,7 @@ SyntaxError - used prior to nonlocal declaration
         7:     def g():
         8:         s = 2
     --> 9:         nonlocal s
-                  ^
+                   ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez attribué une valeur à la variable 's'
@@ -1706,7 +1711,7 @@ SyntaxError - named assignment with Python constant
 
 
     Exception Python:
-        SyntaxError: invalid syntax
+        SyntaxError: cannot use assignment expressions with True
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1718,14 +1723,10 @@ SyntaxError - named assignment with Python constant
        2: or (Python 3.8) cannot use named assignment with True"""
        3: 
     -->4: (True := 1)
-                ^
+           ^
 
-    Je n'ai pas assez d'informations de Python:
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
-        Vous semblez utiliser l'opérateur :=, parfois appelé l'opérateur morse
-        (walrus operator, en anglais). Cet opérateur nécessite l'utilisation de
-        Python 3.8 ou une version plus récente. Vous utilisez la version  3.7.
+    Cause probable basée sur les informations données par Python :
+        True est une constante dans python; vous ne pouvez pas lui assigner une valeur.
         
         
 
@@ -1736,7 +1737,7 @@ SyntaxError - assignment to operator
 
 
     Exception Python:
-        SyntaxError: can't assign to operator
+        SyntaxError: cannot assign to operator
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1748,7 +1749,7 @@ SyntaxError - assignment to operator
        2: or (Python 3.8) cannot assign to operator"""
        3: 
     -->4: a + 1 = 2
-         ^
+          ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez écrit une expression qui inclut des opérations mathématiques
@@ -1789,7 +1790,7 @@ SyntaxError - assign to generator expression
 
 
     Exception Python:
-        SyntaxError: can't assign to generator expression
+        SyntaxError: cannot assign to generator expression
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1800,7 +1801,7 @@ SyntaxError - assign to generator expression
        1: """Should raise SyntaxError: can't [cannot] assign to generator expression"""
        2: 
     -->3: (x for x in x) = 1
-         ^
+          ^
 
     Cause probable basée sur les informations données par Python :
         Du côté gauche d'un signe d'égalité, vous avez une
@@ -1814,7 +1815,7 @@ SyntaxError - assign to conditional expression
 
 
     Exception Python:
-        SyntaxError: can't assign to conditional expression
+        SyntaxError: cannot assign to conditional expression
         
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1825,7 +1826,7 @@ SyntaxError - assign to conditional expression
        1: """Should raise SyntaxError: can't [cannot] assign to conditional expression"""
        2: 
     -->3: a if 1 else b = 1
-         ^
+          ^
 
     Cause probable basée sur les informations données par Python :
         Du côté gauche d'un signe d'égalité, vous avez une
@@ -1853,7 +1854,7 @@ SyntaxError - name is parameter and nonlocal
        3: 
        4: def f(x):
     -->5:     nonlocal x
-             ^
+              ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez utilisé 'x' comme paramètre pour une fonction
@@ -1880,7 +1881,7 @@ SyntaxError - name is global and nonlocal
         5: 
         6: def f():
     --> 7:     global xy
-              ^
+               ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez utilisé 'xy' comme étant une variable non locale et globale.
@@ -1906,7 +1907,7 @@ SyntaxError - nonlocal variable not found
        3: 
        4: def f():
     -->5:     nonlocal ab
-             ^
+              ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez déclaré la variable 'ab' comme non locale
@@ -1932,7 +1933,7 @@ SyntaxError - nonlocal variable not found at module level
        2: 
        3: 
     -->4: nonlocal cd
-         ^
+          ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez utilisé le mot clé nonlocal au niveau d'un module.
@@ -1958,7 +1959,7 @@ SyntaxError - keyword arg only once in function definition
        2: 
        3: 
     -->4: def f(aa=1, aa=2):
-         ^
+          ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez défini une fonction répétant l'argument nommé
@@ -1985,7 +1986,7 @@ SyntaxError - keyword arg only once in function call
        2: 
        3: 
     -->4: f(ad=1, ad=2)
-                 ^
+                  ^
 
     Cause probable basée sur les informations données par Python :
         Vous avez invoqué une fonction en répétant le même argument nommé.
@@ -2018,8 +2019,8 @@ SyntaxError - SyntaxError - unexpected EOF while parsing 2
         
         
 
-Walrus operator does not exist - yet
-------------------------------------
+SyntaxError - SyntaxError - print is a function 2
+-------------------------------------------------
 
 .. code-block:: none
 
@@ -2030,19 +2031,16 @@ Walrus operator does not exist - yet
     Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
-    'TESTS:\syntax\raise_syntax_error_walrus.py'
+    'TESTS:\syntax\raise_syntax_error67.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-       1: """Prior to Python 3.8, this should raise SyntaxError: invalid syntax"""
-       2: 
-    -->3: print(walrus := True)
-                       ^
+       1: """Should raise SyntaxError: invalid syntax"""
+    -->2: print len('hello')
+                ^
 
     Je n'ai pas assez d'informations de Python:
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
-        Vous semblez utiliser l'opérateur :=, parfois appelé l'opérateur morse
-        (walrus operator, en anglais). Cet opérateur nécessite l'utilisation de
-        Python 3.8 ou une version plus récente. Vous utilisez la version  3.7.
-        
+        Dans l'ancienne version de Python, «print» était un mot clé.
+        Maintenant, «print» est une fonction; vous devez utiliser des parenthèses pour l'invoquer.
         
