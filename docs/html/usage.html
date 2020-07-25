@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Usage &mdash; Friendly tracebacks 0.0.30 documentation</title>
+  <title>Usage &mdash; Friendly tracebacks 0.0.30a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.30
+                0.0.30a
               </div>
             
           
@@ -95,6 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#language-used">Language used</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#as-an-exception-hook">As an exception hook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#catching-exception-locally">Catching exception locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-another-script">Running another script</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#from-the-command-line">From the command line</a></li>
 </ul>
 </li>
@@ -130,6 +131,8 @@
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.7.html">SyntaxError - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html">Friendly tracebacks - en Français</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html">Friendly SyntaxError tracebacks - en Français</a></li>
 </ul>
@@ -212,7 +215,11 @@
             
   <div class="section" id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
-<p>There are various ways of using friendly-traceback.</p>
+<p>There are various ways of using friendly-traceback.
+We first list the various basic options.
+If you wish to use friendly-traceback for running scripts that
+accept command line arguments, you might want to read the
+penultimate section on this page.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In some of the examples below, we use the program <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> found
@@ -227,7 +234,7 @@ in the <code class="docutils literal notranslate"><span class="pre">demos</span>
 <ol class="arabic">
 <li><p>As an exception hook:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
-<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">install</span><span class="p">()</span>  <span class="c1"># sys.excepthook = friendly_traceback.explain</span>
+<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">install</span><span class="p">()</span>  <span class="c1"># replaces the default sys.excepthook</span>
 </pre></div>
 </div>
 </li>
@@ -441,15 +448,71 @@ it can be done as in the following example:</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="running-another-script">
+<h2>Running another script<a class="headerlink" href="#running-another-script" title="Permalink to this headline">¶</a></h2>
+<p>We have already given an example of running another script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback demos/hello.py
+
+Hello world!
+Running as main!
+</pre></div>
+</div>
+<p>What if the separate script has its own command line arguments?
+If they are simply positional arguments, you can simply tack them
+on at the end of the argument list. An example can be found
+in the demos/ directory, which can be run directly or using
+friendly-traceback.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python demos/adder.py 1 2 3
+The sum is 6
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback demos/adder.py 1 2 3
+The sum is 6
+</pre></div>
+</div>
+<p>Note that this works even if you specify command line arguments
+that are specific to friendly-traceback:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback --lang fr demos/adder.py 1 2 3
+The sum is 6
+</pre></div>
+</div>
+<p>However, what if one wants to run a script that uses optional named arguments
+similarly to how friendly-traceback can use <code class="docutils literal notranslate"><span class="pre">--lang</span></code> and other optional
+arguments?  In this case, we suggest to use either a <code class="docutils literal notranslate"><span class="pre">sitecustomize.py</span></code>
+or a <code class="docutils literal notranslate"><span class="pre">usercustomize.py</span></code> file, as described in the
+<a class="reference external" href="https://docs.python.org/3/library/site.html">Python documentation</a>.</p>
+<p>Thus, we suggest the following approach.</p>
+<ol class="arabic">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">usercustomize.py</span></code> file whose content is the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
+<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">install</span><span class="p">()</span>
+<span class="c1"># specify other desired options here</span>
+</pre></div>
+</div>
+</li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> environment variable to that directory.
+On Windows, this can be done by navigating to that directory
+and writing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="n">PYTHONPATH</span><span class="o">=%</span><span class="n">CD</span><span class="o">%</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>You can now run your script normally: friendly-traceback exception
+handling will be used by default on it.</p>
+</div>
 <div class="section" id="from-the-command-line">
 <h2>From the command line<a class="headerlink" href="#from-the-command-line" title="Permalink to this headline">¶</a></h2>
-<p>The following is subject to change; this was copied from version 0.0.8a</p>
+<p>The following is subject to change; this was copied from version 0.0.30a</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback -h
 usage: __main__.py [-h] [--lang LANG] [--level LEVEL] [--import_only]
-                   [--version]
-                   [source]
+                   [--version] [--dev] [--formatter FORMATTER]
+                   [source] [args [args ...]]
 
 Friendly-traceback makes Python tracebacks easier to understand.
+
+        If no command line arguments other than -m are specified,
+        Friendly-traceback will start an interactive console.
 
         Note: the values of the verbosity level described below are:
             0: Normal Python tracebacks
@@ -472,17 +535,26 @@ Friendly-traceback makes Python tracebacks easier to understand.
         settings for beginners.
 
 positional arguments:
-  source         Name of the script to be run as though it was the main module
-                 run by Python, so that __name__ does equal &#39;__main__&#39;.
+  source                Name of the script to be run as though it was the main
+                        module run by Python, so that __name__ does equal
+                        &#39;__main__&#39;.
+  args                  Arguments to give to the script specified by source.
 
 optional arguments:
-  -h, --help     show this help message and exit
-  --lang LANG    This sets the language used by Friendly-tracebacks. Usually
-                 this is a two-letter code such as &#39;fr&#39; for French.
-  --level LEVEL  This sets the &quot;verbosity&quot; level, that is the amount of
-                 information provided.
-  --import_only  Imports the module instead of running it as a script.
-  --version      Displays the current version.
+  -h, --help            show this help message and exit
+  --lang LANG           This sets the language used by Friendly-tracebacks.
+                        Usually this is a two-letter code such as &#39;fr&#39; for
+                        French.
+  --level LEVEL         This sets the &quot;verbosity&quot; level, that is the amount of
+                        information provided.
+  --import_only         Imports the module instead of running it as a script.
+  --version             Displays the current version.
+  --dev                 Adds some extra functions in the console, useful for
+                        development.
+  --formatter FORMATTER
+                        Specify a formatter function, as a dotted path.
+                        Example: --formatter
+                        friendly_traceback.formatters.markdown
 </pre></div>
 </div>
 </div>

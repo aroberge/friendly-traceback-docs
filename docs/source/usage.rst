@@ -2,6 +2,10 @@ Usage
 =====
 
 There are various ways of using friendly-traceback.
+We first list the various basic options.
+If you wish to use friendly-traceback for running scripts that
+accept command line arguments, you might want to read the
+penultimate section on this page.
 
 .. note::
 
@@ -17,7 +21,7 @@ There are various ways of using friendly-traceback.
 1. As an exception hook::
 
     import friendly_traceback
-    friendly_traceback.install()  # sys.excepthook = friendly_traceback.explain
+    friendly_traceback.install()  # replaces the default sys.excepthook
 
 
 2. Catching exceptions locally::
@@ -230,19 +234,77 @@ it can be done as in the following example::
         friendly_traceback.set_lang(lang)
 
 
+Running another script
+----------------------
+
+We have already given an example of running another script::
+
+    $ python -m friendly_traceback demos/hello.py
+
+    Hello world!
+    Running as main!
+
+What if the separate script has its own command line arguments?
+If they are simply positional arguments, you can simply tack them
+on at the end of the argument list. An example can be found
+in the demos/ directory, which can be run directly or using
+friendly-traceback.
+
+.. code-block::
+
+    $ python demos/adder.py 1 2 3
+    The sum is 6
+
+.. code-block::
+
+    $ python -m friendly_traceback demos/adder.py 1 2 3
+    The sum is 6
+
+Note that this works even if you specify command line arguments
+that are specific to friendly-traceback::
+
+    $ python -m friendly_traceback --lang fr demos/adder.py 1 2 3
+    The sum is 6
+
+However, what if one wants to run a script that uses optional named arguments
+similarly to how friendly-traceback can use ``--lang`` and other optional
+arguments?  In this case, we suggest to use either a ``sitecustomize.py``
+or a ``usercustomize.py`` file, as described in the
+`Python documentation <https://docs.python.org/3/library/site.html>`_.
+
+Thus, we suggest the following approach.
+
+1. Create a ``usercustomize.py`` file whose content is the following::
+
+    import friendly_traceback
+    friendly_traceback.install()
+    # specify other desired options here
+
+2. Set the ``PYTHONPATH`` environment variable to that directory.
+   On Windows, this can be done by navigating to that directory
+   and writing::
+
+       set PYTHONPATH=%CD%
+
+You can now run your script normally: friendly-traceback exception
+handling will be used by default on it.
+
 From the command line
 ----------------------
 
-The following is subject to change; this was copied from version 0.0.8a
+The following is subject to change; this was copied from version 0.0.30a
 
 .. code-block:: none
 
     $ python -m friendly_traceback -h
     usage: __main__.py [-h] [--lang LANG] [--level LEVEL] [--import_only]
-                       [--version]
-                       [source]
+                       [--version] [--dev] [--formatter FORMATTER]
+                       [source] [args [args ...]]
 
     Friendly-traceback makes Python tracebacks easier to understand.
+
+            If no command line arguments other than -m are specified,
+            Friendly-traceback will start an interactive console.
 
             Note: the values of the verbosity level described below are:
                 0: Normal Python tracebacks
@@ -265,14 +327,23 @@ The following is subject to change; this was copied from version 0.0.8a
             settings for beginners.
 
     positional arguments:
-      source         Name of the script to be run as though it was the main module
-                     run by Python, so that __name__ does equal '__main__'.
+      source                Name of the script to be run as though it was the main
+                            module run by Python, so that __name__ does equal
+                            '__main__'.
+      args                  Arguments to give to the script specified by source.
 
     optional arguments:
-      -h, --help     show this help message and exit
-      --lang LANG    This sets the language used by Friendly-tracebacks. Usually
-                     this is a two-letter code such as 'fr' for French.
-      --level LEVEL  This sets the "verbosity" level, that is the amount of
-                     information provided.
-      --import_only  Imports the module instead of running it as a script.
-      --version      Displays the current version.
+      -h, --help            show this help message and exit
+      --lang LANG           This sets the language used by Friendly-tracebacks.
+                            Usually this is a two-letter code such as 'fr' for
+                            French.
+      --level LEVEL         This sets the "verbosity" level, that is the amount of
+                            information provided.
+      --import_only         Imports the module instead of running it as a script.
+      --version             Displays the current version.
+      --dev                 Adds some extra functions in the console, useful for
+                            development.
+      --formatter FORMATTER
+                            Specify a formatter function, as a dotted path.
+                            Example: --formatter
+                            friendly_traceback.formatters.markdown
