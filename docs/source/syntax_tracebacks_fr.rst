@@ -22,7 +22,7 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.30
+Friendly-traceback version: 0.0.30a
 Python version: 3.8.4
 
 
@@ -1670,11 +1670,11 @@ SyntaxError - assigned prior to nonlocal declaration
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom du module inconnu est 'raise_syntax_error5-'.
         
-    L'exécution s'est arrêtée à la ligne 116 du fichier 'TESTS:\trb_syntax_common.py'
+    L'exécution s'est arrêtée à la ligne 117 du fichier 'TESTS:\trb_syntax_common.py'
     
-       114:                 make_title(title)
-       115:                 try:
-    -->116:                     mod = __import__(name)
+       115:                 make_title(title)
+       116:                 try:
+    -->117:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -2043,4 +2043,30 @@ SyntaxError - SyntaxError - print is a function 2
         
         Dans l'ancienne version de Python, «print» était un mot clé.
         Maintenant, «print» est une fonction; vous devez utiliser des parenthèses pour l'invoquer.
+        
+
+SyntaxError - SyntaxError - copy/paste from interpreter
+-------------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error68.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+    -->2: >>> print("Hello World!")
+          ^
+
+    Je n'ai pas assez d'informations de Python:
+        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+        
+        On dirait que vous avez copié-collé le code d’un interprète interactif.
+        L’invite Python, ''>>>'', ne doit pas être incluse dans votre code.
         

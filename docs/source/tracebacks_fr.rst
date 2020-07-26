@@ -19,7 +19,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.30
+Friendly-traceback version: 0.0.30a
 Python version: 3.8.4
 
 
@@ -386,7 +386,7 @@ TypeError - 2: unsupported operand type(s) for +
     
     Cause probable basée sur les informations données par Python :
         Vous avez essayé d’additionner deux types d’objets incompatibles:
-        un entier ('int') et une variable de valeur 'None' ('NoteType')
+        un entier ('int') et une variable de valeur None ('NoneType')
         
     L'exécution s'est arrêtée à la ligne 54 du fichier 'TESTS:\except\test_type_error.py'
     
@@ -1091,7 +1091,7 @@ TypeError - 15: tuple object is not callable
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable basée sur les informations données par Python :
-        Je soupçonne que vous aviez un objet du type <un tuple>,
+        Je soupçonne que vous aviez un objet du type « un tuple »,
         suivi de ce qui ressemblait à un tuple, '(...) ',
         que Python a pris comme indiquant une invocation de fonction.
         Il est possible que vous ayez oublié d'écrire une virgule avant le tuple.
@@ -1118,7 +1118,7 @@ TypeError - 15a: list object is not callable
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
     Cause probable basée sur les informations données par Python :
-        Je soupçonne que vous aviez un objet du type <une liste ('list')>,
+        Je soupçonne que vous aviez un objet du type « une liste ('list') »,
         suivi de ce qui ressemblait à un tuple, '(...) ',
         que Python a pris comme indiquant une invocation de fonction.
         Il est possible que vous ayez oublié d'écrire une virgule avant le tuple.

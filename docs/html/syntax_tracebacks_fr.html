@@ -197,6 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-call">SyntaxError - keyword arg only once in function call</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-unexpected-eof-while-parsing-2">SyntaxError - SyntaxError - unexpected EOF while parsing 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-print-is-a-function-2">SyntaxError - SyntaxError - print is a function 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-copy-paste-from-interpreter">SyntaxError - SyntaxError - copy/paste from interpreter</a></li>
 </ul>
 </li>
 </ul>
@@ -298,7 +299,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.0.30
+<p>Friendly-traceback version: 0.0.30a
 Python version: 3.8.4</p>
 <div class="section" id="indentationerror-1-expected-an-indented-block">
 <h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -1750,11 +1751,11 @@ Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom du module inconnu est &#39;raise_syntax_error5-&#39;.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 116 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 117 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
 
-   114:                 make_title(title)
-   115:                 try:
---&gt;116:                     mod = __import__(name)
+   115:                 make_title(title)
+   116:                 try:
+--&gt;117:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>
@@ -2084,6 +2085,29 @@ Je n&#39;ai pas assez d&#39;informations de Python:
 
     Dans l&#39;ancienne version de Python, «print» était un mot clé.
     Maintenant, «print» est une fonction; vous devez utiliser des parenthèses pour l&#39;invoquer.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-syntaxerror-copy-paste-from-interpreter">
+<h2>SyntaxError - SyntaxError - copy/paste from interpreter<a class="headerlink" href="#syntaxerror-syntaxerror-copy-paste-from-interpreter" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: invalid syntax
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error68.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+--&gt;2: &gt;&gt;&gt; print(&quot;Hello World!&quot;)
+      ^
+
+Je n&#39;ai pas assez d&#39;informations de Python:
+    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+
+    On dirait que vous avez copié-collé le code d’un interprète interactif.
+    L’invite Python, &#39;&#39;&gt;&gt;&gt;&#39;&#39;, ne doit pas être incluse dans votre code.
 </pre></div>
 </div>
 </div>

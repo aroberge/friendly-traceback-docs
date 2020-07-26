@@ -19,7 +19,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.30
+Friendly-traceback version: 0.0.30a
 Python version: 3.6.8
 
 
@@ -303,7 +303,7 @@ TypeError - 1: concatenate two different types
     
     Likely cause based on the information given by Python:
         You tried to concatenate (add) two different types of objects:
-        a string ('str') and an integer ('int')
+        a string (`str`) and an integer (`int`)
         
     Execution stopped on line 8 of file 'TESTS:\except\test_type_error.py'.
     
@@ -331,7 +331,7 @@ TypeError - 1a: concatenate two different types
     
     Likely cause based on the information given by Python:
         You tried to concatenate (add) two different types of objects:
-        a string ('str') and a list
+        a string (`str`) and a `list`
         
     Execution stopped on line 24 of file 'TESTS:\except\test_type_error.py'.
     
@@ -359,7 +359,7 @@ TypeError - 1b: concatenate two different types
     
     Likely cause based on the information given by Python:
         You tried to concatenate (add) two different types of objects:
-        a tuple and a list
+        a `tuple` and a `list`
         
     Execution stopped on line 40 of file 'TESTS:\except\test_type_error.py'.
     
@@ -387,7 +387,7 @@ TypeError - 2: unsupported operand type(s) for +
     
     Likely cause based on the information given by Python:
         You tried to add two incompatible types of objects:
-        an integer ('int') and a variable equal to None ('NoneType')
+        an integer (`int`) and a variable equal to None (`NoneType`)
         
     Execution stopped on line 54 of file 'TESTS:\except\test_type_error.py'.
     
@@ -415,7 +415,7 @@ TypeError - 2a: unsupported operand type(s) for +=
     
     Likely cause based on the information given by Python:
         You tried to add two incompatible types of objects:
-        an integer ('int') and a string ('str')
+        an integer (`int`) and a string (`str`)
         
     Execution stopped on line 68 of file 'TESTS:\except\test_type_error.py'.
     
@@ -443,7 +443,7 @@ TypeError - 3: unsupported operand type(s) for -
     
     Likely cause based on the information given by Python:
         You tried to subtract two incompatible types of objects:
-        a tuple and a list
+        a `tuple` and a `list`
         
     Execution stopped on line 82 of file 'TESTS:\except\test_type_error.py'.
     
@@ -471,7 +471,7 @@ TypeError - 3a: unsupported operand type(s) for -=
     
     Likely cause based on the information given by Python:
         You tried to subtract two incompatible types of objects:
-        a list and a tuple
+        a `list` and a `tuple`
         
     Execution stopped on line 96 of file 'TESTS:\except\test_type_error.py'.
     
@@ -499,7 +499,7 @@ TypeError - 4: unsupported operand type(s) for *
     
     Likely cause based on the information given by Python:
         You tried to multiply two incompatible types of objects:
-        a complex number and a set
+        a complex number and a `set`
         
     Execution stopped on line 110 of file 'TESTS:\except\test_type_error.py'.
     
@@ -527,7 +527,7 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
     
     Likely cause based on the information given by Python:
         You tried to multiply two incompatible types of objects:
-        a set and a complex number
+        a `set` and a complex number
         
     Execution stopped on line 124 of file 'TESTS:\except\test_type_error.py'.
     
@@ -555,7 +555,7 @@ TypeError - 5: unsupported operand type(s) for /
     
     Likely cause based on the information given by Python:
         You tried to divide two incompatible types of objects:
-        a dictionary ('dict') and a number ('float')
+        a dictionary (`dict`) and a number (`float`)
         
     Execution stopped on line 138 of file 'TESTS:\except\test_type_error.py'.
     
@@ -583,7 +583,7 @@ TypeError - 5a: unsupported operand type(s) for /=
     
     Likely cause based on the information given by Python:
         You tried to divide two incompatible types of objects:
-        a number ('float') and a dictionary ('dict')
+        a number (`float`) and a dictionary (`dict`)
         
     Execution stopped on line 152 of file 'TESTS:\except\test_type_error.py'.
     
@@ -611,7 +611,7 @@ TypeError - 5b: unsupported operand type(s) for //
     
     Likely cause based on the information given by Python:
         You tried to divide two incompatible types of objects:
-        a dictionary ('dict') and an integer ('int')
+        a dictionary (`dict`) and an integer (`int`)
         
     Execution stopped on line 166 of file 'TESTS:\except\test_type_error.py'.
     
@@ -639,7 +639,7 @@ TypeError - 5c: unsupported operand type(s) for //=
     
     Likely cause based on the information given by Python:
         You tried to divide two incompatible types of objects:
-        a number ('float') and a dictionary ('dict')
+        a number (`float`) and a dictionary (`dict`)
         
     Execution stopped on line 180 of file 'TESTS:\except\test_type_error.py'.
     
@@ -668,7 +668,7 @@ TypeError - 6: unsupported operand type(s) for &
     Likely cause based on the information given by Python:
         You tried to perform the bitwise operation &
         on two incompatible types of objects:
-        a string ('str') and an integer ('int')
+        a string (`str`) and an integer (`int`)
         
     Execution stopped on line 194 of file 'TESTS:\except\test_type_error.py'.
     
@@ -697,7 +697,7 @@ TypeError - 6a: unsupported operand type(s) for &=
     Likely cause based on the information given by Python:
         You tried to perform the bitwise operation &=
         on two incompatible types of objects:
-        an integer ('int') and a string ('str')
+        an integer (`int`) and a string (`str`)
         
     Execution stopped on line 208 of file 'TESTS:\except\test_type_error.py'.
     
@@ -726,7 +726,7 @@ TypeError - 7: unsupported operand type(s) for **
     Likely cause based on the information given by Python:
         You tried to exponentiate (raise to a power)
         using two incompatible types of objects:
-        a dictionary ('dict') and a number ('float')
+        a dictionary (`dict`) and a number (`float`)
         
     Execution stopped on line 222 of file 'TESTS:\except\test_type_error.py'.
     
@@ -755,7 +755,7 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
     Likely cause based on the information given by Python:
         You tried to exponentiate (raise to a power)
         using two incompatible types of objects:
-        a dictionary ('dict') and a number ('float')
+        a dictionary (`dict`) and a number (`float`)
         
     Execution stopped on line 236 of file 'TESTS:\except\test_type_error.py'.
     
@@ -784,7 +784,7 @@ TypeError - 8: unsupported operand type(s) for >>
     Likely cause based on the information given by Python:
         You tried to perform the bit shifting operation >>
         on two incompatible types of objects:
-        a string ('str') and an integer ('int')
+        a string (`str`) and an integer (`int`)
         
     Execution stopped on line 250 of file 'TESTS:\except\test_type_error.py'.
     
@@ -813,7 +813,7 @@ TypeError - 8a: unsupported operand type(s) for >>=
     Likely cause based on the information given by Python:
         You tried to perform the bit shifting operation >>=
         on two incompatible types of objects:
-        a string ('str') and an integer ('int')
+        a string (`str`) and an integer (`int`)
         
     Execution stopped on line 264 of file 'TESTS:\except\test_type_error.py'.
     
@@ -842,7 +842,7 @@ TypeError - 9: unsupported operand type(s) for @
     Likely cause based on the information given by Python:
         You tried to use the operator @
         using two incompatible types of objects:
-        a string ('str') and an integer ('int').
+        a string (`str`) and an integer (`int`).
         This operator is normally used only
         for multiplication of matrices.
         
@@ -873,7 +873,7 @@ TypeError - 9a: unsupported operand type(s) for @=
     Likely cause based on the information given by Python:
         You tried to use the operator @=
         using two incompatible types of objects:
-        a string ('str') and an integer ('int').
+        a string (`str`) and an integer (`int`).
         This operator is normally used only
         for multiplication of matrices.
         
@@ -904,7 +904,7 @@ TypeError - 10: comparison between incompatible types
     Likely cause based on the information given by Python:
         You tried to do an order comparison (<)
         between two incompatible types of objects:
-        an integer ('int') and a string ('str')
+        an integer (`int`) and a string (`str`)
         
     Execution stopped on line 306 of file 'TESTS:\except\test_type_error.py'.
     
@@ -932,7 +932,7 @@ TypeError - 11: bad operand type for unary +
     
     Likely cause based on the information given by Python:
         You tried to use the unary operator '+'
-        with the following type of object: a string ('str').
+        with the following type of object: a string (`str`).
         This operation is not defined for this type of object.
         
     Execution stopped on line 318 of file 'TESTS:\except\test_type_error.py'.
@@ -958,7 +958,7 @@ TypeError - 11a: bad operand type for unary -
     
     Likely cause based on the information given by Python:
         You tried to use the unary operator '-'
-        with the following type of object: a list.
+        with the following type of object: a `list`.
         This operation is not defined for this type of object.
         
     Execution stopped on line 331 of file 'TESTS:\except\test_type_error.py'.
@@ -984,7 +984,7 @@ TypeError - 11b: bad operand type for unary ~
     
     Likely cause based on the information given by Python:
         You tried to use the unary operator '~'
-        with the following type of object: a tuple.
+        with the following type of object: a `tuple`.
         This operation is not defined for this type of object.
         
     Execution stopped on line 344 of file 'TESTS:\except\test_type_error.py'.
@@ -1011,7 +1011,7 @@ TypeError - 12: object does not support item assignment
     Likely cause based on the information given by Python:
         In Python, some objects are known as immutable:
         once defined, their value cannot be changed.
-        You tried change part of such an immutable object: a tuple,
+        You tried change part of such an immutable object: a `tuple`,
         most likely by using an indexing operation.
         
     Execution stopped on line 358 of file 'TESTS:\except\test_type_error.py'.
@@ -1093,7 +1093,7 @@ TypeError - 15: tuple object is not callable
     or by tring to do an operation not allowed on a given type of object.
     
     Likely cause based on the information given by Python:
-        I suspect that you had an object of this type, <a tuple>,
+        I suspect that you had an object of this type, a `tuple`,
         followed by what looked like a tuple, '(...)',
         which Python took as an indication of a function call.
         Perhaps you had a missing comma before the tuple.
@@ -1120,7 +1120,7 @@ TypeError - 15a: list object is not callable
     or by tring to do an operation not allowed on a given type of object.
     
     Likely cause based on the information given by Python:
-        I suspect that you had an object of this type, <a list>,
+        I suspect that you had an object of this type, a `list`,
         followed by what looked like a tuple, '(...)',
         which Python took as an indication of a function call.
         Perhaps you had a missing comma before the tuple.

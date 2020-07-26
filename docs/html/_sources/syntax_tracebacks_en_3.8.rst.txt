@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.30
+Friendly-traceback version: 0.0.30a
 Python version: 3.8.4
 
 
@@ -1663,11 +1663,11 @@ SyntaxError - assigned prior to nonlocal declaration
         In your program, the name of the
         module that cannot be found is 'raise_syntax_error5-'.
         
-    Execution stopped on line 116 of file 'TESTS:\trb_syntax_common.py'.
+    Execution stopped on line 117 of file 'TESTS:\trb_syntax_common.py'.
     
-       114:                 make_title(title)
-       115:                 try:
-    -->116:                     mod = __import__(name)
+       115:                 make_title(title)
+       116:                 try:
+    -->117:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -2037,4 +2037,31 @@ SyntaxError - SyntaxError - print is a function 2
         
         In older version of Python, 'print' was a keyword.
         Now, 'print' is a function; you need to use parentheses to call it.
+        
+
+SyntaxError - SyntaxError - copy/paste from interpreter
+-------------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error68.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+    -->2: >>> print("Hello World!")
+          ^
+
+    I don't have enough information from Python:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
+        
+        It looks like you copy-pasted code from an interactive interpreter.
+        The Python prompt, '>>>', should not be included in your code.
         

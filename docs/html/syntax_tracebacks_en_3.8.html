@@ -171,6 +171,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-call">SyntaxError - keyword arg only once in function call</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-unexpected-eof-while-parsing-2">SyntaxError - SyntaxError - unexpected EOF while parsing 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-print-is-a-function-2">SyntaxError - SyntaxError - print is a function 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-copy-paste-from-interpreter">SyntaxError - SyntaxError - copy/paste from interpreter</a></li>
 </ul>
 </li>
 </ul>
@@ -294,7 +295,7 @@ On Windows, if Sphinx is installed on your computer, it is suggested
 instead to run make_trb.bat in the root directory as it will create
 similar files for all languages <em>and</em> update the documentation.</p>
 </div>
-<p>Friendly-traceback version: 0.0.30
+<p>Friendly-traceback version: 0.0.30a
 Python version: 3.8.4</p>
 <div class="section" id="indentationerror-1-expected-an-indented-block">
 <h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -1752,11 +1753,11 @@ Likely cause based on the information given by Python:
     In your program, the name of the
     module that cannot be found is &#39;raise_syntax_error5-&#39;.
 
-Execution stopped on line 116 of file &#39;TESTS:\trb_syntax_common.py&#39;.
+Execution stopped on line 117 of file &#39;TESTS:\trb_syntax_common.py&#39;.
 
-   114:                 make_title(title)
-   115:                 try:
---&gt;116:                     mod = __import__(name)
+   115:                 make_title(title)
+   116:                 try:
+--&gt;117:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>
@@ -2087,6 +2088,30 @@ I don&#39;t have enough information from Python:
 
     In older version of Python, &#39;print&#39; was a keyword.
     Now, &#39;print&#39; is a function; you need to use parentheses to call it.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-syntaxerror-copy-paste-from-interpreter">
+<h2>SyntaxError - SyntaxError - copy/paste from interpreter<a class="headerlink" href="#syntaxerror-syntaxerror-copy-paste-from-interpreter" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid syntax
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error68.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+--&gt;2: &gt;&gt;&gt; print(&quot;Hello World!&quot;)
+      ^
+
+I don&#39;t have enough information from Python:
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    It looks like you copy-pasted code from an interactive interpreter.
+    The Python prompt, &#39;&gt;&gt;&gt;&#39;, should not be included in your code.
 </pre></div>
 </div>
 </div>

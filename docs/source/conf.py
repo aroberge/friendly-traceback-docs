@@ -15,6 +15,10 @@
 
 import os
 import sys
+import sys
+
+import warnings
+warnings.simplefilter("ignore")
 
 sys.path.insert(0, os.path.abspath("../../../friendly-traceback"))
 
