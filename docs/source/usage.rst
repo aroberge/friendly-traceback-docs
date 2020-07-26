@@ -258,21 +258,28 @@ friendly-traceback.
 .. code-block::
 
     $ python -m friendly_traceback demos/adder.py 1 2 3
-    The sum is 6
+    The sum is 6.0
 
 Note that this works even if you specify command line arguments
 that are specific to friendly-traceback::
 
     $ python -m friendly_traceback --lang fr demos/adder.py 1 2 3
-    The sum is 6
+    The sum is 6.0
 
 However, what if one wants to run a script that uses optional named arguments
 similarly to how friendly-traceback can use ``--lang`` and other optional
-arguments?  In this case, we suggest to use either a ``sitecustomize.py``
+arguments? In this case, use ``--`` to separate the list of arguments
+to be used by the script from those written previously and
+intended to be used by friendly-traceback::
+
+    $ python -m friendly_traceback --lang fr demos/adder.py -- --to_int 1 2 3
+    The sum is 6
+
+An alterative is to use either a ``sitecustomize.py``
 or a ``usercustomize.py`` file, as described in the
 `Python documentation <https://docs.python.org/3/library/site.html>`_.
 
-Thus, we suggest the following approach.
+For example, you can use the following approach.
 
 1. Create a ``usercustomize.py`` file whose content is the following::
 

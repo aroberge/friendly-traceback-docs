@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Usage &mdash; Friendly tracebacks 0.0.30a documentation</title>
+  <title>Usage &mdash; Friendly tracebacks 0.0.31a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.30a
+                0.0.31a
               </div>
             
           
@@ -467,21 +467,28 @@ The sum is 6
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback demos/adder.py 1 2 3
-The sum is 6
+The sum is 6.0
 </pre></div>
 </div>
 <p>Note that this works even if you specify command line arguments
 that are specific to friendly-traceback:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback --lang fr demos/adder.py 1 2 3
-The sum is 6
+The sum is 6.0
 </pre></div>
 </div>
 <p>However, what if one wants to run a script that uses optional named arguments
 similarly to how friendly-traceback can use <code class="docutils literal notranslate"><span class="pre">--lang</span></code> and other optional
-arguments?  In this case, we suggest to use either a <code class="docutils literal notranslate"><span class="pre">sitecustomize.py</span></code>
+arguments? In this case, use <code class="docutils literal notranslate"><span class="pre">--</span></code> to separate the list of arguments
+to be used by the script from those written previously and
+intended to be used by friendly-traceback:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback --lang fr demos/adder.py -- --to_int 1 2 3
+The sum is 6
+</pre></div>
+</div>
+<p>An alterative is to use either a <code class="docutils literal notranslate"><span class="pre">sitecustomize.py</span></code>
 or a <code class="docutils literal notranslate"><span class="pre">usercustomize.py</span></code> file, as described in the
 <a class="reference external" href="https://docs.python.org/3/library/site.html">Python documentation</a>.</p>
-<p>Thus, we suggest the following approach.</p>
+<p>For example, you can use the following approach.</p>
 <ol class="arabic">
 <li><p>Create a <code class="docutils literal notranslate"><span class="pre">usercustomize.py</span></code> file whose content is the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
