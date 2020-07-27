@@ -211,18 +211,27 @@ One can also **temporarily** redirect the output to any stream::
 By default, friendly-traceback takes its information from ``sys.exc_info()``.
 It may happen that this is not what we want to show.
 For example, the `showtraceback method in Python's code.py <https://github.com/python/cpython/blob/3.7/Lib/code.py#L131>`_ replaces one of the items prior to
-showing the traceback to the user; we currently also do the same in
+showing the traceback to the user; we currently also do something similar in
 friendly-traceback's own console.  If this is something desired,
 instead of ``explain()``, one can use the "private" function
-``_explain()`` instead.  Ignoring optional parameters,
-what we currently have is essentially the following::
+``friendly_traceback.core.exception_hook(...)`` instead.
+Please note that any such method that is not a direct attribute
+of ``friendly_traceback()`` is not considered to be part of the public
+API and is subject to change at any time.
 
-    def explain():
+Dropping the leading ``friendly_traceback``,
+``explain()`` is currently defined as::
+
+    def explain(redirect=None):
+        core.explain_traceback(redirect=redirect)
+
+and, inside ``core.py``, we have essentially the following::
+
+    def explain_traceback(redirect=None):
         etype, value, tb = sys.exc_info()
-        _explain(etype, value, tb)
+        exception_hook(etype, value, tb, redirect=redirect)
 
-
-If one wishes to temporarily change some other option mentioned above,
+Finally, if one wishes to temporarily change some other option mentioned above,
 it can be done as in the following example::
 
     try:

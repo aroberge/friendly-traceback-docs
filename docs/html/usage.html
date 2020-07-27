@@ -426,17 +426,26 @@ One can also <strong>temporarily</strong> redirect the output to any stream:</p>
 <p>By default, friendly-traceback takes its information from <code class="docutils literal notranslate"><span class="pre">sys.exc_info()</span></code>.
 It may happen that this is not what we want to show.
 For example, the <a class="reference external" href="https://github.com/python/cpython/blob/3.7/Lib/code.py#L131">showtraceback method in Python’s code.py</a> replaces one of the items prior to
-showing the traceback to the user; we currently also do the same in
+showing the traceback to the user; we currently also do something similar in
 friendly-traceback’s own console.  If this is something desired,
 instead of <code class="docutils literal notranslate"><span class="pre">explain()</span></code>, one can use the “private” function
-<code class="docutils literal notranslate"><span class="pre">_explain()</span></code> instead.  Ignoring optional parameters,
-what we currently have is essentially the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">explain</span><span class="p">():</span>
-    <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
-    <span class="n">_explain</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">)</span>
+<code class="docutils literal notranslate"><span class="pre">friendly_traceback.core.exception_hook(...)</span></code> instead.
+Please note that any such method that is not a direct attribute
+of <code class="docutils literal notranslate"><span class="pre">friendly_traceback()</span></code> is not considered to be part of the public
+API and is subject to change at any time.</p>
+<p>Dropping the leading <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
+<code class="docutils literal notranslate"><span class="pre">explain()</span></code> is currently defined as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">core</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="n">redirect</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>If one wishes to temporarily change some other option mentioned above,
+<p>and, inside <code class="docutils literal notranslate"><span class="pre">core.py</span></code>, we have essentially the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">explain_traceback</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
+    <span class="n">exception_hook</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="n">redirect</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, if one wishes to temporarily change some other option mentioned above,
 it can be done as in the following example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="c1"># Some code</span>
