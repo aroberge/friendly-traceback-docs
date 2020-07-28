@@ -195,11 +195,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-nonlocal-variable-not-found-at-module-level">SyntaxError - nonlocal variable not found at module level</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-definition">SyntaxError - keyword arg only once in function definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-call">SyntaxError - keyword arg only once in function call</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-unexpected-eof-while-parsing-2">SyntaxError - SyntaxError - unexpected EOF while parsing 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-print-is-a-function-2">SyntaxError - SyntaxError - print is a function 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-copy-paste-from-interpreter">SyntaxError - SyntaxError - copy/paste from interpreter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-using-pip-from-interpreter">SyntaxError - SyntaxError - Using pip from interpreter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-using-pip-from-interpreter-2">SyntaxError - SyntaxError - Using pip from interpreter 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unexpected-eof-while-parsing-2">SyntaxError - unexpected EOF while parsing 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-print-is-a-function-2">SyntaxError - print is a function 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-copy-paste-from-interpreter">SyntaxError - copy/paste from interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-using-pip-from-interpreter">SyntaxError - Using pip from interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-using-pip-from-interpreter-2">SyntaxError - Using pip from interpreter 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-dot-followed-by-parenthesis">SyntaxError - dot followed by parenthesis</a></li>
 </ul>
 </li>
 </ul>
@@ -1753,11 +1754,11 @@ Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom du module inconnu est &#39;raise_syntax_error5-&#39;.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 119 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 120 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
 
-   117:                 make_title(title)
-   118:                 try:
---&gt;119:                     mod = __import__(name)
+   118:                 make_title(title)
+   119:                 try:
+--&gt;120:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>
@@ -2046,8 +2047,8 @@ Cause probable basée sur les informations données par Python :
 </pre></div>
 </div>
 </div>
-<div class="section" id="syntaxerror-syntaxerror-unexpected-eof-while-parsing-2">
-<h2>SyntaxError - SyntaxError - unexpected EOF while parsing 2<a class="headerlink" href="#syntaxerror-syntaxerror-unexpected-eof-while-parsing-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="syntaxerror-unexpected-eof-while-parsing-2">
+<h2>SyntaxError - unexpected EOF while parsing 2<a class="headerlink" href="#syntaxerror-unexpected-eof-while-parsing-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
     SyntaxError: unexpected EOF while parsing
 
@@ -2068,8 +2069,8 @@ Cause probable basée sur les informations données par Python :
 </pre></div>
 </div>
 </div>
-<div class="section" id="syntaxerror-syntaxerror-print-is-a-function-2">
-<h2>SyntaxError - SyntaxError - print is a function 2<a class="headerlink" href="#syntaxerror-syntaxerror-print-is-a-function-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="syntaxerror-print-is-a-function-2">
+<h2>SyntaxError - print is a function 2<a class="headerlink" href="#syntaxerror-print-is-a-function-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
     SyntaxError: invalid syntax
 
@@ -2091,8 +2092,8 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 </pre></div>
 </div>
 </div>
-<div class="section" id="syntaxerror-syntaxerror-copy-paste-from-interpreter">
-<h2>SyntaxError - SyntaxError - copy/paste from interpreter<a class="headerlink" href="#syntaxerror-syntaxerror-copy-paste-from-interpreter" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="syntaxerror-copy-paste-from-interpreter">
+<h2>SyntaxError - copy/paste from interpreter<a class="headerlink" href="#syntaxerror-copy-paste-from-interpreter" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
     SyntaxError: invalid syntax
 
@@ -2114,8 +2115,8 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 </pre></div>
 </div>
 </div>
-<div class="section" id="syntaxerror-syntaxerror-using-pip-from-interpreter">
-<h2>SyntaxError - SyntaxError - Using pip from interpreter<a class="headerlink" href="#syntaxerror-syntaxerror-using-pip-from-interpreter" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="syntaxerror-using-pip-from-interpreter">
+<h2>SyntaxError - Using pip from interpreter<a class="headerlink" href="#syntaxerror-using-pip-from-interpreter" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
     SyntaxError: invalid syntax
 
@@ -2138,8 +2139,8 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 </pre></div>
 </div>
 </div>
-<div class="section" id="syntaxerror-syntaxerror-using-pip-from-interpreter-2">
-<h2>SyntaxError - SyntaxError - Using pip from interpreter 2<a class="headerlink" href="#syntaxerror-syntaxerror-using-pip-from-interpreter-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="syntaxerror-using-pip-from-interpreter-2">
+<h2>SyntaxError - Using pip from interpreter 2<a class="headerlink" href="#syntaxerror-using-pip-from-interpreter-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
     SyntaxError: invalid syntax
 
@@ -2159,6 +2160,28 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
     Il semble que vous essayez d’utiliser pip pour installer un module.
     pip est une commande qui doit être invoquée dans un terminal,
     pas dans un interprète Python.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-dot-followed-by-parenthesis">
+<h2>SyntaxError - dot followed by parenthesis<a class="headerlink" href="#syntaxerror-dot-followed-by-parenthesis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: invalid syntax
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error71.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+--&gt;2: print(len.(&#39;hello&#39;))
+                ^
+
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
+    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+
+    Vous ne pouvez pas avoir un point &#39;.&#39; suivi de (.
 </pre></div>
 </div>
 </div>

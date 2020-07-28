@@ -1670,11 +1670,11 @@ SyntaxError - assigned prior to nonlocal declaration
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom du module inconnu est 'raise_syntax_error5-'.
         
-    L'exécution s'est arrêtée à la ligne 119 du fichier 'TESTS:\trb_syntax_common.py'
+    L'exécution s'est arrêtée à la ligne 120 du fichier 'TESTS:\trb_syntax_common.py'
     
-       117:                 make_title(title)
-       118:                 try:
-    -->119:                     mod = __import__(name)
+       118:                 make_title(title)
+       119:                 try:
+    -->120:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -1994,8 +1994,8 @@ SyntaxError - keyword arg only once in function call
         Chaque argument de ce type ne peut apparaître qu'une seule fois.
         
 
-SyntaxError - SyntaxError - unexpected EOF while parsing 2
-----------------------------------------------------------
+SyntaxError - unexpected EOF while parsing 2
+--------------------------------------------
 
 .. code-block:: none
 
@@ -2020,8 +2020,8 @@ SyntaxError - SyntaxError - unexpected EOF while parsing 2
         
         
 
-SyntaxError - SyntaxError - print is a function 2
--------------------------------------------------
+SyntaxError - print is a function 2
+-----------------------------------
 
 .. code-block:: none
 
@@ -2046,8 +2046,8 @@ SyntaxError - SyntaxError - print is a function 2
         Maintenant, «print» est une fonction; vous devez utiliser des parenthèses pour l'invoquer.
         
 
-SyntaxError - SyntaxError - copy/paste from interpreter
--------------------------------------------------------
+SyntaxError - copy/paste from interpreter
+-----------------------------------------
 
 .. code-block:: none
 
@@ -2072,8 +2072,8 @@ SyntaxError - SyntaxError - copy/paste from interpreter
         L’invite Python, ''>>>'', ne doit pas être incluse dans votre code.
         
 
-SyntaxError - SyntaxError - Using pip from interpreter
-------------------------------------------------------
+SyntaxError - Using pip from interpreter
+----------------------------------------
 
 .. code-block:: none
 
@@ -2099,8 +2099,8 @@ SyntaxError - SyntaxError - Using pip from interpreter
         pas dans un interprète Python.
         
 
-SyntaxError - SyntaxError - Using pip from interpreter 2
---------------------------------------------------------
+SyntaxError - Using pip from interpreter 2
+------------------------------------------
 
 .. code-block:: none
 
@@ -2124,4 +2124,29 @@ SyntaxError - SyntaxError - Using pip from interpreter 2
         Il semble que vous essayez d’utiliser pip pour installer un module.
         pip est une commande qui doit être invoquée dans un terminal,
         pas dans un interprète Python.
+        
+
+SyntaxError - dot followed by parenthesis
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error71.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+    -->2: print(len.('hello'))
+                    ^
+
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
+        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+        
+        Vous ne pouvez pas avoir un point '.' suivi de (.
         
