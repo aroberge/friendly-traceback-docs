@@ -45,8 +45,8 @@ ArithmeticError
     --> 9:         raise ArithmeticError
 
 
-AttributeError
---------------
+AttributeError - class attribute
+--------------------------------
 
 .. code-block:: none
 
@@ -69,6 +69,64 @@ AttributeError
 
     A: <class 'test_attribute_error.test_attribute_e...>
 
+
+AttributeError - typo in module attribute
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        AssertionError: 
+        
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
+    
+    L'exécution s'est arrêtée à la ligne 196 du fichier 'TESTS:\trb_common.py'
+    
+       194:                     mod = __import__(name)
+       195:                     if function is not None:
+    -->196:                         result = getattr(mod, function)()
+
+    result: "\n    Exception Python:\n        AttributeEr..."  | len(result): 642
+    mod: <module 'test_attribute_error' from 'C:\\User...>
+    function: 'test_misspelled_module_attribute'
+
+    Exception levée à la ligne 29 du fichier 'TESTS:\except\test_attribute_error.py'.
+    
+       27:     result = friendly_traceback.get_output()
+       28:     assert "AttributeError: module 'string' has no attribute 'ascii_lowecase'" in result
+    -->29:     assert (
+
+AttributeError - typo in module attribute 2
+-------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        AssertionError: 
+        
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
+    
+    L'exécution s'est arrêtée à la ligne 196 du fichier 'TESTS:\trb_common.py'
+    
+       194:                     mod = __import__(name)
+       195:                     if function is not None:
+    -->196:                         result = getattr(mod, function)()
+
+    result: "\n    Exception Python:\n        AttributeEr..."  | len(result): 642
+    mod: <module 'test_attribute_error' from 'C:\\User...>
+    function: 'test_misspelled_module_attribute_2'
+
+    Exception levée à la ligne 47 du fichier 'TESTS:\except\test_attribute_error.py'.
+    
+       45:         "AttributeError: module 'math' has no attribute 'cost'"
+       46:     ) in result
+    -->47:     assert (
 
 FileNotFoundError
 -----------------

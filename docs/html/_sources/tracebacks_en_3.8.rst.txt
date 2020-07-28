@@ -45,8 +45,8 @@ ArithmeticError
     --> 9:         raise ArithmeticError
 
 
-AttributeError
---------------
+AttributeError - class attribute
+--------------------------------
 
 .. code-block:: none
 
@@ -68,6 +68,57 @@ AttributeError
     -->10:         A.x
 
     A: <class 'test_attribute_error.test_attribute_e...>
+
+
+AttributeError - typo in module attribute
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        AttributeError: module 'string' has no attribute 'ascii_lowecase'
+        
+    An attribute error occurs when the code contains something like
+        object.x
+    and 'x' is not a method or attribute (variable) belonging to 'object'
+    
+    Likely cause based on the information given by Python:
+        Perhaps you meant to write 'ascii_lowercase' instead of 'ascii_lowecase'
+        
+    Execution stopped on line 24 of file 'TESTS:\except\test_attribute_error.py'.
+    
+       22: 
+       23:     try:
+    -->24:         string.ascii_lowecase
+
+    string: <module 'string' from 'C:\\Users\\andre\\AppD...>
+
+
+AttributeError - typo in module attribute 2
+-------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        AttributeError: module 'math' has no attribute 'cost'
+        
+    An attribute error occurs when the code contains something like
+        object.x
+    and 'x' is not a method or attribute (variable) belonging to 'object'
+    
+    Likely cause based on the information given by Python:
+        Instead of writing cost, perhaps you meant one of the following:
+        ['cos', 'cosh']
+        
+    Execution stopped on line 40 of file 'TESTS:\except\test_attribute_error.py'.
+    
+       38: 
+       39:     try:
+    -->40:         math.cost
+
+    math: <module 'math' (built-in)>
 
 
 FileNotFoundError

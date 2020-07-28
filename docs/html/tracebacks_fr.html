@@ -126,7 +126,9 @@
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Friendly tracebacks - en Français</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#arithmeticerror">ArithmeticError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#attributeerror">AttributeError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attributeerror-class-attribute">AttributeError - class attribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attributeerror-typo-in-module-attribute">AttributeError - typo in module attribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attributeerror-typo-in-module-attribute-2">AttributeError - typo in module attribute 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#filenotfounderror">FileNotFoundError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#importerror">ImportError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#keyerror">KeyError</a></li>
@@ -289,8 +291,8 @@ L&#39;exécution s&#39;est arrêtée à la ligne 9 du fichier &#39;TESTS:\except
 </pre></div>
 </div>
 </div>
-<div class="section" id="attributeerror">
-<h2>AttributeError<a class="headerlink" href="#attributeerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="attributeerror-class-attribute">
+<h2>AttributeError - class attribute<a class="headerlink" href="#attributeerror-class-attribute" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
     AttributeError: type object &#39;A&#39; has no attribute &#39;x&#39;
 
@@ -308,6 +310,60 @@ L&#39;exécution s&#39;est arrêtée à la ligne 10 du fichier &#39;TESTS:\excep
 --&gt;10:         A.x
 
 A: &lt;class &#39;test_attribute_error.test_attribute_e...&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="attributeerror-typo-in-module-attribute">
+<h2>AttributeError - typo in module attribute<a class="headerlink" href="#attributeerror-typo-in-module-attribute" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    AssertionError:
+
+Aucune information n’est connue à propos de cette exception.
+Veuillez signaler cet exemple à
+https://github.com/aroberge/friendly-traceback/issues
+
+L&#39;exécution s&#39;est arrêtée à la ligne 196 du fichier &#39;TESTS:\trb_common.py&#39;
+
+   194:                     mod = __import__(name)
+   195:                     if function is not None:
+--&gt;196:                         result = getattr(mod, function)()
+
+result: &quot;\n    Exception Python:\n        AttributeEr...&quot;  | len(result): 642
+mod: &lt;module &#39;test_attribute_error&#39; from &#39;C:\\User...&gt;
+function: &#39;test_misspelled_module_attribute&#39;
+
+Exception levée à la ligne 29 du fichier &#39;TESTS:\except\test_attribute_error.py&#39;.
+
+   27:     result = friendly_traceback.get_output()
+   28:     assert &quot;AttributeError: module &#39;string&#39; has no attribute &#39;ascii_lowecase&#39;&quot; in result
+--&gt;29:     assert (
+</pre></div>
+</div>
+</div>
+<div class="section" id="attributeerror-typo-in-module-attribute-2">
+<h2>AttributeError - typo in module attribute 2<a class="headerlink" href="#attributeerror-typo-in-module-attribute-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    AssertionError:
+
+Aucune information n’est connue à propos de cette exception.
+Veuillez signaler cet exemple à
+https://github.com/aroberge/friendly-traceback/issues
+
+L&#39;exécution s&#39;est arrêtée à la ligne 196 du fichier &#39;TESTS:\trb_common.py&#39;
+
+   194:                     mod = __import__(name)
+   195:                     if function is not None:
+--&gt;196:                         result = getattr(mod, function)()
+
+result: &quot;\n    Exception Python:\n        AttributeEr...&quot;  | len(result): 642
+mod: &lt;module &#39;test_attribute_error&#39; from &#39;C:\\User...&gt;
+function: &#39;test_misspelled_module_attribute_2&#39;
+
+Exception levée à la ligne 47 du fichier &#39;TESTS:\except\test_attribute_error.py&#39;.
+
+   45:         &quot;AttributeError: module &#39;math&#39; has no attribute &#39;cost&#39;&quot;
+   46:     ) in result
+--&gt;47:     assert (
 </pre></div>
 </div>
 </div>

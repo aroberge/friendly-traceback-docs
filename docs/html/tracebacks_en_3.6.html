@@ -120,7 +120,9 @@
 <li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Friendly tracebacks - Python 3.6 in English</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#arithmeticerror">ArithmeticError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#attributeerror">AttributeError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attributeerror-class-attribute">AttributeError - class attribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attributeerror-typo-in-module-attribute">AttributeError - typo in module attribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attributeerror-typo-in-module-attribute-2">AttributeError - typo in module attribute 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#filenotfounderror">FileNotFoundError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#importerror">ImportError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#keyerror">KeyError</a></li>
@@ -289,8 +291,8 @@ Execution stopped on line 9 of file &#39;TESTS:\except\test_arithmetic_error.py&
 </pre></div>
 </div>
 </div>
-<div class="section" id="attributeerror">
-<h2>AttributeError<a class="headerlink" href="#attributeerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="attributeerror-class-attribute">
+<h2>AttributeError - class attribute<a class="headerlink" href="#attributeerror-class-attribute" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     AttributeError: type object &#39;A&#39; has no attribute &#39;x&#39;
 
@@ -308,6 +310,51 @@ Execution stopped on line 10 of file &#39;TESTS:\except\test_attribute_error.py&
 --&gt;10:         A.x
 
 A: &lt;class &#39;test_attribute_error.test_attribute_e...&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="attributeerror-typo-in-module-attribute">
+<h2>AttributeError - typo in module attribute<a class="headerlink" href="#attributeerror-typo-in-module-attribute" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    AttributeError: module &#39;string&#39; has no attribute &#39;ascii_lowecase&#39;
+
+An attribute error occurs when the code contains something like
+    object.x
+and &#39;x&#39; is not a method or attribute (variable) belonging to &#39;object&#39;
+
+Likely cause based on the information given by Python:
+    Perhaps you meant to write &#39;ascii_lowercase&#39; instead of &#39;ascii_lowecase&#39;
+
+Execution stopped on line 24 of file &#39;TESTS:\except\test_attribute_error.py&#39;.
+
+   22:
+   23:     try:
+--&gt;24:         string.ascii_lowecase
+
+string: &lt;module &#39;string&#39; from &#39;C:\\Users\\andre\\AppD...&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="attributeerror-typo-in-module-attribute-2">
+<h2>AttributeError - typo in module attribute 2<a class="headerlink" href="#attributeerror-typo-in-module-attribute-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    AttributeError: module &#39;math&#39; has no attribute &#39;cost&#39;
+
+An attribute error occurs when the code contains something like
+    object.x
+and &#39;x&#39; is not a method or attribute (variable) belonging to &#39;object&#39;
+
+Likely cause based on the information given by Python:
+    Instead of writing cost, perhaps you meant one of the following:
+    [&#39;cos&#39;, &#39;cosh&#39;]
+
+Execution stopped on line 40 of file &#39;TESTS:\except\test_attribute_error.py&#39;.
+
+   38:
+   39:     try:
+--&gt;40:         math.cost
+
+math: &lt;module &#39;math&#39; (built-in)&gt;
 </pre></div>
 </div>
 </div>
