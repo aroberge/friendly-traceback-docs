@@ -198,6 +198,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-unexpected-eof-while-parsing-2">SyntaxError - SyntaxError - unexpected EOF while parsing 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-print-is-a-function-2">SyntaxError - SyntaxError - print is a function 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-copy-paste-from-interpreter">SyntaxError - SyntaxError - copy/paste from interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-using-pip-from-interpreter">SyntaxError - SyntaxError - Using pip from interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-syntaxerror-using-pip-from-interpreter-2">SyntaxError - SyntaxError - Using pip from interpreter 2</a></li>
 </ul>
 </li>
 </ul>
@@ -299,7 +301,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.0.30a
+<p>Friendly-traceback version: 0.0.31a
 Python version: 3.8.4</p>
 <div class="section" id="indentationerror-1-expected-an-indented-block">
 <h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -419,7 +421,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: def = 2
           ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous essayiez d’assigner une valeur au mot clé Python &#39;def&#39;.
@@ -443,7 +445,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: if True
              ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez écrit un énoncé débutant avec
@@ -467,7 +469,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: while True  # a comment
                   ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous vouliez débuter une boucle &#39;while&#39;
@@ -492,7 +494,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: else if True:
            ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez écrit &#39;else if&#39;
@@ -517,7 +519,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: elseif True:
              ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez écrit &#39;elseif&#39;
@@ -541,7 +543,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: def :
           ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous vouliez définir une fonction ou une méthode,
@@ -567,7 +569,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: def name  :
                 ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous vouliez définir une fonction ou une méthode,
@@ -593,7 +595,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: def ( arg )  :
           ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous vouliez définir une fonction ou une méthode,
@@ -748,7 +750,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: import pen from turtle
                  ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez écrit quelque chose comme
@@ -863,7 +865,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: if x == 1:
                ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Le symbole parenthèse &#39;(&#39; à la ligne 2 n&#39;est pas fermé par le symbole correspondant.
@@ -889,7 +891,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: d = a*a
       ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Le symbole parenthèse &#39;(&#39; à la ligne 2 n&#39;est pas fermé par le symbole correspondant.
@@ -1000,7 +1002,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: def pass():
           ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez tenté d&#39;utiliser le mot clé Python &#39;pass&#39; comme nom de fonction.
@@ -1068,7 +1070,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: message = &#39;don&#39;t&#39;
                      ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il semble y avoir un identificateur Python (nom de variable)
@@ -1095,7 +1097,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5:      &#39;c&#39;: 3,
            ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il est possible que vous ayez oublié une virgule entre les éléments d&#39;un ensemble (set)
@@ -1119,7 +1121,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = {1, 2  3}
                  ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il est possible que vous ayez oublié une virgule entre les éléments d&#39;un ensemble (set)
@@ -1143,7 +1145,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = [1, 2  3]
                  ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il est possible que vous ayez oublié une virgule entre les éléments d&#39;une liste
@@ -1167,7 +1169,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = (1, 2  3)
                  ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il est possible que vous ayez oublié une virgule entre les éléments d&#39;un tuple,
@@ -1192,7 +1194,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: def a(b, c d):
                  ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il est possible que vous ayez oublié une virgule entre les éléments d&#39;un tuple,
@@ -1268,7 +1270,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: ages = {&#39;Alice&#39;=22, &#39;Bob&#39;=24}
                      ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il est possible que vous ayez utilisé un signe d&#39;égalité (=) au lieu de deux points (:)
@@ -1390,7 +1392,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt; 7: print(foo())
        ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Le symbole crochet &#39;[&#39; à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
@@ -1476,7 +1478,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;12: a.pass = 2
          ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez tenté d&#39;utiliser le mot clé Python &#39;pass&#39; comme attribut.
@@ -1580,7 +1582,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: def f(None=1):
             ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez tenté d&#39;utiliser le mot clé Python &#39;None&#39; comme argument
@@ -1606,7 +1608,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: def f(x, True):
                ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez tenté d&#39;utiliser le mot clé Python &#39;True&#39; comme argument
@@ -1632,7 +1634,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: def f(*None):
              ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez tenté d&#39;utiliser le mot clé Python &#39;None&#39; comme argument
@@ -1658,7 +1660,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: def f(**None):
               ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez tenté d&#39;utiliser le mot clé Python &#39;None&#39; comme argument
@@ -1751,11 +1753,11 @@ Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom du module inconnu est &#39;raise_syntax_error5-&#39;.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 117 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 119 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
 
-   115:                 make_title(title)
-   116:                 try:
---&gt;117:                     mod = __import__(name)
+   117:                 make_title(title)
+   118:                 try:
+--&gt;119:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>
@@ -1846,12 +1848,13 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = `1`
           ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous utilisez le charactère d&#39;accent grave ` .
-    Ceci était permis dans Python 2 mais ne l&#39;est plus maintenant.
-    Utilisez la fonction repr(x) au lieu de `x`.
+    Soit que vous vouliez utiliser un apostrophe, &#39;,
+    ou que vous avez copié du code de Python 2;
+    dans ce dernier cas, utilisez la fonction repr(x) au lieu de `x`.
 </pre></div>
 </div>
 </div>
@@ -2080,7 +2083,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;2: print len(&#39;hello&#39;)
             ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Dans l&#39;ancienne version de Python, «print» était un mot clé.
@@ -2103,11 +2106,59 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;2: &gt;&gt;&gt; print(&quot;Hello World!&quot;)
       ^
 
-Je n&#39;ai pas assez d&#39;informations de Python:
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     On dirait que vous avez copié-collé le code d’un interprète interactif.
     L’invite Python, &#39;&#39;&gt;&gt;&gt;&#39;&#39;, ne doit pas être incluse dans votre code.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-syntaxerror-using-pip-from-interpreter">
+<h2>SyntaxError - SyntaxError - Using pip from interpreter<a class="headerlink" href="#syntaxerror-syntaxerror-using-pip-from-interpreter" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: invalid syntax
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error69.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+--&gt;2: pip install friendly
+          ^
+
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
+    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+
+    Il semble que vous essayez d’utiliser pip pour installer un module.
+    pip est une commande qui doit être invoquée dans un terminal,
+    pas dans un interprète Python.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-syntaxerror-using-pip-from-interpreter-2">
+<h2>SyntaxError - SyntaxError - Using pip from interpreter 2<a class="headerlink" href="#syntaxerror-syntaxerror-using-pip-from-interpreter-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: invalid syntax
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error70.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+--&gt;2: python -m pip install friendly
+                ^
+
+Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
+    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+
+    Il semble que vous essayez d’utiliser pip pour installer un module.
+    pip est une commande qui doit être invoquée dans un terminal,
+    pas dans un interprète Python.
 </pre></div>
 </div>
 </div>

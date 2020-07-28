@@ -726,7 +726,10 @@
         <span class="k">if</span> <span class="n">cause</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">message</span> <span class="o">=</span> <span class="n">get_message</span><span class="p">(</span><span class="n">etype</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">etype</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;SyntaxError&quot;</span> <span class="ow">and</span> <span class="s2">&quot;invalid syntax&quot;</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
-                <span class="n">header</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;I don&#39;t have enough information from Python:&quot;</span><span class="p">)</span>
+                <span class="n">header</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span>
+                    <span class="s2">&quot;Python&#39;s error message (invalid syntax) &quot;</span>
+                    <span class="s2">&quot;cannot be used to identify the problem:&quot;</span>
+                <span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">header</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Likely cause based on the information given by Python:&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">header</span><span class="p">,</span> <span class="n">cause</span>

@@ -22,7 +22,7 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.30a
+Friendly-traceback version: 0.0.31a
 Python version: 3.8.4
 
 
@@ -160,7 +160,7 @@ SyntaxError - Assign to keyword
     -->3: def = 2
               ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous essayiez d’assigner une valeur au mot clé Python 'def'.
@@ -188,7 +188,7 @@ SyntaxError - Missing colon - 1
     -->3: if True
                  ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous avez écrit un énoncé débutant avec
@@ -216,7 +216,7 @@ SyntaxError - Missing colon - 2
     -->3: while True  # a comment
                       ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous vouliez débuter une boucle 'while'
@@ -245,7 +245,7 @@ SyntaxError - elif, not else if
     -->5: else if True:
                ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous avez écrit 'else if'
@@ -274,7 +274,7 @@ SyntaxError - elif, not elseif
     -->5: elseif True:
                  ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous avez écrit 'elseif'
@@ -302,7 +302,7 @@ SyntaxError - malformed def statment - 1
     -->3: def :
               ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous vouliez définir une fonction ou une méthode,
@@ -332,7 +332,7 @@ SyntaxError - malformed def statment - 2
     -->3: def name  :
                     ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous vouliez définir une fonction ou une méthode,
@@ -362,7 +362,7 @@ SyntaxError - malformed def statment - 3
     -->3: def ( arg )  :
               ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous vouliez définir une fonction ou une méthode,
@@ -537,7 +537,7 @@ SyntaxError - import X from Y
     -->3: import pen from turtle
                      ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous avez écrit quelque chose comme
@@ -671,7 +671,7 @@ SyntaxError - unclosed parenthesis- 1
     -->3: if x == 1:
                    ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Le symbole parenthèse '(' à la ligne 2 n'est pas fermé par le symbole correspondant.
@@ -700,7 +700,7 @@ SyntaxError - unclosed parenthesis - 2
     -->3: d = a*a
           ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Le symbole parenthèse '(' à la ligne 2 n'est pas fermé par le symbole correspondant.
@@ -823,7 +823,7 @@ SyntaxError - Python keyword as function name
     -->3: def pass():
               ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous avez tenté d'utiliser le mot clé Python 'pass' comme nom de fonction.
@@ -901,7 +901,7 @@ SyntaxError - quote inside a string
     -->3: message = 'don't'
                          ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Il semble y avoir un identificateur Python (nom de variable)
@@ -931,7 +931,7 @@ SyntaxError - missing comma in a dict
     -->5:      'c': 3,
                ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Il est possible que vous ayez oublié une virgule entre les éléments d'un ensemble (set)
@@ -958,7 +958,7 @@ SyntaxError - missing comma in a set
     -->3: a = {1, 2  3}
                      ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Il est possible que vous ayez oublié une virgule entre les éléments d'un ensemble (set)
@@ -985,7 +985,7 @@ SyntaxError - missing comma in a list
     -->3: a = [1, 2  3]
                      ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Il est possible que vous ayez oublié une virgule entre les éléments d'une liste
@@ -1012,7 +1012,7 @@ SyntaxError - missing comma in a tuple
     -->3: a = (1, 2  3)
                      ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Il est possible que vous ayez oublié une virgule entre les éléments d'un tuple,
@@ -1040,7 +1040,7 @@ SyntaxError - missing comma between function args
     -->4: def a(b, c d):
                      ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Il est possible que vous ayez oublié une virgule entre les éléments d'un tuple,
@@ -1125,7 +1125,7 @@ SyntaxError - used equal sign instead of colon
     -->4: ages = {'Alice'=22, 'Bob'=24}
                          ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Il est possible que vous ayez utilisé un signe d'égalité (=) au lieu de deux points (:)
@@ -1259,7 +1259,7 @@ SyntaxError - unclosed bracket
     --> 7: print(foo())
            ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Le symbole crochet '[' à la ligne 5 n'est pas fermé par le symbole correspondant.
@@ -1354,7 +1354,7 @@ SyntaxError - keyword as attribute
     -->12: a.pass = 2
              ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous avez tenté d'utiliser le mot clé Python 'pass' comme attribut.
@@ -1474,7 +1474,7 @@ SyntaxError - keyword cannot be argument in def - 1
     -->5: def f(None=1):
                 ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous avez tenté d'utiliser le mot clé Python 'None' comme argument
@@ -1504,7 +1504,7 @@ SyntaxError - keyword cannot be argument in def - 2
     -->5: def f(x, True):
                    ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous avez tenté d'utiliser le mot clé Python 'True' comme argument
@@ -1534,7 +1534,7 @@ SyntaxError - keyword cannot be argument in def - 3
     -->5: def f(*None):
                  ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous avez tenté d'utiliser le mot clé Python 'None' comme argument
@@ -1564,7 +1564,7 @@ SyntaxError - keyword cannot be argument in def - 4
     -->5: def f(**None):
                   ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous avez tenté d'utiliser le mot clé Python 'None' comme argument
@@ -1670,11 +1670,11 @@ SyntaxError - assigned prior to nonlocal declaration
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom du module inconnu est 'raise_syntax_error5-'.
         
-    L'exécution s'est arrêtée à la ligne 117 du fichier 'TESTS:\trb_syntax_common.py'
+    L'exécution s'est arrêtée à la ligne 119 du fichier 'TESTS:\trb_syntax_common.py'
     
-       115:                 make_title(title)
-       116:                 try:
-    -->117:                     mod = __import__(name)
+       117:                 make_title(title)
+       118:                 try:
+    -->119:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -1776,12 +1776,13 @@ SyntaxError - using the backquote character
     -->3: a = `1`
               ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Vous utilisez le charactère d'accent grave ` .
-        Ceci était permis dans Python 2 mais ne l'est plus maintenant.
-        Utilisez la fonction repr(x) au lieu de `x`.
+        Soit que vous vouliez utiliser un apostrophe, ',
+        ou que vous avez copié du code de Python 2;
+        dans ce dernier cas, utilisez la fonction repr(x) au lieu de `x`.
 
 SyntaxError - assign to generator expression
 --------------------------------------------
@@ -2038,7 +2039,7 @@ SyntaxError - SyntaxError - print is a function 2
     -->2: print len('hello')
                 ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Dans l'ancienne version de Python, «print» était un mot clé.
@@ -2064,9 +2065,63 @@ SyntaxError - SyntaxError - copy/paste from interpreter
     -->2: >>> print("Hello World!")
           ^
 
-    Je n'ai pas assez d'informations de Python:
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         On dirait que vous avez copié-collé le code d’un interprète interactif.
         L’invite Python, ''>>>'', ne doit pas être incluse dans votre code.
+        
+
+SyntaxError - SyntaxError - Using pip from interpreter
+------------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error69.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+    -->2: pip install friendly
+              ^
+
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
+        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+        
+        Il semble que vous essayez d’utiliser pip pour installer un module.
+        pip est une commande qui doit être invoquée dans un terminal,
+        pas dans un interprète Python.
+        
+
+SyntaxError - SyntaxError - Using pip from interpreter 2
+--------------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid syntax
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error70.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+    -->2: python -m pip install friendly
+                    ^
+
+    Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
+        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+        
+        Il semble que vous essayez d’utiliser pip pour installer un module.
+        pip est une commande qui doit être invoquée dans un terminal,
+        pas dans un interprète Python.
         

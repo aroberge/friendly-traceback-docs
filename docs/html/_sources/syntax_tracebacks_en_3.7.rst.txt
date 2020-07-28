@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.30a
+Friendly-traceback version: 0.0.31a
 Python version: 3.7.8
 
 
@@ -152,7 +152,7 @@ SyntaxError - Assign to keyword
     -->3: def = 2
               ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -181,7 +181,7 @@ SyntaxError - Missing colon - 1
     -->3: if True
                  ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -210,7 +210,7 @@ SyntaxError - Missing colon - 2
     -->3: while True  # a comment
                                  ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -240,11 +240,11 @@ SyntaxError - elif, not else if
     -->5: else if True:
                 ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        You meant to use Python's 'elif' keyword
+        You likely meant to use Python's 'elif' keyword
         but wrote 'else if' instead
         
         
@@ -270,11 +270,11 @@ SyntaxError - elif, not elseif
     -->5: elseif True:
                     ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        You meant to use Python's 'elif' keyword
+        You likely meant to use Python's 'elif' keyword
         but wrote 'elseif' instead
         
         
@@ -299,7 +299,7 @@ SyntaxError - malformed def statment - 1
     -->3: def :
               ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -328,7 +328,7 @@ SyntaxError - malformed def statment - 2
     -->3: def name  :
                     ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -357,7 +357,7 @@ SyntaxError - malformed def statment - 3
     -->3: def ( arg )  :
               ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -531,7 +531,7 @@ SyntaxError - import X from Y
     -->3: import pen from turtle
                         ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -640,7 +640,7 @@ SyntaxError - unmatched closing parenthesis
     -->6:     3, 4,))
                     ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -670,7 +670,7 @@ SyntaxError - unclosed parenthesis- 1
     -->3: if x == 1:
                    ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -700,7 +700,7 @@ SyntaxError - unclosed parenthesis - 2
     -->3: d = a*a
           ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -729,7 +729,7 @@ SyntaxError - mismatched brackets
     -->2: x = (1, 2, 3]
                       ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -760,7 +760,7 @@ SyntaxError - mismatched brackets - 2
     -->4:      3]
                 ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -818,7 +818,7 @@ SyntaxError - Python keyword as function name
     -->3: def pass():
                  ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -895,7 +895,7 @@ SyntaxError - quote inside a string
     -->3: message = 'don't'
                          ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -926,7 +926,7 @@ SyntaxError - missing comma in a dict
     -->5:      'c': 3,
                  ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -954,7 +954,7 @@ SyntaxError - missing comma in a set
     -->3: a = {1, 2  3}
                      ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -982,7 +982,7 @@ SyntaxError - missing comma in a list
     -->3: a = [1, 2  3]
                      ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1010,7 +1010,7 @@ SyntaxError - missing comma in a tuple
     -->3: a = (1, 2  3)
                      ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1040,7 +1040,7 @@ SyntaxError - missing comma between function args
     -->4: def a(b, c d):
                      ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1126,7 +1126,7 @@ SyntaxError - used equal sign instead of colon
     -->4: ages = {'Alice'=22, 'Bob'=24}
                          ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1259,7 +1259,7 @@ SyntaxError - unclosed bracket
     --> 7: print(foo())
                ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1353,7 +1353,7 @@ SyntaxError - keyword as attribute
     -->12: a.pass = 2
                 ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1470,7 +1470,7 @@ SyntaxError - keyword cannot be argument in def - 1
     -->5: def f(None=1):
                    ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1499,7 +1499,7 @@ SyntaxError - keyword cannot be argument in def - 2
     -->5: def f(x, True):
                       ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1528,7 +1528,7 @@ SyntaxError - keyword cannot be argument in def - 3
     -->5: def f(*None):
                     ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1557,7 +1557,7 @@ SyntaxError - keyword cannot be argument in def - 4
     -->5: def f(**None):
                      ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1663,11 +1663,11 @@ SyntaxError - assigned prior to nonlocal declaration
         In your program, the name of the
         module that cannot be found is 'raise_syntax_error5-'.
         
-    Execution stopped on line 117 of file 'TESTS:\trb_syntax_common.py'.
+    Execution stopped on line 119 of file 'TESTS:\trb_syntax_common.py'.
     
-       115:                 make_title(title)
-       116:                 try:
-    -->117:                     mod = __import__(name)
+       117:                 make_title(title)
+       118:                 try:
+    -->119:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -1718,7 +1718,7 @@ SyntaxError - named assignment with Python constant
     -->4: (True := 1)
                 ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1773,13 +1773,13 @@ SyntaxError - using the backquote character
     -->3: a = `1`
               ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
         You are using the backquote character `.
-        This was allowed in Python 2 but is no longer allowed.
-        Use the function repr(x) instead of `x`.
+        Either you meant to write a single quote, ', or copied Python 2 code;
+        in this latter case, use the function repr(x) instead of `x`.
 
 SyntaxError - assign to generator expression
 --------------------------------------------
@@ -2035,7 +2035,7 @@ SyntaxError - SyntaxError - print is a function 2
     -->2: print len('hello')
                   ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -2062,12 +2062,68 @@ SyntaxError - SyntaxError - copy/paste from interpreter
     -->2: >>> print("Hello World!")
            ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
         It looks like you copy-pasted code from an interactive interpreter.
         The Python prompt, '>>>', should not be included in your code.
+        
+
+SyntaxError - SyntaxError - Using pip from interpreter
+------------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error69.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+    -->2: pip install friendly
+                    ^
+
+    Python's error message (invalid syntax) cannot be used to identify the problem:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
+        
+        It looks as if you are attempting to use pip to install a module.
+        pip is a command that needs to run in a terminal,
+        not from a Python interpreter.
+        
+
+SyntaxError - SyntaxError - Using pip from interpreter 2
+--------------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error70.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+    -->2: python -m pip install friendly
+                      ^
+
+    Python's error message (invalid syntax) cannot be used to identify the problem:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
+        
+        It looks as if you are attempting to use pip to install a module.
+        pip is a command that needs to run in a terminal,
+        not from a Python interpreter.
         
 
 Walrus operator does not exist - yet
@@ -2090,7 +2146,7 @@ Walrus operator does not exist - yet
     -->3: print(walrus := True)
                        ^
 
-    I don't have enough information from Python:
+    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
