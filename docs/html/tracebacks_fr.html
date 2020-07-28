@@ -316,54 +316,45 @@ A: &lt;class &#39;test_attribute_error.test_attribute_e...&gt;
 <div class="section" id="attributeerror-typo-in-module-attribute">
 <h2>AttributeError - typo in module attribute<a class="headerlink" href="#attributeerror-typo-in-module-attribute" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    AssertionError:
+    AttributeError: module &#39;string&#39; has no attribute &#39;ascii_lowecase&#39;
 
-Aucune information n’est connue à propos de cette exception.
-Veuillez signaler cet exemple à
-https://github.com/aroberge/friendly-traceback/issues
+Une erreur d’attribut se produit lorsque le code contient quelque chose comme
+    objet.x
+et &#39;x&#39; n’est pas une méthode ou un attribut (variable) appartenant à &#39;objet&#39;
 
-L&#39;exécution s&#39;est arrêtée à la ligne 196 du fichier &#39;TESTS:\trb_common.py&#39;
+Cause probable basée sur les informations données par Python :
+    Peut-être que vous vouliez plutôt écrire : &#39;ascii_lowercase&#39; au lieu de &#39;ascii_lowecase&#39;.
 
-   194:                     mod = __import__(name)
-   195:                     if function is not None:
---&gt;196:                         result = getattr(mod, function)()
+L&#39;exécution s&#39;est arrêtée à la ligne 24 du fichier &#39;TESTS:\except\test_attribute_error.py&#39;
 
-result: &quot;\n    Exception Python:\n        AttributeEr...&quot;  | len(result): 642
-mod: &lt;module &#39;test_attribute_error&#39; from &#39;C:\\User...&gt;
-function: &#39;test_misspelled_module_attribute&#39;
+   22:
+   23:     try:
+--&gt;24:         string.ascii_lowecase
 
-Exception levée à la ligne 29 du fichier &#39;TESTS:\except\test_attribute_error.py&#39;.
-
-   27:     result = friendly_traceback.get_output()
-   28:     assert &quot;AttributeError: module &#39;string&#39; has no attribute &#39;ascii_lowecase&#39;&quot; in result
---&gt;29:     assert (
+string: &lt;module &#39;string&#39; from &#39;C:\\Users\\andre\\AppD...&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="attributeerror-typo-in-module-attribute-2">
 <h2>AttributeError - typo in module attribute 2<a class="headerlink" href="#attributeerror-typo-in-module-attribute-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    AssertionError:
+    AttributeError: module &#39;math&#39; has no attribute &#39;cost&#39;
 
-Aucune information n’est connue à propos de cette exception.
-Veuillez signaler cet exemple à
-https://github.com/aroberge/friendly-traceback/issues
+Une erreur d’attribut se produit lorsque le code contient quelque chose comme
+    objet.x
+et &#39;x&#39; n’est pas une méthode ou un attribut (variable) appartenant à &#39;objet&#39;
 
-L&#39;exécution s&#39;est arrêtée à la ligne 196 du fichier &#39;TESTS:\trb_common.py&#39;
+Cause probable basée sur les informations données par Python :
+    Au lieu d’écrire cost, peut-être que vous vouliez écrire l&#39;un des attributs suivants :
+    [&#39;cos&#39;, &#39;cosh&#39;]
 
-   194:                     mod = __import__(name)
-   195:                     if function is not None:
---&gt;196:                         result = getattr(mod, function)()
+L&#39;exécution s&#39;est arrêtée à la ligne 41 du fichier &#39;TESTS:\except\test_attribute_error.py&#39;
 
-result: &quot;\n    Exception Python:\n        AttributeEr...&quot;  | len(result): 642
-mod: &lt;module &#39;test_attribute_error&#39; from &#39;C:\\User...&gt;
-function: &#39;test_misspelled_module_attribute_2&#39;
+   39:
+   40:     try:
+--&gt;41:         math.cost
 
-Exception levée à la ligne 47 du fichier &#39;TESTS:\except\test_attribute_error.py&#39;.
-
-   45:         &quot;AttributeError: module &#39;math&#39; has no attribute &#39;cost&#39;&quot;
-   46:     ) in result
---&gt;47:     assert (
+math: &lt;module &#39;math&#39; (built-in)&gt;
 </pre></div>
 </div>
 </div>

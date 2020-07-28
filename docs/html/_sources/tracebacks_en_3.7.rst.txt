@@ -112,11 +112,11 @@ AttributeError - typo in module attribute 2
         Instead of writing cost, perhaps you meant one of the following:
         ['cos', 'cosh']
         
-    Execution stopped on line 40 of file 'TESTS:\except\test_attribute_error.py'.
+    Execution stopped on line 41 of file 'TESTS:\except\test_attribute_error.py'.
     
-       38: 
-       39:     try:
-    -->40:         math.cost
+       39: 
+       40:     try:
+    -->41:         math.cost
 
     math: <module 'math' (built-in)>
 
