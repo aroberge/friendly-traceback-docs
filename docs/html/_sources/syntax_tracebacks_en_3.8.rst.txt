@@ -1663,11 +1663,11 @@ SyntaxError - assigned prior to nonlocal declaration
         In your program, the name of the
         module that cannot be found is 'raise_syntax_error5-'.
         
-    Execution stopped on line 121 of file 'TESTS:\trb_syntax_common.py'.
+    Execution stopped on line 122 of file 'TESTS:\trb_syntax_common.py'.
     
-       119:                 make_title(title)
-       120:                 try:
-    -->121:                     mod = __import__(name)
+       120:                 make_title(title)
+       121:                 try:
+    -->122:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -2173,4 +2173,30 @@ SyntaxError - cannot assign to f-string
         You wrote an expression that has an f-string
         on the left-hand side of the equal sign.
         An f-string should only appear on the right-handside of the equal sign.
+        
+
+SyntaxError - raising multiple exceptions
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid syntax
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error73.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+    -->2: raise X, Y
+                 ^
+
+    Python's error message (invalid syntax) cannot be used to identify the problem:
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
+        
+        It looks like you are trying to raise an exception using Python 2 syntax.
         
