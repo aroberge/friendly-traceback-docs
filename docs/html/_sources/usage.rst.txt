@@ -146,12 +146,18 @@ desired behaviour, simply use ``flush=False``.
 How much information is printed?
 --------------------------------
 
+.. sidebar:: No warnings from Python
+
+    In order to minimize confusion for the end user, all Python warnings
+    are suppressed.
+
 The amount of information shown to the user can be changed using::
 
     friendly_traceback.set_level(level)
 
+
 What each level correspond to is shown later in this documentation.
-The level currently used can be obtained as follows:
+The level currently used can be obtained as follows::
 
     level = friendly_traceback.get_level()
 

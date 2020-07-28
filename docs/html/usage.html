@@ -365,15 +365,20 @@ desired behaviour, simply use <code class="docutils literal notranslate"><span c
 </div>
 <div class="section" id="how-much-information-is-printed">
 <h2>How much information is printed?<a class="headerlink" href="#how-much-information-is-printed" title="Permalink to this headline">¶</a></h2>
+<div class="sidebar">
+<p class="sidebar-title">No warnings from Python</p>
+<p>In order to minimize confusion for the end user, all Python warnings
+are suppressed.</p>
+</div>
 <p>The amount of information shown to the user can be changed using:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_level</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>What each level correspond to is shown later in this documentation.
 The level currently used can be obtained as follows:</p>
-<blockquote>
-<div><p>level = friendly_traceback.get_level()</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">level</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_level</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="language-used">
 <h2>Language used<a class="headerlink" href="#language-used" title="Permalink to this headline">¶</a></h2>
