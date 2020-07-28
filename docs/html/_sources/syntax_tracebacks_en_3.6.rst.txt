@@ -1663,11 +1663,11 @@ SyntaxError - assigned prior to nonlocal declaration
         In your program, the name of the
         module that cannot be found is 'raise_syntax_error5-'.
         
-    Execution stopped on line 120 of file 'TESTS:\trb_syntax_common.py'.
+    Execution stopped on line 121 of file 'TESTS:\trb_syntax_common.py'.
     
-       118:                 make_title(title)
-       119:                 try:
-    -->120:                     mod = __import__(name)
+       119:                 make_title(title)
+       120:                 try:
+    -->121:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -2151,6 +2151,33 @@ SyntaxError - dot followed by parenthesis
         
         You cannot have a dot '.' followed by (.
         
+
+SyntaxError - cannot assign to f-string
+---------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: can't assign to literal
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error72.py'
+    beyond the location indicated below by --> and ^.
+    
+       3: Python >= 3.8: SyntaxError: cannot assign to f-string expression
+       4: """
+       5: 
+    -->6: f'{x}' = 42
+         ^
+
+    Likely cause based on the information given by Python:
+        You wrote an expression that has an f-string
+        on the left-hand side of the equal sign.
+        An f-string should only appear on the right-handside of the equal sign
+        .
 
 Walrus operator does not exist - yet
 ------------------------------------

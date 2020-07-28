@@ -201,6 +201,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-using-pip-from-interpreter">SyntaxError - Using pip from interpreter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-using-pip-from-interpreter-2">SyntaxError - Using pip from interpreter 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-dot-followed-by-parenthesis">SyntaxError - dot followed by parenthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-cannot-assign-to-f-string">SyntaxError - cannot assign to f-string</a></li>
 </ul>
 </li>
 </ul>
@@ -1754,11 +1755,11 @@ Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom du module inconnu est &#39;raise_syntax_error5-&#39;.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 120 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 121 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
 
-   118:                 make_title(title)
-   119:                 try:
---&gt;120:                     mod = __import__(name)
+   119:                 make_title(title)
+   120:                 try:
+--&gt;121:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>
@@ -2182,6 +2183,31 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous ne pouvez pas avoir un point &#39;.&#39; suivi de (.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-cannot-assign-to-f-string">
+<h2>SyntaxError - cannot assign to f-string<a class="headerlink" href="#syntaxerror-cannot-assign-to-f-string" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: cannot assign to f-string expression
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error72.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   3: Python &gt;= 3.8: SyntaxError: cannot assign to f-string expression
+   4: &quot;&quot;&quot;
+   5:
+--&gt;6: f&#39;{x}&#39; = 42
+      ^
+
+Cause probable basée sur les informations données par Python :
+    Vous avez écrit une expression qui a une chaine de
+    caractères formatés (aussi appelé f-string)
+    sur le côté gauche du signe égal.
+    Une f-string ne doit apparaître que sur le côté droit du signe d’égalité.
 </pre></div>
 </div>
 </div>
