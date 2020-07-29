@@ -1670,11 +1670,11 @@ SyntaxError - assigned prior to nonlocal declaration
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom du module inconnu est 'raise_syntax_error5-'.
         
-    L'exécution s'est arrêtée à la ligne 123 du fichier 'TESTS:\trb_syntax_common.py'
+    L'exécution s'est arrêtée à la ligne 124 du fichier 'TESTS:\trb_syntax_common.py'
     
-       121:                 make_title(title)
-       122:                 try:
-    -->123:                     mod = __import__(name)
+       122:                 make_title(title)
+       123:                 try:
+    -->124:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -2229,4 +2229,33 @@ SyntaxError - parenthesis around generator expression
         Vous utilisez une expression de générateur, quelque chose de la forme
             x for x in objet
         Vous devez ajouter des parenthèses qui entourent cette expression.
+        
+
+SyntaxError - invalid character (bad quote)
+-------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: invalid character in identifier
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error75.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid character in identifier for Python <=3.8
+       2:    and  SyntaxError: invalid character '«' (U+00AB) in Python 3.9"""
+    -->3: a = « hello »
+              ^
+
+    Cause probable basée sur les informations données par Python :
+        Avez-vous utilisé copier-coller?
+        Python indique que vous avez utilisé des caractères unicode non permis
+        comme étant partie d’un nom de variable; cela inclut de nombreux emojis.
+        Cependant, je soupçonne que vous avez utilisé un guillemet unicode 
+        au lieu d’un guillemet normal (simple ou double) pour une chaîne de caractères.
+        
         

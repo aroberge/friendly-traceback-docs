@@ -1443,10 +1443,8 @@ SyntaxError - invalid character in identifier
           ^
 
     Likely cause based on the information given by Python:
-        You likely used some unicode character that is not allowed
-        as part of a variable name in Python.
-        This includes many emojis.
-        
+        Python indicates that you used the unicode character 🤖
+        which is not allowed.
         
 
 SyntaxError - keyword cannot be argument in def - 1
@@ -1663,11 +1661,11 @@ SyntaxError - assigned prior to nonlocal declaration
         In your program, the name of the
         module that cannot be found is 'raise_syntax_error5-'.
         
-    Execution stopped on line 123 of file 'TESTS:\trb_syntax_common.py'.
+    Execution stopped on line 124 of file 'TESTS:\trb_syntax_common.py'.
     
-       121:                 make_title(title)
-       122:                 try:
-    -->123:                     mod = __import__(name)
+       122:                 make_title(title)
+       123:                 try:
+    -->124:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -2226,4 +2224,32 @@ SyntaxError - parenthesis around generator expression
         You are using a generator expression, something of the form
             x for x in thing
         You must add parentheses enclosing that expression.
+        
+
+SyntaxError - invalid character (bad quote)
+-------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: invalid character '«' (U+00AB)
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error75.py'
+    beyond the location indicated below by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid character in identifier for Python <=3.8
+       2:    and  SyntaxError: invalid character '«' (U+00AB) in Python 3.9"""
+    -->3: a = « hello »
+              ^
+
+    Likely cause based on the information given by Python:
+        Did you use copy-paste?
+        Python indicates that you used the unicode character «
+        which is not allowed.
+        I suspect that you used a fancy unicode quotation mark
+        instead of a normal single or double quote for a string.
         

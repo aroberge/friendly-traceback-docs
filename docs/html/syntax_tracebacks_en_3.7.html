@@ -200,6 +200,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-cannot-assign-to-f-string">SyntaxError - cannot assign to f-string</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-raising-multiple-exceptions">SyntaxError - raising multiple exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-parenthesis-around-generator-expression">SyntaxError - parenthesis around generator expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-invalid-character-bad-quote">SyntaxError - invalid character (bad quote)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
@@ -1760,11 +1761,11 @@ Likely cause based on the information given by Python:
     In your program, the name of the
     module that cannot be found is &#39;raise_syntax_error5-&#39;.
 
-Execution stopped on line 123 of file &#39;TESTS:\trb_syntax_common.py&#39;.
+Execution stopped on line 124 of file &#39;TESTS:\trb_syntax_common.py&#39;.
 
-   121:                 make_title(title)
-   122:                 try:
---&gt;123:                     mod = __import__(name)
+   122:                 make_title(title)
+   123:                 try:
+--&gt;124:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>
@@ -2269,6 +2270,31 @@ Likely cause based on the information given by Python:
     You are using a generator expression, something of the form
         x for x in thing
     You must add parentheses enclosing that expression.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-invalid-character-bad-quote">
+<h2>SyntaxError - invalid character (bad quote)<a class="headerlink" href="#syntaxerror-invalid-character-bad-quote" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: invalid character in identifier
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error75.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid character in identifier for Python &lt;=3.8
+   2:    and  SyntaxError: invalid character &#39;«&#39; (U+00AB) in Python 3.9&quot;&quot;&quot;
+--&gt;3: a = « hello »
+          ^
+
+Likely cause based on the information given by Python:
+    Did you use copy-paste?
+    Python indicates that you used some unicode characters not allowed
+    as part of a variable name; this includes many emojis.
+    However, I suspect that you used a fancy unicode quotation mark
+    instead of a normal single or double quote for a string.
 </pre></div>
 </div>
 </div>
