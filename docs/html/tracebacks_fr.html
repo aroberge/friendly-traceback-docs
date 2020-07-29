@@ -168,6 +168,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-14-missing-positional-arguments">TypeError - 14: missing positional arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-15-tuple-object-is-not-callable">TypeError - 15: tuple object is not callable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-15a-list-object-is-not-callable">TypeError - 15a: list object is not callable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typeerror-16-exception-derived-from-baseexception">TypeError - 16: exception derived from BaseException</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unboundlocalerror">UnboundLocalError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unknown-exception">Unknown exception</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
@@ -1298,6 +1299,27 @@ L&#39;exécution s&#39;est arrêtée à la ligne 412 du fichier &#39;TESTS:\exce
    410: def test_type_error15a():
    411:     try:
 --&gt;412:         _ = [1, 2](3, 4)
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-16-exception-derived-from-baseexception">
+<h2>TypeError - 16: exception derived from BaseException<a class="headerlink" href="#typeerror-16-exception-derived-from-baseexception" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    TypeError: exceptions must derive from BaseException
+
+Une exception TypeError est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+Cause probable basée sur les informations données par Python :
+    Dans Python 3, les exceptions doivent être dérivées de BaseException.
+
+L&#39;exécution s&#39;est arrêtée à la ligne 424 du fichier &#39;TESTS:\except\test_type_error.py&#39;
+
+   422: def test_type_error16():
+   423:     try:
+--&gt;424:         raise &quot;exception&quot;
 </pre></div>
 </div>
 </div>

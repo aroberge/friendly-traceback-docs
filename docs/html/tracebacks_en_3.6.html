@@ -162,6 +162,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-14-missing-positional-arguments">TypeError - 14: missing positional arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-15-tuple-object-is-not-callable">TypeError - 15: tuple object is not callable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-15a-list-object-is-not-callable">TypeError - 15a: list object is not callable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typeerror-16-exception-derived-from-baseexception">TypeError - 16: exception derived from BaseException</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unboundlocalerror">UnboundLocalError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unknown-exception">Unknown exception</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
@@ -1300,6 +1301,27 @@ Execution stopped on line 412 of file &#39;TESTS:\except\test_type_error.py&#39;
    410: def test_type_error15a():
    411:     try:
 --&gt;412:         _ = [1, 2](3, 4)
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-16-exception-derived-from-baseexception">
+<h2>TypeError - 16: exception derived from BaseException<a class="headerlink" href="#typeerror-16-exception-derived-from-baseexception" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    TypeError: exceptions must derive from BaseException
+
+A TypeError is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
+Likely cause based on the information given by Python:
+    In Python 3, exceptions must be derived from BaseException.
+
+Execution stopped on line 424 of file &#39;TESTS:\except\test_type_error.py&#39;.
+
+   422: def test_type_error16():
+   423:     try:
+--&gt;424:         raise &quot;exception&quot;
 </pre></div>
 </div>
 </div>

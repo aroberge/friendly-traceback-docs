@@ -1185,6 +1185,30 @@ TypeError - 15a: list object is not callable
     -->412:         _ = [1, 2](3, 4)
 
 
+TypeError - 16: exception derived from BaseException
+----------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        TypeError: exceptions must derive from BaseException
+        
+    A TypeError is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
+    
+    Likely cause based on the information given by Python:
+        In Python 3, exceptions must be derived from BaseException.
+        
+    Execution stopped on line 424 of file 'TESTS:\except\test_type_error.py'.
+    
+       422: def test_type_error16():
+       423:     try:
+    -->424:         raise "exception"
+
+
 UnboundLocalError
 -----------------
 
