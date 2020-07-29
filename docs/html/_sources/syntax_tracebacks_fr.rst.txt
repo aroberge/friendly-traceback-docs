@@ -1670,11 +1670,11 @@ SyntaxError - assigned prior to nonlocal declaration
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom du module inconnu est 'raise_syntax_error5-'.
         
-    L'exécution s'est arrêtée à la ligne 122 du fichier 'TESTS:\trb_syntax_common.py'
+    L'exécution s'est arrêtée à la ligne 123 du fichier 'TESTS:\trb_syntax_common.py'
     
-       120:                 make_title(title)
-       121:                 try:
-    -->122:                     mod = __import__(name)
+       121:                 make_title(title)
+       122:                 try:
+    -->123:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -2202,4 +2202,31 @@ SyntaxError - raising multiple exceptions
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Je crois que vous essayez de lever une exception en utilisant la syntaxe de Python 2.
+        
+
+SyntaxError - parenthesis around generator expression
+-----------------------------------------------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        SyntaxError: Generator expression must be parenthesized
+        
+    Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error74.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       3:     return list(it)
+       4: 
+       5: L = range(10)
+    -->6: f(x for x in L, 1)
+            ^
+
+    Cause probable basée sur les informations données par Python :
+        Vous utilisez une expression de générateur, quelque chose de la forme
+            x for x in objet
+        Vous devez ajouter des parenthèses qui entourent cette expression.
         

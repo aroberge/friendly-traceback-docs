@@ -203,6 +203,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-dot-followed-by-parenthesis">SyntaxError - dot followed by parenthesis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-cannot-assign-to-f-string">SyntaxError - cannot assign to f-string</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-raising-multiple-exceptions">SyntaxError - raising multiple exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-parenthesis-around-generator-expression">SyntaxError - parenthesis around generator expression</a></li>
 </ul>
 </li>
 </ul>
@@ -1756,11 +1757,11 @@ Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom du module inconnu est &#39;raise_syntax_error5-&#39;.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 122 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
+L&#39;exécution s&#39;est arrêtée à la ligne 123 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
 
-   120:                 make_title(title)
-   121:                 try:
---&gt;122:                     mod = __import__(name)
+   121:                 make_title(title)
+   122:                 try:
+--&gt;123:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>
@@ -2231,6 +2232,30 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Je crois que vous essayez de lever une exception en utilisant la syntaxe de Python 2.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-parenthesis-around-generator-expression">
+<h2>SyntaxError - parenthesis around generator expression<a class="headerlink" href="#syntaxerror-parenthesis-around-generator-expression" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    SyntaxError: Generator expression must be parenthesized
+
+Une exception de type SyntaxError se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error74.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   3:     return list(it)
+   4:
+   5: L = range(10)
+--&gt;6: f(x for x in L, 1)
+        ^
+
+Cause probable basée sur les informations données par Python :
+    Vous utilisez une expression de générateur, quelque chose de la forme
+        x for x in objet
+    Vous devez ajouter des parenthèses qui entourent cette expression.
 </pre></div>
 </div>
 </div>

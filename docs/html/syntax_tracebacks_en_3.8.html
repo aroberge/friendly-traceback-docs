@@ -177,6 +177,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-dot-followed-by-parenthesis">SyntaxError - dot followed by parenthesis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-cannot-assign-to-f-string">SyntaxError - cannot assign to f-string</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-raising-multiple-exceptions">SyntaxError - raising multiple exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-parenthesis-around-generator-expression">SyntaxError - parenthesis around generator expression</a></li>
 </ul>
 </li>
 </ul>
@@ -1758,11 +1759,11 @@ Likely cause based on the information given by Python:
     In your program, the name of the
     module that cannot be found is &#39;raise_syntax_error5-&#39;.
 
-Execution stopped on line 122 of file &#39;TESTS:\trb_syntax_common.py&#39;.
+Execution stopped on line 123 of file &#39;TESTS:\trb_syntax_common.py&#39;.
 
-   120:                 make_title(title)
-   121:                 try:
---&gt;122:                     mod = __import__(name)
+   121:                 make_title(title)
+   122:                 try:
+--&gt;123:                     mod = __import__(name)
 
 name: &#39;raise_syntax_error5-&#39;
 </pre></div>
@@ -2237,6 +2238,30 @@ Python&#39;s error message (invalid syntax) cannot be used to identify the probl
     but I might guess incorrectly.
 
     It looks like you are trying to raise an exception using Python 2 syntax.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-parenthesis-around-generator-expression">
+<h2>SyntaxError - parenthesis around generator expression<a class="headerlink" href="#syntaxerror-parenthesis-around-generator-expression" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    SyntaxError: Generator expression must be parenthesized
+
+A SyntaxError occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error74.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+   3:     return list(it)
+   4:
+   5: L = range(10)
+--&gt;6: f(x for x in L, 1)
+        ^
+
+Likely cause based on the information given by Python:
+    You are using a generator expression, something of the form
+        x for x in thing
+    You must add parentheses enclosing that expression.
 </pre></div>
 </div>
 </div>

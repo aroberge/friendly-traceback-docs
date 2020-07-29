@@ -1663,11 +1663,11 @@ SyntaxError - assigned prior to nonlocal declaration
         In your program, the name of the
         module that cannot be found is 'raise_syntax_error5-'.
         
-    Execution stopped on line 122 of file 'TESTS:\trb_syntax_common.py'.
+    Execution stopped on line 123 of file 'TESTS:\trb_syntax_common.py'.
     
-       120:                 make_title(title)
-       121:                 try:
-    -->122:                     mod = __import__(name)
+       121:                 make_title(title)
+       122:                 try:
+    -->123:                     mod = __import__(name)
 
     name: 'raise_syntax_error5-'
 
@@ -2203,6 +2203,33 @@ SyntaxError - raising multiple exceptions
         but I might guess incorrectly.
         
         It looks like you are trying to raise an exception using Python 2 syntax.
+        
+
+SyntaxError - parenthesis around generator expression
+-----------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+        SyntaxError: Generator expression must be parenthesized if not sole argument
+        
+    A SyntaxError occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error74.py'
+    beyond the location indicated below by --> and ^.
+    
+       3:     return list(it)
+       4: 
+       5: L = range(10)
+    -->6: f(x for x in L, 1)
+           ^
+
+    Likely cause based on the information given by Python:
+        You are using a generator expression, something of the form
+            x for x in thing
+        You must add parentheses enclosing that expression.
         
 
 Walrus operator does not exist - yet
