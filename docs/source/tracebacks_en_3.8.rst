@@ -19,7 +19,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.31a
+Friendly-traceback version: 0.0.32a
 Python version: 3.8.4
 
 
@@ -303,7 +303,7 @@ NameError
 
 
     Python exception:
-        NameError: name 'c' is not defined
+        NameError: name 'cost' is not defined
         
     A NameError exception indicates that a variable or
     function name is not known to Python.
@@ -312,13 +312,46 @@ NameError
     before being defined or given a value.
     
     Likely cause based on the information given by Python:
-        In your program, the unknown name is 'c'.
+        In your program, the unknown name is 'cost'.
         
     Execution stopped on line 6 of file 'TESTS:\except\test_name_error.py'.
     
        4: def test_name_error():
        5:     try:
-    -->6:         b = c
+    -->6:         cost  # wrote from math import * above
+
+    Perhaps you meant to write one of the following:
+        Global variable: 'cos', 'cosh'
+
+
+NameError - 2
+-------------
+
+.. code-block:: none
+
+
+    Python exception:
+        NameError: name 'babs' is not defined
+        
+    A NameError exception indicates that a variable or
+    function name is not known to Python.
+    Most often, this is because there is a spelling mistake.
+    However, sometimes it is because the name is used
+    before being defined or given a value.
+    
+    Likely cause based on the information given by Python:
+        In your program, the unknown name is 'babs'.
+        
+    Execution stopped on line 18 of file 'TESTS:\except\test_name_error.py'.
+    
+       16:     nabs = 1
+       17:     try:
+    -->18:         x = babs(-1)
+
+    Perhaps you meant to write one of the following:
+        Local variable: 'nabs'
+        Global variable: 'fabs'
+        Python builtins: 'abs'
 
 
 OverflowError

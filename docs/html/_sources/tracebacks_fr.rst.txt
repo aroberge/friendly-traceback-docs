@@ -19,7 +19,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.31a
+Friendly-traceback version: 0.0.32a
 Python version: 3.8.4
 
 
@@ -300,7 +300,7 @@ NameError
 
 
     Exception Python:
-        NameError: name 'c' is not defined
+        NameError: name 'cost' is not defined
         
     Une exception NameError indique que le nom d'une variable
     ou d'une fonction n'est pas connue par Python.
@@ -309,13 +309,46 @@ NameError
     utilisé avant qu'on ne lui ait associé une valeur.
     
     Cause probable basée sur les informations données par Python :
-        Dans votre programme, le nom inconnu est 'c'.
+        Dans votre programme, le nom inconnu est 'cost'.
         
     L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\except\test_name_error.py'
     
        4: def test_name_error():
        5:     try:
-    -->6:         b = c
+    -->6:         cost  # wrote from math import * above
+
+    Peut-être que vous vouliez plutôt écrire un des choix suivants :
+        Identifiant global : 'cos', 'cosh'
+
+
+NameError - 2
+-------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        NameError: name 'babs' is not defined
+        
+    Une exception NameError indique que le nom d'une variable
+    ou d'une fonction n'est pas connue par Python.
+    Habituellement, ceci indique une simple faute d'orthographe.
+    Cependant, cela peut également indiquer que le nom a été
+    utilisé avant qu'on ne lui ait associé une valeur.
+    
+    Cause probable basée sur les informations données par Python :
+        Dans votre programme, le nom inconnu est 'babs'.
+        
+    L'exécution s'est arrêtée à la ligne 18 du fichier 'TESTS:\except\test_name_error.py'
+    
+       16:     nabs = 1
+       17:     try:
+    -->18:         x = babs(-1)
+
+    Peut-être que vous vouliez plutôt écrire un des choix suivants :
+        Identifiant local : 'nabs'
+        Identifiant global : 'fabs'
+        Identifiant Python (builtins) : 'abs'
 
 
 OverflowError

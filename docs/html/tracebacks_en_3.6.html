@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.0.31a documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.0.32a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.31a
+                0.0.32a
               </div>
             
           
@@ -131,6 +131,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#indexerror-long-list">IndexError - long list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#modulenotfounderror">ModuleNotFoundError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nameerror">NameError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nameerror-2">NameError - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#overflowerror">OverflowError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-1a-concatenate-two-different-types">TypeError - 1a: concatenate two different types</a></li>
@@ -272,7 +273,7 @@ On Windows, if Sphinx is installed on your computer, it is suggested
 instead to run make_trb.bat in the root directory as it will create
 similar files for all languages <em>and</em> update the documentation.</p>
 </div>
-<p>Friendly-traceback version: 0.0.31a
+<p>Friendly-traceback version: 0.0.32a
 Python version: 3.6.8</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -514,7 +515,7 @@ Execution stopped on line 6 of file &#39;TESTS:\except\test_module_not_found_err
 <div class="section" id="nameerror">
 <h2>NameError<a class="headerlink" href="#nameerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    NameError: name &#39;c&#39; is not defined
+    NameError: name &#39;cost&#39; is not defined
 
 A NameError exception indicates that a variable or
 function name is not known to Python.
@@ -523,13 +524,43 @@ However, sometimes it is because the name is used
 before being defined or given a value.
 
 Likely cause based on the information given by Python:
-    In your program, the unknown name is &#39;c&#39;.
+    In your program, the unknown name is &#39;cost&#39;.
 
 Execution stopped on line 6 of file &#39;TESTS:\except\test_name_error.py&#39;.
 
    4: def test_name_error():
    5:     try:
---&gt;6:         b = c
+--&gt;6:         cost  # wrote from math import * above
+
+Perhaps you meant to write one of the following:
+    Global variable: &#39;cos&#39;, &#39;cosh&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="nameerror-2">
+<h2>NameError - 2<a class="headerlink" href="#nameerror-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    NameError: name &#39;babs&#39; is not defined
+
+A NameError exception indicates that a variable or
+function name is not known to Python.
+Most often, this is because there is a spelling mistake.
+However, sometimes it is because the name is used
+before being defined or given a value.
+
+Likely cause based on the information given by Python:
+    In your program, the unknown name is &#39;babs&#39;.
+
+Execution stopped on line 18 of file &#39;TESTS:\except\test_name_error.py&#39;.
+
+   16:     nabs = 1
+   17:     try:
+--&gt;18:         x = babs(-1)
+
+Perhaps you meant to write one of the following:
+    Local variable: &#39;nabs&#39;
+    Global variable: &#39;fabs&#39;
+    Python builtins: &#39;abs&#39;
 </pre></div>
 </div>
 </div>

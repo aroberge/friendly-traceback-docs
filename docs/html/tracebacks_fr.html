@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.0.31a documentation</title>
+  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.0.32a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.31a
+                0.0.32a
               </div>
             
           
@@ -137,6 +137,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#indexerror-long-list">IndexError - long list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#modulenotfounderror">ModuleNotFoundError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nameerror">NameError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nameerror-2">NameError - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#overflowerror">OverflowError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-1a-concatenate-two-different-types">TypeError - 1a: concatenate two different types</a></li>
@@ -272,7 +273,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.0.31a
+<p>Friendly-traceback version: 0.0.32a
 Python version: 3.8.4</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -513,7 +514,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 6 du fichier &#39;TESTS:\except
 <div class="section" id="nameerror">
 <h2>NameError<a class="headerlink" href="#nameerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    NameError: name &#39;c&#39; is not defined
+    NameError: name &#39;cost&#39; is not defined
 
 Une exception NameError indique que le nom d&#39;une variable
 ou d&#39;une fonction n&#39;est pas connue par Python.
@@ -522,13 +523,43 @@ Cependant, cela peut également indiquer que le nom a été
 utilisé avant qu&#39;on ne lui ait associé une valeur.
 
 Cause probable basée sur les informations données par Python :
-    Dans votre programme, le nom inconnu est &#39;c&#39;.
+    Dans votre programme, le nom inconnu est &#39;cost&#39;.
 
 L&#39;exécution s&#39;est arrêtée à la ligne 6 du fichier &#39;TESTS:\except\test_name_error.py&#39;
 
    4: def test_name_error():
    5:     try:
---&gt;6:         b = c
+--&gt;6:         cost  # wrote from math import * above
+
+Peut-être que vous vouliez plutôt écrire un des choix suivants :
+    Identifiant global : &#39;cos&#39;, &#39;cosh&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="nameerror-2">
+<h2>NameError - 2<a class="headerlink" href="#nameerror-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    NameError: name &#39;babs&#39; is not defined
+
+Une exception NameError indique que le nom d&#39;une variable
+ou d&#39;une fonction n&#39;est pas connue par Python.
+Habituellement, ceci indique une simple faute d&#39;orthographe.
+Cependant, cela peut également indiquer que le nom a été
+utilisé avant qu&#39;on ne lui ait associé une valeur.
+
+Cause probable basée sur les informations données par Python :
+    Dans votre programme, le nom inconnu est &#39;babs&#39;.
+
+L&#39;exécution s&#39;est arrêtée à la ligne 18 du fichier &#39;TESTS:\except\test_name_error.py&#39;
+
+   16:     nabs = 1
+   17:     try:
+--&gt;18:         x = babs(-1)
+
+Peut-être que vous vouliez plutôt écrire un des choix suivants :
+    Identifiant local : &#39;nabs&#39;
+    Identifiant global : &#39;fabs&#39;
+    Identifiant Python (builtins) : &#39;abs&#39;
 </pre></div>
 </div>
 </div>
