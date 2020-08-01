@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.0.32a documentation</title>
+  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.0.34a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.32a
+                0.0.34a
               </div>
             
           
@@ -136,9 +136,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#indexerror-short-tuple">IndexError - short tuple</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#indexerror-long-list">IndexError - long list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#modulenotfounderror">ModuleNotFoundError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#nameerror">NameError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nameerror-1">NameError - 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nameerror-2">NameError - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#overflowerror">OverflowError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recursionerror">RecursionError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-1a-concatenate-two-different-types">TypeError - 1a: concatenate two different types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-1b-concatenate-two-different-types">TypeError - 1b: concatenate two different types</a></li>
@@ -273,7 +274,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.0.32a
+<p>Friendly-traceback version: 0.0.34a
 Python version: 3.8.4</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -511,8 +512,8 @@ L&#39;exécution s&#39;est arrêtée à la ligne 6 du fichier &#39;TESTS:\except
 </pre></div>
 </div>
 </div>
-<div class="section" id="nameerror">
-<h2>NameError<a class="headerlink" href="#nameerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nameerror-1">
+<h2>NameError - 1<a class="headerlink" href="#nameerror-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
     NameError: name &#39;cost&#39; is not defined
 
@@ -576,6 +577,34 @@ L&#39;exécution s&#39;est arrêtée à la ligne 6 du fichier &#39;TESTS:\except
    4: def test_overflow_error():
    5:     try:
 --&gt;6:         2.0 ** 1600
+</pre></div>
+</div>
+</div>
+<div class="section" id="recursionerror">
+<h2>RecursionError<a class="headerlink" href="#recursionerror" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    RecursionError: maximum recursion depth exceeded
+
+Une exception de type RecursionError est levée lorsqu’une fonction s&#39;invoque elle-même,
+directement ou indirectement, trop de fois.
+Cette exception indique presque toujours que vous avez fait une erreur dans votre code
+et que votre programme ne terminerait jamais.
+
+L&#39;exécution s&#39;est arrêtée à la ligne 8 du fichier &#39;TESTS:\except\test_recursion_error.py&#39;
+
+    6:         return a()
+    7:     try:
+--&gt; 8:         a()
+
+a: &lt;function test_recursion_error.&lt;locals&gt;.a&gt;
+
+Exception levée à la ligne 6 du fichier &#39;TESTS:\except\test_recursion_error.py&#39;.
+
+   4: def test_recursion_error():
+   5:     def a():
+--&gt;6:         return a()
+
+a: &lt;function test_recursion_error.&lt;locals&gt;.a&gt;
 </pre></div>
 </div>
 </div>

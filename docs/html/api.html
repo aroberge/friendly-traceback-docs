@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Public API &mdash; Friendly tracebacks 0.0.32a documentation</title>
+  <title>Public API &mdash; Friendly tracebacks 0.0.34a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.32a
+                0.0.34a
               </div>
             
           
@@ -370,6 +370,12 @@ However, this can be overriden if desired.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt id="friendly_traceback.public_api.get_verbosity">
+<code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">get_verbosity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/public_api.html#get_verbosity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.get_verbosity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the verbosity level currently used.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="friendly_traceback.public_api.highlight_source">
 <code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">highlight_source</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">linenumber</span></em>, <em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">offset</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/source_cache.html#highlight_source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.highlight_source" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extracts a few relevant lines from a file content given as a list
@@ -412,7 +418,7 @@ by Friendly-traceback.</p>
 
 <dl class="py function">
 <dt id="friendly_traceback.public_api.install">
-<code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">install</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">redirect</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">level</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/public_api.html#install"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.install" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">install</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">redirect</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">level</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/public_api.html#install"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.install" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces <code class="docutils literal notranslate"><span class="pre">sys.excepthook</span></code> by friendly_traceback’s own version.
 Intercepts, and provides an explanation for all Python exceptions except
 for <code class="docutils literal notranslate"><span class="pre">SystemExist</span></code> and <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code>.</p>
@@ -498,6 +504,27 @@ settings for beginners.</p>
 <dd><p>Sets the stream to which the output should be directed.</p>
 <p>If the string <code class="docutils literal notranslate"><span class="pre">&quot;capture&quot;</span></code> is given as argument, the
 output is saved and can be later retrieved by <code class="docutils literal notranslate"><span class="pre">get_output()</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="friendly_traceback.public_api.set_verbosity">
+<code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">set_verbosity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">level</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/public_api.html#set_verbosity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.set_verbosity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the verbosity level to be used. The values are as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">:</span> <span class="n">Normal</span> <span class="n">Python</span> <span class="n">tracebacks</span>
+<span class="mi">1</span><span class="p">:</span> <span class="n">Default</span> <span class="o">-</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">need</span> <span class="n">to</span> <span class="n">be</span> <span class="n">specified</span><span class="o">.</span> <span class="n">The</span> <span class="n">normal</span> <span class="n">Python</span>
+   <span class="n">traceback</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">included</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">output</span><span class="o">.</span>
+<span class="mi">2</span><span class="p">:</span> <span class="n">Python</span> <span class="n">tracebacks</span> <span class="n">appear</span> <span class="n">before</span> <span class="n">the</span> <span class="n">friendly</span> <span class="n">display</span>
+<span class="mi">3</span><span class="p">:</span> <span class="n">Python</span> <span class="n">tracebacks</span> <span class="n">appended</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">the</span> <span class="n">friendly</span> <span class="n">display</span><span class="o">.</span>
+<span class="mi">4</span><span class="p">:</span> <span class="n">Python</span> <span class="n">traceback</span> <span class="n">followed</span> <span class="n">by</span> <span class="n">basic</span> <span class="n">explanation</span> <span class="n">only</span>
+<span class="mi">5</span><span class="p">:</span> <span class="n">Only</span> <span class="n">basic</span> <span class="n">explanation</span>
+<span class="mi">6</span><span class="p">:</span> <span class="n">No</span> <span class="n">generic</span> <span class="n">explanation</span>
+<span class="mi">7</span><span class="p">:</span> <span class="n">Python</span> <span class="n">tracebacks</span> <span class="n">appear</span> <span class="n">before</span> <span class="n">the</span> <span class="n">friendly</span> <span class="n">display</span> <span class="n">but</span>
+   <span class="n">no</span> <span class="n">generic</span> <span class="n">explanation</span> <span class="ow">is</span> <span class="n">included</span><span class="o">.</span>
+<span class="mi">9</span><span class="p">:</span> <span class="n">Python</span> <span class="n">traceback</span>
+</pre></div>
+</div>
+<p>Other values may be available, as we try to find the most useful
+settings for beginners.</p>
 </dd></dl>
 
 <dl class="py function">

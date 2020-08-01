@@ -19,7 +19,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.32a
+Friendly-traceback version: 0.0.34a
 Python version: 3.8.4
 
 
@@ -293,8 +293,8 @@ ModuleNotFoundError
     -->6:         import does_not_exist
 
 
-NameError
----------
+NameError - 1
+-------------
 
 .. code-block:: none
 
@@ -368,6 +368,37 @@ OverflowError
        4: def test_overflow_error():
        5:     try:
     -->6:         2.0 ** 1600
+
+
+RecursionError
+--------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        RecursionError: maximum recursion depth exceeded
+        
+    Une exception de type RecursionError est levée lorsqu’une fonction s'invoque elle-même,
+    directement ou indirectement, trop de fois.
+    Cette exception indique presque toujours que vous avez fait une erreur dans votre code
+    et que votre programme ne terminerait jamais.
+    
+    L'exécution s'est arrêtée à la ligne 8 du fichier 'TESTS:\except\test_recursion_error.py'
+    
+        6:         return a()
+        7:     try:
+    --> 8:         a()
+
+    a: <function test_recursion_error.<locals>.a>
+
+    Exception levée à la ligne 6 du fichier 'TESTS:\except\test_recursion_error.py'.
+    
+       4: def test_recursion_error():
+       5:     def a():
+    -->6:         return a()
+
+    a: <function test_recursion_error.<locals>.a>
 
 
 TypeError - 1: concatenate two different types

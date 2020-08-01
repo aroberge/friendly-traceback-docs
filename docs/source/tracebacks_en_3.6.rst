@@ -19,7 +19,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.32a
+Friendly-traceback version: 0.0.34a
 Python version: 3.6.8
 
 
@@ -294,8 +294,8 @@ ModuleNotFoundError
     -->6:         import does_not_exist
 
 
-NameError
----------
+NameError - 1
+-------------
 
 .. code-block:: none
 
@@ -369,6 +369,37 @@ OverflowError
        4: def test_overflow_error():
        5:     try:
     -->6:         2.0 ** 1600
+
+
+RecursionError
+--------------
+
+.. code-block:: none
+
+
+    Python exception:
+        RecursionError: maximum recursion depth exceeded
+        
+    A RecursionError is raised when a function calls itself,
+    directly or indirectly, too many times.
+    It almost always indicates that you made an error in your code
+    and that your program would never stop.
+    
+    Execution stopped on line 8 of file 'TESTS:\except\test_recursion_error.py'.
+    
+        6:         return a()
+        7:     try:
+    --> 8:         a()
+
+    a: <function test_recursion_error.<locals>.a>
+
+    Exception raised on line 6 of file 'TESTS:\except\test_recursion_error.py'.
+    
+       4: def test_recursion_error():
+       5:     def a():
+    -->6:         return a()
+
+    a: <function test_recursion_error.<locals>.a>
 
 
 TypeError - 1: concatenate two different types

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.0.32a documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.0.34a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.32a
+                0.0.34a
               </div>
             
           
@@ -130,9 +130,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#indexerror-short-tuple">IndexError - short tuple</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#indexerror-long-list">IndexError - long list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#modulenotfounderror">ModuleNotFoundError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#nameerror">NameError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nameerror-1">NameError - 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nameerror-2">NameError - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#overflowerror">OverflowError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recursionerror">RecursionError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-1a-concatenate-two-different-types">TypeError - 1a: concatenate two different types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-1b-concatenate-two-different-types">TypeError - 1b: concatenate two different types</a></li>
@@ -273,7 +274,7 @@ On Windows, if Sphinx is installed on your computer, it is suggested
 instead to run make_trb.bat in the root directory as it will create
 similar files for all languages <em>and</em> update the documentation.</p>
 </div>
-<p>Friendly-traceback version: 0.0.32a
+<p>Friendly-traceback version: 0.0.34a
 Python version: 3.6.8</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -512,8 +513,8 @@ Execution stopped on line 6 of file &#39;TESTS:\except\test_module_not_found_err
 </pre></div>
 </div>
 </div>
-<div class="section" id="nameerror">
-<h2>NameError<a class="headerlink" href="#nameerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nameerror-1">
+<h2>NameError - 1<a class="headerlink" href="#nameerror-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
     NameError: name &#39;cost&#39; is not defined
 
@@ -577,6 +578,34 @@ Execution stopped on line 6 of file &#39;TESTS:\except\test_overflow_error.py&#3
    4: def test_overflow_error():
    5:     try:
 --&gt;6:         2.0 ** 1600
+</pre></div>
+</div>
+</div>
+<div class="section" id="recursionerror">
+<h2>RecursionError<a class="headerlink" href="#recursionerror" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    RecursionError: maximum recursion depth exceeded
+
+A RecursionError is raised when a function calls itself,
+directly or indirectly, too many times.
+It almost always indicates that you made an error in your code
+and that your program would never stop.
+
+Execution stopped on line 8 of file &#39;TESTS:\except\test_recursion_error.py&#39;.
+
+    6:         return a()
+    7:     try:
+--&gt; 8:         a()
+
+a: &lt;function test_recursion_error.&lt;locals&gt;.a&gt;
+
+Exception raised on line 6 of file &#39;TESTS:\except\test_recursion_error.py&#39;.
+
+   4: def test_recursion_error():
+   5:     def a():
+--&gt;6:         return a()
+
+a: &lt;function test_recursion_error.&lt;locals&gt;.a&gt;
 </pre></div>
 </div>
 </div>
