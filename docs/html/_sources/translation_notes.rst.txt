@@ -146,8 +146,8 @@ two-letter code (fr) as it is assumed to be the case in various places.
 
     One of the goals of this project is to provide easier to understand
     tracebacks than those provided by Python. These do not need to be
-    absolutely perfect. For example, we follow 
-    `Blockly's practice <https://translatewiki.net/wiki/Translating:Blockly>`_ 
+    absolutely perfect. For example, we follow
+    `Blockly's practice <https://translatewiki.net/wiki/Translating:Blockly>`_
     in not supporting `plural formatting <https://translatewiki.net/wiki/Plural>`_
 
 When it comes time to save the ``.po`` file, use a similar structure
@@ -245,7 +245,8 @@ we do the following::
 .. warning::
 
     Every language has its own way to deal (or not) with plural forms of words.
-    As mentioned, in principle, ``gettext`` offers a way to handle with the language specific complexities.
+    As mentioned, in principle, ``gettext`` offers a way to handle
+    with the language specific complexities.
     In practice for this project, we assume a single form to be used.
 
 
@@ -265,7 +266,20 @@ these generated files (at least the ``.mo`` files) need to be included.
 Packaging
 ---------
 
-.. todo::
+This is more of a "note to self" than something needed for this project.
+Since ``.po`` and ``.mo`` are data files are not python files,
+they are not automatically added when creating a package with setuptools.
+One way to include them is to write the following in a file named
+``manifest.in`` written where ``setup.py`` is found:
 
-   Explain how to package language files together with Python files.
+.. code-block:: none
 
+    recursive-include friendly_traceback/locales *.*
+
+Also (instead?), if using a ``setup.cfg`` file, include the following:
+
+.. code-block:: none
+
+    [options.package_data]
+    * =
+        friendly_traceback/locales/*

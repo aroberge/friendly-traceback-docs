@@ -108,11 +108,11 @@ penultimate section on this page.
 You can also specify the verbosity level as well as the language
 to be used, either as command line arguments::
 
-    $ python -m friendly_traceback --lang fr --level 5
+    $ python -m friendly_traceback --lang fr --verbosity 5
 
 or as optional arguments when using ``check_syntax`` or ``run_code``::
 
-    friendly_traceback.check_syntax(..., lang='fr', level=5)
+    friendly_traceback.check_syntax(..., lang='fr', verbosity=5)
 
 Where the output is written?
 ----------------------------
@@ -153,13 +153,13 @@ How much information is printed?
 
 The amount of information shown to the user can be changed using::
 
-    friendly_traceback.set_level(level)
+    friendly_traceback.set_verbosity(level)
 
 
 What each level correspond to is shown later in this documentation.
 The level currently used can be obtained as follows::
 
-    level = friendly_traceback.get_level()
+    level = friendly_traceback.get_verbosity()
 
 
 Language used
@@ -184,14 +184,14 @@ As an exception hook
 When "installing" friendly-traceback, one can use various optional
 parameters::
 
-    friendly_traceback.install(lang="fr", redirect="capture", level=1)
+    friendly_traceback.install(lang="fr", redirect="capture", verbosity=1)
 
 This is equivalent to writing::
 
     friendly_traceback.install()
     friendly_traceback.set_lang("fr")
     friendly_traceback.set_stream("capture")
-    friendly_traceback.set_level(1)
+    friendly_traceback.set_verbosity(1)
 
 
 Catching exception locally
@@ -314,58 +314,65 @@ handling will be used by default on it.
 From the command line
 ----------------------
 
-The following is subject to change; this was copied from version 0.0.30a
+It is recommended that you run the following command yourself so as to
+see what options are available for the version installed on
+your computer.
 
 .. code-block:: none
 
     $ python -m friendly_traceback -h
-    usage: __main__.py [-h] [--lang LANG] [--level LEVEL] [--import_only]
-                       [--version] [--dev] [--formatter FORMATTER]
+
+    usage: __main__.py [-h] [--color] [--lang LANG] [--level LEVEL] [--verbosity VERBOSITY]
+                       [--import_only] [--version] [--dev] [--formatter FORMATTER]
                        [source] [args [args ...]]
 
     Friendly-traceback makes Python tracebacks easier to understand.
 
-            If no command line arguments other than -m are specified,
-            Friendly-traceback will start an interactive console.
+        Friendly-traceback version 0.0.34a. [Python version: 3.8.4]
 
-            Note: the values of the verbosity level described below are:
-                0: Normal Python tracebacks
-                1: Default - does not need to be specified
-                2: Python tracebacks appear before the friendly display
-                3: Python tracebacks appended at the end of the friendly display.
-                4: Python traceback followed by basic explanation
-                5: Only basic explanation
-                6: No generic explanation
-                7: Python tracebacks appear before the friendly display but
-                   no generic explanation is included.
-                9: Python traceback
+        If no command line arguments other than -m are specified,
+        Friendly-traceback will start an interactive console.
 
-            The Python traceback for level >= 1 are the simulated version.
-            You can use negative values to show the true Python traceback which
-            will likely include function calls from friendly-traceback itself.
-            Thus level -9 is equivalent to level 0.
+        Note: the values of the verbosity level described below are:
+            0: Normal Python tracebacks
+            1: Default - does not need to be specified.
+               The output does NOT include the standard Python traceback.
+            2: Python tracebacks appear before the friendly display
+            3: Python tracebacks appended at the end of the friendly display.
+            4: Python traceback followed by basic explanation
+            5: Only basic explanation
+            6: No generic explanation
+            7: Python tracebacks appear before the friendly display but
+               no generic explanation is included.
+            9: Python traceback only
 
-            Other values may be available, as we try to find the most useful
-            settings for beginners.
+        The Python traceback for level > 1 is the simulated version, which
+        excludes calls from friendly-traceback itself.
+        You can use negative values to show the true Python traceback which
+        will likely include function calls from friendly-traceback itself.
+        Thus level -9 is equivalent to level 0.
+
+        Other values may be available, as we try to find the most useful
+        settings for beginners.
+
 
     positional arguments:
-      source                Name of the script to be run as though it was the main
-                            module run by Python, so that __name__ does equal
-                            '__main__'.
+      source                Name of the script to be run as though it was the main module run by
+                            Python, so that __name__ does equal '__main__'.
       args                  Arguments to give to the script specified by source.
 
     optional arguments:
       -h, --help            show this help message and exit
-      --lang LANG           This sets the language used by Friendly-tracebacks.
-                            Usually this is a two-letter code such as 'fr' for
-                            French.
-      --level LEVEL         This sets the "verbosity" level, that is the amount of
-                            information provided.
+      --color, --colour     Not implemented yet.
+      --lang LANG           This sets the language used by Friendly-tracebacks. Usually this is a
+                            two-letter code such as 'fr' for French.
+      --level LEVEL         Deprecated. Use --verbosity instead.
+      --verbosity VERBOSITY
+                            This sets the "verbosity" level, that is the amount of information
+                            provided.
       --import_only         Imports the module instead of running it as a script.
       --version             Displays the current version.
-      --dev                 Adds some extra functions in the console, useful for
-                            development.
+      --dev                 Adds some extra functions in the console, useful for development.
       --formatter FORMATTER
-                            Specify a formatter function, as a dotted path.
-                            Example: --formatter
+                            Specify a formatter function, as a dotted path. Example: --formatter
                             friendly_traceback.formatters.markdown

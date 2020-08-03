@@ -439,7 +439,8 @@ we do the following:</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Every language has its own way to deal (or not) with plural forms of words.
-As mentioned, in principle, <code class="docutils literal notranslate"><span class="pre">gettext</span></code> offers a way to handle with the language specific complexities.
+As mentioned, in principle, <code class="docutils literal notranslate"><span class="pre">gettext</span></code> offers a way to handle
+with the language specific complexities.
 In practice for this project, we assume a single form to be used.</p>
 </div>
 </div>
@@ -455,9 +456,19 @@ these generated files (at least the <code class="docutils literal notranslate"><
 </div>
 <div class="section" id="packaging">
 <h2>Packaging<a class="headerlink" href="#packaging" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Explain how to package language files together with Python files.</p>
+<p>This is more of a “note to self” than something needed for this project.
+Since <code class="docutils literal notranslate"><span class="pre">.po</span></code> and <code class="docutils literal notranslate"><span class="pre">.mo</span></code> are data files are not python files,
+they are not automatically added when creating a package with setuptools.
+One way to include them is to write the following in a file named
+<code class="docutils literal notranslate"><span class="pre">manifest.in</span></code> written where <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> is found:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>recursive-include friendly_traceback/locales *.*
+</pre></div>
+</div>
+<p>Also (instead?), if using a <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file, include the following:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[options.package_data]
+* =
+    friendly_traceback/locales/*
+</pre></div>
 </div>
 </div>
 </div>

@@ -71,8 +71,6 @@ and that we are working towards the next release.
 As a result, some features shown here may be slightly different
 from the version available from Pypi.
 
-Contents
---------
 
 .. toctree::
    :maxdepth: 1
@@ -136,5 +134,6 @@ Contents
    :caption: varia
 
    changelog
+
 
 .. todolist::

@@ -112,11 +112,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#add-another-assertion">Add another assertion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#test-your-work">Test your work</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#make-a-pull-request">Make a pull request</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#adding-to-an-existing-exception">Adding to an existing exception</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#additional-optional-steps">Additional optional steps</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#adding-to-tb-common">Adding to tb_common</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
@@ -226,38 +221,49 @@ tracebacks for an Exception that is not already included.
 <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> and <code class="docutils literal notranslate"><span class="pre">TabError</span></code>, <strong>which need to be dealt separately.</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Any contribution, no matter how small, is welcome. The following checklist
+<p>Any contribution, <strong>no matter how small</strong>, is welcome.
+The following checklist
 is provided for those that are ambitious and want to do all the required
-steps by themselves to include a new case.</p>
+steps by themselves to include a new case.
+You definitely do not have to do all of this.</p>
 <p><strong>Checklist</strong></p>
 <p>The following are the include all the steps that have to be done
 to consider that a new case has been completely covered.
-Each item is explained in a different section below. If you find
-the instructions unclear, please do not hesitate to reach out.</p>
+Most individual steps are explained in a different section below.
+If you find the instructions unclear, please do not hesitate to reach out.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>File an issue indicating that you are planning to work on a
-given exception.</p></li>
+given exception. This should be done if you are planning to
+submit something within a week or so.</p></li>
 <li><p>Add /tests/except/test_new_error.py</p></li>
-<li><p>Run pytest and confirm that your new test is included</p></li>
-<li><p>Add generic information</p></li>
-<li><p>Add specific information</p></li>
-<li><p>Add another assertion in test case, based on specific information</p></li>
+<li><p>Run pytest with one of Python’s supported versions (3.6 to 3.9)
+and confirm that your new test is included</p></li>
+<li><p>Add generic information about this Exception</p></li>
+<li><p>Add specific information about this Exception</p></li>
+<li><p>Add another assertion in test case, to be run if the language
+is English, that confirms that (part of) the specific information
+is included in the traceback</p></li>
 <li><p>Execute test_new_error.py and confirm visually it works as expected</p></li>
 <li><p>Run pytest and confirm that your new test is included</p></li>
-<li><p>Optional: Modify /tests/trb_syntax_common.py to include this case</p></li>
+<li><p>For completeness, you could check to see that all this works
+properly with all supported Python versions: sometimes the text
+of the message changes from one Python version to another.</p></li>
 </ul>
 </div></blockquote>
-<p>After completing any of the above steps (other than the first one),
-feel free to make a pull request so that your code can be included.</p>
-<p>If you want to contribute and do not know how to do a pull request,
-or find it too complicated, please contact us: we’ll find a way to help you
+<p>After completing any of the steps above (other than the first one),
+feel free to make a pull request so that your code can be included.
+If you want to contribute and do not know how to do a pull request,
+or find it too complicated, please contact me: we’ll find a way to help you
 contribute.</p>
-<p>The following are additional optional steps, dealing with the documentation
+<p>The following are additional steps, dealing with the documentation
 rather than the code itself.
 They will need to be done at some point
 but, apart for possible translations in languages other than French,
-I can definitely take care of this.</p>
+it is usually something that I do myself. As I do not expect
+contributions for this, I did not include detailed explanations of
+each steps. Let me know if you’d like to work on this and need
+more details.</p>
 <blockquote>
 <div><ul>
 <li><p>Ensure that you have a copy of the friendly-traceceback-docs
@@ -274,7 +280,7 @@ shows the expected result for all Python versions.</p></li>
 </li>
 <li><p>Run make_tb.bat or do the equivalent on non Windows computer</p></li>
 <li><p>Confirm that all docs/tracebacks_xx.rst include the new exception</p></li>
-<li><p>Add translation</p></li>
+<li><p>Add translation; currenly only French is supported.</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -393,7 +399,7 @@ in order to make our test more accurate, we replace the line:</p>
 <div class="section" id="running-with-pytest">
 <h2>Running with pytest<a class="headerlink" href="#running-with-pytest" title="Permalink to this headline">¶</a></h2>
 <p>This assumes that pytest is installed on your computer.
-From the root directory, simply run:</p>
+From Friendly-traceback’s root directory, simply run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pytest</span>
 </pre></div>
 </div>
@@ -440,19 +446,17 @@ familiar with gettext for this doing this work.
 For those that are familiar with gettext, the most common way
 to use it is to <strong>install</strong> it globally, so that the function <code class="docutils literal notranslate"><span class="pre">_</span></code>
 is added to Python’s builtins and can be used everywhere.
-For reasons that will be explained elsewhere, we cannot do this
-in this project.</p>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Explain why we do not install gettext globally.</p>
-</div>
+However, this conflicts with using <code class="docutils literal notranslate"><span class="pre">_</span></code> in the console (REPL) as
+the value of the last command; for this reason, we use <code class="docutils literal notranslate"><span class="pre">_</span></code>
+as a local variable inside any function which contains some strings
+to be translated.</p>
 <p>We first define a function whose name reflects the exception
 we wish to explain.
 This is not strictly required but it makes it easier to find the
 information when looking at the code. Thus, for <code class="docutils literal notranslate"><span class="pre">UnboundLocalError</span></code>,
 we defined <code class="docutils literal notranslate"><span class="pre">unbound_local_error()</span></code>.
 We use <code class="docutils literal notranslate"><span class="pre">register</span></code> as a decorator to add it to the known
-cases.
+cases automatically.
 This function will receive some positional arguments that
 may be useful for some exceptions.  For the first run through, you can
 assume that you can ignore these arguments.</p>
@@ -468,7 +472,7 @@ gettext to retrieve the correct translation.</p>
 <p>For clarity, instead of using triple-quoted strings, we use Python’s
 automatic concatenation of adjacent strings to format the text.
 Experience has shown us that this makes it much easier to
-write the corresponding translations using Poedit.
+write the corresponding translations using Poedit, as described elsewhere.
 Each string should represent a single line of text, and end with
 a single <code class="docutils literal notranslate"><span class="pre">\n</span></code>.</p>
 </div>
@@ -633,7 +637,7 @@ is set to English (<code class="docutils literal notranslate"><span class="pre">
 <div class="section" id="test-your-work">
 <h2>Test your work<a class="headerlink" href="#test-your-work" title="Permalink to this headline">¶</a></h2>
 <p>Now that you have added the generic and specific information,
-you should test again by running something like:</p>
+you might want to test again by running something like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">tests</span><span class="o">/</span><span class="k">except</span><span class="o">/</span><span class="n">test_my_exception</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
@@ -643,7 +647,8 @@ sure that your new case is included correctly in the test suite.</p>
 </div>
 <div class="section" id="make-a-pull-request">
 <h2>Make a pull request<a class="headerlink" href="#make-a-pull-request" title="Permalink to this headline">¶</a></h2>
-<p>Before submitting your code, you should make sure that it
+<p>Before submitting your code, with the possible exception of test cases,
+you should make sure that your code
 is formatted correctly according to <a class="reference external" href="https://github.com/ambv/black">black</a></p>
 <p>However, we ask that you ensures that your added text
 uses the one-line-per-string format described above.
@@ -666,27 +671,6 @@ and fix any conflict that might be arising.</p>
 <p>Finally, you can proceed with a <a class="reference external" href="https://help.github.com/en/articles/creating-a-pull-request">pull request</a>.
 If the information provided in that link is not clear, please do
 not hesitate to ask for clarification.</p>
-</div>
-<div class="section" id="adding-to-an-existing-exception">
-<h2>Adding to an existing exception<a class="headerlink" href="#adding-to-an-existing-exception" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="id2">
-<p class="admonition-title">Todo</p>
-<p>Adding to an existing exception to be written</p>
-</div>
-</div>
-<div class="section" id="additional-optional-steps">
-<h2>Additional optional steps<a class="headerlink" href="#additional-optional-steps" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="id3">
-<p class="admonition-title">Todo</p>
-<p>Additional optional steps to be written.</p>
-</div>
-<div class="section" id="adding-to-tb-common">
-<h3>Adding to tb_common<a class="headerlink" href="#adding-to-tb-common" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id4">
-<p class="admonition-title">Todo</p>
-<p>Adding to tb_common steps to be written.</p>
-</div>
-</div>
 </div>
 </div>
 

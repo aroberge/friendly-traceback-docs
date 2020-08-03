@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.third_party_api &mdash; Friendly tracebacks 0.0.34a documentation</title>
+  <title>friendly_traceback.editors_helper &mdash; Friendly tracebacks 0.0.34a documentation</title>
   
 
   
@@ -176,7 +176,7 @@
         
           <li><a href="../index.html">Module code</a> &raquo;</li>
         
-      <li>friendly_traceback.third_party_api</li>
+      <li>friendly_traceback.editors_helper</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -191,15 +191,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for friendly_traceback.third_party_api</h1><div class="highlight"><pre>
+  <h1>Source code for friendly_traceback.editors_helper</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;The functions in this module have been created so that user of tools,</span>
 <span class="sd">like the editor Mu, could use Friendly-traceback.</span>
 
 <span class="sd">See https://aroberge.github.io/friendly-traceback-docs/docs/html/mu.html</span>
 <span class="sd">for an example.</span>
-
-<span class="sd">Note that most tools can be written so as to make direct use of the</span>
-<span class="sd">standard API.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
@@ -276,7 +273,7 @@
         <span class="k">return</span> <span class="kc">False</span>
 
     <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_verbosity</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">code</span><span class="p">,</span> <span class="n">filename</span></div>
+    <span class="k">return</span> <span class="n">code</span></div>
 
 
 <div class="viewcode-block" id="check_syntax"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.check_syntax">[docs]</a><span class="k">def</span> <span class="nf">check_syntax</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -298,9 +295,7 @@
         <span class="k">return</span> <span class="kc">False</span></div>
 
 
-<div class="viewcode-block" id="exec_code"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.exec_code">[docs]</a><span class="k">def</span> <span class="nf">exec_code</span><span class="p">(</span>
-    <span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;Fake filename&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span>
-<span class="p">):</span>
+<div class="viewcode-block" id="exec_code"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.exec_code">[docs]</a><span class="k">def</span> <span class="nf">exec_code</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This uses check_syntax to see if the code is valid and, if so,</span>
 <span class="sd">       executes it into an empty dict as globals. If no exception is</span>
 <span class="sd">       raised, this dict is returned. If an exception is raised, False</span>
@@ -308,9 +303,6 @@
 
 <span class="sd">       It can either be used on a file, using the ``path`` argument, or</span>
 <span class="sd">       on some code passed as a string, using the ``source`` argument.</span>
-<span class="sd">       For the latter case, one can also specify a corresponding ``filename``:</span>
-<span class="sd">       this could be useful if this function is invoked from a GUI-based</span>
-<span class="sd">       editor.</span>
 
 <span class="sd">       Note that the ``path`` argument, if provided, takes precedence</span>
 <span class="sd">       over the ``source`` argument.</span>
@@ -323,18 +315,16 @@
 <span class="sd">       to calling check_syntax, it will only be used for the duration</span>
 <span class="sd">       of this function call.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">advanced_check_syntax</span><span class="p">(</span>
-        <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="n">verbosity</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">advanced_check_syntax</span><span class="p">(</span>
+        <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="n">verbosity</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span>
     <span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">code</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
 
     <span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_verbosity</span> <span class="o">=</span> <span class="n">_save_settings</span><span class="p">()</span>
     <span class="n">saved_lang</span> <span class="o">=</span> <span class="n">_temp_set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
 
-    <span class="n">my_globals</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">code</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
+    <span class="n">my_globals</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;__name__&quot;</span><span class="p">:</span> <span class="s2">&quot;__main__&quot;</span><span class="p">}</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">exec</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">my_globals</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
@@ -348,6 +338,30 @@
 
     <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_verbosity</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">my_globals</span></div>
+
+
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Given a filename (relative or absolute path), this function uses the</span>
+<span class="sd">       more complex exec_code() to run a file.</span>
+
+<span class="sd">       If friendly-traceback exception hook has not been set up prior</span>
+<span class="sd">       to calling check_syntax, it will only be used for the duration</span>
+<span class="sd">       of this function call. It uses the value of 1 for the verbosity</span>
+<span class="sd">       level.</span>
+
+<span class="sd">        the</span>
+<span class="sd">       more keyword-based advanced_check_syntax(),</span>
+<span class="sd">       and will raise an exception if it identifies</span>
+<span class="sd">       some syntax errors, but also some less common &quot;overflow&quot; and &quot;value&quot;</span>
+<span class="sd">       errors.  advanced_check_syntax() provides a more flexibility</span>
+
+<span class="sd">       If friendly-traceback exception hook has not been set up prior</span>
+<span class="sd">       to calling check_syntax, it will only be used for the duration</span>
+<span class="sd">       of this function call.</span>
+
+<span class="sd">       Returns False if problems have been found, None otherwise.</span>
+<span class="sd">       &quot;&quot;&quot;</span>
+    <span class="n">exec_code</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_temp_set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">):</span>

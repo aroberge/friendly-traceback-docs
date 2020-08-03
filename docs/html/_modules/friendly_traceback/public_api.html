@@ -219,7 +219,8 @@
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">core</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">utils</span>
 
-<span class="kn">from</span> <span class="nn">.third_party_api</span> <span class="kn">import</span> <span class="n">advanced_check_syntax</span><span class="p">,</span> <span class="n">check_syntax</span><span class="p">,</span> <span class="n">exec_code</span>
+<span class="kn">from</span> <span class="nn">.editors_helper</span> <span class="kn">import</span> <span class="n">advanced_check_syntax</span><span class="p">,</span> <span class="n">check_syntax</span><span class="p">,</span> <span class="n">exec_code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">editors_helper</span>
 <span class="kn">from</span> <span class="nn">.session</span> <span class="kn">import</span> <span class="n">session</span>
 <span class="kn">from</span> <span class="nn">.source_cache</span> <span class="kn">import</span> <span class="n">cache</span><span class="p">,</span> <span class="n">highlight_source</span>
 <span class="kn">from</span> <span class="nn">.path_info</span> <span class="kn">import</span> <span class="p">(</span>
@@ -381,7 +382,9 @@
 
 <div class="viewcode-block" id="set_level"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.set_level">[docs]</a><span class="nd">@make_public</span>
 <span class="k">def</span> <span class="nf">set_level</span><span class="p">(</span><span class="n">level</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Sets the verbosity level to be used. The values are as follows::</span>
+    <span class="sd">&quot;&quot;&quot;Deprecated; use set_verbosity() instead.</span>
+
+<span class="sd">    Sets the verbosity level to be used. The values are as follows::</span>
 
 <span class="sd">            0: Normal Python tracebacks</span>
 <span class="sd">            1: Default - does not need to be specified</span>
@@ -429,7 +432,9 @@
 
 <div class="viewcode-block" id="get_level"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.get_level">[docs]</a><span class="nd">@make_public</span>
 <span class="k">def</span> <span class="nf">get_level</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Returns the verbosity level currently used.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Deprecated: use get_verbosity instead</span>
+
+<span class="sd">       Returns the verbosity level currently used.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">level</span></div>
 
 
@@ -466,14 +471,20 @@
     <span class="n">session</span><span class="o">.</span><span class="n">traceback_info</span> <span class="o">=</span> <span class="n">info</span></div>
 
 
-<div class="viewcode-block" id="show_traceback_info_again"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.show_traceback_info_again">[docs]</a><span class="nd">@make_public</span>
-<span class="k">def</span> <span class="nf">show_traceback_info_again</span><span class="p">():</span>
+<div class="viewcode-block" id="show_again"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.show_again">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">show_again</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Shows the traceback info again, on the default stream.</span>
 
-<span class="sd">    Primarily intended to use with GUI based program, where the user changes</span>
+<span class="sd">    Primarily intended to be used when the user changes</span>
 <span class="sd">    a verbosity level to view the traceback again.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">session</span><span class="o">.</span><span class="n">show_traceback_info_again</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="run"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.run">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;First draft&quot;&quot;&quot;</span>
+    <span class="n">editors_helper</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="run_program"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.run_program">[docs]</a><span class="nd">@make_public</span>
