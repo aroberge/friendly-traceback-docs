@@ -322,8 +322,8 @@ your computer.
 
     $ python -m friendly_traceback -h
 
-    usage: __main__.py [-h] [--color] [--lang LANG] [--level LEVEL] [--verbosity VERBOSITY]
-                       [--import_only] [--version] [--dev] [--formatter FORMATTER]
+    usage: __main__.py [-h] [--color] [--lang LANG] [--verbosity VERBOSITY] [--import_only]
+                       [--version] [--dev] [--formatter FORMATTER]
                        [source] [args [args ...]]
 
     Friendly-traceback makes Python tracebacks easier to understand.
@@ -366,8 +366,7 @@ your computer.
       --color, --colour     Not implemented yet.
       --lang LANG           This sets the language used by Friendly-tracebacks. Usually this is a
                             two-letter code such as 'fr' for French.
-      --level LEVEL         Deprecated. Use --verbosity instead.
-      --verbosity VERBOSITY
+      --verbosity VERBOSITY, --level VERBOSITY
                             This sets the "verbosity" level, that is the amount of information
                             provided.
       --import_only         Imports the module instead of running it as a script.
@@ -376,3 +375,4 @@ your computer.
       --formatter FORMATTER
                             Specify a formatter function, as a dotted path. Example: --formatter
                             friendly_traceback.formatters.markdown
+

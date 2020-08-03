@@ -9,9 +9,12 @@ any language.
 
 .. warning::
 
-    This is pre-alpha software, currently in development.
+    This is alpha software, currently in development.
     The API is subject to change without notice; such changes may not
     be included (yet) in this documentation.
+    Note that most screenshots have been taken with an obsolete
+    version. We aim to replace those when work for version 0.2
+    has been completed.
 
 
 In a nutshell

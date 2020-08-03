@@ -12,7 +12,7 @@ beginners and/or for people that have limited knowledge of English
 to understand what caused a program to generate a traceback.
 
 A secondary goal is to help them learn how to decipher a normal Python
-traceback and use the information **provided by Python** 
+traceback and use the information **provided by Python**
 to understand what went wrong and how to fix it.
 
 
@@ -31,7 +31,7 @@ Normally, an "open questions" section would be included at the end, but this doc
 is getting so long that few people might read it to the very end.
 Furthermore, it might be useful to have these in mind while reading the rest of
 this document. They are called "semi-open" as we have made explicit choices
-about some of them, choices which could change given some feedback from 
+about some of them, choices which could change given some feedback from
 actual users.
 
 - In addition to showing the line of code where an exception is raised,
@@ -44,14 +44,14 @@ actual users.
   (The screenshots below do not reflect the actual stage of the project.)
 
 - Should we aim to provide information about **all** standard Python
-  Exceptions, or just a subset?  Some exceptions are going to occur only 
+  Exceptions, or just a subset?  Some exceptions are going to occur only
   because some really advanced features of Python are used (for example:
   ``ConnectionRefusedError``) and it would be likely that users writing
-  such code are already experienced enough to not need supplementary help 
+  such code are already experienced enough to not need supplementary help
   from Friendly-traceback.
 
-- Should exceptions from specific modules in the standard library also 
-  be included? As a specific example, perhaps exceptions raised in the 
+- Should exceptions from specific modules in the standard library also
+  be included? As a specific example, perhaps exceptions raised in the
   ``turtle`` module should be considered.
 
 - Should we include also Warnings?
@@ -240,7 +240,7 @@ or revealed by clicking on a button.
 
 .. image:: images/thonny.png
    :scale: 100 %
-   :alt: Level 0
+   :alt: Verbosity level 0
 
 
 Our current thinking is as follows:
@@ -278,7 +278,7 @@ Our current thinking is as follows:
    one package and enhance it as needed. So, Friendly-traceback must be
    designed to easily allow extensions of its core capabilities.
 
-So, the choice we have made is that Friendly-traceback will only print 
+So, the choice we have made is that Friendly-traceback will only print
 at most one likely cause.
 However, some programming environment could use the additional information
 about possible causes if and when it becomes available in Friendly-traceback.
@@ -291,8 +291,8 @@ As noted above, it is possible to translate almost all the text provided
 by friendly-traceback.
 
 When using Python, it is customary to determine which language should
-be used to provide translations by a call to 
-``locale.getdefaultlocale()``.  In an earlier version, we did this 
+be used to provide translations by a call to
+``locale.getdefaultlocale()``.  In an earlier version, we did this
 but have decided to use English as the default and let the user
 (which could be another program that imports friendly-traceback)
 decide what language should be used.
@@ -328,7 +328,14 @@ amount of information; ideally, when using a REPL, no scrolling should be
 required to display all the information.
 
 Currently, the amount of information provided can be controlled via
-a "level".  Here are the current levels available, with a sample output.
+a verbosity "level".
+Here are the current levels available, with a sample output.
+
+.. warning::
+
+    The command-line option ``--level`` shown in the screenshots
+    is deprecated.
+    Use ``--verbosity`` instead, with the same values.
 
 Level 0
 ~~~~~~~
@@ -346,7 +353,7 @@ Level 1
 
 This is the default, showing all the information mentioned previously.
 The screen capture below shows that we set the value explictly to 1; however,
-we could have omitted the option ``--level 1`` and the result would
+we could have omitted the option ``--verbosity 1`` and the result would
 have been the same
 
 
@@ -357,13 +364,13 @@ have been the same
 Level 2
 ~~~~~~~
 
-Same as level 1 but with the "simulated" Python traceback printed **before**
+Same as verbosity level 1 but with the "simulated" Python traceback printed **before**
 the rest of the information. Note that, in this case, the "simulated"
 Python traceback is identical to the normal Python traceback.
 
 .. important:: Which level to use by default?
 
-    Currently, level 1 is the default. Since the secondary aim of
+    Currently, verbosity level 1 is the default. Since the secondary aim of
     Friendly-traceback is to help users learn how to use the information
     from normal traceback, perhaps the default should be level 2.
 
@@ -376,7 +383,7 @@ Python traceback is identical to the normal Python traceback.
 Level 3
 ~~~~~~~
 
-Same as level 1 but with the simulated Python traceback printed **after**
+Same as verbosity level 1 but with the simulated Python traceback printed **after**
 the complete friendly traceback.
 
 
@@ -402,7 +409,7 @@ involved.
 Level 5
 ~~~~~~~
 
-Like level 4, but without the simulated Python traceback.
+Like verbosity level 4, but without the simulated Python traceback.
 
 
 .. image:: images/level5.png
@@ -432,7 +439,7 @@ Setting the verbosity level
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This can be done when using ``friendly_traceback`` explicitly in the
-program with ``friendly_traceback.set_level()``,
+program with ``friendly_traceback.set_verbosity()``,
 or as an option from the command line.
 
 
@@ -484,5 +491,5 @@ The following is an incomplete list of projects or modules to look at:
 - https://github.com/skorokithakis/tbvaccine
 - https://github.com/alexmojaki/stack_data
 - And, as mentioned in Issue8_, Thonny_ has a widget called
-  "Assistant" whose purpose is helping beginners identify the 
+  "Assistant" whose purpose is helping beginners identify the
   cause of a traceback.

@@ -216,11 +216,11 @@ however, it will do so in a way that might be easily overlooked.</p>
 <p>Have a look at the following screen captures, all taken using
 version 0.0.8a  (Python version: 3.7.3 on Win 32). (Most other screenshots
 normally include Friendly-traceback version.)</p>
-<p>First, we show a traceback generated with <code class="docutils literal notranslate"><span class="pre">level</span></code> set to 0:
+<p>First, we show a traceback generated with <code class="docutils literal notranslate"><span class="pre">verbosity</span> <span class="pre">level</span></code> set to 0:
 with this choice, the output only includes the normal
 Python traceback.</p>
 <a class="reference internal image-reference" href="_images/name_error_0.png"><img alt="Friendly Python traceback" src="_images/name_error_0.png" style="width: 598.1999999999999px; height: 106.2px;" /></a>
-<p>Next, we show a traceback generated with <code class="docutils literal notranslate"><span class="pre">level</span></code> set to 9:
+<p>Next, we show a traceback generated with <code class="docutils literal notranslate"><span class="pre">verbosity</span> <span class="pre">level</span></code> set to 9:
 this corresponds to the “simulated” Python traceback as
 determined by Friendly-traceback.  The traceback is
 identical to the true Python traceback as above.</p>
@@ -234,7 +234,7 @@ include the standard header <code class="docutils literal notranslate"><span cla
 <a class="reference internal image-reference" href="_images/syntax_error1_9.png"><img alt="Friendly Python traceback" src="_images/syntax_error1_9.png" style="width: 601.8px; height: 126.6px;" /></a>
 <p>Notice how the standard header appears, but preceeded by the word
 “Simulated”.</p>
-<p>Here’s the <strong>true</strong> Python traceback generated (displayed with <code class="docutils literal notranslate"><span class="pre">level</span></code> 0)
+<p>Here’s the <strong>true</strong> Python traceback generated (displayed with <code class="docutils literal notranslate"><span class="pre">verbosity</span></code> 0)
 while this same script is run by Friendly-traceback:</p>
 <a class="reference internal image-reference" href="_images/syntax_error1_0.png"><img alt="Friendly Python traceback" src="_images/syntax_error1_0.png" style="width: 854.0px; height: 336.0px;" /></a>
 <p>This traceback contains a lot more information, as Friendly-traceback
