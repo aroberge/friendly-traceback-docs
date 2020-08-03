@@ -6,19 +6,19 @@ Known exceptions
 .. note::
 
     I am currently focusing on adding more cases of ``SyntaxError``,
-    and possibly ``TypeError``, rather than other other specific 
+    and possibly ``TypeError``, rather than other other specific
     types of exceptions, as I believe that these are the most
-    likely ones to be encountered by beginners and include so 
+    likely ones to be encountered by beginners and include so
     many different possible cases.
 
 
 .. warning::
 
-    This documentation is not updated as often as the actual 
-    content of the program. 
-    The content of the following two pages **is** updated 
+    This documentation is not updated as often as the actual
+    content of the program.
+    The content of the following two pages **is** updated
     a lot more frequently than the rest of the documentation
-    and might be a more useful reference than what is 
+    and might be a more useful reference than what is
     written below.
 
 
@@ -59,7 +59,7 @@ They are denoted by ``**``.
           |    +-- OverflowError *
           |    +-- ZeroDivisionError *
           +-- AssertionError
-          +-- AttributeError
+          +-- AttributeError *
           +-- BufferError
           +-- EOFError
           +-- ImportError *
@@ -90,11 +90,11 @@ They are denoted by ``**``.
           +-- RuntimeError
           |    +-- NotImplementedError
           |    +-- RecursionError
-          +-- SyntaxError * (partial: many more cases to include)
+          +-- SyntaxError * (Many cases included)
           |    +-- IndentationError *
           |         +-- TabError *
           +-- SystemError
-          +-- TypeError * (partial: many more cases to include)
+          +-- TypeError * (Many cases)
           +-- ValueError
           |    +-- UnicodeError
           |         +-- UnicodeDecodeError
