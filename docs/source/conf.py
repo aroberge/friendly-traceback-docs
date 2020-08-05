@@ -81,6 +81,17 @@ exclude_patterns = []
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = "sphinx"
 
+rst_epilog = """
+.. |france| image:: images/france.png
+"""
+
+rst_prolog = """
+.. warning::
+
+    This documentation needs to, and is about to be updated significantly.
+
+"""
+
 
 # -- Options for HTML output -------------------------------------------------
 

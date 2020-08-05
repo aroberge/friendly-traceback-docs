@@ -98,6 +98,14 @@ from the version available from Pypi.
 .. toctree::
    :maxdepth: 1
    :hidden:
+   :caption: En français
+
+   tracebacks_fr
+   syntax_tracebacks_fr
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
    :caption: Contribute
 
    suggest
@@ -118,7 +126,7 @@ from the version available from Pypi.
 .. toctree::
    :maxdepth: 1
    :hidden:
-   :caption: Other versions and languages
+   :caption: Other Python versions
 
    compare
    Friendly tracebacks - Python 3.6 in English <tracebacks_en_3.6>
@@ -127,9 +135,6 @@ from the version available from Pypi.
    SyntaxError - Python 3.7 in English <syntax_tracebacks_en_3.7>
    Friendly tracebacks - Python 3.9 in English <tracebacks_en_3.9>
    SyntaxError - Python 3.9 in English <syntax_tracebacks_en_3.9>
-   tracebacks_fr
-   syntax_tracebacks_fr
-
 
 .. toctree::
    :maxdepth: 1
