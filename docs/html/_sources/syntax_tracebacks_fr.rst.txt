@@ -1676,8 +1676,7 @@ SyntaxError - assigned prior to nonlocal declaration
        123:                 try:
     -->124:                     mod = __import__(name)
 
-    Variables:
-    
+        Identificateurs connus :
         name: 'raise_syntax_error5-'
     
 

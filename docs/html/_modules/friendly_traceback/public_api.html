@@ -225,10 +225,16 @@
 
 <span class="c1"># Make functions from other modules directly available from here.</span>
 <span class="kn">from</span> <span class="nn">.editors_helper</span> <span class="kn">import</span> <span class="n">run</span>
+<span class="kn">from</span> <span class="nn">.formatters</span> <span class="kn">import</span> <span class="n">tb_items_to_show</span>
 <span class="kn">from</span> <span class="nn">.path_info</span> <span class="kn">import</span> <span class="n">exclude_file_from_traceback</span>
 
 <span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.0.35a&quot;</span>
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;exclude_file_from_traceback&quot;</span><span class="p">,</span> <span class="s2">&quot;run&quot;</span><span class="p">,</span> <span class="s2">&quot;__version__&quot;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;exclude_file_from_traceback&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;run&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tb_items_to_show&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;__version__&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 
 
 <span class="k">def</span> <span class="nf">make_public</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
@@ -360,7 +366,7 @@
 
 
 <div class="viewcode-block" id="set_verbosity"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.set_verbosity">[docs]</a><span class="nd">@make_public</span>
-<span class="k">def</span> <span class="nf">set_verbosity</span><span class="p">(</span><span class="n">level</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">set_verbosity</span><span class="p">(</span><span class="n">verbosity_level</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Sets the verbosity level to be used. These settings might be ignored</span>
 <span class="sd">       by custom formatters.</span>
 
@@ -384,7 +390,7 @@
 <span class="sd">               suitable for console use by advanced programmers.</span>
 <span class="sd">            9: Simulated Python traceback: see the documentation.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">session</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">level</span><span class="p">)</span></div>
+    <span class="n">session</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">verbosity_level</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="get_verbosity"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.get_verbosity">[docs]</a><span class="nd">@make_public</span>
@@ -418,6 +424,14 @@
     <span class="n">session</span><span class="o">.</span><span class="n">show_traceback_info_again</span><span class="p">()</span></div>
 
 
+<div class="viewcode-block" id="print_itemized_traceback"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.print_itemized_traceback">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">print_itemized_traceback</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;This is a helper function for developer who want to write a formatter.</span>
+<span class="sd">       It prints each item recorded in a traceback dict.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">print_itemized_traceback</span><span class="p">()</span></div>
+
+
 <span class="k">class</span> <span class="nc">Friendly</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Simple API for use with the console&quot;&quot;&quot;</span>
 
@@ -428,6 +442,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">set_verbosity</span> <span class="o">=</span> <span class="n">set_verbosity</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">show_again</span> <span class="o">=</span> <span class="n">show_again</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">run</span> <span class="o">=</span> <span class="n">run</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">print_itemized_traceback</span> <span class="o">=</span> <span class="n">print_itemized_traceback</span>
 
 
 <span class="c1"># -----------------------------------------</span>
@@ -436,10 +451,10 @@
 
 
 <div class="viewcode-block" id="set_level"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.set_level">[docs]</a><span class="nd">@make_public</span>
-<span class="k">def</span> <span class="nf">set_level</span><span class="p">(</span><span class="n">level</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">set_level</span><span class="p">(</span><span class="n">verbosity_level</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Deprecated; use set_verbosity() instead.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">set_verbosity</span><span class="p">(</span><span class="n">level</span><span class="p">)</span></div>
+    <span class="n">set_verbosity</span><span class="p">(</span><span class="n">verbosity_level</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="get_level"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.get_level">[docs]</a><span class="nd">@make_public</span>

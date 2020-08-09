@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>friendly_traceback.formatters &mdash; Friendly tracebacks 0.0.35a documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Friendly tracebacks
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.35a
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">For beginners and teachers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mu.html">Using with Mu</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Thoughts on design</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Some thoughts on the design of friendly-traceback</a></li>
+</ul>
+<p class="caption"><span class="caption-text">More advanced users</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_adv.html">Advanced Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Use in your project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../custom.html">Description of demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graph.html">Project files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lies.html">Intentional lies</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../suggest.html">Suggest an addition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../adding_exception.html">Developer: Add a new Exception case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../syntax_error.html">Developer: Add a new SyntaxError case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../translation_notes.html">Notes on translations - using gettext</a></li>
+</ul>
+<p class="caption"><span class="caption-text">All the tracebacks!</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../known.html">Known exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_en_3.7.html">SyntaxError - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_en_3.8.html">Friendly tracebacks - Python 3.8 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_en_3.8.html">SyntaxError - Python 3.8 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compare.html">Comparison between Python versions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">En français</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
+</ul>
+<p class="caption"><span class="caption-text">varia</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Friendly tracebacks</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>friendly_traceback.formatters</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for friendly_traceback.formatters</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;formatters.py</span>
+
+<span class="sd">Default formatters showing all or only part of the available information.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">default_items_in_order</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;header&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;message&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;generic&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parsing_error&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parsing_error_source&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cause_header&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cause&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;last_call_header&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;last_call_source&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;last_call_variables_header&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;last_call_variables&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;exception_raised_header&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;exception_raised_source&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;exception_raised_variables_header&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="tb_items_to_show"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.tb_items_to_show">[docs]</a><span class="k">def</span> <span class="nf">tb_items_to_show</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Given a verbosity level, returns a list of traceback items to show.&quot;&quot;&quot;</span>
+    <span class="n">selector</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="n">_default</span><span class="p">,</span>
+        <span class="mi">2</span><span class="p">:</span> <span class="n">_traceback_before_default</span><span class="p">,</span>
+        <span class="mi">3</span><span class="p">:</span> <span class="n">_traceback_after_default</span><span class="p">,</span>
+        <span class="mi">4</span><span class="p">:</span> <span class="n">_no_generic_explanation</span><span class="p">,</span>
+        <span class="mi">5</span><span class="p">:</span> <span class="n">_traceback_before_no_generic</span><span class="p">,</span>
+        <span class="mi">6</span><span class="p">:</span> <span class="n">_traceback_after_no_generic</span><span class="p">,</span>
+        <span class="mi">7</span><span class="p">:</span> <span class="n">_simple_explain</span><span class="p">,</span>
+        <span class="mi">8</span><span class="p">:</span> <span class="n">_minimal_for_console</span><span class="p">,</span>
+        <span class="mi">9</span><span class="p">:</span> <span class="n">_only_python_traceback</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">selector</span><span class="p">[</span><span class="n">level</span><span class="p">]()</span></div>
+
+
+<span class="k">def</span> <span class="nf">format_traceback</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Default formatter. Produces an output that is suitable for</span>
+<span class="sd">       insertion in a RestructuredText (.rst) code block,</span>
+<span class="sd">       with pre-formatted indentation.</span>
+
+<span class="sd">       It is also the default used in the friendly-console.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">pre_items</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;header&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;generic&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parsing_error&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parsing_error_source&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;cause_header&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;cause&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;last_call_header&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;last_call_source&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;last_call_variables_header&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;last_call_variables&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;exception_raised_header&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;exception_raised_source&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;exception_raised_variables_header&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">items_to_show</span> <span class="o">=</span> <span class="n">tb_items_to_show</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">)</span>
+    <span class="n">spacing</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;single&quot;</span><span class="p">:</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;double&quot;</span><span class="p">:</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items_to_show</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+            <span class="n">indentation</span> <span class="o">=</span> <span class="n">spacing</span><span class="p">[</span><span class="n">pre_items</span><span class="p">[</span><span class="n">item</span><span class="p">]]</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">indentation</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="c1"># Needs fixing</span>
+<span class="c1">#</span>
+<span class="c1"># def markdown(info, level):</span>
+<span class="c1">#     &quot;&quot;&quot;Traceback formatted with full information but with markdown syntax.&quot;&quot;&quot;</span>
+<span class="c1">#     result = []</span>
+
+<span class="c1">#     # TODO: modify to work with new level selection, including new items.</span>
+<span class="c1">#     friendly_items = [</span>
+<span class="c1">#         (&quot;header&quot;, &quot;# &quot;, &quot;&quot;),</span>
+<span class="c1">#         (&quot;message&quot;, &quot;&quot;, &quot;&quot;),</span>
+<span class="c1">#         (&quot;generic&quot;, &quot;&quot;, &quot;&quot;),</span>
+<span class="c1">#         (&quot;parsing_error&quot;, &quot;&quot;, &quot;&quot;),</span>
+<span class="c1">#         (&quot;parsing_error_source&quot;, &quot;```\n&quot;, &quot;```&quot;),</span>
+<span class="c1">#         (&quot;cause_header&quot;, &quot;## &quot;, &quot;&quot;),</span>
+<span class="c1">#         (&quot;cause&quot;, &quot;&quot;, &quot;&quot;),</span>
+<span class="c1">#         (&quot;last_call_header&quot;, &quot;## &quot;, &quot;&quot;),</span>
+<span class="c1">#         (&quot;last_call_source&quot;, &quot;```\n&quot;, &quot;```&quot;),</span>
+<span class="c1">#         (&quot;last_call_variables&quot;, &quot;Variables:\n```\n&quot;, &quot;```&quot;),</span>
+<span class="c1">#         (&quot;exception_raised_header&quot;, &quot;## &quot;, &quot;&quot;),</span>
+<span class="c1">#         (&quot;exception_raised_source&quot;, &quot;```\n&quot;, &quot;```&quot;),</span>
+<span class="c1">#         (&quot;exception_raised_variables&quot;, &quot;Variables:\n```\n&quot;, &quot;```&quot;),</span>
+<span class="c1">#     ]</span>
+
+<span class="c1">#     for item, prefix, suffix in friendly_items:</span>
+<span class="c1">#         if item in info:</span>
+<span class="c1">#             result.append(prefix + info[item] + suffix)</span>
+<span class="c1">#     return &quot;\n\n&quot;.join(result)</span>
+
+
+<span class="k">def</span> <span class="nf">_default</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Includes all the information processed by Friendly-traceback</span>
+<span class="sd">       except for the traditional Python traceback</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">default_items_in_order</span><span class="p">[:]</span>
+
+
+<span class="k">def</span> <span class="nf">_traceback_before_default</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Includes the Python traceback before all the information</span>
+<span class="sd">       processed by Friendly-traceback.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">]</span>
+    <span class="n">items</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">_default</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">items</span>
+
+
+<span class="k">def</span> <span class="nf">_traceback_after_default</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Includes the Python traceback after all the information</span>
+<span class="sd">       processed by Friendly-traceback.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">_default</span><span class="p">()</span>
+    <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">items</span>
+
+
+<span class="k">def</span> <span class="nf">_no_generic_explanation</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Similar to the default option except that it does not display the</span>
+<span class="sd">       generic information about a given exception.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">default_items_in_order</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;generic&quot;</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">items</span>
+
+
+<span class="k">def</span> <span class="nf">_traceback_before_no_generic</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Includes the Python traceback before all the information</span>
+<span class="sd">       processed by Friendly-traceback.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">]</span>
+    <span class="n">items</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">_no_generic_explanation</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">items</span>
+
+
+<span class="k">def</span> <span class="nf">_traceback_after_no_generic</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Includes the Python traceback after all the information</span>
+<span class="sd">       processed by Friendly-traceback.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">_no_generic_explanation</span><span class="p">()</span>
+    <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">items</span>
+
+
+<span class="k">def</span> <span class="nf">_simple_explain</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;(Subject to change) Python tracebacks followed</span>
+<span class="sd">               by specific information.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">,</span> <span class="s2">&quot;parsing_error&quot;</span><span class="p">,</span> <span class="s2">&quot;cause&quot;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_minimal_for_console</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Minimal traceback, useful for console use by more experienced users.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="s2">&quot;message&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parsing_error_source&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;cause&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;last_call_source&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;last_call_variables&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;exception_raised_source&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_only_python_traceback</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Shows only the simulated Python traceback</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">]</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, André Roberge
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
