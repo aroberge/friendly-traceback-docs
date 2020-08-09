@@ -88,7 +88,15 @@ rst_epilog = """
 rst_prolog = """
 .. warning::
 
-    This documentation needs to, and is about to be updated significantly.
+    This is alpha software, currently in development.
+    The API is subject to change without notice;
+    many such changes are not yet included in this documentation.
+    The aim is to have (almost) all the text updated and corrected
+    by the time version 0.1 is released, at which time this warning
+    will change.
+
+    Note that most screenshots have been taken with an obsolete version.
+    We aim to replace those when work for version 0.2 has been completed.
 
 """
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Developer: Add a new SyntaxError case &mdash; Friendly tracebacks 0.0.34a documentation</title>
+  <title>Developer: Add a new SyntaxError case &mdash; Friendly tracebacks 0.0.35a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.34a
+                0.0.35a
               </div>
             
           
@@ -87,12 +87,14 @@
               
             
             
-              <p class="caption"><span class="caption-text">About</span></p>
+              <p class="caption"><span class="caption-text">For beginners and teachers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mu_thonny.html">About Mu and Thonny</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Thoughts on design</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
@@ -100,11 +102,6 @@
 <li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html">Friendly tracebacks - in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">Friendly SyntaxError tracebacks - in English</a></li>
-</ul>
-<p class="caption"><span class="caption-text">En français</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul class="current">
@@ -129,15 +126,17 @@
 <li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Other Python versions</span></p>
+<p class="caption"><span class="caption-text">All the tracebacks!</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.7.html">SyntaxError - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html">Friendly tracebacks - Python 3.8 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">SyntaxError - Python 3.8 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
 </ul>
 <p class="caption"><span class="caption-text">varia</span></p>
 <ul>
@@ -218,7 +217,14 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This documentation needs to, and is about to be updated significantly.</p>
+<p>This is alpha software, currently in development.
+The API is subject to change without notice;
+many such changes are not yet included in this documentation.
+The aim is to have (almost) all the text updated and corrected
+by the time version 0.1 is released, at which time this warning
+will change.</p>
+<p>Note that most screenshots have been taken with an obsolete version.
+We aim to replace those when work for version 0.2 has been completed.</p>
 </div>
 <div class="section" id="developer-add-a-new-syntaxerror-case">
 <h1>Developer: Add a new SyntaxError case<a class="headerlink" href="#developer-add-a-new-syntaxerror-case" title="Permalink to this headline">¶</a></h1>

@@ -22,7 +22,7 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.34a
+Friendly-traceback version: 0.0.35a
 Python version: 3.8.4
 
 
@@ -1676,7 +1676,10 @@ SyntaxError - assigned prior to nonlocal declaration
        123:                 try:
     -->124:                     mod = __import__(name)
 
-    name: 'raise_syntax_error5-'
+    Variables:
+    
+        name: 'raise_syntax_error5-'
+    
 
 SyntaxError - used prior to nonlocal declaration
 ------------------------------------------------
@@ -2252,10 +2255,10 @@ SyntaxError - invalid character (bad quote)
               ^
 
     Cause probable basée sur les informations données par Python :
-        Avez-vous utilisé copier-coller?
         Python indique que vous avez utilisé des caractères unicode non permis
         comme étant partie d’un nom de variable; cela inclut de nombreux emojis.
         Cependant, je soupçonne que vous avez utilisé un guillemet unicode 
         au lieu d’un guillemet normal (simple ou double) pour une chaîne de caractères.
+        Cela peut se produire si vous utilisez du copier-coller.
         
         

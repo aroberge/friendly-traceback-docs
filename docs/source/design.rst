@@ -1,6 +1,11 @@
 Some thoughts on the design of friendly-traceback
 =================================================
 
+.. todo::
+
+    Add note about no required dependencies other than what is
+    found in the Python standard library.
+
 The following are thoughts on the design of this project.
 The content of this file **will** be changed as this project evolve.
 
@@ -278,7 +283,7 @@ Our current thinking is as follows:
    one package and enhance it as needed. So, Friendly-traceback must be
    designed to easily allow extensions of its core capabilities.
 
-So, the choice we have made is that Friendly-traceback will only print
+So, the choice we have made is that Friendly-traceback will normally only print
 at most one likely cause.
 However, some programming environment could use the additional information
 about possible causes if and when it becomes available in Friendly-traceback.

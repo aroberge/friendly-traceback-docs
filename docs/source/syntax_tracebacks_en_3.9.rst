@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.34a
+Friendly-traceback version: 0.0.35a
 Python version: 3.9.0b4
 
 
@@ -1667,7 +1667,10 @@ SyntaxError - assigned prior to nonlocal declaration
        123:                 try:
     -->124:                     mod = __import__(name)
 
-    name: 'raise_syntax_error5-'
+    Variables:
+    
+        name: 'raise_syntax_error5-'
+    
 
 SyntaxError - used prior to nonlocal declaration
 ------------------------------------------------

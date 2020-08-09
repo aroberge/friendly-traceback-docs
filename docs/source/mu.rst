@@ -1,3 +1,5 @@
+.. _mu_instructions:
+
 Using with Mu
 =============
 

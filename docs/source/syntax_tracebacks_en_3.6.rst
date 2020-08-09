@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.34a
+Friendly-traceback version: 0.0.35a
 Python version: 3.6.8
 
 
@@ -1669,7 +1669,10 @@ SyntaxError - assigned prior to nonlocal declaration
        123:                 try:
     -->124:                     mod = __import__(name)
 
-    name: 'raise_syntax_error5-'
+    Variables:
+    
+        name: 'raise_syntax_error5-'
+    
 
 SyntaxError - used prior to nonlocal declaration
 ------------------------------------------------
@@ -2253,11 +2256,12 @@ SyntaxError - invalid character (bad quote)
               ^
 
     Likely cause based on the information given by Python:
-        Did you use copy-paste?
         Python indicates that you used some unicode characters not allowed
         as part of a variable name; this includes many emojis.
         However, I suspect that you used a fancy unicode quotation mark
         instead of a normal single or double quote for a string.
+        This can happen if you copy-pasted code.
+        
         
 
 Walrus operator does not exist - yet

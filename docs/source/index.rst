@@ -7,15 +7,6 @@ any language.
 
 `Code on Github <https://github.com/aroberge/friendly-traceback>`_
 
-.. warning::
-
-    This is alpha software, currently in development.
-    The API is subject to change without notice; such changes may not
-    be included (yet) in this documentation.
-    Note that most screenshots have been taken with an obsolete
-    version. We aim to replace those when work for version 0.2
-    has been completed.
-
 
 In a nutshell
 --------------
@@ -30,12 +21,19 @@ Please, see the Design section for a complete description of the goals
 of this project.
 
 While Friendly-traceback can be used on its own with a specially
-designed REPL, a better option is to use it together with GUI editors/IDE
-that are especially designed with beginners in mind. We know of
-two excellent such programs: `Mu <https://codewith.mu/>`_ and
-`Thonny <https://thonny.org/>`_. This documentation includes a specific
-page for each of these two editors
-which explain how to use Friendly-traceback.
+designed REPL, a better option would be to use it together with
+GUI-based editors/IDE
+that are especially designed with beginners in mind.
+Currently, only one such program, `Thonny <https://thonny.org/>`_,
+incorporate some of the features of Friendly-traceback.
+We explain how to use Friendly-traceback with Thonny in this
+document.
+
+For the other programs designed with beginners in mind,
+such as `Mu <https://codewith.mu/>`_ or, to a certain extent,
+Python's own IDLE,
+we show what we hope is a relatively easy way to use Friendly-traceback.
+
 
 A quick look
 ------------
@@ -49,11 +47,13 @@ Python traceback when using the REPL.
 
 Not exactly the most helpful information for beginners ...
 
-Here's the corresponding version from Friendly-traceback's REPL
+Here's the corresponding version from Friendly-traceback's REPL using
+the default configuration.
 
 .. image:: images/friendly_indexerror_en.png
    :scale: 50 %
    :alt: Friendly IndexError in English
+
 
 The only thing that is shown in exactly the same way is the line showing
 the exception name and a message.  Everything else can be made available
@@ -63,6 +63,32 @@ in other languages.
 .. image:: images/friendly_indexerror_fr.png
    :scale: 50 %
    :alt: Friendly IndexError in French
+
+.. hint::
+
+    |france| Voir la section en français vers la fin.
+
+Organization of this documentation
+----------------------------------
+
+This documentation has been written with many different types of
+readers in mind.
+
+The first part has been written with beginners and teachers in mind.
+We have attempted to only show the most pertinent information while
+giving a glimpse of more advanced features.
+
+The third part is written with more advanced readers in mind,
+and the explanations given are not as detailed.
+However, **it is assumed that advanced users will have already read
+and are familiar with the content of the first part** and possibly
+the second part, dealing with the design of Friendly-traceback.
+
+Detailed examples of **all** possible cases covered, using different
+Python versions and/or different languages (currently only
+English and French) are found in an appendix. Feel free to make
+suggestions for improvements and/or suggesting additional cases
+to be included.
 
 About the version
 -----------------
@@ -78,39 +104,26 @@ from the version available from Pypi.
 .. toctree::
    :maxdepth: 1
    :hidden:
-   :caption: About
+   :caption: For beginners and teachers
 
    usage
-   mu_thonny
-   mu
    thonny
+   mu
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: Thoughts on design
+
    design
 
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-   :caption: Known exceptions (Python 3.8)
-
-   known
-   tracebacks_en_3.8
-   syntax_tracebacks_en_3.8
 
 .. toctree::
    :maxdepth: 1
    :hidden:
-   :caption: En français
+   :caption: More advanced users
 
-   tracebacks_fr
-   syntax_tracebacks_fr
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-   :caption: Contribute
-
-   suggest
-   adding_exception
-   syntax_error
+   usage_adv
 
 .. toctree::
    :maxdepth: 1
@@ -121,20 +134,40 @@ from the version available from Pypi.
    api
    graph
    lies
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: Contribute
+
+   suggest
+   adding_exception
+   syntax_error
    translation_notes
 
 .. toctree::
    :maxdepth: 1
    :hidden:
-   :caption: Other Python versions
+   :caption: All the tracebacks!
 
-   compare
+   known
    Friendly tracebacks - Python 3.6 in English <tracebacks_en_3.6>
    SyntaxError - Python 3.6 in English <syntax_tracebacks_en_3.6>
    Friendly tracebacks - Python 3.7 in English <tracebacks_en_3.7>
    SyntaxError - Python 3.7 in English <syntax_tracebacks_en_3.7>
+   Friendly tracebacks - Python 3.8 in English <tracebacks_en_3.8>
+   SyntaxError - Python 3.8 in English <syntax_tracebacks_en_3.8>
    Friendly tracebacks - Python 3.9 in English <tracebacks_en_3.9>
    SyntaxError - Python 3.9 in English <syntax_tracebacks_en_3.9>
+   compare
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: En français
+
+   tracebacks_fr
+   syntax_tracebacks_fr
 
 .. toctree::
    :maxdepth: 1

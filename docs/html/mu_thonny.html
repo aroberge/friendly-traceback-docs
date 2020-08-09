@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>About Mu and Thonny &mdash; Friendly tracebacks 0.0.34a documentation</title>
+  <title>About Mu and Thonny &mdash; Friendly tracebacks 0.0.35a documentation</title>
   
 
   
@@ -36,9 +36,7 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Using with Mu" href="mu.html" />
-    <link rel="prev" title="Usage" href="usage.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,7 +60,7 @@
             
             
               <div class="version">
-                0.0.34a
+                0.0.35a
               </div>
             
           
@@ -87,17 +85,14 @@
               
             
             
-              <p class="caption"><span class="caption-text">About</span></p>
-<ul class="current">
+              <p class="caption"><span class="caption-text">For beginners and teachers</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">About Mu and Thonny</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#about-mu">About Mu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#about-thonny">About Thonny</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#which-one-to-use">Which one to use?</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Thoughts on design</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
@@ -105,11 +100,6 @@
 <li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html">Friendly tracebacks - in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">Friendly SyntaxError tracebacks - in English</a></li>
-</ul>
-<p class="caption"><span class="caption-text">En français</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
@@ -125,15 +115,17 @@
 <li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Other Python versions</span></p>
+<p class="caption"><span class="caption-text">All the tracebacks!</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.7.html">SyntaxError - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html">Friendly tracebacks - Python 3.8 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">SyntaxError - Python 3.8 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
 </ul>
 <p class="caption"><span class="caption-text">varia</span></p>
 <ul>
@@ -198,15 +190,6 @@
   </ul>
 
   
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="mu.html" class="btn btn-neutral float-right" title="Using with Mu" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-  </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -214,7 +197,14 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This documentation needs to, and is about to be updated significantly.</p>
+<p>This is alpha software, currently in development.
+The API is subject to change without notice;
+many such changes are not yet included in this documentation.
+The aim is to have (almost) all the text updated and corrected
+by the time version 0.1 is released, at which time this warning
+will change.</p>
+<p>Note that most screenshots have been taken with an obsolete version.
+We aim to replace those when work for version 0.2 has been completed.</p>
 </div>
 <div class="section" id="about-mu-and-thonny">
 <h1>About Mu and Thonny<a class="headerlink" href="#about-mu-and-thonny" title="Permalink to this headline">¶</a></h1>
@@ -307,15 +297,6 @@ beginners, Thonny would likely be a better choice.</p></li>
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="mu.html" class="btn btn-neutral float-right" title="Using with Mu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

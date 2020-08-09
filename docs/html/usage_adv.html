@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Usage &mdash; Friendly tracebacks 0.0.35a documentation</title>
+  <title>Advanced Usage &mdash; Friendly tracebacks 0.0.35a documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Using with Thonny" href="thonny.html" />
-    <link rel="prev" title="Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨" href="index.html" /> 
+    <link rel="next" title="Description of demos" href="custom.html" />
+    <link rel="prev" title="Some thoughts on the design of friendly-traceback" href="design.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,9 +88,18 @@
             
             
               <p class="caption"><span class="caption-text">For beginners and teachers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Thoughts on design</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
+</ul>
+<p class="caption"><span class="caption-text">For advanced users</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#where-the-output-is-written">Where the output is written?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-much-information-is-printed">How much information is printed?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#language-used">Language used</a></li>
@@ -100,16 +109,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#from-the-command-line">From the command line</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Thoughts on design</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
-</ul>
-<p class="caption"><span class="caption-text">More advanced users</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Advanced Usage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
@@ -192,13 +191,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Usage</li>
+      <li>Advanced Usage</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/usage.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/usage_adv.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -208,10 +207,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="thonny.html" class="btn btn-neutral float-right" title="Using with Thonny" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="custom.html" class="btn btn-neutral float-right" title="Description of demos" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of friendly-traceback" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -231,19 +230,13 @@ will change.</p>
 <p>Note that most screenshots have been taken with an obsolete version.
 We aim to replace those when work for version 0.2 has been completed.</p>
 </div>
-<div class="section" id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="advanced-usage">
+<h1>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h1>
 <p>There are various ways of using friendly-traceback.
 We first list the various basic options.
 If you wish to use friendly-traceback for running scripts that
 accept command line arguments, you might want to read the
 penultimate section on this page.</p>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p><img alt="mu_logo" src="_images/mu_logo.png" /> If you use Mu, you can skip this and go to <a class="reference internal" href="mu.html#mu-instructions"><span class="std std-ref">Using with Mu</span></a>.</p>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In some of the examples below, we use the program <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> found
@@ -360,7 +353,6 @@ to be used, either as command line arguments:</p>
 <p>or as optional arguments when using <code class="docutils literal notranslate"><span class="pre">check_syntax</span></code> or <code class="docutils literal notranslate"><span class="pre">run_code</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">check_syntax</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;fr&#39;</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
-</div>
 </div>
 <div class="section" id="where-the-output-is-written">
 <h2>Where the output is written?<a class="headerlink" href="#where-the-output-is-written" title="Permalink to this headline">¶</a></h2>
@@ -620,10 +612,10 @@ optional arguments:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="thonny.html" class="btn btn-neutral float-right" title="Using with Thonny" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="custom.html" class="btn btn-neutral float-right" title="Description of demos" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of friendly-traceback" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

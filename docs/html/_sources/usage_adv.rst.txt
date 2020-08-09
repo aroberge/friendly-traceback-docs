@@ -1,23 +1,11 @@
-Usage
-=====
+Advanced Usage
+==============
 
 There are various ways of using friendly-traceback.
 We first list the various basic options.
 If you wish to use friendly-traceback for running scripts that
 accept command line arguments, you might want to read the
 penultimate section on this page.
-
-
-Installation
--------------
-
-
-.. hint::
-
-    |mu_logo| If you use Mu, you can skip this and go to :ref:`mu_instructions`.
-
-.. |mu_logo| image:: images/mu_logo.png
-
 
 .. note::
 
