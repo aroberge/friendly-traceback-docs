@@ -138,6 +138,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#modulenotfounderror">ModuleNotFoundError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nameerror-1">NameError - 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nameerror-2">NameError - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nameerror-3">NameError - 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nameerror-4">NameError - 4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#overflowerror">OverflowError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#recursionerror">RecursionError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
@@ -329,7 +331,7 @@ Execution stopped on line 10 of file &#39;TESTS:\except\test_attribute_error.py&
     9:     try:
 --&gt;10:         A.x
 
-    Known identifiers:
+Known identifiers
     A: &lt;class &#39;test_attribute_error.test_attribute_e...&gt;
 </pre></div>
 </div>
@@ -352,7 +354,7 @@ Execution stopped on line 24 of file &#39;TESTS:\except\test_attribute_error.py&
    23:     try:
 --&gt;24:         string.ascii_lowecase
 
-    Known identifiers:
+Known identifiers
     string: &lt;module &#39;string&#39; from &#39;C:\\Users\\andre\\AppD...&gt;
 </pre></div>
 </div>
@@ -376,7 +378,7 @@ Execution stopped on line 41 of file &#39;TESTS:\except\test_attribute_error.py&
    40:     try:
 --&gt;41:         math.cost
 
-    Known identifiers:
+Known identifiers
     math: &lt;module &#39;math&#39; (built-in)&gt;
 </pre></div>
 </div>
@@ -442,7 +444,7 @@ Execution stopped on line 7 of file &#39;TESTS:\except\test_key_error.py&#39;.
    6:     try:
 --&gt;7:         d[&quot;c&quot;]
 
-    Known identifiers:
+Known identifiers
     d: {&#39;a&#39;: 1, &#39;b&#39;: 2}
 </pre></div>
 </div>
@@ -484,7 +486,7 @@ Execution stopped on line 8 of file &#39;TESTS:\except\test_index_error.py&#39;.
     7:     try:
 --&gt; 8:         print(a[3], b[2])
 
-    Known identifiers:
+Known identifiers
     a: (1, 2, 3)
     b: [1, 2, 3]
 </pre></div>
@@ -510,7 +512,7 @@ Execution stopped on line 22 of file &#39;TESTS:\except\test_index_error.py&#39;
    21:     try:
 --&gt;22:         print(a[50], b[0])
 
-    Known identifiers:
+Known identifiers
     a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
     b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
 </pre></div>
@@ -541,7 +543,7 @@ Execution stopped on line 6 of file &#39;TESTS:\except\test_module_not_found_err
 <div class="section" id="nameerror-1">
 <h2>NameError - 1<a class="headerlink" href="#nameerror-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    NameError: name &#39;cost&#39; is not defined
+    NameError: name &#39;something&#39; is not defined
 
 A NameError exception indicates that a variable or
 function name is not known to Python.
@@ -550,16 +552,13 @@ However, sometimes it is because the name is used
 before being defined or given a value.
 
 Likely cause based on the information given by Python:
-    In your program, the unknown name is &#39;cost&#39;.
+    In your program, the unknown name is &#39;something&#39;.
 
 Execution stopped on line 6 of file &#39;TESTS:\except\test_name_error.py&#39;.
 
    4: def test_name_error():
    5:     try:
---&gt;6:         cost  # wrote from math import * above
-
-Perhaps you meant to write one of the following:
-    Global variable: &#39;cos&#39;, &#39;cosh&#39;
+--&gt;6:         this = something
 </pre></div>
 </div>
 </div>
@@ -575,18 +574,63 @@ However, sometimes it is because the name is used
 before being defined or given a value.
 
 Likely cause based on the information given by Python:
-    In your program, the unknown name is &#39;babs&#39;.
+    The following similar names were found:
+        Local: &#39;nabs&#39;
+        Global: &#39;fabs&#39;
+        Python builtins: &#39;abs&#39;
 
 Execution stopped on line 18 of file &#39;TESTS:\except\test_name_error.py&#39;.
 
    16:     nabs = 1
    17:     try:
 --&gt;18:         x = babs(-1)
+</pre></div>
+</div>
+</div>
+<div class="section" id="nameerror-3">
+<h2>NameError - 3<a class="headerlink" href="#nameerror-3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    NameError: name &#39;x&#39; is not defined
 
-Perhaps you meant to write one of the following:
-    Local variable: &#39;nabs&#39;
-    Global variable: &#39;fabs&#39;
-    Python builtins: &#39;abs&#39;
+A NameError exception indicates that a variable or
+function name is not known to Python.
+Most often, this is because there is a spelling mistake.
+However, sometimes it is because the name is used
+before being defined or given a value.
+
+Likely cause based on the information given by Python:
+    Type hint found for &#39;x&#39; as a global variable.
+    Perhaps you had written x : 3 instead of x = 3.
+
+
+Execution stopped on line 31 of file &#39;TESTS:\except\test_name_error.py&#39;.
+
+   29: def test_name_error3():
+   30:     try:
+--&gt;31:         y = x
+</pre></div>
+</div>
+</div>
+<div class="section" id="nameerror-4">
+<h2>NameError - 4<a class="headerlink" href="#nameerror-4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+    NameError: name &#39;cost&#39; is not defined
+
+A NameError exception indicates that a variable or
+function name is not known to Python.
+Most often, this is because there is a spelling mistake.
+However, sometimes it is because the name is used
+before being defined or given a value.
+
+Likely cause based on the information given by Python:
+    The following similar names were found:
+        Global: &#39;cos&#39;, &#39;cosh&#39;
+
+Execution stopped on line 42 of file &#39;TESTS:\except\test_name_error.py&#39;.
+
+   40: def test_name_error4():
+   41:     try:
+--&gt;42:         cost  # wrote from math import * above
 </pre></div>
 </div>
 </div>
@@ -622,7 +666,7 @@ Execution stopped on line 8 of file &#39;TESTS:\except\test_recursion_error.py&#
     7:     try:
 --&gt; 8:         a()
 
-    Known identifiers:
+Known identifiers
     a: &lt;function test_recursion_error.&lt;locals&gt;.a&gt;
 
 Exception raised on line 6 of file &#39;TESTS:\except\test_recursion_error.py&#39;.
@@ -631,8 +675,8 @@ Exception raised on line 6 of file &#39;TESTS:\except\test_recursion_error.py&#3
    5:     def a():
 --&gt;6:         return a()
 
-    Known identifiers:
-    a: &lt;function test_recursion_error.&lt;locals&gt;.a&gt;
+Known identifiers
+        a: &lt;function test_recursion_error.&lt;locals&gt;.a&gt;
 </pre></div>
 </div>
 </div>
@@ -656,7 +700,7 @@ Execution stopped on line 8 of file &#39;TESTS:\except\test_type_error.py&#39;.
     7:         one = 1
 --&gt; 8:         result = a + one
 
-    Known identifiers:
+Known identifiers
     a: &#39;a&#39;
     one: 1
 </pre></div>
@@ -682,7 +726,7 @@ Execution stopped on line 24 of file &#39;TESTS:\except\test_type_error.py&#39;.
    23:         a_list = [1, 2, 3]
 --&gt;24:         result = a + a_list
 
-    Known identifiers:
+Known identifiers
     a: &#39;a&#39;
     a_list: [1, 2, 3]
 </pre></div>
@@ -708,7 +752,7 @@ Execution stopped on line 40 of file &#39;TESTS:\except\test_type_error.py&#39;.
    39:         a_list = [1, 2, 3]
 --&gt;40:         result = a_tuple + a_list
 
-    Known identifiers:
+Known identifiers
     a_tuple: (1, 2, 3)
     a_list: [1, 2, 3]
 </pre></div>
@@ -734,7 +778,7 @@ Execution stopped on line 54 of file &#39;TESTS:\except\test_type_error.py&#39;.
    53:         none = None
 --&gt;54:         result = one + none
 
-    Known identifiers:
+Known identifiers
     one: 1
     none: None
 </pre></div>
@@ -760,7 +804,7 @@ Execution stopped on line 68 of file &#39;TESTS:\except\test_type_error.py&#39;.
    67:         two = &quot;two&quot;
 --&gt;68:         one += two
 
-    Known identifiers:
+Known identifiers
     one: 1
     two: &#39;two&#39;
 </pre></div>
@@ -786,7 +830,7 @@ Execution stopped on line 82 of file &#39;TESTS:\except\test_type_error.py&#39;.
    81:         b = [3, 4]
 --&gt;82:         result = a - b
 
-    Known identifiers:
+Known identifiers
     a: (1, 2)
     b: [3, 4]
 </pre></div>
@@ -812,7 +856,7 @@ Execution stopped on line 96 of file &#39;TESTS:\except\test_type_error.py&#39;.
    95:         b = [3, 4]
 --&gt;96:         b -= a
 
-    Known identifiers:
+Known identifiers
     b: [3, 4]
     a: (1, 2)
 </pre></div>
@@ -838,7 +882,7 @@ Execution stopped on line 110 of file &#39;TESTS:\except\test_type_error.py&#39;
    109:         b = {2, 3}
 --&gt;110:         result = a * b
 
-    Known identifiers:
+Known identifiers
     a: 1j
     b: {2, 3}
 </pre></div>
@@ -864,7 +908,7 @@ Execution stopped on line 124 of file &#39;TESTS:\except\test_type_error.py&#39;
    123:         b = {2, 3}
 --&gt;124:         b *= a
 
-    Known identifiers:
+Known identifiers
     b: {2, 3}
     a: 1j
 </pre></div>
@@ -890,7 +934,7 @@ Execution stopped on line 138 of file &#39;TESTS:\except\test_type_error.py&#39;
    137:         b = 3.1416
 --&gt;138:         result = a / b
 
-    Known identifiers:
+Known identifiers
     a: {1: 1, 2: 2}
     b: 3.1416
 </pre></div>
@@ -916,7 +960,7 @@ Execution stopped on line 152 of file &#39;TESTS:\except\test_type_error.py&#39;
    151:         b = 3.1416
 --&gt;152:         b /= a
 
-    Known identifiers:
+Known identifiers
     b: 3.1416
     a: {1: 1, 2: 2}
 </pre></div>
@@ -942,7 +986,7 @@ Execution stopped on line 166 of file &#39;TESTS:\except\test_type_error.py&#39;
    165:         b = 1
 --&gt;166:         result = a // b
 
-    Known identifiers:
+Known identifiers
     a: {1: 1, 2: 2}
     b: 1
 </pre></div>
@@ -968,7 +1012,7 @@ Execution stopped on line 180 of file &#39;TESTS:\except\test_type_error.py&#39;
    179:         b = 3.1416
 --&gt;180:         b //= a
 
-    Known identifiers:
+Known identifiers
     b: 3.1416
     a: {1: 1, 2: 2}
 </pre></div>
@@ -995,7 +1039,7 @@ Execution stopped on line 194 of file &#39;TESTS:\except\test_type_error.py&#39;
    193:         b = 2
 --&gt;194:         result = a &amp; b
 
-    Known identifiers:
+Known identifiers
     a: &#39;a&#39;
     b: 2
 </pre></div>
@@ -1022,7 +1066,7 @@ Execution stopped on line 208 of file &#39;TESTS:\except\test_type_error.py&#39;
    207:         b = 2
 --&gt;208:         b &amp;= a
 
-    Known identifiers:
+Known identifiers
     b: 2
     a: &#39;a&#39;
 </pre></div>
@@ -1049,7 +1093,7 @@ Execution stopped on line 222 of file &#39;TESTS:\except\test_type_error.py&#39;
    221:         b = 3.1416
 --&gt;222:         result = a ** b
 
-    Known identifiers:
+Known identifiers
     a: {1: 1, 2: 2}
     b: 3.1416
 </pre></div>
@@ -1076,7 +1120,7 @@ Execution stopped on line 236 of file &#39;TESTS:\except\test_type_error.py&#39;
    235:         b = 3.1416
 --&gt;236:         a **= b
 
-    Known identifiers:
+Known identifiers
     a: {1: 1, 2: 2}
     b: 3.1416
 </pre></div>
@@ -1103,7 +1147,7 @@ Execution stopped on line 250 of file &#39;TESTS:\except\test_type_error.py&#39;
    249:         b = 42
 --&gt;250:         result = a &gt;&gt; b
 
-    Known identifiers:
+Known identifiers
     a: &#39;a&#39;
     b: 42
 </pre></div>
@@ -1130,7 +1174,7 @@ Execution stopped on line 264 of file &#39;TESTS:\except\test_type_error.py&#39;
    263:         b = 42
 --&gt;264:         a &gt;&gt;= b
 
-    Known identifiers:
+Known identifiers
     a: &#39;a&#39;
     b: 42
 </pre></div>
@@ -1159,7 +1203,7 @@ Execution stopped on line 278 of file &#39;TESTS:\except\test_type_error.py&#39;
    277:         b = 2
 --&gt;278:         result = a @ b
 
-    Known identifiers:
+Known identifiers
     a: &#39;a&#39;
     b: 2
 </pre></div>
@@ -1188,7 +1232,7 @@ Execution stopped on line 292 of file &#39;TESTS:\except\test_type_error.py&#39;
    291:         b = 2
 --&gt;292:         a @= b
 
-    Known identifiers:
+Known identifiers
     a: &#39;a&#39;
     b: 2
 </pre></div>
@@ -1215,7 +1259,7 @@ Execution stopped on line 306 of file &#39;TESTS:\except\test_type_error.py&#39;
    305:         b = 42
 --&gt;306:         b &lt; a
 
-    Known identifiers:
+Known identifiers
     b: 42
     a: &#39;a&#39;
 </pre></div>
@@ -1312,7 +1356,7 @@ Execution stopped on line 358 of file &#39;TESTS:\except\test_type_error.py&#39;
    357:     try:
 --&gt;358:         a[0] = 0
 
-    Known identifiers:
+Known identifiers
     a: (1, 2, 3)
 </pre></div>
 </div>
@@ -1338,7 +1382,7 @@ Execution stopped on line 373 of file &#39;TESTS:\except\test_type_error.py&#39;
    372:     try:
 --&gt;373:         fn(1)
 
-    Known identifiers:
+Known identifiers
     fn: &lt;function test_type_error13.&lt;locals&gt;.fn&gt;
 </pre></div>
 </div>
@@ -1363,7 +1407,7 @@ Execution stopped on line 388 of file &#39;TESTS:\except\test_type_error.py&#39;
    387:     try:
 --&gt;388:         fn(1)
 
-    Known identifiers:
+Known identifiers
     fn: &lt;function test_type_error14.&lt;locals&gt;.fn&gt;
 </pre></div>
 </div>
@@ -1463,7 +1507,7 @@ Execution stopped on line 21 of file &#39;TESTS:\except\test_unbound_local_error
    20:     try:
 --&gt;21:         outer()
 
-    Known identifiers:
+Known identifiers
     global outer: &lt;function outer&gt;
 
 Exception raised on line 12 of file &#39;TESTS:\except\test_unbound_local_error.py&#39;.
@@ -1472,9 +1516,9 @@ Exception raised on line 12 of file &#39;TESTS:\except\test_unbound_local_error.
    11:         c = 3
 --&gt;12:         a = a + b + c
 
-    Known identifiers:
-    global b: 2
-    c: 3
+Known identifiers
+        global b: 2
+        c: 3
 </pre></div>
 </div>
 </div>
@@ -1493,7 +1537,7 @@ Execution stopped on line 10 of file &#39;TESTS:\except\test_unknown_error.py&#3
     9:     try:
 --&gt;10:         raise MyException(&quot;Some informative message about an unknown exception.&quot;)
 
-    Known identifiers:
+Known identifiers
     global MyException: &lt;class &#39;test_unknown_error.MyException&#39;&gt;
 </pre></div>
 </div>
@@ -1536,7 +1580,7 @@ Execution stopped on line 19 of file &#39;TESTS:\except\test_zero_division_error
    18:     try:
 --&gt;19:         1 % zero
 
-    Known identifiers:
+Known identifiers
     zero: 0
 </pre></div>
 </div>

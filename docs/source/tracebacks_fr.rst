@@ -67,7 +67,7 @@ AttributeError - class attribute
         9:     try:
     -->10:         A.x
 
-        Identificateurs connus :
+    Known identifiers
         A: <class 'test_attribute_error.test_attribute_e...>
     
 
@@ -94,7 +94,7 @@ AttributeError - typo in module attribute
        23:     try:
     -->24:         string.ascii_lowecase
 
-        Identificateurs connus :
+    Known identifiers
         string: <module 'string' from 'C:\\Users\\andre\\AppD...>
     
 
@@ -122,7 +122,7 @@ AttributeError - typo in module attribute 2
        40:     try:
     -->41:         math.cost
 
-        Identificateurs connus :
+    Known identifiers
         math: <module 'math' (built-in)>
     
 
@@ -196,7 +196,7 @@ KeyError
        6:     try:
     -->7:         d["c"]
 
-        Identificateurs connus :
+    Known identifiers
         d: {'a': 1, 'b': 2}
     
 
@@ -245,7 +245,7 @@ IndexError - short tuple
         7:     try:
     --> 8:         print(a[3], b[2])
 
-        Identificateurs connus :
+    Known identifiers
         a: (1, 2, 3)
         b: [1, 2, 3]
     
@@ -275,7 +275,7 @@ IndexError - long list
        21:     try:
     -->22:         print(a[50], b[0])
 
-        Identificateurs connus :
+    Known identifiers
         a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
         b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
     
@@ -312,7 +312,7 @@ NameError - 1
 
 
     Exception Python:
-        NameError: name 'cost' is not defined
+        NameError: name 'something' is not defined
         
     Une exception NameError indique que le nom d'une variable
     ou d'une fonction n'est pas connue par Python.
@@ -321,17 +321,13 @@ NameError - 1
     utilisé avant qu'on ne lui ait associé une valeur.
     
     Cause probable basée sur les informations données par Python :
-        Dans votre programme, le nom inconnu est 'cost'.
+        Dans votre programme, le nom inconnu est 'something'.
         
     L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\except\test_name_error.py'
     
        4: def test_name_error():
        5:     try:
-    -->6:         cost  # wrote from math import * above
-
-    Peut-être que vous vouliez plutôt écrire un des choix suivants :
-        Identifiant global : 'cos', 'cosh'
-    
+    -->6:         this = something
 
 
 NameError - 2
@@ -350,7 +346,10 @@ NameError - 2
     utilisé avant qu'on ne lui ait associé une valeur.
     
     Cause probable basée sur les informations données par Python :
-        Dans votre programme, le nom inconnu est 'babs'.
+        The following similar names were found:
+            Local: 'nabs'
+            Global: 'fabs'
+            Identifiant Python (builtins) : 'abs'
         
     L'exécution s'est arrêtée à la ligne 18 du fichier 'TESTS:\except\test_name_error.py'
     
@@ -358,11 +357,58 @@ NameError - 2
        17:     try:
     -->18:         x = babs(-1)
 
-    Peut-être que vous vouliez plutôt écrire un des choix suivants :
-        Identifiant local : 'nabs'
-        Identifiant global : 'fabs'
-        Identifiant Python (builtins) : 'abs'
+
+NameError - 3
+-------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        NameError: name 'x' is not defined
+        
+    Une exception NameError indique que le nom d'une variable
+    ou d'une fonction n'est pas connue par Python.
+    Habituellement, ceci indique une simple faute d'orthographe.
+    Cependant, cela peut également indiquer que le nom a été
+    utilisé avant qu'on ne lui ait associé une valeur.
     
+    Cause probable basée sur les informations données par Python :
+        Type hint found for 'x' as a global variable.
+        Perhaps you had written x : 3 instead of x = 3.
+        
+        
+    L'exécution s'est arrêtée à la ligne 31 du fichier 'TESTS:\except\test_name_error.py'
+    
+       29: def test_name_error3():
+       30:     try:
+    -->31:         y = x
+
+
+NameError - 4
+-------------
+
+.. code-block:: none
+
+
+    Exception Python:
+        NameError: name 'cost' is not defined
+        
+    Une exception NameError indique que le nom d'une variable
+    ou d'une fonction n'est pas connue par Python.
+    Habituellement, ceci indique une simple faute d'orthographe.
+    Cependant, cela peut également indiquer que le nom a été
+    utilisé avant qu'on ne lui ait associé une valeur.
+    
+    Cause probable basée sur les informations données par Python :
+        The following similar names were found:
+            Global: 'cos', 'cosh'
+        
+    L'exécution s'est arrêtée à la ligne 42 du fichier 'TESTS:\except\test_name_error.py'
+    
+       40: def test_name_error4():
+       41:     try:
+    -->42:         cost  # wrote from math import * above
 
 
 OverflowError
@@ -404,7 +450,7 @@ RecursionError
         7:     try:
     --> 8:         a()
 
-        Identificateurs connus :
+    Known identifiers
         a: <function test_recursion_error.<locals>.a>
     
     Exception levée à la ligne 6 du fichier 'TESTS:\except\test_recursion_error.py'.
@@ -413,9 +459,9 @@ RecursionError
        5:     def a():
     -->6:         return a()
 
-        Identificateurs connus :
-        a: <function test_recursion_error.<locals>.a>
-    
+    Known identifiers
+            a: <function test_recursion_error.<locals>.a>
+        
 
 
 TypeError - 1: concatenate two different types
@@ -442,7 +488,7 @@ TypeError - 1: concatenate two different types
         7:         one = 1
     --> 8:         result = a + one
 
-        Identificateurs connus :
+    Known identifiers
         a: 'a'
         one: 1
     
@@ -472,7 +518,7 @@ TypeError - 1a: concatenate two different types
        23:         a_list = [1, 2, 3]
     -->24:         result = a + a_list
 
-        Identificateurs connus :
+    Known identifiers
         a: 'a'
         a_list: [1, 2, 3]
     
@@ -502,7 +548,7 @@ TypeError - 1b: concatenate two different types
        39:         a_list = [1, 2, 3]
     -->40:         result = a_tuple + a_list
 
-        Identificateurs connus :
+    Known identifiers
         a_tuple: (1, 2, 3)
         a_list: [1, 2, 3]
     
@@ -532,7 +578,7 @@ TypeError - 2: unsupported operand type(s) for +
        53:         none = None
     -->54:         result = one + none
 
-        Identificateurs connus :
+    Known identifiers
         one: 1
         none: None
     
@@ -562,7 +608,7 @@ TypeError - 2a: unsupported operand type(s) for +=
        67:         two = "two"
     -->68:         one += two
 
-        Identificateurs connus :
+    Known identifiers
         one: 1
         two: 'two'
     
@@ -592,7 +638,7 @@ TypeError - 3: unsupported operand type(s) for -
        81:         b = [3, 4]
     -->82:         result = a - b
 
-        Identificateurs connus :
+    Known identifiers
         a: (1, 2)
         b: [3, 4]
     
@@ -622,7 +668,7 @@ TypeError - 3a: unsupported operand type(s) for -=
        95:         b = [3, 4]
     -->96:         b -= a
 
-        Identificateurs connus :
+    Known identifiers
         b: [3, 4]
         a: (1, 2)
     
@@ -652,7 +698,7 @@ TypeError - 4: unsupported operand type(s) for *
        109:         b = {2, 3}
     -->110:         result = a * b
 
-        Identificateurs connus :
+    Known identifiers
         a: 1j
         b: {2, 3}
     
@@ -682,7 +728,7 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
        123:         b = {2, 3}
     -->124:         b *= a
 
-        Identificateurs connus :
+    Known identifiers
         b: {2, 3}
         a: 1j
     
@@ -712,7 +758,7 @@ TypeError - 5: unsupported operand type(s) for /
        137:         b = 3.1416
     -->138:         result = a / b
 
-        Identificateurs connus :
+    Known identifiers
         a: {1: 1, 2: 2}
         b: 3.1416
     
@@ -742,7 +788,7 @@ TypeError - 5a: unsupported operand type(s) for /=
        151:         b = 3.1416
     -->152:         b /= a
 
-        Identificateurs connus :
+    Known identifiers
         b: 3.1416
         a: {1: 1, 2: 2}
     
@@ -772,7 +818,7 @@ TypeError - 5b: unsupported operand type(s) for //
        165:         b = 1
     -->166:         result = a // b
 
-        Identificateurs connus :
+    Known identifiers
         a: {1: 1, 2: 2}
         b: 1
     
@@ -802,7 +848,7 @@ TypeError - 5c: unsupported operand type(s) for //=
        179:         b = 3.1416
     -->180:         b //= a
 
-        Identificateurs connus :
+    Known identifiers
         b: 3.1416
         a: {1: 1, 2: 2}
     
@@ -833,7 +879,7 @@ TypeError - 6: unsupported operand type(s) for &
        193:         b = 2
     -->194:         result = a & b
 
-        Identificateurs connus :
+    Known identifiers
         a: 'a'
         b: 2
     
@@ -864,7 +910,7 @@ TypeError - 6a: unsupported operand type(s) for &=
        207:         b = 2
     -->208:         b &= a
 
-        Identificateurs connus :
+    Known identifiers
         b: 2
         a: 'a'
     
@@ -895,7 +941,7 @@ TypeError - 7: unsupported operand type(s) for **
        221:         b = 3.1416
     -->222:         result = a ** b
 
-        Identificateurs connus :
+    Known identifiers
         a: {1: 1, 2: 2}
         b: 3.1416
     
@@ -926,7 +972,7 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
        235:         b = 3.1416
     -->236:         a **= b
 
-        Identificateurs connus :
+    Known identifiers
         a: {1: 1, 2: 2}
         b: 3.1416
     
@@ -957,7 +1003,7 @@ TypeError - 8: unsupported operand type(s) for >>
        249:         b = 42
     -->250:         result = a >> b
 
-        Identificateurs connus :
+    Known identifiers
         a: 'a'
         b: 42
     
@@ -988,7 +1034,7 @@ TypeError - 8a: unsupported operand type(s) for >>=
        263:         b = 42
     -->264:         a >>= b
 
-        Identificateurs connus :
+    Known identifiers
         a: 'a'
         b: 42
     
@@ -1021,7 +1067,7 @@ TypeError - 9: unsupported operand type(s) for @
        277:         b = 2
     -->278:         result = a @ b
 
-        Identificateurs connus :
+    Known identifiers
         a: 'a'
         b: 2
     
@@ -1054,7 +1100,7 @@ TypeError - 9a: unsupported operand type(s) for @=
        291:         b = 2
     -->292:         a @= b
 
-        Identificateurs connus :
+    Known identifiers
         a: 'a'
         b: 2
     
@@ -1085,7 +1131,7 @@ TypeError - 10: comparison between incompatible types
        305:         b = 42
     -->306:         b < a
 
-        Identificateurs connus :
+    Known identifiers
         b: 42
         a: 'a'
     
@@ -1195,7 +1241,7 @@ TypeError - 12: object does not support item assignment
        357:     try:
     -->358:         a[0] = 0
 
-        Identificateurs connus :
+    Known identifiers
         a: (1, 2, 3)
     
 
@@ -1224,7 +1270,7 @@ TypeError - 13: wrong number of positional arguments
        372:     try:
     -->373:         fn(1)
 
-        Identificateurs connus :
+    Known identifiers
         fn: <function test_type_error13.<locals>.fn>
     
 
@@ -1253,7 +1299,7 @@ TypeError - 14: missing positional arguments
        387:     try:
     -->388:         fn(1)
 
-        Identificateurs connus :
+    Known identifiers
         fn: <function test_type_error14.<locals>.fn>
     
 
@@ -1367,7 +1413,7 @@ UnboundLocalError
        20:     try:
     -->21:         outer()
 
-        Identificateurs connus :
+    Known identifiers
         global outer: <function outer>
     
     Exception levée à la ligne 12 du fichier 'TESTS:\except\test_unbound_local_error.py'.
@@ -1376,10 +1422,10 @@ UnboundLocalError
        11:         c = 3
     -->12:         a = a + b + c
 
-        Identificateurs connus :
-        global b: 2
-        c: 3
-    
+    Known identifiers
+            global b: 2
+            c: 3
+        
 
 
 Unknown exception
@@ -1401,7 +1447,7 @@ Unknown exception
         9:     try:
     -->10:         raise MyException("Some informative message about an unknown exception.")
 
-        Identificateurs connus :
+    Known identifiers
         global MyException: <class 'test_unknown_error.MyException'>
     
 
@@ -1451,7 +1497,7 @@ ZeroDivisionError - 2
        18:     try:
     -->19:         1 % zero
 
-        Identificateurs connus :
+    Known identifiers
         zero: 0
     
 

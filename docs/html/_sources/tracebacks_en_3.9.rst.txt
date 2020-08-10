@@ -67,7 +67,7 @@ AttributeError - class attribute
         9:     try:
     -->10:         A.x
 
-        Known identifiers:
+    Known identifiers
         A: <class 'test_attribute_error.test_attribute_e...>
     
 
@@ -94,7 +94,7 @@ AttributeError - typo in module attribute
        23:     try:
     -->24:         string.ascii_lowecase
 
-        Known identifiers:
+    Known identifiers
         string: <module 'string' from 'C:\\Users\\andre\\AppD...>
     
 
@@ -122,7 +122,7 @@ AttributeError - typo in module attribute 2
        40:     try:
     -->41:         math.cost
 
-        Known identifiers:
+    Known identifiers
         math: <module 'math' (built-in)>
     
 
@@ -198,7 +198,7 @@ KeyError
        6:     try:
     -->7:         d["c"]
 
-        Known identifiers:
+    Known identifiers
         d: {'a': 1, 'b': 2}
     
 
@@ -247,7 +247,7 @@ IndexError - short tuple
         7:     try:
     --> 8:         print(a[3], b[2])
 
-        Known identifiers:
+    Known identifiers
         a: (1, 2, 3)
         b: [1, 2, 3]
     
@@ -277,7 +277,7 @@ IndexError - long list
        21:     try:
     -->22:         print(a[50], b[0])
 
-        Known identifiers:
+    Known identifiers
         a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
         b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
     
@@ -315,7 +315,7 @@ NameError - 1
 
 
     Python exception:
-        NameError: name 'cost' is not defined
+        NameError: name 'something' is not defined
         
     A NameError exception indicates that a variable or
     function name is not known to Python.
@@ -324,17 +324,13 @@ NameError - 1
     before being defined or given a value.
     
     Likely cause based on the information given by Python:
-        In your program, the unknown name is 'cost'.
+        In your program, the unknown name is 'something'.
         
     Execution stopped on line 6 of file 'TESTS:\except\test_name_error.py'.
     
        4: def test_name_error():
        5:     try:
-    -->6:         cost  # wrote from math import * above
-
-    Perhaps you meant to write one of the following:
-        Global variable: 'cos', 'cosh'
-    
+    -->6:         this = something
 
 
 NameError - 2
@@ -353,7 +349,10 @@ NameError - 2
     before being defined or given a value.
     
     Likely cause based on the information given by Python:
-        In your program, the unknown name is 'babs'.
+        The following similar names were found:
+            Local: 'nabs'
+            Global: 'fabs'
+            Python builtins: 'abs'
         
     Execution stopped on line 18 of file 'TESTS:\except\test_name_error.py'.
     
@@ -361,11 +360,58 @@ NameError - 2
        17:     try:
     -->18:         x = babs(-1)
 
-    Perhaps you meant to write one of the following:
-        Local variable: 'nabs'
-        Global variable: 'fabs'
-        Python builtins: 'abs'
+
+NameError - 3
+-------------
+
+.. code-block:: none
+
+
+    Python exception:
+        NameError: name 'x' is not defined
+        
+    A NameError exception indicates that a variable or
+    function name is not known to Python.
+    Most often, this is because there is a spelling mistake.
+    However, sometimes it is because the name is used
+    before being defined or given a value.
     
+    Likely cause based on the information given by Python:
+        Type hint found for 'x' as a global variable.
+        Perhaps you had written x : 3 instead of x = 3.
+        
+        
+    Execution stopped on line 31 of file 'TESTS:\except\test_name_error.py'.
+    
+       29: def test_name_error3():
+       30:     try:
+    -->31:         y = x
+
+
+NameError - 4
+-------------
+
+.. code-block:: none
+
+
+    Python exception:
+        NameError: name 'cost' is not defined
+        
+    A NameError exception indicates that a variable or
+    function name is not known to Python.
+    Most often, this is because there is a spelling mistake.
+    However, sometimes it is because the name is used
+    before being defined or given a value.
+    
+    Likely cause based on the information given by Python:
+        The following similar names were found:
+            Global: 'cos', 'cosh'
+        
+    Execution stopped on line 42 of file 'TESTS:\except\test_name_error.py'.
+    
+       40: def test_name_error4():
+       41:     try:
+    -->42:         cost  # wrote from math import * above
 
 
 OverflowError
@@ -407,7 +453,7 @@ RecursionError
         7:     try:
     --> 8:         a()
 
-        Known identifiers:
+    Known identifiers
         a: <function test_recursion_error.<locals>.a>
     
     Exception raised on line 6 of file 'TESTS:\except\test_recursion_error.py'.
@@ -416,9 +462,9 @@ RecursionError
        5:     def a():
     -->6:         return a()
 
-        Known identifiers:
-        a: <function test_recursion_error.<locals>.a>
-    
+    Known identifiers
+            a: <function test_recursion_error.<locals>.a>
+        
 
 
 TypeError - 1: concatenate two different types
@@ -445,7 +491,7 @@ TypeError - 1: concatenate two different types
         7:         one = 1
     --> 8:         result = a + one
 
-        Known identifiers:
+    Known identifiers
         a: 'a'
         one: 1
     
@@ -475,7 +521,7 @@ TypeError - 1a: concatenate two different types
        23:         a_list = [1, 2, 3]
     -->24:         result = a + a_list
 
-        Known identifiers:
+    Known identifiers
         a: 'a'
         a_list: [1, 2, 3]
     
@@ -505,7 +551,7 @@ TypeError - 1b: concatenate two different types
        39:         a_list = [1, 2, 3]
     -->40:         result = a_tuple + a_list
 
-        Known identifiers:
+    Known identifiers
         a_tuple: (1, 2, 3)
         a_list: [1, 2, 3]
     
@@ -535,7 +581,7 @@ TypeError - 2: unsupported operand type(s) for +
        53:         none = None
     -->54:         result = one + none
 
-        Known identifiers:
+    Known identifiers
         one: 1
         none: None
     
@@ -565,7 +611,7 @@ TypeError - 2a: unsupported operand type(s) for +=
        67:         two = "two"
     -->68:         one += two
 
-        Known identifiers:
+    Known identifiers
         one: 1
         two: 'two'
     
@@ -595,7 +641,7 @@ TypeError - 3: unsupported operand type(s) for -
        81:         b = [3, 4]
     -->82:         result = a - b
 
-        Known identifiers:
+    Known identifiers
         a: (1, 2)
         b: [3, 4]
     
@@ -625,7 +671,7 @@ TypeError - 3a: unsupported operand type(s) for -=
        95:         b = [3, 4]
     -->96:         b -= a
 
-        Known identifiers:
+    Known identifiers
         b: [3, 4]
         a: (1, 2)
     
@@ -655,7 +701,7 @@ TypeError - 4: unsupported operand type(s) for *
        109:         b = {2, 3}
     -->110:         result = a * b
 
-        Known identifiers:
+    Known identifiers
         a: 1j
         b: {2, 3}
     
@@ -685,7 +731,7 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
        123:         b = {2, 3}
     -->124:         b *= a
 
-        Known identifiers:
+    Known identifiers
         b: {2, 3}
         a: 1j
     
@@ -715,7 +761,7 @@ TypeError - 5: unsupported operand type(s) for /
        137:         b = 3.1416
     -->138:         result = a / b
 
-        Known identifiers:
+    Known identifiers
         a: {1: 1, 2: 2}
         b: 3.1416
     
@@ -745,7 +791,7 @@ TypeError - 5a: unsupported operand type(s) for /=
        151:         b = 3.1416
     -->152:         b /= a
 
-        Known identifiers:
+    Known identifiers
         b: 3.1416
         a: {1: 1, 2: 2}
     
@@ -775,7 +821,7 @@ TypeError - 5b: unsupported operand type(s) for //
        165:         b = 1
     -->166:         result = a // b
 
-        Known identifiers:
+    Known identifiers
         a: {1: 1, 2: 2}
         b: 1
     
@@ -805,7 +851,7 @@ TypeError - 5c: unsupported operand type(s) for //=
        179:         b = 3.1416
     -->180:         b //= a
 
-        Known identifiers:
+    Known identifiers
         b: 3.1416
         a: {1: 1, 2: 2}
     
@@ -836,7 +882,7 @@ TypeError - 6: unsupported operand type(s) for &
        193:         b = 2
     -->194:         result = a & b
 
-        Known identifiers:
+    Known identifiers
         a: 'a'
         b: 2
     
@@ -867,7 +913,7 @@ TypeError - 6a: unsupported operand type(s) for &=
        207:         b = 2
     -->208:         b &= a
 
-        Known identifiers:
+    Known identifiers
         b: 2
         a: 'a'
     
@@ -898,7 +944,7 @@ TypeError - 7: unsupported operand type(s) for **
        221:         b = 3.1416
     -->222:         result = a ** b
 
-        Known identifiers:
+    Known identifiers
         a: {1: 1, 2: 2}
         b: 3.1416
     
@@ -929,7 +975,7 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
        235:         b = 3.1416
     -->236:         a **= b
 
-        Known identifiers:
+    Known identifiers
         a: {1: 1, 2: 2}
         b: 3.1416
     
@@ -960,7 +1006,7 @@ TypeError - 8: unsupported operand type(s) for >>
        249:         b = 42
     -->250:         result = a >> b
 
-        Known identifiers:
+    Known identifiers
         a: 'a'
         b: 42
     
@@ -991,7 +1037,7 @@ TypeError - 8a: unsupported operand type(s) for >>=
        263:         b = 42
     -->264:         a >>= b
 
-        Known identifiers:
+    Known identifiers
         a: 'a'
         b: 42
     
@@ -1024,7 +1070,7 @@ TypeError - 9: unsupported operand type(s) for @
        277:         b = 2
     -->278:         result = a @ b
 
-        Known identifiers:
+    Known identifiers
         a: 'a'
         b: 2
     
@@ -1057,7 +1103,7 @@ TypeError - 9a: unsupported operand type(s) for @=
        291:         b = 2
     -->292:         a @= b
 
-        Known identifiers:
+    Known identifiers
         a: 'a'
         b: 2
     
@@ -1088,7 +1134,7 @@ TypeError - 10: comparison between incompatible types
        305:         b = 42
     -->306:         b < a
 
-        Known identifiers:
+    Known identifiers
         b: 42
         a: 'a'
     
@@ -1198,7 +1244,7 @@ TypeError - 12: object does not support item assignment
        357:     try:
     -->358:         a[0] = 0
 
-        Known identifiers:
+    Known identifiers
         a: (1, 2, 3)
     
 
@@ -1228,7 +1274,7 @@ TypeError - 13: wrong number of positional arguments
        372:     try:
     -->373:         fn(1)
 
-        Known identifiers:
+    Known identifiers
         fn: <function test_type_error13.<locals>.fn>
     
 
@@ -1257,7 +1303,7 @@ TypeError - 14: missing positional arguments
        387:     try:
     -->388:         fn(1)
 
-        Known identifiers:
+    Known identifiers
         fn: <function test_type_error14.<locals>.fn>
     
 
@@ -1370,7 +1416,7 @@ UnboundLocalError
        20:     try:
     -->21:         outer()
 
-        Known identifiers:
+    Known identifiers
         global outer: <function outer>
     
     Exception raised on line 12 of file 'TESTS:\except\test_unbound_local_error.py'.
@@ -1379,10 +1425,10 @@ UnboundLocalError
        11:         c = 3
     -->12:         a = a + b + c
 
-        Known identifiers:
-        global b: 2
-        c: 3
-    
+    Known identifiers
+            global b: 2
+            c: 3
+        
 
 
 Unknown exception
@@ -1404,7 +1450,7 @@ Unknown exception
         9:     try:
     -->10:         raise MyException("Some informative message about an unknown exception.")
 
-        Known identifiers:
+    Known identifiers
         global MyException: <class 'test_unknown_error.MyException'>
     
 
@@ -1454,7 +1500,7 @@ ZeroDivisionError - 2
        18:     try:
     -->19:         1 % zero
 
-        Known identifiers:
+    Known identifiers
         zero: 0
     
 

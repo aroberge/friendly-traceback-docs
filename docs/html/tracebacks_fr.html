@@ -144,6 +144,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#modulenotfounderror">ModuleNotFoundError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nameerror-1">NameError - 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nameerror-2">NameError - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nameerror-3">NameError - 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nameerror-4">NameError - 4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#overflowerror">OverflowError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#recursionerror">RecursionError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-1-concatenate-two-different-types">TypeError - 1: concatenate two different types</a></li>
@@ -329,7 +331,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 10 du fichier &#39;TESTS:\excep
     9:     try:
 --&gt;10:         A.x
 
-    Identificateurs connus :
+Known identifiers
     A: &lt;class &#39;test_attribute_error.test_attribute_e...&gt;
 </pre></div>
 </div>
@@ -352,7 +354,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 24 du fichier &#39;TESTS:\excep
    23:     try:
 --&gt;24:         string.ascii_lowecase
 
-    Identificateurs connus :
+Known identifiers
     string: &lt;module &#39;string&#39; from &#39;C:\\Users\\andre\\AppD...&gt;
 </pre></div>
 </div>
@@ -376,7 +378,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 41 du fichier &#39;TESTS:\excep
    40:     try:
 --&gt;41:         math.cost
 
-    Identificateurs connus :
+Known identifiers
     math: &lt;module &#39;math&#39; (built-in)&gt;
 </pre></div>
 </div>
@@ -440,7 +442,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 7 du fichier &#39;TESTS:\except
    6:     try:
 --&gt;7:         d[&quot;c&quot;]
 
-    Identificateurs connus :
+Known identifiers
     d: {&#39;a&#39;: 1, &#39;b&#39;: 2}
 </pre></div>
 </div>
@@ -482,7 +484,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 8 du fichier &#39;TESTS:\except
     7:     try:
 --&gt; 8:         print(a[3], b[2])
 
-    Identificateurs connus :
+Known identifiers
     a: (1, 2, 3)
     b: [1, 2, 3]
 </pre></div>
@@ -508,7 +510,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 22 du fichier &#39;TESTS:\excep
    21:     try:
 --&gt;22:         print(a[50], b[0])
 
-    Identificateurs connus :
+Known identifiers
     a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
     b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
 </pre></div>
@@ -538,7 +540,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 6 du fichier &#39;TESTS:\except
 <div class="section" id="nameerror-1">
 <h2>NameError - 1<a class="headerlink" href="#nameerror-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    NameError: name &#39;cost&#39; is not defined
+    NameError: name &#39;something&#39; is not defined
 
 Une exception NameError indique que le nom d&#39;une variable
 ou d&#39;une fonction n&#39;est pas connue par Python.
@@ -547,16 +549,13 @@ Cependant, cela peut également indiquer que le nom a été
 utilisé avant qu&#39;on ne lui ait associé une valeur.
 
 Cause probable basée sur les informations données par Python :
-    Dans votre programme, le nom inconnu est &#39;cost&#39;.
+    Dans votre programme, le nom inconnu est &#39;something&#39;.
 
 L&#39;exécution s&#39;est arrêtée à la ligne 6 du fichier &#39;TESTS:\except\test_name_error.py&#39;
 
    4: def test_name_error():
    5:     try:
---&gt;6:         cost  # wrote from math import * above
-
-Peut-être que vous vouliez plutôt écrire un des choix suivants :
-    Identifiant global : &#39;cos&#39;, &#39;cosh&#39;
+--&gt;6:         this = something
 </pre></div>
 </div>
 </div>
@@ -572,18 +571,63 @@ Cependant, cela peut également indiquer que le nom a été
 utilisé avant qu&#39;on ne lui ait associé une valeur.
 
 Cause probable basée sur les informations données par Python :
-    Dans votre programme, le nom inconnu est &#39;babs&#39;.
+    The following similar names were found:
+        Local: &#39;nabs&#39;
+        Global: &#39;fabs&#39;
+        Identifiant Python (builtins) : &#39;abs&#39;
 
 L&#39;exécution s&#39;est arrêtée à la ligne 18 du fichier &#39;TESTS:\except\test_name_error.py&#39;
 
    16:     nabs = 1
    17:     try:
 --&gt;18:         x = babs(-1)
+</pre></div>
+</div>
+</div>
+<div class="section" id="nameerror-3">
+<h2>NameError - 3<a class="headerlink" href="#nameerror-3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    NameError: name &#39;x&#39; is not defined
 
-Peut-être que vous vouliez plutôt écrire un des choix suivants :
-    Identifiant local : &#39;nabs&#39;
-    Identifiant global : &#39;fabs&#39;
-    Identifiant Python (builtins) : &#39;abs&#39;
+Une exception NameError indique que le nom d&#39;une variable
+ou d&#39;une fonction n&#39;est pas connue par Python.
+Habituellement, ceci indique une simple faute d&#39;orthographe.
+Cependant, cela peut également indiquer que le nom a été
+utilisé avant qu&#39;on ne lui ait associé une valeur.
+
+Cause probable basée sur les informations données par Python :
+    Type hint found for &#39;x&#39; as a global variable.
+    Perhaps you had written x : 3 instead of x = 3.
+
+
+L&#39;exécution s&#39;est arrêtée à la ligne 31 du fichier &#39;TESTS:\except\test_name_error.py&#39;
+
+   29: def test_name_error3():
+   30:     try:
+--&gt;31:         y = x
+</pre></div>
+</div>
+</div>
+<div class="section" id="nameerror-4">
+<h2>NameError - 4<a class="headerlink" href="#nameerror-4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+    NameError: name &#39;cost&#39; is not defined
+
+Une exception NameError indique que le nom d&#39;une variable
+ou d&#39;une fonction n&#39;est pas connue par Python.
+Habituellement, ceci indique une simple faute d&#39;orthographe.
+Cependant, cela peut également indiquer que le nom a été
+utilisé avant qu&#39;on ne lui ait associé une valeur.
+
+Cause probable basée sur les informations données par Python :
+    The following similar names were found:
+        Global: &#39;cos&#39;, &#39;cosh&#39;
+
+L&#39;exécution s&#39;est arrêtée à la ligne 42 du fichier &#39;TESTS:\except\test_name_error.py&#39;
+
+   40: def test_name_error4():
+   41:     try:
+--&gt;42:         cost  # wrote from math import * above
 </pre></div>
 </div>
 </div>
@@ -619,7 +663,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 8 du fichier &#39;TESTS:\except
     7:     try:
 --&gt; 8:         a()
 
-    Identificateurs connus :
+Known identifiers
     a: &lt;function test_recursion_error.&lt;locals&gt;.a&gt;
 
 Exception levée à la ligne 6 du fichier &#39;TESTS:\except\test_recursion_error.py&#39;.
@@ -628,8 +672,8 @@ Exception levée à la ligne 6 du fichier &#39;TESTS:\except\test_recursion_erro
    5:     def a():
 --&gt;6:         return a()
 
-    Identificateurs connus :
-    a: &lt;function test_recursion_error.&lt;locals&gt;.a&gt;
+Known identifiers
+        a: &lt;function test_recursion_error.&lt;locals&gt;.a&gt;
 </pre></div>
 </div>
 </div>
@@ -653,7 +697,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 8 du fichier &#39;TESTS:\except
     7:         one = 1
 --&gt; 8:         result = a + one
 
-    Identificateurs connus :
+Known identifiers
     a: &#39;a&#39;
     one: 1
 </pre></div>
@@ -679,7 +723,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 24 du fichier &#39;TESTS:\excep
    23:         a_list = [1, 2, 3]
 --&gt;24:         result = a + a_list
 
-    Identificateurs connus :
+Known identifiers
     a: &#39;a&#39;
     a_list: [1, 2, 3]
 </pre></div>
@@ -705,7 +749,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 40 du fichier &#39;TESTS:\excep
    39:         a_list = [1, 2, 3]
 --&gt;40:         result = a_tuple + a_list
 
-    Identificateurs connus :
+Known identifiers
     a_tuple: (1, 2, 3)
     a_list: [1, 2, 3]
 </pre></div>
@@ -731,7 +775,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 54 du fichier &#39;TESTS:\excep
    53:         none = None
 --&gt;54:         result = one + none
 
-    Identificateurs connus :
+Known identifiers
     one: 1
     none: None
 </pre></div>
@@ -757,7 +801,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 68 du fichier &#39;TESTS:\excep
    67:         two = &quot;two&quot;
 --&gt;68:         one += two
 
-    Identificateurs connus :
+Known identifiers
     one: 1
     two: &#39;two&#39;
 </pre></div>
@@ -783,7 +827,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 82 du fichier &#39;TESTS:\excep
    81:         b = [3, 4]
 --&gt;82:         result = a - b
 
-    Identificateurs connus :
+Known identifiers
     a: (1, 2)
     b: [3, 4]
 </pre></div>
@@ -809,7 +853,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 96 du fichier &#39;TESTS:\excep
    95:         b = [3, 4]
 --&gt;96:         b -= a
 
-    Identificateurs connus :
+Known identifiers
     b: [3, 4]
     a: (1, 2)
 </pre></div>
@@ -835,7 +879,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 110 du fichier &#39;TESTS:\exce
    109:         b = {2, 3}
 --&gt;110:         result = a * b
 
-    Identificateurs connus :
+Known identifiers
     a: 1j
     b: {2, 3}
 </pre></div>
@@ -861,7 +905,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 124 du fichier &#39;TESTS:\exce
    123:         b = {2, 3}
 --&gt;124:         b *= a
 
-    Identificateurs connus :
+Known identifiers
     b: {2, 3}
     a: 1j
 </pre></div>
@@ -887,7 +931,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 138 du fichier &#39;TESTS:\exce
    137:         b = 3.1416
 --&gt;138:         result = a / b
 
-    Identificateurs connus :
+Known identifiers
     a: {1: 1, 2: 2}
     b: 3.1416
 </pre></div>
@@ -913,7 +957,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 152 du fichier &#39;TESTS:\exce
    151:         b = 3.1416
 --&gt;152:         b /= a
 
-    Identificateurs connus :
+Known identifiers
     b: 3.1416
     a: {1: 1, 2: 2}
 </pre></div>
@@ -939,7 +983,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 166 du fichier &#39;TESTS:\exce
    165:         b = 1
 --&gt;166:         result = a // b
 
-    Identificateurs connus :
+Known identifiers
     a: {1: 1, 2: 2}
     b: 1
 </pre></div>
@@ -965,7 +1009,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 180 du fichier &#39;TESTS:\exce
    179:         b = 3.1416
 --&gt;180:         b //= a
 
-    Identificateurs connus :
+Known identifiers
     b: 3.1416
     a: {1: 1, 2: 2}
 </pre></div>
@@ -992,7 +1036,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 194 du fichier &#39;TESTS:\exce
    193:         b = 2
 --&gt;194:         result = a &amp; b
 
-    Identificateurs connus :
+Known identifiers
     a: &#39;a&#39;
     b: 2
 </pre></div>
@@ -1019,7 +1063,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 208 du fichier &#39;TESTS:\exce
    207:         b = 2
 --&gt;208:         b &amp;= a
 
-    Identificateurs connus :
+Known identifiers
     b: 2
     a: &#39;a&#39;
 </pre></div>
@@ -1046,7 +1090,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 222 du fichier &#39;TESTS:\exce
    221:         b = 3.1416
 --&gt;222:         result = a ** b
 
-    Identificateurs connus :
+Known identifiers
     a: {1: 1, 2: 2}
     b: 3.1416
 </pre></div>
@@ -1073,7 +1117,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 236 du fichier &#39;TESTS:\exce
    235:         b = 3.1416
 --&gt;236:         a **= b
 
-    Identificateurs connus :
+Known identifiers
     a: {1: 1, 2: 2}
     b: 3.1416
 </pre></div>
@@ -1100,7 +1144,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 250 du fichier &#39;TESTS:\exce
    249:         b = 42
 --&gt;250:         result = a &gt;&gt; b
 
-    Identificateurs connus :
+Known identifiers
     a: &#39;a&#39;
     b: 42
 </pre></div>
@@ -1127,7 +1171,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 264 du fichier &#39;TESTS:\exce
    263:         b = 42
 --&gt;264:         a &gt;&gt;= b
 
-    Identificateurs connus :
+Known identifiers
     a: &#39;a&#39;
     b: 42
 </pre></div>
@@ -1156,7 +1200,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 278 du fichier &#39;TESTS:\exce
    277:         b = 2
 --&gt;278:         result = a @ b
 
-    Identificateurs connus :
+Known identifiers
     a: &#39;a&#39;
     b: 2
 </pre></div>
@@ -1185,7 +1229,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 292 du fichier &#39;TESTS:\exce
    291:         b = 2
 --&gt;292:         a @= b
 
-    Identificateurs connus :
+Known identifiers
     a: &#39;a&#39;
     b: 2
 </pre></div>
@@ -1212,7 +1256,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 306 du fichier &#39;TESTS:\exce
    305:         b = 42
 --&gt;306:         b &lt; a
 
-    Identificateurs connus :
+Known identifiers
     b: 42
     a: &#39;a&#39;
 </pre></div>
@@ -1309,7 +1353,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 358 du fichier &#39;TESTS:\exce
    357:     try:
 --&gt;358:         a[0] = 0
 
-    Identificateurs connus :
+Known identifiers
     a: (1, 2, 3)
 </pre></div>
 </div>
@@ -1334,7 +1378,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 373 du fichier &#39;TESTS:\exce
    372:     try:
 --&gt;373:         fn(1)
 
-    Identificateurs connus :
+Known identifiers
     fn: &lt;function test_type_error13.&lt;locals&gt;.fn&gt;
 </pre></div>
 </div>
@@ -1359,7 +1403,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 388 du fichier &#39;TESTS:\exce
    387:     try:
 --&gt;388:         fn(1)
 
-    Identificateurs connus :
+Known identifiers
     fn: &lt;function test_type_error14.&lt;locals&gt;.fn&gt;
 </pre></div>
 </div>
@@ -1460,7 +1504,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;TESTS:\excep
    20:     try:
 --&gt;21:         outer()
 
-    Identificateurs connus :
+Known identifiers
     global outer: &lt;function outer&gt;
 
 Exception levée à la ligne 12 du fichier &#39;TESTS:\except\test_unbound_local_error.py&#39;.
@@ -1469,9 +1513,9 @@ Exception levée à la ligne 12 du fichier &#39;TESTS:\except\test_unbound_local
    11:         c = 3
 --&gt;12:         a = a + b + c
 
-    Identificateurs connus :
-    global b: 2
-    c: 3
+Known identifiers
+        global b: 2
+        c: 3
 </pre></div>
 </div>
 </div>
@@ -1490,7 +1534,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 10 du fichier &#39;TESTS:\excep
     9:     try:
 --&gt;10:         raise MyException(&quot;Some informative message about an unknown exception.&quot;)
 
-    Identificateurs connus :
+Known identifiers
     global MyException: &lt;class &#39;test_unknown_error.MyException&#39;&gt;
 </pre></div>
 </div>
@@ -1533,7 +1577,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 19 du fichier &#39;TESTS:\excep
    18:     try:
 --&gt;19:         1 % zero
 
-    Identificateurs connus :
+Known identifiers
     zero: 0
 </pre></div>
 </div>
