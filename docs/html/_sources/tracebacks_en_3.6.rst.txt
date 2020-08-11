@@ -33,7 +33,7 @@ ArithmeticError
     Python exception:
         ArithmeticError: 
         
-    ArithmeticError is the base class for those built-in exceptions
+    `ArithmeticError` is the base class for those built-in exceptions
     that are raised for various arithmetic errors.
     It is unusual that you are seeing this exception;
     normally, a more specific exception should have been raised.
@@ -54,12 +54,12 @@ AttributeError - class attribute
     Python exception:
         AttributeError: type object 'A' has no attribute 'x'
         
-    An attribute error occurs when the code contains something like
-        object.x
-    and 'x' is not a method or attribute (variable) belonging to 'object'
+    An `AttributeError` occurs when the code contains something like
+        `object.x`
+    and `x` is not a method or attribute (variable) belonging to `object`.
     
     Likely cause based on the information given by Python:
-        In your program, the object is 'A' and the attribute is 'x'.
+        In your program, the object is `A` and the attribute is `x`.
         
     Execution stopped on line 10 of file 'TESTS:\except\test_attribute_error.py'.
     
@@ -67,9 +67,9 @@ AttributeError - class attribute
         9:     try:
     -->10:         A.x
 
-    Known identifiers
-        A: <class 'test_attribute_error.test_attribute_e...>
-    
+        Known identifiers
+            A: <class 'test_attribute_error.test_attrib...>
+        
 
 
 AttributeError - typo in module attribute
@@ -81,12 +81,12 @@ AttributeError - typo in module attribute
     Python exception:
         AttributeError: module 'string' has no attribute 'ascii_lowecase'
         
-    An attribute error occurs when the code contains something like
-        object.x
-    and 'x' is not a method or attribute (variable) belonging to 'object'
+    An `AttributeError` occurs when the code contains something like
+        `object.x`
+    and `x` is not a method or attribute (variable) belonging to `object`.
     
     Likely cause based on the information given by Python:
-        Perhaps you meant to write 'ascii_lowercase' instead of 'ascii_lowecase'
+        Perhaps you meant to write `ascii_lowercase` instead of `ascii_lowecase`
         
     Execution stopped on line 24 of file 'TESTS:\except\test_attribute_error.py'.
     
@@ -94,9 +94,9 @@ AttributeError - typo in module attribute
        23:     try:
     -->24:         string.ascii_lowecase
 
-    Known identifiers
-        string: <module 'string' from 'C:\\Users\\andre\\AppD...>
-    
+        Known identifiers
+            string: <module 'string'>
+        
 
 
 AttributeError - typo in module attribute 2
@@ -108,13 +108,13 @@ AttributeError - typo in module attribute 2
     Python exception:
         AttributeError: module 'math' has no attribute 'cost'
         
-    An attribute error occurs when the code contains something like
-        object.x
-    and 'x' is not a method or attribute (variable) belonging to 'object'
+    An `AttributeError` occurs when the code contains something like
+        `object.x`
+    and `x` is not a method or attribute (variable) belonging to `object`.
     
     Likely cause based on the information given by Python:
-        Instead of writing cost, perhaps you meant one of the following:
-        ['cos', 'cosh']
+        Instead of writing `cost`, perhaps you meant one of the following:
+        [`cos`, `cosh`]
         
     Execution stopped on line 41 of file 'TESTS:\except\test_attribute_error.py'.
     
@@ -122,9 +122,9 @@ AttributeError - typo in module attribute 2
        40:     try:
     -->41:         math.cost
 
-    Known identifiers
-        math: <module 'math' (built-in)>
-    
+        Known identifiers
+            math: <module 'math' (built-in)>
+        
 
 
 FileNotFoundError
@@ -136,13 +136,13 @@ FileNotFoundError
     Python exception:
         FileNotFoundError: [Errno 2] No such file or directory: 'does_not_exist'
         
-    A FileNotFoundError exception indicates that you
+    A `FileNotFoundError` exception indicates that you
     are trying to open a file that cannot be found by Python.
     This could be because you misspelled the name of the file.
     
     Likely cause based on the information given by Python:
         In your program, the name of the
-        file that cannot be found is 'does_not_exist'.
+        file that cannot be found is `does_not_exist`.
         
     Execution stopped on line 6 of file 'TESTS:\except\test_file_not_found_error.py'.
     
@@ -158,21 +158,32 @@ ImportError
 
 
     Python exception:
-        ImportError: cannot import name 'Pi'
+        AssertionError: 
         
-    This exception indicates that a certain object could not
-    be imported from a module or package. Most often, this is
-    because the name of the object is not spelled correctly.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
     
-    Likely cause based on the information given by Python:
-        The object that could not be imported is 'Pi'.
-        
-    Execution stopped on line 6 of file 'TESTS:\except\test_import_error.py'.
+    Execution stopped on line 204 of file 'TESTS:\trb_common.py'.
     
-       4: def test_import_error():
-       5:     try:
-    -->6:         from math import Pi
+       202:                     mod = __import__(name)
+       203:                     if function is not None:
+    -->204:                         result = getattr(mod, function)()
 
+        Known identifiers
+            result: '\n    Python exception:\n        FileNo...'  | len(result): 656
+            mod: <module 'test_import_error'>
+            function: 'test_import_error'
+        
+    Exception raised on line 12 of file 'TESTS:\except\test_import_error.py'.
+    
+       10:     assert "ImportError: cannot import name 'Pi'" in result
+       11:     if friendly_traceback.get_lang() == "en":
+    -->12:         assert "The object that could not be imported is `Pi`." in result
+
+        Known identifiers
+            result: "\n    Python exception:\n        Import..."  | len(result): 576
+        
 
 KeyError
 --------
@@ -183,12 +194,12 @@ KeyError
     Python exception:
         KeyError: 'c'
         
-    A KeyError is raised when a value is not found as a
+    A `KeyError` is raised when a value is not found as a
     key in a Python dict.
     
     Likely cause based on the information given by Python:
         In your program, the name of the key
-        that cannot be found is 'c'.
+        that cannot be found is `c`.
         
     Execution stopped on line 7 of file 'TESTS:\except\test_key_error.py'.
     
@@ -196,9 +207,9 @@ KeyError
        6:     try:
     -->7:         d["c"]
 
-    Known identifiers
-        d: {'a': 1, 'b': 2}
-    
+        Known identifiers
+            d: {'a': 1, 'b': 2}
+        
 
 
 LookupError
@@ -210,7 +221,7 @@ LookupError
     Python exception:
         LookupError: 
         
-    LookupError is the base class for the exceptions that are raised
+    `LookupError` is the base class for the exceptions that are raised
     when a key or index used on a mapping or sequence is invalid.
     It can also be raised directly by codecs.lookup().
     
@@ -230,7 +241,7 @@ IndexError - short tuple
     Python exception:
         IndexError: tuple index out of range
         
-    An IndexError occurs when you are try to get an item from a list,
+    An `IndexError` occurs when you are try to get an item from a list,
     a tuple, or a similar object (sequence), by using an index which
     does not exists; typically, this is because the index you give
     is greater than the length of the sequence.
@@ -245,10 +256,10 @@ IndexError - short tuple
         7:     try:
     --> 8:         print(a[3], b[2])
 
-    Known identifiers
-        a: (1, 2, 3)
-        b: [1, 2, 3]
-    
+        Known identifiers
+            a: (1, 2, 3)
+            b: [1, 2, 3]
+        
 
 
 IndexError - long list
@@ -260,7 +271,7 @@ IndexError - long list
     Python exception:
         IndexError: list index out of range
         
-    An IndexError occurs when you are try to get an item from a list,
+    An `IndexError` occurs when you are try to get an item from a list,
     a tuple, or a similar object (sequence), by using an index which
     does not exists; typically, this is because the index you give
     is greater than the length of the sequence.
@@ -275,10 +286,10 @@ IndexError - long list
        21:     try:
     -->22:         print(a[50], b[0])
 
-    Known identifiers
-        a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...]  | len(a): 40
-        b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...)  | len(b): 50
-    
+        Known identifiers
+            a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1...]  | len(a): 40
+            b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1...)  | len(b): 50
+        
 
 
 ModuleNotFoundError
@@ -290,14 +301,14 @@ ModuleNotFoundError
     Python exception:
         ModuleNotFoundError: No module named 'does_not_exist'
         
-    A ModuleNotFoundError exception indicates that you
+    A `ModuleNotFoundError` exception indicates that you
     are trying to import a module that cannot be found by Python.
     This could be because you misspelled the name of the module
     or because it is not installed on your computer.
     
     Likely cause based on the information given by Python:
         In your program, the name of the
-        module that cannot be found is 'does_not_exist'.
+        module that cannot be found is `does_not_exist`.
         
     Execution stopped on line 6 of file 'TESTS:\except\test_module_not_found_error.py'.
     
@@ -315,14 +326,14 @@ NameError - 1
     Python exception:
         NameError: name 'something' is not defined
         
-    A NameError exception indicates that a variable or
+    A `NameError` exception indicates that a variable or
     function name is not known to Python.
     Most often, this is because there is a spelling mistake.
     However, sometimes it is because the name is used
     before being defined or given a value.
     
     Likely cause based on the information given by Python:
-        In your program, the unknown name is 'something'.
+        In your program, the unknown name is `something`.
         
     Execution stopped on line 6 of file 'TESTS:\except\test_name_error.py'.
     
@@ -340,16 +351,18 @@ NameError - 2
     Python exception:
         NameError: name 'babs' is not defined
         
-    A NameError exception indicates that a variable or
+    A `NameError` exception indicates that a variable or
     function name is not known to Python.
     Most often, this is because there is a spelling mistake.
     However, sometimes it is because the name is used
     before being defined or given a value.
     
     Likely cause based on the information given by Python:
-        The following similar names were found:
-            Local: 'nabs'
-            Global: 'fabs'
+        In your program, the unknown name is `babs`.
+        Instead of writing `babs`, perhaps you meant one of the following:
+        
+            Local scope: 'nabs'
+            Global scope: 'fabs'
             Python builtins: 'abs'
         
     Execution stopped on line 18 of file 'TESTS:\except\test_name_error.py'.
@@ -368,16 +381,16 @@ NameError - 3
     Python exception:
         NameError: name 'x' is not defined
         
-    A NameError exception indicates that a variable or
+    A `NameError` exception indicates that a variable or
     function name is not known to Python.
     Most often, this is because there is a spelling mistake.
     However, sometimes it is because the name is used
     before being defined or given a value.
     
     Likely cause based on the information given by Python:
-        Type hint found for 'x' as a global variable.
-        Perhaps you had written x : 3 instead of x = 3.
-        
+        In your program, the unknown name is `x`.
+        A type hint found for `x` in the global scope.
+        Perhaps you had written `x : 3` instead of `x = 3`.
         
     Execution stopped on line 31 of file 'TESTS:\except\test_name_error.py'.
     
@@ -395,15 +408,17 @@ NameError - 4
     Python exception:
         NameError: name 'cost' is not defined
         
-    A NameError exception indicates that a variable or
+    A `NameError` exception indicates that a variable or
     function name is not known to Python.
     Most often, this is because there is a spelling mistake.
     However, sometimes it is because the name is used
     before being defined or given a value.
     
     Likely cause based on the information given by Python:
-        The following similar names were found:
-            Global: 'cos', 'cosh'
+        In your program, the unknown name is `cost`.
+        Instead of writing `cost`, perhaps you meant one of the following:
+        
+            Global scope: 'cos', 'cosh'
         
     Execution stopped on line 42 of file 'TESTS:\except\test_name_error.py'.
     
@@ -421,7 +436,7 @@ OverflowError
     Python exception:
         OverflowError: (34, 'Result too large')
         
-    An OverflowError is raised when the result of an arithmetic operation
+    An `OverflowError` is raised when the result of an arithmetic operation
     is too large to be handled by the computer's processor.
     
     Execution stopped on line 6 of file 'TESTS:\except\test_overflow_error.py'.
@@ -440,7 +455,7 @@ RecursionError
     Python exception:
         RecursionError: maximum recursion depth exceeded
         
-    A RecursionError is raised when a function calls itself,
+    A `RecursionError` is raised when a function calls itself,
     directly or indirectly, too many times.
     It almost always indicates that you made an error in your code
     and that your program would never stop.
@@ -451,16 +466,16 @@ RecursionError
         7:     try:
     --> 8:         a()
 
-    Known identifiers
-        a: <function test_recursion_error.<locals>.a>
-    
+        Known identifiers
+            a: <function test_recursion_error.<locals>.a>
+        
     Exception raised on line 6 of file 'TESTS:\except\test_recursion_error.py'.
     
        4: def test_recursion_error():
        5:     def a():
     -->6:         return a()
 
-    Known identifiers
+        Known identifiers
             a: <function test_recursion_error.<locals>.a>
         
 
@@ -474,7 +489,7 @@ TypeError - 1: concatenate two different types
     Python exception:
         TypeError: must be str, not int
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -489,10 +504,10 @@ TypeError - 1: concatenate two different types
         7:         one = 1
     --> 8:         result = a + one
 
-    Known identifiers
-        a: 'a'
-        one: 1
-    
+        Known identifiers
+            a: 'a'
+            one: 1
+        
 
 
 TypeError - 1a: concatenate two different types
@@ -504,7 +519,7 @@ TypeError - 1a: concatenate two different types
     Python exception:
         TypeError: must be str, not list
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -519,10 +534,10 @@ TypeError - 1a: concatenate two different types
        23:         a_list = [1, 2, 3]
     -->24:         result = a + a_list
 
-    Known identifiers
-        a: 'a'
-        a_list: [1, 2, 3]
-    
+        Known identifiers
+            a: 'a'
+            a_list: [1, 2, 3]
+        
 
 
 TypeError - 1b: concatenate two different types
@@ -534,7 +549,7 @@ TypeError - 1b: concatenate two different types
     Python exception:
         TypeError: can only concatenate tuple (not "list") to tuple
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -549,10 +564,10 @@ TypeError - 1b: concatenate two different types
        39:         a_list = [1, 2, 3]
     -->40:         result = a_tuple + a_list
 
-    Known identifiers
-        a_tuple: (1, 2, 3)
-        a_list: [1, 2, 3]
-    
+        Known identifiers
+            a_tuple: (1, 2, 3)
+            a_list: [1, 2, 3]
+        
 
 
 TypeError - 2: unsupported operand type(s) for +
@@ -564,7 +579,7 @@ TypeError - 2: unsupported operand type(s) for +
     Python exception:
         TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -579,10 +594,10 @@ TypeError - 2: unsupported operand type(s) for +
        53:         none = None
     -->54:         result = one + none
 
-    Known identifiers
-        one: 1
-        none: None
-    
+        Known identifiers
+            one: 1
+            none: None
+        
 
 
 TypeError - 2a: unsupported operand type(s) for +=
@@ -594,7 +609,7 @@ TypeError - 2a: unsupported operand type(s) for +=
     Python exception:
         TypeError: unsupported operand type(s) for +=: 'int' and 'str'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -609,10 +624,10 @@ TypeError - 2a: unsupported operand type(s) for +=
        67:         two = "two"
     -->68:         one += two
 
-    Known identifiers
-        one: 1
-        two: 'two'
-    
+        Known identifiers
+            one: 1
+            two: 'two'
+        
 
 
 TypeError - 3: unsupported operand type(s) for -
@@ -624,7 +639,7 @@ TypeError - 3: unsupported operand type(s) for -
     Python exception:
         TypeError: unsupported operand type(s) for -: 'tuple' and 'list'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -639,10 +654,10 @@ TypeError - 3: unsupported operand type(s) for -
        81:         b = [3, 4]
     -->82:         result = a - b
 
-    Known identifiers
-        a: (1, 2)
-        b: [3, 4]
-    
+        Known identifiers
+            a: (1, 2)
+            b: [3, 4]
+        
 
 
 TypeError - 3a: unsupported operand type(s) for -=
@@ -654,7 +669,7 @@ TypeError - 3a: unsupported operand type(s) for -=
     Python exception:
         TypeError: unsupported operand type(s) for -=: 'list' and 'tuple'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -669,10 +684,10 @@ TypeError - 3a: unsupported operand type(s) for -=
        95:         b = [3, 4]
     -->96:         b -= a
 
-    Known identifiers
-        b: [3, 4]
-        a: (1, 2)
-    
+        Known identifiers
+            b: [3, 4]
+            a: (1, 2)
+        
 
 
 TypeError - 4: unsupported operand type(s) for *
@@ -684,7 +699,7 @@ TypeError - 4: unsupported operand type(s) for *
     Python exception:
         TypeError: unsupported operand type(s) for *: 'complex' and 'set'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -699,10 +714,10 @@ TypeError - 4: unsupported operand type(s) for *
        109:         b = {2, 3}
     -->110:         result = a * b
 
-    Known identifiers
-        a: 1j
-        b: {2, 3}
-    
+        Known identifiers
+            a: 1j
+            b: {2, 3}
+        
 
 
 TypeError - 4a: unsupported operand type(s) for ``*=``
@@ -714,7 +729,7 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
     Python exception:
         TypeError: unsupported operand type(s) for *=: 'set' and 'complex'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -729,10 +744,10 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
        123:         b = {2, 3}
     -->124:         b *= a
 
-    Known identifiers
-        b: {2, 3}
-        a: 1j
-    
+        Known identifiers
+            b: {2, 3}
+            a: 1j
+        
 
 
 TypeError - 5: unsupported operand type(s) for /
@@ -744,7 +759,7 @@ TypeError - 5: unsupported operand type(s) for /
     Python exception:
         TypeError: unsupported operand type(s) for /: 'dict' and 'float'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -759,10 +774,10 @@ TypeError - 5: unsupported operand type(s) for /
        137:         b = 3.1416
     -->138:         result = a / b
 
-    Known identifiers
-        a: {1: 1, 2: 2}
-        b: 3.1416
-    
+        Known identifiers
+            a: {1: 1, 2: 2}
+            b: 3.1416
+        
 
 
 TypeError - 5a: unsupported operand type(s) for /=
@@ -774,7 +789,7 @@ TypeError - 5a: unsupported operand type(s) for /=
     Python exception:
         TypeError: unsupported operand type(s) for /=: 'float' and 'dict'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -789,10 +804,10 @@ TypeError - 5a: unsupported operand type(s) for /=
        151:         b = 3.1416
     -->152:         b /= a
 
-    Known identifiers
-        b: 3.1416
-        a: {1: 1, 2: 2}
-    
+        Known identifiers
+            b: 3.1416
+            a: {1: 1, 2: 2}
+        
 
 
 TypeError - 5b: unsupported operand type(s) for //
@@ -804,7 +819,7 @@ TypeError - 5b: unsupported operand type(s) for //
     Python exception:
         TypeError: unsupported operand type(s) for //: 'dict' and 'int'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -819,10 +834,10 @@ TypeError - 5b: unsupported operand type(s) for //
        165:         b = 1
     -->166:         result = a // b
 
-    Known identifiers
-        a: {1: 1, 2: 2}
-        b: 1
-    
+        Known identifiers
+            a: {1: 1, 2: 2}
+            b: 1
+        
 
 
 TypeError - 5c: unsupported operand type(s) for //=
@@ -834,7 +849,7 @@ TypeError - 5c: unsupported operand type(s) for //=
     Python exception:
         TypeError: unsupported operand type(s) for //=: 'float' and 'dict'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -849,10 +864,10 @@ TypeError - 5c: unsupported operand type(s) for //=
        179:         b = 3.1416
     -->180:         b //= a
 
-    Known identifiers
-        b: 3.1416
-        a: {1: 1, 2: 2}
-    
+        Known identifiers
+            b: 3.1416
+            a: {1: 1, 2: 2}
+        
 
 
 TypeError - 6: unsupported operand type(s) for &
@@ -864,7 +879,7 @@ TypeError - 6: unsupported operand type(s) for &
     Python exception:
         TypeError: unsupported operand type(s) for &: 'str' and 'int'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -880,10 +895,10 @@ TypeError - 6: unsupported operand type(s) for &
        193:         b = 2
     -->194:         result = a & b
 
-    Known identifiers
-        a: 'a'
-        b: 2
-    
+        Known identifiers
+            a: 'a'
+            b: 2
+        
 
 
 TypeError - 6a: unsupported operand type(s) for &=
@@ -895,7 +910,7 @@ TypeError - 6a: unsupported operand type(s) for &=
     Python exception:
         TypeError: unsupported operand type(s) for &=: 'int' and 'str'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -911,10 +926,10 @@ TypeError - 6a: unsupported operand type(s) for &=
        207:         b = 2
     -->208:         b &= a
 
-    Known identifiers
-        b: 2
-        a: 'a'
-    
+        Known identifiers
+            b: 2
+            a: 'a'
+        
 
 
 TypeError - 7: unsupported operand type(s) for **
@@ -926,7 +941,7 @@ TypeError - 7: unsupported operand type(s) for **
     Python exception:
         TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -942,10 +957,10 @@ TypeError - 7: unsupported operand type(s) for **
        221:         b = 3.1416
     -->222:         result = a ** b
 
-    Known identifiers
-        a: {1: 1, 2: 2}
-        b: 3.1416
-    
+        Known identifiers
+            a: {1: 1, 2: 2}
+            b: 3.1416
+        
 
 
 TypeError - 7a: unsupported operand type(s) for ``**=``
@@ -957,7 +972,7 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
     Python exception:
         TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -973,10 +988,10 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
        235:         b = 3.1416
     -->236:         a **= b
 
-    Known identifiers
-        a: {1: 1, 2: 2}
-        b: 3.1416
-    
+        Known identifiers
+            a: {1: 1, 2: 2}
+            b: 3.1416
+        
 
 
 TypeError - 8: unsupported operand type(s) for >>
@@ -988,7 +1003,7 @@ TypeError - 8: unsupported operand type(s) for >>
     Python exception:
         TypeError: unsupported operand type(s) for >>: 'str' and 'int'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -1004,10 +1019,10 @@ TypeError - 8: unsupported operand type(s) for >>
        249:         b = 42
     -->250:         result = a >> b
 
-    Known identifiers
-        a: 'a'
-        b: 42
-    
+        Known identifiers
+            a: 'a'
+            b: 42
+        
 
 
 TypeError - 8a: unsupported operand type(s) for >>=
@@ -1019,7 +1034,7 @@ TypeError - 8a: unsupported operand type(s) for >>=
     Python exception:
         TypeError: unsupported operand type(s) for >>=: 'str' and 'int'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -1035,10 +1050,10 @@ TypeError - 8a: unsupported operand type(s) for >>=
        263:         b = 42
     -->264:         a >>= b
 
-    Known identifiers
-        a: 'a'
-        b: 42
-    
+        Known identifiers
+            a: 'a'
+            b: 42
+        
 
 
 TypeError - 9: unsupported operand type(s) for @
@@ -1050,7 +1065,7 @@ TypeError - 9: unsupported operand type(s) for @
     Python exception:
         TypeError: unsupported operand type(s) for @: 'str' and 'int'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -1068,10 +1083,10 @@ TypeError - 9: unsupported operand type(s) for @
        277:         b = 2
     -->278:         result = a @ b
 
-    Known identifiers
-        a: 'a'
-        b: 2
-    
+        Known identifiers
+            a: 'a'
+            b: 2
+        
 
 
 TypeError - 9a: unsupported operand type(s) for @=
@@ -1083,7 +1098,7 @@ TypeError - 9a: unsupported operand type(s) for @=
     Python exception:
         TypeError: unsupported operand type(s) for @=: 'str' and 'int'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -1101,10 +1116,10 @@ TypeError - 9a: unsupported operand type(s) for @=
        291:         b = 2
     -->292:         a @= b
 
-    Known identifiers
-        a: 'a'
-        b: 2
-    
+        Known identifiers
+            a: 'a'
+            b: 2
+        
 
 
 TypeError - 10: comparison between incompatible types
@@ -1116,7 +1131,7 @@ TypeError - 10: comparison between incompatible types
     Python exception:
         TypeError: '<' not supported between instances of 'int' and 'str'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -1132,10 +1147,10 @@ TypeError - 10: comparison between incompatible types
        305:         b = 42
     -->306:         b < a
 
-    Known identifiers
-        b: 42
-        a: 'a'
-    
+        Known identifiers
+            b: 42
+            a: 'a'
+        
 
 
 TypeError - 11: bad operand type for unary +
@@ -1147,7 +1162,7 @@ TypeError - 11: bad operand type for unary +
     Python exception:
         TypeError: bad operand type for unary +: 'str'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -1173,7 +1188,7 @@ TypeError - 11a: bad operand type for unary -
     Python exception:
         TypeError: bad operand type for unary -: 'list'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -1199,7 +1214,7 @@ TypeError - 11b: bad operand type for unary ~
     Python exception:
         TypeError: bad operand type for unary ~: 'tuple'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -1225,7 +1240,7 @@ TypeError - 12: object does not support item assignment
     Python exception:
         TypeError: 'tuple' object does not support item assignment
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -1242,9 +1257,9 @@ TypeError - 12: object does not support item assignment
        357:     try:
     -->358:         a[0] = 0
 
-    Known identifiers
-        a: (1, 2, 3)
-    
+        Known identifiers
+            a: (1, 2, 3)
+        
 
 
 TypeError - 13: wrong number of positional arguments
@@ -1256,7 +1271,7 @@ TypeError - 13: wrong number of positional arguments
     Python exception:
         TypeError: fn() takes 0 positional arguments but 1 was given
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -1272,9 +1287,9 @@ TypeError - 13: wrong number of positional arguments
        372:     try:
     -->373:         fn(1)
 
-    Known identifiers
-        fn: <function test_type_error13.<locals>.fn>
-    
+        Known identifiers
+            fn: <function test_type_error13.<locals>.fn>
+        
 
 
 TypeError - 14: missing positional arguments
@@ -1286,7 +1301,7 @@ TypeError - 14: missing positional arguments
     Python exception:
         TypeError: fn() missing 2 required positional arguments: 'b' and 'c'
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -1301,9 +1316,9 @@ TypeError - 14: missing positional arguments
        387:     try:
     -->388:         fn(1)
 
-    Known identifiers
-        fn: <function test_type_error14.<locals>.fn>
-    
+        Known identifiers
+            fn: <function test_type_error14.<locals>.fn>
+        
 
 
 TypeError - 15: tuple object is not callable
@@ -1315,7 +1330,7 @@ TypeError - 15: tuple object is not callable
     Python exception:
         TypeError: 'tuple' object is not callable
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -1342,7 +1357,7 @@ TypeError - 15a: list object is not callable
     Python exception:
         TypeError: 'list' object is not callable
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -1369,7 +1384,7 @@ TypeError - 16: exception derived from BaseException
     Python exception:
         TypeError: exceptions must derive from BaseException
         
-    A TypeError is usually caused by trying
+    A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
@@ -1396,16 +1411,16 @@ UnboundLocalError
     In Python, variables that are used inside a function are known as 
     local variables. Before they are used, they must be assigned a value.
     A variable that is used before it is assigned a value is assumed to
-    be defined outside that function; it is known as a 'global'
-    (or sometimes 'nonlocal') variable. You cannot assign a value to such
+    be defined outside that function; it is known as a `global`
+    (or sometimes `nonlocal`) variable. You cannot assign a value to such
     a global variable inside a function without first indicating to
     Python that this is a global variable, otherwise you will see
-    an UnboundLocalError.
+    an `UnboundLocalError`.
     
     Likely cause based on the information given by Python:
-        The variable that appears to cause the problem is 'a'.
+        The variable that appears to cause the problem is `a`.
         Perhaps the statement
-            global a
+            `global a`
         should have been included as the first line inside your function.
         
     Execution stopped on line 21 of file 'TESTS:\except\test_unbound_local_error.py'.
@@ -1414,16 +1429,16 @@ UnboundLocalError
        20:     try:
     -->21:         outer()
 
-    Known identifiers
-        global outer: <function outer>
-    
+        Known identifiers
+            global outer: <function outer>
+        
     Exception raised on line 12 of file 'TESTS:\except\test_unbound_local_error.py'.
     
        10:     def inner():
        11:         c = 3
     -->12:         a = a + b + c
 
-    Known identifiers
+        Known identifiers
             global b: 2
             c: 3
         
@@ -1448,9 +1463,9 @@ Unknown exception
         9:     try:
     -->10:         raise MyException("Some informative message about an unknown exception.")
 
-    Known identifiers
-        global MyException: <class 'test_unknown_error.MyException'>
-    
+        Known identifiers
+            global MyException: <class 'test_unknown_error.MyException'>
+        
 
 
 ZeroDivisionError - 1
@@ -1462,12 +1477,12 @@ ZeroDivisionError - 1
     Python exception:
         ZeroDivisionError: division by zero
         
-    A ZeroDivisionError occurs when you are attempting to divide
+    A `ZeroDivisionError` occurs when you are attempting to divide
     a value by zero:
-        result = my_variable / 0
+        `result = my_variable / 0.`
     It can also happen if you calculate the remainder of a division
-    using the modulo operator '%'
-        result = my_variable % 0
+    using the modulo operator `%`:
+        `result = my_variable % 0`
     
     Execution stopped on line 6 of file 'TESTS:\except\test_zero_division_error.py'.
     
@@ -1485,12 +1500,12 @@ ZeroDivisionError - 2
     Python exception:
         ZeroDivisionError: integer division or modulo by zero
         
-    A ZeroDivisionError occurs when you are attempting to divide
+    A `ZeroDivisionError` occurs when you are attempting to divide
     a value by zero:
-        result = my_variable / 0
+        `result = my_variable / 0.`
     It can also happen if you calculate the remainder of a division
-    using the modulo operator '%'
-        result = my_variable % 0
+    using the modulo operator `%`:
+        `result = my_variable % 0`
     
     Execution stopped on line 19 of file 'TESTS:\except\test_zero_division_error.py'.
     
@@ -1498,7 +1513,7 @@ ZeroDivisionError - 2
        18:     try:
     -->19:         1 % zero
 
-    Known identifiers
-        zero: 0
-    
+        Known identifiers
+            zero: 0
+        
 

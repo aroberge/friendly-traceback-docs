@@ -32,7 +32,7 @@ IndentationError - 1: expected an indented block
     Python exception:
         IndentationError: expected an indented block
         
-    An IndentationError occurs when a given line of code is
+    An `IndentationError` occurs when a given line of code is
     not indented (aligned vertically with other lines) as expected.
     
     Python could not understand the code in the file
@@ -59,7 +59,7 @@ IndentationError - 2: unexpected indent
     Python exception:
         IndentationError: unexpected indent
         
-    An IndentationError occurs when a given line of code is
+    An `IndentationError` occurs when a given line of code is
     not indented (aligned vertically with other lines) as expected.
     
     Python could not understand the code in the file
@@ -87,7 +87,7 @@ IndentationError - 3: unindent does not match ...
     Python exception:
         IndentationError: unindent does not match any outer indentation level
         
-    An IndentationError occurs when a given line of code is
+    An `IndentationError` occurs when a given line of code is
     not indented (aligned vertically with other lines) as expected.
     
     Python could not understand the code in the file
@@ -115,7 +115,7 @@ TabError
     Python exception:
         TabError: inconsistent use of tabs and spaces in indentation
         
-    A TabError indicates that you have used both spaces
+    A `TabError` indicates that you have used both spaces
     and tab characters to indent your code.
     This is not allowed in Python.
     Indenting your code means to have block of codes aligned vertically
@@ -141,7 +141,7 @@ SyntaxError - Assign to keyword
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error1.py'
@@ -156,7 +156,7 @@ SyntaxError - Assign to keyword
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        You were trying to assign a value to the Python keyword 'def'.
+        You were trying to assign a value to the Python keyword `def`.
         This is not allowed.
         
         
@@ -170,7 +170,7 @@ SyntaxError - Missing colon - 1
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error2.py'
@@ -186,7 +186,7 @@ SyntaxError - Missing colon - 1
         but I might guess incorrectly.
         
         You wrote a statement beginning with
-        'if' but forgot to add a colon ':' at the end
+        `if` but forgot to add a colon `:` at the end
         
         
 
@@ -199,7 +199,7 @@ SyntaxError - Missing colon - 2
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error3.py'
@@ -214,8 +214,8 @@ SyntaxError - Missing colon - 2
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        You wrote a 'while' loop but
-        forgot to add a colon ':' at the end
+        You wrote a `while` loop but
+        forgot to add a colon `:` at the end
         
         
 
@@ -228,7 +228,7 @@ SyntaxError - elif, not else if
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error4.py'
@@ -244,8 +244,8 @@ SyntaxError - elif, not else if
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        You likely meant to use Python's 'elif' keyword
-        but wrote 'else if' instead
+        You likely meant to use Python's `elif` keyword
+        but wrote `else if` instead
         
         
 
@@ -258,7 +258,7 @@ SyntaxError - elif, not elseif
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error5.py'
@@ -274,8 +274,8 @@ SyntaxError - elif, not elseif
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        You likely meant to use Python's 'elif' keyword
-        but wrote 'elseif' instead
+        You likely meant to use Python's `elif` keyword
+        but wrote `elseif` instead
         
         
 
@@ -288,7 +288,7 @@ SyntaxError - malformed def statment - 1
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error6.py'
@@ -305,7 +305,7 @@ SyntaxError - malformed def statment - 1
         
         You tried to define a function or method and did not use the correct syntax.
         The correct syntax is:
-            def name ( optional_arguments ):
+            `def name ( optional_arguments ):`
         
 
 SyntaxError - malformed def statment - 2
@@ -317,7 +317,7 @@ SyntaxError - malformed def statment - 2
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error7.py'
@@ -334,7 +334,7 @@ SyntaxError - malformed def statment - 2
         
         You tried to define a function or method and did not use the correct syntax.
         The correct syntax is:
-            def name ( optional_arguments ):
+            `def name ( optional_arguments ):`
         
 
 SyntaxError - malformed def statment - 3
@@ -346,7 +346,7 @@ SyntaxError - malformed def statment - 3
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error8.py'
@@ -363,7 +363,7 @@ SyntaxError - malformed def statment - 3
         
         You tried to define a function or method and did not use the correct syntax.
         The correct syntax is:
-            def name ( optional_arguments ):
+            `def name ( optional_arguments ):`
         
 
 SyntaxError - can't assign to literal - 1
@@ -375,7 +375,7 @@ SyntaxError - can't assign to literal - 1
     Python exception:
         SyntaxError: cannot assign to literal
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error9.py'
@@ -388,11 +388,11 @@ SyntaxError - can't assign to literal - 1
 
     Likely cause based on the information given by Python:
         You wrote an expression like
-            1 = a
-        where <1>, on the left-hand side of the equal sign,
-        is or includes an actual object of type 'int'
+            `1 = a`
+        where `1`, on the left-hand side of the equal sign,
+        is or includes an actual object of type `int`
         and is not simply the name of a variable. Perhaps you meant to write:
-            a = 1
+            `a = 1`
         
         
 
@@ -405,7 +405,7 @@ SyntaxError - can't assign to literal - 2
     Python exception:
         SyntaxError: cannot assign to literal
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error10.py'
@@ -418,9 +418,9 @@ SyntaxError - can't assign to literal - 2
 
     Likely cause based on the information given by Python:
         You wrote an expression like
-            1 = 2
-        where <1>, on the left-hand side of the equal sign,
-        is or includes an actual object of type 'int'
+            `1 = 2`
+        where `1`, on the left-hand side of the equal sign,
+        is or includes an actual object of type `int`
         and is not simply the name of a variable.
         
 
@@ -433,7 +433,7 @@ SyntaxError - can't assign to literal - 3
     Python exception:
         SyntaxError: cannot assign to set display
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error52.py'
@@ -447,9 +447,9 @@ SyntaxError - can't assign to literal - 3
 
     Likely cause based on the information given by Python:
         You wrote an expression like
-            {1, 2, 3} = 4
-        where <{1, 2, 3}>, on the left-hand side of the equal sign,
-        is or includes an actual object of type 'set'
+            `{1, 2, 3} = 4`
+        where `{1, 2, 3}`, on the left-hand side of the equal sign,
+        is or includes an actual object of type `set`
         and is not simply the name of a variable.
         
 
@@ -462,7 +462,7 @@ SyntaxError - can't assign to literal - 4
     Python exception:
         SyntaxError: cannot assign to dict display
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error53.py'
@@ -476,9 +476,9 @@ SyntaxError - can't assign to literal - 4
 
     Likely cause based on the information given by Python:
         You wrote an expression like
-            {1 : 2, 2 : 4} = 5
-        where <{1 : 2, 2 : 4}>, on the left-hand side of the equal sign,
-        is or includes an actual object of type 'dict'
+            `{1 : 2, 2 : 4} = 5`
+        where `{1 : 2, 2 : 4}`, on the left-hand side of the equal sign,
+        is or includes an actual object of type `dict`
         and is not simply the name of a variable.
         
 
@@ -491,7 +491,7 @@ SyntaxError - can't assign to literal - 5
     Python exception:
         SyntaxError: cannot assign to literal
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error54.py'
@@ -505,8 +505,8 @@ SyntaxError - can't assign to literal - 5
 
     Likely cause based on the information given by Python:
         You wrote an expression like
-            ... = variable_name
-        where <...>, on the left-hand side of the equal sign,
+            `... = variable_name`
+        where `...`, on the left-hand side of the equal sign,
         is or includes an actual object 
         and is not simply the name of a variable.
         
@@ -520,7 +520,7 @@ SyntaxError - import X from Y
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error11.py'
@@ -536,9 +536,9 @@ SyntaxError - import X from Y
         but I might guess incorrectly.
         
         You wrote something like
-            import pen from turtle
+            `import pen from turtle`
         instead of
-            from turtle import pen
+            `from turtle import pen`
         
         
 
@@ -551,7 +551,7 @@ SyntaxError - EOL while scanning string literal
     Python exception:
         SyntaxError: EOL while scanning string literal
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error12.py'
@@ -576,7 +576,7 @@ SyntaxError - assignment to keyword (None)
     Python exception:
         SyntaxError: cannot assign to None
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error13.py'
@@ -589,7 +589,7 @@ SyntaxError - assignment to keyword (None)
           ^
 
     Likely cause based on the information given by Python:
-        None is a constant in Python; you cannot assign it a value.
+        `None` is a constant in Python; you cannot assign it a value.
         
         
 
@@ -602,7 +602,7 @@ SyntaxError - assignment to keyword (__debug__)
     Python exception:
         SyntaxError: cannot assign to __debug__
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error14.py'
@@ -615,7 +615,7 @@ SyntaxError - assignment to keyword (__debug__)
           ^
 
     Likely cause based on the information given by Python:
-        __debug__ is a constant in Python; you cannot assign it a value.
+        `__debug__` is a constant in Python; you cannot assign it a value.
         
         
 
@@ -628,7 +628,7 @@ SyntaxError - unmatched closing parenthesis
     Python exception:
         SyntaxError: unmatched ')'
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error15.py'
@@ -641,7 +641,7 @@ SyntaxError - unmatched closing parenthesis
                     ^
 
     Likely cause based on the information given by Python:
-        The closing parenthesis ')' on line 6 does not match anything.
+        The closing parenthesis `)` on line 6 does not match anything.
         
 
 SyntaxError - unclosed parenthesis- 1
@@ -653,7 +653,7 @@ SyntaxError - unclosed parenthesis- 1
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error16.py'
@@ -668,7 +668,7 @@ SyntaxError - unclosed parenthesis- 1
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        The opening parenthesis '(' on line 2 is not closed.
+        The opening parenthesis `(` on line 2 is not closed.
         
             2: x = int('1'
                       ^
@@ -683,7 +683,7 @@ SyntaxError - unclosed parenthesis - 2
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error17.py'
@@ -698,7 +698,7 @@ SyntaxError - unclosed parenthesis - 2
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        The opening parenthesis '(' on line 2 is not closed.
+        The opening parenthesis `(` on line 2 is not closed.
         
             2: a = (b+c
                    ^
@@ -713,7 +713,7 @@ SyntaxError - mismatched brackets
     Python exception:
         SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error18.py'
@@ -724,12 +724,12 @@ SyntaxError - mismatched brackets
                       ^
 
     Likely cause based on the information given by Python:
-        Python tells us that the closing ']' on the last line shown
-        does not match the opening '('.
+        Python tells us that the closing `]` on the last line shown
+        does not match the opening `(`.
         
         I will attempt to be give a bit more information.
         
-        The closing square bracket ']' on line 2 does not match the opening parenthesis '(' on line 2.
+        The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
         
             2: x = (1, 2, 3]
                    ^       ^
@@ -744,7 +744,7 @@ SyntaxError - mismatched brackets - 2
     Python exception:
         SyntaxError: closing parenthesis ']' does not match opening parenthesis '(' on line 2
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error19.py'
@@ -757,12 +757,12 @@ SyntaxError - mismatched brackets - 2
                 ^
 
     Likely cause based on the information given by Python:
-        Python tells us that the closing ']' on the last line shown
-        does not match the opening '(' on line 2.
+        Python tells us that the closing `]` on the last line shown
+        does not match the opening `(` on line 2.
         
         I will attempt to be give a bit more information.
         
-        The closing square bracket ']' on line 4 does not match the opening parenthesis '(' on line 2.
+        The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
         
             2: x = (1,
                    ^
@@ -779,7 +779,7 @@ SyntaxError - print is a function
     Python exception:
         SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello')?
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error20.py'
@@ -790,10 +790,10 @@ SyntaxError - print is a function
                 ^
 
     Likely cause based on the information given by Python:
-        Perhaps you need to type print('hello')?
+        Perhaps you need to type `print('hello')`?
         
-        In older version of Python, 'print' was a keyword.
-        Now, 'print' is a function; you need to use parentheses to call it.
+        In older version of Python, `print` was a keyword.
+        Now, `print` is a function; you need to use parentheses to call it.
         
 
 SyntaxError - Python keyword as function name
@@ -805,7 +805,7 @@ SyntaxError - Python keyword as function name
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error21.py'
@@ -820,7 +820,7 @@ SyntaxError - Python keyword as function name
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        You tried to use the Python keyword 'pass' as a function name.
+        You tried to use the Python keyword `pass` as a function name.
         
 
 SyntaxError - break outside loop
@@ -832,7 +832,7 @@ SyntaxError - break outside loop
     Python exception:
         SyntaxError: 'break' outside loop
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error22.py'
@@ -845,7 +845,7 @@ SyntaxError - break outside loop
               ^
 
     Likely cause based on the information given by Python:
-        The Python keyword 'break' can only be used inside a for loop or inside a while loop.
+        The Python keyword `break` can only be used inside a for loop or inside a while loop.
         
 
 SyntaxError - continue outside loop
@@ -857,7 +857,7 @@ SyntaxError - continue outside loop
     Python exception:
         SyntaxError: 'continue' not properly in loop
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error23.py'
@@ -870,7 +870,7 @@ SyntaxError - continue outside loop
               ^
 
     Likely cause based on the information given by Python:
-        The Python keyword 'continue' can only be used inside a for loop or inside a while loop.
+        The Python keyword `continue` can only be used inside a for loop or inside a while loop.
         
 
 SyntaxError - quote inside a string
@@ -882,7 +882,7 @@ SyntaxError - quote inside a string
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error24.py'
@@ -912,7 +912,7 @@ SyntaxError - missing comma in a dict
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error25.py'
@@ -941,7 +941,7 @@ SyntaxError - missing comma in a set
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error26.py'
@@ -969,7 +969,7 @@ SyntaxError - missing comma in a list
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error27.py'
@@ -997,7 +997,7 @@ SyntaxError - missing comma in a tuple
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error28.py'
@@ -1026,7 +1026,7 @@ SyntaxError - missing comma between function args
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error29.py'
@@ -1056,7 +1056,7 @@ SyntaxError - can't assign to function call - 1
     Python exception:
         SyntaxError: cannot assign to function call
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error30.py'
@@ -1070,8 +1070,8 @@ SyntaxError - can't assign to function call - 1
 
     Likely cause based on the information given by Python:
         You wrote the expression
-            len('a') = 3
-        where len('a'), on the left-hand side of the equal sign, either is
+            `len('a') = 3`
+        where `len('a')`, on the left-hand side of the equal sign, either is
         or includes a function call and is not simply the name of a variable.
         
 
@@ -1084,7 +1084,7 @@ SyntaxError - can't assign to function call - 2
     Python exception:
         SyntaxError: cannot assign to function call
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error31.py'
@@ -1098,8 +1098,8 @@ SyntaxError - can't assign to function call - 2
 
     Likely cause based on the information given by Python:
         You wrote an expression like
-            my_function(...) = some value
-        where my_function(...), on the left-hand side of the equal sign, is
+            `my_function(...) = some value`
+        where `my_function(...)`, on the left-hand side of the equal sign, is
         a function call and not the name of a variable.
         
 
@@ -1112,7 +1112,7 @@ SyntaxError - used equal sign instead of colon
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error32.py'
@@ -1128,7 +1128,7 @@ SyntaxError - used equal sign instead of colon
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        It is possible that you used an equal sign '=' instead of a colon ':'
+        It is possible that you used an equal sign `=` instead of a colon `:`
         to assign values to keys in a dict
         before or at the position indicated by --> and ^.
         
@@ -1142,7 +1142,7 @@ SyntaxError - non-default argument follows default argument
     Python exception:
         SyntaxError: non-default argument follows default argument
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error33.py'
@@ -1157,15 +1157,15 @@ SyntaxError - non-default argument follows default argument
     Likely cause based on the information given by Python:
         In Python, you can define functions with only positional arguments
         
-            def test(a, b, c): ...
+            `def test(a, b, c): ...`
         
         or only keyword arguments
         
-            def test(a=1, b=2, c=3): ...
+            `def test(a=1, b=2, c=3): ...`
         
         or a combination of the two
         
-            def test(a, b, c=3): ...
+            `def test(a, b, c=3): ...`
         
         but with the keyword arguments appearing after all the positional ones.
         According to Python, you used positional arguments after keyword ones.
@@ -1180,7 +1180,7 @@ SyntaxError - positional argument follows keyword argument
     Python exception:
         SyntaxError: positional argument follows keyword argument
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error34.py'
@@ -1195,15 +1195,15 @@ SyntaxError - positional argument follows keyword argument
     Likely cause based on the information given by Python:
         In Python, you can call functions with only positional arguments
         
-            test(1, 2, 3)
+            `test(1, 2, 3)`
         
         or only keyword arguments
         
-            test(a=1, b=2, c=3)
+            `test(a=1, b=2, c=3)`
         
         or a combination of the two
         
-            test(1, 2, c=3)
+            `test(1, 2, c=3)`
         
         but with the keyword arguments appearing after all the positional ones.
         According to Python, you used positional arguments after keyword ones.
@@ -1218,7 +1218,7 @@ SyntaxError - f-string: unterminated string
     Python exception:
         SyntaxError: f-string: unterminated string
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error35.py'
@@ -1245,7 +1245,7 @@ SyntaxError - unclosed bracket
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error36.py'
@@ -1261,7 +1261,7 @@ SyntaxError - unclosed bracket
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        The opening square bracket '[' on line 5 is not closed.
+        The opening square bracket `[` on line 5 is not closed.
         
             5:     return [1, 2, 3
                           ^
@@ -1276,7 +1276,7 @@ SyntaxError - unexpected EOF while parsing
     Python exception:
         SyntaxError: unexpected EOF while parsing
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code the file
     'TESTS:\syntax\raise_syntax_error37.py'.
@@ -1292,7 +1292,7 @@ SyntaxError - unexpected EOF while parsing
         
         I will attempt to be give a bit more information.
         
-        The opening square bracket '[' on line 5 is not closed.
+        The opening square bracket `[` on line 5 is not closed.
         
             5:     return [1, 2, 3,
                           ^
@@ -1307,7 +1307,7 @@ SyntaxError - name is parameter and global
     Python exception:
         SyntaxError: name 'x' is parameter and global
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error38.py'
@@ -1322,12 +1322,12 @@ SyntaxError - name is parameter and global
     Likely cause based on the information given by Python:
         You are including the statement
         
-                global x
+            `    global x`
         
-        indicating that 'x' is a variable defined outside a function.
-        You are also using the same 'x' as an argument for that
+        indicating that `x` is a variable defined outside a function.
+        You are also using the same `x` as an argument for that
         function, thus indicating that it should be variable known only
-        inside that function, which is the contrary of what 'global' implied.
+        inside that function, which is the contrary of what `global` implied.
         
 
 SyntaxError - keyword as attribute
@@ -1339,7 +1339,7 @@ SyntaxError - keyword as attribute
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error39.py'
@@ -1355,7 +1355,7 @@ SyntaxError - keyword as attribute
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        You cannot use the Python keyword pass as an attribute.
+        You cannot use the Python keyword `pass` as an attribute.
         
         
 
@@ -1368,7 +1368,7 @@ SyntaxError - content passed continuation line character
     Python exception:
         SyntaxError: unexpected character after line continuation character
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error40.py'
@@ -1381,7 +1381,7 @@ SyntaxError - content passed continuation line character
                    ^
 
     Likely cause based on the information given by Python:
-        You are using the continuation character '\' outside of a string,
+        You are using the continuation character `\` outside of a string,
         and it is followed by some other character(s).
         I am guessing that you forgot to enclose some content in a string.
         
@@ -1396,7 +1396,7 @@ SyntaxError - keyword can't be an expression
     Python exception:
         SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error41.py'
@@ -1413,9 +1413,9 @@ SyntaxError - keyword can't be an expression
         1. You meant to do a comparison with == and wrote = instead.
         2. You called a function with a named argument:
         
-               a_function(invalid=something)
+               `a_function(invalid=something)`
         
-        where 'invalid' is not a valid variable name in Python
+        where `invalid` is not a valid variable name in Python
         either because it starts with a number, or is a string,
         or contains a period, etc.
         
@@ -1430,7 +1430,7 @@ SyntaxError - invalid character in identifier
     Python exception:
         SyntaxError: invalid character in identifier
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error42.py'
@@ -1458,7 +1458,7 @@ SyntaxError - keyword cannot be argument in def - 1
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error43.py'
@@ -1475,7 +1475,7 @@ SyntaxError - keyword cannot be argument in def - 1
         but I might guess incorrectly.
         
         I am guessing that you tried to use the Python keyword
-        None as an argument in the definition of a function.
+        `None` as an argument in the definition of a function.
         
 
 SyntaxError - keyword cannot be argument in def - 2
@@ -1487,7 +1487,7 @@ SyntaxError - keyword cannot be argument in def - 2
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error44.py'
@@ -1504,7 +1504,7 @@ SyntaxError - keyword cannot be argument in def - 2
         but I might guess incorrectly.
         
         I am guessing that you tried to use the Python keyword
-        True as an argument in the definition of a function.
+        `True` as an argument in the definition of a function.
         
 
 SyntaxError - keyword cannot be argument in def - 3
@@ -1516,7 +1516,7 @@ SyntaxError - keyword cannot be argument in def - 3
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error45.py'
@@ -1533,7 +1533,7 @@ SyntaxError - keyword cannot be argument in def - 3
         but I might guess incorrectly.
         
         I am guessing that you tried to use the Python keyword
-        None as an argument in the definition of a function.
+        `None` as an argument in the definition of a function.
         
 
 SyntaxError - keyword cannot be argument in def - 4
@@ -1545,7 +1545,7 @@ SyntaxError - keyword cannot be argument in def - 4
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error46.py'
@@ -1562,7 +1562,7 @@ SyntaxError - keyword cannot be argument in def - 4
         but I might guess incorrectly.
         
         I am guessing that you tried to use the Python keyword
-        None as an argument in the definition of a function.
+        `None` as an argument in the definition of a function.
         
 
 SyntaxError - delete function call
@@ -1574,7 +1574,7 @@ SyntaxError - delete function call
     Python exception:
         SyntaxError: cannot delete function call
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error47.py'
@@ -1588,9 +1588,9 @@ SyntaxError - delete function call
 
     Likely cause based on the information given by Python:
         You attempted to delete a function call
-            del f(a)
+            `del f(a)`
         instead of deleting the function's name
-            del f
+            `del f`
         
 
 SyntaxError - assigned prior to global declaration
@@ -1602,7 +1602,7 @@ SyntaxError - assigned prior to global declaration
     Python exception:
         SyntaxError: name 'p' is assigned to before global declaration
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error48.py'
@@ -1615,7 +1615,7 @@ SyntaxError - assigned prior to global declaration
                ^
 
     Likely cause based on the information given by Python:
-        You assigned a value to the variable 'p'
+        You assigned a value to the variable `p`
         before declaring it as a global variable.
         
 
@@ -1628,7 +1628,7 @@ SyntaxError - used prior to global declaration
     Python exception:
         SyntaxError: name 'r' is used prior to global declaration
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error49.py'
@@ -1641,7 +1641,7 @@ SyntaxError - used prior to global declaration
                ^
 
     Likely cause based on the information given by Python:
-        You used the variable 'r'
+        You used the variable `r`
         before declaring it as a global variable.
         
 
@@ -1654,14 +1654,14 @@ SyntaxError - assigned prior to nonlocal declaration
     Python exception:
         ModuleNotFoundError: No module named 'raise_syntax_error5-'
         
-    A ModuleNotFoundError exception indicates that you
+    A `ModuleNotFoundError` exception indicates that you
     are trying to import a module that cannot be found by Python.
     This could be because you misspelled the name of the module
     or because it is not installed on your computer.
     
     Likely cause based on the information given by Python:
         In your program, the name of the
-        module that cannot be found is 'raise_syntax_error5-'.
+        module that cannot be found is `raise_syntax_error5-`.
         
     Execution stopped on line 124 of file 'TESTS:\trb_syntax_common.py'.
     
@@ -1669,9 +1669,9 @@ SyntaxError - assigned prior to nonlocal declaration
        123:                 try:
     -->124:                     mod = __import__(name)
 
-    Known identifiers
-        name: 'raise_syntax_error5-'
-    
+        Known identifiers
+            name: 'raise_syntax_error5-'
+        
 
 SyntaxError - used prior to nonlocal declaration
 ------------------------------------------------
@@ -1682,7 +1682,7 @@ SyntaxError - used prior to nonlocal declaration
     Python exception:
         SyntaxError: name 's' is assigned to before nonlocal declaration
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error51.py'
@@ -1695,7 +1695,7 @@ SyntaxError - used prior to nonlocal declaration
                    ^
 
     Likely cause based on the information given by Python:
-        You assigned a value to the variable 's'
+        You assigned a value to the variable `s`
         before declaring it as a nonlocal variable.
         
 
@@ -1708,7 +1708,7 @@ SyntaxError - named assignment with Python constant
     Python exception:
         SyntaxError: cannot use assignment expressions with True
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error55.py'
@@ -1721,7 +1721,7 @@ SyntaxError - named assignment with Python constant
            ^
 
     Likely cause based on the information given by Python:
-        True is a constant in Python; you cannot assign it a value.
+        `True` is a constant in Python; you cannot assign it a value.
         
         
 
@@ -1734,7 +1734,7 @@ SyntaxError - assignment to operator
     Python exception:
         SyntaxError: cannot assign to operator
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error56.py'
@@ -1760,7 +1760,7 @@ SyntaxError - using the backquote character
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error57.py'
@@ -1775,9 +1775,9 @@ SyntaxError - using the backquote character
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        You are using the backquote character `.
+        You are using the backquote character.
         Either you meant to write a single quote, ', or copied Python 2 code;
-        in this latter case, use the function repr(x) instead of `x`.
+        in this latter case, use the function repr(x).
 
 SyntaxError - assign to generator expression
 --------------------------------------------
@@ -1788,7 +1788,7 @@ SyntaxError - assign to generator expression
     Python exception:
         SyntaxError: cannot assign to generator expression
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error58.py'
@@ -1813,7 +1813,7 @@ SyntaxError - assign to conditional expression
     Python exception:
         SyntaxError: cannot assign to conditional expression
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error59.py'
@@ -1829,7 +1829,7 @@ SyntaxError - assign to conditional expression
         conditional expression instead of the name of a variable.
         A conditional expression has the following form:
         
-            variable = object if condition else other_object
+            `variable = object if condition else other_object`
 
 SyntaxError - name is parameter and nonlocal
 --------------------------------------------
@@ -1840,7 +1840,7 @@ SyntaxError - name is parameter and nonlocal
     Python exception:
         SyntaxError: name 'x' is parameter and nonlocal
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error60.py'
@@ -1853,9 +1853,9 @@ SyntaxError - name is parameter and nonlocal
               ^
 
     Likely cause based on the information given by Python:
-        You used 'x' as a parameter for a function
+        You used `x` as a parameter for a function
         before declaring it also as a nonlocal variable:
-        'x' cannot be both at the same time.
+        `x` cannot be both at the same time.
         
 
 SyntaxError - name is global and nonlocal
@@ -1867,7 +1867,7 @@ SyntaxError - name is global and nonlocal
     Python exception:
         SyntaxError: name 'xy' is nonlocal and global
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error61.py'
@@ -1880,7 +1880,7 @@ SyntaxError - name is global and nonlocal
                ^
 
     Likely cause based on the information given by Python:
-        You declared 'xy' as being both a global and nonlocal variable.
+        You declared `xy` as being both a global and nonlocal variable.
         A variable can be global, or nonlocal, but not both at the same time.
         
 
@@ -1893,7 +1893,7 @@ SyntaxError - nonlocal variable not found
     Python exception:
         SyntaxError: no binding for nonlocal 'ab' found
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error62.py'
@@ -1906,7 +1906,7 @@ SyntaxError - nonlocal variable not found
               ^
 
     Likely cause based on the information given by Python:
-        You declared the variable 'ab' as being a
+        You declared the variable `ab` as being a
         nonlocal variable but it cannot be found.
         
 
@@ -1919,7 +1919,7 @@ SyntaxError - nonlocal variable not found at module level
     Python exception:
         SyntaxError: nonlocal declaration not allowed at module level
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error63.py'
@@ -1945,7 +1945,7 @@ SyntaxError - keyword arg only once in function definition
     Python exception:
         SyntaxError: duplicate argument 'aa' in function definition
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error64.py'
@@ -1959,7 +1959,7 @@ SyntaxError - keyword arg only once in function definition
 
     Likely cause based on the information given by Python:
         You have defined a function repeating the keyword argument
-            'aa'
+            `aa`
         twice; each keyword argument should appear only once in a function definition.
         
 
@@ -1972,7 +1972,7 @@ SyntaxError - keyword arg only once in function call
     Python exception:
         SyntaxError: keyword argument repeated
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error65.py'
@@ -1998,7 +1998,7 @@ SyntaxError - unexpected EOF while parsing 2
     Python exception:
         SyntaxError: unexpected EOF while parsing
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code the file
     'TESTS:\syntax\raise_syntax_error66.py'.
@@ -2023,7 +2023,7 @@ SyntaxError - print is a function 2
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error67.py'
@@ -2037,8 +2037,8 @@ SyntaxError - print is a function 2
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        In older version of Python, 'print' was a keyword.
-        Now, 'print' is a function; you need to use parentheses to call it.
+        In older version of Python, `print` was a keyword.
+        Now, `print` is a function; you need to use parentheses to call it.
         
 
 SyntaxError - copy/paste from interpreter
@@ -2050,7 +2050,7 @@ SyntaxError - copy/paste from interpreter
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error68.py'
@@ -2065,7 +2065,7 @@ SyntaxError - copy/paste from interpreter
         but I might guess incorrectly.
         
         It looks like you copy-pasted code from an interactive interpreter.
-        The Python prompt, '>>>', should not be included in your code.
+        The Python prompt, `>>>`, should not be included in your code.
         
 
 SyntaxError - Using pip from interpreter
@@ -2077,7 +2077,7 @@ SyntaxError - Using pip from interpreter
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error69.py'
@@ -2092,7 +2092,7 @@ SyntaxError - Using pip from interpreter
         but I might guess incorrectly.
         
         It looks as if you are attempting to use pip to install a module.
-        pip is a command that needs to run in a terminal,
+        `pip` is a command that needs to run in a terminal,
         not from a Python interpreter.
         
 
@@ -2105,7 +2105,7 @@ SyntaxError - Using pip from interpreter 2
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error70.py'
@@ -2120,7 +2120,7 @@ SyntaxError - Using pip from interpreter 2
         but I might guess incorrectly.
         
         It looks as if you are attempting to use pip to install a module.
-        pip is a command that needs to run in a terminal,
+        `pip` is a command that needs to run in a terminal,
         not from a Python interpreter.
         
 
@@ -2133,7 +2133,7 @@ SyntaxError - dot followed by parenthesis
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error71.py'
@@ -2147,7 +2147,7 @@ SyntaxError - dot followed by parenthesis
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        You cannot have a dot '.' followed by (.
+        You cannot have a dot `.` followed by `(`.
         
 
 SyntaxError - cannot assign to f-string
@@ -2159,7 +2159,7 @@ SyntaxError - cannot assign to f-string
     Python exception:
         SyntaxError: cannot assign to f-string expression
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error72.py'
@@ -2186,7 +2186,7 @@ SyntaxError - raising multiple exceptions
     Python exception:
         SyntaxError: invalid syntax
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error73.py'
@@ -2212,7 +2212,7 @@ SyntaxError - parenthesis around generator expression
     Python exception:
         SyntaxError: Generator expression must be parenthesized
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error74.py'
@@ -2226,7 +2226,7 @@ SyntaxError - parenthesis around generator expression
 
     Likely cause based on the information given by Python:
         You are using a generator expression, something of the form
-            x for x in thing
+            `x for x in thing`
         You must add parentheses enclosing that expression.
         
 
@@ -2239,7 +2239,7 @@ SyntaxError - invalid character (bad quote)
     Python exception:
         SyntaxError: invalid character in identifier
         
-    A SyntaxError occurs when Python cannot understand your code.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error75.py'

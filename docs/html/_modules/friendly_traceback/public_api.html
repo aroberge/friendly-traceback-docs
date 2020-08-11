@@ -286,9 +286,9 @@
 <span class="sd">        hook: exception_hook - if one wants to experiment using</span>
 <span class="sd">              a different one.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: check validity here instead of in sessions.py</span>
-
-    <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="n">redirect</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="n">verbosity</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">)</span></div>
+    <span class="k">if</span> <span class="n">verbosity</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">verbosity_level</span> <span class="o">=</span> <span class="n">level</span>  <span class="c1"># Supporting deprecated argument</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="n">redirect</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="n">verbosity_level</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="uninstall"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.uninstall">[docs]</a><span class="nd">@make_public</span>
@@ -371,7 +371,6 @@
 
 <span class="sd">       The values are as follows::</span>
 
-<span class="sd">            0: Normal Python tracebacks: friendly_traceback is disabled.</span>
 <span class="sd">            1: Default - does not need to be specified. The normal Python</span>
 <span class="sd">               traceback is not included in the output.</span>
 <span class="sd">            2: Python tracebacks appear before the output of level 1.</span>
@@ -379,11 +378,12 @@
 <span class="sd">            4: Same as 1, but generic explanation is not included</span>
 <span class="sd">            5: Same as 2, but generic explanation is not included</span>
 <span class="sd">            6: Same as 3, but generic explanation is not included</span>
-<span class="sd">            7: (Subject to change) Python tracebacks followed</span>
-<span class="sd">               by specific information.</span>
-<span class="sd">            8: Minimal display of relevant information,</span>
+<span class="sd">            7: Minimal display of relevant information,</span>
 <span class="sd">               suitable for console use by advanced programmers.</span>
-<span class="sd">            9: Simulated Python traceback: see the documentation.</span>
+<span class="sd">            8: (Subject to change) Python tracebacks followed</span>
+<span class="sd">               by specific information.</span>
+<span class="sd">            9: Python traceback</span>
+<span class="sd">            0: Python traceback that also includes calls to friendly-traceback.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">session</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">verbosity_level</span><span class="p">)</span></div>
 
@@ -399,7 +399,8 @@
     <span class="sd">&quot;&quot;&quot;Sets the stream to which the output should be directed.</span>
 
 <span class="sd">       If the string ``&quot;capture&quot;`` is given as argument, the</span>
-<span class="sd">       output is saved and can be later retrieved by ``get_output()``.&quot;&quot;&quot;</span>
+<span class="sd">       output is saved and can be later retrieved by ``get_output()``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">session</span><span class="o">.</span><span class="n">set_redirect</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="n">stream</span><span class="p">)</span></div>
 
 
@@ -413,14 +414,15 @@
 <span class="k">def</span> <span class="nf">show_again</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Shows the traceback info again, on the default stream.</span>
 
-<span class="sd">    Primarily intended to be used when the user changes</span>
-<span class="sd">    a verbosity level to view the last computed traceback in a given language.</span>
+<span class="sd">        Primarily intended to be used when the user changes</span>
+<span class="sd">        a verbosity level to view the last computed traceback</span>
+<span class="sd">        in a given language.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">session</span><span class="o">.</span><span class="n">show_traceback_info_again</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="print_itemized_traceback"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.print_itemized_traceback">[docs]</a><span class="nd">@make_public</span>
-<span class="k">def</span> <span class="nf">print_itemized_traceback</span><span class="p">():</span>
+<div class="viewcode-block" id="print_items"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.print_items">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">print_items</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;This is a helper function for developer who want to write a formatter.</span>
 <span class="sd">       It prints each item recorded in a traceback dict.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -428,7 +430,22 @@
 
 
 <span class="k">class</span> <span class="nc">Friendly</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Simple API for use with the console&quot;&quot;&quot;</span>
+    <span class="vm">__doc__</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Simple API for use with the console</span>
+
+<span class="s2">    get_lang: </span><span class="si">{</span><span class="n">get_lang</span><span class="o">.</span><span class="vm">__doc__</span><span class="si">}</span><span class="s2"></span>
+
+<span class="s2">    set_lang: </span><span class="si">{</span><span class="n">set_lang</span><span class="o">.</span><span class="vm">__doc__</span><span class="si">}</span><span class="s2"></span>
+
+<span class="s2">    get_verbosity: </span><span class="si">{</span><span class="n">get_verbosity</span><span class="o">.</span><span class="vm">__doc__</span><span class="si">}</span><span class="s2"></span>
+
+<span class="s2">    set_verbosity: </span><span class="si">{</span><span class="n">set_verbosity</span><span class="o">.</span><span class="vm">__doc__</span><span class="si">}</span><span class="s2"></span>
+
+<span class="s2">    show_again: </span><span class="si">{</span><span class="n">show_again</span><span class="o">.</span><span class="vm">__doc__</span><span class="si">}</span><span class="s2"></span>
+
+<span class="s2">    run: </span><span class="si">{</span><span class="n">run</span><span class="o">.</span><span class="vm">__doc__</span><span class="si">}</span><span class="s2"></span>
+
+<span class="s2">    print_items: </span><span class="si">{</span><span class="n">print_items</span><span class="o">.</span><span class="vm">__doc__</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">get_lang</span> <span class="o">=</span> <span class="n">get_lang</span>
@@ -437,7 +454,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">set_verbosity</span> <span class="o">=</span> <span class="n">set_verbosity</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">show_again</span> <span class="o">=</span> <span class="n">show_again</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">run</span> <span class="o">=</span> <span class="n">run</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">print_itemized_traceback</span> <span class="o">=</span> <span class="n">print_itemized_traceback</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">print_items</span> <span class="o">=</span> <span class="n">print_items</span>
 
 
 <span class="c1"># -----------------------------------------</span>
