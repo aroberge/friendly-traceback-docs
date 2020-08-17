@@ -15,11 +15,8 @@ should be included here.
      trb_english.py located in the ``tests/`` directory.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
-     On Windows, if Sphinx is installed on your computer, it is suggested
-     instead to run make_trb.bat in the root directory as it will create
-     similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.35a
+Friendly-traceback version: 0.0.39a
 Python version: 3.6.8
 
 
@@ -44,6 +41,10 @@ ArithmeticError
         8:         # likely be raised.
     --> 9:         raise ArithmeticError
 
+        Known identifiers:
+            ArithmeticError: <class 'ArithmeticError'>
+        
+
 
 AttributeError - class attribute
 --------------------------------
@@ -67,7 +68,7 @@ AttributeError - class attribute
         9:     try:
     -->10:         A.x
 
-        Known identifiers
+        Known identifiers:
             A: <class 'test_attribute_error.test_attrib...>
         
 
@@ -94,7 +95,7 @@ AttributeError - typo in module attribute
        23:     try:
     -->24:         string.ascii_lowecase
 
-        Known identifiers
+        Known identifiers:
             string: <module 'string'>
         
 
@@ -122,7 +123,7 @@ AttributeError - typo in module attribute 2
        40:     try:
     -->41:         math.cost
 
-        Known identifiers
+        Known identifiers:
             math: <module 'math' (built-in)>
         
 
@@ -150,6 +151,10 @@ FileNotFoundError
        5:     try:
     -->6:         open("does_not_exist")
 
+        Known identifiers:
+            open: <built-in function open>
+        
+
 
 ImportError
 -----------
@@ -158,32 +163,21 @@ ImportError
 
 
     Python exception:
-        AssertionError: 
+        ImportError: cannot import name 'Pi'
         
-    No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly-traceback/issues
+    An `ImportError` exception indicates that a certain object could not
+    be imported from a module or package. Most often, this is
+    because the name of the object is not spelled correctly.
     
-    Execution stopped on line 204 of file 'TESTS:\trb_common.py'.
+    Likely cause based on the information given by Python:
+        The object that could not be imported is `Pi`.
+        
+    Execution stopped on line 6 of file 'TESTS:\except\test_import_error.py'.
     
-       202:                     mod = __import__(name)
-       203:                     if function is not None:
-    -->204:                         result = getattr(mod, function)()
+       4: def test_import_error():
+       5:     try:
+    -->6:         from math import Pi
 
-        Known identifiers
-            result: '\n    Python exception:\n        FileNo...'  | len(result): 656
-            mod: <module 'test_import_error'>
-            function: 'test_import_error'
-        
-    Exception raised on line 12 of file 'TESTS:\except\test_import_error.py'.
-    
-       10:     assert "ImportError: cannot import name 'Pi'" in result
-       11:     if friendly_traceback.get_lang() == "en":
-    -->12:         assert "The object that could not be imported is `Pi`." in result
-
-        Known identifiers
-            result: "\n    Python exception:\n        Import..."  | len(result): 576
-        
 
 KeyError
 --------
@@ -207,7 +201,7 @@ KeyError
        6:     try:
     -->7:         d["c"]
 
-        Known identifiers
+        Known identifiers:
             d: {'a': 1, 'b': 2}
         
 
@@ -231,6 +225,10 @@ LookupError
         9:         # it directly here for our example.
     -->10:         raise LookupError
 
+        Known identifiers:
+            LookupError: <class 'LookupError'>
+        
+
 
 IndexError - short tuple
 ------------------------
@@ -247,16 +245,14 @@ IndexError - short tuple
     is greater than the length of the sequence.
     Reminder: the first item of a sequence is at index 0.
     
-    Likely cause based on the information given by Python:
-        In this case, the sequence is a tuple.
-        
     Execution stopped on line 8 of file 'TESTS:\except\test_index_error.py'.
     
         6:     b = [1, 2, 3]
         7:     try:
     --> 8:         print(a[3], b[2])
 
-        Known identifiers
+        Known identifiers:
+            print: <built-in function print>
             a: (1, 2, 3)
             b: [1, 2, 3]
         
@@ -277,16 +273,14 @@ IndexError - long list
     is greater than the length of the sequence.
     Reminder: the first item of a sequence is at index 0.
     
-    Likely cause based on the information given by Python:
-        In this case, the sequence is a list.
-        
-    Execution stopped on line 22 of file 'TESTS:\except\test_index_error.py'.
+    Execution stopped on line 20 of file 'TESTS:\except\test_index_error.py'.
     
-       20:     b = tuple(range(50))
-       21:     try:
-    -->22:         print(a[50], b[0])
+       18:     b = tuple(range(50))
+       19:     try:
+    -->20:         print(a[50], b[0])
 
-        Known identifiers
+        Known identifiers:
+            print: <built-in function print>
             a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1...]  | len(a): 40
             b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1...)  | len(b): 50
         
@@ -360,10 +354,9 @@ NameError - 2
     Likely cause based on the information given by Python:
         In your program, the unknown name is `babs`.
         Instead of writing `babs`, perhaps you meant one of the following:
-        
-            Local scope: 'nabs'
-            Global scope: 'fabs'
-            Python builtins: 'abs'
+        *   Local scope: `nabs`
+        *   Global scope: `fabs`
+        *   Python builtins: `abs`
         
     Execution stopped on line 18 of file 'TESTS:\except\test_name_error.py'.
     
@@ -391,7 +384,7 @@ NameError - 3
         In your program, the unknown name is `x`.
         A type hint found for `x` in the global scope.
         Perhaps you had written `x : 3` instead of `x = 3`.
-        
+        The similar name `'e'` was found in the local scope. 
     Execution stopped on line 31 of file 'TESTS:\except\test_name_error.py'.
     
        29: def test_name_error3():
@@ -417,8 +410,7 @@ NameError - 4
     Likely cause based on the information given by Python:
         In your program, the unknown name is `cost`.
         Instead of writing `cost`, perhaps you meant one of the following:
-        
-            Global scope: 'cos', 'cosh'
+        *   Global scope: `cos`, `cosh`
         
     Execution stopped on line 42 of file 'TESTS:\except\test_name_error.py'.
     
@@ -466,7 +458,7 @@ RecursionError
         7:     try:
     --> 8:         a()
 
-        Known identifiers
+        Known identifiers:
             a: <function test_recursion_error.<locals>.a>
         
     Exception raised on line 6 of file 'TESTS:\except\test_recursion_error.py'.
@@ -475,7 +467,7 @@ RecursionError
        5:     def a():
     -->6:         return a()
 
-        Known identifiers
+        Known identifiers:
             a: <function test_recursion_error.<locals>.a>
         
 
@@ -504,7 +496,7 @@ TypeError - 1: concatenate two different types
         7:         one = 1
     --> 8:         result = a + one
 
-        Known identifiers
+        Known identifiers:
             a: 'a'
             one: 1
         
@@ -534,7 +526,7 @@ TypeError - 1a: concatenate two different types
        23:         a_list = [1, 2, 3]
     -->24:         result = a + a_list
 
-        Known identifiers
+        Known identifiers:
             a: 'a'
             a_list: [1, 2, 3]
         
@@ -564,7 +556,7 @@ TypeError - 1b: concatenate two different types
        39:         a_list = [1, 2, 3]
     -->40:         result = a_tuple + a_list
 
-        Known identifiers
+        Known identifiers:
             a_tuple: (1, 2, 3)
             a_list: [1, 2, 3]
         
@@ -594,7 +586,7 @@ TypeError - 2: unsupported operand type(s) for +
        53:         none = None
     -->54:         result = one + none
 
-        Known identifiers
+        Known identifiers:
             one: 1
             none: None
         
@@ -624,7 +616,7 @@ TypeError - 2a: unsupported operand type(s) for +=
        67:         two = "two"
     -->68:         one += two
 
-        Known identifiers
+        Known identifiers:
             one: 1
             two: 'two'
         
@@ -654,7 +646,7 @@ TypeError - 3: unsupported operand type(s) for -
        81:         b = [3, 4]
     -->82:         result = a - b
 
-        Known identifiers
+        Known identifiers:
             a: (1, 2)
             b: [3, 4]
         
@@ -684,7 +676,7 @@ TypeError - 3a: unsupported operand type(s) for -=
        95:         b = [3, 4]
     -->96:         b -= a
 
-        Known identifiers
+        Known identifiers:
             b: [3, 4]
             a: (1, 2)
         
@@ -714,7 +706,7 @@ TypeError - 4: unsupported operand type(s) for *
        109:         b = {2, 3}
     -->110:         result = a * b
 
-        Known identifiers
+        Known identifiers:
             a: 1j
             b: {2, 3}
         
@@ -744,7 +736,7 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
        123:         b = {2, 3}
     -->124:         b *= a
 
-        Known identifiers
+        Known identifiers:
             b: {2, 3}
             a: 1j
         
@@ -774,7 +766,7 @@ TypeError - 5: unsupported operand type(s) for /
        137:         b = 3.1416
     -->138:         result = a / b
 
-        Known identifiers
+        Known identifiers:
             a: {1: 1, 2: 2}
             b: 3.1416
         
@@ -804,7 +796,7 @@ TypeError - 5a: unsupported operand type(s) for /=
        151:         b = 3.1416
     -->152:         b /= a
 
-        Known identifiers
+        Known identifiers:
             b: 3.1416
             a: {1: 1, 2: 2}
         
@@ -834,7 +826,7 @@ TypeError - 5b: unsupported operand type(s) for //
        165:         b = 1
     -->166:         result = a // b
 
-        Known identifiers
+        Known identifiers:
             a: {1: 1, 2: 2}
             b: 1
         
@@ -864,7 +856,7 @@ TypeError - 5c: unsupported operand type(s) for //=
        179:         b = 3.1416
     -->180:         b //= a
 
-        Known identifiers
+        Known identifiers:
             b: 3.1416
             a: {1: 1, 2: 2}
         
@@ -895,7 +887,7 @@ TypeError - 6: unsupported operand type(s) for &
        193:         b = 2
     -->194:         result = a & b
 
-        Known identifiers
+        Known identifiers:
             a: 'a'
             b: 2
         
@@ -926,7 +918,7 @@ TypeError - 6a: unsupported operand type(s) for &=
        207:         b = 2
     -->208:         b &= a
 
-        Known identifiers
+        Known identifiers:
             b: 2
             a: 'a'
         
@@ -957,7 +949,7 @@ TypeError - 7: unsupported operand type(s) for **
        221:         b = 3.1416
     -->222:         result = a ** b
 
-        Known identifiers
+        Known identifiers:
             a: {1: 1, 2: 2}
             b: 3.1416
         
@@ -988,7 +980,7 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
        235:         b = 3.1416
     -->236:         a **= b
 
-        Known identifiers
+        Known identifiers:
             a: {1: 1, 2: 2}
             b: 3.1416
         
@@ -1019,7 +1011,7 @@ TypeError - 8: unsupported operand type(s) for >>
        249:         b = 42
     -->250:         result = a >> b
 
-        Known identifiers
+        Known identifiers:
             a: 'a'
             b: 42
         
@@ -1050,7 +1042,7 @@ TypeError - 8a: unsupported operand type(s) for >>=
        263:         b = 42
     -->264:         a >>= b
 
-        Known identifiers
+        Known identifiers:
             a: 'a'
             b: 42
         
@@ -1083,7 +1075,7 @@ TypeError - 9: unsupported operand type(s) for @
        277:         b = 2
     -->278:         result = a @ b
 
-        Known identifiers
+        Known identifiers:
             a: 'a'
             b: 2
         
@@ -1116,7 +1108,7 @@ TypeError - 9a: unsupported operand type(s) for @=
        291:         b = 2
     -->292:         a @= b
 
-        Known identifiers
+        Known identifiers:
             a: 'a'
             b: 2
         
@@ -1147,7 +1139,7 @@ TypeError - 10: comparison between incompatible types
        305:         b = 42
     -->306:         b < a
 
-        Known identifiers
+        Known identifiers:
             b: 42
             a: 'a'
         
@@ -1257,7 +1249,7 @@ TypeError - 12: object does not support item assignment
        357:     try:
     -->358:         a[0] = 0
 
-        Known identifiers
+        Known identifiers:
             a: (1, 2, 3)
         
 
@@ -1287,7 +1279,7 @@ TypeError - 13: wrong number of positional arguments
        372:     try:
     -->373:         fn(1)
 
-        Known identifiers
+        Known identifiers:
             fn: <function test_type_error13.<locals>.fn>
         
 
@@ -1316,7 +1308,7 @@ TypeError - 14: missing positional arguments
        387:     try:
     -->388:         fn(1)
 
-        Known identifiers
+        Known identifiers:
             fn: <function test_type_error14.<locals>.fn>
         
 
@@ -1422,6 +1414,9 @@ UnboundLocalError
         Perhaps the statement
             `global a`
         should have been included as the first line inside your function.
+        Instead of writing `a`, perhaps you meant one of the following:
+        *   Local scope: `c`
+        *   Global scope: `b`
         
     Execution stopped on line 21 of file 'TESTS:\except\test_unbound_local_error.py'.
     
@@ -1429,7 +1424,7 @@ UnboundLocalError
        20:     try:
     -->21:         outer()
 
-        Known identifiers
+        Known identifiers:
             global outer: <function outer>
         
     Exception raised on line 12 of file 'TESTS:\except\test_unbound_local_error.py'.
@@ -1438,7 +1433,7 @@ UnboundLocalError
        11:         c = 3
     -->12:         a = a + b + c
 
-        Known identifiers
+        Known identifiers:
             global b: 2
             c: 3
         
@@ -1463,7 +1458,7 @@ Unknown exception
         9:     try:
     -->10:         raise MyException("Some informative message about an unknown exception.")
 
-        Known identifiers
+        Known identifiers:
             global MyException: <class 'test_unknown_error.MyException'>
         
 
@@ -1513,7 +1508,7 @@ ZeroDivisionError - 2
        18:     try:
     -->19:         1 % zero
 
-        Known identifiers
+        Known identifiers:
             zero: 0
         
 

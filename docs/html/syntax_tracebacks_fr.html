@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.0.35a documentation</title>
+  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.0.39a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.35a
+                0.0.39a
               </div>
             
           
@@ -127,6 +127,11 @@
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Markdown examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_markdown.html">Friendly tracebacks - markdown_docs format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_syntax_markdown.html">Syntax errors - markdown_docs format</a></li>
 </ul>
 <p class="caption"><span class="caption-text">En français</span></p>
 <ul class="current">
@@ -323,7 +328,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.0.35a
+<p>Friendly-traceback version: 0.0.39a
 Python version: 3.8.4</p>
 <div class="section" id="indentationerror-1-expected-an-indented-block">
 <h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -571,7 +576,8 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
     Vous vouliez définir une fonction ou une méthode,
     mais vous avez fait des erreurs de syntaxe.
     La syntaxe correcte est:
-        `def nom ( arguments_optionnels ):`
+
+        def nom ( arguments_optionnels ):
 </pre></div>
 </div>
 </div>
@@ -597,7 +603,8 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
     Vous vouliez définir une fonction ou une méthode,
     mais vous avez fait des erreurs de syntaxe.
     La syntaxe correcte est:
-        `def nom ( arguments_optionnels ):`
+
+        def nom ( arguments_optionnels ):
 </pre></div>
 </div>
 </div>
@@ -623,7 +630,8 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
     Vous vouliez définir une fonction ou une méthode,
     mais vous avez fait des erreurs de syntaxe.
     La syntaxe correcte est:
-        `def nom ( arguments_optionnels ):`
+
+        def nom ( arguments_optionnels ):
 </pre></div>
 </div>
 </div>
@@ -645,11 +653,13 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
-        `1 = a`
+
+        1 = a
     où `1`, du côté gauche du signe d&#39;égalité
     est ou inclut un objet de type `int`
     et n&#39;est pas simplement le nom d&#39;une variable.  Peut-être que vous vouliez plutôt écrire :
-        `a = 1`
+
+        a = 1
 </pre></div>
 </div>
 </div>
@@ -671,7 +681,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
-        `1 = 2`
+
+        1 = 2
     où `1`, du côté gauche du signe d&#39;égalité
     est ou inclut un objet de type `int`
     et n&#39;est pas simplement le nom d&#39;une variable.
@@ -697,7 +708,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
-        `{1, 2, 3} = 4`
+
+        {1, 2, 3} = 4
     où `{1, 2, 3}`, du côté gauche du signe d&#39;égalité
     est ou inclut un objet de type `set`
     et n&#39;est pas simplement le nom d&#39;une variable.
@@ -723,7 +735,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
-        `{1 : 2, 2 : 4} = 5`
+
+        {1 : 2, 2 : 4} = 5
     où `{1 : 2, 2 : 4}`, du côté gauche du signe d&#39;égalité
     est ou inclut un objet de type `dict`
     et n&#39;est pas simplement le nom d&#39;une variable.
@@ -749,7 +762,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
-        `... = nom_de_variable`
+
+        ... = nom_de_variable
     où `...`, du côté gauche du signe d&#39;égalité
     est ou inclut un objet
     et n&#39;est pas simplement le nom d&#39;une variable.
@@ -776,9 +790,9 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez écrit quelque chose comme
-        `import pen from turtle`
+        import pen from turtle
     au lieu de
-        `from turtle import pen`
+        from turtle import pen
 </pre></div>
 </div>
 </div>
@@ -1001,7 +1015,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
             ^
 
 Cause probable basée sur les informations données par Python :
-    Peut-être que vous avez besoin d&#39;écrire `print(&#39;hello&#39;)` ?
+    Peut-être que vous avez besoin d&#39;écrire
+
+         print(&#39;hello&#39;)
 
     Dans l&#39;ancienne version de Python, `print` était un mot clé.
     Maintenant, `print` est une fonction; vous devez utiliser des parenthèses pour l&#39;invoquer.
@@ -1243,7 +1259,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
-        `len(&#39;a&#39;)` = `3`
+
+        len(&#39;a&#39;) = 3
+
     où `len(&#39;a&#39;)`, à la gauche du signe d&#39;égalité est soit l&#39;invocation
     d&#39;une fonction, ou inclus une telle invocation,
     et n&#39;est pas simplement le nom d&#39;une variable.
@@ -1269,7 +1287,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
-        `ma_fonction(…) = une certaine valeur`
+
+        ma_fonction(…) = une certaine valeur
+
     où `ma_fonction(…)`, du côté gauche du signe d&#39;égalité
     est une fonction et non le nom d’une variable.
 </pre></div>
@@ -1321,15 +1341,15 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 Cause probable basée sur les informations données par Python :
     Dans Python, vous pouvez définir les fonctions avec seulement des arguments de position
 
-        `def test(a, b, c): ...`
+        def test(a, b, c): ...
 
     ou seulement des arguments nommés
 
-        `def test(a=1, b=2, c=3): ...`
+        def test(a=1, b=2, c=3): ...
 
     ou une combinaison des deux
 
-        `def test(a, b, c=3): ...`
+        def test(a, b, c=3): ...
 
     mais avec les arguments nommés apparaissant après tous les arguments positionnels.
     Selon Python, vous avez utilisé des arguments positionnels après des arguments nommés.
@@ -1356,15 +1376,15 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 Cause probable basée sur les informations données par Python :
     Dans Python, vous pouvez invoquer les fonctions avec seulement des arguments de position
 
-        `test(1, 2, 3)`
+        test(1, 2, 3)
 
     ou seulement des arguments nommés
 
-        `test (a=1, b=2, c=3)`
+        test (a=1, b=2, c=3)
 
     ou une combinaison des deux
 
-        `test(1, 2, c=3)`
+        test(1, 2, c=3)
 
     mais avec les arguments nommés apparaissant après tous les arguments positionnels.
     Selon Python, vous avez utilisé des arguments positionnels après des arguments nommés.
@@ -1553,7 +1573,7 @@ Cause probable basée sur les informations données par Python :
     1. Vous vouliez faire une comparaison avec `==` et vous avez écrit `=` à sa place.
     2. Vous avez invoqué une fonction avec un argument nommé:
 
-            `une_fonction (invalide=quelque_chose)`
+            une_fonction (invalide=quelque_chose)
 
     où `invalide` n&#39;est pas un nom de variable valide dans Python
     soit parce qu&#39;il commence par un nombre, soit qu&#39;il est une chaîne,
@@ -1708,9 +1728,11 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Cause probable basée sur les informations données par Python :
     Vous avez tenté de supprimer un appel de fonction
-        `del f(a)`
+
+        del f(a)
     au lieu de supprimer le nom de la fonction
-        `del f`
+
+        del f
 </pre></div>
 </div>
 </div>
@@ -1763,24 +1785,23 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-assigned-prior-to-nonlocal-declaration">
 <h2>SyntaxError - assigned prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    ModuleNotFoundError: No module named &#39;raise_syntax_error5-&#39;
+    SyntaxError: name &#39;q&#39; is used prior to nonlocal declaration
 
-Une exception `ModuleNotFoundError` indique que vous
-essayez d’importer un module qui ne peut pas être trouvé par Python.
-Cela pourrait être parce que vous fait une faute d&#39;orthographe en
-écrivant le nom du module, ou parce qu’il n’est pas installé sur votre ordinateur.
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error50.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+    6:
+    7:     def g():
+    8:         print(q)
+--&gt; 9:         nonlocal q
+               ^
 
 Cause probable basée sur les informations données par Python :
-    Dans votre programme, le nom du module inconnu est `raise_syntax_error5-`.
-
-L&#39;exécution s&#39;est arrêtée à la ligne 124 du fichier &#39;TESTS:\trb_syntax_common.py&#39;
-
-   122:                 make_title(title)
-   123:                 try:
---&gt;124:                     mod = __import__(name)
-
-    Identificateurs connus :
-        name: &#39;raise_syntax_error5-&#39;
+    Vous avez utilisé la variable `q`
+    avant de la déclarer comme variable non locale.
 </pre></div>
 </div>
 </div>
@@ -1875,7 +1896,7 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
     Vous utilisez le charactère d&#39;accent grave.
     Soit que vous vouliez utiliser un apostrophe, &#39;,
     ou que vous avez copié du code de Python 2;
-    dans ce dernier cas, utilisez la fonction repr(x).
+    dans ce dernier cas, utilisez la fonction `repr(x)`.
 </pre></div>
 </div>
 </div>
@@ -1922,7 +1943,7 @@ Cause probable basée sur les informations données par Python :
     expression conditionnelle au lieu du nom d&#39;une variable.
     Une expression conditionnelle doit avoir la forme suivante:
 
-        `variable = objet si condition else autre_objet`
+        variable = objet if condition else autre_objet
 </pre></div>
 </div>
 </div>
@@ -2039,7 +2060,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 Cause probable basée sur les informations données par Python :
     Vous avez défini une fonction répétant l&#39;argument nommé
-        `aa`
+
+        aa
     deux fois; chaque argument nommé ne doit apparaître qu&#39;une seule fois dans une définition de fonction.
 </pre></div>
 </div>

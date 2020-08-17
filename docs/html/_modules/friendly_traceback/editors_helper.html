@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.editors_helper &mdash; Friendly tracebacks 0.0.35a documentation</title>
+  <title>friendly_traceback.editors_helper &mdash; Friendly tracebacks 0.0.39a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.0.35a
+                0.0.39a
               </div>
             
           
@@ -125,6 +125,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../compare.html">Comparison between Python versions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Markdown examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_markdown.html">Friendly tracebacks - markdown_docs format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_syntax_markdown.html">Syntax errors - markdown_docs format</a></li>
 </ul>
 <p class="caption"><span class="caption-text">En français</span></p>
 <ul>
@@ -214,6 +219,7 @@
 <span class="kn">from</span> <span class="nn">.source_cache</span> <span class="kn">import</span> <span class="n">cache</span>
 <span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
 <span class="kn">from</span> <span class="nn">.session</span> <span class="kn">import</span> <span class="n">session</span>
+<span class="kn">from</span> <span class="nn">.console</span> <span class="kn">import</span> <span class="n">start_console</span>
 
 
 <span class="k">def</span> <span class="nf">advanced_check_syntax</span><span class="p">(</span>
@@ -307,9 +313,10 @@
 
 <span class="k">def</span> <span class="nf">exec_code</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This uses check_syntax to see if the code is valid and, if so,</span>
-<span class="sd">       executes it into an empty dict as globals. If no exception is</span>
-<span class="sd">       raised, this dict is returned. If an exception is raised, False</span>
-<span class="sd">       is returned.</span>
+<span class="sd">       executes it into a globals dict containing only</span>
+<span class="sd">       ``{&quot;__name__&quot;: &quot;__main__&quot;}``.</span>
+<span class="sd">       If no SyntaxError exception is raised, this dict is returned;</span>
+<span class="sd">       otherwise, an empty dict is returned.</span>
 
 <span class="sd">       It can either be used on a file, using the ``path`` argument, or</span>
 <span class="sd">       on some code passed as a string, using the ``source`` argument.</span>
@@ -329,14 +336,14 @@
         <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="n">verbosity</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span>
     <span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">code</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="p">{}</span>
 
     <span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_verbosity</span> <span class="o">=</span> <span class="n">_save_settings</span><span class="p">()</span>
     <span class="n">saved_lang</span> <span class="o">=</span> <span class="n">_temp_set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
 
-    <span class="n">my_globals</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;__name__&quot;</span><span class="p">:</span> <span class="s2">&quot;__main__&quot;</span><span class="p">}</span>
+    <span class="n">module_globals</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;__name__&quot;</span><span class="p">:</span> <span class="s2">&quot;__main__&quot;</span><span class="p">}</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">exec</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">my_globals</span><span class="p">)</span>
+        <span class="n">exec</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">module_globals</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">verbosity</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">session</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># our default</span>
@@ -344,13 +351,13 @@
             <span class="n">session</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
         <span class="n">explain_traceback</span><span class="p">()</span>
         <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_verbosity</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="n">module_globals</span>
 
     <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_verbosity</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">my_globals</span>
+    <span class="k">return</span> <span class="n">module_globals</span>
 
 
-<div class="viewcode-block" id="run"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.run">[docs]</a><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="run"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.run">[docs]</a><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">console</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_rich</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Given a filename (relative or absolute path), this function uses the</span>
 <span class="sd">       more complex exec_code() to run a file.</span>
 
@@ -363,14 +370,24 @@
 <span class="sd">       to calling check_syntax, it will only be used for the duration</span>
 <span class="sd">       of this function call.</span>
 
-<span class="sd">       Returns False if problems have been found, None otherwise.</span>
+<span class="sd">       If console is set to False, run() returns an empty dict if a SyntaxError</span>
+<span class="sd">       was raised, otherwise returns the dict in which the module (filename)</span>
+<span class="sd">       was executed.</span>
+
+<span class="sd">       If console is set to True (the default), the execution continues</span>
+<span class="sd">       as an interactive session in a Friendly console, with the module</span>
+<span class="sd">       dict being the locals dict.</span>
 <span class="sd">       &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="p">[</span><span class="n">filename</span><span class="p">]</span>
         <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">arg</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)]</span>
         <span class="c1"># TODO: add extensive tests for this</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">arg</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span> <span class="k">if</span> <span class="n">arg</span><span class="p">])</span>  <span class="c1"># remove empty strings</span>
-    <span class="n">exec_code</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="n">verbosity</span><span class="p">)</span></div>
+    <span class="n">module_globals</span> <span class="o">=</span> <span class="n">exec_code</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="n">verbosity</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">console</span><span class="p">:</span>
+        <span class="n">start_console</span><span class="p">(</span><span class="n">local_vars</span><span class="o">=</span><span class="n">module_globals</span><span class="p">,</span> <span class="n">use_rich</span><span class="o">=</span><span class="n">use_rich</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">module_globals</span></div>
 
 
 <span class="k">def</span> <span class="nf">_temp_set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">):</span>

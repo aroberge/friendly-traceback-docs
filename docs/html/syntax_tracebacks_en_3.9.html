@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly tracebacks 0.0.35a documentation</title>
+  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly tracebacks 0.0.39a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.35a
+                0.0.39a
               </div>
             
           
@@ -209,6 +209,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Markdown examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_markdown.html">Friendly tracebacks - markdown_docs format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_syntax_markdown.html">Syntax errors - markdown_docs format</a></li>
+</ul>
 <p class="caption"><span class="caption-text">En français</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
@@ -319,7 +324,7 @@ On Windows, if Sphinx is installed on your computer, it is suggested
 instead to run make_trb.bat in the root directory as it will create
 similar files for all languages <em>and</em> update the documentation.</p>
 </div>
-<p>Friendly-traceback version: 0.0.35a
+<p>Friendly-traceback version: 0.0.39a
 Python version: 3.9.0b4</p>
 <div class="section" id="indentationerror-1-expected-an-indented-block">
 <h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -568,7 +573,8 @@ Python&#39;s error message (invalid syntax) cannot be used to identify the probl
 
     You tried to define a function or method and did not use the correct syntax.
     The correct syntax is:
-        `def name ( optional_arguments ):`
+
+        def name ( optional_arguments ):
 </pre></div>
 </div>
 </div>
@@ -594,7 +600,8 @@ Python&#39;s error message (invalid syntax) cannot be used to identify the probl
 
     You tried to define a function or method and did not use the correct syntax.
     The correct syntax is:
-        `def name ( optional_arguments ):`
+
+        def name ( optional_arguments ):
 </pre></div>
 </div>
 </div>
@@ -620,7 +627,8 @@ Python&#39;s error message (invalid syntax) cannot be used to identify the probl
 
     You tried to define a function or method and did not use the correct syntax.
     The correct syntax is:
-        `def name ( optional_arguments ):`
+
+        def name ( optional_arguments ):
 </pre></div>
 </div>
 </div>
@@ -642,11 +650,13 @@ beyond the location indicated below by --&gt; and ^.
 
 Likely cause based on the information given by Python:
     You wrote an expression like
-        `1 = a`
+
+        1 = a
     where `1`, on the left-hand side of the equal sign,
     is or includes an actual object of type `int`
     and is not simply the name of a variable. Perhaps you meant to write:
-        `a = 1`
+
+        a = 1
 </pre></div>
 </div>
 </div>
@@ -668,7 +678,8 @@ beyond the location indicated below by --&gt; and ^.
 
 Likely cause based on the information given by Python:
     You wrote an expression like
-        `1 = 2`
+
+        1 = 2
     where `1`, on the left-hand side of the equal sign,
     is or includes an actual object of type `int`
     and is not simply the name of a variable.
@@ -694,7 +705,8 @@ beyond the location indicated below by --&gt; and ^.
 
 Likely cause based on the information given by Python:
     You wrote an expression like
-        `{1, 2, 3} = 4`
+
+        {1, 2, 3} = 4
     where `{1, 2, 3}`, on the left-hand side of the equal sign,
     is or includes an actual object of type `set`
     and is not simply the name of a variable.
@@ -720,7 +732,8 @@ beyond the location indicated below by --&gt; and ^.
 
 Likely cause based on the information given by Python:
     You wrote an expression like
-        `{1 : 2, 2 : 4} = 5`
+
+        {1 : 2, 2 : 4} = 5
     where `{1 : 2, 2 : 4}`, on the left-hand side of the equal sign,
     is or includes an actual object of type `dict`
     and is not simply the name of a variable.
@@ -746,7 +759,8 @@ beyond the location indicated below by --&gt; and ^.
 
 Likely cause based on the information given by Python:
     You wrote an expression like
-        `... = variable_name`
+
+        ... = variable_name
     where `...`, on the left-hand side of the equal sign,
     is or includes an actual object
     and is not simply the name of a variable.
@@ -774,9 +788,11 @@ Python&#39;s error message (invalid syntax) cannot be used to identify the probl
     but I might guess incorrectly.
 
     You wrote something like
-        `import pen from turtle`
+
+        import pen from turtle
     instead of
-        `from turtle import pen`
+
+        from turtle import pen
 </pre></div>
 </div>
 </div>
@@ -998,7 +1014,9 @@ beyond the location indicated below by --&gt; and ^.
             ^
 
 Likely cause based on the information given by Python:
-    Perhaps you need to type `print(&#39;hello&#39;)`?
+    Perhaps you need to type
+
+         print(&#39;hello&#39;)
 
     In older version of Python, `print` was a keyword.
     Now, `print` is a function; you need to use parentheses to call it.
@@ -1248,7 +1266,9 @@ beyond the location indicated below by --&gt; and ^.
 
 Likely cause based on the information given by Python:
     You wrote the expression
-        `len(&#39;a&#39;) = 3`
+
+        len(&#39;a&#39;) = 3
+
     where `len(&#39;a&#39;)`, on the left-hand side of the equal sign, either is
     or includes a function call and is not simply the name of a variable.
 </pre></div>
@@ -1273,7 +1293,9 @@ beyond the location indicated below by --&gt; and ^.
 
 Likely cause based on the information given by Python:
     You wrote an expression like
-        `my_function(...) = some value`
+
+        my_function(...) = some value
+
     where `my_function(...)`, on the left-hand side of the equal sign, is
     a function call and not the name of a variable.
 </pre></div>
@@ -1326,15 +1348,15 @@ beyond the location indicated below by --&gt; and ^.
 Likely cause based on the information given by Python:
     In Python, you can define functions with only positional arguments
 
-        `def test(a, b, c): ...`
+        def test(a, b, c): ...
 
     or only keyword arguments
 
-        `def test(a=1, b=2, c=3): ...`
+        def test(a=1, b=2, c=3): ...
 
     or a combination of the two
 
-        `def test(a, b, c=3): ...`
+        def test(a, b, c=3): ...
 
     but with the keyword arguments appearing after all the positional ones.
     According to Python, you used positional arguments after keyword ones.
@@ -1361,15 +1383,15 @@ beyond the location indicated below by --&gt; and ^.
 Likely cause based on the information given by Python:
     In Python, you can call functions with only positional arguments
 
-        `test(1, 2, 3)`
+        test(1, 2, 3)
 
     or only keyword arguments
 
-        `test(a=1, b=2, c=3)`
+        test(a=1, b=2, c=3)
 
     or a combination of the two
 
-        `test(1, 2, c=3)`
+        test(1, 2, c=3)
 
     but with the keyword arguments appearing after all the positional ones.
     According to Python, you used positional arguments after keyword ones.
@@ -1556,7 +1578,7 @@ Likely cause based on the information given by Python:
     1. You meant to do a comparison with == and wrote = instead.
     2. You called a function with a named argument:
 
-           `a_function(invalid=something)`
+           a_function(invalid=something)
 
     where `invalid` is not a valid variable name in Python
     either because it starts with a number, or is a string,
@@ -1710,9 +1732,11 @@ beyond the location indicated below by --&gt; and ^.
 
 Likely cause based on the information given by Python:
     You attempted to delete a function call
-        `del f(a)`
+
+        del f(a)
     instead of deleting the function&#39;s name
-        `del f`
+
+        del f
 </pre></div>
 </div>
 </div>
@@ -1765,25 +1789,23 @@ Likely cause based on the information given by Python:
 <div class="section" id="syntaxerror-assigned-prior-to-nonlocal-declaration">
 <h2>SyntaxError - assigned prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    ModuleNotFoundError: No module named &#39;raise_syntax_error5-&#39;
+    SyntaxError: name &#39;q&#39; is used prior to nonlocal declaration
 
-A `ModuleNotFoundError` exception indicates that you
-are trying to import a module that cannot be found by Python.
-This could be because you misspelled the name of the module
-or because it is not installed on your computer.
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error50.py&#39;
+beyond the location indicated below by --&gt; and ^.
+
+    6:
+    7:     def g():
+    8:         print(q)
+--&gt; 9:         nonlocal q
+               ^
 
 Likely cause based on the information given by Python:
-    In your program, the name of the
-    module that cannot be found is `raise_syntax_error5-`.
-
-Execution stopped on line 124 of file &#39;TESTS:\trb_syntax_common.py&#39;.
-
-   122:                 make_title(title)
-   123:                 try:
---&gt;124:                     mod = __import__(name)
-
-    Known identifiers
-        name: &#39;raise_syntax_error5-&#39;
+    You used the variable `q`
+    before declaring it as a nonlocal variable.
 </pre></div>
 </div>
 </div>
@@ -1878,7 +1900,7 @@ Python&#39;s error message (invalid syntax) cannot be used to identify the probl
 
     You are using the backquote character.
     Either you meant to write a single quote, &#39;, or copied Python 2 code;
-    in this latter case, use the function repr(x).
+    in this latter case, use the function `repr(x)`.
 </pre></div>
 </div>
 </div>
@@ -1925,7 +1947,7 @@ Likely cause based on the information given by Python:
     conditional expression instead of the name of a variable.
     A conditional expression has the following form:
 
-        `variable = object if condition else other_object`
+        variable = object if condition else other_object
 </pre></div>
 </div>
 </div>
@@ -2042,7 +2064,8 @@ beyond the location indicated below by --&gt; and ^.
 
 Likely cause based on the information given by Python:
     You have defined a function repeating the keyword argument
-        `aa`
+
+        aa
     twice; each keyword argument should appear only once in a function definition.
 </pre></div>
 </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.0.35a documentation</title>
+  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.0.39a documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Friendly SyntaxError tracebacks - en Français" href="syntax_tracebacks_fr.html" />
-    <link rel="prev" title="Comparison between Python versions" href="compare.html" /> 
+    <link rel="prev" title="Syntax errors - markdown_docs format" href="tracebacks_syntax_markdown.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.35a
+                0.0.39a
               </div>
             
           
@@ -127,6 +127,11 @@
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Markdown examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_markdown.html">Friendly tracebacks - markdown_docs format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_syntax_markdown.html">Syntax errors - markdown_docs format</a></li>
 </ul>
 <p class="caption"><span class="caption-text">En français</span></p>
 <ul class="current">
@@ -255,7 +260,7 @@
         <a href="syntax_tracebacks_fr.html" class="btn btn-neutral float-right" title="Friendly SyntaxError tracebacks - en Français" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="compare.html" class="btn btn-neutral float-left" title="Comparison between Python versions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tracebacks_syntax_markdown.html" class="btn btn-neutral float-left" title="Syntax errors - markdown_docs format" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -287,13 +292,9 @@ ici tous les exemples possibles tels qu’interprétés par friendly-traceback.<
 trb_french.py situé dans le répertoire <code class="docutils literal notranslate"><span class="pre">tests/</span></code>.
 Ceci a besoin d’être fait de manière explicite lorsqu’on veut
 faire des corrections ou des ajouts, avant de faire la mise
-à jour du reste de la documentation avec Sphinx.
-Sous Windows, si Sphinx est installé sur votre ordinateur, il est
-plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
-du répertoire de fichier. Si vous faites ceci, la documentation pour
-toutes les langues sera automatiquement mise à jour.</p>
+à jour du reste de la documentation avec Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.0.35a
+<p>Friendly-traceback version: 0.0.39a
 Python version: 3.8.4</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -310,6 +311,9 @@ L&#39;exécution s&#39;est arrêtée à la ligne 9 du fichier &#39;TESTS:\except
     7:         # Usually, a subclass such as ZeroDivisionError, etc., would
     8:         # likely be raised.
 --&gt; 9:         raise ArithmeticError
+
+    Identificateurs connus :
+        ArithmeticError: &lt;class &#39;ArithmeticError&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -401,6 +405,9 @@ L&#39;exécution s&#39;est arrêtée à la ligne 6 du fichier &#39;TESTS:\except
    4: def test_file_not_found_error():
    5:     try:
 --&gt;6:         open(&quot;does_not_exist&quot;)
+
+    Identificateurs connus :
+        open: &lt;built-in function open&gt;
 </pre></div>
 </div>
 </div>
@@ -461,6 +468,9 @@ L&#39;exécution s&#39;est arrêtée à la ligne 10 du fichier &#39;TESTS:\excep
     8:         # other than possibly codecs.lookup(), which is why we raise
     9:         # it directly here for our example.
 --&gt;10:         raise LookupError
+
+    Identificateurs connus :
+        LookupError: &lt;class &#39;LookupError&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -475,9 +485,6 @@ n’existe pas; typiquement, c’est parce que l’index que vous donnez
 est plus grand que la longueur de la séquence.
 Rappel: le premier élément d&#39;une séquence est à l&#39;index 0.
 
-Cause probable basée sur les informations données par Python :
-    Dans ce cas, la séquence est un tuple.
-
 L&#39;exécution s&#39;est arrêtée à la ligne 8 du fichier &#39;TESTS:\except\test_index_error.py&#39;
 
     6:     b = [1, 2, 3]
@@ -485,6 +492,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 8 du fichier &#39;TESTS:\except
 --&gt; 8:         print(a[3], b[2])
 
     Identificateurs connus :
+        print: &lt;built-in function print&gt;
         a: (1, 2, 3)
         b: [1, 2, 3]
 </pre></div>
@@ -501,16 +509,14 @@ n’existe pas; typiquement, c’est parce que l’index que vous donnez
 est plus grand que la longueur de la séquence.
 Rappel: le premier élément d&#39;une séquence est à l&#39;index 0.
 
-Cause probable basée sur les informations données par Python :
-    Dans ce cas, la séquence est une liste.
+L&#39;exécution s&#39;est arrêtée à la ligne 20 du fichier &#39;TESTS:\except\test_index_error.py&#39;
 
-L&#39;exécution s&#39;est arrêtée à la ligne 22 du fichier &#39;TESTS:\except\test_index_error.py&#39;
-
-   20:     b = tuple(range(50))
-   21:     try:
---&gt;22:         print(a[50], b[0])
+   18:     b = tuple(range(50))
+   19:     try:
+--&gt;20:         print(a[50], b[0])
 
     Identificateurs connus :
+        print: &lt;built-in function print&gt;
         a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1...]  | len(a): 40
         b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1...)  | len(b): 50
 </pre></div>
@@ -572,11 +578,10 @@ utilisé avant qu&#39;on ne lui ait associé une valeur.
 
 Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom inconnu est `babs`.
-    Au lieu d’écrire `babs`, peut-être que vous vouliez écrire l&#39;un des attributs suivants :
-
-        Identifiant local :&#39;nabs&#39;
-        Identifiant global :&#39;fabs&#39;
-        Identifiant Python (builtins) :&#39;abs&#39;
+    Au lieu d’écrire `babs`, peut-être que vous vouliez écrire l&#39;un des noms suivants :
+    *    Portée locale : `nabs`
+    *    Portée globale : `fabs`
+    *    Identifiant Python (builtins) : `abs`
 
 L&#39;exécution s&#39;est arrêtée à la ligne 18 du fichier &#39;TESTS:\except\test_name_error.py&#39;
 
@@ -601,7 +606,7 @@ Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom inconnu est `x`.
     Annotation de type trouvée pour `x` en tant que variable globale.
     Peut-être aviez-vous écrit `x : 3` au lieu de `x = 3`.
-
+    Le nom semblable `&#39;e&#39;` a été trouvé dans la portée locale.
 L&#39;exécution s&#39;est arrêtée à la ligne 31 du fichier &#39;TESTS:\except\test_name_error.py&#39;
 
    29: def test_name_error3():
@@ -623,9 +628,8 @@ utilisé avant qu&#39;on ne lui ait associé une valeur.
 
 Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom inconnu est `cost`.
-    Au lieu d’écrire `cost`, peut-être que vous vouliez écrire l&#39;un des attributs suivants :
-
-        Identifiant global :&#39;cos&#39;, &#39;cosh&#39;
+    Au lieu d’écrire `cost`, peut-être que vous vouliez écrire l&#39;un des noms suivants :
+    *    Portée globale : `cos`, `cosh`
 
 L&#39;exécution s&#39;est arrêtée à la ligne 42 du fichier &#39;TESTS:\except\test_name_error.py&#39;
 
@@ -1501,6 +1505,9 @@ Cause probable basée sur les informations données par Python :
     Il est possible que vous avez oublié d&#39;écrire l’instruction
         `global a`
     comme première ligne à l’intérieur de votre fonction.
+    Au lieu d’écrire `a`, peut-être que vous vouliez écrire l&#39;un des noms suivants :
+    *    Portée locale : `c`
+    *    Portée globale : `b`
 
 L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;TESTS:\except\test_unbound_local_error.py&#39;
 
@@ -1599,7 +1606,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 19 du fichier &#39;TESTS:\excep
         <a href="syntax_tracebacks_fr.html" class="btn btn-neutral float-right" title="Friendly SyntaxError tracebacks - en Français" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="compare.html" class="btn btn-neutral float-left" title="Comparison between Python versions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tracebacks_syntax_markdown.html" class="btn btn-neutral float-left" title="Syntax errors - markdown_docs format" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

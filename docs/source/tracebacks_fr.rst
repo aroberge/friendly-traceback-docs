@@ -14,12 +14,8 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      Ceci a besoin d'être fait de manière explicite lorsqu'on veut
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
-     Sous Windows, si Sphinx est installé sur votre ordinateur, il est
-     plutôt suggéré d'exécuter make_trb.bat qui est au premier niveau
-     du répertoire de fichier. Si vous faites ceci, la documentation pour
-     toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.0.35a
+Friendly-traceback version: 0.0.39a
 Python version: 3.8.4
 
 
@@ -43,6 +39,10 @@ ArithmeticError
         7:         # Usually, a subclass such as ZeroDivisionError, etc., would
         8:         # likely be raised.
     --> 9:         raise ArithmeticError
+
+        Identificateurs connus :
+            ArithmeticError: <class 'ArithmeticError'>
+        
 
 
 AttributeError - class attribute
@@ -150,6 +150,10 @@ FileNotFoundError
        5:     try:
     -->6:         open("does_not_exist")
 
+        Identificateurs connus :
+            open: <built-in function open>
+        
+
 
 ImportError
 -----------
@@ -220,6 +224,10 @@ LookupError
         9:         # it directly here for our example.
     -->10:         raise LookupError
 
+        Identificateurs connus :
+            LookupError: <class 'LookupError'>
+        
+
 
 IndexError - short tuple
 ------------------------
@@ -236,9 +244,6 @@ IndexError - short tuple
     est plus grand que la longueur de la séquence.
     Rappel: le premier élément d'une séquence est à l'index 0.
     
-    Cause probable basée sur les informations données par Python :
-        Dans ce cas, la séquence est un tuple.
-        
     L'exécution s'est arrêtée à la ligne 8 du fichier 'TESTS:\except\test_index_error.py'
     
         6:     b = [1, 2, 3]
@@ -246,6 +251,7 @@ IndexError - short tuple
     --> 8:         print(a[3], b[2])
 
         Identificateurs connus :
+            print: <built-in function print>
             a: (1, 2, 3)
             b: [1, 2, 3]
         
@@ -266,16 +272,14 @@ IndexError - long list
     est plus grand que la longueur de la séquence.
     Rappel: le premier élément d'une séquence est à l'index 0.
     
-    Cause probable basée sur les informations données par Python :
-        Dans ce cas, la séquence est une liste.
-        
-    L'exécution s'est arrêtée à la ligne 22 du fichier 'TESTS:\except\test_index_error.py'
+    L'exécution s'est arrêtée à la ligne 20 du fichier 'TESTS:\except\test_index_error.py'
     
-       20:     b = tuple(range(50))
-       21:     try:
-    -->22:         print(a[50], b[0])
+       18:     b = tuple(range(50))
+       19:     try:
+    -->20:         print(a[50], b[0])
 
         Identificateurs connus :
+            print: <built-in function print>
             a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1...]  | len(a): 40
             b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1...)  | len(b): 50
         
@@ -347,11 +351,10 @@ NameError - 2
     
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom inconnu est `babs`.
-        Au lieu d’écrire `babs`, peut-être que vous vouliez écrire l'un des attributs suivants :
-        
-            Identifiant local :'nabs'
-            Identifiant global :'fabs'
-            Identifiant Python (builtins) :'abs'
+        Au lieu d’écrire `babs`, peut-être que vous vouliez écrire l'un des noms suivants :
+        *    Portée locale : `nabs`
+        *    Portée globale : `fabs`
+        *    Identifiant Python (builtins) : `abs`
         
     L'exécution s'est arrêtée à la ligne 18 du fichier 'TESTS:\except\test_name_error.py'
     
@@ -379,7 +382,7 @@ NameError - 3
         Dans votre programme, le nom inconnu est `x`.
         Annotation de type trouvée pour `x` en tant que variable globale.
         Peut-être aviez-vous écrit `x : 3` au lieu de `x = 3`.
-        
+        Le nom semblable `'e'` a été trouvé dans la portée locale. 
     L'exécution s'est arrêtée à la ligne 31 du fichier 'TESTS:\except\test_name_error.py'
     
        29: def test_name_error3():
@@ -404,9 +407,8 @@ NameError - 4
     
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom inconnu est `cost`.
-        Au lieu d’écrire `cost`, peut-être que vous vouliez écrire l'un des attributs suivants :
-        
-            Identifiant global :'cos', 'cosh'
+        Au lieu d’écrire `cost`, peut-être que vous vouliez écrire l'un des noms suivants :
+        *    Portée globale : `cos`, `cosh`
         
     L'exécution s'est arrêtée à la ligne 42 du fichier 'TESTS:\except\test_name_error.py'
     
@@ -1410,6 +1412,9 @@ UnboundLocalError
         Il est possible que vous avez oublié d'écrire l’instruction
             `global a`
         comme première ligne à l’intérieur de votre fonction.
+        Au lieu d’écrire `a`, peut-être que vous vouliez écrire l'un des noms suivants :
+        *    Portée locale : `c`
+        *    Portée globale : `b`
         
     L'exécution s'est arrêtée à la ligne 21 du fichier 'TESTS:\except\test_unbound_local_error.py'
     

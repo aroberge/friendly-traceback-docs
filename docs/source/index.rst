@@ -161,6 +161,16 @@ from the version available from Pypi.
    SyntaxError - Python 3.9 in English <syntax_tracebacks_en_3.9>
    compare
 
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: Markdown examples
+
+   tracebacks_markdown
+   tracebacks_syntax_markdown
+
+
 .. toctree::
    :maxdepth: 1
    :hidden:

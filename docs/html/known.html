@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Known exceptions &mdash; Friendly tracebacks 0.0.35a documentation</title>
+  <title>Known exceptions &mdash; Friendly tracebacks 0.0.39a documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Friendly tracebacks - in English" href="tracebacks_en_3.8.html" />
-    <link rel="prev" title="Some thoughts on the design of friendly-traceback" href="design.html" /> 
+    <link rel="next" title="Friendly tracebacks - in English" href="tracebacks_en_3.6.html" />
+    <link rel="prev" title="Notes on translations - using gettext" href="translation_notes.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.35a
+                0.0.39a
               </div>
             
           
@@ -97,17 +97,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Known exceptions (Python 3.8)</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Known exceptions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html">Friendly tracebacks - in English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">Friendly SyntaxError tracebacks - in English</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Contribute</span></p>
+<p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="suggest.html">Suggest an addition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Add a new Exception case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Advanced Usage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
@@ -115,10 +107,17 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html">Project files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="suggest.html">Suggest an addition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Add a new Exception case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
-<ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
@@ -128,6 +127,16 @@
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Markdown examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_markdown.html">Friendly tracebacks - markdown_docs format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_syntax_markdown.html">Syntax errors - markdown_docs format</a></li>
+</ul>
+<p class="caption"><span class="caption-text">En français</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
 </ul>
 <p class="caption"><span class="caption-text">varia</span></p>
 <ul>
@@ -194,10 +203,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="tracebacks_en_3.8.html" class="btn btn-neutral float-right" title="Friendly tracebacks - in English" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tracebacks_en_3.6.html" class="btn btn-neutral float-right" title="Friendly tracebacks - in English" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of friendly-traceback" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="translation_notes.html" class="btn btn-neutral float-left" title="Notes on translations - using gettext" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -391,10 +400,10 @@ They are denoted by <code class="docutils literal notranslate"><span class="pre"
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tracebacks_en_3.8.html" class="btn btn-neutral float-right" title="Friendly tracebacks - in English" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tracebacks_en_3.6.html" class="btn btn-neutral float-right" title="Friendly tracebacks - in English" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of friendly-traceback" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="translation_notes.html" class="btn btn-neutral float-left" title="Notes on translations - using gettext" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

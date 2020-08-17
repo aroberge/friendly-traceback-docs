@@ -36,10 +36,6 @@ penultimate section on this page.
         friendly_traceback.explain()
 
 
-.. sidebar:: Important
-
-   Note the ``.py`` extension required here, but not for other cases.
-
 
 3. When launching a Python script::
 
@@ -50,7 +46,7 @@ penultimate section on this page.
 
 4. Launching the friendly console after running a script::
 
-    $ python -im friendly_traceback demos.hello
+    $ python -im friendly_traceback demos/hello.py
 
     Hello world!
     Running as main!
@@ -58,51 +54,15 @@ penultimate section on this page.
 
     >>>
 
-5. Only importing a Python script::
 
-    $ python -m friendly_traceback --import_only demos.hello
-
-    Hello world!
-
-6. Importing a script and starting the console::
-
-    $ python -im friendly_traceback --import_only demos.hello
-
-    Hello world!
-    Friendly Console version 0.0.10a. [Python version: 3.7.3]
-
-    >>>
-
-7. Only starting the console::
+5. Only starting the console::
 
     $ python -m friendly_traceback
 
-8. Starting the console from an interpreter::
+6. Starting the console from an interpreter::
 
     >>> import friendly_traceback
     >>> friendly_traceback.start_console()
-
-9. To see if there are syntax errors, with attempts to provide an
-   explanation as to what they mean, in a file specified by
-   its path (assumed to be relative to the current working directory)::
-
-       import friendly_traceback
-       friendly_traceback.check_syntax(path="demos/hello.py")
-
-10. To see if there are syntax errors in some code submitted as
-    a string, with an optional file name supplied::
-
-       import friendly_traceback
-       friendly_traceback.check_syntax(source=some_code, filename="hello.py")
-
-
-11. Instead of simply checking the syntax, one can run the code to see
-    if there are also runtime errors; this is done by calling ``run_code``
-    which first calls ``check_syntax`` and will execute the code if
-    no exception are raised; for example::
-
-        import friendly_traceback
-        friendly_traceback.run_code(source=some_code, filename="hello.py")
 
 
 You can also specify the verbosity level as well as the language
@@ -165,6 +125,11 @@ The level currently used can be obtained as follows::
 Language used
 -------------
 
+.. sidebar::  Supported languages
+
+    Currently, only English and French are available.
+    Additional translations are more than welcome.
+
 The language used can be explicitly set as follows::
 
     friendly_traceback.set_lang("fr")  # two-letter code for French
@@ -218,26 +183,9 @@ By default, friendly-traceback takes its information from ``sys.exc_info()``.
 It may happen that this is not what we want to show.
 For example, the `showtraceback method in Python's code.py <https://github.com/python/cpython/blob/3.7/Lib/code.py#L131>`_ replaces one of the items prior to
 showing the traceback to the user; we currently also do something similar in
-friendly-traceback's own console.  If this is something desired,
-instead of ``explain()``, one can use the "private" function
-``friendly_traceback.core.exception_hook(...)`` instead.
-Please note that any such method that is not a direct attribute
-of ``friendly_traceback()`` is not considered to be part of the public
-API and is subject to change at any time.
+friendly-traceback's own console.
 
-Dropping the leading ``friendly_traceback``,
-``explain()`` is currently defined as::
-
-    def explain(redirect=None):
-        core.explain_traceback(redirect=redirect)
-
-and, inside ``core.py``, we have essentially the following::
-
-    def explain_traceback(redirect=None):
-        etype, value, tb = sys.exc_info()
-        exception_hook(etype, value, tb, redirect=redirect)
-
-Finally, if one wishes to temporarily change some other option mentioned above,
+Finally, if one wishes to *temporarily* change some other option mentioned above,
 it can be done as in the following example::
 
     try:
@@ -262,7 +210,7 @@ We have already given an example of running another script::
 What if the separate script has its own command line arguments?
 If they are simply positional arguments, you can simply tack them
 on at the end of the argument list. An example can be found
-in the demos/ directory, which can be run directly or using
+in the ``demos/`` directory, which can be run directly or using
 friendly-traceback.
 
 .. code-block::
@@ -369,9 +317,7 @@ your computer.
       --verbosity VERBOSITY, --level VERBOSITY
                             This sets the "verbosity" level, that is the amount of information
                             provided.
-      --import_only         Imports the module instead of running it as a script.
       --version             Displays the current version.
-      --dev                 Adds some extra functions in the console, useful for development.
       --formatter FORMATTER
                             Specify a formatter function, as a dotted path. Example: --formatter
                             friendly_traceback.formatters.markdown

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.formatters &mdash; Friendly tracebacks 0.0.35a documentation</title>
+  <title>friendly_traceback.formatters &mdash; Friendly tracebacks 0.0.39a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.0.35a
+                0.0.39a
               </div>
             
           
@@ -125,6 +125,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../compare.html">Comparison between Python versions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Markdown examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_markdown.html">Friendly tracebacks - markdown_docs format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_syntax_markdown.html">Syntax errors - markdown_docs format</a></li>
 </ul>
 <p class="caption"><span class="caption-text">En français</span></p>
 <ul>
@@ -239,12 +244,15 @@
     <span class="k">return</span> <span class="n">selector</span><span class="p">[</span><span class="n">level</span><span class="p">]()</span></div>
 
 
-<span class="k">def</span> <span class="nf">format_traceback</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Default formatter. Produces an output that is suitable for</span>
+<span class="k">def</span> <span class="nf">pre</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Default formatter, primarily for console usage.</span>
+
+<span class="sd">       It also  produces an output that is suitable for</span>
 <span class="sd">       insertion in a RestructuredText (.rst) code block,</span>
 <span class="sd">       with pre-formatted indentation.</span>
 
-<span class="sd">       It is also the default used in the friendly-console.</span>
+<span class="sd">       The only change made to the content of &quot;info&quot; is</span>
+<span class="sd">       some added indentation.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">pre_items</span> <span class="o">=</span> <span class="p">{</span>
@@ -278,28 +286,64 @@
     <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">rich_markdown</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Traceback formatted with full information but with markdown syntax.</span>
-<span class="sd">       to be processed by Rich.</span>
+<span class="k">def</span> <span class="nf">markdown</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Traceback formatted with with markdown syntax.</span>
+
+<span class="sd">    Some minor changes of the traceback info content are done,</span>
+<span class="sd">    for nicer final display when the markdown generated content</span>
+<span class="sd">    if further processed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">_markdown</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">markdown_docs</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Traceback formatted with with markdown syntax, where each</span>
+<span class="sd">    header is shifted down by 2 (h1 -&gt; h3, etc.) so that they</span>
+<span class="sd">    can be inserted in a document, without creating artificial</span>
+<span class="sd">    top headers.</span>
+
+<span class="sd">    Some minor changes of the traceback info content are done,</span>
+<span class="sd">    for nicer final display when the markdown generated content</span>
+<span class="sd">    if further processed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">_markdown</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">docs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">rich_markdown</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Traceback formatted with with markdown syntax suitable for</span>
+<span class="sd">    printing in color in the console using Rich.</span>
+
+<span class="sd">    Some minor changes of the traceback info content are done,</span>
+<span class="sd">    for nicer final display when the markdown generated content</span>
+<span class="sd">    if further processed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">_markdown</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">rich</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_markdown</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">rich</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">docs</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Traceback formatted with with markdown syntax.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="n">markdown_items</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;# &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;### &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;## &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;generic&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;parsing_error&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;parsing_error_source&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;cause_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;## &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;cause_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;### &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;cause&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;last_call_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;### &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;last_call_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;## &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;last_call_source&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;last_call_variables_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;## &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;last_call_variables&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;exception_raised_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;### &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;last_call_variables_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;### &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;last_call_variables&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;exception_raised_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;## &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;exception_raised_source&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;exception_raised_variables_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;## &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;exception_raised_variables_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;### &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
         <span class="s2">&quot;original_python_traceback&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
     <span class="p">}</span>
@@ -308,8 +352,22 @@
     <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items_to_show</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
-            <span class="n">content</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span>
+            <span class="c1"># With normal markdown formatting, it does not make sense to have a</span>
+            <span class="c1"># header end with a colon.</span>
+            <span class="c1"># However, we style headers differently with Rich; see</span>
+            <span class="c1"># Rich theme in file friendly_rich.</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">rich</span><span class="p">:</span>
+                    <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span>
+                        <span class="s2">&quot;cause_header&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;last_call_variables_header&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;exception_raised_variables_header&quot;</span><span class="p">,</span>
+                    <span class="p">]:</span>
+                        <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;message&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">docs</span><span class="p">:</span>
                 <span class="c1"># replacing something like</span>
                 <span class="c1">#   the variable &#39;x&#39; is ...</span>
                 <span class="c1"># by</span>
@@ -321,9 +379,19 @@
                     <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;`&#39;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
                     <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;.&quot;</span><span class="p">,</span> <span class="s2">&quot;`&#39;.&quot;</span><span class="p">)</span>
                 <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;variables&quot;</span><span class="p">):</span>
+                <span class="n">parts</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;&lt;&quot;</span><span class="p">):</span>
+                        <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;&quot;</span><span class="p">,</span> <span class="s1">&#39;&quot;&lt;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="s1">&#39;&gt;&quot;&#39;</span><span class="p">)</span>
+
             <span class="n">prefix</span><span class="p">,</span> <span class="n">suffix</span> <span class="o">=</span> <span class="n">markdown_items</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">docs</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">prefix</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">):</span>
+                    <span class="n">prefix</span> <span class="o">=</span> <span class="s2">&quot;##&quot;</span> <span class="o">+</span> <span class="n">prefix</span>
             <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="n">content</span> <span class="o">+</span> <span class="n">suffix</span><span class="p">)</span>
-    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
 
 
 <span class="k">def</span> <span class="nf">_default</span><span class="p">():</span>

@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.0.35a
+Friendly-traceback version: 0.0.39a
 Python version: 3.6.8
 
 
@@ -305,7 +305,8 @@ SyntaxError - malformed def statment - 1
         
         You tried to define a function or method and did not use the correct syntax.
         The correct syntax is:
-            `def name ( optional_arguments ):`
+        
+            def name ( optional_arguments ):
         
 
 SyntaxError - malformed def statment - 2
@@ -334,7 +335,8 @@ SyntaxError - malformed def statment - 2
         
         You tried to define a function or method and did not use the correct syntax.
         The correct syntax is:
-            `def name ( optional_arguments ):`
+        
+            def name ( optional_arguments ):
         
 
 SyntaxError - malformed def statment - 3
@@ -363,7 +365,8 @@ SyntaxError - malformed def statment - 3
         
         You tried to define a function or method and did not use the correct syntax.
         The correct syntax is:
-            `def name ( optional_arguments ):`
+        
+            def name ( optional_arguments ):
         
 
 SyntaxError - can't assign to literal - 1
@@ -388,11 +391,13 @@ SyntaxError - can't assign to literal - 1
 
     Likely cause based on the information given by Python:
         You wrote an expression like
-            `1 = a`
+        
+            1 = a
         where `1`, on the left-hand side of the equal sign,
         is or includes an actual object of type `int`
         and is not simply the name of a variable. Perhaps you meant to write:
-            `a = 1`
+        
+            a = 1
         
         
 
@@ -418,7 +423,8 @@ SyntaxError - can't assign to literal - 2
 
     Likely cause based on the information given by Python:
         You wrote an expression like
-            `1 = 2`
+        
+            1 = 2
         where `1`, on the left-hand side of the equal sign,
         is or includes an actual object of type `int`
         and is not simply the name of a variable.
@@ -447,7 +453,8 @@ SyntaxError - can't assign to literal - 3
 
     Likely cause based on the information given by Python:
         You wrote an expression like
-            `{1, 2, 3} = 4`
+        
+            {1, 2, 3} = 4
         where `{1, 2, 3}`, on the left-hand side of the equal sign,
         is or includes an actual object of type `set`
         and is not simply the name of a variable.
@@ -476,7 +483,8 @@ SyntaxError - can't assign to literal - 4
 
     Likely cause based on the information given by Python:
         You wrote an expression like
-            `{1 : 2, 2 : 4} = 5`
+        
+            {1 : 2, 2 : 4} = 5
         where `{1 : 2, 2 : 4}`, on the left-hand side of the equal sign,
         is or includes an actual object of type `dict`
         and is not simply the name of a variable.
@@ -505,7 +513,8 @@ SyntaxError - can't assign to literal - 5
 
     Likely cause based on the information given by Python:
         You wrote an expression like
-            `... = variable_name`
+        
+            ... = variable_name
         where `...`, on the left-hand side of the equal sign,
         is or includes an actual object 
         and is not simply the name of a variable.
@@ -536,9 +545,12 @@ SyntaxError - import X from Y
         but I might guess incorrectly.
         
         You wrote something like
-            `import pen from turtle`
+        
+            import pen from turtle
         instead of
-            `from turtle import pen`
+        
+            from turtle import pen
+        
         
         
 
@@ -792,7 +804,9 @@ SyntaxError - print is a function
                       ^
 
     Likely cause based on the information given by Python:
-        Perhaps you need to type `print('hello')`?
+        Perhaps you need to type
+        
+             print('hello')
         
         In older version of Python, `print` was a keyword.
         Now, `print` is a function; you need to use parentheses to call it.
@@ -1072,7 +1086,9 @@ SyntaxError - can't assign to function call - 1
 
     Likely cause based on the information given by Python:
         You wrote the expression
-            `len('a') = 3`
+        
+            len('a') = 3
+        
         where `len('a')`, on the left-hand side of the equal sign, either is
         or includes a function call and is not simply the name of a variable.
         
@@ -1100,7 +1116,9 @@ SyntaxError - can't assign to function call - 2
 
     Likely cause based on the information given by Python:
         You wrote an expression like
-            `my_function(...) = some value`
+        
+            my_function(...) = some value
+        
         where `my_function(...)`, on the left-hand side of the equal sign, is
         a function call and not the name of a variable.
         
@@ -1159,15 +1177,15 @@ SyntaxError - non-default argument follows default argument
     Likely cause based on the information given by Python:
         In Python, you can define functions with only positional arguments
         
-            `def test(a, b, c): ...`
+            def test(a, b, c): ...
         
         or only keyword arguments
         
-            `def test(a=1, b=2, c=3): ...`
+            def test(a=1, b=2, c=3): ...
         
         or a combination of the two
         
-            `def test(a, b, c=3): ...`
+            def test(a, b, c=3): ...
         
         but with the keyword arguments appearing after all the positional ones.
         According to Python, you used positional arguments after keyword ones.
@@ -1197,15 +1215,15 @@ SyntaxError - positional argument follows keyword argument
     Likely cause based on the information given by Python:
         In Python, you can call functions with only positional arguments
         
-            `test(1, 2, 3)`
+            test(1, 2, 3)
         
         or only keyword arguments
         
-            `test(a=1, b=2, c=3)`
+            test(a=1, b=2, c=3)
         
         or a combination of the two
         
-            `test(1, 2, c=3)`
+            test(1, 2, c=3)
         
         but with the keyword arguments appearing after all the positional ones.
         According to Python, you used positional arguments after keyword ones.
@@ -1588,9 +1606,11 @@ SyntaxError - delete function call
 
     Likely cause based on the information given by Python:
         You attempted to delete a function call
-            `del f(a)`
+        
+            del f(a)
         instead of deleting the function's name
-            `del f`
+        
+            del f
         
 
 SyntaxError - assigned prior to global declaration
@@ -1652,25 +1672,23 @@ SyntaxError - assigned prior to nonlocal declaration
 
 
     Python exception:
-        ModuleNotFoundError: No module named 'raise_syntax_error5-'
+        SyntaxError: name 'q' is used prior to nonlocal declaration
         
-    A `ModuleNotFoundError` exception indicates that you
-    are trying to import a module that cannot be found by Python.
-    This could be because you misspelled the name of the module
-    or because it is not installed on your computer.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
-    Likely cause based on the information given by Python:
-        In your program, the name of the
-        module that cannot be found is `raise_syntax_error5-`.
-        
-    Execution stopped on line 124 of file 'TESTS:\trb_syntax_common.py'.
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error50.py'
+    beyond the location indicated below by --> and ^.
     
-       122:                 make_title(title)
-       123:                 try:
-    -->124:                     mod = __import__(name)
+        6: 
+        7:     def g():
+        8:         print(q)
+    --> 9:         nonlocal q
+                  ^
 
-        Known identifiers
-            name: 'raise_syntax_error5-'
+    Likely cause based on the information given by Python:
+        You used the variable `q`
+        before declaring it as a nonlocal variable.
         
 
 SyntaxError - used prior to nonlocal declaration
@@ -1781,7 +1799,7 @@ SyntaxError - using the backquote character
         
         You are using the backquote character.
         Either you meant to write a single quote, ', or copied Python 2 code;
-        in this latter case, use the function repr(x).
+        in this latter case, use the function `repr(x)`.
 
 SyntaxError - assign to generator expression
 --------------------------------------------
@@ -1833,7 +1851,7 @@ SyntaxError - assign to conditional expression
         conditional expression instead of the name of a variable.
         A conditional expression has the following form:
         
-            `variable = object if condition else other_object`
+            variable = object if condition else other_object
 
 SyntaxError - name is parameter and nonlocal
 --------------------------------------------
@@ -1963,7 +1981,8 @@ SyntaxError - keyword arg only once in function definition
 
     Likely cause based on the information given by Python:
         You have defined a function repeating the keyword argument
-            `aa`
+        
+            aa
         twice; each keyword argument should appear only once in a function definition.
         
 

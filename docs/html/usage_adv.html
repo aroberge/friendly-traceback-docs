@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Advanced Usage &mdash; Friendly tracebacks 0.0.35a documentation</title>
+  <title>Advanced Usage &mdash; Friendly tracebacks 0.0.39a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.35a
+                0.0.39a
               </div>
             
           
@@ -97,7 +97,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
 </ul>
-<p class="caption"><span class="caption-text">For advanced users</span></p>
+<p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#where-the-output-is-written">Where the output is written?</a></li>
@@ -136,6 +136,11 @@
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Markdown examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_markdown.html">Friendly tracebacks - markdown_docs format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_syntax_markdown.html">Syntax errors - markdown_docs format</a></li>
 </ul>
 <p class="caption"><span class="caption-text">En français</span></p>
 <ul>
@@ -267,12 +272,6 @@ in the <code class="docutils literal notranslate"><span class="pre">demos</span>
 </pre></div>
 </div>
 </li>
-</ol>
-<div class="sidebar">
-<p class="sidebar-title">Important</p>
-<p>Note the <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension required here, but not for other cases.</p>
-</div>
-<ol class="arabic" start="3">
 <li><p>When launching a Python script:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback demos/hello.py
 
@@ -282,27 +281,10 @@ Running as main!
 </div>
 </li>
 <li><p>Launching the friendly console after running a script:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -im friendly_traceback demos.hello
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -im friendly_traceback demos/hello.py
 
 Hello world!
 Running as main!
-Friendly Console version 0.0.10a. [Python version: 3.7.3]
-
-&gt;&gt;&gt;
-</pre></div>
-</div>
-</li>
-<li><p>Only importing a Python script:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback --import_only demos.hello
-
-Hello world!
-</pre></div>
-</div>
-</li>
-<li><p>Importing a script and starting the console:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -im friendly_traceback --import_only demos.hello
-
-Hello world!
 Friendly Console version 0.0.10a. [Python version: 3.7.3]
 
 &gt;&gt;&gt;
@@ -317,30 +299,6 @@ Friendly Console version 0.0.10a. [Python version: 3.7.3]
 <li><p>Starting the console from an interpreter:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">start_console</span><span class="p">()</span>
-</pre></div>
-</div>
-</li>
-<li><p>To see if there are syntax errors, with attempts to provide an
-explanation as to what they mean, in a file specified by
-its path (assumed to be relative to the current working directory):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
-<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">check_syntax</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s2">&quot;demos/hello.py&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</li>
-<li><p>To see if there are syntax errors in some code submitted as
-a string, with an optional file name supplied:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
-<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">check_syntax</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">some_code</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;hello.py&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</li>
-<li><p>Instead of simply checking the syntax, one can run the code to see
-if there are also runtime errors; this is done by calling <code class="docutils literal notranslate"><span class="pre">run_code</span></code>
-which first calls <code class="docutils literal notranslate"><span class="pre">check_syntax</span></code> and will execute the code if
-no exception are raised; for example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
-<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">run_code</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">some_code</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;hello.py&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -399,6 +357,11 @@ The level currently used can be obtained as follows:</p>
 </div>
 <div class="section" id="language-used">
 <h2>Language used<a class="headerlink" href="#language-used" title="Permalink to this headline">¶</a></h2>
+<div class="sidebar">
+<p class="sidebar-title">Supported languages</p>
+<p>Currently, only English and French are available.
+Additional translations are more than welcome.</p>
+</div>
 <p>The language used can be explicitly set as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="s2">&quot;fr&quot;</span><span class="p">)</span>  <span class="c1"># two-letter code for French</span>
 </pre></div>
@@ -449,25 +412,8 @@ One can also <strong>temporarily</strong> redirect the output to any stream:</p>
 It may happen that this is not what we want to show.
 For example, the <a class="reference external" href="https://github.com/python/cpython/blob/3.7/Lib/code.py#L131">showtraceback method in Python’s code.py</a> replaces one of the items prior to
 showing the traceback to the user; we currently also do something similar in
-friendly-traceback’s own console.  If this is something desired,
-instead of <code class="docutils literal notranslate"><span class="pre">explain()</span></code>, one can use the “private” function
-<code class="docutils literal notranslate"><span class="pre">friendly_traceback.core.exception_hook(...)</span></code> instead.
-Please note that any such method that is not a direct attribute
-of <code class="docutils literal notranslate"><span class="pre">friendly_traceback()</span></code> is not considered to be part of the public
-API and is subject to change at any time.</p>
-<p>Dropping the leading <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
-<code class="docutils literal notranslate"><span class="pre">explain()</span></code> is currently defined as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="n">core</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="n">redirect</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>and, inside <code class="docutils literal notranslate"><span class="pre">core.py</span></code>, we have essentially the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">explain_traceback</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
-    <span class="n">exception_hook</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="n">redirect</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Finally, if one wishes to temporarily change some other option mentioned above,
+friendly-traceback’s own console.</p>
+<p>Finally, if one wishes to <em>temporarily</em> change some other option mentioned above,
 it can be done as in the following example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="c1"># Some code</span>
@@ -491,7 +437,7 @@ Running as main!
 <p>What if the separate script has its own command line arguments?
 If they are simply positional arguments, you can simply tack them
 on at the end of the argument list. An example can be found
-in the demos/ directory, which can be run directly or using
+in the <code class="docutils literal notranslate"><span class="pre">demos/</span></code> directory, which can be run directly or using
 friendly-traceback.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python demos/adder.py 1 2 3
 The sum is 6
@@ -593,9 +539,7 @@ optional arguments:
   --verbosity VERBOSITY, --level VERBOSITY
                         This sets the &quot;verbosity&quot; level, that is the amount of information
                         provided.
-  --import_only         Imports the module instead of running it as a script.
   --version             Displays the current version.
-  --dev                 Adds some extra functions in the console, useful for development.
   --formatter FORMATTER
                         Specify a formatter function, as a dotted path. Example: --formatter
                         friendly_traceback.formatters.markdown
