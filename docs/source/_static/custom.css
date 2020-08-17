@@ -44,8 +44,14 @@
     color:black;
 }
 
-.rst-content tt.literal, 
-.rst-content tt.literal, 
+.rst-content tt.literal,
+.rst-content tt.literal,
 .rst-content code.literal {
     color: purple;
+}
+
+hr.docutils {
+    border-top: 1px solid blue;
+    margin: 24px 40px;
+    height: 2px;
 }

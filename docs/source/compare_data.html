@@ -1,6 +1,7 @@
 <div>
 <div class='filename-header'>
 raise_syntax_error10</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
 
 <b>3.8: </b>SyntaxError: cannot assign to literal
@@ -8,6 +9,7 @@ raise_syntax_error10</div>
 </pre>
 <div class='filename-header'>
 raise_syntax_error13</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to keyword
 
 <b>3.8: </b>SyntaxError: cannot assign to None
@@ -15,6 +17,7 @@ raise_syntax_error13</div>
 </pre>
 <div class='filename-header'>
 raise_syntax_error14</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: assignment to keyword
 
 <b>3.8: </b>SyntaxError: cannot assign to __debug__
@@ -22,43 +25,47 @@ raise_syntax_error14</div>
 </pre>
 <div class='filename-header'>
 raise_syntax_error15</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid syntax
 
 <b>3.8: </b>SyntaxError: unmatched ')'
 
 </pre>
+<h5>Different explanation</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-The closing parenthesis ')' on line 6 does not match anything.
+The closing parenthesis `)` on line 6 does not match anything.
 
     6:     3, 4,))
                  ^
 
-<b>3.8: </b>The closing parenthesis ')' on line 6 does not match anything.
+<b>3.8: </b>The closing parenthesis `)` on line 6 does not match anything.
 
 </pre>
 <div class='filename-header'>
 raise_syntax_error18</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid syntax
 
 <b>3.8: </b>SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
 
 </pre>
+<h5>Different explanation</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-The closing square bracket ']' on line 2 does not match the opening parenthesis '(' on line 2.
+The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
 
     2: x = (1, 2, 3]
            ^       ^
 
-<b>3.8: </b>Python tells us that the closing ']' on the last line shown
-does not match the opening '('.
+<b>3.8: </b>Python tells us that the closing `]` on the last line shown
+does not match the opening `(`.
 
 I will attempt to be give a bit more information.
 
-The closing square bracket ']' on line 2 does not match the opening parenthesis '(' on line 2.
+The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
 
     2: x = (1, 2, 3]
            ^       ^
@@ -66,27 +73,29 @@ The closing square bracket ']' on line 2 does not match the opening parenthesis 
 </pre>
 <div class='filename-header'>
 raise_syntax_error19</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid syntax
 
 <b>3.8: </b>SyntaxError: closing parenthesis ']' does not match opening parenthesis '(' on line 2
 
 </pre>
+<h5>Different explanation</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-The closing square bracket ']' on line 4 does not match the opening parenthesis '(' on line 2.
+The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
 
     2: x = (1,
            ^
     4:      3]
              ^
 
-<b>3.8: </b>Python tells us that the closing ']' on the last line shown
-does not match the opening '(' on line 2.
+<b>3.8: </b>Python tells us that the closing `]` on the last line shown
+does not match the opening `(` on line 2.
 
 I will attempt to be give a bit more information.
 
-The closing square bracket ']' on line 4 does not match the opening parenthesis '(' on line 2.
+The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
 
     2: x = (1,
            ^
@@ -96,6 +105,7 @@ The closing square bracket ']' on line 4 does not match the opening parenthesis 
 </pre>
 <div class='filename-header'>
 raise_syntax_error30</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to function call
 
 <b>3.8: </b>SyntaxError: cannot assign to function call
@@ -103,6 +113,7 @@ raise_syntax_error30</div>
 </pre>
 <div class='filename-header'>
 raise_syntax_error31</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to function call
 
 <b>3.8: </b>SyntaxError: cannot assign to function call
@@ -110,16 +121,18 @@ raise_syntax_error31</div>
 </pre>
 <div class='filename-header'>
 raise_syntax_error41</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: keyword can't be an expression
 
 <b>3.8: </b>SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
 
 </pre>
+<h5>Different explanation</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>You likely called a function with a named argument:
 
-   a_function(invalid=something)
+   `a_function(invalid=something)`
 
-where 'invalid' is not a valid variable name in Python
+where `invalid` is not a valid variable name in Python
 either because it starts with a number, or is a string,
 or contains a period, etc.
 
@@ -130,20 +143,32 @@ or contains a period, etc.
 
        a_function(invalid=something)
 
-where 'invalid' is not a valid variable name in Python
+where `invalid` is not a valid variable name in Python
 either because it starts with a number, or is a string,
 or contains a period, etc.
 
 
 </pre>
 <div class='filename-header'>raise_syntax_error42</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.8: </b>SyntaxError: invalid character in identifier
 
 <b>3.9: </b>SyntaxError: invalid character '🤖' (U+1F916)
 
 </pre>
+<h5>Different explanation</h5>
+<pre class='highlight friendly-small-pre'><b>3.8: </b>You likely used some unicode character that is not allowed
+as part of a variable name in Python.
+This includes many emojis.
+
+
+<b>3.9: </b>Python indicates that you used the unicode character `🤖`
+which is not allowed.
+
+</pre>
 <div class='filename-header'>
 raise_syntax_error47</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't delete function call
 
 <b>3.8: </b>SyntaxError: cannot delete function call
@@ -151,6 +176,7 @@ raise_syntax_error47</div>
 </pre>
 <div class='filename-header'>
 raise_syntax_error52</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
 
 <b>3.8: </b>SyntaxError: cannot assign to set display
@@ -158,6 +184,7 @@ raise_syntax_error52</div>
 </pre>
 <div class='filename-header'>
 raise_syntax_error53</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
 
 <b>3.8: </b>SyntaxError: cannot assign to dict display
@@ -165,6 +192,7 @@ raise_syntax_error53</div>
 </pre>
 <div class='filename-header'>
 raise_syntax_error54</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
 
 <b>3.8: </b>SyntaxError: cannot assign to literal
@@ -172,32 +200,35 @@ raise_syntax_error54</div>
 </pre>
 <div class='filename-header'>
 raise_syntax_error55</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid syntax
 
 <b>3.8: </b>SyntaxError: cannot use assignment expressions with True
 
 </pre>
+<h5>Different explanation</h5>
 <pre class='highlight friendly-small-pre'><b>3.6: </b>I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-You appear to be using the operator :=, sometimes called
+You appear to be using the operator `:=`, sometimes called
 the walrus operator. This operator requires the use of
 Python 3.8 or newer. You are using version 3.6.
 
 <b>3.7: </b>I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-You appear to be using the operator :=, sometimes called
+You appear to be using the operator `:=`, sometimes called
 the walrus operator. This operator requires the use of
 Python 3.8 or newer. You are using version 3.7.
 
 </pre>
-<pre class='highlight friendly-small-pre'><b>3.8: </b>True is a constant in Python; you cannot assign it a value.
+<pre class='highlight friendly-small-pre'><b>3.8: </b>`True` is a constant in Python; you cannot assign it a value.
 
 
 </pre>
 <div class='filename-header'>
 raise_syntax_error56</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to operator
 
 <b>3.8: </b>SyntaxError: cannot assign to operator
@@ -205,6 +236,7 @@ raise_syntax_error56</div>
 </pre>
 <div class='filename-header'>
 raise_syntax_error58</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to generator expression
 
 <b>3.8: </b>SyntaxError: cannot assign to generator expression
@@ -212,23 +244,27 @@ raise_syntax_error58</div>
 </pre>
 <div class='filename-header'>
 raise_syntax_error59</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to conditional expression
 
 <b>3.8: </b>SyntaxError: cannot assign to conditional expression
 
 </pre>
 <div class='filename-header'>raise_syntax_error65</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.8: </b>SyntaxError: keyword argument repeated
 
 <b>3.9: </b>SyntaxError: keyword argument repeated: ad
 
 </pre>
 <div class='filename-header'>raise_syntax_error66</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.8: </b>SyntaxError: unexpected EOF while parsing
 
 <b>3.9: </b>IndentationError: expected an indented block
 
 </pre>
+<h5>Different explanation</h5>
 <pre class='highlight friendly-small-pre'><b>3.8: </b>Python tells us that it reached the end of the file
 and expected more content.
 
@@ -238,7 +274,56 @@ was expected to begin a new indented block.
 
 </pre>
 <div class='filename-header'>
+raise_syntax_error72</div>
+<h5>Different messages</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
+
+<b>3.8: </b>SyntaxError: cannot assign to f-string expression
+
+</pre>
+<h5>Different explanation</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>You wrote an expression that has an f-string
+on the left-hand side of the equal sign.
+An f-string should only appear on the right-handside of the equal sign
+.
+<b>3.8: </b>You wrote an expression that has an f-string
+on the left-hand side of the equal sign.
+An f-string should only appear on the right-handside of the equal sign.
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error74</div>
+<h5>Different messages</h5>
+<pre class='highlight friendly-small-pre'><b>3.6: </b>SyntaxError: Generator expression must be parenthesized if not sole argument
+
+<b>3.7: </b>SyntaxError: Generator expression must be parenthesized
+
+</pre>
+<div class='filename-header'>raise_syntax_error75</div>
+<h5>Different messages</h5>
+<pre class='highlight friendly-small-pre'><b>3.8: </b>SyntaxError: invalid character in identifier
+
+<b>3.9: </b>SyntaxError: invalid character '«' (U+00AB)
+
+</pre>
+<h5>Different explanation</h5>
+<pre class='highlight friendly-small-pre'><b>3.8: </b>Python indicates that you used some unicode characters not allowed
+as part of a variable name; this includes many emojis.
+However, I suspect that you used a fancy unicode quotation mark
+instead of a normal single or double quote for a string.
+This can happen if you copy-pasted code.
+
+
+<b>3.9: </b>Did you use copy-paste?
+Python indicates that you used the unicode character `«`
+which is not allowed.
+I suspect that you used a fancy unicode quotation mark
+instead of a normal single or double quote for a string.
+
+</pre>
+<div class='filename-header'>
 raise_syntax_error9</div>
+<h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
 
 <b>3.8: </b>SyntaxError: cannot assign to literal
