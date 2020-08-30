@@ -1548,15 +1548,17 @@ SyntaxError: unexpected EOF while parsing
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
-Python could not understand the code the file
-'TESTS:\syntax\raise_syntax_error37.py'.
-It reached the end of the file and expected more content.
+Python could not understand the code in the file
+'TESTS:\syntax\raise_syntax_error37.py'
+beyond the location indicated below by --> and ^.
 
 
 ```python
         5:     return [1, 2, 3,
         6: 
         7: print(foo())
+    --> 8: 
+           ^
 
 ```
 
@@ -2431,15 +2433,17 @@ SyntaxError: unexpected EOF while parsing
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
-Python could not understand the code the file
-'TESTS:\syntax\raise_syntax_error66.py'.
-It reached the end of the file and expected more content.
+Python could not understand the code in the file
+'TESTS:\syntax\raise_syntax_error66.py'
+beyond the location indicated below by --> and ^.
 
 
 ```python
        1: '''Should raise SyntaxError: unexpected EOF while parsing'''
        2: 
        3: for i in range(10):
+    -->4: 
+          ^
 
 ```
 

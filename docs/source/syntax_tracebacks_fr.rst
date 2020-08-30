@@ -1291,14 +1291,15 @@ SyntaxError - unexpected EOF while parsing
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
-    Python ne peut pas comprendre le code du fichier
-    'TESTS:\syntax\raise_syntax_error37.py'.
-    La fin du fichier a été atteinte et Python s'attendait à voir plus de code.
-    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error37.py'
+    jusqu'à l'endroit indiqué par --> et ^.
     
         5:     return [1, 2, 3,
         6: 
         7: print(foo())
+    --> 8: 
+           ^
 
     Cause probable basée sur les informations données par Python :
         Python nous dit qu'il a atteint la fin du fichier
@@ -2021,14 +2022,15 @@ SyntaxError - unexpected EOF while parsing 2
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
-    Python ne peut pas comprendre le code du fichier
-    'TESTS:\syntax\raise_syntax_error66.py'.
-    La fin du fichier a été atteinte et Python s'attendait à voir plus de code.
-    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error66.py'
+    jusqu'à l'endroit indiqué par --> et ^.
     
        1: '''Should raise SyntaxError: unexpected EOF while parsing'''
        2: 
        3: for i in range(10):
+    -->4: 
+          ^
 
     Cause probable basée sur les informations données par Python :
         Python nous dit qu'il a atteint la fin du fichier

@@ -1449,14 +1449,15 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
-Python ne peut pas comprendre le code du fichier
-&#39;TESTS:\syntax\raise_syntax_error37.py&#39;.
-La fin du fichier a été atteinte et Python s&#39;attendait à voir plus de code.
-
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error37.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
     5:     return [1, 2, 3,
     6:
     7: print(foo())
+--&gt; 8:
+       ^
 
 Cause probable basée sur les informations données par Python :
     Python nous dit qu&#39;il a atteint la fin du fichier
@@ -2096,14 +2097,15 @@ Cause probable basée sur les informations données par Python :
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
-Python ne peut pas comprendre le code du fichier
-&#39;TESTS:\syntax\raise_syntax_error66.py&#39;.
-La fin du fichier a été atteinte et Python s&#39;attendait à voir plus de code.
-
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error66.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
    1: &#39;&#39;&#39;Should raise SyntaxError: unexpected EOF while parsing&#39;&#39;&#39;
    2:
    3: for i in range(10):
+--&gt;4:
+      ^
 
 Cause probable basée sur les informations données par Python :
     Python nous dit qu&#39;il a atteint la fin du fichier

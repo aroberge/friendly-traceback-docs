@@ -1460,13 +1460,15 @@ Python&#39;s error message (invalid syntax) cannot be used to identify the probl
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
-Python could not understand the code the file
-&#39;TESTS:\syntax\raise_syntax_error37.py&#39;.
-It reached the end of the file and expected more content.
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error37.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
     5:     return [1, 2, 3,
     6:
     7: print(foo())
+--&gt; 8:
+       ^
 
 Likely cause based on the information given by Python:
     Python tells us that it reached the end of the file
@@ -2107,13 +2109,15 @@ Likely cause based on the information given by Python:
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
-Python could not understand the code the file
-&#39;TESTS:\syntax\raise_syntax_error66.py&#39;.
-It reached the end of the file and expected more content.
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error66.py&#39;
+beyond the location indicated below by --&gt; and ^.
 
    1: &#39;&#39;&#39;Should raise SyntaxError: unexpected EOF while parsing&#39;&#39;&#39;
    2:
    3: for i in range(10):
+--&gt;4:
+      ^
 
 Likely cause based on the information given by Python:
     Python tells us that it reached the end of the file
