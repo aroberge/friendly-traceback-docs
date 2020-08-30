@@ -116,6 +116,7 @@ from the version available from Pypi.
    :caption: Thoughts on design
 
    design
+   verbosity
 
 
 .. toctree::
@@ -130,10 +131,10 @@ from the version available from Pypi.
    :hidden:
    :caption: Use in your project
 
-   custom
+   lies
    api
    graph
-   lies
+
 
 .. toctree::
    :maxdepth: 1

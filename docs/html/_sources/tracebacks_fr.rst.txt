@@ -15,7 +15,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly-traceback version: 0.0.39a
+Friendly-traceback version: 0.1.0a
 Python version: 3.8.4
 
 
@@ -34,7 +34,7 @@ ArithmeticError
     Il est inhabituel que vous voyiez cette exception;
     normalement, une exception plus spécifique aurait dû être soulevée.
     
-    L'exécution s'est arrêtée à la ligne 9 du fichier 'TESTS:\except\test_arithmetic_error.py'
+    Exception levée à la ligne 9 du fichier 'TESTS:\except\test_arithmetic_error.py'.
     
         7:         # Usually, a subclass such as ZeroDivisionError, etc., would
         8:         # likely be raised.
@@ -61,7 +61,7 @@ AttributeError - class attribute
     Cause probable basée sur les informations données par Python :
         Dans votre programme, l’objet est `A` et l’attribut est `x`.
         
-    L'exécution s'est arrêtée à la ligne 10 du fichier 'TESTS:\except\test_attribute_error.py'
+    Exception levée à la ligne 10 du fichier 'TESTS:\except\test_attribute_error.py'.
     
         8:     A()
         9:     try:
@@ -88,7 +88,7 @@ AttributeError - typo in module attribute
     Cause probable basée sur les informations données par Python :
         Peut-être que vous vouliez plutôt écrire : `ascii_lowercase` au lieu de `ascii_lowecase`.
         
-    L'exécution s'est arrêtée à la ligne 24 du fichier 'TESTS:\except\test_attribute_error.py'
+    Exception levée à la ligne 24 du fichier 'TESTS:\except\test_attribute_error.py'.
     
        22: 
        23:     try:
@@ -116,7 +116,7 @@ AttributeError - typo in module attribute 2
         Au lieu d’écrire `cost`, peut-être que vous vouliez écrire l'un des attributs suivants :
         [`cos`, `cosh`]
         
-    L'exécution s'est arrêtée à la ligne 41 du fichier 'TESTS:\except\test_attribute_error.py'
+    Exception levée à la ligne 41 du fichier 'TESTS:\except\test_attribute_error.py'.
     
        39: 
        40:     try:
@@ -144,7 +144,7 @@ FileNotFoundError
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom du fichier inconnu est `does_not_exist`.
         
-    L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\except\test_file_not_found_error.py'
+    Exception levée à la ligne 6 du fichier 'TESTS:\except\test_file_not_found_error.py'.
     
        4: def test_file_not_found_error():
        5:     try:
@@ -172,7 +172,7 @@ ImportError
         L’objet qui n’a pas pu être importé est `Pi`.
         Le module ou le paquet d'où il devait être importé est `math`.
         
-    L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\except\test_import_error.py'
+    Exception levée à la ligne 6 du fichier 'TESTS:\except\test_import_error.py'.
     
        4: def test_import_error():
        5:     try:
@@ -194,7 +194,7 @@ KeyError
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom de la clé inconnue est `c`.
         
-    L'exécution s'est arrêtée à la ligne 7 du fichier 'TESTS:\except\test_key_error.py'
+    Exception levée à la ligne 7 du fichier 'TESTS:\except\test_key_error.py'.
     
        5:     d = {"a": 1, "b": 2}
        6:     try:
@@ -218,7 +218,7 @@ LookupError
     lorsqu’une clé ou un index utilisé sur un tableau de correspondance ou une séquence est invalide.
     Elle peut également être levée directement par codecs.lookup().
     
-    L'exécution s'est arrêtée à la ligne 10 du fichier 'TESTS:\except\test_lookup_error.py'
+    Exception levée à la ligne 10 du fichier 'TESTS:\except\test_lookup_error.py'.
     
         8:         # other than possibly codecs.lookup(), which is why we raise
         9:         # it directly here for our example.
@@ -244,7 +244,7 @@ IndexError - short tuple
     est plus grand que la longueur de la séquence.
     Rappel: le premier élément d'une séquence est à l'index 0.
     
-    L'exécution s'est arrêtée à la ligne 8 du fichier 'TESTS:\except\test_index_error.py'
+    Exception levée à la ligne 8 du fichier 'TESTS:\except\test_index_error.py'.
     
         6:     b = [1, 2, 3]
         7:     try:
@@ -272,7 +272,7 @@ IndexError - long list
     est plus grand que la longueur de la séquence.
     Rappel: le premier élément d'une séquence est à l'index 0.
     
-    L'exécution s'est arrêtée à la ligne 20 du fichier 'TESTS:\except\test_index_error.py'
+    Exception levée à la ligne 20 du fichier 'TESTS:\except\test_index_error.py'.
     
        18:     b = tuple(range(50))
        19:     try:
@@ -302,7 +302,7 @@ ModuleNotFoundError
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom du module inconnu est `does_not_exist`.
         
-    L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\except\test_module_not_found_error.py'
+    Exception levée à la ligne 6 du fichier 'TESTS:\except\test_module_not_found_error.py'.
     
        4: def test_module_not_found_error():
        5:     try:
@@ -327,7 +327,7 @@ NameError - 1
     Cause probable basée sur les informations données par Python :
         Dans votre programme, le nom inconnu est `something`.
         
-    L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\except\test_name_error.py'
+    Exception levée à la ligne 6 du fichier 'TESTS:\except\test_name_error.py'.
     
        4: def test_name_error():
        5:     try:
@@ -356,7 +356,7 @@ NameError - 2
         *    Portée globale : `fabs`
         *    Identifiant Python (builtins) : `abs`
         
-    L'exécution s'est arrêtée à la ligne 18 du fichier 'TESTS:\except\test_name_error.py'
+    Exception levée à la ligne 18 du fichier 'TESTS:\except\test_name_error.py'.
     
        16:     nabs = 1
        17:     try:
@@ -383,7 +383,8 @@ NameError - 3
         Annotation de type trouvée pour `x` en tant que variable globale.
         Peut-être aviez-vous écrit `x : 3` au lieu de `x = 3`.
         Le nom semblable `'e'` a été trouvé dans la portée locale. 
-    L'exécution s'est arrêtée à la ligne 31 du fichier 'TESTS:\except\test_name_error.py'
+        
+    Exception levée à la ligne 31 du fichier 'TESTS:\except\test_name_error.py'.
     
        29: def test_name_error3():
        30:     try:
@@ -410,7 +411,7 @@ NameError - 4
         Au lieu d’écrire `cost`, peut-être que vous vouliez écrire l'un des noms suivants :
         *    Portée globale : `cos`, `cosh`
         
-    L'exécution s'est arrêtée à la ligne 42 du fichier 'TESTS:\except\test_name_error.py'
+    Exception levée à la ligne 42 du fichier 'TESTS:\except\test_name_error.py'.
     
        40: def test_name_error4():
        41:     try:
@@ -429,7 +430,7 @@ OverflowError
     Une exception de type `OverflowError` est levée lorsque le résultat d’une opération arithmétique
     est trop grand pour être manipulé par le processeur de l’ordinateur.
     
-    L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\except\test_overflow_error.py'
+    Exception levée à la ligne 6 du fichier 'TESTS:\except\test_overflow_error.py'.
     
        4: def test_overflow_error():
        5:     try:
@@ -488,7 +489,7 @@ TypeError - 1: concatenate two different types
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
         une chaîne de caractères ('str') et un entier ('int')
         
-    L'exécution s'est arrêtée à la ligne 8 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 8 du fichier 'TESTS:\except\test_type_error.py'.
     
         6:         a = "a"
         7:         one = 1
@@ -518,7 +519,7 @@ TypeError - 1a: concatenate two different types
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
         une chaîne de caractères ('str') et une liste ('list')
         
-    L'exécution s'est arrêtée à la ligne 24 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 24 du fichier 'TESTS:\except\test_type_error.py'.
     
        22:         a = "a"
        23:         a_list = [1, 2, 3]
@@ -548,7 +549,7 @@ TypeError - 1b: concatenate two different types
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
         un tuple et une liste ('list')
         
-    L'exécution s'est arrêtée à la ligne 40 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 40 du fichier 'TESTS:\except\test_type_error.py'.
     
        38:         a_tuple = (1, 2, 3)
        39:         a_list = [1, 2, 3]
@@ -578,7 +579,7 @@ TypeError - 2: unsupported operand type(s) for +
         Vous avez essayé d’additionner deux types d’objets incompatibles:
         un entier ('int') et une variable de valeur None ('NoneType')
         
-    L'exécution s'est arrêtée à la ligne 54 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 54 du fichier 'TESTS:\except\test_type_error.py'.
     
        52:         one = 1
        53:         none = None
@@ -608,7 +609,7 @@ TypeError - 2a: unsupported operand type(s) for +=
         Vous avez essayé d’additionner deux types d’objets incompatibles:
         un entier ('int') et une chaîne de caractères ('str')
         
-    L'exécution s'est arrêtée à la ligne 68 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 68 du fichier 'TESTS:\except\test_type_error.py'.
     
        66:         one = 1
        67:         two = "two"
@@ -638,7 +639,7 @@ TypeError - 3: unsupported operand type(s) for -
         Vous avez tenté de soustraire deux types d’objets incompatibles:
         un tuple et une liste ('list')
         
-    L'exécution s'est arrêtée à la ligne 82 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 82 du fichier 'TESTS:\except\test_type_error.py'.
     
        80:         a = (1, 2)
        81:         b = [3, 4]
@@ -668,7 +669,7 @@ TypeError - 3a: unsupported operand type(s) for -=
         Vous avez tenté de soustraire deux types d’objets incompatibles:
         une liste ('list') et un tuple
         
-    L'exécution s'est arrêtée à la ligne 96 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 96 du fichier 'TESTS:\except\test_type_error.py'.
     
        94:         a = (1, 2)
        95:         b = [3, 4]
@@ -698,7 +699,7 @@ TypeError - 4: unsupported operand type(s) for *
         Vous avez essayé de multiplier deux types d’objets différents:
         un nombre complexe ('complex') et un ensemble ('set')
         
-    L'exécution s'est arrêtée à la ligne 110 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 110 du fichier 'TESTS:\except\test_type_error.py'.
     
        108:         a = 1j
        109:         b = {2, 3}
@@ -728,7 +729,7 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
         Vous avez essayé de multiplier deux types d’objets différents:
         un ensemble ('set') et un nombre complexe ('complex')
         
-    L'exécution s'est arrêtée à la ligne 124 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 124 du fichier 'TESTS:\except\test_type_error.py'.
     
        122:         a = 1j
        123:         b = {2, 3}
@@ -758,7 +759,7 @@ TypeError - 5: unsupported operand type(s) for /
         Vous avez essayé de diviser deux types d’objets différents:
         un dictionnaire ('dict') et un nombre ('float')
         
-    L'exécution s'est arrêtée à la ligne 138 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 138 du fichier 'TESTS:\except\test_type_error.py'.
     
        136:         a = {1: 1, 2: 2}
        137:         b = 3.1416
@@ -788,7 +789,7 @@ TypeError - 5a: unsupported operand type(s) for /=
         Vous avez essayé de diviser deux types d’objets différents:
         un nombre ('float') et un dictionnaire ('dict')
         
-    L'exécution s'est arrêtée à la ligne 152 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 152 du fichier 'TESTS:\except\test_type_error.py'.
     
        150:         a = {1: 1, 2: 2}
        151:         b = 3.1416
@@ -818,7 +819,7 @@ TypeError - 5b: unsupported operand type(s) for //
         Vous avez essayé de diviser deux types d’objets différents:
         un dictionnaire ('dict') et un entier ('int')
         
-    L'exécution s'est arrêtée à la ligne 166 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 166 du fichier 'TESTS:\except\test_type_error.py'.
     
        164:         a = {1: 1, 2: 2}
        165:         b = 1
@@ -848,7 +849,7 @@ TypeError - 5c: unsupported operand type(s) for //=
         Vous avez essayé de diviser deux types d’objets différents:
         un nombre ('float') et un dictionnaire ('dict')
         
-    L'exécution s'est arrêtée à la ligne 180 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 180 du fichier 'TESTS:\except\test_type_error.py'.
     
        178:         a = {1: 1, 2: 2}
        179:         b = 3.1416
@@ -879,7 +880,7 @@ TypeError - 6: unsupported operand type(s) for &
         sur deux types d’objets incompatibles:
         une chaîne de caractères ('str') et un entier ('int')
         
-    L'exécution s'est arrêtée à la ligne 194 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 194 du fichier 'TESTS:\except\test_type_error.py'.
     
        192:         a = "a"
        193:         b = 2
@@ -910,7 +911,7 @@ TypeError - 6a: unsupported operand type(s) for &=
         sur deux types d’objets incompatibles:
         un entier ('int') et une chaîne de caractères ('str')
         
-    L'exécution s'est arrêtée à la ligne 208 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 208 du fichier 'TESTS:\except\test_type_error.py'.
     
        206:         a = "a"
        207:         b = 2
@@ -941,7 +942,7 @@ TypeError - 7: unsupported operand type(s) for **
         en utilisant deux types d’objets incompatibles:
         un dictionnaire ('dict') et un nombre ('float')
         
-    L'exécution s'est arrêtée à la ligne 222 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 222 du fichier 'TESTS:\except\test_type_error.py'.
     
        220:         a = {1: 1, 2: 2}
        221:         b = 3.1416
@@ -972,7 +973,7 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
         en utilisant deux types d’objets incompatibles:
         un dictionnaire ('dict') et un nombre ('float')
         
-    L'exécution s'est arrêtée à la ligne 236 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 236 du fichier 'TESTS:\except\test_type_error.py'.
     
        234:         a = {1: 1, 2: 2}
        235:         b = 3.1416
@@ -1003,7 +1004,7 @@ TypeError - 8: unsupported operand type(s) for >>
         sur deux types d’objets incompatibles:
         une chaîne de caractères ('str') et un entier ('int')
         
-    L'exécution s'est arrêtée à la ligne 250 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 250 du fichier 'TESTS:\except\test_type_error.py'.
     
        248:         a = "a"
        249:         b = 42
@@ -1034,7 +1035,7 @@ TypeError - 8a: unsupported operand type(s) for >>=
         sur deux types d’objets incompatibles:
         une chaîne de caractères ('str') et un entier ('int')
         
-    L'exécution s'est arrêtée à la ligne 264 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 264 du fichier 'TESTS:\except\test_type_error.py'.
     
        262:         a = "a"
        263:         b = 42
@@ -1067,7 +1068,7 @@ TypeError - 9: unsupported operand type(s) for @
         Cet opérateur est normalement utilisé uniquement
         pour la multiplication des matrices.
         
-    L'exécution s'est arrêtée à la ligne 278 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 278 du fichier 'TESTS:\except\test_type_error.py'.
     
        276:         a = "a"
        277:         b = 2
@@ -1100,7 +1101,7 @@ TypeError - 9a: unsupported operand type(s) for @=
         Cet opérateur est normalement utilisé uniquement
         pour la multiplication des matrices.
         
-    L'exécution s'est arrêtée à la ligne 292 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 292 du fichier 'TESTS:\except\test_type_error.py'.
     
        290:         a = "a"
        291:         b = 2
@@ -1131,7 +1132,7 @@ TypeError - 10: comparison between incompatible types
         deux types d’objets incompatibles:
         un entier ('int') et une chaîne de caractères ('str')
         
-    L'exécution s'est arrêtée à la ligne 306 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 306 du fichier 'TESTS:\except\test_type_error.py'.
     
        304:         a = "a"
        305:         b = 42
@@ -1162,7 +1163,7 @@ TypeError - 11: bad operand type for unary +
         avec le type d’objet suivant: une chaîne de caractères ('str').
         Cette opération n’est pas définie pour ce type d’objet.
         
-    L'exécution s'est arrêtée à la ligne 318 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 318 du fichier 'TESTS:\except\test_type_error.py'.
     
        316: def test_type_error11():
        317:     try:
@@ -1188,7 +1189,7 @@ TypeError - 11a: bad operand type for unary -
         avec le type d’objet suivant: une liste ('list').
         Cette opération n’est pas définie pour ce type d’objet.
         
-    L'exécution s'est arrêtée à la ligne 331 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 331 du fichier 'TESTS:\except\test_type_error.py'.
     
        329: def test_type_error11a():
        330:     try:
@@ -1214,7 +1215,7 @@ TypeError - 11b: bad operand type for unary ~
         avec le type d’objet suivant: un tuple.
         Cette opération n’est pas définie pour ce type d’objet.
         
-    L'exécution s'est arrêtée à la ligne 344 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 344 du fichier 'TESTS:\except\test_type_error.py'.
     
        342: def test_type_error11b():
        343:     try:
@@ -1241,7 +1242,7 @@ TypeError - 12: object does not support item assignment
         Vous avez essayé de modifier une partie d’un tel objet immuable: un tuple,
         probablement en utilisant une opération d’indexation.
         
-    L'exécution s'est arrêtée à la ligne 358 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 358 du fichier 'TESTS:\except\test_type_error.py'.
     
        356:     a = (1, 2, 3)
        357:     try:
@@ -1270,7 +1271,7 @@ TypeError - 13: wrong number of positional arguments
         Vous avez apparemment invoqué la fonction 'fn()' avec
         1 arguments positionnels alors qu'elle en requiert 0.
         
-    L'exécution s'est arrêtée à la ligne 373 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 373 du fichier 'TESTS:\except\test_type_error.py'.
     
        371: 
        372:     try:
@@ -1299,7 +1300,7 @@ TypeError - 14: missing positional arguments
         Vous avez apparemment invoqué la fonction 'fn()' avec
         moins d'arguments positionnels qu'il n'en faut (2 manquent).
         
-    L'exécution s'est arrêtée à la ligne 388 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 388 du fichier 'TESTS:\except\test_type_error.py'.
     
        386: 
        387:     try:
@@ -1328,9 +1329,9 @@ TypeError - 15: tuple object is not callable
         Je soupçonne que vous aviez un objet du type « un tuple »,
         suivi de ce qui ressemblait à un tuple, '(...) ',
         que Python a pris comme indiquant une invocation de fonction.
-        Il est possible que vous ayez oublié d'écrire une virgule avant le tuple.
+        Peut-être que vous aviez une virgule manquante entre deux tuples.
         
-    L'exécution s'est arrêtée à la ligne 400 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 400 du fichier 'TESTS:\except\test_type_error.py'.
     
        398: def test_type_error15():
        399:     try:
@@ -1355,9 +1356,9 @@ TypeError - 15a: list object is not callable
         Je soupçonne que vous aviez un objet du type « une liste ('list') »,
         suivi de ce qui ressemblait à un tuple, '(...) ',
         que Python a pris comme indiquant une invocation de fonction.
-        Il est possible que vous ayez oublié d'écrire une virgule avant le tuple.
+        Peut-être que vous aviez une virgule manquante avant le tuple.
         
-    L'exécution s'est arrêtée à la ligne 412 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 412 du fichier 'TESTS:\except\test_type_error.py'.
     
        410: def test_type_error15a():
        411:     try:
@@ -1381,7 +1382,7 @@ TypeError - 16: exception derived from BaseException
     Cause probable basée sur les informations données par Python :
         Dans Python 3, les exceptions doivent être dérivées de BaseException.
         
-    L'exécution s'est arrêtée à la ligne 424 du fichier 'TESTS:\except\test_type_error.py'
+    Exception levée à la ligne 424 du fichier 'TESTS:\except\test_type_error.py'.
     
        422: def test_type_error16():
        423:     try:
@@ -1410,7 +1411,9 @@ UnboundLocalError
     Cause probable basée sur les informations données par Python :
         La variable qui semble causer le problème est `a`.
         Il est possible que vous avez oublié d'écrire l’instruction
-            `global a`
+        
+            global a
+        
         comme première ligne à l’intérieur de votre fonction.
         Au lieu d’écrire `a`, peut-être que vous vouliez écrire l'un des noms suivants :
         *    Portée locale : `c`
@@ -1450,7 +1453,7 @@ Unknown exception
     Veuillez signaler cet exemple à
     https://github.com/aroberge/friendly-traceback/issues
     
-    L'exécution s'est arrêtée à la ligne 10 du fichier 'TESTS:\except\test_unknown_error.py'
+    Exception levée à la ligne 10 du fichier 'TESTS:\except\test_unknown_error.py'.
     
         8: def test_unknown_error():
         9:     try:
@@ -1477,7 +1480,7 @@ ZeroDivisionError - 1
     à l’aide de l’opérateur modulo '%'
         `résultat = ma_variable % 0`
     
-    L'exécution s'est arrêtée à la ligne 6 du fichier 'TESTS:\except\test_zero_division_error.py'
+    Exception levée à la ligne 6 du fichier 'TESTS:\except\test_zero_division_error.py'.
     
        4: def test_zero_division_error():
        5:     try:
@@ -1500,7 +1503,7 @@ ZeroDivisionError - 2
     à l’aide de l’opérateur modulo '%'
         `résultat = ma_variable % 0`
     
-    L'exécution s'est arrêtée à la ligne 19 du fichier 'TESTS:\except\test_zero_division_error.py'
+    Exception levée à la ligne 19 du fichier 'TESTS:\except\test_zero_division_error.py'.
     
        17:     zero = 0
        18:     try:

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Syntax errors - markdown_docs format &mdash; Friendly tracebacks 0.0.39a documentation</title>
+  <title>Syntax errors - markdown_docs format &mdash; Friendly tracebacks 0.1.0a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.39a
+                0.1.0a
               </div>
             
           
@@ -96,6 +96,7 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verbosity.html">Verbosity: how much information do we want?</a></li>
 </ul>
 <p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul>
@@ -103,10 +104,9 @@
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="custom.html">Description of demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html">Project files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
@@ -134,553 +134,550 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Syntax errors - markdown_docs format</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-1-expected-an-indented-block">IndentationError - 1: expected an indented block</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#python-exception">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#indentationerror-expected-an-indented-block">IndentationError: expected an indented block</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#likely-cause-based-on-the-information-given-by-python">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-2-unexpected-indent">IndentationError - 2: unexpected indent</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#indentationerror-unexpected-indent">IndentationError: unexpected indent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-3-unindent-does-not-match">IndentationError - 3: unindent does not match …</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id3">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#indentationerror-unindent-does-not-match-any-outer-indentation-level">IndentationError: unindent does not match any outer indentation level</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#taberror">TabError</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#taberror-inconsistent-use-of-tabs-and-spaces-in-indentation">TabError: inconsistent use of tabs and spaces in indentation</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Python exception</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assign-to-keyword">SyntaxError - Assign to keyword</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id6">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-invalid-syntax">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#python-s-error-message-invalid-syntax-cannot-be-used-to-identify-the-problem">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-colon-1">SyntaxError - Missing colon - 1</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id7">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id8">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-colon-2">SyntaxError - Missing colon - 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id10">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id11">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-elif-not-else-if">SyntaxError - elif, not else if</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id13">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id14">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-elif-not-elseif">SyntaxError - elif, not elseif</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id16">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id17">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-malformed-def-statment-1">SyntaxError - malformed def statment - 1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id19">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id20">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id16">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-malformed-def-statment-2">SyntaxError - malformed def statment - 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id22">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id23">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id18">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-malformed-def-statment-3">SyntaxError - malformed def statment - 3</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id25">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id26">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id20">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-1">SyntaxError - can’t assign to literal - 1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id28">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-cannot-assign-to-literal">SyntaxError: cannot assign to literal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id22">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-2">SyntaxError - can’t assign to literal - 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id30">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id31">SyntaxError: cannot assign to literal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id24">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-3">SyntaxError - can’t assign to literal - 3</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id33">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-cannot-assign-to-set-display">SyntaxError: cannot assign to set display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id26">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-4">SyntaxError - can’t assign to literal - 4</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id35">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-cannot-assign-to-dict-display">SyntaxError: cannot assign to dict display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id28">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-literal-5">SyntaxError - can’t assign to literal - 5</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id37">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id38">SyntaxError: cannot assign to literal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id29">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id30">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-import-x-from-y">SyntaxError - import X from Y</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id40">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id41">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id31">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id32">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-eol-while-scanning-string-literal">SyntaxError - EOL while scanning string literal</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id43">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id44">SyntaxError: EOL while scanning string literal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id33">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id34">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assignment-to-keyword-none">SyntaxError - assignment to keyword (None)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id46">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-cannot-assign-to-none">SyntaxError: cannot assign to None</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id35">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id36">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assignment-to-keyword-debug">SyntaxError - assignment to keyword (<strong>debug</strong>)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id48">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-cannot-assign-to-debug">SyntaxError: cannot assign to <strong>debug</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id37">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id38">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unmatched-closing-parenthesis">SyntaxError - unmatched closing parenthesis</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id50">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-unmatched">SyntaxError: unmatched ‘)’</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id39">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id40">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unclosed-parenthesis-1">SyntaxError - unclosed parenthesis- 1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id52">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id53">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id41">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id42">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unclosed-parenthesis-2">SyntaxError - unclosed parenthesis - 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id55">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id56">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id43">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id44">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-mismatched-brackets">SyntaxError - mismatched brackets</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id58">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-closing-parenthesis-does-not-match-opening-parenthesis">SyntaxError: closing parenthesis ‘]’ does not match opening parenthesis ‘(‘</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id45">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id46">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-mismatched-brackets-2">SyntaxError - mismatched brackets - 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id60">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-closing-parenthesis-does-not-match-opening-parenthesis-on-line-2">SyntaxError: closing parenthesis ‘]’ does not match opening parenthesis ‘(‘ on line 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id47">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id48">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-print-is-a-function">SyntaxError - print is a function</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id62">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-missing-parentheses-in-call-to-print-did-you-mean-print-hello">SyntaxError: Missing parentheses in call to ‘print’. Did you mean print(‘hello’)?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id49">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id50">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-python-keyword-as-function-name">SyntaxError - Python keyword as function name</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id64">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id65">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id51">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id52">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-break-outside-loop">SyntaxError - break outside loop</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id67">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id68">SyntaxError: ‘break’ outside loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id53">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id54">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-continue-outside-loop">SyntaxError - continue outside loop</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id70">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-continue-not-properly-in-loop">SyntaxError: ‘continue’ not properly in loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id55">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id56">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-quote-inside-a-string">SyntaxError - quote inside a string</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id72">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id73">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id57">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id58">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-comma-in-a-dict">SyntaxError - missing comma in a dict</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id75">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id76">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id59">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id60">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-comma-in-a-set">SyntaxError - missing comma in a set</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id78">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id79">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id61">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id62">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-comma-in-a-list">SyntaxError - missing comma in a list</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id81">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id82">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id63">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id64">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-comma-in-a-tuple">SyntaxError - missing comma in a tuple</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id84">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id85">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id65">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id66">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-missing-comma-between-function-args">SyntaxError - missing comma between function args</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id87">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id88">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id67">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id68">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-function-call-1">SyntaxError - can’t assign to function call - 1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id90">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-cannot-assign-to-function-call">SyntaxError: cannot assign to function call</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id69">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id70">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-assign-to-function-call-2">SyntaxError - can’t assign to function call - 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id92">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id93">SyntaxError: cannot assign to function call</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id71">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id72">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-used-equal-sign-instead-of-colon">SyntaxError - used equal sign instead of colon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id95">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id96">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id73">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id74">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-non-default-argument-follows-default-argument">SyntaxError - non-default argument follows default argument</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id98">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id99">SyntaxError: non-default argument follows default argument</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id75">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id76">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-positional-argument-follows-keyword-argument">SyntaxError - positional argument follows keyword argument</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id101">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id102">SyntaxError: positional argument follows keyword argument</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id77">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id78">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-f-string-unterminated-string">SyntaxError - f-string: unterminated string</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id104">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id105">SyntaxError: f-string: unterminated string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id79">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id80">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unclosed-bracket">SyntaxError - unclosed bracket</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id107">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id108">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id81">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id82">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unexpected-eof-while-parsing">SyntaxError - unexpected EOF while parsing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id110">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id111">SyntaxError: unexpected EOF while parsing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id83">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id84">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-name-is-parameter-and-global">SyntaxError - name is parameter and global</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id113">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-name-x-is-parameter-and-global">SyntaxError: name ‘x’ is parameter and global</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id85">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id86">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-as-attribute">SyntaxError - keyword as attribute</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id115">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id116">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id87">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id88">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-content-passed-continuation-line-character">SyntaxError - content passed continuation line character</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id118">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-unexpected-character-after-line-continuation-character">SyntaxError: unexpected character after line continuation character</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id89">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id90">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-can-t-be-an-expression">SyntaxError - keyword can’t be an expression</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id120">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-expression-cannot-contain-assignment-perhaps-you-meant">SyntaxError: expression cannot contain assignment, perhaps you meant “==”?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id91">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id92">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-invalid-character-in-identifier">SyntaxError - invalid character in identifier</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id122">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id123">SyntaxError: invalid character in identifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id93">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id94">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-cannot-be-argument-in-def-1">SyntaxError - keyword cannot be argument in def - 1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id125">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id126">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id95">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id96">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-cannot-be-argument-in-def-2">SyntaxError - keyword cannot be argument in def - 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id128">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id129">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id97">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id98">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-cannot-be-argument-in-def-3">SyntaxError - keyword cannot be argument in def - 3</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id131">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id132">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id99">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id100">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-cannot-be-argument-in-def-4">SyntaxError - keyword cannot be argument in def - 4</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id134">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id135">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id101">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id102">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-delete-function-call">SyntaxError - delete function call</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id137">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-cannot-delete-function-call">SyntaxError: cannot delete function call</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id103">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id104">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assigned-prior-to-global-declaration">SyntaxError - assigned prior to global declaration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id139">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-name-p-is-assigned-to-before-global-declaration">SyntaxError: name ‘p’ is assigned to before global declaration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id105">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id106">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-used-prior-to-global-declaration">SyntaxError - used prior to global declaration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id141">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-name-r-is-used-prior-to-global-declaration">SyntaxError: name ‘r’ is used prior to global declaration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id107">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id108">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assigned-prior-to-nonlocal-declaration">SyntaxError - assigned prior to nonlocal declaration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id143">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-name-q-is-used-prior-to-nonlocal-declaration">SyntaxError: name ‘q’ is used prior to nonlocal declaration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id109">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id110">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-used-prior-to-nonlocal-declaration">SyntaxError - used prior to nonlocal declaration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id145">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-name-s-is-assigned-to-before-nonlocal-declaration">SyntaxError: name ‘s’ is assigned to before nonlocal declaration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id111">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id112">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-named-assignment-with-python-constant">SyntaxError - named assignment with Python constant</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id147">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-cannot-use-assignment-expressions-with-true">SyntaxError: cannot use assignment expressions with True</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id113">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id114">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assignment-to-operator">SyntaxError - assignment to operator</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id149">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-cannot-assign-to-operator">SyntaxError: cannot assign to operator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id115">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id116">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-using-the-backquote-character">SyntaxError - using the backquote character</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id151">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id152">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id117">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id118">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assign-to-generator-expression">SyntaxError - assign to generator expression</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id154">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-cannot-assign-to-generator-expression">SyntaxError: cannot assign to generator expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id119">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id120">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-assign-to-conditional-expression">SyntaxError - assign to conditional expression</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id156">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-cannot-assign-to-conditional-expression">SyntaxError: cannot assign to conditional expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id121">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id122">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-name-is-parameter-and-nonlocal">SyntaxError - name is parameter and nonlocal</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id158">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-name-x-is-parameter-and-nonlocal">SyntaxError: name ‘x’ is parameter and nonlocal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id123">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id124">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-name-is-global-and-nonlocal">SyntaxError - name is global and nonlocal</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id160">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-name-xy-is-nonlocal-and-global">SyntaxError: name ‘xy’ is nonlocal and global</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id125">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id126">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-nonlocal-variable-not-found">SyntaxError - nonlocal variable not found</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id162">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-no-binding-for-nonlocal-ab-found">SyntaxError: no binding for nonlocal ‘ab’ found</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id127">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id128">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-nonlocal-variable-not-found-at-module-level">SyntaxError - nonlocal variable not found at module level</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id164">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-nonlocal-declaration-not-allowed-at-module-level">SyntaxError: nonlocal declaration not allowed at module level</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id129">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id130">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-definition">SyntaxError - keyword arg only once in function definition</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id166">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-duplicate-argument-aa-in-function-definition">SyntaxError: duplicate argument ‘aa’ in function definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id131">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id132">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-keyword-arg-only-once-in-function-call">SyntaxError - keyword arg only once in function call</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id168">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-keyword-argument-repeated">SyntaxError: keyword argument repeated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id133">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id134">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unexpected-eof-while-parsing-2">SyntaxError - unexpected EOF while parsing 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id170">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id171">SyntaxError: unexpected EOF while parsing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id135">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id136">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-print-is-a-function-2">SyntaxError - print is a function 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id173">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id174">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id137">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id138">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-copy-paste-from-interpreter">SyntaxError - copy/paste from interpreter</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id176">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id177">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id139">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id140">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-using-pip-from-interpreter">SyntaxError - Using pip from interpreter</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id179">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id180">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id141">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id142">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-using-pip-from-interpreter-2">SyntaxError - Using pip from interpreter 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id182">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id183">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id143">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id144">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-dot-followed-by-parenthesis">SyntaxError - dot followed by parenthesis</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id185">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id186">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id145">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id146">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-cannot-assign-to-f-string">SyntaxError - cannot assign to f-string</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id188">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-cannot-assign-to-f-string-expression">SyntaxError: cannot assign to f-string expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id147">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id148">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-raising-multiple-exceptions">SyntaxError - raising multiple exceptions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id190">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id191">SyntaxError: invalid syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id149">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id150">Python’s error message (invalid syntax) cannot be used to identify the problem</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-parenthesis-around-generator-expression">SyntaxError - parenthesis around generator expression</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id193">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#syntaxerror-generator-expression-must-be-parenthesized">SyntaxError: Generator expression must be parenthesized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id151">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id152">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-invalid-character-bad-quote">SyntaxError - invalid character (bad quote)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id195">Python exception</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id196">SyntaxError: invalid character in identifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id153">Python exception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id154">Likely cause based on the information given by Python</a></li>
 </ul>
 </li>
 </ul>
@@ -779,15 +776,14 @@ trb_syntax_markdown.py located in the <code class="docutils literal notranslate"
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.
 </p>
-</div><p>Friendly-traceback version: 0.0.39a
+</div><p>Friendly-traceback version: 0.1.0a
 Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="indentationerror-1-expected-an-indented-block">
 <h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="python-exception">
 <h3>Python exception<a class="headerlink" href="#python-exception" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="indentationerror-expected-an-indented-block">
-<h4>IndentationError: expected an indented block<a class="headerlink" href="#indentationerror-expected-an-indented-block" title="Permalink to this headline">¶</a></h4>
+<p>IndentationError: expected an indented block</p>
 <p>An <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> occurs when a given line of code is
 not indented (aligned vertically with other lines) as expected.</p>
 <p>Python could not understand the code in the file
@@ -801,10 +797,9 @@ beyond the location indicated below by –&gt; and ^.</p>
 </pre></div>
 </div>
 <div class="section" id="likely-cause-based-on-the-information-given-by-python">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#likely-cause-based-on-the-information-given-by-python" title="Permalink to this headline">¶</a></h5>
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#likely-cause-based-on-the-information-given-by-python" title="Permalink to this headline">¶</a></h4>
 <p>In this case, the line identified above
 was expected to begin a new indented block.</p>
-</div>
 </div>
 </div>
 </div>
@@ -813,8 +808,7 @@ was expected to begin a new indented block.</p>
 <h2>IndentationError - 2: unexpected indent<a class="headerlink" href="#indentationerror-2-unexpected-indent" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>Python exception<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="indentationerror-unexpected-indent">
-<h4>IndentationError: unexpected indent<a class="headerlink" href="#indentationerror-unexpected-indent" title="Permalink to this headline">¶</a></h4>
+<p>IndentationError: unexpected indent</p>
 <p>An <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> occurs when a given line of code is
 not indented (aligned vertically with other lines) as expected.</p>
 <p>Python could not understand the code in the file
@@ -828,11 +822,10 @@ beyond the location indicated below by –&gt; and ^.</p>
 </pre></div>
 </div>
 <div class="section" id="id2">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p>In this case, the line identified above
 is more indented than expected and
 does not match the indentation of the previous line.</p>
-</div>
 </div>
 </div>
 </div>
@@ -841,8 +834,7 @@ does not match the indentation of the previous line.</p>
 <h2>IndentationError - 3: unindent does not match …<a class="headerlink" href="#indentationerror-3-unindent-does-not-match" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
 <h3>Python exception<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="indentationerror-unindent-does-not-match-any-outer-indentation-level">
-<h4>IndentationError: unindent does not match any outer indentation level<a class="headerlink" href="#indentationerror-unindent-does-not-match-any-outer-indentation-level" title="Permalink to this headline">¶</a></h4>
+<p>IndentationError: unindent does not match any outer indentation level</p>
 <p>An <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> occurs when a given line of code is
 not indented (aligned vertically with other lines) as expected.</p>
 <p>Python could not understand the code in the file
@@ -856,11 +848,10 @@ beyond the location indicated below by –&gt; and ^.</p>
 </pre></div>
 </div>
 <div class="section" id="id4">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p>In this case, the line identified above is
 less indented than the preceding one,
 and is not aligned vertically with another block of code.</p>
-</div>
 </div>
 </div>
 </div>
@@ -869,8 +860,7 @@ and is not aligned vertically with another block of code.</p>
 <h2>TabError<a class="headerlink" href="#taberror" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id5">
 <h3>Python exception<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="taberror-inconsistent-use-of-tabs-and-spaces-in-indentation">
-<h4>TabError: inconsistent use of tabs and spaces in indentation<a class="headerlink" href="#taberror-inconsistent-use-of-tabs-and-spaces-in-indentation" title="Permalink to this headline">¶</a></h4>
+<p>TabError: inconsistent use of tabs and spaces in indentation</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">TabError</span></code> indicates that you have used both spaces
 and tab characters to indent your code.
 This is not allowed in Python.
@@ -889,14 +879,12 @@ beyond the location indicated below by –&gt; and ^.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-assign-to-keyword">
 <h2>SyntaxError - Assign to keyword<a class="headerlink" href="#syntaxerror-assign-to-keyword" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id6">
 <h3>Python exception<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-invalid-syntax">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#syntaxerror-invalid-syntax" title="Permalink to this headline">¶</a></h4>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error1.py’
@@ -908,12 +896,11 @@ beyond the location indicated below by –&gt; and ^.</p>
 </pre></div>
 </div>
 <div class="section" id="python-s-error-message-invalid-syntax-cannot-be-used-to-identify-the-problem">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#python-s-error-message-invalid-syntax-cannot-be-used-to-identify-the-problem" title="Permalink to this headline">¶</a></h5>
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#python-s-error-message-invalid-syntax-cannot-be-used-to-identify-the-problem" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>You were trying to assign a value to the Python keyword <code class="docutils literal notranslate"><span class="pre">def</span></code>.
 This is not allowed.</p>
-</div>
 </div>
 </div>
 </div>
@@ -922,8 +909,7 @@ This is not allowed.</p>
 <h2>SyntaxError - Missing colon - 1<a class="headerlink" href="#syntaxerror-missing-colon-1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id7">
 <h3>Python exception<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id8">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error2.py’
@@ -934,8 +920,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                  <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id9">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id8">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>You wrote a statement beginning with
@@ -943,14 +929,12 @@ but I might guess incorrectly.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-missing-colon-2">
 <h2>SyntaxError - Missing colon - 2<a class="headerlink" href="#syntaxerror-missing-colon-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id10">
-<h3>Python exception<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id11">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id9">
+<h3>Python exception<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error3.py’
@@ -961,8 +945,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                       <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id12">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id10">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>You wrote a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop but
@@ -970,14 +954,12 @@ forgot to add a colon <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-elif-not-else-if">
 <h2>SyntaxError - elif, not else if<a class="headerlink" href="#syntaxerror-elif-not-else-if" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id13">
-<h3>Python exception<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id14">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id11">
+<h3>Python exception<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error4.py’
@@ -989,8 +971,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id15">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id12">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>You likely meant to use Python’s <code class="docutils literal notranslate"><span class="pre">elif</span></code> keyword
@@ -998,14 +980,12 @@ but wrote <code class="docutils literal notranslate"><span class="pre">else</spa
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-elif-not-elseif">
 <h2>SyntaxError - elif, not elseif<a class="headerlink" href="#syntaxerror-elif-not-elseif" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id16">
-<h3>Python exception<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id17">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id13">
+<h3>Python exception<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error5.py’
@@ -1017,8 +997,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                  <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id18">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id14">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>You likely meant to use Python’s <code class="docutils literal notranslate"><span class="pre">elif</span></code> keyword
@@ -1026,14 +1006,12 @@ but wrote <code class="docutils literal notranslate"><span class="pre">elseif</s
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-malformed-def-statment-1">
 <h2>SyntaxError - malformed def statment - 1<a class="headerlink" href="#syntaxerror-malformed-def-statment-1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id19">
-<h3>Python exception<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id20">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id15">
+<h3>Python exception<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error6.py’
@@ -1044,8 +1022,8 @@ beyond the location indicated below by –&gt; and ^.</p>
               <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id21">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id16">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>You tried to define a function or method and did not use the correct syntax.
@@ -1056,14 +1034,12 @@ The correct syntax is:</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-malformed-def-statment-2">
 <h2>SyntaxError - malformed def statment - 2<a class="headerlink" href="#syntaxerror-malformed-def-statment-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id22">
-<h3>Python exception<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id23">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id17">
+<h3>Python exception<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error7.py’
@@ -1074,8 +1050,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                     <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id24">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id18">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>You tried to define a function or method and did not use the correct syntax.
@@ -1086,14 +1062,12 @@ The correct syntax is:</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-malformed-def-statment-3">
 <h2>SyntaxError - malformed def statment - 3<a class="headerlink" href="#syntaxerror-malformed-def-statment-3" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id25">
-<h3>Python exception<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id26">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id19">
+<h3>Python exception<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error8.py’
@@ -1104,8 +1078,8 @@ beyond the location indicated below by –&gt; and ^.</p>
               <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id27">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id20">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>You tried to define a function or method and did not use the correct syntax.
@@ -1116,14 +1090,12 @@ The correct syntax is:</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-can-t-assign-to-literal-1">
 <h2>SyntaxError - can’t assign to literal - 1<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id28">
-<h3>Python exception<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-cannot-assign-to-literal">
-<h4>SyntaxError: cannot assign to literal<a class="headerlink" href="#syntaxerror-cannot-assign-to-literal" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id21">
+<h3>Python exception<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: cannot assign to literal</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error9.py’
@@ -1134,8 +1106,8 @@ beyond the location indicated below by –&gt; and ^.</p>
           <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id29">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id22">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
 <p>You wrote an expression like</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">=</span> <span class="n">a</span>
 </pre></div>
@@ -1149,14 +1121,12 @@ and is not simply the name of a variable. Perhaps you meant to write:</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-can-t-assign-to-literal-2">
 <h2>SyntaxError - can’t assign to literal - 2<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id30">
-<h3>Python exception<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id31">
-<h4>SyntaxError: cannot assign to literal<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id23">
+<h3>Python exception<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: cannot assign to literal</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error10.py’
@@ -1167,8 +1137,8 @@ beyond the location indicated below by –&gt; and ^.</p>
           <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id32">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id24">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
 <p>You wrote an expression like</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">=</span> <span class="mi">2</span>
 </pre></div>
@@ -1179,14 +1149,12 @@ and is not simply the name of a variable.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-can-t-assign-to-literal-3">
 <h2>SyntaxError - can’t assign to literal - 3<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-3" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id33">
-<h3>Python exception<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-cannot-assign-to-set-display">
-<h4>SyntaxError: cannot assign to set display<a class="headerlink" href="#syntaxerror-cannot-assign-to-set-display" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id25">
+<h3>Python exception<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: cannot assign to set display</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error52.py’
@@ -1198,8 +1166,8 @@ beyond the location indicated below by –&gt; and ^.</p>
 <span class="s2">           ^</span>
 </pre></div>
 </div>
-<div class="section" id="id34">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id26">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
 <p>You wrote an expression like</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span> <span class="o">=</span> <span class="mi">4</span>
 </pre></div>
@@ -1210,14 +1178,12 @@ and is not simply the name of a variable.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-can-t-assign-to-literal-4">
 <h2>SyntaxError - can’t assign to literal - 4<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-4" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id35">
-<h3>Python exception<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-cannot-assign-to-dict-display">
-<h4>SyntaxError: cannot assign to dict display<a class="headerlink" href="#syntaxerror-cannot-assign-to-dict-display" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id27">
+<h3>Python exception<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: cannot assign to dict display</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error53.py’
@@ -1229,8 +1195,8 @@ beyond the location indicated below by –&gt; and ^.</p>
 <span class="s2">           ^</span>
 </pre></div>
 </div>
-<div class="section" id="id36">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id28">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
 <p>You wrote an expression like</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="mi">1</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span> <span class="p">:</span> <span class="mi">4</span><span class="p">}</span> <span class="o">=</span> <span class="mi">5</span>
 </pre></div>
@@ -1241,14 +1207,12 @@ and is not simply the name of a variable.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-can-t-assign-to-literal-5">
 <h2>SyntaxError - can’t assign to literal - 5<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-5" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id37">
-<h3>Python exception<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id38">
-<h4>SyntaxError: cannot assign to literal<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id29">
+<h3>Python exception<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: cannot assign to literal</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error54.py’
@@ -1260,8 +1224,8 @@ beyond the location indicated below by –&gt; and ^.</p>
           <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id39">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id30">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
 <p>You wrote an expression like</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span> <span class="o">=</span> <span class="n">variable_name</span>
 </pre></div>
@@ -1272,14 +1236,12 @@ and is not simply the name of a variable.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-import-x-from-y">
 <h2>SyntaxError - import X from Y<a class="headerlink" href="#syntaxerror-import-x-from-y" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id40">
-<h3>Python exception<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id41">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id31">
+<h3>Python exception<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error11.py’
@@ -1290,8 +1252,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                      <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id42">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id32">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>You wrote something like</p>
@@ -1305,14 +1267,12 @@ but I might guess incorrectly.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-eol-while-scanning-string-literal">
 <h2>SyntaxError - EOL while scanning string literal<a class="headerlink" href="#syntaxerror-eol-while-scanning-string-literal" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id43">
-<h3>Python exception<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id44">
-<h4>SyntaxError: EOL while scanning string literal<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id33">
+<h3>Python exception<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: EOL while scanning string literal</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error12.py’
@@ -1323,21 +1283,19 @@ beyond the location indicated below by –&gt; and ^.</p>
                          <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id45">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id34">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h4>
 <p>You starting writing a string with a single or double quote
 but never ended the string with another quote on that line.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-assignment-to-keyword-none">
 <h2>SyntaxError - assignment to keyword (None)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-none" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id46">
-<h3>Python exception<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-cannot-assign-to-none">
-<h4>SyntaxError: cannot assign to None<a class="headerlink" href="#syntaxerror-cannot-assign-to-none" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id35">
+<h3>Python exception<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: cannot assign to None</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error13.py’
@@ -1349,20 +1307,18 @@ beyond the location indicated below by –&gt; and ^.</p>
           <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id47">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id36">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">None</span></code> is a constant in Python; you cannot assign it a value.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-assignment-to-keyword-debug">
 <h2>SyntaxError - assignment to keyword (<strong>debug</strong>)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-debug" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id48">
-<h3>Python exception<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-cannot-assign-to-debug">
-<h4>SyntaxError: cannot assign to <strong>debug</strong><a class="headerlink" href="#syntaxerror-cannot-assign-to-debug" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id37">
+<h3>Python exception<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: cannot assign to <strong>debug</strong></p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error14.py’
@@ -1374,20 +1330,18 @@ beyond the location indicated below by –&gt; and ^.</p>
           <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id49">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id38">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">__debug__</span></code> is a constant in Python; you cannot assign it a value.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-unmatched-closing-parenthesis">
 <h2>SyntaxError - unmatched closing parenthesis<a class="headerlink" href="#syntaxerror-unmatched-closing-parenthesis" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id50">
-<h3>Python exception<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-unmatched">
-<h4>SyntaxError: unmatched ‘)’<a class="headerlink" href="#syntaxerror-unmatched" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id39">
+<h3>Python exception<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: unmatched ‘)’</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error15.py’
@@ -1399,20 +1353,18 @@ beyond the location indicated below by –&gt; and ^.</p>
 <span class="s2">                    ^</span>
 </pre></div>
 </div>
-<div class="section" id="id51">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id40">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h4>
 <p>The closing parenthesis <code class="docutils literal notranslate"><span class="pre">)</span></code> on line 6 does not match anything.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-unclosed-parenthesis-1">
 <h2>SyntaxError - unclosed parenthesis- 1<a class="headerlink" href="#syntaxerror-unclosed-parenthesis-1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id52">
-<h3>Python exception<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id53">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id41">
+<h3>Python exception<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error16.py’
@@ -1423,8 +1375,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                    <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id54">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id42">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>The opening parenthesis <code class="docutils literal notranslate"><span class="pre">(</span></code> on line 2 is not closed.</p>
@@ -1435,14 +1387,12 @@ but I might guess incorrectly.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-unclosed-parenthesis-2">
 <h2>SyntaxError - unclosed parenthesis - 2<a class="headerlink" href="#syntaxerror-unclosed-parenthesis-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id55">
-<h3>Python exception<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id56">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id43">
+<h3>Python exception<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error17.py’
@@ -1453,8 +1403,8 @@ beyond the location indicated below by –&gt; and ^.</p>
           <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id57">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id44">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>The opening parenthesis <code class="docutils literal notranslate"><span class="pre">(</span></code> on line 2 is not closed.</p>
@@ -1465,14 +1415,12 @@ but I might guess incorrectly.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-mismatched-brackets">
 <h2>SyntaxError - mismatched brackets<a class="headerlink" href="#syntaxerror-mismatched-brackets" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id58">
-<h3>Python exception<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-closing-parenthesis-does-not-match-opening-parenthesis">
-<h4>SyntaxError: closing parenthesis ‘]’ does not match opening parenthesis ‘(‘<a class="headerlink" href="#syntaxerror-closing-parenthesis-does-not-match-opening-parenthesis" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id45">
+<h3>Python exception<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: closing parenthesis ‘]’ does not match opening parenthesis ‘(‘</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error18.py’
@@ -1482,8 +1430,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                       <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id59">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id46">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h4>
 <p>Python tells us that the closing <code class="docutils literal notranslate"><span class="pre">]</span></code> on the last line shown
 does not match the opening <code class="docutils literal notranslate"><span class="pre">(</span></code>.</p>
 <p>I will attempt to be give a bit more information.</p>
@@ -1495,14 +1443,12 @@ does not match the opening <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-mismatched-brackets-2">
 <h2>SyntaxError - mismatched brackets - 2<a class="headerlink" href="#syntaxerror-mismatched-brackets-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id60">
-<h3>Python exception<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-closing-parenthesis-does-not-match-opening-parenthesis-on-line-2">
-<h4>SyntaxError: closing parenthesis ‘]’ does not match opening parenthesis ‘(‘ on line 2<a class="headerlink" href="#syntaxerror-closing-parenthesis-does-not-match-opening-parenthesis-on-line-2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id47">
+<h3>Python exception<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: closing parenthesis ‘]’ does not match opening parenthesis ‘(‘ on line 2</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error19.py’
@@ -1514,8 +1460,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                 <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id61">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id48">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h4>
 <p>Python tells us that the closing <code class="docutils literal notranslate"><span class="pre">]</span></code> on the last line shown
 does not match the opening <code class="docutils literal notranslate"><span class="pre">(</span></code> on line 2.</p>
 <p>I will attempt to be give a bit more information.</p>
@@ -1529,14 +1475,12 @@ does not match the opening <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-print-is-a-function">
 <h2>SyntaxError - print is a function<a class="headerlink" href="#syntaxerror-print-is-a-function" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id62">
-<h3>Python exception<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-missing-parentheses-in-call-to-print-did-you-mean-print-hello">
-<h4>SyntaxError: Missing parentheses in call to ‘print’. Did you mean print(‘hello’)?<a class="headerlink" href="#syntaxerror-missing-parentheses-in-call-to-print-did-you-mean-print-hello" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id49">
+<h3>Python exception<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: Missing parentheses in call to ‘print’. Did you mean print(‘hello’)?</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error20.py’
@@ -1546,8 +1490,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                 <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id63">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id50">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h4>
 <p>Perhaps you need to type</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1557,14 +1501,12 @@ Now, <code class="docutils literal notranslate"><span class="pre">print</span></
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-python-keyword-as-function-name">
 <h2>SyntaxError - Python keyword as function name<a class="headerlink" href="#syntaxerror-python-keyword-as-function-name" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id64">
-<h3>Python exception<a class="headerlink" href="#id64" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id65">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id51">
+<h3>Python exception<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error21.py’
@@ -1575,22 +1517,20 @@ beyond the location indicated below by –&gt; and ^.</p>
               <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id66">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id52">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>You tried to use the Python keyword <code class="docutils literal notranslate"><span class="pre">pass</span></code> as a function name.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-break-outside-loop">
 <h2>SyntaxError - break outside loop<a class="headerlink" href="#syntaxerror-break-outside-loop" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id67">
-<h3>Python exception<a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id68">
-<h4>SyntaxError: ‘break’ outside loop<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id53">
+<h3>Python exception<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: ‘break’ outside loop</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error22.py’
@@ -1602,20 +1542,18 @@ beyond the location indicated below by –&gt; and ^.</p>
               <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id69">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id69" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id54">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h4>
 <p>The Python keyword <code class="docutils literal notranslate"><span class="pre">break</span></code> can only be used inside a for loop or inside a while loop.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-continue-outside-loop">
 <h2>SyntaxError - continue outside loop<a class="headerlink" href="#syntaxerror-continue-outside-loop" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id70">
-<h3>Python exception<a class="headerlink" href="#id70" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-continue-not-properly-in-loop">
-<h4>SyntaxError: ‘continue’ not properly in loop<a class="headerlink" href="#syntaxerror-continue-not-properly-in-loop" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id55">
+<h3>Python exception<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: ‘continue’ not properly in loop</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error23.py’
@@ -1627,20 +1565,18 @@ beyond the location indicated below by –&gt; and ^.</p>
               <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id71">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id71" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id56">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h4>
 <p>The Python keyword <code class="docutils literal notranslate"><span class="pre">continue</span></code> can only be used inside a for loop or inside a while loop.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-quote-inside-a-string">
 <h2>SyntaxError - quote inside a string<a class="headerlink" href="#syntaxerror-quote-inside-a-string" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id72">
-<h3>Python exception<a class="headerlink" href="#id72" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id73">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id73" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id57">
+<h3>Python exception<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error24.py’
@@ -1651,8 +1587,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                          <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id74">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id74" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id58">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>There appears to be a Python identifier (variable name)
@@ -1662,14 +1598,12 @@ that was enclosed in quotes of the same kind.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-missing-comma-in-a-dict">
 <h2>SyntaxError - missing comma in a dict<a class="headerlink" href="#syntaxerror-missing-comma-in-a-dict" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id75">
-<h3>Python exception<a class="headerlink" href="#id75" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id76">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id76" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id59">
+<h3>Python exception<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error25.py’
@@ -1681,8 +1615,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id77">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id77" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id60">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>It is possible that you forgot a comma between items in a set or dict
@@ -1690,14 +1624,12 @@ before the position indicated by –&gt; and ^.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-missing-comma-in-a-set">
 <h2>SyntaxError - missing comma in a set<a class="headerlink" href="#syntaxerror-missing-comma-in-a-set" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id78">
-<h3>Python exception<a class="headerlink" href="#id78" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id79">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id79" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id61">
+<h3>Python exception<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error26.py’
@@ -1708,8 +1640,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                      <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id80">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id80" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id62">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>It is possible that you forgot a comma between items in a set or dict
@@ -1717,14 +1649,12 @@ before the position indicated by –&gt; and ^.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-missing-comma-in-a-list">
 <h2>SyntaxError - missing comma in a list<a class="headerlink" href="#syntaxerror-missing-comma-in-a-list" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id81">
-<h3>Python exception<a class="headerlink" href="#id81" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id82">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id82" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id63">
+<h3>Python exception<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error27.py’
@@ -1735,8 +1665,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                      <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id83">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id83" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id64">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id64" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>It is possible that you forgot a comma between items in a list
@@ -1744,14 +1674,12 @@ before the position indicated by –&gt; and ^.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-missing-comma-in-a-tuple">
 <h2>SyntaxError - missing comma in a tuple<a class="headerlink" href="#syntaxerror-missing-comma-in-a-tuple" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id84">
-<h3>Python exception<a class="headerlink" href="#id84" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id85">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id85" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id65">
+<h3>Python exception<a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error28.py’
@@ -1762,8 +1690,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                      <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id86">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id86" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id66">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>It is possible that you forgot a comma between items in a tuple,
@@ -1772,14 +1700,12 @@ before the position indicated by –&gt; and ^.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-missing-comma-between-function-args">
 <h2>SyntaxError - missing comma between function args<a class="headerlink" href="#syntaxerror-missing-comma-between-function-args" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id87">
-<h3>Python exception<a class="headerlink" href="#id87" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id88">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id88" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id67">
+<h3>Python exception<a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error29.py’
@@ -1791,8 +1717,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                      <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id89">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id89" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id68">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>It is possible that you forgot a comma between items in a tuple,
@@ -1801,14 +1727,12 @@ before the position indicated by –&gt; and ^.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-can-t-assign-to-function-call-1">
 <h2>SyntaxError - can’t assign to function call - 1<a class="headerlink" href="#syntaxerror-can-t-assign-to-function-call-1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id90">
-<h3>Python exception<a class="headerlink" href="#id90" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-cannot-assign-to-function-call">
-<h4>SyntaxError: cannot assign to function call<a class="headerlink" href="#syntaxerror-cannot-assign-to-function-call" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id69">
+<h3>Python exception<a class="headerlink" href="#id69" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: cannot assign to function call</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error30.py’
@@ -1820,8 +1744,8 @@ beyond the location indicated below by –&gt; and ^.</p>
 <span class="s2">          ^</span>
 </pre></div>
 </div>
-<div class="section" id="id91">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id91" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id70">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id70" title="Permalink to this headline">¶</a></h4>
 <p>You wrote the expression</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
@@ -1831,14 +1755,12 @@ or includes a function call and is not simply the name of a variable.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-can-t-assign-to-function-call-2">
 <h2>SyntaxError - can’t assign to function call - 2<a class="headerlink" href="#syntaxerror-can-t-assign-to-function-call-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id92">
-<h3>Python exception<a class="headerlink" href="#id92" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id93">
-<h4>SyntaxError: cannot assign to function call<a class="headerlink" href="#id93" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id71">
+<h3>Python exception<a class="headerlink" href="#id71" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: cannot assign to function call</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error31.py’
@@ -1850,8 +1772,8 @@ beyond the location indicated below by –&gt; and ^.</p>
 <span class="s2">          ^</span>
 </pre></div>
 </div>
-<div class="section" id="id94">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id94" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id72">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id72" title="Permalink to this headline">¶</a></h4>
 <p>You wrote an expression like</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_function</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="o">=</span> <span class="n">some</span> <span class="n">value</span>
 </pre></div>
@@ -1861,14 +1783,12 @@ a function call and not the name of a variable.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-used-equal-sign-instead-of-colon">
 <h2>SyntaxError - used equal sign instead of colon<a class="headerlink" href="#syntaxerror-used-equal-sign-instead-of-colon" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id95">
-<h3>Python exception<a class="headerlink" href="#id95" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id96">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id96" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id73">
+<h3>Python exception<a class="headerlink" href="#id73" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error32.py’
@@ -1880,8 +1800,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                          <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id97">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id97" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id74">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id74" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>It is possible that you used an equal sign <code class="docutils literal notranslate"><span class="pre">=</span></code> instead of a colon <code class="docutils literal notranslate"><span class="pre">:</span></code>
@@ -1890,14 +1810,12 @@ before or at the position indicated by –&gt; and ^.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-non-default-argument-follows-default-argument">
 <h2>SyntaxError - non-default argument follows default argument<a class="headerlink" href="#syntaxerror-non-default-argument-follows-default-argument" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id98">
-<h3>Python exception<a class="headerlink" href="#id98" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id99">
-<h4>SyntaxError: non-default argument follows default argument<a class="headerlink" href="#id99" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id75">
+<h3>Python exception<a class="headerlink" href="#id75" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: non-default argument follows default argument</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error33.py’
@@ -1909,8 +1827,8 @@ beyond the location indicated below by –&gt; and ^.</p>
 <span class="s2">                   ^</span>
 </pre></div>
 </div>
-<div class="section" id="id100">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id100" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id76">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id76" title="Permalink to this headline">¶</a></h4>
 <p>In Python, you can define functions with only positional arguments</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span> <span class="o">...</span>
 </pre></div>
@@ -1928,14 +1846,12 @@ According to Python, you used positional arguments after keyword ones.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-positional-argument-follows-keyword-argument">
 <h2>SyntaxError - positional argument follows keyword argument<a class="headerlink" href="#syntaxerror-positional-argument-follows-keyword-argument" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id101">
-<h3>Python exception<a class="headerlink" href="#id101" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id102">
-<h4>SyntaxError: positional argument follows keyword argument<a class="headerlink" href="#id102" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id77">
+<h3>Python exception<a class="headerlink" href="#id77" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: positional argument follows keyword argument</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error34.py’
@@ -1947,8 +1863,8 @@ beyond the location indicated below by –&gt; and ^.</p>
 <span class="s2">                    ^</span>
 </pre></div>
 </div>
-<div class="section" id="id103">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id103" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id78">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id78" title="Permalink to this headline">¶</a></h4>
 <p>In Python, you can call functions with only positional arguments</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
@@ -1966,14 +1882,12 @@ According to Python, you used positional arguments after keyword ones.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-f-string-unterminated-string">
 <h2>SyntaxError - f-string: unterminated string<a class="headerlink" href="#syntaxerror-f-string-unterminated-string" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id104">
-<h3>Python exception<a class="headerlink" href="#id104" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id105">
-<h4>SyntaxError: f-string: unterminated string<a class="headerlink" href="#id105" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id79">
+<h3>Python exception<a class="headerlink" href="#id79" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: f-string: unterminated string</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error35.py’
@@ -1985,22 +1899,20 @@ beyond the location indicated below by –&gt; and ^.</p>
                 <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id106">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id106" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id80">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id80" title="Permalink to this headline">¶</a></h4>
 <p>Inside an f-string, which is a string prefixed by the letter f,
 you have another string, which starts with either a
 single quote (‘) or double quote (“), without a matching closing one.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-unclosed-bracket">
 <h2>SyntaxError - unclosed bracket<a class="headerlink" href="#syntaxerror-unclosed-bracket" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id107">
-<h3>Python exception<a class="headerlink" href="#id107" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id108">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id108" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id81">
+<h3>Python exception<a class="headerlink" href="#id81" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error36.py’
@@ -2012,8 +1924,8 @@ beyond the location indicated below by –&gt; and ^.</p>
            <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id109">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id109" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id82">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id82" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>The opening square bracket <code class="docutils literal notranslate"><span class="pre">[</span></code> on line 5 is not closed.</p>
@@ -2024,14 +1936,12 @@ but I might guess incorrectly.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-unexpected-eof-while-parsing">
 <h2>SyntaxError - unexpected EOF while parsing<a class="headerlink" href="#syntaxerror-unexpected-eof-while-parsing" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id110">
-<h3>Python exception<a class="headerlink" href="#id110" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id111">
-<h4>SyntaxError: unexpected EOF while parsing<a class="headerlink" href="#id111" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id83">
+<h3>Python exception<a class="headerlink" href="#id83" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: unexpected EOF while parsing</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code the file
 ‘TESTS:\syntax\raise_syntax_error37.py’.
@@ -2041,8 +1951,8 @@ It reached the end of the file and expected more content.</p>
         <span class="mi">7</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">foo</span><span class="p">())</span>
 </pre></div>
 </div>
-<div class="section" id="id112">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id112" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id84">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id84" title="Permalink to this headline">¶</a></h4>
 <p>Python tells us that it reached the end of the file
 and expected more content.</p>
 <p>I will attempt to be give a bit more information.</p>
@@ -2054,14 +1964,12 @@ and expected more content.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-name-is-parameter-and-global">
 <h2>SyntaxError - name is parameter and global<a class="headerlink" href="#syntaxerror-name-is-parameter-and-global" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id113">
-<h3>Python exception<a class="headerlink" href="#id113" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-name-x-is-parameter-and-global">
-<h4>SyntaxError: name ‘x’ is parameter and global<a class="headerlink" href="#syntaxerror-name-x-is-parameter-and-global" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id85">
+<h3>Python exception<a class="headerlink" href="#id85" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: name ‘x’ is parameter and global</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error38.py’
@@ -2073,8 +1981,8 @@ beyond the location indicated below by –&gt; and ^.</p>
               <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id114">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id114" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id86">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id86" title="Permalink to this headline">¶</a></h4>
 <p>You are including the statement</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`    global x`
 </pre></div>
@@ -2086,14 +1994,12 @@ inside that function, which is the contrary of what <code class="docutils litera
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-keyword-as-attribute">
 <h2>SyntaxError - keyword as attribute<a class="headerlink" href="#syntaxerror-keyword-as-attribute" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id115">
-<h3>Python exception<a class="headerlink" href="#id115" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id116">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id116" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id87">
+<h3>Python exception<a class="headerlink" href="#id87" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error39.py’
@@ -2105,22 +2011,20 @@ beyond the location indicated below by –&gt; and ^.</p>
              <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id117">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id117" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id88">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id88" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>You cannot use the Python keyword <code class="docutils literal notranslate"><span class="pre">pass</span></code> as an attribute.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-content-passed-continuation-line-character">
 <h2>SyntaxError - content passed continuation line character<a class="headerlink" href="#syntaxerror-content-passed-continuation-line-character" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id118">
-<h3>Python exception<a class="headerlink" href="#id118" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-unexpected-character-after-line-continuation-character">
-<h4>SyntaxError: unexpected character after line continuation character<a class="headerlink" href="#syntaxerror-unexpected-character-after-line-continuation-character" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id89">
+<h3>Python exception<a class="headerlink" href="#id89" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: unexpected character after line continuation character</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error40.py’
@@ -2132,22 +2036,20 @@ beyond the location indicated below by –&gt; and ^.</p>
 <span class="s2">                   ^</span>
 </pre></div>
 </div>
-<div class="section" id="id119">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id119" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id90">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id90" title="Permalink to this headline">¶</a></h4>
 <p>You are using the continuation character <code class="docutils literal notranslate"><span class="pre">\</span></code> outside of a string,
 and it is followed by some other character(s).
 I am guessing that you forgot to enclose some content in a string.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-keyword-can-t-be-an-expression">
 <h2>SyntaxError - keyword can’t be an expression<a class="headerlink" href="#syntaxerror-keyword-can-t-be-an-expression" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id120">
-<h3>Python exception<a class="headerlink" href="#id120" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-expression-cannot-contain-assignment-perhaps-you-meant">
-<h4>SyntaxError: expression cannot contain assignment, perhaps you meant “==”?<a class="headerlink" href="#syntaxerror-expression-cannot-contain-assignment-perhaps-you-meant" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id91">
+<h3>Python exception<a class="headerlink" href="#id91" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: expression cannot contain assignment, perhaps you meant “==”?</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error41.py’
@@ -2159,8 +2061,8 @@ beyond the location indicated below by –&gt; and ^.</p>
 <span class="s2">                    ^</span>
 </pre></div>
 </div>
-<div class="section" id="id121">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id121" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id92">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id92" title="Permalink to this headline">¶</a></h4>
 <p>One of the following two possibilities could be the cause:</p>
 <ol>
 <li><p>You meant to do a comparison with == and wrote = instead.</p></li>
@@ -2176,14 +2078,12 @@ or contains a period, etc.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-invalid-character-in-identifier">
 <h2>SyntaxError - invalid character in identifier<a class="headerlink" href="#syntaxerror-invalid-character-in-identifier" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id122">
-<h3>Python exception<a class="headerlink" href="#id122" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id123">
-<h4>SyntaxError: invalid character in identifier<a class="headerlink" href="#id123" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id93">
+<h3>Python exception<a class="headerlink" href="#id93" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid character in identifier</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error42.py’
@@ -2195,22 +2095,20 @@ beyond the location indicated below by –&gt; and ^.</p>
           ^
 </pre></div>
 </div>
-<div class="section" id="id124">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id124" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id94">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id94" title="Permalink to this headline">¶</a></h4>
 <p>You likely used some unicode character that is not allowed
 as part of a variable name in Python.
 This includes many emojis.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-1">
 <h2>SyntaxError - keyword cannot be argument in def - 1<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id125">
-<h3>Python exception<a class="headerlink" href="#id125" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id126">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id126" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id95">
+<h3>Python exception<a class="headerlink" href="#id95" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error43.py’
@@ -2222,8 +2120,8 @@ beyond the location indicated below by –&gt; and ^.</p>
 <span class="s2">                ^</span>
 </pre></div>
 </div>
-<div class="section" id="id127">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id127" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id96">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id96" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>I am guessing that you tried to use the Python keyword
@@ -2231,14 +2129,12 @@ but I might guess incorrectly.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-2">
 <h2>SyntaxError - keyword cannot be argument in def - 2<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id128">
-<h3>Python exception<a class="headerlink" href="#id128" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id129">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id129" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id97">
+<h3>Python exception<a class="headerlink" href="#id97" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error44.py’
@@ -2250,8 +2146,8 @@ beyond the location indicated below by –&gt; and ^.</p>
 <span class="s2">                   ^</span>
 </pre></div>
 </div>
-<div class="section" id="id130">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id130" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id98">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id98" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>I am guessing that you tried to use the Python keyword
@@ -2259,14 +2155,12 @@ but I might guess incorrectly.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-3">
 <h2>SyntaxError - keyword cannot be argument in def - 3<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-3" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id131">
-<h3>Python exception<a class="headerlink" href="#id131" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id132">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id132" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id99">
+<h3>Python exception<a class="headerlink" href="#id99" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error45.py’
@@ -2278,8 +2172,8 @@ beyond the location indicated below by –&gt; and ^.</p>
 <span class="s2">                 ^</span>
 </pre></div>
 </div>
-<div class="section" id="id133">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id133" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id100">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id100" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>I am guessing that you tried to use the Python keyword
@@ -2287,14 +2181,12 @@ but I might guess incorrectly.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-4">
 <h2>SyntaxError - keyword cannot be argument in def - 4<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-4" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id134">
-<h3>Python exception<a class="headerlink" href="#id134" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id135">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id135" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id101">
+<h3>Python exception<a class="headerlink" href="#id101" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error46.py’
@@ -2306,8 +2198,8 @@ beyond the location indicated below by –&gt; and ^.</p>
 <span class="s2">                  ^</span>
 </pre></div>
 </div>
-<div class="section" id="id136">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id136" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id102">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id102" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>I am guessing that you tried to use the Python keyword
@@ -2315,14 +2207,12 @@ but I might guess incorrectly.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-delete-function-call">
 <h2>SyntaxError - delete function call<a class="headerlink" href="#syntaxerror-delete-function-call" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id137">
-<h3>Python exception<a class="headerlink" href="#id137" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-cannot-delete-function-call">
-<h4>SyntaxError: cannot delete function call<a class="headerlink" href="#syntaxerror-cannot-delete-function-call" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id103">
+<h3>Python exception<a class="headerlink" href="#id103" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: cannot delete function call</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error47.py’
@@ -2334,8 +2224,8 @@ beyond the location indicated below by –&gt; and ^.</p>
 <span class="s2">              ^</span>
 </pre></div>
 </div>
-<div class="section" id="id138">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id138" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id104">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id104" title="Permalink to this headline">¶</a></h4>
 <p>You attempted to delete a function call</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
@@ -2347,14 +2237,12 @@ beyond the location indicated below by –&gt; and ^.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-assigned-prior-to-global-declaration">
 <h2>SyntaxError - assigned prior to global declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-global-declaration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id139">
-<h3>Python exception<a class="headerlink" href="#id139" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-name-p-is-assigned-to-before-global-declaration">
-<h4>SyntaxError: name ‘p’ is assigned to before global declaration<a class="headerlink" href="#syntaxerror-name-p-is-assigned-to-before-global-declaration" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id105">
+<h3>Python exception<a class="headerlink" href="#id105" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: name ‘p’ is assigned to before global declaration</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error48.py’
@@ -2366,21 +2254,19 @@ beyond the location indicated below by –&gt; and ^.</p>
                <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id140">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id140" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id106">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id106" title="Permalink to this headline">¶</a></h4>
 <p>You assigned a value to the variable <code class="docutils literal notranslate"><span class="pre">p</span></code>
 before declaring it as a global variable.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-used-prior-to-global-declaration">
 <h2>SyntaxError - used prior to global declaration<a class="headerlink" href="#syntaxerror-used-prior-to-global-declaration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id141">
-<h3>Python exception<a class="headerlink" href="#id141" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-name-r-is-used-prior-to-global-declaration">
-<h4>SyntaxError: name ‘r’ is used prior to global declaration<a class="headerlink" href="#syntaxerror-name-r-is-used-prior-to-global-declaration" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id107">
+<h3>Python exception<a class="headerlink" href="#id107" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: name ‘r’ is used prior to global declaration</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error49.py’
@@ -2392,21 +2278,19 @@ beyond the location indicated below by –&gt; and ^.</p>
                <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id142">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id142" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id108">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id108" title="Permalink to this headline">¶</a></h4>
 <p>You used the variable <code class="docutils literal notranslate"><span class="pre">r</span></code>
 before declaring it as a global variable.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-assigned-prior-to-nonlocal-declaration">
 <h2>SyntaxError - assigned prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id143">
-<h3>Python exception<a class="headerlink" href="#id143" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-name-q-is-used-prior-to-nonlocal-declaration">
-<h4>SyntaxError: name ‘q’ is used prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-name-q-is-used-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id109">
+<h3>Python exception<a class="headerlink" href="#id109" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: name ‘q’ is used prior to nonlocal declaration</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error50.py’
@@ -2418,21 +2302,19 @@ beyond the location indicated below by –&gt; and ^.</p>
                    <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id144">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id144" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id110">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id110" title="Permalink to this headline">¶</a></h4>
 <p>You used the variable <code class="docutils literal notranslate"><span class="pre">q</span></code>
 before declaring it as a nonlocal variable.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-used-prior-to-nonlocal-declaration">
 <h2>SyntaxError - used prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-used-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id145">
-<h3>Python exception<a class="headerlink" href="#id145" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-name-s-is-assigned-to-before-nonlocal-declaration">
-<h4>SyntaxError: name ‘s’ is assigned to before nonlocal declaration<a class="headerlink" href="#syntaxerror-name-s-is-assigned-to-before-nonlocal-declaration" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id111">
+<h3>Python exception<a class="headerlink" href="#id111" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: name ‘s’ is assigned to before nonlocal declaration</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error51.py’
@@ -2444,21 +2326,19 @@ beyond the location indicated below by –&gt; and ^.</p>
                    <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id146">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id146" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id112">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id112" title="Permalink to this headline">¶</a></h4>
 <p>You assigned a value to the variable <code class="docutils literal notranslate"><span class="pre">s</span></code>
 before declaring it as a nonlocal variable.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-named-assignment-with-python-constant">
 <h2>SyntaxError - named assignment with Python constant<a class="headerlink" href="#syntaxerror-named-assignment-with-python-constant" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id147">
-<h3>Python exception<a class="headerlink" href="#id147" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-cannot-use-assignment-expressions-with-true">
-<h4>SyntaxError: cannot use assignment expressions with True<a class="headerlink" href="#syntaxerror-cannot-use-assignment-expressions-with-true" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id113">
+<h3>Python exception<a class="headerlink" href="#id113" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: cannot use assignment expressions with True</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error55.py’
@@ -2470,20 +2350,18 @@ beyond the location indicated below by –&gt; and ^.</p>
            <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id148">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id148" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id114">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id114" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">True</span></code> is a constant in Python; you cannot assign it a value.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-assignment-to-operator">
 <h2>SyntaxError - assignment to operator<a class="headerlink" href="#syntaxerror-assignment-to-operator" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id149">
-<h3>Python exception<a class="headerlink" href="#id149" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-cannot-assign-to-operator">
-<h4>SyntaxError: cannot assign to operator<a class="headerlink" href="#syntaxerror-cannot-assign-to-operator" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id115">
+<h3>Python exception<a class="headerlink" href="#id115" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: cannot assign to operator</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error56.py’
@@ -2495,22 +2373,20 @@ beyond the location indicated below by –&gt; and ^.</p>
           <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id150">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id150" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id116">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id116" title="Permalink to this headline">¶</a></h4>
 <p>You wrote an expression that includes some mathematical operations
 on the left-hand side of the equal sign which should be
 only used to assign a value to a variable.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-using-the-backquote-character">
 <h2>SyntaxError - using the backquote character<a class="headerlink" href="#syntaxerror-using-the-backquote-character" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id151">
-<h3>Python exception<a class="headerlink" href="#id151" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id152">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id152" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id117">
+<h3>Python exception<a class="headerlink" href="#id117" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error57.py’
@@ -2521,8 +2397,8 @@ beyond the location indicated below by –&gt; and ^.</p>
               ^
 </pre></div>
 </div>
-<div class="section" id="id153">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id153" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id118">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id118" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>You are using the backquote character.
@@ -2531,14 +2407,12 @@ in this latter case, use the function <code class="docutils literal notranslate"
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-assign-to-generator-expression">
 <h2>SyntaxError - assign to generator expression<a class="headerlink" href="#syntaxerror-assign-to-generator-expression" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id154">
-<h3>Python exception<a class="headerlink" href="#id154" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-cannot-assign-to-generator-expression">
-<h4>SyntaxError: cannot assign to generator expression<a class="headerlink" href="#syntaxerror-cannot-assign-to-generator-expression" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id119">
+<h3>Python exception<a class="headerlink" href="#id119" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: cannot assign to generator expression</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error58.py’
@@ -2549,21 +2423,19 @@ beyond the location indicated below by –&gt; and ^.</p>
           <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id155">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id155" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id120">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id120" title="Permalink to this headline">¶</a></h4>
 <p>On the left-hand side of an equal sign, you have a
 generator expression instead of the name of a variable.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-assign-to-conditional-expression">
 <h2>SyntaxError - assign to conditional expression<a class="headerlink" href="#syntaxerror-assign-to-conditional-expression" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id156">
-<h3>Python exception<a class="headerlink" href="#id156" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-cannot-assign-to-conditional-expression">
-<h4>SyntaxError: cannot assign to conditional expression<a class="headerlink" href="#syntaxerror-cannot-assign-to-conditional-expression" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id121">
+<h3>Python exception<a class="headerlink" href="#id121" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: cannot assign to conditional expression</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error59.py’
@@ -2574,8 +2446,8 @@ beyond the location indicated below by –&gt; and ^.</p>
           <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id157">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id157" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id122">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id122" title="Permalink to this headline">¶</a></h4>
 <p>On the left-hand side of an equal sign, you have a
 conditional expression instead of the name of a variable.
 A conditional expression has the following form:</p>
@@ -2585,14 +2457,12 @@ A conditional expression has the following form:</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-name-is-parameter-and-nonlocal">
 <h2>SyntaxError - name is parameter and nonlocal<a class="headerlink" href="#syntaxerror-name-is-parameter-and-nonlocal" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id158">
-<h3>Python exception<a class="headerlink" href="#id158" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-name-x-is-parameter-and-nonlocal">
-<h4>SyntaxError: name ‘x’ is parameter and nonlocal<a class="headerlink" href="#syntaxerror-name-x-is-parameter-and-nonlocal" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id123">
+<h3>Python exception<a class="headerlink" href="#id123" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: name ‘x’ is parameter and nonlocal</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error60.py’
@@ -2604,22 +2474,20 @@ beyond the location indicated below by –&gt; and ^.</p>
               <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id159">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id159" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id124">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id124" title="Permalink to this headline">¶</a></h4>
 <p>You used <code class="docutils literal notranslate"><span class="pre">x</span></code> as a parameter for a function
 before declaring it also as a nonlocal variable:
 <code class="docutils literal notranslate"><span class="pre">x</span></code> cannot be both at the same time.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-name-is-global-and-nonlocal">
 <h2>SyntaxError - name is global and nonlocal<a class="headerlink" href="#syntaxerror-name-is-global-and-nonlocal" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id160">
-<h3>Python exception<a class="headerlink" href="#id160" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-name-xy-is-nonlocal-and-global">
-<h4>SyntaxError: name ‘xy’ is nonlocal and global<a class="headerlink" href="#syntaxerror-name-xy-is-nonlocal-and-global" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id125">
+<h3>Python exception<a class="headerlink" href="#id125" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: name ‘xy’ is nonlocal and global</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error61.py’
@@ -2631,21 +2499,19 @@ beyond the location indicated below by –&gt; and ^.</p>
                <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id161">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id161" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id126">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id126" title="Permalink to this headline">¶</a></h4>
 <p>You declared <code class="docutils literal notranslate"><span class="pre">xy</span></code> as being both a global and nonlocal variable.
 A variable can be global, or nonlocal, but not both at the same time.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-nonlocal-variable-not-found">
 <h2>SyntaxError - nonlocal variable not found<a class="headerlink" href="#syntaxerror-nonlocal-variable-not-found" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id162">
-<h3>Python exception<a class="headerlink" href="#id162" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-no-binding-for-nonlocal-ab-found">
-<h4>SyntaxError: no binding for nonlocal ‘ab’ found<a class="headerlink" href="#syntaxerror-no-binding-for-nonlocal-ab-found" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id127">
+<h3>Python exception<a class="headerlink" href="#id127" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: no binding for nonlocal ‘ab’ found</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error62.py’
@@ -2657,21 +2523,19 @@ beyond the location indicated below by –&gt; and ^.</p>
               <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id163">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id163" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id128">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id128" title="Permalink to this headline">¶</a></h4>
 <p>You declared the variable <code class="docutils literal notranslate"><span class="pre">ab</span></code> as being a
 nonlocal variable but it cannot be found.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-nonlocal-variable-not-found-at-module-level">
 <h2>SyntaxError - nonlocal variable not found at module level<a class="headerlink" href="#syntaxerror-nonlocal-variable-not-found-at-module-level" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id164">
-<h3>Python exception<a class="headerlink" href="#id164" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-nonlocal-declaration-not-allowed-at-module-level">
-<h4>SyntaxError: nonlocal declaration not allowed at module level<a class="headerlink" href="#syntaxerror-nonlocal-declaration-not-allowed-at-module-level" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id129">
+<h3>Python exception<a class="headerlink" href="#id129" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: nonlocal declaration not allowed at module level</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error63.py’
@@ -2683,22 +2547,20 @@ beyond the location indicated below by –&gt; and ^.</p>
           <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id165">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id165" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id130">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id130" title="Permalink to this headline">¶</a></h4>
 <p>You used the nonlocal keyword at a module level.
 The nonlocal keyword refers to a variable inside a function
 given a value outside that function.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-keyword-arg-only-once-in-function-definition">
 <h2>SyntaxError - keyword arg only once in function definition<a class="headerlink" href="#syntaxerror-keyword-arg-only-once-in-function-definition" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id166">
-<h3>Python exception<a class="headerlink" href="#id166" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-duplicate-argument-aa-in-function-definition">
-<h4>SyntaxError: duplicate argument ‘aa’ in function definition<a class="headerlink" href="#syntaxerror-duplicate-argument-aa-in-function-definition" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id131">
+<h3>Python exception<a class="headerlink" href="#id131" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: duplicate argument ‘aa’ in function definition</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error64.py’
@@ -2710,8 +2572,8 @@ beyond the location indicated below by –&gt; and ^.</p>
           <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id167">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id167" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id132">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id132" title="Permalink to this headline">¶</a></h4>
 <p>You have defined a function repeating the keyword argument</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aa</span>
 </pre></div>
@@ -2720,14 +2582,12 @@ beyond the location indicated below by –&gt; and ^.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-keyword-arg-only-once-in-function-call">
 <h2>SyntaxError - keyword arg only once in function call<a class="headerlink" href="#syntaxerror-keyword-arg-only-once-in-function-call" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id168">
-<h3>Python exception<a class="headerlink" href="#id168" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-keyword-argument-repeated">
-<h4>SyntaxError: keyword argument repeated<a class="headerlink" href="#syntaxerror-keyword-argument-repeated" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id133">
+<h3>Python exception<a class="headerlink" href="#id133" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: keyword argument repeated</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error65.py’
@@ -2739,21 +2599,19 @@ beyond the location indicated below by –&gt; and ^.</p>
                   <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id169">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id169" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id134">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id134" title="Permalink to this headline">¶</a></h4>
 <p>You have called a function repeating the same keyword argument.
 Each keyword argument should appear only once in a function call.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-unexpected-eof-while-parsing-2">
 <h2>SyntaxError - unexpected EOF while parsing 2<a class="headerlink" href="#syntaxerror-unexpected-eof-while-parsing-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id170">
-<h3>Python exception<a class="headerlink" href="#id170" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id171">
-<h4>SyntaxError: unexpected EOF while parsing<a class="headerlink" href="#id171" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id135">
+<h3>Python exception<a class="headerlink" href="#id135" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: unexpected EOF while parsing</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code the file
 ‘TESTS:\syntax\raise_syntax_error66.py’.
@@ -2763,21 +2621,19 @@ It reached the end of the file and expected more content.</p>
        <span class="mi">3</span><span class="p">:</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
 </pre></div>
 </div>
-<div class="section" id="id172">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id172" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id136">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id136" title="Permalink to this headline">¶</a></h4>
 <p>Python tells us that it reached the end of the file
 and expected more content.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-print-is-a-function-2">
 <h2>SyntaxError - print is a function 2<a class="headerlink" href="#syntaxerror-print-is-a-function-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id173">
-<h3>Python exception<a class="headerlink" href="#id173" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id174">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id174" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id137">
+<h3>Python exception<a class="headerlink" href="#id137" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error67.py’
@@ -2787,8 +2643,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                 <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id175">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id175" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id138">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id138" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>In older version of Python, <code class="docutils literal notranslate"><span class="pre">print</span></code> was a keyword.
@@ -2796,14 +2652,12 @@ Now, <code class="docutils literal notranslate"><span class="pre">print</span></
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-copy-paste-from-interpreter">
 <h2>SyntaxError - copy/paste from interpreter<a class="headerlink" href="#syntaxerror-copy-paste-from-interpreter" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id176">
-<h3>Python exception<a class="headerlink" href="#id176" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id177">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id177" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id139">
+<h3>Python exception<a class="headerlink" href="#id139" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error68.py’
@@ -2813,8 +2667,8 @@ beyond the location indicated below by –&gt; and ^.</p>
           <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id178">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id178" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id140">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id140" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>It looks like you copy-pasted code from an interactive interpreter.
@@ -2822,14 +2676,12 @@ The Python prompt, <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-using-pip-from-interpreter">
 <h2>SyntaxError - Using pip from interpreter<a class="headerlink" href="#syntaxerror-using-pip-from-interpreter" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id179">
-<h3>Python exception<a class="headerlink" href="#id179" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id180">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id180" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id141">
+<h3>Python exception<a class="headerlink" href="#id141" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error69.py’
@@ -2839,8 +2691,8 @@ beyond the location indicated below by –&gt; and ^.</p>
               <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id181">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id181" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id142">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id142" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>It looks as if you are attempting to use pip to install a module.
@@ -2849,14 +2701,12 @@ not from a Python interpreter.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-using-pip-from-interpreter-2">
 <h2>SyntaxError - Using pip from interpreter 2<a class="headerlink" href="#syntaxerror-using-pip-from-interpreter-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id182">
-<h3>Python exception<a class="headerlink" href="#id182" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id183">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id183" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id143">
+<h3>Python exception<a class="headerlink" href="#id143" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error70.py’
@@ -2866,8 +2716,8 @@ beyond the location indicated below by –&gt; and ^.</p>
                     <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id184">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id184" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id144">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id144" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>It looks as if you are attempting to use pip to install a module.
@@ -2876,14 +2726,12 @@ not from a Python interpreter.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-dot-followed-by-parenthesis">
 <h2>SyntaxError - dot followed by parenthesis<a class="headerlink" href="#syntaxerror-dot-followed-by-parenthesis" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id185">
-<h3>Python exception<a class="headerlink" href="#id185" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id186">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id186" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id145">
+<h3>Python exception<a class="headerlink" href="#id145" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error71.py’
@@ -2893,22 +2741,20 @@ beyond the location indicated below by –&gt; and ^.</p>
                     <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id187">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id187" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id146">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id146" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>You cannot have a dot <code class="docutils literal notranslate"><span class="pre">.</span></code> followed by <code class="docutils literal notranslate"><span class="pre">(</span></code>.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-cannot-assign-to-f-string">
 <h2>SyntaxError - cannot assign to f-string<a class="headerlink" href="#syntaxerror-cannot-assign-to-f-string" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id188">
-<h3>Python exception<a class="headerlink" href="#id188" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-cannot-assign-to-f-string-expression">
-<h4>SyntaxError: cannot assign to f-string expression<a class="headerlink" href="#syntaxerror-cannot-assign-to-f-string-expression" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id147">
+<h3>Python exception<a class="headerlink" href="#id147" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: cannot assign to f-string expression</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error72.py’
@@ -2920,22 +2766,20 @@ beyond the location indicated below by –&gt; and ^.</p>
 <span class="s2">          ^</span>
 </pre></div>
 </div>
-<div class="section" id="id189">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id189" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id148">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id148" title="Permalink to this headline">¶</a></h4>
 <p>You wrote an expression that has an f-string
 on the left-hand side of the equal sign.
 An f-string should only appear on the right-handside of the equal sign.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-raising-multiple-exceptions">
 <h2>SyntaxError - raising multiple exceptions<a class="headerlink" href="#syntaxerror-raising-multiple-exceptions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id190">
-<h3>Python exception<a class="headerlink" href="#id190" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id191">
-<h4>SyntaxError: invalid syntax<a class="headerlink" href="#id191" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id149">
+<h3>Python exception<a class="headerlink" href="#id149" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid syntax</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error73.py’
@@ -2945,22 +2789,20 @@ beyond the location indicated below by –&gt; and ^.</p>
                  <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id192">
-<h5>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id192" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id150">
+<h4>Python’s error message (invalid syntax) cannot be used to identify the problem<a class="headerlink" href="#id150" title="Permalink to this headline">¶</a></h4>
 <p>I make an effort below to guess what caused the problem
 but I might guess incorrectly.</p>
 <p>It looks like you are trying to raise an exception using Python 2 syntax.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-parenthesis-around-generator-expression">
 <h2>SyntaxError - parenthesis around generator expression<a class="headerlink" href="#syntaxerror-parenthesis-around-generator-expression" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id193">
-<h3>Python exception<a class="headerlink" href="#id193" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="syntaxerror-generator-expression-must-be-parenthesized">
-<h4>SyntaxError: Generator expression must be parenthesized<a class="headerlink" href="#syntaxerror-generator-expression-must-be-parenthesized" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id151">
+<h3>Python exception<a class="headerlink" href="#id151" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: Generator expression must be parenthesized</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error74.py’
@@ -2972,22 +2814,20 @@ beyond the location indicated below by –&gt; and ^.</p>
             <span class="o">^</span>
 </pre></div>
 </div>
-<div class="section" id="id194">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id194" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id152">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id152" title="Permalink to this headline">¶</a></h4>
 <p>You are using a generator expression, something of the form
 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">thing</span></code>
 You must add parentheses enclosing that expression.</p>
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="syntaxerror-invalid-character-bad-quote">
 <h2>SyntaxError - invalid character (bad quote)<a class="headerlink" href="#syntaxerror-invalid-character-bad-quote" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id195">
-<h3>Python exception<a class="headerlink" href="#id195" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id196">
-<h4>SyntaxError: invalid character in identifier<a class="headerlink" href="#id196" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id153">
+<h3>Python exception<a class="headerlink" href="#id153" title="Permalink to this headline">¶</a></h3>
+<p>SyntaxError: invalid character in identifier</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error75.py’
@@ -2998,14 +2838,13 @@ beyond the location indicated below by –&gt; and ^.</p>
               ^
 </pre></div>
 </div>
-<div class="section" id="id197">
-<h5>Likely cause based on the information given by Python<a class="headerlink" href="#id197" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id154">
+<h4>Likely cause based on the information given by Python<a class="headerlink" href="#id154" title="Permalink to this headline">¶</a></h4>
 <p>Python indicates that you used some unicode characters not allowed
 as part of a variable name; this includes many emojis.
 However, I suspect that you used a fancy unicode quotation mark
 instead of a normal single or double quote for a string.
 This can happen if you copy-pasted code.</p>
-</div>
 </div>
 </div>
 </div>

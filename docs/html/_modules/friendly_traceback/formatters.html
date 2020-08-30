@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.formatters &mdash; Friendly tracebacks 0.0.39a documentation</title>
+  <title>friendly_traceback.formatters &mdash; Friendly tracebacks 0.1.0a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.0.39a
+                0.1.0a
               </div>
             
           
@@ -94,6 +94,7 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../design.html">Some thoughts on the design of friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../verbosity.html">Verbosity: how much information do we want?</a></li>
 </ul>
 <p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul>
@@ -101,10 +102,9 @@
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../custom.html">Description of demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../graph.html">Project files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../lies.html">Intentional lies</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
@@ -207,8 +207,9 @@
 
 <span class="sd">Default formatters showing all or only part of the available information.</span>
 <span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
 
-<span class="n">default_items_in_order</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># This list excludes two full traceback items</span>
+<span class="n">default_items_in_order</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># This list excludes three traceback items</span>
     <span class="s2">&quot;header&quot;</span><span class="p">,</span>
     <span class="s2">&quot;message&quot;</span><span class="p">,</span>
     <span class="s2">&quot;generic&quot;</span><span class="p">,</span>
@@ -230,16 +231,20 @@
 <div class="viewcode-block" id="tb_items_to_show"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.tb_items_to_show">[docs]</a><span class="k">def</span> <span class="nf">tb_items_to_show</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Given a verbosity level, returns a list of traceback items to show.&quot;&quot;&quot;</span>
     <span class="n">selector</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="mi">1</span><span class="p">:</span> <span class="n">_default</span><span class="p">,</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="n">_default</span><span class="p">,</span>  <span class="c1"># for running script in non-interactive mode</span>
         <span class="mi">2</span><span class="p">:</span> <span class="n">_traceback_before_default</span><span class="p">,</span>
         <span class="mi">3</span><span class="p">:</span> <span class="n">_traceback_after_default</span><span class="p">,</span>
         <span class="mi">4</span><span class="p">:</span> <span class="n">_no_generic_explanation</span><span class="p">,</span>
         <span class="mi">5</span><span class="p">:</span> <span class="n">_traceback_before_no_generic</span><span class="p">,</span>
         <span class="mi">6</span><span class="p">:</span> <span class="n">_traceback_after_no_generic</span><span class="p">,</span>
-        <span class="mi">7</span><span class="p">:</span> <span class="n">_minimal_for_console</span><span class="p">,</span>
-        <span class="mi">8</span><span class="p">:</span> <span class="n">_simple_explain</span><span class="p">,</span>
-        <span class="mi">9</span><span class="p">:</span> <span class="n">_simulated_python_traceback</span><span class="p">,</span>
-        <span class="mi">0</span><span class="p">:</span> <span class="n">_original_python_traceback</span><span class="p">,</span>
+        <span class="mi">7</span><span class="p">:</span> <span class="n">_tb_plus_why</span><span class="p">,</span>  <span class="c1"># shortened traceback</span>
+        <span class="mi">8</span><span class="p">:</span> <span class="n">_advanced_user</span><span class="p">,</span>
+        <span class="mi">9</span><span class="p">:</span> <span class="n">_shortened_python_traceback</span><span class="p">,</span>
+        <span class="mi">0</span><span class="p">:</span> <span class="n">_simulated_python_traceback</span><span class="p">,</span>
+        <span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="n">_original_python_traceback</span><span class="p">,</span>
+        <span class="mi">11</span><span class="p">:</span> <span class="n">_what</span><span class="p">,</span>
+        <span class="mi">12</span><span class="p">:</span> <span class="n">_where</span><span class="p">,</span>
+        <span class="mi">13</span><span class="p">:</span> <span class="n">_why</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">selector</span><span class="p">[</span><span class="n">level</span><span class="p">]()</span></div>
 
@@ -254,6 +259,7 @@
 <span class="sd">       The only change made to the content of &quot;info&quot; is</span>
 <span class="sd">       some added indentation.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
 
     <span class="n">pre_items</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;header&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
@@ -271,8 +277,9 @@
         <span class="s2">&quot;exception_raised_source&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
         <span class="s2">&quot;exception_raised_variables_header&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">,</span>
         <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;original_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;original_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;shortened_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
     <span class="p">}</span>
 
     <span class="n">items_to_show</span> <span class="o">=</span> <span class="n">tb_items_to_show</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">)</span>
@@ -283,6 +290,10 @@
             <span class="n">indentation</span> <span class="o">=</span> <span class="n">spacing</span><span class="p">[</span><span class="n">pre_items</span><span class="p">[</span><span class="n">item</span><span class="p">]]</span>
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>
                 <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">indentation</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]:</span>
+        <span class="c1"># this would occur in answer to why() if not cause is found</span>
+        <span class="k">return</span> <span class="s2">&quot;    &quot;</span> <span class="o">+</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;I do not know.&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 
@@ -293,7 +304,12 @@
 <span class="sd">    for nicer final display when the markdown generated content</span>
 <span class="sd">    if further processed.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+
     <span class="n">result</span> <span class="o">=</span> <span class="n">_markdown</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]:</span>
+        <span class="c1"># this would occur in answer to why() if not cause is found</span>
+        <span class="k">return</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;I do not know.&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 
@@ -305,9 +321,13 @@
 
 <span class="sd">    Some minor changes of the traceback info content are done,</span>
 <span class="sd">    for nicer final display when the markdown generated content</span>
-<span class="sd">    if further processed.</span>
+<span class="sd">    is further processed.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">_markdown</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">docs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]:</span>
+        <span class="c1"># this would occur in answer to why() if not cause is found</span>
+        <span class="k">return</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;I do not know.&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 
@@ -319,7 +339,11 @@
 <span class="sd">    for nicer final display when the markdown generated content</span>
 <span class="sd">    if further processed.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">_markdown</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">rich</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]:</span>
+        <span class="c1"># this would occur in answer to why() if not cause is found</span>
+        <span class="k">return</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;I do not know.&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 
@@ -330,7 +354,7 @@
 
     <span class="n">markdown_items</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;# &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;## &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;generic&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;parsing_error&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;parsing_error_source&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
@@ -343,9 +367,10 @@
         <span class="s2">&quot;exception_raised_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;## &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;exception_raised_source&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
         <span class="s2">&quot;exception_raised_variables_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;### &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;original_python_traceback&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```pytb</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;original_python_traceback&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```pytb</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;shortened_traceback&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```pytb</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
     <span class="p">}</span>
 
     <span class="n">items_to_show</span> <span class="o">=</span> <span class="n">tb_items_to_show</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">)</span>
@@ -367,24 +392,10 @@
                         <span class="s2">&quot;exception_raised_variables_header&quot;</span><span class="p">,</span>
                     <span class="p">]:</span>
                         <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;message&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">docs</span><span class="p">:</span>
-                <span class="c1"># replacing something like</span>
-                <span class="c1">#   the variable &#39;x&#39; is ...</span>
-                <span class="c1"># by</span>
-                <span class="c1">#   the variable &#39;`x`&#39; is ...</span>
-                <span class="c1"># so that it is highlighted as code.</span>
-                <span class="n">content</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="n">content</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &#39;&quot;</span><span class="p">,</span> <span class="s2">&quot; &#39;`&quot;</span><span class="p">)</span>
-                    <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39; &quot;</span><span class="p">,</span> <span class="s2">&quot;`&#39; &quot;</span><span class="p">)</span>
-                    <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;`&#39;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;.&quot;</span><span class="p">,</span> <span class="s2">&quot;`&#39;.&quot;</span><span class="p">)</span>
-                <span class="p">)</span>
-
-            <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;variables&quot;</span><span class="p">):</span>
-                <span class="n">parts</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
-                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;&lt;&quot;</span><span class="p">):</span>
-                        <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;&quot;</span><span class="p">,</span> <span class="s1">&#39;&quot;&lt;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="s1">&#39;&gt;&quot;&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;message&quot;</span> <span class="ow">and</span> <span class="n">rich</span><span class="p">:</span>
+                <span class="c1"># Ensure consistent colour scheme</span>
+                <span class="n">markdown_items</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;```py2tb</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">)</span>
+                <span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;Traceback message:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">content</span>
 
             <span class="n">prefix</span><span class="p">,</span> <span class="n">suffix</span> <span class="o">=</span> <span class="n">markdown_items</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
             <span class="k">if</span> <span class="n">docs</span><span class="p">:</span>
@@ -405,8 +416,9 @@
     <span class="sd">&quot;&quot;&quot;Includes the simulated Python traceback before all the information</span>
 <span class="sd">       processed by Friendly-traceback.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">]</span>
-    <span class="n">items</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">_default</span><span class="p">())</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">_default</span><span class="p">()</span>
+    <span class="c1"># The traceback ends with the message; so we replace the message by the tb.</span>
+    <span class="n">items</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;simulated_python_traceback&quot;</span>
     <span class="k">return</span> <span class="n">items</span>
 
 
@@ -449,25 +461,26 @@
     <span class="k">return</span> <span class="n">items</span>
 
 
-<span class="k">def</span> <span class="nf">_minimal_for_console</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Minimal traceback, useful for console use by more experienced users.</span>
+<span class="k">def</span> <span class="nf">_advanced_user</span><span class="p">():</span>  <span class="c1"># Not (yet) included by Thonny</span>
+    <span class="sd">&quot;&quot;&quot;Useful information for advanced users.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span>
-        <span class="s2">&quot;message&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">,</span>
         <span class="s2">&quot;parsing_error_source&quot;</span><span class="p">,</span>
         <span class="s2">&quot;cause&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;last_call_header&quot;</span><span class="p">,</span>
         <span class="s2">&quot;last_call_source&quot;</span><span class="p">,</span>
         <span class="s2">&quot;last_call_variables&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;exception_raised_header&quot;</span><span class="p">,</span>
         <span class="s2">&quot;exception_raised_source&quot;</span><span class="p">,</span>
         <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">,</span>
     <span class="p">]</span>
 
 
-<span class="k">def</span> <span class="nf">_simple_explain</span><span class="p">():</span>  <span class="c1"># Not (yet) included by Thonny</span>
-    <span class="sd">&quot;&quot;&quot;(Subject to change) Simulated Python tracebacks followed</span>
-<span class="sd">               by specific information.</span>
+<span class="k">def</span> <span class="nf">_tb_plus_why</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Shortened Python tracebacks followed by specific information.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">,</span> <span class="s2">&quot;parsing_error&quot;</span><span class="p">,</span> <span class="s2">&quot;cause&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;shortened_traceback&quot;</span><span class="p">,</span> <span class="s2">&quot;parsing_error&quot;</span><span class="p">,</span> <span class="s2">&quot;cause&quot;</span><span class="p">]</span>
 
 
 <span class="k">def</span> <span class="nf">_simulated_python_traceback</span><span class="p">():</span>
@@ -476,11 +489,47 @@
     <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">]</span>
 
 
+<span class="k">def</span> <span class="nf">_shortened_python_traceback</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Shows only the simulated Python traceback</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;shortened_traceback&quot;</span><span class="p">]</span>
+
+
 <span class="k">def</span> <span class="nf">_original_python_traceback</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Shows only the original Python traceback, which includes calls</span>
 <span class="sd">       to friendly-traceback itself. It should only be used for diagnostic.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;original_python_traceback&quot;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_what</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Shows the message and and the generic meaning.</span>
+
+<span class="sd">       For example: A NameError means ...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="s2">&quot;generic&quot;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_why</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Show only the likely cause&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;cause&quot;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_where</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Shows the locations where the program stopped and where the</span>
+<span class="sd">       exception was raised, together with variable information</span>
+<span class="sd">       at these locations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="s2">&quot;parsing_error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parsing_error_source&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;last_call_header&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;last_call_source&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;last_call_variables&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;exception_raised_header&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;exception_raised_source&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
 </pre></div>
 
            </div>

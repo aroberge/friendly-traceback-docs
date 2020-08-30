@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Some thoughts on the design of friendly-traceback &mdash; Friendly tracebacks 0.0.39a documentation</title>
+  <title>Some thoughts on the design of friendly-traceback &mdash; Friendly tracebacks 0.1.0a documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Advanced Usage" href="usage_adv.html" />
+    <link rel="next" title="Verbosity: how much information do we want?" href="verbosity.html" />
     <link rel="prev" title="Using with Mu" href="mu.html" /> 
 </head>
 
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.39a
+                0.1.0a
               </div>
             
           
@@ -107,24 +107,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-invalid-syntax">SyntaxError: invalid syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-many-possible-causes">How many possible causes?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#localization">Localization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#verbosity">Verbosity</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#level-0">Level 0</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#level-1">Level 1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#level-2">Level 2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#level-3">Level 3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#level-4">Level 4</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#level-5">Level 5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#level-9">Level 9</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#negative-values">Negative values</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#setting-the-verbosity-level">Setting the verbosity level</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#extensibility">Extensibility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#other-similar-projects">Other similar projects</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="verbosity.html">Verbosity: how much information do we want?</a></li>
 </ul>
 <p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul>
@@ -132,10 +119,9 @@
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="custom.html">Description of demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html">Project files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
@@ -232,7 +218,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="usage_adv.html" class="btn btn-neutral float-right" title="Advanced Usage" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="verbosity.html" class="btn btn-neutral float-right" title="Verbosity: how much information do we want?" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="mu.html" class="btn btn-neutral float-left" title="Using with Mu" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -499,97 +485,6 @@ whether or not this should be provided in addition to any region
 specific version.</p>
 </div>
 </div>
-<div class="section" id="verbosity">
-<h2>Verbosity<a class="headerlink" href="#verbosity" title="Permalink to this headline">¶</a></h2>
-<p>The useful amount of information to be provided by Friendly-traceback
-will be <strong>determined from the feedback from actual users.</strong>
-Our current thoughts are that a user should never be shown an overwhelming
-amount of information; ideally, when using a REPL, no scrolling should be
-required to display all the information.</p>
-<p>Currently, the amount of information provided can be controlled via
-a verbosity “level”.
-Here are the current levels available, with a sample output.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The command-line option <code class="docutils literal notranslate"><span class="pre">--level</span></code> shown in the screenshots
-is deprecated.
-Use <code class="docutils literal notranslate"><span class="pre">--verbosity</span></code> instead, with the same values.</p>
-</div>
-<div class="section" id="level-0">
-<h3>Level 0<a class="headerlink" href="#level-0" title="Permalink to this headline">¶</a></h3>
-<p>This disables friendly-traceback and just shows the normal Python traceback.
-It can be set from the commmand line as shown below:</p>
-<a class="reference internal image-reference" href="_images/level0.png"><img alt="Level 0" src="_images/level0.png" style="width: 615.5px; height: 218.5px;" /></a>
-</div>
-<div class="section" id="level-1">
-<h3>Level 1<a class="headerlink" href="#level-1" title="Permalink to this headline">¶</a></h3>
-<p>This is the default, showing all the information mentioned previously.
-The screen capture below shows that we set the value explictly to 1; however,
-we could have omitted the option <code class="docutils literal notranslate"><span class="pre">--verbosity</span> <span class="pre">1</span></code> and the result would
-have been the same</p>
-<a class="reference internal image-reference" href="_images/level1.png"><img alt="Level 1" src="_images/level1.png" style="width: 610.0px; height: 698.5px;" /></a>
-</div>
-<div class="section" id="level-2">
-<h3>Level 2<a class="headerlink" href="#level-2" title="Permalink to this headline">¶</a></h3>
-<p>Same as verbosity level 1 but with the “simulated” Python traceback printed <strong>before</strong>
-the rest of the information. Note that, in this case, the “simulated”
-Python traceback is identical to the normal Python traceback.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Which level to use by default?</p>
-<p>Currently, verbosity level 1 is the default. Since the secondary aim of
-Friendly-traceback is to help users learn how to use the information
-from normal traceback, perhaps the default should be level 2.</p>
-</div>
-<a class="reference internal image-reference" href="_images/level2.png"><img alt="Level 2" src="_images/level2.png" style="width: 600.5px; height: 820.5px;" /></a>
-</div>
-<div class="section" id="level-3">
-<h3>Level 3<a class="headerlink" href="#level-3" title="Permalink to this headline">¶</a></h3>
-<p>Same as verbosity level 1 but with the simulated Python traceback printed <strong>after</strong>
-the complete friendly traceback.</p>
-<a class="reference internal image-reference" href="_images/level3.png"><img alt="Level 3" src="_images/level3.png" style="width: 603.5px; height: 835.0px;" /></a>
-</div>
-<div class="section" id="level-4">
-<h3>Level 4<a class="headerlink" href="#level-4" title="Permalink to this headline">¶</a></h3>
-<p>The simulated Python traceback followed by some generic information about
-this type of error and the likely cause that was identified (if any),
-but without showing where in the code the error occurred, nor the variables
-involved.</p>
-<a class="reference internal image-reference" href="_images/level4.png"><img alt="Level 4" src="_images/level4.png" style="width: 600.5px; height: 479.0px;" /></a>
-</div>
-<div class="section" id="level-5">
-<h3>Level 5<a class="headerlink" href="#level-5" title="Permalink to this headline">¶</a></h3>
-<p>Like verbosity level 4, but without the simulated Python traceback.</p>
-<a class="reference internal image-reference" href="_images/level5.png"><img alt="Level 5" src="_images/level5.png" style="width: 593.5px; height: 373.5px;" /></a>
-</div>
-<div class="section" id="level-9">
-<h3>Level 9<a class="headerlink" href="#level-9" title="Permalink to this headline">¶</a></h3>
-<p>Only the simulated Python traceback. In this specific case, it is
-identical to the normal Python traceback.</p>
-<a class="reference internal image-reference" href="_images/level9.png"><img alt="Level 9" src="_images/level9.png" style="width: 612.5px; height: 211.0px;" /></a>
-</div>
-</div>
-<div class="section" id="negative-values">
-<h2>Negative values<a class="headerlink" href="#negative-values" title="Permalink to this headline">¶</a></h2>
-<p>For all the cases above for which the “simulated” Python traceback appears,
-asking for a negative level number means to replace the “simulated” Python
-traceback by the real Python traceback. As a result of this, level -9 is
-identical to level 0.</p>
-<div class="section" id="setting-the-verbosity-level">
-<h3>Setting the verbosity level<a class="headerlink" href="#setting-the-verbosity-level" title="Permalink to this headline">¶</a></h3>
-<p>This can be done when using <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code> explicitly in the
-program with <code class="docutils literal notranslate"><span class="pre">friendly_traceback.set_verbosity()</span></code>,
-or as an option from the command line.</p>
-<div class="sidebar">
-<p class="sidebar-title">Additional open question</p>
-<p>It might be interesting to see if the simulated Python traceback could be
-replaced by something that looks like what
-<a class="reference external" href="https://github.com/Qix-/better-exceptions">better-exceptions</a> provides,
-but perhaps without added colours, at least initially.</p>
-<a class="reference internal image-reference" href="_images/better-exceptions.png"><img alt="traceback from better-exceptions" src="_images/better-exceptions.png" style="width: 326.0px; height: 210.5px;" /></a>
-</div>
-</div>
-</div>
 <div class="section" id="extensibility">
 <h2>Extensibility<a class="headerlink" href="#extensibility" title="Permalink to this headline">¶</a></h2>
 <p>For projects that have their custom Exceptions, like
@@ -636,7 +531,7 @@ cause of a traceback.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="usage_adv.html" class="btn btn-neutral float-right" title="Advanced Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="verbosity.html" class="btn btn-neutral float-right" title="Verbosity: how much information do we want?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="mu.html" class="btn btn-neutral float-left" title="Using with Mu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

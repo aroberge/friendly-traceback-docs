@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.0.39a
+Friendly-traceback version: 0.1.0a
 Python version: 3.8.4
 
 
@@ -22,7 +22,7 @@ Python version: 3.8.4
 
 ### Python exception
 
-#### IndentationError: expected an indented block
+IndentationError: expected an indented block
 
 
 An `IndentationError` occurs when a given line of code is
@@ -55,7 +55,7 @@ was expected to begin a new indented block.
 
 ### Python exception
 
-#### IndentationError: unexpected indent
+IndentationError: unexpected indent
 
 
 An `IndentationError` occurs when a given line of code is
@@ -89,7 +89,7 @@ does not match the indentation of the previous line.
 
 ### Python exception
 
-#### IndentationError: unindent does not match any outer indentation level
+IndentationError: unindent does not match any outer indentation level
 
 
 An `IndentationError` occurs when a given line of code is
@@ -123,7 +123,7 @@ and is not aligned vertically with another block of code.
 
 ### Python exception
 
-#### TabError: inconsistent use of tabs and spaces in indentation
+TabError: inconsistent use of tabs and spaces in indentation
 
 
 A `TabError` indicates that you have used both spaces
@@ -155,7 +155,7 @@ beyond the location indicated below by --> and ^.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -190,7 +190,7 @@ This is not allowed.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -225,7 +225,7 @@ You wrote a statement beginning with
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -260,7 +260,7 @@ forgot to add a colon `:` at the end
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -296,7 +296,7 @@ but wrote `else if` instead
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -332,7 +332,7 @@ but wrote `elseif` instead
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -368,7 +368,7 @@ The correct syntax is:
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -404,7 +404,7 @@ The correct syntax is:
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -440,7 +440,7 @@ The correct syntax is:
 
 ### Python exception
 
-#### SyntaxError: cannot assign to literal
+SyntaxError: cannot assign to literal
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -478,7 +478,7 @@ and is not simply the name of a variable. Perhaps you meant to write:
 
 ### Python exception
 
-#### SyntaxError: cannot assign to literal
+SyntaxError: cannot assign to literal
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -513,7 +513,7 @@ and is not simply the name of a variable.
 
 ### Python exception
 
-#### SyntaxError: cannot assign to set display
+SyntaxError: cannot assign to set display
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -549,7 +549,7 @@ and is not simply the name of a variable.
 
 ### Python exception
 
-#### SyntaxError: cannot assign to dict display
+SyntaxError: cannot assign to dict display
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -585,7 +585,7 @@ and is not simply the name of a variable.
 
 ### Python exception
 
-#### SyntaxError: cannot assign to literal
+SyntaxError: cannot assign to literal
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -621,7 +621,7 @@ and is not simply the name of a variable.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -661,7 +661,7 @@ instead of
 
 ### Python exception
 
-#### SyntaxError: EOL while scanning string literal
+SyntaxError: EOL while scanning string literal
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -692,7 +692,7 @@ but never ended the string with another quote on that line.
 
 ### Python exception
 
-#### SyntaxError: cannot assign to None
+SyntaxError: cannot assign to None
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -724,7 +724,7 @@ beyond the location indicated below by --> and ^.
 
 ### Python exception
 
-#### SyntaxError: cannot assign to __debug__
+SyntaxError: cannot assign to __debug__
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -756,7 +756,7 @@ beyond the location indicated below by --> and ^.
 
 ### Python exception
 
-#### SyntaxError: unmatched ')'
+SyntaxError: unmatched ')'
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -787,7 +787,7 @@ The closing parenthesis `)` on line 6 does not match anything.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -823,7 +823,7 @@ The opening parenthesis `(` on line 2 is not closed.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -859,7 +859,7 @@ The opening parenthesis `(` on line 2 is not closed.
 
 ### Python exception
 
-#### SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
+SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -896,7 +896,7 @@ The closing square bracket `]` on line 2 does not match the opening parenthesis 
 
 ### Python exception
 
-#### SyntaxError: closing parenthesis ']' does not match opening parenthesis '(' on line 2
+SyntaxError: closing parenthesis ']' does not match opening parenthesis '(' on line 2
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -937,7 +937,7 @@ The closing square bracket `]` on line 4 does not match the opening parenthesis 
 
 ### Python exception
 
-#### SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello')?
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello')?
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -971,7 +971,7 @@ Now, `print` is a function; you need to use parentheses to call it.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1004,7 +1004,7 @@ You tried to use the Python keyword `pass` as a function name.
 
 ### Python exception
 
-#### SyntaxError: 'break' outside loop
+SyntaxError: 'break' outside loop
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1035,7 +1035,7 @@ The Python keyword `break` can only be used inside a for loop or inside a while 
 
 ### Python exception
 
-#### SyntaxError: 'continue' not properly in loop
+SyntaxError: 'continue' not properly in loop
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1066,7 +1066,7 @@ The Python keyword `continue` can only be used inside a for loop or inside a whi
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1102,7 +1102,7 @@ that was enclosed in quotes of the same kind.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1137,7 +1137,7 @@ before the position indicated by --> and ^.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1171,7 +1171,7 @@ before the position indicated by --> and ^.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1205,7 +1205,7 @@ before the position indicated by --> and ^.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1240,7 +1240,7 @@ before the position indicated by --> and ^.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1276,7 +1276,7 @@ before the position indicated by --> and ^.
 
 ### Python exception
 
-#### SyntaxError: cannot assign to function call
+SyntaxError: cannot assign to function call
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1312,7 +1312,7 @@ or includes a function call and is not simply the name of a variable.
 
 ### Python exception
 
-#### SyntaxError: cannot assign to function call
+SyntaxError: cannot assign to function call
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1348,7 +1348,7 @@ a function call and not the name of a variable.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1384,7 +1384,7 @@ before or at the position indicated by --> and ^.
 
 ### Python exception
 
-#### SyntaxError: non-default argument follows default argument
+SyntaxError: non-default argument follows default argument
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1428,7 +1428,7 @@ According to Python, you used positional arguments after keyword ones.
 
 ### Python exception
 
-#### SyntaxError: positional argument follows keyword argument
+SyntaxError: positional argument follows keyword argument
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1472,7 +1472,7 @@ According to Python, you used positional arguments after keyword ones.
 
 ### Python exception
 
-#### SyntaxError: f-string: unterminated string
+SyntaxError: f-string: unterminated string
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1505,7 +1505,7 @@ single quote (') or double quote ("), without a matching closing one.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1542,7 +1542,7 @@ The opening square bracket `[` on line 5 is not closed.
 
 ### Python exception
 
-#### SyntaxError: unexpected EOF while parsing
+SyntaxError: unexpected EOF while parsing
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1579,7 +1579,7 @@ The opening square bracket `[` on line 5 is not closed.
 
 ### Python exception
 
-#### SyntaxError: name 'x' is parameter and global
+SyntaxError: name 'x' is parameter and global
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1617,7 +1617,7 @@ inside that function, which is the contrary of what `global` implied.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1652,7 +1652,7 @@ You cannot use the Python keyword `pass` as an attribute.
 
 ### Python exception
 
-#### SyntaxError: unexpected character after line continuation character
+SyntaxError: unexpected character after line continuation character
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1686,7 +1686,7 @@ I am guessing that you forgot to enclose some content in a string.
 
 ### Python exception
 
-#### SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
+SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1726,7 +1726,7 @@ or contains a period, etc.
 
 ### Python exception
 
-#### SyntaxError: invalid character in identifier
+SyntaxError: invalid character in identifier
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1760,7 +1760,7 @@ This includes many emojis.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1795,7 +1795,7 @@ I am guessing that you tried to use the Python keyword
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1830,7 +1830,7 @@ I am guessing that you tried to use the Python keyword
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1865,7 +1865,7 @@ I am guessing that you tried to use the Python keyword
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1900,7 +1900,7 @@ I am guessing that you tried to use the Python keyword
 
 ### Python exception
 
-#### SyntaxError: cannot delete function call
+SyntaxError: cannot delete function call
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1936,7 +1936,7 @@ instead of deleting the function's name
 
 ### Python exception
 
-#### SyntaxError: name 'p' is assigned to before global declaration
+SyntaxError: name 'p' is assigned to before global declaration
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1968,7 +1968,7 @@ before declaring it as a global variable.
 
 ### Python exception
 
-#### SyntaxError: name 'r' is used prior to global declaration
+SyntaxError: name 'r' is used prior to global declaration
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2000,7 +2000,7 @@ before declaring it as a global variable.
 
 ### Python exception
 
-#### SyntaxError: name 'q' is used prior to nonlocal declaration
+SyntaxError: name 'q' is used prior to nonlocal declaration
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2032,7 +2032,7 @@ before declaring it as a nonlocal variable.
 
 ### Python exception
 
-#### SyntaxError: name 's' is assigned to before nonlocal declaration
+SyntaxError: name 's' is assigned to before nonlocal declaration
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2064,7 +2064,7 @@ before declaring it as a nonlocal variable.
 
 ### Python exception
 
-#### SyntaxError: cannot use assignment expressions with True
+SyntaxError: cannot use assignment expressions with True
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2096,7 +2096,7 @@ beyond the location indicated below by --> and ^.
 
 ### Python exception
 
-#### SyntaxError: cannot assign to operator
+SyntaxError: cannot assign to operator
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2129,7 +2129,7 @@ only used to assign a value to a variable.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2164,7 +2164,7 @@ in this latter case, use the function `repr(x)`.
 
 ### Python exception
 
-#### SyntaxError: cannot assign to generator expression
+SyntaxError: cannot assign to generator expression
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2195,7 +2195,7 @@ generator expression instead of the name of a variable.
 
 ### Python exception
 
-#### SyntaxError: cannot assign to conditional expression
+SyntaxError: cannot assign to conditional expression
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2229,7 +2229,7 @@ A conditional expression has the following form:
 
 ### Python exception
 
-#### SyntaxError: name 'x' is parameter and nonlocal
+SyntaxError: name 'x' is parameter and nonlocal
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2262,7 +2262,7 @@ before declaring it also as a nonlocal variable:
 
 ### Python exception
 
-#### SyntaxError: name 'xy' is nonlocal and global
+SyntaxError: name 'xy' is nonlocal and global
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2294,7 +2294,7 @@ A variable can be global, or nonlocal, but not both at the same time.
 
 ### Python exception
 
-#### SyntaxError: no binding for nonlocal 'ab' found
+SyntaxError: no binding for nonlocal 'ab' found
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2326,7 +2326,7 @@ nonlocal variable but it cannot be found.
 
 ### Python exception
 
-#### SyntaxError: nonlocal declaration not allowed at module level
+SyntaxError: nonlocal declaration not allowed at module level
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2359,7 +2359,7 @@ given a value outside that function.
 
 ### Python exception
 
-#### SyntaxError: duplicate argument 'aa' in function definition
+SyntaxError: duplicate argument 'aa' in function definition
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2393,7 +2393,7 @@ twice; each keyword argument should appear only once in a function definition.
 
 ### Python exception
 
-#### SyntaxError: keyword argument repeated
+SyntaxError: keyword argument repeated
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2425,7 +2425,7 @@ Each keyword argument should appear only once in a function call.
 
 ### Python exception
 
-#### SyntaxError: unexpected EOF while parsing
+SyntaxError: unexpected EOF while parsing
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2456,7 +2456,7 @@ and expected more content.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2489,7 +2489,7 @@ Now, `print` is a function; you need to use parentheses to call it.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2522,7 +2522,7 @@ The Python prompt, `>>>`, should not be included in your code.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2556,7 +2556,7 @@ not from a Python interpreter.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2590,7 +2590,7 @@ not from a Python interpreter.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2622,7 +2622,7 @@ You cannot have a dot `.` followed by `(`.
 
 ### Python exception
 
-#### SyntaxError: cannot assign to f-string expression
+SyntaxError: cannot assign to f-string expression
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2655,7 +2655,7 @@ An f-string should only appear on the right-handside of the equal sign.
 
 ### Python exception
 
-#### SyntaxError: invalid syntax
+SyntaxError: invalid syntax
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2687,7 +2687,7 @@ It looks like you are trying to raise an exception using Python 2 syntax.
 
 ### Python exception
 
-#### SyntaxError: Generator expression must be parenthesized
+SyntaxError: Generator expression must be parenthesized
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2720,7 +2720,7 @@ You must add parentheses enclosing that expression.
 
 ### Python exception
 
-#### SyntaxError: invalid character in identifier
+SyntaxError: invalid character in identifier
 
 
 A `SyntaxError` occurs when Python cannot understand your code.

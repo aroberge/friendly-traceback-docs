@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.0.39a
+Friendly-traceback version: 0.1.0a
 Python version: 3.8.4
 
 
@@ -22,7 +22,7 @@ Python version: 3.8.4
 
 ### Python exception
 
-#### ArithmeticError: 
+ArithmeticError: 
 
 
 `ArithmeticError` is the base class for those built-in exceptions
@@ -31,7 +31,7 @@ It is unusual that you are seeing this exception;
 normally, a more specific exception should have been raised.
 
 
-#### Execution stopped on line 9 of file 'TESTS:\except\test_arithmetic_error.py'.
+#### Exception raised on line 9 of file 'TESTS:\except\test_arithmetic_error.py'.
 
 
 ```python
@@ -44,7 +44,7 @@ normally, a more specific exception should have been raised.
 ##### Known identifiers
 
 ```python
-    ArithmeticError: "<class 'ArithmeticError'>"
+    ArithmeticError: <class 'ArithmeticError'>
 
 ```
 
@@ -56,7 +56,7 @@ normally, a more specific exception should have been raised.
 
 ### Python exception
 
-#### AttributeError: type object 'A' has no attribute 'x'
+AttributeError: type object 'A' has no attribute 'x'
 
 
 An `AttributeError` occurs when the code contains something like
@@ -69,7 +69,7 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 In your program, the object is `A` and the attribute is `x`.
 
 
-#### Execution stopped on line 10 of file 'TESTS:\except\test_attribute_error.py'.
+#### Exception raised on line 10 of file 'TESTS:\except\test_attribute_error.py'.
 
 
 ```python
@@ -82,7 +82,7 @@ In your program, the object is `A` and the attribute is `x`.
 ##### Known identifiers
 
 ```python
-    A: "<class 'test_attribute_error.test_attrib...>"
+    A: <class 'test_attribute_error.test_attrib...>
 
 ```
 
@@ -94,7 +94,7 @@ In your program, the object is `A` and the attribute is `x`.
 
 ### Python exception
 
-#### AttributeError: module 'string' has no attribute 'ascii_lowecase'
+AttributeError: module 'string' has no attribute 'ascii_lowecase'
 
 
 An `AttributeError` occurs when the code contains something like
@@ -107,7 +107,7 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 Perhaps you meant to write `ascii_lowercase` instead of `ascii_lowecase`
 
 
-#### Execution stopped on line 24 of file 'TESTS:\except\test_attribute_error.py'.
+#### Exception raised on line 24 of file 'TESTS:\except\test_attribute_error.py'.
 
 
 ```python
@@ -120,7 +120,7 @@ Perhaps you meant to write `ascii_lowercase` instead of `ascii_lowecase`
 ##### Known identifiers
 
 ```python
-    string: "<module 'string'>"
+    string: <module 'string'>
 
 ```
 
@@ -132,7 +132,7 @@ Perhaps you meant to write `ascii_lowercase` instead of `ascii_lowecase`
 
 ### Python exception
 
-#### AttributeError: module 'math' has no attribute 'cost'
+AttributeError: module 'math' has no attribute 'cost'
 
 
 An `AttributeError` occurs when the code contains something like
@@ -146,7 +146,7 @@ Instead of writing `cost`, perhaps you meant one of the following:
 [`cos`, `cosh`]
 
 
-#### Execution stopped on line 41 of file 'TESTS:\except\test_attribute_error.py'.
+#### Exception raised on line 41 of file 'TESTS:\except\test_attribute_error.py'.
 
 
 ```python
@@ -159,7 +159,7 @@ Instead of writing `cost`, perhaps you meant one of the following:
 ##### Known identifiers
 
 ```python
-    math: "<module 'math' (built-in)>"
+    math: <module 'math' (built-in)>
 
 ```
 
@@ -171,7 +171,7 @@ Instead of writing `cost`, perhaps you meant one of the following:
 
 ### Python exception
 
-#### FileNotFoundError: [Errno 2] No such file or directory: 'does_not_exist'
+FileNotFoundError: [Errno 2] No such file or directory: 'does_not_exist'
 
 
 A `FileNotFoundError` exception indicates that you
@@ -185,7 +185,7 @@ In your program, the name of the
 file that cannot be found is `does_not_exist`.
 
 
-#### Execution stopped on line 6 of file 'TESTS:\except\test_file_not_found_error.py'.
+#### Exception raised on line 6 of file 'TESTS:\except\test_file_not_found_error.py'.
 
 
 ```python
@@ -198,7 +198,7 @@ file that cannot be found is `does_not_exist`.
 ##### Known identifiers
 
 ```python
-    open: "<built-in function open>"
+    open: <built-in function open>
 
 ```
 
@@ -210,7 +210,7 @@ file that cannot be found is `does_not_exist`.
 
 ### Python exception
 
-#### ImportError: cannot import name 'Pi' from 'math' (unknown location)
+ImportError: cannot import name 'Pi' from 'math' (unknown location)
 
 
 An `ImportError` exception indicates that a certain object could not
@@ -225,7 +225,7 @@ The module or package where it was
 expected to be found is `math`.
 
 
-#### Execution stopped on line 6 of file 'TESTS:\except\test_import_error.py'.
+#### Exception raised on line 6 of file 'TESTS:\except\test_import_error.py'.
 
 
 ```python
@@ -243,7 +243,7 @@ expected to be found is `math`.
 
 ### Python exception
 
-#### KeyError: 'c'
+KeyError: 'c'
 
 
 A `KeyError` is raised when a value is not found as a
@@ -256,7 +256,7 @@ In your program, the name of the key
 that cannot be found is `c`.
 
 
-#### Execution stopped on line 7 of file 'TESTS:\except\test_key_error.py'.
+#### Exception raised on line 7 of file 'TESTS:\except\test_key_error.py'.
 
 
 ```python
@@ -281,7 +281,7 @@ that cannot be found is `c`.
 
 ### Python exception
 
-#### LookupError: 
+LookupError: 
 
 
 `LookupError` is the base class for the exceptions that are raised
@@ -289,7 +289,7 @@ when a key or index used on a mapping or sequence is invalid.
 It can also be raised directly by codecs.lookup().
 
 
-#### Execution stopped on line 10 of file 'TESTS:\except\test_lookup_error.py'.
+#### Exception raised on line 10 of file 'TESTS:\except\test_lookup_error.py'.
 
 
 ```python
@@ -302,7 +302,7 @@ It can also be raised directly by codecs.lookup().
 ##### Known identifiers
 
 ```python
-    LookupError: "<class 'LookupError'>"
+    LookupError: <class 'LookupError'>
 
 ```
 
@@ -314,7 +314,7 @@ It can also be raised directly by codecs.lookup().
 
 ### Python exception
 
-#### IndexError: tuple index out of range
+IndexError: tuple index out of range
 
 
 An `IndexError` occurs when you are try to get an item from a list,
@@ -324,7 +324,7 @@ is greater than the length of the sequence.
 Reminder: the first item of a sequence is at index 0.
 
 
-#### Execution stopped on line 8 of file 'TESTS:\except\test_index_error.py'.
+#### Exception raised on line 8 of file 'TESTS:\except\test_index_error.py'.
 
 
 ```python
@@ -337,7 +337,7 @@ Reminder: the first item of a sequence is at index 0.
 ##### Known identifiers
 
 ```python
-    print: "<built-in function print>"
+    print: <built-in function print>
     a: (1, 2, 3)
     b: [1, 2, 3]
 
@@ -351,7 +351,7 @@ Reminder: the first item of a sequence is at index 0.
 
 ### Python exception
 
-#### IndexError: list index out of range
+IndexError: list index out of range
 
 
 An `IndexError` occurs when you are try to get an item from a list,
@@ -361,7 +361,7 @@ is greater than the length of the sequence.
 Reminder: the first item of a sequence is at index 0.
 
 
-#### Execution stopped on line 20 of file 'TESTS:\except\test_index_error.py'.
+#### Exception raised on line 20 of file 'TESTS:\except\test_index_error.py'.
 
 
 ```python
@@ -374,7 +374,7 @@ Reminder: the first item of a sequence is at index 0.
 ##### Known identifiers
 
 ```python
-    print: "<built-in function print>"
+    print: <built-in function print>
     a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1...]  | len(a): 40
     b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1...)  | len(b): 50
 
@@ -388,7 +388,7 @@ Reminder: the first item of a sequence is at index 0.
 
 ### Python exception
 
-#### ModuleNotFoundError: No module named 'does_not_exist'
+ModuleNotFoundError: No module named 'does_not_exist'
 
 
 A `ModuleNotFoundError` exception indicates that you
@@ -403,7 +403,7 @@ In your program, the name of the
 module that cannot be found is `does_not_exist`.
 
 
-#### Execution stopped on line 6 of file 'TESTS:\except\test_module_not_found_error.py'.
+#### Exception raised on line 6 of file 'TESTS:\except\test_module_not_found_error.py'.
 
 
 ```python
@@ -421,7 +421,7 @@ module that cannot be found is `does_not_exist`.
 
 ### Python exception
 
-#### NameError: name 'something' is not defined
+NameError: name 'something' is not defined
 
 
 A `NameError` exception indicates that a variable or
@@ -436,7 +436,7 @@ before being defined or given a value.
 In your program, the unknown name is `something`.
 
 
-#### Execution stopped on line 6 of file 'TESTS:\except\test_name_error.py'.
+#### Exception raised on line 6 of file 'TESTS:\except\test_name_error.py'.
 
 
 ```python
@@ -454,7 +454,7 @@ In your program, the unknown name is `something`.
 
 ### Python exception
 
-#### NameError: name 'babs' is not defined
+NameError: name 'babs' is not defined
 
 
 A `NameError` exception indicates that a variable or
@@ -473,7 +473,7 @@ Instead of writing `babs`, perhaps you meant one of the following:
 *   Python builtins: `abs`
 
 
-#### Execution stopped on line 18 of file 'TESTS:\except\test_name_error.py'.
+#### Exception raised on line 18 of file 'TESTS:\except\test_name_error.py'.
 
 
 ```python
@@ -491,7 +491,7 @@ Instead of writing `babs`, perhaps you meant one of the following:
 
 ### Python exception
 
-#### NameError: name 'x' is not defined
+NameError: name 'x' is not defined
 
 
 A `NameError` exception indicates that a variable or
@@ -508,7 +508,8 @@ A type hint found for `x` in the global scope.
 Perhaps you had written `x : 3` instead of `x = 3`.
 The similar name `'e'` was found in the local scope. 
 
-#### Execution stopped on line 31 of file 'TESTS:\except\test_name_error.py'.
+
+#### Exception raised on line 31 of file 'TESTS:\except\test_name_error.py'.
 
 
 ```python
@@ -526,7 +527,7 @@ The similar name `'e'` was found in the local scope.
 
 ### Python exception
 
-#### NameError: name 'cost' is not defined
+NameError: name 'cost' is not defined
 
 
 A `NameError` exception indicates that a variable or
@@ -543,7 +544,7 @@ Instead of writing `cost`, perhaps you meant one of the following:
 *   Global scope: `cos`, `cosh`
 
 
-#### Execution stopped on line 42 of file 'TESTS:\except\test_name_error.py'.
+#### Exception raised on line 42 of file 'TESTS:\except\test_name_error.py'.
 
 
 ```python
@@ -561,14 +562,14 @@ Instead of writing `cost`, perhaps you meant one of the following:
 
 ### Python exception
 
-#### OverflowError: (34, 'Result too large')
+OverflowError: (34, 'Result too large')
 
 
 An `OverflowError` is raised when the result of an arithmetic operation
 is too large to be handled by the computer's processor.
 
 
-#### Execution stopped on line 6 of file 'TESTS:\except\test_overflow_error.py'.
+#### Exception raised on line 6 of file 'TESTS:\except\test_overflow_error.py'.
 
 
 ```python
@@ -586,7 +587,7 @@ is too large to be handled by the computer's processor.
 
 ### Python exception
 
-#### RecursionError: maximum recursion depth exceeded
+RecursionError: maximum recursion depth exceeded
 
 
 A `RecursionError` is raised when a function calls itself,
@@ -608,7 +609,7 @@ and that your program would never stop.
 ##### Known identifiers
 
 ```python
-    a: "<function test_recursion_error."<locals>".a>"
+    a: <function test_recursion_error.<locals>.a>
 
 ```
 
@@ -624,7 +625,10 @@ and that your program would never stop.
 
 ##### Known identifiers
 
-    a: "<function test_recursion_error."<locals>".a>"
+```python
+    a: <function test_recursion_error.<locals>.a>
+
+```
 
 
 ---
@@ -634,7 +638,7 @@ and that your program would never stop.
 
 ### Python exception
 
-#### TypeError: can only concatenate str (not "int") to str
+TypeError: can only concatenate str (not "int") to str
 
 
 A `TypeError` is usually caused by trying
@@ -649,7 +653,7 @@ You tried to concatenate (add) two different types of objects:
 a string (`str`) and an integer (`int`)
 
 
-#### Execution stopped on line 8 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 8 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -675,7 +679,7 @@ a string (`str`) and an integer (`int`)
 
 ### Python exception
 
-#### TypeError: can only concatenate str (not "list") to str
+TypeError: can only concatenate str (not "list") to str
 
 
 A `TypeError` is usually caused by trying
@@ -690,7 +694,7 @@ You tried to concatenate (add) two different types of objects:
 a string (`str`) and a `list`
 
 
-#### Execution stopped on line 24 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 24 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -716,7 +720,7 @@ a string (`str`) and a `list`
 
 ### Python exception
 
-#### TypeError: can only concatenate tuple (not "list") to tuple
+TypeError: can only concatenate tuple (not "list") to tuple
 
 
 A `TypeError` is usually caused by trying
@@ -731,7 +735,7 @@ You tried to concatenate (add) two different types of objects:
 a `tuple` and a `list`
 
 
-#### Execution stopped on line 40 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 40 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -757,7 +761,7 @@ a `tuple` and a `list`
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
 
 
 A `TypeError` is usually caused by trying
@@ -772,7 +776,7 @@ You tried to add two incompatible types of objects:
 an integer (`int`) and a variable equal to None (`NoneType`)
 
 
-#### Execution stopped on line 54 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 54 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -798,7 +802,7 @@ an integer (`int`) and a variable equal to None (`NoneType`)
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for +=: 'int' and 'str'
+TypeError: unsupported operand type(s) for +=: 'int' and 'str'
 
 
 A `TypeError` is usually caused by trying
@@ -813,7 +817,7 @@ You tried to add two incompatible types of objects:
 an integer (`int`) and a string (`str`)
 
 
-#### Execution stopped on line 68 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 68 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -839,7 +843,7 @@ an integer (`int`) and a string (`str`)
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for -: 'tuple' and 'list'
+TypeError: unsupported operand type(s) for -: 'tuple' and 'list'
 
 
 A `TypeError` is usually caused by trying
@@ -854,7 +858,7 @@ You tried to subtract two incompatible types of objects:
 a `tuple` and a `list`
 
 
-#### Execution stopped on line 82 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 82 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -880,7 +884,7 @@ a `tuple` and a `list`
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for -=: 'list' and 'tuple'
+TypeError: unsupported operand type(s) for -=: 'list' and 'tuple'
 
 
 A `TypeError` is usually caused by trying
@@ -895,7 +899,7 @@ You tried to subtract two incompatible types of objects:
 a `list` and a `tuple`
 
 
-#### Execution stopped on line 96 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 96 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -921,7 +925,7 @@ a `list` and a `tuple`
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for *: 'complex' and 'set'
+TypeError: unsupported operand type(s) for *: 'complex' and 'set'
 
 
 A `TypeError` is usually caused by trying
@@ -936,7 +940,7 @@ You tried to multiply two incompatible types of objects:
 a complex number and a `set`
 
 
-#### Execution stopped on line 110 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 110 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -962,7 +966,7 @@ a complex number and a `set`
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for *=: 'set' and 'complex'
+TypeError: unsupported operand type(s) for *=: 'set' and 'complex'
 
 
 A `TypeError` is usually caused by trying
@@ -977,7 +981,7 @@ You tried to multiply two incompatible types of objects:
 a `set` and a complex number
 
 
-#### Execution stopped on line 124 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 124 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1003,7 +1007,7 @@ a `set` and a complex number
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for /: 'dict' and 'float'
+TypeError: unsupported operand type(s) for /: 'dict' and 'float'
 
 
 A `TypeError` is usually caused by trying
@@ -1018,7 +1022,7 @@ You tried to divide two incompatible types of objects:
 a dictionary (`dict`) and a number (`float`)
 
 
-#### Execution stopped on line 138 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 138 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1044,7 +1048,7 @@ a dictionary (`dict`) and a number (`float`)
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for /=: 'float' and 'dict'
+TypeError: unsupported operand type(s) for /=: 'float' and 'dict'
 
 
 A `TypeError` is usually caused by trying
@@ -1059,7 +1063,7 @@ You tried to divide two incompatible types of objects:
 a number (`float`) and a dictionary (`dict`)
 
 
-#### Execution stopped on line 152 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 152 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1085,7 +1089,7 @@ a number (`float`) and a dictionary (`dict`)
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for //: 'dict' and 'int'
+TypeError: unsupported operand type(s) for //: 'dict' and 'int'
 
 
 A `TypeError` is usually caused by trying
@@ -1100,7 +1104,7 @@ You tried to divide two incompatible types of objects:
 a dictionary (`dict`) and an integer (`int`)
 
 
-#### Execution stopped on line 166 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 166 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1126,7 +1130,7 @@ a dictionary (`dict`) and an integer (`int`)
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for //=: 'float' and 'dict'
+TypeError: unsupported operand type(s) for //=: 'float' and 'dict'
 
 
 A `TypeError` is usually caused by trying
@@ -1141,7 +1145,7 @@ You tried to divide two incompatible types of objects:
 a number (`float`) and a dictionary (`dict`)
 
 
-#### Execution stopped on line 180 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 180 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1167,7 +1171,7 @@ a number (`float`) and a dictionary (`dict`)
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for &: 'str' and 'int'
+TypeError: unsupported operand type(s) for &: 'str' and 'int'
 
 
 A `TypeError` is usually caused by trying
@@ -1183,7 +1187,7 @@ on two incompatible types of objects:
 a string (`str`) and an integer (`int`)
 
 
-#### Execution stopped on line 194 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 194 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1209,7 +1213,7 @@ a string (`str`) and an integer (`int`)
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for &=: 'int' and 'str'
+TypeError: unsupported operand type(s) for &=: 'int' and 'str'
 
 
 A `TypeError` is usually caused by trying
@@ -1225,7 +1229,7 @@ on two incompatible types of objects:
 an integer (`int`) and a string (`str`)
 
 
-#### Execution stopped on line 208 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 208 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1251,7 +1255,7 @@ an integer (`int`) and a string (`str`)
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
+TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
 
 
 A `TypeError` is usually caused by trying
@@ -1267,7 +1271,7 @@ using two incompatible types of objects:
 a dictionary (`dict`) and a number (`float`)
 
 
-#### Execution stopped on line 222 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 222 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1293,7 +1297,7 @@ a dictionary (`dict`) and a number (`float`)
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
+TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
 
 
 A `TypeError` is usually caused by trying
@@ -1309,7 +1313,7 @@ using two incompatible types of objects:
 a dictionary (`dict`) and a number (`float`)
 
 
-#### Execution stopped on line 236 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 236 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1335,7 +1339,7 @@ a dictionary (`dict`) and a number (`float`)
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for >>: 'str' and 'int'
+TypeError: unsupported operand type(s) for >>: 'str' and 'int'
 
 
 A `TypeError` is usually caused by trying
@@ -1351,7 +1355,7 @@ on two incompatible types of objects:
 a string (`str`) and an integer (`int`)
 
 
-#### Execution stopped on line 250 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 250 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1377,7 +1381,7 @@ a string (`str`) and an integer (`int`)
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for >>=: 'str' and 'int'
+TypeError: unsupported operand type(s) for >>=: 'str' and 'int'
 
 
 A `TypeError` is usually caused by trying
@@ -1393,7 +1397,7 @@ on two incompatible types of objects:
 a string (`str`) and an integer (`int`)
 
 
-#### Execution stopped on line 264 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 264 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1419,7 +1423,7 @@ a string (`str`) and an integer (`int`)
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for @: 'str' and 'int'
+TypeError: unsupported operand type(s) for @: 'str' and 'int'
 
 
 A `TypeError` is usually caused by trying
@@ -1437,7 +1441,7 @@ This operator is normally used only
 for multiplication of matrices.
 
 
-#### Execution stopped on line 278 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 278 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1463,7 +1467,7 @@ for multiplication of matrices.
 
 ### Python exception
 
-#### TypeError: unsupported operand type(s) for @=: 'str' and 'int'
+TypeError: unsupported operand type(s) for @=: 'str' and 'int'
 
 
 A `TypeError` is usually caused by trying
@@ -1481,7 +1485,7 @@ This operator is normally used only
 for multiplication of matrices.
 
 
-#### Execution stopped on line 292 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 292 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1507,7 +1511,7 @@ for multiplication of matrices.
 
 ### Python exception
 
-#### TypeError: '<' not supported between instances of 'int' and 'str'
+TypeError: '<' not supported between instances of 'int' and 'str'
 
 
 A `TypeError` is usually caused by trying
@@ -1523,7 +1527,7 @@ between two incompatible types of objects:
 an integer (`int`) and a string (`str`)
 
 
-#### Execution stopped on line 306 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 306 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1549,7 +1553,7 @@ an integer (`int`) and a string (`str`)
 
 ### Python exception
 
-#### TypeError: bad operand type for unary +: 'str'
+TypeError: bad operand type for unary +: 'str'
 
 
 A `TypeError` is usually caused by trying
@@ -1565,7 +1569,7 @@ with the following type of object: a string (`str`).
 This operation is not defined for this type of object.
 
 
-#### Execution stopped on line 318 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 318 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1583,7 +1587,7 @@ This operation is not defined for this type of object.
 
 ### Python exception
 
-#### TypeError: bad operand type for unary -: 'list'
+TypeError: bad operand type for unary -: 'list'
 
 
 A `TypeError` is usually caused by trying
@@ -1599,7 +1603,7 @@ with the following type of object: a `list`.
 This operation is not defined for this type of object.
 
 
-#### Execution stopped on line 331 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 331 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1617,7 +1621,7 @@ This operation is not defined for this type of object.
 
 ### Python exception
 
-#### TypeError: bad operand type for unary ~: 'tuple'
+TypeError: bad operand type for unary ~: 'tuple'
 
 
 A `TypeError` is usually caused by trying
@@ -1633,7 +1637,7 @@ with the following type of object: a `tuple`.
 This operation is not defined for this type of object.
 
 
-#### Execution stopped on line 344 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 344 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1651,7 +1655,7 @@ This operation is not defined for this type of object.
 
 ### Python exception
 
-#### TypeError: 'tuple' object does not support item assignment
+TypeError: 'tuple' object does not support item assignment
 
 
 A `TypeError` is usually caused by trying
@@ -1668,7 +1672,7 @@ You tried change part of such an immutable object: a `tuple`,
 most likely by using an indexing operation.
 
 
-#### Execution stopped on line 358 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 358 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1693,7 +1697,7 @@ most likely by using an indexing operation.
 
 ### Python exception
 
-#### TypeError: fn() takes 0 positional arguments but 1 was given
+TypeError: fn() takes 0 positional arguments but 1 was given
 
 
 A `TypeError` is usually caused by trying
@@ -1709,7 +1713,7 @@ You apparently have called the function 'fn()' with
 such positional arguments.
 
 
-#### Execution stopped on line 373 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 373 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1722,7 +1726,7 @@ such positional arguments.
 ##### Known identifiers
 
 ```python
-    fn: "<function test_type_error13."<locals>".fn>"
+    fn: <function test_type_error13.<locals>.fn>
 
 ```
 
@@ -1734,7 +1738,7 @@ such positional arguments.
 
 ### Python exception
 
-#### TypeError: fn() missing 2 required positional arguments: 'b' and 'c'
+TypeError: fn() missing 2 required positional arguments: 'b' and 'c'
 
 
 A `TypeError` is usually caused by trying
@@ -1749,7 +1753,7 @@ You apparently have called the function 'fn()' with
 fewer positional arguments than it requires (2 missing).
 
 
-#### Execution stopped on line 388 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 388 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1762,7 +1766,7 @@ fewer positional arguments than it requires (2 missing).
 ##### Known identifiers
 
 ```python
-    fn: "<function test_type_error14."<locals>".fn>"
+    fn: <function test_type_error14.<locals>.fn>
 
 ```
 
@@ -1774,7 +1778,7 @@ fewer positional arguments than it requires (2 missing).
 
 ### Python exception
 
-#### TypeError: 'tuple' object is not callable
+TypeError: 'tuple' object is not callable
 
 
 A `TypeError` is usually caused by trying
@@ -1788,10 +1792,10 @@ or by tring to do an operation not allowed on a given type of object.
 I suspect that you had an object of this type, a `tuple`,
 followed by what looked like a tuple, '(...)',
 which Python took as an indication of a function call.
-Perhaps you had a missing comma before the tuple.
+Perhaps you had a missing comma between two tuples.
 
 
-#### Execution stopped on line 400 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 400 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1809,7 +1813,7 @@ Perhaps you had a missing comma before the tuple.
 
 ### Python exception
 
-#### TypeError: 'list' object is not callable
+TypeError: 'list' object is not callable
 
 
 A `TypeError` is usually caused by trying
@@ -1826,7 +1830,7 @@ which Python took as an indication of a function call.
 Perhaps you had a missing comma before the tuple.
 
 
-#### Execution stopped on line 412 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 412 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1844,7 +1848,7 @@ Perhaps you had a missing comma before the tuple.
 
 ### Python exception
 
-#### TypeError: exceptions must derive from BaseException
+TypeError: exceptions must derive from BaseException
 
 
 A `TypeError` is usually caused by trying
@@ -1858,7 +1862,7 @@ or by tring to do an operation not allowed on a given type of object.
 In Python 3, exceptions must be derived from BaseException.
 
 
-#### Execution stopped on line 424 of file 'TESTS:\except\test_type_error.py'.
+#### Exception raised on line 424 of file 'TESTS:\except\test_type_error.py'.
 
 
 ```python
@@ -1876,7 +1880,7 @@ In Python 3, exceptions must be derived from BaseException.
 
 ### Python exception
 
-#### UnboundLocalError: local variable 'a' referenced before assignment
+UnboundLocalError: local variable 'a' referenced before assignment
 
 
 In Python, variables that are used inside a function are known as 
@@ -1893,7 +1897,9 @@ an `UnboundLocalError`.
 
 The variable that appears to cause the problem is `a`.
 Perhaps the statement
-    `global a`
+
+    global a
+
 should have been included as the first line inside your function.
 Instead of writing `a`, perhaps you meant one of the following:
 *   Local scope: `c`
@@ -1913,7 +1919,7 @@ Instead of writing `a`, perhaps you meant one of the following:
 ##### Known identifiers
 
 ```python
-    global outer: "<function outer>"
+    global outer: <function outer>
 
 ```
 
@@ -1929,8 +1935,11 @@ Instead of writing `a`, perhaps you meant one of the following:
 
 ##### Known identifiers
 
+```python
     global b: 2
     c: 3
+
+```
 
 
 ---
@@ -1940,7 +1949,7 @@ Instead of writing `a`, perhaps you meant one of the following:
 
 ### Python exception
 
-#### MyException: Some informative message about an unknown exception.
+MyException: Some informative message about an unknown exception.
 
 
 No information is known about this exception.
@@ -1948,7 +1957,7 @@ Please report this example to
 https://github.com/aroberge/friendly-traceback/issues
 
 
-#### Execution stopped on line 10 of file 'TESTS:\except\test_unknown_error.py'.
+#### Exception raised on line 10 of file 'TESTS:\except\test_unknown_error.py'.
 
 
 ```python
@@ -1961,7 +1970,7 @@ https://github.com/aroberge/friendly-traceback/issues
 ##### Known identifiers
 
 ```python
-    global MyException: "<class 'test_unknown_error.MyException'>"
+    global MyException: <class 'test_unknown_error.MyException'>
 
 ```
 
@@ -1973,7 +1982,7 @@ https://github.com/aroberge/friendly-traceback/issues
 
 ### Python exception
 
-#### ZeroDivisionError: division by zero
+ZeroDivisionError: division by zero
 
 
 A `ZeroDivisionError` occurs when you are attempting to divide
@@ -1984,7 +1993,7 @@ using the modulo operator `%`:
     `result = my_variable % 0`
 
 
-#### Execution stopped on line 6 of file 'TESTS:\except\test_zero_division_error.py'.
+#### Exception raised on line 6 of file 'TESTS:\except\test_zero_division_error.py'.
 
 
 ```python
@@ -2002,7 +2011,7 @@ using the modulo operator `%`:
 
 ### Python exception
 
-#### ZeroDivisionError: integer division or modulo by zero
+ZeroDivisionError: integer division or modulo by zero
 
 
 A `ZeroDivisionError` occurs when you are attempting to divide
@@ -2013,7 +2022,7 @@ using the modulo operator `%`:
     `result = my_variable % 0`
 
 
-#### Execution stopped on line 19 of file 'TESTS:\except\test_zero_division_error.py'.
+#### Exception raised on line 19 of file 'TESTS:\except\test_zero_division_error.py'.
 
 
 ```python
