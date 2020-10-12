@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Description of demos &mdash; Friendly tracebacks 0.0.39a documentation</title>
+  <title>Comparing Exception messages between Python versions &mdash; Friendly tracebacks 0.1.1a documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Public API" href="api.html" />
-    <link rel="prev" title="Advanced Usage" href="usage_adv.html" /> 
+    <link rel="next" title="Comparison between Python versions: SyntaxErrors" href="compare.html" />
+    <link rel="prev" title="Friendly SyntaxError tracebacks - in English" href="syntax_tracebacks_en_3.10.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.0.39a
+                0.1.1a
               </div>
             
           
@@ -96,26 +96,17 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verbosity.html">Verbosity: how much information do we want?</a></li>
 </ul>
 <p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Advanced Usage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Description of demos</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#custom-exception-py">custom_exception.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#custom-exception-demo-py">custom_exception_demo.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gui-demo-py">gui_demo.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#custom-formatter-py">custom_formatter.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#demo-gettext-py">demo_gettext.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#additional-file-gui-py">Additional file: <code class="docutils literal notranslate"><span class="pre">_gui.py</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#acknowledgement">Acknowledgement</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html">Project files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
@@ -125,7 +116,7 @@
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
@@ -135,7 +126,10 @@
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">SyntaxError - Python 3.8 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.10.html">Friendly tracebacks - Python 3.10 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.10.html">SyntaxError - Python 3.10 in English</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Comparing Exception messages between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions: SyntaxErrors</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Markdown examples</span></p>
 <ul>
@@ -196,13 +190,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Description of demos</li>
+      <li>Comparing Exception messages between Python versions</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/custom.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/compare_exceptions.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -212,10 +206,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="api.html" class="btn btn-neutral float-right" title="Public API" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="compare.html" class="btn btn-neutral float-right" title="Comparison between Python versions: SyntaxErrors" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="usage_adv.html" class="btn btn-neutral float-left" title="Advanced Usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="syntax_tracebacks_en_3.10.html" class="btn btn-neutral float-left" title="Friendly SyntaxError tracebacks - in English" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -235,91 +229,40 @@ will change.</p>
 <p>Note that most screenshots have been taken with an obsolete version.
 We aim to replace those when work for version 0.2 has been completed.</p>
 </div>
-<div class="section" id="description-of-demos">
-<h1>Description of demos<a class="headerlink" href="#description-of-demos" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Read the following if you are interested in making use of Friendly-traceback
-in your own project, perhaps adding your own exceptions, or wanting to
-change the formatting.</p>
-</div>
-<p>In the <a class="reference external" href="https://github.com/aroberge/friendly-traceback/tree/master/demos">demos</a> directory,
-there are a few different files, including the following.</p>
-<div class="section" id="custom-exception-py">
-<h2>custom_exception.py<a class="headerlink" href="#custom-exception-py" title="Permalink to this headline">¶</a></h2>
-<p>Shows how to define custom exceptions that are ready to be used by
-Friendly-traceback. While this is not required, we show how to
-support translations.</p>
-<p>There is no point in running this file as a script.</p>
-</div>
-<div class="section" id="custom-exception-demo-py">
-<h2>custom_exception_demo.py<a class="headerlink" href="#custom-exception-demo-py" title="Permalink to this headline">¶</a></h2>
-<p>This is a demo that generates a few exceptions (most of which are imported
-from custom_exception.py), process them with Friendly-traceback, and
-shows the result.</p>
-<p>This script can be run from a command line.</p>
-<img alt="Graph of demo Python files" src="_images/custom_exception_demo_graph.png" />
-</div>
-<div class="section" id="gui-demo-py">
-<h2>gui_demo.py<a class="headerlink" href="#gui-demo-py" title="Permalink to this headline">¶</a></h2>
-<p>This is a demo GUI that should be run from a command line.</p>
-<img alt="Graph of demo Python files" src="_images/demo_graph.png" />
-<p>After starting this GUI demo, which does nothing on its own,
-I suggest that you use the menu to open “custom_exception_demo.py” and run it; you
-will need to interact from the console (command line) as if you were executing
-that script from Python.</p>
-<a class="reference internal image-reference" href="_images/gui_demo.png"><img alt="GUI demo" src="_images/gui_demo.png" style="width: 736.25px; height: 342.0px;" /></a>
-<p>The “simulated” Python traceback is shown in the console on the left; the program
-pause periodically and ask the user to proceed to the next example.</p>
-<p>On the right, we can see the file “custom_exception_demo.py” loaded in
-the editor at the top; at the bottom, we see the custom exception information.</p>
-<p>Note that this GUI could likely be significantly improved; it is included
-only as a proof of concept.
-Experienced GUI programmers should feel most welcome to contribute their
-expertise and make this a more user-friendly demonstration.</p>
-</div>
-<div class="section" id="custom-formatter-py">
-<h2>custom_formatter.py<a class="headerlink" href="#custom-formatter-py" title="Permalink to this headline">¶</a></h2>
-<p>A custom formatter which creates an html file from a given exception.</p>
-<img alt="custom formatter" src="_images/custom_formatter_graph.png" />
-<p>Running this custom formatter will produce the following <em>ugly</em> html output
-(additional border added “by hand” here).</p>
-<style>
-.main {color:red}
-.sub {color:blue}
-div.div {border: 1px solid blue; padding-left: 1em;}
-.pre2 {color:yellow; background: #321; width:600px}
-</style>
-<div class="div">
-<h2 class="main">Python exception:</h2>
-<h4 class="main">NameError: name 'a' is not defined</h4>
-<h3 class="sub">Likely cause:</h3>
-<p>In your program, the unknown name is 'a'.
-</p>
-<h4 class="main">Execution stopped on line 72 of file 'custom_formatter.py'.
-<h4>
-<pre class="pre2">       70:
-       71: try:
-    -->72:     b = a + c  # noqa
-       73: except Exception:
+<div class="section" id="comparing-exception-messages-between-python-versions">
+<h1>Comparing Exception messages between Python versions<a class="headerlink" href="#comparing-exception-messages-between-python-versions" title="Permalink to this headline">¶</a></h1>
+<p>In this file, we highlight differences between the
+messages provided by Python for all Exceptions excluding <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>
+cases; these are covered elsewhere.</p>
+<p>Note that the content below is extracted automaticaly by
+a simple program we wrote for this purpose.
+If the information is the same for Python 3.6 and
+3.7, but changes for Python 3.8, and stays the same
+afterwards, we only show the differences between 3.7 and 3.8.</p>
+<div>
+<div class='filename-header'>
+test_import_error</div>
+<pre class='highlight friendly-small-pre'><b>3.6: </b>cannot import name 'Pi'
+<b>3.7: </b>cannot import name 'Pi' from 'math' (unknown location)
 </pre>
-</div></div>
-<div class="section" id="demo-gettext-py">
-<h2>demo_gettext.py<a class="headerlink" href="#demo-gettext-py" title="Permalink to this headline">¶</a></h2>
-<p>Provides translation support for the demos</p>
-</div>
-<div class="section" id="additional-file-gui-py">
-<h2>Additional file: <code class="docutils literal notranslate"><span class="pre">_gui.py</span></code><a class="headerlink" href="#additional-file-gui-py" title="Permalink to this headline">¶</a></h2>
-<p>Various GUI elements that do not depend on either <cite>demo_gettext.py</cite> or
-<cite>friendly_traceback</cite> and would only clutter the code of demos if they were
-included in the script to be run.</p>
-</div>
-<div class="section" id="acknowledgement">
-<h2>Acknowledgement<a class="headerlink" href="#acknowledgement" title="Permalink to this headline">¶</a></h2>
-<p>Note that the information obtained by Friendly-traceback is collected
-in a “structured” form, as suggested by Aivar Annamaa
-in <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/8">Issue8</a> and noted in <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/10">Issue10</a>,
-so that it could be formatted differently by any program using Friendly-traceback.</p>
+<div class='filename-header'>
+test_type_error1</div>
+<pre class='highlight friendly-small-pre'><b>3.6: </b>must be str, not int
+<b>3.7: </b>can only concatenate str (not "int") to str
+</pre>
+<div class='filename-header'>
+test_type_error1a</div>
+<pre class='highlight friendly-small-pre'><b>3.6: </b>must be str, not list
+<b>3.7: </b>can only concatenate str (not "list") to str
+</pre>
+<div class='filename-header'>test_type_error13</div>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>fn() takes 0 positional arguments but 1 was given
+<b>3.10: </b>test_type_error13.&lt;locals&gt;.fn() takes 0 positional arguments but 1 was given
+</pre>
+<div class='filename-header'>test_type_error14</div>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>fn() missing 2 required positional arguments: 'b' and 'c'
+<b>3.10: </b>test_type_error14.&lt;locals&gt;.fn() missing 2 required positional arguments: 'b' and 'c'
+</pre>
 </div>
 </div>
 
@@ -331,10 +274,10 @@ so that it could be formatted differently by any program using Friendly-tracebac
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="api.html" class="btn btn-neutral float-right" title="Public API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="compare.html" class="btn btn-neutral float-right" title="Comparison between Python versions: SyntaxErrors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="usage_adv.html" class="btn btn-neutral float-left" title="Advanced Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="syntax_tracebacks_en_3.10.html" class="btn btn-neutral float-left" title="Friendly SyntaxError tracebacks - in English" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

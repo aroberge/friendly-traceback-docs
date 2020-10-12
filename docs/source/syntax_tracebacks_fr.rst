@@ -22,7 +22,7 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.1.0a
+Friendly-traceback version: 0.1.1a
 Python version: 3.8.4
 
 
@@ -2191,10 +2191,9 @@ SyntaxError - cannot assign to f-string
           ^
 
     Cause probable basée sur les informations données par Python :
-        Vous avez écrit une expression qui a une chaine de
-        caractères formatés (aussi appelé f-string)
-        sur le côté gauche du signe égal.
-        Une f-string ne doit apparaître que sur le côté droit du signe d’égalité.
+        You wrote an expression that has an f-string
+        on the left-hand side of the equal sign.
+        An f-string should only appear on the right-hand side of the equal sign.
         
 
 SyntaxError - raising multiple exceptions

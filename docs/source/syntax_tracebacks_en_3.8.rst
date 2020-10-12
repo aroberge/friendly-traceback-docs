@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.1.0a
+Friendly-traceback version: 0.1.1a
 Python version: 3.8.4
 
 
@@ -2197,7 +2197,7 @@ SyntaxError - cannot assign to f-string
     Likely cause based on the information given by Python:
         You wrote an expression that has an f-string
         on the left-hand side of the equal sign.
-        An f-string should only appear on the right-handside of the equal sign.
+        An f-string should only appear on the right-hand side of the equal sign.
         
 
 SyntaxError - raising multiple exceptions

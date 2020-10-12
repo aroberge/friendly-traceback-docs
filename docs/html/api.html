@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Public API &mdash; Friendly tracebacks 0.1.0a documentation</title>
+  <title>Public API &mdash; Friendly tracebacks 0.1.1a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.0a
+                0.1.1a
               </div>
             
           
@@ -126,7 +126,10 @@
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">SyntaxError - Python 3.8 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.10.html">Friendly tracebacks - Python 3.10 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.10.html">SyntaxError - Python 3.10 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare_exceptions.html">Comparing Exception messages between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions: SyntaxErrors</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Markdown examples</span></p>
 <ul>
@@ -353,6 +356,13 @@ for <code class="docutils literal notranslate"><span class="pre">SystemExist</sp
 </dd></dl>
 
 <dl class="py function">
+<dt id="friendly_traceback.public_api.quote">
+<code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">quote</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/public_api.html#quote"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.quote" title="Permalink to this definition">¶</a></dt>
+<dd><p>Surrounds text by single quote, or by backquote if formatter
+is markdown type.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="friendly_traceback.public_api.run">
 <code class="sig-prename descclassname">friendly_traceback.public_api.</code><code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbosity</span><span class="o">=</span><span class="default_value">7</span></em>, <em class="sig-param"><span class="n">args</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">console</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_rich</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">theme</span><span class="o">=</span><span class="default_value">'dark'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/editors_helper.html#run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.public_api.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a filename (relative or absolute path), this function uses the
@@ -362,8 +372,8 @@ to calling check_syntax, it will only be used for the duration
 of this function call. By default, it uses the value of 7 for
 the verbosity level.</p>
 <p>If friendly-traceback exception hook has not been set up prior
-to calling check_syntax, it will only be used for the duration
-of this function call.</p>
+to calling check_syntax, the exception hook will only be used for
+the duration of this function call.</p>
 <p>If console is set to False, run() returns an empty dict if a SyntaxError
 was raised, otherwise returns the dict in which the module (filename)
 was executed.</p>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Comparison between Python versions &mdash; Friendly tracebacks 0.1.0a documentation</title>
+  <title>Comparison between Python versions: SyntaxErrors &mdash; Friendly tracebacks 0.1.1a documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Friendly tracebacks - markdown_docs format" href="tracebacks_markdown.html" />
-    <link rel="prev" title="Friendly SyntaxError tracebacks - in English" href="syntax_tracebacks_en_3.9.html" /> 
+    <link rel="prev" title="Comparing Exception messages between Python versions" href="compare_exceptions.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.0a
+                0.1.1a
               </div>
             
           
@@ -126,7 +126,10 @@
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">SyntaxError - Python 3.8 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Comparison between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.10.html">Friendly tracebacks - Python 3.10 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.10.html">SyntaxError - Python 3.10 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare_exceptions.html">Comparing Exception messages between Python versions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Comparison between Python versions: SyntaxErrors</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Markdown examples</span></p>
 <ul>
@@ -187,7 +190,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Comparison between Python versions</li>
+      <li>Comparison between Python versions: SyntaxErrors</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -206,7 +209,7 @@
         <a href="tracebacks_markdown.html" class="btn btn-neutral float-right" title="Friendly tracebacks - markdown_docs format" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="syntax_tracebacks_en_3.9.html" class="btn btn-neutral float-left" title="Friendly SyntaxError tracebacks - in English" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="compare_exceptions.html" class="btn btn-neutral float-left" title="Comparing Exception messages between Python versions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -226,8 +229,8 @@ will change.</p>
 <p>Note that most screenshots have been taken with an obsolete version.
 We aim to replace those when work for version 0.2 has been completed.</p>
 </div>
-<div class="section" id="comparison-between-python-versions">
-<h1>Comparison between Python versions<a class="headerlink" href="#comparison-between-python-versions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="comparison-between-python-versions-syntaxerrors">
+<h1>Comparison between Python versions: SyntaxErrors<a class="headerlink" href="#comparison-between-python-versions-syntaxerrors" title="Permalink to this headline">¶</a></h1>
 <p>In this file, we highlight differences between the information
 given by different versions of Python when it comes to <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>.
 The content of this file is likely of no use to anyone except for
@@ -528,16 +531,6 @@ raise_syntax_error72</div>
 <b>3.8: </b>SyntaxError: cannot assign to f-string expression
 
 </pre>
-<h5>Different explanation</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>You wrote an expression that has an f-string
-on the left-hand side of the equal sign.
-An f-string should only appear on the right-handside of the equal sign
-.
-<b>3.8: </b>You wrote an expression that has an f-string
-on the left-hand side of the equal sign.
-An f-string should only appear on the right-handside of the equal sign.
-
-</pre>
 <div class='filename-header'>
 raise_syntax_error74</div>
 <h5>Different messages</h5>
@@ -591,7 +584,7 @@ raise_syntax_error9</div>
         <a href="tracebacks_markdown.html" class="btn btn-neutral float-right" title="Friendly tracebacks - markdown_docs format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="syntax_tracebacks_en_3.9.html" class="btn btn-neutral float-left" title="Friendly SyntaxError tracebacks - in English" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="compare_exceptions.html" class="btn btn-neutral float-left" title="Comparing Exception messages between Python versions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

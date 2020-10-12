@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.1.0a documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.1.1a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.0a
+                0.1.1a
               </div>
             
           
@@ -180,7 +180,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.10.html">Friendly tracebacks - Python 3.10 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.10.html">SyntaxError - Python 3.10 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare_exceptions.html">Comparing Exception messages between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions: SyntaxErrors</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Markdown examples</span></p>
 <ul>
@@ -295,8 +298,8 @@ C:Usersandregithubfriendly-tracebackteststrb_english.py located in the <code cla
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.1.0a
-Python version: 3.9.0b4</p>
+<p>Friendly-traceback version: 0.1.1a
+Python version: 3.9.0</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
@@ -353,11 +356,11 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 Likely cause based on the information given by Python:
     Perhaps you meant to write `ascii_lowercase` instead of `ascii_lowecase`
 
-Exception raised on line 24 of file &#39;TESTS:\except\test_attribute_error.py&#39;.
+Exception raised on line 25 of file &#39;TESTS:\except\test_attribute_error.py&#39;.
 
-   22:
-   23:     try:
---&gt;24:         string.ascii_lowecase
+   23:
+   24:     try:
+--&gt;25:         string.ascii_lowecase
 
     Known identifiers:
         string: &lt;module &#39;string&#39;&gt;
@@ -375,13 +378,13 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 
 Likely cause based on the information given by Python:
     Instead of writing `cost`, perhaps you meant one of the following:
-    [`cos`, `cosh`]
+    [`cos`, `cosh`, `acos`]
 
-Exception raised on line 41 of file &#39;TESTS:\except\test_attribute_error.py&#39;.
+Exception raised on line 40 of file &#39;TESTS:\except\test_attribute_error.py&#39;.
 
-   39:
-   40:     try:
---&gt;41:         math.cost
+   38:
+   39:     try:
+--&gt;40:         math.cost
 
     Known identifiers:
         math: &lt;module &#39;math&#39; (built-in)&gt;
@@ -512,11 +515,11 @@ does not exists; typically, this is because the index you give
 is greater than the length of the sequence.
 Reminder: the first item of a sequence is at index 0.
 
-Exception raised on line 20 of file &#39;TESTS:\except\test_index_error.py&#39;.
+Exception raised on line 21 of file &#39;TESTS:\except\test_index_error.py&#39;.
 
-   18:     b = tuple(range(50))
-   19:     try:
---&gt;20:         print(a[50], b[0])
+   19:     b = tuple(range(50))
+   20:     try:
+--&gt;21:         print(a[50], b[0])
 
     Known identifiers:
         print: &lt;built-in function print&gt;
@@ -587,11 +590,11 @@ Likely cause based on the information given by Python:
     *   Global scope: `fabs`
     *   Python builtins: `abs`
 
-Exception raised on line 18 of file &#39;TESTS:\except\test_name_error.py&#39;.
+Exception raised on line 19 of file &#39;TESTS:\except\test_name_error.py&#39;.
 
-   16:     nabs = 1
-   17:     try:
---&gt;18:         x = babs(-1)
+   17:     nabs = 1
+   18:     try:
+--&gt;19:         x = babs(-1)
 </pre></div>
 </div>
 </div>
@@ -610,13 +613,12 @@ Likely cause based on the information given by Python:
     In your program, the unknown name is `x`.
     A type hint found for `x` in the global scope.
     Perhaps you had written `x : 3` instead of `x = 3`.
-    The similar name `&#39;e&#39;` was found in the local scope.
 
-Exception raised on line 31 of file &#39;TESTS:\except\test_name_error.py&#39;.
+Exception raised on line 33 of file &#39;TESTS:\except\test_name_error.py&#39;.
 
-   29: def test_name_error3():
-   30:     try:
---&gt;31:         y = x
+   31: def test_name_error3():
+   32:     try:
+--&gt;33:         y = x
 </pre></div>
 </div>
 </div>
@@ -634,13 +636,13 @@ before being defined or given a value.
 Likely cause based on the information given by Python:
     In your program, the unknown name is `cost`.
     Instead of writing `cost`, perhaps you meant one of the following:
-    *   Global scope: `cos`, `cosh`
+    *   Global scope: `cos`, `cosh`, `acos`
 
-Exception raised on line 42 of file &#39;TESTS:\except\test_name_error.py&#39;.
+Exception raised on line 45 of file &#39;TESTS:\except\test_name_error.py&#39;.
 
-   40: def test_name_error4():
-   41:     try:
---&gt;42:         cost  # wrote from math import * above
+   43: def test_name_error4():
+   44:     try:
+--&gt;45:         cost  # wrote from math import * above
 </pre></div>
 </div>
 </div>
@@ -730,11 +732,11 @@ Likely cause based on the information given by Python:
     You tried to concatenate (add) two different types of objects:
     a string (`str`) and a `list`
 
-Exception raised on line 24 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 25 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   22:         a = &quot;a&quot;
-   23:         a_list = [1, 2, 3]
---&gt;24:         result = a + a_list
+   23:         a = &quot;a&quot;
+   24:         a_list = [1, 2, 3]
+--&gt;25:         result = a + a_list
 
     Known identifiers:
         a: &#39;a&#39;
@@ -756,11 +758,11 @@ Likely cause based on the information given by Python:
     You tried to concatenate (add) two different types of objects:
     a `tuple` and a `list`
 
-Exception raised on line 40 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 42 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   38:         a_tuple = (1, 2, 3)
-   39:         a_list = [1, 2, 3]
---&gt;40:         result = a_tuple + a_list
+   40:         a_tuple = (1, 2, 3)
+   41:         a_list = [1, 2, 3]
+--&gt;42:         result = a_tuple + a_list
 
     Known identifiers:
         a_tuple: (1, 2, 3)
@@ -780,13 +782,13 @@ or by tring to do an operation not allowed on a given type of object.
 
 Likely cause based on the information given by Python:
     You tried to add two incompatible types of objects:
-    an integer (`int`) and a variable equal to None (`NoneType`)
+    an integer (`int`) and a variable equal to `None` (`NoneType`)
 
-Exception raised on line 54 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 57 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   52:         one = 1
-   53:         none = None
---&gt;54:         result = one + none
+   55:         one = 1
+   56:         none = None
+--&gt;57:         result = one + none
 
     Known identifiers:
         one: 1
@@ -808,11 +810,11 @@ Likely cause based on the information given by Python:
     You tried to add two incompatible types of objects:
     an integer (`int`) and a string (`str`)
 
-Exception raised on line 68 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 72 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   66:         one = 1
-   67:         two = &quot;two&quot;
---&gt;68:         one += two
+   70:         one = 1
+   71:         two = &quot;two&quot;
+--&gt;72:         one += two
 
     Known identifiers:
         one: 1
@@ -834,11 +836,11 @@ Likely cause based on the information given by Python:
     You tried to subtract two incompatible types of objects:
     a `tuple` and a `list`
 
-Exception raised on line 82 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 87 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   80:         a = (1, 2)
-   81:         b = [3, 4]
---&gt;82:         result = a - b
+   85:         a = (1, 2)
+   86:         b = [3, 4]
+--&gt;87:         result = a - b
 
     Known identifiers:
         a: (1, 2)
@@ -860,11 +862,11 @@ Likely cause based on the information given by Python:
     You tried to subtract two incompatible types of objects:
     a `list` and a `tuple`
 
-Exception raised on line 96 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 102 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   94:         a = (1, 2)
-   95:         b = [3, 4]
---&gt;96:         b -= a
+   100:         a = (1, 2)
+   101:         b = [3, 4]
+--&gt;102:         b -= a
 
     Known identifiers:
         b: [3, 4]
@@ -886,11 +888,11 @@ Likely cause based on the information given by Python:
     You tried to multiply two incompatible types of objects:
     a complex number and a `set`
 
-Exception raised on line 110 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 117 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   108:         a = 1j
-   109:         b = {2, 3}
---&gt;110:         result = a * b
+   115:         a = 1j
+   116:         b = {2, 3}
+--&gt;117:         result = a * b
 
     Known identifiers:
         a: 1j
@@ -912,11 +914,11 @@ Likely cause based on the information given by Python:
     You tried to multiply two incompatible types of objects:
     a `set` and a complex number
 
-Exception raised on line 124 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 132 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   122:         a = 1j
-   123:         b = {2, 3}
---&gt;124:         b *= a
+   130:         a = 1j
+   131:         b = {2, 3}
+--&gt;132:         b *= a
 
     Known identifiers:
         b: {2, 3}
@@ -938,11 +940,11 @@ Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
     a dictionary (`dict`) and a number (`float`)
 
-Exception raised on line 138 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 147 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   136:         a = {1: 1, 2: 2}
-   137:         b = 3.1416
---&gt;138:         result = a / b
+   145:         a = {1: 1, 2: 2}
+   146:         b = 3.1416
+--&gt;147:         result = a / b
 
     Known identifiers:
         a: {1: 1, 2: 2}
@@ -964,11 +966,11 @@ Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
     a number (`float`) and a dictionary (`dict`)
 
-Exception raised on line 152 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 162 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   150:         a = {1: 1, 2: 2}
-   151:         b = 3.1416
---&gt;152:         b /= a
+   160:         a = {1: 1, 2: 2}
+   161:         b = 3.1416
+--&gt;162:         b /= a
 
     Known identifiers:
         b: 3.1416
@@ -990,11 +992,11 @@ Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
     a dictionary (`dict`) and an integer (`int`)
 
-Exception raised on line 166 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 177 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   164:         a = {1: 1, 2: 2}
-   165:         b = 1
---&gt;166:         result = a // b
+   175:         a = {1: 1, 2: 2}
+   176:         b = 1
+--&gt;177:         result = a // b
 
     Known identifiers:
         a: {1: 1, 2: 2}
@@ -1016,11 +1018,11 @@ Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
     a number (`float`) and a dictionary (`dict`)
 
-Exception raised on line 180 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 192 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   178:         a = {1: 1, 2: 2}
-   179:         b = 3.1416
---&gt;180:         b //= a
+   190:         a = {1: 1, 2: 2}
+   191:         b = 3.1416
+--&gt;192:         b //= a
 
     Known identifiers:
         b: 3.1416
@@ -1043,11 +1045,11 @@ Likely cause based on the information given by Python:
     on two incompatible types of objects:
     a string (`str`) and an integer (`int`)
 
-Exception raised on line 194 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 207 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   192:         a = &quot;a&quot;
-   193:         b = 2
---&gt;194:         result = a &amp; b
+   205:         a = &quot;a&quot;
+   206:         b = 2
+--&gt;207:         result = a &amp; b
 
     Known identifiers:
         a: &#39;a&#39;
@@ -1070,11 +1072,11 @@ Likely cause based on the information given by Python:
     on two incompatible types of objects:
     an integer (`int`) and a string (`str`)
 
-Exception raised on line 208 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 222 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   206:         a = &quot;a&quot;
-   207:         b = 2
---&gt;208:         b &amp;= a
+   220:         a = &quot;a&quot;
+   221:         b = 2
+--&gt;222:         b &amp;= a
 
     Known identifiers:
         b: 2
@@ -1097,11 +1099,11 @@ Likely cause based on the information given by Python:
     using two incompatible types of objects:
     a dictionary (`dict`) and a number (`float`)
 
-Exception raised on line 222 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 237 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   220:         a = {1: 1, 2: 2}
-   221:         b = 3.1416
---&gt;222:         result = a ** b
+   235:         a = {1: 1, 2: 2}
+   236:         b = 3.1416
+--&gt;237:         result = a ** b
 
     Known identifiers:
         a: {1: 1, 2: 2}
@@ -1124,11 +1126,11 @@ Likely cause based on the information given by Python:
     using two incompatible types of objects:
     a dictionary (`dict`) and a number (`float`)
 
-Exception raised on line 236 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 252 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   234:         a = {1: 1, 2: 2}
-   235:         b = 3.1416
---&gt;236:         a **= b
+   250:         a = {1: 1, 2: 2}
+   251:         b = 3.1416
+--&gt;252:         a **= b
 
     Known identifiers:
         a: {1: 1, 2: 2}
@@ -1151,11 +1153,11 @@ Likely cause based on the information given by Python:
     on two incompatible types of objects:
     a string (`str`) and an integer (`int`)
 
-Exception raised on line 250 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 267 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   248:         a = &quot;a&quot;
-   249:         b = 42
---&gt;250:         result = a &gt;&gt; b
+   265:         a = &quot;a&quot;
+   266:         b = 42
+--&gt;267:         result = a &gt;&gt; b
 
     Known identifiers:
         a: &#39;a&#39;
@@ -1178,11 +1180,11 @@ Likely cause based on the information given by Python:
     on two incompatible types of objects:
     a string (`str`) and an integer (`int`)
 
-Exception raised on line 264 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 282 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   262:         a = &quot;a&quot;
-   263:         b = 42
---&gt;264:         a &gt;&gt;= b
+   280:         a = &quot;a&quot;
+   281:         b = 42
+--&gt;282:         a &gt;&gt;= b
 
     Known identifiers:
         a: &#39;a&#39;
@@ -1207,11 +1209,11 @@ Likely cause based on the information given by Python:
     This operator is normally used only
     for multiplication of matrices.
 
-Exception raised on line 278 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 297 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   276:         a = &quot;a&quot;
-   277:         b = 2
---&gt;278:         result = a @ b
+   295:         a = &quot;a&quot;
+   296:         b = 2
+--&gt;297:         result = a @ b
 
     Known identifiers:
         a: &#39;a&#39;
@@ -1236,11 +1238,11 @@ Likely cause based on the information given by Python:
     This operator is normally used only
     for multiplication of matrices.
 
-Exception raised on line 292 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 312 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   290:         a = &quot;a&quot;
-   291:         b = 2
---&gt;292:         a @= b
+   310:         a = &quot;a&quot;
+   311:         b = 2
+--&gt;312:         a @= b
 
     Known identifiers:
         a: &#39;a&#39;
@@ -1263,11 +1265,11 @@ Likely cause based on the information given by Python:
     between two incompatible types of objects:
     an integer (`int`) and a string (`str`)
 
-Exception raised on line 306 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 327 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   304:         a = &quot;a&quot;
-   305:         b = 42
---&gt;306:         b &lt; a
+   325:         a = &quot;a&quot;
+   326:         b = 42
+--&gt;327:         b &lt; a
 
     Known identifiers:
         b: 42
@@ -1290,11 +1292,11 @@ Likely cause based on the information given by Python:
     with the following type of object: a string (`str`).
     This operation is not defined for this type of object.
 
-Exception raised on line 318 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 340 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   316: def test_type_error11():
-   317:     try:
---&gt;318:         a = +&quot;abc&quot;
+   338: def test_type_error11():
+   339:     try:
+--&gt;340:         a = +&quot;abc&quot;
 </pre></div>
 </div>
 </div>
@@ -1313,11 +1315,11 @@ Likely cause based on the information given by Python:
     with the following type of object: a `list`.
     This operation is not defined for this type of object.
 
-Exception raised on line 331 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 354 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   329: def test_type_error11a():
-   330:     try:
---&gt;331:         a = -[1, 2, 3]
+   352: def test_type_error11a():
+   353:     try:
+--&gt;354:         a = -[1, 2, 3]
 </pre></div>
 </div>
 </div>
@@ -1336,11 +1338,11 @@ Likely cause based on the information given by Python:
     with the following type of object: a `tuple`.
     This operation is not defined for this type of object.
 
-Exception raised on line 344 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 368 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   342: def test_type_error11b():
-   343:     try:
---&gt;344:         a = ~(1, 2, 3)
+   366: def test_type_error11b():
+   367:     try:
+--&gt;368:         a = ~(1, 2, 3)
 </pre></div>
 </div>
 </div>
@@ -1360,11 +1362,11 @@ Likely cause based on the information given by Python:
     You tried change part of such an immutable object: a `tuple`,
     most likely by using an indexing operation.
 
-Exception raised on line 358 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 383 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   356:     a = (1, 2, 3)
-   357:     try:
---&gt;358:         a[0] = 0
+   381:     a = (1, 2, 3)
+   382:     try:
+--&gt;383:         a[0] = 0
 
     Known identifiers:
         a: (1, 2, 3)
@@ -1382,15 +1384,15 @@ by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
 Likely cause based on the information given by Python:
-    You apparently have called the function &#39;fn()&#39; with
-    1 positional argument while it requires 0
-    such positional arguments.
+    You apparently have called the function `fn` with
+    1 positional argument(s) while it requires 0
+    such positional argument(s).
 
-Exception raised on line 373 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 399 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   371:
-   372:     try:
---&gt;373:         fn(1)
+   397:
+   398:     try:
+--&gt;399:         fn(1)
 
     Known identifiers:
         fn: &lt;function test_type_error13.&lt;locals&gt;.fn&gt;
@@ -1411,11 +1413,11 @@ Likely cause based on the information given by Python:
     You apparently have called the function &#39;fn()&#39; with
     fewer positional arguments than it requires (2 missing).
 
-Exception raised on line 388 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 435 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   386:
-   387:     try:
---&gt;388:         fn(1)
+   433:
+   434:     try:
+--&gt;435:         fn(1)
 
     Known identifiers:
         fn: &lt;function test_type_error14.&lt;locals&gt;.fn&gt;
@@ -1438,11 +1440,11 @@ Likely cause based on the information given by Python:
     which Python took as an indication of a function call.
     Perhaps you had a missing comma between two tuples.
 
-Exception raised on line 400 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 449 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   398: def test_type_error15():
-   399:     try:
---&gt;400:         _ = (1, 2)(3, 4)
+   447: def test_type_error15():
+   448:     try:
+--&gt;449:         _ = (1, 2)(3, 4)
 </pre></div>
 </div>
 </div>
@@ -1462,11 +1464,11 @@ Likely cause based on the information given by Python:
     which Python took as an indication of a function call.
     Perhaps you had a missing comma before the tuple.
 
-Exception raised on line 412 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 462 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   410: def test_type_error15a():
-   411:     try:
---&gt;412:         _ = [1, 2](3, 4)
+   460: def test_type_error15a():
+   461:     try:
+--&gt;462:         _ = [1, 2](3, 4)
 </pre></div>
 </div>
 </div>
@@ -1483,11 +1485,11 @@ or by tring to do an operation not allowed on a given type of object.
 Likely cause based on the information given by Python:
     In Python 3, exceptions must be derived from BaseException.
 
-Exception raised on line 424 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 475 of file &#39;TESTS:\except\test_type_error.py&#39;.
 
-   422: def test_type_error16():
-   423:     try:
---&gt;424:         raise &quot;exception&quot;
+   473: def test_type_error16():
+   474:     try:
+--&gt;475:         raise &quot;exception&quot;
 </pre></div>
 </div>
 </div>
@@ -1512,9 +1514,6 @@ Likely cause based on the information given by Python:
         global a
 
     should have been included as the first line inside your function.
-    Instead of writing `a`, perhaps you meant one of the following:
-    *   Local scope: `c`
-    *   Global scope: `b`
 
 Execution stopped on line 21 of file &#39;TESTS:\except\test_unbound_local_error.py&#39;.
 
@@ -1589,11 +1588,11 @@ It can also happen if you calculate the remainder of a division
 using the modulo operator `%`:
     `result = my_variable % 0`
 
-Exception raised on line 19 of file &#39;TESTS:\except\test_zero_division_error.py&#39;.
+Exception raised on line 20 of file &#39;TESTS:\except\test_zero_division_error.py&#39;.
 
-   17:     zero = 0
-   18:     try:
---&gt;19:         1 % zero
+   18:     zero = 0
+   19:     try:
+--&gt;20:         1 % zero
 
     Known identifiers:
         zero: 0

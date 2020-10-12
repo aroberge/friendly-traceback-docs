@@ -160,6 +160,9 @@ from the version available from Pypi.
    SyntaxError - Python 3.8 in English <syntax_tracebacks_en_3.8>
    Friendly tracebacks - Python 3.9 in English <tracebacks_en_3.9>
    SyntaxError - Python 3.9 in English <syntax_tracebacks_en_3.9>
+   Friendly tracebacks - Python 3.10 in English <tracebacks_en_3.10>
+   SyntaxError - Python 3.10 in English <syntax_tracebacks_en_3.10>
+   compare_exceptions
    compare
 
 

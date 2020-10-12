@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.1.0a documentation</title>
+  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.1.1a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.0a
+                0.1.1a
               </div>
             
           
@@ -126,7 +126,10 @@
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">SyntaxError - Python 3.8 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.10.html">Friendly tracebacks - Python 3.10 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.10.html">SyntaxError - Python 3.10 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare_exceptions.html">Comparing Exception messages between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions: SyntaxErrors</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Markdown examples</span></p>
 <ul>
@@ -294,7 +297,7 @@ Ceci a besoin d’être fait de manière explicite lorsqu’on veut
 faire des corrections ou des ajouts, avant de faire la mise
 à jour du reste de la documentation avec Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.1.0a
+<p>Friendly-traceback version: 0.1.1a
 Python version: 3.8.4</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -352,11 +355,11 @@ et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`
 Cause probable basée sur les informations données par Python :
     Peut-être que vous vouliez plutôt écrire : `ascii_lowercase` au lieu de `ascii_lowecase`.
 
-Exception levée à la ligne 24 du fichier &#39;TESTS:\except\test_attribute_error.py&#39;.
+Exception levée à la ligne 25 du fichier &#39;TESTS:\except\test_attribute_error.py&#39;.
 
-   22:
-   23:     try:
---&gt;24:         string.ascii_lowecase
+   23:
+   24:     try:
+--&gt;25:         string.ascii_lowecase
 
     Identificateurs connus :
         string: &lt;module &#39;string&#39;&gt;
@@ -374,13 +377,13 @@ et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`
 
 Cause probable basée sur les informations données par Python :
     Au lieu d’écrire `cost`, peut-être que vous vouliez écrire l&#39;un des attributs suivants :
-    [`cos`, `cosh`]
+    [`cos`, `cosh`, `acos`]
 
-Exception levée à la ligne 41 du fichier &#39;TESTS:\except\test_attribute_error.py&#39;.
+Exception levée à la ligne 40 du fichier &#39;TESTS:\except\test_attribute_error.py&#39;.
 
-   39:
-   40:     try:
---&gt;41:         math.cost
+   38:
+   39:     try:
+--&gt;40:         math.cost
 
     Identificateurs connus :
         math: &lt;module &#39;math&#39; (built-in)&gt;
@@ -509,11 +512,11 @@ n’existe pas; typiquement, c’est parce que l’index que vous donnez
 est plus grand que la longueur de la séquence.
 Rappel: le premier élément d&#39;une séquence est à l&#39;index 0.
 
-Exception levée à la ligne 20 du fichier &#39;TESTS:\except\test_index_error.py&#39;.
+Exception levée à la ligne 21 du fichier &#39;TESTS:\except\test_index_error.py&#39;.
 
-   18:     b = tuple(range(50))
-   19:     try:
---&gt;20:         print(a[50], b[0])
+   19:     b = tuple(range(50))
+   20:     try:
+--&gt;21:         print(a[50], b[0])
 
     Identificateurs connus :
         print: &lt;built-in function print&gt;
@@ -583,11 +586,11 @@ Cause probable basée sur les informations données par Python :
     *    Portée globale : `fabs`
     *    Identifiant Python (builtins) : `abs`
 
-Exception levée à la ligne 18 du fichier &#39;TESTS:\except\test_name_error.py&#39;.
+Exception levée à la ligne 19 du fichier &#39;TESTS:\except\test_name_error.py&#39;.
 
-   16:     nabs = 1
-   17:     try:
---&gt;18:         x = babs(-1)
+   17:     nabs = 1
+   18:     try:
+--&gt;19:         x = babs(-1)
 </pre></div>
 </div>
 </div>
@@ -606,13 +609,12 @@ Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom inconnu est `x`.
     Annotation de type trouvée pour `x` en tant que variable globale.
     Peut-être aviez-vous écrit `x : 3` au lieu de `x = 3`.
-    Le nom semblable `&#39;e&#39;` a été trouvé dans la portée locale.
 
-Exception levée à la ligne 31 du fichier &#39;TESTS:\except\test_name_error.py&#39;.
+Exception levée à la ligne 33 du fichier &#39;TESTS:\except\test_name_error.py&#39;.
 
-   29: def test_name_error3():
-   30:     try:
---&gt;31:         y = x
+   31: def test_name_error3():
+   32:     try:
+--&gt;33:         y = x
 </pre></div>
 </div>
 </div>
@@ -630,13 +632,13 @@ utilisé avant qu&#39;on ne lui ait associé une valeur.
 Cause probable basée sur les informations données par Python :
     Dans votre programme, le nom inconnu est `cost`.
     Au lieu d’écrire `cost`, peut-être que vous vouliez écrire l&#39;un des noms suivants :
-    *    Portée globale : `cos`, `cosh`
+    *    Portée globale : `cos`, `cosh`, `acos`
 
-Exception levée à la ligne 42 du fichier &#39;TESTS:\except\test_name_error.py&#39;.
+Exception levée à la ligne 45 du fichier &#39;TESTS:\except\test_name_error.py&#39;.
 
-   40: def test_name_error4():
-   41:     try:
---&gt;42:         cost  # wrote from math import * above
+   43: def test_name_error4():
+   44:     try:
+--&gt;45:         cost  # wrote from math import * above
 </pre></div>
 </div>
 </div>
@@ -726,11 +728,11 @@ Cause probable basée sur les informations données par Python :
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
     une chaîne de caractères (&#39;str&#39;) et une liste (&#39;list&#39;)
 
-Exception levée à la ligne 24 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 25 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   22:         a = &quot;a&quot;
-   23:         a_list = [1, 2, 3]
---&gt;24:         result = a + a_list
+   23:         a = &quot;a&quot;
+   24:         a_list = [1, 2, 3]
+--&gt;25:         result = a + a_list
 
     Identificateurs connus :
         a: &#39;a&#39;
@@ -752,11 +754,11 @@ Cause probable basée sur les informations données par Python :
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
     un tuple et une liste (&#39;list&#39;)
 
-Exception levée à la ligne 40 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 42 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   38:         a_tuple = (1, 2, 3)
-   39:         a_list = [1, 2, 3]
---&gt;40:         result = a_tuple + a_list
+   40:         a_tuple = (1, 2, 3)
+   41:         a_list = [1, 2, 3]
+--&gt;42:         result = a_tuple + a_list
 
     Identificateurs connus :
         a_tuple: (1, 2, 3)
@@ -776,13 +778,13 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
 Cause probable basée sur les informations données par Python :
     Vous avez essayé d’additionner deux types d’objets incompatibles:
-    un entier (&#39;int&#39;) et une variable de valeur None (&#39;NoneType&#39;)
+    un entier (&#39;int&#39;) et a variable equal to `None` (`NoneType`)
 
-Exception levée à la ligne 54 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 57 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   52:         one = 1
-   53:         none = None
---&gt;54:         result = one + none
+   55:         one = 1
+   56:         none = None
+--&gt;57:         result = one + none
 
     Identificateurs connus :
         one: 1
@@ -804,11 +806,11 @@ Cause probable basée sur les informations données par Python :
     Vous avez essayé d’additionner deux types d’objets incompatibles:
     un entier (&#39;int&#39;) et une chaîne de caractères (&#39;str&#39;)
 
-Exception levée à la ligne 68 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 72 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   66:         one = 1
-   67:         two = &quot;two&quot;
---&gt;68:         one += two
+   70:         one = 1
+   71:         two = &quot;two&quot;
+--&gt;72:         one += two
 
     Identificateurs connus :
         one: 1
@@ -830,11 +832,11 @@ Cause probable basée sur les informations données par Python :
     Vous avez tenté de soustraire deux types d’objets incompatibles:
     un tuple et une liste (&#39;list&#39;)
 
-Exception levée à la ligne 82 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 87 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   80:         a = (1, 2)
-   81:         b = [3, 4]
---&gt;82:         result = a - b
+   85:         a = (1, 2)
+   86:         b = [3, 4]
+--&gt;87:         result = a - b
 
     Identificateurs connus :
         a: (1, 2)
@@ -856,11 +858,11 @@ Cause probable basée sur les informations données par Python :
     Vous avez tenté de soustraire deux types d’objets incompatibles:
     une liste (&#39;list&#39;) et un tuple
 
-Exception levée à la ligne 96 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 102 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   94:         a = (1, 2)
-   95:         b = [3, 4]
---&gt;96:         b -= a
+   100:         a = (1, 2)
+   101:         b = [3, 4]
+--&gt;102:         b -= a
 
     Identificateurs connus :
         b: [3, 4]
@@ -882,11 +884,11 @@ Cause probable basée sur les informations données par Python :
     Vous avez essayé de multiplier deux types d’objets différents:
     un nombre complexe (&#39;complex&#39;) et un ensemble (&#39;set&#39;)
 
-Exception levée à la ligne 110 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 117 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   108:         a = 1j
-   109:         b = {2, 3}
---&gt;110:         result = a * b
+   115:         a = 1j
+   116:         b = {2, 3}
+--&gt;117:         result = a * b
 
     Identificateurs connus :
         a: 1j
@@ -908,11 +910,11 @@ Cause probable basée sur les informations données par Python :
     Vous avez essayé de multiplier deux types d’objets différents:
     un ensemble (&#39;set&#39;) et un nombre complexe (&#39;complex&#39;)
 
-Exception levée à la ligne 124 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 132 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   122:         a = 1j
-   123:         b = {2, 3}
---&gt;124:         b *= a
+   130:         a = 1j
+   131:         b = {2, 3}
+--&gt;132:         b *= a
 
     Identificateurs connus :
         b: {2, 3}
@@ -934,11 +936,11 @@ Cause probable basée sur les informations données par Python :
     Vous avez essayé de diviser deux types d’objets différents:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
-Exception levée à la ligne 138 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 147 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   136:         a = {1: 1, 2: 2}
-   137:         b = 3.1416
---&gt;138:         result = a / b
+   145:         a = {1: 1, 2: 2}
+   146:         b = 3.1416
+--&gt;147:         result = a / b
 
     Identificateurs connus :
         a: {1: 1, 2: 2}
@@ -960,11 +962,11 @@ Cause probable basée sur les informations données par Python :
     Vous avez essayé de diviser deux types d’objets différents:
     un nombre (&#39;float&#39;) et un dictionnaire (&#39;dict&#39;)
 
-Exception levée à la ligne 152 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 162 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   150:         a = {1: 1, 2: 2}
-   151:         b = 3.1416
---&gt;152:         b /= a
+   160:         a = {1: 1, 2: 2}
+   161:         b = 3.1416
+--&gt;162:         b /= a
 
     Identificateurs connus :
         b: 3.1416
@@ -986,11 +988,11 @@ Cause probable basée sur les informations données par Python :
     Vous avez essayé de diviser deux types d’objets différents:
     un dictionnaire (&#39;dict&#39;) et un entier (&#39;int&#39;)
 
-Exception levée à la ligne 166 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 177 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   164:         a = {1: 1, 2: 2}
-   165:         b = 1
---&gt;166:         result = a // b
+   175:         a = {1: 1, 2: 2}
+   176:         b = 1
+--&gt;177:         result = a // b
 
     Identificateurs connus :
         a: {1: 1, 2: 2}
@@ -1012,11 +1014,11 @@ Cause probable basée sur les informations données par Python :
     Vous avez essayé de diviser deux types d’objets différents:
     un nombre (&#39;float&#39;) et un dictionnaire (&#39;dict&#39;)
 
-Exception levée à la ligne 180 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 192 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   178:         a = {1: 1, 2: 2}
-   179:         b = 3.1416
---&gt;180:         b //= a
+   190:         a = {1: 1, 2: 2}
+   191:         b = 3.1416
+--&gt;192:         b //= a
 
     Identificateurs connus :
         b: 3.1416
@@ -1039,11 +1041,11 @@ Cause probable basée sur les informations données par Python :
     sur deux types d’objets incompatibles:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
 
-Exception levée à la ligne 194 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 207 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   192:         a = &quot;a&quot;
-   193:         b = 2
---&gt;194:         result = a &amp; b
+   205:         a = &quot;a&quot;
+   206:         b = 2
+--&gt;207:         result = a &amp; b
 
     Identificateurs connus :
         a: &#39;a&#39;
@@ -1066,11 +1068,11 @@ Cause probable basée sur les informations données par Python :
     sur deux types d’objets incompatibles:
     un entier (&#39;int&#39;) et une chaîne de caractères (&#39;str&#39;)
 
-Exception levée à la ligne 208 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 222 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   206:         a = &quot;a&quot;
-   207:         b = 2
---&gt;208:         b &amp;= a
+   220:         a = &quot;a&quot;
+   221:         b = 2
+--&gt;222:         b &amp;= a
 
     Identificateurs connus :
         b: 2
@@ -1093,11 +1095,11 @@ Cause probable basée sur les informations données par Python :
     en utilisant deux types d’objets incompatibles:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
-Exception levée à la ligne 222 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 237 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   220:         a = {1: 1, 2: 2}
-   221:         b = 3.1416
---&gt;222:         result = a ** b
+   235:         a = {1: 1, 2: 2}
+   236:         b = 3.1416
+--&gt;237:         result = a ** b
 
     Identificateurs connus :
         a: {1: 1, 2: 2}
@@ -1120,11 +1122,11 @@ Cause probable basée sur les informations données par Python :
     en utilisant deux types d’objets incompatibles:
     un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
 
-Exception levée à la ligne 236 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 252 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   234:         a = {1: 1, 2: 2}
-   235:         b = 3.1416
---&gt;236:         a **= b
+   250:         a = {1: 1, 2: 2}
+   251:         b = 3.1416
+--&gt;252:         a **= b
 
     Identificateurs connus :
         a: {1: 1, 2: 2}
@@ -1147,11 +1149,11 @@ Cause probable basée sur les informations données par Python :
     sur deux types d’objets incompatibles:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
 
-Exception levée à la ligne 250 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 267 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   248:         a = &quot;a&quot;
-   249:         b = 42
---&gt;250:         result = a &gt;&gt; b
+   265:         a = &quot;a&quot;
+   266:         b = 42
+--&gt;267:         result = a &gt;&gt; b
 
     Identificateurs connus :
         a: &#39;a&#39;
@@ -1174,11 +1176,11 @@ Cause probable basée sur les informations données par Python :
     sur deux types d’objets incompatibles:
     une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
 
-Exception levée à la ligne 264 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 282 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   262:         a = &quot;a&quot;
-   263:         b = 42
---&gt;264:         a &gt;&gt;= b
+   280:         a = &quot;a&quot;
+   281:         b = 42
+--&gt;282:         a &gt;&gt;= b
 
     Identificateurs connus :
         a: &#39;a&#39;
@@ -1203,11 +1205,11 @@ Cause probable basée sur les informations données par Python :
     Cet opérateur est normalement utilisé uniquement
     pour la multiplication des matrices.
 
-Exception levée à la ligne 278 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 297 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   276:         a = &quot;a&quot;
-   277:         b = 2
---&gt;278:         result = a @ b
+   295:         a = &quot;a&quot;
+   296:         b = 2
+--&gt;297:         result = a @ b
 
     Identificateurs connus :
         a: &#39;a&#39;
@@ -1232,11 +1234,11 @@ Cause probable basée sur les informations données par Python :
     Cet opérateur est normalement utilisé uniquement
     pour la multiplication des matrices.
 
-Exception levée à la ligne 292 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 312 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   290:         a = &quot;a&quot;
-   291:         b = 2
---&gt;292:         a @= b
+   310:         a = &quot;a&quot;
+   311:         b = 2
+--&gt;312:         a @= b
 
     Identificateurs connus :
         a: &#39;a&#39;
@@ -1259,11 +1261,11 @@ Cause probable basée sur les informations données par Python :
     deux types d’objets incompatibles:
     un entier (&#39;int&#39;) et une chaîne de caractères (&#39;str&#39;)
 
-Exception levée à la ligne 306 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 327 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   304:         a = &quot;a&quot;
-   305:         b = 42
---&gt;306:         b &lt; a
+   325:         a = &quot;a&quot;
+   326:         b = 42
+--&gt;327:         b &lt; a
 
     Identificateurs connus :
         b: 42
@@ -1286,11 +1288,11 @@ Cause probable basée sur les informations données par Python :
     avec le type d’objet suivant: une chaîne de caractères (&#39;str&#39;).
     Cette opération n’est pas définie pour ce type d’objet.
 
-Exception levée à la ligne 318 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 340 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   316: def test_type_error11():
-   317:     try:
---&gt;318:         a = +&quot;abc&quot;
+   338: def test_type_error11():
+   339:     try:
+--&gt;340:         a = +&quot;abc&quot;
 </pre></div>
 </div>
 </div>
@@ -1309,11 +1311,11 @@ Cause probable basée sur les informations données par Python :
     avec le type d’objet suivant: une liste (&#39;list&#39;).
     Cette opération n’est pas définie pour ce type d’objet.
 
-Exception levée à la ligne 331 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 354 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   329: def test_type_error11a():
-   330:     try:
---&gt;331:         a = -[1, 2, 3]
+   352: def test_type_error11a():
+   353:     try:
+--&gt;354:         a = -[1, 2, 3]
 </pre></div>
 </div>
 </div>
@@ -1332,11 +1334,11 @@ Cause probable basée sur les informations données par Python :
     avec le type d’objet suivant: un tuple.
     Cette opération n’est pas définie pour ce type d’objet.
 
-Exception levée à la ligne 344 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 368 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   342: def test_type_error11b():
-   343:     try:
---&gt;344:         a = ~(1, 2, 3)
+   366: def test_type_error11b():
+   367:     try:
+--&gt;368:         a = ~(1, 2, 3)
 </pre></div>
 </div>
 </div>
@@ -1356,11 +1358,11 @@ Cause probable basée sur les informations données par Python :
     Vous avez essayé de modifier une partie d’un tel objet immuable: un tuple,
     probablement en utilisant une opération d’indexation.
 
-Exception levée à la ligne 358 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 383 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   356:     a = (1, 2, 3)
-   357:     try:
---&gt;358:         a[0] = 0
+   381:     a = (1, 2, 3)
+   382:     try:
+--&gt;383:         a[0] = 0
 
     Identificateurs connus :
         a: (1, 2, 3)
@@ -1378,14 +1380,14 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
 Cause probable basée sur les informations données par Python :
-    Vous avez apparemment invoqué la fonction &#39;fn()&#39; avec
+    Vous avez apparemment invoqué la fonction `fn` avec
     1 arguments positionnels alors qu&#39;elle en requiert 0.
 
-Exception levée à la ligne 373 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 399 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   371:
-   372:     try:
---&gt;373:         fn(1)
+   397:
+   398:     try:
+--&gt;399:         fn(1)
 
     Identificateurs connus :
         fn: &lt;function test_type_error13.&lt;locals&gt;.fn&gt;
@@ -1406,11 +1408,11 @@ Cause probable basée sur les informations données par Python :
     Vous avez apparemment invoqué la fonction &#39;fn()&#39; avec
     moins d&#39;arguments positionnels qu&#39;il n&#39;en faut (2 manquent).
 
-Exception levée à la ligne 388 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 435 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   386:
-   387:     try:
---&gt;388:         fn(1)
+   433:
+   434:     try:
+--&gt;435:         fn(1)
 
     Identificateurs connus :
         fn: &lt;function test_type_error14.&lt;locals&gt;.fn&gt;
@@ -1433,11 +1435,11 @@ Cause probable basée sur les informations données par Python :
     que Python a pris comme indiquant une invocation de fonction.
     Peut-être que vous aviez une virgule manquante entre deux tuples.
 
-Exception levée à la ligne 400 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 449 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   398: def test_type_error15():
-   399:     try:
---&gt;400:         _ = (1, 2)(3, 4)
+   447: def test_type_error15():
+   448:     try:
+--&gt;449:         _ = (1, 2)(3, 4)
 </pre></div>
 </div>
 </div>
@@ -1457,11 +1459,11 @@ Cause probable basée sur les informations données par Python :
     que Python a pris comme indiquant une invocation de fonction.
     Peut-être que vous aviez une virgule manquante avant le tuple.
 
-Exception levée à la ligne 412 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 462 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   410: def test_type_error15a():
-   411:     try:
---&gt;412:         _ = [1, 2](3, 4)
+   460: def test_type_error15a():
+   461:     try:
+--&gt;462:         _ = [1, 2](3, 4)
 </pre></div>
 </div>
 </div>
@@ -1478,11 +1480,11 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 Cause probable basée sur les informations données par Python :
     Dans Python 3, les exceptions doivent être dérivées de BaseException.
 
-Exception levée à la ligne 424 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
+Exception levée à la ligne 475 du fichier &#39;TESTS:\except\test_type_error.py&#39;.
 
-   422: def test_type_error16():
-   423:     try:
---&gt;424:         raise &quot;exception&quot;
+   473: def test_type_error16():
+   474:     try:
+--&gt;475:         raise &quot;exception&quot;
 </pre></div>
 </div>
 </div>
@@ -1508,9 +1510,6 @@ Cause probable basée sur les informations données par Python :
         global a
 
     comme première ligne à l’intérieur de votre fonction.
-    Au lieu d’écrire `a`, peut-être que vous vouliez écrire l&#39;un des noms suivants :
-    *    Portée locale : `c`
-    *    Portée globale : `b`
 
 L&#39;exécution s&#39;est arrêtée à la ligne 21 du fichier &#39;TESTS:\except\test_unbound_local_error.py&#39;
 
@@ -1585,11 +1584,11 @@ Ceci peut également se produire si vous calculez le reste d’une division
 à l’aide de l’opérateur modulo &#39;%&#39;
     `résultat = ma_variable % 0`
 
-Exception levée à la ligne 19 du fichier &#39;TESTS:\except\test_zero_division_error.py&#39;.
+Exception levée à la ligne 20 du fichier &#39;TESTS:\except\test_zero_division_error.py&#39;.
 
-   17:     zero = 0
-   18:     try:
---&gt;19:         1 % zero
+   18:     zero = 0
+   19:     try:
+--&gt;20:         1 % zero
 
     Identificateurs connus :
         zero: 0

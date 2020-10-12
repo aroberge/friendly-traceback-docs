@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.1.0a
+Friendly-traceback version: 0.1.1a
 Python version: 3.8.4
 
 
@@ -2650,7 +2650,7 @@ beyond the location indicated below by --> and ^.
 
 You wrote an expression that has an f-string
 on the left-hand side of the equal sign.
-An f-string should only appear on the right-handside of the equal sign.
+An f-string should only appear on the right-hand side of the equal sign.
 
 ---
 
