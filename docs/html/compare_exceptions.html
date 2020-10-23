@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Comparing Exception messages between Python versions &mdash; Friendly tracebacks 0.1.1a documentation</title>
+  <title>Comparing Exception messages between Python versions &mdash; Friendly tracebacks 0.1.6a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.1a
+                0.1.6a
               </div>
             
           
@@ -96,7 +96,6 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
-<li class="toctree-l1"><a class="reference internal" href="verbosity.html">Verbosity: how much information do we want?</a></li>
 </ul>
 <p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul>
@@ -258,6 +257,10 @@ test_type_error1a</div>
 <div class='filename-header'>test_type_error13</div>
 <pre class='highlight friendly-small-pre'><b>3.9: </b>fn() takes 0 positional arguments but 1 was given
 <b>3.10: </b>test_type_error13.&lt;locals&gt;.fn() takes 0 positional arguments but 1 was given
+</pre>
+<div class='filename-header'>test_type_error13a</div>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>f() takes 1 positional argument but 2 were given
+<b>3.10: </b>test_type_error13a.&lt;locals&gt;.A.f() takes 1 positional argument but 2 were given
 </pre>
 <div class='filename-header'>test_type_error14</div>
 <pre class='highlight friendly-small-pre'><b>3.9: </b>fn() missing 2 required positional arguments: 'b' and 'c'

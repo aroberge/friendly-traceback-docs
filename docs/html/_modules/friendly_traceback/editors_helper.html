@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.editors_helper &mdash; Friendly tracebacks 0.1.1a documentation</title>
+  <title>friendly_traceback.editors_helper &mdash; Friendly tracebacks 0.1.6a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.1.1a
+                0.1.6a
               </div>
             
           
@@ -94,7 +94,6 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../design.html">Some thoughts on the design of friendly-traceback</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../verbosity.html">Verbosity: how much information do we want?</a></li>
 </ul>
 <p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul>
@@ -372,7 +371,11 @@
     <span class="n">module_globals</span> <span class="o">=</span> <span class="n">exec_code</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="n">verbosity</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">console</span><span class="p">:</span>
         <span class="n">start_console</span><span class="p">(</span>
-            <span class="n">local_vars</span><span class="o">=</span><span class="n">module_globals</span><span class="p">,</span> <span class="n">use_rich</span><span class="o">=</span><span class="n">use_rich</span><span class="p">,</span> <span class="n">banner</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="n">theme</span>
+            <span class="n">local_vars</span><span class="o">=</span><span class="n">module_globals</span><span class="p">,</span>
+            <span class="n">use_rich</span><span class="o">=</span><span class="n">use_rich</span><span class="p">,</span>
+            <span class="n">banner</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">theme</span><span class="o">=</span><span class="n">theme</span><span class="p">,</span>
+            <span class="n">verbosity</span><span class="o">=</span><span class="n">verbosity</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">module_globals</span></div>

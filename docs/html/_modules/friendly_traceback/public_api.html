@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.public_api &mdash; Friendly tracebacks 0.1.1a documentation</title>
+  <title>friendly_traceback.public_api &mdash; Friendly tracebacks 0.1.6a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.1.1a
+                0.1.6a
               </div>
             
           
@@ -94,7 +94,6 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../design.html">Some thoughts on the design of friendly-traceback</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../verbosity.html">Verbosity: how much information do we want?</a></li>
 </ul>
 <p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul>
@@ -374,18 +373,18 @@
 
 <span class="sd">    The values are as follows::</span>
 
-<span class="sd">         1: All items except a Python traceback. Default for non-interactive scripts.</span>
-<span class="sd">         2: Python tracebacks appear before the output of level 1.</span>
-<span class="sd">         3: Python tracebacks appended at the end of the output of level 1.</span>
-<span class="sd">         4: Same as 1, but generic explanation is not included</span>
-<span class="sd">         5: Same as 2, but generic explanation is not included</span>
-<span class="sd">         6: Same as 3, but generic explanation is not included</span>
-<span class="sd">         7: Shortened python tracebacks followed by specific explanation.</span>
-<span class="sd">         8: Minimal display of relevant information,</span>
-<span class="sd">            suitable for console use by advanced programmers.</span>
-<span class="sd">         9: Shortened Python traceback</span>
-<span class="sd">         0: Python traceback.</span>
-<span class="sd">         -1: Python traceback that also includes calls to friendly-traceback.</span>
+<span class="sd">        1: All items except with a shortened Python traceback.</span>
+<span class="sd">           Default for non-interactive scripts.</span>
+<span class="sd">        2: Same as 1, except that the traceback is not shown.</span>
+<span class="sd">        3: Similar to 1 but Python tracebacks appended at the end of the output.</span>
+<span class="sd">        4: Same as 1, but generic explanation is not included</span>
+<span class="sd">        5: Same as 2, but generic explanation is not included</span>
+<span class="sd">        6: Same as 3, but generic explanation is not included</span>
+<span class="sd">        7: Shortened python tracebacks followed by suggestion/hint.</span>
+<span class="sd">        8: Subject to change.</span>
+<span class="sd">        9: Shortened Python traceback</span>
+<span class="sd">        0: Normal Python traceback.</span>
+<span class="sd">        -1: Python traceback that also includes calls to friendly-traceback.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">session</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">verbosity_level</span><span class="p">)</span></div>
 
@@ -474,30 +473,31 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">set_verbosity</span> <span class="o">=</span> <span class="n">set_verbosity</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">run</span> <span class="o">=</span> <span class="n">run</span>
 
-    <span class="k">def</span> <span class="nf">show_again</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Shows the previously recorded traceback info again,</span>
-<span class="sd">        on the default stream.</span>
-
-<span class="sd">        Primarily intended to be used when the user changes</span>
-<span class="sd">        a verbosity level to view the last computed traceback</span>
-<span class="sd">        in a given language.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">session</span><span class="o">.</span><span class="n">show_traceback_info_again</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">_show_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Debugging tool: shows the content of traceback info.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_traceback_info</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No recorded traceback</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recorded traceback information:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_traceback_info</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">session</span><span class="o">.</span><span class="n">saved_traceback_info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Shows the previously recorded traceback info again,</span>
 <span class="sd">        with the specified verbosity level.</span>
+
+<span class="sd">        See set_verbosity() for details.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">verbosity</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">verbosity</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="n">old_level</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_verbosity</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_again</span><span class="p">()</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">show_traceback_info_again</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">old_level</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">tb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Shows the traceback&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">traceback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Shows the traceback.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">what</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -511,6 +511,10 @@
     <span class="k">def</span> <span class="nf">why</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Shows the likely cause of the exception.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">hint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Shows hint/suggestion if available.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>
 
 
 <span class="c1"># -----------------------------------------</span>

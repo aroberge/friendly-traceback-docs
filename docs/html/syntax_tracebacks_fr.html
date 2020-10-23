@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.1.1a documentation</title>
+  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.1.6a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.1a
+                0.1.6a
               </div>
             
           
@@ -96,7 +96,6 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
-<li class="toctree-l1"><a class="reference internal" href="verbosity.html">Verbosity: how much information do we want?</a></li>
 </ul>
 <p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul>
@@ -219,6 +218,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-raising-multiple-exceptions">SyntaxError - raising multiple exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-parenthesis-around-generator-expression">SyntaxError - parenthesis around generator expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-invalid-character-bad-quote">SyntaxError - invalid character (bad quote)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-single-instead-of-double-with-if">SyntaxError - single = instead of double == with if</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-single-instead-of-double-with-elif">SyntaxError - single = instead of double == with elif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-single-instead-of-double-with-while">SyntaxError - single = instead of double == with while</a></li>
 </ul>
 </li>
 </ul>
@@ -331,20 +333,25 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.1.1a
+<p>Friendly-traceback version: 0.1.6a
 Python version: 3.8.4</p>
 <div class="section" id="indentationerror-1-expected-an-indented-block">
 <h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    IndentationError: expected an indented block
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_indentation_error1.py&quot;, line 4
+    pass
+    ^
+IndentationError: expected an indented block
 
 Une exception de type `IndentationError` se produit lorsqu&#39;une ligne de code
 n&#39;est pas indentée (c&#39;est-à-dire alignée verticalement avec les autres lignes)
 de la façon attendue.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_indentation_error1.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
    2:
@@ -352,7 +359,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: pass
       ^
 
-Cause probable basée sur les informations données par Python :
     Dans ce cas-ci, la ligne indiquée ci-dessus par --&gt; devrait
     normalement commencer un nouveau bloc de code indenté.
 </pre></div>
@@ -361,15 +367,20 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="indentationerror-2-unexpected-indent">
 <h2>IndentationError - 2: unexpected indent<a class="headerlink" href="#indentationerror-2-unexpected-indent" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    IndentationError: unexpected indent
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_indentation_error2.py&quot;, line 4
+    pass
+   ^
+IndentationError: unexpected indent
 
 Une exception de type `IndentationError` se produit lorsqu&#39;une ligne de code
 n&#39;est pas indentée (c&#39;est-à-dire alignée verticalement avec les autres lignes)
 de la façon attendue.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_indentation_error2.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
    2: if True:
@@ -377,7 +388,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:       pass
            ^
 
-Cause probable basée sur les informations données par Python :
     Dans ce cas-ci, la ligne indiquée ci-dessus par --&gt;
     est plus indentée que ce qui était attendu et ne
     correspond pas à l&#39;indentation de la ligne précédente.
@@ -387,15 +397,20 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="indentationerror-3-unindent-does-not-match">
 <h2>IndentationError - 3: unindent does not match …<a class="headerlink" href="#indentationerror-3-unindent-does-not-match" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    IndentationError: unindent does not match any outer indentation level
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_indentation_error3.py&quot;, line 4
+    pass
+        ^
+IndentationError: unindent does not match any outer indentation level
 
 Une exception de type `IndentationError` se produit lorsqu&#39;une ligne de code
 n&#39;est pas indentée (c&#39;est-à-dire alignée verticalement avec les autres lignes)
 de la façon attendue.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_indentation_error3.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
    2: if True:
@@ -403,7 +418,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:     pass
               ^
 
-Cause probable basée sur les informations données par Python :
     Dans ce cas-ci, la ligne indiquée ci-dessus par --&gt;
     est moins indentée que la ligne précédente
     et n’est pas alignée verticalement avec un autre bloc de code.
@@ -413,7 +427,13 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="taberror">
 <h2>TabError<a class="headerlink" href="#taberror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    TabError: inconsistent use of tabs and spaces in indentation
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_tab_error.py&quot;, line 7
+    pass
+        ^
+TabError: inconsistent use of tabs and spaces in indentation
 
 Une exception de type `TabError` indique que vous avez utilisé des espaces
 ainsi que des caractères de tabulation pour indenter votre code.
@@ -422,10 +442,9 @@ L’indentation de votre code signifie que le bloc de codes est aligné
 verticalement en insérant des espaces ou des tabulations au début des lignes.
 La recommandation de Python est de toujours utiliser des espaces
 pour indenter votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_tab_error.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
     4:
     5: def test_tab_error():
@@ -438,20 +457,24 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 <div class="section" id="syntaxerror-assign-to-keyword">
 <h2>SyntaxError - Assign to keyword<a class="headerlink" href="#syntaxerror-assign-to-keyword" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error1.py&quot;, line 3
+    def = 2
+        ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error1.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot; Should raise SyntaxError&quot;&quot;&quot;
    2:
 --&gt;3: def = 2
           ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous essayiez d’assigner une valeur au mot clé Python `def`.
@@ -462,20 +485,24 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-missing-colon-1">
 <h2>SyntaxError - Missing colon - 1<a class="headerlink" href="#syntaxerror-missing-colon-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error2.py&quot;, line 3
+    if True
+           ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error2.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
 --&gt;3: if True
              ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez écrit un énoncé débutant avec
@@ -486,20 +513,24 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-missing-colon-2">
 <h2>SyntaxError - Missing colon - 2<a class="headerlink" href="#syntaxerror-missing-colon-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error3.py&quot;, line 3
+    while True  # a comment
+                ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error3.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
 --&gt;3: while True  # a comment
                   ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous vouliez débuter une boucle `while`
@@ -510,13 +541,18 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-elif-not-else-if">
 <h2>SyntaxError - elif, not else if<a class="headerlink" href="#syntaxerror-elif-not-else-if" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error4.py&quot;, line 5
+    else if True:
+         ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error4.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    2:
    3: if False:
@@ -524,7 +560,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: else if True:
            ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez écrit `else if`
@@ -535,13 +570,18 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-elif-not-elseif">
 <h2>SyntaxError - elif, not elseif<a class="headerlink" href="#syntaxerror-elif-not-elseif" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error5.py&quot;, line 5
+    elseif True:
+           ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error5.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    2:
    3: if False:
@@ -549,7 +589,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: elseif True:
              ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez écrit `elseif`
@@ -560,20 +599,24 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-malformed-def-statment-1">
 <h2>SyntaxError - malformed def statment - 1<a class="headerlink" href="#syntaxerror-malformed-def-statment-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error6.py&quot;, line 3
+    def :
+        ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error6.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
 --&gt;3: def :
           ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous vouliez définir une fonction ou une méthode,
@@ -587,20 +630,24 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-malformed-def-statment-2">
 <h2>SyntaxError - malformed def statment - 2<a class="headerlink" href="#syntaxerror-malformed-def-statment-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error7.py&quot;, line 3
+    def name  :
+              ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error7.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
 --&gt;3: def name  :
                 ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous vouliez définir une fonction ou une méthode,
@@ -614,20 +661,24 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-malformed-def-statment-3">
 <h2>SyntaxError - malformed def statment - 3<a class="headerlink" href="#syntaxerror-malformed-def-statment-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error8.py&quot;, line 3
+    def ( arg )  :
+        ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error8.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
 --&gt;3: def ( arg )  :
           ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous vouliez définir une fonction ou une méthode,
@@ -641,20 +692,24 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-can-t-assign-to-literal-1">
 <h2>SyntaxError - can’t assign to literal - 1<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: cannot assign to literal
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error9.py&quot;, line 3
+    1 = a
+    ^
+SyntaxError: cannot assign to literal
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error9.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal&quot;&quot;&quot;
    2:
 --&gt;3: 1 = a
       ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
 
         1 = a
@@ -669,20 +724,24 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-can-t-assign-to-literal-2">
 <h2>SyntaxError - can’t assign to literal - 2<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: cannot assign to literal
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error10.py&quot;, line 3
+    1 = 2
+    ^
+SyntaxError: cannot assign to literal
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error10.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal&quot;&quot;&quot;
    2:
 --&gt;3: 1 = 2
       ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
 
         1 = 2
@@ -695,13 +754,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-can-t-assign-to-literal-3">
 <h2>SyntaxError - can’t assign to literal - 3<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: cannot assign to set display
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error52.py&quot;, line 7
+    {1, 2, 3} = 4
+    ^
+SyntaxError: cannot assign to set display
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error52.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
     4:
     5:  &quot;&quot;&quot;
@@ -709,7 +773,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt; 7: {1, 2, 3} = 4
        ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
 
         {1, 2, 3} = 4
@@ -722,13 +785,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-can-t-assign-to-literal-4">
 <h2>SyntaxError - can’t assign to literal - 4<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-4" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: cannot assign to dict display
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error53.py&quot;, line 7
+    {1 : 2, 2 : 4} = 5
+    ^
+SyntaxError: cannot assign to dict display
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error53.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
     4:
     5:  &quot;&quot;&quot;
@@ -736,7 +804,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt; 7: {1 : 2, 2 : 4} = 5
        ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
 
         {1 : 2, 2 : 4} = 5
@@ -749,13 +816,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-can-t-assign-to-literal-5">
 <h2>SyntaxError - can’t assign to literal - 5<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-5" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: cannot assign to literal
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error54.py&quot;, line 4
+    1 = a = b
+    ^
+SyntaxError: cannot assign to literal
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error54.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal
    2: or (Python 3.8) cannot assign to literal&quot;&quot;&quot;
@@ -763,7 +835,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: 1 = a = b
       ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
 
         ... = nom_de_variable
@@ -776,20 +847,24 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-import-x-from-y">
 <h2>SyntaxError - import X from Y<a class="headerlink" href="#syntaxerror-import-x-from-y" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error11.py&quot;, line 3
+    import pen from turtle
+               ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error11.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2:
 --&gt;3: import pen from turtle
                  ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez écrit quelque chose comme
@@ -802,20 +877,24 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-eol-while-scanning-string-literal">
 <h2>SyntaxError - EOL while scanning string literal<a class="headerlink" href="#syntaxerror-eol-while-scanning-string-literal" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: EOL while scanning string literal
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error12.py&quot;, line 3
+    alphabet = &#39;abc
+                   ^
+SyntaxError: EOL while scanning string literal
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error12.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: EOL while scanning string literal&quot;&quot;&quot;
    2:
 --&gt;3: alphabet = &#39;abc
                      ^
 
-Cause probable basée sur les informations données par Python :
     Vous aviez commencé à écrire une chaîne de caractères
     avec un guillemet simple ou double, mais n&#39;avez jamais
     terminé la chaîne avec un autre guillemet sur cette ligne.
@@ -825,13 +904,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-assignment-to-keyword-none">
 <h2>SyntaxError - assignment to keyword (None)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-none" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: cannot assign to None
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error13.py&quot;, line 4
+    None = 1
+    ^
+SyntaxError: cannot assign to None
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error13.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: cannot assign to None in Py 3.8
    2:    and can&#39;t assign to keyword before.&quot;&quot;&quot;
@@ -839,7 +923,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: None = 1
       ^
 
-Cause probable basée sur les informations données par Python :
     `None` est une constante dans python; vous ne pouvez pas lui assigner une valeur.
 </pre></div>
 </div>
@@ -847,13 +930,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-assignment-to-keyword-debug">
 <h2>SyntaxError - assignment to keyword (__debug__)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-debug" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: cannot assign to __debug__
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error14.py&quot;, line 4
+    __debug__ = 1
+    ^
+SyntaxError: cannot assign to __debug__
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error14.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
    2:    and assignment to keyword before.&quot;&quot;&quot;
@@ -861,7 +949,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: __debug__ = 1
       ^
 
-Cause probable basée sur les informations données par Python :
     `__debug__` est une constante dans python; vous ne pouvez pas lui assigner une valeur.
 </pre></div>
 </div>
@@ -869,13 +956,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-unmatched-closing-parenthesis">
 <h2>SyntaxError - unmatched closing parenthesis<a class="headerlink" href="#syntaxerror-unmatched-closing-parenthesis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: unmatched &#39;)&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error15.py&quot;, line 6
+    3, 4,))
+          ^
+SyntaxError: unmatched &#39;)&#39;
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error15.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    3: &quot;&quot;&quot;
    4: a = (1,
@@ -883,7 +975,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6:     3, 4,))
                 ^
 
-Cause probable basée sur les informations données par Python :
     Le symbole parenthèse `)` à la ligne 6 n&#39;a pas de symbole ouvrant qui lui correspond.
 </pre></div>
 </div>
@@ -891,20 +982,24 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-unclosed-parenthesis-1">
 <h2>SyntaxError - unclosed parenthesis- 1<a class="headerlink" href="#syntaxerror-unclosed-parenthesis-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error16.py&quot;, line 3
+    if x == 1:
+             ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error16.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2: x = int(&#39;1&#39;
 --&gt;3: if x == 1:
                ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Le symbole parenthèse `(` à la ligne 2 n&#39;est pas fermé par le symbole correspondant.
@@ -917,20 +1012,24 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-unclosed-parenthesis-2">
 <h2>SyntaxError - unclosed parenthesis - 2<a class="headerlink" href="#syntaxerror-unclosed-parenthesis-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error17.py&quot;, line 3
+    d = a*a
+    ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error17.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2: a = (b+c
 --&gt;3: d = a*a
       ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Le symbole parenthèse `(` à la ligne 2 n&#39;est pas fermé par le symbole correspondant.
@@ -943,19 +1042,23 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-mismatched-brackets">
 <h2>SyntaxError - mismatched brackets<a class="headerlink" href="#syntaxerror-mismatched-brackets" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: closing parenthesis &#39;]&#39; does not match opening parenthesis &#39;(&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error18.py&quot;, line 2
+    x = (1, 2, 3]
+                ^
+SyntaxError: closing parenthesis &#39;]&#39; does not match opening parenthesis &#39;(&#39;
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error18.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: x = (1, 2, 3]
                   ^
 
-Cause probable basée sur les informations données par Python :
     Python nous dit que la parenthèse de droite `]` ne correspond pas
     à la parenthèse de gauche `(`.
 
@@ -972,13 +1075,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-mismatched-brackets-2">
 <h2>SyntaxError - mismatched brackets - 2<a class="headerlink" href="#syntaxerror-mismatched-brackets-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: closing parenthesis &#39;]&#39; does not match opening parenthesis &#39;(&#39; on line 2
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error19.py&quot;, line 4
+    3]
+     ^
+SyntaxError: closing parenthesis &#39;]&#39; does not match opening parenthesis &#39;(&#39; on line 2
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error19.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2: x = (1,
@@ -986,7 +1094,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:      3]
             ^
 
-Cause probable basée sur les informations données par Python :
     Python nous dit que la parenthèse de droite `]` sur la dernière ligne
     ne correspond pas à la parenthèse de gauche `(` sur la ligne 2.
 
@@ -1005,19 +1112,23 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-print-is-a-function">
 <h2>SyntaxError - print is a function<a class="headerlink" href="#syntaxerror-print-is-a-function" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: Missing parentheses in call to &#39;print&#39;. Did you mean print(&#39;hello&#39;)?
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error20.py&quot;, line 2
+    print &#39;hello&#39;
+          ^
+SyntaxError: Missing parentheses in call to &#39;print&#39;. Did you mean print(&#39;hello&#39;)?
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error20.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: Missing parentheses in call to &#39;print&#39; ...&quot;&quot;&quot;
 --&gt;2: print &#39;hello&#39;
             ^
 
-Cause probable basée sur les informations données par Python :
     Peut-être que vous avez besoin d&#39;écrire
 
          print(&#39;hello&#39;)
@@ -1030,20 +1141,24 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-python-keyword-as-function-name">
 <h2>SyntaxError - Python keyword as function name<a class="headerlink" href="#syntaxerror-python-keyword-as-function-name" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error21.py&quot;, line 3
+    def pass():
+        ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error21.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2:
 --&gt;3: def pass():
           ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez tenté d&#39;utiliser le mot clé Python `pass` comme nom de fonction.
@@ -1054,13 +1169,18 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-break-outside-loop">
 <h2>SyntaxError - break outside loop<a class="headerlink" href="#syntaxerror-break-outside-loop" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: &#39;break&#39; outside loop
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error22.py&quot;, line 4
+    break
+    ^
+SyntaxError: &#39;break&#39; outside loop
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error22.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: &#39;break&#39; outside loop&quot;&quot;&quot;
    2:
@@ -1068,7 +1188,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:     break
           ^
 
-Cause probable basée sur les informations données par Python :
     Le mot-clé Python `break` ne peut être utilisé qu&#39;à l&#39;intérieur d&#39;une boucle `for` ou à l&#39;intérieur d&#39;une boucle `while`.
 </pre></div>
 </div>
@@ -1076,13 +1195,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-continue-outside-loop">
 <h2>SyntaxError - continue outside loop<a class="headerlink" href="#syntaxerror-continue-outside-loop" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: &#39;continue&#39; not properly in loop
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error23.py&quot;, line 4
+    continue
+    ^
+SyntaxError: &#39;continue&#39; not properly in loop
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error23.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: &#39;continue&#39; outside loop&quot;&quot;&quot;
    2:
@@ -1090,7 +1214,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:     continue
           ^
 
-Cause probable basée sur les informations données par Python :
     Le mot-clé Python `continue` ne peut être utilisé qu&#39;à l&#39;intérieur d&#39;une boucle `for` ou à l&#39;intérieur d&#39;une boucle `while`.
 </pre></div>
 </div>
@@ -1098,20 +1221,24 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-quote-inside-a-string">
 <h2>SyntaxError - quote inside a string<a class="headerlink" href="#syntaxerror-quote-inside-a-string" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error24.py&quot;, line 3
+    message = &#39;don&#39;t&#39;
+                   ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error24.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2:
 --&gt;3: message = &#39;don&#39;t&#39;
                      ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il semble y avoir un identificateur Python (nom de variable)
@@ -1124,13 +1251,18 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-missing-comma-in-a-dict">
 <h2>SyntaxError - missing comma in a dict<a class="headerlink" href="#syntaxerror-missing-comma-in-a-dict" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error25.py&quot;, line 5
+    &#39;c&#39;: 3,
+    ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error25.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    2:
    3: a = {&#39;a&#39;: 1,
@@ -1138,7 +1270,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5:      &#39;c&#39;: 3,
            ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il est possible que vous ayez oublié une virgule entre les éléments d&#39;un ensemble (set)
@@ -1149,20 +1280,24 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-missing-comma-in-a-set">
 <h2>SyntaxError - missing comma in a set<a class="headerlink" href="#syntaxerror-missing-comma-in-a-set" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error26.py&quot;, line 3
+    a = {1, 2  3}
+               ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error26.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2:
 --&gt;3: a = {1, 2  3}
                  ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il est possible que vous ayez oublié une virgule entre les éléments d&#39;un ensemble (set)
@@ -1173,20 +1308,24 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-missing-comma-in-a-list">
 <h2>SyntaxError - missing comma in a list<a class="headerlink" href="#syntaxerror-missing-comma-in-a-list" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error27.py&quot;, line 3
+    a = [1, 2  3]
+               ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error27.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2:
 --&gt;3: a = [1, 2  3]
                  ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il est possible que vous ayez oublié une virgule entre les éléments d&#39;une liste
@@ -1197,20 +1336,24 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-missing-comma-in-a-tuple">
 <h2>SyntaxError - missing comma in a tuple<a class="headerlink" href="#syntaxerror-missing-comma-in-a-tuple" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error28.py&quot;, line 3
+    a = (1, 2  3)
+               ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error28.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2:
 --&gt;3: a = (1, 2  3)
                  ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il est possible que vous ayez oublié une virgule entre les éléments d&#39;un tuple,
@@ -1221,13 +1364,18 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-missing-comma-between-function-args">
 <h2>SyntaxError - missing comma between function args<a class="headerlink" href="#syntaxerror-missing-comma-between-function-args" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error29.py&quot;, line 4
+    def a(b, c d):
+               ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error29.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2:
@@ -1235,7 +1383,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: def a(b, c d):
                  ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il est possible que vous ayez oublié une virgule entre les éléments d&#39;un tuple,
@@ -1246,13 +1393,18 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-can-t-assign-to-function-call-1">
 <h2>SyntaxError - can’t assign to function call - 1<a class="headerlink" href="#syntaxerror-can-t-assign-to-function-call-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: cannot assign to function call
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error30.py&quot;, line 6
+    len(&#39;a&#39;) = 3
+    ^
+SyntaxError: cannot assign to function call
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error30.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    3: Python 3.8: SyntaxError: cannot assign to function call
    4: &quot;&quot;&quot;
@@ -1260,7 +1412,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6: len(&#39;a&#39;) = 3
       ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
 
         len(&#39;a&#39;) = 3
@@ -1274,13 +1425,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-can-t-assign-to-function-call-2">
 <h2>SyntaxError - can’t assign to function call - 2<a class="headerlink" href="#syntaxerror-can-t-assign-to-function-call-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: cannot assign to function call
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error31.py&quot;, line 6
+    func(a, b=3) = 4
+    ^
+SyntaxError: cannot assign to function call
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error31.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    3: Python 3.8: SyntaxError: cannot assign to function call
    4: &quot;&quot;&quot;
@@ -1288,7 +1444,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6: func(a, b=3) = 4
       ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression comme
 
         ma_fonction(…) = une certaine valeur
@@ -1301,13 +1456,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-used-equal-sign-instead-of-colon">
 <h2>SyntaxError - used equal sign instead of colon<a class="headerlink" href="#syntaxerror-used-equal-sign-instead-of-colon" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error32.py&quot;, line 4
+    ages = {&#39;Alice&#39;=22, &#39;Bob&#39;=24}
+                   ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error32.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
    2: &quot;&quot;&quot;
@@ -1315,7 +1475,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: ages = {&#39;Alice&#39;=22, &#39;Bob&#39;=24}
                      ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il est possible que vous ayez utilisé un signe d&#39;égalité `=` au lieu de deux points `:`
@@ -1327,13 +1486,18 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-non-default-argument-follows-default-argument">
 <h2>SyntaxError - non-default argument follows default argument<a class="headerlink" href="#syntaxerror-non-default-argument-follows-default-argument" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: non-default argument follows default argument
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error33.py&quot;, line 5
+    def test(a=1, b):
+             ^
+SyntaxError: non-default argument follows default argument
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error33.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    2: &quot;&quot;&quot;
    3:
@@ -1341,7 +1505,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: def test(a=1, b):
                ^
 
-Cause probable basée sur les informations données par Python :
     Dans Python, vous pouvez définir les fonctions avec seulement des arguments de position
 
         def test(a, b, c): ...
@@ -1362,13 +1525,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-positional-argument-follows-keyword-argument">
 <h2>SyntaxError - positional argument follows keyword argument<a class="headerlink" href="#syntaxerror-positional-argument-follows-keyword-argument" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: positional argument follows keyword argument
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error34.py&quot;, line 5
+    test(a=1, b)
+              ^
+SyntaxError: positional argument follows keyword argument
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error34.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    2: &quot;&quot;&quot;
    3:
@@ -1376,7 +1544,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: test(a=1, b)
                 ^
 
-Cause probable basée sur les informations données par Python :
     Dans Python, vous pouvez invoquer les fonctions avec seulement des arguments de position
 
         test(1, 2, 3)
@@ -1397,13 +1564,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-f-string-unterminated-string">
 <h2>SyntaxError - f-string: unterminated string<a class="headerlink" href="#syntaxerror-f-string-unterminated-string" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: f-string: unterminated string
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error35.py&quot;, line 4
+    print(f&quot;Bob is {age[&#39;Bob]} years old.&quot;)
+          ^
+SyntaxError: f-string: unterminated string
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error35.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: f-string: unterminated string
    2: &quot;&quot;&quot;
@@ -1411,7 +1583,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: print(f&quot;Bob is {age[&#39;Bob]} years old.&quot;)
             ^
 
-Cause probable basée sur les informations données par Python :
     À l&#39;intérieur d&#39;une &quot;f-string&quot;, qui est une chaîne de caractères préfixée de la lettre f,
     vous avez une autre chaîne de caractère qui débute soit avec un apostrophe (&#39;)
     ou des guillemets (&quot;), mais n&#39;est pas terminé par un autre caractère semblable.
@@ -1421,13 +1592,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-unclosed-bracket">
 <h2>SyntaxError - unclosed bracket<a class="headerlink" href="#syntaxerror-unclosed-bracket" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error36.py&quot;, line 7
+    print(foo())
+    ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error36.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
     4: def foo():
     5:     return [1, 2, 3
@@ -1435,7 +1611,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt; 7: print(foo())
        ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Le symbole crochet `[` à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
@@ -1448,13 +1623,16 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-unexpected-eof-while-parsing">
 <h2>SyntaxError - unexpected EOF while parsing<a class="headerlink" href="#syntaxerror-unexpected-eof-while-parsing" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: unexpected EOF while parsing
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error37.py&quot;, line 8
+SyntaxError: unexpected EOF while parsing
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error37.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
     5:     return [1, 2, 3,
     6:
@@ -1462,7 +1640,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt; 8:
        ^
 
-Cause probable basée sur les informations données par Python :
     Python nous dit qu&#39;il a atteint la fin du fichier
     et s&#39;attendait à plus de contenu.
 
@@ -1479,13 +1656,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-name-is-parameter-and-global">
 <h2>SyntaxError - name is parameter and global<a class="headerlink" href="#syntaxerror-name-is-parameter-and-global" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: name &#39;x&#39; is parameter and global
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error38.py&quot;, line 6
+    global x
+    ^
+SyntaxError: name &#39;x&#39; is parameter and global
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error38.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    3:
    4:
@@ -1493,7 +1675,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6:     global x
           ^
 
-Cause probable basée sur les informations données par Python :
     Vous avec inclus l&#39;énoncé
 
         `    global x`
@@ -1508,13 +1689,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-keyword-as-attribute">
 <h2>SyntaxError - keyword as attribute<a class="headerlink" href="#syntaxerror-keyword-as-attribute" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error39.py&quot;, line 12
+    a.pass = 2
+      ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error39.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
     9: a = A()
    10:
@@ -1522,7 +1708,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;12: a.pass = 2
          ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez tenté d&#39;utiliser le mot clé Python `pass` comme attribut.
@@ -1533,13 +1718,18 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-content-passed-continuation-line-character">
 <h2>SyntaxError - content passed continuation line character<a class="headerlink" href="#syntaxerror-content-passed-continuation-line-character" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: unexpected character after line continuation character
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error40.py&quot;, line 5
+    print(\t)
+             ^
+SyntaxError: unexpected character after line continuation character
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error40.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    2: SyntaxError: unexpected character after line continuation character
    3: &quot;&quot;&quot;
@@ -1547,7 +1737,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: print(\t)
                ^
 
-Cause probable basée sur les informations données par Python :
     Vous utilisez le caractère de continuation `\` en dehors d&#39;une chaîne de caractères,
     et il est suivi par au moins un autre caractère.
     Je suppose que vous avez oublié de terminer la chaîne par un guillemet
@@ -1558,13 +1747,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-keyword-can-t-be-an-expression">
 <h2>SyntaxError - keyword can’t be an expression<a class="headerlink" href="#syntaxerror-keyword-can-t-be-an-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: expression cannot contain assignment, perhaps you meant &quot;==&quot;?
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error41.py&quot;, line 7
+    a = dict(&#39;key&#39;=1)
+             ^
+SyntaxError: expression cannot contain assignment, perhaps you meant &quot;==&quot;?
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error41.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
     4: &quot;&quot;&quot;
     5:
@@ -1572,7 +1766,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt; 7: a = dict(&#39;key&#39;=1)
                 ^
 
-Cause probable basée sur les informations données par Python :
     L&#39;une des deux possibilités suivantes pourrait être la cause:
     1. Vous vouliez faire une comparaison avec `==` et vous avez écrit `=` à sa place.
     2. Vous avez invoqué une fonction avec un argument nommé:
@@ -1588,13 +1781,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-invalid-character-in-identifier">
 <h2>SyntaxError - invalid character in identifier<a class="headerlink" href="#syntaxerror-invalid-character-in-identifier" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid character in identifier
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error42.py&quot;, line 6
+    🤖 = &#39;Reeborg&#39;
+    ^
+SyntaxError: invalid character in identifier
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error42.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    3:
    4: # Robot-face character below
@@ -1602,7 +1800,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6: 🤖 = &#39;Reeborg&#39;
       ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez probablement utilisé un caractère unicode qui n&#39;est pas autorisé
     dans le nom d&#39;une variable dans Python.
     Cela comprend de nombreux emojis.
@@ -1612,13 +1809,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-1">
 <h2>SyntaxError - keyword cannot be argument in def - 1<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error43.py&quot;, line 5
+    def f(None=1):
+          ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error43.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    2: &quot;&quot;&quot;
    3:
@@ -1626,7 +1828,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: def f(None=1):
             ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez tenté d&#39;utiliser le mot clé Python `None` comme argument
@@ -1638,13 +1839,18 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-2">
 <h2>SyntaxError - keyword cannot be argument in def - 2<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error44.py&quot;, line 5
+    def f(x, True):
+             ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error44.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    2: &quot;&quot;&quot;
    3:
@@ -1652,7 +1858,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: def f(x, True):
                ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez tenté d&#39;utiliser le mot clé Python `True` comme argument
@@ -1664,13 +1869,18 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-3">
 <h2>SyntaxError - keyword cannot be argument in def - 3<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error45.py&quot;, line 5
+    def f(*None):
+           ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error45.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    2: &quot;&quot;&quot;
    3:
@@ -1678,7 +1888,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: def f(*None):
              ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez tenté d&#39;utiliser le mot clé Python `None` comme argument
@@ -1690,13 +1899,18 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-4">
 <h2>SyntaxError - keyword cannot be argument in def - 4<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-4" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error46.py&quot;, line 5
+    def f(**None):
+            ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error46.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    2: &quot;&quot;&quot;
    3:
@@ -1704,7 +1918,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: def f(**None):
               ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez tenté d&#39;utiliser le mot clé Python `None` comme argument
@@ -1716,13 +1929,18 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-delete-function-call">
 <h2>SyntaxError - delete function call<a class="headerlink" href="#syntaxerror-delete-function-call" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: cannot delete function call
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error47.py&quot;, line 5
+    del f(a)
+        ^
+SyntaxError: cannot delete function call
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error47.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    2: &quot;&quot;&quot;
    3:
@@ -1730,7 +1948,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: del f(a)
           ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez tenté de supprimer un appel de fonction
 
         del f(a)
@@ -1743,13 +1960,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-assigned-prior-to-global-declaration">
 <h2>SyntaxError - assigned prior to global declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-global-declaration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: name &#39;p&#39; is assigned to before global declaration
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error48.py&quot;, line 7
+    global p
+    ^
+SyntaxError: name &#39;p&#39; is assigned to before global declaration
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error48.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
     4:
     5: def fn():
@@ -1757,7 +1979,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt; 7:     global p
            ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez attribué une valeur à la variable `p`
     avant de la déclarer comme une variable globale.
 </pre></div>
@@ -1766,13 +1987,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-used-prior-to-global-declaration">
 <h2>SyntaxError - used prior to global declaration<a class="headerlink" href="#syntaxerror-used-prior-to-global-declaration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: name &#39;r&#39; is used prior to global declaration
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error49.py&quot;, line 7
+    global r
+    ^
+SyntaxError: name &#39;r&#39; is used prior to global declaration
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error49.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
     4:
     5: def fn():
@@ -1780,7 +2006,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt; 7:     global r
            ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez utilisé la variable `r`
     avant de la déclarer comme une variable globale.
 </pre></div>
@@ -1789,13 +2014,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-assigned-prior-to-nonlocal-declaration">
 <h2>SyntaxError - assigned prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: name &#39;q&#39; is used prior to nonlocal declaration
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error50.py&quot;, line 9
+    nonlocal q
+    ^
+SyntaxError: name &#39;q&#39; is used prior to nonlocal declaration
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error50.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
     6:
     7:     def g():
@@ -1803,7 +2033,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt; 9:         nonlocal q
                ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez utilisé la variable `q`
     avant de la déclarer comme variable non locale.
 </pre></div>
@@ -1812,13 +2041,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-used-prior-to-nonlocal-declaration">
 <h2>SyntaxError - used prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-used-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: name &#39;s&#39; is assigned to before nonlocal declaration
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error51.py&quot;, line 9
+    nonlocal s
+    ^
+SyntaxError: name &#39;s&#39; is assigned to before nonlocal declaration
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error51.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
     6:
     7:     def g():
@@ -1826,7 +2060,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt; 9:         nonlocal s
                ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez attribué une valeur à la variable `s`
     avant de la déclarer comme variable non locale.
 </pre></div>
@@ -1835,13 +2068,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-named-assignment-with-python-constant">
 <h2>SyntaxError - named assignment with Python constant<a class="headerlink" href="#syntaxerror-named-assignment-with-python-constant" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: cannot use assignment expressions with True
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error55.py&quot;, line 4
+    (True := 1)
+     ^
+SyntaxError: cannot use assignment expressions with True
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error55.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
    2: or (Python 3.8) cannot use named assignment with True&quot;&quot;&quot;
@@ -1849,7 +2087,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: (True := 1)
        ^
 
-Cause probable basée sur les informations données par Python :
     `True` est une constante dans python; vous ne pouvez pas lui assigner une valeur.
 </pre></div>
 </div>
@@ -1857,13 +2094,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-assignment-to-operator">
 <h2>SyntaxError - assignment to operator<a class="headerlink" href="#syntaxerror-assignment-to-operator" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: cannot assign to operator
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error56.py&quot;, line 4
+    a + 1 = 2
+    ^
+SyntaxError: cannot assign to operator
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error56.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to operator
    2: or (Python 3.8) cannot assign to operator&quot;&quot;&quot;
@@ -1871,7 +2113,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: a + 1 = 2
       ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez écrit une expression qui inclut des opérations mathématiques
     du côté gauche du signe d&#39;égalité; ceci devrait être
     utilisé uniquement pour attribuer une valeur à une variable.
@@ -1881,20 +2122,24 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-using-the-backquote-character">
 <h2>SyntaxError - using the backquote character<a class="headerlink" href="#syntaxerror-using-the-backquote-character" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error57.py&quot;, line 3
+    a = `1`
+        ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error57.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2:
 --&gt;3: a = `1`
           ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous utilisez le charactère d&#39;accent grave.
@@ -1907,20 +2152,24 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-assign-to-generator-expression">
 <h2>SyntaxError - assign to generator expression<a class="headerlink" href="#syntaxerror-assign-to-generator-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: cannot assign to generator expression
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error58.py&quot;, line 3
+    (x for x in x) = 1
+    ^
+SyntaxError: cannot assign to generator expression
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error58.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t [cannot] assign to generator expression&quot;&quot;&quot;
    2:
 --&gt;3: (x for x in x) = 1
       ^
 
-Cause probable basée sur les informations données par Python :
     Du côté gauche d&#39;un signe d&#39;égalité, vous avez une
     expression génératrice au lieu du nom d&#39;une variable.
 </pre></div>
@@ -1929,20 +2178,24 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-assign-to-conditional-expression">
 <h2>SyntaxError - assign to conditional expression<a class="headerlink" href="#syntaxerror-assign-to-conditional-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: cannot assign to conditional expression
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error59.py&quot;, line 3
+    a if 1 else b = 1
+    ^
+SyntaxError: cannot assign to conditional expression
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error59.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t [cannot] assign to conditional expression&quot;&quot;&quot;
    2:
 --&gt;3: a if 1 else b = 1
       ^
 
-Cause probable basée sur les informations données par Python :
     Du côté gauche d&#39;un signe d&#39;égalité, vous avez une
     expression conditionnelle au lieu du nom d&#39;une variable.
     Une expression conditionnelle doit avoir la forme suivante:
@@ -1954,13 +2207,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-name-is-parameter-and-nonlocal">
 <h2>SyntaxError - name is parameter and nonlocal<a class="headerlink" href="#syntaxerror-name-is-parameter-and-nonlocal" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: name &#39;x&#39; is parameter and nonlocal
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error60.py&quot;, line 5
+    nonlocal x
+    ^
+SyntaxError: name &#39;x&#39; is parameter and nonlocal
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error60.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    2:
    3:
@@ -1968,7 +2226,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5:     nonlocal x
           ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez utilisé `x` comme paramètre pour une fonction
     avant de la déclarer également comme une variable non locale :
     `x` ne peut pas être les deux en même temps.
@@ -1978,13 +2235,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-name-is-global-and-nonlocal">
 <h2>SyntaxError - name is global and nonlocal<a class="headerlink" href="#syntaxerror-name-is-global-and-nonlocal" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: name &#39;xy&#39; is nonlocal and global
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error61.py&quot;, line 7
+    global xy
+    ^
+SyntaxError: name &#39;xy&#39; is nonlocal and global
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error61.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
     4:
     5:
@@ -1992,7 +2254,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt; 7:     global xy
            ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez utilisé `xy` comme étant une variable non locale et globale.
     Une variable peut être d&#39;un seul type à la fois: soit globale, soit non locale, ou soit locale.
 </pre></div>
@@ -2001,13 +2262,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-nonlocal-variable-not-found">
 <h2>SyntaxError - nonlocal variable not found<a class="headerlink" href="#syntaxerror-nonlocal-variable-not-found" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: no binding for nonlocal &#39;ab&#39; found
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error62.py&quot;, line 5
+    nonlocal ab
+    ^
+SyntaxError: no binding for nonlocal &#39;ab&#39; found
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error62.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    2:
    3:
@@ -2015,7 +2281,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5:     nonlocal ab
           ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez déclaré la variable `ab` comme non locale
     mais elle n&#39;existe pas ailleurs.
 </pre></div>
@@ -2024,13 +2289,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-nonlocal-variable-not-found-at-module-level">
 <h2>SyntaxError - nonlocal variable not found at module level<a class="headerlink" href="#syntaxerror-nonlocal-variable-not-found-at-module-level" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: nonlocal declaration not allowed at module level
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error63.py&quot;, line 4
+    nonlocal cd
+    ^
+SyntaxError: nonlocal declaration not allowed at module level
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error63.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError:  nonlocal declaration not allowed at module level&quot;&quot;&quot;
    2:
@@ -2038,7 +2308,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: nonlocal cd
       ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez utilisé le mot clé nonlocal au niveau d&#39;un module.
     Le mot clé nonlocal fait référence à une variable à l&#39;intérieur d&#39;une fonction
     qui a une valeur attribuée à l&#39;extérieur de cette fonction.
@@ -2048,13 +2317,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-keyword-arg-only-once-in-function-definition">
 <h2>SyntaxError - keyword arg only once in function definition<a class="headerlink" href="#syntaxerror-keyword-arg-only-once-in-function-definition" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: duplicate argument &#39;aa&#39; in function definition
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error64.py&quot;, line 4
+    def f(aa=1, aa=2):
+    ^
+SyntaxError: duplicate argument &#39;aa&#39; in function definition
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error64.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: duplicate argument &#39;aa&#39; in function definition&quot;&quot;&quot;
    2:
@@ -2062,7 +2336,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: def f(aa=1, aa=2):
       ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez défini une fonction répétant l&#39;argument nommé
 
         aa
@@ -2073,13 +2346,18 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-keyword-arg-only-once-in-function-call">
 <h2>SyntaxError - keyword arg only once in function call<a class="headerlink" href="#syntaxerror-keyword-arg-only-once-in-function-call" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: keyword argument repeated
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error65.py&quot;, line 4
+    f(ad=1, ad=2)
+            ^
+SyntaxError: keyword argument repeated
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error65.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError:  keyword argument repeated&quot;&quot;&quot;
    2:
@@ -2087,7 +2365,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: f(ad=1, ad=2)
               ^
 
-Cause probable basée sur les informations données par Python :
     Vous avez invoqué une fonction en répétant le même argument nommé.
     Chaque argument de ce type ne peut apparaître qu&#39;une seule fois.
 </pre></div>
@@ -2096,13 +2373,16 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-unexpected-eof-while-parsing-2">
 <h2>SyntaxError - unexpected EOF while parsing 2<a class="headerlink" href="#syntaxerror-unexpected-eof-while-parsing-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: unexpected EOF while parsing
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error66.py&quot;, line 4
+SyntaxError: unexpected EOF while parsing
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error66.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &#39;&#39;&#39;Should raise SyntaxError: unexpected EOF while parsing&#39;&#39;&#39;
    2:
@@ -2110,7 +2390,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:
       ^
 
-Cause probable basée sur les informations données par Python :
     Python nous dit qu&#39;il a atteint la fin du fichier
     et s&#39;attendait à plus de contenu.
 </pre></div>
@@ -2119,19 +2398,23 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-print-is-a-function-2">
 <h2>SyntaxError - print is a function 2<a class="headerlink" href="#syntaxerror-print-is-a-function-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error67.py&quot;, line 2
+    print len(&#39;hello&#39;)
+          ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error67.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: print len(&#39;hello&#39;)
             ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Dans l&#39;ancienne version de Python, `print` était un mot clé.
@@ -2142,19 +2425,23 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-copy-paste-from-interpreter">
 <h2>SyntaxError - copy/paste from interpreter<a class="headerlink" href="#syntaxerror-copy-paste-from-interpreter" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error68.py&quot;, line 2
+    &gt;&gt;&gt; print(&quot;Hello World!&quot;)
+    ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error68.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: &gt;&gt;&gt; print(&quot;Hello World!&quot;)
       ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     On dirait que vous avez copié-collé le code d’un interprète interactif.
@@ -2165,19 +2452,23 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-using-pip-from-interpreter">
 <h2>SyntaxError - Using pip from interpreter<a class="headerlink" href="#syntaxerror-using-pip-from-interpreter" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error69.py&quot;, line 2
+    pip install friendly
+        ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error69.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: pip install friendly
           ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il semble que vous essayez d’utiliser pip pour installer un module.
@@ -2189,19 +2480,23 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-using-pip-from-interpreter-2">
 <h2>SyntaxError - Using pip from interpreter 2<a class="headerlink" href="#syntaxerror-using-pip-from-interpreter-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error70.py&quot;, line 2
+    python -m pip install friendly
+              ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error70.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: python -m pip install friendly
                 ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il semble que vous essayez d’utiliser pip pour installer un module.
@@ -2213,19 +2508,23 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-dot-followed-by-parenthesis">
 <h2>SyntaxError - dot followed by parenthesis<a class="headerlink" href="#syntaxerror-dot-followed-by-parenthesis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error71.py&quot;, line 2
+    print(len.(&#39;hello&#39;))
+              ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error71.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: print(len.(&#39;hello&#39;))
                 ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous ne pouvez pas avoir un point `.` suivi de `(`.
@@ -2235,13 +2534,18 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-cannot-assign-to-f-string">
 <h2>SyntaxError - cannot assign to f-string<a class="headerlink" href="#syntaxerror-cannot-assign-to-f-string" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: cannot assign to f-string expression
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error72.py&quot;, line 6
+    f&#39;{x}&#39; = 42
+    ^
+SyntaxError: cannot assign to f-string expression
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error72.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    3: Python &gt;= 3.8: SyntaxError: cannot assign to f-string expression
    4: &quot;&quot;&quot;
@@ -2249,29 +2553,33 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6: f&#39;{x}&#39; = 42
       ^
 
-Cause probable basée sur les informations données par Python :
-    You wrote an expression that has an f-string
-    on the left-hand side of the equal sign.
-    An f-string should only appear on the right-hand side of the equal sign.
+    Vous avez écrit une expression qui a une chaine de
+    caractères formatés (aussi appelé f-string)
+    sur le côté gauche du signe d&#39;égalité.
+    Une f-string ne doit apparaître que sur le côté droit du signe d’égalité.
 </pre></div>
 </div>
 </div>
 <div class="section" id="syntaxerror-raising-multiple-exceptions">
 <h2>SyntaxError - raising multiple exceptions<a class="headerlink" href="#syntaxerror-raising-multiple-exceptions" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error73.py&quot;, line 2
+    raise X, Y
+           ^
+SyntaxError: invalid syntax
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error73.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: raise X, Y
              ^
 
-Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour identifier le problème :
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Je crois que vous essayez de lever une exception en utilisant la syntaxe de Python 2.
@@ -2281,13 +2589,18 @@ Le message d’erreur de Python (invalid syntax) ne peut pas être utilisé pour
 <div class="section" id="syntaxerror-parenthesis-around-generator-expression">
 <h2>SyntaxError - parenthesis around generator expression<a class="headerlink" href="#syntaxerror-parenthesis-around-generator-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: Generator expression must be parenthesized
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error74.py&quot;, line 6
+    f(x for x in L, 1)
+      ^
+SyntaxError: Generator expression must be parenthesized
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error74.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    3:     return list(it)
    4:
@@ -2295,7 +2608,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6: f(x for x in L, 1)
         ^
 
-Cause probable basée sur les informations données par Python :
     Vous utilisez une expression de générateur, quelque chose de la forme
         `x for x in objet`
     Vous devez ajouter des parenthèses qui entourent cette expression.
@@ -2305,25 +2617,115 @@ Cause probable basée sur les informations données par Python :
 <div class="section" id="syntaxerror-invalid-character-bad-quote">
 <h2>SyntaxError - invalid character (bad quote)<a class="headerlink" href="#syntaxerror-invalid-character-bad-quote" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
-    SyntaxError: invalid character in identifier
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error75.py&quot;, line 3
+    a = « hello »
+        ^
+SyntaxError: invalid character in identifier
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
-
-Python peut seulement comprendre le code du fichier
+Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error75.py&#39;
-jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid character in identifier for Python &lt;=3.8
    2:    and  SyntaxError: invalid character &#39;«&#39; (U+00AB) in Python 3.9&quot;&quot;&quot;
 --&gt;3: a = « hello »
           ^
 
-Cause probable basée sur les informations données par Python :
     Python indique que vous avez utilisé des caractères unicode non permis
     comme étant partie d’un nom de variable; cela inclut de nombreux emojis.
     Cependant, je soupçonne que vous avez utilisé un guillemet unicode
     au lieu d’un guillemet normal (simple ou double) pour une chaîne de caractères.
     Cela peut se produire si vous utilisez du copier-coller.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-single-instead-of-double-with-if">
+<h2>SyntaxError - single = instead of double == with if<a class="headerlink" href="#syntaxerror-single-instead-of-double-with-if" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error76.py&quot;, line 3
+    if i % 2 = 0:
+             ^
+SyntaxError: invalid syntax
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error76.py&#39;
+beyond the location indicated by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2: for i in range(101):
+--&gt;3:     if i % 2 = 0:
+                   ^
+
+    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+
+    Vous avez utilisé un opérateur d’affectation `=` au lieu d’un opérateur d&#39;égalité `==`
+    avec un énoncé `if`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-single-instead-of-double-with-elif">
+<h2>SyntaxError - single = instead of double == with elif<a class="headerlink" href="#syntaxerror-single-instead-of-double-with-elif" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error77.py&quot;, line 5
+    elif i % 2 = 0:
+               ^
+SyntaxError: invalid syntax
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error77.py&#39;
+beyond the location indicated by --&gt; and ^.
+
+   2: for i in range(101):
+   3:     if False:
+   4:         pass
+--&gt;5:     elif i % 2 = 0:
+                     ^
+
+    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+
+    Vous avez utilisé un opérateur d’affectation `=` au lieu d’un opérateur d&#39;égalité `==`
+    avec un énoncé `elif`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-single-instead-of-double-with-while">
+<h2>SyntaxError - single = instead of double == with while<a class="headerlink" href="#syntaxerror-single-instead-of-double-with-while" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exception Python:
+Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 134, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error78.py&quot;, line 4
+    while a = 1:
+            ^
+SyntaxError: invalid syntax
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error78.py&#39;
+beyond the location indicated by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2: a = 1
+   3:
+--&gt;4: while a = 1:
+              ^
+
+    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+
+    Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser
+    un opérateur d&#39;égalité, `==`, ou l&#39;opérateur `:=`.
 </pre></div>
 </div>
 </div>

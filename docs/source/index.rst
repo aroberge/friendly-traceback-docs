@@ -116,7 +116,6 @@ from the version available from Pypi.
    :caption: Thoughts on design
 
    design
-   verbosity
 
 
 .. toctree::

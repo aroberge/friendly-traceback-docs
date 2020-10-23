@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.1.1a
+Friendly-traceback version: 0.1.6a
 Python version: 3.7.8
 
 
@@ -30,14 +30,19 @@ IndentationError - 1: expected an indented block
 
 
     Python exception:
-        IndentationError: expected an indented block
-        
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_indentation_error1.py", line 4
+        pass
+           ^
+    IndentationError: expected an indented block
+    
     An `IndentationError` occurs when a given line of code is
     not indented (aligned vertically with other lines) as expected.
-    
     Python could not understand the code in the file
     'TESTS:\syntax\raise_indentation_error1.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: '''Should raise IndentationError'''
        2: 
@@ -45,7 +50,6 @@ IndentationError - 1: expected an indented block
     -->4: pass
              ^
 
-    Likely cause based on the information given by Python:
         In this case, the line identified above
         was expected to begin a new indented block.
         
@@ -57,14 +61,19 @@ IndentationError - 2: unexpected indent
 
 
     Python exception:
-        IndentationError: unexpected indent
-        
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_indentation_error2.py", line 4
+        pass
+       ^
+    IndentationError: unexpected indent
+    
     An `IndentationError` occurs when a given line of code is
     not indented (aligned vertically with other lines) as expected.
-    
     Python could not understand the code in the file
     'TESTS:\syntax\raise_indentation_error2.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: '''Should raise IndentationError'''
        2: if True:
@@ -72,7 +81,6 @@ IndentationError - 2: unexpected indent
     -->4:       pass
                ^
 
-    Likely cause based on the information given by Python:
         In this case, the line identified above
         is more indented than expected and 
         does not match the indentation of the previous line.
@@ -85,14 +93,19 @@ IndentationError - 3: unindent does not match ...
 
 
     Python exception:
-        IndentationError: unindent does not match any outer indentation level
-        
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_indentation_error3.py", line 4
+        pass
+            ^
+    IndentationError: unindent does not match any outer indentation level
+    
     An `IndentationError` occurs when a given line of code is
     not indented (aligned vertically with other lines) as expected.
-    
     Python could not understand the code in the file
     'TESTS:\syntax\raise_indentation_error3.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: '''Should raise IndentationError'''
        2: if True:
@@ -100,7 +113,6 @@ IndentationError - 3: unindent does not match ...
     -->4:     pass
                   ^
 
-    Likely cause based on the information given by Python:
         In this case, the line identified above is
         less indented than the preceding one,
         and is not aligned vertically with another block of code.
@@ -113,18 +125,23 @@ TabError
 
 
     Python exception:
-        TabError: inconsistent use of tabs and spaces in indentation
-        
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_tab_error.py", line 7
+        pass
+            ^
+    TabError: inconsistent use of tabs and spaces in indentation
+    
     A `TabError` indicates that you have used both spaces
     and tab characters to indent your code.
     This is not allowed in Python.
     Indenting your code means to have block of codes aligned vertically
     by inserting either spaces or tab characters at the beginning of lines.
     Python's recommendation is to always use spaces to indent your code.
-    
     Python could not understand the code in the file
     'TESTS:\syntax\raise_tab_error.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
         4: 
         5: def test_tab_error():
@@ -139,20 +156,24 @@ SyntaxError - Assign to keyword
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error1.py", line 3
+        def = 2
+            ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error1.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """ Should raise SyntaxError"""
        2: 
     -->3: def = 2
               ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -168,20 +189,24 @@ SyntaxError - Missing colon - 1
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error2.py", line 3
+        if True
+               ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error2.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError"""
        2: 
     -->3: if True
                  ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -197,20 +222,24 @@ SyntaxError - Missing colon - 2
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error3.py", line 3
+        while True  # a comment
+                               ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error3.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError"""
        2: 
     -->3: while True  # a comment
                                  ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -226,13 +255,18 @@ SyntaxError - elif, not else if
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error4.py", line 5
+        else if True:
+              ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error4.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        2: 
        3: if False:
@@ -240,7 +274,6 @@ SyntaxError - elif, not else if
     -->5: else if True:
                 ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -256,13 +289,18 @@ SyntaxError - elif, not elseif
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error5.py", line 5
+        elseif True:
+                  ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error5.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        2: 
        3: if False:
@@ -270,7 +308,6 @@ SyntaxError - elif, not elseif
     -->5: elseif True:
                     ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -286,20 +323,24 @@ SyntaxError - malformed def statment - 1
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error6.py", line 3
+        def :
+            ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error6.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError"""
        2: 
     -->3: def :
               ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -316,20 +357,24 @@ SyntaxError - malformed def statment - 2
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error7.py", line 3
+        def name  :
+                  ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error7.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError"""
        2: 
     -->3: def name  :
                     ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -346,20 +391,24 @@ SyntaxError - malformed def statment - 3
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error8.py", line 3
+        def ( arg )  :
+            ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error8.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError"""
        2: 
     -->3: def ( arg )  :
               ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -376,20 +425,24 @@ SyntaxError - can't assign to literal - 1
 
 
     Python exception:
-        SyntaxError: can't assign to literal
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error9.py", line 3
+        1 = a
+       ^
+    SyntaxError: can't assign to literal
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error9.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: can't assign to literal"""
        2: 
     -->3: 1 = a
          ^
 
-    Likely cause based on the information given by Python:
         You wrote an expression like
         
             1 = a
@@ -408,20 +461,24 @@ SyntaxError - can't assign to literal - 2
 
 
     Python exception:
-        SyntaxError: can't assign to literal
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error10.py", line 3
+        1 = 2
+       ^
+    SyntaxError: can't assign to literal
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error10.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: can't assign to literal"""
        2: 
     -->3: 1 = 2
          ^
 
-    Likely cause based on the information given by Python:
         You wrote an expression like
         
             1 = 2
@@ -437,13 +494,18 @@ SyntaxError - can't assign to literal - 3
 
 
     Python exception:
-        SyntaxError: can't assign to literal
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error52.py", line 7
+        {1, 2, 3} = 4
+       ^
+    SyntaxError: can't assign to literal
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error52.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
         4: 
         5:  """
@@ -451,7 +513,6 @@ SyntaxError - can't assign to literal - 3
     --> 7: {1, 2, 3} = 4
           ^
 
-    Likely cause based on the information given by Python:
         You wrote an expression like
         
             {1, 2, 3} = 4
@@ -467,13 +528,18 @@ SyntaxError - can't assign to literal - 4
 
 
     Python exception:
-        SyntaxError: can't assign to literal
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error53.py", line 7
+        {1 : 2, 2 : 4} = 5
+       ^
+    SyntaxError: can't assign to literal
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error53.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
         4: 
         5:  """
@@ -481,7 +547,6 @@ SyntaxError - can't assign to literal - 4
     --> 7: {1 : 2, 2 : 4} = 5
           ^
 
-    Likely cause based on the information given by Python:
         You wrote an expression like
         
             {1 : 2, 2 : 4} = 5
@@ -497,13 +562,18 @@ SyntaxError - can't assign to literal - 5
 
 
     Python exception:
-        SyntaxError: can't assign to literal
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error54.py", line 4
+        1 = a = b
+       ^
+    SyntaxError: can't assign to literal
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error54.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: can't assign to literal
        2: or (Python 3.8) cannot assign to literal"""
@@ -511,7 +581,6 @@ SyntaxError - can't assign to literal - 5
     -->4: 1 = a = b
          ^
 
-    Likely cause based on the information given by Python:
         You wrote an expression like
         
             ... = variable_name
@@ -527,20 +596,24 @@ SyntaxError - import X from Y
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error11.py", line 3
+        import pen from turtle
+                      ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error11.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
        2: 
     -->3: import pen from turtle
                         ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -561,20 +634,24 @@ SyntaxError - EOL while scanning string literal
 
 
     Python exception:
-        SyntaxError: EOL while scanning string literal
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error12.py", line 3
+        alphabet = 'abc
+                       ^
+    SyntaxError: EOL while scanning string literal
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error12.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: EOL while scanning string literal"""
        2: 
     -->3: alphabet = 'abc
                          ^
 
-    Likely cause based on the information given by Python:
         You starting writing a string with a single or double quote
         but never ended the string with another quote on that line.
         
@@ -586,13 +663,18 @@ SyntaxError - assignment to keyword (None)
 
 
     Python exception:
-        SyntaxError: can't assign to keyword
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error13.py", line 4
+        None = 1
+       ^
+    SyntaxError: can't assign to keyword
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error13.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: cannot assign to None in Py 3.8
        2:    and can't assign to keyword before."""
@@ -600,7 +682,6 @@ SyntaxError - assignment to keyword (None)
     -->4: None = 1
          ^
 
-    Likely cause based on the information given by Python:
         `None` is a constant in Python; you cannot assign it a value.
         
         
@@ -612,13 +693,18 @@ SyntaxError - assignment to keyword (__debug__)
 
 
     Python exception:
-        SyntaxError: assignment to keyword
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error14.py", line 4
+        __debug__ = 1
+       ^
+    SyntaxError: assignment to keyword
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error14.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
        2:    and assignment to keyword before."""
@@ -626,7 +712,6 @@ SyntaxError - assignment to keyword (__debug__)
     -->4: __debug__ = 1
          ^
 
-    Likely cause based on the information given by Python:
         `__debug__` is a constant in Python; you cannot assign it a value.
         
         
@@ -638,13 +723,18 @@ SyntaxError - unmatched closing parenthesis
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error15.py", line 6
+        3, 4,))
+              ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error15.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        3: """
        4: a = (1,
@@ -652,7 +742,6 @@ SyntaxError - unmatched closing parenthesis
     -->6:     3, 4,))
                     ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -669,20 +758,24 @@ SyntaxError - unclosed parenthesis- 1
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error16.py", line 3
+        if x == 1:
+                 ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error16.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
        2: x = int('1'
     -->3: if x == 1:
                    ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -699,20 +792,24 @@ SyntaxError - unclosed parenthesis - 2
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error17.py", line 3
+        d = a*a
+        ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error17.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
        2: a = (b+c
     -->3: d = a*a
           ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -729,19 +826,23 @@ SyntaxError - mismatched brackets
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error18.py", line 2
+        x = (1, 2, 3]
+                    ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error18.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: x = (1, 2, 3]
                       ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -758,13 +859,18 @@ SyntaxError - mismatched brackets - 2
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error19.py", line 4
+        3]
+         ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error19.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
        2: x = (1,
@@ -772,7 +878,6 @@ SyntaxError - mismatched brackets - 2
     -->4:      3]
                 ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -791,19 +896,23 @@ SyntaxError - print is a function
 
 
     Python exception:
-        SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello')?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error20.py", line 2
+        print 'hello'
+                    ^
+    SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello')?
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error20.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: Missing parentheses in call to 'print' ..."""
     -->2: print 'hello'
                       ^
 
-    Likely cause based on the information given by Python:
         Perhaps you need to type
         
              print('hello')
@@ -819,20 +928,24 @@ SyntaxError - Python keyword as function name
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error21.py", line 3
+        def pass():
+               ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error21.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
        2: 
     -->3: def pass():
                  ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -846,13 +959,18 @@ SyntaxError - break outside loop
 
 
     Python exception:
-        SyntaxError: 'break' outside loop
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error22.py", line 4
+        break
+       ^
+    SyntaxError: 'break' outside loop
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error22.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: 'break' outside loop"""
        2: 
@@ -860,7 +978,6 @@ SyntaxError - break outside loop
     -->4:     break
              ^
 
-    Likely cause based on the information given by Python:
         The Python keyword `break` can only be used inside a for loop or inside a while loop.
         
 
@@ -871,13 +988,18 @@ SyntaxError - continue outside loop
 
 
     Python exception:
-        SyntaxError: 'continue' not properly in loop
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error23.py", line 4
+        continue
+       ^
+    SyntaxError: 'continue' not properly in loop
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error23.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: 'continue' outside loop"""
        2: 
@@ -885,7 +1007,6 @@ SyntaxError - continue outside loop
     -->4:     continue
              ^
 
-    Likely cause based on the information given by Python:
         The Python keyword `continue` can only be used inside a for loop or inside a while loop.
         
 
@@ -896,20 +1017,24 @@ SyntaxError - quote inside a string
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error24.py", line 3
+        message = 'don't'
+                       ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error24.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
        2: 
     -->3: message = 'don't'
                          ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -926,13 +1051,18 @@ SyntaxError - missing comma in a dict
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error25.py", line 5
+        'c': 3,
+          ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error25.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        2: 
        3: a = {'a': 1,
@@ -940,7 +1070,6 @@ SyntaxError - missing comma in a dict
     -->5:      'c': 3,
                  ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -955,20 +1084,24 @@ SyntaxError - missing comma in a set
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error26.py", line 3
+        a = {1, 2  3}
+                   ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error26.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
        2: 
     -->3: a = {1, 2  3}
                      ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -983,20 +1116,24 @@ SyntaxError - missing comma in a list
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error27.py", line 3
+        a = [1, 2  3]
+                   ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error27.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
        2: 
     -->3: a = [1, 2  3]
                      ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1011,20 +1148,24 @@ SyntaxError - missing comma in a tuple
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error28.py", line 3
+        a = (1, 2  3)
+                   ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error28.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
        2: 
     -->3: a = (1, 2  3)
                      ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1040,13 +1181,18 @@ SyntaxError - missing comma between function args
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error29.py", line 4
+        def a(b, c d):
+                   ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error29.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
        2: 
@@ -1054,7 +1200,6 @@ SyntaxError - missing comma between function args
     -->4: def a(b, c d):
                      ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1070,13 +1215,18 @@ SyntaxError - can't assign to function call - 1
 
 
     Python exception:
-        SyntaxError: can't assign to function call
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error30.py", line 6
+        len('a') = 3
+       ^
+    SyntaxError: can't assign to function call
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error30.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        3: Python 3.8: SyntaxError: cannot assign to function call
        4: """
@@ -1084,7 +1234,6 @@ SyntaxError - can't assign to function call - 1
     -->6: len('a') = 3
          ^
 
-    Likely cause based on the information given by Python:
         You wrote the expression
         
             len('a') = 3
@@ -1100,13 +1249,18 @@ SyntaxError - can't assign to function call - 2
 
 
     Python exception:
-        SyntaxError: can't assign to function call
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error31.py", line 6
+        func(a, b=3) = 4
+       ^
+    SyntaxError: can't assign to function call
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error31.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        3: Python 3.8: SyntaxError: cannot assign to function call
        4: """
@@ -1114,7 +1268,6 @@ SyntaxError - can't assign to function call - 2
     -->6: func(a, b=3) = 4
          ^
 
-    Likely cause based on the information given by Python:
         You wrote an expression like
         
             my_function(...) = some value
@@ -1130,13 +1283,18 @@ SyntaxError - used equal sign instead of colon
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error32.py", line 4
+        ages = {'Alice'=22, 'Bob'=24}
+                       ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error32.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax
        2: """
@@ -1144,7 +1302,6 @@ SyntaxError - used equal sign instead of colon
     -->4: ages = {'Alice'=22, 'Bob'=24}
                          ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1160,13 +1317,18 @@ SyntaxError - non-default argument follows default argument
 
 
     Python exception:
-        SyntaxError: non-default argument follows default argument
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error33.py", line 5
+        def test(a=1, b):
+                ^
+    SyntaxError: non-default argument follows default argument
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error33.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        2: """
        3: 
@@ -1174,7 +1336,6 @@ SyntaxError - non-default argument follows default argument
     -->5: def test(a=1, b):
                   ^
 
-    Likely cause based on the information given by Python:
         In Python, you can define functions with only positional arguments
         
             def test(a, b, c): ...
@@ -1198,13 +1359,18 @@ SyntaxError - positional argument follows keyword argument
 
 
     Python exception:
-        SyntaxError: positional argument follows keyword argument
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error34.py", line 5
+        test(a=1, b)
+                 ^
+    SyntaxError: positional argument follows keyword argument
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error34.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        2: """
        3: 
@@ -1212,7 +1378,6 @@ SyntaxError - positional argument follows keyword argument
     -->5: test(a=1, b)
                    ^
 
-    Likely cause based on the information given by Python:
         In Python, you can call functions with only positional arguments
         
             test(1, 2, 3)
@@ -1236,13 +1401,18 @@ SyntaxError - f-string: unterminated string
 
 
     Python exception:
-        SyntaxError: f-string: unterminated string
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error35.py", line 4
+        print(f"Bob is {age['Bob]} years old.")
+             ^
+    SyntaxError: f-string: unterminated string
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error35.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: f-string: unterminated string
        2: """
@@ -1250,7 +1420,6 @@ SyntaxError - f-string: unterminated string
     -->4: print(f"Bob is {age['Bob]} years old.")
                ^
 
-    Likely cause based on the information given by Python:
         Inside an f-string, which is a string prefixed by the letter f, 
         you have another string, which starts with either a
         single quote (') or double quote ("), without a matching closing one.
@@ -1263,13 +1432,18 @@ SyntaxError - unclosed bracket
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error36.py", line 7
+        print(foo())
+            ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error36.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
         4: def foo():
         5:     return [1, 2, 3
@@ -1277,7 +1451,6 @@ SyntaxError - unclosed bracket
     --> 7: print(foo())
                ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1294,13 +1467,16 @@ SyntaxError - unexpected EOF while parsing
 
 
     Python exception:
-        SyntaxError: unexpected EOF while parsing
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error37.py", line 8
+    SyntaxError: unexpected EOF while parsing
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error37.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
         5:     return [1, 2, 3,
         6: 
@@ -1308,7 +1484,6 @@ SyntaxError - unexpected EOF while parsing
     --> 8: 
            ^
 
-    Likely cause based on the information given by Python:
         Python tells us that it reached the end of the file
         and expected more content.
         
@@ -1327,13 +1502,18 @@ SyntaxError - name is parameter and global
 
 
     Python exception:
-        SyntaxError: name 'x' is parameter and global
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error38.py", line 6
+        global x
+       ^
+    SyntaxError: name 'x' is parameter and global
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error38.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        3: 
        4: 
@@ -1341,7 +1521,6 @@ SyntaxError - name is parameter and global
     -->6:     global x
              ^
 
-    Likely cause based on the information given by Python:
         You are including the statement
         
             `    global x`
@@ -1359,13 +1538,18 @@ SyntaxError - keyword as attribute
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error39.py", line 12
+        a.pass = 2
+             ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error39.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
         9: a = A()
        10: 
@@ -1373,7 +1557,6 @@ SyntaxError - keyword as attribute
     -->12: a.pass = 2
                 ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1388,13 +1571,18 @@ SyntaxError - content passed continuation line character
 
 
     Python exception:
-        SyntaxError: unexpected character after line continuation character
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error40.py", line 5
+        print(\t)
+                 ^
+    SyntaxError: unexpected character after line continuation character
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error40.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        2: SyntaxError: unexpected character after line continuation character
        3: """
@@ -1402,7 +1590,6 @@ SyntaxError - content passed continuation line character
     -->5: print(\t)
                    ^
 
-    Likely cause based on the information given by Python:
         You are using the continuation character `\` outside of a string,
         and it is followed by some other character(s).
         I am guessing that you forgot to enclose some content in a string.
@@ -1416,13 +1603,18 @@ SyntaxError - keyword can't be an expression
 
 
     Python exception:
-        SyntaxError: keyword can't be an expression
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error41.py", line 7
+        a = dict('key'=1)
+                ^
+    SyntaxError: keyword can't be an expression
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error41.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
         4: """
         5: 
@@ -1430,7 +1622,6 @@ SyntaxError - keyword can't be an expression
     --> 7: a = dict('key'=1)
                    ^
 
-    Likely cause based on the information given by Python:
         You likely called a function with a named argument:
         
            `a_function(invalid=something)`
@@ -1448,13 +1639,18 @@ SyntaxError - invalid character in identifier
 
 
     Python exception:
-        SyntaxError: invalid character in identifier
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error42.py", line 6
+        🤖 = 'Reeborg'
+        ^
+    SyntaxError: invalid character in identifier
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error42.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        3: 
        4: # Robot-face character below
@@ -1462,7 +1658,6 @@ SyntaxError - invalid character in identifier
     -->6: 🤖 = 'Reeborg'
           ^
 
-    Likely cause based on the information given by Python:
         You likely used some unicode character that is not allowed
         as part of a variable name in Python.
         This includes many emojis.
@@ -1476,13 +1671,18 @@ SyntaxError - keyword cannot be argument in def - 1
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error43.py", line 5
+        def f(None=1):
+                 ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error43.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        2: """
        3: 
@@ -1490,7 +1690,6 @@ SyntaxError - keyword cannot be argument in def - 1
     -->5: def f(None=1):
                    ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1505,13 +1704,18 @@ SyntaxError - keyword cannot be argument in def - 2
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error44.py", line 5
+        def f(x, True):
+                    ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error44.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        2: """
        3: 
@@ -1519,7 +1723,6 @@ SyntaxError - keyword cannot be argument in def - 2
     -->5: def f(x, True):
                       ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1534,13 +1737,18 @@ SyntaxError - keyword cannot be argument in def - 3
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error45.py", line 5
+        def f(*None):
+                  ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error45.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        2: """
        3: 
@@ -1548,7 +1756,6 @@ SyntaxError - keyword cannot be argument in def - 3
     -->5: def f(*None):
                     ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1563,13 +1770,18 @@ SyntaxError - keyword cannot be argument in def - 4
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error46.py", line 5
+        def f(**None):
+                   ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error46.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        2: """
        3: 
@@ -1577,7 +1789,6 @@ SyntaxError - keyword cannot be argument in def - 4
     -->5: def f(**None):
                      ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1592,13 +1803,18 @@ SyntaxError - delete function call
 
 
     Python exception:
-        SyntaxError: can't delete function call
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error47.py", line 5
+        del f(a)
+           ^
+    SyntaxError: can't delete function call
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error47.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        2: """
        3: 
@@ -1606,7 +1822,6 @@ SyntaxError - delete function call
     -->5: del f(a)
              ^
 
-    Likely cause based on the information given by Python:
         You attempted to delete a function call
         
             del f(a)
@@ -1622,13 +1837,18 @@ SyntaxError - assigned prior to global declaration
 
 
     Python exception:
-        SyntaxError: name 'p' is assigned to before global declaration
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error48.py", line 7
+        global p
+       ^
+    SyntaxError: name 'p' is assigned to before global declaration
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error48.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
         4: 
         5: def fn():
@@ -1636,7 +1856,6 @@ SyntaxError - assigned prior to global declaration
     --> 7:     global p
               ^
 
-    Likely cause based on the information given by Python:
         You assigned a value to the variable `p`
         before declaring it as a global variable.
         
@@ -1648,13 +1867,18 @@ SyntaxError - used prior to global declaration
 
 
     Python exception:
-        SyntaxError: name 'r' is used prior to global declaration
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error49.py", line 7
+        global r
+       ^
+    SyntaxError: name 'r' is used prior to global declaration
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error49.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
         4: 
         5: def fn():
@@ -1662,7 +1886,6 @@ SyntaxError - used prior to global declaration
     --> 7:     global r
               ^
 
-    Likely cause based on the information given by Python:
         You used the variable `r`
         before declaring it as a global variable.
         
@@ -1674,13 +1897,18 @@ SyntaxError - assigned prior to nonlocal declaration
 
 
     Python exception:
-        SyntaxError: name 'q' is used prior to nonlocal declaration
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error50.py", line 9
+        nonlocal q
+       ^
+    SyntaxError: name 'q' is used prior to nonlocal declaration
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error50.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
         6: 
         7:     def g():
@@ -1688,7 +1916,6 @@ SyntaxError - assigned prior to nonlocal declaration
     --> 9:         nonlocal q
                   ^
 
-    Likely cause based on the information given by Python:
         You used the variable `q`
         before declaring it as a nonlocal variable.
         
@@ -1700,13 +1927,18 @@ SyntaxError - used prior to nonlocal declaration
 
 
     Python exception:
-        SyntaxError: name 's' is assigned to before nonlocal declaration
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error51.py", line 9
+        nonlocal s
+       ^
+    SyntaxError: name 's' is assigned to before nonlocal declaration
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error51.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
         6: 
         7:     def g():
@@ -1714,7 +1946,6 @@ SyntaxError - used prior to nonlocal declaration
     --> 9:         nonlocal s
                   ^
 
-    Likely cause based on the information given by Python:
         You assigned a value to the variable `s`
         before declaring it as a nonlocal variable.
         
@@ -1726,13 +1957,18 @@ SyntaxError - named assignment with Python constant
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error55.py", line 4
+        (True := 1)
+              ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error55.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax
        2: or (Python 3.8) cannot use named assignment with True"""
@@ -1740,7 +1976,6 @@ SyntaxError - named assignment with Python constant
     -->4: (True := 1)
                 ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1756,13 +1991,18 @@ SyntaxError - assignment to operator
 
 
     Python exception:
-        SyntaxError: can't assign to operator
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error56.py", line 4
+        a + 1 = 2
+       ^
+    SyntaxError: can't assign to operator
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error56.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: can't assign to operator
        2: or (Python 3.8) cannot assign to operator"""
@@ -1770,7 +2010,6 @@ SyntaxError - assignment to operator
     -->4: a + 1 = 2
          ^
 
-    Likely cause based on the information given by Python:
         You wrote an expression that includes some mathematical operations
         on the left-hand side of the equal sign which should be
         only used to assign a value to a variable.
@@ -1782,20 +2021,24 @@ SyntaxError - using the backquote character
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error57.py", line 3
+        a = `1`
+            ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error57.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
        2: 
     -->3: a = `1`
               ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -1810,20 +2053,24 @@ SyntaxError - assign to generator expression
 
 
     Python exception:
-        SyntaxError: can't assign to generator expression
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error58.py", line 3
+        (x for x in x) = 1
+       ^
+    SyntaxError: can't assign to generator expression
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error58.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: can't [cannot] assign to generator expression"""
        2: 
     -->3: (x for x in x) = 1
          ^
 
-    Likely cause based on the information given by Python:
         On the left-hand side of an equal sign, you have a
         generator expression instead of the name of a variable.
         
@@ -1835,20 +2082,24 @@ SyntaxError - assign to conditional expression
 
 
     Python exception:
-        SyntaxError: can't assign to conditional expression
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error59.py", line 3
+        a if 1 else b = 1
+       ^
+    SyntaxError: can't assign to conditional expression
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error59.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: can't [cannot] assign to conditional expression"""
        2: 
     -->3: a if 1 else b = 1
          ^
 
-    Likely cause based on the information given by Python:
         On the left-hand side of an equal sign, you have a
         conditional expression instead of the name of a variable.
         A conditional expression has the following form:
@@ -1862,13 +2113,18 @@ SyntaxError - name is parameter and nonlocal
 
 
     Python exception:
-        SyntaxError: name 'x' is parameter and nonlocal
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error60.py", line 5
+        nonlocal x
+       ^
+    SyntaxError: name 'x' is parameter and nonlocal
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error60.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        2: 
        3: 
@@ -1876,7 +2132,6 @@ SyntaxError - name is parameter and nonlocal
     -->5:     nonlocal x
              ^
 
-    Likely cause based on the information given by Python:
         You used `x` as a parameter for a function
         before declaring it also as a nonlocal variable:
         `x` cannot be both at the same time.
@@ -1889,13 +2144,18 @@ SyntaxError - name is global and nonlocal
 
 
     Python exception:
-        SyntaxError: name 'xy' is nonlocal and global
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error61.py", line 7
+        global xy
+       ^
+    SyntaxError: name 'xy' is nonlocal and global
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error61.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
         4: 
         5: 
@@ -1903,7 +2163,6 @@ SyntaxError - name is global and nonlocal
     --> 7:     global xy
               ^
 
-    Likely cause based on the information given by Python:
         You declared `xy` as being both a global and nonlocal variable.
         A variable can be global, or nonlocal, but not both at the same time.
         
@@ -1915,13 +2174,18 @@ SyntaxError - nonlocal variable not found
 
 
     Python exception:
-        SyntaxError: no binding for nonlocal 'ab' found
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error62.py", line 5
+        nonlocal ab
+       ^
+    SyntaxError: no binding for nonlocal 'ab' found
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error62.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        2: 
        3: 
@@ -1929,7 +2193,6 @@ SyntaxError - nonlocal variable not found
     -->5:     nonlocal ab
              ^
 
-    Likely cause based on the information given by Python:
         You declared the variable `ab` as being a
         nonlocal variable but it cannot be found.
         
@@ -1941,13 +2204,18 @@ SyntaxError - nonlocal variable not found at module level
 
 
     Python exception:
-        SyntaxError: nonlocal declaration not allowed at module level
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error63.py", line 4
+        nonlocal cd
+       ^
+    SyntaxError: nonlocal declaration not allowed at module level
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error63.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError:  nonlocal declaration not allowed at module level"""
        2: 
@@ -1955,7 +2223,6 @@ SyntaxError - nonlocal variable not found at module level
     -->4: nonlocal cd
          ^
 
-    Likely cause based on the information given by Python:
         You used the nonlocal keyword at a module level.
         The nonlocal keyword refers to a variable inside a function
         given a value outside that function.
@@ -1967,13 +2234,18 @@ SyntaxError - keyword arg only once in function definition
 
 
     Python exception:
-        SyntaxError: duplicate argument 'aa' in function definition
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error64.py", line 4
+        def f(aa=1, aa=2):
+       ^
+    SyntaxError: duplicate argument 'aa' in function definition
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error64.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: duplicate argument 'aa' in function definition"""
        2: 
@@ -1981,7 +2253,6 @@ SyntaxError - keyword arg only once in function definition
     -->4: def f(aa=1, aa=2):
          ^
 
-    Likely cause based on the information given by Python:
         You have defined a function repeating the keyword argument
         
             aa
@@ -1995,13 +2266,18 @@ SyntaxError - keyword arg only once in function call
 
 
     Python exception:
-        SyntaxError: keyword argument repeated
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error65.py", line 4
+        f(ad=1, ad=2)
+               ^
+    SyntaxError: keyword argument repeated
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error65.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError:  keyword argument repeated"""
        2: 
@@ -2009,7 +2285,6 @@ SyntaxError - keyword arg only once in function call
     -->4: f(ad=1, ad=2)
                  ^
 
-    Likely cause based on the information given by Python:
         You have called a function repeating the same keyword argument.
         Each keyword argument should appear only once in a function call.
         
@@ -2021,13 +2296,16 @@ SyntaxError - unexpected EOF while parsing 2
 
 
     Python exception:
-        SyntaxError: unexpected EOF while parsing
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error66.py", line 4
+    SyntaxError: unexpected EOF while parsing
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error66.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: '''Should raise SyntaxError: unexpected EOF while parsing'''
        2: 
@@ -2035,7 +2313,6 @@ SyntaxError - unexpected EOF while parsing 2
     -->4: 
           ^
 
-    Likely cause based on the information given by Python:
         Python tells us that it reached the end of the file
         and expected more content.
         
@@ -2048,19 +2325,23 @@ SyntaxError - print is a function 2
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error67.py", line 2
+        print len('hello')
+                ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error67.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: print len('hello')
                   ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -2075,19 +2356,23 @@ SyntaxError - copy/paste from interpreter
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error68.py", line 2
+        >>> print("Hello World!")
+         ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error68.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: >>> print("Hello World!")
            ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -2102,19 +2387,23 @@ SyntaxError - Using pip from interpreter
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error69.py", line 2
+        pip install friendly
+                  ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error69.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: pip install friendly
                     ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -2130,19 +2419,23 @@ SyntaxError - Using pip from interpreter 2
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error70.py", line 2
+        python -m pip install friendly
+                    ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error70.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: python -m pip install friendly
                       ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -2158,19 +2451,23 @@ SyntaxError - dot followed by parenthesis
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error71.py", line 2
+        print(len.('hello'))
+                  ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error71.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: print(len.('hello'))
                     ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -2184,13 +2481,18 @@ SyntaxError - cannot assign to f-string
 
 
     Python exception:
-        SyntaxError: can't assign to literal
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error72.py", line 6
+        f'{x}' = 42
+       ^
+    SyntaxError: can't assign to literal
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error72.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        3: Python >= 3.8: SyntaxError: cannot assign to f-string expression
        4: """
@@ -2198,7 +2500,6 @@ SyntaxError - cannot assign to f-string
     -->6: f'{x}' = 42
          ^
 
-    Likely cause based on the information given by Python:
         You wrote an expression that has an f-string
         on the left-hand side of the equal sign.
         An f-string should only appear on the right-hand side of the equal sign.
@@ -2211,19 +2512,23 @@ SyntaxError - raising multiple exceptions
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error73.py", line 2
+        raise X, Y
+               ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error73.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: raise X, Y
                  ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
@@ -2237,13 +2542,18 @@ SyntaxError - parenthesis around generator expression
 
 
     Python exception:
-        SyntaxError: Generator expression must be parenthesized
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error74.py", line 6
+        f(x for x in L, 1)
+         ^
+    SyntaxError: Generator expression must be parenthesized
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error74.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        3:     return list(it)
        4: 
@@ -2251,7 +2561,6 @@ SyntaxError - parenthesis around generator expression
     -->6: f(x for x in L, 1)
            ^
 
-    Likely cause based on the information given by Python:
         You are using a generator expression, something of the form
             `x for x in thing`
         You must add parentheses enclosing that expression.
@@ -2264,26 +2573,128 @@ SyntaxError - invalid character (bad quote)
 
 
     Python exception:
-        SyntaxError: invalid character in identifier
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error75.py", line 3
+        a = « hello »
+            ^
+    SyntaxError: invalid character in identifier
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error75.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid character in identifier for Python <=3.8
        2:    and  SyntaxError: invalid character '«' (U+00AB) in Python 3.9"""
     -->3: a = « hello »
               ^
 
-    Likely cause based on the information given by Python:
         Python indicates that you used some unicode characters not allowed
         as part of a variable name; this includes many emojis.
         However, I suspect that you used a fancy unicode quotation mark
         instead of a normal single or double quote for a string.
         This can happen if you copy-pasted code.
         
+        
+
+SyntaxError - single = instead of double == with if
+---------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error76.py", line 3
+        if i % 2 = 0:
+                 ^
+    SyntaxError: invalid syntax
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error76.py'
+    beyond the location indicated by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: for i in range(101):
+    -->3:     if i % 2 = 0:
+                       ^
+
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
+        
+        You used an assignment operator `=` instead of an equality operator `==` 
+        with an `if` statement.
+        
+
+SyntaxError - single = instead of double == with elif
+-----------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error77.py", line 5
+        elif i % 2 = 0:
+                   ^
+    SyntaxError: invalid syntax
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error77.py'
+    beyond the location indicated by --> and ^.
+    
+       2: for i in range(101):
+       3:     if False:
+       4:         pass
+    -->5:     elif i % 2 = 0:
+                         ^
+
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
+        
+        You used an assignment operator `=` instead of an equality operator `==` 
+        with an `elif` statement.
+        
+
+SyntaxError - single = instead of double == with while
+------------------------------------------------------
+
+.. code-block:: none
+
+
+    Python exception:
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error78.py", line 4
+        while a = 1:
+                ^
+    SyntaxError: invalid syntax
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error78.py'
+    beyond the location indicated by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: a = 1
+       3: 
+    -->4: while a = 1:
+                  ^
+
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
+        
+        You used an assignment operator `=` instead of an equality operator `==` 
+        with a `while` statement.
         
 
 Walrus operator does not exist - yet
@@ -2293,20 +2704,24 @@ Walrus operator does not exist - yet
 
 
     Python exception:
-        SyntaxError: invalid syntax
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error_walrus.py", line 3
+        print(walrus := True)
+                     ^
+    SyntaxError: invalid syntax
     
+    A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error_walrus.py'
-    beyond the location indicated below by --> and ^.
+    beyond the location indicated by --> and ^.
     
        1: """Prior to Python 3.8, this should raise SyntaxError: invalid syntax"""
        2: 
     -->3: print(walrus := True)
                        ^
 
-    Python's error message (invalid syntax) cannot be used to identify the problem:
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         

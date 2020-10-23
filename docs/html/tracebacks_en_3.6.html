@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.1.1a documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.1.6a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.1a
+                0.1.6a
               </div>
             
           
@@ -96,7 +96,6 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
-<li class="toctree-l1"><a class="reference internal" href="verbosity.html">Verbosity: how much information do we want?</a></li>
 </ul>
 <p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul>
@@ -163,11 +162,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-11b-bad-operand-type-for-unary">TypeError - 11b: bad operand type for unary ~</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-12-object-does-not-support-item-assignment">TypeError - 12: object does not support item assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-13-wrong-number-of-positional-arguments">TypeError - 13: wrong number of positional arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typeerror-13a-wrong-number-of-positional-arguments">TypeError - 13a: wrong number of positional arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-14-missing-positional-arguments">TypeError - 14: missing positional arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-15-tuple-object-is-not-callable">TypeError - 15: tuple object is not callable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-15a-list-object-is-not-callable">TypeError - 15a: list object is not callable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-16-exception-derived-from-baseexception">TypeError - 16: exception derived from BaseException</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unboundlocalerror">UnboundLocalError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unboundlocalerror-1-missing-global">UnboundLocalError - 1: missing global</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unboundlocalerror-2-missing-nonlocal">UnboundLocalError - 2: missing nonlocal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unknown-exception">Unknown exception</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#zerodivisionerror-2">ZeroDivisionError - 2</a></li>
@@ -298,19 +299,22 @@ trb_english.py located in the <code class="docutils literal notranslate"><span c
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.1.1a
+<p>Friendly-traceback version: 0.1.6a
 Python version: 3.6.8</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    ArithmeticError:
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_arithmetic_error.py&quot;, line 9, in test_arithmetic_error
+    raise ArithmeticError
+ArithmeticError:
 
 `ArithmeticError` is the base class for those built-in exceptions
 that are raised for various arithmetic errors.
 It is unusual that you are seeing this exception;
 normally, a more specific exception should have been raised.
 
-Exception raised on line 9 of file &#39;TESTS:\except\test_arithmetic_error.py&#39;.
+Exception raised on line 9 of file &#39;TESTS:\runtime\test_arithmetic_error.py&#39;.
 
     7:         # Usually, a subclass such as ZeroDivisionError, etc., would
     8:         # likely be raised.
@@ -324,67 +328,78 @@ Exception raised on line 9 of file &#39;TESTS:\except\test_arithmetic_error.py&#
 <div class="section" id="attributeerror-class-attribute">
 <h2>AttributeError - class attribute<a class="headerlink" href="#attributeerror-class-attribute" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    AttributeError: type object &#39;A&#39; has no attribute &#39;x&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 34, in test_attribute_error
+    a.x  # Testing instance
+AttributeError: &#39;A&#39; object has no attribute &#39;x&#39;
 
 An `AttributeError` occurs when the code contains something like
     `object.x`
 and `x` is not a method or attribute (variable) belonging to `object`.
 
-Likely cause based on the information given by Python:
-    In your program, the object is `A` and the attribute is `x`.
+    The object `a` has no attribute named `x`.
 
-Exception raised on line 10 of file &#39;TESTS:\except\test_attribute_error.py&#39;.
+Exception raised on line 34 of file &#39;TESTS:\runtime\test_attribute_error.py&#39;.
 
-    8:     A()
-    9:     try:
---&gt;10:         A.x
+   32:     try:
+   33:         a = A()
+--&gt;34:         a.x  # Testing instance
 
     Known identifiers:
-        A: &lt;class &#39;test_attribute_error.test_attrib...&gt;
+        a: &lt;test_attribute_error.test_attribute_error.&lt;locals&gt;.A object&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="attributeerror-typo-in-module-attribute">
 <h2>AttributeError - typo in module attribute<a class="headerlink" href="#attributeerror-typo-in-module-attribute" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    AttributeError: module &#39;string&#39; has no attribute &#39;ascii_lowecase&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 63, in test_misspelled_module_attribute
+    string.ascii_lowecase
+AttributeError: module &#39;string&#39; has no attribute &#39;ascii_lowecase&#39;
+
+    Did you mean `ascii_lowercase`?
 
 An `AttributeError` occurs when the code contains something like
     `object.x`
 and `x` is not a method or attribute (variable) belonging to `object`.
 
-Likely cause based on the information given by Python:
-    Perhaps you meant to write `ascii_lowercase` instead of `ascii_lowecase`
+    Perhaps you meant to write `string.ascii_lowercase` instead of `string.ascii_lowecase`
 
-Exception raised on line 25 of file &#39;TESTS:\except\test_attribute_error.py&#39;.
+Exception raised on line 63 of file &#39;TESTS:\runtime\test_attribute_error.py&#39;.
 
-   23:
-   24:     try:
---&gt;25:         string.ascii_lowecase
+   61:
+   62:     try:
+--&gt;63:         string.ascii_lowecase
 
     Known identifiers:
-        string: &lt;module &#39;string&#39;&gt;
+        string: &lt;module &#39;string&#39;&gt; from PYTHON_LIB:\string.py
 </pre></div>
 </div>
 </div>
 <div class="section" id="attributeerror-typo-in-module-attribute-2">
 <h2>AttributeError - typo in module attribute 2<a class="headerlink" href="#attributeerror-typo-in-module-attribute-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    AttributeError: module &#39;math&#39; has no attribute &#39;cost&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 78, in test_misspelled_module_attribute_2
+    math.cost
+AttributeError: module &#39;math&#39; has no attribute &#39;cost&#39;
+
+    Did you mean one of the following: `cos, cosh, acos`?
 
 An `AttributeError` occurs when the code contains something like
     `object.x`
 and `x` is not a method or attribute (variable) belonging to `object`.
 
-Likely cause based on the information given by Python:
-    Instead of writing `cost`, perhaps you meant one of the following:
-    [`cos`, `cosh`, `acos`]
+    Instead of writing `math.cost`, perhaps you meant to write one of
+    the following names which are attributes of module `math`:
+    `cos, cosh, acos`
 
-Exception raised on line 40 of file &#39;TESTS:\except\test_attribute_error.py&#39;.
+Exception raised on line 78 of file &#39;TESTS:\runtime\test_attribute_error.py&#39;.
 
-   38:
-   39:     try:
---&gt;40:         math.cost
+   76:
+   77:     try:
+--&gt;78:         math.cost
 
     Known identifiers:
         math: &lt;module &#39;math&#39; (built-in)&gt;
@@ -394,17 +409,19 @@ Exception raised on line 40 of file &#39;TESTS:\except\test_attribute_error.py&#
 <div class="section" id="filenotfounderror">
 <h2>FileNotFoundError<a class="headerlink" href="#filenotfounderror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    FileNotFoundError: [Errno 2] No such file or directory: &#39;does_not_exist&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_file_not_found_error.py&quot;, line 6, in test_file_not_found_error
+    open(&quot;does_not_exist&quot;)
+FileNotFoundError: [Errno 2] No such file or directory: &#39;does_not_exist&#39;
 
 A `FileNotFoundError` exception indicates that you
 are trying to open a file that cannot be found by Python.
 This could be because you misspelled the name of the file.
 
-Likely cause based on the information given by Python:
     In your program, the name of the
     file that cannot be found is `does_not_exist`.
 
-Exception raised on line 6 of file &#39;TESTS:\except\test_file_not_found_error.py&#39;.
+Exception raised on line 6 of file &#39;TESTS:\runtime\test_file_not_found_error.py&#39;.
 
    4: def test_file_not_found_error():
    5:     try:
@@ -418,16 +435,20 @@ Exception raised on line 6 of file &#39;TESTS:\except\test_file_not_found_error.
 <div class="section" id="importerror">
 <h2>ImportError<a class="headerlink" href="#importerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    ImportError: cannot import name &#39;Pi&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_import_error.py&quot;, line 6, in test_import_error
+    from math import Pi
+ImportError: cannot import name &#39;Pi&#39;
+
+    Did you mean `pi`?
 
 An `ImportError` exception indicates that a certain object could not
 be imported from a module or package. Most often, this is
 because the name of the object is not spelled correctly.
 
-Likely cause based on the information given by Python:
-    The object that could not be imported is `Pi`.
+    Perhaps you meant to import `pi` from `math` instead of `Pi`
 
-Exception raised on line 6 of file &#39;TESTS:\except\test_import_error.py&#39;.
+Exception raised on line 6 of file &#39;TESTS:\runtime\test_import_error.py&#39;.
 
    4: def test_import_error():
    5:     try:
@@ -438,16 +459,17 @@ Exception raised on line 6 of file &#39;TESTS:\except\test_import_error.py&#39;.
 <div class="section" id="keyerror">
 <h2>KeyError<a class="headerlink" href="#keyerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    KeyError: &#39;c&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_key_error.py&quot;, line 7, in test_key_error
+    d[&quot;c&quot;]
+KeyError: &#39;c&#39;
 
 A `KeyError` is raised when a value is not found as a
 key in a Python dict.
 
-Likely cause based on the information given by Python:
-    In your program, the name of the key
-    that cannot be found is `c`.
+    In your program, the key that cannot be found is `&#39;c&#39;`.
 
-Exception raised on line 7 of file &#39;TESTS:\except\test_key_error.py&#39;.
+Exception raised on line 7 of file &#39;TESTS:\runtime\test_key_error.py&#39;.
 
    5:     d = {&quot;a&quot;: 1, &quot;b&quot;: 2}
    6:     try:
@@ -461,17 +483,20 @@ Exception raised on line 7 of file &#39;TESTS:\except\test_key_error.py&#39;.
 <div class="section" id="lookuperror">
 <h2>LookupError<a class="headerlink" href="#lookuperror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    LookupError:
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_lookup_error.py&quot;, line 10, in test_lookup_error
+    raise LookupError(&quot;Fake message&quot;)
+LookupError: Fake message
 
 `LookupError` is the base class for the exceptions that are raised
 when a key or index used on a mapping or sequence is invalid.
 It can also be raised directly by codecs.lookup().
 
-Exception raised on line 10 of file &#39;TESTS:\except\test_lookup_error.py&#39;.
+Exception raised on line 10 of file &#39;TESTS:\runtime\test_lookup_error.py&#39;.
 
     8:         # other than possibly codecs.lookup(), which is why we raise
     9:         # it directly here for our example.
---&gt;10:         raise LookupError
+--&gt;10:         raise LookupError(&quot;Fake message&quot;)
 
     Known identifiers:
         LookupError: &lt;class &#39;LookupError&#39;&gt;
@@ -481,7 +506,10 @@ Exception raised on line 10 of file &#39;TESTS:\except\test_lookup_error.py&#39;
 <div class="section" id="indexerror-short-tuple">
 <h2>IndexError - short tuple<a class="headerlink" href="#indexerror-short-tuple" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    IndexError: tuple index out of range
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_index_error.py&quot;, line 8, in test_index_error1
+    print(a[3], b[2])
+IndexError: tuple index out of range
 
 An `IndexError` occurs when you are try to get an item from a list,
 a tuple, or a similar object (sequence), by using an index which
@@ -489,7 +517,7 @@ does not exists; typically, this is because the index you give
 is greater than the length of the sequence.
 Reminder: the first item of a sequence is at index 0.
 
-Exception raised on line 8 of file &#39;TESTS:\except\test_index_error.py&#39;.
+Exception raised on line 8 of file &#39;TESTS:\runtime\test_index_error.py&#39;.
 
     6:     b = [1, 2, 3]
     7:     try:
@@ -505,7 +533,10 @@ Exception raised on line 8 of file &#39;TESTS:\except\test_index_error.py&#39;.
 <div class="section" id="indexerror-long-list">
 <h2>IndexError - long list<a class="headerlink" href="#indexerror-long-list" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    IndexError: list index out of range
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_index_error.py&quot;, line 21, in test_index_error2
+    print(a[50], b[0])
+IndexError: list index out of range
 
 An `IndexError` occurs when you are try to get an item from a list,
 a tuple, or a similar object (sequence), by using an index which
@@ -513,7 +544,7 @@ does not exists; typically, this is because the index you give
 is greater than the length of the sequence.
 Reminder: the first item of a sequence is at index 0.
 
-Exception raised on line 21 of file &#39;TESTS:\except\test_index_error.py&#39;.
+Exception raised on line 21 of file &#39;TESTS:\runtime\test_index_error.py&#39;.
 
    19:     b = tuple(range(50))
    20:     try:
@@ -521,37 +552,44 @@ Exception raised on line 21 of file &#39;TESTS:\except\test_index_error.py&#39;.
 
     Known identifiers:
         print: &lt;built-in function print&gt;
-        a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1...]  | len(a): 40
-        b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1...)  | len(b): 50
+        a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1...]  | len(a): 40
+        b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1...)  | len(b): 50
 </pre></div>
 </div>
 </div>
 <div class="section" id="modulenotfounderror">
 <h2>ModuleNotFoundError<a class="headerlink" href="#modulenotfounderror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    ModuleNotFoundError: No module named &#39;does_not_exist&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_module_not_found_error.py&quot;, line 6, in test_module_not_found_error
+    import Tkinter
+ModuleNotFoundError: No module named &#39;Tkinter&#39;
+
+    Did you mean `tkinter`?
 
 A `ModuleNotFoundError` exception indicates that you
 are trying to import a module that cannot be found by Python.
 This could be because you misspelled the name of the module
 or because it is not installed on your computer.
 
-Likely cause based on the information given by Python:
-    In your program, the name of the
-    module that cannot be found is `does_not_exist`.
+    The name of the module that could not be imported is `Tkinter`.
+    `tkinter` is an existing module that has a similar name.
 
-Exception raised on line 6 of file &#39;TESTS:\except\test_module_not_found_error.py&#39;.
+Exception raised on line 6 of file &#39;TESTS:\runtime\test_module_not_found_error.py&#39;.
 
    4: def test_module_not_found_error():
    5:     try:
---&gt;6:         import does_not_exist
+--&gt;6:         import Tkinter
 </pre></div>
 </div>
 </div>
 <div class="section" id="nameerror-1">
 <h2>NameError - 1<a class="headerlink" href="#nameerror-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    NameError: name &#39;something&#39; is not defined
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 6, in test_name_error
+    this = something
+NameError: name &#39;something&#39; is not defined
 
 A `NameError` exception indicates that a variable or
 function name is not known to Python.
@@ -559,10 +597,9 @@ Most often, this is because there is a spelling mistake.
 However, sometimes it is because the name is used
 before being defined or given a value.
 
-Likely cause based on the information given by Python:
     In your program, the unknown name is `something`.
 
-Exception raised on line 6 of file &#39;TESTS:\except\test_name_error.py&#39;.
+Exception raised on line 6 of file &#39;TESTS:\runtime\test_name_error.py&#39;.
 
    4: def test_name_error():
    5:     try:
@@ -573,7 +610,10 @@ Exception raised on line 6 of file &#39;TESTS:\except\test_name_error.py&#39;.
 <div class="section" id="nameerror-2">
 <h2>NameError - 2<a class="headerlink" href="#nameerror-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    NameError: name &#39;babs&#39; is not defined
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 19, in test_name_error2
+    x = babs(-1)
+NameError: name &#39;babs&#39; is not defined
 
 A `NameError` exception indicates that a variable or
 function name is not known to Python.
@@ -581,14 +621,13 @@ Most often, this is because there is a spelling mistake.
 However, sometimes it is because the name is used
 before being defined or given a value.
 
-Likely cause based on the information given by Python:
     In your program, the unknown name is `babs`.
     Instead of writing `babs`, perhaps you meant one of the following:
     *   Local scope: `nabs`
     *   Global scope: `fabs`
     *   Python builtins: `abs`
 
-Exception raised on line 19 of file &#39;TESTS:\except\test_name_error.py&#39;.
+Exception raised on line 19 of file &#39;TESTS:\runtime\test_name_error.py&#39;.
 
    17:     nabs = 1
    18:     try:
@@ -599,7 +638,10 @@ Exception raised on line 19 of file &#39;TESTS:\except\test_name_error.py&#39;.
 <div class="section" id="nameerror-3">
 <h2>NameError - 3<a class="headerlink" href="#nameerror-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    NameError: name &#39;x&#39; is not defined
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 33, in test_name_error3
+    y = x
+NameError: name &#39;x&#39; is not defined
 
 A `NameError` exception indicates that a variable or
 function name is not known to Python.
@@ -607,12 +649,11 @@ Most often, this is because there is a spelling mistake.
 However, sometimes it is because the name is used
 before being defined or given a value.
 
-Likely cause based on the information given by Python:
     In your program, the unknown name is `x`.
     A type hint found for `x` in the global scope.
     Perhaps you had written `x : 3` instead of `x = 3`.
 
-Exception raised on line 33 of file &#39;TESTS:\except\test_name_error.py&#39;.
+Exception raised on line 33 of file &#39;TESTS:\runtime\test_name_error.py&#39;.
 
    31: def test_name_error3():
    32:     try:
@@ -623,7 +664,10 @@ Exception raised on line 33 of file &#39;TESTS:\except\test_name_error.py&#39;.
 <div class="section" id="nameerror-4">
 <h2>NameError - 4<a class="headerlink" href="#nameerror-4" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    NameError: name &#39;cost&#39; is not defined
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 45, in test_name_error4
+    cost  # wrote from math import * above
+NameError: name &#39;cost&#39; is not defined
 
 A `NameError` exception indicates that a variable or
 function name is not known to Python.
@@ -631,12 +675,11 @@ Most often, this is because there is a spelling mistake.
 However, sometimes it is because the name is used
 before being defined or given a value.
 
-Likely cause based on the information given by Python:
     In your program, the unknown name is `cost`.
     Instead of writing `cost`, perhaps you meant one of the following:
     *   Global scope: `cos`, `cosh`, `acos`
 
-Exception raised on line 45 of file &#39;TESTS:\except\test_name_error.py&#39;.
+Exception raised on line 45 of file &#39;TESTS:\runtime\test_name_error.py&#39;.
 
    43: def test_name_error4():
    44:     try:
@@ -647,12 +690,15 @@ Exception raised on line 45 of file &#39;TESTS:\except\test_name_error.py&#39;.
 <div class="section" id="overflowerror">
 <h2>OverflowError<a class="headerlink" href="#overflowerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    OverflowError: (34, &#39;Result too large&#39;)
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_overflow_error.py&quot;, line 6, in test_overflow_error
+    2.0 ** 1600
+OverflowError: (34, &#39;Result too large&#39;)
 
 An `OverflowError` is raised when the result of an arithmetic operation
 is too large to be handled by the computer&#39;s processor.
 
-Exception raised on line 6 of file &#39;TESTS:\except\test_overflow_error.py&#39;.
+Exception raised on line 6 of file &#39;TESTS:\runtime\test_overflow_error.py&#39;.
 
    4: def test_overflow_error():
    5:     try:
@@ -663,48 +709,60 @@ Exception raised on line 6 of file &#39;TESTS:\except\test_overflow_error.py&#39
 <div class="section" id="recursionerror">
 <h2>RecursionError<a class="headerlink" href="#recursionerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    RecursionError: maximum recursion depth exceeded
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 8, in test_function_recursion_error
+    a()
+
+       ... More lines not shown. ...
+
+  File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 6, in a
+    return a()
+  File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 6, in a
+    return a()
+RecursionError: maximum recursion depth exceeded
 
 A `RecursionError` is raised when a function calls itself,
 directly or indirectly, too many times.
 It almost always indicates that you made an error in your code
 and that your program would never stop.
 
-Execution stopped on line 8 of file &#39;TESTS:\except\test_recursion_error.py&#39;.
+Execution stopped on line 8 of file &#39;TESTS:\runtime\test_recursion_error.py&#39;.
 
     6:         return a()
     7:     try:
 --&gt; 8:         a()
 
     Known identifiers:
-        a: &lt;function test_recursion_error.&lt;locals&gt;.a&gt;
+        a: &lt;function test_function_recursion_error.&lt;locals&gt;.a&gt;
 
-Exception raised on line 6 of file &#39;TESTS:\except\test_recursion_error.py&#39;.
+Exception raised on line 6 of file &#39;TESTS:\runtime\test_recursion_error.py&#39;.
 
-   4: def test_recursion_error():
+   4: def test_function_recursion_error():
    5:     def a():
 --&gt;6:         return a()
 
     Known identifiers:
-        a: &lt;function test_recursion_error.&lt;locals&gt;.a&gt;
+        a: &lt;function test_function_recursion_error.&lt;locals&gt;.a&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-1-concatenate-two-different-types">
 <h2>TypeError - 1: concatenate two different types<a class="headerlink" href="#typeerror-1-concatenate-two-different-types" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: must be str, not int
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 8, in test_type_error1
+    result = a + one
+TypeError: must be str, not int
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to concatenate (add) two different types of objects:
     a string (`str`) and an integer (`int`)
 
-Exception raised on line 8 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 8 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
     6:         a = &quot;a&quot;
     7:         one = 1
@@ -719,18 +777,20 @@ Exception raised on line 8 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-1a-concatenate-two-different-types">
 <h2>TypeError - 1a: concatenate two different types<a class="headerlink" href="#typeerror-1a-concatenate-two-different-types" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: must be str, not list
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 25, in test_type_error1a
+    result = a + a_list
+TypeError: must be str, not list
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to concatenate (add) two different types of objects:
     a string (`str`) and a `list`
 
-Exception raised on line 25 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 25 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
    23:         a = &quot;a&quot;
    24:         a_list = [1, 2, 3]
@@ -745,18 +805,20 @@ Exception raised on line 25 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-1b-concatenate-two-different-types">
 <h2>TypeError - 1b: concatenate two different types<a class="headerlink" href="#typeerror-1b-concatenate-two-different-types" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: can only concatenate tuple (not &quot;list&quot;) to tuple
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 42, in test_type_error1b
+    result = a_tuple + a_list
+TypeError: can only concatenate tuple (not &quot;list&quot;) to tuple
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to concatenate (add) two different types of objects:
     a `tuple` and a `list`
 
-Exception raised on line 42 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 42 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
    40:         a_tuple = (1, 2, 3)
    41:         a_list = [1, 2, 3]
@@ -771,18 +833,20 @@ Exception raised on line 42 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-2-unsupported-operand-type-s-for">
 <h2>TypeError - 2: unsupported operand type(s) for +<a class="headerlink" href="#typeerror-2-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;NoneType&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 57, in test_type_error2
+    result = one + none
+TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;NoneType&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to add two incompatible types of objects:
     an integer (`int`) and a variable equal to `None` (`NoneType`)
 
-Exception raised on line 57 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 57 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
    55:         one = 1
    56:         none = None
@@ -797,22 +861,24 @@ Exception raised on line 57 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-2a-unsupported-operand-type-s-for">
 <h2>TypeError - 2a: unsupported operand type(s) for +=<a class="headerlink" href="#typeerror-2a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for +=: &#39;int&#39; and &#39;str&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 74, in test_type_error2a
+    one += two
+TypeError: unsupported operand type(s) for +=: &#39;int&#39; and &#39;str&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to add two incompatible types of objects:
     an integer (`int`) and a string (`str`)
 
-Exception raised on line 72 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 74 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   70:         one = 1
-   71:         two = &quot;two&quot;
---&gt;72:         one += two
+   72:         one = 1
+   73:         two = &quot;two&quot;
+--&gt;74:         one += two
 
     Known identifiers:
         one: 1
@@ -823,22 +889,24 @@ Exception raised on line 72 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-3-unsupported-operand-type-s-for">
 <h2>TypeError - 3: unsupported operand type(s) for -<a class="headerlink" href="#typeerror-3-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for -: &#39;tuple&#39; and &#39;list&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 89, in test_type_error3
+    result = a - b
+TypeError: unsupported operand type(s) for -: &#39;tuple&#39; and &#39;list&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to subtract two incompatible types of objects:
     a `tuple` and a `list`
 
-Exception raised on line 87 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 89 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   85:         a = (1, 2)
-   86:         b = [3, 4]
---&gt;87:         result = a - b
+   87:         a = (1, 2)
+   88:         b = [3, 4]
+--&gt;89:         result = a - b
 
     Known identifiers:
         a: (1, 2)
@@ -849,22 +917,24 @@ Exception raised on line 87 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-3a-unsupported-operand-type-s-for">
 <h2>TypeError - 3a: unsupported operand type(s) for -=<a class="headerlink" href="#typeerror-3a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for -=: &#39;list&#39; and &#39;tuple&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 104, in test_type_error3a
+    b -= a
+TypeError: unsupported operand type(s) for -=: &#39;list&#39; and &#39;tuple&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to subtract two incompatible types of objects:
     a `list` and a `tuple`
 
-Exception raised on line 102 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 104 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   100:         a = (1, 2)
-   101:         b = [3, 4]
---&gt;102:         b -= a
+   102:         a = (1, 2)
+   103:         b = [3, 4]
+--&gt;104:         b -= a
 
     Known identifiers:
         b: [3, 4]
@@ -875,22 +945,24 @@ Exception raised on line 102 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-4-unsupported-operand-type-s-for">
 <h2>TypeError - 4: unsupported operand type(s) for *<a class="headerlink" href="#typeerror-4-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for *: &#39;complex&#39; and &#39;set&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 119, in test_type_error4
+    result = a * b
+TypeError: unsupported operand type(s) for *: &#39;complex&#39; and &#39;set&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to multiply two incompatible types of objects:
     a complex number and a `set`
 
-Exception raised on line 117 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 119 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   115:         a = 1j
-   116:         b = {2, 3}
---&gt;117:         result = a * b
+   117:         a = 1j
+   118:         b = {2, 3}
+--&gt;119:         result = a * b
 
     Known identifiers:
         a: 1j
@@ -901,22 +973,24 @@ Exception raised on line 117 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-4a-unsupported-operand-type-s-for">
 <h2>TypeError - 4a: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">*=</span></code><a class="headerlink" href="#typeerror-4a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for *=: &#39;set&#39; and &#39;complex&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 134, in test_type_error4a
+    b *= a
+TypeError: unsupported operand type(s) for *=: &#39;set&#39; and &#39;complex&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to multiply two incompatible types of objects:
     a `set` and a complex number
 
-Exception raised on line 132 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 134 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   130:         a = 1j
-   131:         b = {2, 3}
---&gt;132:         b *= a
+   132:         a = 1j
+   133:         b = {2, 3}
+--&gt;134:         b *= a
 
     Known identifiers:
         b: {2, 3}
@@ -927,22 +1001,24 @@ Exception raised on line 132 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-5-unsupported-operand-type-s-for">
 <h2>TypeError - 5: unsupported operand type(s) for /<a class="headerlink" href="#typeerror-5-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for /: &#39;dict&#39; and &#39;float&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 149, in test_type_error5
+    result = a / b
+TypeError: unsupported operand type(s) for /: &#39;dict&#39; and &#39;float&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
     a dictionary (`dict`) and a number (`float`)
 
-Exception raised on line 147 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 149 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   145:         a = {1: 1, 2: 2}
-   146:         b = 3.1416
---&gt;147:         result = a / b
+   147:         a = {1: 1, 2: 2}
+   148:         b = 3.1416
+--&gt;149:         result = a / b
 
     Known identifiers:
         a: {1: 1, 2: 2}
@@ -953,22 +1029,24 @@ Exception raised on line 147 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-5a-unsupported-operand-type-s-for">
 <h2>TypeError - 5a: unsupported operand type(s) for /=<a class="headerlink" href="#typeerror-5a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for /=: &#39;float&#39; and &#39;dict&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 164, in test_type_error5a
+    b /= a
+TypeError: unsupported operand type(s) for /=: &#39;float&#39; and &#39;dict&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
     a number (`float`) and a dictionary (`dict`)
 
-Exception raised on line 162 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 164 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   160:         a = {1: 1, 2: 2}
-   161:         b = 3.1416
---&gt;162:         b /= a
+   162:         a = {1: 1, 2: 2}
+   163:         b = 3.1416
+--&gt;164:         b /= a
 
     Known identifiers:
         b: 3.1416
@@ -979,22 +1057,24 @@ Exception raised on line 162 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-5b-unsupported-operand-type-s-for">
 <h2>TypeError - 5b: unsupported operand type(s) for //<a class="headerlink" href="#typeerror-5b-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for //: &#39;dict&#39; and &#39;int&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 179, in test_type_error5b
+    result = a // b
+TypeError: unsupported operand type(s) for //: &#39;dict&#39; and &#39;int&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
     a dictionary (`dict`) and an integer (`int`)
 
-Exception raised on line 177 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 179 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   175:         a = {1: 1, 2: 2}
-   176:         b = 1
---&gt;177:         result = a // b
+   177:         a = {1: 1, 2: 2}
+   178:         b = 1
+--&gt;179:         result = a // b
 
     Known identifiers:
         a: {1: 1, 2: 2}
@@ -1005,22 +1085,24 @@ Exception raised on line 177 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-5c-unsupported-operand-type-s-for">
 <h2>TypeError - 5c: unsupported operand type(s) for //=<a class="headerlink" href="#typeerror-5c-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for //=: &#39;float&#39; and &#39;dict&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 194, in test_type_error5c
+    b //= a
+TypeError: unsupported operand type(s) for //=: &#39;float&#39; and &#39;dict&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to divide two incompatible types of objects:
     a number (`float`) and a dictionary (`dict`)
 
-Exception raised on line 192 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 194 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   190:         a = {1: 1, 2: 2}
-   191:         b = 3.1416
---&gt;192:         b //= a
+   192:         a = {1: 1, 2: 2}
+   193:         b = 3.1416
+--&gt;194:         b //= a
 
     Known identifiers:
         b: 3.1416
@@ -1031,23 +1113,25 @@ Exception raised on line 192 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-6-unsupported-operand-type-s-for">
 <h2>TypeError - 6: unsupported operand type(s) for &amp;<a class="headerlink" href="#typeerror-6-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for &amp;: &#39;str&#39; and &#39;int&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 209, in test_type_error6
+    result = a &amp; b
+TypeError: unsupported operand type(s) for &amp;: &#39;str&#39; and &#39;int&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to perform the bitwise operation &amp;
     on two incompatible types of objects:
     a string (`str`) and an integer (`int`)
 
-Exception raised on line 207 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 209 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   205:         a = &quot;a&quot;
-   206:         b = 2
---&gt;207:         result = a &amp; b
+   207:         a = &quot;a&quot;
+   208:         b = 2
+--&gt;209:         result = a &amp; b
 
     Known identifiers:
         a: &#39;a&#39;
@@ -1058,23 +1142,25 @@ Exception raised on line 207 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-6a-unsupported-operand-type-s-for">
 <h2>TypeError - 6a: unsupported operand type(s) for &amp;=<a class="headerlink" href="#typeerror-6a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for &amp;=: &#39;int&#39; and &#39;str&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 224, in test_type_error6a
+    b &amp;= a
+TypeError: unsupported operand type(s) for &amp;=: &#39;int&#39; and &#39;str&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to perform the bitwise operation &amp;=
     on two incompatible types of objects:
     an integer (`int`) and a string (`str`)
 
-Exception raised on line 222 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 224 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   220:         a = &quot;a&quot;
-   221:         b = 2
---&gt;222:         b &amp;= a
+   222:         a = &quot;a&quot;
+   223:         b = 2
+--&gt;224:         b &amp;= a
 
     Known identifiers:
         b: 2
@@ -1085,23 +1171,25 @@ Exception raised on line 222 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-7-unsupported-operand-type-s-for">
 <h2>TypeError - 7: unsupported operand type(s) for **<a class="headerlink" href="#typeerror-7-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for ** or pow(): &#39;dict&#39; and &#39;float&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 239, in test_type_error7
+    result = a ** b
+TypeError: unsupported operand type(s) for ** or pow(): &#39;dict&#39; and &#39;float&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to exponentiate (raise to a power)
     using two incompatible types of objects:
     a dictionary (`dict`) and a number (`float`)
 
-Exception raised on line 237 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 239 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   235:         a = {1: 1, 2: 2}
-   236:         b = 3.1416
---&gt;237:         result = a ** b
+   237:         a = {1: 1, 2: 2}
+   238:         b = 3.1416
+--&gt;239:         result = a ** b
 
     Known identifiers:
         a: {1: 1, 2: 2}
@@ -1112,23 +1200,25 @@ Exception raised on line 237 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-7a-unsupported-operand-type-s-for">
 <h2>TypeError - 7a: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">**=</span></code><a class="headerlink" href="#typeerror-7a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for ** or pow(): &#39;dict&#39; and &#39;float&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 254, in test_type_error7a
+    a **= b
+TypeError: unsupported operand type(s) for ** or pow(): &#39;dict&#39; and &#39;float&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to exponentiate (raise to a power)
     using two incompatible types of objects:
     a dictionary (`dict`) and a number (`float`)
 
-Exception raised on line 252 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 254 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   250:         a = {1: 1, 2: 2}
-   251:         b = 3.1416
---&gt;252:         a **= b
+   252:         a = {1: 1, 2: 2}
+   253:         b = 3.1416
+--&gt;254:         a **= b
 
     Known identifiers:
         a: {1: 1, 2: 2}
@@ -1139,23 +1229,25 @@ Exception raised on line 252 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-8-unsupported-operand-type-s-for">
 <h2>TypeError - 8: unsupported operand type(s) for &gt;&gt;<a class="headerlink" href="#typeerror-8-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for &gt;&gt;: &#39;str&#39; and &#39;int&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 269, in test_type_error8
+    result = a &gt;&gt; b
+TypeError: unsupported operand type(s) for &gt;&gt;: &#39;str&#39; and &#39;int&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to perform the bit shifting operation &gt;&gt;
     on two incompatible types of objects:
     a string (`str`) and an integer (`int`)
 
-Exception raised on line 267 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 269 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   265:         a = &quot;a&quot;
-   266:         b = 42
---&gt;267:         result = a &gt;&gt; b
+   267:         a = &quot;a&quot;
+   268:         b = 42
+--&gt;269:         result = a &gt;&gt; b
 
     Known identifiers:
         a: &#39;a&#39;
@@ -1166,23 +1258,25 @@ Exception raised on line 267 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-8a-unsupported-operand-type-s-for">
 <h2>TypeError - 8a: unsupported operand type(s) for &gt;&gt;=<a class="headerlink" href="#typeerror-8a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for &gt;&gt;=: &#39;str&#39; and &#39;int&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 284, in test_type_error8a
+    a &gt;&gt;= b
+TypeError: unsupported operand type(s) for &gt;&gt;=: &#39;str&#39; and &#39;int&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to perform the bit shifting operation &gt;&gt;=
     on two incompatible types of objects:
     a string (`str`) and an integer (`int`)
 
-Exception raised on line 282 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 284 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   280:         a = &quot;a&quot;
-   281:         b = 42
---&gt;282:         a &gt;&gt;= b
+   282:         a = &quot;a&quot;
+   283:         b = 42
+--&gt;284:         a &gt;&gt;= b
 
     Known identifiers:
         a: &#39;a&#39;
@@ -1193,25 +1287,27 @@ Exception raised on line 282 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-9-unsupported-operand-type-s-for">
 <h2>TypeError - 9: unsupported operand type(s) for &#64;<a class="headerlink" href="#typeerror-9-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for @: &#39;str&#39; and &#39;int&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 299, in test_type_error9
+    result = a @ b
+TypeError: unsupported operand type(s) for @: &#39;str&#39; and &#39;int&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to use the operator @
     using two incompatible types of objects:
     a string (`str`) and an integer (`int`).
     This operator is normally used only
     for multiplication of matrices.
 
-Exception raised on line 297 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 299 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   295:         a = &quot;a&quot;
-   296:         b = 2
---&gt;297:         result = a @ b
+   297:         a = &quot;a&quot;
+   298:         b = 2
+--&gt;299:         result = a @ b
 
     Known identifiers:
         a: &#39;a&#39;
@@ -1222,25 +1318,27 @@ Exception raised on line 297 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-9a-unsupported-operand-type-s-for">
 <h2>TypeError - 9a: unsupported operand type(s) for &#64;=<a class="headerlink" href="#typeerror-9a-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: unsupported operand type(s) for @=: &#39;str&#39; and &#39;int&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 314, in test_type_error9a
+    a @= b
+TypeError: unsupported operand type(s) for @=: &#39;str&#39; and &#39;int&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to use the operator @=
     using two incompatible types of objects:
     a string (`str`) and an integer (`int`).
     This operator is normally used only
     for multiplication of matrices.
 
-Exception raised on line 312 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 314 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   310:         a = &quot;a&quot;
-   311:         b = 2
---&gt;312:         a @= b
+   312:         a = &quot;a&quot;
+   313:         b = 2
+--&gt;314:         a @= b
 
     Known identifiers:
         a: &#39;a&#39;
@@ -1251,23 +1349,25 @@ Exception raised on line 312 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-10-comparison-between-incompatible-types">
 <h2>TypeError - 10: comparison between incompatible types<a class="headerlink" href="#typeerror-10-comparison-between-incompatible-types" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 329, in test_type_error10
+    b &lt; a
+TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to do an order comparison (&lt;)
     between two incompatible types of objects:
     an integer (`int`) and a string (`str`)
 
-Exception raised on line 327 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 329 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   325:         a = &quot;a&quot;
-   326:         b = 42
---&gt;327:         b &lt; a
+   327:         a = &quot;a&quot;
+   328:         b = 42
+--&gt;329:         b &lt; a
 
     Known identifiers:
         b: 42
@@ -1278,93 +1378,101 @@ Exception raised on line 327 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-11-bad-operand-type-for-unary">
 <h2>TypeError - 11: bad operand type for unary +<a class="headerlink" href="#typeerror-11-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: bad operand type for unary +: &#39;str&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 342, in test_type_error11
+    a = +&quot;abc&quot;
+TypeError: bad operand type for unary +: &#39;str&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to use the unary operator &#39;+&#39;
     with the following type of object: a string (`str`).
     This operation is not defined for this type of object.
 
-Exception raised on line 340 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 342 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   338: def test_type_error11():
-   339:     try:
---&gt;340:         a = +&quot;abc&quot;
+   340: def test_type_error11():
+   341:     try:
+--&gt;342:         a = +&quot;abc&quot;
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-11a-bad-operand-type-for-unary">
 <h2>TypeError - 11a: bad operand type for unary -<a class="headerlink" href="#typeerror-11a-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: bad operand type for unary -: &#39;list&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 356, in test_type_error11a
+    a = -[1, 2, 3]
+TypeError: bad operand type for unary -: &#39;list&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to use the unary operator &#39;-&#39;
     with the following type of object: a `list`.
     This operation is not defined for this type of object.
 
-Exception raised on line 354 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 356 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   352: def test_type_error11a():
-   353:     try:
---&gt;354:         a = -[1, 2, 3]
+   354: def test_type_error11a():
+   355:     try:
+--&gt;356:         a = -[1, 2, 3]
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-11b-bad-operand-type-for-unary">
 <h2>TypeError - 11b: bad operand type for unary ~<a class="headerlink" href="#typeerror-11b-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: bad operand type for unary ~: &#39;tuple&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 370, in test_type_error11b
+    a = ~(1, 2, 3)
+TypeError: bad operand type for unary ~: &#39;tuple&#39;
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You tried to use the unary operator &#39;~&#39;
     with the following type of object: a `tuple`.
     This operation is not defined for this type of object.
 
-Exception raised on line 368 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 370 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   366: def test_type_error11b():
-   367:     try:
---&gt;368:         a = ~(1, 2, 3)
+   368: def test_type_error11b():
+   369:     try:
+--&gt;370:         a = ~(1, 2, 3)
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-12-object-does-not-support-item-assignment">
 <h2>TypeError - 12: object does not support item assignment<a class="headerlink" href="#typeerror-12-object-does-not-support-item-assignment" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: &#39;tuple&#39; object does not support item assignment
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 385, in test_type_error12
+    a[0] = 0
+TypeError: &#39;tuple&#39; object does not support item assignment
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     In Python, some objects are known as immutable:
     once defined, their value cannot be changed.
     You tried change part of such an immutable object: a `tuple`,
     most likely by using an indexing operation.
 
-Exception raised on line 383 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 385 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   381:     a = (1, 2, 3)
-   382:     try:
---&gt;383:         a[0] = 0
+   383:     a = (1, 2, 3)
+   384:     try:
+--&gt;385:         a[0] = 0
 
     Known identifiers:
         a: (1, 2, 3)
@@ -1374,48 +1482,81 @@ Exception raised on line 383 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-13-wrong-number-of-positional-arguments">
 <h2>TypeError - 13: wrong number of positional arguments<a class="headerlink" href="#typeerror-13-wrong-number-of-positional-arguments" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: fn() takes 0 positional arguments but 1 was given
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 401, in test_type_error13
+    fn(1)
+TypeError: fn() takes 0 positional arguments but 1 was given
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     You apparently have called the function `fn` with
     1 positional argument(s) while it requires 0
     such positional argument(s).
 
-Exception raised on line 399 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 401 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   397:
-   398:     try:
---&gt;399:         fn(1)
+   399:
+   400:     try:
+--&gt;401:         fn(1)
 
     Known identifiers:
         fn: &lt;function test_type_error13.&lt;locals&gt;.fn&gt;
 </pre></div>
 </div>
 </div>
-<div class="section" id="typeerror-14-missing-positional-arguments">
-<h2>TypeError - 14: missing positional arguments<a class="headerlink" href="#typeerror-14-missing-positional-arguments" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="typeerror-13a-wrong-number-of-positional-arguments">
+<h2>TypeError - 13a: wrong number of positional arguments<a class="headerlink" href="#typeerror-13a-wrong-number-of-positional-arguments" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: fn() missing 2 required positional arguments: &#39;b&#39; and &#39;c&#39;
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 419, in test_type_error13a
+    A().f(1)
+TypeError: f() takes 1 positional argument but 2 were given
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
+    You apparently have called the function `f` with
+    2 positional argument(s) while it requires 1
+    such positional argument(s).
+    Perhaps you forgot `self` when defining `f`.
+
+Exception raised on line 419 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
+
+   417:
+   418:     try:
+--&gt;419:         A().f(1)
+
+    Known identifiers:
+        A: &lt;class &#39;test_type_error.test_type_error13a.&lt;locals&gt;.A&#39;&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-14-missing-positional-arguments">
+<h2>TypeError - 14: missing positional arguments<a class="headerlink" href="#typeerror-14-missing-positional-arguments" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 437, in test_type_error14
+    fn(1)
+TypeError: fn() missing 2 required positional arguments: &#39;b&#39; and &#39;c&#39;
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by tring to do an operation not allowed on a given type of object.
+
     You apparently have called the function &#39;fn()&#39; with
     fewer positional arguments than it requires (2 missing).
 
-Exception raised on line 435 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 437 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   433:
-   434:     try:
---&gt;435:         fn(1)
+   435:
+   436:     try:
+--&gt;437:         fn(1)
 
     Known identifiers:
         fn: &lt;function test_type_error14.&lt;locals&gt;.fn&gt;
@@ -1425,76 +1566,91 @@ Exception raised on line 435 of file &#39;TESTS:\except\test_type_error.py&#39;.
 <div class="section" id="typeerror-15-tuple-object-is-not-callable">
 <h2>TypeError - 15: tuple object is not callable<a class="headerlink" href="#typeerror-15-tuple-object-is-not-callable" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: &#39;tuple&#39; object is not callable
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 451, in test_type_error15
+    _ = (1, 2)(3, 4)
+TypeError: &#39;tuple&#39; object is not callable
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     I suspect that you had an object of this type, a `tuple`,
     followed by what looked like a tuple, &#39;(...)&#39;,
     which Python took as an indication of a function call.
     Perhaps you had a missing comma between two tuples.
 
-Exception raised on line 449 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 451 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   447: def test_type_error15():
-   448:     try:
---&gt;449:         _ = (1, 2)(3, 4)
+   449: def test_type_error15():
+   450:     try:
+--&gt;451:         _ = (1, 2)(3, 4)
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-15a-list-object-is-not-callable">
 <h2>TypeError - 15a: list object is not callable<a class="headerlink" href="#typeerror-15a-list-object-is-not-callable" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: &#39;list&#39; object is not callable
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 464, in test_type_error15a
+    _ = [1, 2](3, 4)
+TypeError: &#39;list&#39; object is not callable
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     I suspect that you had an object of this type, a `list`,
     followed by what looked like a tuple, &#39;(...)&#39;,
     which Python took as an indication of a function call.
     Perhaps you had a missing comma before the tuple.
 
-Exception raised on line 462 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 464 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   460: def test_type_error15a():
-   461:     try:
---&gt;462:         _ = [1, 2](3, 4)
+   462: def test_type_error15a():
+   463:     try:
+--&gt;464:         _ = [1, 2](3, 4)
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-16-exception-derived-from-baseexception">
 <h2>TypeError - 16: exception derived from BaseException<a class="headerlink" href="#typeerror-16-exception-derived-from-baseexception" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    TypeError: exceptions must derive from BaseException
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 477, in test_type_error16
+    raise &quot;exception&quot;
+TypeError: exceptions must derive from BaseException
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-Likely cause based on the information given by Python:
     In Python 3, exceptions must be derived from BaseException.
 
-Exception raised on line 475 of file &#39;TESTS:\except\test_type_error.py&#39;.
+Exception raised on line 477 of file &#39;TESTS:\runtime\test_type_error.py&#39;.
 
-   473: def test_type_error16():
-   474:     try:
---&gt;475:         raise &quot;exception&quot;
+   475: def test_type_error16():
+   476:     try:
+--&gt;477:         raise &quot;exception&quot;
 </pre></div>
 </div>
 </div>
-<div class="section" id="unboundlocalerror">
-<h2>UnboundLocalError<a class="headerlink" href="#unboundlocalerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="unboundlocalerror-1-missing-global">
+<h2>UnboundLocalError - 1: missing global<a class="headerlink" href="#unboundlocalerror-1-missing-global" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    UnboundLocalError: local variable &#39;a&#39; referenced before assignment
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 27, in test_unbound_local_error_missing_global
+    outer_missing_global()
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 11, in outer_missing_global
+    inner()
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 9, in inner
+    spam_missing_global += 1
+UnboundLocalError: local variable &#39;spam_missing_global&#39; referenced before assignment
+
+    Did you forget to add `global spam_missing_global`?
 
 In Python, variables that are used inside a function are known as
 local variables. Before they are used, they must be assigned a value.
@@ -1505,47 +1661,95 @@ a global variable inside a function without first indicating to
 Python that this is a global variable, otherwise you will see
 an `UnboundLocalError`.
 
-Likely cause based on the information given by Python:
-    The variable that appears to cause the problem is `a`.
+    The identifier `spam_missing_global` exists in the global scope.
     Perhaps the statement
 
-        global a
+        global spam_missing_global
 
     should have been included as the first line inside your function.
 
-Execution stopped on line 21 of file &#39;TESTS:\except\test_unbound_local_error.py&#39;.
+Execution stopped on line 27 of file &#39;TESTS:\runtime\test_unbound_local_error.py&#39;.
 
-   19:
-   20:     try:
---&gt;21:         outer()
-
-    Known identifiers:
-        global outer: &lt;function outer&gt;
-
-Exception raised on line 12 of file &#39;TESTS:\except\test_unbound_local_error.py&#39;.
-
-   10:     def inner():
-   11:         c = 3
---&gt;12:         a = a + b + c
+   25:
+   26:     try:
+--&gt;27:         outer_missing_global()
 
     Known identifiers:
-        global b: 2
-        c: 3
+        global outer_missing_global: &lt;function outer_missing_global&gt;
+
+Exception raised on line 9 of file &#39;TESTS:\runtime\test_unbound_local_error.py&#39;.
+
+    7: def outer_missing_global():
+    8:     def inner():
+--&gt; 9:         spam_missing_global += 1
+
+    Known identifiers:
+        global spam_missing_global: 1
+</pre></div>
+</div>
+</div>
+<div class="section" id="unboundlocalerror-2-missing-nonlocal">
+<h2>UnboundLocalError - 2: missing nonlocal<a class="headerlink" href="#unboundlocalerror-2-missing-nonlocal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 47, in test_unbound_local_error_missing_nonlocal
+    outer_missing_nonlocal()
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 20, in outer_missing_nonlocal
+    inner()
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 18, in inner
+    spam_missing_nonlocal += 1
+UnboundLocalError: local variable &#39;spam_missing_nonlocal&#39; referenced before assignment
+
+    Did you forget to add `nonlocal spam_missing_nonlocal`?
+
+In Python, variables that are used inside a function are known as
+local variables. Before they are used, they must be assigned a value.
+A variable that is used before it is assigned a value is assumed to
+be defined outside that function; it is known as a `global`
+(or sometimes `nonlocal`) variable. You cannot assign a value to such
+a global variable inside a function without first indicating to
+Python that this is a global variable, otherwise you will see
+an `UnboundLocalError`.
+
+    The identifier `spam_missing_nonlocal` exists in the nonlocal scope.
+    Perhaps the statement
+
+        nonlocal spam_missing_nonlocal
+
+    should have been included as the first line inside your function.
+
+Execution stopped on line 47 of file &#39;TESTS:\runtime\test_unbound_local_error.py&#39;.
+
+   45:
+   46:     try:
+--&gt;47:         outer_missing_nonlocal()
+
+    Known identifiers:
+        global outer_missing_nonlocal: &lt;function outer_missing_nonlocal&gt;
+
+Exception raised on line 18 of file &#39;TESTS:\runtime\test_unbound_local_error.py&#39;.
+
+   16:
+   17:     def inner():
+--&gt;18:         spam_missing_nonlocal += 1
 </pre></div>
 </div>
 </div>
 <div class="section" id="unknown-exception">
 <h2>Unknown exception<a class="headerlink" href="#unknown-exception" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    MyException: Some informative message about an unknown exception.
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_unknown_error.py&quot;, line 10, in test_function_unknown_error
+    raise MyException(&quot;Some informative message about an unknown exception.&quot;)
+MyException: Some informative message about an unknown exception.
 
 No information is known about this exception.
 Please report this example to
 https://github.com/aroberge/friendly-traceback/issues
 
-Exception raised on line 10 of file &#39;TESTS:\except\test_unknown_error.py&#39;.
+Exception raised on line 10 of file &#39;TESTS:\runtime\test_unknown_error.py&#39;.
 
-    8: def test_unknown_error():
+    8: def test_function_unknown_error():
     9:     try:
 --&gt;10:         raise MyException(&quot;Some informative message about an unknown exception.&quot;)
 
@@ -1557,7 +1761,10 @@ Exception raised on line 10 of file &#39;TESTS:\except\test_unknown_error.py&#39
 <div class="section" id="zerodivisionerror-1">
 <h2>ZeroDivisionError - 1<a class="headerlink" href="#zerodivisionerror-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 6, in test_zero_division_error
+    1 / 0
+ZeroDivisionError: division by zero
 
 A `ZeroDivisionError` occurs when you are attempting to divide
 a value by zero:
@@ -1566,7 +1773,7 @@ It can also happen if you calculate the remainder of a division
 using the modulo operator `%`:
     `result = my_variable % 0`
 
-Exception raised on line 6 of file &#39;TESTS:\except\test_zero_division_error.py&#39;.
+Exception raised on line 6 of file &#39;TESTS:\runtime\test_zero_division_error.py&#39;.
 
    4: def test_zero_division_error():
    5:     try:
@@ -1577,7 +1784,10 @@ Exception raised on line 6 of file &#39;TESTS:\except\test_zero_division_error.p
 <div class="section" id="zerodivisionerror-2">
 <h2>ZeroDivisionError - 2<a class="headerlink" href="#zerodivisionerror-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python exception:
-    ZeroDivisionError: integer division or modulo by zero
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 20, in test_zero_division_error2
+    1 % zero
+ZeroDivisionError: integer division or modulo by zero
 
 A `ZeroDivisionError` occurs when you are attempting to divide
 a value by zero:
@@ -1586,7 +1796,7 @@ It can also happen if you calculate the remainder of a division
 using the modulo operator `%`:
     `result = my_variable % 0`
 
-Exception raised on line 20 of file &#39;TESTS:\except\test_zero_division_error.py&#39;.
+Exception raised on line 20 of file &#39;TESTS:\runtime\test_zero_division_error.py&#39;.
 
    18:     zero = 0
    19:     try:

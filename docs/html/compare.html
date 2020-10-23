@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Comparison between Python versions: SyntaxErrors &mdash; Friendly tracebacks 0.1.1a documentation</title>
+  <title>Comparison between Python versions: SyntaxErrors &mdash; Friendly tracebacks 0.1.6a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.1a
+                0.1.6a
               </div>
             
           
@@ -96,7 +96,6 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
-<li class="toctree-l1"><a class="reference internal" href="verbosity.html">Verbosity: how much information do we want?</a></li>
 </ul>
 <p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul>
@@ -559,6 +558,22 @@ Python indicates that you used the unicode character `«`
 which is not allowed.
 I suspect that you used a fancy unicode quotation mark
 instead of a normal single or double quote for a string.
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error78</div>
+<h5>Different explanation</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>I make an effort below to guess what caused the problem
+but I might guess incorrectly.
+
+You used an assignment operator `=` instead of an equality operator `==` 
+with a `while` statement.
+
+<b>3.8: </b>I make an effort below to guess what caused the problem
+but I might guess incorrectly.
+
+You used an assignment operator `=`; perhaps you meant to use 
+an equality operator, `==`, or the walrus operator `:=`.
 
 </pre>
 <div class='filename-header'>
