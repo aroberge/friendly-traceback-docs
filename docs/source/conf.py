@@ -89,15 +89,17 @@ rst_prolog = """
 .. warning::
 
     This is alpha software, currently in development.
-    The API is subject to change without notice;
-    many such changes are not yet included in this documentation.
-    The aim is to have (almost) all the text updated and corrected
-    by the time version 0.1 is released, at which time this warning
-    will change.
+    The API is subject to change without notice.
+    The current documentation does not reflect the actual state of
+    the project, but it does give a good idea of the actual aim.
 
-    Note that most screenshots have been taken with an obsolete version.
-    We aim to replace those when work for version 0.2 has been completed.
+    Note that most screenshots have been taken with a very old version.
+    We aim to replace those when we update the text, so that they
+    look similar to this:
 
+    .. image:: images/friendly-rich.png
+       :scale: 20 %
+       :alt: Output in the console styled by Rich
 """
 
 

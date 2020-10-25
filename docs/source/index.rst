@@ -132,7 +132,6 @@ from the version available from Pypi.
 
    lies
    api
-   graph
 
 
 .. toctree::
