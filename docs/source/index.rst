@@ -107,6 +107,10 @@ from the version available from Pypi.
    :caption: For beginners and teachers
 
    usage
+   Console basics <repl>
+   friendly_tb
+   python_tb
+   debug_tb
    thonny
    mu
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.public_api &mdash; Friendly tracebacks 0.1.7a documentation</title>
+  <title>friendly_traceback.public_api &mdash; Friendly tracebacks 0.1.8a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.1.7a
+                0.1.8a
               </div>
             
           
@@ -88,6 +88,10 @@
               <p class="caption"><span class="caption-text">For beginners and teachers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../repl.html">Console basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../friendly_tb.html">friendly_tb() and hint()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python_tb.html">python_tb()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../debug_tb.html">debug_tb() and debug()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../thonny.html">Using with Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../mu.html">Using with Mu</a></li>
 </ul>
@@ -228,6 +232,7 @@
 <span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">import_module</span>
 
 <span class="kn">from</span> <span class="nn">.session</span> <span class="kn">import</span> <span class="n">session</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">info_generic</span>
 
 <span class="c1"># Make functions from other modules directly available from here.</span>
 <span class="kn">from</span> <span class="nn">.editors_helper</span> <span class="kn">import</span> <span class="n">run</span>
@@ -271,7 +276,7 @@
 
 
 <div class="viewcode-block" id="install"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.install">[docs]</a><span class="nd">@make_public</span>
-<span class="k">def</span> <span class="nf">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="s2">&quot;minimal&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Replaces ``sys.excepthook`` by friendly_traceback&#39;s own version.</span>
 <span class="sd">    Intercepts, and provides an explanation for all Python exceptions except</span>
@@ -292,6 +297,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">level</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Friendly-traceback: level is no longer supported&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The documentation needs to be updated to reflect this change.&quot;</span><span class="p">)</span>
     <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="n">redirect</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">)</span></div>
 
 
@@ -328,6 +334,29 @@
 <span class="sd">    See formatters.py for details.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">session</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_what"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.get_what">[docs]</a><span class="nd">@make_public</span>
+<span class="k">def</span> <span class="nf">get_what</span><span class="p">(</span><span class="n">exception_name</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Given an exception name as a string argument,</span>
+<span class="sd">    returns what this exception means, also known as the</span>
+<span class="sd">    generic explanation elsewhere in this package.</span>
+
+<span class="sd">    Something like:</span>
+
+<span class="sd">        A `RecursionError` is raised when a function calls itself ...</span>
+
+<span class="sd">    If argument lang is specified, the information is provided</span>
+<span class="sd">    in that language (if available) without changing the overall</span>
+<span class="sd">    default language used.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">lang</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">old_lang</span> <span class="o">=</span> <span class="n">get_lang</span><span class="p">()</span>
+        <span class="n">set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">info_generic</span><span class="o">.</span><span class="n">get_generic_explanation</span><span class="p">(</span><span class="n">exception_name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">lang</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">set_lang</span><span class="p">(</span><span class="n">old_lang</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span></div>
 
 
 <span class="c1"># =========================================================================</span>
@@ -397,9 +426,9 @@
 <span class="k">def</span> <span class="nf">show_again</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Shows the previously recorded traceback info again, on the default stream.</span>
 
-<span class="sd">        Primarily intended to be used when the user changes</span>
-<span class="sd">        a verbosity level to view the last computed traceback</span>
-<span class="sd">        in a given language.</span>
+<span class="sd">    Primarily intended to be used when the user changes</span>
+<span class="sd">    a verbosity level to view the last computed traceback</span>
+<span class="sd">    in a given language.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">session</span><span class="o">.</span><span class="n">show_traceback_info_again</span><span class="p">()</span></div>
 
@@ -455,20 +484,21 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">set_include</span> <span class="o">=</span> <span class="n">set_include</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">run</span> <span class="o">=</span> <span class="n">run</span>
 
-    <span class="k">def</span> <span class="nf">_show_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Debugging tool: shows the content of traceback info.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Debugging tool: shows the complete content of traceback info.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_traceback_info</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No recorded traceback</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="k">return</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recorded traceback information:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">use_rich</span><span class="p">:</span>  <span class="c1"># will automatically pretty print</span>
+            <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_traceback_info</span>
+
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_traceback_info</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">session</span><span class="o">.</span><span class="n">saved_traceback_info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Shows the previously recorded traceback info again,</span>
 <span class="sd">        with the specified verbosity level.</span>
-
-<span class="sd">        See set_verbosity() for details.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">old_include</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_include</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>
@@ -476,7 +506,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">old_include</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">traceback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Shows the traceback.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Shows the Python traceback, with the added suggestion/hint.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;python_tb&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">more</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -486,8 +516,24 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;more&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">what</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">what</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;If known, shows the generic explanation about a given exception.&quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">exception</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">exception</span><span class="p">,</span> <span class="s2">&quot;__name__&quot;</span><span class="p">):</span>
+                <span class="n">exception</span> <span class="o">=</span> <span class="n">exception</span><span class="o">.</span><span class="vm">__name__</span>
+            <span class="k">if</span> <span class="n">lang</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">old_lang</span> <span class="o">=</span> <span class="n">get_lang</span><span class="p">()</span>
+                <span class="n">set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">info_generic</span><span class="o">.</span><span class="n">get_generic_explanation</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">lang</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">set_lang</span><span class="p">(</span><span class="n">old_lang</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">use_rich</span><span class="p">:</span>
+                <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+            <span class="k">return</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;what&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">where</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -502,10 +548,29 @@
         <span class="sd">&quot;&quot;&quot;Shows hint/suggestion if available.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;hint&quot;</span><span class="p">)</span>
 
+    <span class="k">def</span> <span class="nf">friendly_tb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Shows the friendly traceback, which includes the hint/suggestion</span>
+<span class="sd">        if available.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">python_tb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Shows the Python traceback, excluding files from friendly-traceback</span>
+<span class="sd">        itself.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;python_tb&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">debug_tb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Shows the true Python traceback, which includes</span>
+<span class="sd">        files from friendly-traceback itself.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span>
+
     <span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;This functions displays the true traceback recorded, that</span>
 <span class="sd">        includes friendly-traceback&#39;s own code.</span>
-<span class="sd">        It also sets a debug flag for the current session.</span>
+<span class="sd">        It also adds the suggestion/hint from friendly-traceback</span>
+<span class="sd">        and sets a debug flag for the current session.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">session</span><span class="o">.</span><span class="n">_debug</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span>
@@ -518,15 +583,9 @@
 
 <div class="viewcode-block" id="set_level"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.set_level">[docs]</a><span class="nd">@make_public</span>
 <span class="k">def</span> <span class="nf">set_level</span><span class="p">(</span><span class="n">verbosity_level</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Deprecated; use set_verbosity() instead.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Deprecated. Details about new API to be provided later.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;friendly-traceback set_level is deprecated; defaults will be used.&quot;</span><span class="p">)</span>
     <span class="n">set_include</span><span class="p">(</span><span class="s2">&quot;explain&quot;</span><span class="p">)</span></div>
-
-
-<span class="c1"># @make_public</span>
-<span class="c1"># def get_level():</span>
-<span class="c1">#     &quot;&quot;&quot;Deprecated: use get_verbosity() instead.&quot;&quot;&quot;</span>
-<span class="c1">#     return get_verbosity()</span>
 </pre></div>
 
            </div>

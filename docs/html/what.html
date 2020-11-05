@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>what() &mdash; Friendly tracebacks 0.1.8a documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly tracebacks
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.8a
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">For beginners and teachers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="friendly_tb.html">friendly_tb() and hint()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_tb.html">python_tb()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug_tb.html">debug_tb() and debug()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Thoughts on design</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
+</ul>
+<p class="caption"><span class="caption-text">More advanced users</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Advanced Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Use in your project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="suggest.html">Suggest an addition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Add a new Exception case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
+</ul>
+<p class="caption"><span class="caption-text">All the tracebacks!</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.7.html">SyntaxError - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html">Friendly tracebacks - Python 3.8 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">SyntaxError - Python 3.8 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.10.html">Friendly tracebacks - Python 3.10 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.10.html">SyntaxError - Python 3.10 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare_exceptions.html">Comparing Exception messages between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions: SyntaxErrors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Markdown examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_markdown.html">Friendly tracebacks - markdown_docs format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_syntax_markdown.html">Syntax errors - markdown_docs format</a></li>
+</ul>
+<p class="caption"><span class="caption-text">En français</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
+</ul>
+<p class="caption"><span class="caption-text">varia</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Friendly tracebacks</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>what()</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/what.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is alpha software, currently in development.
+The API is subject to change without notice.
+The current documentation does not reflect the actual state of
+the project, but it does give a good idea of the actual aim.</p>
+<p>Note that most screenshots have been taken with a very old version.
+We aim to replace those when we update the text, so that they
+look similar to this:</p>
+<a class="reference internal image-reference" href="_images/friendly-rich.png"><img alt="Output in the console styled by Rich" src="_images/friendly-rich.png" style="width: 285.6px; height: 282.6px;" /></a>
+</div>
+<div class="section" id="what">
+<h1>what()<a class="headerlink" href="#what" title="Permalink to this headline">¶</a></h1>
+<p>Imagine that you are a beginner. You write some code and are
+suddenly confronted with the following:</p>
+<a class="reference internal image-reference" href="_images/greet_what_1.png"><img alt="Screen capture of unbound local error" src="_images/greet_what_1.png" style="width: 642.6px; height: 157.79999999999998px;" /></a>
+<p>You see <code class="docutils literal notranslate"><span class="pre">UnboundLocalError</span></code>, and have no idea what it might mean.
+Rather than heading to StackOverflow to ask a question and have it
+immediately closed as being a duplicate, you simply ask <code class="docutils literal notranslate"><span class="pre">what()</span></code>
+and Friendly-traceback tries to help you.</p>
+<a class="reference internal image-reference" href="_images/greet_what_2.png"><img alt="Screen capture of explanation bout unbound local error" src="_images/greet_what_2.png" style="width: 666.0px; height: 215.4px;" /></a>
+<p><code class="docutils literal notranslate"><span class="pre">what()</span></code> only gives here some generic information about what an <code class="docutils literal notranslate"><span class="pre">UnboundLocalError</span></code> is.
+Later, we’ll see how Friendly-traceback can often give more useful
+information regarding the exact cause of the exception, and how to fix it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">what()</span></code> can be useful even if an exception has not been raised.
+In principle, you can get information about any exception by passing it as
+an object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">what</span><span class="p">(</span><span class="ne">IndexError</span><span class="p">)</span>
+
+<span class="go">An IndexError occurs when you are try to get an item from a list, a tuple, or a similar</span>
+<span class="go">object (sequence), by using an index which does not exists; typically, this is because</span>
+<span class="go">the index you give is greater than the length of the sequence. Reminder: the first item</span>
+<span class="go">of a sequence is at index 0.</span>
+</pre></div>
+</div>
+<p>Instead of using a known Exception object, we can pass its name as a string
+if we prefer. We can even specify a language other than English …
+as long as it is French - hopefully, support for more languages will be added
+by contributors:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">what</span><span class="p">(</span><span class="s2">&quot;IndentationError&quot;</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;fr&#39;</span><span class="p">)</span>
+
+<span class="go">Une exception de type IndentationError se produit lorsqu&#39;une ligne de code n&#39;est pas</span>
+<span class="go">indentée (c&#39;est-à-dire alignée verticalement avec les autres lignes) de la façon</span>
+<span class="go">attendue.</span>
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Try to provide such generic information about <strong>all</strong> standard Python exceptions.</p>
+</div>
+</div>
+<div class="section" id="why">
+<h1>why()<a class="headerlink" href="#why" title="Permalink to this headline">¶</a></h1>
+<p>You are a beginner reading some code found in a tutorial on the web
+and decide to try it out by copy-pasting it.</p>
+<a class="reference internal image-reference" href="_images/why_1.png"><img alt="Screen capture of syntax error" src="_images/why_1.png" style="width: 611.4px; height: 171.6px;" /></a>
+<p>So, this didn’t work, but you’d like to find out why.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">why</span><span class="p">()</span>
+
+<span class="go">Python indicates that you used some unicode characters not allowed as part</span>
+<span class="go">of a variable name; this includes many emojis. However, I suspect that you</span>
+<span class="go">used a fancy unicode quotation mark instead of a normal single or double</span>
+<span class="go">quote for a string. This can happen if you copy-pasted code.</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, André Roberge
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

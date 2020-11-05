@@ -90,16 +90,8 @@ rst_prolog = """
 
     This is alpha software, currently in development.
     The API is subject to change without notice.
-    The current documentation does not reflect the actual state of
+    The current documentation does not fully reflect the actual state of
     the project, but it does give a good idea of the actual aim.
-
-    Note that most screenshots have been taken with a very old version.
-    We aim to replace those when we update the text, so that they
-    look similar to this:
-
-    .. image:: images/friendly-rich.png
-       :scale: 20 %
-       :alt: Output in the console styled by Rich
 """
 
 
