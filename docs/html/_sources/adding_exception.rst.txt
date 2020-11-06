@@ -60,7 +60,7 @@ tracebacks for an Exception that is not already included.
 
         - Ensure that you have a copy of the friendly-traceceback-docs
           repository; it should be located at the same directory level
-          as friendly-traceback on your computer.
+          as Friendly-traceback on your computer.
         - Add case to tests/tb_common.py
 
             - Run tests/tb_english.py and ensure that
@@ -121,7 +121,7 @@ with some numbered comments added::
    this would not work when using pytest. **Important:** unless there is no
    other way, you should not trigger an exception by an explicit call
    using the ``raise`` keyword, so that the message included is produce
-   by Python and not artificially written. Whenever possible, friendly-traceback
+   by Python and not artificially written. Whenever possible, Friendly-traceback
    provides some specific information about an exception based on the content
    of the message included by Python.
 3. By default, friendly_traceback outputs its result to sys.stderr.

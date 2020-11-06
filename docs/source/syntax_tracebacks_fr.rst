@@ -2,13 +2,13 @@
 |france| Friendly SyntaxError tracebacks - en Français
 ======================================================
 
-Le but principal de friendly-traceback est de fournir des rétroactions plus
+Le but principal de Friendly-traceback est de fournir des rétroactions plus
 conviviales que les fameux **tracebacks** de Python lorsqu'une exception survient.
 Ci-dessous, on peut voir quelques exemples, uniquement pour les
 exceptions de type SyntaxError et des classes dérivées;
 les autres sont couvertes dans une autre page.
 Le but est de documenter ici tous les exemples possibles
-tels qu'interprétés par friendly-traceback.
+tels qu'interprétés par Friendly-traceback.
 
 .. note::
 

@@ -82,7 +82,8 @@ and decide to try it out by copy-pasting it.
    :scale: 60 %
    :alt: Screen capture of syntax error
 
-So, this didn't work, but you'd like to find out why.
+So, this didn't work, but you'd like to find out why -- and possibly
+how to fix the problem.
 
 
     >>> why()

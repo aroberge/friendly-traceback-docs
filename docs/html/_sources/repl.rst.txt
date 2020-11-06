@@ -82,7 +82,8 @@ and decide to try it out by copy-pasting it.
    :scale: 60 %
    :alt: Screen capture of syntax error
 
-So, this didn't work, but you'd like to find out why.
+So, this didn't work, but you'd like to find out why -- and possibly
+how to fix the problem.
 
 
     >>> why()
@@ -172,3 +173,14 @@ seeing a traceback, they might want to see more information
 about ``where()`` and ``why()``: this is what ``more()`` does.
 
 We purposely do not show an example, and leave it up to you to try!
+
+
+More about explain()
+--------------------
+
+``explain()`` is a bit more versatile than we let it on: it can
+take an argument that can change its behaviour.
+For example, ``explain("what")`` is equivalent to ``what()``;
+``explain("why")`` is equivalent to ``why()``.
+For the console, this is clearly redundant. However, it is something
+to keep in mind as it might be more useful later.

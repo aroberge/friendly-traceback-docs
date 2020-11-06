@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Intentional lies" href="lies.html" />
-    <link rel="prev" title="Some thoughts on the design of friendly-traceback" href="design.html" /> 
+    <link rel="prev" title="Some thoughts on the design of Friendly-traceback" href="design.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,19 +87,18 @@
               
             
             
-              <p class="caption"><span class="caption-text">For beginners and teachers</span></p>
+              <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Installation and basic usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="friendly_tb.html">friendly_tb() and hint()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_tb.html">python_tb()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="debug_tb.html">debug_tb() and debug()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
 </ul>
 <p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul class="current">
@@ -220,7 +219,7 @@
         <a href="lies.html" class="btn btn-neutral float-right" title="Intentional lies" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of friendly-traceback" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of Friendly-traceback" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -233,85 +232,19 @@
 <p class="admonition-title">Warning</p>
 <p>This is alpha software, currently in development.
 The API is subject to change without notice.
-The current documentation does not fully reflect the actual state of
-the project, but it does give a good idea of the actual aim.</p>
+The current documentation is likely not up to date and
+is definitely imcomplete, but it does give a good idea of
+what this project is about..</p>
 </div>
 <div class="section" id="advanced-usage">
 <h1>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h1>
-<p>There are various ways of using friendly-traceback.
-We first list the various basic options.
-If you wish to use friendly-traceback for running scripts that
-accept command line arguments, you might want to read the
-penultimate section on this page.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In some of the examples below, we use the program <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> found
-in the <code class="docutils literal notranslate"><span class="pre">demos</span></code> directory, containing the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Hello world!&quot;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running as main!&quot;</span><span class="p">)</span>
-</pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is no longer accurate; it needs to be updated.</p>
 </div>
-</div>
-<ol class="arabic">
-<li><p>As an exception hook:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
-<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">install</span><span class="p">()</span>  <span class="c1"># replaces the default sys.excepthook</span>
-</pre></div>
-</div>
-</li>
-<li><p>Catching exceptions locally:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
-
-<span class="o">...</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="c1"># Some code</span>
-<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">()</span>
-</pre></div>
-</div>
-</li>
-<li><p>When launching a Python script:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback demos/hello.py
-
-Hello world!
-Running as main!
-</pre></div>
-</div>
-</li>
-<li><p>Launching the friendly console after running a script:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -im friendly_traceback demos/hello.py
-
-Hello world!
-Running as main!
-Friendly Console version 0.0.10a. [Python version: 3.7.3]
-
-&gt;&gt;&gt;
-</pre></div>
-</div>
-</li>
-<li><p>Only starting the console:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback
-</pre></div>
-</div>
-</li>
-<li><p>Starting the console from an interpreter:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">start_console</span><span class="p">()</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<p>You can also specify the verbosity level as well as the language
-to be used, either as command line arguments:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback --lang fr --verbosity 5
-</pre></div>
-</div>
-<p>or as optional arguments when using <code class="docutils literal notranslate"><span class="pre">check_syntax</span></code> or <code class="docutils literal notranslate"><span class="pre">run_code</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">check_syntax</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;fr&#39;</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Update the information about Advanced usage and configuration.</p>
 </div>
 <div class="section" id="where-the-output-is-written">
 <h2>Where the output is written?<a class="headerlink" href="#where-the-output-is-written" title="Permalink to this headline">¶</a></h2>
@@ -378,7 +311,7 @@ in the section about design.</p>
 </div>
 <div class="section" id="as-an-exception-hook">
 <h2>As an exception hook<a class="headerlink" href="#as-an-exception-hook" title="Permalink to this headline">¶</a></h2>
-<p>When “installing” friendly-traceback, one can use various optional
+<p>When “installing” Friendly-traceback, one can use various optional
 parameters:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="s2">&quot;fr&quot;</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="s2">&quot;capture&quot;</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -409,11 +342,11 @@ One can also <strong>temporarily</strong> redirect the output to any stream:</p>
     <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="n">stream</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>By default, friendly-traceback takes its information from <code class="docutils literal notranslate"><span class="pre">sys.exc_info()</span></code>.
+<p>By default, Friendly-traceback takes its information from <code class="docutils literal notranslate"><span class="pre">sys.exc_info()</span></code>.
 It may happen that this is not what we want to show.
 For example, the <a class="reference external" href="https://github.com/python/cpython/blob/3.7/Lib/code.py#L131">showtraceback method in Python’s code.py</a> replaces one of the items prior to
 showing the traceback to the user; we currently also do something similar in
-friendly-traceback’s own console.</p>
+Friendly-traceback’s own console.</p>
 <p>Finally, if one wishes to <em>temporarily</em> change some other option mentioned above,
 it can be done as in the following example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -439,7 +372,7 @@ Running as main!
 If they are simply positional arguments, you can simply tack them
 on at the end of the argument list. An example can be found
 in the <code class="docutils literal notranslate"><span class="pre">demos/</span></code> directory, which can be run directly or using
-friendly-traceback.</p>
+Friendly-traceback.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python demos/adder.py 1 2 3
 The sum is 6
 </pre></div>
@@ -449,16 +382,16 @@ The sum is 6.0
 </pre></div>
 </div>
 <p>Note that this works even if you specify command line arguments
-that are specific to friendly-traceback:</p>
+that are specific to Friendly-traceback:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback --lang fr demos/adder.py 1 2 3
 The sum is 6.0
 </pre></div>
 </div>
 <p>However, what if one wants to run a script that uses optional named arguments
-similarly to how friendly-traceback can use <code class="docutils literal notranslate"><span class="pre">--lang</span></code> and other optional
+similarly to how Friendly-traceback can use <code class="docutils literal notranslate"><span class="pre">--lang</span></code> and other optional
 arguments? In this case, use <code class="docutils literal notranslate"><span class="pre">--</span></code> to separate the list of arguments
 to be used by the script from those written previously and
-intended to be used by friendly-traceback:</p>
+intended to be used by Friendly-traceback:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback --lang fr demos/adder.py -- --to_int 1 2 3
 The sum is 6
 </pre></div>
@@ -483,7 +416,7 @@ and writing:</p>
 </div>
 </li>
 </ol>
-<p>You can now run your script normally: friendly-traceback exception
+<p>You can now run your script normally: Friendly-traceback exception
 handling will be used by default on it.</p>
 </div>
 <div class="section" id="from-the-command-line">
@@ -518,9 +451,9 @@ Friendly-traceback makes Python tracebacks easier to understand.
         9: Python traceback only
 
     The Python traceback for level &gt; 1 is the simulated version, which
-    excludes calls from friendly-traceback itself.
+    excludes calls from Friendly-traceback itself.
     You can use negative values to show the true Python traceback which
-    will likely include function calls from friendly-traceback itself.
+    will likely include function calls from Friendly-traceback itself.
     Thus level -9 is equivalent to level 0.
 
     Other values may be available, as we try to find the most useful
@@ -560,7 +493,7 @@ optional arguments:
         <a href="lies.html" class="btn btn-neutral float-right" title="Intentional lies" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of friendly-traceback" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of Friendly-traceback" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

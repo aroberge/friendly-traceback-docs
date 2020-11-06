@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="friendly_tb() and hint()" href="friendly_tb.html" />
-    <link rel="prev" title="Usage" href="usage.html" /> 
+    <link rel="next" title="Using with an editor or IDE" href="editor.html" />
+    <link rel="prev" title="Installation and basic usage" href="usage.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,26 +87,26 @@
               
             
             
-              <p class="caption"><span class="caption-text">For beginners and teachers</span></p>
+              <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Installation and basic usage</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Console basics</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#what">what()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#why">why()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#where">where()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#explain">explain()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#more">more()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#more-about-explain">More about explain()</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="friendly_tb.html">friendly_tb() and hint()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_tb.html">python_tb()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="debug_tb.html">debug_tb() and debug()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
 </ul>
 <p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul>
@@ -215,10 +215,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="friendly_tb.html" class="btn btn-neutral float-right" title="friendly_tb() and hint()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="editor.html" class="btn btn-neutral float-right" title="Using with an editor or IDE" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="usage.html" class="btn btn-neutral float-left" title="Installation and basic usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -231,8 +231,9 @@
 <p class="admonition-title">Warning</p>
 <p>This is alpha software, currently in development.
 The API is subject to change without notice.
-The current documentation does not fully reflect the actual state of
-the project, but it does give a good idea of the actual aim.</p>
+The current documentation is likely not up to date and
+is definitely imcomplete, but it does give a good idea of
+what this project is about..</p>
 </div>
 <div class="section" id="console-basics">
 <h1>Console basics<a class="headerlink" href="#console-basics" title="Permalink to this headline">¶</a></h1>
@@ -298,7 +299,8 @@ except for <code class="docutils literal notranslate"><span class="pre">what()</
 <p>You are a beginner reading some code found in a tutorial on the web
 and decide to try it out by copy-pasting it.</p>
 <a class="reference internal image-reference" href="_images/why_1.png"><img alt="Screen capture of syntax error" src="_images/why_1.png" style="width: 611.4px; height: 171.6px;" /></a>
-<p>So, this didn’t work, but you’d like to find out why.</p>
+<p>So, this didn’t work, but you’d like to find out why – and possibly
+how to fix the problem.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">why</span><span class="p">()</span>
 <span class="go">Python indicates that you used some unicode characters not allowed as part</span>
 <span class="go">of a variable name; this includes many emojis. However, I suspect that you</span>
@@ -375,6 +377,15 @@ seeing a traceback, they might want to see more information
 about <code class="docutils literal notranslate"><span class="pre">where()</span></code> and <code class="docutils literal notranslate"><span class="pre">why()</span></code>: this is what <code class="docutils literal notranslate"><span class="pre">more()</span></code> does.</p>
 <p>We purposely do not show an example, and leave it up to you to try!</p>
 </div>
+<div class="section" id="more-about-explain">
+<h2>More about explain()<a class="headerlink" href="#more-about-explain" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">explain()</span></code> is a bit more versatile than we let it on: it can
+take an argument that can change its behaviour.
+For example, <code class="docutils literal notranslate"><span class="pre">explain(&quot;what&quot;)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">what()</span></code>;
+<code class="docutils literal notranslate"><span class="pre">explain(&quot;why&quot;)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">why()</span></code>.
+For the console, this is clearly redundant. However, it is something
+to keep in mind as it might be more useful later.</p>
+</div>
 </div>
 
 
@@ -385,10 +396,10 @@ about <code class="docutils literal notranslate"><span class="pre">where()</span
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="friendly_tb.html" class="btn btn-neutral float-right" title="friendly_tb() and hint()" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="editor.html" class="btn btn-neutral float-right" title="Using with an editor or IDE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="usage.html" class="btn btn-neutral float-left" title="Installation and basic usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

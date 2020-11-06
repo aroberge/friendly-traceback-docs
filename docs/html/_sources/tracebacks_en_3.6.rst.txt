@@ -6,7 +6,7 @@ Friendly-traceback aims to provide friendlier feedback when an exception
 is raised than what is done by Python.
 Below, we can find some examples. SyntaxError cases, as well as TabError and
 IndentationError cases, are shown in a separate page.
-Ideally, an example of each case handled by friendly-traceback
+Ideally, an example of each case handled by Friendly-traceback
 should be included here.
 
 .. note::
@@ -1659,7 +1659,7 @@ Unknown exception
     
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly-traceback/issues
+    https://github.com/aroberge/Friendly-traceback/issues
     
     Exception raised on line 10 of file 'TESTS:\runtime\test_unknown_error.py'.
     

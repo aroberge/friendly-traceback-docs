@@ -2,10 +2,10 @@
 |france| Friendly tracebacks - en Français
 ===========================================
 
-Le but principal de friendly-traceback est de fournir des rétroactions plus
+Le but principal de Friendly-traceback est de fournir des rétroactions plus
 conviviales que les fameux **tracebacks** de Python lorsqu'une exception survient.
 Ci-dessous, on peut voir quelques exemples. Le but éventuel est de documenter
-ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
+ici tous les exemples possibles tels qu'interprétés par Friendly-traceback.
 
 .. note::
 
@@ -1658,7 +1658,7 @@ Unknown exception
     
     Aucune information n’est connue à propos de cette exception.
     Veuillez signaler cet exemple à
-    https://github.com/aroberge/friendly-traceback/issues
+    https://github.com/aroberge/Friendly-traceback/issues
     
     Exception levée à la ligne 10 du fichier 'TESTS:\runtime\test_unknown_error.py'.
     

@@ -85,19 +85,18 @@
               
             
             
-              <p class="caption"><span class="caption-text">For beginners and teachers</span></p>
+              <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Installation and basic usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../repl.html">Console basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../friendly_tb.html">friendly_tb() and hint()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python_tb.html">python_tb()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../debug_tb.html">debug_tb() and debug()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../mu.html">Using with Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks.html">Multiple tracebacks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../design.html">Some thoughts on the design of friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Some thoughts on the design of Friendly-traceback</a></li>
 </ul>
 <p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul>
@@ -225,6 +224,7 @@
 <span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
 <span class="kn">from</span> <span class="nn">.session</span> <span class="kn">import</span> <span class="n">session</span>
 <span class="kn">from</span> <span class="nn">.console</span> <span class="kn">import</span> <span class="n">start_console</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">friendly_rich</span>
 
 
 <span class="k">def</span> <span class="nf">check_syntax</span><span class="p">(</span>
@@ -349,14 +349,6 @@
     <span class="sd">&quot;&quot;&quot;Given a filename (relative or absolute path), this function uses the</span>
 <span class="sd">       more complex exec_code() to run a file.</span>
 
-<span class="sd">       If friendly-traceback exception hook has not been set up prior</span>
-<span class="sd">       to calling check_syntax, it will only be used for the duration</span>
-<span class="sd">       of this function call.</span>
-
-<span class="sd">       If friendly-traceback exception hook has not been set up prior</span>
-<span class="sd">       to calling check_syntax, the exception hook will only be used for</span>
-<span class="sd">       the duration of this function call.</span>
-
 <span class="sd">       If console is set to False, run() returns an empty dict if a SyntaxError</span>
 <span class="sd">       was raised, otherwise returns the dict in which the module (filename)</span>
 <span class="sd">       was executed.</span>
@@ -365,6 +357,12 @@
 <span class="sd">       as an interactive session in a Friendly console, with the module</span>
 <span class="sd">       dict being the locals dict.</span>
 <span class="sd">       &quot;&quot;&quot;</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">use_rich</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">friendly_rich</span><span class="o">.</span><span class="n">rich_available</span><span class="p">:</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">use_rich</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="s2">&quot;rich&quot;</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="n">theme</span><span class="p">)</span>
+
     <span class="k">if</span> <span class="n">args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="p">[</span><span class="n">filename</span><span class="p">]</span>
         <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">arg</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)]</span>

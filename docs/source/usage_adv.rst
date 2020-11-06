@@ -1,78 +1,18 @@
 Advanced Usage
 ==============
 
-There are various ways of using friendly-traceback.
-We first list the various basic options.
-If you wish to use friendly-traceback for running scripts that
-accept command line arguments, you might want to read the
-penultimate section on this page.
-
-.. note::
-
-    In some of the examples below, we use the program ``hello.py`` found
-    in the ``demos`` directory, containing the following::
-
-        print("\nHello world!")
-
-        if __name__ == '__main__':
-            print("Running as main!")
 
 
-1. As an exception hook::
+.. warning::
 
-    import friendly_traceback
-    friendly_traceback.install()  # replaces the default sys.excepthook
-
-
-2. Catching exceptions locally::
-
-    import friendly_traceback
-
-    ...
-
-    try:
-        # Some code
-    except Exception:
-        friendly_traceback.explain()
+    This is no longer accurate; it needs to be updated.
 
 
+.. todo::
 
-3. When launching a Python script::
-
-    $ python -m friendly_traceback demos/hello.py
-
-    Hello world!
-    Running as main!
-
-4. Launching the friendly console after running a script::
-
-    $ python -im friendly_traceback demos/hello.py
-
-    Hello world!
-    Running as main!
-    Friendly Console version 0.0.10a. [Python version: 3.7.3]
-
-    >>>
+    Update the information about Advanced usage and configuration.
 
 
-5. Only starting the console::
-
-    $ python -m friendly_traceback
-
-6. Starting the console from an interpreter::
-
-    >>> import friendly_traceback
-    >>> friendly_traceback.start_console()
-
-
-You can also specify the verbosity level as well as the language
-to be used, either as command line arguments::
-
-    $ python -m friendly_traceback --lang fr --verbosity 5
-
-or as optional arguments when using ``check_syntax`` or ``run_code``::
-
-    friendly_traceback.check_syntax(..., lang='fr', verbosity=5)
 
 Where the output is written?
 ----------------------------
@@ -146,7 +86,7 @@ in the section about design.
 As an exception hook
 ---------------------
 
-When "installing" friendly-traceback, one can use various optional
+When "installing" Friendly-traceback, one can use various optional
 parameters::
 
     friendly_traceback.install(lang="fr", redirect="capture", verbosity=1)
@@ -179,11 +119,11 @@ One can also **temporarily** redirect the output to any stream::
     except Exception:
         friendly_traceback.explain(redirect=stream)
 
-By default, friendly-traceback takes its information from ``sys.exc_info()``.
+By default, Friendly-traceback takes its information from ``sys.exc_info()``.
 It may happen that this is not what we want to show.
 For example, the `showtraceback method in Python's code.py <https://github.com/python/cpython/blob/3.7/Lib/code.py#L131>`_ replaces one of the items prior to
 showing the traceback to the user; we currently also do something similar in
-friendly-traceback's own console.
+Friendly-traceback's own console.
 
 Finally, if one wishes to *temporarily* change some other option mentioned above,
 it can be done as in the following example::
@@ -211,7 +151,7 @@ What if the separate script has its own command line arguments?
 If they are simply positional arguments, you can simply tack them
 on at the end of the argument list. An example can be found
 in the ``demos/`` directory, which can be run directly or using
-friendly-traceback.
+Friendly-traceback.
 
 .. code-block::
 
@@ -224,16 +164,16 @@ friendly-traceback.
     The sum is 6.0
 
 Note that this works even if you specify command line arguments
-that are specific to friendly-traceback::
+that are specific to Friendly-traceback::
 
     $ python -m friendly_traceback --lang fr demos/adder.py 1 2 3
     The sum is 6.0
 
 However, what if one wants to run a script that uses optional named arguments
-similarly to how friendly-traceback can use ``--lang`` and other optional
+similarly to how Friendly-traceback can use ``--lang`` and other optional
 arguments? In this case, use ``--`` to separate the list of arguments
 to be used by the script from those written previously and
-intended to be used by friendly-traceback::
+intended to be used by Friendly-traceback::
 
     $ python -m friendly_traceback --lang fr demos/adder.py -- --to_int 1 2 3
     The sum is 6
@@ -256,7 +196,7 @@ For example, you can use the following approach.
 
        set PYTHONPATH=%CD%
 
-You can now run your script normally: friendly-traceback exception
+You can now run your script normally: Friendly-traceback exception
 handling will be used by default on it.
 
 From the command line
@@ -295,9 +235,9 @@ your computer.
             9: Python traceback only
 
         The Python traceback for level > 1 is the simulated version, which
-        excludes calls from friendly-traceback itself.
+        excludes calls from Friendly-traceback itself.
         You can use negative values to show the true Python traceback which
-        will likely include function calls from friendly-traceback itself.
+        will likely include function calls from Friendly-traceback itself.
         Thus level -9 is equivalent to level 0.
 
         Other values may be available, as we try to find the most useful

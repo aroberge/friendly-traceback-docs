@@ -37,7 +37,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Usage" href="usage.html" /> 
+    <link rel="next" title="Installation and basic usage" href="usage.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,19 +86,18 @@
               
             
             
-              <p class="caption"><span class="caption-text">For beginners and teachers</span></p>
+              <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Installation and basic usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="friendly_tb.html">friendly_tb() and hint()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_tb.html">python_tb()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="debug_tb.html">debug_tb() and debug()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
 </ul>
 <p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul>
@@ -207,7 +206,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="usage.html" class="btn btn-neutral float-right" title="Usage" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="usage.html" class="btn btn-neutral float-right" title="Installation and basic usage" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
   </div>
@@ -221,80 +220,53 @@
 <p class="admonition-title">Warning</p>
 <p>This is alpha software, currently in development.
 The API is subject to change without notice.
-The current documentation does not fully reflect the actual state of
-the project, but it does give a good idea of the actual aim.</p>
+The current documentation is likely not up to date and
+is definitely imcomplete, but it does give a good idea of
+what this project is about..</p>
 </div>
 <div class="section" id="bienvenue-bienvenido-welcome">
 <h1>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome  歡迎光臨<a class="headerlink" href="#bienvenue-bienvenido-welcome" title="Permalink to this headline">¶</a></h1>
 <p><strong>Friendly tracebacks</strong> - Simplified Python tracebacks translatable into
 any language.</p>
-<p><a class="reference external" href="https://github.com/aroberge/friendly-traceback">Code on Github</a></p>
+<p><a class="reference external" href="https://github.com/aroberge/Friendly-traceback">Code on Github</a></p>
 <div class="section" id="in-a-nutshell">
 <h2>In a nutshell<a class="headerlink" href="#in-a-nutshell" title="Permalink to this headline">¶</a></h2>
-<p>There exists many Python projects intended to supplement the information
+<p>There exists many Python projects, including some listed below,
+whose primary goal is to supplement the information
 given by Python traceback to make them more useful for <strong>advanced</strong> programmers.
 Friendly-traceback is <strong>not</strong> one of these projects.</p>
-<p>Friendly-traceback is aimed primarily at <strong>beginners</strong> and/or at users
+<p>While Friendly-traceback can be useful for advanced programmers,
+it is aimed aimed primarily at <strong>beginners</strong> and/or at users
 who would like to get information about traceback in their own language.
-Please, see the Design section for a complete description of the goals
-of this project.</p>
+Friendly-traceback can give more detailed information as to
+<strong>where</strong> an exception occurred, <strong>what</strong> a given exception means and
+<strong>why</strong> it might have occurred (including, sometimes, how to fix it).</p>
 <p>While Friendly-traceback can be used on its own with a specially
-designed REPL, a better option would be to use it together with
-GUI-based editors/IDE
-that are especially designed with beginners in mind.
-Currently, only one such program, <a class="reference external" href="https://thonny.org/">Thonny</a>,
-incorporate some of the features of Friendly-traceback.
-We explain how to use Friendly-traceback with Thonny in this
-document.</p>
-<p>For the other programs designed with beginners in mind,
-such as <a class="reference external" href="https://codewith.mu/">Mu</a> or, to a certain extent,
-Python’s own IDLE,
-we show what we hope is a relatively easy way to use Friendly-traceback.</p>
+designed console, a better option would be to use it together with
+GUI-based editors/IDE. We explain how to do so later.
+For now, we just show one quick example of executing a program
+that raises an exception.</p>
 </div>
 <div class="section" id="a-quick-look">
 <h2>A quick look<a class="headerlink" href="#a-quick-look" title="Permalink to this headline">¶</a></h2>
+<p>First, we show what happens</p>
 <p>Let’s have a quick look at a standard
 Python traceback when using the REPL.</p>
-<a class="reference internal image-reference" href="_images/python_indexerror.png"><img alt="Python IndexError" src="_images/python_indexerror.png" style="width: 702.5px; height: 213.0px;" /></a>
+<a class="reference internal image-reference" href="_images/python_indexerror.png"><img alt="Python IndexError example" src="_images/python_indexerror.png" style="width: 555.0px; height: 114.0px;" /></a>
 <p>Not exactly the most helpful information for beginners …</p>
-<p>Here’s the corresponding version from Friendly-traceback’s REPL using
-the default configuration.</p>
-<a class="reference internal image-reference" href="_images/friendly_indexerror_en.png"><img alt="Friendly IndexError in English" src="_images/friendly_indexerror_en.png" style="width: 613.5px; height: 626.0px;" /></a>
-<p>The only thing that is shown in exactly the same way is the line showing
-the exception name and a message.  Everything else can be made available
-in other languages.</p>
-<a class="reference internal image-reference" href="_images/friendly_indexerror_fr.png"><img alt="Friendly IndexError in French" src="_images/friendly_indexerror_fr.png" style="width: 670.0px; height: 513.5px;" /></a>
+<p>Here’s the corresponding version from Friendly-traceback,
+making use of
+<a class="reference external" href="https://github.com/willmcgugan/rich">Rich</a> which has been
+installed separately.</p>
+<a class="reference internal image-reference" href="_images/friendly_indexerror_en.png"><img alt="Friendly IndexError example in English" src="_images/friendly_indexerror_en.png" style="width: 555.0px; height: 584.0px;" /></a>
+<p>One unique feature of Friendly-traceback is that all the information
+it provides can be translated into another language; currently, only
+English (by default) and French are available.</p>
+<a class="reference internal image-reference" href="_images/friendly_indexerror_fr.png"><img alt="Friendly IndexError in French" src="_images/friendly_indexerror_fr.png" style="width: 555.0px; height: 582.5px;" /></a>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p><img alt="france" src="_images/france.png" /> Voir la section en français vers la fin.</p>
 </div>
-</div>
-<div class="section" id="organization-of-this-documentation">
-<h2>Organization of this documentation<a class="headerlink" href="#organization-of-this-documentation" title="Permalink to this headline">¶</a></h2>
-<p>This documentation has been written with many different types of
-readers in mind.</p>
-<p>The first part has been written with beginners and teachers in mind.
-We have attempted to only show the most pertinent information while
-giving a glimpse of more advanced features.</p>
-<p>The third part is written with more advanced readers in mind,
-and the explanations given are not as detailed.
-However, <strong>it is assumed that advanced users will have already read
-and are familiar with the content of the first part</strong> and possibly
-the second part, dealing with the design of Friendly-traceback.</p>
-<p>Detailed examples of <strong>all</strong> possible cases covered, using different
-Python versions and/or different languages (currently only
-English and French) are found in an appendix. Feel free to make
-suggestions for improvements and/or suggesting additional cases
-to be included.</p>
-</div>
-<div class="section" id="about-the-version">
-<h2>About the version<a class="headerlink" href="#about-the-version" title="Permalink to this headline">¶</a></h2>
-<p>Typically, the version shown at the top will have the letter “a” at the end.
-This means that the latest update to the documentation was made after
-a release with a version number without the “a” was uploaded to Pypi,
-and that we are working towards the next release.
-As a result, some features shown here may be slightly different
-from the version available from Pypi.</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -324,6 +296,11 @@ found in the Python standard library.</p>
 <p>Try to provide such generic information about <strong>all</strong> standard Python exceptions.</p>
 </div>
 <p class="todo-source">(The <a class="reference internal" href="repl.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\repl.rst, line 72.)</p>
+<div class="admonition-todo admonition">
+<p class="admonition-title">Todo</p>
+<p>Update the information about Advanced usage and configuration.</p>
+</div>
+<p class="todo-source">(The <a class="reference internal" href="usage_adv.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\usage_adv.rst, line 11.)</p>
 </div>
 </div>
 
@@ -335,7 +312,7 @@ found in the Python standard library.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="usage.html" class="btn btn-neutral float-right" title="Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="usage.html" class="btn btn-neutral float-right" title="Installation and basic usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>

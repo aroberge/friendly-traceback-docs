@@ -85,19 +85,18 @@
               
             
             
-              <p class="caption"><span class="caption-text">For beginners and teachers</span></p>
+              <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Installation and basic usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../repl.html">Console basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../friendly_tb.html">friendly_tb() and hint()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python_tb.html">python_tb()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../debug_tb.html">debug_tb() and debug()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../mu.html">Using with Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks.html">Multiple tracebacks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../design.html">Some thoughts on the design of friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Some thoughts on the design of Friendly-traceback</a></li>
 </ul>
 <p class="caption"><span class="caption-text">More advanced users</span></p>
 <ul>
@@ -504,10 +503,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>
         <span class="n">session</span><span class="o">.</span><span class="n">show_traceback_info_again</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">old_include</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">traceback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Shows the Python traceback, with the added suggestion/hint.&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;python_tb&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">more</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Used to display information additional to the minimal traceback,</span>

@@ -1,4 +1,4 @@
-Some thoughts on the design of friendly-traceback
+Some thoughts on the design of Friendly-traceback
 =================================================
 
 .. todo::
@@ -80,8 +80,8 @@ actual users.
   How do we find the right balance?
 
 
-.. _Issue8: https://github.com/aroberge/friendly-traceback/issues/8
-.. _Issue10: https://github.com/aroberge/friendly-traceback/issues/10
+.. _Issue8: https://github.com/aroberge/Friendly-traceback/issues/8
+.. _Issue10: https://github.com/aroberge/Friendly-traceback/issues/10
 
 Anatomy of a standard Python traceback
 --------------------------------------
@@ -213,7 +213,7 @@ Sometimes, the offending code actually occurred well before: for example,
 an open bracket might have been inserted many lines prior to where
 the absence of the corresponding closing bracket was noted to cause an error.
 
-For ``SyntaxError``, friendly-traceback does a fairly simple analysis
+For ``SyntaxError``, Friendly-traceback does a fairly simple analysis
 of the code and tries to identify a single cause which produced the
 error.
 
@@ -293,13 +293,13 @@ Localization
 ---------------
 
 As noted above, it is possible to translate almost all the text provided
-by friendly-traceback.
+by Friendly-traceback.
 
 When using Python, it is customary to determine which language should
 be used to provide translations by a call to
 ``locale.getdefaultlocale()``.  In an earlier version, we did this
 but have decided to use English as the default and let the user
-(which could be another program that imports friendly-traceback)
+(which could be another program that imports Friendly-traceback)
 decide what language should be used.
 
 The information provided by ``locale.getdefaultlocale()`` includes
@@ -330,7 +330,7 @@ Extensibility
 For projects that have their custom Exceptions, like
 `AvantPy <https://aroberge.github.io/avantpy/docs/html/>`_, it is
 be possible to add the custom exceptions to those handled by
-friendly-traceback.  See the ``demos`` directory for an example.
+Friendly-traceback.  See the ``demos`` directory for an example.
 
 It is also possible to use a different formatter.
 

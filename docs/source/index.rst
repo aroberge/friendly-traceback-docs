@@ -5,59 +5,58 @@ Bienvenue 환영합니다 Bienvenido - ようこそ Welcome  歡迎光臨
 **Friendly tracebacks** - Simplified Python tracebacks translatable into
 any language.
 
-`Code on Github <https://github.com/aroberge/friendly-traceback>`_
+`Code on Github <https://github.com/aroberge/Friendly-traceback>`_
 
 
 In a nutshell
 --------------
 
-There exists many Python projects intended to supplement the information
+There exists many Python projects, including some listed below,
+whose primary goal is to supplement the information
 given by Python traceback to make them more useful for **advanced** programmers.
 Friendly-traceback is **not** one of these projects.
 
-Friendly-traceback is aimed primarily at **beginners** and/or at users
+While Friendly-traceback can be useful for advanced programmers,
+it is aimed aimed primarily at **beginners** and/or at users
 who would like to get information about traceback in their own language.
-Please, see the Design section for a complete description of the goals
-of this project.
+Friendly-traceback can give more detailed information as to
+**where** an exception occurred, **what** a given exception means and
+**why** it might have occurred (including, sometimes, how to fix it).
 
 While Friendly-traceback can be used on its own with a specially
-designed REPL, a better option would be to use it together with
-GUI-based editors/IDE
-that are especially designed with beginners in mind.
-Currently, only one such program, `Thonny <https://thonny.org/>`_,
-incorporate some of the features of Friendly-traceback.
-We explain how to use Friendly-traceback with Thonny in this
-document.
-
-For the other programs designed with beginners in mind,
-such as `Mu <https://codewith.mu/>`_ or, to a certain extent,
-Python's own IDLE,
-we show what we hope is a relatively easy way to use Friendly-traceback.
+designed console, a better option would be to use it together with
+GUI-based editors/IDE. We explain how to do so later.
+For now, we just show one quick example of executing a program
+that raises an exception.
 
 
 A quick look
 ------------
+
+First, we show what happens
 
 Let's have a quick look at a standard
 Python traceback when using the REPL.
 
 .. image:: images/python_indexerror.png
    :scale: 50 %
-   :alt: Python IndexError
+   :alt: Python IndexError example
 
 Not exactly the most helpful information for beginners ...
 
-Here's the corresponding version from Friendly-traceback's REPL using
-the default configuration.
+Here's the corresponding version from Friendly-traceback,
+making use of
+`Rich <https://github.com/willmcgugan/rich>`_ which has been
+installed separately.
 
 .. image:: images/friendly_indexerror_en.png
    :scale: 50 %
-   :alt: Friendly IndexError in English
+   :alt: Friendly IndexError example in English
 
 
-The only thing that is shown in exactly the same way is the line showing
-the exception name and a message.  Everything else can be made available
-in other languages.
+One unique feature of Friendly-traceback is that all the information
+it provides can be translated into another language; currently, only
+English (by default) and French are available.
 
 
 .. image:: images/friendly_indexerror_fr.png
@@ -68,51 +67,20 @@ in other languages.
 
     |france| Voir la section en français vers la fin.
 
-Organization of this documentation
-----------------------------------
-
-This documentation has been written with many different types of
-readers in mind.
-
-The first part has been written with beginners and teachers in mind.
-We have attempted to only show the most pertinent information while
-giving a glimpse of more advanced features.
-
-The third part is written with more advanced readers in mind,
-and the explanations given are not as detailed.
-However, **it is assumed that advanced users will have already read
-and are familiar with the content of the first part** and possibly
-the second part, dealing with the design of Friendly-traceback.
-
-Detailed examples of **all** possible cases covered, using different
-Python versions and/or different languages (currently only
-English and French) are found in an appendix. Feel free to make
-suggestions for improvements and/or suggesting additional cases
-to be included.
-
-About the version
------------------
-
-Typically, the version shown at the top will have the letter "a" at the end.
-This means that the latest update to the documentation was made after
-a release with a version number without the "a" was uploaded to Pypi,
-and that we are working towards the next release.
-As a result, some features shown here may be slightly different
-from the version available from Pypi.
-
 
 .. toctree::
    :maxdepth: 1
    :hidden:
-   :caption: For beginners and teachers
+   :caption: Begin here
 
    usage
    Console basics <repl>
-   friendly_tb
-   python_tb
-   debug_tb
-   thonny
+   editor
    mu
+   thonny
+   tracebacks
+
+
 
 .. toctree::
    :maxdepth: 1

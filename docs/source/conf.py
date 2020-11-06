@@ -90,8 +90,9 @@ rst_prolog = """
 
     This is alpha software, currently in development.
     The API is subject to change without notice.
-    The current documentation does not fully reflect the actual state of
-    the project, but it does give a good idea of the actual aim.
+    The current documentation is likely not up to date and
+    is definitely imcomplete, but it does give a good idea of
+    what this project is about..
 """
 
 

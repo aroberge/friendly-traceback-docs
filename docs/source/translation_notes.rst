@@ -29,7 +29,7 @@ Structure of this project
 Below, I make references to various files. Here's a simplified view of the
 directory structure of this project, showing only a few relevant files::
 
-    friendly-traceback/
+    Friendly-traceback/
         demos/
         friendly_traceback/
             locales/

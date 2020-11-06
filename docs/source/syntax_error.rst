@@ -42,7 +42,7 @@ from the other situation.
 
         - Ensure that you have a copy of the friendly-traceceback-docs 
           repository; it should be located at the same directory level
-          as friendly-traceback on your computer.
+          as Friendly-traceback on your computer.
         - Add case to tests/tb_syntax_common.py
 
             - Run tests/tb_english.py and ensure that

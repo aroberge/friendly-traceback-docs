@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Some thoughts on the design of friendly-traceback &mdash; Friendly tracebacks 0.1.8a documentation</title>
+  <title>Some thoughts on the design of Friendly-traceback &mdash; Friendly tracebacks 0.1.8a documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Advanced Usage" href="usage_adv.html" />
-    <link rel="prev" title="Using with Mu" href="mu.html" /> 
+    <link rel="prev" title="Multiple tracebacks" href="tracebacks.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,19 +87,18 @@
               
             
             
-              <p class="caption"><span class="caption-text">For beginners and teachers</span></p>
+              <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Installation and basic usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="friendly_tb.html">friendly_tb() and hint()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_tb.html">python_tb()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="debug_tb.html">debug_tb() and debug()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Some thoughts on the design of friendly-traceback</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Some thoughts on the design of Friendly-traceback</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#purpose">Purpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#semi-open-questions">Semi-open questions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#anatomy-of-a-standard-python-traceback">Anatomy of a standard Python traceback</a></li>
@@ -207,7 +206,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Some thoughts on the design of friendly-traceback</li>
+      <li>Some thoughts on the design of Friendly-traceback</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -226,7 +225,7 @@
         <a href="usage_adv.html" class="btn btn-neutral float-right" title="Advanced Usage" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mu.html" class="btn btn-neutral float-left" title="Using with Mu" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tracebacks.html" class="btn btn-neutral float-left" title="Multiple tracebacks" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -239,11 +238,12 @@
 <p class="admonition-title">Warning</p>
 <p>This is alpha software, currently in development.
 The API is subject to change without notice.
-The current documentation does not fully reflect the actual state of
-the project, but it does give a good idea of the actual aim.</p>
+The current documentation is likely not up to date and
+is definitely imcomplete, but it does give a good idea of
+what this project is about..</p>
 </div>
 <div class="section" id="some-thoughts-on-the-design-of-friendly-traceback">
-<h1>Some thoughts on the design of friendly-traceback<a class="headerlink" href="#some-thoughts-on-the-design-of-friendly-traceback" title="Permalink to this headline">¶</a></h1>
+<h1>Some thoughts on the design of Friendly-traceback<a class="headerlink" href="#some-thoughts-on-the-design-of-friendly-traceback" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
 <p>Add note about no required dependencies other than what is
@@ -304,7 +304,7 @@ for a given language (e.g. <code class="docutils literal notranslate"><span clas
 (e.g. <code class="docutils literal notranslate"><span class="pre">fr_CA</span></code>)?</p></li>
 <li><p>Should we offer a single explanation as to the likely cause of the error,
 or do like Thonny and offer weighted alternatives?
-See <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/8">Issue8</a> for a discussion, as well as the section about multiple
+See <a class="reference external" href="https://github.com/aroberge/Friendly-traceback/issues/8">Issue8</a> for a discussion, as well as the section about multiple
 causes below.</p></li>
 <li><p>Giving too much information (“wall of text”) can be overwhelming;
 giving a limited amount of information might not be helpful enough to help
@@ -399,7 +399,7 @@ beyond where it finally identified that a <code class="docutils literal notransl
 Sometimes, the offending code actually occurred well before: for example,
 an open bracket might have been inserted many lines prior to where
 the absence of the corresponding closing bracket was noted to cause an error.</p>
-<p>For <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, friendly-traceback does a fairly simple analysis
+<p>For <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, Friendly-traceback does a fairly simple analysis
 of the code and tries to identify a single cause which produced the
 error.</p>
 <a class="reference internal image-reference" href="_images/syntax_error.png"><img alt="SyntaxError traceback" src="_images/syntax_error.png" style="width: 556.0px; height: 275.0px;" /></a>
@@ -413,7 +413,7 @@ in order of likelihood, based on its own analysis of the code.
 Those interested by what Thonny does might want to
 <a class="reference external" href="https://github.com/thonny/thonny/blob/master/thonny/plugins/stdlib_error_helpers.py">have a look here</a>.</p>
 <p>The idea of showing more than one possible cause for an error
-is discussed in <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/8">Issue8</a>.</p>
+is discussed in <a class="reference external" href="https://github.com/aroberge/Friendly-traceback/issues/8">Issue8</a>.</p>
 <p>As a concrete example, in the image below,
 Thonny shows the normal Python traceback [1],
 and offers some additional explanations [2], parts of which can be hidden
@@ -459,12 +459,12 @@ about possible causes if and when it becomes available in Friendly-traceback.</p
 <div class="section" id="localization">
 <h2>Localization<a class="headerlink" href="#localization" title="Permalink to this headline">¶</a></h2>
 <p>As noted above, it is possible to translate almost all the text provided
-by friendly-traceback.</p>
+by Friendly-traceback.</p>
 <p>When using Python, it is customary to determine which language should
 be used to provide translations by a call to
 <code class="docutils literal notranslate"><span class="pre">locale.getdefaultlocale()</span></code>.  In an earlier version, we did this
 but have decided to use English as the default and let the user
-(which could be another program that imports friendly-traceback)
+(which could be another program that imports Friendly-traceback)
 decide what language should be used.</p>
 <p>The information provided by <code class="docutils literal notranslate"><span class="pre">locale.getdefaultlocale()</span></code> includes
 not only a language code, but information about a specific region as well.
@@ -491,7 +491,7 @@ specific version.</p>
 <p>For projects that have their custom Exceptions, like
 <a class="reference external" href="https://aroberge.github.io/avantpy/docs/html/">AvantPy</a>, it is
 be possible to add the custom exceptions to those handled by
-friendly-traceback.  See the <code class="docutils literal notranslate"><span class="pre">demos</span></code> directory for an example.</p>
+Friendly-traceback.  See the <code class="docutils literal notranslate"><span class="pre">demos</span></code> directory for an example.</p>
 <p>It is also possible to use a different formatter.</p>
 </div>
 <div class="section" id="other-similar-projects">
@@ -517,7 +517,7 @@ The following is an incomplete list of projects or modules to look at:</p>
 <li><p><a class="reference external" href="https://github.com/onelivesleft/PrettyErrors/">https://github.com/onelivesleft/PrettyErrors/</a></p></li>
 <li><p><a class="reference external" href="https://github.com/skorokithakis/tbvaccine">https://github.com/skorokithakis/tbvaccine</a></p></li>
 <li><p><a class="reference external" href="https://github.com/alexmojaki/stack_data">https://github.com/alexmojaki/stack_data</a></p></li>
-<li><p>And, as mentioned in <a class="reference external" href="https://github.com/aroberge/friendly-traceback/issues/8">Issue8</a>, <a class="reference external" href="https://thonny.org/">Thonny</a> has a widget called
+<li><p>And, as mentioned in <a class="reference external" href="https://github.com/aroberge/Friendly-traceback/issues/8">Issue8</a>, <a class="reference external" href="https://thonny.org/">Thonny</a> has a widget called
 “Assistant” whose purpose is helping beginners identify the
 cause of a traceback.</p></li>
 </ul>
@@ -535,7 +535,7 @@ cause of a traceback.</p></li>
         <a href="usage_adv.html" class="btn btn-neutral float-right" title="Advanced Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mu.html" class="btn btn-neutral float-left" title="Using with Mu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tracebacks.html" class="btn btn-neutral float-left" title="Multiple tracebacks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
