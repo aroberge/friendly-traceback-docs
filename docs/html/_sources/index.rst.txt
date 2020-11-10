@@ -104,6 +104,7 @@ English (by default) and French are available.
 
    lies
    api
+   plugins
 
 
 .. toctree::
@@ -152,13 +153,5 @@ English (by default) and French are available.
 
    tracebacks_fr
    syntax_tracebacks_fr
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-   :caption: varia
-
-   changelog
-
 
 .. todolist::

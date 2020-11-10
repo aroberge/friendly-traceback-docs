@@ -26,7 +26,8 @@ suddenly confronted with the following:
    :alt: Screen capture of unbound local error
 
 
-You see ``UnboundLocalError``, and have no idea what it might mean.
+You see ``UnboundLocalError``, and have no idea what it might mean,
+in spite of the hint provided by Friendly-traceback.
 Rather than heading to StackOverflow to ask a question and have it
 immediately closed as being a duplicate, you simply ask ``what()``
 and Friendly-traceback tries to help you.
@@ -82,8 +83,8 @@ and decide to try it out by copy-pasting it.
    :scale: 60 %
    :alt: Screen capture of syntax error
 
-So, this didn't work, but you'd like to find out why -- and possibly
-how to fix the problem.
+So, this didn't work, but you'd like to find out a bit more information than
+that provided by the terse hint shown after the traceback. 
 
 
     >>> why()

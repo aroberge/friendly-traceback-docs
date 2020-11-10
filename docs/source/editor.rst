@@ -1,6 +1,21 @@
 Using with an editor or IDE
 ============================
 
+.. tip::
+
+   To use Friendly-traceback with an editor or IDE,
+   create a second file to be used as a "launcher", containing
+   the following::
+
+        from friendly_traceback import run
+
+        run("my_program.py")
+
+Using with IDLE
+---------------
+
+Since IDLE is part of the standard library, it is often the first
+editor that is used by beginners learning Python.
 Let's have a look at what happens if we run
 the following program with IDLE using the 
 "Run -> Run Module" menu item.
@@ -39,19 +54,26 @@ further interactions aftewards.
    :scale: 50 %
    :alt: Screen capture of IDLE
 
-We stil get a traceback [1] that looks similar to Python's
-standard traceback, but that has an added hint [2]
-as to what might be the cause of the exception.
+We stil get a traceback that looks similar to Python's
+standard traceback, but that has an added hint
+as to what might be the cause of the exception: here
+it was because we wrote ``Pi`` with an uppercase ``P``.
 
-Like it was the case with IDLE, we have access [3] to
-the variables in our program inside the friendly-console:
-did you notice how the prompt is blue instead of black
-for IDLE?  This is because we use some ``input()`` statements
-to interact in a friendly console, run inside IDLE.
+Like it was the case with Python running inside IDLE,
+we have access to the variables that were in the program
+that was run.
 
-We can ask for more details about the exception [4] and
-get some more information [5] about how the possible
-cause of the exception was determined.
+Notice how the prompt is blue instead of black: this is
+because we are running the friendly console which uses
+``print()`` or ``input()`` calls.
+
+As shown below, we can ask for more details about
+the exception, as was shown in the previous section.
+
+.. image:: images/idle-friendly2.png
+   :scale: 50 %
+   :alt: Screen capture of IDLE
+
 
 Using Microsoft VS Code
 -----------------------

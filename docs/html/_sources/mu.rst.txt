@@ -22,6 +22,7 @@ Installation
 I assume that you have installed Mu on your computer.
 Mu picks up the language to use from the computer default settings,
 which explains why French appears on the screen capture below.
+However, that information is not available to Friendly-traceback.
 
 After you start it, you should see a gear icon at the bottom right
 corner.
@@ -78,5 +79,4 @@ I can ask Friendly-traceback to provide explanations in French instead:
 .. image:: images/test_problem_fr.png
    :scale: 50 %
    :alt: Mu with friendly running test_problem
-
 

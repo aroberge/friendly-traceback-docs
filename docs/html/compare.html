@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Comparison between Python versions: SyntaxErrors &mdash; Friendly tracebacks 0.1.8a documentation</title>
+  <title>Comparison between Python versions: SyntaxErrors &mdash; Friendly tracebacks 0.1.9a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.8a
+                0.1.9a
               </div>
             
           
@@ -108,6 +108,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins.html">Editor plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
@@ -141,10 +142,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
-</ul>
-<p class="caption"><span class="caption-text">varia</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a></li>
 </ul>
 
             
@@ -573,6 +570,13 @@ but I might guess incorrectly.
 
 You used an assignment operator `=`; perhaps you meant to use 
 an equality operator, `==`, or the walrus operator `:=`.
+
+</pre>
+<div class='filename-header'>raise_syntax_error79</div>
+<h5>Different messages</h5>
+<pre class='highlight friendly-small-pre'><b>3.8: </b>SyntaxError: invalid syntax
+
+<b>3.9: </b>SyntaxError: f-string: invalid syntax
 
 </pre>
 <div class='filename-header'>

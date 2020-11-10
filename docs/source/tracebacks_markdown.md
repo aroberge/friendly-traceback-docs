@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.1.6a
+Friendly-traceback version: 0.1.8a
 Python version: 3.8.4
 
 
@@ -19,8 +19,6 @@ Python version: 3.8.4
 
 ## ArithmeticError
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -36,20 +34,22 @@ It is unusual that you are seeing this exception;
 normally, a more specific exception should have been raised.
 
 
-#### Exception raised on line 9 of file 'TESTS:\runtime\test_arithmetic_error.py'.
+#### Exception raised on line 9 of file TESTS:\runtime\test_arithmetic_error.py.
 
 
 ```python
-        7:         # Usually, a subclass such as ZeroDivisionError, etc., would
         8:         # likely be raised.
     --> 9:         raise ArithmeticError
+       10:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     ArithmeticError: <class 'ArithmeticError'>
+    Exception: <class 'Exception'>
+    e: ArithmeticError()
 
 ```
 
@@ -58,8 +58,6 @@ normally, a more specific exception should have been raised.
 
 ## AttributeError - class attribute
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -77,20 +75,23 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 The object `a` has no attribute named `x`.
 
 
-#### Exception raised on line 34 of file 'TESTS:\runtime\test_attribute_error.py'.
+#### Exception raised on line 34 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       32:     try:
        33:         a = A()
     -->34:         a.x  # Testing instance
+       35:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     a: <test_attribute_error.test_attribute_error.<locals>.A object>
+    A: <class 'test_attribute_error.test_attribute_error.<locals>.A'>
+    Exception: <class 'Exception'>
+    e: AttributeError("'A' object has no attribute 'x'")
 
 ```
 
@@ -99,8 +100,6 @@ The object `a` has no attribute named `x`.
 
 ## AttributeError - typo in module attribute
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -122,20 +121,22 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 Perhaps you meant to write `string.ascii_lowercase` instead of `string.ascii_lowecase`
 
 
-#### Exception raised on line 63 of file 'TESTS:\runtime\test_attribute_error.py'.
+#### Exception raised on line 63 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       61: 
        62:     try:
     -->63:         string.ascii_lowecase
+       64:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     string: <module 'string'> from PYTHON_LIB:\string.py
+    Exception: <class 'Exception'>
+    e: AttributeError("module 'string' has no attribute 'ascii_lowe...)
 
 ```
 
@@ -144,8 +145,6 @@ Perhaps you meant to write `string.ascii_lowercase` instead of `string.ascii_low
 
 ## AttributeError - typo in module attribute 2
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -169,20 +168,22 @@ the following names which are attributes of module `math`:
 `cos, cosh, acos`
 
 
-#### Exception raised on line 78 of file 'TESTS:\runtime\test_attribute_error.py'.
+#### Exception raised on line 78 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       76: 
        77:     try:
     -->78:         math.cost
+       79:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    math: <module 'math' (built-in)>
+    math: <module 'math' (builtin)>
+    Exception: <class 'Exception'>
+    e: AttributeError("module 'math' has no attribute 'cost'")
 
 ```
 
@@ -191,8 +192,6 @@ the following names which are attributes of module `math`:
 
 ## FileNotFoundError
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -211,20 +210,22 @@ In your program, the name of the
 file that cannot be found is `does_not_exist`.
 
 
-#### Exception raised on line 6 of file 'TESTS:\runtime\test_file_not_found_error.py'.
+#### Exception raised on line 6 of file TESTS:\runtime\test_file_not_found_error.py.
 
 
 ```python
-       4: def test_file_not_found_error():
        5:     try:
     -->6:         open("does_not_exist")
+       7:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    open: <built-in function open>
+    open: <builtin function open>
+    Exception: <class 'Exception'>
+    e: FileNotFoundError(2, 'No such file or directory')
 
 ```
 
@@ -233,8 +234,6 @@ file that cannot be found is `does_not_exist`.
 
 ## ImportError
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -253,16 +252,24 @@ be imported from a module or package. Most often, this is
 because the name of the object is not spelled correctly.
 
 
-Perhaps you meant to import `pi` from `math` instead of `Pi`
+Perhaps you meant to import `pi` (from `math`) instead of `Pi`
 
 
-#### Exception raised on line 6 of file 'TESTS:\runtime\test_import_error.py'.
+#### Exception raised on line 6 of file TESTS:\runtime\test_import_error.py.
 
 
 ```python
-       4: def test_import_error():
        5:     try:
     -->6:         from math import Pi
+       7:     except Exception as e:
+
+```
+
+##### Known objects shown above
+
+```python
+    Exception: <class 'Exception'>
+    e: ImportError("cannot import name 'Pi' from 'math' (unknown lo...)
 
 ```
 
@@ -271,8 +278,6 @@ Perhaps you meant to import `pi` from `math` instead of `Pi`
 
 ## KeyError
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -289,20 +294,22 @@ key in a Python dict.
 In your program, the key that cannot be found is `'c'`.
 
 
-#### Exception raised on line 7 of file 'TESTS:\runtime\test_key_error.py'.
+#### Exception raised on line 7 of file TESTS:\runtime\test_key_error.py.
 
 
 ```python
-       5:     d = {"a": 1, "b": 2}
        6:     try:
     -->7:         d["c"]
+       8:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     d: {'a': 1, 'b': 2}
+    Exception: <class 'Exception'>
+    e: KeyError('c')
 
 ```
 
@@ -311,8 +318,6 @@ In your program, the key that cannot be found is `'c'`.
 
 ## LookupError
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -327,20 +332,22 @@ when a key or index used on a mapping or sequence is invalid.
 It can also be raised directly by codecs.lookup().
 
 
-#### Exception raised on line 10 of file 'TESTS:\runtime\test_lookup_error.py'.
+#### Exception raised on line 10 of file TESTS:\runtime\test_lookup_error.py.
 
 
 ```python
-        8:         # other than possibly codecs.lookup(), which is why we raise
         9:         # it directly here for our example.
     -->10:         raise LookupError("Fake message")
+       11:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     LookupError: <class 'LookupError'>
+    Exception: <class 'Exception'>
+    e: LookupError('Fake message')
 
 ```
 
@@ -349,8 +356,6 @@ It can also be raised directly by codecs.lookup().
 
 ## IndexError - short tuple
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -367,22 +372,24 @@ is greater than the length of the sequence.
 Reminder: the first item of a sequence is at index 0.
 
 
-#### Exception raised on line 8 of file 'TESTS:\runtime\test_index_error.py'.
+#### Exception raised on line 8 of file TESTS:\runtime\test_index_error.py.
 
 
 ```python
-        6:     b = [1, 2, 3]
-        7:     try:
-    --> 8:         print(a[3], b[2])
+       7:     try:
+    -->8:         print(a[3], b[2])
+       9:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    print: <built-in function print>
+    print: <builtin function print>
     a: (1, 2, 3)
     b: [1, 2, 3]
+    Exception: <class 'Exception'>
+    e: IndexError('tuple index out of range')
 
 ```
 
@@ -391,8 +398,6 @@ Reminder: the first item of a sequence is at index 0.
 
 ## IndexError - long list
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -409,22 +414,26 @@ is greater than the length of the sequence.
 Reminder: the first item of a sequence is at index 0.
 
 
-#### Exception raised on line 21 of file 'TESTS:\runtime\test_index_error.py'.
+#### Exception raised on line 21 of file TESTS:\runtime\test_index_error.py.
 
 
 ```python
-       19:     b = tuple(range(50))
        20:     try:
     -->21:         print(a[50], b[0])
+       22:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    print: <built-in function print>
-    a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1...]  | len(a): 40
-    b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1...)  | len(b): 50
+    print: <builtin function print>
+    a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
+        len(a): 40
+    b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...)
+        len(b): 50
+    Exception: <class 'Exception'>
+    e: IndexError('list index out of range')
 
 ```
 
@@ -433,8 +442,6 @@ Reminder: the first item of a sequence is at index 0.
 
 ## ModuleNotFoundError
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -458,13 +465,21 @@ The name of the module that could not be imported is `Tkinter`.
 `tkinter` is an existing module that has a similar name.
 
 
-#### Exception raised on line 6 of file 'TESTS:\runtime\test_module_not_found_error.py'.
+#### Exception raised on line 6 of file TESTS:\runtime\test_module_not_found_error.py.
 
 
 ```python
-       4: def test_module_not_found_error():
        5:     try:
     -->6:         import Tkinter
+       7:     except Exception as e:
+
+```
+
+##### Known objects shown above
+
+```python
+    Exception: <class 'Exception'>
+    e: ModuleNotFoundError("No module named 'Tkinter'")
 
 ```
 
@@ -473,8 +488,6 @@ The name of the module that could not be imported is `Tkinter`.
 
 ## NameError - 1
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -491,16 +504,24 @@ However, sometimes it is because the name is used
 before being defined or given a value.
 
 
-In your program, the unknown name is `something`.
+In your program, `something` is an unknown name.
+I have no additional information for you.
 
-
-#### Exception raised on line 6 of file 'TESTS:\runtime\test_name_error.py'.
+#### Exception raised on line 6 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
-       4: def test_name_error():
        5:     try:
     -->6:         this = something
+       7:     except Exception as e:
+
+```
+
+##### Known objects shown above
+
+```python
+    Exception: <class 'Exception'>
+    e: NameError("name 'something' is not defined")
 
 ```
 
@@ -510,8 +531,6 @@ In your program, the unknown name is `something`.
 ## NameError - 2
 
 
-### Python exception
-
 ```pytb
 Traceback (most recent call last):
   File "TESTS:\runtime\test_name_error.py", line 19, in test_name_error2
@@ -520,6 +539,9 @@ NameError: name 'babs' is not defined
 
 ```
 
+Did you mean `abs`?
+
+
 A `NameError` exception indicates that a variable or
 function name is not known to Python.
 Most often, this is because there is a spelling mistake.
@@ -527,20 +549,28 @@ However, sometimes it is because the name is used
 before being defined or given a value.
 
 
-In your program, the unknown name is `babs`.
+In your program, `babs` is an unknown name.
 Instead of writing `babs`, perhaps you meant one of the following:
 *   Local scope: `nabs`
 *   Global scope: `fabs`
 *   Python builtins: `abs`
 
 
-#### Exception raised on line 19 of file 'TESTS:\runtime\test_name_error.py'.
+#### Exception raised on line 19 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
-       17:     nabs = 1
        18:     try:
     -->19:         x = babs(-1)
+       20:     except Exception as e:
+
+```
+
+##### Known objects shown above
+
+```python
+    Exception: <class 'Exception'>
+    e: NameError("name 'babs' is not defined")
 
 ```
 
@@ -550,8 +580,6 @@ Instead of writing `babs`, perhaps you meant one of the following:
 ## NameError - 3
 
 
-### Python exception
-
 ```pytb
 Traceback (most recent call last):
   File "TESTS:\runtime\test_name_error.py", line 33, in test_name_error3
@@ -560,6 +588,9 @@ NameError: name 'x' is not defined
 
 ```
 
+Did you use a colon instead of an equal sign?
+
+
 A `NameError` exception indicates that a variable or
 function name is not known to Python.
 Most often, this is because there is a spelling mistake.
@@ -567,18 +598,32 @@ However, sometimes it is because the name is used
 before being defined or given a value.
 
 
-In your program, the unknown name is `x`.
+In your program, `x` is an unknown name.
 A type hint found for `x` in the global scope.
-Perhaps you had written `x : 3` instead of `x = 3`.
+Perhaps you had used a colon instead of an equal sign and written
+
+    x : 3
+
+instead of
+
+    x = 3
 
 
-#### Exception raised on line 33 of file 'TESTS:\runtime\test_name_error.py'.
+#### Exception raised on line 33 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
-       31: def test_name_error3():
        32:     try:
     -->33:         y = x
+       34:     except Exception as e:
+
+```
+
+##### Known objects shown above
+
+```python
+    Exception: <class 'Exception'>
+    e: NameError("name 'x' is not defined")
 
 ```
 
@@ -588,8 +633,6 @@ Perhaps you had written `x : 3` instead of `x = 3`.
 ## NameError - 4
 
 
-### Python exception
-
 ```pytb
 Traceback (most recent call last):
   File "TESTS:\runtime\test_name_error.py", line 45, in test_name_error4
@@ -598,6 +641,9 @@ NameError: name 'cost' is not defined
 
 ```
 
+Did you mean `cos`?
+
+
 A `NameError` exception indicates that a variable or
 function name is not known to Python.
 Most often, this is because there is a spelling mistake.
@@ -605,18 +651,26 @@ However, sometimes it is because the name is used
 before being defined or given a value.
 
 
-In your program, the unknown name is `cost`.
+In your program, `cost` is an unknown name.
 Instead of writing `cost`, perhaps you meant one of the following:
 *   Global scope: `cos`, `cosh`, `acos`
 
 
-#### Exception raised on line 45 of file 'TESTS:\runtime\test_name_error.py'.
+#### Exception raised on line 45 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
-       43: def test_name_error4():
        44:     try:
     -->45:         cost  # wrote from math import * above
+       46:     except Exception as e:
+
+```
+
+##### Known objects shown above
+
+```python
+    Exception: <class 'Exception'>
+    e: NameError("name 'cost' is not defined")
 
 ```
 
@@ -625,8 +679,6 @@ Instead of writing `cost`, perhaps you meant one of the following:
 
 ## OverflowError
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -640,13 +692,21 @@ An `OverflowError` is raised when the result of an arithmetic operation
 is too large to be handled by the computer's processor.
 
 
-#### Exception raised on line 6 of file 'TESTS:\runtime\test_overflow_error.py'.
+#### Exception raised on line 6 of file TESTS:\runtime\test_overflow_error.py.
 
 
 ```python
-       4: def test_overflow_error():
        5:     try:
     -->6:         2.0 ** 1600
+       7:     except Exception as e:
+
+```
+
+##### Known objects shown above
+
+```python
+    Exception: <class 'Exception'>
+    e: OverflowError(34, 'Result too large')
 
 ```
 
@@ -655,8 +715,6 @@ is too large to be handled by the computer's processor.
 
 ## RecursionError
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -679,34 +737,36 @@ It almost always indicates that you made an error in your code
 and that your program would never stop.
 
 
-#### Execution stopped on line 8 of file 'TESTS:\runtime\test_recursion_error.py'.
+#### Execution stopped on line 8 of file TESTS:\runtime\test_recursion_error.py.
 
 
 ```python
-        6:         return a()
-        7:     try:
-    --> 8:         a()
+       7:     try:
+    -->8:         a()
+       9:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     a: <function test_function_recursion_error.<locals>.a>
+    Exception: <class 'Exception'>
+    e: RecursionError('maximum recursion depth exceeded')
 
 ```
 
-#### Exception raised on line 6 of file 'TESTS:\runtime\test_recursion_error.py'.
+#### Exception raised on line 6 of file TESTS:\runtime\test_recursion_error.py.
 
 
 ```python
-       4: def test_function_recursion_error():
        5:     def a():
     -->6:         return a()
+       7:     try:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     a: <function test_function_recursion_error.<locals>.a>
@@ -718,8 +778,6 @@ and that your program would never stop.
 
 ## TypeError - 1: concatenate two different types
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -739,21 +797,23 @@ You tried to concatenate (add) two different types of objects:
 a string (`str`) and an integer (`int`)
 
 
-#### Exception raised on line 8 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 8 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-        6:         a = "a"
-        7:         one = 1
-    --> 8:         result = a + one
+       7:         one = 1
+    -->8:         result = a + one
+       9:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    a: 'a'
     one: 1
+    a: 'a'
+    Exception: <class 'Exception'>
+    e: TypeError('can only concatenate str (not "int") to str')
 
 ```
 
@@ -762,8 +822,6 @@ a string (`str`) and an integer (`int`)
 
 ## TypeError - 1a: concatenate two different types
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -783,21 +841,23 @@ You tried to concatenate (add) two different types of objects:
 a string (`str`) and a `list`
 
 
-#### Exception raised on line 25 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 25 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       23:         a = "a"
        24:         a_list = [1, 2, 3]
     -->25:         result = a + a_list
+       26:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    a: 'a'
     a_list: [1, 2, 3]
+    a: 'a'
+    Exception: <class 'Exception'>
+    e: TypeError('can only concatenate str (not "list") to str')
 
 ```
 
@@ -806,8 +866,6 @@ a string (`str`) and a `list`
 
 ## TypeError - 1b: concatenate two different types
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -827,21 +885,23 @@ You tried to concatenate (add) two different types of objects:
 a `tuple` and a `list`
 
 
-#### Exception raised on line 42 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 42 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       40:         a_tuple = (1, 2, 3)
        41:         a_list = [1, 2, 3]
     -->42:         result = a_tuple + a_list
+       43:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    a_tuple: (1, 2, 3)
     a_list: [1, 2, 3]
+    a_tuple: (1, 2, 3)
+    Exception: <class 'Exception'>
+    e: TypeError('can only concatenate tuple (not "list") to tuple')
 
 ```
 
@@ -850,8 +910,6 @@ a `tuple` and a `list`
 
 ## TypeError - 2: unsupported operand type(s) for +
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -871,21 +929,23 @@ You tried to add two incompatible types of objects:
 an integer (`int`) and a variable equal to `None` (`NoneType`)
 
 
-#### Exception raised on line 57 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 57 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       55:         one = 1
        56:         none = None
     -->57:         result = one + none
+       58:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    one: 1
     none: None
+    one: 1
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for +: 'int' and 'Non...)
 
 ```
 
@@ -894,8 +954,6 @@ an integer (`int`) and a variable equal to `None` (`NoneType`)
 
 ## TypeError - 2a: unsupported operand type(s) for +=
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -915,21 +973,23 @@ You tried to add two incompatible types of objects:
 an integer (`int`) and a string (`str`)
 
 
-#### Exception raised on line 74 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 74 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       72:         one = 1
        73:         two = "two"
     -->74:         one += two
+       75:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    one: 1
     two: 'two'
+    one: 1
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for +=: 'int' and 'str'")
 
 ```
 
@@ -938,8 +998,6 @@ an integer (`int`) and a string (`str`)
 
 ## TypeError - 3: unsupported operand type(s) for -
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -959,21 +1017,23 @@ You tried to subtract two incompatible types of objects:
 a `tuple` and a `list`
 
 
-#### Exception raised on line 89 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 89 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       87:         a = (1, 2)
        88:         b = [3, 4]
     -->89:         result = a - b
+       90:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    a: (1, 2)
     b: [3, 4]
+    a: (1, 2)
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for -: 'tuple' and 'l...)
 
 ```
 
@@ -982,8 +1042,6 @@ a `tuple` and a `list`
 
 ## TypeError - 3a: unsupported operand type(s) for -=
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1003,21 +1061,23 @@ You tried to subtract two incompatible types of objects:
 a `list` and a `tuple`
 
 
-#### Exception raised on line 104 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 104 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       102:         a = (1, 2)
        103:         b = [3, 4]
     -->104:         b -= a
+       105:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     b: [3, 4]
     a: (1, 2)
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for -=: 'list' and 't...)
 
 ```
 
@@ -1026,8 +1086,6 @@ a `list` and a `tuple`
 
 ## TypeError - 4: unsupported operand type(s) for *
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1047,21 +1105,23 @@ You tried to multiply two incompatible types of objects:
 a complex number and a `set`
 
 
-#### Exception raised on line 119 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 119 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       117:         a = 1j
        118:         b = {2, 3}
     -->119:         result = a * b
+       120:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    a: 1j
     b: {2, 3}
+    a: 1j
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for *: 'complex' and ...)
 
 ```
 
@@ -1070,8 +1130,6 @@ a complex number and a `set`
 
 ## TypeError - 4a: unsupported operand type(s) for ``*=``
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1091,21 +1149,23 @@ You tried to multiply two incompatible types of objects:
 a `set` and a complex number
 
 
-#### Exception raised on line 134 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 134 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       132:         a = 1j
        133:         b = {2, 3}
     -->134:         b *= a
+       135:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     b: {2, 3}
     a: 1j
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for *=: 'set' and 'co...)
 
 ```
 
@@ -1114,8 +1174,6 @@ a `set` and a complex number
 
 ## TypeError - 5: unsupported operand type(s) for /
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1135,21 +1193,23 @@ You tried to divide two incompatible types of objects:
 a dictionary (`dict`) and a number (`float`)
 
 
-#### Exception raised on line 149 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 149 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       147:         a = {1: 1, 2: 2}
        148:         b = 3.1416
     -->149:         result = a / b
+       150:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    a: {1: 1, 2: 2}
     b: 3.1416
+    a: {1: 1, 2: 2}
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for /: 'dict' and 'fl...)
 
 ```
 
@@ -1158,8 +1218,6 @@ a dictionary (`dict`) and a number (`float`)
 
 ## TypeError - 5a: unsupported operand type(s) for /=
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1179,21 +1237,23 @@ You tried to divide two incompatible types of objects:
 a number (`float`) and a dictionary (`dict`)
 
 
-#### Exception raised on line 164 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 164 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       162:         a = {1: 1, 2: 2}
        163:         b = 3.1416
     -->164:         b /= a
+       165:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     b: 3.1416
     a: {1: 1, 2: 2}
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for /=: 'float' and '...)
 
 ```
 
@@ -1202,8 +1262,6 @@ a number (`float`) and a dictionary (`dict`)
 
 ## TypeError - 5b: unsupported operand type(s) for //
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1223,21 +1281,23 @@ You tried to divide two incompatible types of objects:
 a dictionary (`dict`) and an integer (`int`)
 
 
-#### Exception raised on line 179 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 179 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       177:         a = {1: 1, 2: 2}
        178:         b = 1
     -->179:         result = a // b
+       180:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    a: {1: 1, 2: 2}
     b: 1
+    a: {1: 1, 2: 2}
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for //: 'dict' and 'int'")
 
 ```
 
@@ -1246,8 +1306,6 @@ a dictionary (`dict`) and an integer (`int`)
 
 ## TypeError - 5c: unsupported operand type(s) for //=
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1267,21 +1325,23 @@ You tried to divide two incompatible types of objects:
 a number (`float`) and a dictionary (`dict`)
 
 
-#### Exception raised on line 194 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 194 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       192:         a = {1: 1, 2: 2}
        193:         b = 3.1416
     -->194:         b //= a
+       195:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     b: 3.1416
     a: {1: 1, 2: 2}
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for //=: 'float' and ...)
 
 ```
 
@@ -1290,8 +1350,6 @@ a number (`float`) and a dictionary (`dict`)
 
 ## TypeError - 6: unsupported operand type(s) for &
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1312,21 +1370,23 @@ on two incompatible types of objects:
 a string (`str`) and an integer (`int`)
 
 
-#### Exception raised on line 209 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 209 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       207:         a = "a"
        208:         b = 2
     -->209:         result = a & b
+       210:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    a: 'a'
     b: 2
+    a: 'a'
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for &: 'str' and 'int'")
 
 ```
 
@@ -1335,8 +1395,6 @@ a string (`str`) and an integer (`int`)
 
 ## TypeError - 6a: unsupported operand type(s) for &=
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1357,21 +1415,23 @@ on two incompatible types of objects:
 an integer (`int`) and a string (`str`)
 
 
-#### Exception raised on line 224 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 224 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       222:         a = "a"
        223:         b = 2
     -->224:         b &= a
+       225:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     b: 2
     a: 'a'
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for &=: 'int' and 'str'")
 
 ```
 
@@ -1380,8 +1440,6 @@ an integer (`int`) and a string (`str`)
 
 ## TypeError - 7: unsupported operand type(s) for **
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1402,21 +1460,23 @@ using two incompatible types of objects:
 a dictionary (`dict`) and a number (`float`)
 
 
-#### Exception raised on line 239 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 239 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       237:         a = {1: 1, 2: 2}
        238:         b = 3.1416
     -->239:         result = a ** b
+       240:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    a: {1: 1, 2: 2}
     b: 3.1416
+    a: {1: 1, 2: 2}
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for ** or pow(): 'dic...)
 
 ```
 
@@ -1425,8 +1485,6 @@ a dictionary (`dict`) and a number (`float`)
 
 ## TypeError - 7a: unsupported operand type(s) for ``**=``
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1447,21 +1505,23 @@ using two incompatible types of objects:
 a dictionary (`dict`) and a number (`float`)
 
 
-#### Exception raised on line 254 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 254 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       252:         a = {1: 1, 2: 2}
        253:         b = 3.1416
     -->254:         a **= b
+       255:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    a: {1: 1, 2: 2}
     b: 3.1416
+    a: {1: 1, 2: 2}
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for ** or pow(): 'dic...)
 
 ```
 
@@ -1470,8 +1530,6 @@ a dictionary (`dict`) and a number (`float`)
 
 ## TypeError - 8: unsupported operand type(s) for >>
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1492,21 +1550,23 @@ on two incompatible types of objects:
 a string (`str`) and an integer (`int`)
 
 
-#### Exception raised on line 269 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 269 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       267:         a = "a"
        268:         b = 42
     -->269:         result = a >> b
+       270:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    a: 'a'
     b: 42
+    a: 'a'
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for >>: 'str' and 'int'")
 
 ```
 
@@ -1515,8 +1575,6 @@ a string (`str`) and an integer (`int`)
 
 ## TypeError - 8a: unsupported operand type(s) for >>=
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1537,21 +1595,23 @@ on two incompatible types of objects:
 a string (`str`) and an integer (`int`)
 
 
-#### Exception raised on line 284 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 284 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       282:         a = "a"
        283:         b = 42
     -->284:         a >>= b
+       285:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    a: 'a'
     b: 42
+    a: 'a'
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for >>=: 'str' and 'int'")
 
 ```
 
@@ -1560,8 +1620,6 @@ a string (`str`) and an integer (`int`)
 
 ## TypeError - 9: unsupported operand type(s) for @
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1584,21 +1642,23 @@ This operator is normally used only
 for multiplication of matrices.
 
 
-#### Exception raised on line 299 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 299 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       297:         a = "a"
        298:         b = 2
     -->299:         result = a @ b
+       300:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    a: 'a'
     b: 2
+    a: 'a'
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for @: 'str' and 'int'")
 
 ```
 
@@ -1607,8 +1667,6 @@ for multiplication of matrices.
 
 ## TypeError - 9a: unsupported operand type(s) for @=
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1631,21 +1689,23 @@ This operator is normally used only
 for multiplication of matrices.
 
 
-#### Exception raised on line 314 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 314 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       312:         a = "a"
        313:         b = 2
     -->314:         a @= b
+       315:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
-    a: 'a'
     b: 2
+    a: 'a'
+    Exception: <class 'Exception'>
+    e: TypeError("unsupported operand type(s) for @=: 'str' and 'int'")
 
 ```
 
@@ -1654,8 +1714,6 @@ for multiplication of matrices.
 
 ## TypeError - 10: comparison between incompatible types
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1676,21 +1734,23 @@ between two incompatible types of objects:
 an integer (`int`) and a string (`str`)
 
 
-#### Exception raised on line 329 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 329 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       327:         a = "a"
        328:         b = 42
     -->329:         b < a
+       330:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     b: 42
     a: 'a'
+    Exception: <class 'Exception'>
+    e: TypeError("'<' not supported between instances of 'int' and ...)
 
 ```
 
@@ -1699,8 +1759,6 @@ an integer (`int`) and a string (`str`)
 
 ## TypeError - 11: bad operand type for unary +
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1721,13 +1779,20 @@ with the following type of object: a string (`str`).
 This operation is not defined for this type of object.
 
 
-#### Exception raised on line 342 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 342 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       340: def test_type_error11():
        341:     try:
     -->342:         a = +"abc"
+       343:         print(a)
+
+```
+
+##### Known objects shown above
+
+```python
+    print: <builtin function print>
 
 ```
 
@@ -1736,8 +1801,6 @@ This operation is not defined for this type of object.
 
 ## TypeError - 11a: bad operand type for unary -
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1758,13 +1821,20 @@ with the following type of object: a `list`.
 This operation is not defined for this type of object.
 
 
-#### Exception raised on line 356 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 356 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       354: def test_type_error11a():
        355:     try:
     -->356:         a = -[1, 2, 3]
+       357:         print(a)
+
+```
+
+##### Known objects shown above
+
+```python
+    print: <builtin function print>
 
 ```
 
@@ -1773,8 +1843,6 @@ This operation is not defined for this type of object.
 
 ## TypeError - 11b: bad operand type for unary ~
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1795,13 +1863,20 @@ with the following type of object: a `tuple`.
 This operation is not defined for this type of object.
 
 
-#### Exception raised on line 370 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 370 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       368: def test_type_error11b():
        369:     try:
     -->370:         a = ~(1, 2, 3)
+       371:         print(a)
+
+```
+
+##### Known objects shown above
+
+```python
+    print: <builtin function print>
 
 ```
 
@@ -1810,8 +1885,6 @@ This operation is not defined for this type of object.
 
 ## TypeError - 12: object does not support item assignment
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1833,20 +1906,22 @@ You tried change part of such an immutable object: a `tuple`,
 most likely by using an indexing operation.
 
 
-#### Exception raised on line 385 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 385 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       383:     a = (1, 2, 3)
        384:     try:
     -->385:         a[0] = 0
+       386:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     a: (1, 2, 3)
+    Exception: <class 'Exception'>
+    e: TypeError("'tuple' object does not support item assignment")
 
 ```
 
@@ -1855,8 +1930,6 @@ most likely by using an indexing operation.
 
 ## TypeError - 13: wrong number of positional arguments
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1877,20 +1950,22 @@ You apparently have called the function `fn` with
 such positional argument(s).
 
 
-#### Exception raised on line 401 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 401 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       399: 
        400:     try:
     -->401:         fn(1)
+       402:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     fn: <function test_type_error13.<locals>.fn>
+    Exception: <class 'Exception'>
+    e: TypeError('fn() takes 0 positional arguments but 1 was given')
 
 ```
 
@@ -1900,8 +1975,6 @@ such positional argument(s).
 ## TypeError - 13a: wrong number of positional arguments
 
 
-### Python exception
-
 ```pytb
 Traceback (most recent call last):
   File "TESTS:\runtime\test_type_error.py", line 419, in test_type_error13a
@@ -1909,6 +1982,10 @@ Traceback (most recent call last):
 TypeError: f() takes 1 positional argument but 2 were given
 
 ```
+
+Perhaps you forgot `self` when defining `f`.
+
+
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
@@ -1922,20 +1999,22 @@ such positional argument(s).
 Perhaps you forgot `self` when defining `f`.
 
 
-#### Exception raised on line 419 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 419 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       417: 
        418:     try:
     -->419:         A().f(1)
+       420:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     A: <class 'test_type_error.test_type_error13a.<locals>.A'>
+    Exception: <class 'Exception'>
+    e: TypeError('f() takes 1 positional argument but 2 were given')
 
 ```
 
@@ -1944,8 +2023,6 @@ Perhaps you forgot `self` when defining `f`.
 
 ## TypeError - 14: missing positional arguments
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1965,20 +2042,22 @@ You apparently have called the function 'fn()' with
 fewer positional arguments than it requires (2 missing).
 
 
-#### Exception raised on line 437 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 437 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       435: 
        436:     try:
     -->437:         fn(1)
+       438:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     fn: <function test_type_error14.<locals>.fn>
+    Exception: <class 'Exception'>
+    e: TypeError("fn() missing 2 required positional arguments: 'b'...)
 
 ```
 
@@ -1988,8 +2067,6 @@ fewer positional arguments than it requires (2 missing).
 ## TypeError - 15: tuple object is not callable
 
 
-### Python exception
-
 ```pytb
 Traceback (most recent call last):
   File "TESTS:\runtime\test_type_error.py", line 451, in test_type_error15
@@ -1997,6 +2074,10 @@ Traceback (most recent call last):
 TypeError: 'tuple' object is not callable
 
 ```
+
+Perhaps you had a missing comma between two tuples.
+
+
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
@@ -2010,13 +2091,21 @@ which Python took as an indication of a function call.
 Perhaps you had a missing comma between two tuples.
 
 
-#### Exception raised on line 451 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 451 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       449: def test_type_error15():
        450:     try:
     -->451:         _ = (1, 2)(3, 4)
+       452:     except Exception as e:
+
+```
+
+##### Known objects shown above
+
+```python
+    Exception: <class 'Exception'>
+    e: TypeError("'tuple' object is not callable")
 
 ```
 
@@ -2026,8 +2115,6 @@ Perhaps you had a missing comma between two tuples.
 ## TypeError - 15a: list object is not callable
 
 
-### Python exception
-
 ```pytb
 Traceback (most recent call last):
   File "TESTS:\runtime\test_type_error.py", line 464, in test_type_error15a
@@ -2035,6 +2122,10 @@ Traceback (most recent call last):
 TypeError: 'list' object is not callable
 
 ```
+
+Perhaps you had a missing comma before the tuple.
+
+
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
@@ -2048,13 +2139,21 @@ which Python took as an indication of a function call.
 Perhaps you had a missing comma before the tuple.
 
 
-#### Exception raised on line 464 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 464 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       462: def test_type_error15a():
        463:     try:
     -->464:         _ = [1, 2](3, 4)
+       465:     except Exception as e:
+
+```
+
+##### Known objects shown above
+
+```python
+    Exception: <class 'Exception'>
+    e: TypeError("'list' object is not callable")
 
 ```
 
@@ -2063,8 +2162,6 @@ Perhaps you had a missing comma before the tuple.
 
 ## TypeError - 16: exception derived from BaseException
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2083,13 +2180,21 @@ or by tring to do an operation not allowed on a given type of object.
 In Python 3, exceptions must be derived from BaseException.
 
 
-#### Exception raised on line 477 of file 'TESTS:\runtime\test_type_error.py'.
+#### Exception raised on line 477 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       475: def test_type_error16():
        476:     try:
     -->477:         raise "exception"
+       478:     except Exception as e:
+
+```
+
+##### Known objects shown above
+
+```python
+    Exception: <class 'Exception'>
+    e: TypeError('exceptions must derive from BaseException')
 
 ```
 
@@ -2098,8 +2203,6 @@ In Python 3, exceptions must be derived from BaseException.
 
 ## UnboundLocalError - 1: missing global
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2127,7 +2230,7 @@ Python that this is a global variable, otherwise you will see
 an `UnboundLocalError`.
 
 
-The identifier `spam_missing_global` exists in the global scope.
+The name `spam_missing_global` exists in the global scope.
 Perhaps the statement
 
     global spam_missing_global
@@ -2135,34 +2238,36 @@ Perhaps the statement
 should have been included as the first line inside your function.
 
 
-#### Execution stopped on line 27 of file 'TESTS:\runtime\test_unbound_local_error.py'.
+#### Execution stopped on line 27 of file TESTS:\runtime\test_unbound_local_error.py.
 
 
 ```python
-       25: 
        26:     try:
     -->27:         outer_missing_global()
+       28:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     global outer_missing_global: <function outer_missing_global>
+    Exception: <class 'Exception'>
+    e: UnboundLocalError("local variable 'spam_missing_global' refe...)
 
 ```
 
-#### Exception raised on line 9 of file 'TESTS:\runtime\test_unbound_local_error.py'.
+#### Exception raised on line 9 of file TESTS:\runtime\test_unbound_local_error.py.
 
 
 ```python
-        7: def outer_missing_global():
         8:     def inner():
     --> 9:         spam_missing_global += 1
+       10: 
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     global spam_missing_global: 1
@@ -2174,8 +2279,6 @@ should have been included as the first line inside your function.
 
 ## UnboundLocalError - 2: missing nonlocal
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2203,7 +2306,7 @@ Python that this is a global variable, otherwise you will see
 an `UnboundLocalError`.
 
 
-The identifier `spam_missing_nonlocal` exists in the nonlocal scope.
+The name `spam_missing_nonlocal` exists in the nonlocal scope.
 Perhaps the statement
 
     nonlocal spam_missing_nonlocal
@@ -2211,30 +2314,32 @@ Perhaps the statement
 should have been included as the first line inside your function.
 
 
-#### Execution stopped on line 47 of file 'TESTS:\runtime\test_unbound_local_error.py'.
+#### Execution stopped on line 47 of file TESTS:\runtime\test_unbound_local_error.py.
 
 
 ```python
-       45: 
        46:     try:
     -->47:         outer_missing_nonlocal()
+       48:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     global outer_missing_nonlocal: <function outer_missing_nonlocal>
+    Exception: <class 'Exception'>
+    e: UnboundLocalError("local variable 'spam_missing_nonlocal' re...)
 
 ```
 
-#### Exception raised on line 18 of file 'TESTS:\runtime\test_unbound_local_error.py'.
+#### Exception raised on line 18 of file TESTS:\runtime\test_unbound_local_error.py.
 
 
 ```python
-       16: 
        17:     def inner():
     -->18:         spam_missing_nonlocal += 1
+       19: 
 
 ```
 
@@ -2243,8 +2348,6 @@ should have been included as the first line inside your function.
 
 ## Unknown exception
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2259,20 +2362,22 @@ Please report this example to
 https://github.com/aroberge/friendly-traceback/issues
 
 
-#### Exception raised on line 10 of file 'TESTS:\runtime\test_unknown_error.py'.
+#### Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.
 
 
 ```python
-        8: def test_function_unknown_error():
         9:     try:
     -->10:         raise MyException("Some informative message about an unknown exception.")
+       11:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     global MyException: <class 'test_unknown_error.MyException'>
+    Exception: <class 'Exception'>
+    e: MyException('Some informative message about an unknown excep...)
 
 ```
 
@@ -2281,8 +2386,6 @@ https://github.com/aroberge/friendly-traceback/issues
 
 ## ZeroDivisionError - 1
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2300,13 +2403,21 @@ using the modulo operator `%`:
     `result = my_variable % 0`
 
 
-#### Exception raised on line 6 of file 'TESTS:\runtime\test_zero_division_error.py'.
+#### Exception raised on line 6 of file TESTS:\runtime\test_zero_division_error.py.
 
 
 ```python
-       4: def test_zero_division_error():
        5:     try:
     -->6:         1 / 0
+       7:     except Exception as e:
+
+```
+
+##### Known objects shown above
+
+```python
+    Exception: <class 'Exception'>
+    e: ZeroDivisionError('division by zero')
 
 ```
 
@@ -2315,8 +2426,6 @@ using the modulo operator `%`:
 
 ## ZeroDivisionError - 2
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2334,20 +2443,22 @@ using the modulo operator `%`:
     `result = my_variable % 0`
 
 
-#### Exception raised on line 20 of file 'TESTS:\runtime\test_zero_division_error.py'.
+#### Exception raised on line 20 of file TESTS:\runtime\test_zero_division_error.py.
 
 
 ```python
-       18:     zero = 0
        19:     try:
     -->20:         1 % zero
+       21:     except Exception as e:
 
 ```
 
-##### Known identifiers
+##### Known objects shown above
 
 ```python
     zero: 0
+    Exception: <class 'Exception'>
+    e: ZeroDivisionError('integer division or modulo by zero')
 
 ```
 

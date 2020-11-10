@@ -116,6 +116,8 @@ html_theme_options = {
 html_static_path = ["_static"]
 
 
+suppress_warnings = ["misc.highlighting_failure"]
+
 html_css_files = [
     'custom.css',
 ]

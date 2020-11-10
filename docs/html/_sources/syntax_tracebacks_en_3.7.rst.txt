@@ -5,7 +5,7 @@ Friendly SyntaxError tracebacks - in English
 Friendly-traceback aims to provide friendlier feedback when an exception
 is raised than what is done by Python.
 This file contains only examples of SyntaxError and its sub-classes.
-Ideally, an example of each case handled by Friendly-traceback
+Ideally, an example of each case handled by friendly-traceback
 should be included here.
 
 .. note::
@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.1.6a
+Friendly-traceback version: 0.1.8a
 Python version: 3.7.8
 
 
@@ -29,7 +29,6 @@ IndentationError - 1: expected an indented block
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -44,11 +43,11 @@ IndentationError - 1: expected an indented block
     'TESTS:\syntax\raise_indentation_error1.py'
     beyond the location indicated by --> and ^.
     
-       1: '''Should raise IndentationError'''
        2: 
        3: if True:
     -->4: pass
              ^
+       5: 
 
         In this case, the line identified above
         was expected to begin a new indented block.
@@ -60,7 +59,6 @@ IndentationError - 2: unexpected indent
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -75,11 +73,11 @@ IndentationError - 2: unexpected indent
     'TESTS:\syntax\raise_indentation_error2.py'
     beyond the location indicated by --> and ^.
     
-       1: '''Should raise IndentationError'''
        2: if True:
        3:     pass
     -->4:       pass
                ^
+       5: 
 
         In this case, the line identified above
         is more indented than expected and 
@@ -92,7 +90,6 @@ IndentationError - 3: unindent does not match ...
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -107,11 +104,11 @@ IndentationError - 3: unindent does not match ...
     'TESTS:\syntax\raise_indentation_error3.py'
     beyond the location indicated by --> and ^.
     
-       1: '''Should raise IndentationError'''
        2: if True:
        3:       pass
     -->4:     pass
                   ^
+       5: 
 
         In this case, the line identified above is
         less indented than the preceding one,
@@ -124,7 +121,6 @@ TabError
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -143,11 +139,11 @@ TabError
     'TESTS:\syntax\raise_tab_error.py'
     beyond the location indicated by --> and ^.
     
-        4: 
-        5: def test_tab_error():
-        6:     if True:
-    --> 7: 	pass
-                ^
+       5: def test_tab_error():
+       6:     if True:
+    -->7: 	pass
+               ^
+       8: 
 
 SyntaxError - Assign to keyword
 -------------------------------
@@ -155,7 +151,6 @@ SyntaxError - Assign to keyword
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -173,6 +168,7 @@ SyntaxError - Assign to keyword
        2: 
     -->3: def = 2
               ^
+       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -188,7 +184,6 @@ SyntaxError - Missing colon - 1
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -206,6 +201,7 @@ SyntaxError - Missing colon - 1
        2: 
     -->3: if True
                  ^
+       4:     pass
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -221,7 +217,6 @@ SyntaxError - Missing colon - 2
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -239,6 +234,7 @@ SyntaxError - Missing colon - 2
        2: 
     -->3: while True  # a comment
                                  ^
+       4:     pass
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -254,7 +250,6 @@ SyntaxError - elif, not else if
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -268,11 +263,11 @@ SyntaxError - elif, not else if
     'TESTS:\syntax\raise_syntax_error4.py'
     beyond the location indicated by --> and ^.
     
-       2: 
        3: if False:
        4:     pass
     -->5: else if True:
                 ^
+       6:     print('ok')
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -288,7 +283,6 @@ SyntaxError - elif, not elseif
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -302,11 +296,11 @@ SyntaxError - elif, not elseif
     'TESTS:\syntax\raise_syntax_error5.py'
     beyond the location indicated by --> and ^.
     
-       2: 
        3: if False:
        4:     pass
     -->5: elseif True:
                     ^
+       6:     print('ok')
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -322,7 +316,6 @@ SyntaxError - malformed def statment - 1
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -340,6 +333,7 @@ SyntaxError - malformed def statment - 1
        2: 
     -->3: def :
               ^
+       4:     pass
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -356,7 +350,6 @@ SyntaxError - malformed def statment - 2
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -374,6 +367,7 @@ SyntaxError - malformed def statment - 2
        2: 
     -->3: def name  :
                     ^
+       4:     pass
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -390,7 +384,6 @@ SyntaxError - malformed def statment - 3
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -408,6 +401,7 @@ SyntaxError - malformed def statment - 3
        2: 
     -->3: def ( arg )  :
               ^
+       4:     pass
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -424,7 +418,6 @@ SyntaxError - can't assign to literal - 1
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -442,6 +435,7 @@ SyntaxError - can't assign to literal - 1
        2: 
     -->3: 1 = a
          ^
+       4: 
 
         You wrote an expression like
         
@@ -460,7 +454,6 @@ SyntaxError - can't assign to literal - 2
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -478,6 +471,7 @@ SyntaxError - can't assign to literal - 2
        2: 
     -->3: 1 = 2
          ^
+       4: 
 
         You wrote an expression like
         
@@ -493,7 +487,6 @@ SyntaxError - can't assign to literal - 3
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -507,11 +500,11 @@ SyntaxError - can't assign to literal - 3
     'TESTS:\syntax\raise_syntax_error52.py'
     beyond the location indicated by --> and ^.
     
-        4: 
-        5:  """
-        6: 
-    --> 7: {1, 2, 3} = 4
-          ^
+       5:  """
+       6: 
+    -->7: {1, 2, 3} = 4
+         ^
+       8: 
 
         You wrote an expression like
         
@@ -527,7 +520,6 @@ SyntaxError - can't assign to literal - 4
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -541,11 +533,11 @@ SyntaxError - can't assign to literal - 4
     'TESTS:\syntax\raise_syntax_error53.py'
     beyond the location indicated by --> and ^.
     
-        4: 
-        5:  """
-        6: 
-    --> 7: {1 : 2, 2 : 4} = 5
-          ^
+       5:  """
+       6: 
+    -->7: {1 : 2, 2 : 4} = 5
+         ^
+       8: 
 
         You wrote an expression like
         
@@ -561,7 +553,6 @@ SyntaxError - can't assign to literal - 5
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -575,11 +566,11 @@ SyntaxError - can't assign to literal - 5
     'TESTS:\syntax\raise_syntax_error54.py'
     beyond the location indicated by --> and ^.
     
-       1: """Should raise SyntaxError: can't assign to literal
        2: or (Python 3.8) cannot assign to literal"""
        3: 
     -->4: 1 = a = b
          ^
+       5: 
 
         You wrote an expression like
         
@@ -595,7 +586,6 @@ SyntaxError - import X from Y
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -613,6 +603,7 @@ SyntaxError - import X from Y
        2: 
     -->3: import pen from turtle
                         ^
+       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -633,7 +624,6 @@ SyntaxError - EOL while scanning string literal
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -651,6 +641,7 @@ SyntaxError - EOL while scanning string literal
        2: 
     -->3: alphabet = 'abc
                          ^
+       4: 
 
         You starting writing a string with a single or double quote
         but never ended the string with another quote on that line.
@@ -662,7 +653,6 @@ SyntaxError - assignment to keyword (None)
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -671,16 +661,17 @@ SyntaxError - assignment to keyword (None)
        ^
     SyntaxError: can't assign to keyword
     
+        You cannot assign a value to `None`.
     A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error13.py'
     beyond the location indicated by --> and ^.
     
-       1: """Should raise SyntaxError: cannot assign to None in Py 3.8
        2:    and can't assign to keyword before."""
        3: 
     -->4: None = 1
          ^
+       5: 
 
         `None` is a constant in Python; you cannot assign it a value.
         
@@ -692,7 +683,6 @@ SyntaxError - assignment to keyword (__debug__)
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -701,16 +691,17 @@ SyntaxError - assignment to keyword (__debug__)
        ^
     SyntaxError: assignment to keyword
     
+        You cannot assign a value to `__debug__`.
     A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error14.py'
     beyond the location indicated by --> and ^.
     
-       1: """Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
        2:    and assignment to keyword before."""
        3: 
     -->4: __debug__ = 1
          ^
+       5: 
 
         `__debug__` is a constant in Python; you cannot assign it a value.
         
@@ -722,7 +713,6 @@ SyntaxError - unmatched closing parenthesis
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -736,11 +726,11 @@ SyntaxError - unmatched closing parenthesis
     'TESTS:\syntax\raise_syntax_error15.py'
     beyond the location indicated by --> and ^.
     
-       3: """
        4: a = (1,
        5:     2,
     -->6:     3, 4,))
                     ^
+       7: b = 3
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -757,7 +747,6 @@ SyntaxError - unclosed parenthesis- 1
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -775,6 +764,7 @@ SyntaxError - unclosed parenthesis- 1
        2: x = int('1'
     -->3: if x == 1:
                    ^
+       4:     print('yes')
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -791,7 +781,6 @@ SyntaxError - unclosed parenthesis - 2
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -809,6 +798,7 @@ SyntaxError - unclosed parenthesis - 2
        2: a = (b+c
     -->3: d = a*a
           ^
+       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -825,7 +815,6 @@ SyntaxError - mismatched brackets
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -842,6 +831,7 @@ SyntaxError - mismatched brackets
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: x = (1, 2, 3]
                       ^
+       3: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -858,7 +848,6 @@ SyntaxError - mismatched brackets - 2
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -872,11 +861,11 @@ SyntaxError - mismatched brackets - 2
     'TESTS:\syntax\raise_syntax_error19.py'
     beyond the location indicated by --> and ^.
     
-       1: """Should raise SyntaxError: invalid syntax"""
        2: x = (1,
        3:      2,
     -->4:      3]
                 ^
+       5: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -895,7 +884,6 @@ SyntaxError - print is a function
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -912,6 +900,7 @@ SyntaxError - print is a function
        1: """Should raise SyntaxError: Missing parentheses in call to 'print' ..."""
     -->2: print 'hello'
                       ^
+       3: 
 
         Perhaps you need to type
         
@@ -927,7 +916,6 @@ SyntaxError - Python keyword as function name
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -945,6 +933,7 @@ SyntaxError - Python keyword as function name
        2: 
     -->3: def pass():
                  ^
+       4:     print("keyword as function name!")
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -958,7 +947,6 @@ SyntaxError - break outside loop
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -972,11 +960,11 @@ SyntaxError - break outside loop
     'TESTS:\syntax\raise_syntax_error22.py'
     beyond the location indicated by --> and ^.
     
-       1: """Should raise SyntaxError: 'break' outside loop"""
        2: 
        3: if True:
     -->4:     break
              ^
+       5: 
 
         The Python keyword `break` can only be used inside a for loop or inside a while loop.
         
@@ -987,7 +975,6 @@ SyntaxError - continue outside loop
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1001,11 +988,11 @@ SyntaxError - continue outside loop
     'TESTS:\syntax\raise_syntax_error23.py'
     beyond the location indicated by --> and ^.
     
-       1: """Should raise SyntaxError: 'continue' outside loop"""
        2: 
        3: if True:
     -->4:     continue
              ^
+       5: 
 
         The Python keyword `continue` can only be used inside a for loop or inside a while loop.
         
@@ -1016,7 +1003,6 @@ SyntaxError - quote inside a string
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1034,6 +1020,7 @@ SyntaxError - quote inside a string
        2: 
     -->3: message = 'don't'
                          ^
+       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1050,7 +1037,6 @@ SyntaxError - missing comma in a dict
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1064,11 +1050,11 @@ SyntaxError - missing comma in a dict
     'TESTS:\syntax\raise_syntax_error25.py'
     beyond the location indicated by --> and ^.
     
-       2: 
        3: a = {'a': 1,
        4:      'b': 2
     -->5:      'c': 3,
                  ^
+       6:      }
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1083,7 +1069,6 @@ SyntaxError - missing comma in a set
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1101,6 +1086,7 @@ SyntaxError - missing comma in a set
        2: 
     -->3: a = {1, 2  3}
                      ^
+       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1115,7 +1101,6 @@ SyntaxError - missing comma in a list
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1133,6 +1118,7 @@ SyntaxError - missing comma in a list
        2: 
     -->3: a = [1, 2  3]
                      ^
+       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1147,7 +1133,6 @@ SyntaxError - missing comma in a tuple
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1165,6 +1150,7 @@ SyntaxError - missing comma in a tuple
        2: 
     -->3: a = (1, 2  3)
                      ^
+       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1180,7 +1166,6 @@ SyntaxError - missing comma between function args
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1194,11 +1179,11 @@ SyntaxError - missing comma between function args
     'TESTS:\syntax\raise_syntax_error29.py'
     beyond the location indicated by --> and ^.
     
-       1: """Should raise SyntaxError: invalid syntax"""
        2: 
        3: 
     -->4: def a(b, c d):
                      ^
+       5:     pass
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1214,7 +1199,6 @@ SyntaxError - can't assign to function call - 1
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1228,11 +1212,11 @@ SyntaxError - can't assign to function call - 1
     'TESTS:\syntax\raise_syntax_error30.py'
     beyond the location indicated by --> and ^.
     
-       3: Python 3.8: SyntaxError: cannot assign to function call
        4: """
        5: 
     -->6: len('a') = 3
          ^
+       7: 
 
         You wrote the expression
         
@@ -1248,7 +1232,6 @@ SyntaxError - can't assign to function call - 2
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1262,11 +1245,11 @@ SyntaxError - can't assign to function call - 2
     'TESTS:\syntax\raise_syntax_error31.py'
     beyond the location indicated by --> and ^.
     
-       3: Python 3.8: SyntaxError: cannot assign to function call
        4: """
        5: 
     -->6: func(a, b=3) = 4
          ^
+       7: 
 
         You wrote an expression like
         
@@ -1282,7 +1265,6 @@ SyntaxError - used equal sign instead of colon
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1296,11 +1278,11 @@ SyntaxError - used equal sign instead of colon
     'TESTS:\syntax\raise_syntax_error32.py'
     beyond the location indicated by --> and ^.
     
-       1: """Should raise SyntaxError: invalid syntax
        2: """
        3: 
     -->4: ages = {'Alice'=22, 'Bob'=24}
                          ^
+       5: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1316,7 +1298,6 @@ SyntaxError - non-default argument follows default argument
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1330,11 +1311,11 @@ SyntaxError - non-default argument follows default argument
     'TESTS:\syntax\raise_syntax_error33.py'
     beyond the location indicated by --> and ^.
     
-       2: """
        3: 
        4: 
     -->5: def test(a=1, b):
                   ^
+       6:     return a + b
 
         In Python, you can define functions with only positional arguments
         
@@ -1358,7 +1339,6 @@ SyntaxError - positional argument follows keyword argument
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1372,11 +1352,11 @@ SyntaxError - positional argument follows keyword argument
     'TESTS:\syntax\raise_syntax_error34.py'
     beyond the location indicated by --> and ^.
     
-       2: """
        3: 
        4: 
     -->5: test(a=1, b)
                    ^
+       6: 
 
         In Python, you can call functions with only positional arguments
         
@@ -1400,7 +1380,6 @@ SyntaxError - f-string: unterminated string
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1414,11 +1393,11 @@ SyntaxError - f-string: unterminated string
     'TESTS:\syntax\raise_syntax_error35.py'
     beyond the location indicated by --> and ^.
     
-       1: """Should raise SyntaxError: f-string: unterminated string
        2: """
        3: 
     -->4: print(f"Bob is {age['Bob]} years old.")
                ^
+       5: 
 
         Inside an f-string, which is a string prefixed by the letter f, 
         you have another string, which starts with either a
@@ -1431,7 +1410,6 @@ SyntaxError - unclosed bracket
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1445,11 +1423,11 @@ SyntaxError - unclosed bracket
     'TESTS:\syntax\raise_syntax_error36.py'
     beyond the location indicated by --> and ^.
     
-        4: def foo():
-        5:     return [1, 2, 3
-        6: 
-    --> 7: print(foo())
-               ^
+       5:     return [1, 2, 3
+       6: 
+    -->7: print(foo())
+              ^
+       8: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1466,7 +1444,6 @@ SyntaxError - unexpected EOF while parsing
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1478,7 +1455,6 @@ SyntaxError - unexpected EOF while parsing
     'TESTS:\syntax\raise_syntax_error37.py'
     beyond the location indicated by --> and ^.
     
-        5:     return [1, 2, 3,
         6: 
         7: print(foo())
     --> 8: 
@@ -1501,7 +1477,6 @@ SyntaxError - name is parameter and global
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1515,11 +1490,11 @@ SyntaxError - name is parameter and global
     'TESTS:\syntax\raise_syntax_error38.py'
     beyond the location indicated by --> and ^.
     
-       3: 
        4: 
        5: def f(x):
     -->6:     global x
              ^
+       7: 
 
         You are including the statement
         
@@ -1537,7 +1512,6 @@ SyntaxError - keyword as attribute
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1551,11 +1525,11 @@ SyntaxError - keyword as attribute
     'TESTS:\syntax\raise_syntax_error39.py'
     beyond the location indicated by --> and ^.
     
-        9: a = A()
        10: 
        11: a.x = 1
     -->12: a.pass = 2
                 ^
+       13: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1570,7 +1544,6 @@ SyntaxError - content passed continuation line character
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1584,11 +1557,11 @@ SyntaxError - content passed continuation line character
     'TESTS:\syntax\raise_syntax_error40.py'
     beyond the location indicated by --> and ^.
     
-       2: SyntaxError: unexpected character after line continuation character
        3: """
        4: 
     -->5: print(\t)
                    ^
+       6: 
 
         You are using the continuation character `\` outside of a string,
         and it is followed by some other character(s).
@@ -1602,7 +1575,6 @@ SyntaxError - keyword can't be an expression
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1616,11 +1588,11 @@ SyntaxError - keyword can't be an expression
     'TESTS:\syntax\raise_syntax_error41.py'
     beyond the location indicated by --> and ^.
     
-        4: """
-        5: 
-        6: 
-    --> 7: a = dict('key'=1)
-                   ^
+       5: 
+       6: 
+    -->7: a = dict('key'=1)
+                  ^
+       8: 
 
         You likely called a function with a named argument:
         
@@ -1638,7 +1610,6 @@ SyntaxError - invalid character in identifier
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1652,11 +1623,11 @@ SyntaxError - invalid character in identifier
     'TESTS:\syntax\raise_syntax_error42.py'
     beyond the location indicated by --> and ^.
     
-       3: 
        4: # Robot-face character below
        5: 
     -->6: 🤖 = 'Reeborg'
           ^
+       7: 
 
         You likely used some unicode character that is not allowed
         as part of a variable name in Python.
@@ -1670,7 +1641,6 @@ SyntaxError - keyword cannot be argument in def - 1
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1684,11 +1654,11 @@ SyntaxError - keyword cannot be argument in def - 1
     'TESTS:\syntax\raise_syntax_error43.py'
     beyond the location indicated by --> and ^.
     
-       2: """
        3: 
        4: 
     -->5: def f(None=1):
                    ^
+       6:     pass
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1703,7 +1673,6 @@ SyntaxError - keyword cannot be argument in def - 2
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1717,11 +1686,11 @@ SyntaxError - keyword cannot be argument in def - 2
     'TESTS:\syntax\raise_syntax_error44.py'
     beyond the location indicated by --> and ^.
     
-       2: """
        3: 
        4: 
     -->5: def f(x, True):
                       ^
+       6:     pass
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1736,7 +1705,6 @@ SyntaxError - keyword cannot be argument in def - 3
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1750,11 +1718,11 @@ SyntaxError - keyword cannot be argument in def - 3
     'TESTS:\syntax\raise_syntax_error45.py'
     beyond the location indicated by --> and ^.
     
-       2: """
        3: 
        4: 
     -->5: def f(*None):
                     ^
+       6:     pass
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1769,7 +1737,6 @@ SyntaxError - keyword cannot be argument in def - 4
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1783,11 +1750,11 @@ SyntaxError - keyword cannot be argument in def - 4
     'TESTS:\syntax\raise_syntax_error46.py'
     beyond the location indicated by --> and ^.
     
-       2: """
        3: 
        4: 
     -->5: def f(**None):
                      ^
+       6:     pass
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1802,7 +1769,6 @@ SyntaxError - delete function call
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1816,11 +1782,11 @@ SyntaxError - delete function call
     'TESTS:\syntax\raise_syntax_error47.py'
     beyond the location indicated by --> and ^.
     
-       2: """
        3: 
        4: 
     -->5: del f(a)
              ^
+       6: 
 
         You attempted to delete a function call
         
@@ -1836,7 +1802,6 @@ SyntaxError - assigned prior to global declaration
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1850,11 +1815,11 @@ SyntaxError - assigned prior to global declaration
     'TESTS:\syntax\raise_syntax_error48.py'
     beyond the location indicated by --> and ^.
     
-        4: 
-        5: def fn():
-        6:     p = 1
-    --> 7:     global p
-              ^
+       5: def fn():
+       6:     p = 1
+    -->7:     global p
+             ^
+       8: 
 
         You assigned a value to the variable `p`
         before declaring it as a global variable.
@@ -1866,7 +1831,6 @@ SyntaxError - used prior to global declaration
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1880,11 +1844,11 @@ SyntaxError - used prior to global declaration
     'TESTS:\syntax\raise_syntax_error49.py'
     beyond the location indicated by --> and ^.
     
-        4: 
-        5: def fn():
-        6:     print(r)
-    --> 7:     global r
-              ^
+       5: def fn():
+       6:     print(r)
+    -->7:     global r
+             ^
+       8: 
 
         You used the variable `r`
         before declaring it as a global variable.
@@ -1896,7 +1860,6 @@ SyntaxError - assigned prior to nonlocal declaration
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1905,16 +1868,17 @@ SyntaxError - assigned prior to nonlocal declaration
        ^
     SyntaxError: name 'q' is used prior to nonlocal declaration
     
+        Did you forget to write `nonlocal` first?
     A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error50.py'
     beyond the location indicated by --> and ^.
     
-        6: 
         7:     def g():
         8:         print(q)
     --> 9:         nonlocal q
                   ^
+       10: 
 
         You used the variable `q`
         before declaring it as a nonlocal variable.
@@ -1926,7 +1890,6 @@ SyntaxError - used prior to nonlocal declaration
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1935,16 +1898,17 @@ SyntaxError - used prior to nonlocal declaration
        ^
     SyntaxError: name 's' is assigned to before nonlocal declaration
     
+        Did you forget to add `nonlocal`?
     A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error51.py'
     beyond the location indicated by --> and ^.
     
-        6: 
         7:     def g():
         8:         s = 2
     --> 9:         nonlocal s
                   ^
+       10: 
 
         You assigned a value to the variable `s`
         before declaring it as a nonlocal variable.
@@ -1956,7 +1920,6 @@ SyntaxError - named assignment with Python constant
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -1970,11 +1933,11 @@ SyntaxError - named assignment with Python constant
     'TESTS:\syntax\raise_syntax_error55.py'
     beyond the location indicated by --> and ^.
     
-       1: """Should raise SyntaxError: invalid syntax
        2: or (Python 3.8) cannot use named assignment with True"""
        3: 
     -->4: (True := 1)
                 ^
+       5: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1990,7 +1953,6 @@ SyntaxError - assignment to operator
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2004,11 +1966,11 @@ SyntaxError - assignment to operator
     'TESTS:\syntax\raise_syntax_error56.py'
     beyond the location indicated by --> and ^.
     
-       1: """Should raise SyntaxError: can't assign to operator
        2: or (Python 3.8) cannot assign to operator"""
        3: 
     -->4: a + 1 = 2
          ^
+       5: 
 
         You wrote an expression that includes some mathematical operations
         on the left-hand side of the equal sign which should be
@@ -2020,7 +1982,6 @@ SyntaxError - using the backquote character
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2038,6 +1999,7 @@ SyntaxError - using the backquote character
        2: 
     -->3: a = `1`
               ^
+       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2052,7 +2014,6 @@ SyntaxError - assign to generator expression
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2070,6 +2031,7 @@ SyntaxError - assign to generator expression
        2: 
     -->3: (x for x in x) = 1
          ^
+       4: 
 
         On the left-hand side of an equal sign, you have a
         generator expression instead of the name of a variable.
@@ -2081,7 +2043,6 @@ SyntaxError - assign to conditional expression
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2099,6 +2060,7 @@ SyntaxError - assign to conditional expression
        2: 
     -->3: a if 1 else b = 1
          ^
+       4: 
 
         On the left-hand side of an equal sign, you have a
         conditional expression instead of the name of a variable.
@@ -2112,7 +2074,6 @@ SyntaxError - name is parameter and nonlocal
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2126,11 +2087,11 @@ SyntaxError - name is parameter and nonlocal
     'TESTS:\syntax\raise_syntax_error60.py'
     beyond the location indicated by --> and ^.
     
-       2: 
        3: 
        4: def f(x):
     -->5:     nonlocal x
              ^
+       6: 
 
         You used `x` as a parameter for a function
         before declaring it also as a nonlocal variable:
@@ -2143,7 +2104,6 @@ SyntaxError - name is global and nonlocal
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2157,11 +2117,11 @@ SyntaxError - name is global and nonlocal
     'TESTS:\syntax\raise_syntax_error61.py'
     beyond the location indicated by --> and ^.
     
-        4: 
-        5: 
-        6: def f():
-    --> 7:     global xy
-              ^
+       5: 
+       6: def f():
+    -->7:     global xy
+             ^
+       8:     nonlocal xy
 
         You declared `xy` as being both a global and nonlocal variable.
         A variable can be global, or nonlocal, but not both at the same time.
@@ -2173,7 +2133,6 @@ SyntaxError - nonlocal variable not found
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2187,11 +2146,11 @@ SyntaxError - nonlocal variable not found
     'TESTS:\syntax\raise_syntax_error62.py'
     beyond the location indicated by --> and ^.
     
-       2: 
        3: 
        4: def f():
     -->5:     nonlocal ab
              ^
+       6: 
 
         You declared the variable `ab` as being a
         nonlocal variable but it cannot be found.
@@ -2203,7 +2162,6 @@ SyntaxError - nonlocal variable not found at module level
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2217,11 +2175,11 @@ SyntaxError - nonlocal variable not found at module level
     'TESTS:\syntax\raise_syntax_error63.py'
     beyond the location indicated by --> and ^.
     
-       1: """Should raise SyntaxError:  nonlocal declaration not allowed at module level"""
        2: 
        3: 
     -->4: nonlocal cd
          ^
+       5: 
 
         You used the nonlocal keyword at a module level.
         The nonlocal keyword refers to a variable inside a function
@@ -2233,7 +2191,6 @@ SyntaxError - keyword arg only once in function definition
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2247,11 +2204,11 @@ SyntaxError - keyword arg only once in function definition
     'TESTS:\syntax\raise_syntax_error64.py'
     beyond the location indicated by --> and ^.
     
-       1: """Should raise SyntaxError: duplicate argument 'aa' in function definition"""
        2: 
        3: 
     -->4: def f(aa=1, aa=2):
          ^
+       5:     pass
 
         You have defined a function repeating the keyword argument
         
@@ -2265,7 +2222,6 @@ SyntaxError - keyword arg only once in function call
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2279,11 +2235,11 @@ SyntaxError - keyword arg only once in function call
     'TESTS:\syntax\raise_syntax_error65.py'
     beyond the location indicated by --> and ^.
     
-       1: """Should raise SyntaxError:  keyword argument repeated"""
        2: 
        3: 
     -->4: f(ad=1, ad=2)
                  ^
+       5: 
 
         You have called a function repeating the same keyword argument.
         Each keyword argument should appear only once in a function call.
@@ -2295,7 +2251,6 @@ SyntaxError - unexpected EOF while parsing 2
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2307,7 +2262,6 @@ SyntaxError - unexpected EOF while parsing 2
     'TESTS:\syntax\raise_syntax_error66.py'
     beyond the location indicated by --> and ^.
     
-       1: '''Should raise SyntaxError: unexpected EOF while parsing'''
        2: 
        3: for i in range(10):
     -->4: 
@@ -2324,7 +2278,6 @@ SyntaxError - print is a function 2
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2341,6 +2294,7 @@ SyntaxError - print is a function 2
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: print len('hello')
                   ^
+       3: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2355,7 +2309,6 @@ SyntaxError - copy/paste from interpreter
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2372,6 +2325,7 @@ SyntaxError - copy/paste from interpreter
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: >>> print("Hello World!")
            ^
+       3: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2386,7 +2340,6 @@ SyntaxError - Using pip from interpreter
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2403,6 +2356,7 @@ SyntaxError - Using pip from interpreter
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: pip install friendly
                     ^
+       3: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2418,7 +2372,6 @@ SyntaxError - Using pip from interpreter 2
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2435,6 +2388,7 @@ SyntaxError - Using pip from interpreter 2
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: python -m pip install friendly
                       ^
+       3: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2450,7 +2404,6 @@ SyntaxError - dot followed by parenthesis
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2467,6 +2420,7 @@ SyntaxError - dot followed by parenthesis
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: print(len.('hello'))
                     ^
+       3: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2480,7 +2434,6 @@ SyntaxError - cannot assign to f-string
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2494,11 +2447,11 @@ SyntaxError - cannot assign to f-string
     'TESTS:\syntax\raise_syntax_error72.py'
     beyond the location indicated by --> and ^.
     
-       3: Python >= 3.8: SyntaxError: cannot assign to f-string expression
        4: """
        5: 
     -->6: f'{x}' = 42
          ^
+       7: 
 
         You wrote an expression that has an f-string
         on the left-hand side of the equal sign.
@@ -2511,7 +2464,6 @@ SyntaxError - raising multiple exceptions
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2528,6 +2480,7 @@ SyntaxError - raising multiple exceptions
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: raise X, Y
                  ^
+       3: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2541,7 +2494,6 @@ SyntaxError - parenthesis around generator expression
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2555,11 +2507,11 @@ SyntaxError - parenthesis around generator expression
     'TESTS:\syntax\raise_syntax_error74.py'
     beyond the location indicated by --> and ^.
     
-       3:     return list(it)
        4: 
        5: L = range(10)
     -->6: f(x for x in L, 1)
            ^
+       7: 
 
         You are using a generator expression, something of the form
             `x for x in thing`
@@ -2572,7 +2524,6 @@ SyntaxError - invalid character (bad quote)
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2581,6 +2532,7 @@ SyntaxError - invalid character (bad quote)
             ^
     SyntaxError: invalid character in identifier
     
+        Did you mean to use a normal quote character, `'` or `"`?
     A `SyntaxError` occurs when Python cannot understand your code.
     Python could not understand the code in the file
     'TESTS:\syntax\raise_syntax_error75.py'
@@ -2590,6 +2542,7 @@ SyntaxError - invalid character (bad quote)
        2:    and  SyntaxError: invalid character '«' (U+00AB) in Python 3.9"""
     -->3: a = « hello »
               ^
+       4: 
 
         Python indicates that you used some unicode characters not allowed
         as part of a variable name; this includes many emojis.
@@ -2605,7 +2558,6 @@ SyntaxError - single = instead of double == with if
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2623,6 +2575,7 @@ SyntaxError - single = instead of double == with if
        2: for i in range(101):
     -->3:     if i % 2 = 0:
                        ^
+       4:         print(i)
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2637,7 +2590,6 @@ SyntaxError - single = instead of double == with elif
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2651,11 +2603,11 @@ SyntaxError - single = instead of double == with elif
     'TESTS:\syntax\raise_syntax_error77.py'
     beyond the location indicated by --> and ^.
     
-       2: for i in range(101):
        3:     if False:
        4:         pass
     -->5:     elif i % 2 = 0:
                          ^
+       6:         print(i)
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2670,7 +2622,6 @@ SyntaxError - single = instead of double == with while
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2684,11 +2635,11 @@ SyntaxError - single = instead of double == with while
     'TESTS:\syntax\raise_syntax_error78.py'
     beyond the location indicated by --> and ^.
     
-       1: """Should raise SyntaxError: invalid syntax"""
        2: a = 1
        3: 
     -->4: while a = 1:
                   ^
+       5:     a = 2
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2703,7 +2654,6 @@ Walrus operator does not exist - yet
 .. code-block:: none
 
 
-    Python exception:
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
         mod = __import__(name)
@@ -2721,6 +2671,7 @@ Walrus operator does not exist - yet
        2: 
     -->3: print(walrus := True)
                        ^
+       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.

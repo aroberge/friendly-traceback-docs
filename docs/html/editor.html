@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using with an editor or IDE &mdash; Friendly tracebacks 0.1.8a documentation</title>
+  <title>Using with an editor or IDE &mdash; Friendly tracebacks 0.1.9a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.8a
+                0.1.9a
               </div>
             
           
@@ -92,6 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Installation and basic usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Using with an editor or IDE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-with-idle">Using with IDLE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-microsoft-vs-code">Using Microsoft VS Code</a></li>
 </ul>
 </li>
@@ -111,6 +112,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins.html">Editor plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
@@ -144,10 +146,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
-</ul>
-<p class="caption"><span class="caption-text">varia</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a></li>
 </ul>
 
             
@@ -232,7 +230,22 @@ what this project is about..</p>
 </div>
 <div class="section" id="using-with-an-editor-or-ide">
 <h1>Using with an editor or IDE<a class="headerlink" href="#using-with-an-editor-or-ide" title="Permalink to this headline">¶</a></h1>
-<p>Let’s have a look at what happens if we run
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To use Friendly-traceback with an editor or IDE,
+create a second file to be used as a “launcher”, containing
+the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly_traceback</span> <span class="kn">import</span> <span class="n">run</span>
+
+<span class="n">run</span><span class="p">(</span><span class="s2">&quot;my_program.py&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-with-idle">
+<h2>Using with IDLE<a class="headerlink" href="#using-with-idle" title="Permalink to this headline">¶</a></h2>
+<p>Since IDLE is part of the standard library, it is often the first
+editor that is used by beginners learning Python.
+Let’s have a look at what happens if we run
 the following program with IDLE using the
 “Run -&gt; Run Module” menu item.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
@@ -258,18 +271,21 @@ file with the following content:</p>
 </div>
 <p>The following is what happens if we run it, and do
 further interactions aftewards.</p>
-<a class="reference internal image-reference" href="_images/idle-friendly.png"><img alt="Screen capture of IDLE" src="_images/idle-friendly.png" style="width: 686.0px; height: 662.0px;" /></a>
-<p>We stil get a traceback [1] that looks similar to Python’s
-standard traceback, but that has an added hint [2]
-as to what might be the cause of the exception.</p>
-<p>Like it was the case with IDLE, we have access [3] to
-the variables in our program inside the friendly-console:
-did you notice how the prompt is blue instead of black
-for IDLE?  This is because we use some <code class="docutils literal notranslate"><span class="pre">input()</span></code> statements
-to interact in a friendly console, run inside IDLE.</p>
-<p>We can ask for more details about the exception [4] and
-get some more information [5] about how the possible
-cause of the exception was determined.</p>
+<a class="reference internal image-reference" href="_images/idle-friendly.png"><img alt="Screen capture of IDLE" src="_images/idle-friendly.png" style="width: 686.0px; height: 172.5px;" /></a>
+<p>We stil get a traceback that looks similar to Python’s
+standard traceback, but that has an added hint
+as to what might be the cause of the exception: here
+it was because we wrote <code class="docutils literal notranslate"><span class="pre">Pi</span></code> with an uppercase <code class="docutils literal notranslate"><span class="pre">P</span></code>.</p>
+<p>Like it was the case with Python running inside IDLE,
+we have access to the variables that were in the program
+that was run.</p>
+<p>Notice how the prompt is blue instead of black: this is
+because we are running the friendly console which uses
+<code class="docutils literal notranslate"><span class="pre">print()</span></code> or <code class="docutils literal notranslate"><span class="pre">input()</span></code> calls.</p>
+<p>As shown below, we can ask for more details about
+the exception, as was shown in the previous section.</p>
+<a class="reference internal image-reference" href="_images/idle-friendly2.png"><img alt="Screen capture of IDLE" src="_images/idle-friendly2.png" style="width: 686.0px; height: 481.5px;" /></a>
+</div>
 <div class="section" id="using-microsoft-vs-code">
 <h2>Using Microsoft VS Code<a class="headerlink" href="#using-microsoft-vs-code" title="Permalink to this headline">¶</a></h2>
 <p>Let’s do the same thing, this time using Microsoft Visual Studio Code,

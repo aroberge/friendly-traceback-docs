@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.editors_helper &mdash; Friendly tracebacks 0.1.8a documentation</title>
+  <title>friendly_traceback.editors_helper &mdash; Friendly tracebacks 0.1.9a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.1.8a
+                0.1.9a
               </div>
             
           
@@ -106,6 +106,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins.html">Editor plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
@@ -139,10 +140,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
-</ul>
-<p class="caption"><span class="caption-text">varia</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Change Log</a></li>
 </ul>
 
             
@@ -207,13 +204,15 @@
            <div itemprop="articleBody">
             
   <h1>Source code for friendly_traceback.editors_helper</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;The functions in this module have been created so that user of tools,</span>
-<span class="sd">like the editor Mu, could use Friendly-traceback.</span>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">editors_helper.py</span>
+<span class="sd">-----------------</span>
 
-<span class="sd">See https://aroberge.github.io/friendly-traceback-docs/docs/html/mu.html</span>
-<span class="sd">for an example.</span>
+<span class="sd">The functions in this module have been created so that user editors/IDEs</span>
+<span class="sd">could use Friendly-traceback without having to change the content of</span>
+<span class="sd">their own programs.</span>
 
-<span class="sd">At the moment, only run() is part of the public API.</span>
+<span class="sd">At the moment, only ``run()`` is part of the public API.</span>
 
 <span class="sd">If you make use of any other function here, please file an issue so</span>
 <span class="sd">it can be determined if it should be added to the public API.</span>
@@ -227,33 +226,38 @@
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">friendly_rich</span>
 
 
-<span class="k">def</span> <span class="nf">check_syntax</span><span class="p">(</span>
+<div class="viewcode-block" id="check_syntax"><a class="viewcode-back" href="../../plugins.html#friendly_traceback.public_api.check_syntax">[docs]</a><span class="k">def</span> <span class="nf">check_syntax</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;Fake filename&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This uses Python&#39;s ``compile()`` builtin which does some analysis of</span>
-<span class="sd">       its code argument and will raise an exception if it identifies</span>
-<span class="sd">       some syntax errors, but also some less common &quot;overflow&quot; and &quot;value&quot;</span>
-<span class="sd">       errors.</span>
+<span class="sd">    its code argument and will raise an exception if it identifies</span>
+<span class="sd">    some syntax errors, but also some less common &quot;overflow&quot; and &quot;value&quot;</span>
+<span class="sd">    errors.</span>
 
-<span class="sd">       This function can either be used on a file, using the ``path`` argument, or</span>
-<span class="sd">       on some code passed as a string, using the ``source`` argument.</span>
-<span class="sd">       For the latter case, one can also specify a corresponding ``filename``:</span>
-<span class="sd">       this could be useful if this function is invoked from a GUI-based</span>
-<span class="sd">       editor.</span>
+<span class="sd">    Note that there are a few syntax errors that are not caught by this,</span>
+<span class="sd">    as they are identified by Python very late in its execution</span>
+<span class="sd">    process. See for example</span>
+<span class="sd">    `this blog post &lt;https://aroberge.blogspot.com/2019/12/a-tiny-python-exception-oddity.html&gt;`_</span>
 
-<span class="sd">       Note that the ``path`` argument, if provided, takes precedence</span>
-<span class="sd">       over the ``source`` argument.</span>
+<span class="sd">    This function can either be used on a file, using the ``path`` argument, or</span>
+<span class="sd">    on some code passed as a string, using the ``source`` argument.</span>
+<span class="sd">    For the latter case, one can also specify a corresponding ``filename``:</span>
+<span class="sd">    this could be useful if this function is invoked from a GUI-based</span>
+<span class="sd">    editor.</span>
 
-<span class="sd">       Two additional named arguments, ``include`` and ``lang``, can be</span>
-<span class="sd">       provided to temporarily set the values to be used during this function</span>
-<span class="sd">       call. The original values are restored at the end.</span>
+<span class="sd">    Note that the ``path`` argument, if provided, takes precedence</span>
+<span class="sd">    over the ``source`` argument.</span>
 
-<span class="sd">       If friendly-traceback exception hook has not been set up prior</span>
-<span class="sd">       to calling check_syntax, it will only be used for the duration</span>
-<span class="sd">       of this function call.</span>
+<span class="sd">    Two additional named arguments, ``include`` and ``lang``, can be</span>
+<span class="sd">    provided to temporarily set the values to be used during this function</span>
+<span class="sd">    call. The original values are restored at the end.</span>
 
-<span class="sd">       Returns a tuple containing a code object and a filename if no exception</span>
-<span class="sd">       has been raised, False otherwise.</span>
+<span class="sd">    If friendly-traceback exception hook has not been set up prior</span>
+<span class="sd">    to calling check_syntax, it will only be used for the duration</span>
+<span class="sd">    of this function call.</span>
+
+<span class="sd">    Returns a tuple containing a code object and a filename if no exception</span>
+<span class="sd">    has been raised, False otherwise.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
@@ -290,29 +294,29 @@
         <span class="k">return</span> <span class="kc">False</span>
 
     <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_include</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">code</span>
+    <span class="k">return</span> <span class="n">code</span></div>
 
 
-<span class="k">def</span> <span class="nf">exec_code</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="exec_code"><a class="viewcode-back" href="../../plugins.html#friendly_traceback.public_api.exec_code">[docs]</a><span class="k">def</span> <span class="nf">exec_code</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This uses check_syntax to see if the code is valid and, if so,</span>
-<span class="sd">       executes it into a globals dict containing only</span>
-<span class="sd">       ``{&quot;__name__&quot;: &quot;__main__&quot;}``.</span>
-<span class="sd">       If no SyntaxError exception is raised, this dict is returned;</span>
-<span class="sd">       otherwise, an empty dict is returned.</span>
+<span class="sd">    executes it into a globals dict containing only</span>
+<span class="sd">    ``{&quot;__name__&quot;: &quot;__main__&quot;}``.</span>
+<span class="sd">    If no ``SyntaxError`` exception is raised, this dict is returned;</span>
+<span class="sd">    otherwise, an empty dict is returned.</span>
 
-<span class="sd">       It can either be used on a file, using the ``path`` argument, or</span>
-<span class="sd">       on some code passed as a string, using the ``source`` argument.</span>
+<span class="sd">    It can either be used on a file, using the ``path`` argument, or</span>
+<span class="sd">    on some code passed as a string, using the ``source`` argument.</span>
 
-<span class="sd">       Note that the ``path`` argument, if provided, takes precedence</span>
-<span class="sd">       over the ``source`` argument.</span>
+<span class="sd">    Note that the ``path`` argument, if provided, takes precedence</span>
+<span class="sd">    over the ``source`` argument.</span>
 
-<span class="sd">       Two additional named arguments, ``include`` and ``lang``, can be</span>
-<span class="sd">       provided to temporarily set the values to be used during this function</span>
-<span class="sd">       call. The original values are restored at the end.</span>
+<span class="sd">    Two additional named arguments, ``include`` and ``lang``, can be</span>
+<span class="sd">    provided to temporarily set the values to be used during this function</span>
+<span class="sd">    call. The original values are restored at the end.</span>
 
-<span class="sd">       If friendly-traceback exception hook has not been set up prior</span>
-<span class="sd">       to calling check_syntax, it will only be used for the duration</span>
-<span class="sd">       of this function call.</span>
+<span class="sd">    If friendly-traceback exception hook has not been set up prior</span>
+<span class="sd">    to calling check_syntax, it will only be used for the duration</span>
+<span class="sd">    of this function call.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">code</span> <span class="o">=</span> <span class="n">check_syntax</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">code</span><span class="p">:</span>
@@ -334,10 +338,10 @@
         <span class="k">return</span> <span class="n">module_globals</span>
 
     <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_include</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">module_globals</span>
+    <span class="k">return</span> <span class="n">module_globals</span></div>
 
 
-<div class="viewcode-block" id="run"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.run">[docs]</a><span class="k">def</span> <span class="nf">run</span><span class="p">(</span>
+<div class="viewcode-block" id="run"><a class="viewcode-back" href="../../plugins.html#friendly_traceback.public_api.run">[docs]</a><span class="k">def</span> <span class="nf">run</span><span class="p">(</span>
     <span class="n">filename</span><span class="p">,</span>
     <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">include</span><span class="o">=</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">,</span>
@@ -346,17 +350,38 @@
     <span class="n">use_rich</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">theme</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Given a filename (relative or absolute path), this function uses the</span>
-<span class="sd">       more complex exec_code() to run a file.</span>
+    <span class="sd">&quot;&quot;&quot;Given a filename (relative or absolute path) ending with the &quot;.py&quot;</span>
+<span class="sd">    extension, this function uses the</span>
+<span class="sd">    more complex ``exec_code()`` to run a file.</span>
 
-<span class="sd">       If console is set to False, run() returns an empty dict if a SyntaxError</span>
-<span class="sd">       was raised, otherwise returns the dict in which the module (filename)</span>
-<span class="sd">       was executed.</span>
+<span class="sd">    If console is set to ``False``, ``run()`` returns an empty dict</span>
+<span class="sd">    if a ``SyntaxError`` was raised, otherwise returns the dict in</span>
+<span class="sd">    which the module (``filename``) was executed.</span>
 
-<span class="sd">       If console is set to True (the default), the execution continues</span>
-<span class="sd">       as an interactive session in a Friendly console, with the module</span>
-<span class="sd">       dict being the locals dict.</span>
-<span class="sd">       &quot;&quot;&quot;</span>
+<span class="sd">    If console is set to ``True`` (the default), the execution continues</span>
+<span class="sd">    as an interactive session in a Friendly console, with the module</span>
+<span class="sd">    dict being used as the locals dict.</span>
+
+<span class="sd">    Other arguments include:</span>
+
+<span class="sd">    ``lang``: language used; currenly only ``en`` (default) and ``fr``</span>
+<span class="sd">    are available.</span>
+
+<span class="sd">    ``include``: specifies what information is to be included if an</span>
+<span class="sd">    exception is raised.</span>
+
+<span class="sd">    ``args``: arguments that are passed to the program as though it</span>
+<span class="sd">    was run on the command line as follows::</span>
+
+<span class="sd">        python filename.py arg1, arg2, ...</span>
+
+<span class="sd">    ``use_rich``: set to ``True`` if Rich is available and the environment</span>
+<span class="sd">    supports it.</span>
+
+<span class="sd">    ``theme``: Theme to be used with Rich. Currently only ``dark``,</span>
+<span class="sd">    the default, and ``light`` are available. ``light`` is meant for</span>
+<span class="sd">    light coloured background and has not been extensively tested.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">use_rich</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">friendly_rich</span><span class="o">.</span><span class="n">rich_available</span><span class="p">:</span>
@@ -383,11 +408,11 @@
 
 <span class="k">def</span> <span class="nf">_temp_set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;If lang is not none, temporarily set session.lang to the provided</span>
-<span class="sd">       value. Keep track of the original lang setting and return it.</span>
+<span class="sd">    value. Keep track of the original lang setting and return it.</span>
 
-<span class="sd">       A value of None for saved_lang indicates that no resetting will</span>
-<span class="sd">       be required.</span>
-<span class="sd">       &quot;&quot;&quot;</span>
+<span class="sd">    A value of None for saved_lang indicates that no resetting will</span>
+<span class="sd">    be required.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">saved_lang</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">if</span> <span class="n">lang</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">saved_lang</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">lang</span>

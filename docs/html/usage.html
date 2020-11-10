@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation and basic usage &mdash; Friendly tracebacks 0.1.8a documentation</title>
+  <title>Installation and basic usage &mdash; Friendly tracebacks 0.1.9a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.8a
+                0.1.9a
               </div>
             
           
@@ -90,7 +90,10 @@
               <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation and basic usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#suggestions">Suggestions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
 </ul>
 </li>
@@ -112,6 +115,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins.html">Editor plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
@@ -145,10 +149,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
-</ul>
-<p class="caption"><span class="caption-text">varia</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a></li>
 </ul>
 
             
@@ -243,17 +243,32 @@ what this project is about..</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">friendly</span><span class="o">-</span><span class="n">traceback</span>
 </pre></div>
 </div>
+<div class="section" id="suggestions">
+<h3>Suggestions<a class="headerlink" href="#suggestions" title="Permalink to this headline">¶</a></h3>
 <p>If the environment in which you plan to use Friendly-traceback
 supports <a class="reference external" href="https://github.com/willmcgugan/rich">Rich</a>, we
-strongly suggest you install Rich so that Friendly-traceback
-can make use of it by default. However, some programming environments,
-such as IDLE and other IDEs do not support Rich.
-The only editor/IDE capable of making use of Rich that we know
-of is <a class="reference external" href="https://code.visualstudio.com/">Microsoft Visual Studio Code</a>.</p>
+<strong>strongly</strong> suggest you install Rich so that Friendly-traceback
+can make use of it by default:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">rich</span>
+</pre></div>
+</div>
+<p>Note however that some programming environments,
+such as IDLE and other IDEs do not support Rich; this does not
+prevent you from using Friendly-traceback, but the display
+will definitely not look as nice.
+The only editor/IDE capable of fully making use of Rich that we know
+of is <a class="reference external" href="https://code.visualstudio.com/">Microsoft Visual Studio Code</a>.
+Pycharm’s embedded console, at least on Windows, does not fully
+support Rich.</p>
 <p>If you use Rich on Windows from a terminal,
-we strongly suggest that you use the new
+we also strongly suggest that you use the new
 <a class="reference external" href="https://github.com/microsoft/terminal">Windows Terminal</a>; this is
 what we have used for various screen captures.</p>
+<p>If you are a Mac or Linux user,
+and use Friendly-traceback with Rich installed,
+we’d gladly accept any screenshot that you could provide so that they
+could be included in this documentation.</p>
+</div>
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>

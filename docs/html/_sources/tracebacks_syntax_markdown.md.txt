@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.1.6a
+Friendly-traceback version: 0.1.8a
 Python version: 3.8.4
 
 
@@ -19,8 +19,6 @@ Python version: 3.8.4
 
 ## IndentationError - 1: expected an indented block
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -41,11 +39,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: '''Should raise IndentationError'''
        2: 
        3: if True:
     -->4: pass
           ^
+       5: 
 
 ```
 
@@ -56,8 +54,6 @@ was expected to begin a new indented block.
 
 ## IndentationError - 2: unexpected indent
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -78,11 +74,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: '''Should raise IndentationError'''
        2: if True:
        3:     pass
     -->4:       pass
                ^
+       5: 
 
 ```
 
@@ -94,8 +90,6 @@ does not match the indentation of the previous line.
 
 ## IndentationError - 3: unindent does not match ...
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -116,11 +110,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: '''Should raise IndentationError'''
        2: if True:
        3:       pass
     -->4:     pass
                   ^
+       5: 
 
 ```
 
@@ -132,8 +126,6 @@ and is not aligned vertically with another block of code.
 
 ## TabError
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -158,11 +150,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-        4: 
-        5: def test_tab_error():
-        6:     if True:
-    --> 7: 	pass
-                ^
+       5: def test_tab_error():
+       6:     if True:
+    -->7: 	pass
+               ^
+       8: 
 
 ```
 
@@ -170,8 +162,6 @@ beyond the location indicated by --> and ^.
 
 ## SyntaxError - Assign to keyword
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -195,6 +185,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: def = 2
               ^
+       4: 
 
 ```
 
@@ -209,8 +200,6 @@ This is not allowed.
 
 ## SyntaxError - Missing colon - 1
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -234,6 +223,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: if True
                  ^
+       4:     pass
 
 ```
 
@@ -248,8 +238,6 @@ You wrote a statement beginning with
 
 ## SyntaxError - Missing colon - 2
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -273,6 +261,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: while True  # a comment
                       ^
+       4:     pass
 
 ```
 
@@ -287,8 +276,6 @@ forgot to add a colon `:` at the end
 
 ## SyntaxError - elif, not else if
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -308,11 +295,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       2: 
        3: if False:
        4:     pass
     -->5: else if True:
                ^
+       6:     print('ok')
 
 ```
 
@@ -327,8 +314,6 @@ but wrote `else if` instead
 
 ## SyntaxError - elif, not elseif
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -348,11 +333,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       2: 
        3: if False:
        4:     pass
     -->5: elseif True:
                  ^
+       6:     print('ok')
 
 ```
 
@@ -367,8 +352,6 @@ but wrote `elseif` instead
 
 ## SyntaxError - malformed def statment - 1
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -392,6 +375,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: def :
               ^
+       4:     pass
 
 ```
 
@@ -407,8 +391,6 @@ The correct syntax is:
 
 ## SyntaxError - malformed def statment - 2
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -432,6 +414,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: def name  :
                     ^
+       4:     pass
 
 ```
 
@@ -447,8 +430,6 @@ The correct syntax is:
 
 ## SyntaxError - malformed def statment - 3
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -472,6 +453,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: def ( arg )  :
               ^
+       4:     pass
 
 ```
 
@@ -487,8 +469,6 @@ The correct syntax is:
 
 ## SyntaxError - can't assign to literal - 1
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -512,6 +492,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: 1 = a
           ^
+       4: 
 
 ```
 
@@ -529,8 +510,6 @@ and is not simply the name of a variable. Perhaps you meant to write:
 
 ## SyntaxError - can't assign to literal - 2
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -554,6 +533,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: 1 = 2
           ^
+       4: 
 
 ```
 
@@ -568,8 +548,6 @@ and is not simply the name of a variable.
 
 ## SyntaxError - can't assign to literal - 3
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -589,11 +567,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-        4: 
-        5:  """
-        6: 
-    --> 7: {1, 2, 3} = 4
-           ^
+       5:  """
+       6: 
+    -->7: {1, 2, 3} = 4
+          ^
+       8: 
 
 ```
 
@@ -608,8 +586,6 @@ and is not simply the name of a variable.
 
 ## SyntaxError - can't assign to literal - 4
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -629,11 +605,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-        4: 
-        5:  """
-        6: 
-    --> 7: {1 : 2, 2 : 4} = 5
-           ^
+       5:  """
+       6: 
+    -->7: {1 : 2, 2 : 4} = 5
+          ^
+       8: 
 
 ```
 
@@ -648,8 +624,6 @@ and is not simply the name of a variable.
 
 ## SyntaxError - can't assign to literal - 5
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -669,11 +643,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: """Should raise SyntaxError: can't assign to literal
        2: or (Python 3.8) cannot assign to literal"""
        3: 
     -->4: 1 = a = b
           ^
+       5: 
 
 ```
 
@@ -688,8 +662,6 @@ and is not simply the name of a variable.
 
 ## SyntaxError - import X from Y
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -713,6 +685,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: import pen from turtle
                      ^
+       4: 
 
 ```
 
@@ -732,8 +705,6 @@ instead of
 
 ## SyntaxError - EOL while scanning string literal
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -757,6 +728,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: alphabet = 'abc
                          ^
+       4: 
 
 ```
 
@@ -767,8 +739,6 @@ but never ended the string with another quote on that line.
 
 ## SyntaxError - assignment to keyword (None)
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -781,6 +751,9 @@ SyntaxError: cannot assign to None
 
 ```
 
+You cannot assign a value to `None`.
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 Python could not understand the code in the file
 'TESTS:\syntax\raise_syntax_error13.py'
@@ -788,11 +761,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: """Should raise SyntaxError: cannot assign to None in Py 3.8
        2:    and can't assign to keyword before."""
        3: 
     -->4: None = 1
           ^
+       5: 
 
 ```
 
@@ -803,8 +776,6 @@ beyond the location indicated by --> and ^.
 
 ## SyntaxError - assignment to keyword (__debug__)
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -817,6 +788,9 @@ SyntaxError: cannot assign to __debug__
 
 ```
 
+You cannot assign a value to `__debug__`.
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 Python could not understand the code in the file
 'TESTS:\syntax\raise_syntax_error14.py'
@@ -824,11 +798,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: """Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
        2:    and assignment to keyword before."""
        3: 
     -->4: __debug__ = 1
           ^
+       5: 
 
 ```
 
@@ -839,8 +813,6 @@ beyond the location indicated by --> and ^.
 
 ## SyntaxError - unmatched closing parenthesis
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -860,11 +832,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       3: """
        4: a = (1,
        5:     2,
     -->6:     3, 4,))
                     ^
+       7: b = 3
 
 ```
 
@@ -874,8 +846,6 @@ The closing parenthesis `)` on line 6 does not match anything.
 
 ## SyntaxError - unclosed parenthesis- 1
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -899,6 +869,7 @@ beyond the location indicated by --> and ^.
        2: x = int('1'
     -->3: if x == 1:
                    ^
+       4:     print('yes')
 
 ```
 
@@ -914,8 +885,6 @@ The opening parenthesis `(` on line 2 is not closed.
 
 ## SyntaxError - unclosed parenthesis - 2
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -939,6 +908,7 @@ beyond the location indicated by --> and ^.
        2: a = (b+c
     -->3: d = a*a
           ^
+       4: 
 
 ```
 
@@ -954,8 +924,6 @@ The opening parenthesis `(` on line 2 is not closed.
 
 ## SyntaxError - mismatched brackets
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -978,6 +946,7 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: x = (1, 2, 3]
                       ^
+       3: 
 
 ```
 
@@ -995,8 +964,6 @@ The closing square bracket `]` on line 2 does not match the opening parenthesis 
 
 ## SyntaxError - mismatched brackets - 2
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1016,11 +983,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: """Should raise SyntaxError: invalid syntax"""
        2: x = (1,
        3:      2,
     -->4:      3]
                 ^
+       5: 
 
 ```
 
@@ -1040,8 +1007,6 @@ The closing square bracket `]` on line 4 does not match the opening parenthesis 
 
 ## SyntaxError - print is a function
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1064,6 +1029,7 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: Missing parentheses in call to 'print' ..."""
     -->2: print 'hello'
                 ^
+       3: 
 
 ```
 
@@ -1078,8 +1044,6 @@ Now, `print` is a function; you need to use parentheses to call it.
 
 ## SyntaxError - Python keyword as function name
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1103,6 +1067,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: def pass():
               ^
+       4:     print("keyword as function name!")
 
 ```
 
@@ -1115,8 +1080,6 @@ You tried to use the Python keyword `pass` as a function name.
 
 ## SyntaxError - break outside loop
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1136,11 +1099,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: """Should raise SyntaxError: 'break' outside loop"""
        2: 
        3: if True:
     -->4:     break
               ^
+       5: 
 
 ```
 
@@ -1150,8 +1113,6 @@ The Python keyword `break` can only be used inside a for loop or inside a while 
 
 ## SyntaxError - continue outside loop
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1171,11 +1132,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: """Should raise SyntaxError: 'continue' outside loop"""
        2: 
        3: if True:
     -->4:     continue
               ^
+       5: 
 
 ```
 
@@ -1185,8 +1146,6 @@ The Python keyword `continue` can only be used inside a for loop or inside a whi
 
 ## SyntaxError - quote inside a string
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1210,6 +1169,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: message = 'don't'
                          ^
+       4: 
 
 ```
 
@@ -1225,8 +1185,6 @@ that was enclosed in quotes of the same kind.
 
 ## SyntaxError - missing comma in a dict
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1246,11 +1204,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       2: 
        3: a = {'a': 1,
        4:      'b': 2
     -->5:      'c': 3,
                ^
+       6:      }
 
 ```
 
@@ -1264,8 +1222,6 @@ before the position indicated by --> and ^.
 
 ## SyntaxError - missing comma in a set
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1289,6 +1245,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: a = {1, 2  3}
                      ^
+       4: 
 
 ```
 
@@ -1302,8 +1259,6 @@ before the position indicated by --> and ^.
 
 ## SyntaxError - missing comma in a list
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1327,6 +1282,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: a = [1, 2  3]
                      ^
+       4: 
 
 ```
 
@@ -1340,8 +1296,6 @@ before the position indicated by --> and ^.
 
 ## SyntaxError - missing comma in a tuple
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1365,6 +1319,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: a = (1, 2  3)
                      ^
+       4: 
 
 ```
 
@@ -1379,8 +1334,6 @@ before the position indicated by --> and ^.
 
 ## SyntaxError - missing comma between function args
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1400,11 +1353,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: """Should raise SyntaxError: invalid syntax"""
        2: 
        3: 
     -->4: def a(b, c d):
                      ^
+       5:     pass
 
 ```
 
@@ -1419,8 +1372,6 @@ before the position indicated by --> and ^.
 
 ## SyntaxError - can't assign to function call - 1
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1440,11 +1391,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       3: Python 3.8: SyntaxError: cannot assign to function call
        4: """
        5: 
     -->6: len('a') = 3
           ^
+       7: 
 
 ```
 
@@ -1459,8 +1410,6 @@ or includes a function call and is not simply the name of a variable.
 
 ## SyntaxError - can't assign to function call - 2
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1480,11 +1429,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       3: Python 3.8: SyntaxError: cannot assign to function call
        4: """
        5: 
     -->6: func(a, b=3) = 4
           ^
+       7: 
 
 ```
 
@@ -1499,8 +1448,6 @@ a function call and not the name of a variable.
 
 ## SyntaxError - used equal sign instead of colon
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1520,11 +1467,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: """Should raise SyntaxError: invalid syntax
        2: """
        3: 
     -->4: ages = {'Alice'=22, 'Bob'=24}
                          ^
+       5: 
 
 ```
 
@@ -1539,8 +1486,6 @@ before or at the position indicated by --> and ^.
 
 ## SyntaxError - non-default argument follows default argument
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1560,11 +1505,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       2: """
        3: 
        4: 
     -->5: def test(a=1, b):
                    ^
+       6:     return a + b
 
 ```
 
@@ -1588,8 +1533,6 @@ According to Python, you used positional arguments after keyword ones.
 ## SyntaxError - positional argument follows keyword argument
 
 
-### Python exception
-
 ```pytb
 Traceback (most recent call last):
   File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
@@ -1608,11 +1551,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       2: """
        3: 
        4: 
     -->5: test(a=1, b)
                     ^
+       6: 
 
 ```
 
@@ -1636,8 +1579,6 @@ According to Python, you used positional arguments after keyword ones.
 ## SyntaxError - f-string: unterminated string
 
 
-### Python exception
-
 ```pytb
 Traceback (most recent call last):
   File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
@@ -1656,11 +1597,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: """Should raise SyntaxError: f-string: unterminated string
        2: """
        3: 
     -->4: print(f"Bob is {age['Bob]} years old.")
                 ^
+       5: 
 
 ```
 
@@ -1672,8 +1613,6 @@ single quote (') or double quote ("), without a matching closing one.
 
 ## SyntaxError - unclosed bracket
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1693,11 +1632,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-        4: def foo():
-        5:     return [1, 2, 3
-        6: 
-    --> 7: print(foo())
-           ^
+       5:     return [1, 2, 3
+       6: 
+    -->7: print(foo())
+          ^
+       8: 
 
 ```
 
@@ -1713,8 +1652,6 @@ The opening square bracket `[` on line 5 is not closed.
 
 ## SyntaxError - unexpected EOF while parsing
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1732,7 +1669,6 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-        5:     return [1, 2, 3,
         6: 
         7: print(foo())
     --> 8: 
@@ -1755,8 +1691,6 @@ The opening square bracket `[` on line 5 is not closed.
 ## SyntaxError - name is parameter and global
 
 
-### Python exception
-
 ```pytb
 Traceback (most recent call last):
   File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
@@ -1775,11 +1709,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       3: 
        4: 
        5: def f(x):
     -->6:     global x
               ^
+       7: 
 
 ```
 
@@ -1796,8 +1730,6 @@ inside that function, which is the contrary of what `global` implied.
 
 ## SyntaxError - keyword as attribute
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1817,11 +1749,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-        9: a = A()
        10: 
        11: a.x = 1
     -->12: a.pass = 2
              ^
+       13: 
 
 ```
 
@@ -1835,8 +1767,6 @@ You cannot use the Python keyword `pass` as an attribute.
 
 ## SyntaxError - content passed continuation line character
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1856,11 +1786,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       2: SyntaxError: unexpected character after line continuation character
        3: """
        4: 
     -->5: print(\t)
                    ^
+       6: 
 
 ```
 
@@ -1873,8 +1803,6 @@ I am guessing that you forgot to enclose some content in a string.
 
 ## SyntaxError - keyword can't be an expression
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1894,11 +1822,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-        4: """
-        5: 
-        6: 
-    --> 7: a = dict('key'=1)
-                    ^
+       5: 
+       6: 
+    -->7: a = dict('key'=1)
+                   ^
+       8: 
 
 ```
 
@@ -1918,8 +1846,6 @@ or contains a period, etc.
 ## SyntaxError - invalid character in identifier
 
 
-### Python exception
-
 ```pytb
 Traceback (most recent call last):
   File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
@@ -1938,11 +1864,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       3: 
        4: # Robot-face character below
        5: 
     -->6: 🤖 = 'Reeborg'
           ^
+       7: 
 
 ```
 
@@ -1955,8 +1881,6 @@ This includes many emojis.
 
 ## SyntaxError - keyword cannot be argument in def - 1
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -1976,11 +1900,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       2: """
        3: 
        4: 
     -->5: def f(None=1):
                 ^
+       6:     pass
 
 ```
 
@@ -1994,8 +1918,6 @@ I am guessing that you tried to use the Python keyword
 
 ## SyntaxError - keyword cannot be argument in def - 2
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2015,11 +1937,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       2: """
        3: 
        4: 
     -->5: def f(x, True):
                    ^
+       6:     pass
 
 ```
 
@@ -2033,8 +1955,6 @@ I am guessing that you tried to use the Python keyword
 
 ## SyntaxError - keyword cannot be argument in def - 3
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2054,11 +1974,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       2: """
        3: 
        4: 
     -->5: def f(*None):
                  ^
+       6:     pass
 
 ```
 
@@ -2072,8 +1992,6 @@ I am guessing that you tried to use the Python keyword
 
 ## SyntaxError - keyword cannot be argument in def - 4
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2093,11 +2011,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       2: """
        3: 
        4: 
     -->5: def f(**None):
                   ^
+       6:     pass
 
 ```
 
@@ -2111,8 +2029,6 @@ I am guessing that you tried to use the Python keyword
 
 ## SyntaxError - delete function call
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2132,11 +2048,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       2: """
        3: 
        4: 
     -->5: del f(a)
               ^
+       6: 
 
 ```
 
@@ -2151,8 +2067,6 @@ instead of deleting the function's name
 
 ## SyntaxError - assigned prior to global declaration
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2172,11 +2086,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-        4: 
-        5: def fn():
-        6:     p = 1
-    --> 7:     global p
-               ^
+       5: def fn():
+       6:     p = 1
+    -->7:     global p
+              ^
+       8: 
 
 ```
 
@@ -2187,8 +2101,6 @@ before declaring it as a global variable.
 
 ## SyntaxError - used prior to global declaration
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2208,11 +2120,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-        4: 
-        5: def fn():
-        6:     print(r)
-    --> 7:     global r
-               ^
+       5: def fn():
+       6:     print(r)
+    -->7:     global r
+              ^
+       8: 
 
 ```
 
@@ -2223,8 +2135,6 @@ before declaring it as a global variable.
 
 ## SyntaxError - assigned prior to nonlocal declaration
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2237,6 +2147,9 @@ SyntaxError: name 'q' is used prior to nonlocal declaration
 
 ```
 
+Did you forget to write `nonlocal` first?
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 Python could not understand the code in the file
 'TESTS:\syntax\raise_syntax_error50.py'
@@ -2244,11 +2157,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-        6: 
         7:     def g():
         8:         print(q)
     --> 9:         nonlocal q
                    ^
+       10: 
 
 ```
 
@@ -2259,8 +2172,6 @@ before declaring it as a nonlocal variable.
 
 ## SyntaxError - used prior to nonlocal declaration
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2273,6 +2184,9 @@ SyntaxError: name 's' is assigned to before nonlocal declaration
 
 ```
 
+Did you forget to add `nonlocal`?
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 Python could not understand the code in the file
 'TESTS:\syntax\raise_syntax_error51.py'
@@ -2280,11 +2194,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-        6: 
         7:     def g():
         8:         s = 2
     --> 9:         nonlocal s
                    ^
+       10: 
 
 ```
 
@@ -2295,8 +2209,6 @@ before declaring it as a nonlocal variable.
 
 ## SyntaxError - named assignment with Python constant
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2309,6 +2221,9 @@ SyntaxError: cannot use assignment expressions with True
 
 ```
 
+You cannot assign a value to `True`.
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 Python could not understand the code in the file
 'TESTS:\syntax\raise_syntax_error55.py'
@@ -2316,11 +2231,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: """Should raise SyntaxError: invalid syntax
        2: or (Python 3.8) cannot use named assignment with True"""
        3: 
     -->4: (True := 1)
            ^
+       5: 
 
 ```
 
@@ -2331,8 +2246,6 @@ beyond the location indicated by --> and ^.
 
 ## SyntaxError - assignment to operator
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2352,11 +2265,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: """Should raise SyntaxError: can't assign to operator
        2: or (Python 3.8) cannot assign to operator"""
        3: 
     -->4: a + 1 = 2
           ^
+       5: 
 
 ```
 
@@ -2368,8 +2281,6 @@ only used to assign a value to a variable.
 
 ## SyntaxError - using the backquote character
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2393,6 +2304,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: a = `1`
               ^
+       4: 
 
 ```
 
@@ -2407,8 +2319,6 @@ in this latter case, use the function `repr(x)`.
 
 ## SyntaxError - assign to generator expression
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2432,6 +2342,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: (x for x in x) = 1
           ^
+       4: 
 
 ```
 
@@ -2442,8 +2353,6 @@ generator expression instead of the name of a variable.
 
 ## SyntaxError - assign to conditional expression
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2467,6 +2376,7 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: a if 1 else b = 1
           ^
+       4: 
 
 ```
 
@@ -2480,8 +2390,6 @@ A conditional expression has the following form:
 
 ## SyntaxError - name is parameter and nonlocal
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2501,11 +2409,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       2: 
        3: 
        4: def f(x):
     -->5:     nonlocal x
               ^
+       6: 
 
 ```
 
@@ -2517,8 +2425,6 @@ before declaring it also as a nonlocal variable:
 
 ## SyntaxError - name is global and nonlocal
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2538,11 +2444,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-        4: 
-        5: 
-        6: def f():
-    --> 7:     global xy
-               ^
+       5: 
+       6: def f():
+    -->7:     global xy
+              ^
+       8:     nonlocal xy
 
 ```
 
@@ -2553,8 +2459,6 @@ A variable can be global, or nonlocal, but not both at the same time.
 
 ## SyntaxError - nonlocal variable not found
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2574,11 +2478,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       2: 
        3: 
        4: def f():
     -->5:     nonlocal ab
               ^
+       6: 
 
 ```
 
@@ -2589,8 +2493,6 @@ nonlocal variable but it cannot be found.
 
 ## SyntaxError - nonlocal variable not found at module level
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2610,11 +2512,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: """Should raise SyntaxError:  nonlocal declaration not allowed at module level"""
        2: 
        3: 
     -->4: nonlocal cd
           ^
+       5: 
 
 ```
 
@@ -2626,8 +2528,6 @@ given a value outside that function.
 
 ## SyntaxError - keyword arg only once in function definition
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2647,11 +2547,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: """Should raise SyntaxError: duplicate argument 'aa' in function definition"""
        2: 
        3: 
     -->4: def f(aa=1, aa=2):
           ^
+       5:     pass
 
 ```
 
@@ -2664,8 +2564,6 @@ twice; each keyword argument should appear only once in a function definition.
 
 ## SyntaxError - keyword arg only once in function call
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2685,11 +2583,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: """Should raise SyntaxError:  keyword argument repeated"""
        2: 
        3: 
     -->4: f(ad=1, ad=2)
                   ^
+       5: 
 
 ```
 
@@ -2700,8 +2598,6 @@ Each keyword argument should appear only once in a function call.
 
 ## SyntaxError - unexpected EOF while parsing 2
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2719,7 +2615,6 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: '''Should raise SyntaxError: unexpected EOF while parsing'''
        2: 
        3: for i in range(10):
     -->4: 
@@ -2735,8 +2630,6 @@ and expected more content.
 
 ## SyntaxError - print is a function 2
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2759,6 +2652,7 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: print len('hello')
                 ^
+       3: 
 
 ```
 
@@ -2772,8 +2666,6 @@ Now, `print` is a function; you need to use parentheses to call it.
 
 ## SyntaxError - copy/paste from interpreter
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2796,6 +2688,7 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: >>> print("Hello World!")
           ^
+       3: 
 
 ```
 
@@ -2809,8 +2702,6 @@ The Python prompt, `>>>`, should not be included in your code.
 
 ## SyntaxError - Using pip from interpreter
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2833,6 +2724,7 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: pip install friendly
               ^
+       3: 
 
 ```
 
@@ -2847,8 +2739,6 @@ not from a Python interpreter.
 
 ## SyntaxError - Using pip from interpreter 2
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2871,6 +2761,7 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: python -m pip install friendly
                     ^
+       3: 
 
 ```
 
@@ -2885,8 +2776,6 @@ not from a Python interpreter.
 
 ## SyntaxError - dot followed by parenthesis
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2909,6 +2798,7 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: print(len.('hello'))
                     ^
+       3: 
 
 ```
 
@@ -2921,8 +2811,6 @@ You cannot have a dot `.` followed by `(`.
 
 ## SyntaxError - cannot assign to f-string
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2942,11 +2830,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       3: Python >= 3.8: SyntaxError: cannot assign to f-string expression
        4: """
        5: 
     -->6: f'{x}' = 42
           ^
+       7: 
 
 ```
 
@@ -2958,8 +2846,6 @@ An f-string should only appear on the right-hand side of the equal sign.
 
 ## SyntaxError - raising multiple exceptions
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -2982,6 +2868,7 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: raise X, Y
                  ^
+       3: 
 
 ```
 
@@ -2994,8 +2881,6 @@ It looks like you are trying to raise an exception using Python 2 syntax.
 
 ## SyntaxError - parenthesis around generator expression
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -3015,11 +2900,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       3:     return list(it)
        4: 
        5: L = range(10)
     -->6: f(x for x in L, 1)
             ^
+       7: 
 
 ```
 
@@ -3032,8 +2917,6 @@ You must add parentheses enclosing that expression.
 ## SyntaxError - invalid character (bad quote)
 
 
-### Python exception
-
 ```pytb
 Traceback (most recent call last):
   File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
@@ -3044,6 +2927,9 @@ Traceback (most recent call last):
 SyntaxError: invalid character in identifier
 
 ```
+
+Did you mean to use a normal quote character, `'` or `"`?
+
 
 A `SyntaxError` occurs when Python cannot understand your code.
 Python could not understand the code in the file
@@ -3056,6 +2942,7 @@ beyond the location indicated by --> and ^.
        2:    and  SyntaxError: invalid character '«' (U+00AB) in Python 3.9"""
     -->3: a = « hello »
               ^
+       4: 
 
 ```
 
@@ -3070,8 +2957,6 @@ This can happen if you copy-pasted code.
 
 ## SyntaxError - single = instead of double == with if
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -3095,6 +2980,7 @@ beyond the location indicated by --> and ^.
        2: for i in range(101):
     -->3:     if i % 2 = 0:
                        ^
+       4:         print(i)
 
 ```
 
@@ -3108,8 +2994,6 @@ with an `if` statement.
 
 ## SyntaxError - single = instead of double == with elif
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -3129,11 +3013,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       2: for i in range(101):
        3:     if False:
        4:         pass
     -->5:     elif i % 2 = 0:
                          ^
+       6:         print(i)
 
 ```
 
@@ -3147,8 +3031,6 @@ with an `elif` statement.
 
 ## SyntaxError - single = instead of double == with while
 
-
-### Python exception
 
 ```pytb
 Traceback (most recent call last):
@@ -3168,11 +3050,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       1: """Should raise SyntaxError: invalid syntax"""
        2: a = 1
        3: 
     -->4: while a = 1:
                   ^
+       5:     a = 2
 
 ```
 

@@ -8,7 +8,6 @@ Installation and basic usage
 .. |mu_logo| image:: images/mu_logo.png
 
 
-
 Installation
 -------------
 
@@ -18,23 +17,38 @@ You can install Friendly-traceback from Pypi in the usual way::
     python -m pip install friendly-traceback
 
 
+Suggestions
+~~~~~~~~~~~
+
 If the environment in which you plan to use Friendly-traceback
 supports `Rich <https://github.com/willmcgugan/rich>`_, we
-strongly suggest you install Rich so that Friendly-traceback
-can make use of it by default. However, some programming environments,
-such as IDLE and other IDEs do not support Rich.
-The only editor/IDE capable of making use of Rich that we know
+**strongly** suggest you install Rich so that Friendly-traceback
+can make use of it by default::
+
+    python -m pip install rich
+
+Note however that some programming environments,
+such as IDLE and other IDEs do not support Rich; this does not
+prevent you from using Friendly-traceback, but the display
+will definitely not look as nice.
+The only editor/IDE capable of fully making use of Rich that we know
 of is `Microsoft Visual Studio Code <https://code.visualstudio.com/>`_.
+Pycharm's embedded console, at least on Windows, does not fully
+support Rich.
 
 If you use Rich on Windows from a terminal,
-we strongly suggest that you use the new
+we also strongly suggest that you use the new
 `Windows Terminal <https://github.com/microsoft/terminal>`_; this is
 what we have used for various screen captures.
+
+If you are a Mac or Linux user,
+and use Friendly-traceback with Rich installed,
+we'd gladly accept any screenshot that you could provide so that they
+could be included in this documentation.
 
 
 Usage
 -----
-
 
 There are various ways of using Friendly-traceback.
 We only list here the basic scenarios available from a

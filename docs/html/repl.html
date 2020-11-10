@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Console basics &mdash; Friendly tracebacks 0.1.8a documentation</title>
+  <title>Console basics &mdash; Friendly tracebacks 0.1.9a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.8a
+                0.1.9a
               </div>
             
           
@@ -116,6 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins.html">Editor plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
@@ -149,10 +150,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
-</ul>
-<p class="caption"><span class="caption-text">varia</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a></li>
 </ul>
 
             
@@ -254,7 +251,8 @@ the console basics here might come in handy.</p>
 <p>Imagine that you are a beginner. You write some code and are
 suddenly confronted with the following:</p>
 <a class="reference internal image-reference" href="_images/greet_what_1.png"><img alt="Screen capture of unbound local error" src="_images/greet_what_1.png" style="width: 642.6px; height: 157.79999999999998px;" /></a>
-<p>You see <code class="docutils literal notranslate"><span class="pre">UnboundLocalError</span></code>, and have no idea what it might mean.
+<p>You see <code class="docutils literal notranslate"><span class="pre">UnboundLocalError</span></code>, and have no idea what it might mean,
+in spite of the hint provided by Friendly-traceback.
 Rather than heading to StackOverflow to ask a question and have it
 immediately closed as being a duplicate, you simply ask <code class="docutils literal notranslate"><span class="pre">what()</span></code>
 and Friendly-traceback tries to help you.</p>
@@ -299,8 +297,8 @@ except for <code class="docutils literal notranslate"><span class="pre">what()</
 <p>You are a beginner reading some code found in a tutorial on the web
 and decide to try it out by copy-pasting it.</p>
 <a class="reference internal image-reference" href="_images/why_1.png"><img alt="Screen capture of syntax error" src="_images/why_1.png" style="width: 611.4px; height: 171.6px;" /></a>
-<p>So, this didn’t work, but you’d like to find out why – and possibly
-how to fix the problem.</p>
+<p>So, this didn’t work, but you’d like to find out a bit more information than
+that provided by the terse hint shown after the traceback.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">why</span><span class="p">()</span>
 <span class="go">Python indicates that you used some unicode characters not allowed as part</span>
 <span class="go">of a variable name; this includes many emojis. However, I suspect that you</span>

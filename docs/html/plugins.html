@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Editor plugins &mdash; Friendly tracebacks 0.1.9a documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Suggest an addition" href="suggest.html" />
+    <link rel="prev" title="Public API" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly tracebacks
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.9a
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Begin here</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Installation and basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Thoughts on design</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
+</ul>
+<p class="caption"><span class="caption-text">More advanced users</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Advanced Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Use in your project</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Editor plugins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#editors-helper-py">editors_helper.py</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="suggest.html">Suggest an addition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Add a new Exception case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
+</ul>
+<p class="caption"><span class="caption-text">All the tracebacks!</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.7.html">SyntaxError - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.8.html">Friendly tracebacks - Python 3.8 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.8.html">SyntaxError - Python 3.8 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.10.html">Friendly tracebacks - Python 3.10 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.10.html">SyntaxError - Python 3.10 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare_exceptions.html">Comparing Exception messages between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compare.html">Comparison between Python versions: SyntaxErrors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Markdown examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_markdown.html">Friendly tracebacks - markdown_docs format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_syntax_markdown.html">Syntax errors - markdown_docs format</a></li>
+</ul>
+<p class="caption"><span class="caption-text">En français</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Friendly tracebacks</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Editor plugins</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/plugins.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="suggest.html" class="btn btn-neutral float-right" title="Suggest an addition" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api.html" class="btn btn-neutral float-left" title="Public API" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is alpha software, currently in development.
+The API is subject to change without notice.
+The current documentation is likely not up to date and
+is definitely imcomplete, but it does give a good idea of
+what this project is about..</p>
+</div>
+<div class="section" id="editor-plugins">
+<h1>Editor plugins<a class="headerlink" href="#editor-plugins" title="Permalink to this headline">¶</a></h1>
+<p>If are interested in writing a plugin for an editor,
+so that Friendly-traceback could be used to run a program at
+the click of a button, or simply check the syntax without actually
+running the program, you will want to have a look at the
+content of the file <code class="docutils literal notranslate"><span class="pre">editors_helper.py</span></code>.</p>
+<span class="target" id="module-friendly_traceback.editors_helper"></span><div class="section" id="editors-helper-py">
+<h2>editors_helper.py<a class="headerlink" href="#editors-helper-py" title="Permalink to this headline">¶</a></h2>
+<p>The functions in this module have been created so that user editors/IDEs
+could use Friendly-traceback without having to change the content of
+their own programs.</p>
+<p>At the moment, only <code class="docutils literal notranslate"><span class="pre">run()</span></code> is part of the public API.</p>
+<p>If you make use of any other function here, please file an issue so
+it can be determined if it should be added to the public API.</p>
+<dl class="py function">
+<dt id="friendly_traceback.editors_helper.check_syntax">
+<code class="sig-prename descclassname">friendly_traceback.editors_helper.</code><code class="sig-name descname">check_syntax</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">source</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">'Fake filename'</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/editors_helper.html#check_syntax"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.editors_helper.check_syntax" title="Permalink to this definition">¶</a></dt>
+<dd><p>This uses Python’s <code class="docutils literal notranslate"><span class="pre">compile()</span></code> builtin which does some analysis of
+its code argument and will raise an exception if it identifies
+some syntax errors, but also some less common “overflow” and “value”
+errors.</p>
+<p>Note that there are a few syntax errors that are not caught by this,
+as they are identified by Python very late in its execution
+process. See for example
+<a class="reference external" href="https://aroberge.blogspot.com/2019/12/a-tiny-python-exception-oddity.html">this blog post</a></p>
+<p>This function can either be used on a file, using the <code class="docutils literal notranslate"><span class="pre">path</span></code> argument, or
+on some code passed as a string, using the <code class="docutils literal notranslate"><span class="pre">source</span></code> argument.
+For the latter case, one can also specify a corresponding <code class="docutils literal notranslate"><span class="pre">filename</span></code>:
+this could be useful if this function is invoked from a GUI-based
+editor.</p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">path</span></code> argument, if provided, takes precedence
+over the <code class="docutils literal notranslate"><span class="pre">source</span></code> argument.</p>
+<p>Two additional named arguments, <code class="docutils literal notranslate"><span class="pre">include</span></code> and <code class="docutils literal notranslate"><span class="pre">lang</span></code>, can be
+provided to temporarily set the values to be used during this function
+call. The original values are restored at the end.</p>
+<p>If friendly-traceback exception hook has not been set up prior
+to calling check_syntax, it will only be used for the duration
+of this function call.</p>
+<p>Returns a tuple containing a code object and a filename if no exception
+has been raised, False otherwise.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="friendly_traceback.editors_helper.exec_code">
+<code class="sig-prename descclassname">friendly_traceback.editors_helper.</code><code class="sig-name descname">exec_code</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">source</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/editors_helper.html#exec_code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.editors_helper.exec_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>This uses check_syntax to see if the code is valid and, if so,
+executes it into a globals dict containing only
+<code class="docutils literal notranslate"><span class="pre">{&quot;__name__&quot;:</span> <span class="pre">&quot;__main__&quot;}</span></code>.
+If no <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> exception is raised, this dict is returned;
+otherwise, an empty dict is returned.</p>
+<p>It can either be used on a file, using the <code class="docutils literal notranslate"><span class="pre">path</span></code> argument, or
+on some code passed as a string, using the <code class="docutils literal notranslate"><span class="pre">source</span></code> argument.</p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">path</span></code> argument, if provided, takes precedence
+over the <code class="docutils literal notranslate"><span class="pre">source</span></code> argument.</p>
+<p>Two additional named arguments, <code class="docutils literal notranslate"><span class="pre">include</span></code> and <code class="docutils literal notranslate"><span class="pre">lang</span></code>, can be
+provided to temporarily set the values to be used during this function
+call. The original values are restored at the end.</p>
+<p>If friendly-traceback exception hook has not been set up prior
+to calling check_syntax, it will only be used for the duration
+of this function call.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="friendly_traceback.editors_helper.run">
+<code class="sig-prename descclassname">friendly_traceback.editors_helper.</code><code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'friendly_tb'</span></em>, <em class="sig-param"><span class="n">args</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">console</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_rich</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">theme</span><span class="o">=</span><span class="default_value">'dark'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/editors_helper.html#run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.editors_helper.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a filename (relative or absolute path) ending with the “.py”
+extension, this function uses the
+more complex <code class="docutils literal notranslate"><span class="pre">exec_code()</span></code> to run a file.</p>
+<p>If console is set to <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">run()</span></code> returns an empty dict
+if a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> was raised, otherwise returns the dict in
+which the module (<code class="docutils literal notranslate"><span class="pre">filename</span></code>) was executed.</p>
+<p>If console is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> (the default), the execution continues
+as an interactive session in a Friendly console, with the module
+dict being used as the locals dict.</p>
+<p>Other arguments include:</p>
+<p><code class="docutils literal notranslate"><span class="pre">lang</span></code>: language used; currenly only <code class="docutils literal notranslate"><span class="pre">en</span></code> (default) and <code class="docutils literal notranslate"><span class="pre">fr</span></code>
+are available.</p>
+<p><code class="docutils literal notranslate"><span class="pre">include</span></code>: specifies what information is to be included if an
+exception is raised.</p>
+<p><code class="docutils literal notranslate"><span class="pre">args</span></code>: arguments that are passed to the program as though it
+was run on the command line as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">filename</span><span class="o">.</span><span class="n">py</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">use_rich</span></code>: set to <code class="docutils literal notranslate"><span class="pre">True</span></code> if Rich is available and the environment
+supports it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">theme</span></code>: Theme to be used with Rich. Currently only <code class="docutils literal notranslate"><span class="pre">dark</span></code>,
+the default, and <code class="docutils literal notranslate"><span class="pre">light</span></code> are available. <code class="docutils literal notranslate"><span class="pre">light</span></code> is meant for
+light coloured background and has not been extensively tested.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="suggest.html" class="btn btn-neutral float-right" title="Suggest an addition" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api.html" class="btn btn-neutral float-left" title="Public API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, André Roberge
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
