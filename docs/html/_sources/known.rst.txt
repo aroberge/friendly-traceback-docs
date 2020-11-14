@@ -3,6 +3,12 @@
 Known exceptions
 =================
 
+.. todo::
+
+    Use Python builtins to obtain a list of all exceptions and create
+    automatic documentation for all known exceptions (answer to ``what()``)
+    in both French and English.
+
 .. note::
 
     I am currently focusing on adding more cases of ``SyntaxError``,

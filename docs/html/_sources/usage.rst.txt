@@ -8,6 +8,13 @@ Installation and basic usage
 .. |mu_logo| image:: images/mu_logo.png
 
 
+.. hint::
+
+    |thonny_logo| If you use Thonny, you should skip this and go to :ref:`using_thonny`.
+
+.. |thonny_logo| image:: images/thonny_logo.png
+
+
 Installation
 -------------
 
@@ -95,7 +102,7 @@ as described later in this documentation.
     try:
         # Some code
     except Exception:
-        friendly_traceback.explain()
+        friendly_traceback.explain_traceback()
 
 
 All of the above support additional options allowing one

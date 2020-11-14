@@ -1,3 +1,5 @@
+.. _multiple_tracebacks:
+
 Multiple tracebacks
 ====================
 
@@ -143,7 +145,7 @@ As before, we can use ``debug_tb()`` to see the complete traceback.
 
 Since paths can be quite long, when showing information about an
 exception, Friendly-traceback will attempt to reduce the length
-of the path shown. We've seen before an example where ``HOME``
+of the path shown. We've seen before an example where ``HOME_DIR``
 was substituted for the user's home directory. A more significant
 reduction is shown when the path for a module from the Python standard library
 is shown.

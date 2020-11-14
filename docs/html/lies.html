@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Intentional lies &mdash; Friendly tracebacks 0.1.9a documentation</title>
+  <title>Learn to lie &mdash; Friendly tracebacks 0.1.11a documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Public API" href="api.html" />
-    <link rel="prev" title="Advanced Usage" href="usage_adv.html" /> 
+    <link rel="next" title="Custom formatter" href="formatter.html" />
+    <link rel="prev" title="Public API" href="api.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.9a
+                0.1.11a
               </div>
             
           
@@ -99,18 +99,14 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
-</ul>
-<p class="caption"><span class="caption-text">More advanced users</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Intentional lies</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#you-can-lie-too">You can lie too</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Learn to lie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatter.html">Custom formatter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Other details for advanced users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugins.html">Editor plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
@@ -122,6 +118,7 @@
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="all_tb.html">Why all the tracebacks?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
@@ -191,7 +188,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Intentional lies</li>
+      <li>Learn to lie</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -207,10 +204,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="api.html" class="btn btn-neutral float-right" title="Public API" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="formatter.html" class="btn btn-neutral float-right" title="Custom formatter" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="usage_adv.html" class="btn btn-neutral float-left" title="Advanced Usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-left" title="Public API" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -221,64 +218,24 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is alpha software, currently in development.
-The API is subject to change without notice.
-The current documentation is likely not up to date and
+<p>This is alpha software, currently in development.</p>
+<p>The current documentation is likely not up to date and
 is definitely imcomplete, but it does give a good idea of
-what this project is about..</p>
+what this project is about.</p>
 </div>
-<div class="section" id="intentional-lies">
-<h1>Intentional lies<a class="headerlink" href="#intentional-lies" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="learn-to-lie">
+<h1>Learn to lie<a class="headerlink" href="#learn-to-lie" title="Permalink to this headline">¶</a></h1>
 <p>Let me let you in on a secret:
 occasionally, Friendly-traceback will lie to you.
-When it does so, it will indicate it to you;
-however, it will do so in a way that might be easily overlooked.</p>
-<p>Have a look at the following screen captures, all taken using
-version 0.0.8a  (Python version: 3.7.3 on Win 32). (Most other screenshots
-normally include Friendly-traceback version.)</p>
-<p>First, we show a traceback generated with <code class="docutils literal notranslate"><span class="pre">verbosity</span> <span class="pre">level</span></code> set to 0:
-with this choice, the output only includes the normal
-Python traceback.</p>
-<a class="reference internal image-reference" href="_images/name_error_0.png"><img alt="Friendly Python traceback" src="_images/name_error_0.png" style="width: 598.1999999999999px; height: 106.2px;" /></a>
-<p>Next, we show a traceback generated with <code class="docutils literal notranslate"><span class="pre">verbosity</span> <span class="pre">level</span></code> set to 9:
-this corresponds to the “simulated” Python traceback as
-determined by Friendly-traceback.  The traceback is
-identical to the true Python traceback as above.</p>
-<a class="reference internal image-reference" href="_images/name_error_9.png"><img alt="Friendly Python traceback" src="_images/name_error_9.png" style="width: 592.8px; height: 108.6px;" /></a>
-<p>So far, Friendly-traceback has not lied. Let’s look at another
-example, first run directly with Python.</p>
-<a class="reference internal image-reference" href="_images/syntax_error1_py.png"><img alt="Friendly Python traceback" src="_images/syntax_error1_py.png" style="width: 598.1999999999999px; height: 111.6px;" /></a>
-<p>Because the traceback contains only a single step, Python did not
-include the standard header <code class="docutils literal notranslate"><span class="pre">Traceback</span> <span class="pre">(most</span> <span class="pre">recent</span> <span class="pre">call</span> <span class="pre">last):</span></code>.</p>
-<p>Here’s the “simulated” Python traceback generated by Friendly-traceback.</p>
-<a class="reference internal image-reference" href="_images/syntax_error1_9.png"><img alt="Friendly Python traceback" src="_images/syntax_error1_9.png" style="width: 601.8px; height: 126.6px;" /></a>
-<p>Notice how the standard header appears, but preceeded by the word
-“Simulated”.</p>
-<p>Here’s the <strong>true</strong> Python traceback generated (displayed with <code class="docutils literal notranslate"><span class="pre">verbosity</span></code> 0)
-while this same script is run by Friendly-traceback:</p>
-<a class="reference internal image-reference" href="_images/syntax_error1_0.png"><img alt="Friendly Python traceback" src="_images/syntax_error1_0.png" style="width: 854.0px; height: 336.0px;" /></a>
-<p>This traceback contains a lot more information, as Friendly-traceback
-uses Python’s <code class="docutils literal notranslate"><span class="pre">runpy</span></code> module as well as its own functions to run this
-script - all of which are shown in this traceback.
-To avoid confusing users, when it is desired to include a Python traceback
-in the information provided by Friendly-traceback, the default will
-be to include a “simulated” traceback, where all traces of
-Friendly-traceback’s own functions, as well as Python’s <code class="docutils literal notranslate"><span class="pre">runpy</span></code> module,
-will be removed.  When such calls are removed, the traceback header
-will have the word “Simulated” inserted first.  If no calls are removed,
-like in the very first example, then the word “Simulated” does not appear.</p>
-<div class="section" id="you-can-lie-too">
-<h2>You can lie too<a class="headerlink" href="#you-can-lie-too" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes, you might wish to exclude other modules from the
-simulated Python traceback. For example, in Friendly-traceback’s console,
-the Python <code class="docutils literal notranslate"><span class="pre">codeop.py</span></code> module might sometimes appear due to the
-way we process the users’ code. To instruct Friendly-traceback
-from including this module in the “simulated” traceback,
-we need to have the following two lines of code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">codeop</span>
-<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">add_excluded_path</span><span class="p">(</span><span class="n">codeop</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
+And I encourage you to do the same.</p>
+<p>Actually, if you have read the section
+<a class="reference internal" href="tracebacks.html#multiple-tracebacks"><span class="std std-ref">Multiple tracebacks</span></a>, you already have seen that the
+traceback shown usually does not include modules from Friendly-traceback
+itself.  You can do the same for your own modules
+using something like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">my_module</span>
+<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">add_excluded_path</span><span class="p">(</span><span class="n">my_module</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
 </pre></div>
-</div>
 </div>
 </div>
 
@@ -290,10 +247,10 @@ we need to have the following two lines of code:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="api.html" class="btn btn-neutral float-right" title="Public API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="formatter.html" class="btn btn-neutral float-right" title="Custom formatter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="usage_adv.html" class="btn btn-neutral float-left" title="Advanced Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-left" title="Public API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

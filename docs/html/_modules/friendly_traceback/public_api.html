@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.public_api &mdash; Friendly tracebacks 0.1.9a documentation</title>
+  <title>friendly_traceback.public_api &mdash; Friendly tracebacks 0.1.11a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.1.9a
+                0.1.11a
               </div>
             
           
@@ -97,15 +97,14 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../design.html">Some thoughts on the design of Friendly-traceback</a></li>
-</ul>
-<p class="caption"><span class="caption-text">More advanced users</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../usage_adv.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lies.html">Learn to lie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../formatter.html">Custom formatter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_adv.html">Other details for advanced users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins.html">Editor plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
@@ -117,6 +116,7 @@
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../all_tb.html">Why all the tracebacks?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../known.html">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
@@ -187,6 +187,8 @@
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../friendly_traceback.html">friendly_traceback</a> &raquo;</li>
         
       <li>friendly_traceback.public_api</li>
     
@@ -459,7 +461,7 @@
         <span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span></div>
 
 
-<span class="k">class</span> <span class="nc">Friendly</span><span class="p">:</span>
+<div class="viewcode-block" id="Friendly"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.Friendly">[docs]</a><span class="k">class</span> <span class="nc">Friendly</span><span class="p">:</span>
     <span class="vm">__doc__</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Simple API for use with the console</span>
 
 <span class="s2">    get_lang: </span><span class="si">{</span><span class="n">get_lang</span><span class="o">.</span><span class="vm">__doc__</span><span class="si">}</span><span class="s2"></span>
@@ -494,23 +496,23 @@
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_traceback_info</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">session</span><span class="o">.</span><span class="n">saved_traceback_info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="Friendly.explain"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.Friendly.explain">[docs]</a>    <span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Shows the previously recorded traceback info again,</span>
 <span class="sd">        with the specified verbosity level.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">old_include</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_include</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>
         <span class="n">session</span><span class="o">.</span><span class="n">show_traceback_info_again</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">old_include</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">old_include</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">more</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Friendly.more"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.Friendly.more">[docs]</a>    <span class="k">def</span> <span class="nf">more</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Used to display information additional to the minimal traceback,</span>
 <span class="sd">        with the exception of the generic information.</span>
 <span class="sd">        Potentially useful for advanced users.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;more&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;more&quot;</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">what</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="Friendly.what"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.Friendly.what">[docs]</a>    <span class="k">def</span> <span class="nf">what</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;If known, shows the generic explanation about a given exception.&quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="n">exception</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -528,46 +530,46 @@
                 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
             <span class="k">return</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;what&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;what&quot;</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">where</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Friendly.where"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.Friendly.where">[docs]</a>    <span class="k">def</span> <span class="nf">where</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Shows the information about where the exception occurred&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;where&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;where&quot;</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">why</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Friendly.why"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.Friendly.why">[docs]</a>    <span class="k">def</span> <span class="nf">why</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Shows the likely cause of the exception.&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;why&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;why&quot;</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">hint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Friendly.hint"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.Friendly.hint">[docs]</a>    <span class="k">def</span> <span class="nf">hint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Shows hint/suggestion if available.&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;hint&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;hint&quot;</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">friendly_tb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Friendly.friendly_tb"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.Friendly.friendly_tb">[docs]</a>    <span class="k">def</span> <span class="nf">friendly_tb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Shows the friendly traceback, which includes the hint/suggestion</span>
 <span class="sd">        if available.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">python_tb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Friendly.python_tb"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.Friendly.python_tb">[docs]</a>    <span class="k">def</span> <span class="nf">python_tb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Shows the Python traceback, excluding files from friendly-traceback</span>
 <span class="sd">        itself.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;python_tb&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;python_tb&quot;</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">debug_tb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Friendly.debug_tb"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.Friendly.debug_tb">[docs]</a>    <span class="k">def</span> <span class="nf">debug_tb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Shows the true Python traceback, which includes</span>
 <span class="sd">        files from friendly-traceback itself.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Friendly.debug"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.Friendly.debug">[docs]</a>    <span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;This functions displays the true traceback recorded, that</span>
 <span class="sd">        includes friendly-traceback&#39;s own code.</span>
 <span class="sd">        It also adds the suggestion/hint from friendly-traceback</span>
 <span class="sd">        and sets a debug flag for the current session.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">session</span><span class="o">.</span><span class="n">_debug</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span></div></div>
 
 
 <span class="c1"># -----------------------------------------</span>

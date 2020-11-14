@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.1.8a
+Friendly-traceback version: 0.1.9a
 Python version: 3.8.4
 
 
@@ -61,7 +61,7 @@ normally, a more specific exception should have been raised.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 34, in test_attribute_error
+  File "TESTS:\runtime\test_attribute_error.py", line 35, in test_attribute_error
     a.x  # Testing instance
 AttributeError: 'A' object has no attribute 'x'
 
@@ -75,13 +75,13 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 The object `a` has no attribute named `x`.
 
 
-#### Exception raised on line 34 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 35 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       33:         a = A()
-    -->34:         a.x  # Testing instance
-       35:     except Exception as e:
+       34:         a = A()
+    -->35:         a.x  # Testing instance
+       36:     except Exception as e:
 
 ```
 
@@ -103,7 +103,7 @@ The object `a` has no attribute named `x`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 63, in test_misspelled_module_attribute
+  File "TESTS:\runtime\test_attribute_error.py", line 66, in test_misspelled_module_attribute
     string.ascii_lowecase
 AttributeError: module 'string' has no attribute 'ascii_lowecase'
 
@@ -121,13 +121,13 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 Perhaps you meant to write `string.ascii_lowercase` instead of `string.ascii_lowecase`
 
 
-#### Exception raised on line 63 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 66 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       62:     try:
-    -->63:         string.ascii_lowecase
-       64:     except Exception as e:
+       65:     try:
+    -->66:         string.ascii_lowecase
+       67:     except Exception as e:
 
 ```
 
@@ -148,7 +148,7 @@ Perhaps you meant to write `string.ascii_lowercase` instead of `string.ascii_low
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 78, in test_misspelled_module_attribute_2
+  File "TESTS:\runtime\test_attribute_error.py", line 82, in test_misspelled_module_attribute_2
     math.cost
 AttributeError: module 'math' has no attribute 'cost'
 
@@ -168,13 +168,13 @@ the following names which are attributes of module `math`:
 `cos, cosh, acos`
 
 
-#### Exception raised on line 78 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 82 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       77:     try:
-    -->78:         math.cost
-       79:     except Exception as e:
+       81:     try:
+    -->82:         math.cost
+       83:     except Exception as e:
 
 ```
 
@@ -401,7 +401,7 @@ Reminder: the first item of a sequence is at index 0.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_index_error.py", line 21, in test_index_error2
+  File "TESTS:\runtime\test_index_error.py", line 22, in test_index_error2
     print(a[50], b[0])
 IndexError: list index out of range
 
@@ -414,13 +414,13 @@ is greater than the length of the sequence.
 Reminder: the first item of a sequence is at index 0.
 
 
-#### Exception raised on line 21 of file TESTS:\runtime\test_index_error.py.
+#### Exception raised on line 22 of file TESTS:\runtime\test_index_error.py.
 
 
 ```python
-       20:     try:
-    -->21:         print(a[50], b[0])
-       22:     except Exception as e:
+       21:     try:
+    -->22:         print(a[50], b[0])
+       23:     except Exception as e:
 
 ```
 
@@ -533,7 +533,7 @@ I have no additional information for you.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_name_error.py", line 19, in test_name_error2
+  File "TESTS:\runtime\test_name_error.py", line 20, in test_name_error2
     x = babs(-1)
 NameError: name 'babs' is not defined
 
@@ -556,13 +556,13 @@ Instead of writing `babs`, perhaps you meant one of the following:
 *   Python builtins: `abs`
 
 
-#### Exception raised on line 19 of file TESTS:\runtime\test_name_error.py.
+#### Exception raised on line 20 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
-       18:     try:
-    -->19:         x = babs(-1)
-       20:     except Exception as e:
+       19:     try:
+    -->20:         x = babs(-1)
+       21:     except Exception as e:
 
 ```
 
@@ -582,7 +582,7 @@ Instead of writing `babs`, perhaps you meant one of the following:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_name_error.py", line 33, in test_name_error3
+  File "TESTS:\runtime\test_name_error.py", line 35, in test_name_error3
     y = x
 NameError: name 'x' is not defined
 
@@ -609,13 +609,13 @@ instead of
     x = 3
 
 
-#### Exception raised on line 33 of file TESTS:\runtime\test_name_error.py.
+#### Exception raised on line 35 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
-       32:     try:
-    -->33:         y = x
-       34:     except Exception as e:
+       34:     try:
+    -->35:         y = x
+       36:     except Exception as e:
 
 ```
 
@@ -635,7 +635,7 @@ instead of
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_name_error.py", line 45, in test_name_error4
+  File "TESTS:\runtime\test_name_error.py", line 48, in test_name_error4
     cost  # wrote from math import * above
 NameError: name 'cost' is not defined
 
@@ -656,13 +656,13 @@ Instead of writing `cost`, perhaps you meant one of the following:
 *   Global scope: `cos`, `cosh`, `acos`
 
 
-#### Exception raised on line 45 of file TESTS:\runtime\test_name_error.py.
+#### Exception raised on line 48 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
-       44:     try:
-    -->45:         cost  # wrote from math import * above
-       46:     except Exception as e:
+       47:     try:
+    -->48:         cost  # wrote from math import * above
+       49:     except Exception as e:
 
 ```
 
@@ -825,7 +825,7 @@ a string (`str`) and an integer (`int`)
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 25, in test_type_error1a
+  File "TESTS:\runtime\test_type_error.py", line 26, in test_type_error1a
     result = a + a_list
 TypeError: can only concatenate str (not "list") to str
 
@@ -841,13 +841,13 @@ You tried to concatenate (add) two different types of objects:
 a string (`str`) and a `list`
 
 
-#### Exception raised on line 25 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 26 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       24:         a_list = [1, 2, 3]
-    -->25:         result = a + a_list
-       26:     except Exception as e:
+       25:         a_list = [1, 2, 3]
+    -->26:         result = a + a_list
+       27:     except Exception as e:
 
 ```
 
@@ -869,7 +869,7 @@ a string (`str`) and a `list`
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 42, in test_type_error1b
+  File "TESTS:\runtime\test_type_error.py", line 44, in test_type_error1b
     result = a_tuple + a_list
 TypeError: can only concatenate tuple (not "list") to tuple
 
@@ -885,13 +885,13 @@ You tried to concatenate (add) two different types of objects:
 a `tuple` and a `list`
 
 
-#### Exception raised on line 42 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 44 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       41:         a_list = [1, 2, 3]
-    -->42:         result = a_tuple + a_list
-       43:     except Exception as e:
+       43:         a_list = [1, 2, 3]
+    -->44:         result = a_tuple + a_list
+       45:     except Exception as e:
 
 ```
 
@@ -913,7 +913,7 @@ a `tuple` and a `list`
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 57, in test_type_error2
+  File "TESTS:\runtime\test_type_error.py", line 60, in test_type_error2
     result = one + none
 TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
 
@@ -929,13 +929,13 @@ You tried to add two incompatible types of objects:
 an integer (`int`) and a variable equal to `None` (`NoneType`)
 
 
-#### Exception raised on line 57 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 60 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       56:         none = None
-    -->57:         result = one + none
-       58:     except Exception as e:
+       59:         none = None
+    -->60:         result = one + none
+       61:     except Exception as e:
 
 ```
 
@@ -957,7 +957,7 @@ an integer (`int`) and a variable equal to `None` (`NoneType`)
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 74, in test_type_error2a
+  File "TESTS:\runtime\test_type_error.py", line 78, in test_type_error2a
     one += two
 TypeError: unsupported operand type(s) for +=: 'int' and 'str'
 
@@ -973,13 +973,13 @@ You tried to add two incompatible types of objects:
 an integer (`int`) and a string (`str`)
 
 
-#### Exception raised on line 74 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 78 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       73:         two = "two"
-    -->74:         one += two
-       75:     except Exception as e:
+       77:         two = "two"
+    -->78:         one += two
+       79:     except Exception as e:
 
 ```
 
@@ -1001,7 +1001,7 @@ an integer (`int`) and a string (`str`)
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 89, in test_type_error3
+  File "TESTS:\runtime\test_type_error.py", line 94, in test_type_error3
     result = a - b
 TypeError: unsupported operand type(s) for -: 'tuple' and 'list'
 
@@ -1017,13 +1017,13 @@ You tried to subtract two incompatible types of objects:
 a `tuple` and a `list`
 
 
-#### Exception raised on line 89 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 94 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       88:         b = [3, 4]
-    -->89:         result = a - b
-       90:     except Exception as e:
+       93:         b = [3, 4]
+    -->94:         result = a - b
+       95:     except Exception as e:
 
 ```
 
@@ -1045,7 +1045,7 @@ a `tuple` and a `list`
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 104, in test_type_error3a
+  File "TESTS:\runtime\test_type_error.py", line 110, in test_type_error3a
     b -= a
 TypeError: unsupported operand type(s) for -=: 'list' and 'tuple'
 
@@ -1061,13 +1061,13 @@ You tried to subtract two incompatible types of objects:
 a `list` and a `tuple`
 
 
-#### Exception raised on line 104 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 110 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       103:         b = [3, 4]
-    -->104:         b -= a
-       105:     except Exception as e:
+       109:         b = [3, 4]
+    -->110:         b -= a
+       111:     except Exception as e:
 
 ```
 
@@ -1089,7 +1089,7 @@ a `list` and a `tuple`
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 119, in test_type_error4
+  File "TESTS:\runtime\test_type_error.py", line 126, in test_type_error4
     result = a * b
 TypeError: unsupported operand type(s) for *: 'complex' and 'set'
 
@@ -1105,13 +1105,13 @@ You tried to multiply two incompatible types of objects:
 a complex number and a `set`
 
 
-#### Exception raised on line 119 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 126 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       118:         b = {2, 3}
-    -->119:         result = a * b
-       120:     except Exception as e:
+       125:         b = {2, 3}
+    -->126:         result = a * b
+       127:     except Exception as e:
 
 ```
 
@@ -1133,7 +1133,7 @@ a complex number and a `set`
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 134, in test_type_error4a
+  File "TESTS:\runtime\test_type_error.py", line 142, in test_type_error4a
     b *= a
 TypeError: unsupported operand type(s) for *=: 'set' and 'complex'
 
@@ -1149,13 +1149,13 @@ You tried to multiply two incompatible types of objects:
 a `set` and a complex number
 
 
-#### Exception raised on line 134 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 142 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       133:         b = {2, 3}
-    -->134:         b *= a
-       135:     except Exception as e:
+       141:         b = {2, 3}
+    -->142:         b *= a
+       143:     except Exception as e:
 
 ```
 
@@ -1177,7 +1177,7 @@ a `set` and a complex number
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 149, in test_type_error5
+  File "TESTS:\runtime\test_type_error.py", line 158, in test_type_error5
     result = a / b
 TypeError: unsupported operand type(s) for /: 'dict' and 'float'
 
@@ -1193,13 +1193,13 @@ You tried to divide two incompatible types of objects:
 a dictionary (`dict`) and a number (`float`)
 
 
-#### Exception raised on line 149 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 158 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       148:         b = 3.1416
-    -->149:         result = a / b
-       150:     except Exception as e:
+       157:         b = 3.1416
+    -->158:         result = a / b
+       159:     except Exception as e:
 
 ```
 
@@ -1221,7 +1221,7 @@ a dictionary (`dict`) and a number (`float`)
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 164, in test_type_error5a
+  File "TESTS:\runtime\test_type_error.py", line 174, in test_type_error5a
     b /= a
 TypeError: unsupported operand type(s) for /=: 'float' and 'dict'
 
@@ -1237,13 +1237,13 @@ You tried to divide two incompatible types of objects:
 a number (`float`) and a dictionary (`dict`)
 
 
-#### Exception raised on line 164 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 174 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       163:         b = 3.1416
-    -->164:         b /= a
-       165:     except Exception as e:
+       173:         b = 3.1416
+    -->174:         b /= a
+       175:     except Exception as e:
 
 ```
 
@@ -1265,7 +1265,7 @@ a number (`float`) and a dictionary (`dict`)
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 179, in test_type_error5b
+  File "TESTS:\runtime\test_type_error.py", line 190, in test_type_error5b
     result = a // b
 TypeError: unsupported operand type(s) for //: 'dict' and 'int'
 
@@ -1281,13 +1281,13 @@ You tried to divide two incompatible types of objects:
 a dictionary (`dict`) and an integer (`int`)
 
 
-#### Exception raised on line 179 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 190 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       178:         b = 1
-    -->179:         result = a // b
-       180:     except Exception as e:
+       189:         b = 1
+    -->190:         result = a // b
+       191:     except Exception as e:
 
 ```
 
@@ -1309,7 +1309,7 @@ a dictionary (`dict`) and an integer (`int`)
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 194, in test_type_error5c
+  File "TESTS:\runtime\test_type_error.py", line 206, in test_type_error5c
     b //= a
 TypeError: unsupported operand type(s) for //=: 'float' and 'dict'
 
@@ -1325,13 +1325,13 @@ You tried to divide two incompatible types of objects:
 a number (`float`) and a dictionary (`dict`)
 
 
-#### Exception raised on line 194 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 206 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       193:         b = 3.1416
-    -->194:         b //= a
-       195:     except Exception as e:
+       205:         b = 3.1416
+    -->206:         b //= a
+       207:     except Exception as e:
 
 ```
 
@@ -1353,7 +1353,7 @@ a number (`float`) and a dictionary (`dict`)
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 209, in test_type_error6
+  File "TESTS:\runtime\test_type_error.py", line 222, in test_type_error6
     result = a & b
 TypeError: unsupported operand type(s) for &: 'str' and 'int'
 
@@ -1370,13 +1370,13 @@ on two incompatible types of objects:
 a string (`str`) and an integer (`int`)
 
 
-#### Exception raised on line 209 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 222 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       208:         b = 2
-    -->209:         result = a & b
-       210:     except Exception as e:
+       221:         b = 2
+    -->222:         result = a & b
+       223:     except Exception as e:
 
 ```
 
@@ -1398,7 +1398,7 @@ a string (`str`) and an integer (`int`)
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 224, in test_type_error6a
+  File "TESTS:\runtime\test_type_error.py", line 238, in test_type_error6a
     b &= a
 TypeError: unsupported operand type(s) for &=: 'int' and 'str'
 
@@ -1415,13 +1415,13 @@ on two incompatible types of objects:
 an integer (`int`) and a string (`str`)
 
 
-#### Exception raised on line 224 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 238 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       223:         b = 2
-    -->224:         b &= a
-       225:     except Exception as e:
+       237:         b = 2
+    -->238:         b &= a
+       239:     except Exception as e:
 
 ```
 
@@ -1443,7 +1443,7 @@ an integer (`int`) and a string (`str`)
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 239, in test_type_error7
+  File "TESTS:\runtime\test_type_error.py", line 254, in test_type_error7
     result = a ** b
 TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
 
@@ -1460,13 +1460,13 @@ using two incompatible types of objects:
 a dictionary (`dict`) and a number (`float`)
 
 
-#### Exception raised on line 239 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 254 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       238:         b = 3.1416
-    -->239:         result = a ** b
-       240:     except Exception as e:
+       253:         b = 3.1416
+    -->254:         result = a ** b
+       255:     except Exception as e:
 
 ```
 
@@ -1488,7 +1488,7 @@ a dictionary (`dict`) and a number (`float`)
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 254, in test_type_error7a
+  File "TESTS:\runtime\test_type_error.py", line 270, in test_type_error7a
     a **= b
 TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
 
@@ -1505,13 +1505,13 @@ using two incompatible types of objects:
 a dictionary (`dict`) and a number (`float`)
 
 
-#### Exception raised on line 254 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 270 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       253:         b = 3.1416
-    -->254:         a **= b
-       255:     except Exception as e:
+       269:         b = 3.1416
+    -->270:         a **= b
+       271:     except Exception as e:
 
 ```
 
@@ -1533,7 +1533,7 @@ a dictionary (`dict`) and a number (`float`)
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 269, in test_type_error8
+  File "TESTS:\runtime\test_type_error.py", line 286, in test_type_error8
     result = a >> b
 TypeError: unsupported operand type(s) for >>: 'str' and 'int'
 
@@ -1550,13 +1550,13 @@ on two incompatible types of objects:
 a string (`str`) and an integer (`int`)
 
 
-#### Exception raised on line 269 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 286 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       268:         b = 42
-    -->269:         result = a >> b
-       270:     except Exception as e:
+       285:         b = 42
+    -->286:         result = a >> b
+       287:     except Exception as e:
 
 ```
 
@@ -1578,7 +1578,7 @@ a string (`str`) and an integer (`int`)
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 284, in test_type_error8a
+  File "TESTS:\runtime\test_type_error.py", line 302, in test_type_error8a
     a >>= b
 TypeError: unsupported operand type(s) for >>=: 'str' and 'int'
 
@@ -1595,13 +1595,13 @@ on two incompatible types of objects:
 a string (`str`) and an integer (`int`)
 
 
-#### Exception raised on line 284 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 302 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       283:         b = 42
-    -->284:         a >>= b
-       285:     except Exception as e:
+       301:         b = 42
+    -->302:         a >>= b
+       303:     except Exception as e:
 
 ```
 
@@ -1623,7 +1623,7 @@ a string (`str`) and an integer (`int`)
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 299, in test_type_error9
+  File "TESTS:\runtime\test_type_error.py", line 318, in test_type_error9
     result = a @ b
 TypeError: unsupported operand type(s) for @: 'str' and 'int'
 
@@ -1642,13 +1642,13 @@ This operator is normally used only
 for multiplication of matrices.
 
 
-#### Exception raised on line 299 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 318 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       298:         b = 2
-    -->299:         result = a @ b
-       300:     except Exception as e:
+       317:         b = 2
+    -->318:         result = a @ b
+       319:     except Exception as e:
 
 ```
 
@@ -1670,7 +1670,7 @@ for multiplication of matrices.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 314, in test_type_error9a
+  File "TESTS:\runtime\test_type_error.py", line 334, in test_type_error9a
     a @= b
 TypeError: unsupported operand type(s) for @=: 'str' and 'int'
 
@@ -1689,13 +1689,13 @@ This operator is normally used only
 for multiplication of matrices.
 
 
-#### Exception raised on line 314 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 334 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       313:         b = 2
-    -->314:         a @= b
-       315:     except Exception as e:
+       333:         b = 2
+    -->334:         a @= b
+       335:     except Exception as e:
 
 ```
 
@@ -1717,7 +1717,7 @@ for multiplication of matrices.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 329, in test_type_error10
+  File "TESTS:\runtime\test_type_error.py", line 350, in test_type_error10
     b < a
 TypeError: '<' not supported between instances of 'int' and 'str'
 
@@ -1734,13 +1734,13 @@ between two incompatible types of objects:
 an integer (`int`) and a string (`str`)
 
 
-#### Exception raised on line 329 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 350 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       328:         b = 42
-    -->329:         b < a
-       330:     except Exception as e:
+       349:         b = 42
+    -->350:         b < a
+       351:     except Exception as e:
 
 ```
 
@@ -1762,7 +1762,7 @@ an integer (`int`) and a string (`str`)
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 342, in test_type_error11
+  File "TESTS:\runtime\test_type_error.py", line 364, in test_type_error11
     a = +"abc"
 TypeError: bad operand type for unary +: 'str'
 
@@ -1779,13 +1779,13 @@ with the following type of object: a string (`str`).
 This operation is not defined for this type of object.
 
 
-#### Exception raised on line 342 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 364 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       341:     try:
-    -->342:         a = +"abc"
-       343:         print(a)
+       363:     try:
+    -->364:         a = +"abc"
+       365:         print(a)
 
 ```
 
@@ -1804,7 +1804,7 @@ This operation is not defined for this type of object.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 356, in test_type_error11a
+  File "TESTS:\runtime\test_type_error.py", line 379, in test_type_error11a
     a = -[1, 2, 3]
 TypeError: bad operand type for unary -: 'list'
 
@@ -1821,13 +1821,13 @@ with the following type of object: a `list`.
 This operation is not defined for this type of object.
 
 
-#### Exception raised on line 356 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 379 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       355:     try:
-    -->356:         a = -[1, 2, 3]
-       357:         print(a)
+       378:     try:
+    -->379:         a = -[1, 2, 3]
+       380:         print(a)
 
 ```
 
@@ -1846,7 +1846,7 @@ This operation is not defined for this type of object.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 370, in test_type_error11b
+  File "TESTS:\runtime\test_type_error.py", line 394, in test_type_error11b
     a = ~(1, 2, 3)
 TypeError: bad operand type for unary ~: 'tuple'
 
@@ -1863,13 +1863,13 @@ with the following type of object: a `tuple`.
 This operation is not defined for this type of object.
 
 
-#### Exception raised on line 370 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 394 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       369:     try:
-    -->370:         a = ~(1, 2, 3)
-       371:         print(a)
+       393:     try:
+    -->394:         a = ~(1, 2, 3)
+       395:         print(a)
 
 ```
 
@@ -1888,7 +1888,7 @@ This operation is not defined for this type of object.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 385, in test_type_error12
+  File "TESTS:\runtime\test_type_error.py", line 410, in test_type_error12
     a[0] = 0
 TypeError: 'tuple' object does not support item assignment
 
@@ -1906,13 +1906,13 @@ You tried change part of such an immutable object: a `tuple`,
 most likely by using an indexing operation.
 
 
-#### Exception raised on line 385 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 410 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       384:     try:
-    -->385:         a[0] = 0
-       386:     except Exception as e:
+       409:     try:
+    -->410:         a[0] = 0
+       411:     except Exception as e:
 
 ```
 
@@ -1933,7 +1933,7 @@ most likely by using an indexing operation.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 401, in test_type_error13
+  File "TESTS:\runtime\test_type_error.py", line 427, in test_type_error13
     fn(1)
 TypeError: fn() takes 0 positional arguments but 1 was given
 
@@ -1950,13 +1950,13 @@ You apparently have called the function `fn` with
 such positional argument(s).
 
 
-#### Exception raised on line 401 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 427 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       400:     try:
-    -->401:         fn(1)
-       402:     except Exception as e:
+       426:     try:
+    -->427:         fn(1)
+       428:     except Exception as e:
 
 ```
 
@@ -1977,7 +1977,7 @@ such positional argument(s).
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 419, in test_type_error13a
+  File "TESTS:\runtime\test_type_error.py", line 446, in test_type_error13a
     A().f(1)
 TypeError: f() takes 1 positional argument but 2 were given
 
@@ -1999,13 +1999,13 @@ such positional argument(s).
 Perhaps you forgot `self` when defining `f`.
 
 
-#### Exception raised on line 419 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 446 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       418:     try:
-    -->419:         A().f(1)
-       420:     except Exception as e:
+       445:     try:
+    -->446:         A().f(1)
+       447:     except Exception as e:
 
 ```
 
@@ -2026,7 +2026,7 @@ Perhaps you forgot `self` when defining `f`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 437, in test_type_error14
+  File "TESTS:\runtime\test_type_error.py", line 465, in test_type_error14
     fn(1)
 TypeError: fn() missing 2 required positional arguments: 'b' and 'c'
 
@@ -2042,13 +2042,13 @@ You apparently have called the function 'fn()' with
 fewer positional arguments than it requires (2 missing).
 
 
-#### Exception raised on line 437 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 465 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       436:     try:
-    -->437:         fn(1)
-       438:     except Exception as e:
+       464:     try:
+    -->465:         fn(1)
+       466:     except Exception as e:
 
 ```
 
@@ -2069,7 +2069,7 @@ fewer positional arguments than it requires (2 missing).
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 451, in test_type_error15
+  File "TESTS:\runtime\test_type_error.py", line 480, in test_type_error15
     _ = (1, 2)(3, 4)
 TypeError: 'tuple' object is not callable
 
@@ -2091,13 +2091,13 @@ which Python took as an indication of a function call.
 Perhaps you had a missing comma between two tuples.
 
 
-#### Exception raised on line 451 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 480 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       450:     try:
-    -->451:         _ = (1, 2)(3, 4)
-       452:     except Exception as e:
+       479:     try:
+    -->480:         _ = (1, 2)(3, 4)
+       481:     except Exception as e:
 
 ```
 
@@ -2117,7 +2117,7 @@ Perhaps you had a missing comma between two tuples.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 464, in test_type_error15a
+  File "TESTS:\runtime\test_type_error.py", line 494, in test_type_error15a
     _ = [1, 2](3, 4)
 TypeError: 'list' object is not callable
 
@@ -2139,13 +2139,13 @@ which Python took as an indication of a function call.
 Perhaps you had a missing comma before the tuple.
 
 
-#### Exception raised on line 464 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 494 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       463:     try:
-    -->464:         _ = [1, 2](3, 4)
-       465:     except Exception as e:
+       493:     try:
+    -->494:         _ = [1, 2](3, 4)
+       495:     except Exception as e:
 
 ```
 
@@ -2165,7 +2165,7 @@ Perhaps you had a missing comma before the tuple.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 477, in test_type_error16
+  File "TESTS:\runtime\test_type_error.py", line 507, in test_type_error16
     raise "exception"
 TypeError: exceptions must derive from BaseException
 
@@ -2180,13 +2180,13 @@ or by tring to do an operation not allowed on a given type of object.
 In Python 3, exceptions must be derived from BaseException.
 
 
-#### Exception raised on line 477 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 507 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       476:     try:
-    -->477:         raise "exception"
-       478:     except Exception as e:
+       506:     try:
+    -->507:         raise "exception"
+       508:     except Exception as e:
 
 ```
 
@@ -2282,7 +2282,7 @@ should have been included as the first line inside your function.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_unbound_local_error.py", line 47, in test_unbound_local_error_missing_nonlocal
+  File "TESTS:\runtime\test_unbound_local_error.py", line 48, in test_unbound_local_error_missing_nonlocal
     outer_missing_nonlocal()
   File "TESTS:\runtime\test_unbound_local_error.py", line 20, in outer_missing_nonlocal
     inner()
@@ -2314,13 +2314,13 @@ Perhaps the statement
 should have been included as the first line inside your function.
 
 
-#### Execution stopped on line 47 of file TESTS:\runtime\test_unbound_local_error.py.
+#### Execution stopped on line 48 of file TESTS:\runtime\test_unbound_local_error.py.
 
 
 ```python
-       46:     try:
-    -->47:         outer_missing_nonlocal()
-       48:     except Exception as e:
+       47:     try:
+    -->48:         outer_missing_nonlocal()
+       49:     except Exception as e:
 
 ```
 
@@ -2429,7 +2429,7 @@ using the modulo operator `%`:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_zero_division_error.py", line 20, in test_zero_division_error2
+  File "TESTS:\runtime\test_zero_division_error.py", line 21, in test_zero_division_error2
     1 % zero
 ZeroDivisionError: integer division or modulo by zero
 
@@ -2443,13 +2443,13 @@ using the modulo operator `%`:
     `result = my_variable % 0`
 
 
-#### Exception raised on line 20 of file TESTS:\runtime\test_zero_division_error.py.
+#### Exception raised on line 21 of file TESTS:\runtime\test_zero_division_error.py.
 
 
 ```python
-       19:     try:
-    -->20:         1 % zero
-       21:     except Exception as e:
+       20:     try:
+    -->21:         1 % zero
+       22:     except Exception as e:
 
 ```
 

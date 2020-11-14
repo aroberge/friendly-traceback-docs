@@ -1,3 +1,6 @@
+.. _using_editor:
+
+
 Using with an editor or IDE
 ============================
 
@@ -95,3 +98,6 @@ our program, has been removed from the screen capture above.
 
 As you can see, this is much more pleasant to look at then what
 we see using IDLE.
+
+
+.. todo:: Add info about running program with command line argument.

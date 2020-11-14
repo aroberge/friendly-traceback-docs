@@ -17,7 +17,7 @@ given by Python traceback to make them more useful for **advanced** programmers.
 Friendly-traceback is **not** one of these projects.
 
 While Friendly-traceback can be useful for advanced programmers,
-it is aimed aimed primarily at **beginners** and/or at users
+it is aimed aimed primarily at beginners and/or at users
 who would like to get information about traceback in their own language.
 Friendly-traceback can give more detailed information as to
 **where** an exception occurred, **what** a given exception means and
@@ -26,17 +26,14 @@ Friendly-traceback can give more detailed information as to
 While Friendly-traceback can be used on its own with a specially
 designed console, a better option would be to use it together with
 GUI-based editors/IDE. We explain how to do so later.
-For now, we just show one quick example of executing a program
-that raises an exception.
+For now, we just show one quick example.
 
 
 A quick look
 ------------
 
-First, we show what happens
-
-Let's have a quick look at a standard
-Python traceback when using the REPL.
+First, we show what happens when we use Python
+to run a program that raises an exception.
 
 .. image:: images/python_indexerror.png
    :scale: 50 %
@@ -63,9 +60,8 @@ English (by default) and French are available.
    :scale: 50 %
    :alt: Friendly IndexError in French
 
-.. hint::
 
-    |france| Voir la section en français vers la fin.
+**Keep reading if you want to find out more.**
 
 
 .. toctree::
@@ -88,22 +84,18 @@ English (by default) and French are available.
    :caption: Thoughts on design
 
    design
+   themes
 
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-   :caption: More advanced users
-
-   usage_adv
 
 .. toctree::
    :maxdepth: 1
    :hidden:
    :caption: Use in your project
 
-   lies
    api
+   lies
+   formatter
+   usage_adv
    plugins
 
 
@@ -122,6 +114,7 @@ English (by default) and French are available.
    :hidden:
    :caption: All the tracebacks!
 
+   all_tb
    known
    Friendly tracebacks - Python 3.6 in English <tracebacks_en_3.6>
    SyntaxError - Python 3.6 in English <syntax_tracebacks_en_3.6>

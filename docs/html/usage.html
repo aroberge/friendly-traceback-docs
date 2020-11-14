@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation and basic usage &mdash; Friendly tracebacks 0.1.9a documentation</title>
+  <title>Installation and basic usage &mdash; Friendly tracebacks 0.1.11a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.9a
+                0.1.11a
               </div>
             
           
@@ -106,15 +106,14 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
-</ul>
-<p class="caption"><span class="caption-text">More advanced users</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Learn to lie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatter.html">Custom formatter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Other details for advanced users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugins.html">Editor plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
@@ -126,6 +125,7 @@
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="all_tb.html">Why all the tracebacks?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
@@ -225,17 +225,20 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is alpha software, currently in development.
-The API is subject to change without notice.
-The current documentation is likely not up to date and
+<p>This is alpha software, currently in development.</p>
+<p>The current documentation is likely not up to date and
 is definitely imcomplete, but it does give a good idea of
-what this project is about..</p>
+what this project is about.</p>
 </div>
 <div class="section" id="installation-and-basic-usage">
 <h1>Installation and basic usage<a class="headerlink" href="#installation-and-basic-usage" title="Permalink to this headline">¶</a></h1>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p><img alt="mu_logo" src="_images/mu_logo.png" /> If you use Mu, you should skip this and go to <a class="reference internal" href="mu.html#mu-instructions"><span class="std std-ref">Using with Mu</span></a>.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><img alt="thonny_logo" src="_images/thonny_logo.png" /> If you use Thonny, you should skip this and go to <a class="reference internal" href="thonny.html#using-thonny"><span class="std std-ref">Using with Thonny</span></a>.</p>
 </div>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
@@ -315,7 +318,7 @@ a program:</p>
 <span class="k">try</span><span class="p">:</span>
     <span class="c1"># Some code</span>
 <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">()</span>
+    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">()</span>
 </pre></div>
 </div>
 </li>

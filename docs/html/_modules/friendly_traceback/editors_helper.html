@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.editors_helper &mdash; Friendly tracebacks 0.1.9a documentation</title>
+  <title>friendly_traceback.editors_helper &mdash; Friendly tracebacks 0.1.11a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.1.9a
+                0.1.11a
               </div>
             
           
@@ -97,15 +97,14 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../design.html">Some thoughts on the design of Friendly-traceback</a></li>
-</ul>
-<p class="caption"><span class="caption-text">More advanced users</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../usage_adv.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lies.html">Learn to lie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../formatter.html">Custom formatter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_adv.html">Other details for advanced users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins.html">Editor plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
@@ -117,6 +116,7 @@
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../all_tb.html">Why all the tracebacks?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../known.html">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
@@ -188,6 +188,8 @@
         
           <li><a href="../index.html">Module code</a> &raquo;</li>
         
+          <li><a href="../friendly_traceback.html">friendly_traceback</a> &raquo;</li>
+        
       <li>friendly_traceback.editors_helper</li>
     
     
@@ -212,7 +214,7 @@
 <span class="sd">could use Friendly-traceback without having to change the content of</span>
 <span class="sd">their own programs.</span>
 
-<span class="sd">At the moment, only ``run()`` is part of the public API.</span>
+<span class="sd">None of these are part of the public API.</span>
 
 <span class="sd">If you make use of any other function here, please file an issue so</span>
 <span class="sd">it can be determined if it should be added to the public API.</span>
@@ -221,12 +223,10 @@
 
 <span class="kn">from</span> <span class="nn">.source_cache</span> <span class="kn">import</span> <span class="n">cache</span>
 <span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
-<span class="kn">from</span> <span class="nn">.session</span> <span class="kn">import</span> <span class="n">session</span>
-<span class="kn">from</span> <span class="nn">.console</span> <span class="kn">import</span> <span class="n">start_console</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">friendly_rich</span>
+<span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">session</span>
 
 
-<div class="viewcode-block" id="check_syntax"><a class="viewcode-back" href="../../plugins.html#friendly_traceback.public_api.check_syntax">[docs]</a><span class="k">def</span> <span class="nf">check_syntax</span><span class="p">(</span>
+<div class="viewcode-block" id="check_syntax"><a class="viewcode-back" href="../../plugins.html#friendly_traceback.editors_helper.check_syntax">[docs]</a><span class="k">def</span> <span class="nf">check_syntax</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;Fake filename&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This uses Python&#39;s ``compile()`` builtin which does some analysis of</span>
@@ -297,7 +297,7 @@
     <span class="k">return</span> <span class="n">code</span></div>
 
 
-<div class="viewcode-block" id="exec_code"><a class="viewcode-back" href="../../plugins.html#friendly_traceback.public_api.exec_code">[docs]</a><span class="k">def</span> <span class="nf">exec_code</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="exec_code"><a class="viewcode-back" href="../../plugins.html#friendly_traceback.editors_helper.exec_code">[docs]</a><span class="k">def</span> <span class="nf">exec_code</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This uses check_syntax to see if the code is valid and, if so,</span>
 <span class="sd">    executes it into a globals dict containing only</span>
 <span class="sd">    ``{&quot;__name__&quot;: &quot;__main__&quot;}``.</span>
@@ -339,71 +339,6 @@
 
     <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_include</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">module_globals</span></div>
-
-
-<div class="viewcode-block" id="run"><a class="viewcode-back" href="../../plugins.html#friendly_traceback.public_api.run">[docs]</a><span class="k">def</span> <span class="nf">run</span><span class="p">(</span>
-    <span class="n">filename</span><span class="p">,</span>
-    <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">include</span><span class="o">=</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">,</span>
-    <span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">console</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">use_rich</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">theme</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span>
-<span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Given a filename (relative or absolute path) ending with the &quot;.py&quot;</span>
-<span class="sd">    extension, this function uses the</span>
-<span class="sd">    more complex ``exec_code()`` to run a file.</span>
-
-<span class="sd">    If console is set to ``False``, ``run()`` returns an empty dict</span>
-<span class="sd">    if a ``SyntaxError`` was raised, otherwise returns the dict in</span>
-<span class="sd">    which the module (``filename``) was executed.</span>
-
-<span class="sd">    If console is set to ``True`` (the default), the execution continues</span>
-<span class="sd">    as an interactive session in a Friendly console, with the module</span>
-<span class="sd">    dict being used as the locals dict.</span>
-
-<span class="sd">    Other arguments include:</span>
-
-<span class="sd">    ``lang``: language used; currenly only ``en`` (default) and ``fr``</span>
-<span class="sd">    are available.</span>
-
-<span class="sd">    ``include``: specifies what information is to be included if an</span>
-<span class="sd">    exception is raised.</span>
-
-<span class="sd">    ``args``: arguments that are passed to the program as though it</span>
-<span class="sd">    was run on the command line as follows::</span>
-
-<span class="sd">        python filename.py arg1, arg2, ...</span>
-
-<span class="sd">    ``use_rich``: set to ``True`` if Rich is available and the environment</span>
-<span class="sd">    supports it.</span>
-
-<span class="sd">    ``theme``: Theme to be used with Rich. Currently only ``dark``,</span>
-<span class="sd">    the default, and ``light`` are available. ``light`` is meant for</span>
-<span class="sd">    light coloured background and has not been extensively tested.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">use_rich</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">friendly_rich</span><span class="o">.</span><span class="n">rich_available</span><span class="p">:</span>
-            <span class="n">session</span><span class="o">.</span><span class="n">use_rich</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="n">session</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="s2">&quot;rich&quot;</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="n">theme</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="p">[</span><span class="n">filename</span><span class="p">]</span>
-        <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">arg</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)]</span>
-        <span class="c1"># TODO: add extensive tests for this</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">arg</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span> <span class="k">if</span> <span class="n">arg</span><span class="p">])</span>  <span class="c1"># remove empty strings</span>
-    <span class="n">module_globals</span> <span class="o">=</span> <span class="n">exec_code</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">console</span><span class="p">:</span>
-        <span class="n">start_console</span><span class="p">(</span>
-            <span class="n">local_vars</span><span class="o">=</span><span class="n">module_globals</span><span class="p">,</span>
-            <span class="n">use_rich</span><span class="o">=</span><span class="n">use_rich</span><span class="p">,</span>
-            <span class="n">banner</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="n">theme</span><span class="o">=</span><span class="n">theme</span><span class="p">,</span>
-            <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span>
-        <span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">module_globals</span></div>
 
 
 <span class="k">def</span> <span class="nf">_temp_set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">):</span>

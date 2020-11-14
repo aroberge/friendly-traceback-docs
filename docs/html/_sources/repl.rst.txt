@@ -1,3 +1,5 @@
+.. _using_repl:
+
 Console basics
 ===============
 
@@ -12,7 +14,7 @@ in a console (repl) but that they use an editor instead.
 However, using a console is useful to demonstrate various
 features of Friendly-traceback. Furthermore, as we will see when
 we discuss using Friendly-traceback with editors, knowing
-the console basics here might come in handy.
+the console basics shown here might come in handy.
 
 
 what()
@@ -185,3 +187,10 @@ For example, ``explain("what")`` is equivalent to ``what()``;
 ``explain("why")`` is equivalent to ``why()``.
 For the console, this is clearly redundant. However, it is something
 to keep in mind as it might be more useful later.
+
+
+API
+---
+
+.. automodule:: friendly_traceback.console
+   :members:

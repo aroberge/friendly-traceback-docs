@@ -80,3 +80,10 @@ I can ask Friendly-traceback to provide explanations in French instead:
    :scale: 50 %
    :alt: Mu with friendly running test_problem
 
+More information
+-----------------
+
+To find out what you can do in addition to using ``why()``, go back and have
+a look at :ref:`using_repl`. Then, go on to the following section to
+see everything that there is to know about using with any editor as we
+explain some other features not covered here.

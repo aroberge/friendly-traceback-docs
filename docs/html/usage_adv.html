@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Advanced Usage &mdash; Friendly tracebacks 0.1.9a documentation</title>
+  <title>Other details for advanced users &mdash; Friendly tracebacks 0.1.11a documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Intentional lies" href="lies.html" />
-    <link rel="prev" title="Some thoughts on the design of Friendly-traceback" href="design.html" /> 
+    <link rel="next" title="Editor plugins" href="plugins.html" />
+    <link rel="prev" title="Custom formatter" href="formatter.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.9a
+                0.1.11a
               </div>
             
           
@@ -99,24 +99,21 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
-<p class="caption"><span class="caption-text">More advanced users</span></p>
+<p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Usage</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Learn to lie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatter.html">Custom formatter</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Other details for advanced users</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#where-the-output-is-written">Where the output is written?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-much-information-is-printed">How much information is printed?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#language-used">Language used</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#as-an-exception-hook">As an exception hook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#catching-exception-locally">Catching exception locally</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-another-script">Running another script</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#from-the-command-line">From the command line</a></li>
 </ul>
 </li>
-</ul>
-<p class="caption"><span class="caption-text">Use in your project</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugins.html">Editor plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
@@ -128,6 +125,7 @@
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="all_tb.html">Why all the tracebacks?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
@@ -197,7 +195,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Advanced Usage</li>
+      <li>Other details for advanced users</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -213,10 +211,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="lies.html" class="btn btn-neutral float-right" title="Intentional lies" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="plugins.html" class="btn btn-neutral float-right" title="Editor plugins" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of Friendly-traceback" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="formatter.html" class="btn btn-neutral float-left" title="Custom formatter" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -227,22 +225,13 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is alpha software, currently in development.
-The API is subject to change without notice.
-The current documentation is likely not up to date and
+<p>This is alpha software, currently in development.</p>
+<p>The current documentation is likely not up to date and
 is definitely imcomplete, but it does give a good idea of
-what this project is about..</p>
+what this project is about.</p>
 </div>
-<div class="section" id="advanced-usage">
-<h1>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This is no longer accurate; it needs to be updated.</p>
-</div>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Update the information about Advanced usage and configuration.</p>
-</div>
+<div class="section" id="other-details-for-advanced-users">
+<h1>Other details for advanced users<a class="headerlink" href="#other-details-for-advanced-users" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="where-the-output-is-written">
 <h2>Where the output is written?<a class="headerlink" href="#where-the-output-is-written" title="Permalink to this headline">¶</a></h2>
 <p>By default, friendly tracebacks are written to <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>.
@@ -269,23 +258,6 @@ However, it is possible to override this choice, as follows:</p>
 the output will be cleared once it has been retrieved. If this is not the
 desired behaviour, simply use <code class="docutils literal notranslate"><span class="pre">flush=False</span></code>.</p>
 </div>
-<div class="section" id="how-much-information-is-printed">
-<h2>How much information is printed?<a class="headerlink" href="#how-much-information-is-printed" title="Permalink to this headline">¶</a></h2>
-<div class="sidebar">
-<p class="sidebar-title">No warnings from Python</p>
-<p>In order to minimize confusion for the end user, all Python warnings
-are suppressed.</p>
-</div>
-<p>The amount of information shown to the user can be changed using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>What each level correspond to is shown later in this documentation.
-The level currently used can be obtained as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">level</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_verbosity</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
 <div class="section" id="language-used">
 <h2>Language used<a class="headerlink" href="#language-used" title="Permalink to this headline">¶</a></h2>
 <div class="sidebar">
@@ -310,14 +282,14 @@ in the section about design.</p>
 <h2>As an exception hook<a class="headerlink" href="#as-an-exception-hook" title="Permalink to this headline">¶</a></h2>
 <p>When “installing” Friendly-traceback, one can use various optional
 parameters:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="s2">&quot;fr&quot;</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="s2">&quot;capture&quot;</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="s2">&quot;fr&quot;</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="s2">&quot;capture&quot;</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This is equivalent to writing:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">install</span><span class="p">()</span>
 <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="s2">&quot;fr&quot;</span><span class="p">)</span>
 <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_stream</span><span class="p">(</span><span class="s2">&quot;capture&quot;</span><span class="p">)</span>
-<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="s2">&quot;explain&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -328,7 +300,7 @@ exceptions where they are expected to arise, such as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="c1"># Some code</span>
 <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">()</span>
+    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>This uses the default of writing to <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>.
@@ -336,7 +308,7 @@ One can also <strong>temporarily</strong> redirect the output to any stream:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="c1"># Some code</span>
 <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="n">stream</span><span class="p">)</span>
+    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="n">stream</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>By default, Friendly-traceback takes its information from <code class="docutils literal notranslate"><span class="pre">sys.exc_info()</span></code>.
@@ -351,7 +323,7 @@ it can be done as in the following example:</p>
 <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
     <span class="n">lang</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_lang</span><span class="p">()</span>
     <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="s2">&quot;fr&quot;</span><span class="p">)</span>
-    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain</span><span class="p">()</span>
+    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">()</span>
     <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -416,67 +388,6 @@ and writing:</p>
 <p>You can now run your script normally: Friendly-traceback exception
 handling will be used by default on it.</p>
 </div>
-<div class="section" id="from-the-command-line">
-<h2>From the command line<a class="headerlink" href="#from-the-command-line" title="Permalink to this headline">¶</a></h2>
-<p>It is recommended that you run the following command yourself so as to
-see what options are available for the version installed on
-your computer.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback -h
-
-usage: __main__.py [-h] [--color] [--lang LANG] [--verbosity VERBOSITY] [--import_only]
-                   [--version] [--dev] [--formatter FORMATTER]
-                   [source] [args [args ...]]
-
-Friendly-traceback makes Python tracebacks easier to understand.
-
-    Friendly-traceback version 0.0.34a. [Python version: 3.8.4]
-
-    If no command line arguments other than -m are specified,
-    Friendly-traceback will start an interactive console.
-
-    Note: the values of the verbosity level described below are:
-        0: Normal Python tracebacks
-        1: Default - does not need to be specified.
-           The output does NOT include the standard Python traceback.
-        2: Python tracebacks appear before the friendly display
-        3: Python tracebacks appended at the end of the friendly display.
-        4: Python traceback followed by basic explanation
-        5: Only basic explanation
-        6: No generic explanation
-        7: Python tracebacks appear before the friendly display but
-           no generic explanation is included.
-        9: Python traceback only
-
-    The Python traceback for level &gt; 1 is the simulated version, which
-    excludes calls from Friendly-traceback itself.
-    You can use negative values to show the true Python traceback which
-    will likely include function calls from Friendly-traceback itself.
-    Thus level -9 is equivalent to level 0.
-
-    Other values may be available, as we try to find the most useful
-    settings for beginners.
-
-
-positional arguments:
-  source                Name of the script to be run as though it was the main module run by
-                        Python, so that __name__ does equal &#39;__main__&#39;.
-  args                  Arguments to give to the script specified by source.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --color, --colour     Not implemented yet.
-  --lang LANG           This sets the language used by Friendly-tracebacks. Usually this is a
-                        two-letter code such as &#39;fr&#39; for French.
-  --verbosity VERBOSITY, --level VERBOSITY
-                        This sets the &quot;verbosity&quot; level, that is the amount of information
-                        provided.
-  --version             Displays the current version.
-  --formatter FORMATTER
-                        Specify a formatter function, as a dotted path. Example: --formatter
-                        friendly_traceback.formatters.markdown
-</pre></div>
-</div>
-</div>
 </div>
 
 
@@ -487,10 +398,10 @@ optional arguments:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="lies.html" class="btn btn-neutral float-right" title="Intentional lies" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="plugins.html" class="btn btn-neutral float-right" title="Editor plugins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of Friendly-traceback" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="formatter.html" class="btn btn-neutral float-left" title="Custom formatter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

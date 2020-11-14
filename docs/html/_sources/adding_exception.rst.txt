@@ -102,7 +102,7 @@ with some numbered comments added::
         try:
             inner()   # 2
         except Exception:
-            friendly_traceback.explain(*sys.exc_info(), redirect="capture")  # 3
+            friendly_traceback.explain_traceback(*sys.exc_info(), redirect="capture")  # 3
         result = friendly_traceback.get_output()  # 4
         assert "UnboundLocalError" in result  # 5
         return result  # 6
@@ -386,7 +386,7 @@ that could be done when I first created this example::
         try:
             outer()
         except Exception:
-            friendly_traceback.explain(redirect="capture")
+            friendly_traceback.explain_traceback(redirect="capture")
         result = friendly_traceback.get_output()
         assert "UnboundLocalError: local variable 'a' referenced" in result
         if friendly_traceback.get_lang() == 'en':

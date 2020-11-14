@@ -111,7 +111,7 @@ with some numbered comments added, to which we refer below::
             except ImportError:
                 import raise_indentation_error1
         except Exception:
-            friendly_traceback.explain(*sys.exc_info(), redirect="capture")
+            friendly_traceback.explain_traceback(*sys.exc_info(), redirect="capture")
         result = friendly_traceback.get_output()
         assert "IndentationError: expected an indented block" in result  # 2
         return result

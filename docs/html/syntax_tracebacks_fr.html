@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.1.9a documentation</title>
+  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.1.11a documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.1.9a
+                0.1.11a
               </div>
             
           
@@ -98,15 +98,14 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
-</ul>
-<p class="caption"><span class="caption-text">More advanced users</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Learn to lie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatter.html">Custom formatter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Other details for advanced users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugins.html">Editor plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
@@ -118,6 +117,7 @@
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="all_tb.html">Why all the tracebacks?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
@@ -299,11 +299,10 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is alpha software, currently in development.
-The API is subject to change without notice.
-The current documentation is likely not up to date and
+<p>This is alpha software, currently in development.</p>
+<p>The current documentation is likely not up to date and
 is definitely imcomplete, but it does give a good idea of
-what this project is about..</p>
+what this project is about.</p>
 </div>
 <div class="section" id="france-friendly-syntaxerror-tracebacks-en-francais">
 <h1><img alt="france" src="_images/france.png" /> Friendly SyntaxError tracebacks - en Français<a class="headerlink" href="#france-friendly-syntaxerror-tracebacks-en-francais" title="Permalink to this headline">¶</a></h1>
@@ -326,7 +325,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.1.8a
+<p>Friendly-traceback version: 0.1.9a
 Python version: 3.8.4</p>
 <div class="section" id="indentationerror-1-expected-an-indented-block">
 <h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -895,7 +894,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     ^
 SyntaxError: cannot assign to None
 
-    You cannot assign a value to `None`.
+    Vous ne pouvez pas attribuer une valeur à `None`.
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error13.py&#39;
@@ -921,7 +920,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     ^
 SyntaxError: cannot assign to __debug__
 
-    You cannot assign a value to `__debug__`.
+    Vous ne pouvez pas attribuer une valeur à `__debug__`.
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error14.py&#39;
@@ -1978,7 +1977,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     ^
 SyntaxError: name &#39;q&#39; is used prior to nonlocal declaration
 
-    Did you forget to write `nonlocal` first?
+    Avez-vous oublié d’ajouter `nonlocal` en premier ?
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error50.py&#39;
@@ -2005,7 +2004,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     ^
 SyntaxError: name &#39;s&#39; is assigned to before nonlocal declaration
 
-    Did you forget to add `nonlocal`?
+    Avez-vous oublié d’ajouter `nonlocal` ?
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error51.py&#39;
@@ -2032,7 +2031,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
      ^
 SyntaxError: cannot use assignment expressions with True
 
-    You cannot assign a value to `True`.
+    Vous ne pouvez pas attribuer une valeur à `True`.
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error55.py&#39;
@@ -2570,7 +2569,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
         ^
 SyntaxError: invalid character in identifier
 
-    Vouliez vous utiliser un guillemet normal, `&#39;` ou `&quot;`?
+    Vouliez vous utiliser un guillemet normal, `&#39;` ou `&quot;` ?
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error75.py&#39;

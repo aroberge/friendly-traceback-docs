@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨 &mdash; Friendly tracebacks 0.1.9a documentation</title>
+  <title>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨 &mdash; Friendly tracebacks 0.1.11a documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.1.9a
+                0.1.11a
               </div>
             
           
@@ -98,15 +98,14 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
-</ul>
-<p class="caption"><span class="caption-text">More advanced users</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Learn to lie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatter.html">Custom formatter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Other details for advanced users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugins.html">Editor plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
@@ -118,6 +117,7 @@
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="all_tb.html">Why all the tracebacks?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
@@ -215,11 +215,10 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is alpha software, currently in development.
-The API is subject to change without notice.
-The current documentation is likely not up to date and
+<p>This is alpha software, currently in development.</p>
+<p>The current documentation is likely not up to date and
 is definitely imcomplete, but it does give a good idea of
-what this project is about..</p>
+what this project is about.</p>
 </div>
 <div class="section" id="bienvenue-bienvenido-welcome">
 <h1>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome  歡迎光臨<a class="headerlink" href="#bienvenue-bienvenido-welcome" title="Permalink to this headline">¶</a></h1>
@@ -233,7 +232,7 @@ whose primary goal is to supplement the information
 given by Python traceback to make them more useful for <strong>advanced</strong> programmers.
 Friendly-traceback is <strong>not</strong> one of these projects.</p>
 <p>While Friendly-traceback can be useful for advanced programmers,
-it is aimed aimed primarily at <strong>beginners</strong> and/or at users
+it is aimed aimed primarily at beginners and/or at users
 who would like to get information about traceback in their own language.
 Friendly-traceback can give more detailed information as to
 <strong>where</strong> an exception occurred, <strong>what</strong> a given exception means and
@@ -241,14 +240,12 @@ Friendly-traceback can give more detailed information as to
 <p>While Friendly-traceback can be used on its own with a specially
 designed console, a better option would be to use it together with
 GUI-based editors/IDE. We explain how to do so later.
-For now, we just show one quick example of executing a program
-that raises an exception.</p>
+For now, we just show one quick example.</p>
 </div>
 <div class="section" id="a-quick-look">
 <h2>A quick look<a class="headerlink" href="#a-quick-look" title="Permalink to this headline">¶</a></h2>
-<p>First, we show what happens</p>
-<p>Let’s have a quick look at a standard
-Python traceback when using the REPL.</p>
+<p>First, we show what happens when we use Python
+to run a program that raises an exception.</p>
 <a class="reference internal image-reference" href="_images/python_indexerror.png"><img alt="Python IndexError example" src="_images/python_indexerror.png" style="width: 555.0px; height: 114.0px;" /></a>
 <p>Not exactly the most helpful information for beginners …</p>
 <p>Here’s the corresponding version from Friendly-traceback,
@@ -260,10 +257,7 @@ installed separately.</p>
 it provides can be translated into another language; currently, only
 English (by default) and French are available.</p>
 <a class="reference internal image-reference" href="_images/friendly_indexerror_fr.png"><img alt="Friendly IndexError in French" src="_images/friendly_indexerror_fr.png" style="width: 555.0px; height: 582.5px;" /></a>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p><img alt="france" src="_images/france.png" /> Voir la section en français vers la fin.</p>
-</div>
+<p><strong>Keep reading if you want to find out more.</strong></p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -278,8 +272,16 @@ English (by default) and French are available.</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>
-<div class="toctree-wrapper compound">
+<div class="admonition-todo admonition">
+<p class="admonition-title">Todo</p>
+<p>Add explanation as to why we include all possible tracebacks.
+Short answer: we created a separate repository for documentation.
+When we update the documentation, we can check the commit diff to
+spot any changes that should be flagged as an error and was not
+captured in a unit test. Note that this is also why we
+simplified functions repr.</p>
 </div>
+<p class="todo-source">(The <a class="reference internal" href="all_tb.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\all_tb.rst, line 4.)</p>
 <div class="admonition-todo admonition">
 <p class="admonition-title">Todo</p>
 <p>Add note about no required dependencies other than what is
@@ -288,14 +290,36 @@ found in the Python standard library.</p>
 <p class="todo-source">(The <a class="reference internal" href="design.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\design.rst, line 4.)</p>
 <div class="admonition-todo admonition">
 <p class="admonition-title">Todo</p>
-<p>Try to provide such generic information about <strong>all</strong> standard Python exceptions.</p>
+<p>Add info about running program with command line argument.</p>
 </div>
-<p class="todo-source">(The <a class="reference internal" href="repl.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\repl.rst, line 73.)</p>
+<p class="todo-source">(The <a class="reference internal" href="editor.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\editor.rst, line 103.)</p>
 <div class="admonition-todo admonition">
 <p class="admonition-title">Todo</p>
-<p>Update the information about Advanced usage and configuration.</p>
+<p>Write material for this section</p>
 </div>
-<p class="todo-source">(The <a class="reference internal" href="usage_adv.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\usage_adv.rst, line 11.)</p>
+<p class="todo-source">(The <a class="reference internal" href="formatter.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\formatter.rst, line 4.)</p>
+<div class="admonition-todo admonition">
+<p class="admonition-title">Todo</p>
+<p>Use Python builtins to obtain a list of all exceptions and create
+automatic documentation for all known exceptions (answer to <code class="docutils literal notranslate"><span class="pre">what()</span></code>)
+in both French and English.</p>
+</div>
+<p class="todo-source">(The <a class="reference internal" href="known.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\known.rst, line 6.)</p>
+<div class="admonition-todo admonition">
+<p class="admonition-title">Todo</p>
+<p>Try to provide such generic information about <strong>all</strong> standard Python exceptions.</p>
+</div>
+<p class="todo-source">(The <a class="reference internal" href="repl.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\repl.rst, line 75.)</p>
+<div class="admonition-todo admonition">
+<p class="admonition-title">Todo</p>
+<p>Revise this section after release of Thonny version 3.3.</p>
+</div>
+<p class="todo-source">(The <a class="reference internal" href="thonny.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\thonny.rst, line 6.)</p>
+<div class="admonition-todo admonition">
+<p class="admonition-title">Todo</p>
+<p>Add info about themes with screenshots from various themes from ConEmu</p>
+</div>
+<p class="todo-source">(The <a class="reference internal" href="themes.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\themes.rst, line 4.)</p>
 </div>
 </div>
 

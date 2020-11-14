@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using with Mu &mdash; Friendly tracebacks 0.1.9a documentation</title>
+  <title>Using with Mu &mdash; Friendly tracebacks 0.1.11a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.9a
+                0.1.11a
               </div>
             
           
@@ -96,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#before-using-friendly-traceback-with-mu">Before using Friendly-traceback with Mu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-friendly-traceback-with-mu">Using Friendly-traceback with Mu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#more-information">More information</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
@@ -104,15 +105,14 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
-</ul>
-<p class="caption"><span class="caption-text">More advanced users</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Learn to lie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatter.html">Custom formatter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Other details for advanced users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugins.html">Editor plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
@@ -124,6 +124,7 @@
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="all_tb.html">Why all the tracebacks?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
@@ -223,11 +224,10 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is alpha software, currently in development.
-The API is subject to change without notice.
-The current documentation is likely not up to date and
+<p>This is alpha software, currently in development.</p>
+<p>The current documentation is likely not up to date and
 is definitely imcomplete, but it does give a good idea of
-what this project is about..</p>
+what this project is about.</p>
 </div>
 <div class="section" id="using-with-mu">
 <span id="mu-instructions"></span><h1>Using with Mu<a class="headerlink" href="#using-with-mu" title="Permalink to this headline">¶</a></h1>
@@ -277,6 +277,13 @@ more information.</p>
 <p>You likely will not be surprised to know that
 I can ask Friendly-traceback to provide explanations in French instead:</p>
 <a class="reference internal image-reference" href="_images/test_problem_fr.png"><img alt="Mu with friendly running test_problem" src="_images/test_problem_fr.png" style="width: 752.0px; height: 530.0px;" /></a>
+</div>
+<div class="section" id="more-information">
+<h2>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
+<p>To find out what you can do in addition to using <code class="docutils literal notranslate"><span class="pre">why()</span></code>, go back and have
+a look at <a class="reference internal" href="repl.html#using-repl"><span class="std std-ref">Console basics</span></a>. Then, go on to the following section to
+see everything that there is to know about using with any editor as we
+explain some other features not covered here.</p>
 </div>
 </div>
 

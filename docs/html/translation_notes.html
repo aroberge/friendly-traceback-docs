@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Notes on translations - using gettext &mdash; Friendly tracebacks 0.1.9a documentation</title>
+  <title>Notes on translations - using gettext &mdash; Friendly tracebacks 0.1.11a documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Known exceptions" href="known.html" />
+    <link rel="next" title="Why all the tracebacks?" href="all_tb.html" />
     <link rel="prev" title="Developer: Add a new SyntaxError case" href="syntax_error.html" /> 
 </head>
 
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.9a
+                0.1.11a
               </div>
             
           
@@ -99,15 +99,14 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
-</ul>
-<p class="caption"><span class="caption-text">More advanced users</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Intentional lies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lies.html">Learn to lie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatter.html">Custom formatter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Other details for advanced users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugins.html">Editor plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contribute</span></p>
@@ -128,6 +127,7 @@
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="all_tb.html">Why all the tracebacks?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
@@ -213,7 +213,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="known.html" class="btn btn-neutral float-right" title="Known exceptions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="all_tb.html" class="btn btn-neutral float-right" title="Why all the tracebacks?" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="syntax_error.html" class="btn btn-neutral float-left" title="Developer: Add a new SyntaxError case" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -227,11 +227,10 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is alpha software, currently in development.
-The API is subject to change without notice.
-The current documentation is likely not up to date and
+<p>This is alpha software, currently in development.</p>
+<p>The current documentation is likely not up to date and
 is definitely imcomplete, but it does give a good idea of
-what this project is about..</p>
+what this project is about.</p>
 </div>
 <div class="section" id="notes-on-translations-using-gettext">
 <h1>Notes on translations - using gettext<a class="headerlink" href="#notes-on-translations-using-gettext" title="Permalink to this headline">¶</a></h1>
@@ -501,7 +500,7 @@ One way to include them is to write the following in a file named
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="known.html" class="btn btn-neutral float-right" title="Known exceptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="all_tb.html" class="btn btn-neutral float-right" title="Why all the tracebacks?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="syntax_error.html" class="btn btn-neutral float-left" title="Developer: Add a new SyntaxError case" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -89,10 +89,10 @@ rst_prolog = """
 .. warning::
 
     This is alpha software, currently in development.
-    The API is subject to change without notice.
+
     The current documentation is likely not up to date and
     is definitely imcomplete, but it does give a good idea of
-    what this project is about..
+    what this project is about.
 """
 
 

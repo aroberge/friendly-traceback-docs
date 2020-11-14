@@ -1,11 +1,23 @@
 Editor plugins
 ===============
 
-If are interested in writing a plugin for an editor,
-so that Friendly-traceback could be used to run a program at
-the click of a button, or simply check the syntax without actually
-running the program, you will want to have a look at the
-content of the file ``editors_helper.py``.
+As mentioned in :ref:`using_editor`, one can launch a program
+by writing an auxiliary file that uses ``friendly_traceback.run()``.
+Perhaps your favourite editor support plugins that can replace
+such auxiliary scripts by a menu item or an additional button.
+If that is the case, we encourage you to do so, and let us know
+so that we can make other users aware.
+
+``friendly_traceback.run()`` makes use of another function
+called ``exec_code()`` found in ``editors_helper.py``.
+This file contains additional functions that might be useful
+to turn into plugins, for example enabling to check the
+syntax without actually running a program.
+
+Again, if you do so, let us know, and we will add any function
+you use to the public API. In the meantime,
+here's some information about these functions.
+
 
 .. automodule:: friendly_traceback.editors_helper
    :members:

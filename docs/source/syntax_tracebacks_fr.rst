@@ -22,7 +22,7 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.1.8a
+Friendly-traceback version: 0.1.9a
 Python version: 3.8.4
 
 
@@ -664,7 +664,7 @@ SyntaxError - assignment to keyword (None)
         ^
     SyntaxError: cannot assign to None
     
-        You cannot assign a value to `None`.
+        Vous ne pouvez pas attribuer une valeur à `None`.
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     Python peut seulement comprendre le code du fichier
     'TESTS:\syntax\raise_syntax_error13.py'
@@ -694,7 +694,7 @@ SyntaxError - assignment to keyword (__debug__)
         ^
     SyntaxError: cannot assign to __debug__
     
-        You cannot assign a value to `__debug__`.
+        Vous ne pouvez pas attribuer une valeur à `__debug__`.
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     Python peut seulement comprendre le code du fichier
     'TESTS:\syntax\raise_syntax_error14.py'
@@ -1869,7 +1869,7 @@ SyntaxError - assigned prior to nonlocal declaration
         ^
     SyntaxError: name 'q' is used prior to nonlocal declaration
     
-        Did you forget to write `nonlocal` first?
+        Avez-vous oublié d’ajouter `nonlocal` en premier ?
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     Python peut seulement comprendre le code du fichier
     'TESTS:\syntax\raise_syntax_error50.py'
@@ -1899,7 +1899,7 @@ SyntaxError - used prior to nonlocal declaration
         ^
     SyntaxError: name 's' is assigned to before nonlocal declaration
     
-        Did you forget to add `nonlocal`?
+        Avez-vous oublié d’ajouter `nonlocal` ?
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     Python peut seulement comprendre le code du fichier
     'TESTS:\syntax\raise_syntax_error51.py'
@@ -1929,7 +1929,7 @@ SyntaxError - named assignment with Python constant
          ^
     SyntaxError: cannot use assignment expressions with True
     
-        You cannot assign a value to `True`.
+        Vous ne pouvez pas attribuer une valeur à `True`.
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     Python peut seulement comprendre le code du fichier
     'TESTS:\syntax\raise_syntax_error55.py'
@@ -2525,7 +2525,7 @@ SyntaxError - invalid character (bad quote)
             ^
     SyntaxError: invalid character in identifier
     
-        Vouliez vous utiliser un guillemet normal, `'` ou `"`?
+        Vouliez vous utiliser un guillemet normal, `'` ou `"` ?
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     Python peut seulement comprendre le code du fichier
     'TESTS:\syntax\raise_syntax_error75.py'

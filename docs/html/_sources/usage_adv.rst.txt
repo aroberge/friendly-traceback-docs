@@ -1,16 +1,5 @@
-Advanced Usage
-==============
-
-
-
-.. warning::
-
-    This is no longer accurate; it needs to be updated.
-
-
-.. todo::
-
-    Update the information about Advanced usage and configuration.
+Other details for advanced users
+=================================
 
 
 
@@ -43,24 +32,6 @@ the output will be cleared once it has been retrieved. If this is not the
 desired behaviour, simply use ``flush=False``.
 
 
-How much information is printed?
---------------------------------
-
-.. sidebar:: No warnings from Python
-
-    In order to minimize confusion for the end user, all Python warnings
-    are suppressed.
-
-The amount of information shown to the user can be changed using::
-
-    friendly_traceback.set_verbosity(level)
-
-
-What each level correspond to is shown later in this documentation.
-The level currently used can be obtained as follows::
-
-    level = friendly_traceback.get_verbosity()
-
 
 Language used
 -------------
@@ -89,14 +60,14 @@ As an exception hook
 When "installing" Friendly-traceback, one can use various optional
 parameters::
 
-    friendly_traceback.install(lang="fr", redirect="capture", verbosity=1)
+    friendly_traceback.install(lang="fr", redirect="capture", include="explain")
 
 This is equivalent to writing::
 
     friendly_traceback.install()
     friendly_traceback.set_lang("fr")
     friendly_traceback.set_stream("capture")
-    friendly_traceback.set_verbosity(1)
+    friendly_traceback.set_include("explain")
 
 
 Catching exception locally
@@ -109,7 +80,7 @@ exceptions where they are expected to arise, such as::
     try:
         # Some code
     except Exception:
-        friendly_traceback.explain()
+        friendly_traceback.explain_traceback()
 
 This uses the default of writing to ``sys.stderr``.
 One can also **temporarily** redirect the output to any stream::
@@ -117,7 +88,7 @@ One can also **temporarily** redirect the output to any stream::
     try:
         # Some code
     except Exception:
-        friendly_traceback.explain(redirect=stream)
+        friendly_traceback.explain_traceback(redirect=stream)
 
 By default, Friendly-traceback takes its information from ``sys.exc_info()``.
 It may happen that this is not what we want to show.
@@ -133,7 +104,7 @@ it can be done as in the following example::
     except Exception:
         lang = friendly_traceback.get_lang()
         friendly_traceback.set_lang("fr")
-        friendly_traceback.explain()
+        friendly_traceback.explain_traceback()
         friendly_traceback.set_lang(lang)
 
 
@@ -198,67 +169,3 @@ For example, you can use the following approach.
 
 You can now run your script normally: Friendly-traceback exception
 handling will be used by default on it.
-
-From the command line
-----------------------
-
-It is recommended that you run the following command yourself so as to
-see what options are available for the version installed on
-your computer.
-
-.. code-block:: none
-
-    $ python -m friendly_traceback -h
-
-    usage: __main__.py [-h] [--color] [--lang LANG] [--verbosity VERBOSITY] [--import_only]
-                       [--version] [--dev] [--formatter FORMATTER]
-                       [source] [args [args ...]]
-
-    Friendly-traceback makes Python tracebacks easier to understand.
-
-        Friendly-traceback version 0.0.34a. [Python version: 3.8.4]
-
-        If no command line arguments other than -m are specified,
-        Friendly-traceback will start an interactive console.
-
-        Note: the values of the verbosity level described below are:
-            0: Normal Python tracebacks
-            1: Default - does not need to be specified.
-               The output does NOT include the standard Python traceback.
-            2: Python tracebacks appear before the friendly display
-            3: Python tracebacks appended at the end of the friendly display.
-            4: Python traceback followed by basic explanation
-            5: Only basic explanation
-            6: No generic explanation
-            7: Python tracebacks appear before the friendly display but
-               no generic explanation is included.
-            9: Python traceback only
-
-        The Python traceback for level > 1 is the simulated version, which
-        excludes calls from Friendly-traceback itself.
-        You can use negative values to show the true Python traceback which
-        will likely include function calls from Friendly-traceback itself.
-        Thus level -9 is equivalent to level 0.
-
-        Other values may be available, as we try to find the most useful
-        settings for beginners.
-
-
-    positional arguments:
-      source                Name of the script to be run as though it was the main module run by
-                            Python, so that __name__ does equal '__main__'.
-      args                  Arguments to give to the script specified by source.
-
-    optional arguments:
-      -h, --help            show this help message and exit
-      --color, --colour     Not implemented yet.
-      --lang LANG           This sets the language used by Friendly-tracebacks. Usually this is a
-                            two-letter code such as 'fr' for French.
-      --verbosity VERBOSITY, --level VERBOSITY
-                            This sets the "verbosity" level, that is the amount of information
-                            provided.
-      --version             Displays the current version.
-      --formatter FORMATTER
-                            Specify a formatter function, as a dotted path. Example: --formatter
-                            friendly_traceback.formatters.markdown
-

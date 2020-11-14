@@ -1,5 +1,9 @@
+.. _using_thonny:
+
 Using with Thonny
 =================
+
+.. todo:: Revise this section after release of Thonny version 3.3.
 
 Starting with version 3.2.5, Thonny will include
 some support for Friendly-traceback.
@@ -113,3 +117,13 @@ output is indeed in French.
 .. image:: images/thonny_francais.png
    :scale: 50 %
    :alt: thonny francais
+
+
+More information
+-----------------
+
+To find out what you can do in addition to what is shown here,
+go back and have a look at :ref:`using_repl`.
+Then, go on to the following section to
+see everything that there is to know about using with any editor as we
+explain some other features not covered here.
