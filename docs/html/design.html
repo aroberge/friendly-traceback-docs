@@ -103,10 +103,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#revised-purpose">Revised purpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gradual-reveal">Gradual reveal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#about-warnings">About Warnings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#location-of-the-exception">Location of the exception</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#variable-information">Variable information</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#location-of-the-exception">Location of the exception</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variable-information">Variable information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-invalid-syntax">SyntaxError: invalid syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#localization">Localization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#no-dependencies">No dependencies</a></li>
@@ -295,8 +293,9 @@ Friendly-traceback.</p>
 <p>While a Python traceback includes the information from all the frames
 that were involved, Friendly-traceback focus on the first and last frame,
 as these are more likely to contain the relevant information to the user.</p>
+</div>
 <div class="section" id="variable-information">
-<h3>Variable information<a class="headerlink" href="#variable-information" title="Permalink to this headline">¶</a></h3>
+<h2>Variable information<a class="headerlink" href="#variable-information" title="Permalink to this headline">¶</a></h2>
 <p>Friendly-traceback include the value of all known variables found
 on the lines of code shown; earlier versions, such
 as that shown in the example below, included only variable information
@@ -310,7 +309,6 @@ To avoid this situation, we truncate any value that exceeds a predetermined
 length. However, when we do so, if the variable has a <code class="docutils literal notranslate"><span class="pre">__len__</span></code> attribute,
 we show its value as it can sometimes be helpful in identifying the problem.</p>
 <a class="reference internal image-reference" href="_images/index_error2.png"><img alt="IndexError traceback" src="_images/index_error2.png" style="width: 561.0px; height: 123.5px;" /></a>
-</div>
 </div>
 <div class="section" id="syntaxerror-invalid-syntax">
 <h2>SyntaxError: invalid syntax<a class="headerlink" href="#syntaxerror-invalid-syntax" title="Permalink to this headline">¶</a></h2>

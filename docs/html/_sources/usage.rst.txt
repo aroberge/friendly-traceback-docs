@@ -44,9 +44,11 @@ Pycharm's embedded console, at least on Windows, does not fully
 support Rich.
 
 If you use Rich on Windows from a terminal,
-we also strongly suggest that you use the new
+we also **very strongly suggest** that you use the new
 `Windows Terminal <https://github.com/microsoft/terminal>`_; this is
 what we have used for various screen captures.
+See :ref:`themes` for screenshot taken with with other terminals
+on Windows.
 
 If you are a Mac or Linux user,
 and use Friendly-traceback with Rich installed,

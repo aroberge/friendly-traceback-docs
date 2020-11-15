@@ -99,7 +99,15 @@
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Themes and colours</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Themes and colours</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#default-theme-using-windows-terminal">Default theme using Windows Terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conemu-base16-theme">ConEmu: base16 theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conemu-default-windows-theme">ConEmu: default windows theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conemu-powershell-theme">ConEmu: powershell theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-os">Other OS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
@@ -224,13 +232,57 @@ is definitely imcomplete, but it does give a good idea of
 what this project is about.</p>
 </div>
 <div class="section" id="themes-and-colours">
-<h1>Themes and colours<a class="headerlink" href="#themes-and-colours" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Add info about themes with screenshots from various themes from ConEmu</p>
+<span id="themes"></span><h1>Themes and colours<a class="headerlink" href="#themes-and-colours" title="Permalink to this headline">¶</a></h1>
+<p>As mentioned before, Friendly-traceback can make use of
+<a class="reference external" href="https://github.com/willmcgugan/rich">Rich</a> if it is installed.
+Syntax colouring is done by Rich using Pygments.
+While Pygments comes with many different styles (colour schemes),
+most of them do not define colours for all possible parts of
+a Python traceback: depending on the style, we sometimes end up with
+some text with the same colour as the background.</p>
+<p>To ensure that all of Friendly-traceback’s output would be styled
+properly, Friendly-traceback includes its own “theme”.
+One problem I had was to figure out
+all the possible styling elements. It turned out that I had “solved”
+this problem in 2008 when I created the Pygments Tango style for
+a project I worked (Crunchy) where I did my best to include all
+possible styling elements, while minimizing the numbers of colours
+used. While Tango had been designed for a light coloured background,
+the new style has been designed for a dark coloured background.</p>
+<p>Designing a pygments colour style is one thing; having it faithfully
+displayed in a terminal is something else altogether.
+Below you will see various screenshots: the first one is
+taken using the new <a class="reference external" href="https://github.com/microsoft/terminal">Windows Terminal</a>.
+Other screenshots have been taken using <a class="reference external" href="https://conemu.github.io/">ConEmu</a>,
+using different colour schemes available from ConEmu’s settings.
+Much to my surprise, even though the colours I have chosen are not standard
+colours, they are much altered by ConEmu depending on the chosen
+colour scheme.</p>
+<div class="section" id="default-theme-using-windows-terminal">
+<h2>Default theme using Windows Terminal<a class="headerlink" href="#default-theme-using-windows-terminal" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/theme_terminal.png"><img alt="Default theme using Windows Terminal" src="_images/theme_terminal.png" style="width: 628.4000000000001px; height: 375.6px;" /></a>
 </div>
-<p>Include here an example of what happens if we use Rich in an
-environment that does not support it.</p>
+<div class="section" id="conemu-base16-theme">
+<h2>ConEmu: base16 theme<a class="headerlink" href="#conemu-base16-theme" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/conemu_base16.png"><img alt="ConEmu: base16 theme" src="_images/conemu_base16.png" style="width: 626.4000000000001px; height: 358.0px;" /></a>
+</div>
+<div class="section" id="conemu-default-windows-theme">
+<h2>ConEmu: default windows theme<a class="headerlink" href="#conemu-default-windows-theme" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/conemu_default_windows.png"><img alt="ConEmu: default windows theme" src="_images/conemu_default_windows.png" style="width: 626.4000000000001px; height: 358.40000000000003px;" /></a>
+</div>
+<div class="section" id="conemu-powershell-theme">
+<h2>ConEmu: powershell theme<a class="headerlink" href="#conemu-powershell-theme" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/conemu_powershell.png"><img alt="ConEmu: default powershell theme" src="_images/conemu_powershell.png" style="width: 626.4000000000001px; height: 352.0px;" /></a>
+</div>
+<div class="section" id="other-os">
+<h2>Other OS<a class="headerlink" href="#other-os" title="Permalink to this headline">¶</a></h2>
+<p>Screenshots taken by MacOS or Linux users would be welcome.</p>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>It appears that efforts to carefully design a theme are somewhat
+pointless as the end result can depend on the environment used.</p>
+</div>
 </div>
 
 

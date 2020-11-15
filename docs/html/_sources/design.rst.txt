@@ -76,7 +76,7 @@ as these are more likely to contain the relevant information to the user.
 
 
 Variable information
-~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 Friendly-traceback include the value of all known variables found
 on the lines of code shown; earlier versions, such
