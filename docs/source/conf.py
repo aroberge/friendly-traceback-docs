@@ -85,16 +85,16 @@ rst_epilog = """
 .. |france| image:: images/france.png
 """
 
-rst_prolog = """
-.. warning::
+# rst_prolog = """
+# .. warning::
 
-    This is alpha software, currently in development.
+#     This is alpha software, currently in development.
 
-    The current documentation is likely not up to date and
-    is definitely imcomplete, but it does give a good idea of
-    what this project is about.
-"""
-
+#     The current documentation is likely not up to date and
+#     is definitely imcomplete, but it does give a good idea of
+#     what this project is about.
+# """
+#
 
 # -- Options for HTML output -------------------------------------------------
 

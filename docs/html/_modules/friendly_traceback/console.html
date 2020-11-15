@@ -117,7 +117,7 @@
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../all_tb.html">Why all the tracebacks?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../known.html">Known exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../known.html">Generic information about various exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
@@ -536,7 +536,7 @@
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;more&quot;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="what"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console.what">[docs]</a><span class="k">def</span> <span class="nf">what</span><span class="p">(</span><span class="n">exception</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="what"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console.what">[docs]</a><span class="k">def</span> <span class="nf">what</span><span class="p">(</span><span class="n">exception</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;If known, shows the generic explanation about a given exception.&quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">exception</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -548,10 +548,13 @@
         <span class="n">result</span> <span class="o">=</span> <span class="n">info_generic</span><span class="o">.</span><span class="n">get_generic_explanation</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">lang</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="n">old_lang</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">use_rich</span><span class="p">:</span>
-            <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">pre</span><span class="p">:</span>  <span class="c1"># for documentation</span>
+            <span class="n">lines</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+                <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="s2">&quot;    &quot;</span> <span class="o">+</span> <span class="n">line</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
         <span class="k">return</span>
 
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;what&quot;</span><span class="p">)</span></div>

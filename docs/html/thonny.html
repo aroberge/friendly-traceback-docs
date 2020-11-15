@@ -93,12 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Using with Thonny</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#using-friendly-traceback">Using Friendly-traceback</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#french-version">French version</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#more-information">More information</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using with Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
@@ -124,7 +119,7 @@
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="all_tb.html">Why all the tracebacks?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="known.html">Generic information about various exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
@@ -221,27 +216,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This is alpha software, currently in development.</p>
-<p>The current documentation is likely not up to date and
-is definitely imcomplete, but it does give a good idea of
-what this project is about.</p>
-</div>
-<div class="section" id="using-with-thonny">
+  <div class="section" id="using-with-thonny">
 <span id="using-thonny"></span><h1>Using with Thonny<a class="headerlink" href="#using-with-thonny" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Revise this section after release of Thonny version 3.3.</p>
-</div>
-<p>Starting with version 3.2.5, Thonny will include
-some support for Friendly-traceback.
-This is briefly described on
-<a class="reference external" href="https://github.com/thonny/thonny/wiki/Friendly-traceback">Thonny’s wiki</a>
-which gives the required steps to using Friendly-traceback with Thonny.
-The current document is a longer description that goes into more details,
-with screenshots taken with a pre-released version.</p>
-<p>As mentioned earlier, Thonny is highly configurable. Among the tools
+<p><a class="reference external" href="https://github.com/thonny/thonny/">Thonny</a> is a fantastic
+programming environment for learning Python.
+While it does not support traceback theming with Rich, we nonetheless
+highly recommend it to beginners and instructors.</p>
+<p>Starting with version 3.2.5, Thonny included built-in support for
+an early version of Friendly-traceback. As Friendly-traceback evolved,
+we suggested that the built-in support be temporarily removed so as to avoid
+any incompatibility; this will likely happen with the release of
+Thonny’s version 3.3.</p>
+<p>Friendly-traceback can still be used within Thonny
+using the same approach described for other editors in
+<a class="reference internal" href="editor.html#using-editor"><span class="std std-ref">Using with an editor or IDE</span></a>. The only difference is for actually installing
+Friendly-traceback.</p>
+<p>Thonny is highly configurable. Among the tools
 it provides is the ability to install packages either from pypi or
 others found locally.</p>
 <a class="reference internal image-reference" href="_images/thonny_manage_packages1.png"><img alt="thonny manage packages" src="_images/thonny_manage_packages1.png" style="width: 812.0px; height: 701.5px;" /></a>
@@ -250,67 +240,11 @@ is installed. If not, one can install it with pip or with Thonny itself.
 As you can see, Friendly-traceback is indeed installed on my
 computer, along with many other packages.</p>
 <a class="reference internal image-reference" href="_images/thonny_manage_packages2.png"><img alt="thonny manage packages" src="_images/thonny_manage_packages2.png" style="width: 666.5px; height: 422.0px;" /></a>
-<p>Next, we need to set up at least one essential option in order
-to actually use Friendly-traceback.</p>
-<a class="reference internal image-reference" href="_images/thonny_options.png"><img alt="thonny options" src="_images/thonny_options.png" style="width: 381.5px; height: 183.5px;" /></a>
-<p>But before getting to the essential option for Friendly traceback,
-while the option dialog is open, I suggest you explore what
-is available.
-Personally, I like to change the default fonts used
-for the output shell. I mention this in case you wonder why
-the results on your computer look different from the
-screenshots here.</p>
-<a class="reference internal image-reference" href="_images/thonny_options_output.png"><img alt="thonny options io" src="_images/thonny_options_output.png" style="width: 558.5px; height: 481.5px;" /></a>
-<p>Note that many options require to restart Thonny.</p>
-<div class="section" id="using-friendly-traceback">
-<h2>Using Friendly-traceback<a class="headerlink" href="#using-friendly-traceback" title="Permalink to this headline">¶</a></h2>
-<p>Next, we need to tell Thonny to actually use Friendly-traceback.
-As mentioned in a few places in this documentation, Friendly-traceback
-has different “verbosity levels”. Level 0 correspond to disactivating
-Friendly-traceback: this is the starting value for Thonny.
-To see Friendly traceback in action, I suggest to use the
-default value of 1.</p>
-<a class="reference internal image-reference" href="_images/thonny_friendly_levels.png"><img alt="thonny friendly levels" src="_images/thonny_friendly_levels.png" style="width: 396.5px; height: 240.5px;" /></a>
-<p>With this choice set, we can run a program that raises an exception
-and have a look at the output.</p>
-<a class="reference internal image-reference" href="_images/thonny_friendly_error.png"><img alt="thonny friendly error" src="_images/thonny_friendly_error.png" style="width: 877.5px; height: 701.5px;" /></a>
-<p>As you can see in (1), the familiar friendly traceback is shown.
-At the bottom (2), Thonny replaces the passive text that
-states where an error is found by an actual link: clicking
-on this link would bring us to the place in the file
-where the exception was actually generated.
-This is, in my opinion, a highly remarkable feature of Thonny.</p>
-<p>You might also note the side bar (3) known as the “Assistant”.
-It is, if you wish, Thonny’s own version of a traceback interpreter
-designed to help users figure out what may have caused
-the problem. If Thonny finds some possible causes of the
-error, it shows one or more clickable one-liners.</p>
-<p>Below you can see what happens if one expand on the
-information provided by Thonny by clicking on each
-individual cause:</p>
-<img alt="thonny assistant" src="_images/thonny_assistant.png" />
-</div>
-<div class="section" id="french-version">
-<h2>French version<a class="headerlink" href="#french-version" title="Permalink to this headline">¶</a></h2>
-<p>Next, I want to see the same traceback explanation
-in a different language - French being, for now,
-my only other choice.</p>
-<a class="reference internal image-reference" href="_images/thonny_options_language.png"><img alt="thonny option languages" src="_images/thonny_options_language.png" style="width: 558.5px; height: 481.5px;" /></a>
-<p>Doing this will require to close and restart Thonny:
-its UI (not shown) including the text on various menus
-will change to French.</p>
-<p>After doing this change, we can see that Friendly-traceback’s
-output is indeed in French.</p>
-<a class="reference internal image-reference" href="_images/thonny_francais.png"><img alt="thonny francais" src="_images/thonny_francais.png" style="width: 687.0px; height: 338.0px;" /></a>
-</div>
-<div class="section" id="more-information">
-<h2>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
-<p>To find out what you can do in addition to what is shown here,
+<p>From that point on, everything is the same as for other editors.
+To find out what you can do in addition to what is shown here,
 go back and have a look at <a class="reference internal" href="repl.html#using-repl"><span class="std std-ref">Console basics</span></a>.
-Then, go on to the following section to
-see everything that there is to know about using with any editor as we
-explain some other features not covered here.</p>
-</div>
+Then, go on to the following section, <a class="reference internal" href="editor.html#using-editor"><span class="std std-ref">Using with an editor or IDE</span></a>, to
+see everything that there is to know about using with any editor.</p>
 </div>
 
 

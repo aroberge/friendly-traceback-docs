@@ -119,7 +119,7 @@
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="all_tb.html">Why all the tracebacks?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="known.html">Known exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="known.html">Generic information about various exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
@@ -272,14 +272,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This is alpha software, currently in development.</p>
-<p>The current documentation is likely not up to date and
-is definitely imcomplete, but it does give a good idea of
-what this project is about.</p>
-</div>
-<div class="section" id="friendly-tracebacks-in-english">
+  <div class="section" id="friendly-tracebacks-in-english">
 <h1>Friendly tracebacks - in English<a class="headerlink" href="#friendly-tracebacks-in-english" title="Permalink to this headline">¶</a></h1>
 <p>Friendly-traceback aims to provide friendlier feedback when an exception
 is raised than what is done by Python.
@@ -294,30 +287,44 @@ C:Usersandregithubfriendly-tracebackteststrb_english.py located in the <code cla
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.1.9a
+<p>Friendly-traceback version: 0.1.11a
 Python version: 3.9.0</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_arithmetic_error.py&quot;, line 9, in test_arithmetic_error
-    raise ArithmeticError
-ArithmeticError:
+  File &quot;TESTS:\trb_common.py&quot;, line 227, in create_tracebacks
+    result, message = getattr(mod, function)()
+  File &quot;TESTS:\runtime\test_arithmetic_error.py&quot;, line 17, in test_arithmetic_error
+    assert &quot;`ArithmeticError` is the base class&quot; in result
+AssertionError:
 
-`ArithmeticError` is the base class for those built-in exceptions
-that are raised for various arithmetic errors.
-It is unusual that you are seeing this exception;
-normally, a more specific exception should have been raised.
+No information is available about this exception.
 
-Exception raised on line 9 of file TESTS:\runtime\test_arithmetic_error.py.
+Execution stopped on line 227 of file TESTS:\trb_common.py.
 
-    8:         # likely be raised.
---&gt; 9:         raise ArithmeticError
-   10:     except Exception as e:
+   226:                     if function is not None:
+--&gt;227:                         result, message = getattr(mod, function)()
+   228:                         save_messages[function] = message
 
     Known objects shown above:
-        ArithmeticError: &lt;class &#39;ArithmeticError&#39;&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: ArithmeticError()
+        function: &#39;test_arithmetic_error&#39;
+        getattr: &lt;builtin function getattr&gt;
+        mod: &lt;module &#39;test_arithmetic_error&#39;&gt;
+            from TESTS:\runtime\test_arithmetic_error.py
+        global save_messages: {}
+
+Exception raised on line 17 of file TESTS:\runtime\test_arithmetic_error.py.
+
+   16:     if friendly_traceback.get_lang() == &quot;en&quot;:
+--&gt;17:         assert &quot;`ArithmeticError` is the base class&quot; in result
+   18:     return result, message
+
+    Known objects shown above:
+        global friendly_traceback: &lt;module &#39;friendly_traceback&#39;&gt;
+            from FRIENDLY:\friendly_traceback\__init__.py
+        result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
+            len(result): 622
+        message: &#39;&#39;
 </pre></div>
 </div>
 </div>
@@ -328,9 +335,7 @@ Exception raised on line 9 of file TESTS:\runtime\test_arithmetic_error.py.
     a.x  # Testing instance
 AttributeError: &#39;A&#39; object has no attribute &#39;x&#39;
 
-An `AttributeError` occurs when the code contains something like
-    `object.x`
-and `x` is not a method or attribute (variable) belonging to `object`.
+No information is available about this exception.
 
     The object `a` has no attribute named `x`.
 
@@ -357,9 +362,7 @@ AttributeError: module &#39;string&#39; has no attribute &#39;ascii_lowecase&#39
 
     Did you mean `ascii_lowercase`?
 
-An `AttributeError` occurs when the code contains something like
-    `object.x`
-and `x` is not a method or attribute (variable) belonging to `object`.
+No information is available about this exception.
 
     Perhaps you meant to write `string.ascii_lowercase` instead of `string.ascii_lowecase`
 
@@ -385,9 +388,7 @@ AttributeError: module &#39;math&#39; has no attribute &#39;cost&#39;
 
     Did you mean one of the following: `cos, cosh, acos`?
 
-An `AttributeError` occurs when the code contains something like
-    `object.x`
-and `x` is not a method or attribute (variable) belonging to `object`.
+No information is available about this exception.
 
     Instead of writing `math.cost`, perhaps you meant to write one of
     the following names which are attributes of module `math`:
@@ -413,9 +414,7 @@ Exception raised on line 82 of file TESTS:\runtime\test_attribute_error.py.
     open(&quot;does_not_exist&quot;)
 FileNotFoundError: [Errno 2] No such file or directory: &#39;does_not_exist&#39;
 
-A `FileNotFoundError` exception indicates that you
-are trying to open a file that cannot be found by Python.
-This could be because you misspelled the name of the file.
+No information is available about this exception.
 
     In your program, the name of the
     file that cannot be found is `does_not_exist`.
@@ -442,9 +441,7 @@ ImportError: cannot import name &#39;Pi&#39; from &#39;math&#39; (unknown locati
 
     Did you mean `pi`?
 
-An `ImportError` exception indicates that a certain object could not
-be imported from a module or package. Most often, this is
-because the name of the object is not spelled correctly.
+No information is available about this exception.
 
     Perhaps you meant to import `pi` (from `math`) instead of `Pi`
 
@@ -467,8 +464,7 @@ Exception raised on line 6 of file TESTS:\runtime\test_import_error.py.
     d[&quot;c&quot;]
 KeyError: &#39;c&#39;
 
-A `KeyError` is raised when a value is not found as a
-key in a Python dict.
+No information is available about this exception.
 
     In your program, the key that cannot be found is `&#39;c&#39;`.
 
@@ -488,24 +484,42 @@ Exception raised on line 7 of file TESTS:\runtime\test_key_error.py.
 <div class="section" id="lookuperror">
 <h2>LookupError<a class="headerlink" href="#lookuperror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_lookup_error.py&quot;, line 10, in test_lookup_error
-    raise LookupError(&quot;Fake message&quot;)
-LookupError: Fake message
+  File &quot;TESTS:\trb_common.py&quot;, line 227, in create_tracebacks
+    result, message = getattr(mod, function)()
+  File &quot;TESTS:\runtime\test_lookup_error.py&quot;, line 18, in test_lookup_error
+    assert &quot;`LookupError` is the base class for&quot; in result
+AssertionError:
 
-`LookupError` is the base class for the exceptions that are raised
-when a key or index used on a mapping or sequence is invalid.
-It can also be raised directly by codecs.lookup().
+No information is available about this exception.
 
-Exception raised on line 10 of file TESTS:\runtime\test_lookup_error.py.
+Execution stopped on line 227 of file TESTS:\trb_common.py.
 
-    9:         # it directly here for our example.
---&gt;10:         raise LookupError(&quot;Fake message&quot;)
-   11:     except Exception as e:
+   226:                     if function is not None:
+--&gt;227:                         result, message = getattr(mod, function)()
+   228:                         save_messages[function] = message
 
     Known objects shown above:
-        LookupError: &lt;class &#39;LookupError&#39;&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: LookupError(&#39;Fake message&#39;)
+        function: &#39;test_lookup_error&#39;
+        result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
+            len(result): 591
+        message: &quot;&#39;c&#39;&quot;
+        getattr: &lt;builtin function getattr&gt;
+        mod: &lt;module &#39;test_lookup_error&#39;&gt; from TESTS:\runtime\test_lookup_error.py
+        global save_messages: {&#39;test_attribute_error&#39;: &quot;&#39;A&#39; object has no attribute &#39;x&#39;&quot;, ...}
+            len(save_messages): 6
+
+Exception raised on line 18 of file TESTS:\runtime\test_lookup_error.py.
+
+   17:     if friendly_traceback.get_lang() == &quot;en&quot;:
+--&gt;18:         assert &quot;`LookupError` is the base class for&quot; in result
+   19:     return result, message
+
+    Known objects shown above:
+        global friendly_traceback: &lt;module &#39;friendly_traceback&#39;&gt;
+            from FRIENDLY:\friendly_traceback\__init__.py
+        result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
+            len(result): 662
+        message: &#39;Fake message&#39;
 </pre></div>
 </div>
 </div>
@@ -516,11 +530,7 @@ Exception raised on line 10 of file TESTS:\runtime\test_lookup_error.py.
     print(a[3], b[2])
 IndexError: tuple index out of range
 
-An `IndexError` occurs when you are try to get an item from a list,
-a tuple, or a similar object (sequence), by using an index which
-does not exists; typically, this is because the index you give
-is greater than the length of the sequence.
-Reminder: the first item of a sequence is at index 0.
+No information is available about this exception.
 
 Exception raised on line 8 of file TESTS:\runtime\test_index_error.py.
 
@@ -544,11 +554,7 @@ Exception raised on line 8 of file TESTS:\runtime\test_index_error.py.
     print(a[50], b[0])
 IndexError: list index out of range
 
-An `IndexError` occurs when you are try to get an item from a list,
-a tuple, or a similar object (sequence), by using an index which
-does not exists; typically, this is because the index you give
-is greater than the length of the sequence.
-Reminder: the first item of a sequence is at index 0.
+No information is available about this exception.
 
 Exception raised on line 22 of file TESTS:\runtime\test_index_error.py.
 
@@ -576,10 +582,7 @@ ModuleNotFoundError: No module named &#39;Tkinter&#39;
 
     Did you mean `tkinter`?
 
-A `ModuleNotFoundError` exception indicates that you
-are trying to import a module that cannot be found by Python.
-This could be because you misspelled the name of the module
-or because it is not installed on your computer.
+No information is available about this exception.
 
     The name of the module that could not be imported is `Tkinter`.
     `tkinter` is an existing module that has a similar name.
@@ -603,11 +606,7 @@ Exception raised on line 6 of file TESTS:\runtime\test_module_not_found_error.py
     this = something
 NameError: name &#39;something&#39; is not defined
 
-A `NameError` exception indicates that a variable or
-function name is not known to Python.
-Most often, this is because there is a spelling mistake.
-However, sometimes it is because the name is used
-before being defined or given a value.
+No information is available about this exception.
 
     In your program, `something` is an unknown name.
     I have no additional information for you.
@@ -631,11 +630,7 @@ Exception raised on line 6 of file TESTS:\runtime\test_name_error.py.
 NameError: name &#39;babs&#39; is not defined
 
     Did you mean `abs`?
-A `NameError` exception indicates that a variable or
-function name is not known to Python.
-Most often, this is because there is a spelling mistake.
-However, sometimes it is because the name is used
-before being defined or given a value.
+No information is available about this exception.
 
     In your program, `babs` is an unknown name.
     Instead of writing `babs`, perhaps you meant one of the following:
@@ -663,11 +658,7 @@ Exception raised on line 20 of file TESTS:\runtime\test_name_error.py.
 NameError: name &#39;x&#39; is not defined
 
     Did you use a colon instead of an equal sign?
-A `NameError` exception indicates that a variable or
-function name is not known to Python.
-Most often, this is because there is a spelling mistake.
-However, sometimes it is because the name is used
-before being defined or given a value.
+No information is available about this exception.
 
     In your program, `x` is an unknown name.
     A type hint found for `x` in the global scope.
@@ -699,11 +690,7 @@ Exception raised on line 35 of file TESTS:\runtime\test_name_error.py.
 NameError: name &#39;cost&#39; is not defined
 
     Did you mean `cos`?
-A `NameError` exception indicates that a variable or
-function name is not known to Python.
-Most often, this is because there is a spelling mistake.
-However, sometimes it is because the name is used
-before being defined or given a value.
+No information is available about this exception.
 
     In your program, `cost` is an unknown name.
     Instead of writing `cost`, perhaps you meant one of the following:
@@ -724,63 +711,86 @@ Exception raised on line 48 of file TESTS:\runtime\test_name_error.py.
 <div class="section" id="overflowerror">
 <h2>OverflowError<a class="headerlink" href="#overflowerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_overflow_error.py&quot;, line 6, in test_overflow_error
-    2.0 ** 1600
-OverflowError: (34, &#39;Result too large&#39;)
+  File &quot;TESTS:\trb_common.py&quot;, line 227, in create_tracebacks
+    result, message = getattr(mod, function)()
+  File &quot;TESTS:\runtime\test_overflow_error.py&quot;, line 17, in test_overflow_error
+    assert &quot;`OverflowError` is raised when the result&quot; in result
+AssertionError:
 
-An `OverflowError` is raised when the result of an arithmetic operation
-is too large to be handled by the computer&#39;s processor.
+No information is available about this exception.
 
-Exception raised on line 6 of file TESTS:\runtime\test_overflow_error.py.
+Execution stopped on line 227 of file TESTS:\trb_common.py.
 
-   5:     try:
---&gt;6:         2.0 ** 1600
-   7:     except Exception as e:
+   226:                     if function is not None:
+--&gt;227:                         result, message = getattr(mod, function)()
+   228:                         save_messages[function] = message
 
     Known objects shown above:
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: OverflowError(34, &#39;Result too large&#39;)
+        function: &#39;test_overflow_error&#39;
+        result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
+            len(result): 821
+        message: &quot;name &#39;cost&#39; is not defined&quot;
+        getattr: &lt;builtin function getattr&gt;
+        mod: &lt;module &#39;test_overflow_error&#39;&gt;
+            from TESTS:\runtime\test_overflow_error.py
+        global save_messages: {&#39;test_attribute_error&#39;: &quot;&#39;A&#39; object has no attribute &#39;x&#39;&quot;, ...}
+            len(save_messages): 13
+
+Exception raised on line 17 of file TESTS:\runtime\test_overflow_error.py.
+
+   16:     if friendly_traceback.get_lang() == &quot;en&quot;:
+--&gt;17:         assert &quot;`OverflowError` is raised when the result&quot; in result
+   18:     return result, message
+
+    Known objects shown above:
+        global friendly_traceback: &lt;module &#39;friendly_traceback&#39;&gt;
+            from FRIENDLY:\friendly_traceback\__init__.py
+        result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
+            len(result): 561
+        message: &quot;(34, &#39;Result too large&#39;)&quot;
 </pre></div>
 </div>
 </div>
 <div class="section" id="recursionerror">
 <h2>RecursionError<a class="headerlink" href="#recursionerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 8, in test_function_recursion_error
-    a()
+  File &quot;TESTS:\trb_common.py&quot;, line 227, in create_tracebacks
+    result, message = getattr(mod, function)()
+  File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 16, in test_function_recursion_error
+    assert &quot;too many times&quot; in result
+AssertionError:
 
-       ... More lines not shown. ...
+No information is available about this exception.
 
-  File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 6, in a
-    return a()
-  File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 6, in a
-    return a()
-RecursionError: maximum recursion depth exceeded
+Execution stopped on line 227 of file TESTS:\trb_common.py.
 
-A `RecursionError` is raised when a function calls itself,
-directly or indirectly, too many times.
-It almost always indicates that you made an error in your code
-and that your program would never stop.
-
-Execution stopped on line 8 of file TESTS:\runtime\test_recursion_error.py.
-
-   7:     try:
---&gt;8:         a()
-   9:     except Exception as e:
+   226:                     if function is not None:
+--&gt;227:                         result, message = getattr(mod, function)()
+   228:                         save_messages[function] = message
 
     Known objects shown above:
-        a: &lt;function test_function_recursion_error.&lt;locals&gt;.a&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: RecursionError(&#39;maximum recursion depth exceeded&#39;)
+        function: &#39;test_function_recursion_error&#39;
+        result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
+            len(result): 821
+        message: &quot;name &#39;cost&#39; is not defined&quot;
+        getattr: &lt;builtin function getattr&gt;
+        mod: &lt;module &#39;test_recursion_error&#39;&gt;
+            from TESTS:\runtime\test_recursion_error.py
+        global save_messages: {&#39;test_attribute_error&#39;: &quot;&#39;A&#39; object has no attribute &#39;x&#39;&quot;, ...}
+            len(save_messages): 13
 
-Exception raised on line 6 of file TESTS:\runtime\test_recursion_error.py.
+Exception raised on line 16 of file TESTS:\runtime\test_recursion_error.py.
 
-   5:     def a():
---&gt;6:         return a()
-   7:     try:
+   15:     if friendly_traceback.get_lang() == &quot;en&quot;:
+--&gt;16:         assert &quot;too many times&quot; in result
+   17:     return result, message
 
     Known objects shown above:
-        a: &lt;function test_function_recursion_error.&lt;locals&gt;.a&gt;
+        global friendly_traceback: &lt;module &#39;friendly_traceback&#39;&gt;
+            from FRIENDLY:\friendly_traceback\__init__.py
+        result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
+            len(result): 1135
+        message: &#39;maximum recursion depth exceeded&#39;
 </pre></div>
 </div>
 </div>
@@ -791,10 +801,7 @@ Exception raised on line 6 of file TESTS:\runtime\test_recursion_error.py.
     result = a + one
 TypeError: can only concatenate str (not &quot;int&quot;) to str
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to concatenate (add) two different types of objects:
     a string (`str`) and an integer (`int`)
@@ -820,10 +827,7 @@ Exception raised on line 8 of file TESTS:\runtime\test_type_error.py.
     result = a + a_list
 TypeError: can only concatenate str (not &quot;list&quot;) to str
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to concatenate (add) two different types of objects:
     a string (`str`) and a `list`
@@ -849,10 +853,7 @@ Exception raised on line 26 of file TESTS:\runtime\test_type_error.py.
     result = a_tuple + a_list
 TypeError: can only concatenate tuple (not &quot;list&quot;) to tuple
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to concatenate (add) two different types of objects:
     a `tuple` and a `list`
@@ -878,10 +879,7 @@ Exception raised on line 44 of file TESTS:\runtime\test_type_error.py.
     result = one + none
 TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;NoneType&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to add two incompatible types of objects:
     an integer (`int`) and a variable equal to `None` (`NoneType`)
@@ -907,10 +905,7 @@ Exception raised on line 60 of file TESTS:\runtime\test_type_error.py.
     one += two
 TypeError: unsupported operand type(s) for +=: &#39;int&#39; and &#39;str&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to add two incompatible types of objects:
     an integer (`int`) and a string (`str`)
@@ -936,10 +931,7 @@ Exception raised on line 78 of file TESTS:\runtime\test_type_error.py.
     result = a - b
 TypeError: unsupported operand type(s) for -: &#39;tuple&#39; and &#39;list&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to subtract two incompatible types of objects:
     a `tuple` and a `list`
@@ -965,10 +957,7 @@ Exception raised on line 94 of file TESTS:\runtime\test_type_error.py.
     b -= a
 TypeError: unsupported operand type(s) for -=: &#39;list&#39; and &#39;tuple&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to subtract two incompatible types of objects:
     a `list` and a `tuple`
@@ -994,10 +983,7 @@ Exception raised on line 110 of file TESTS:\runtime\test_type_error.py.
     result = a * b
 TypeError: unsupported operand type(s) for *: &#39;complex&#39; and &#39;set&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to multiply two incompatible types of objects:
     a complex number and a `set`
@@ -1023,10 +1009,7 @@ Exception raised on line 126 of file TESTS:\runtime\test_type_error.py.
     b *= a
 TypeError: unsupported operand type(s) for *=: &#39;set&#39; and &#39;complex&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to multiply two incompatible types of objects:
     a `set` and a complex number
@@ -1052,10 +1035,7 @@ Exception raised on line 142 of file TESTS:\runtime\test_type_error.py.
     result = a / b
 TypeError: unsupported operand type(s) for /: &#39;dict&#39; and &#39;float&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to divide two incompatible types of objects:
     a dictionary (`dict`) and a number (`float`)
@@ -1081,10 +1061,7 @@ Exception raised on line 158 of file TESTS:\runtime\test_type_error.py.
     b /= a
 TypeError: unsupported operand type(s) for /=: &#39;float&#39; and &#39;dict&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to divide two incompatible types of objects:
     a number (`float`) and a dictionary (`dict`)
@@ -1110,10 +1087,7 @@ Exception raised on line 174 of file TESTS:\runtime\test_type_error.py.
     result = a // b
 TypeError: unsupported operand type(s) for //: &#39;dict&#39; and &#39;int&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to divide two incompatible types of objects:
     a dictionary (`dict`) and an integer (`int`)
@@ -1139,10 +1113,7 @@ Exception raised on line 190 of file TESTS:\runtime\test_type_error.py.
     b //= a
 TypeError: unsupported operand type(s) for //=: &#39;float&#39; and &#39;dict&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to divide two incompatible types of objects:
     a number (`float`) and a dictionary (`dict`)
@@ -1168,10 +1139,7 @@ Exception raised on line 206 of file TESTS:\runtime\test_type_error.py.
     result = a &amp; b
 TypeError: unsupported operand type(s) for &amp;: &#39;str&#39; and &#39;int&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to perform the bitwise operation &amp;
     on two incompatible types of objects:
@@ -1198,10 +1166,7 @@ Exception raised on line 222 of file TESTS:\runtime\test_type_error.py.
     b &amp;= a
 TypeError: unsupported operand type(s) for &amp;=: &#39;int&#39; and &#39;str&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to perform the bitwise operation &amp;=
     on two incompatible types of objects:
@@ -1228,10 +1193,7 @@ Exception raised on line 238 of file TESTS:\runtime\test_type_error.py.
     result = a ** b
 TypeError: unsupported operand type(s) for ** or pow(): &#39;dict&#39; and &#39;float&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to exponentiate (raise to a power)
     using two incompatible types of objects:
@@ -1258,10 +1220,7 @@ Exception raised on line 254 of file TESTS:\runtime\test_type_error.py.
     a **= b
 TypeError: unsupported operand type(s) for ** or pow(): &#39;dict&#39; and &#39;float&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to exponentiate (raise to a power)
     using two incompatible types of objects:
@@ -1288,10 +1247,7 @@ Exception raised on line 270 of file TESTS:\runtime\test_type_error.py.
     result = a &gt;&gt; b
 TypeError: unsupported operand type(s) for &gt;&gt;: &#39;str&#39; and &#39;int&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to perform the bit shifting operation &gt;&gt;
     on two incompatible types of objects:
@@ -1318,10 +1274,7 @@ Exception raised on line 286 of file TESTS:\runtime\test_type_error.py.
     a &gt;&gt;= b
 TypeError: unsupported operand type(s) for &gt;&gt;=: &#39;str&#39; and &#39;int&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to perform the bit shifting operation &gt;&gt;=
     on two incompatible types of objects:
@@ -1348,10 +1301,7 @@ Exception raised on line 302 of file TESTS:\runtime\test_type_error.py.
     result = a @ b
 TypeError: unsupported operand type(s) for @: &#39;str&#39; and &#39;int&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to use the operator @
     using two incompatible types of objects:
@@ -1380,10 +1330,7 @@ Exception raised on line 318 of file TESTS:\runtime\test_type_error.py.
     a @= b
 TypeError: unsupported operand type(s) for @=: &#39;str&#39; and &#39;int&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to use the operator @=
     using two incompatible types of objects:
@@ -1412,10 +1359,7 @@ Exception raised on line 334 of file TESTS:\runtime\test_type_error.py.
     b &lt; a
 TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to do an order comparison (&lt;)
     between two incompatible types of objects:
@@ -1442,10 +1386,7 @@ Exception raised on line 350 of file TESTS:\runtime\test_type_error.py.
     a = +&quot;abc&quot;
 TypeError: bad operand type for unary +: &#39;str&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to use the unary operator &#39;+&#39;
     with the following type of object: a string (`str`).
@@ -1469,10 +1410,7 @@ Exception raised on line 364 of file TESTS:\runtime\test_type_error.py.
     a = -[1, 2, 3]
 TypeError: bad operand type for unary -: &#39;list&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to use the unary operator &#39;-&#39;
     with the following type of object: a `list`.
@@ -1496,10 +1434,7 @@ Exception raised on line 379 of file TESTS:\runtime\test_type_error.py.
     a = ~(1, 2, 3)
 TypeError: bad operand type for unary ~: &#39;tuple&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You tried to use the unary operator &#39;~&#39;
     with the following type of object: a `tuple`.
@@ -1523,10 +1458,7 @@ Exception raised on line 394 of file TESTS:\runtime\test_type_error.py.
     a[0] = 0
 TypeError: &#39;tuple&#39; object does not support item assignment
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     In Python, some objects are known as immutable:
     once defined, their value cannot be changed.
@@ -1553,10 +1485,7 @@ Exception raised on line 410 of file TESTS:\runtime\test_type_error.py.
     fn(1)
 TypeError: fn() takes 0 positional arguments but 1 was given
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You apparently have called the function `fn` with
     1 positional argument(s) while it requires 0
@@ -1584,10 +1513,7 @@ TypeError: f() takes 1 positional argument but 2 were given
 
     Perhaps you forgot `self` when defining `f`.
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You apparently have called the function `f` with
     2 positional argument(s) while it requires 1
@@ -1614,10 +1540,7 @@ Exception raised on line 446 of file TESTS:\runtime\test_type_error.py.
     fn(1)
 TypeError: fn() missing 2 required positional arguments: &#39;b&#39; and &#39;c&#39;
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     You apparently have called the function &#39;fn()&#39; with
     fewer positional arguments than it requires (2 missing).
@@ -1644,10 +1567,7 @@ TypeError: &#39;tuple&#39; object is not callable
 
     Perhaps you had a missing comma between two tuples.
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     I suspect that you had an object of this type, a `tuple`,
     followed by what looked like a tuple, &#39;(...)&#39;,
@@ -1675,10 +1595,7 @@ TypeError: &#39;list&#39; object is not callable
 
     Perhaps you had a missing comma before the tuple.
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     I suspect that you had an object of this type, a `list`,
     followed by what looked like a tuple, &#39;(...)&#39;,
@@ -1704,10 +1621,7 @@ Exception raised on line 494 of file TESTS:\runtime\test_type_error.py.
     raise &quot;exception&quot;
 TypeError: exceptions must derive from BaseException
 
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by tring to do an operation not allowed on a given type of object.
+No information is available about this exception.
 
     In Python 3, exceptions must be derived from BaseException.
 
@@ -1736,14 +1650,7 @@ UnboundLocalError: local variable &#39;spam_missing_global&#39; referenced befor
 
     Did you forget to add `global spam_missing_global`?
 
-In Python, variables that are used inside a function are known as
-local variables. Before they are used, they must be assigned a value.
-A variable that is used before it is assigned a value is assumed to
-be defined outside that function; it is known as a `global`
-(or sometimes `nonlocal`) variable. You cannot assign a value to such
-a global variable inside a function without first indicating to
-Python that this is a global variable, otherwise you will see
-an `UnboundLocalError`.
+No information is available about this exception.
 
     The name `spam_missing_global` exists in the global scope.
     Perhaps the statement
@@ -1787,14 +1694,7 @@ UnboundLocalError: local variable &#39;spam_missing_nonlocal&#39; referenced bef
 
     Did you forget to add `nonlocal spam_missing_nonlocal`?
 
-In Python, variables that are used inside a function are known as
-local variables. Before they are used, they must be assigned a value.
-A variable that is used before it is assigned a value is assumed to
-be defined outside that function; it is known as a `global`
-(or sometimes `nonlocal`) variable. You cannot assign a value to such
-a global variable inside a function without first indicating to
-Python that this is a global variable, otherwise you will see
-an `UnboundLocalError`.
+No information is available about this exception.
 
     The name `spam_missing_nonlocal` exists in the nonlocal scope.
     Perhaps the statement
@@ -1825,77 +1725,131 @@ Exception raised on line 18 of file TESTS:\runtime\test_unbound_local_error.py.
 <div class="section" id="unknown-exception">
 <h2>Unknown exception<a class="headerlink" href="#unknown-exception" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_unknown_error.py&quot;, line 10, in test_function_unknown_error
-    raise MyException(&quot;Some informative message about an unknown exception.&quot;)
-MyException: Some informative message about an unknown exception.
+  File &quot;TESTS:\trb_common.py&quot;, line 227, in create_tracebacks
+    result, message = getattr(mod, function)()
+  File &quot;TESTS:\runtime\test_unknown_error.py&quot;, line 18, in test_function_unknown_error
+    assert &quot;Please report this example&quot; in result
+AssertionError:
 
-No information is known about this exception.
-Please report this example to
-https://github.com/aroberge/friendly-traceback/issues
+No information is available about this exception.
 
-Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.
+Execution stopped on line 227 of file TESTS:\trb_common.py.
 
-    9:     try:
---&gt;10:         raise MyException(&quot;Some informative message about an unknown exception.&quot;)
-   11:     except Exception as e:
+   226:                     if function is not None:
+--&gt;227:                         result, message = getattr(mod, function)()
+   228:                         save_messages[function] = message
 
     Known objects shown above:
-        global MyException: &lt;class &#39;test_unknown_error.MyException&#39;&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: MyException(&#39;Some informative message about an unknown excep...)
+        function: &#39;test_function_unknown_error&#39;
+        result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
+            len(result): 1487
+        message: &quot;local variable &#39;spam_missing_nonlocal&#39; referenced before as...&quot;
+            len(message): 67
+        getattr: &lt;builtin function getattr&gt;
+        mod: &lt;module &#39;test_unknown_error&#39;&gt; from TESTS:\runtime\test_unknown_error.py
+        global save_messages: {&#39;test_attribute_error&#39;: &quot;&#39;A&#39; object has no attribute &#39;x&#39;&quot;, ...}
+            len(save_messages): 47
+
+Exception raised on line 18 of file TESTS:\runtime\test_unknown_error.py.
+
+   17:     if friendly_traceback.get_lang() == &quot;en&quot;:
+--&gt;18:         assert &quot;Please report this example&quot; in result
+   19:     return result, message
+
+    Known objects shown above:
+        global friendly_traceback: &lt;module &#39;friendly_traceback&#39;&gt;
+            from FRIENDLY:\friendly_traceback\__init__.py
+        result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
+            len(result): 822
+        message: &#39;Some informative message about an unknown exception.&#39;
 </pre></div>
 </div>
 </div>
 <div class="section" id="zerodivisionerror-1">
 <h2>ZeroDivisionError - 1<a class="headerlink" href="#zerodivisionerror-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 6, in test_zero_division_error
-    1 / 0
-ZeroDivisionError: division by zero
+  File &quot;TESTS:\trb_common.py&quot;, line 227, in create_tracebacks
+    result, message = getattr(mod, function)()
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 14, in test_zero_division_error
+    assert &quot;A `ZeroDivisionError` occurs when&quot; in result
+AssertionError:
 
-A `ZeroDivisionError` occurs when you are attempting to divide
-a value by zero:
-    `result = my_variable / 0.`
-It can also happen if you calculate the remainder of a division
-using the modulo operator `%`:
-    `result = my_variable % 0`
+No information is available about this exception.
 
-Exception raised on line 6 of file TESTS:\runtime\test_zero_division_error.py.
+Execution stopped on line 227 of file TESTS:\trb_common.py.
 
-   5:     try:
---&gt;6:         1 / 0
-   7:     except Exception as e:
+   226:                     if function is not None:
+--&gt;227:                         result, message = getattr(mod, function)()
+   228:                         save_messages[function] = message
 
     Known objects shown above:
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: ZeroDivisionError(&#39;division by zero&#39;)
+        function: &#39;test_zero_division_error&#39;
+        result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
+            len(result): 1487
+        message: &quot;local variable &#39;spam_missing_nonlocal&#39; referenced before as...&quot;
+            len(message): 67
+        getattr: &lt;builtin function getattr&gt;
+        mod: &lt;module &#39;test_zero_division_error&#39;&gt;
+            from TESTS:\runtime\test_zero_division_error.py
+        global save_messages: {&#39;test_attribute_error&#39;: &quot;&#39;A&#39; object has no attribute &#39;x&#39;&quot;, ...}
+            len(save_messages): 47
+
+Exception raised on line 14 of file TESTS:\runtime\test_zero_division_error.py.
+
+   13:     if friendly_traceback.get_lang() == &quot;en&quot;:
+--&gt;14:         assert &quot;A `ZeroDivisionError` occurs when&quot; in result
+   15:     return result, message
+
+    Known objects shown above:
+        global friendly_traceback: &lt;module &#39;friendly_traceback&#39;&gt;
+            from FRIENDLY:\friendly_traceback\__init__.py
+        result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
+            len(result): 560
+        message: &#39;division by zero&#39;
 </pre></div>
 </div>
 </div>
 <div class="section" id="zerodivisionerror-2">
 <h2>ZeroDivisionError - 2<a class="headerlink" href="#zerodivisionerror-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 21, in test_zero_division_error2
-    1 % zero
-ZeroDivisionError: integer division or modulo by zero
+  File &quot;TESTS:\trb_common.py&quot;, line 227, in create_tracebacks
+    result, message = getattr(mod, function)()
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 29, in test_zero_division_error2
+    assert &quot;A `ZeroDivisionError` occurs when&quot; in result
+AssertionError:
 
-A `ZeroDivisionError` occurs when you are attempting to divide
-a value by zero:
-    `result = my_variable / 0.`
-It can also happen if you calculate the remainder of a division
-using the modulo operator `%`:
-    `result = my_variable % 0`
+No information is available about this exception.
 
-Exception raised on line 21 of file TESTS:\runtime\test_zero_division_error.py.
+Execution stopped on line 227 of file TESTS:\trb_common.py.
 
-   20:     try:
---&gt;21:         1 % zero
-   22:     except Exception as e:
+   226:                     if function is not None:
+--&gt;227:                         result, message = getattr(mod, function)()
+   228:                         save_messages[function] = message
 
     Known objects shown above:
-        zero: 0
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: ZeroDivisionError(&#39;integer division or modulo by zero&#39;)
+        function: &#39;test_zero_division_error2&#39;
+        result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
+            len(result): 1487
+        message: &quot;local variable &#39;spam_missing_nonlocal&#39; referenced before as...&quot;
+            len(message): 67
+        getattr: &lt;builtin function getattr&gt;
+        mod: &lt;module &#39;test_zero_division_error&#39;&gt;
+            from TESTS:\runtime\test_zero_division_error.py
+        global save_messages: {&#39;test_attribute_error&#39;: &quot;&#39;A&#39; object has no attribute &#39;x&#39;&quot;, ...}
+            len(save_messages): 47
+
+Exception raised on line 29 of file TESTS:\runtime\test_zero_division_error.py.
+
+   28:     if friendly_traceback.get_lang() == &quot;en&quot;:
+--&gt;29:         assert &quot;A `ZeroDivisionError` occurs when&quot; in result
+   30:     return result, message
+
+    Known objects shown above:
+        global friendly_traceback: &lt;module &#39;friendly_traceback&#39;&gt;
+            from FRIENDLY:\friendly_traceback\__init__.py
+        result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
+            len(result): 628
+        message: &#39;integer division or modulo by zero&#39;
 </pre></div>
 </div>
 </div>

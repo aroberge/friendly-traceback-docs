@@ -142,7 +142,10 @@ English (by default) and French are available.
    syntax_tracebacks_fr
 
 
-Todo
-----
+To do
+------
+
+We sometimes add notes about planned changes or additions to the documentation
+in various sections. Any such note is listed below.
 
 .. todolist::
