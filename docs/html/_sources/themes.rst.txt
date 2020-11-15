@@ -31,8 +31,8 @@ Much to my surprise, even though the colours I have chosen are not standard
 colours, they are much altered by ConEmu depending on the chosen
 colour scheme.
 
-Default theme using Windows Terminal
--------------------------------------
+Friendly-traceback default theme using Windows Terminal
+--------------------------------------------------------
 
 .. image:: images/theme_terminal.png
    :scale: 40 %
@@ -67,8 +67,27 @@ Other OS
 
 Screenshots taken by MacOS or Linux users would be welcome.
 
+
+Rich not supported
+-------------------
+
+Rich works by adding escape sequences which are interpreted
+by terminals as adding style (colours, font style like bold, italics, or
+underlined, etc.). Some environment cannot interpret these escape
+sequences. Here is what happens if we attempt to use Rich
+together with Python's IDLE:
+
+.. image:: images/rich_not_supported.png
+   :scale: 40 %
+   :alt: Rich not supported in IDLE
+
 Conclusion
 -----------
 
-It appears that efforts to carefully design a theme are somewhat
-pointless as the end result can depend on the environment used.
+While suggestions for improving Friendly-traceback are generally
+always welcome, suggested changes to the current default theme
+will likely be ignored since the end result appear to be
+completely dependent on the environment.
+
+We might consider supporting custom themes, but this will likely
+be a lower priority item.

@@ -76,8 +76,6 @@ English (by default) and French are available.
    thonny
    tracebacks
 
-
-
 .. toctree::
    :maxdepth: 1
    :hidden:
@@ -85,7 +83,6 @@ English (by default) and French are available.
 
    design
    themes
-
 
 .. toctree::
    :maxdepth: 1
@@ -97,7 +94,6 @@ English (by default) and French are available.
    formatter
    usage_adv
    plugins
-
 
 .. toctree::
    :maxdepth: 1
@@ -129,7 +125,6 @@ English (by default) and French are available.
    compare_exceptions
    compare
 
-
 .. toctree::
    :maxdepth: 1
    :hidden:
@@ -138,7 +133,6 @@ English (by default) and French are available.
    tracebacks_markdown
    tracebacks_syntax_markdown
 
-
 .. toctree::
    :maxdepth: 1
    :hidden:
@@ -146,5 +140,9 @@ English (by default) and French are available.
 
    tracebacks_fr
    syntax_tracebacks_fr
+
+
+Todo
+----
 
 .. todolist::

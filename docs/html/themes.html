@@ -100,11 +100,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Themes and colours</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#default-theme-using-windows-terminal">Default theme using Windows Terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#friendly-traceback-default-theme-using-windows-terminal">Friendly-traceback default theme using Windows Terminal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#conemu-base16-theme">ConEmu: base16 theme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#conemu-default-windows-theme">ConEmu: default windows theme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#conemu-powershell-theme">ConEmu: powershell theme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#other-os">Other OS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rich-not-supported">Rich not supported</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
@@ -258,8 +259,8 @@ using different colour schemes available from ConEmu’s settings.
 Much to my surprise, even though the colours I have chosen are not standard
 colours, they are much altered by ConEmu depending on the chosen
 colour scheme.</p>
-<div class="section" id="default-theme-using-windows-terminal">
-<h2>Default theme using Windows Terminal<a class="headerlink" href="#default-theme-using-windows-terminal" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="friendly-traceback-default-theme-using-windows-terminal">
+<h2>Friendly-traceback default theme using Windows Terminal<a class="headerlink" href="#friendly-traceback-default-theme-using-windows-terminal" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="_images/theme_terminal.png"><img alt="Default theme using Windows Terminal" src="_images/theme_terminal.png" style="width: 628.4000000000001px; height: 375.6px;" /></a>
 </div>
 <div class="section" id="conemu-base16-theme">
@@ -278,10 +279,23 @@ colour scheme.</p>
 <h2>Other OS<a class="headerlink" href="#other-os" title="Permalink to this headline">¶</a></h2>
 <p>Screenshots taken by MacOS or Linux users would be welcome.</p>
 </div>
+<div class="section" id="rich-not-supported">
+<h2>Rich not supported<a class="headerlink" href="#rich-not-supported" title="Permalink to this headline">¶</a></h2>
+<p>Rich works by adding escape sequences which are interpreted
+by terminals as adding style (colours, font style like bold, italics, or
+underlined, etc.). Some environment cannot interpret these escape
+sequences. Here is what happens if we attempt to use Rich
+together with Python’s IDLE:</p>
+<a class="reference internal image-reference" href="_images/rich_not_supported.png"><img alt="Rich not supported in IDLE" src="_images/rich_not_supported.png" style="width: 548.8000000000001px; height: 200.0px;" /></a>
+</div>
 <div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
-<p>It appears that efforts to carefully design a theme are somewhat
-pointless as the end result can depend on the environment used.</p>
+<p>While suggestions for improving Friendly-traceback are generally
+always welcome, suggested changes to the current default theme
+will likely be ignored since the end result appear to be
+completely dependent on the environment.</p>
+<p>We might consider supporting custom themes, but this will likely
+be a lower priority item.</p>
 </div>
 </div>
 
