@@ -234,6 +234,12 @@ what this project is about.</p>
 </div>
 <div class="section" id="developer-add-a-new-syntaxerror-case">
 <h1>Developer: Add a new SyntaxError case<a class="headerlink" href="#developer-add-a-new-syntaxerror-case" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This section was written quite a while ago. Some of the details might
+no longer reflect the actual code, but the general idea should still
+be fairly accurate.</p>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, and its subclasses, <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> and <code class="docutils literal notranslate"><span class="pre">TabError</span></code>,
 are particular cases in that arise when a file cannot be parsed properly
 by Python. Such files cannot be imported by pytest.
@@ -244,9 +250,13 @@ from the other situation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Checklist</strong></p>
-<p>The following are the required steps before a pull request.
-Each item is explained in a different section below. If you find
-the instructions unclear, please do not hesitate to reach out.</p>
+<p>Any contribution, <strong>no matter how small</strong>, is welcome.
+The following checklist
+is provided for those that are ambitious and want to do all the required
+steps by themselves to include a new case.
+You definitely do not have to do all of this.</p>
+<p>Each of the following items is explained in a different section below.
+If you find the instructions unclear, please do not hesitate to reach out.</p>
 <blockquote>
 <div><ul>
 <li><p>File an issue indicating that you are planning to work on a
@@ -323,44 +333,7 @@ Therefore, it will ignore this file.</p>
 </div>
 <div class="section" id="catching-an-exception">
 <h3>Catching an exception<a class="headerlink" href="#catching-an-exception" title="Permalink to this headline">¶</a></h3>
-<p>Now that we have script that can raise an exception,
-we need to create a script that will catch it, and can
-also be used by pytest which we use as our test runner.
-Here’s only part of the content of <code class="docutils literal notranslate"><span class="pre">catch_name_error.py</span></code>,
-with some numbered comments added, to which we refer below:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-
-
-<span class="k">def</span> <span class="nf">test_indentation_error1</span><span class="p">():</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">raise_indentation_error1</span>  <span class="c1"># 1 for pytest</span>
-        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-            <span class="kn">import</span> <span class="nn">raise_indentation_error1</span>
-    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-        <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">(),</span> <span class="n">redirect</span><span class="o">=</span><span class="s2">&quot;capture&quot;</span><span class="p">)</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_output</span><span class="p">()</span>
-    <span class="k">assert</span> <span class="s2">&quot;IndentationError: expected an indented block&quot;</span> <span class="ow">in</span> <span class="n">result</span>  <span class="c1"># 2</span>
-    <span class="k">return</span> <span class="n">result</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">test_indentation_error1</span><span class="p">())</span>
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p>Importing a test using pytest is done differently than importing it when
-running this file as standalone</p></li>
-<li><p>There are three possible cases of <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code>. We try to be
-as specific as possible in terms of which case will be indicated by Python.</p></li>
-</ol>
-<p>At this point, running pytest from the root directory should
-work, and you should see your test case included.  You can also
-run this test directly, using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">tests</span><span class="o">/</span><span class="n">syntax</span><span class="o">/</span><span class="n">catch_indentation_error</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-</div>
+<p>Edit tests/syntax/catch_syntax_error.py to add your new case.</p>
 </div>
 </div>
 <div class="section" id="adding-generic-information">

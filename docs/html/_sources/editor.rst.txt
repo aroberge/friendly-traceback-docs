@@ -100,4 +100,37 @@ As you can see, this is much more pleasant to look at then what
 we see using IDLE.
 
 
-.. todo:: Add info about running program with command line argument.
+Using command line arguments
+-----------------------------
+
+Suppose you wish to run a program that expect command line arguments.
+Here's an example, taken from our unit tests::
+
+    # Demonstration of a program that uses command line arguments
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("numbers", nargs="*", help="List of numbers to add.")
+
+    total = 0
+    args = parser.parse_args()
+
+    for number in args.numbers:
+        total += float(number)
+
+    print(f"The sum is {total}.")
+
+
+Running the program with the following code will result in
+``The sum is 6.5.`` being printed::
+
+    import friendly_traceback
+
+    mod_dict = friendly_traceback.run(
+        "tests/adder.py",
+        console=False,
+        args=("1", "2.5", "3")
+    )
+    assert "total" in mod_dict
+    assert mod_dict["total"] == 6.5
+

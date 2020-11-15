@@ -1,6 +1,14 @@
 Developer: Add a new SyntaxError case
 ========================================
 
+.. warning::
+
+    This section was written quite a while ago. Some of the details might
+    no longer reflect the actual code, but the general idea should still
+    be fairly accurate.
+
+
+
 ``SyntaxError``, and its subclasses, ``IndentationError`` and ``TabError``,
 are particular cases in that arise when a file cannot be parsed properly
 by Python. Such files cannot be imported by pytest.
@@ -14,9 +22,14 @@ from the other situation.
 
     **Checklist**
 
-    The following are the required steps before a pull request.
-    Each item is explained in a different section below. If you find
-    the instructions unclear, please do not hesitate to reach out.
+    Any contribution, **no matter how small**, is welcome.
+    The following checklist
+    is provided for those that are ambitious and want to do all the required
+    steps by themselves to include a new case.
+    You definitely do not have to do all of this.
+
+    Each of the following items is explained in a different section below.
+    If you find the instructions unclear, please do not hesitate to reach out.
 
         - File an issue indicating that you are planning to work on a
           given exception.
@@ -94,43 +107,7 @@ from the root directory of the repository.
 Catching an exception
 ~~~~~~~~~~~~~~~~~~~~~
 
-Now that we have script that can raise an exception,
-we need to create a script that will catch it, and can
-also be used by pytest which we use as our test runner.
-Here's only part of the content of ``catch_name_error.py``,
-with some numbered comments added, to which we refer below::
-
-    import friendly_traceback
-    import sys
-
-
-    def test_indentation_error1():
-        try:
-            try:
-                from . import raise_indentation_error1  # 1 for pytest
-            except ImportError:
-                import raise_indentation_error1
-        except Exception:
-            friendly_traceback.explain_traceback(*sys.exc_info(), redirect="capture")
-        result = friendly_traceback.get_output()
-        assert "IndentationError: expected an indented block" in result  # 2
-        return result
-
-
-    if __name__ == "__main__":
-        print(test_indentation_error1())
-
-
-1. Importing a test using pytest is done differently than importing it when
-   running this file as standalone
-2. There are three possible cases of ``IndentationError``. We try to be
-   as specific as possible in terms of which case will be indicated by Python.
-
-At this point, running pytest from the root directory should
-work, and you should see your test case included.  You can also
-run this test directly, using::
-
-    python tests/syntax/catch_indentation_error.py
+Edit tests/syntax/catch_syntax_error.py to add your new case.
 
 
 Adding generic information

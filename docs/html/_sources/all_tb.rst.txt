@@ -1,11 +1,11 @@
 Why all the tracebacks?
 =========================
 
-.. todo::
-
-    Add explanation as to why we include all possible tracebacks.
-    Short answer: we created a separate repository for documentation.
-    When we update the documentation, we can check the commit diff to
-    spot any changes that should be flagged as an error and was not
-    captured in a unit test. Note that this is also why we
-    simplified functions repr.
+This documentation contains essentially all the tracebacks
+generated from unit tests, for all Python versions. We do this for
+two reasons. First, so that interested users can browse through and
+perhaps find cases where the explanation provided could be improved.
+Secondly, these traceback capture more information than what
+we check in the unit tests. In this way, when we run all tests,
+we can use something like "git diff" to see if any unexpected changes
+occur.

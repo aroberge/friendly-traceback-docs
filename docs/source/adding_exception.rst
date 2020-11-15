@@ -3,6 +3,12 @@
 Developer: Add a new Exception case
 ======================================
 
+.. warning::
+
+    This section was written quite a while ago. Some of the details might
+    no longer reflect the actual code, but the general idea should still
+    be fairly accurate.
+
 This primarily describes the situation where you wish to add friendly
 tracebacks for an Exception that is not already included.
 **It does not apply to** ``SyntaxError`` **and its subclasses,**
@@ -89,7 +95,6 @@ Here is what was the **initial** content of that file,
 with some numbered comments added::
 
     import friendly_traceback
-    import sys
 
 
     def test_unbound_local_error():    # 1
@@ -102,7 +107,7 @@ with some numbered comments added::
         try:
             inner()   # 2
         except Exception:
-            friendly_traceback.explain_traceback(*sys.exc_info(), redirect="capture")  # 3
+            friendly_traceback.explain_traceback(redirect="capture")  # 3
         result = friendly_traceback.get_output()  # 4
         assert "UnboundLocalError" in result  # 5
         return result  # 6

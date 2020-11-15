@@ -234,6 +234,12 @@ what this project is about.</p>
 </div>
 <div class="section" id="developer-add-a-new-exception-case">
 <span id="adding-exception"></span><h1>Developer: Add a new Exception case<a class="headerlink" href="#developer-add-a-new-exception-case" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This section was written quite a while ago. Some of the details might
+no longer reflect the actual code, but the general idea should still
+be fairly accurate.</p>
+</div>
 <p>This primarily describes the situation where you wish to add friendly
 tracebacks for an Exception that is not already included.
 <strong>It does not apply to</strong> <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> <strong>and its subclasses,</strong>
@@ -318,7 +324,6 @@ such as <code class="docutils literal notranslate"><span class="pre">test_unboun
 Here is what was the <strong>initial</strong> content of that file,
 with some numbered comments added:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
-<span class="kn">import</span> <span class="nn">sys</span>
 
 
 <span class="k">def</span> <span class="nf">test_unbound_local_error</span><span class="p">():</span>    <span class="c1"># 1</span>
@@ -331,7 +336,7 @@ with some numbered comments added:</p>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">inner</span><span class="p">()</span>   <span class="c1"># 2</span>
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-        <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">(),</span> <span class="n">redirect</span><span class="o">=</span><span class="s2">&quot;capture&quot;</span><span class="p">)</span>  <span class="c1"># 3</span>
+        <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="s2">&quot;capture&quot;</span><span class="p">)</span>  <span class="c1"># 3</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_output</span><span class="p">()</span>  <span class="c1"># 4</span>
     <span class="k">assert</span> <span class="s2">&quot;UnboundLocalError&quot;</span> <span class="ow">in</span> <span class="n">result</span>  <span class="c1"># 5</span>
     <span class="k">return</span> <span class="n">result</span>  <span class="c1"># 6</span>

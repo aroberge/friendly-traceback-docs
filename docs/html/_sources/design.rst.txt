@@ -1,16 +1,11 @@
 Some thoughts on the design of Friendly-traceback
 =================================================
 
-.. todo::
-
-    Add note about no required dependencies other than what is
-    found in the Python standard library.
-
 The following are thoughts on the design of this project.
 The content of this file **will** be changed as this project evolve.
 
-Purpose
--------
+Original purpose
+------------------
 
 Friendly-traceback's primary purpose is to make it easier for
 beginners and/or for people that have limited knowledge of English
@@ -21,172 +16,72 @@ traceback and use the information **provided by Python**
 to understand what went wrong and how to fix it.
 
 
-.. sidebar:: Thought ...
+Revised purpose
+----------------
 
-    The success of this module is predicated on contributions (mostly to
-    translations) by intermediate or advanced programmers.
-    For this reason, it might make sense to include some "advanced" features
-    that could be of interest to them, such as the example of
-    **better-exceptions** mentioned below.
+As Friendly-traceback was developed, we found that going beyond
+providing an explanation for the traceback printed by Python
+was potentially very useful. This is something that is currently
+done by Thonny_ which, in some cases, even attempts to identify more than
+one possible cause giving rise to an exception, as well as ordering them
+in order of likelihood, based on its own analysis of the code.
 
-Semi-open questions
--------------------
+.. _Thonny: https://thonny.org/
 
-Normally, an "open questions" section would be included at the end, but this document
-is getting so long that few people might read it to the very end.
-Furthermore, it might be useful to have these in mind while reading the rest of
-this document. They are called "semi-open" as we have made explicit choices
-about some of them, choices which could change given some feedback from
-actual users.
+As a concrete example, in the image below,
+Thonny shows the normal Python traceback [1],
+and offers some additional explanations [2], parts of which can be hidden
+or revealed by clicking on a button.
 
-- In addition to showing the line of code where an exception is raised,
-  should we include other lines of code for contextual information and,
-  if so, how many?
-
-  Python's `cgitb module <https://docs.python.org/3/library/cgitb.html>`_
-  shows five lines of context for each "item" in a traceback. We currently
-  show at most three, ending with the line where the exception occurred.
-  (The screenshots below do not reflect the actual stage of the project.)
-
-- Should we aim to provide information about **all** standard Python
-  Exceptions, or just a subset?  Some exceptions are going to occur only
-  because some really advanced features of Python are used (for example:
-  ``ConnectionRefusedError``) and it would be likely that users writing
-  such code are already experienced enough to not need supplementary help
-  from Friendly-traceback.
-
-- Should exceptions from specific modules in the standard library also
-  be included? As a specific example, perhaps exceptions raised in the
-  ``turtle`` module should be considered.
-
-- Should we include also Warnings?
-
-  The full list of exceptions and warnings is included in
-  :ref:`known` as well as some notes about some Exceptions that have
-  been purposely excluded.
-
-- Should translations (``.po`` files) be limited to general translations
-  for a given language (e.g. ``fr``) and not include region-specific version
-  (e.g. ``fr_CA``)?
-
-- Should we offer a single explanation as to the likely cause of the error,
-  or do like Thonny and offer weighted alternatives?
-  See Issue8_ for a discussion, as well as the section about multiple
-  causes below.
-
-- Giving too much information ("wall of text") can be overwhelming;
-  giving a limited amount of information might not be helpful enough to help
-  beginners understand what went wrong and how to fix their program.
-  How do we find the right balance?
+.. image:: images/thonny.png
+   :scale: 100 %
 
 
-.. _Issue8: https://github.com/aroberge/Friendly-traceback/issues/8
-.. _Issue10: https://github.com/aroberge/Friendly-traceback/issues/10
+For now, Friendly-traceback tries to identify the most likely cause
+of the exception, but some consideration has been given to
+include more than one possible explanation in some cases.
 
-Anatomy of a standard Python traceback
---------------------------------------
+Gradual reveal
+---------------
 
-Here's an annotated screen capture of a standard somewhat typical Python traceback:
+Initially, it was thought that the information provided by Friendly-traceback
+should be shown all at once. As we accumulated more and more cases,
+we realised that this could yield a huge amount of material which could
+be rather daunting for beginners. Eventually, this lead to the
+approach of using a REPL whenever possible so that the user could get
+some small amount of information at a time by entering ``why()`` or
+``where()``.
 
-.. image:: images/standard_traceback.png
-   :scale: 50 %
-   :alt: Standard Python traceback
+As part of the gradual reveal, the traceback shown to the user
+shows an added "hint" which attempts to summarize in a single sentence
+a possible cause or remedy to the exception that was raised.
+This has been inspired in parts by the
+`DidYouMean-Python (aka BetterErrorMessages) <https://github.com/SylvainDe/DidYouMean-Python>`_
+project.
 
-1. Some information about the exception raised which often includes a terse message.
+About Warnings
+---------------
 
-2. The line of code which was executed and eventually led to an exception
-   being raised. Most often, this will be code written by the end-user.
+In addition to generating exceptions, Python can provide some Warnings
+to users. For now, these are simply silenced but we would like to
+consider including them in the information provided by
+Friendly-traceback.
 
-3. The actual line of code where the exception was raised.
+Location of the exception
+--------------------------
 
-4. "(most recent last call)" informs us how about the order in which the
-   execution occurred.
+While a Python traceback includes the information from all the frames
+that were involved, Friendly-traceback focus on the first and last frame,
+as these are more likely to contain the relevant information to the user.
 
-In some cases, there can be many calls in between 2 and 3; this can contribute
-to the confusion experienced by beginners when they are confronted with
-similar tracebacks.
-
-Basic anatomy of a friendly traceback
--------------------------------------
-
-Let's have a look at a "friendly traceback" by focusing first on the items
-corresponding to those we have highlighted above for a standard traceback.
-
-.. image:: images/friendly_traceback_en.png
-   :scale: 50 %
-   :alt: Friendly Python traceback
-
-1. The exact same terse information provided by Python about the exception raised.
-
-2. The line of code which was executed and eventually led to an exception
-   being raised, shown with a few additional lines to help understand the context.
-
-3. The actual line of code where the exception was raised, shown with a few
-   additional lines to help understand the context.
-
-4. and 5. Instead of relying simply on the "(most recent last call)" note
-   given by Python, we explicitly state which was the line of code where
-   the program stopped, and which one where the exception was raised.
-   This is something that can be translated, as shown for the corresponding
-   French version (screenshot taken with an earlier version of Friendly-traceback.)
-
-.. image:: images/friendly_traceback_fr.png
-   :scale: 50 %
-   :alt: Friendly Python traceback
-
-Note that, contrarily to standard Python tracebacks, only the first and last
-call made are shown.  In most cases, this should be sufficient to figure out
-the cause of the exception, and how to fix it, while avoiding overwhelming
-the user with too much information.
-
-Other parts of a friendly traceback
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In addition to what was mentioned above, here's an annotated screen capture
-highlighting the other information included in a "friendly traceback", all
-of which can be translated.
-
-.. image:: images/friendly_traceback_en2.png
-   :scale: 50 %
-   :alt: Friendly Python traceback
-
-
-1. A header. This could be customized if a third-party module implemented
-   its own custom exceptions.
-
-2. Some generic information about a given exception, simply based on its
-   name.
-
-3. Some specific information about this exception. For many exceptions, this
-   information is obtained from the message included in a standard Python
-   traceback. Sometimes, like in the above, it can include a suggestion as
-   to how to fix the problem.
-   Other times (see an example below for ``NameError``), it is
-   simply rephrasing the information in the Python message which can then
-   be translated.
-
-4. and 5. This shows the value of all known variables (local and global) which
-   are found on the lines where problems have been noted.
-
-Below is an example where the standard Python message [1] for a ``NameError``
-is simply rewritten [2] in English, so that it could be translated.
-
-
-.. image:: images/name_error.png
-   :scale: 50 %
-   :alt: NameError traceback in English
-
-And here is the corresponding French version:
-
-.. image:: images/name_error_fr.png
-   :scale: 50 %
-   :alt: NameError traceback in French
 
 Variable information
 ~~~~~~~~~~~~~~~~~~~~
 
-As mentioned above, we include the value of all known variables found
-on the offending line. In the example below (``IndexError``), this
+Friendly-traceback include the value of all known variables found
+on the lines of code shown; earlier versions, such
+as that shown in the example below, included only variable information
+from a single line of code. In the example below (``IndexError``), this
 information [1] together with the reminder [2] and the code from
 the offending line [3] give enough information to properly diagnose the error.
 
@@ -222,77 +117,11 @@ error.
    :scale: 50 %
    :alt: SyntaxError traceback
 
-How many possible causes?
----------------------------
-
-The idea of showing a single possible cause for a given error is different
-than that taken by Thonny_ which, in some cases, attempts to identify more than
-one possible cause giving rise to an exception, as well as ordering them
-in order of likelihood, based on its own analysis of the code.
-Those interested by what Thonny does might want to
-`have a look here <https://github.com/thonny/thonny/blob/master/thonny/plugins/stdlib_error_helpers.py>`_.
-
-The idea of showing more than one possible cause for an error
-is discussed in Issue8_.
-
-.. _Thonny: https://thonny.org/
-
-
-As a concrete example, in the image below,
-Thonny shows the normal Python traceback [1],
-and offers some additional explanations [2], parts of which can be hidden
-or revealed by clicking on a button.
-
-.. image:: images/thonny.png
-   :scale: 100 %
-   :alt: Verbosity level 0
-
-
-Our current thinking is as follows:
-
-1. Friendly-traceback aims to supplement the information provided by Python
-   in a normal traceback, in order to make it easier to understand.
-   Therefore, it should not second-guess the information given by Python
-   when the information is specific enough. For exemple, if we see an
-   ``UnboundLocalError``, it could very well be that the cause is really
-   a ``NameError`` in disguise. However, trying to figure out if that is the
-   case would go beyond explaining and/or translating what a given
-   traceback includes as information.
-
-2. For ``SyntaxError``, Python very often includes the rather useless
-   ``invalid syntax`` message. Nonetheless, we still try to make an educated
-   guess as to what the cause is.  We note however that many programming
-   environment (editor or IDE) will include linters that will catch
-   syntax errors before a program is run,
-   thus helping to prevent ``SyntaxError`` tracebacks from happening.
-   While we could, in theory, use third-party linters as
-   tools in Friendly-traceback, we believe that such tools more properly
-   belong in a programming environment, and that it would be a duplicated
-   and largely wasted effort to incorporate such tools in Friendly-traceback.
-
-3. We generally distinguish cases where we can use the information given by Python
-   from those where we have to guess by having a different header
-   ("Likely cause" vs "best guess").
-
-4. Trying to provide explanations and translations for all relevant
-   exceptions will require a considerable amount of work.
-   For those, like Thonny, that wishes to
-   explore the possibility of suggesting more than one cause, it makes sense
-   to add functions in Friendly-tracebacks that could perform this task
-   in addition to its current design, so that the community can focus on this
-   one package and enhance it as needed. So, Friendly-traceback must be
-   designed to easily allow extensions of its core capabilities.
-
-So, the choice we have made is that Friendly-traceback will normally only print
-at most one likely cause.
-However, some programming environment could use the additional information
-about possible causes if and when it becomes available in Friendly-traceback.
-
 
 Localization
 ---------------
 
-As noted above, it is possible to translate almost all the text provided
+It is possible to translate almost all the text provided
 by Friendly-traceback.
 
 When using Python, it is customary to determine which language should
@@ -324,15 +153,12 @@ gettext's option of falling back to the hard-coded version if needed.
     specific version.
 
 
-Extensibility
---------------
+No dependencies
+----------------
 
-For projects that have their custom Exceptions, like
-`AvantPy <https://aroberge.github.io/avantpy/docs/html/>`_, it is
-be possible to add the custom exceptions to those handled by
-Friendly-traceback.  See the ``demos`` directory for an example.
-
-It is also possible to use a different formatter.
+For now at least, Friendly-traceback has no required dependencies other than
+modules found in Python's standard library. If possible, we would like
+to keep it this way.
 
 
 Other similar projects
@@ -359,6 +185,3 @@ The following is an incomplete list of projects or modules to look at:
 - https://github.com/onelivesleft/PrettyErrors/
 - https://github.com/skorokithakis/tbvaccine
 - https://github.com/alexmojaki/stack_data
-- And, as mentioned in Issue8_, Thonny_ has a widget called
-  "Assistant" whose purpose is helping beginners identify the
-  cause of a traceback.

@@ -94,6 +94,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Using with an editor or IDE</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#using-with-idle">Using with IDLE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-microsoft-vs-code">Using Microsoft VS Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-command-line-arguments">Using command line arguments</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
@@ -300,9 +301,38 @@ This time, our code launcher is modified as follows:</p>
 our program, has been removed from the screen capture above.</p>
 <p>As you can see, this is much more pleasant to look at then what
 we see using IDLE.</p>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Add info about running program with command line argument.</p>
+</div>
+<div class="section" id="using-command-line-arguments">
+<h2>Using command line arguments<a class="headerlink" href="#using-command-line-arguments" title="Permalink to this headline">¶</a></h2>
+<p>Suppose you wish to run a program that expect command line arguments.
+Here’s an example, taken from our unit tests:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Demonstration of a program that uses command line arguments</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;numbers&quot;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;List of numbers to add.&quot;</span><span class="p">)</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">numbers</span><span class="p">:</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The sum is </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Running the program with the following code will result in
+<code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">sum</span> <span class="pre">is</span> <span class="pre">6.5.</span></code> being printed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
+
+<span class="n">mod_dict</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="s2">&quot;tests/adder.py&quot;</span><span class="p">,</span>
+    <span class="n">console</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2.5&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="s2">&quot;total&quot;</span> <span class="ow">in</span> <span class="n">mod_dict</span>
+<span class="k">assert</span> <span class="n">mod_dict</span><span class="p">[</span><span class="s2">&quot;total&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">6.5</span>
+</pre></div>
 </div>
 </div>
 </div>

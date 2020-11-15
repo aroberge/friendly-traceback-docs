@@ -72,9 +72,6 @@ by contributors::
     except for ``what()`` as shown here.
 
 
-.. todo:: Try to provide such generic information about **all** standard Python exceptions.
-
-
 why()
 -------
 
