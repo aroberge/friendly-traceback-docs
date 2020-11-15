@@ -44,7 +44,10 @@ ArithmeticError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    `ArithmeticError` is the base class for those built-in exceptions
+    that are raised for various arithmetic errors.
+    It is unusual that you are seeing this exception;
+    normally, a more specific exception should have been raised.
     
 
 
@@ -62,7 +65,9 @@ AttributeError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    An `AttributeError` occurs when the code contains something like
+        `object.x`
+    and `x` is not a method or attribute (variable) belonging to `object`.
     
 
 
@@ -188,7 +193,9 @@ FileNotFoundError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    A `FileNotFoundError` exception indicates that you
+    are trying to open a file that cannot be found by Python.
+    This could be because you misspelled the name of the file.
     
 
 
@@ -224,7 +231,9 @@ ImportError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    An `ImportError` exception indicates that a certain object could not
+    be imported from a module or package. Most often, this is
+    because the name of the object is not spelled correctly.
     
 
 
@@ -233,7 +242,8 @@ IndentationError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    An `IndentationError` occurs when a given line of code is
+    not indented (aligned vertically with other lines) as expected.
     
 
 
@@ -242,7 +252,11 @@ IndexError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    An `IndexError` occurs when you are try to get an item from a list,
+    a tuple, or a similar object (sequence), by using an index which
+    does not exists; typically, this is because the index you give
+    is greater than the length of the sequence.
+    Reminder: the first item of a sequence is at index 0.
     
 
 
@@ -269,7 +283,8 @@ KeyError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    A `KeyError` is raised when a value is not found as a
+    key in a Python dict.
     
 
 
@@ -287,7 +302,9 @@ LookupError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    `LookupError` is the base class for the exceptions that are raised
+    when a key or index used on a mapping or sequence is invalid.
+    It can also be raised directly by codecs.lookup().
     
 
 
@@ -305,7 +322,10 @@ ModuleNotFoundError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    A `ModuleNotFoundError` exception indicates that you
+    are trying to import a module that cannot be found by Python.
+    This could be because you misspelled the name of the module
+    or because it is not installed on your computer.
     
 
 
@@ -314,7 +334,11 @@ NameError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    A `NameError` exception indicates that a variable or
+    function name is not known to Python.
+    Most often, this is because there is a spelling mistake.
+    However, sometimes it is because the name is used
+    before being defined or given a value.
     
 
 
@@ -350,7 +374,8 @@ OverflowError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    An `OverflowError` is raised when the result of an arithmetic operation
+    is too large to be handled by the computer's processor.
     
 
 
@@ -377,7 +402,10 @@ RecursionError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    A `RecursionError` is raised when a function calls itself,
+    directly or indirectly, too many times.
+    It almost always indicates that you made an error in your code
+    and that your program would never stop.
     
 
 
@@ -422,7 +450,7 @@ SyntaxError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    A `SyntaxError` occurs when Python cannot understand your code.
     
 
 
@@ -449,7 +477,12 @@ TabError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    A `TabError` indicates that you have used both spaces
+    and tab characters to indent your code.
+    This is not allowed in Python.
+    Indenting your code means to have block of codes aligned vertically
+    by inserting either spaces or tab characters at the beginning of lines.
+    Python's recommendation is to always use spaces to indent your code.
     
 
 
@@ -467,7 +500,10 @@ TypeError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    A `TypeError` is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by tring to do an operation not allowed on a given type of object.
     
 
 
@@ -476,7 +512,14 @@ UnboundLocalError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    In Python, variables that are used inside a function are known as 
+    local variables. Before they are used, they must be assigned a value.
+    A variable that is used before it is assigned a value is assumed to
+    be defined outside that function; it is known as a `global`
+    (or sometimes `nonlocal`) variable. You cannot assign a value to such
+    a global variable inside a function without first indicating to
+    Python that this is a global variable, otherwise you will see
+    an `UnboundLocalError`.
     
 
 
@@ -521,7 +564,8 @@ ValueError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    A `ValueError` indicates that a function or an operation
+    received an argument of the right type, but an inappropriate value.
     
 
 
@@ -539,7 +583,12 @@ ZeroDivisionError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    A `ZeroDivisionError` occurs when you are attempting to divide
+    a value by zero:
+        `result = my_variable / 0.`
+    It can also happen if you calculate the remainder of a division
+    using the modulo operator `%`:
+        `result = my_variable % 0`
     
 
 
