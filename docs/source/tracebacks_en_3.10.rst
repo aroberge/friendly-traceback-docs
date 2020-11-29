@@ -16,7 +16,7 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly-traceback version: 0.1.11a
+Friendly-traceback version: 0.1.12a
 Python version: 3.10.0a1
 
 
