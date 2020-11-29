@@ -1,2 +1,2 @@
 environment.pickle
-*.doctree
+*/doctrees/*.*
