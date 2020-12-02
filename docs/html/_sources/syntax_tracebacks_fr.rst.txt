@@ -1123,9 +1123,7 @@ SyntaxError - missing comma in a set
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
-        Il est possible que vous ayez oublié une virgule entre les éléments d'un ensemble (set)
-        ou un dict avant la position indiquée par --> et ^.
-        
+        Perhaps you forgot a comma or an operator between `2` and `3`.
 
 SyntaxError - missing comma in a list
 -------------------------------------
@@ -1155,9 +1153,7 @@ SyntaxError - missing comma in a list
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
-        Il est possible que vous ayez oublié une virgule entre les éléments d'une liste
-        avant la position indiquée par --> et ^.
-        
+        Perhaps you forgot a comma or an operator between `2` and `3`.
 
 SyntaxError - missing comma in a tuple
 --------------------------------------
@@ -1187,9 +1183,7 @@ SyntaxError - missing comma in a tuple
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
-        Il est possible que vous ayez oublié une virgule entre les éléments d'un tuple,
-        ou entre les arguments d'une fonction, avant la position indiquée par --> et ^.
-        
+        Perhaps you forgot a comma or an operator between `2` and `3`.
 
 SyntaxError - missing comma between function args
 -------------------------------------------------
@@ -1219,9 +1213,7 @@ SyntaxError - missing comma between function args
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
-        Il est possible que vous ayez oublié une virgule entre les éléments d'un tuple,
-        ou entre les arguments d'une fonction, avant la position indiquée par --> et ^.
-        
+        Perhaps you forgot a comma or an operator between `c` and `d`.
 
 SyntaxError - can't assign to function call - 1
 -----------------------------------------------

@@ -1318,8 +1318,7 @@ beyond the location indicated by --> and ^.
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-It is possible that you forgot a comma between items in a set or dict
-before the position indicated by --> and ^.
+Perhaps you forgot a comma or an operator between `2` and `3`.
 
 ---
 
@@ -1357,8 +1356,7 @@ beyond the location indicated by --> and ^.
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-It is possible that you forgot a comma between items in a list
-before the position indicated by --> and ^.
+Perhaps you forgot a comma or an operator between `2` and `3`.
 
 ---
 
@@ -1396,9 +1394,7 @@ beyond the location indicated by --> and ^.
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-It is possible that you forgot a comma between items in a tuple, 
-or between function arguments, 
-before the position indicated by --> and ^.
+Perhaps you forgot a comma or an operator between `2` and `3`.
 
 ---
 
@@ -1436,9 +1432,7 @@ beyond the location indicated by --> and ^.
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-It is possible that you forgot a comma between items in a tuple, 
-or between function arguments, 
-before the position indicated by --> and ^.
+Perhaps you forgot a comma or an operator between `c` and `d`.
 
 ---
 

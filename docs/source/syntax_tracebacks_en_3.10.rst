@@ -1122,9 +1122,7 @@ SyntaxError - missing comma in a set
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        It is possible that you forgot a comma between items in a set or dict
-        before the position indicated by --> and ^.
-        
+        Perhaps you forgot a comma or an operator between `2` and `3`.
 
 SyntaxError - missing comma in a list
 -------------------------------------
@@ -1155,9 +1153,7 @@ SyntaxError - missing comma in a list
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        It is possible that you forgot a comma between items in a list
-        before the position indicated by --> and ^.
-        
+        Perhaps you forgot a comma or an operator between `2` and `3`.
 
 SyntaxError - missing comma in a tuple
 --------------------------------------
@@ -1188,10 +1184,7 @@ SyntaxError - missing comma in a tuple
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        It is possible that you forgot a comma between items in a tuple, 
-        or between function arguments, 
-        before the position indicated by --> and ^.
-        
+        Perhaps you forgot a comma or an operator between `2` and `3`.
 
 SyntaxError - missing comma between function args
 -------------------------------------------------
@@ -1222,10 +1215,7 @@ SyntaxError - missing comma between function args
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        It is possible that you forgot a comma between items in a tuple, 
-        or between function arguments, 
-        before the position indicated by --> and ^.
-        
+        Perhaps you forgot a comma or an operator between `c` and `d`.
 
 SyntaxError - can't assign to function call - 1
 -----------------------------------------------
