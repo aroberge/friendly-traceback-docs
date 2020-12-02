@@ -1109,6 +1109,7 @@ SyntaxError - missing comma in a set
                    ^
     SyntaxError: invalid syntax
     
+        Did you forget something between `2` and `3`?
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -1124,7 +1125,8 @@ SyntaxError - missing comma in a set
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        Perhaps you forgot a comma or an operator between `2` and `3`.
+        Python indicates that the error is caused by `3` written just after `2`.
+        Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `2` and `3`.
 
 SyntaxError - missing comma in a list
 -------------------------------------
@@ -1140,6 +1142,7 @@ SyntaxError - missing comma in a list
                    ^
     SyntaxError: invalid syntax
     
+        Did you forget something between `2` and `3`?
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -1155,7 +1158,8 @@ SyntaxError - missing comma in a list
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        Perhaps you forgot a comma or an operator between `2` and `3`.
+        Python indicates that the error is caused by `3` written just after `2`.
+        Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `2` and `3`.
 
 SyntaxError - missing comma in a tuple
 --------------------------------------
@@ -1171,6 +1175,7 @@ SyntaxError - missing comma in a tuple
                    ^
     SyntaxError: invalid syntax
     
+        Did you forget something between `2` and `3`?
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -1186,7 +1191,8 @@ SyntaxError - missing comma in a tuple
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        Perhaps you forgot a comma or an operator between `2` and `3`.
+        Python indicates that the error is caused by `3` written just after `2`.
+        Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `2` and `3`.
 
 SyntaxError - missing comma between function args
 -------------------------------------------------
@@ -1202,6 +1208,7 @@ SyntaxError - missing comma between function args
                    ^
     SyntaxError: invalid syntax
     
+        Did you forget something between `c` and `d`?
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -1217,7 +1224,8 @@ SyntaxError - missing comma between function args
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        Perhaps you forgot a comma or an operator between `c` and `d`.
+        Python indicates that the error is caused by `d` written just after `c`.
+        Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `c` and `d`.
 
 SyntaxError - can't assign to function call - 1
 -----------------------------------------------

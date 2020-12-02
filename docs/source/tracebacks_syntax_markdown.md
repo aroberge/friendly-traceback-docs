@@ -1298,6 +1298,9 @@ SyntaxError: invalid syntax
 
 ```
 
+Did you forget something between `2` and `3`?
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
@@ -1318,7 +1321,8 @@ beyond the location indicated by --> and ^.
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-Perhaps you forgot a comma or an operator between `2` and `3`.
+Python indicates that the error is caused by `3` written just after `2`.
+Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `2` and `3`.
 
 ---
 
@@ -1335,6 +1339,9 @@ Traceback (most recent call last):
 SyntaxError: invalid syntax
 
 ```
+
+Did you forget something between `2` and `3`?
+
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -1356,7 +1363,8 @@ beyond the location indicated by --> and ^.
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-Perhaps you forgot a comma or an operator between `2` and `3`.
+Python indicates that the error is caused by `3` written just after `2`.
+Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `2` and `3`.
 
 ---
 
@@ -1373,6 +1381,9 @@ Traceback (most recent call last):
 SyntaxError: invalid syntax
 
 ```
+
+Did you forget something between `2` and `3`?
+
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -1394,7 +1405,8 @@ beyond the location indicated by --> and ^.
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-Perhaps you forgot a comma or an operator between `2` and `3`.
+Python indicates that the error is caused by `3` written just after `2`.
+Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `2` and `3`.
 
 ---
 
@@ -1411,6 +1423,9 @@ Traceback (most recent call last):
 SyntaxError: invalid syntax
 
 ```
+
+Did you forget something between `c` and `d`?
+
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -1432,7 +1447,8 @@ beyond the location indicated by --> and ^.
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-Perhaps you forgot a comma or an operator between `c` and `d`.
+Python indicates that the error is caused by `d` written just after `c`.
+Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `c` and `d`.
 
 ---
 

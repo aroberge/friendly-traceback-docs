@@ -1109,6 +1109,7 @@ SyntaxError - missing comma in a set
                    ^
     SyntaxError: invalid syntax
     
+        Avez-vous oublié quelque chose entre `2` et `3` ?
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -1123,7 +1124,8 @@ SyntaxError - missing comma in a set
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
-        Perhaps you forgot a comma or an operator between `2` and `3`.
+        Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
+        Peut-être avez-vous oublié une virgule ou un opérateur, comme '+', '*', etc., entre `2` et `3`.
 
 SyntaxError - missing comma in a list
 -------------------------------------
@@ -1139,6 +1141,7 @@ SyntaxError - missing comma in a list
                    ^
     SyntaxError: invalid syntax
     
+        Avez-vous oublié quelque chose entre `2` et `3` ?
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -1153,7 +1156,8 @@ SyntaxError - missing comma in a list
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
-        Perhaps you forgot a comma or an operator between `2` and `3`.
+        Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
+        Peut-être avez-vous oublié une virgule ou un opérateur, comme '+', '*', etc., entre `2` et `3`.
 
 SyntaxError - missing comma in a tuple
 --------------------------------------
@@ -1169,6 +1173,7 @@ SyntaxError - missing comma in a tuple
                    ^
     SyntaxError: invalid syntax
     
+        Avez-vous oublié quelque chose entre `2` et `3` ?
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -1183,7 +1188,8 @@ SyntaxError - missing comma in a tuple
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
-        Perhaps you forgot a comma or an operator between `2` and `3`.
+        Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
+        Peut-être avez-vous oublié une virgule ou un opérateur, comme '+', '*', etc., entre `2` et `3`.
 
 SyntaxError - missing comma between function args
 -------------------------------------------------
@@ -1199,6 +1205,7 @@ SyntaxError - missing comma between function args
                    ^
     SyntaxError: invalid syntax
     
+        Avez-vous oublié quelque chose entre `c` et `d` ?
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -1213,7 +1220,8 @@ SyntaxError - missing comma between function args
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
-        Perhaps you forgot a comma or an operator between `c` and `d`.
+        Python indique que l’erreur est causée par `d` écrit tout juste après `c`.
+        Peut-être avez-vous oublié une virgule ou un opérateur, comme '+', '*', etc., entre `c` et `d`.
 
 SyntaxError - can't assign to function call - 1
 -----------------------------------------------
