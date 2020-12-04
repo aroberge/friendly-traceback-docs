@@ -577,10 +577,10 @@ Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_arithmetic_error.py&quot;, line 9, in test_arithmetic_error
-    raise ArithmeticError
-ArithmeticError: 
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_arithmetic_error.py&quot;</span>, line <span class="m">9</span>, in <span class="n">test_arithmetic_error</span>
+    <span class="k">raise</span> <span class="ne">ArithmeticError</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">)</span>
+<span class="gr">ArithmeticError</span>: <span class="n">error</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ArithmeticError</span></code> is the base class for those built-in exceptions
@@ -591,7 +591,7 @@ normally, a more specific exception should have been raised.</p>
 <h3>Exception raised on line 9 of file TESTS:\runtime\test_arithmetic_error.py.<a class="headerlink" href="#exception-raised-on-line-9-of-file-tests-runtime-test-arithmetic-error-py" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">7</span><span class="p">:</span>         <span class="c1"># Usually, a subclass such as ZeroDivisionError, etc., would</span>
         <span class="mi">8</span><span class="p">:</span>         <span class="c1"># likely be raised.</span>
-    <span class="o">--&gt;</span> <span class="mi">9</span><span class="p">:</span>         <span class="k">raise</span> <span class="ne">ArithmeticError</span>
+    <span class="o">--&gt;</span> <span class="mi">9</span><span class="p">:</span>         <span class="k">raise</span> <span class="ne">ArithmeticError</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">)</span>
        <span class="mi">10</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>

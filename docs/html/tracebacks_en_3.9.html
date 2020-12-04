@@ -293,8 +293,8 @@ Python version: 3.9.0</p>
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_arithmetic_error.py&quot;, line 9, in test_arithmetic_error
-    raise ArithmeticError
-ArithmeticError:
+    raise ArithmeticError(&#39;error&#39;)
+ArithmeticError: error
 
 `ArithmeticError` is the base class for those built-in exceptions
 that are raised for various arithmetic errors.
@@ -305,7 +305,7 @@ Exception raised on line 9 of file TESTS:\runtime\test_arithmetic_error.py.
 
     7:         # Usually, a subclass such as ZeroDivisionError, etc., would
     8:         # likely be raised.
---&gt; 9:         raise ArithmeticError
+--&gt; 9:         raise ArithmeticError(&#39;error&#39;)
    10:     except Exception as e:
 
     Known objects shown above:

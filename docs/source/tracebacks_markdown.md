@@ -23,8 +23,8 @@ Python version: 3.8.4
 ```pytb
 Traceback (most recent call last):
   File "TESTS:\runtime\test_arithmetic_error.py", line 9, in test_arithmetic_error
-    raise ArithmeticError
-ArithmeticError: 
+    raise ArithmeticError('error')
+ArithmeticError: error
 
 ```
 
@@ -40,7 +40,7 @@ normally, a more specific exception should have been raised.
 ```python
         7:         # Usually, a subclass such as ZeroDivisionError, etc., would
         8:         # likely be raised.
-    --> 9:         raise ArithmeticError
+    --> 9:         raise ArithmeticError('error')
        10:     except Exception as e:
 
 ```

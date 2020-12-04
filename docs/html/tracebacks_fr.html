@@ -292,8 +292,8 @@ Python version: 3.8.4</p>
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_arithmetic_error.py&quot;, line 9, in test_arithmetic_error
-    raise ArithmeticError
-ArithmeticError:
+    raise ArithmeticError(&#39;error&#39;)
+ArithmeticError: error
 
 `ArithmeticError` est la classe de base pour les exceptions
 qui sont soulevées pour diverses erreurs arithmétiques.
@@ -304,7 +304,7 @@ Exception levée à la ligne 9 du fichier TESTS:\runtime\test_arithmetic_error.p
 
     7:         # Usually, a subclass such as ZeroDivisionError, etc., would
     8:         # likely be raised.
---&gt; 9:         raise ArithmeticError
+--&gt; 9:         raise ArithmeticError(&#39;error&#39;)
    10:     except Exception as e:
 
     Objets connus mentionnés ci-dessus :
@@ -331,8 +331,8 @@ L&#39;exécution s&#39;est arrêtée à la ligne 227 du fichier TESTS:\trb_commo
 
     Objets connus mentionnés ci-dessus :
         result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
-            len(result): 838
-        message: &#39;&#39;
+            len(result): 861
+        message: &#39;error&#39;
         getattr: &lt;builtin function getattr&gt;
         mod: &lt;module &#39;test_attribute_error&#39;&gt;
             from TESTS:\runtime\test_attribute_error.py

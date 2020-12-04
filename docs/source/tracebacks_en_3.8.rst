@@ -29,8 +29,8 @@ ArithmeticError
 
     Traceback (most recent call last):
       File "TESTS:\runtime\test_arithmetic_error.py", line 9, in test_arithmetic_error
-        raise ArithmeticError
-    ArithmeticError: 
+        raise ArithmeticError('error')
+    ArithmeticError: error
     
     `ArithmeticError` is the base class for those built-in exceptions
     that are raised for various arithmetic errors.
@@ -41,7 +41,7 @@ ArithmeticError
     
         7:         # Usually, a subclass such as ZeroDivisionError, etc., would
         8:         # likely be raised.
-    --> 9:         raise ArithmeticError
+    --> 9:         raise ArithmeticError('error')
        10:     except Exception as e:
 
         Known objects shown above:

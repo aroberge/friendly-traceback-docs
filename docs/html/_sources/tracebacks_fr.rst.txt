@@ -28,8 +28,8 @@ ArithmeticError
 
     Traceback (most recent call last):
       File "TESTS:\runtime\test_arithmetic_error.py", line 9, in test_arithmetic_error
-        raise ArithmeticError
-    ArithmeticError: 
+        raise ArithmeticError('error')
+    ArithmeticError: error
     
     `ArithmeticError` est la classe de base pour les exceptions
     qui sont soulevées pour diverses erreurs arithmétiques.
@@ -40,7 +40,7 @@ ArithmeticError
     
         7:         # Usually, a subclass such as ZeroDivisionError, etc., would
         8:         # likely be raised.
-    --> 9:         raise ArithmeticError
+    --> 9:         raise ArithmeticError('error')
        10:     except Exception as e:
 
         Objets connus mentionnés ci-dessus :
@@ -71,8 +71,8 @@ AttributeError - class attribute
 
         Objets connus mentionnés ci-dessus :
             result: '\n    Traceback (most recent call last):\n      File "TESTS...'
-                len(result): 838
-            message: ''
+                len(result): 861
+            message: 'error'
             getattr: <builtin function getattr>
             mod: <module 'test_attribute_error'>
                 from TESTS:\runtime\test_attribute_error.py
