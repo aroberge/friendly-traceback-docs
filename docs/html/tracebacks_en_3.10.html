@@ -303,14 +303,13 @@ normally, a more specific exception should have been raised.
 
 Exception raised on line 9 of file TESTS:\runtime\test_arithmetic_error.py.
 
+    7:         # Usually, a subclass such as ZeroDivisionError, etc., would
     8:         # likely be raised.
 --&gt; 9:         raise ArithmeticError
    10:     except Exception as e:
 
     Known objects shown above:
         ArithmeticError: &lt;class &#39;ArithmeticError&#39;&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: ArithmeticError()
 </pre></div>
 </div>
 </div>
@@ -329,15 +328,13 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 
 Exception raised on line 35 of file TESTS:\runtime\test_attribute_error.py.
 
+   33:     try:
    34:         a = A()
 --&gt;35:         a.x  # Testing instance
    36:     except Exception as e:
 
     Known objects shown above:
         a: &lt;test_attribute_error.test_attribute_error.&lt;locals&gt;.A object&gt;
-        A: &lt;class &#39;test_attribute_error.test_attribute_error.&lt;locals&gt;.A&#39;&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: AttributeError(&quot;&#39;A&#39; object has no attribute &#39;x&#39;&quot;)
 </pre></div>
 </div>
 </div>
@@ -358,14 +355,13 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 
 Exception raised on line 66 of file TESTS:\runtime\test_attribute_error.py.
 
+   64:
    65:     try:
 --&gt;66:         string.ascii_lowecase
    67:     except Exception as e:
 
     Known objects shown above:
         string: &lt;module &#39;string&#39;&gt; from PYTHON_LIB:\string.py
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: AttributeError(&quot;module &#39;string&#39; has no attribute &#39;ascii_lowe...)
 </pre></div>
 </div>
 </div>
@@ -388,14 +384,13 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 
 Exception raised on line 82 of file TESTS:\runtime\test_attribute_error.py.
 
+   80:
    81:     try:
 --&gt;82:         math.cost
    83:     except Exception as e:
 
     Known objects shown above:
         math: &lt;module &#39;math&#39; (builtin)&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: AttributeError(&quot;module &#39;math&#39; has no attribute &#39;cost&#39;&quot;)
 </pre></div>
 </div>
 </div>
@@ -415,14 +410,13 @@ This could be because you misspelled the name of the file.
 
 Exception raised on line 6 of file TESTS:\runtime\test_file_not_found_error.py.
 
+   4: def test_file_not_found_error():
    5:     try:
 --&gt;6:         open(&quot;does_not_exist&quot;)
    7:     except Exception as e:
 
     Known objects shown above:
         open: &lt;builtin function open&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: FileNotFoundError(2, &#39;No such file or directory&#39;)
 </pre></div>
 </div>
 </div>
@@ -443,13 +437,10 @@ because the name of the object is not spelled correctly.
 
 Exception raised on line 6 of file TESTS:\runtime\test_import_error.py.
 
+   4: def test_import_error():
    5:     try:
 --&gt;6:         from math import Pi
    7:     except Exception as e:
-
-    Known objects shown above:
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: ImportError(&quot;cannot import name &#39;Pi&#39; from &#39;math&#39; (unknown lo...)
 </pre></div>
 </div>
 </div>
@@ -467,14 +458,13 @@ key in a Python dict.
 
 Exception raised on line 7 of file TESTS:\runtime\test_key_error.py.
 
+   5:     d = {&quot;a&quot;: 1, &quot;b&quot;: 2}
    6:     try:
 --&gt;7:         d[&quot;c&quot;]
    8:     except Exception as e:
 
     Known objects shown above:
         d: {&#39;a&#39;: 1, &#39;b&#39;: 2}
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: KeyError(&#39;c&#39;)
 </pre></div>
 </div>
 </div>
@@ -491,14 +481,13 @@ It can also be raised directly by codecs.lookup().
 
 Exception raised on line 10 of file TESTS:\runtime\test_lookup_error.py.
 
+    8:         # other than possibly codecs.lookup(), which is why we raise
     9:         # it directly here for our example.
 --&gt;10:         raise LookupError(&quot;Fake message&quot;)
    11:     except Exception as e:
 
     Known objects shown above:
         LookupError: &lt;class &#39;LookupError&#39;&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: LookupError(&#39;Fake message&#39;)
 </pre></div>
 </div>
 </div>
@@ -517,16 +506,15 @@ Reminder: the first item of a sequence is at index 0.
 
 Exception raised on line 8 of file TESTS:\runtime\test_index_error.py.
 
-   7:     try:
---&gt;8:         print(a[3], b[2])
-   9:     except Exception as e:
+    6:     b = [1, 2, 3]
+    7:     try:
+--&gt; 8:         print(a[3], b[2])
+    9:     except Exception as e:
 
     Known objects shown above:
         print: &lt;builtin function print&gt;
         a: (1, 2, 3)
         b: [1, 2, 3]
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: IndexError(&#39;tuple index out of range&#39;)
 </pre></div>
 </div>
 </div>
@@ -545,6 +533,7 @@ Reminder: the first item of a sequence is at index 0.
 
 Exception raised on line 22 of file TESTS:\runtime\test_index_error.py.
 
+   20:     b = tuple(range(50))
    21:     try:
 --&gt;22:         print(a[50], b[0])
    23:     except Exception as e:
@@ -555,8 +544,6 @@ Exception raised on line 22 of file TESTS:\runtime\test_index_error.py.
             len(a): 40
         b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...)
             len(b): 50
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: IndexError(&#39;list index out of range&#39;)
 </pre></div>
 </div>
 </div>
@@ -579,13 +566,10 @@ or because it is not installed on your computer.
 
 Exception raised on line 6 of file TESTS:\runtime\test_module_not_found_error.py.
 
+   4: def test_module_not_found_error():
    5:     try:
 --&gt;6:         import Tkinter
    7:     except Exception as e:
-
-    Known objects shown above:
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: ModuleNotFoundError(&quot;No module named &#39;Tkinter&#39;&quot;)
 </pre></div>
 </div>
 </div>
@@ -606,13 +590,10 @@ before being defined or given a value.
     I have no additional information for you.
 Exception raised on line 6 of file TESTS:\runtime\test_name_error.py.
 
+   4: def test_name_error():
    5:     try:
 --&gt;6:         this = something
    7:     except Exception as e:
-
-    Known objects shown above:
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: NameError(&quot;name &#39;something&#39; is not defined&quot;)
 </pre></div>
 </div>
 </div>
@@ -638,13 +619,10 @@ before being defined or given a value.
 
 Exception raised on line 20 of file TESTS:\runtime\test_name_error.py.
 
+   18:     nabs = 1
    19:     try:
 --&gt;20:         x = babs(-1)
    21:     except Exception as e:
-
-    Known objects shown above:
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: NameError(&quot;name &#39;babs&#39; is not defined&quot;)
 </pre></div>
 </div>
 </div>
@@ -674,13 +652,10 @@ before being defined or given a value.
 
 Exception raised on line 35 of file TESTS:\runtime\test_name_error.py.
 
+   33: def test_name_error3():
    34:     try:
 --&gt;35:         y = x
    36:     except Exception as e:
-
-    Known objects shown above:
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: NameError(&quot;name &#39;x&#39; is not defined&quot;)
 </pre></div>
 </div>
 </div>
@@ -704,13 +679,10 @@ before being defined or given a value.
 
 Exception raised on line 48 of file TESTS:\runtime\test_name_error.py.
 
+   46: def test_name_error4():
    47:     try:
 --&gt;48:         cost  # wrote from math import * above
    49:     except Exception as e:
-
-    Known objects shown above:
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: NameError(&quot;name &#39;cost&#39; is not defined&quot;)
 </pre></div>
 </div>
 </div>
@@ -726,13 +698,10 @@ is too large to be handled by the computer&#39;s processor.
 
 Exception raised on line 6 of file TESTS:\runtime\test_overflow_error.py.
 
+   4: def test_overflow_error():
    5:     try:
 --&gt;6:         2.0 ** 1600
    7:     except Exception as e:
-
-    Known objects shown above:
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: OverflowError(34, &#39;Result too large&#39;)
 </pre></div>
 </div>
 </div>
@@ -757,17 +726,17 @@ and that your program would never stop.
 
 Execution stopped on line 8 of file TESTS:\runtime\test_recursion_error.py.
 
-   7:     try:
---&gt;8:         a()
-   9:     except Exception as e:
+    6:         return a()
+    7:     try:
+--&gt; 8:         a()
+    9:     except Exception as e:
 
     Known objects shown above:
         a: &lt;function test_function_recursion_error.&lt;locals&gt;.a&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: RecursionError(&#39;maximum recursion depth exceeded&#39;)
 
 Exception raised on line 6 of file TESTS:\runtime\test_recursion_error.py.
 
+   4: def test_function_recursion_error():
    5:     def a():
 --&gt;6:         return a()
    7:     try:
@@ -794,15 +763,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 8 of file TESTS:\runtime\test_type_error.py.
 
-   7:         one = 1
---&gt;8:         result = a + one
-   9:     except Exception as e:
+    6:         a = &quot;a&quot;
+    7:         one = 1
+--&gt; 8:         result = a + one
+    9:     except Exception as e:
 
     Known objects shown above:
-        one: 1
         a: &#39;a&#39;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&#39;can only concatenate str (not &quot;int&quot;) to str&#39;)
+        one: 1
 </pre></div>
 </div>
 </div>
@@ -823,15 +791,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 26 of file TESTS:\runtime\test_type_error.py.
 
+   24:         a = &quot;a&quot;
    25:         a_list = [1, 2, 3]
 --&gt;26:         result = a + a_list
    27:     except Exception as e:
 
     Known objects shown above:
-        a_list: [1, 2, 3]
         a: &#39;a&#39;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&#39;can only concatenate str (not &quot;list&quot;) to str&#39;)
+        a_list: [1, 2, 3]
 </pre></div>
 </div>
 </div>
@@ -852,15 +819,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 44 of file TESTS:\runtime\test_type_error.py.
 
+   42:         a_tuple = (1, 2, 3)
    43:         a_list = [1, 2, 3]
 --&gt;44:         result = a_tuple + a_list
    45:     except Exception as e:
 
     Known objects shown above:
-        a_list: [1, 2, 3]
         a_tuple: (1, 2, 3)
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&#39;can only concatenate tuple (not &quot;list&quot;) to tuple&#39;)
+        a_list: [1, 2, 3]
 </pre></div>
 </div>
 </div>
@@ -881,15 +847,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 60 of file TESTS:\runtime\test_type_error.py.
 
+   58:         one = 1
    59:         none = None
 --&gt;60:         result = one + none
    61:     except Exception as e:
 
     Known objects shown above:
-        none: None
         one: 1
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for +: &#39;int&#39; and &#39;Non...)
+        none: None
 </pre></div>
 </div>
 </div>
@@ -910,15 +875,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 78 of file TESTS:\runtime\test_type_error.py.
 
+   76:         one = 1
    77:         two = &quot;two&quot;
 --&gt;78:         one += two
    79:     except Exception as e:
 
     Known objects shown above:
-        two: &#39;two&#39;
         one: 1
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for +=: &#39;int&#39; and &#39;str&#39;&quot;)
+        two: &#39;two&#39;
 </pre></div>
 </div>
 </div>
@@ -939,15 +903,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 94 of file TESTS:\runtime\test_type_error.py.
 
+   92:         a = (1, 2)
    93:         b = [3, 4]
 --&gt;94:         result = a - b
    95:     except Exception as e:
 
     Known objects shown above:
-        b: [3, 4]
         a: (1, 2)
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for -: &#39;tuple&#39; and &#39;l...)
+        b: [3, 4]
 </pre></div>
 </div>
 </div>
@@ -968,6 +931,7 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 110 of file TESTS:\runtime\test_type_error.py.
 
+   108:         a = (1, 2)
    109:         b = [3, 4]
 --&gt;110:         b -= a
    111:     except Exception as e:
@@ -975,8 +939,6 @@ Exception raised on line 110 of file TESTS:\runtime\test_type_error.py.
     Known objects shown above:
         b: [3, 4]
         a: (1, 2)
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for -=: &#39;list&#39; and &#39;t...)
 </pre></div>
 </div>
 </div>
@@ -997,15 +959,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 126 of file TESTS:\runtime\test_type_error.py.
 
+   124:         a = 1j
    125:         b = {2, 3}
 --&gt;126:         result = a * b
    127:     except Exception as e:
 
     Known objects shown above:
-        b: {2, 3}
         a: 1j
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for *: &#39;complex&#39; and ...)
+        b: {2, 3}
 </pre></div>
 </div>
 </div>
@@ -1026,6 +987,7 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 142 of file TESTS:\runtime\test_type_error.py.
 
+   140:         a = 1j
    141:         b = {2, 3}
 --&gt;142:         b *= a
    143:     except Exception as e:
@@ -1033,8 +995,6 @@ Exception raised on line 142 of file TESTS:\runtime\test_type_error.py.
     Known objects shown above:
         b: {2, 3}
         a: 1j
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for *=: &#39;set&#39; and &#39;co...)
 </pre></div>
 </div>
 </div>
@@ -1055,15 +1015,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 158 of file TESTS:\runtime\test_type_error.py.
 
+   156:         a = {1: 1, 2: 2}
    157:         b = 3.1416
 --&gt;158:         result = a / b
    159:     except Exception as e:
 
     Known objects shown above:
-        b: 3.1416
         a: {1: 1, 2: 2}
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for /: &#39;dict&#39; and &#39;fl...)
+        b: 3.1416
 </pre></div>
 </div>
 </div>
@@ -1084,6 +1043,7 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 174 of file TESTS:\runtime\test_type_error.py.
 
+   172:         a = {1: 1, 2: 2}
    173:         b = 3.1416
 --&gt;174:         b /= a
    175:     except Exception as e:
@@ -1091,8 +1051,6 @@ Exception raised on line 174 of file TESTS:\runtime\test_type_error.py.
     Known objects shown above:
         b: 3.1416
         a: {1: 1, 2: 2}
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for /=: &#39;float&#39; and &#39;...)
 </pre></div>
 </div>
 </div>
@@ -1113,15 +1071,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 190 of file TESTS:\runtime\test_type_error.py.
 
+   188:         a = {1: 1, 2: 2}
    189:         b = 1
 --&gt;190:         result = a // b
    191:     except Exception as e:
 
     Known objects shown above:
-        b: 1
         a: {1: 1, 2: 2}
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for //: &#39;dict&#39; and &#39;int&#39;&quot;)
+        b: 1
 </pre></div>
 </div>
 </div>
@@ -1142,6 +1099,7 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 206 of file TESTS:\runtime\test_type_error.py.
 
+   204:         a = {1: 1, 2: 2}
    205:         b = 3.1416
 --&gt;206:         b //= a
    207:     except Exception as e:
@@ -1149,8 +1107,6 @@ Exception raised on line 206 of file TESTS:\runtime\test_type_error.py.
     Known objects shown above:
         b: 3.1416
         a: {1: 1, 2: 2}
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for //=: &#39;float&#39; and ...)
 </pre></div>
 </div>
 </div>
@@ -1172,15 +1128,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 222 of file TESTS:\runtime\test_type_error.py.
 
+   220:         a = &quot;a&quot;
    221:         b = 2
 --&gt;222:         result = a &amp; b
    223:     except Exception as e:
 
     Known objects shown above:
-        b: 2
         a: &#39;a&#39;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for &amp;: &#39;str&#39; and &#39;int&#39;&quot;)
+        b: 2
 </pre></div>
 </div>
 </div>
@@ -1202,6 +1157,7 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 238 of file TESTS:\runtime\test_type_error.py.
 
+   236:         a = &quot;a&quot;
    237:         b = 2
 --&gt;238:         b &amp;= a
    239:     except Exception as e:
@@ -1209,8 +1165,6 @@ Exception raised on line 238 of file TESTS:\runtime\test_type_error.py.
     Known objects shown above:
         b: 2
         a: &#39;a&#39;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for &amp;=: &#39;int&#39; and &#39;str&#39;&quot;)
 </pre></div>
 </div>
 </div>
@@ -1232,15 +1186,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 254 of file TESTS:\runtime\test_type_error.py.
 
+   252:         a = {1: 1, 2: 2}
    253:         b = 3.1416
 --&gt;254:         result = a ** b
    255:     except Exception as e:
 
     Known objects shown above:
-        b: 3.1416
         a: {1: 1, 2: 2}
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for ** or pow(): &#39;dic...)
+        b: 3.1416
 </pre></div>
 </div>
 </div>
@@ -1262,15 +1215,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 270 of file TESTS:\runtime\test_type_error.py.
 
+   268:         a = {1: 1, 2: 2}
    269:         b = 3.1416
 --&gt;270:         a **= b
    271:     except Exception as e:
 
     Known objects shown above:
-        b: 3.1416
         a: {1: 1, 2: 2}
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for ** or pow(): &#39;dic...)
+        b: 3.1416
 </pre></div>
 </div>
 </div>
@@ -1292,15 +1244,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 286 of file TESTS:\runtime\test_type_error.py.
 
+   284:         a = &quot;a&quot;
    285:         b = 42
 --&gt;286:         result = a &gt;&gt; b
    287:     except Exception as e:
 
     Known objects shown above:
-        b: 42
         a: &#39;a&#39;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for &gt;&gt;: &#39;str&#39; and &#39;int&#39;&quot;)
+        b: 42
 </pre></div>
 </div>
 </div>
@@ -1322,15 +1273,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 302 of file TESTS:\runtime\test_type_error.py.
 
+   300:         a = &quot;a&quot;
    301:         b = 42
 --&gt;302:         a &gt;&gt;= b
    303:     except Exception as e:
 
     Known objects shown above:
-        b: 42
         a: &#39;a&#39;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for &gt;&gt;=: &#39;str&#39; and &#39;int&#39;&quot;)
+        b: 42
 </pre></div>
 </div>
 </div>
@@ -1354,15 +1304,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 318 of file TESTS:\runtime\test_type_error.py.
 
+   316:         a = &quot;a&quot;
    317:         b = 2
 --&gt;318:         result = a @ b
    319:     except Exception as e:
 
     Known objects shown above:
-        b: 2
         a: &#39;a&#39;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for @: &#39;str&#39; and &#39;int&#39;&quot;)
+        b: 2
 </pre></div>
 </div>
 </div>
@@ -1386,15 +1335,14 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 334 of file TESTS:\runtime\test_type_error.py.
 
+   332:         a = &quot;a&quot;
    333:         b = 2
 --&gt;334:         a @= b
    335:     except Exception as e:
 
     Known objects shown above:
-        b: 2
         a: &#39;a&#39;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;unsupported operand type(s) for @=: &#39;str&#39; and &#39;int&#39;&quot;)
+        b: 2
 </pre></div>
 </div>
 </div>
@@ -1416,6 +1364,7 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 350 of file TESTS:\runtime\test_type_error.py.
 
+   348:         a = &quot;a&quot;
    349:         b = 42
 --&gt;350:         b &lt; a
    351:     except Exception as e:
@@ -1423,8 +1372,6 @@ Exception raised on line 350 of file TESTS:\runtime\test_type_error.py.
     Known objects shown above:
         b: 42
         a: &#39;a&#39;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;&#39;&lt;&#39; not supported between instances of &#39;int&#39; and ...)
 </pre></div>
 </div>
 </div>
@@ -1446,12 +1393,10 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 364 of file TESTS:\runtime\test_type_error.py.
 
+   362: def test_type_error11():
    363:     try:
 --&gt;364:         a = +&quot;abc&quot;
    365:         print(a)
-
-    Known objects shown above:
-        print: &lt;builtin function print&gt;
 </pre></div>
 </div>
 </div>
@@ -1473,12 +1418,10 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 379 of file TESTS:\runtime\test_type_error.py.
 
+   377: def test_type_error11a():
    378:     try:
 --&gt;379:         a = -[1, 2, 3]
    380:         print(a)
-
-    Known objects shown above:
-        print: &lt;builtin function print&gt;
 </pre></div>
 </div>
 </div>
@@ -1500,12 +1443,10 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 394 of file TESTS:\runtime\test_type_error.py.
 
+   392: def test_type_error11b():
    393:     try:
 --&gt;394:         a = ~(1, 2, 3)
    395:         print(a)
-
-    Known objects shown above:
-        print: &lt;builtin function print&gt;
 </pre></div>
 </div>
 </div>
@@ -1528,14 +1469,13 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 410 of file TESTS:\runtime\test_type_error.py.
 
+   408:     a = (1, 2, 3)
    409:     try:
 --&gt;410:         a[0] = 0
    411:     except Exception as e:
 
     Known objects shown above:
         a: (1, 2, 3)
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;&#39;tuple&#39; object does not support item assignment&quot;)
 </pre></div>
 </div>
 </div>
@@ -1560,14 +1500,13 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 427 of file TESTS:\runtime\test_type_error.py.
 
+   425:
    426:     try:
 --&gt;427:         fn(1)
    428:     except Exception as e:
 
     Known objects shown above:
         fn: &lt;function test_type_error13.&lt;locals&gt;.fn&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&#39;test_type_error13.&lt;locals&gt;.fn() takes 0 positiona...)
 </pre></div>
 </div>
 </div>
@@ -1592,14 +1531,13 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 446 of file TESTS:\runtime\test_type_error.py.
 
+   444:
    445:     try:
 --&gt;446:         A().f(1)
    447:     except Exception as e:
 
     Known objects shown above:
         A: &lt;class &#39;test_type_error.test_type_error13a.&lt;locals&gt;.A&#39;&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&#39;test_type_error13a.&lt;locals&gt;.A.f() takes 1 positio...)
 </pre></div>
 </div>
 </div>
@@ -1620,14 +1558,13 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 465 of file TESTS:\runtime\test_type_error.py.
 
+   463:
    464:     try:
 --&gt;465:         fn(1)
    466:     except Exception as e:
 
     Known objects shown above:
         fn: &lt;function test_type_error14.&lt;locals&gt;.fn&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;test_type_error14.&lt;locals&gt;.fn() missing 2 require...)
 </pre></div>
 </div>
 </div>
@@ -1652,13 +1589,10 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 480 of file TESTS:\runtime\test_type_error.py.
 
+   478: def test_type_error15():
    479:     try:
 --&gt;480:         _ = (1, 2)(3, 4)
    481:     except Exception as e:
-
-    Known objects shown above:
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;&#39;tuple&#39; object is not callable&quot;)
 </pre></div>
 </div>
 </div>
@@ -1683,13 +1617,10 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 494 of file TESTS:\runtime\test_type_error.py.
 
+   492: def test_type_error15a():
    493:     try:
 --&gt;494:         _ = [1, 2](3, 4)
    495:     except Exception as e:
-
-    Known objects shown above:
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&quot;&#39;list&#39; object is not callable&quot;)
 </pre></div>
 </div>
 </div>
@@ -1709,13 +1640,10 @@ or by tring to do an operation not allowed on a given type of object.
 
 Exception raised on line 507 of file TESTS:\runtime\test_type_error.py.
 
+   505: def test_type_error16():
    506:     try:
 --&gt;507:         raise &quot;exception&quot;
    508:     except Exception as e:
-
-    Known objects shown above:
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: TypeError(&#39;exceptions must derive from BaseException&#39;)
 </pre></div>
 </div>
 </div>
@@ -1750,17 +1678,17 @@ an `UnboundLocalError`.
 
 Execution stopped on line 27 of file TESTS:\runtime\test_unbound_local_error.py.
 
+   25:
    26:     try:
 --&gt;27:         outer_missing_global()
    28:     except Exception as e:
 
     Known objects shown above:
         global outer_missing_global: &lt;function outer_missing_global&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: UnboundLocalError(&quot;local variable &#39;spam_missing_global&#39; refe...)
 
 Exception raised on line 9 of file TESTS:\runtime\test_unbound_local_error.py.
 
+    7: def outer_missing_global():
     8:     def inner():
 --&gt; 9:         spam_missing_global += 1
    10:
@@ -1801,17 +1729,17 @@ an `UnboundLocalError`.
 
 Execution stopped on line 48 of file TESTS:\runtime\test_unbound_local_error.py.
 
+   46:
    47:     try:
 --&gt;48:         outer_missing_nonlocal()
    49:     except Exception as e:
 
     Known objects shown above:
         global outer_missing_nonlocal: &lt;function outer_missing_nonlocal&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: UnboundLocalError(&quot;local variable &#39;spam_missing_nonlocal&#39; re...)
 
 Exception raised on line 18 of file TESTS:\runtime\test_unbound_local_error.py.
 
+   16:
    17:     def inner():
 --&gt;18:         spam_missing_nonlocal += 1
    19:
@@ -1829,14 +1757,13 @@ No information is available about this exception.
 
 Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.
 
+    8: def test_function_unknown_error():
     9:     try:
 --&gt;10:         raise MyException(&quot;Some informative message about an unknown exception.&quot;)
    11:     except Exception as e:
 
     Known objects shown above:
         global MyException: &lt;class &#39;test_unknown_error.MyException&#39;&gt;
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: MyException(&#39;Some informative message about an unknown excep...)
 </pre></div>
 </div>
 </div>
@@ -1856,13 +1783,10 @@ using the modulo operator `%`:
 
 Exception raised on line 6 of file TESTS:\runtime\test_zero_division_error.py.
 
+   4: def test_zero_division_error():
    5:     try:
 --&gt;6:         1 / 0
    7:     except Exception as e:
-
-    Known objects shown above:
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: ZeroDivisionError(&#39;division by zero&#39;)
 </pre></div>
 </div>
 </div>
@@ -1882,14 +1806,13 @@ using the modulo operator `%`:
 
 Exception raised on line 21 of file TESTS:\runtime\test_zero_division_error.py.
 
+   19:     zero = 0
    20:     try:
 --&gt;21:         1 % zero
    22:     except Exception as e:
 
     Known objects shown above:
         zero: 0
-        Exception: &lt;class &#39;Exception&#39;&gt;
-        e: ZeroDivisionError(&#39;integer division or modulo by zero&#39;)
 </pre></div>
 </div>
 </div>

@@ -38,6 +38,7 @@ normally, a more specific exception should have been raised.
 
 
 ```python
+        7:         # Usually, a subclass such as ZeroDivisionError, etc., would
         8:         # likely be raised.
     --> 9:         raise ArithmeticError
        10:     except Exception as e:
@@ -48,8 +49,6 @@ normally, a more specific exception should have been raised.
 
 ```python
     ArithmeticError: <class 'ArithmeticError'>
-    Exception: <class 'Exception'>
-    e: ArithmeticError()
 
 ```
 
@@ -79,6 +78,7 @@ The object `a` has no attribute named `x`.
 
 
 ```python
+       33:     try:
        34:         a = A()
     -->35:         a.x  # Testing instance
        36:     except Exception as e:
@@ -89,9 +89,6 @@ The object `a` has no attribute named `x`.
 
 ```python
     a: <test_attribute_error.test_attribute_error.<locals>.A object>
-    A: <class 'test_attribute_error.test_attribute_error.<locals>.A'>
-    Exception: <class 'Exception'>
-    e: AttributeError("'A' object has no attribute 'x'")
 
 ```
 
@@ -125,6 +122,7 @@ Perhaps you meant to write `string.ascii_lowercase` instead of `string.ascii_low
 
 
 ```python
+       64: 
        65:     try:
     -->66:         string.ascii_lowecase
        67:     except Exception as e:
@@ -135,8 +133,6 @@ Perhaps you meant to write `string.ascii_lowercase` instead of `string.ascii_low
 
 ```python
     string: <module 'string'> from PYTHON_LIB:\string.py
-    Exception: <class 'Exception'>
-    e: AttributeError("module 'string' has no attribute 'ascii_lowe...)
 
 ```
 
@@ -172,6 +168,7 @@ the following names which are attributes of module `math`:
 
 
 ```python
+       80: 
        81:     try:
     -->82:         math.cost
        83:     except Exception as e:
@@ -182,8 +179,6 @@ the following names which are attributes of module `math`:
 
 ```python
     math: <module 'math' (builtin)>
-    Exception: <class 'Exception'>
-    e: AttributeError("module 'math' has no attribute 'cost'")
 
 ```
 
@@ -214,6 +209,7 @@ file that cannot be found is `does_not_exist`.
 
 
 ```python
+       4: def test_file_not_found_error():
        5:     try:
     -->6:         open("does_not_exist")
        7:     except Exception as e:
@@ -224,8 +220,6 @@ file that cannot be found is `does_not_exist`.
 
 ```python
     open: <builtin function open>
-    Exception: <class 'Exception'>
-    e: FileNotFoundError(2, 'No such file or directory')
 
 ```
 
@@ -259,17 +253,10 @@ Perhaps you meant to import `pi` (from `math`) instead of `Pi`
 
 
 ```python
+       4: def test_import_error():
        5:     try:
     -->6:         from math import Pi
        7:     except Exception as e:
-
-```
-
-##### Known objects shown above
-
-```python
-    Exception: <class 'Exception'>
-    e: ImportError("cannot import name 'Pi' from 'math' (unknown lo...)
 
 ```
 
@@ -298,6 +285,7 @@ In your program, the key that cannot be found is `'c'`.
 
 
 ```python
+       5:     d = {"a": 1, "b": 2}
        6:     try:
     -->7:         d["c"]
        8:     except Exception as e:
@@ -308,8 +296,6 @@ In your program, the key that cannot be found is `'c'`.
 
 ```python
     d: {'a': 1, 'b': 2}
-    Exception: <class 'Exception'>
-    e: KeyError('c')
 
 ```
 
@@ -336,6 +322,7 @@ It can also be raised directly by codecs.lookup().
 
 
 ```python
+        8:         # other than possibly codecs.lookup(), which is why we raise
         9:         # it directly here for our example.
     -->10:         raise LookupError("Fake message")
        11:     except Exception as e:
@@ -346,8 +333,6 @@ It can also be raised directly by codecs.lookup().
 
 ```python
     LookupError: <class 'LookupError'>
-    Exception: <class 'Exception'>
-    e: LookupError('Fake message')
 
 ```
 
@@ -376,9 +361,10 @@ Reminder: the first item of a sequence is at index 0.
 
 
 ```python
-       7:     try:
-    -->8:         print(a[3], b[2])
-       9:     except Exception as e:
+        6:     b = [1, 2, 3]
+        7:     try:
+    --> 8:         print(a[3], b[2])
+        9:     except Exception as e:
 
 ```
 
@@ -388,8 +374,6 @@ Reminder: the first item of a sequence is at index 0.
     print: <builtin function print>
     a: (1, 2, 3)
     b: [1, 2, 3]
-    Exception: <class 'Exception'>
-    e: IndexError('tuple index out of range')
 
 ```
 
@@ -418,6 +402,7 @@ Reminder: the first item of a sequence is at index 0.
 
 
 ```python
+       20:     b = tuple(range(50))
        21:     try:
     -->22:         print(a[50], b[0])
        23:     except Exception as e:
@@ -432,8 +417,6 @@ Reminder: the first item of a sequence is at index 0.
         len(a): 40
     b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...)
         len(b): 50
-    Exception: <class 'Exception'>
-    e: IndexError('list index out of range')
 
 ```
 
@@ -469,17 +452,10 @@ The name of the module that could not be imported is `Tkinter`.
 
 
 ```python
+       4: def test_module_not_found_error():
        5:     try:
     -->6:         import Tkinter
        7:     except Exception as e:
-
-```
-
-##### Known objects shown above
-
-```python
-    Exception: <class 'Exception'>
-    e: ModuleNotFoundError("No module named 'Tkinter'")
 
 ```
 
@@ -511,17 +487,10 @@ I have no additional information for you.
 
 
 ```python
+       4: def test_name_error():
        5:     try:
     -->6:         this = something
        7:     except Exception as e:
-
-```
-
-##### Known objects shown above
-
-```python
-    Exception: <class 'Exception'>
-    e: NameError("name 'something' is not defined")
 
 ```
 
@@ -560,17 +529,10 @@ Instead of writing `babs`, perhaps you meant one of the following:
 
 
 ```python
+       18:     nabs = 1
        19:     try:
     -->20:         x = babs(-1)
        21:     except Exception as e:
-
-```
-
-##### Known objects shown above
-
-```python
-    Exception: <class 'Exception'>
-    e: NameError("name 'babs' is not defined")
 
 ```
 
@@ -613,17 +575,10 @@ instead of
 
 
 ```python
+       33: def test_name_error3():
        34:     try:
     -->35:         y = x
        36:     except Exception as e:
-
-```
-
-##### Known objects shown above
-
-```python
-    Exception: <class 'Exception'>
-    e: NameError("name 'x' is not defined")
 
 ```
 
@@ -660,17 +615,10 @@ Instead of writing `cost`, perhaps you meant one of the following:
 
 
 ```python
+       46: def test_name_error4():
        47:     try:
     -->48:         cost  # wrote from math import * above
        49:     except Exception as e:
-
-```
-
-##### Known objects shown above
-
-```python
-    Exception: <class 'Exception'>
-    e: NameError("name 'cost' is not defined")
 
 ```
 
@@ -696,17 +644,10 @@ is too large to be handled by the computer's processor.
 
 
 ```python
+       4: def test_overflow_error():
        5:     try:
     -->6:         2.0 ** 1600
        7:     except Exception as e:
-
-```
-
-##### Known objects shown above
-
-```python
-    Exception: <class 'Exception'>
-    e: OverflowError(34, 'Result too large')
 
 ```
 
@@ -741,9 +682,10 @@ and that your program would never stop.
 
 
 ```python
-       7:     try:
-    -->8:         a()
-       9:     except Exception as e:
+        6:         return a()
+        7:     try:
+    --> 8:         a()
+        9:     except Exception as e:
 
 ```
 
@@ -751,8 +693,6 @@ and that your program would never stop.
 
 ```python
     a: <function test_function_recursion_error.<locals>.a>
-    Exception: <class 'Exception'>
-    e: RecursionError('maximum recursion depth exceeded')
 
 ```
 
@@ -760,6 +700,7 @@ and that your program would never stop.
 
 
 ```python
+       4: def test_function_recursion_error():
        5:     def a():
     -->6:         return a()
        7:     try:
@@ -801,19 +742,18 @@ a string (`str`) and an integer (`int`)
 
 
 ```python
-       7:         one = 1
-    -->8:         result = a + one
-       9:     except Exception as e:
+        6:         a = "a"
+        7:         one = 1
+    --> 8:         result = a + one
+        9:     except Exception as e:
 
 ```
 
 ##### Known objects shown above
 
 ```python
-    one: 1
     a: 'a'
-    Exception: <class 'Exception'>
-    e: TypeError('can only concatenate str (not "int") to str')
+    one: 1
 
 ```
 
@@ -845,6 +785,7 @@ a string (`str`) and a `list`
 
 
 ```python
+       24:         a = "a"
        25:         a_list = [1, 2, 3]
     -->26:         result = a + a_list
        27:     except Exception as e:
@@ -854,10 +795,8 @@ a string (`str`) and a `list`
 ##### Known objects shown above
 
 ```python
-    a_list: [1, 2, 3]
     a: 'a'
-    Exception: <class 'Exception'>
-    e: TypeError('can only concatenate str (not "list") to str')
+    a_list: [1, 2, 3]
 
 ```
 
@@ -889,6 +828,7 @@ a `tuple` and a `list`
 
 
 ```python
+       42:         a_tuple = (1, 2, 3)
        43:         a_list = [1, 2, 3]
     -->44:         result = a_tuple + a_list
        45:     except Exception as e:
@@ -898,10 +838,8 @@ a `tuple` and a `list`
 ##### Known objects shown above
 
 ```python
-    a_list: [1, 2, 3]
     a_tuple: (1, 2, 3)
-    Exception: <class 'Exception'>
-    e: TypeError('can only concatenate tuple (not "list") to tuple')
+    a_list: [1, 2, 3]
 
 ```
 
@@ -933,6 +871,7 @@ an integer (`int`) and a variable equal to `None` (`NoneType`)
 
 
 ```python
+       58:         one = 1
        59:         none = None
     -->60:         result = one + none
        61:     except Exception as e:
@@ -942,10 +881,8 @@ an integer (`int`) and a variable equal to `None` (`NoneType`)
 ##### Known objects shown above
 
 ```python
-    none: None
     one: 1
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for +: 'int' and 'Non...)
+    none: None
 
 ```
 
@@ -977,6 +914,7 @@ an integer (`int`) and a string (`str`)
 
 
 ```python
+       76:         one = 1
        77:         two = "two"
     -->78:         one += two
        79:     except Exception as e:
@@ -986,10 +924,8 @@ an integer (`int`) and a string (`str`)
 ##### Known objects shown above
 
 ```python
-    two: 'two'
     one: 1
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for +=: 'int' and 'str'")
+    two: 'two'
 
 ```
 
@@ -1021,6 +957,7 @@ a `tuple` and a `list`
 
 
 ```python
+       92:         a = (1, 2)
        93:         b = [3, 4]
     -->94:         result = a - b
        95:     except Exception as e:
@@ -1030,10 +967,8 @@ a `tuple` and a `list`
 ##### Known objects shown above
 
 ```python
-    b: [3, 4]
     a: (1, 2)
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for -: 'tuple' and 'l...)
+    b: [3, 4]
 
 ```
 
@@ -1065,6 +1000,7 @@ a `list` and a `tuple`
 
 
 ```python
+       108:         a = (1, 2)
        109:         b = [3, 4]
     -->110:         b -= a
        111:     except Exception as e:
@@ -1076,8 +1012,6 @@ a `list` and a `tuple`
 ```python
     b: [3, 4]
     a: (1, 2)
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for -=: 'list' and 't...)
 
 ```
 
@@ -1109,6 +1043,7 @@ a complex number and a `set`
 
 
 ```python
+       124:         a = 1j
        125:         b = {2, 3}
     -->126:         result = a * b
        127:     except Exception as e:
@@ -1118,10 +1053,8 @@ a complex number and a `set`
 ##### Known objects shown above
 
 ```python
-    b: {2, 3}
     a: 1j
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for *: 'complex' and ...)
+    b: {2, 3}
 
 ```
 
@@ -1153,6 +1086,7 @@ a `set` and a complex number
 
 
 ```python
+       140:         a = 1j
        141:         b = {2, 3}
     -->142:         b *= a
        143:     except Exception as e:
@@ -1164,8 +1098,6 @@ a `set` and a complex number
 ```python
     b: {2, 3}
     a: 1j
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for *=: 'set' and 'co...)
 
 ```
 
@@ -1197,6 +1129,7 @@ a dictionary (`dict`) and a number (`float`)
 
 
 ```python
+       156:         a = {1: 1, 2: 2}
        157:         b = 3.1416
     -->158:         result = a / b
        159:     except Exception as e:
@@ -1206,10 +1139,8 @@ a dictionary (`dict`) and a number (`float`)
 ##### Known objects shown above
 
 ```python
-    b: 3.1416
     a: {1: 1, 2: 2}
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for /: 'dict' and 'fl...)
+    b: 3.1416
 
 ```
 
@@ -1241,6 +1172,7 @@ a number (`float`) and a dictionary (`dict`)
 
 
 ```python
+       172:         a = {1: 1, 2: 2}
        173:         b = 3.1416
     -->174:         b /= a
        175:     except Exception as e:
@@ -1252,8 +1184,6 @@ a number (`float`) and a dictionary (`dict`)
 ```python
     b: 3.1416
     a: {1: 1, 2: 2}
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for /=: 'float' and '...)
 
 ```
 
@@ -1285,6 +1215,7 @@ a dictionary (`dict`) and an integer (`int`)
 
 
 ```python
+       188:         a = {1: 1, 2: 2}
        189:         b = 1
     -->190:         result = a // b
        191:     except Exception as e:
@@ -1294,10 +1225,8 @@ a dictionary (`dict`) and an integer (`int`)
 ##### Known objects shown above
 
 ```python
-    b: 1
     a: {1: 1, 2: 2}
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for //: 'dict' and 'int'")
+    b: 1
 
 ```
 
@@ -1329,6 +1258,7 @@ a number (`float`) and a dictionary (`dict`)
 
 
 ```python
+       204:         a = {1: 1, 2: 2}
        205:         b = 3.1416
     -->206:         b //= a
        207:     except Exception as e:
@@ -1340,8 +1270,6 @@ a number (`float`) and a dictionary (`dict`)
 ```python
     b: 3.1416
     a: {1: 1, 2: 2}
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for //=: 'float' and ...)
 
 ```
 
@@ -1374,6 +1302,7 @@ a string (`str`) and an integer (`int`)
 
 
 ```python
+       220:         a = "a"
        221:         b = 2
     -->222:         result = a & b
        223:     except Exception as e:
@@ -1383,10 +1312,8 @@ a string (`str`) and an integer (`int`)
 ##### Known objects shown above
 
 ```python
-    b: 2
     a: 'a'
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for &: 'str' and 'int'")
+    b: 2
 
 ```
 
@@ -1419,6 +1346,7 @@ an integer (`int`) and a string (`str`)
 
 
 ```python
+       236:         a = "a"
        237:         b = 2
     -->238:         b &= a
        239:     except Exception as e:
@@ -1430,8 +1358,6 @@ an integer (`int`) and a string (`str`)
 ```python
     b: 2
     a: 'a'
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for &=: 'int' and 'str'")
 
 ```
 
@@ -1464,6 +1390,7 @@ a dictionary (`dict`) and a number (`float`)
 
 
 ```python
+       252:         a = {1: 1, 2: 2}
        253:         b = 3.1416
     -->254:         result = a ** b
        255:     except Exception as e:
@@ -1473,10 +1400,8 @@ a dictionary (`dict`) and a number (`float`)
 ##### Known objects shown above
 
 ```python
-    b: 3.1416
     a: {1: 1, 2: 2}
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for ** or pow(): 'dic...)
+    b: 3.1416
 
 ```
 
@@ -1509,6 +1434,7 @@ a dictionary (`dict`) and a number (`float`)
 
 
 ```python
+       268:         a = {1: 1, 2: 2}
        269:         b = 3.1416
     -->270:         a **= b
        271:     except Exception as e:
@@ -1518,10 +1444,8 @@ a dictionary (`dict`) and a number (`float`)
 ##### Known objects shown above
 
 ```python
-    b: 3.1416
     a: {1: 1, 2: 2}
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for ** or pow(): 'dic...)
+    b: 3.1416
 
 ```
 
@@ -1554,6 +1478,7 @@ a string (`str`) and an integer (`int`)
 
 
 ```python
+       284:         a = "a"
        285:         b = 42
     -->286:         result = a >> b
        287:     except Exception as e:
@@ -1563,10 +1488,8 @@ a string (`str`) and an integer (`int`)
 ##### Known objects shown above
 
 ```python
-    b: 42
     a: 'a'
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for >>: 'str' and 'int'")
+    b: 42
 
 ```
 
@@ -1599,6 +1522,7 @@ a string (`str`) and an integer (`int`)
 
 
 ```python
+       300:         a = "a"
        301:         b = 42
     -->302:         a >>= b
        303:     except Exception as e:
@@ -1608,10 +1532,8 @@ a string (`str`) and an integer (`int`)
 ##### Known objects shown above
 
 ```python
-    b: 42
     a: 'a'
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for >>=: 'str' and 'int'")
+    b: 42
 
 ```
 
@@ -1646,6 +1568,7 @@ for multiplication of matrices.
 
 
 ```python
+       316:         a = "a"
        317:         b = 2
     -->318:         result = a @ b
        319:     except Exception as e:
@@ -1655,10 +1578,8 @@ for multiplication of matrices.
 ##### Known objects shown above
 
 ```python
-    b: 2
     a: 'a'
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for @: 'str' and 'int'")
+    b: 2
 
 ```
 
@@ -1693,6 +1614,7 @@ for multiplication of matrices.
 
 
 ```python
+       332:         a = "a"
        333:         b = 2
     -->334:         a @= b
        335:     except Exception as e:
@@ -1702,10 +1624,8 @@ for multiplication of matrices.
 ##### Known objects shown above
 
 ```python
-    b: 2
     a: 'a'
-    Exception: <class 'Exception'>
-    e: TypeError("unsupported operand type(s) for @=: 'str' and 'int'")
+    b: 2
 
 ```
 
@@ -1738,6 +1658,7 @@ an integer (`int`) and a string (`str`)
 
 
 ```python
+       348:         a = "a"
        349:         b = 42
     -->350:         b < a
        351:     except Exception as e:
@@ -1749,8 +1670,6 @@ an integer (`int`) and a string (`str`)
 ```python
     b: 42
     a: 'a'
-    Exception: <class 'Exception'>
-    e: TypeError("'<' not supported between instances of 'int' and ...)
 
 ```
 
@@ -1783,16 +1702,10 @@ This operation is not defined for this type of object.
 
 
 ```python
+       362: def test_type_error11():
        363:     try:
     -->364:         a = +"abc"
        365:         print(a)
-
-```
-
-##### Known objects shown above
-
-```python
-    print: <builtin function print>
 
 ```
 
@@ -1825,16 +1738,10 @@ This operation is not defined for this type of object.
 
 
 ```python
+       377: def test_type_error11a():
        378:     try:
     -->379:         a = -[1, 2, 3]
        380:         print(a)
-
-```
-
-##### Known objects shown above
-
-```python
-    print: <builtin function print>
 
 ```
 
@@ -1867,16 +1774,10 @@ This operation is not defined for this type of object.
 
 
 ```python
+       392: def test_type_error11b():
        393:     try:
     -->394:         a = ~(1, 2, 3)
        395:         print(a)
-
-```
-
-##### Known objects shown above
-
-```python
-    print: <builtin function print>
 
 ```
 
@@ -1910,6 +1811,7 @@ most likely by using an indexing operation.
 
 
 ```python
+       408:     a = (1, 2, 3)
        409:     try:
     -->410:         a[0] = 0
        411:     except Exception as e:
@@ -1920,8 +1822,6 @@ most likely by using an indexing operation.
 
 ```python
     a: (1, 2, 3)
-    Exception: <class 'Exception'>
-    e: TypeError("'tuple' object does not support item assignment")
 
 ```
 
@@ -1954,6 +1854,7 @@ such positional argument(s).
 
 
 ```python
+       425: 
        426:     try:
     -->427:         fn(1)
        428:     except Exception as e:
@@ -1964,8 +1865,6 @@ such positional argument(s).
 
 ```python
     fn: <function test_type_error13.<locals>.fn>
-    Exception: <class 'Exception'>
-    e: TypeError('fn() takes 0 positional arguments but 1 was given')
 
 ```
 
@@ -2003,6 +1902,7 @@ Perhaps you forgot `self` when defining `f`.
 
 
 ```python
+       444: 
        445:     try:
     -->446:         A().f(1)
        447:     except Exception as e:
@@ -2013,8 +1913,6 @@ Perhaps you forgot `self` when defining `f`.
 
 ```python
     A: <class 'test_type_error.test_type_error13a.<locals>.A'>
-    Exception: <class 'Exception'>
-    e: TypeError('f() takes 1 positional argument but 2 were given')
 
 ```
 
@@ -2046,6 +1944,7 @@ fewer positional arguments than it requires (2 missing).
 
 
 ```python
+       463: 
        464:     try:
     -->465:         fn(1)
        466:     except Exception as e:
@@ -2056,8 +1955,6 @@ fewer positional arguments than it requires (2 missing).
 
 ```python
     fn: <function test_type_error14.<locals>.fn>
-    Exception: <class 'Exception'>
-    e: TypeError("fn() missing 2 required positional arguments: 'b'...)
 
 ```
 
@@ -2095,17 +1992,10 @@ Perhaps you had a missing comma between two tuples.
 
 
 ```python
+       478: def test_type_error15():
        479:     try:
     -->480:         _ = (1, 2)(3, 4)
        481:     except Exception as e:
-
-```
-
-##### Known objects shown above
-
-```python
-    Exception: <class 'Exception'>
-    e: TypeError("'tuple' object is not callable")
 
 ```
 
@@ -2143,17 +2033,10 @@ Perhaps you had a missing comma before the tuple.
 
 
 ```python
+       492: def test_type_error15a():
        493:     try:
     -->494:         _ = [1, 2](3, 4)
        495:     except Exception as e:
-
-```
-
-##### Known objects shown above
-
-```python
-    Exception: <class 'Exception'>
-    e: TypeError("'list' object is not callable")
 
 ```
 
@@ -2184,17 +2067,10 @@ In Python 3, exceptions must be derived from BaseException.
 
 
 ```python
+       505: def test_type_error16():
        506:     try:
     -->507:         raise "exception"
        508:     except Exception as e:
-
-```
-
-##### Known objects shown above
-
-```python
-    Exception: <class 'Exception'>
-    e: TypeError('exceptions must derive from BaseException')
 
 ```
 
@@ -2242,6 +2118,7 @@ should have been included as the first line inside your function.
 
 
 ```python
+       25: 
        26:     try:
     -->27:         outer_missing_global()
        28:     except Exception as e:
@@ -2252,8 +2129,6 @@ should have been included as the first line inside your function.
 
 ```python
     global outer_missing_global: <function outer_missing_global>
-    Exception: <class 'Exception'>
-    e: UnboundLocalError("local variable 'spam_missing_global' refe...)
 
 ```
 
@@ -2261,6 +2136,7 @@ should have been included as the first line inside your function.
 
 
 ```python
+        7: def outer_missing_global():
         8:     def inner():
     --> 9:         spam_missing_global += 1
        10: 
@@ -2318,6 +2194,7 @@ should have been included as the first line inside your function.
 
 
 ```python
+       46: 
        47:     try:
     -->48:         outer_missing_nonlocal()
        49:     except Exception as e:
@@ -2328,8 +2205,6 @@ should have been included as the first line inside your function.
 
 ```python
     global outer_missing_nonlocal: <function outer_missing_nonlocal>
-    Exception: <class 'Exception'>
-    e: UnboundLocalError("local variable 'spam_missing_nonlocal' re...)
 
 ```
 
@@ -2337,6 +2212,7 @@ should have been included as the first line inside your function.
 
 
 ```python
+       16: 
        17:     def inner():
     -->18:         spam_missing_nonlocal += 1
        19: 
@@ -2364,6 +2240,7 @@ No information is available about this exception.
 
 
 ```python
+        8: def test_function_unknown_error():
         9:     try:
     -->10:         raise MyException("Some informative message about an unknown exception.")
        11:     except Exception as e:
@@ -2374,8 +2251,6 @@ No information is available about this exception.
 
 ```python
     global MyException: <class 'test_unknown_error.MyException'>
-    Exception: <class 'Exception'>
-    e: MyException('Some informative message about an unknown excep...)
 
 ```
 
@@ -2405,17 +2280,10 @@ using the modulo operator `%`:
 
 
 ```python
+       4: def test_zero_division_error():
        5:     try:
     -->6:         1 / 0
        7:     except Exception as e:
-
-```
-
-##### Known objects shown above
-
-```python
-    Exception: <class 'Exception'>
-    e: ZeroDivisionError('division by zero')
 
 ```
 
@@ -2445,6 +2313,7 @@ using the modulo operator `%`:
 
 
 ```python
+       19:     zero = 0
        20:     try:
     -->21:         1 % zero
        22:     except Exception as e:
@@ -2455,8 +2324,6 @@ using the modulo operator `%`:
 
 ```python
     zero: 0
-    Exception: <class 'Exception'>
-    e: ZeroDivisionError('integer division or modulo by zero')
 
 ```
 

@@ -39,14 +39,13 @@ ArithmeticError
     
     Exception raised on line 9 of file TESTS:\runtime\test_arithmetic_error.py.
     
+        7:         # Usually, a subclass such as ZeroDivisionError, etc., would
         8:         # likely be raised.
     --> 9:         raise ArithmeticError
        10:     except Exception as e:
 
         Known objects shown above:
             ArithmeticError: <class 'ArithmeticError'>
-            Exception: <class 'Exception'>
-            e: ArithmeticError()
         
 
 
@@ -69,15 +68,13 @@ AttributeError - class attribute
         
     Exception raised on line 35 of file TESTS:\runtime\test_attribute_error.py.
     
+       33:     try:
        34:         a = A()
     -->35:         a.x  # Testing instance
        36:     except Exception as e:
 
         Known objects shown above:
             a: <test_attribute_error.test_attribute_error.<locals>.A object>
-            A: <class 'test_attribute_error.test_attribute_error.<locals>.A'>
-            Exception: <class 'Exception'>
-            e: AttributeError("'A' object has no attribute 'x'")
         
 
 
@@ -102,14 +99,13 @@ AttributeError - typo in module attribute
         
     Exception raised on line 66 of file TESTS:\runtime\test_attribute_error.py.
     
+       64: 
        65:     try:
     -->66:         string.ascii_lowecase
        67:     except Exception as e:
 
         Known objects shown above:
             string: <module 'string'> from PYTHON_LIB:\string.py
-            Exception: <class 'Exception'>
-            e: AttributeError("module 'string' has no attribute 'ascii_lowe...)
         
 
 
@@ -136,14 +132,13 @@ AttributeError - typo in module attribute 2
         
     Exception raised on line 82 of file TESTS:\runtime\test_attribute_error.py.
     
+       80: 
        81:     try:
     -->82:         math.cost
        83:     except Exception as e:
 
         Known objects shown above:
             math: <module 'math' (builtin)>
-            Exception: <class 'Exception'>
-            e: AttributeError("module 'math' has no attribute 'cost'")
         
 
 
@@ -167,14 +162,13 @@ FileNotFoundError
         
     Exception raised on line 6 of file TESTS:\runtime\test_file_not_found_error.py.
     
+       4: def test_file_not_found_error():
        5:     try:
     -->6:         open("does_not_exist")
        7:     except Exception as e:
 
         Known objects shown above:
             open: <builtin function open>
-            Exception: <class 'Exception'>
-            e: FileNotFoundError(2, 'No such file or directory')
         
 
 
@@ -199,14 +193,10 @@ ImportError
         
     Exception raised on line 6 of file TESTS:\runtime\test_import_error.py.
     
+       4: def test_import_error():
        5:     try:
     -->6:         from math import Pi
        7:     except Exception as e:
-
-        Known objects shown above:
-            Exception: <class 'Exception'>
-            e: ImportError("cannot import name 'Pi' from 'math' (unknown lo...)
-        
 
 
 KeyError
@@ -227,14 +217,13 @@ KeyError
         
     Exception raised on line 7 of file TESTS:\runtime\test_key_error.py.
     
+       5:     d = {"a": 1, "b": 2}
        6:     try:
     -->7:         d["c"]
        8:     except Exception as e:
 
         Known objects shown above:
             d: {'a': 1, 'b': 2}
-            Exception: <class 'Exception'>
-            e: KeyError('c')
         
 
 
@@ -255,14 +244,13 @@ LookupError
     
     Exception raised on line 10 of file TESTS:\runtime\test_lookup_error.py.
     
+        8:         # other than possibly codecs.lookup(), which is why we raise
         9:         # it directly here for our example.
     -->10:         raise LookupError("Fake message")
        11:     except Exception as e:
 
         Known objects shown above:
             LookupError: <class 'LookupError'>
-            Exception: <class 'Exception'>
-            e: LookupError('Fake message')
         
 
 
@@ -285,16 +273,15 @@ IndexError - short tuple
     
     Exception raised on line 8 of file TESTS:\runtime\test_index_error.py.
     
-       7:     try:
-    -->8:         print(a[3], b[2])
-       9:     except Exception as e:
+        6:     b = [1, 2, 3]
+        7:     try:
+    --> 8:         print(a[3], b[2])
+        9:     except Exception as e:
 
         Known objects shown above:
             print: <builtin function print>
             a: (1, 2, 3)
             b: [1, 2, 3]
-            Exception: <class 'Exception'>
-            e: IndexError('tuple index out of range')
         
 
 
@@ -317,6 +304,7 @@ IndexError - long list
     
     Exception raised on line 22 of file TESTS:\runtime\test_index_error.py.
     
+       20:     b = tuple(range(50))
        21:     try:
     -->22:         print(a[50], b[0])
        23:     except Exception as e:
@@ -327,8 +315,6 @@ IndexError - long list
                 len(a): 40
             b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...)
                 len(b): 50
-            Exception: <class 'Exception'>
-            e: IndexError('list index out of range')
         
 
 
@@ -355,14 +341,10 @@ ModuleNotFoundError
         
     Exception raised on line 6 of file TESTS:\runtime\test_module_not_found_error.py.
     
+       4: def test_module_not_found_error():
        5:     try:
     -->6:         import Tkinter
        7:     except Exception as e:
-
-        Known objects shown above:
-            Exception: <class 'Exception'>
-            e: ModuleNotFoundError("No module named 'Tkinter'")
-        
 
 
 NameError - 1
@@ -386,14 +368,10 @@ NameError - 1
         I have no additional information for you.
     Exception raised on line 6 of file TESTS:\runtime\test_name_error.py.
     
+       4: def test_name_error():
        5:     try:
     -->6:         this = something
        7:     except Exception as e:
-
-        Known objects shown above:
-            Exception: <class 'Exception'>
-            e: NameError("name 'something' is not defined")
-        
 
 
 NameError - 2
@@ -422,14 +400,10 @@ NameError - 2
         
     Exception raised on line 20 of file TESTS:\runtime\test_name_error.py.
     
+       18:     nabs = 1
        19:     try:
     -->20:         x = babs(-1)
        21:     except Exception as e:
-
-        Known objects shown above:
-            Exception: <class 'Exception'>
-            e: NameError("name 'babs' is not defined")
-        
 
 
 NameError - 3
@@ -462,14 +436,10 @@ NameError - 3
         
     Exception raised on line 35 of file TESTS:\runtime\test_name_error.py.
     
+       33: def test_name_error3():
        34:     try:
     -->35:         y = x
        36:     except Exception as e:
-
-        Known objects shown above:
-            Exception: <class 'Exception'>
-            e: NameError("name 'x' is not defined")
-        
 
 
 NameError - 4
@@ -496,14 +466,10 @@ NameError - 4
         
     Exception raised on line 48 of file TESTS:\runtime\test_name_error.py.
     
+       46: def test_name_error4():
        47:     try:
     -->48:         cost  # wrote from math import * above
        49:     except Exception as e:
-
-        Known objects shown above:
-            Exception: <class 'Exception'>
-            e: NameError("name 'cost' is not defined")
-        
 
 
 OverflowError
@@ -522,14 +488,10 @@ OverflowError
     
     Exception raised on line 6 of file TESTS:\runtime\test_overflow_error.py.
     
+       4: def test_overflow_error():
        5:     try:
     -->6:         2.0 ** 1600
        7:     except Exception as e:
-
-        Known objects shown above:
-            Exception: <class 'Exception'>
-            e: OverflowError(34, 'Result too large')
-        
 
 
 RecursionError
@@ -557,17 +519,17 @@ RecursionError
     
     Execution stopped on line 8 of file TESTS:\runtime\test_recursion_error.py.
     
-       7:     try:
-    -->8:         a()
-       9:     except Exception as e:
+        6:         return a()
+        7:     try:
+    --> 8:         a()
+        9:     except Exception as e:
 
         Known objects shown above:
             a: <function test_function_recursion_error.<locals>.a>
-            Exception: <class 'Exception'>
-            e: RecursionError('maximum recursion depth exceeded')
         
     Exception raised on line 6 of file TESTS:\runtime\test_recursion_error.py.
     
+       4: def test_function_recursion_error():
        5:     def a():
     -->6:         return a()
        7:     try:
@@ -598,15 +560,14 @@ TypeError - 1: concatenate two different types
         
     Exception raised on line 8 of file TESTS:\runtime\test_type_error.py.
     
-       7:         one = 1
-    -->8:         result = a + one
-       9:     except Exception as e:
+        6:         a = "a"
+        7:         one = 1
+    --> 8:         result = a + one
+        9:     except Exception as e:
 
         Known objects shown above:
-            one: 1
             a: 'a'
-            Exception: <class 'Exception'>
-            e: TypeError('can only concatenate str (not "int") to str')
+            one: 1
         
 
 
@@ -631,15 +592,14 @@ TypeError - 1a: concatenate two different types
         
     Exception raised on line 26 of file TESTS:\runtime\test_type_error.py.
     
+       24:         a = "a"
        25:         a_list = [1, 2, 3]
     -->26:         result = a + a_list
        27:     except Exception as e:
 
         Known objects shown above:
-            a_list: [1, 2, 3]
             a: 'a'
-            Exception: <class 'Exception'>
-            e: TypeError('can only concatenate str (not "list") to str')
+            a_list: [1, 2, 3]
         
 
 
@@ -664,15 +624,14 @@ TypeError - 1b: concatenate two different types
         
     Exception raised on line 44 of file TESTS:\runtime\test_type_error.py.
     
+       42:         a_tuple = (1, 2, 3)
        43:         a_list = [1, 2, 3]
     -->44:         result = a_tuple + a_list
        45:     except Exception as e:
 
         Known objects shown above:
-            a_list: [1, 2, 3]
             a_tuple: (1, 2, 3)
-            Exception: <class 'Exception'>
-            e: TypeError('can only concatenate tuple (not "list") to tuple')
+            a_list: [1, 2, 3]
         
 
 
@@ -697,15 +656,14 @@ TypeError - 2: unsupported operand type(s) for +
         
     Exception raised on line 60 of file TESTS:\runtime\test_type_error.py.
     
+       58:         one = 1
        59:         none = None
     -->60:         result = one + none
        61:     except Exception as e:
 
         Known objects shown above:
-            none: None
             one: 1
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for +: 'int' and 'Non...)
+            none: None
         
 
 
@@ -730,15 +688,14 @@ TypeError - 2a: unsupported operand type(s) for +=
         
     Exception raised on line 78 of file TESTS:\runtime\test_type_error.py.
     
+       76:         one = 1
        77:         two = "two"
     -->78:         one += two
        79:     except Exception as e:
 
         Known objects shown above:
-            two: 'two'
             one: 1
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for +=: 'int' and 'str'")
+            two: 'two'
         
 
 
@@ -763,15 +720,14 @@ TypeError - 3: unsupported operand type(s) for -
         
     Exception raised on line 94 of file TESTS:\runtime\test_type_error.py.
     
+       92:         a = (1, 2)
        93:         b = [3, 4]
     -->94:         result = a - b
        95:     except Exception as e:
 
         Known objects shown above:
-            b: [3, 4]
             a: (1, 2)
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for -: 'tuple' and 'l...)
+            b: [3, 4]
         
 
 
@@ -796,6 +752,7 @@ TypeError - 3a: unsupported operand type(s) for -=
         
     Exception raised on line 110 of file TESTS:\runtime\test_type_error.py.
     
+       108:         a = (1, 2)
        109:         b = [3, 4]
     -->110:         b -= a
        111:     except Exception as e:
@@ -803,8 +760,6 @@ TypeError - 3a: unsupported operand type(s) for -=
         Known objects shown above:
             b: [3, 4]
             a: (1, 2)
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for -=: 'list' and 't...)
         
 
 
@@ -829,15 +784,14 @@ TypeError - 4: unsupported operand type(s) for *
         
     Exception raised on line 126 of file TESTS:\runtime\test_type_error.py.
     
+       124:         a = 1j
        125:         b = {2, 3}
     -->126:         result = a * b
        127:     except Exception as e:
 
         Known objects shown above:
-            b: {2, 3}
             a: 1j
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for *: 'complex' and ...)
+            b: {2, 3}
         
 
 
@@ -862,6 +816,7 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
         
     Exception raised on line 142 of file TESTS:\runtime\test_type_error.py.
     
+       140:         a = 1j
        141:         b = {2, 3}
     -->142:         b *= a
        143:     except Exception as e:
@@ -869,8 +824,6 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
         Known objects shown above:
             b: {2, 3}
             a: 1j
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for *=: 'set' and 'co...)
         
 
 
@@ -895,15 +848,14 @@ TypeError - 5: unsupported operand type(s) for /
         
     Exception raised on line 158 of file TESTS:\runtime\test_type_error.py.
     
+       156:         a = {1: 1, 2: 2}
        157:         b = 3.1416
     -->158:         result = a / b
        159:     except Exception as e:
 
         Known objects shown above:
-            b: 3.1416
             a: {1: 1, 2: 2}
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for /: 'dict' and 'fl...)
+            b: 3.1416
         
 
 
@@ -928,6 +880,7 @@ TypeError - 5a: unsupported operand type(s) for /=
         
     Exception raised on line 174 of file TESTS:\runtime\test_type_error.py.
     
+       172:         a = {1: 1, 2: 2}
        173:         b = 3.1416
     -->174:         b /= a
        175:     except Exception as e:
@@ -935,8 +888,6 @@ TypeError - 5a: unsupported operand type(s) for /=
         Known objects shown above:
             b: 3.1416
             a: {1: 1, 2: 2}
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for /=: 'float' and '...)
         
 
 
@@ -961,15 +912,14 @@ TypeError - 5b: unsupported operand type(s) for //
         
     Exception raised on line 190 of file TESTS:\runtime\test_type_error.py.
     
+       188:         a = {1: 1, 2: 2}
        189:         b = 1
     -->190:         result = a // b
        191:     except Exception as e:
 
         Known objects shown above:
-            b: 1
             a: {1: 1, 2: 2}
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for //: 'dict' and 'int'")
+            b: 1
         
 
 
@@ -994,6 +944,7 @@ TypeError - 5c: unsupported operand type(s) for //=
         
     Exception raised on line 206 of file TESTS:\runtime\test_type_error.py.
     
+       204:         a = {1: 1, 2: 2}
        205:         b = 3.1416
     -->206:         b //= a
        207:     except Exception as e:
@@ -1001,8 +952,6 @@ TypeError - 5c: unsupported operand type(s) for //=
         Known objects shown above:
             b: 3.1416
             a: {1: 1, 2: 2}
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for //=: 'float' and ...)
         
 
 
@@ -1028,15 +977,14 @@ TypeError - 6: unsupported operand type(s) for &
         
     Exception raised on line 222 of file TESTS:\runtime\test_type_error.py.
     
+       220:         a = "a"
        221:         b = 2
     -->222:         result = a & b
        223:     except Exception as e:
 
         Known objects shown above:
-            b: 2
             a: 'a'
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for &: 'str' and 'int'")
+            b: 2
         
 
 
@@ -1062,6 +1010,7 @@ TypeError - 6a: unsupported operand type(s) for &=
         
     Exception raised on line 238 of file TESTS:\runtime\test_type_error.py.
     
+       236:         a = "a"
        237:         b = 2
     -->238:         b &= a
        239:     except Exception as e:
@@ -1069,8 +1018,6 @@ TypeError - 6a: unsupported operand type(s) for &=
         Known objects shown above:
             b: 2
             a: 'a'
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for &=: 'int' and 'str'")
         
 
 
@@ -1096,15 +1043,14 @@ TypeError - 7: unsupported operand type(s) for **
         
     Exception raised on line 254 of file TESTS:\runtime\test_type_error.py.
     
+       252:         a = {1: 1, 2: 2}
        253:         b = 3.1416
     -->254:         result = a ** b
        255:     except Exception as e:
 
         Known objects shown above:
-            b: 3.1416
             a: {1: 1, 2: 2}
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for ** or pow(): 'dic...)
+            b: 3.1416
         
 
 
@@ -1130,15 +1076,14 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
         
     Exception raised on line 270 of file TESTS:\runtime\test_type_error.py.
     
+       268:         a = {1: 1, 2: 2}
        269:         b = 3.1416
     -->270:         a **= b
        271:     except Exception as e:
 
         Known objects shown above:
-            b: 3.1416
             a: {1: 1, 2: 2}
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for ** or pow(): 'dic...)
+            b: 3.1416
         
 
 
@@ -1164,15 +1109,14 @@ TypeError - 8: unsupported operand type(s) for >>
         
     Exception raised on line 286 of file TESTS:\runtime\test_type_error.py.
     
+       284:         a = "a"
        285:         b = 42
     -->286:         result = a >> b
        287:     except Exception as e:
 
         Known objects shown above:
-            b: 42
             a: 'a'
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for >>: 'str' and 'int'")
+            b: 42
         
 
 
@@ -1198,15 +1142,14 @@ TypeError - 8a: unsupported operand type(s) for >>=
         
     Exception raised on line 302 of file TESTS:\runtime\test_type_error.py.
     
+       300:         a = "a"
        301:         b = 42
     -->302:         a >>= b
        303:     except Exception as e:
 
         Known objects shown above:
-            b: 42
             a: 'a'
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for >>=: 'str' and 'int'")
+            b: 42
         
 
 
@@ -1234,15 +1177,14 @@ TypeError - 9: unsupported operand type(s) for @
         
     Exception raised on line 318 of file TESTS:\runtime\test_type_error.py.
     
+       316:         a = "a"
        317:         b = 2
     -->318:         result = a @ b
        319:     except Exception as e:
 
         Known objects shown above:
-            b: 2
             a: 'a'
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for @: 'str' and 'int'")
+            b: 2
         
 
 
@@ -1270,15 +1212,14 @@ TypeError - 9a: unsupported operand type(s) for @=
         
     Exception raised on line 334 of file TESTS:\runtime\test_type_error.py.
     
+       332:         a = "a"
        333:         b = 2
     -->334:         a @= b
        335:     except Exception as e:
 
         Known objects shown above:
-            b: 2
             a: 'a'
-            Exception: <class 'Exception'>
-            e: TypeError("unsupported operand type(s) for @=: 'str' and 'int'")
+            b: 2
         
 
 
@@ -1304,6 +1245,7 @@ TypeError - 10: comparison between incompatible types
         
     Exception raised on line 350 of file TESTS:\runtime\test_type_error.py.
     
+       348:         a = "a"
        349:         b = 42
     -->350:         b < a
        351:     except Exception as e:
@@ -1311,8 +1253,6 @@ TypeError - 10: comparison between incompatible types
         Known objects shown above:
             b: 42
             a: 'a'
-            Exception: <class 'Exception'>
-            e: TypeError("'<' not supported between instances of 'int' and ...)
         
 
 
@@ -1338,13 +1278,10 @@ TypeError - 11: bad operand type for unary +
         
     Exception raised on line 364 of file TESTS:\runtime\test_type_error.py.
     
+       362: def test_type_error11():
        363:     try:
     -->364:         a = +"abc"
        365:         print(a)
-
-        Known objects shown above:
-            print: <builtin function print>
-        
 
 
 TypeError - 11a: bad operand type for unary -
@@ -1369,13 +1306,10 @@ TypeError - 11a: bad operand type for unary -
         
     Exception raised on line 379 of file TESTS:\runtime\test_type_error.py.
     
+       377: def test_type_error11a():
        378:     try:
     -->379:         a = -[1, 2, 3]
        380:         print(a)
-
-        Known objects shown above:
-            print: <builtin function print>
-        
 
 
 TypeError - 11b: bad operand type for unary ~
@@ -1400,13 +1334,10 @@ TypeError - 11b: bad operand type for unary ~
         
     Exception raised on line 394 of file TESTS:\runtime\test_type_error.py.
     
+       392: def test_type_error11b():
        393:     try:
     -->394:         a = ~(1, 2, 3)
        395:         print(a)
-
-        Known objects shown above:
-            print: <builtin function print>
-        
 
 
 TypeError - 12: object does not support item assignment
@@ -1432,14 +1363,13 @@ TypeError - 12: object does not support item assignment
         
     Exception raised on line 410 of file TESTS:\runtime\test_type_error.py.
     
+       408:     a = (1, 2, 3)
        409:     try:
     -->410:         a[0] = 0
        411:     except Exception as e:
 
         Known objects shown above:
             a: (1, 2, 3)
-            Exception: <class 'Exception'>
-            e: TypeError("'tuple' object does not support item assignment")
         
 
 
@@ -1468,14 +1398,13 @@ TypeError - 13: wrong number of positional arguments
         
     Exception raised on line 427 of file TESTS:\runtime\test_type_error.py.
     
+       425: 
        426:     try:
     -->427:         fn(1)
        428:     except Exception as e:
 
         Known objects shown above:
             fn: <function test_type_error13.<locals>.fn>
-            Exception: <class 'Exception'>
-            e: TypeError('test_type_error13.<locals>.fn() takes 0 positiona...)
         
 
 
@@ -1504,14 +1433,13 @@ TypeError - 13a: wrong number of positional arguments
         
     Exception raised on line 446 of file TESTS:\runtime\test_type_error.py.
     
+       444: 
        445:     try:
     -->446:         A().f(1)
        447:     except Exception as e:
 
         Known objects shown above:
             A: <class 'test_type_error.test_type_error13a.<locals>.A'>
-            Exception: <class 'Exception'>
-            e: TypeError('test_type_error13a.<locals>.A.f() takes 1 positio...)
         
 
 
@@ -1536,14 +1464,13 @@ TypeError - 14: missing positional arguments
         
     Exception raised on line 465 of file TESTS:\runtime\test_type_error.py.
     
+       463: 
        464:     try:
     -->465:         fn(1)
        466:     except Exception as e:
 
         Known objects shown above:
             fn: <function test_type_error14.<locals>.fn>
-            Exception: <class 'Exception'>
-            e: TypeError("test_type_error14.<locals>.fn() missing 2 require...)
         
 
 
@@ -1572,14 +1499,10 @@ TypeError - 15: tuple object is not callable
         
     Exception raised on line 480 of file TESTS:\runtime\test_type_error.py.
     
+       478: def test_type_error15():
        479:     try:
     -->480:         _ = (1, 2)(3, 4)
        481:     except Exception as e:
-
-        Known objects shown above:
-            Exception: <class 'Exception'>
-            e: TypeError("'tuple' object is not callable")
-        
 
 
 TypeError - 15a: list object is not callable
@@ -1607,14 +1530,10 @@ TypeError - 15a: list object is not callable
         
     Exception raised on line 494 of file TESTS:\runtime\test_type_error.py.
     
+       492: def test_type_error15a():
        493:     try:
     -->494:         _ = [1, 2](3, 4)
        495:     except Exception as e:
-
-        Known objects shown above:
-            Exception: <class 'Exception'>
-            e: TypeError("'list' object is not callable")
-        
 
 
 TypeError - 16: exception derived from BaseException
@@ -1637,14 +1556,10 @@ TypeError - 16: exception derived from BaseException
         
     Exception raised on line 507 of file TESTS:\runtime\test_type_error.py.
     
+       505: def test_type_error16():
        506:     try:
     -->507:         raise "exception"
        508:     except Exception as e:
-
-        Known objects shown above:
-            Exception: <class 'Exception'>
-            e: TypeError('exceptions must derive from BaseException')
-        
 
 
 UnboundLocalError - 1: missing global
@@ -1682,17 +1597,17 @@ UnboundLocalError - 1: missing global
         
     Execution stopped on line 27 of file TESTS:\runtime\test_unbound_local_error.py.
     
+       25: 
        26:     try:
     -->27:         outer_missing_global()
        28:     except Exception as e:
 
         Known objects shown above:
             global outer_missing_global: <function outer_missing_global>
-            Exception: <class 'Exception'>
-            e: UnboundLocalError("local variable 'spam_missing_global' refe...)
         
     Exception raised on line 9 of file TESTS:\runtime\test_unbound_local_error.py.
     
+        7: def outer_missing_global():
         8:     def inner():
     --> 9:         spam_missing_global += 1
        10: 
@@ -1737,17 +1652,17 @@ UnboundLocalError - 2: missing nonlocal
         
     Execution stopped on line 48 of file TESTS:\runtime\test_unbound_local_error.py.
     
+       46: 
        47:     try:
     -->48:         outer_missing_nonlocal()
        49:     except Exception as e:
 
         Known objects shown above:
             global outer_missing_nonlocal: <function outer_missing_nonlocal>
-            Exception: <class 'Exception'>
-            e: UnboundLocalError("local variable 'spam_missing_nonlocal' re...)
         
     Exception raised on line 18 of file TESTS:\runtime\test_unbound_local_error.py.
     
+       16: 
        17:     def inner():
     -->18:         spam_missing_nonlocal += 1
        19: 
@@ -1768,14 +1683,13 @@ Unknown exception
     
     Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.
     
+        8: def test_function_unknown_error():
         9:     try:
     -->10:         raise MyException("Some informative message about an unknown exception.")
        11:     except Exception as e:
 
         Known objects shown above:
             global MyException: <class 'test_unknown_error.MyException'>
-            Exception: <class 'Exception'>
-            e: MyException('Some informative message about an unknown excep...)
         
 
 
@@ -1799,14 +1713,10 @@ ZeroDivisionError - 1
     
     Exception raised on line 6 of file TESTS:\runtime\test_zero_division_error.py.
     
+       4: def test_zero_division_error():
        5:     try:
     -->6:         1 / 0
        7:     except Exception as e:
-
-        Known objects shown above:
-            Exception: <class 'Exception'>
-            e: ZeroDivisionError('division by zero')
-        
 
 
 ZeroDivisionError - 2
@@ -1829,13 +1739,12 @@ ZeroDivisionError - 2
     
     Exception raised on line 21 of file TESTS:\runtime\test_zero_division_error.py.
     
+       19:     zero = 0
        20:     try:
     -->21:         1 % zero
        22:     except Exception as e:
 
         Known objects shown above:
             zero: 0
-            Exception: <class 'Exception'>
-            e: ZeroDivisionError('integer division or modulo by zero')
         
 
