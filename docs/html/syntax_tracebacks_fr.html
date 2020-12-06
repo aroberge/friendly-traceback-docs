@@ -342,7 +342,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3: if True:
 --&gt;4: pass
       ^
-   5:
 
     Dans ce cas-ci, la ligne indiquée ci-dessus par --&gt; devrait
     normalement commencer un nouveau bloc de code indenté.
@@ -371,7 +370,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:     pass
 --&gt;4:       pass
            ^
-   5:
 
     Dans ce cas-ci, la ligne indiquée ci-dessus par --&gt;
     est plus indentée que ce qui était attendu et ne
@@ -401,7 +399,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:       pass
 --&gt;4:     pass
               ^
-   5:
 
     Dans ce cas-ci, la ligne indiquée ci-dessus par --&gt;
     est moins indentée que la ligne précédente
@@ -435,7 +432,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    6:     if True:
 --&gt;7:       pass
            ^
-   8:
 </pre></div>
 </div>
 </div>
@@ -459,7 +455,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: def = 2
           ^
-   4:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -700,7 +695,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: 1 = a
       ^
-   4:
 
     Vous avez écrit une expression comme
 
@@ -733,7 +727,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: 1 = 2
       ^
-   4:
 
     Vous avez écrit une expression comme
 
@@ -764,7 +757,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    6:
 --&gt;7: {1, 2, 3} = 4
       ^
-   8:
 
     Vous avez écrit une expression comme
 
@@ -795,7 +787,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    6:
 --&gt;7: {1 : 2, 2 : 4} = 5
       ^
-   8:
 
     Vous avez écrit une expression comme
 
@@ -826,7 +817,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
 --&gt;4: 1 = a = b
       ^
-   5:
 
     Vous avez écrit une expression comme
 
@@ -857,7 +847,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: import pen from turtle
                  ^
-   4:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -888,7 +877,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: alphabet = &#39;abc
                      ^
-   4:
 
     Vous aviez commencé à écrire une chaîne de caractères
     avec un guillemet simple ou double, mais n&#39;avez jamais
@@ -917,7 +905,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
 --&gt;4: None = 1
       ^
-   5:
 
     `None` est une constante dans python; vous ne pouvez pas lui assigner une valeur.
 </pre></div>
@@ -944,7 +931,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
 --&gt;4: __debug__ = 1
       ^
-   5:
 
     `__debug__` est une constante dans python; vous ne pouvez pas lui assigner une valeur.
 </pre></div>
@@ -1027,7 +1013,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2: a = (b+c
 --&gt;3: d = a*a
       ^
-   4:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -1057,7 +1042,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: x = (1, 2, 3]
                   ^
-   3:
 
     Python nous dit que la parenthèse de droite `]` ne correspond pas
     à la parenthèse de gauche `(`.
@@ -1092,7 +1076,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:      2,
 --&gt;4:      3]
             ^
-   5:
 
     Python nous dit que la parenthèse de droite `]` sur la dernière ligne
     ne correspond pas à la parenthèse de gauche `(` sur la ligne 2.
@@ -1128,7 +1111,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: Missing parentheses in call to &#39;print&#39; ...&quot;&quot;&quot;
 --&gt;2: print &#39;hello&#39;
             ^
-   3:
 
     Peut-être que vous avez besoin d&#39;écrire
 
@@ -1188,7 +1170,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3: if True:
 --&gt;4:     break
           ^
-   5:
 
     Le mot-clé Python `break` ne peut être utilisé qu&#39;à l&#39;intérieur d&#39;une boucle `for` ou à l&#39;intérieur d&#39;une boucle `while`.
 </pre></div>
@@ -1214,7 +1195,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3: if True:
 --&gt;4:     continue
           ^
-   5:
 
     Le mot-clé Python `continue` ne peut être utilisé qu&#39;à l&#39;intérieur d&#39;une boucle `for` ou à l&#39;intérieur d&#39;une boucle `while`.
 </pre></div>
@@ -1240,7 +1220,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: message = &#39;don&#39;t&#39;
                      ^
-   4:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -1301,7 +1280,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: a = {1, 2  3}
                  ^
-   4:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -1331,7 +1309,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: a = [1, 2  3]
                  ^
-   4:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -1361,7 +1338,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: a = (1, 2  3)
                  ^
-   4:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -1420,7 +1396,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    5:
 --&gt;6: len(&#39;a&#39;) = 3
       ^
-   7:
 
     Vous avez écrit une expression comme
 
@@ -1452,7 +1427,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    5:
 --&gt;6: func(a, b=3) = 4
       ^
-   7:
 
     Vous avez écrit une expression comme
 
@@ -1483,7 +1457,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
 --&gt;4: ages = {&#39;Alice&#39;=22, &#39;Bob&#39;=24}
                      ^
-   5:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -1552,7 +1525,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    4:
 --&gt;5: test(a=1, b)
                 ^
-   6:
 
     Dans Python, vous pouvez invoquer les fonctions avec seulement des arguments de position
 
@@ -1591,7 +1563,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
 --&gt;4: print(f&quot;Bob is {age[&#39;Bob]} years old.&quot;)
             ^
-   5:
 
     À l&#39;intérieur d&#39;une &quot;f-string&quot;, qui est une chaîne de caractères préfixée de la lettre f,
     vous avez une autre chaîne de caractère qui débute soit avec un apostrophe (&#39;)
@@ -1619,7 +1590,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    6:
 --&gt;7: print(foo())
       ^
-   8:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -1682,7 +1652,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    5: def f(x):
 --&gt;6:     global x
           ^
-   7:
 
     Vous avec inclus l&#39;énoncé
 
@@ -1715,7 +1684,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    11: a.x = 1
 --&gt;12: a.pass = 2
          ^
-   13:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -1744,7 +1712,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    4:
 --&gt;5: print(\t)
                ^
-   6:
 
     Vous utilisez le caractère de continuation `\` en dehors d&#39;une chaîne de caractères,
     et il est suivi par au moins un autre caractère.
@@ -1773,7 +1740,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    6:
 --&gt;7: a = dict(&#39;key&#39;=1)
                ^
-   8:
 
     L&#39;une des deux possibilités suivantes pourrait être la cause:
     1. Vous vouliez faire une comparaison avec `==` et vous avez écrit `=` à sa place.
@@ -1807,7 +1773,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    5:
 --&gt;6: 🤖 = &#39;Reeborg&#39;
       ^
-   7:
 
     Vous avez probablement utilisé un caractère unicode qui n&#39;est pas autorisé
     dans le nom d&#39;une variable dans Python.
@@ -1955,7 +1920,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    4:
 --&gt;5: del f(a)
           ^
-   6:
 
     Vous avez tenté de supprimer un appel de fonction
 
@@ -1986,7 +1950,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    6:     p = 1
 --&gt;7:     global p
           ^
-   8:
 
     Vous avez attribué une valeur à la variable `p`
     avant de la déclarer comme une variable globale.
@@ -2013,7 +1976,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    6:     print(r)
 --&gt;7:     global r
           ^
-   8:
 
     Vous avez utilisé la variable `r`
     avant de la déclarer comme une variable globale.
@@ -2041,7 +2003,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     8:         print(q)
 --&gt; 9:         nonlocal q
                ^
-   10:
 
     Vous avez utilisé la variable `q`
     avant de la déclarer comme variable non locale.
@@ -2069,7 +2030,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     8:         s = 2
 --&gt; 9:         nonlocal s
                ^
-   10:
 
     Vous avez attribué une valeur à la variable `s`
     avant de la déclarer comme variable non locale.
@@ -2097,7 +2057,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
 --&gt;4: (True := 1)
        ^
-   5:
 
     `True` est une constante dans python; vous ne pouvez pas lui assigner une valeur.
 </pre></div>
@@ -2123,7 +2082,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
 --&gt;4: a + 1 = 2
       ^
-   5:
 
     Vous avez écrit une expression qui inclut des opérations mathématiques
     du côté gauche du signe d&#39;égalité; ceci devrait être
@@ -2151,7 +2109,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: a = `1`
           ^
-   4:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -2182,7 +2139,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: (x for x in x) = 1
       ^
-   4:
 
     Du côté gauche d&#39;un signe d&#39;égalité, vous avez une
     expression génératrice au lieu du nom d&#39;une variable.
@@ -2209,7 +2165,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: a if 1 else b = 1
       ^
-   4:
 
     Du côté gauche d&#39;un signe d&#39;égalité, vous avez une
     expression conditionnelle au lieu du nom d&#39;une variable.
@@ -2239,7 +2194,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    4: def f(x):
 --&gt;5:     nonlocal x
           ^
-   6:
 
     Vous avez utilisé `x` comme paramètre pour une fonction
     avant de la déclarer également comme une variable non locale :
@@ -2294,7 +2248,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    4: def f():
 --&gt;5:     nonlocal ab
           ^
-   6:
 
     Vous avez déclaré la variable `ab` comme non locale
     mais elle n&#39;existe pas ailleurs.
@@ -2321,7 +2274,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
 --&gt;4: nonlocal cd
       ^
-   5:
 
     Vous avez utilisé le mot clé nonlocal au niveau d&#39;un module.
     Le mot clé nonlocal fait référence à une variable à l&#39;intérieur d&#39;une fonction
@@ -2378,7 +2330,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
 --&gt;4: f(ad=1, ad=2)
               ^
-   5:
 
     Vous avez invoqué une fonction en répétant le même argument nommé.
     Chaque argument de ce type ne peut apparaître qu&#39;une seule fois.
@@ -2428,7 +2379,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: print len(&#39;hello&#39;)
             ^
-   3:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -2456,7 +2406,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: &gt;&gt;&gt; print(&quot;Hello World!&quot;)
       ^
-   3:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -2484,7 +2433,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: pip install friendly
           ^
-   3:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -2513,7 +2461,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: python -m pip install friendly
                 ^
-   3:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -2542,7 +2489,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: print(len.(&#39;hello&#39;))
                 ^
-   3:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -2570,7 +2516,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    5:
 --&gt;6: f&#39;{x}&#39; = 42
       ^
-   7:
 
     Vous avez écrit une expression qui a une chaine de
     caractères formatés (aussi appelé f-string)
@@ -2598,7 +2543,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: raise X, Y
              ^
-   3:
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -2626,7 +2570,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    5: L = range(10)
 --&gt;6: f(x for x in L, 1)
         ^
-   7:
 
     Vous utilisez une expression de générateur, quelque chose de la forme
         `x for x in objet`
@@ -2655,7 +2598,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:    and  SyntaxError: invalid character &#39;«&#39; (U+00AB) in Python 3.9&quot;&quot;&quot;
 --&gt;3: a = « hello »
           ^
-   4:
 
     Python indique que vous avez utilisé des caractères unicode non permis
     comme étant partie d’un nom de variable; cela inclut de nombreux emojis.

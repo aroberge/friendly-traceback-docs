@@ -332,7 +332,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">3</span><span class="p">:</span> <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
     <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span> <span class="k">pass</span>
           <span class="o">^</span>
-       <span class="mi">5</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>In this case, the line identified above
@@ -359,7 +358,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">3</span><span class="p">:</span>     <span class="k">pass</span>
     <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span>       <span class="k">pass</span>
                <span class="o">^</span>
-       <span class="mi">5</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>In this case, the line identified above
@@ -387,7 +385,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">3</span><span class="p">:</span>       <span class="k">pass</span>
     <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span>     <span class="k">pass</span>
                   <span class="o">^</span>
-       <span class="mi">5</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>In this case, the line identified above is
@@ -419,7 +416,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">6</span><span class="p">:</span>     <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
     <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span> 	<span class="k">pass</span>
                <span class="o">^</span>
-       <span class="mi">8</span><span class="p">:</span> 
 </pre></div>
 </div>
 </div>
@@ -443,7 +439,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="k">def</span> <span class="o">=</span> <span class="mi">2</span>
               <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -676,7 +671,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="mi">1</span> <span class="o">=</span> <span class="n">a</span>
           <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>You wrote an expression like</p>
@@ -710,7 +704,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">2</span>
           <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>You wrote an expression like</p>
@@ -741,7 +734,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <span class="s2">       6: </span>
 <span class="s2">    --&gt;7: {1, 2, 3} = 4</span>
 <span class="s2">          ^</span>
-<span class="s2">       8: </span>
 </pre></div>
 </div>
 <p>You wrote an expression like</p>
@@ -772,7 +764,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <span class="s2">       6: </span>
 <span class="s2">    --&gt;7: {1 : 2, 2 : 4} = 5</span>
 <span class="s2">          ^</span>
-<span class="s2">       8: </span>
 </pre></div>
 </div>
 <p>You wrote an expression like</p>
@@ -803,7 +794,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <span class="s2">       3: </span>
 <span class="s2">    --&gt;4: 1 = a = b</span>
 <span class="s2">          ^</span>
-<span class="s2">       5: </span>
 </pre></div>
 </div>
 <p>You wrote an expression like</p>
@@ -834,7 +824,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="kn">import</span> <span class="nn">pen</span> <span class="kn">from</span> <span class="nn">turtle</span>
                      <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -868,7 +857,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="n">alphabet</span> <span class="o">=</span> <span class="s1">&#39;abc</span>
                          <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>You starting writing a string with a single or double quote
@@ -895,7 +883,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">3</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span> <span class="kc">None</span> <span class="o">=</span> <span class="mi">1</span>
           <span class="o">^</span>
-       <span class="mi">5</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">None</span></code> is a constant in Python; you cannot assign it a value.</p>
@@ -921,7 +908,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <span class="s2">       3: </span>
 <span class="s2">    --&gt;4: __debug__ = 1</span>
 <span class="s2">          ^</span>
-<span class="s2">       5: </span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">__debug__</span></code> is a constant in Python; you cannot assign it a value.</p>
@@ -1002,7 +988,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="n">d</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">a</span>
           <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -1032,7 +1017,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;</span>
     <span class="o">--&gt;</span><span class="mi">2</span><span class="p">:</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
                       <span class="o">^</span>
-       <span class="mi">3</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>Python tells us that the closing <code class="docutils literal notranslate"><span class="pre">]</span></code> on the last line shown
@@ -1064,7 +1048,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">3</span><span class="p">:</span>      <span class="mi">2</span><span class="p">,</span>
     <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span>      <span class="mi">3</span><span class="p">]</span>
                 <span class="o">^</span>
-       <span class="mi">5</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>Python tells us that the closing <code class="docutils literal notranslate"><span class="pre">]</span></code> on the last line shown
@@ -1097,7 +1080,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: Missing parentheses in call to &#39;print&#39; ...&quot;&quot;&quot;</span>
     <span class="o">--&gt;</span><span class="mi">2</span><span class="p">:</span> <span class="nb">print</span> <span class="s1">&#39;hello&#39;</span>
                 <span class="o">^</span>
-       <span class="mi">3</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>Perhaps you need to type</p>
@@ -1154,7 +1136,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">3</span><span class="p">:</span> <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
     <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span>     <span class="k">break</span>
               <span class="o">^</span>
-       <span class="mi">5</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>The Python keyword <code class="docutils literal notranslate"><span class="pre">break</span></code> can only be used inside a for loop or inside a while loop.</p>
@@ -1179,7 +1160,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">3</span><span class="p">:</span> <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
     <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span>     <span class="k">continue</span>
               <span class="o">^</span>
-       <span class="mi">5</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>The Python keyword <code class="docutils literal notranslate"><span class="pre">continue</span></code> can only be used inside a for loop or inside a while loop.</p>
@@ -1204,7 +1184,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;don&#39;</span><span class="n">t</span><span class="s1">&#39;</span>
                          <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -1263,7 +1242,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>  <span class="mi">3</span><span class="p">}</span>
                      <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -1292,7 +1270,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>  <span class="mi">3</span><span class="p">]</span>
                      <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -1321,7 +1298,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>  <span class="mi">3</span><span class="p">)</span>
                      <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -1378,7 +1354,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <span class="s2">       5: </span>
 <span class="s2">    --&gt;6: len(&#39;a&#39;) = 3</span>
 <span class="s2">          ^</span>
-<span class="s2">       7: </span>
 </pre></div>
 </div>
 <p>You wrote the expression</p>
@@ -1408,7 +1383,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <span class="s2">       5: </span>
 <span class="s2">    --&gt;6: func(a, b=3) = 4</span>
 <span class="s2">          ^</span>
-<span class="s2">       7: </span>
 </pre></div>
 </div>
 <p>You wrote an expression like</p>
@@ -1438,7 +1412,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <span class="s2">       3: </span>
 <span class="s2">    --&gt;4: ages = {&#39;Alice&#39;=22, &#39;Bob&#39;=24}</span>
 <span class="s2">                         ^</span>
-<span class="s2">       5: </span>
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -1505,7 +1478,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">4</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span> <span class="n">test</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
                     <span class="o">^</span>
-       <span class="mi">6</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>In Python, you can call functions with only positional arguments</p>
@@ -1543,7 +1515,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <span class="s2">       3: </span>
 <span class="s2">    --&gt;4: print(f&quot;Bob is </span><span class="si">{age[&#39;Bob]}</span><span class="s2"> years old.&quot;)</span>
 <span class="s2">                ^</span>
-<span class="s2">       5: </span>
 </pre></div>
 </div>
 <p>Inside an f-string, which is a string prefixed by the letter f,
@@ -1570,7 +1541,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">6</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">foo</span><span class="p">())</span>
           <span class="o">^</span>
-       <span class="mi">8</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -1630,7 +1600,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">5</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="o">--&gt;</span><span class="mi">6</span><span class="p">:</span>     <span class="k">global</span> <span class="n">x</span>
               <span class="o">^</span>
-       <span class="mi">7</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>You are including the statement</p>
@@ -1662,7 +1631,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">11</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="o">--&gt;</span><span class="mi">12</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="k">pass</span> <span class="o">=</span> <span class="mi">2</span>
              <span class="o">^</span>
-       <span class="mi">13</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -1689,7 +1657,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <span class="s2">       4: </span>
 <span class="s2">    --&gt;5: print(</span><span class="se">\t</span><span class="s2">)</span>
 <span class="s2">                   ^</span>
-<span class="s2">       6: </span>
 </pre></div>
 </div>
 <p>You are using the continuation character <code class="docutils literal notranslate"><span class="pre">\</span></code> outside of a string,
@@ -1716,7 +1683,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">6</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
                    <span class="o">^</span>
-       <span class="mi">8</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>One of the following two possibilities could be the cause:</p>
@@ -1752,7 +1718,6 @@ beyond the location indicated by –&gt; and ^.</p>
        5: 
     --&gt;6: 🤖 = &#39;Reeborg&#39;
           ^
-       7: 
 </pre></div>
 </div>
 <p>You likely used some unicode character that is not allowed
@@ -1891,7 +1856,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">4</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span> <span class="k">del</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
               <span class="o">^</span>
-       <span class="mi">6</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>You attempted to delete a function call</p>
@@ -1923,7 +1887,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">6</span><span class="p">:</span>     <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span>     <span class="k">global</span> <span class="n">p</span>
               <span class="o">^</span>
-       <span class="mi">8</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>You assigned a value to the variable <code class="docutils literal notranslate"><span class="pre">p</span></code>
@@ -1949,7 +1912,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">6</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
     <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span>     <span class="k">global</span> <span class="n">r</span>
               <span class="o">^</span>
-       <span class="mi">8</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>You used the variable <code class="docutils literal notranslate"><span class="pre">r</span></code>
@@ -1976,7 +1938,6 @@ beyond the location indicated by –&gt; and ^.</p>
         <span class="mi">8</span><span class="p">:</span>         <span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
     <span class="o">--&gt;</span> <span class="mi">9</span><span class="p">:</span>         <span class="k">nonlocal</span> <span class="n">q</span>
                    <span class="o">^</span>
-       <span class="mi">10</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>You used the variable <code class="docutils literal notranslate"><span class="pre">q</span></code>
@@ -2003,7 +1964,6 @@ beyond the location indicated by –&gt; and ^.</p>
         <span class="mi">8</span><span class="p">:</span>         <span class="n">s</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="o">--&gt;</span> <span class="mi">9</span><span class="p">:</span>         <span class="k">nonlocal</span> <span class="n">s</span>
                    <span class="o">^</span>
-       <span class="mi">10</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>You assigned a value to the variable <code class="docutils literal notranslate"><span class="pre">s</span></code>
@@ -2030,7 +1990,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <span class="s2">       3: </span>
 <span class="s2">    --&gt;4: (True := 1)</span>
 <span class="s2">           ^</span>
-<span class="s2">       5: </span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">True</span></code> is a constant in Python; you cannot assign it a value.</p>
@@ -2055,7 +2014,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <span class="s2">       3: </span>
 <span class="s2">    --&gt;4: a + 1 = 2</span>
 <span class="s2">          ^</span>
-<span class="s2">       5: </span>
 </pre></div>
 </div>
 <p>You wrote an expression that includes some mathematical operations
@@ -2082,7 +2040,6 @@ beyond the location indicated by –&gt; and ^.</p>
        2: 
     --&gt;3: a = `1`
               ^
-       4: 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -2111,7 +2068,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span>
           <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>On the left-hand side of an equal sign, you have a
@@ -2137,7 +2093,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="n">a</span> <span class="k">if</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
           <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>On the left-hand side of an equal sign, you have a
@@ -2167,7 +2122,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">4</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span>     <span class="k">nonlocal</span> <span class="n">x</span>
               <span class="o">^</span>
-       <span class="mi">6</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>You used <code class="docutils literal notranslate"><span class="pre">x</span></code> as a parameter for a function
@@ -2220,7 +2174,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">4</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
     <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span>     <span class="k">nonlocal</span> <span class="n">ab</span>
               <span class="o">^</span>
-       <span class="mi">6</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>You declared the variable <code class="docutils literal notranslate"><span class="pre">ab</span></code> as being a
@@ -2246,7 +2199,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">3</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span> <span class="k">nonlocal</span> <span class="n">cd</span>
           <span class="o">^</span>
-       <span class="mi">5</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>You used the nonlocal keyword at a module level.
@@ -2302,7 +2254,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">3</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">ad</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ad</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
                   <span class="o">^</span>
-       <span class="mi">5</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>You have called a function repeating the same keyword argument.
@@ -2350,7 +2301,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;</span>
     <span class="o">--&gt;</span><span class="mi">2</span><span class="p">:</span> <span class="nb">print</span> <span class="nb">len</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
                 <span class="o">^</span>
-       <span class="mi">3</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -2377,7 +2327,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;</span>
     <span class="o">--&gt;</span><span class="mi">2</span><span class="p">:</span> <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
           <span class="o">^</span>
-       <span class="mi">3</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -2404,7 +2353,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;</span>
     <span class="o">--&gt;</span><span class="mi">2</span><span class="p">:</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">friendly</span>
               <span class="o">^</span>
-       <span class="mi">3</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -2432,7 +2380,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;</span>
     <span class="o">--&gt;</span><span class="mi">2</span><span class="p">:</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">friendly</span>
                     <span class="o">^</span>
-       <span class="mi">3</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -2460,7 +2407,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;</span>
     <span class="o">--&gt;</span><span class="mi">2</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="o">.</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">))</span>
                     <span class="o">^</span>
-       <span class="mi">3</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -2487,7 +2433,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <span class="s2">       5: </span>
 <span class="s2">    --&gt;6: f&#39;</span><span class="si">{x}</span><span class="s2">&#39; = 42</span>
 <span class="s2">          ^</span>
-<span class="s2">       7: </span>
 </pre></div>
 </div>
 <p>You wrote an expression that has an f-string
@@ -2513,7 +2458,6 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;</span>
     <span class="o">--&gt;</span><span class="mi">2</span><span class="p">:</span> <span class="k">raise</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span>
                  <span class="o">^</span>
-       <span class="mi">3</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -2540,7 +2484,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">5</span><span class="p">:</span> <span class="n">L</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
     <span class="o">--&gt;</span><span class="mi">6</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">L</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
             <span class="o">^</span>
-       <span class="mi">7</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>You are using a generator expression, something of the form
@@ -2568,7 +2511,6 @@ beyond the location indicated by –&gt; and ^.</p>
        2:    and  SyntaxError: invalid character &#39;«&#39; (U+00AB) in Python 3.9&quot;&quot;&quot;
     --&gt;3: a = « hello »
               ^
-       4: 
 </pre></div>
 </div>
 <p>Python indicates that you used some unicode characters not allowed

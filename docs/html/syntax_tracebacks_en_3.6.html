@@ -341,7 +341,6 @@ beyond the location indicated by --&gt; and ^.
    3: if True:
 --&gt;4: pass
          ^
-   5:
 
     In this case, the line identified above
     was expected to begin a new indented block.
@@ -369,7 +368,6 @@ beyond the location indicated by --&gt; and ^.
    3:     pass
 --&gt;4:       pass
            ^
-   5:
 
     In this case, the line identified above
     is more indented than expected and
@@ -398,7 +396,6 @@ beyond the location indicated by --&gt; and ^.
    3:       pass
 --&gt;4:     pass
               ^
-   5:
 
     In this case, the line identified above is
     less indented than the preceding one,
@@ -431,7 +428,6 @@ beyond the location indicated by --&gt; and ^.
    6:     if True:
 --&gt;7:       pass
            ^
-   8:
 </pre></div>
 </div>
 </div>
@@ -455,7 +451,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: def = 2
           ^
-   4:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -701,7 +696,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: 1 = a
      ^
-   4:
 
     You wrote an expression like
 
@@ -734,7 +728,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: 1 = 2
      ^
-   4:
 
     You wrote an expression like
 
@@ -765,7 +758,6 @@ beyond the location indicated by --&gt; and ^.
    6:
 --&gt;7: {1, 2, 3} = 4
      ^
-   8:
 
     You wrote an expression like
 
@@ -796,7 +788,6 @@ beyond the location indicated by --&gt; and ^.
    6:
 --&gt;7: {1 : 2, 2 : 4} = 5
      ^
-   8:
 
     You wrote an expression like
 
@@ -827,7 +818,6 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: 1 = a = b
      ^
-   5:
 
     You wrote an expression like
 
@@ -858,7 +848,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: import pen from turtle
                     ^
-   4:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -892,7 +881,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: alphabet = &#39;abc
                      ^
-   4:
 
     You starting writing a string with a single or double quote
     but never ended the string with another quote on that line.
@@ -920,7 +908,6 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: None = 1
      ^
-   5:
 
     `None` is a constant in Python; you cannot assign it a value.
 </pre></div>
@@ -947,7 +934,6 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: __debug__ = 1
      ^
-   5:
 
     `__debug__` is a constant in Python; you cannot assign it a value.
 </pre></div>
@@ -1037,7 +1023,6 @@ beyond the location indicated by --&gt; and ^.
    2: a = (b+c
 --&gt;3: d = a*a
       ^
-   4:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1068,7 +1053,6 @@ beyond the location indicated by --&gt; and ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: x = (1, 2, 3]
                   ^
-   3:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1100,7 +1084,6 @@ beyond the location indicated by --&gt; and ^.
    3:      2,
 --&gt;4:      3]
             ^
-   5:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1133,7 +1116,6 @@ beyond the location indicated by --&gt; and ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: Missing parentheses in call to &#39;print&#39; ...&quot;&quot;&quot;
 --&gt;2: print &#39;hello&#39;
                   ^
-   3:
 
     Perhaps you need to type
 
@@ -1193,7 +1175,6 @@ beyond the location indicated by --&gt; and ^.
    3: if True:
 --&gt;4:     break
          ^
-   5:
 
     The Python keyword `break` can only be used inside a for loop or inside a while loop.
 </pre></div>
@@ -1219,7 +1200,6 @@ beyond the location indicated by --&gt; and ^.
    3: if True:
 --&gt;4:     continue
          ^
-   5:
 
     The Python keyword `continue` can only be used inside a for loop or inside a while loop.
 </pre></div>
@@ -1245,7 +1225,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: message = &#39;don&#39;t&#39;
                      ^
-   4:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1308,7 +1287,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: a = {1, 2  3}
                  ^
-   4:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1339,7 +1317,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: a = [1, 2  3]
                  ^
-   4:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1370,7 +1347,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: a = (1, 2  3)
                  ^
-   4:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1431,7 +1407,6 @@ beyond the location indicated by --&gt; and ^.
    5:
 --&gt;6: len(&#39;a&#39;) = 3
      ^
-   7:
 
     You wrote the expression
 
@@ -1462,7 +1437,6 @@ beyond the location indicated by --&gt; and ^.
    5:
 --&gt;6: func(a, b=3) = 4
      ^
-   7:
 
     You wrote an expression like
 
@@ -1493,7 +1467,6 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: ages = {&#39;Alice&#39;=22, &#39;Bob&#39;=24}
                      ^
-   5:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1563,7 +1536,6 @@ beyond the location indicated by --&gt; and ^.
    4:
 --&gt;5: test(a=1, b)
                ^
-   6:
 
     In Python, you can call functions with only positional arguments
 
@@ -1602,7 +1574,6 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: print(f&quot;Bob is {age[&#39;Bob]} years old.&quot;)
            ^
-   5:
 
     Inside an f-string, which is a string prefixed by the letter f,
     you have another string, which starts with either a
@@ -1630,7 +1601,6 @@ beyond the location indicated by --&gt; and ^.
    6:
 --&gt;7: print(foo())
           ^
-   8:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1693,7 +1663,6 @@ beyond the location indicated by --&gt; and ^.
    5: def f(x):
 --&gt;6:     global x
          ^
-   7:
 
     You are including the statement
 
@@ -1726,7 +1695,6 @@ beyond the location indicated by --&gt; and ^.
    11: a.x = 1
 --&gt;12: a.pass = 2
             ^
-   13:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1755,7 +1723,6 @@ beyond the location indicated by --&gt; and ^.
    4:
 --&gt;5: print(\t)
                ^
-   6:
 
     You are using the continuation character `\` outside of a string,
     and it is followed by some other character(s).
@@ -1783,7 +1750,6 @@ beyond the location indicated by --&gt; and ^.
    6:
 --&gt;7: a = dict(&#39;key&#39;=1)
               ^
-   8:
 
     You likely called a function with a named argument:
 
@@ -1815,7 +1781,6 @@ beyond the location indicated by --&gt; and ^.
    5:
 --&gt;6: 🤖 = &#39;Reeborg&#39;
       ^
-   7:
 
     You likely used some unicode character that is not allowed
     as part of a variable name in Python.
@@ -1963,7 +1928,6 @@ beyond the location indicated by --&gt; and ^.
    4:
 --&gt;5: del f(a)
          ^
-   6:
 
     You attempted to delete a function call
 
@@ -1994,7 +1958,6 @@ beyond the location indicated by --&gt; and ^.
    6:     p = 1
 --&gt;7:     global p
          ^
-   8:
 
     You assigned a value to the variable `p`
     before declaring it as a global variable.
@@ -2021,7 +1984,6 @@ beyond the location indicated by --&gt; and ^.
    6:     print(r)
 --&gt;7:     global r
          ^
-   8:
 
     You used the variable `r`
     before declaring it as a global variable.
@@ -2049,7 +2011,6 @@ beyond the location indicated by --&gt; and ^.
     8:         print(q)
 --&gt; 9:         nonlocal q
               ^
-   10:
 
     You used the variable `q`
     before declaring it as a nonlocal variable.
@@ -2077,7 +2038,6 @@ beyond the location indicated by --&gt; and ^.
     8:         s = 2
 --&gt; 9:         nonlocal s
               ^
-   10:
 
     You assigned a value to the variable `s`
     before declaring it as a nonlocal variable.
@@ -2104,7 +2064,6 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: (True := 1)
             ^
-   5:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -2135,7 +2094,6 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: a + 1 = 2
      ^
-   5:
 
     You wrote an expression that includes some mathematical operations
     on the left-hand side of the equal sign which should be
@@ -2163,7 +2121,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: a = `1`
           ^
-   4:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -2194,7 +2151,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: (x for x in x) = 1
      ^
-   4:
 
     On the left-hand side of an equal sign, you have a
     generator expression instead of the name of a variable.
@@ -2221,7 +2177,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: a if 1 else b = 1
      ^
-   4:
 
     On the left-hand side of an equal sign, you have a
     conditional expression instead of the name of a variable.
@@ -2251,7 +2206,6 @@ beyond the location indicated by --&gt; and ^.
    4: def f(x):
 --&gt;5:     nonlocal x
          ^
-   6:
 
     You used `x` as a parameter for a function
     before declaring it also as a nonlocal variable:
@@ -2306,7 +2260,6 @@ beyond the location indicated by --&gt; and ^.
    4: def f():
 --&gt;5:     nonlocal ab
          ^
-   6:
 
     You declared the variable `ab` as being a
     nonlocal variable but it cannot be found.
@@ -2333,7 +2286,6 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: nonlocal cd
      ^
-   5:
 
     You used the nonlocal keyword at a module level.
     The nonlocal keyword refers to a variable inside a function
@@ -2390,7 +2342,6 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: f(ad=1, ad=2)
              ^
-   5:
 
     You have called a function repeating the same keyword argument.
     Each keyword argument should appear only once in a function call.
@@ -2440,7 +2391,6 @@ beyond the location indicated by --&gt; and ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: print len(&#39;hello&#39;)
               ^
-   3:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -2469,7 +2419,6 @@ beyond the location indicated by --&gt; and ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: &gt;&gt;&gt; print(&quot;Hello World!&quot;)
        ^
-   3:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -2498,7 +2447,6 @@ beyond the location indicated by --&gt; and ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: pip install friendly
                 ^
-   3:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -2528,7 +2476,6 @@ beyond the location indicated by --&gt; and ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: python -m pip install friendly
                   ^
-   3:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -2558,7 +2505,6 @@ beyond the location indicated by --&gt; and ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: print(len.(&#39;hello&#39;))
                 ^
-   3:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -2587,7 +2533,6 @@ beyond the location indicated by --&gt; and ^.
    5:
 --&gt;6: f&#39;{x}&#39; = 42
      ^
-   7:
 
     You wrote an expression that has an f-string
     on the left-hand side of the equal sign.
@@ -2614,7 +2559,6 @@ beyond the location indicated by --&gt; and ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: raise X, Y
              ^
-   3:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -2643,7 +2587,6 @@ beyond the location indicated by --&gt; and ^.
    5: L = range(10)
 --&gt;6: f(x for x in L, 1)
        ^
-   7:
 
     You are using a generator expression, something of the form
         `x for x in thing`
@@ -2672,7 +2615,6 @@ beyond the location indicated by --&gt; and ^.
    2:    and  SyntaxError: invalid character &#39;«&#39; (U+00AB) in Python 3.9&quot;&quot;&quot;
 --&gt;3: a = « hello »
           ^
-   4:
 
     Python indicates that you used some unicode characters not allowed
     as part of a variable name; this includes many emojis.
@@ -2792,7 +2734,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: print(walrus := True)
                    ^
-   4:
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.

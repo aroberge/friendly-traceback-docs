@@ -48,7 +48,6 @@ IndentationError - 1: expected an indented block
        3: if True:
     -->4: pass
              ^
-       5: 
 
         In this case, the line identified above
         was expected to begin a new indented block.
@@ -79,7 +78,6 @@ IndentationError - 2: unexpected indent
        3:     pass
     -->4:       pass
                ^
-       5: 
 
         In this case, the line identified above
         is more indented than expected and 
@@ -111,7 +109,6 @@ IndentationError - 3: unindent does not match ...
        3:       pass
     -->4:     pass
                   ^
-       5: 
 
         In this case, the line identified above is
         less indented than the preceding one,
@@ -147,7 +144,6 @@ TabError
        6:     if True:
     -->7: 	pass
                ^
-       8: 
 
 SyntaxError - Assign to keyword
 -------------------------------
@@ -173,7 +169,6 @@ SyntaxError - Assign to keyword
        2: 
     -->3: def = 2
               ^
-       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -448,7 +443,6 @@ SyntaxError - can't assign to literal - 1
        2: 
     -->3: 1 = a
          ^
-       4: 
 
         You wrote an expression like
         
@@ -485,7 +479,6 @@ SyntaxError - can't assign to literal - 2
        2: 
     -->3: 1 = 2
          ^
-       4: 
 
         You wrote an expression like
         
@@ -519,7 +512,6 @@ SyntaxError - can't assign to literal - 3
        6: 
     -->7: {1, 2, 3} = 4
          ^
-       8: 
 
         You wrote an expression like
         
@@ -553,7 +545,6 @@ SyntaxError - can't assign to literal - 4
        6: 
     -->7: {1 : 2, 2 : 4} = 5
          ^
-       8: 
 
         You wrote an expression like
         
@@ -587,7 +578,6 @@ SyntaxError - can't assign to literal - 5
        3: 
     -->4: 1 = a = b
          ^
-       5: 
 
         You wrote an expression like
         
@@ -621,7 +611,6 @@ SyntaxError - import X from Y
        2: 
     -->3: import pen from turtle
                         ^
-       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -660,7 +649,6 @@ SyntaxError - EOL while scanning string literal
        2: 
     -->3: alphabet = 'abc
                          ^
-       4: 
 
         You starting writing a string with a single or double quote
         but never ended the string with another quote on that line.
@@ -691,7 +679,6 @@ SyntaxError - assignment to keyword (None)
        3: 
     -->4: None = 1
          ^
-       5: 
 
         `None` is a constant in Python; you cannot assign it a value.
         
@@ -722,7 +709,6 @@ SyntaxError - assignment to keyword (__debug__)
        3: 
     -->4: __debug__ = 1
          ^
-       5: 
 
         `__debug__` is a constant in Python; you cannot assign it a value.
         
@@ -822,7 +808,6 @@ SyntaxError - unclosed parenthesis - 2
        2: a = (b+c
     -->3: d = a*a
           ^
-       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -856,7 +841,6 @@ SyntaxError - mismatched brackets
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: x = (1, 2, 3]
                       ^
-       3: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -891,7 +875,6 @@ SyntaxError - mismatched brackets - 2
        3:      2,
     -->4:      3]
                 ^
-       5: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -927,7 +910,6 @@ SyntaxError - print is a function
        1: """Should raise SyntaxError: Missing parentheses in call to 'print' ..."""
     -->2: print 'hello'
                       ^
-       3: 
 
         Perhaps you need to type
         
@@ -993,7 +975,6 @@ SyntaxError - break outside loop
        3: if True:
     -->4:     break
              ^
-       5: 
 
         The Python keyword `break` can only be used inside a for loop or inside a while loop.
         
@@ -1022,7 +1003,6 @@ SyntaxError - continue outside loop
        3: if True:
     -->4:     continue
              ^
-       5: 
 
         The Python keyword `continue` can only be used inside a for loop or inside a while loop.
         
@@ -1051,7 +1031,6 @@ SyntaxError - quote inside a string
        2: 
     -->3: message = 'don't'
                          ^
-       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1120,7 +1099,6 @@ SyntaxError - missing comma in a set
        2: 
     -->3: a = {1, 2  3}
                      ^
-       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1153,7 +1131,6 @@ SyntaxError - missing comma in a list
        2: 
     -->3: a = [1, 2  3]
                      ^
-       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1186,7 +1163,6 @@ SyntaxError - missing comma in a tuple
        2: 
     -->3: a = (1, 2  3)
                      ^
-       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1251,7 +1227,6 @@ SyntaxError - can't assign to function call - 1
        5: 
     -->6: len('a') = 3
          ^
-       7: 
 
         You wrote the expression
         
@@ -1285,7 +1260,6 @@ SyntaxError - can't assign to function call - 2
        5: 
     -->6: func(a, b=3) = 4
          ^
-       7: 
 
         You wrote an expression like
         
@@ -1319,7 +1293,6 @@ SyntaxError - used equal sign instead of colon
        3: 
     -->4: ages = {'Alice'=22, 'Bob'=24}
                          ^
-       5: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1395,7 +1368,6 @@ SyntaxError - positional argument follows keyword argument
        4: 
     -->5: test(a=1, b)
                    ^
-       6: 
 
         In Python, you can call functions with only positional arguments
         
@@ -1437,7 +1409,6 @@ SyntaxError - f-string: unterminated string
        3: 
     -->4: print(f"Bob is {age['Bob]} years old.")
                ^
-       5: 
 
         Inside an f-string, which is a string prefixed by the letter f, 
         you have another string, which starts with either a
@@ -1468,7 +1439,6 @@ SyntaxError - unclosed bracket
        6: 
     -->7: print(foo())
               ^
-       8: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1537,7 +1507,6 @@ SyntaxError - name is parameter and global
        5: def f(x):
     -->6:     global x
              ^
-       7: 
 
         You are including the statement
         
@@ -1573,7 +1542,6 @@ SyntaxError - keyword as attribute
        11: a.x = 1
     -->12: a.pass = 2
                 ^
-       13: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -1606,7 +1574,6 @@ SyntaxError - content passed continuation line character
        4: 
     -->5: print(\t)
                    ^
-       6: 
 
         You are using the continuation character `\` outside of a string,
         and it is followed by some other character(s).
@@ -1638,7 +1605,6 @@ SyntaxError - keyword can't be an expression
        6: 
     -->7: a = dict('key'=1)
                   ^
-       8: 
 
         You likely called a function with a named argument:
         
@@ -1674,7 +1640,6 @@ SyntaxError - invalid character in identifier
        5: 
     -->6: 🤖 = 'Reeborg'
           ^
-       7: 
 
         You likely used some unicode character that is not allowed
         as part of a variable name in Python.
@@ -1838,7 +1803,6 @@ SyntaxError - delete function call
        4: 
     -->5: del f(a)
              ^
-       6: 
 
         You attempted to delete a function call
         
@@ -1872,7 +1836,6 @@ SyntaxError - assigned prior to global declaration
        6:     p = 1
     -->7:     global p
              ^
-       8: 
 
         You assigned a value to the variable `p`
         before declaring it as a global variable.
@@ -1902,7 +1865,6 @@ SyntaxError - used prior to global declaration
        6:     print(r)
     -->7:     global r
              ^
-       8: 
 
         You used the variable `r`
         before declaring it as a global variable.
@@ -1933,7 +1895,6 @@ SyntaxError - assigned prior to nonlocal declaration
         8:         print(q)
     --> 9:         nonlocal q
                   ^
-       10: 
 
         You used the variable `q`
         before declaring it as a nonlocal variable.
@@ -1964,7 +1925,6 @@ SyntaxError - used prior to nonlocal declaration
         8:         s = 2
     --> 9:         nonlocal s
                   ^
-       10: 
 
         You assigned a value to the variable `s`
         before declaring it as a nonlocal variable.
@@ -1994,7 +1954,6 @@ SyntaxError - named assignment with Python constant
        3: 
     -->4: (True := 1)
                 ^
-       5: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2028,7 +1987,6 @@ SyntaxError - assignment to operator
        3: 
     -->4: a + 1 = 2
          ^
-       5: 
 
         You wrote an expression that includes some mathematical operations
         on the left-hand side of the equal sign which should be
@@ -2058,7 +2016,6 @@ SyntaxError - using the backquote character
        2: 
     -->3: a = `1`
               ^
-       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2091,7 +2048,6 @@ SyntaxError - assign to generator expression
        2: 
     -->3: (x for x in x) = 1
          ^
-       4: 
 
         On the left-hand side of an equal sign, you have a
         generator expression instead of the name of a variable.
@@ -2121,7 +2077,6 @@ SyntaxError - assign to conditional expression
        2: 
     -->3: a if 1 else b = 1
          ^
-       4: 
 
         On the left-hand side of an equal sign, you have a
         conditional expression instead of the name of a variable.
@@ -2153,7 +2108,6 @@ SyntaxError - name is parameter and nonlocal
        4: def f(x):
     -->5:     nonlocal x
              ^
-       6: 
 
         You used `x` as a parameter for a function
         before declaring it also as a nonlocal variable:
@@ -2214,7 +2168,6 @@ SyntaxError - nonlocal variable not found
        4: def f():
     -->5:     nonlocal ab
              ^
-       6: 
 
         You declared the variable `ab` as being a
         nonlocal variable but it cannot be found.
@@ -2244,7 +2197,6 @@ SyntaxError - nonlocal variable not found at module level
        3: 
     -->4: nonlocal cd
          ^
-       5: 
 
         You used the nonlocal keyword at a module level.
         The nonlocal keyword refers to a variable inside a function
@@ -2306,7 +2258,6 @@ SyntaxError - keyword arg only once in function call
        3: 
     -->4: f(ad=1, ad=2)
                  ^
-       5: 
 
         You have called a function repeating the same keyword argument.
         Each keyword argument should appear only once in a function call.
@@ -2363,7 +2314,6 @@ SyntaxError - print is a function 2
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: print len('hello')
                   ^
-       3: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2395,7 +2345,6 @@ SyntaxError - copy/paste from interpreter
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: >>> print("Hello World!")
            ^
-       3: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2427,7 +2376,6 @@ SyntaxError - Using pip from interpreter
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: pip install friendly
                     ^
-       3: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2460,7 +2408,6 @@ SyntaxError - Using pip from interpreter 2
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: python -m pip install friendly
                       ^
-       3: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2493,7 +2440,6 @@ SyntaxError - dot followed by parenthesis
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: print(len.('hello'))
                     ^
-       3: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2525,7 +2471,6 @@ SyntaxError - cannot assign to f-string
        5: 
     -->6: f'{x}' = 42
          ^
-       7: 
 
         You wrote an expression that has an f-string
         on the left-hand side of the equal sign.
@@ -2555,7 +2500,6 @@ SyntaxError - raising multiple exceptions
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: raise X, Y
                  ^
-       3: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
@@ -2587,7 +2531,6 @@ SyntaxError - parenthesis around generator expression
        5: L = range(10)
     -->6: f(x for x in L, 1)
            ^
-       7: 
 
         You are using a generator expression, something of the form
             `x for x in thing`
@@ -2619,7 +2562,6 @@ SyntaxError - invalid character (bad quote)
        2:    and  SyntaxError: invalid character '«' (U+00AB) in Python 3.9"""
     -->3: a = « hello »
               ^
-       4: 
 
         Python indicates that you used some unicode characters not allowed
         as part of a variable name; this includes many emojis.
@@ -2752,7 +2694,6 @@ Walrus operator does not exist - yet
        2: 
     -->3: print(walrus := True)
                        ^
-       4: 
 
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.

@@ -45,7 +45,6 @@ beyond the location indicated by --> and ^.
        3: if True:
     -->4: pass
           ^
-       5: 
 
 ```
 
@@ -82,7 +81,6 @@ beyond the location indicated by --> and ^.
        3:     pass
     -->4:       pass
                ^
-       5: 
 
 ```
 
@@ -120,7 +118,6 @@ beyond the location indicated by --> and ^.
        3:       pass
     -->4:     pass
                   ^
-       5: 
 
 ```
 
@@ -162,7 +159,6 @@ beyond the location indicated by --> and ^.
        6:     if True:
     -->7: 	pass
                ^
-       8: 
 
 ```
 
@@ -195,7 +191,6 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: def = 2
               ^
-       4: 
 
 ```
 
@@ -518,7 +513,6 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: 1 = a
           ^
-       4: 
 
 ```
 
@@ -561,7 +555,6 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: 1 = 2
           ^
-       4: 
 
 ```
 
@@ -601,7 +594,6 @@ beyond the location indicated by --> and ^.
        6: 
     -->7: {1, 2, 3} = 4
           ^
-       8: 
 
 ```
 
@@ -641,7 +633,6 @@ beyond the location indicated by --> and ^.
        6: 
     -->7: {1 : 2, 2 : 4} = 5
           ^
-       8: 
 
 ```
 
@@ -681,7 +672,6 @@ beyond the location indicated by --> and ^.
        3: 
     -->4: 1 = a = b
           ^
-       5: 
 
 ```
 
@@ -721,7 +711,6 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: import pen from turtle
                      ^
-       4: 
 
 ```
 
@@ -766,7 +755,6 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: alphabet = 'abc
                          ^
-       4: 
 
 ```
 
@@ -805,7 +793,6 @@ beyond the location indicated by --> and ^.
        3: 
     -->4: None = 1
           ^
-       5: 
 
 ```
 
@@ -844,7 +831,6 @@ beyond the location indicated by --> and ^.
        3: 
     -->4: __debug__ = 1
           ^
-       5: 
 
 ```
 
@@ -956,7 +942,6 @@ beyond the location indicated by --> and ^.
        2: a = (b+c
     -->3: d = a*a
           ^
-       4: 
 
 ```
 
@@ -996,7 +981,6 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: x = (1, 2, 3]
                       ^
-       3: 
 
 ```
 
@@ -1039,7 +1023,6 @@ beyond the location indicated by --> and ^.
        3:      2,
     -->4:      3]
                 ^
-       5: 
 
 ```
 
@@ -1083,7 +1066,6 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: Missing parentheses in call to 'print' ..."""
     -->2: print 'hello'
                 ^
-       3: 
 
 ```
 
@@ -1161,7 +1143,6 @@ beyond the location indicated by --> and ^.
        3: if True:
     -->4:     break
               ^
-       5: 
 
 ```
 
@@ -1196,7 +1177,6 @@ beyond the location indicated by --> and ^.
        3: if True:
     -->4:     continue
               ^
-       5: 
 
 ```
 
@@ -1231,7 +1211,6 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: message = 'don't'
                          ^
-       4: 
 
 ```
 
@@ -1314,7 +1293,6 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: a = {1, 2  3}
                      ^
-       4: 
 
 ```
 
@@ -1356,7 +1334,6 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: a = [1, 2  3]
                      ^
-       4: 
 
 ```
 
@@ -1398,7 +1375,6 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: a = (1, 2  3)
                      ^
-       4: 
 
 ```
 
@@ -1479,7 +1455,6 @@ beyond the location indicated by --> and ^.
        5: 
     -->6: len('a') = 3
           ^
-       7: 
 
 ```
 
@@ -1519,7 +1494,6 @@ beyond the location indicated by --> and ^.
        5: 
     -->6: func(a, b=3) = 4
           ^
-       7: 
 
 ```
 
@@ -1559,7 +1533,6 @@ beyond the location indicated by --> and ^.
        3: 
     -->4: ages = {'Alice'=22, 'Bob'=24}
                          ^
-       5: 
 
 ```
 
@@ -1647,7 +1620,6 @@ beyond the location indicated by --> and ^.
        4: 
     -->5: test(a=1, b)
                     ^
-       6: 
 
 ```
 
@@ -1695,7 +1667,6 @@ beyond the location indicated by --> and ^.
        3: 
     -->4: print(f"Bob is {age['Bob]} years old.")
                 ^
-       5: 
 
 ```
 
@@ -1732,7 +1703,6 @@ beyond the location indicated by --> and ^.
        6: 
     -->7: print(foo())
           ^
-       8: 
 
 ```
 
@@ -1813,7 +1783,6 @@ beyond the location indicated by --> and ^.
        5: def f(x):
     -->6:     global x
               ^
-       7: 
 
 ```
 
@@ -1855,7 +1824,6 @@ beyond the location indicated by --> and ^.
        11: a.x = 1
     -->12: a.pass = 2
              ^
-       13: 
 
 ```
 
@@ -1894,7 +1862,6 @@ beyond the location indicated by --> and ^.
        4: 
     -->5: print(\t)
                    ^
-       6: 
 
 ```
 
@@ -1932,7 +1899,6 @@ beyond the location indicated by --> and ^.
        6: 
     -->7: a = dict('key'=1)
                    ^
-       8: 
 
 ```
 
@@ -1976,7 +1942,6 @@ beyond the location indicated by --> and ^.
        5: 
     -->6: 🤖 = 'Reeborg'
           ^
-       7: 
 
 ```
 
@@ -2170,7 +2135,6 @@ beyond the location indicated by --> and ^.
        4: 
     -->5: del f(a)
               ^
-       6: 
 
 ```
 
@@ -2210,7 +2174,6 @@ beyond the location indicated by --> and ^.
        6:     p = 1
     -->7:     global p
               ^
-       8: 
 
 ```
 
@@ -2246,7 +2209,6 @@ beyond the location indicated by --> and ^.
        6:     print(r)
     -->7:     global r
               ^
-       8: 
 
 ```
 
@@ -2285,7 +2247,6 @@ beyond the location indicated by --> and ^.
         8:         print(q)
     --> 9:         nonlocal q
                    ^
-       10: 
 
 ```
 
@@ -2324,7 +2285,6 @@ beyond the location indicated by --> and ^.
         8:         s = 2
     --> 9:         nonlocal s
                    ^
-       10: 
 
 ```
 
@@ -2363,7 +2323,6 @@ beyond the location indicated by --> and ^.
        3: 
     -->4: (True := 1)
            ^
-       5: 
 
 ```
 
@@ -2399,7 +2358,6 @@ beyond the location indicated by --> and ^.
        3: 
     -->4: a + 1 = 2
           ^
-       5: 
 
 ```
 
@@ -2436,7 +2394,6 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: a = `1`
               ^
-       4: 
 
 ```
 
@@ -2476,7 +2433,6 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: (x for x in x) = 1
           ^
-       4: 
 
 ```
 
@@ -2512,7 +2468,6 @@ beyond the location indicated by --> and ^.
        2: 
     -->3: a if 1 else b = 1
           ^
-       4: 
 
 ```
 
@@ -2551,7 +2506,6 @@ beyond the location indicated by --> and ^.
        4: def f(x):
     -->5:     nonlocal x
               ^
-       6: 
 
 ```
 
@@ -2624,7 +2578,6 @@ beyond the location indicated by --> and ^.
        4: def f():
     -->5:     nonlocal ab
               ^
-       6: 
 
 ```
 
@@ -2660,7 +2613,6 @@ beyond the location indicated by --> and ^.
        3: 
     -->4: nonlocal cd
           ^
-       5: 
 
 ```
 
@@ -2735,7 +2687,6 @@ beyond the location indicated by --> and ^.
        3: 
     -->4: f(ad=1, ad=2)
                   ^
-       5: 
 
 ```
 
@@ -2804,7 +2755,6 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: print len('hello')
                 ^
-       3: 
 
 ```
 
@@ -2842,7 +2792,6 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: >>> print("Hello World!")
           ^
-       3: 
 
 ```
 
@@ -2880,7 +2829,6 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: pip install friendly
               ^
-       3: 
 
 ```
 
@@ -2919,7 +2867,6 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: python -m pip install friendly
                     ^
-       3: 
 
 ```
 
@@ -2958,7 +2905,6 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: print(len.('hello'))
                     ^
-       3: 
 
 ```
 
@@ -2996,7 +2942,6 @@ beyond the location indicated by --> and ^.
        5: 
     -->6: f'{x}' = 42
           ^
-       7: 
 
 ```
 
@@ -3032,7 +2977,6 @@ beyond the location indicated by --> and ^.
        1: """Should raise SyntaxError: invalid syntax"""
     -->2: raise X, Y
                  ^
-       3: 
 
 ```
 
@@ -3070,7 +3014,6 @@ beyond the location indicated by --> and ^.
        5: L = range(10)
     -->6: f(x for x in L, 1)
             ^
-       7: 
 
 ```
 
@@ -3110,7 +3053,6 @@ beyond the location indicated by --> and ^.
        2:    and  SyntaxError: invalid character '«' (U+00AB) in Python 3.9"""
     -->3: a = « hello »
               ^
-       4: 
 
 ```
 
