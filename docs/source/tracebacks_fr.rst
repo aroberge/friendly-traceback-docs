@@ -55,40 +55,27 @@ AttributeError - class attribute
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_common.py", line 227, in create_tracebacks
-        result, message = getattr(mod, function)()
-      File "TESTS:\runtime\test_attribute_error.py", line 28, in test_attribute_error
-        assert not "debug_warning" in result, "Internal error found."
-    AssertionError: Internal error found.
+      File "TESTS:\runtime\test_attribute_error.py", line 35, in test_attribute_error
+        a.x  # Testing instance
+    AttributeError: 'A' object has no attribute 'x'
     
-    Aucune information n’est disponible sur cette exception.
+    Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+        `object.x`
+    et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
     
-    L'exécution s'est arrêtée à la ligne 227 du fichier TESTS:\trb_common.py
+        L’objet `a` n’a pas d’attribut nommé `x`.
+        
+    Exception levée à la ligne 35 du fichier TESTS:\runtime\test_attribute_error.py.
     
-       226:                     if function is not None:
-    -->227:                         result, message = getattr(mod, function)()
-       228:                         save_messages[function] = message
+       33:     try:
+       34:         a = A()
+    -->35:         a.x  # Testing instance
+       36:     except Exception as e:
 
         Objets connus mentionnés ci-dessus :
-            result: '\n    Traceback (most recent call last):\n      File "TESTS...'
-                len(result): 861
-            message: 'error'
-            getattr: <builtin function getattr>
-            mod: <module 'test_attribute_error'>
-                from TESTS:\runtime\test_attribute_error.py
-            function: 'test_attribute_error'
+            a: <test_attribute_error.test_attribute_error.<locals>.A object>
         
-    Exception levée à la ligne 28 du fichier TESTS:\runtime\test_attribute_error.py.
-    
-       26:         friendly_traceback.explain_traceback(redirect="capture")
-       27:     result = friendly_traceback.get_output()
-    -->28:     assert not "debug_warning" in result, "Internal error found."
-       29:     assert "AttributeError: type object 'A' has no attribute 'x'" in result
 
-        Objets connus mentionnés ci-dessus :
-            result: '\n    debug_warning: Internal error caught in `get_likely_c...'
-                len(result): 811
-        
 
 AttributeError - typo in module attribute
 -----------------------------------------

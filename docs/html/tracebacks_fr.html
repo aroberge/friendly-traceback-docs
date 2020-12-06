@@ -315,39 +315,25 @@ Exception levée à la ligne 9 du fichier TESTS:\runtime\test_arithmetic_error.p
 <div class="section" id="attributeerror-class-attribute">
 <h2>AttributeError - class attribute<a class="headerlink" href="#attributeerror-class-attribute" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_common.py&quot;, line 227, in create_tracebacks
-    result, message = getattr(mod, function)()
-  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 28, in test_attribute_error
-    assert not &quot;debug_warning&quot; in result, &quot;Internal error found.&quot;
-AssertionError: Internal error found.
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 35, in test_attribute_error
+    a.x  # Testing instance
+AttributeError: &#39;A&#39; object has no attribute &#39;x&#39;
 
-Aucune information n’est disponible sur cette exception.
+Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+    `object.x`
+et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 227 du fichier TESTS:\trb_common.py
+    L’objet `a` n’a pas d’attribut nommé `x`.
 
-   226:                     if function is not None:
---&gt;227:                         result, message = getattr(mod, function)()
-   228:                         save_messages[function] = message
+Exception levée à la ligne 35 du fichier TESTS:\runtime\test_attribute_error.py.
 
-    Objets connus mentionnés ci-dessus :
-        result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
-            len(result): 861
-        message: &#39;error&#39;
-        getattr: &lt;builtin function getattr&gt;
-        mod: &lt;module &#39;test_attribute_error&#39;&gt;
-            from TESTS:\runtime\test_attribute_error.py
-        function: &#39;test_attribute_error&#39;
-
-Exception levée à la ligne 28 du fichier TESTS:\runtime\test_attribute_error.py.
-
-   26:         friendly_traceback.explain_traceback(redirect=&quot;capture&quot;)
-   27:     result = friendly_traceback.get_output()
---&gt;28:     assert not &quot;debug_warning&quot; in result, &quot;Internal error found.&quot;
-   29:     assert &quot;AttributeError: type object &#39;A&#39; has no attribute &#39;x&#39;&quot; in result
+   33:     try:
+   34:         a = A()
+--&gt;35:         a.x  # Testing instance
+   36:     except Exception as e:
 
     Objets connus mentionnés ci-dessus :
-        result: &#39;\n    debug_warning: Internal error caught in `get_likely_c...&#39;
-            len(result): 811
+        a: &lt;test_attribute_error.test_attribute_error.&lt;locals&gt;.A object&gt;
 </pre></div>
 </div>
 </div>
