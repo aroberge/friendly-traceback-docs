@@ -240,7 +240,6 @@
 
 <span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
 
-
 <span class="kn">from</span> <span class="nn">.version</span> <span class="kn">import</span> <span class="n">__version__</span>  <span class="c1"># noqa</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">path_info</span>
 <span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">session</span>
@@ -449,12 +448,12 @@
 
 
 <div class="viewcode-block" id="set_lang"><a class="viewcode-back" href="../api.html#friendly_traceback.set_lang">[docs]</a><span class="k">def</span> <span class="nf">set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Sets the language to be used by gettext.</span>
+    <span class="sd">&quot;&quot;&quot;Sets the language to be used for the display.</span>
 
 <span class="sd">    If no translations exist for that language, the original</span>
 <span class="sd">    English strings will be used.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">session</span><span class="o">.</span><span class="n">install_gettext</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span></div>
+    <span class="n">session</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="get_lang"><a class="viewcode-back" href="../api.html#friendly_traceback.get_lang">[docs]</a><span class="k">def</span> <span class="nf">get_lang</span><span class="p">():</span>

@@ -199,6 +199,8 @@ SyntaxError - Missing colon - 1
                ^
     SyntaxError: invalid syntax
     
+        Vous avez oublié les deux points, `:`.
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -232,6 +234,8 @@ SyntaxError - Missing colon - 2
                     ^
     SyntaxError: invalid syntax
     
+        Vous avez oublié les deux points, `:`.
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -265,6 +269,8 @@ SyntaxError - elif, not else if
              ^
     SyntaxError: invalid syntax
     
+        Peut-être que vous vouliez plutôt `elif`.
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -298,6 +304,8 @@ SyntaxError - elif, not elseif
                ^
     SyntaxError: invalid syntax
     
+        Peut-être que vous vouliez plutôt `elif`.
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -367,6 +375,8 @@ SyntaxError - malformed def statment - 2
                   ^
     SyntaxError: invalid syntax
     
+        Vous avez peut-être oublié d'écrire des parenthèses.
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -641,6 +651,8 @@ SyntaxError - EOL while scanning string literal
                        ^
     SyntaxError: EOL while scanning string literal
     
+        Avez-vous oublié d’ajouter un guillemet ?
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -1023,6 +1035,8 @@ SyntaxError - quote inside a string
                        ^
     SyntaxError: invalid syntax
     
+        Vous avez peut-être un guillemet écrit au mauvais endroit.
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -1395,6 +1409,8 @@ SyntaxError - f-string: unterminated string
               ^
     SyntaxError: f-string: unterminated string
     
+        Avez-vous oublié d’ajouter un guillemet ?
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -2006,6 +2022,8 @@ SyntaxError - using the backquote character
             ^
     SyntaxError: invalid syntax
     
+        Vous ne devez pas utiliser le caractère accent grave.
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -2335,6 +2353,8 @@ SyntaxError - copy/paste from interpreter
         ^
     SyntaxError: invalid syntax
     
+        Avez-vous utilisé copier-coller ?
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -2365,6 +2385,8 @@ SyntaxError - Using pip from interpreter
             ^
     SyntaxError: invalid syntax
     
+        Pip ne peut pas être utilisé dans un interprète Python.
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -2396,6 +2418,8 @@ SyntaxError - Using pip from interpreter 2
                   ^
     SyntaxError: invalid syntax
     
+        Pip ne peut pas être utilisé dans un interprète Python.
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -2580,6 +2604,8 @@ SyntaxError - single = instead of double == with if
                  ^
     SyntaxError: invalid syntax
     
+        Peut-être que vous aviez besoin de `==` au lieu de `=`.
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -2612,6 +2638,8 @@ SyntaxError - single = instead of double == with elif
                    ^
     SyntaxError: invalid syntax
     
+        Peut-être que vous aviez besoin de `==` au lieu de `=`.
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -2644,6 +2672,8 @@ SyntaxError - single = instead of double == with while
                 ^
     SyntaxError: invalid syntax
     
+        Peut-être que vous aviez besoin de `==` ou `:=` au lieu de `=`.
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier

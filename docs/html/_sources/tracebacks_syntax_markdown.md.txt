@@ -217,6 +217,10 @@ SyntaxError: invalid syntax
 
 ```
 
+You forgot a colon, `:`.
+
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
@@ -256,6 +260,10 @@ Traceback (most recent call last):
 SyntaxError: invalid syntax
 
 ```
+
+You forgot a colon, `:`.
+
+
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -297,6 +305,10 @@ SyntaxError: invalid syntax
 
 ```
 
+Perhaps you meant to write `elif`.
+
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
@@ -336,6 +348,10 @@ Traceback (most recent call last):
 SyntaxError: invalid syntax
 
 ```
+
+Perhaps you meant to write `elif`.
+
+
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -417,6 +433,10 @@ Traceback (most recent call last):
 SyntaxError: invalid syntax
 
 ```
+
+Perhaps you forgot parentheses.
+
+
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -741,6 +761,10 @@ Traceback (most recent call last):
 SyntaxError: EOL while scanning string literal
 
 ```
+
+Did you forget a closing quote?
+
+
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -1198,6 +1222,10 @@ SyntaxError: invalid syntax
 
 ```
 
+Perhaps you misplaced a quote.
+
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
@@ -1653,6 +1681,10 @@ Traceback (most recent call last):
 SyntaxError: f-string: unterminated string
 
 ```
+
+Perhaps you forgot a closing quote.
+
+
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -2381,6 +2413,10 @@ SyntaxError: invalid syntax
 
 ```
 
+You should not use the backquote character.
+
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
@@ -2780,6 +2816,10 @@ SyntaxError: invalid syntax
 
 ```
 
+Did you use copy-paste?
+
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
@@ -2816,6 +2856,10 @@ Traceback (most recent call last):
 SyntaxError: invalid syntax
 
 ```
+
+Pip cannot be used in a Python interpreter.
+
+
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -2854,6 +2898,10 @@ Traceback (most recent call last):
 SyntaxError: invalid syntax
 
 ```
+
+Pip cannot be used in a Python interpreter.
+
+
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -3079,6 +3127,10 @@ SyntaxError: invalid syntax
 
 ```
 
+Perhaps you needed `==` instead of `=`.
+
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
@@ -3118,6 +3170,10 @@ SyntaxError: invalid syntax
 
 ```
 
+Perhaps you needed `==` instead of `=`.
+
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
@@ -3156,6 +3212,10 @@ Traceback (most recent call last):
 SyntaxError: invalid syntax
 
 ```
+
+Perhaps you needed `==` or `:=` instead of `=`.
+
+
 
 A `SyntaxError` occurs when Python cannot understand your code.
 

@@ -192,6 +192,8 @@ SyntaxError - Missing colon - 1
                ^
     SyntaxError: invalid syntax
     
+        You forgot a colon, `:`.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -226,6 +228,8 @@ SyntaxError - Missing colon - 2
                                ^
     SyntaxError: invalid syntax
     
+        You forgot a colon, `:`.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -260,6 +264,8 @@ SyntaxError - elif, not else if
               ^
     SyntaxError: invalid syntax
     
+        Perhaps you meant to write `elif`.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -294,6 +300,8 @@ SyntaxError - elif, not elseif
                   ^
     SyntaxError: invalid syntax
     
+        Perhaps you meant to write `elif`.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -363,6 +371,8 @@ SyntaxError - malformed def statment - 2
                   ^
     SyntaxError: invalid syntax
     
+        Perhaps you forgot parentheses.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -639,6 +649,8 @@ SyntaxError - EOL while scanning string literal
                        ^
     SyntaxError: EOL while scanning string literal
     
+        Did you forget a closing quote?
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -1021,6 +1033,8 @@ SyntaxError - quote inside a string
                        ^
     SyntaxError: invalid syntax
     
+        Perhaps you misplaced a quote.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -1399,6 +1413,8 @@ SyntaxError - f-string: unterminated string
              ^
     SyntaxError: f-string: unterminated string
     
+        Perhaps you forgot a closing quote.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -1944,6 +1960,8 @@ SyntaxError - named assignment with Python constant
               ^
     SyntaxError: invalid syntax
     
+        Your Python version might be too old.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -2006,6 +2024,8 @@ SyntaxError - using the backquote character
             ^
     SyntaxError: invalid syntax
     
+        You should not use the backquote character.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -2336,6 +2356,8 @@ SyntaxError - copy/paste from interpreter
          ^
     SyntaxError: invalid syntax
     
+        Did you use copy-paste?
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -2367,6 +2389,8 @@ SyntaxError - Using pip from interpreter
                   ^
     SyntaxError: invalid syntax
     
+        Pip cannot be used in a Python interpreter.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -2399,6 +2423,8 @@ SyntaxError - Using pip from interpreter 2
                     ^
     SyntaxError: invalid syntax
     
+        Pip cannot be used in a Python interpreter.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -2585,6 +2611,8 @@ SyntaxError - single = instead of double == with if
                  ^
     SyntaxError: invalid syntax
     
+        Perhaps you needed `==` instead of `=`.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -2618,6 +2646,8 @@ SyntaxError - single = instead of double == with elif
                    ^
     SyntaxError: invalid syntax
     
+        Perhaps you needed `==` instead of `=`.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -2651,6 +2681,8 @@ SyntaxError - single = instead of double == with while
                 ^
     SyntaxError: invalid syntax
     
+        Perhaps you needed `==` instead of `=`.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -2684,6 +2716,8 @@ Walrus operator does not exist - yet
                      ^
     SyntaxError: invalid syntax
     
+        Your Python version might be too old.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
