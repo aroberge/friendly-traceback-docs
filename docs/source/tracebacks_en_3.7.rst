@@ -1607,7 +1607,6 @@ UnboundLocalError - 1: missing global
         7: def outer_missing_global():
         8:     def inner():
     --> 9:         spam_missing_global += 1
-       10: 
 
         Known objects shown above:
             global spam_missing_global: 1
@@ -1662,7 +1661,6 @@ UnboundLocalError - 2: missing nonlocal
        16: 
        17:     def inner():
     -->18:         spam_missing_nonlocal += 1
-       19: 
 
 
 Unknown exception

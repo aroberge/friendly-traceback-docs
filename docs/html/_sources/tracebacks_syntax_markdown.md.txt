@@ -41,6 +41,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: '''Should raise IndentationError'''
        2: 
        3: if True:
     -->4: pass
@@ -77,6 +78,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: '''Should raise IndentationError'''
        2: if True:
        3:     pass
     -->4:       pass
@@ -114,6 +116,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: '''Should raise IndentationError'''
        2: if True:
        3:       pass
     -->4:     pass
@@ -155,10 +158,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       5: def test_tab_error():
-       6:     if True:
-    -->7: 	pass
-               ^
+        4: 
+        5: def test_tab_error():
+        6:     if True:
+    --> 7: 	pass
+                ^
 
 ```
 
@@ -217,7 +221,7 @@ SyntaxError: invalid syntax
 
 ```
 
-You forgot a colon, `:`.
+Perhaps you forgot a colon `:`.
 
 
 
@@ -261,7 +265,7 @@ SyntaxError: invalid syntax
 
 ```
 
-You forgot a colon, `:`.
+Perhaps you forgot a colon `:`.
 
 
 
@@ -318,6 +322,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       2: 
        3: if False:
        4:     pass
     -->5: else if True:
@@ -362,6 +367,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       2: 
        3: if False:
        4:     pass
     -->5: elseif True:
@@ -610,10 +616,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       5:  """
-       6: 
-    -->7: {1, 2, 3} = 4
-          ^
+        4: 
+        5:  """
+        6: 
+    --> 7: {1, 2, 3} = 4
+           ^
 
 ```
 
@@ -649,10 +656,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       5:  """
-       6: 
-    -->7: {1 : 2, 2 : 4} = 5
-          ^
+        4: 
+        5:  """
+        6: 
+    --> 7: {1 : 2, 2 : 4} = 5
+           ^
 
 ```
 
@@ -688,6 +696,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: """Should raise SyntaxError: can't assign to literal
        2: or (Python 3.8) cannot assign to literal"""
        3: 
     -->4: 1 = a = b
@@ -813,6 +822,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: """Should raise SyntaxError: cannot assign to None in Py 3.8
        2:    and can't assign to keyword before."""
        3: 
     -->4: None = 1
@@ -851,6 +861,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: """Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
        2:    and assignment to keyword before."""
        3: 
     -->4: __debug__ = 1
@@ -886,6 +897,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       3: """
        4: a = (1,
        5:     2,
     -->6:     3, 4,))
@@ -1043,6 +1055,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: """Should raise SyntaxError: invalid syntax"""
        2: x = (1,
        3:      2,
     -->4:      3]
@@ -1163,6 +1176,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: """Should raise SyntaxError: 'break' outside loop"""
        2: 
        3: if True:
     -->4:     break
@@ -1197,6 +1211,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: """Should raise SyntaxError: 'continue' outside loop"""
        2: 
        3: if True:
     -->4:     continue
@@ -1275,6 +1290,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       2: 
        3: a = {'a': 1,
        4:      'b': 2
     -->5:      'c': 3,
@@ -1440,6 +1456,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: """Should raise SyntaxError: invalid syntax"""
        2: 
        3: 
     -->4: def a(b, c d):
@@ -1479,6 +1496,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       3: Python 3.8: SyntaxError: cannot assign to function call
        4: """
        5: 
     -->6: len('a') = 3
@@ -1518,6 +1536,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       3: Python 3.8: SyntaxError: cannot assign to function call
        4: """
        5: 
     -->6: func(a, b=3) = 4
@@ -1557,6 +1576,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: """Should raise SyntaxError: invalid syntax
        2: """
        3: 
     -->4: ages = {'Alice'=22, 'Bob'=24}
@@ -1596,6 +1616,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       2: """
        3: 
        4: 
     -->5: def test(a=1, b):
@@ -1644,6 +1665,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       2: """
        3: 
        4: 
     -->5: test(a=1, b)
@@ -1695,6 +1717,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: """Should raise SyntaxError: f-string: unterminated string
        2: """
        3: 
     -->4: print(f"Bob is {age['Bob]} years old.")
@@ -1731,10 +1754,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       5:     return [1, 2, 3
-       6: 
-    -->7: print(foo())
-          ^
+        4: def foo():
+        5:     return [1, 2, 3
+        6: 
+    --> 7: print(foo())
+           ^
 
 ```
 
@@ -1769,6 +1793,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+        5:     return [1, 2, 3,
         6: 
         7: print(foo())
     --> 8: 
@@ -1811,6 +1836,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       3: 
        4: 
        5: def f(x):
     -->6:     global x
@@ -1852,6 +1878,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+        9: a = A()
        10: 
        11: a.x = 1
     -->12: a.pass = 2
@@ -1890,6 +1917,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       2: SyntaxError: unexpected character after line continuation character
        3: """
        4: 
     -->5: print(\t)
@@ -1927,10 +1955,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       5: 
-       6: 
-    -->7: a = dict('key'=1)
-                   ^
+        4: """
+        5: 
+        6: 
+    --> 7: a = dict('key'=1)
+                    ^
 
 ```
 
@@ -1970,6 +1999,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       3: 
        4: # Robot-face character below
        5: 
     -->6: 🤖 = 'Reeborg'
@@ -2007,6 +2037,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       2: """
        3: 
        4: 
     -->5: def f(None=1):
@@ -2046,6 +2077,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       2: """
        3: 
        4: 
     -->5: def f(x, True):
@@ -2085,6 +2117,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       2: """
        3: 
        4: 
     -->5: def f(*None):
@@ -2124,6 +2157,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       2: """
        3: 
        4: 
     -->5: def f(**None):
@@ -2163,6 +2197,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       2: """
        3: 
        4: 
     -->5: del f(a)
@@ -2202,10 +2237,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       5: def fn():
-       6:     p = 1
-    -->7:     global p
-              ^
+        4: 
+        5: def fn():
+        6:     p = 1
+    --> 7:     global p
+               ^
 
 ```
 
@@ -2237,10 +2273,11 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       5: def fn():
-       6:     print(r)
-    -->7:     global r
-              ^
+        4: 
+        5: def fn():
+        6:     print(r)
+    --> 7:     global r
+               ^
 
 ```
 
@@ -2275,6 +2312,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+        6: 
         7:     def g():
         8:         print(q)
     --> 9:         nonlocal q
@@ -2313,6 +2351,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+        6: 
         7:     def g():
         8:         s = 2
     --> 9:         nonlocal s
@@ -2351,6 +2390,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: """Should raise SyntaxError: invalid syntax
        2: or (Python 3.8) cannot use named assignment with True"""
        3: 
     -->4: (True := 1)
@@ -2386,6 +2426,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: """Should raise SyntaxError: can't assign to operator
        2: or (Python 3.8) cannot assign to operator"""
        3: 
     -->4: a + 1 = 2
@@ -2538,6 +2579,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       2: 
        3: 
        4: def f(x):
     -->5:     nonlocal x
@@ -2574,11 +2616,12 @@ beyond the location indicated by --> and ^.
 
 
 ```python
-       5: 
-       6: def f():
-    -->7:     global xy
-              ^
-       8:     nonlocal xy
+        4: 
+        5: 
+        6: def f():
+    --> 7:     global xy
+               ^
+        8:     nonlocal xy
 
 ```
 
@@ -2610,6 +2653,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       2: 
        3: 
        4: def f():
     -->5:     nonlocal ab
@@ -2645,6 +2689,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: """Should raise SyntaxError:  nonlocal declaration not allowed at module level"""
        2: 
        3: 
     -->4: nonlocal cd
@@ -2681,6 +2726,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: """Should raise SyntaxError: duplicate argument 'aa' in function definition"""
        2: 
        3: 
     -->4: def f(aa=1, aa=2):
@@ -2719,6 +2765,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: """Should raise SyntaxError:  keyword argument repeated"""
        2: 
        3: 
     -->4: f(ad=1, ad=2)
@@ -2752,6 +2799,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: '''Should raise SyntaxError: unexpected EOF while parsing'''
        2: 
        3: for i in range(10):
     -->4: 
@@ -2986,6 +3034,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       3: Python >= 3.8: SyntaxError: cannot assign to f-string expression
        4: """
        5: 
     -->6: f'{x}' = 42
@@ -3058,6 +3107,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       3:     return list(it)
        4: 
        5: L = range(10)
     -->6: f(x for x in L, 1)
@@ -3183,6 +3233,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       2: for i in range(101):
        3:     if False:
        4:         pass
     -->5:     elif i % 2 = 0:
@@ -3226,6 +3277,7 @@ beyond the location indicated by --> and ^.
 
 
 ```python
+       1: """Should raise SyntaxError: invalid syntax"""
        2: a = 1
        3: 
     -->4: while a = 1:

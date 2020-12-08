@@ -2139,7 +2139,6 @@ should have been included as the first line inside your function.
         7: def outer_missing_global():
         8:     def inner():
     --> 9:         spam_missing_global += 1
-       10: 
 
 ```
 
@@ -2215,7 +2214,6 @@ should have been included as the first line inside your function.
        16: 
        17:     def inner():
     -->18:         spam_missing_nonlocal += 1
-       19: 
 
 ```
 

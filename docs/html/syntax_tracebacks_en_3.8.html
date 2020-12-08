@@ -336,6 +336,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_indentation_error1.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
    2:
    3: if True:
 --&gt;4: pass
@@ -363,6 +364,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_indentation_error2.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
    2: if True:
    3:     pass
 --&gt;4:       pass
@@ -391,6 +393,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_indentation_error3.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
    2: if True:
    3:       pass
 --&gt;4:     pass
@@ -423,10 +426,11 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_tab_error.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-   5: def test_tab_error():
-   6:     if True:
---&gt;7:       pass
-           ^
+    4:
+    5: def test_tab_error():
+    6:     if True:
+--&gt; 7:      pass
+            ^
 </pre></div>
 </div>
 </div>
@@ -469,7 +473,7 @@ beyond the location indicated by --&gt; and ^.
            ^
 SyntaxError: invalid syntax
 
-    You forgot a colon, `:`.
+    Perhaps you forgot a colon `:`.
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -501,7 +505,7 @@ beyond the location indicated by --&gt; and ^.
                 ^
 SyntaxError: invalid syntax
 
-    You forgot a colon, `:`.
+    Perhaps you forgot a colon `:`.
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -541,6 +545,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error4.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   2:
    3: if False:
    4:     pass
 --&gt;5: else if True:
@@ -573,6 +578,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error5.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   2:
    3: if False:
    4:     pass
 --&gt;5: elseif True:
@@ -763,10 +769,11 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error52.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-   5:  &quot;&quot;&quot;
-   6:
---&gt;7: {1, 2, 3} = 4
-      ^
+    4:
+    5:  &quot;&quot;&quot;
+    6:
+--&gt; 7: {1, 2, 3} = 4
+       ^
 
     You wrote an expression like
 
@@ -793,10 +800,11 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error53.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-   5:  &quot;&quot;&quot;
-   6:
---&gt;7: {1 : 2, 2 : 4} = 5
-      ^
+    4:
+    5:  &quot;&quot;&quot;
+    6:
+--&gt; 7: {1 : 2, 2 : 4} = 5
+       ^
 
     You wrote an expression like
 
@@ -823,6 +831,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error54.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to literal
    2: or (Python 3.8) cannot assign to literal&quot;&quot;&quot;
    3:
 --&gt;4: 1 = a = b
@@ -915,6 +924,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error13.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: cannot assign to None in Py 3.8
    2:    and can&#39;t assign to keyword before.&quot;&quot;&quot;
    3:
 --&gt;4: None = 1
@@ -941,6 +951,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error14.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
    2:    and assignment to keyword before.&quot;&quot;&quot;
    3:
 --&gt;4: __debug__ = 1
@@ -966,6 +977,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error15.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   3: &quot;&quot;&quot;
    4: a = (1,
    5:     2,
 --&gt;6:     3, 4,))
@@ -1087,6 +1099,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error19.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2: x = (1,
    3:      2,
 --&gt;4:      3]
@@ -1180,6 +1193,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error22.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: &#39;break&#39; outside loop&quot;&quot;&quot;
    2:
    3: if True:
 --&gt;4:     break
@@ -1205,6 +1219,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error23.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: &#39;continue&#39; outside loop&quot;&quot;&quot;
    2:
    3: if True:
 --&gt;4:     continue
@@ -1263,6 +1278,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error25.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   2:
    3: a = {&#39;a&#39;: 1,
    4:      &#39;b&#39;: 2
 --&gt;5:      &#39;c&#39;: 3,
@@ -1384,6 +1400,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error29.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2:
    3:
 --&gt;4: def a(b, c d):
@@ -1414,6 +1431,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error30.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   3: Python 3.8: SyntaxError: cannot assign to function call
    4: &quot;&quot;&quot;
    5:
 --&gt;6: len(&#39;a&#39;) = 3
@@ -1444,6 +1462,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error31.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   3: Python 3.8: SyntaxError: cannot assign to function call
    4: &quot;&quot;&quot;
    5:
 --&gt;6: func(a, b=3) = 4
@@ -1474,6 +1493,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error32.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
    2: &quot;&quot;&quot;
    3:
 --&gt;4: ages = {&#39;Alice&#39;=22, &#39;Bob&#39;=24}
@@ -1504,6 +1524,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error33.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: def test(a=1, b):
@@ -1543,6 +1564,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error34.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: test(a=1, b)
@@ -1583,6 +1605,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error35.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: f-string: unterminated string
    2: &quot;&quot;&quot;
    3:
 --&gt;4: print(f&quot;Bob is {age[&#39;Bob]} years old.&quot;)
@@ -1610,10 +1633,11 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error36.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-   5:     return [1, 2, 3
-   6:
---&gt;7: print(foo())
-      ^
+    4: def foo():
+    5:     return [1, 2, 3
+    6:
+--&gt; 7: print(foo())
+       ^
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1639,6 +1663,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error37.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+    5:     return [1, 2, 3,
     6:
     7: print(foo())
 --&gt; 8:
@@ -1672,6 +1697,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error38.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   3:
    4:
    5: def f(x):
 --&gt;6:     global x
@@ -1704,6 +1730,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error39.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+    9: a = A()
    10:
    11: a.x = 1
 --&gt;12: a.pass = 2
@@ -1732,6 +1759,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error40.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   2: SyntaxError: unexpected character after line continuation character
    3: &quot;&quot;&quot;
    4:
 --&gt;5: print(\t)
@@ -1759,10 +1787,11 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error41.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-   5:
-   6:
---&gt;7: a = dict(&#39;key&#39;=1)
-               ^
+    4: &quot;&quot;&quot;
+    5:
+    6:
+--&gt; 7: a = dict(&#39;key&#39;=1)
+                ^
 
     One of the following two possibilities could be the cause:
     1. You meant to do a comparison with == and wrote = instead.
@@ -1792,6 +1821,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error42.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   3:
    4: # Robot-face character below
    5:
 --&gt;6: 🤖 = &#39;Reeborg&#39;
@@ -1819,6 +1849,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error43.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: def f(None=1):
@@ -1849,6 +1880,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error44.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: def f(x, True):
@@ -1879,6 +1911,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error45.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: def f(*None):
@@ -1909,6 +1942,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error46.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: def f(**None):
@@ -1939,6 +1973,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error47.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: del f(a)
@@ -1969,10 +2004,11 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error48.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-   5: def fn():
-   6:     p = 1
---&gt;7:     global p
-          ^
+    4:
+    5: def fn():
+    6:     p = 1
+--&gt; 7:     global p
+           ^
 
     You assigned a value to the variable `p`
     before declaring it as a global variable.
@@ -1995,10 +2031,11 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error49.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-   5: def fn():
-   6:     print(r)
---&gt;7:     global r
-          ^
+    4:
+    5: def fn():
+    6:     print(r)
+--&gt; 7:     global r
+           ^
 
     You used the variable `r`
     before declaring it as a global variable.
@@ -2022,6 +2059,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error50.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+    6:
     7:     def g():
     8:         print(q)
 --&gt; 9:         nonlocal q
@@ -2049,6 +2087,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error51.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+    6:
     7:     def g():
     8:         s = 2
 --&gt; 9:         nonlocal s
@@ -2076,6 +2115,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error55.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
    2: or (Python 3.8) cannot use named assignment with True&quot;&quot;&quot;
    3:
 --&gt;4: (True := 1)
@@ -2101,6 +2141,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error56.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to operator
    2: or (Python 3.8) cannot assign to operator&quot;&quot;&quot;
    3:
 --&gt;4: a + 1 = 2
@@ -2215,6 +2256,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error60.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   2:
    3:
    4: def f(x):
 --&gt;5:     nonlocal x
@@ -2242,11 +2284,12 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error61.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-   5:
-   6: def f():
---&gt;7:     global xy
-          ^
-   8:     nonlocal xy
+    4:
+    5:
+    6: def f():
+--&gt; 7:     global xy
+           ^
+    8:     nonlocal xy
 
     You declared `xy` as being both a global and nonlocal variable.
     A variable can be global, or nonlocal, but not both at the same time.
@@ -2269,6 +2312,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error62.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   2:
    3:
    4: def f():
 --&gt;5:     nonlocal ab
@@ -2295,6 +2339,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error63.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError:  nonlocal declaration not allowed at module level&quot;&quot;&quot;
    2:
    3:
 --&gt;4: nonlocal cd
@@ -2322,6 +2367,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error64.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: duplicate argument &#39;aa&#39; in function definition&quot;&quot;&quot;
    2:
    3:
 --&gt;4: def f(aa=1, aa=2):
@@ -2351,6 +2397,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error65.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError:  keyword argument repeated&quot;&quot;&quot;
    2:
    3:
 --&gt;4: f(ad=1, ad=2)
@@ -2375,6 +2422,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error66.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &#39;&#39;&#39;Should raise SyntaxError: unexpected EOF while parsing&#39;&#39;&#39;
    2:
    3: for i in range(10):
 --&gt;4:
@@ -2548,6 +2596,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error72.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   3: Python &gt;= 3.8: SyntaxError: cannot assign to f-string expression
    4: &quot;&quot;&quot;
    5:
 --&gt;6: f&#39;{x}&#39; = 42
@@ -2602,6 +2651,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error74.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   3:     return list(it)
    4:
    5: L = range(10)
 --&gt;6: f(x for x in L, 1)
@@ -2693,6 +2743,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error77.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   2: for i in range(101):
    3:     if False:
    4:         pass
 --&gt;5:     elif i % 2 = 0:
@@ -2725,6 +2776,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error78.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2: a = 1
    3:
 --&gt;4: while a = 1:

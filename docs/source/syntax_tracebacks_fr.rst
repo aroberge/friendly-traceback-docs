@@ -49,6 +49,7 @@ IndentationError - 1: expected an indented block
     'TESTS:\syntax\raise_indentation_error1.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: '''Should raise IndentationError'''
        2: 
        3: if True:
     -->4: pass
@@ -80,6 +81,7 @@ IndentationError - 2: unexpected indent
     'TESTS:\syntax\raise_indentation_error2.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: '''Should raise IndentationError'''
        2: if True:
        3:     pass
     -->4:       pass
@@ -112,6 +114,7 @@ IndentationError - 3: unindent does not match ...
     'TESTS:\syntax\raise_indentation_error3.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: '''Should raise IndentationError'''
        2: if True:
        3:       pass
     -->4:     pass
@@ -148,10 +151,11 @@ TabError
     'TESTS:\syntax\raise_tab_error.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-       5: def test_tab_error():
-       6:     if True:
-    -->7: 	pass
-               ^
+        4: 
+        5: def test_tab_error():
+        6:     if True:
+    --> 7: 	pass
+                ^
 
 SyntaxError - Assign to keyword
 -------------------------------
@@ -199,7 +203,7 @@ SyntaxError - Missing colon - 1
                ^
     SyntaxError: invalid syntax
     
-        Vous avez oublié les deux points, `:`.
+        Vous avez peut-être oublié les deux points, `:`.
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -234,7 +238,7 @@ SyntaxError - Missing colon - 2
                     ^
     SyntaxError: invalid syntax
     
-        Vous avez oublié les deux points, `:`.
+        Vous avez peut-être oublié les deux points, `:`.
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -277,6 +281,7 @@ SyntaxError - elif, not else if
     'TESTS:\syntax\raise_syntax_error4.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       2: 
        3: if False:
        4:     pass
     -->5: else if True:
@@ -312,6 +317,7 @@ SyntaxError - elif, not elseif
     'TESTS:\syntax\raise_syntax_error5.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       2: 
        3: if False:
        4:     pass
     -->5: elseif True:
@@ -524,10 +530,11 @@ SyntaxError - can't assign to literal - 3
     'TESTS:\syntax\raise_syntax_error52.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-       5:  """
-       6: 
-    -->7: {1, 2, 3} = 4
-          ^
+        4: 
+        5:  """
+        6: 
+    --> 7: {1, 2, 3} = 4
+           ^
 
         Vous avez écrit une expression comme
         
@@ -557,10 +564,11 @@ SyntaxError - can't assign to literal - 4
     'TESTS:\syntax\raise_syntax_error53.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-       5:  """
-       6: 
-    -->7: {1 : 2, 2 : 4} = 5
-          ^
+        4: 
+        5:  """
+        6: 
+    --> 7: {1 : 2, 2 : 4} = 5
+           ^
 
         Vous avez écrit une expression comme
         
@@ -590,6 +598,7 @@ SyntaxError - can't assign to literal - 5
     'TESTS:\syntax\raise_syntax_error54.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: can't assign to literal
        2: or (Python 3.8) cannot assign to literal"""
        3: 
     -->4: 1 = a = b
@@ -690,6 +699,7 @@ SyntaxError - assignment to keyword (None)
     'TESTS:\syntax\raise_syntax_error13.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: cannot assign to None in Py 3.8
        2:    and can't assign to keyword before."""
        3: 
     -->4: None = 1
@@ -720,6 +730,7 @@ SyntaxError - assignment to keyword (__debug__)
     'TESTS:\syntax\raise_syntax_error14.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
        2:    and assignment to keyword before."""
        3: 
     -->4: __debug__ = 1
@@ -749,6 +760,7 @@ SyntaxError - unmatched closing parenthesis
     'TESTS:\syntax\raise_syntax_error15.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       3: """
        4: a = (1,
        5:     2,
     -->6:     3, 4,))
@@ -881,6 +893,7 @@ SyntaxError - mismatched brackets - 2
     'TESTS:\syntax\raise_syntax_error19.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: invalid syntax"""
        2: x = (1,
        3:      2,
     -->4:      3]
@@ -985,6 +998,7 @@ SyntaxError - break outside loop
     'TESTS:\syntax\raise_syntax_error22.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: 'break' outside loop"""
        2: 
        3: if True:
     -->4:     break
@@ -1013,6 +1027,7 @@ SyntaxError - continue outside loop
     'TESTS:\syntax\raise_syntax_error23.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: 'continue' outside loop"""
        2: 
        3: if True:
     -->4:     continue
@@ -1076,6 +1091,7 @@ SyntaxError - missing comma in a dict
     'TESTS:\syntax\raise_syntax_error25.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       2: 
        3: a = {'a': 1,
        4:      'b': 2
     -->5:      'c': 3,
@@ -1202,6 +1218,7 @@ SyntaxError - missing comma between function args
     'TESTS:\syntax\raise_syntax_error29.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: invalid syntax"""
        2: 
        3: 
     -->4: def a(b, c d):
@@ -1233,6 +1250,7 @@ SyntaxError - can't assign to function call - 1
     'TESTS:\syntax\raise_syntax_error30.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       3: Python 3.8: SyntaxError: cannot assign to function call
        4: """
        5: 
     -->6: len('a') = 3
@@ -1267,6 +1285,7 @@ SyntaxError - can't assign to function call - 2
     'TESTS:\syntax\raise_syntax_error31.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       3: Python 3.8: SyntaxError: cannot assign to function call
        4: """
        5: 
     -->6: func(a, b=3) = 4
@@ -1300,6 +1319,7 @@ SyntaxError - used equal sign instead of colon
     'TESTS:\syntax\raise_syntax_error32.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: invalid syntax
        2: """
        3: 
     -->4: ages = {'Alice'=22, 'Bob'=24}
@@ -1332,6 +1352,7 @@ SyntaxError - non-default argument follows default argument
     'TESTS:\syntax\raise_syntax_error33.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       2: """
        3: 
        4: 
     -->5: def test(a=1, b):
@@ -1374,6 +1395,7 @@ SyntaxError - positional argument follows keyword argument
     'TESTS:\syntax\raise_syntax_error34.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       2: """
        3: 
        4: 
     -->5: test(a=1, b)
@@ -1417,6 +1439,7 @@ SyntaxError - f-string: unterminated string
     'TESTS:\syntax\raise_syntax_error35.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: f-string: unterminated string
        2: """
        3: 
     -->4: print(f"Bob is {age['Bob]} years old.")
@@ -1447,10 +1470,11 @@ SyntaxError - unclosed bracket
     'TESTS:\syntax\raise_syntax_error36.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-       5:     return [1, 2, 3
-       6: 
-    -->7: print(foo())
-          ^
+        4: def foo():
+        5:     return [1, 2, 3
+        6: 
+    --> 7: print(foo())
+           ^
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
@@ -1478,6 +1502,7 @@ SyntaxError - unexpected EOF while parsing
     'TESTS:\syntax\raise_syntax_error37.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+        5:     return [1, 2, 3,
         6: 
         7: print(foo())
     --> 8: 
@@ -1515,6 +1540,7 @@ SyntaxError - name is parameter and global
     'TESTS:\syntax\raise_syntax_error38.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       3: 
        4: 
        5: def f(x):
     -->6:     global x
@@ -1550,6 +1576,7 @@ SyntaxError - keyword as attribute
     'TESTS:\syntax\raise_syntax_error39.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+        9: a = A()
        10: 
        11: a.x = 1
     -->12: a.pass = 2
@@ -1582,6 +1609,7 @@ SyntaxError - content passed continuation line character
     'TESTS:\syntax\raise_syntax_error40.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       2: SyntaxError: unexpected character after line continuation character
        3: """
        4: 
     -->5: print(\t)
@@ -1614,10 +1642,11 @@ SyntaxError - keyword can't be an expression
     'TESTS:\syntax\raise_syntax_error41.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-       5: 
-       6: 
-    -->7: a = dict('key'=1)
-                   ^
+        4: """
+        5: 
+        6: 
+    --> 7: a = dict('key'=1)
+                    ^
 
         L'une des deux possibilités suivantes pourrait être la cause:
         1. Vous vouliez faire une comparaison avec `==` et vous avez écrit `=` à sa place.
@@ -1651,6 +1680,7 @@ SyntaxError - invalid character in identifier
     'TESTS:\syntax\raise_syntax_error42.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       3: 
        4: # Robot-face character below
        5: 
     -->6: 🤖 = 'Reeborg'
@@ -1682,6 +1712,7 @@ SyntaxError - keyword cannot be argument in def - 1
     'TESTS:\syntax\raise_syntax_error43.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       2: """
        3: 
        4: 
     -->5: def f(None=1):
@@ -1716,6 +1747,7 @@ SyntaxError - keyword cannot be argument in def - 2
     'TESTS:\syntax\raise_syntax_error44.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       2: """
        3: 
        4: 
     -->5: def f(x, True):
@@ -1750,6 +1782,7 @@ SyntaxError - keyword cannot be argument in def - 3
     'TESTS:\syntax\raise_syntax_error45.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       2: """
        3: 
        4: 
     -->5: def f(*None):
@@ -1784,6 +1817,7 @@ SyntaxError - keyword cannot be argument in def - 4
     'TESTS:\syntax\raise_syntax_error46.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       2: """
        3: 
        4: 
     -->5: def f(**None):
@@ -1818,6 +1852,7 @@ SyntaxError - delete function call
     'TESTS:\syntax\raise_syntax_error47.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       2: """
        3: 
        4: 
     -->5: del f(a)
@@ -1851,10 +1886,11 @@ SyntaxError - assigned prior to global declaration
     'TESTS:\syntax\raise_syntax_error48.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-       5: def fn():
-       6:     p = 1
-    -->7:     global p
-              ^
+        4: 
+        5: def fn():
+        6:     p = 1
+    --> 7:     global p
+               ^
 
         Vous avez attribué une valeur à la variable `p`
         avant de la déclarer comme une variable globale.
@@ -1880,10 +1916,11 @@ SyntaxError - used prior to global declaration
     'TESTS:\syntax\raise_syntax_error49.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-       5: def fn():
-       6:     print(r)
-    -->7:     global r
-              ^
+        4: 
+        5: def fn():
+        6:     print(r)
+    --> 7:     global r
+               ^
 
         Vous avez utilisé la variable `r`
         avant de la déclarer comme une variable globale.
@@ -1910,6 +1947,7 @@ SyntaxError - assigned prior to nonlocal declaration
     'TESTS:\syntax\raise_syntax_error50.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+        6: 
         7:     def g():
         8:         print(q)
     --> 9:         nonlocal q
@@ -1940,6 +1978,7 @@ SyntaxError - used prior to nonlocal declaration
     'TESTS:\syntax\raise_syntax_error51.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+        6: 
         7:     def g():
         8:         s = 2
     --> 9:         nonlocal s
@@ -1970,6 +2009,7 @@ SyntaxError - named assignment with Python constant
     'TESTS:\syntax\raise_syntax_error55.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: invalid syntax
        2: or (Python 3.8) cannot use named assignment with True"""
        3: 
     -->4: (True := 1)
@@ -1999,6 +2039,7 @@ SyntaxError - assignment to operator
     'TESTS:\syntax\raise_syntax_error56.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: can't assign to operator
        2: or (Python 3.8) cannot assign to operator"""
        3: 
     -->4: a + 1 = 2
@@ -2122,6 +2163,7 @@ SyntaxError - name is parameter and nonlocal
     'TESTS:\syntax\raise_syntax_error60.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       2: 
        3: 
        4: def f(x):
     -->5:     nonlocal x
@@ -2152,11 +2194,12 @@ SyntaxError - name is global and nonlocal
     'TESTS:\syntax\raise_syntax_error61.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-       5: 
-       6: def f():
-    -->7:     global xy
-              ^
-       8:     nonlocal xy
+        4: 
+        5: 
+        6: def f():
+    --> 7:     global xy
+               ^
+        8:     nonlocal xy
 
         Vous avez utilisé `xy` comme étant une variable non locale et globale.
         Une variable peut être d'un seul type à la fois: soit globale, soit non locale, ou soit locale.
@@ -2182,6 +2225,7 @@ SyntaxError - nonlocal variable not found
     'TESTS:\syntax\raise_syntax_error62.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       2: 
        3: 
        4: def f():
     -->5:     nonlocal ab
@@ -2211,6 +2255,7 @@ SyntaxError - nonlocal variable not found at module level
     'TESTS:\syntax\raise_syntax_error63.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError:  nonlocal declaration not allowed at module level"""
        2: 
        3: 
     -->4: nonlocal cd
@@ -2240,6 +2285,7 @@ SyntaxError - keyword arg only once in function definition
     'TESTS:\syntax\raise_syntax_error64.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: duplicate argument 'aa' in function definition"""
        2: 
        3: 
     -->4: def f(aa=1, aa=2):
@@ -2272,6 +2318,7 @@ SyntaxError - keyword arg only once in function call
     'TESTS:\syntax\raise_syntax_error65.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError:  keyword argument repeated"""
        2: 
        3: 
     -->4: f(ad=1, ad=2)
@@ -2299,6 +2346,7 @@ SyntaxError - unexpected EOF while parsing 2
     'TESTS:\syntax\raise_syntax_error66.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: '''Should raise SyntaxError: unexpected EOF while parsing'''
        2: 
        3: for i in range(10):
     -->4: 
@@ -2486,6 +2534,7 @@ SyntaxError - cannot assign to f-string
     'TESTS:\syntax\raise_syntax_error72.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       3: Python >= 3.8: SyntaxError: cannot assign to f-string expression
        4: """
        5: 
     -->6: f'{x}' = 42
@@ -2546,6 +2595,7 @@ SyntaxError - parenthesis around generator expression
     'TESTS:\syntax\raise_syntax_error74.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       3:     return list(it)
        4: 
        5: L = range(10)
     -->6: f(x for x in L, 1)
@@ -2646,6 +2696,7 @@ SyntaxError - single = instead of double == with elif
     'TESTS:\syntax\raise_syntax_error77.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       2: for i in range(101):
        3:     if False:
        4:         pass
     -->5:     elif i % 2 = 0:
@@ -2680,6 +2731,7 @@ SyntaxError - single = instead of double == with while
     'TESTS:\syntax\raise_syntax_error78.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: invalid syntax"""
        2: a = 1
        3: 
     -->4: while a = 1:
