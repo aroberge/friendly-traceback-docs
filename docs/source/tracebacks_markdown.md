@@ -74,7 +74,6 @@ The object `a` has no attribute named `x`.
        33:     try:
        34:         a = A()
     -->35:         a.x  # Testing instance
-                   ^^^
        36:     except Exception as e:
 
 ```
