@@ -43,10 +43,6 @@ ArithmeticError
     --> 9:         raise ArithmeticError('error')
        10:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
-            ArithmeticError: <class 'ArithmeticError'>
-        
-
 
 AttributeError - class attribute
 --------------------------------
@@ -70,9 +66,10 @@ AttributeError - class attribute
        33:     try:
        34:         a = A()
     -->35:         a.x  # Testing instance
+                   ^^^
        36:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a: <test_attribute_error.test_attribute_error.<locals>.A object>
         
 
@@ -103,7 +100,7 @@ AttributeError - typo in module attribute
     -->66:         string.ascii_lowecase
        67:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             string: <module 'string'> from PYTHON_LIB:\string.py
         
 
@@ -136,7 +133,7 @@ AttributeError - typo in module attribute 2
     -->82:         math.cost
        83:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             math: <module 'math' (builtin)>
         
 
@@ -165,10 +162,6 @@ FileNotFoundError
        5:     try:
     -->6:         open("does_not_exist")
        7:     except Exception as e:
-
-        Objets connus mentionnés ci-dessus :
-            open: <builtin function open>
-        
 
 
 ImportError
@@ -221,7 +214,7 @@ KeyError
     -->7:         d["c"]
        8:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             d: {'a': 1, 'b': 2}
         
 
@@ -248,10 +241,6 @@ LookupError
     -->10:         raise LookupError("Fake message")
        11:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
-            LookupError: <class 'LookupError'>
-        
-
 
 IndexError - short tuple
 ------------------------
@@ -275,12 +264,11 @@ IndexError - short tuple
         6:     b = [1, 2, 3]
         7:     try:
     --> 8:         print(a[3], b[2])
+                         ^^^^
         9:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
-            print: <builtin function print>
+        Known objects of interest shown above:
             a: (1, 2, 3)
-            b: [1, 2, 3]
         
 
 
@@ -306,14 +294,12 @@ IndexError - long list
        20:     b = tuple(range(50))
        21:     try:
     -->22:         print(a[50], b[0])
+                         ^^^^^
        23:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
-            print: <builtin function print>
+        Known objects of interest shown above:
             a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
                 len(a): 40
-            b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...)
-                len(b): 50
         
 
 
@@ -531,9 +517,10 @@ RecursionError
        4: def test_function_recursion_error():
        5:     def a():
     -->6:         return a()
+                         ^^^
        7:     try:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a: <function test_function_recursion_error.<locals>.a>
         
 
@@ -562,9 +549,10 @@ TypeError - 1: concatenate two different types
         6:         a = "a"
         7:         one = 1
     --> 8:         result = a + one
+                            ^^^^^^^
         9:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a: 'a'
             one: 1
         
@@ -594,9 +582,10 @@ TypeError - 1a: concatenate two different types
        24:         a = "a"
        25:         a_list = [1, 2, 3]
     -->26:         result = a + a_list
+                            ^^^^^^^^^^
        27:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a: 'a'
             a_list: [1, 2, 3]
         
@@ -626,9 +615,10 @@ TypeError - 1b: concatenate two different types
        42:         a_tuple = (1, 2, 3)
        43:         a_list = [1, 2, 3]
     -->44:         result = a_tuple + a_list
+                            ^^^^^^^^^^^^^^^^
        45:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a_tuple: (1, 2, 3)
             a_list: [1, 2, 3]
         
@@ -658,9 +648,10 @@ TypeError - 2: unsupported operand type(s) for +
        58:         one = 1
        59:         none = None
     -->60:         result = one + none
+                            ^^^^^^^^^^
        61:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             one: 1
             none: None
         
@@ -692,7 +683,7 @@ TypeError - 2a: unsupported operand type(s) for +=
     -->78:         one += two
        79:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             one: 1
             two: 'two'
         
@@ -722,9 +713,10 @@ TypeError - 3: unsupported operand type(s) for -
        92:         a = (1, 2)
        93:         b = [3, 4]
     -->94:         result = a - b
+                            ^^^^^
        95:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a: (1, 2)
             b: [3, 4]
         
@@ -756,7 +748,7 @@ TypeError - 3a: unsupported operand type(s) for -=
     -->110:         b -= a
        111:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             b: [3, 4]
             a: (1, 2)
         
@@ -786,9 +778,10 @@ TypeError - 4: unsupported operand type(s) for *
        124:         a = 1j
        125:         b = {2, 3}
     -->126:         result = a * b
+                             ^^^^^
        127:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a: 1j
             b: {2, 3}
         
@@ -820,7 +813,7 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
     -->142:         b *= a
        143:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             b: {2, 3}
             a: 1j
         
@@ -850,9 +843,10 @@ TypeError - 5: unsupported operand type(s) for /
        156:         a = {1: 1, 2: 2}
        157:         b = 3.1416
     -->158:         result = a / b
+                             ^^^^^
        159:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a: {1: 1, 2: 2}
             b: 3.1416
         
@@ -884,7 +878,7 @@ TypeError - 5a: unsupported operand type(s) for /=
     -->174:         b /= a
        175:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             b: 3.1416
             a: {1: 1, 2: 2}
         
@@ -914,9 +908,10 @@ TypeError - 5b: unsupported operand type(s) for //
        188:         a = {1: 1, 2: 2}
        189:         b = 1
     -->190:         result = a // b
+                             ^^^^^^
        191:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a: {1: 1, 2: 2}
             b: 1
         
@@ -948,7 +943,7 @@ TypeError - 5c: unsupported operand type(s) for //=
     -->206:         b //= a
        207:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             b: 3.1416
             a: {1: 1, 2: 2}
         
@@ -979,9 +974,10 @@ TypeError - 6: unsupported operand type(s) for &
        220:         a = "a"
        221:         b = 2
     -->222:         result = a & b
+                             ^^^^^
        223:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a: 'a'
             b: 2
         
@@ -1014,7 +1010,7 @@ TypeError - 6a: unsupported operand type(s) for &=
     -->238:         b &= a
        239:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             b: 2
             a: 'a'
         
@@ -1045,9 +1041,10 @@ TypeError - 7: unsupported operand type(s) for **
        252:         a = {1: 1, 2: 2}
        253:         b = 3.1416
     -->254:         result = a ** b
+                             ^^^^^^
        255:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a: {1: 1, 2: 2}
             b: 3.1416
         
@@ -1080,7 +1077,7 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
     -->270:         a **= b
        271:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a: {1: 1, 2: 2}
             b: 3.1416
         
@@ -1111,9 +1108,10 @@ TypeError - 8: unsupported operand type(s) for >>
        284:         a = "a"
        285:         b = 42
     -->286:         result = a >> b
+                             ^^^^^^
        287:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a: 'a'
             b: 42
         
@@ -1146,7 +1144,7 @@ TypeError - 8a: unsupported operand type(s) for >>=
     -->302:         a >>= b
        303:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a: 'a'
             b: 42
         
@@ -1179,9 +1177,10 @@ TypeError - 9: unsupported operand type(s) for @
        316:         a = "a"
        317:         b = 2
     -->318:         result = a @ b
+                             ^^^^^
        319:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a: 'a'
             b: 2
         
@@ -1216,7 +1215,7 @@ TypeError - 9a: unsupported operand type(s) for @=
     -->334:         a @= b
        335:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             a: 'a'
             b: 2
         
@@ -1249,7 +1248,7 @@ TypeError - 10: comparison between incompatible types
     -->350:         b < a
        351:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             b: 42
             a: 'a'
         
@@ -1280,6 +1279,7 @@ TypeError - 11: bad operand type for unary +
        362: def test_type_error11():
        363:     try:
     -->364:         a = +"abc"
+                        ^^^^^^
        365:         print(a)
 
 
@@ -1308,6 +1308,7 @@ TypeError - 11a: bad operand type for unary -
        377: def test_type_error11a():
        378:     try:
     -->379:         a = -[1, 2, 3]
+                        ^^^^^^^^^^
        380:         print(a)
 
 
@@ -1336,6 +1337,7 @@ TypeError - 11b: bad operand type for unary ~
        392: def test_type_error11b():
        393:     try:
     -->394:         a = ~(1, 2, 3)
+                        ^^^^^^^^^^
        395:         print(a)
 
 
@@ -1367,7 +1369,8 @@ TypeError - 12: object does not support item assignment
     -->410:         a[0] = 0
        411:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
+            a[0]: 1
             a: (1, 2, 3)
         
 
@@ -1398,7 +1401,7 @@ TypeError - 13: wrong number of positional arguments
     -->427:         fn(1)
        428:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             fn: <function test_type_error13.<locals>.fn>
         
 
@@ -1432,7 +1435,7 @@ TypeError - 13a: wrong number of positional arguments
     -->446:         A().f(1)
        447:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             A: <class 'test_type_error.test_type_error13a.<locals>.A'>
         
 
@@ -1463,7 +1466,7 @@ TypeError - 14: missing positional arguments
     -->465:         fn(1)
        466:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             fn: <function test_type_error14.<locals>.fn>
         
 
@@ -1496,6 +1499,7 @@ TypeError - 15: tuple object is not callable
        478: def test_type_error15():
        479:     try:
     -->480:         _ = (1, 2)(3, 4)
+                        ^^^^^^^^^^^^
        481:     except Exception as e:
 
 
@@ -1527,6 +1531,7 @@ TypeError - 15a: list object is not callable
        492: def test_type_error15a():
        493:     try:
     -->494:         _ = [1, 2](3, 4)
+                        ^^^^^^^^^^^^
        495:     except Exception as e:
 
 
@@ -1606,7 +1611,7 @@ UnboundLocalError - 1: missing global
         8:     def inner():
     --> 9:         spam_missing_global += 1
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             global spam_missing_global: 1
         
 
@@ -1682,7 +1687,7 @@ Unknown exception
     -->10:         raise MyException("Some informative message about an unknown exception.")
        11:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             global MyException: <class 'test_unknown_error.MyException'>
         
 
@@ -1738,7 +1743,7 @@ ZeroDivisionError - 2
     -->21:         1 % zero
        22:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
+        Known objects of interest shown above:
             zero: 0
         
 

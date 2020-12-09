@@ -45,13 +45,6 @@ normally, a more specific exception should have been raised.
 
 ```
 
-##### Known objects shown above
-
-```python
-    ArithmeticError: <class 'ArithmeticError'>
-
-```
-
 
 ---
 
@@ -81,11 +74,12 @@ The object `a` has no attribute named `x`.
        33:     try:
        34:         a = A()
     -->35:         a.x  # Testing instance
+                   ^^^
        36:     except Exception as e:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a: <test_attribute_error.test_attribute_error.<locals>.A object>
@@ -129,7 +123,7 @@ Perhaps you meant to write `string.ascii_lowercase` instead of `string.ascii_low
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     string: <module 'string'> from PYTHON_LIB:\string.py
@@ -175,7 +169,7 @@ the following names which are attributes of module `math`:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     math: <module 'math' (builtin)>
@@ -213,13 +207,6 @@ file that cannot be found is `does_not_exist`.
        5:     try:
     -->6:         open("does_not_exist")
        7:     except Exception as e:
-
-```
-
-##### Known objects shown above
-
-```python
-    open: <builtin function open>
 
 ```
 
@@ -292,7 +279,7 @@ In your program, the key that cannot be found is `'c'`.
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     d: {'a': 1, 'b': 2}
@@ -329,13 +316,6 @@ It can also be raised directly by codecs.lookup().
 
 ```
 
-##### Known objects shown above
-
-```python
-    LookupError: <class 'LookupError'>
-
-```
-
 
 ---
 
@@ -364,16 +344,15 @@ Reminder: the first item of a sequence is at index 0.
         6:     b = [1, 2, 3]
         7:     try:
     --> 8:         print(a[3], b[2])
+                         ^^^^
         9:     except Exception as e:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
-    print: <builtin function print>
     a: (1, 2, 3)
-    b: [1, 2, 3]
 
 ```
 
@@ -405,18 +384,16 @@ Reminder: the first item of a sequence is at index 0.
        20:     b = tuple(range(50))
        21:     try:
     -->22:         print(a[50], b[0])
+                         ^^^^^
        23:     except Exception as e:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
-    print: <builtin function print>
     a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
         len(a): 40
-    b: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...)
-        len(b): 50
 
 ```
 
@@ -703,11 +680,12 @@ and that your program would never stop.
        4: def test_function_recursion_error():
        5:     def a():
     -->6:         return a()
+                         ^^^
        7:     try:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a: <function test_function_recursion_error.<locals>.a>
@@ -745,11 +723,12 @@ a string (`str`) and an integer (`int`)
         6:         a = "a"
         7:         one = 1
     --> 8:         result = a + one
+                            ^^^^^^^
         9:     except Exception as e:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a: 'a'
@@ -788,11 +767,12 @@ a string (`str`) and a `list`
        24:         a = "a"
        25:         a_list = [1, 2, 3]
     -->26:         result = a + a_list
+                            ^^^^^^^^^^
        27:     except Exception as e:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a: 'a'
@@ -831,11 +811,12 @@ a `tuple` and a `list`
        42:         a_tuple = (1, 2, 3)
        43:         a_list = [1, 2, 3]
     -->44:         result = a_tuple + a_list
+                            ^^^^^^^^^^^^^^^^
        45:     except Exception as e:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a_tuple: (1, 2, 3)
@@ -874,11 +855,12 @@ an integer (`int`) and a variable equal to `None` (`NoneType`)
        58:         one = 1
        59:         none = None
     -->60:         result = one + none
+                            ^^^^^^^^^^
        61:     except Exception as e:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     one: 1
@@ -921,7 +903,7 @@ an integer (`int`) and a string (`str`)
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     one: 1
@@ -960,11 +942,12 @@ a `tuple` and a `list`
        92:         a = (1, 2)
        93:         b = [3, 4]
     -->94:         result = a - b
+                            ^^^^^
        95:     except Exception as e:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a: (1, 2)
@@ -1007,7 +990,7 @@ a `list` and a `tuple`
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     b: [3, 4]
@@ -1046,11 +1029,12 @@ a complex number and a `set`
        124:         a = 1j
        125:         b = {2, 3}
     -->126:         result = a * b
+                             ^^^^^
        127:     except Exception as e:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a: 1j
@@ -1093,7 +1077,7 @@ a `set` and a complex number
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     b: {2, 3}
@@ -1132,11 +1116,12 @@ a dictionary (`dict`) and a number (`float`)
        156:         a = {1: 1, 2: 2}
        157:         b = 3.1416
     -->158:         result = a / b
+                             ^^^^^
        159:     except Exception as e:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a: {1: 1, 2: 2}
@@ -1179,7 +1164,7 @@ a number (`float`) and a dictionary (`dict`)
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     b: 3.1416
@@ -1218,11 +1203,12 @@ a dictionary (`dict`) and an integer (`int`)
        188:         a = {1: 1, 2: 2}
        189:         b = 1
     -->190:         result = a // b
+                             ^^^^^^
        191:     except Exception as e:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a: {1: 1, 2: 2}
@@ -1265,7 +1251,7 @@ a number (`float`) and a dictionary (`dict`)
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     b: 3.1416
@@ -1305,11 +1291,12 @@ a string (`str`) and an integer (`int`)
        220:         a = "a"
        221:         b = 2
     -->222:         result = a & b
+                             ^^^^^
        223:     except Exception as e:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a: 'a'
@@ -1353,7 +1340,7 @@ an integer (`int`) and a string (`str`)
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     b: 2
@@ -1393,11 +1380,12 @@ a dictionary (`dict`) and a number (`float`)
        252:         a = {1: 1, 2: 2}
        253:         b = 3.1416
     -->254:         result = a ** b
+                             ^^^^^^
        255:     except Exception as e:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a: {1: 1, 2: 2}
@@ -1441,7 +1429,7 @@ a dictionary (`dict`) and a number (`float`)
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a: {1: 1, 2: 2}
@@ -1481,11 +1469,12 @@ a string (`str`) and an integer (`int`)
        284:         a = "a"
        285:         b = 42
     -->286:         result = a >> b
+                             ^^^^^^
        287:     except Exception as e:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a: 'a'
@@ -1529,7 +1518,7 @@ a string (`str`) and an integer (`int`)
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a: 'a'
@@ -1571,11 +1560,12 @@ for multiplication of matrices.
        316:         a = "a"
        317:         b = 2
     -->318:         result = a @ b
+                             ^^^^^
        319:     except Exception as e:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a: 'a'
@@ -1621,7 +1611,7 @@ for multiplication of matrices.
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     a: 'a'
@@ -1665,7 +1655,7 @@ an integer (`int`) and a string (`str`)
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     b: 42
@@ -1705,6 +1695,7 @@ This operation is not defined for this type of object.
        362: def test_type_error11():
        363:     try:
     -->364:         a = +"abc"
+                        ^^^^^^
        365:         print(a)
 
 ```
@@ -1741,6 +1732,7 @@ This operation is not defined for this type of object.
        377: def test_type_error11a():
        378:     try:
     -->379:         a = -[1, 2, 3]
+                        ^^^^^^^^^^
        380:         print(a)
 
 ```
@@ -1777,6 +1769,7 @@ This operation is not defined for this type of object.
        392: def test_type_error11b():
        393:     try:
     -->394:         a = ~(1, 2, 3)
+                        ^^^^^^^^^^
        395:         print(a)
 
 ```
@@ -1818,9 +1811,10 @@ most likely by using an indexing operation.
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
+    a[0]: 1
     a: (1, 2, 3)
 
 ```
@@ -1861,7 +1855,7 @@ such positional argument(s).
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     fn: <function test_type_error13.<locals>.fn>
@@ -1909,7 +1903,7 @@ Perhaps you forgot `self` when defining `f`.
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     A: <class 'test_type_error.test_type_error13a.<locals>.A'>
@@ -1951,7 +1945,7 @@ fewer positional arguments than it requires (2 missing).
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     fn: <function test_type_error14.<locals>.fn>
@@ -1995,6 +1989,7 @@ Perhaps you had a missing comma between two tuples.
        478: def test_type_error15():
        479:     try:
     -->480:         _ = (1, 2)(3, 4)
+                        ^^^^^^^^^^^^
        481:     except Exception as e:
 
 ```
@@ -2036,6 +2031,7 @@ Perhaps you had a missing comma before the tuple.
        492: def test_type_error15a():
        493:     try:
     -->494:         _ = [1, 2](3, 4)
+                        ^^^^^^^^^^^^
        495:     except Exception as e:
 
 ```
@@ -2142,7 +2138,7 @@ should have been included as the first line inside your function.
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     global spam_missing_global: 1
@@ -2245,7 +2241,7 @@ No information is available about this exception.
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     global MyException: <class 'test_unknown_error.MyException'>
@@ -2318,7 +2314,7 @@ using the modulo operator `%`:
 
 ```
 
-##### Known objects shown above
+##### Known objects of interest shown above
 
 ```python
     zero: 0
