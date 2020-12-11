@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.formatters &mdash; Friendly tracebacks 0.1.12a documentation</title>
+  <title>friendly_traceback.formatters &mdash; Friendly tracebacks 0.2.3a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.1.12a
+                0.2.3a
               </div>
             
           
@@ -228,7 +228,7 @@
 <span class="sd">A formatter returns a single string. By default, this string will be</span>
 <span class="sd">written to stderr; however this can be changed by the calling program.</span>
 
-<span class="sd">This module currently contains 5 formatters:</span>
+<span class="sd">This module currently contains 6 formatters:</span>
 
 <span class="sd">* ``repl()``: This is used to print the information in a traditional console,</span>
 <span class="sd">  including that found in IDLE.  The indentation of the traceback itself</span>
@@ -238,6 +238,8 @@
 <span class="sd">  embedded as a code-block in a file (such as .rst). It can also be used</span>
 <span class="sd">  to print the information in a traditional console, including that</span>
 <span class="sd">  found in IDLE.</span>
+
+<span class="sd">* ``jupyter()``: experimental formatter for Jupyter notebooks</span>
 
 <span class="sd">* ``markdown()``: This produces an output formatted with markdown syntax.</span>
 
@@ -250,6 +252,17 @@
 <span class="sd">    in colour in a console using Rich (https://github.com/willmcgugan/rich).</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">pygments</span> <span class="kn">import</span> <span class="n">highlight</span>
+    <span class="kn">from</span> <span class="nn">pygments.lexers</span> <span class="kn">import</span> <span class="n">PythonLexer</span>
+    <span class="kn">from</span> <span class="nn">pygments.formatters</span> <span class="kn">import</span> <span class="n">HtmlFormatter</span>
+    <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+
+    <span class="n">INSERTED_CSS</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">ipython_available</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">ipython_available</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="n">RICH_HEADER</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -273,11 +286,9 @@
     <span class="s2">&quot;cause&quot;</span><span class="p">,</span>
     <span class="s2">&quot;last_call_header&quot;</span><span class="p">,</span>
     <span class="s2">&quot;last_call_source&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;last_call_variables_header&quot;</span><span class="p">,</span>
     <span class="s2">&quot;last_call_variables&quot;</span><span class="p">,</span>
     <span class="s2">&quot;exception_raised_header&quot;</span><span class="p">,</span>
     <span class="s2">&quot;exception_raised_source&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;exception_raised_variables_header&quot;</span><span class="p">,</span>
     <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
@@ -293,11 +304,9 @@
     <span class="s2">&quot;cause&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">,</span>
     <span class="s2">&quot;last_call_header&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
     <span class="s2">&quot;last_call_source&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;last_call_variables_header&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">,</span>
     <span class="s2">&quot;last_call_variables&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">,</span>
     <span class="s2">&quot;exception_raised_header&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
     <span class="s2">&quot;exception_raised_source&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;exception_raised_variables_header&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">,</span>
     <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 
@@ -336,6 +345,65 @@
         <span class="k">return</span> <span class="n">_no_result</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">html_escape</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&amp;&quot;</span><span class="p">,</span> <span class="s2">&quot;&amp;amp;&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&amp;lt;&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&amp;gt;&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">while</span> <span class="s2">&quot;`&quot;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;`&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;code&gt;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;`&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;/code&gt;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">text</span>
+
+
+<div class="viewcode-block" id="jupyter"><a class="viewcode-back" href="../../formatter.html#friendly_traceback.formatters.jupyter">[docs]</a><span class="k">def</span> <span class="nf">jupyter</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Jupyter formatter using pygments and html format.&quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">INSERTED_CSS</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">INSERTED_CSS</span><span class="p">:</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;style&gt;</span><span class="si">{</span><span class="n">HtmlFormatter</span><span class="p">()</span><span class="o">.</span><span class="n">get_style_defs</span><span class="p">(</span><span class="s1">&#39;.highlight&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/style&gt;&quot;</span><span class="p">))</span>
+        <span class="n">INSERTED_CSS</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="n">items_to_show</span> <span class="o">=</span> <span class="n">select_items</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items_to_show</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="s2">&quot;source&quot;</span> <span class="ow">in</span> <span class="n">item</span>
+                <span class="ow">or</span> <span class="s2">&quot;traceback&quot;</span> <span class="ow">in</span> <span class="n">item</span>
+                <span class="ow">or</span> <span class="s2">&quot;message&quot;</span> <span class="ow">in</span> <span class="n">item</span>
+                <span class="ow">or</span> <span class="s2">&quot;variable&quot;</span> <span class="ow">in</span> <span class="n">item</span> 
+            <span class="p">):</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">highlight</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">PythonLexer</span><span class="p">(),</span> <span class="n">HtmlFormatter</span><span class="p">())</span>
+                <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;suggest&quot;</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">html_escape</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">])</span>
+                <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;p&gt;&lt;i&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;i&gt;&lt;p&gt;&quot;</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">html_escape</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">])</span>
+                <span class="k">if</span> <span class="s2">&quot;header&quot;</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
+                    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;p&gt;&lt;b&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/b&gt;&lt;/p&gt;&quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">include</span> <span class="o">==</span> <span class="s2">&quot;why&quot;</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;I do not know.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">include</span> <span class="o">==</span> <span class="s2">&quot;hint&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;cause&quot;</span><span class="p">]:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;I have no suggestion to offer; try `why()`.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;I have no suggestion to offer.&quot;</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">html_escape</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;p style=&quot;width: 70ch;&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&lt;/p&gt;&#39;</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span></div>
+
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">ipython_available</span><span class="p">:</span>
+    <span class="n">jupyter</span> <span class="o">=</span> <span class="n">repl</span>  <span class="c1"># noqa</span>
 
 
 <div class="viewcode-block" id="pre"><a class="viewcode-back" href="../../formatter.html#friendly_traceback.formatters.pre">[docs]</a><span class="k">def</span> <span class="nf">pre</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">):</span>
@@ -425,11 +493,9 @@
         <span class="s2">&quot;cause&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;last_call_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;## &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;last_call_source&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;last_call_variables_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;### &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;last_call_variables&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
         <span class="s2">&quot;exception_raised_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;## &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;exception_raised_source&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;exception_raised_variables_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;### &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
         <span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```pytb</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
         <span class="s2">&quot;original_python_traceback&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```pytb</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
@@ -454,11 +520,7 @@
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">rich</span><span class="p">:</span>
                     <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span>
-                        <span class="s2">&quot;cause_header&quot;</span><span class="p">,</span>
-                        <span class="s2">&quot;last_call_variables_header&quot;</span><span class="p">,</span>
-                        <span class="s2">&quot;exception_raised_variables_header&quot;</span><span class="p">,</span>
-                    <span class="p">]:</span>
+                    <span class="k">if</span> <span class="n">item</span> <span class="o">!=</span> <span class="s2">&quot;cause_header&quot;</span><span class="p">:</span>
                         <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;message&quot;</span> <span class="ow">and</span> <span class="n">rich</span><span class="p">:</span>
                 <span class="c1"># Ensure that the exception name is highlighted.</span>
@@ -505,11 +567,9 @@
         <span class="s2">&quot;parsing_error_source&quot;</span><span class="p">,</span>
         <span class="s2">&quot;last_call_header&quot;</span><span class="p">,</span>
         <span class="s2">&quot;last_call_source&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;last_call_variables_header&quot;</span><span class="p">,</span>
         <span class="s2">&quot;last_call_variables&quot;</span><span class="p">,</span>
         <span class="s2">&quot;exception_raised_header&quot;</span><span class="p">,</span>
         <span class="s2">&quot;exception_raised_source&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;exception_raised_variables_header&quot;</span><span class="p">,</span>
         <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;friendly_tb&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;shortened_traceback&quot;</span><span class="p">,</span> <span class="s2">&quot;suggest&quot;</span><span class="p">,</span> <span class="s2">&quot;debug_warning&quot;</span><span class="p">},</span>

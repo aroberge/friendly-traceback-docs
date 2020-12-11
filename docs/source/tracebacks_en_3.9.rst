@@ -16,7 +16,7 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly-traceback version: 0.1.12a
+Friendly-traceback version: 0.2.3a
 Python version: 3.9.0
 
 
@@ -69,7 +69,6 @@ AttributeError - class attribute
     -->35:         a.x  # Testing instance
        36:     except Exception as e:
 
-        Known objects of interest shown above:
             a: <test_attribute_error.test_attribute_error.<locals>.A object>
         
 
@@ -100,7 +99,6 @@ AttributeError - typo in module attribute
     -->66:         string.ascii_lowecase
        67:     except Exception as e:
 
-        Known objects of interest shown above:
             string: <module 'string'> from PYTHON_LIB:\string.py
         
 
@@ -133,7 +131,6 @@ AttributeError - typo in module attribute 2
     -->82:         math.cost
        83:     except Exception as e:
 
-        Known objects of interest shown above:
             math: <module 'math' (builtin)>
         
 
@@ -214,7 +211,6 @@ KeyError
     -->7:         d["c"]
        8:     except Exception as e:
 
-        Known objects of interest shown above:
             d: {'a': 1, 'b': 2}
         
 
@@ -267,7 +263,6 @@ IndexError - short tuple
                          ^^^^
         9:     except Exception as e:
 
-        Known objects of interest shown above:
             a: (1, 2, 3)
         
 
@@ -297,7 +292,6 @@ IndexError - long list
                          ^^^^^
        23:     except Exception as e:
 
-        Known objects of interest shown above:
             a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
                 len(a): 40
         
@@ -509,7 +503,6 @@ RecursionError
     --> 8:         a()
         9:     except Exception as e:
 
-        Known objects shown above:
             a: <function test_function_recursion_error.<locals>.a>
         
     Exception raised on line 6 of file TESTS:\runtime\test_recursion_error.py.
@@ -520,7 +513,6 @@ RecursionError
                          ^^^
        7:     try:
 
-        Known objects of interest shown above:
             a: <function test_function_recursion_error.<locals>.a>
         
 
@@ -552,7 +544,6 @@ TypeError - 1: concatenate two different types
                             ^^^^^^^
         9:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 'a'
             one: 1
         
@@ -585,7 +576,6 @@ TypeError - 1a: concatenate two different types
                             ^^^^^^^^^^
        27:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 'a'
             a_list: [1, 2, 3]
         
@@ -618,7 +608,6 @@ TypeError - 1b: concatenate two different types
                             ^^^^^^^^^^^^^^^^
        45:     except Exception as e:
 
-        Known objects of interest shown above:
             a_tuple: (1, 2, 3)
             a_list: [1, 2, 3]
         
@@ -651,7 +640,6 @@ TypeError - 2: unsupported operand type(s) for +
                             ^^^^^^^^^^
        61:     except Exception as e:
 
-        Known objects of interest shown above:
             one: 1
             none: None
         
@@ -683,7 +671,6 @@ TypeError - 2a: unsupported operand type(s) for +=
     -->78:         one += two
        79:     except Exception as e:
 
-        Known objects of interest shown above:
             one: 1
             two: 'two'
         
@@ -716,7 +703,6 @@ TypeError - 3: unsupported operand type(s) for -
                             ^^^^^
        95:     except Exception as e:
 
-        Known objects of interest shown above:
             a: (1, 2)
             b: [3, 4]
         
@@ -748,7 +734,6 @@ TypeError - 3a: unsupported operand type(s) for -=
     -->110:         b -= a
        111:     except Exception as e:
 
-        Known objects of interest shown above:
             b: [3, 4]
             a: (1, 2)
         
@@ -781,7 +766,6 @@ TypeError - 4: unsupported operand type(s) for *
                              ^^^^^
        127:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 1j
             b: {2, 3}
         
@@ -813,7 +797,6 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
     -->142:         b *= a
        143:     except Exception as e:
 
-        Known objects of interest shown above:
             b: {2, 3}
             a: 1j
         
@@ -846,7 +829,6 @@ TypeError - 5: unsupported operand type(s) for /
                              ^^^^^
        159:     except Exception as e:
 
-        Known objects of interest shown above:
             a: {1: 1, 2: 2}
             b: 3.1416
         
@@ -878,7 +860,6 @@ TypeError - 5a: unsupported operand type(s) for /=
     -->174:         b /= a
        175:     except Exception as e:
 
-        Known objects of interest shown above:
             b: 3.1416
             a: {1: 1, 2: 2}
         
@@ -911,7 +892,6 @@ TypeError - 5b: unsupported operand type(s) for //
                              ^^^^^^
        191:     except Exception as e:
 
-        Known objects of interest shown above:
             a: {1: 1, 2: 2}
             b: 1
         
@@ -943,7 +923,6 @@ TypeError - 5c: unsupported operand type(s) for //=
     -->206:         b //= a
        207:     except Exception as e:
 
-        Known objects of interest shown above:
             b: 3.1416
             a: {1: 1, 2: 2}
         
@@ -977,7 +956,6 @@ TypeError - 6: unsupported operand type(s) for &
                              ^^^^^
        223:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 'a'
             b: 2
         
@@ -1010,7 +988,6 @@ TypeError - 6a: unsupported operand type(s) for &=
     -->238:         b &= a
        239:     except Exception as e:
 
-        Known objects of interest shown above:
             b: 2
             a: 'a'
         
@@ -1044,7 +1021,6 @@ TypeError - 7: unsupported operand type(s) for **
                              ^^^^^^
        255:     except Exception as e:
 
-        Known objects of interest shown above:
             a: {1: 1, 2: 2}
             b: 3.1416
         
@@ -1077,7 +1053,6 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
     -->270:         a **= b
        271:     except Exception as e:
 
-        Known objects of interest shown above:
             a: {1: 1, 2: 2}
             b: 3.1416
         
@@ -1111,7 +1086,6 @@ TypeError - 8: unsupported operand type(s) for >>
                              ^^^^^^
        287:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 'a'
             b: 42
         
@@ -1144,7 +1118,6 @@ TypeError - 8a: unsupported operand type(s) for >>=
     -->302:         a >>= b
        303:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 'a'
             b: 42
         
@@ -1180,7 +1153,6 @@ TypeError - 9: unsupported operand type(s) for @
                              ^^^^^
        319:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 'a'
             b: 2
         
@@ -1215,7 +1187,6 @@ TypeError - 9a: unsupported operand type(s) for @=
     -->334:         a @= b
        335:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 'a'
             b: 2
         
@@ -1248,7 +1219,6 @@ TypeError - 10: comparison between incompatible types
     -->350:         b < a
        351:     except Exception as e:
 
-        Known objects of interest shown above:
             b: 42
             a: 'a'
         
@@ -1369,7 +1339,6 @@ TypeError - 12: object does not support item assignment
     -->410:         a[0] = 0
        411:     except Exception as e:
 
-        Known objects of interest shown above:
             a[0]: 1
             a: (1, 2, 3)
         
@@ -1402,7 +1371,6 @@ TypeError - 13: wrong number of positional arguments
     -->427:         fn(1)
        428:     except Exception as e:
 
-        Known objects of interest shown above:
             fn: <function test_type_error13.<locals>.fn>
         
 
@@ -1437,7 +1405,6 @@ TypeError - 13a: wrong number of positional arguments
     -->446:         A().f(1)
        447:     except Exception as e:
 
-        Known objects of interest shown above:
             A: <class 'test_type_error.test_type_error13a.<locals>.A'>
         
 
@@ -1468,7 +1435,6 @@ TypeError - 14: missing positional arguments
     -->465:         fn(1)
        466:     except Exception as e:
 
-        Known objects of interest shown above:
             fn: <function test_type_error14.<locals>.fn>
         
 
@@ -1603,7 +1569,6 @@ UnboundLocalError - 1: missing global
     -->27:         outer_missing_global()
        28:     except Exception as e:
 
-        Known objects shown above:
             global outer_missing_global: <function outer_missing_global>
         
     Exception raised on line 9 of file TESTS:\runtime\test_unbound_local_error.py.
@@ -1612,7 +1577,6 @@ UnboundLocalError - 1: missing global
         8:     def inner():
     --> 9:         spam_missing_global += 1
 
-        Known objects of interest shown above:
             global spam_missing_global: 1
         
 
@@ -1657,7 +1621,6 @@ UnboundLocalError - 2: missing nonlocal
     -->48:         outer_missing_nonlocal()
        49:     except Exception as e:
 
-        Known objects shown above:
             global outer_missing_nonlocal: <function outer_missing_nonlocal>
         
     Exception raised on line 18 of file TESTS:\runtime\test_unbound_local_error.py.
@@ -1687,7 +1650,6 @@ Unknown exception
     -->10:         raise MyException("Some informative message about an unknown exception.")
        11:     except Exception as e:
 
-        Known objects of interest shown above:
             global MyException: <class 'test_unknown_error.MyException'>
         
 
@@ -1743,7 +1705,6 @@ ZeroDivisionError - 2
     -->21:         1 % zero
        22:     except Exception as e:
 
-        Known objects of interest shown above:
             zero: 0
         
 

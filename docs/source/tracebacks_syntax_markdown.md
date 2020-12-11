@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.1.12a
+Friendly-traceback version: 0.2.3a
 Python version: 3.8.4
 
 
@@ -525,6 +525,9 @@ Traceback (most recent call last):
 SyntaxError: cannot assign to literal
 
 ```
+
+Perhaps you meant to write `a = 1`
+
 
 A `SyntaxError` occurs when Python cannot understand your code.
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Custom formatter &mdash; Friendly tracebacks 0.1.12a documentation</title>
+  <title>Custom formatter &mdash; Friendly tracebacks 0.2.3a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.12a
+                0.2.3a
               </div>
             
           
@@ -297,7 +297,7 @@ version 1.0</p></li>
 </ol>
 <p>A formatter returns a single string. By default, this string will be
 written to stderr; however this can be changed by the calling program.</p>
-<p>This module currently contains 5 formatters:</p>
+<p>This module currently contains 6 formatters:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">repl()</span></code>: This is used to print the information in a traditional console,
 including that found in IDLE.  The indentation of the traceback itself
@@ -306,6 +306,7 @@ is chosen so as to reproduce that of a normal Python traceback.</p></li>
 embedded as a code-block in a file (such as .rst). It can also be used
 to print the information in a traditional console, including that
 found in IDLE.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jupyter()</span></code>: experimental formatter for Jupyter notebooks</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">markdown()</span></code>: This produces an output formatted with markdown syntax.</p></li>
 <li><dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">markdown_docs()</span></code>: This produces an output formatted markdown syntax,</dt><dd><p>but where each header is shifted down by 2 (h1 -&gt; h3, etc.) so that they
@@ -320,6 +321,14 @@ in colour in a console using Rich (<a class="reference external" href="https://g
 </dl>
 </li>
 </ul>
+<dl class="py function">
+<dt id="friendly_traceback.formatters.jupyter">
+<code class="sig-prename descclassname">friendly_traceback.formatters.</code><code class="sig-name descname">jupyter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'friendly_tb'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/formatters.html#jupyter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.formatters.jupyter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default formatter, primarily for console usage.</p>
+<p>The only change made to the content of “info” is
+some added indentation.</p>
+</dd></dl>
+
 <dl class="py function">
 <dt id="friendly_traceback.formatters.markdown">
 <code class="sig-prename descclassname">friendly_traceback.formatters.</code><code class="sig-name descname">markdown</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'friendly_tb'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/formatters.html#markdown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.formatters.markdown" title="Permalink to this definition">¶</a></dt>

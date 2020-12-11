@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.1.12a documentation</title>
+  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.2.3a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.12a
+                0.2.3a
               </div>
             
           
@@ -286,7 +286,7 @@ Ceci a besoin d’être fait de manière explicite lorsqu’on veut
 faire des corrections ou des ajouts, avant de faire la mise
 à jour du reste de la documentation avec Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.1.12a
+<p>Friendly-traceback version: 0.2.3a
 Python version: 3.8.4</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -329,7 +329,6 @@ Exception levée à la ligne 35 du fichier TESTS:\runtime\test_attribute_error.p
 --&gt;35:         a.x  # Testing instance
    36:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &lt;test_attribute_error.test_attribute_error.&lt;locals&gt;.A object&gt;
 </pre></div>
 </div>
@@ -356,7 +355,6 @@ Exception levée à la ligne 66 du fichier TESTS:\runtime\test_attribute_error.p
 --&gt;66:         string.ascii_lowecase
    67:     except Exception as e:
 
-    Known objects of interest shown above:
         string: &lt;module &#39;string&#39;&gt; from PYTHON_LIB:\string.py
 </pre></div>
 </div>
@@ -385,7 +383,6 @@ Exception levée à la ligne 82 du fichier TESTS:\runtime\test_attribute_error.p
 --&gt;82:         math.cost
    83:     except Exception as e:
 
-    Known objects of interest shown above:
         math: &lt;module &#39;math&#39; (builtin)&gt;
 </pre></div>
 </div>
@@ -456,7 +453,6 @@ Exception levée à la ligne 7 du fichier TESTS:\runtime\test_key_error.py.
 --&gt;7:         d[&quot;c&quot;]
    8:     except Exception as e:
 
-    Known objects of interest shown above:
         d: {&#39;a&#39;: 1, &#39;b&#39;: 2}
 </pre></div>
 </div>
@@ -502,7 +498,6 @@ Exception levée à la ligne 8 du fichier TESTS:\runtime\test_index_error.py.
                      ^^^^
     9:     except Exception as e:
 
-    Known objects of interest shown above:
         a: (1, 2, 3)
 </pre></div>
 </div>
@@ -528,7 +523,6 @@ Exception levée à la ligne 22 du fichier TESTS:\runtime\test_index_error.py.
                      ^^^^^
    23:     except Exception as e:
 
-    Known objects of interest shown above:
         a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
             len(a): 40
 </pre></div>
@@ -718,7 +712,6 @@ L&#39;exécution s&#39;est arrêtée à la ligne 8 du fichier TESTS:\runtime\tes
 --&gt; 8:         a()
     9:     except Exception as e:
 
-    Objets connus mentionnés ci-dessus :
         a: &lt;function test_function_recursion_error.&lt;locals&gt;.a&gt;
 
 Exception levée à la ligne 6 du fichier TESTS:\runtime\test_recursion_error.py.
@@ -729,7 +722,6 @@ Exception levée à la ligne 6 du fichier TESTS:\runtime\test_recursion_error.py
                      ^^^
    7:     try:
 
-    Known objects of interest shown above:
         a: &lt;function test_function_recursion_error.&lt;locals&gt;.a&gt;
 </pre></div>
 </div>
@@ -747,7 +739,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
-    une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
+    une chaîne de caractères (`str`) et un entier (`int`)
 
 Exception levée à la ligne 8 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -757,7 +749,6 @@ Exception levée à la ligne 8 du fichier TESTS:\runtime\test_type_error.py.
                         ^^^^^^^
     9:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &#39;a&#39;
         one: 1
 </pre></div>
@@ -776,7 +767,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
-    une chaîne de caractères (&#39;str&#39;) et une liste (&#39;list&#39;)
+    une chaîne de caractères (`str`) et une liste (`list`)
 
 Exception levée à la ligne 26 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -786,7 +777,6 @@ Exception levée à la ligne 26 du fichier TESTS:\runtime\test_type_error.py.
                         ^^^^^^^^^^
    27:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &#39;a&#39;
         a_list: [1, 2, 3]
 </pre></div>
@@ -805,7 +795,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
-    un tuple et une liste (&#39;list&#39;)
+    un `tuple` et une liste (`list`)
 
 Exception levée à la ligne 44 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -815,7 +805,6 @@ Exception levée à la ligne 44 du fichier TESTS:\runtime\test_type_error.py.
                         ^^^^^^^^^^^^^^^^
    45:     except Exception as e:
 
-    Known objects of interest shown above:
         a_tuple: (1, 2, 3)
         a_list: [1, 2, 3]
 </pre></div>
@@ -834,7 +823,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez essayé d’additionner deux types d’objets incompatibles:
-    un entier (&#39;int&#39;) et une variable ayant la valeur `None` (&#39;NoneType&#39;)
+    un entier (`int`) et une variable ayant la valeur `None` (&#39;NoneType&#39;)
 
 Exception levée à la ligne 60 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -844,7 +833,6 @@ Exception levée à la ligne 60 du fichier TESTS:\runtime\test_type_error.py.
                         ^^^^^^^^^^
    61:     except Exception as e:
 
-    Known objects of interest shown above:
         one: 1
         none: None
 </pre></div>
@@ -863,7 +851,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez essayé d’additionner deux types d’objets incompatibles:
-    un entier (&#39;int&#39;) et une chaîne de caractères (&#39;str&#39;)
+    un entier (`int`) et une chaîne de caractères (`str`)
 
 Exception levée à la ligne 78 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -872,7 +860,6 @@ Exception levée à la ligne 78 du fichier TESTS:\runtime\test_type_error.py.
 --&gt;78:         one += two
    79:     except Exception as e:
 
-    Known objects of interest shown above:
         one: 1
         two: &#39;two&#39;
 </pre></div>
@@ -891,7 +878,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez tenté de soustraire deux types d’objets incompatibles:
-    un tuple et une liste (&#39;list&#39;)
+    un `tuple` et une liste (`list`)
 
 Exception levée à la ligne 94 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -901,7 +888,6 @@ Exception levée à la ligne 94 du fichier TESTS:\runtime\test_type_error.py.
                         ^^^^^
    95:     except Exception as e:
 
-    Known objects of interest shown above:
         a: (1, 2)
         b: [3, 4]
 </pre></div>
@@ -920,7 +906,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez tenté de soustraire deux types d’objets incompatibles:
-    une liste (&#39;list&#39;) et un tuple
+    une liste (`list`) et un `tuple`
 
 Exception levée à la ligne 110 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -929,7 +915,6 @@ Exception levée à la ligne 110 du fichier TESTS:\runtime\test_type_error.py.
 --&gt;110:         b -= a
    111:     except Exception as e:
 
-    Known objects of interest shown above:
         b: [3, 4]
         a: (1, 2)
 </pre></div>
@@ -948,7 +933,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez essayé de multiplier deux types d’objets différents:
-    un nombre complexe (&#39;complex&#39;) et un ensemble (&#39;set&#39;)
+    un nombre complexe (`complex`) et un ensemble (`set`)
 
 Exception levée à la ligne 126 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -958,7 +943,6 @@ Exception levée à la ligne 126 du fichier TESTS:\runtime\test_type_error.py.
                          ^^^^^
    127:     except Exception as e:
 
-    Known objects of interest shown above:
         a: 1j
         b: {2, 3}
 </pre></div>
@@ -977,7 +961,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez essayé de multiplier deux types d’objets différents:
-    un ensemble (&#39;set&#39;) et un nombre complexe (&#39;complex&#39;)
+    un ensemble (`set`) et un nombre complexe (`complex`)
 
 Exception levée à la ligne 142 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -986,7 +970,6 @@ Exception levée à la ligne 142 du fichier TESTS:\runtime\test_type_error.py.
 --&gt;142:         b *= a
    143:     except Exception as e:
 
-    Known objects of interest shown above:
         b: {2, 3}
         a: 1j
 </pre></div>
@@ -1005,7 +988,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez essayé de diviser deux types d’objets différents:
-    un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
+    un dictionnaire (`dict`) et un nombre (`float`)
 
 Exception levée à la ligne 158 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -1015,7 +998,6 @@ Exception levée à la ligne 158 du fichier TESTS:\runtime\test_type_error.py.
                          ^^^^^
    159:     except Exception as e:
 
-    Known objects of interest shown above:
         a: {1: 1, 2: 2}
         b: 3.1416
 </pre></div>
@@ -1034,7 +1016,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez essayé de diviser deux types d’objets différents:
-    un nombre (&#39;float&#39;) et un dictionnaire (&#39;dict&#39;)
+    un nombre (`float`) et un dictionnaire (`dict`)
 
 Exception levée à la ligne 174 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -1043,7 +1025,6 @@ Exception levée à la ligne 174 du fichier TESTS:\runtime\test_type_error.py.
 --&gt;174:         b /= a
    175:     except Exception as e:
 
-    Known objects of interest shown above:
         b: 3.1416
         a: {1: 1, 2: 2}
 </pre></div>
@@ -1062,7 +1043,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez essayé de diviser deux types d’objets différents:
-    un dictionnaire (&#39;dict&#39;) et un entier (&#39;int&#39;)
+    un dictionnaire (`dict`) et un entier (`int`)
 
 Exception levée à la ligne 190 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -1072,7 +1053,6 @@ Exception levée à la ligne 190 du fichier TESTS:\runtime\test_type_error.py.
                          ^^^^^^
    191:     except Exception as e:
 
-    Known objects of interest shown above:
         a: {1: 1, 2: 2}
         b: 1
 </pre></div>
@@ -1091,7 +1071,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez essayé de diviser deux types d’objets différents:
-    un nombre (&#39;float&#39;) et un dictionnaire (&#39;dict&#39;)
+    un nombre (`float`) et un dictionnaire (`dict`)
 
 Exception levée à la ligne 206 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -1100,7 +1080,6 @@ Exception levée à la ligne 206 du fichier TESTS:\runtime\test_type_error.py.
 --&gt;206:         b //= a
    207:     except Exception as e:
 
-    Known objects of interest shown above:
         b: 3.1416
         a: {1: 1, 2: 2}
 </pre></div>
@@ -1120,7 +1099,7 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
     Vous avez essayé d’effectuer l’opération binaire bit à bit &amp;
     sur deux types d’objets incompatibles:
-    une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
+    une chaîne de caractères (`str`) et un entier (`int`)
 
 Exception levée à la ligne 222 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -1130,7 +1109,6 @@ Exception levée à la ligne 222 du fichier TESTS:\runtime\test_type_error.py.
                          ^^^^^
    223:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &#39;a&#39;
         b: 2
 </pre></div>
@@ -1150,7 +1128,7 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
     Vous avez essayé d’effectuer l’opération binaire bit à bit &amp;=
     sur deux types d’objets incompatibles:
-    un entier (&#39;int&#39;) et une chaîne de caractères (&#39;str&#39;)
+    un entier (`int`) et une chaîne de caractères (`str`)
 
 Exception levée à la ligne 238 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -1159,7 +1137,6 @@ Exception levée à la ligne 238 du fichier TESTS:\runtime\test_type_error.py.
 --&gt;238:         b &amp;= a
    239:     except Exception as e:
 
-    Known objects of interest shown above:
         b: 2
         a: &#39;a&#39;
 </pre></div>
@@ -1179,7 +1156,7 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
     Vous avez essayé d&#39;élever à une puissance
     en utilisant deux types d’objets incompatibles:
-    un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
+    un dictionnaire (`dict`) et un nombre (`float`)
 
 Exception levée à la ligne 254 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -1189,7 +1166,6 @@ Exception levée à la ligne 254 du fichier TESTS:\runtime\test_type_error.py.
                          ^^^^^^
    255:     except Exception as e:
 
-    Known objects of interest shown above:
         a: {1: 1, 2: 2}
         b: 3.1416
 </pre></div>
@@ -1209,7 +1185,7 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
     Vous avez essayé d&#39;élever à une puissance
     en utilisant deux types d’objets incompatibles:
-    un dictionnaire (&#39;dict&#39;) et un nombre (&#39;float&#39;)
+    un dictionnaire (`dict`) et un nombre (`float`)
 
 Exception levée à la ligne 270 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -1218,7 +1194,6 @@ Exception levée à la ligne 270 du fichier TESTS:\runtime\test_type_error.py.
 --&gt;270:         a **= b
    271:     except Exception as e:
 
-    Known objects of interest shown above:
         a: {1: 1, 2: 2}
         b: 3.1416
 </pre></div>
@@ -1238,7 +1213,7 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
     Vous avez essayé d’effectuer l’opération de décalage &gt;&gt;
     sur deux types d’objets incompatibles:
-    une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
+    une chaîne de caractères (`str`) et un entier (`int`)
 
 Exception levée à la ligne 286 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -1248,7 +1223,6 @@ Exception levée à la ligne 286 du fichier TESTS:\runtime\test_type_error.py.
                          ^^^^^^
    287:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &#39;a&#39;
         b: 42
 </pre></div>
@@ -1268,7 +1242,7 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
     Vous avez essayé d’effectuer l’opération de décalage &gt;&gt;=
     sur deux types d’objets incompatibles:
-    une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;)
+    une chaîne de caractères (`str`) et un entier (`int`)
 
 Exception levée à la ligne 302 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -1277,7 +1251,6 @@ Exception levée à la ligne 302 du fichier TESTS:\runtime\test_type_error.py.
 --&gt;302:         a &gt;&gt;= b
    303:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &#39;a&#39;
         b: 42
 </pre></div>
@@ -1297,7 +1270,7 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
     Vous avez essayé d’utiliser l’opérateur @
     à l’aide de deux types d’objets incompatibles:
-    une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;).
+    une chaîne de caractères (`str`) et un entier (`int`).
     Cet opérateur est normalement utilisé uniquement
     pour la multiplication des matrices.
 
@@ -1309,7 +1282,6 @@ Exception levée à la ligne 318 du fichier TESTS:\runtime\test_type_error.py.
                          ^^^^^
    319:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &#39;a&#39;
         b: 2
 </pre></div>
@@ -1329,7 +1301,7 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
     Vous avez essayé d’utiliser l’opérateur @=
     à l’aide de deux types d’objets incompatibles:
-    une chaîne de caractères (&#39;str&#39;) et un entier (&#39;int&#39;).
+    une chaîne de caractères (`str`) et un entier (`int`).
     Cet opérateur est normalement utilisé uniquement
     pour la multiplication des matrices.
 
@@ -1340,7 +1312,6 @@ Exception levée à la ligne 334 du fichier TESTS:\runtime\test_type_error.py.
 --&gt;334:         a @= b
    335:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &#39;a&#39;
         b: 2
 </pre></div>
@@ -1360,7 +1331,7 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
     En utilisant &lt;, vous avez tenté de comparer
     deux types d’objets incompatibles:
-    un entier (&#39;int&#39;) et une chaîne de caractères (&#39;str&#39;)
+    un entier (`int`) et une chaîne de caractères (`str`)
 
 Exception levée à la ligne 350 du fichier TESTS:\runtime\test_type_error.py.
 
@@ -1369,7 +1340,6 @@ Exception levée à la ligne 350 du fichier TESTS:\runtime\test_type_error.py.
 --&gt;350:         b &lt; a
    351:     except Exception as e:
 
-    Known objects of interest shown above:
         b: 42
         a: &#39;a&#39;
 </pre></div>
@@ -1388,7 +1358,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez essayé d’utiliser l’opérateur unaire &#39;+&#39;
-    avec le type d’objet suivant: une chaîne de caractères (&#39;str&#39;).
+    avec le type d’objet suivant: une chaîne de caractères (`str`).
     Cette opération n’est pas définie pour ce type d’objet.
 
 Exception levée à la ligne 364 du fichier TESTS:\runtime\test_type_error.py.
@@ -1414,7 +1384,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez essayé d’utiliser l’opérateur unaire &#39;-&#39;
-    avec le type d’objet suivant: une liste (&#39;list&#39;).
+    avec le type d’objet suivant: une liste (`list`).
     Cette opération n’est pas définie pour ce type d’objet.
 
 Exception levée à la ligne 379 du fichier TESTS:\runtime\test_type_error.py.
@@ -1440,7 +1410,7 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez essayé d’utiliser l’opérateur unaire &#39;~&#39;
-    avec le type d’objet suivant: un tuple.
+    avec le type d’objet suivant: un `tuple`.
     Cette opération n’est pas définie pour ce type d’objet.
 
 Exception levée à la ligne 394 du fichier TESTS:\runtime\test_type_error.py.
@@ -1467,7 +1437,7 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
     Dans Python, certains objets sont connus comme immuables:
     une fois définis, leur valeur ne peut pas être modifiée.
-    Vous avez essayé de modifier une partie d’un tel objet immuable: un tuple,
+    Vous avez essayé de modifier une partie d’un tel objet immuable: un `tuple`,
     probablement en utilisant une opération d’indexation.
 
 Exception levée à la ligne 410 du fichier TESTS:\runtime\test_type_error.py.
@@ -1477,7 +1447,6 @@ Exception levée à la ligne 410 du fichier TESTS:\runtime\test_type_error.py.
 --&gt;410:         a[0] = 0
    411:     except Exception as e:
 
-    Known objects of interest shown above:
         a[0]: 1
         a: (1, 2, 3)
 </pre></div>
@@ -1505,7 +1474,6 @@ Exception levée à la ligne 427 du fichier TESTS:\runtime\test_type_error.py.
 --&gt;427:         fn(1)
    428:     except Exception as e:
 
-    Known objects of interest shown above:
         fn: &lt;function test_type_error13.&lt;locals&gt;.fn&gt;
 </pre></div>
 </div>
@@ -1535,7 +1503,6 @@ Exception levée à la ligne 446 du fichier TESTS:\runtime\test_type_error.py.
 --&gt;446:         A().f(1)
    447:     except Exception as e:
 
-    Known objects of interest shown above:
         A: &lt;class &#39;test_type_error.test_type_error13a.&lt;locals&gt;.A&#39;&gt;
 </pre></div>
 </div>
@@ -1562,7 +1529,6 @@ Exception levée à la ligne 465 du fichier TESTS:\runtime\test_type_error.py.
 --&gt;465:         fn(1)
    466:     except Exception as e:
 
-    Known objects of interest shown above:
         fn: &lt;function test_type_error14.&lt;locals&gt;.fn&gt;
 </pre></div>
 </div>
@@ -1581,7 +1547,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-    Je soupçonne que vous aviez un objet du type « un tuple »,
+    Je soupçonne que vous aviez un objet du type « un `tuple` »,
     suivi de ce qui ressemblait à un tuple, &#39;(...) &#39;,
     que Python a pris comme indiquant une invocation de fonction.
     Peut-être que vous aviez une virgule manquante entre deux tuples.
@@ -1610,7 +1576,7 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-    Je soupçonne que vous aviez un objet du type « une liste (&#39;list&#39;) »,
+    Je soupçonne que vous aviez un objet du type « une liste (`list`) »,
     suivi de ce qui ressemblait à un tuple, &#39;(...) &#39;,
     que Python a pris comme indiquant une invocation de fonction.
     Peut-être que vous aviez une virgule manquante avant le tuple.
@@ -1685,7 +1651,6 @@ L&#39;exécution s&#39;est arrêtée à la ligne 27 du fichier TESTS:\runtime\te
 --&gt;27:         outer_missing_global()
    28:     except Exception as e:
 
-    Objets connus mentionnés ci-dessus :
         global outer_missing_global: &lt;function outer_missing_global&gt;
 
 Exception levée à la ligne 9 du fichier TESTS:\runtime\test_unbound_local_error.py.
@@ -1694,7 +1659,6 @@ Exception levée à la ligne 9 du fichier TESTS:\runtime\test_unbound_local_erro
     8:     def inner():
 --&gt; 9:         spam_missing_global += 1
 
-    Known objects of interest shown above:
         global spam_missing_global: 1
 </pre></div>
 </div>
@@ -1736,7 +1700,6 @@ L&#39;exécution s&#39;est arrêtée à la ligne 48 du fichier TESTS:\runtime\te
 --&gt;48:         outer_missing_nonlocal()
    49:     except Exception as e:
 
-    Objets connus mentionnés ci-dessus :
         global outer_missing_nonlocal: &lt;function outer_missing_nonlocal&gt;
 
 Exception levée à la ligne 18 du fichier TESTS:\runtime\test_unbound_local_error.py.
@@ -1763,7 +1726,6 @@ Exception levée à la ligne 10 du fichier TESTS:\runtime\test_unknown_error.py.
 --&gt;10:         raise MyException(&quot;Some informative message about an unknown exception.&quot;)
    11:     except Exception as e:
 
-    Known objects of interest shown above:
         global MyException: &lt;class &#39;test_unknown_error.MyException&#39;&gt;
 </pre></div>
 </div>
@@ -1812,7 +1774,6 @@ Exception levée à la ligne 21 du fichier TESTS:\runtime\test_zero_division_err
 --&gt;21:         1 % zero
    22:     except Exception as e:
 
-    Known objects of interest shown above:
         zero: 0
 </pre></div>
 </div>

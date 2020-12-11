@@ -15,7 +15,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly-traceback version: 0.1.12a
+Friendly-traceback version: 0.2.3a
 Python version: 3.8.4
 
 
@@ -68,7 +68,6 @@ AttributeError - class attribute
     -->35:         a.x  # Testing instance
        36:     except Exception as e:
 
-        Known objects of interest shown above:
             a: <test_attribute_error.test_attribute_error.<locals>.A object>
         
 
@@ -99,7 +98,6 @@ AttributeError - typo in module attribute
     -->66:         string.ascii_lowecase
        67:     except Exception as e:
 
-        Known objects of interest shown above:
             string: <module 'string'> from PYTHON_LIB:\string.py
         
 
@@ -132,7 +130,6 @@ AttributeError - typo in module attribute 2
     -->82:         math.cost
        83:     except Exception as e:
 
-        Known objects of interest shown above:
             math: <module 'math' (builtin)>
         
 
@@ -213,7 +210,6 @@ KeyError
     -->7:         d["c"]
        8:     except Exception as e:
 
-        Known objects of interest shown above:
             d: {'a': 1, 'b': 2}
         
 
@@ -266,7 +262,6 @@ IndexError - short tuple
                          ^^^^
         9:     except Exception as e:
 
-        Known objects of interest shown above:
             a: (1, 2, 3)
         
 
@@ -296,7 +291,6 @@ IndexError - long list
                          ^^^^^
        23:     except Exception as e:
 
-        Known objects of interest shown above:
             a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
                 len(a): 40
         
@@ -508,7 +502,6 @@ RecursionError
     --> 8:         a()
         9:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
             a: <function test_function_recursion_error.<locals>.a>
         
     Exception levée à la ligne 6 du fichier TESTS:\runtime\test_recursion_error.py.
@@ -519,7 +512,6 @@ RecursionError
                          ^^^
        7:     try:
 
-        Known objects of interest shown above:
             a: <function test_function_recursion_error.<locals>.a>
         
 
@@ -541,7 +533,7 @@ TypeError - 1: concatenate two different types
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
-        une chaîne de caractères ('str') et un entier ('int')
+        une chaîne de caractères (`str`) et un entier (`int`)
         
     Exception levée à la ligne 8 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -551,7 +543,6 @@ TypeError - 1: concatenate two different types
                             ^^^^^^^
         9:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 'a'
             one: 1
         
@@ -574,7 +565,7 @@ TypeError - 1a: concatenate two different types
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
-        une chaîne de caractères ('str') et une liste ('list')
+        une chaîne de caractères (`str`) et une liste (`list`)
         
     Exception levée à la ligne 26 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -584,7 +575,6 @@ TypeError - 1a: concatenate two different types
                             ^^^^^^^^^^
        27:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 'a'
             a_list: [1, 2, 3]
         
@@ -607,7 +597,7 @@ TypeError - 1b: concatenate two different types
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
-        un tuple et une liste ('list')
+        un `tuple` et une liste (`list`)
         
     Exception levée à la ligne 44 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -617,7 +607,6 @@ TypeError - 1b: concatenate two different types
                             ^^^^^^^^^^^^^^^^
        45:     except Exception as e:
 
-        Known objects of interest shown above:
             a_tuple: (1, 2, 3)
             a_list: [1, 2, 3]
         
@@ -640,7 +629,7 @@ TypeError - 2: unsupported operand type(s) for +
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez essayé d’additionner deux types d’objets incompatibles:
-        un entier ('int') et une variable ayant la valeur `None` ('NoneType')
+        un entier (`int`) et une variable ayant la valeur `None` ('NoneType')
         
     Exception levée à la ligne 60 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -650,7 +639,6 @@ TypeError - 2: unsupported operand type(s) for +
                             ^^^^^^^^^^
        61:     except Exception as e:
 
-        Known objects of interest shown above:
             one: 1
             none: None
         
@@ -673,7 +661,7 @@ TypeError - 2a: unsupported operand type(s) for +=
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez essayé d’additionner deux types d’objets incompatibles:
-        un entier ('int') et une chaîne de caractères ('str')
+        un entier (`int`) et une chaîne de caractères (`str`)
         
     Exception levée à la ligne 78 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -682,7 +670,6 @@ TypeError - 2a: unsupported operand type(s) for +=
     -->78:         one += two
        79:     except Exception as e:
 
-        Known objects of interest shown above:
             one: 1
             two: 'two'
         
@@ -705,7 +692,7 @@ TypeError - 3: unsupported operand type(s) for -
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez tenté de soustraire deux types d’objets incompatibles:
-        un tuple et une liste ('list')
+        un `tuple` et une liste (`list`)
         
     Exception levée à la ligne 94 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -715,7 +702,6 @@ TypeError - 3: unsupported operand type(s) for -
                             ^^^^^
        95:     except Exception as e:
 
-        Known objects of interest shown above:
             a: (1, 2)
             b: [3, 4]
         
@@ -738,7 +724,7 @@ TypeError - 3a: unsupported operand type(s) for -=
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez tenté de soustraire deux types d’objets incompatibles:
-        une liste ('list') et un tuple
+        une liste (`list`) et un `tuple`
         
     Exception levée à la ligne 110 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -747,7 +733,6 @@ TypeError - 3a: unsupported operand type(s) for -=
     -->110:         b -= a
        111:     except Exception as e:
 
-        Known objects of interest shown above:
             b: [3, 4]
             a: (1, 2)
         
@@ -770,7 +755,7 @@ TypeError - 4: unsupported operand type(s) for *
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez essayé de multiplier deux types d’objets différents:
-        un nombre complexe ('complex') et un ensemble ('set')
+        un nombre complexe (`complex`) et un ensemble (`set`)
         
     Exception levée à la ligne 126 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -780,7 +765,6 @@ TypeError - 4: unsupported operand type(s) for *
                              ^^^^^
        127:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 1j
             b: {2, 3}
         
@@ -803,7 +787,7 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez essayé de multiplier deux types d’objets différents:
-        un ensemble ('set') et un nombre complexe ('complex')
+        un ensemble (`set`) et un nombre complexe (`complex`)
         
     Exception levée à la ligne 142 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -812,7 +796,6 @@ TypeError - 4a: unsupported operand type(s) for ``*=``
     -->142:         b *= a
        143:     except Exception as e:
 
-        Known objects of interest shown above:
             b: {2, 3}
             a: 1j
         
@@ -835,7 +818,7 @@ TypeError - 5: unsupported operand type(s) for /
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez essayé de diviser deux types d’objets différents:
-        un dictionnaire ('dict') et un nombre ('float')
+        un dictionnaire (`dict`) et un nombre (`float`)
         
     Exception levée à la ligne 158 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -845,7 +828,6 @@ TypeError - 5: unsupported operand type(s) for /
                              ^^^^^
        159:     except Exception as e:
 
-        Known objects of interest shown above:
             a: {1: 1, 2: 2}
             b: 3.1416
         
@@ -868,7 +850,7 @@ TypeError - 5a: unsupported operand type(s) for /=
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez essayé de diviser deux types d’objets différents:
-        un nombre ('float') et un dictionnaire ('dict')
+        un nombre (`float`) et un dictionnaire (`dict`)
         
     Exception levée à la ligne 174 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -877,7 +859,6 @@ TypeError - 5a: unsupported operand type(s) for /=
     -->174:         b /= a
        175:     except Exception as e:
 
-        Known objects of interest shown above:
             b: 3.1416
             a: {1: 1, 2: 2}
         
@@ -900,7 +881,7 @@ TypeError - 5b: unsupported operand type(s) for //
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez essayé de diviser deux types d’objets différents:
-        un dictionnaire ('dict') et un entier ('int')
+        un dictionnaire (`dict`) et un entier (`int`)
         
     Exception levée à la ligne 190 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -910,7 +891,6 @@ TypeError - 5b: unsupported operand type(s) for //
                              ^^^^^^
        191:     except Exception as e:
 
-        Known objects of interest shown above:
             a: {1: 1, 2: 2}
             b: 1
         
@@ -933,7 +913,7 @@ TypeError - 5c: unsupported operand type(s) for //=
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez essayé de diviser deux types d’objets différents:
-        un nombre ('float') et un dictionnaire ('dict')
+        un nombre (`float`) et un dictionnaire (`dict`)
         
     Exception levée à la ligne 206 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -942,7 +922,6 @@ TypeError - 5c: unsupported operand type(s) for //=
     -->206:         b //= a
        207:     except Exception as e:
 
-        Known objects of interest shown above:
             b: 3.1416
             a: {1: 1, 2: 2}
         
@@ -966,7 +945,7 @@ TypeError - 6: unsupported operand type(s) for &
     
         Vous avez essayé d’effectuer l’opération binaire bit à bit &
         sur deux types d’objets incompatibles:
-        une chaîne de caractères ('str') et un entier ('int')
+        une chaîne de caractères (`str`) et un entier (`int`)
         
     Exception levée à la ligne 222 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -976,7 +955,6 @@ TypeError - 6: unsupported operand type(s) for &
                              ^^^^^
        223:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 'a'
             b: 2
         
@@ -1000,7 +978,7 @@ TypeError - 6a: unsupported operand type(s) for &=
     
         Vous avez essayé d’effectuer l’opération binaire bit à bit &=
         sur deux types d’objets incompatibles:
-        un entier ('int') et une chaîne de caractères ('str')
+        un entier (`int`) et une chaîne de caractères (`str`)
         
     Exception levée à la ligne 238 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -1009,7 +987,6 @@ TypeError - 6a: unsupported operand type(s) for &=
     -->238:         b &= a
        239:     except Exception as e:
 
-        Known objects of interest shown above:
             b: 2
             a: 'a'
         
@@ -1033,7 +1010,7 @@ TypeError - 7: unsupported operand type(s) for **
     
         Vous avez essayé d'élever à une puissance
         en utilisant deux types d’objets incompatibles:
-        un dictionnaire ('dict') et un nombre ('float')
+        un dictionnaire (`dict`) et un nombre (`float`)
         
     Exception levée à la ligne 254 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -1043,7 +1020,6 @@ TypeError - 7: unsupported operand type(s) for **
                              ^^^^^^
        255:     except Exception as e:
 
-        Known objects of interest shown above:
             a: {1: 1, 2: 2}
             b: 3.1416
         
@@ -1067,7 +1043,7 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
     
         Vous avez essayé d'élever à une puissance
         en utilisant deux types d’objets incompatibles:
-        un dictionnaire ('dict') et un nombre ('float')
+        un dictionnaire (`dict`) et un nombre (`float`)
         
     Exception levée à la ligne 270 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -1076,7 +1052,6 @@ TypeError - 7a: unsupported operand type(s) for ``**=``
     -->270:         a **= b
        271:     except Exception as e:
 
-        Known objects of interest shown above:
             a: {1: 1, 2: 2}
             b: 3.1416
         
@@ -1100,7 +1075,7 @@ TypeError - 8: unsupported operand type(s) for >>
     
         Vous avez essayé d’effectuer l’opération de décalage >>
         sur deux types d’objets incompatibles:
-        une chaîne de caractères ('str') et un entier ('int')
+        une chaîne de caractères (`str`) et un entier (`int`)
         
     Exception levée à la ligne 286 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -1110,7 +1085,6 @@ TypeError - 8: unsupported operand type(s) for >>
                              ^^^^^^
        287:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 'a'
             b: 42
         
@@ -1134,7 +1108,7 @@ TypeError - 8a: unsupported operand type(s) for >>=
     
         Vous avez essayé d’effectuer l’opération de décalage >>=
         sur deux types d’objets incompatibles:
-        une chaîne de caractères ('str') et un entier ('int')
+        une chaîne de caractères (`str`) et un entier (`int`)
         
     Exception levée à la ligne 302 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -1143,7 +1117,6 @@ TypeError - 8a: unsupported operand type(s) for >>=
     -->302:         a >>= b
        303:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 'a'
             b: 42
         
@@ -1167,7 +1140,7 @@ TypeError - 9: unsupported operand type(s) for @
     
         Vous avez essayé d’utiliser l’opérateur @
         à l’aide de deux types d’objets incompatibles:
-        une chaîne de caractères ('str') et un entier ('int').
+        une chaîne de caractères (`str`) et un entier (`int`).
         Cet opérateur est normalement utilisé uniquement
         pour la multiplication des matrices.
         
@@ -1179,7 +1152,6 @@ TypeError - 9: unsupported operand type(s) for @
                              ^^^^^
        319:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 'a'
             b: 2
         
@@ -1203,7 +1175,7 @@ TypeError - 9a: unsupported operand type(s) for @=
     
         Vous avez essayé d’utiliser l’opérateur @=
         à l’aide de deux types d’objets incompatibles:
-        une chaîne de caractères ('str') et un entier ('int').
+        une chaîne de caractères (`str`) et un entier (`int`).
         Cet opérateur est normalement utilisé uniquement
         pour la multiplication des matrices.
         
@@ -1214,7 +1186,6 @@ TypeError - 9a: unsupported operand type(s) for @=
     -->334:         a @= b
        335:     except Exception as e:
 
-        Known objects of interest shown above:
             a: 'a'
             b: 2
         
@@ -1238,7 +1209,7 @@ TypeError - 10: comparison between incompatible types
     
         En utilisant <, vous avez tenté de comparer
         deux types d’objets incompatibles:
-        un entier ('int') et une chaîne de caractères ('str')
+        un entier (`int`) et une chaîne de caractères (`str`)
         
     Exception levée à la ligne 350 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -1247,7 +1218,6 @@ TypeError - 10: comparison between incompatible types
     -->350:         b < a
        351:     except Exception as e:
 
-        Known objects of interest shown above:
             b: 42
             a: 'a'
         
@@ -1270,7 +1240,7 @@ TypeError - 11: bad operand type for unary +
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez essayé d’utiliser l’opérateur unaire '+'
-        avec le type d’objet suivant: une chaîne de caractères ('str').
+        avec le type d’objet suivant: une chaîne de caractères (`str`).
         Cette opération n’est pas définie pour ce type d’objet.
         
     Exception levée à la ligne 364 du fichier TESTS:\runtime\test_type_error.py.
@@ -1299,7 +1269,7 @@ TypeError - 11a: bad operand type for unary -
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez essayé d’utiliser l’opérateur unaire '-'
-        avec le type d’objet suivant: une liste ('list').
+        avec le type d’objet suivant: une liste (`list`).
         Cette opération n’est pas définie pour ce type d’objet.
         
     Exception levée à la ligne 379 du fichier TESTS:\runtime\test_type_error.py.
@@ -1328,7 +1298,7 @@ TypeError - 11b: bad operand type for unary ~
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez essayé d’utiliser l’opérateur unaire '~'
-        avec le type d’objet suivant: un tuple.
+        avec le type d’objet suivant: un `tuple`.
         Cette opération n’est pas définie pour ce type d’objet.
         
     Exception levée à la ligne 394 du fichier TESTS:\runtime\test_type_error.py.
@@ -1358,7 +1328,7 @@ TypeError - 12: object does not support item assignment
     
         Dans Python, certains objets sont connus comme immuables:
         une fois définis, leur valeur ne peut pas être modifiée.
-        Vous avez essayé de modifier une partie d’un tel objet immuable: un tuple,
+        Vous avez essayé de modifier une partie d’un tel objet immuable: un `tuple`,
         probablement en utilisant une opération d’indexation.
         
     Exception levée à la ligne 410 du fichier TESTS:\runtime\test_type_error.py.
@@ -1368,7 +1338,6 @@ TypeError - 12: object does not support item assignment
     -->410:         a[0] = 0
        411:     except Exception as e:
 
-        Known objects of interest shown above:
             a[0]: 1
             a: (1, 2, 3)
         
@@ -1400,7 +1369,6 @@ TypeError - 13: wrong number of positional arguments
     -->427:         fn(1)
        428:     except Exception as e:
 
-        Known objects of interest shown above:
             fn: <function test_type_error13.<locals>.fn>
         
 
@@ -1434,7 +1402,6 @@ TypeError - 13a: wrong number of positional arguments
     -->446:         A().f(1)
        447:     except Exception as e:
 
-        Known objects of interest shown above:
             A: <class 'test_type_error.test_type_error13a.<locals>.A'>
         
 
@@ -1465,7 +1432,6 @@ TypeError - 14: missing positional arguments
     -->465:         fn(1)
        466:     except Exception as e:
 
-        Known objects of interest shown above:
             fn: <function test_type_error14.<locals>.fn>
         
 
@@ -1488,7 +1454,7 @@ TypeError - 15: tuple object is not callable
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-        Je soupçonne que vous aviez un objet du type « un tuple »,
+        Je soupçonne que vous aviez un objet du type « un `tuple` »,
         suivi de ce qui ressemblait à un tuple, '(...) ',
         que Python a pris comme indiquant une invocation de fonction.
         Peut-être que vous aviez une virgule manquante entre deux tuples.
@@ -1520,7 +1486,7 @@ TypeError - 15a: list object is not callable
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-        Je soupçonne que vous aviez un objet du type « une liste ('list') »,
+        Je soupçonne que vous aviez un objet du type « une liste (`list`) »,
         suivi de ce qui ressemblait à un tuple, '(...) ',
         que Python a pris comme indiquant une invocation de fonction.
         Peut-être que vous aviez une virgule manquante avant le tuple.
@@ -1601,7 +1567,6 @@ UnboundLocalError - 1: missing global
     -->27:         outer_missing_global()
        28:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
             global outer_missing_global: <function outer_missing_global>
         
     Exception levée à la ligne 9 du fichier TESTS:\runtime\test_unbound_local_error.py.
@@ -1610,7 +1575,6 @@ UnboundLocalError - 1: missing global
         8:     def inner():
     --> 9:         spam_missing_global += 1
 
-        Known objects of interest shown above:
             global spam_missing_global: 1
         
 
@@ -1656,7 +1620,6 @@ UnboundLocalError - 2: missing nonlocal
     -->48:         outer_missing_nonlocal()
        49:     except Exception as e:
 
-        Objets connus mentionnés ci-dessus :
             global outer_missing_nonlocal: <function outer_missing_nonlocal>
         
     Exception levée à la ligne 18 du fichier TESTS:\runtime\test_unbound_local_error.py.
@@ -1686,7 +1649,6 @@ Unknown exception
     -->10:         raise MyException("Some informative message about an unknown exception.")
        11:     except Exception as e:
 
-        Known objects of interest shown above:
             global MyException: <class 'test_unknown_error.MyException'>
         
 
@@ -1742,7 +1704,6 @@ ZeroDivisionError - 2
     -->21:         1 % zero
        22:     except Exception as e:
 
-        Known objects of interest shown above:
             zero: 0
         
 

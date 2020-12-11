@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.1.12a documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.2.3a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.12a
+                0.2.3a
               </div>
             
           
@@ -287,7 +287,7 @@ C:Usersandregithubfriendly-tracebackteststrb_english.py located in the <code cla
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.1.12a
+<p>Friendly-traceback version: 0.2.3a
 Python version: 3.10.0a1</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -330,7 +330,6 @@ Exception raised on line 35 of file TESTS:\runtime\test_attribute_error.py.
 --&gt;35:         a.x  # Testing instance
    36:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &lt;test_attribute_error.test_attribute_error.&lt;locals&gt;.A object&gt;
 </pre></div>
 </div>
@@ -357,7 +356,6 @@ Exception raised on line 66 of file TESTS:\runtime\test_attribute_error.py.
 --&gt;66:         string.ascii_lowecase
    67:     except Exception as e:
 
-    Known objects of interest shown above:
         string: &lt;module &#39;string&#39;&gt; from PYTHON_LIB:\string.py
 </pre></div>
 </div>
@@ -386,7 +384,6 @@ Exception raised on line 82 of file TESTS:\runtime\test_attribute_error.py.
 --&gt;82:         math.cost
    83:     except Exception as e:
 
-    Known objects of interest shown above:
         math: &lt;module &#39;math&#39; (builtin)&gt;
 </pre></div>
 </div>
@@ -457,7 +454,6 @@ Exception raised on line 7 of file TESTS:\runtime\test_key_error.py.
 --&gt;7:         d[&quot;c&quot;]
    8:     except Exception as e:
 
-    Known objects of interest shown above:
         d: {&#39;a&#39;: 1, &#39;b&#39;: 2}
 </pre></div>
 </div>
@@ -503,7 +499,6 @@ Exception raised on line 8 of file TESTS:\runtime\test_index_error.py.
                      ^^^^
     9:     except Exception as e:
 
-    Known objects of interest shown above:
         a: (1, 2, 3)
 </pre></div>
 </div>
@@ -529,7 +524,6 @@ Exception raised on line 22 of file TESTS:\runtime\test_index_error.py.
                      ^^^^^
    23:     except Exception as e:
 
-    Known objects of interest shown above:
         a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
             len(a): 40
 </pre></div>
@@ -719,7 +713,6 @@ Execution stopped on line 8 of file TESTS:\runtime\test_recursion_error.py.
 --&gt; 8:         a()
     9:     except Exception as e:
 
-    Known objects shown above:
         a: &lt;function test_function_recursion_error.&lt;locals&gt;.a&gt;
 
 Exception raised on line 6 of file TESTS:\runtime\test_recursion_error.py.
@@ -730,7 +723,6 @@ Exception raised on line 6 of file TESTS:\runtime\test_recursion_error.py.
                      ^^^
    7:     try:
 
-    Known objects of interest shown above:
         a: &lt;function test_function_recursion_error.&lt;locals&gt;.a&gt;
 </pre></div>
 </div>
@@ -758,7 +750,6 @@ Exception raised on line 8 of file TESTS:\runtime\test_type_error.py.
                         ^^^^^^^
     9:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &#39;a&#39;
         one: 1
 </pre></div>
@@ -787,7 +778,6 @@ Exception raised on line 26 of file TESTS:\runtime\test_type_error.py.
                         ^^^^^^^^^^
    27:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &#39;a&#39;
         a_list: [1, 2, 3]
 </pre></div>
@@ -816,7 +806,6 @@ Exception raised on line 44 of file TESTS:\runtime\test_type_error.py.
                         ^^^^^^^^^^^^^^^^
    45:     except Exception as e:
 
-    Known objects of interest shown above:
         a_tuple: (1, 2, 3)
         a_list: [1, 2, 3]
 </pre></div>
@@ -845,7 +834,6 @@ Exception raised on line 60 of file TESTS:\runtime\test_type_error.py.
                         ^^^^^^^^^^
    61:     except Exception as e:
 
-    Known objects of interest shown above:
         one: 1
         none: None
 </pre></div>
@@ -873,7 +861,6 @@ Exception raised on line 78 of file TESTS:\runtime\test_type_error.py.
 --&gt;78:         one += two
    79:     except Exception as e:
 
-    Known objects of interest shown above:
         one: 1
         two: &#39;two&#39;
 </pre></div>
@@ -902,7 +889,6 @@ Exception raised on line 94 of file TESTS:\runtime\test_type_error.py.
                         ^^^^^
    95:     except Exception as e:
 
-    Known objects of interest shown above:
         a: (1, 2)
         b: [3, 4]
 </pre></div>
@@ -930,7 +916,6 @@ Exception raised on line 110 of file TESTS:\runtime\test_type_error.py.
 --&gt;110:         b -= a
    111:     except Exception as e:
 
-    Known objects of interest shown above:
         b: [3, 4]
         a: (1, 2)
 </pre></div>
@@ -959,7 +944,6 @@ Exception raised on line 126 of file TESTS:\runtime\test_type_error.py.
                          ^^^^^
    127:     except Exception as e:
 
-    Known objects of interest shown above:
         a: 1j
         b: {2, 3}
 </pre></div>
@@ -987,7 +971,6 @@ Exception raised on line 142 of file TESTS:\runtime\test_type_error.py.
 --&gt;142:         b *= a
    143:     except Exception as e:
 
-    Known objects of interest shown above:
         b: {2, 3}
         a: 1j
 </pre></div>
@@ -1016,7 +999,6 @@ Exception raised on line 158 of file TESTS:\runtime\test_type_error.py.
                          ^^^^^
    159:     except Exception as e:
 
-    Known objects of interest shown above:
         a: {1: 1, 2: 2}
         b: 3.1416
 </pre></div>
@@ -1044,7 +1026,6 @@ Exception raised on line 174 of file TESTS:\runtime\test_type_error.py.
 --&gt;174:         b /= a
    175:     except Exception as e:
 
-    Known objects of interest shown above:
         b: 3.1416
         a: {1: 1, 2: 2}
 </pre></div>
@@ -1073,7 +1054,6 @@ Exception raised on line 190 of file TESTS:\runtime\test_type_error.py.
                          ^^^^^^
    191:     except Exception as e:
 
-    Known objects of interest shown above:
         a: {1: 1, 2: 2}
         b: 1
 </pre></div>
@@ -1101,7 +1081,6 @@ Exception raised on line 206 of file TESTS:\runtime\test_type_error.py.
 --&gt;206:         b //= a
    207:     except Exception as e:
 
-    Known objects of interest shown above:
         b: 3.1416
         a: {1: 1, 2: 2}
 </pre></div>
@@ -1131,7 +1110,6 @@ Exception raised on line 222 of file TESTS:\runtime\test_type_error.py.
                          ^^^^^
    223:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &#39;a&#39;
         b: 2
 </pre></div>
@@ -1160,7 +1138,6 @@ Exception raised on line 238 of file TESTS:\runtime\test_type_error.py.
 --&gt;238:         b &amp;= a
    239:     except Exception as e:
 
-    Known objects of interest shown above:
         b: 2
         a: &#39;a&#39;
 </pre></div>
@@ -1190,7 +1167,6 @@ Exception raised on line 254 of file TESTS:\runtime\test_type_error.py.
                          ^^^^^^
    255:     except Exception as e:
 
-    Known objects of interest shown above:
         a: {1: 1, 2: 2}
         b: 3.1416
 </pre></div>
@@ -1219,7 +1195,6 @@ Exception raised on line 270 of file TESTS:\runtime\test_type_error.py.
 --&gt;270:         a **= b
    271:     except Exception as e:
 
-    Known objects of interest shown above:
         a: {1: 1, 2: 2}
         b: 3.1416
 </pre></div>
@@ -1249,7 +1224,6 @@ Exception raised on line 286 of file TESTS:\runtime\test_type_error.py.
                          ^^^^^^
    287:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &#39;a&#39;
         b: 42
 </pre></div>
@@ -1278,7 +1252,6 @@ Exception raised on line 302 of file TESTS:\runtime\test_type_error.py.
 --&gt;302:         a &gt;&gt;= b
    303:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &#39;a&#39;
         b: 42
 </pre></div>
@@ -1310,7 +1283,6 @@ Exception raised on line 318 of file TESTS:\runtime\test_type_error.py.
                          ^^^^^
    319:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &#39;a&#39;
         b: 2
 </pre></div>
@@ -1341,7 +1313,6 @@ Exception raised on line 334 of file TESTS:\runtime\test_type_error.py.
 --&gt;334:         a @= b
    335:     except Exception as e:
 
-    Known objects of interest shown above:
         a: &#39;a&#39;
         b: 2
 </pre></div>
@@ -1370,7 +1341,6 @@ Exception raised on line 350 of file TESTS:\runtime\test_type_error.py.
 --&gt;350:         b &lt; a
    351:     except Exception as e:
 
-    Known objects of interest shown above:
         b: 42
         a: &#39;a&#39;
 </pre></div>
@@ -1478,7 +1448,6 @@ Exception raised on line 410 of file TESTS:\runtime\test_type_error.py.
 --&gt;410:         a[0] = 0
    411:     except Exception as e:
 
-    Known objects of interest shown above:
         a[0]: 1
         a: (1, 2, 3)
 </pre></div>
@@ -1510,7 +1479,6 @@ Exception raised on line 427 of file TESTS:\runtime\test_type_error.py.
 --&gt;427:         fn(1)
    428:     except Exception as e:
 
-    Known objects of interest shown above:
         fn: &lt;function test_type_error13.&lt;locals&gt;.fn&gt;
 </pre></div>
 </div>
@@ -1541,7 +1509,6 @@ Exception raised on line 446 of file TESTS:\runtime\test_type_error.py.
 --&gt;446:         A().f(1)
    447:     except Exception as e:
 
-    Known objects of interest shown above:
         A: &lt;class &#39;test_type_error.test_type_error13a.&lt;locals&gt;.A&#39;&gt;
 </pre></div>
 </div>
@@ -1568,7 +1535,6 @@ Exception raised on line 465 of file TESTS:\runtime\test_type_error.py.
 --&gt;465:         fn(1)
    466:     except Exception as e:
 
-    Known objects of interest shown above:
         fn: &lt;function test_type_error14.&lt;locals&gt;.fn&gt;
 </pre></div>
 </div>
@@ -1690,7 +1656,6 @@ Execution stopped on line 27 of file TESTS:\runtime\test_unbound_local_error.py.
 --&gt;27:         outer_missing_global()
    28:     except Exception as e:
 
-    Known objects shown above:
         global outer_missing_global: &lt;function outer_missing_global&gt;
 
 Exception raised on line 9 of file TESTS:\runtime\test_unbound_local_error.py.
@@ -1699,7 +1664,6 @@ Exception raised on line 9 of file TESTS:\runtime\test_unbound_local_error.py.
     8:     def inner():
 --&gt; 9:         spam_missing_global += 1
 
-    Known objects of interest shown above:
         global spam_missing_global: 1
 </pre></div>
 </div>
@@ -1740,7 +1704,6 @@ Execution stopped on line 48 of file TESTS:\runtime\test_unbound_local_error.py.
 --&gt;48:         outer_missing_nonlocal()
    49:     except Exception as e:
 
-    Known objects shown above:
         global outer_missing_nonlocal: &lt;function outer_missing_nonlocal&gt;
 
 Exception raised on line 18 of file TESTS:\runtime\test_unbound_local_error.py.
@@ -1767,7 +1730,6 @@ Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.
 --&gt;10:         raise MyException(&quot;Some informative message about an unknown exception.&quot;)
    11:     except Exception as e:
 
-    Known objects of interest shown above:
         global MyException: &lt;class &#39;test_unknown_error.MyException&#39;&gt;
 </pre></div>
 </div>
@@ -1816,7 +1778,6 @@ Exception raised on line 21 of file TESTS:\runtime\test_zero_division_error.py.
 --&gt;21:         1 % zero
    22:     except Exception as e:
 
-    Known objects of interest shown above:
         zero: 0
 </pre></div>
 </div>

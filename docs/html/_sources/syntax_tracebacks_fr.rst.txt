@@ -22,7 +22,7 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.1.12a
+Friendly-traceback version: 0.2.3a
 Python version: 3.8.4
 
 
@@ -455,6 +455,7 @@ SyntaxError - can't assign to literal - 1
         ^
     SyntaxError: cannot assign to literal
     
+        Peut-être que vous vouliez plutôt écrire : `a = 1`
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier

@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.1.12a
+Friendly-traceback version: 0.2.3a
 Python version: 3.8.4
 
 
@@ -78,8 +78,6 @@ The object `a` has no attribute named `x`.
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     a: <test_attribute_error.test_attribute_error.<locals>.A object>
 
@@ -121,8 +119,6 @@ Perhaps you meant to write `string.ascii_lowercase` instead of `string.ascii_low
        67:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     string: <module 'string'> from PYTHON_LIB:\string.py
@@ -167,8 +163,6 @@ the following names which are attributes of module `math`:
        83:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     math: <module 'math' (builtin)>
@@ -278,8 +272,6 @@ In your program, the key that cannot be found is `'c'`.
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     d: {'a': 1, 'b': 2}
 
@@ -348,8 +340,6 @@ Reminder: the first item of a sequence is at index 0.
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     a: (1, 2, 3)
 
@@ -387,8 +377,6 @@ Reminder: the first item of a sequence is at index 0.
        23:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
@@ -665,8 +653,6 @@ and that your program would never stop.
 
 ```
 
-##### Known objects shown above
-
 ```python
     a: <function test_function_recursion_error.<locals>.a>
 
@@ -683,8 +669,6 @@ and that your program would never stop.
        7:     try:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     a: <function test_function_recursion_error.<locals>.a>
@@ -726,8 +710,6 @@ a string (`str`) and an integer (`int`)
         9:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     a: 'a'
@@ -771,8 +753,6 @@ a string (`str`) and a `list`
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     a: 'a'
     a_list: [1, 2, 3]
@@ -814,8 +794,6 @@ a `tuple` and a `list`
        45:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     a_tuple: (1, 2, 3)
@@ -859,8 +837,6 @@ an integer (`int`) and a variable equal to `None` (`NoneType`)
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     one: 1
     none: None
@@ -901,8 +877,6 @@ an integer (`int`) and a string (`str`)
        79:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     one: 1
@@ -946,8 +920,6 @@ a `tuple` and a `list`
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     a: (1, 2)
     b: [3, 4]
@@ -988,8 +960,6 @@ a `list` and a `tuple`
        111:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     b: [3, 4]
@@ -1033,8 +1003,6 @@ a complex number and a `set`
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     a: 1j
     b: {2, 3}
@@ -1075,8 +1043,6 @@ a `set` and a complex number
        143:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     b: {2, 3}
@@ -1120,8 +1086,6 @@ a dictionary (`dict`) and a number (`float`)
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     a: {1: 1, 2: 2}
     b: 3.1416
@@ -1162,8 +1126,6 @@ a number (`float`) and a dictionary (`dict`)
        175:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     b: 3.1416
@@ -1207,8 +1169,6 @@ a dictionary (`dict`) and an integer (`int`)
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     a: {1: 1, 2: 2}
     b: 1
@@ -1249,8 +1209,6 @@ a number (`float`) and a dictionary (`dict`)
        207:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     b: 3.1416
@@ -1295,8 +1253,6 @@ a string (`str`) and an integer (`int`)
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     a: 'a'
     b: 2
@@ -1338,8 +1294,6 @@ an integer (`int`) and a string (`str`)
        239:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     b: 2
@@ -1384,8 +1338,6 @@ a dictionary (`dict`) and a number (`float`)
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     a: {1: 1, 2: 2}
     b: 3.1416
@@ -1427,8 +1379,6 @@ a dictionary (`dict`) and a number (`float`)
        271:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     a: {1: 1, 2: 2}
@@ -1473,8 +1423,6 @@ a string (`str`) and an integer (`int`)
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     a: 'a'
     b: 42
@@ -1516,8 +1464,6 @@ a string (`str`) and an integer (`int`)
        303:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     a: 'a'
@@ -1564,8 +1510,6 @@ for multiplication of matrices.
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     a: 'a'
     b: 2
@@ -1610,8 +1554,6 @@ for multiplication of matrices.
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     a: 'a'
     b: 2
@@ -1653,8 +1595,6 @@ an integer (`int`) and a string (`str`)
        351:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     b: 42
@@ -1810,8 +1750,6 @@ most likely by using an indexing operation.
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     a[0]: 1
     a: (1, 2, 3)
@@ -1853,8 +1791,6 @@ such positional argument(s).
        428:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     fn: <function test_type_error13.<locals>.fn>
@@ -1902,8 +1838,6 @@ Perhaps you forgot `self` when defining `f`.
 
 ```
 
-##### Known objects of interest shown above
-
 ```python
     A: <class 'test_type_error.test_type_error13a.<locals>.A'>
 
@@ -1943,8 +1877,6 @@ fewer positional arguments than it requires (2 missing).
        466:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     fn: <function test_type_error14.<locals>.fn>
@@ -2120,8 +2052,6 @@ should have been included as the first line inside your function.
 
 ```
 
-##### Known objects shown above
-
 ```python
     global outer_missing_global: <function outer_missing_global>
 
@@ -2136,8 +2066,6 @@ should have been included as the first line inside your function.
     --> 9:         spam_missing_global += 1
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     global spam_missing_global: 1
@@ -2195,8 +2123,6 @@ should have been included as the first line inside your function.
 
 ```
 
-##### Known objects shown above
-
 ```python
     global outer_missing_nonlocal: <function outer_missing_nonlocal>
 
@@ -2239,8 +2165,6 @@ No information is available about this exception.
        11:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     global MyException: <class 'test_unknown_error.MyException'>
@@ -2312,8 +2236,6 @@ using the modulo operator `%`:
        22:     except Exception as e:
 
 ```
-
-##### Known objects of interest shown above
 
 ```python
     zero: 0
