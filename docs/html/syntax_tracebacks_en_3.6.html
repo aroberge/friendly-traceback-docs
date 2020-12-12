@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly tracebacks 0.2.6 documentation</title>
+  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly tracebacks 0.2.7a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.6
+                0.2.7a
               </div>
             
           
@@ -207,6 +207,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-forgot-a-comma-in-an-f-string">SyntaxError - forgot a comma in an f-string</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-valid-names-cannot-begin-with-a-number">SyntaxError - Valid names cannot begin with a number</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unclosed-parenthesis-3">SyntaxError - unclosed parenthesis - 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-forgot-a-multiplication-operator">SyntaxError - forgot a multiplication operator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
@@ -321,7 +322,7 @@ On Windows, if Sphinx is installed on your computer, it is suggested
 instead to run make_trb.bat in the root directory as it will create
 similar files for all languages <em>and</em> update the documentation.</p>
 </div>
-<p>Friendly-traceback version: 0.2.6
+<p>Friendly-traceback version: 0.2.7a
 Python version: 3.6.8</p>
 <div class="section" id="indentationerror-1-expected-an-indented-block">
 <h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -2899,6 +2900,37 @@ beyond the location indicated by --&gt; and ^.
 
         5:         print(((123))
                         |
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-forgot-a-multiplication-operator">
+<h2>SyntaxError - forgot a multiplication operator<a class="headerlink" href="#syntaxerror-forgot-a-multiplication-operator" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 138, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error82.py&quot;, line 3
+    tau = 2pi
+            ^
+SyntaxError: invalid syntax
+
+    Perhaps you forgot a multiplication operator, `2 * pi`.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error82.py&#39;
+beyond the location indicated by --&gt; and ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: tau = 2pi
+              ^
+
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    Valid names cannot begin with a number.
+    Perhaps you forgot a multiplication operator, `2 * pi`.
 </pre></div>
 </div>
 </div>

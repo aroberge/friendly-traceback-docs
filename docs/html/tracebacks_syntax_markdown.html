@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Syntax errors - markdown_docs format &mdash; Friendly tracebacks 0.2.6 documentation</title>
+  <title>Syntax errors - markdown_docs format &mdash; Friendly tracebacks 0.2.7a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.6
+                0.2.7a
               </div>
             
           
@@ -222,6 +222,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-forgot-a-comma-in-an-f-string">SyntaxError - forgot a comma in an f-string</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-valid-names-cannot-begin-with-a-number">SyntaxError - Valid names cannot begin with a number</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unclosed-parenthesis-3">SyntaxError - unclosed parenthesis - 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-forgot-a-multiplication-operator">SyntaxError - forgot a multiplication operator</a></li>
 </ul>
 </li>
 </ul>
@@ -312,7 +313,7 @@ trb_syntax_markdown.py located in the <code class="docutils literal notranslate"
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.
 </p>
-</div><p>Friendly-traceback version: 0.2.6
+</div><p>Friendly-traceback version: 0.2.7a
 Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="indentationerror-1-expected-an-indented-block">
@@ -2768,6 +2769,34 @@ but I might guess incorrectly.</p>
                 <span class="o">|</span>
 </pre></div>
 </div>
+</div>
+<hr class="docutils" />
+<div class="section" id="syntaxerror-forgot-a-multiplication-operator">
+<h2>SyntaxError - forgot a multiplication operator<a class="headerlink" href="#syntaxerror-forgot-a-multiplication-operator" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error82.py&quot;</span>, line <span class="m">3</span>
+    <span class="n">tau</span> <span class="o">=</span> <span class="mi">2</span><span class="n">pi</span>
+           <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>Perhaps you forgot a multiplication operator, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">pi</span></code>.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error82.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;</span>
+       <span class="mi">2</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="n">tau</span> <span class="o">=</span> <span class="mi">2</span><span class="n">pi</span>
+                 <span class="o">^</span>
+</pre></div>
+</div>
+<p>I make an effort below to guess what caused the problem
+but I might guess incorrectly.</p>
+<p>Valid names cannot begin with a number.
+Perhaps you forgot a multiplication operator, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">pi</span></code>.</p>
 </div>
 </div>
 

@@ -22,7 +22,7 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.2.6
+Friendly-traceback version: 0.2.7a
 Python version: 3.8.4
 
 
@@ -2847,4 +2847,37 @@ SyntaxError - unclosed parenthesis - 3
         
             5:         print(((123))
                             |
+        
+
+SyntaxError - forgot a multiplication operator
+----------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error82.py", line 3
+        tau = 2pi
+               ^
+    SyntaxError: invalid syntax
+    
+        Peut-être avez-vous oublié un opérateur de multiplication, `2 * pi`.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error82.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: tau = 2pi
+                 ^
+
+        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+        
+        Les noms valides ne peuvent pas commencer par un chiffre.
+        Peut-être avez-vous oublié un opérateur de multiplication, `2 * pi`.
         

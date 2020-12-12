@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.2.6
+Friendly-traceback version: 0.2.7a
 Python version: 3.8.4
 
 
@@ -3425,3 +3425,45 @@ The opening parenthesis `(` on line 5 is not closed.
 
     5:         print(((123))
                     |
+
+---
+
+## SyntaxError - forgot a multiplication operator
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
+    mod = __import__(name)
+  File "TESTS:\syntax\raise_syntax_error82.py", line 3
+    tau = 2pi
+           ^
+SyntaxError: invalid syntax
+
+```
+
+Perhaps you forgot a multiplication operator, `2 * pi`.
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\raise_syntax_error82.py'
+beyond the location indicated by --> and ^.
+
+
+```python
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: tau = 2pi
+                 ^
+
+```
+
+I make an effort below to guess what caused the problem
+but I might guess incorrectly.
+
+Valid names cannot begin with a number.
+Perhaps you forgot a multiplication operator, `2 * pi`.
