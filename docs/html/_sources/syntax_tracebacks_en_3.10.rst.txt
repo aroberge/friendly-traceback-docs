@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.2.3a
+Friendly-traceback version: 0.2.6
 Python version: 3.10.0a1
 
 
@@ -30,7 +30,7 @@ IndentationError - 1: expected an indented block
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_indentation_error1.py", line 4
         pass
@@ -61,7 +61,7 @@ IndentationError - 2: unexpected indent
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_indentation_error2.py", line 4
         pass
@@ -93,7 +93,7 @@ IndentationError - 3: unindent does not match ...
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_indentation_error3.py", line 4
         pass
@@ -125,7 +125,7 @@ TabError
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_tab_error.py", line 7
         pass
@@ -156,7 +156,7 @@ SyntaxError - Assign to keyword
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error1.py", line 3
         def = 2
@@ -189,7 +189,7 @@ SyntaxError - Missing colon - 1
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error2.py", line 3
         if True
@@ -225,7 +225,7 @@ SyntaxError - Missing colon - 2
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error3.py", line 3
         while True  # a comment
@@ -261,7 +261,7 @@ SyntaxError - elif, not else if
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error4.py", line 5
         else if True:
@@ -298,7 +298,7 @@ SyntaxError - elif, not elseif
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error5.py", line 5
         elseif True:
@@ -335,7 +335,7 @@ SyntaxError - malformed def statment - 1
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error6.py", line 3
         def :
@@ -370,7 +370,7 @@ SyntaxError - malformed def statment - 2
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error7.py", line 3
         def name  :
@@ -407,7 +407,7 @@ SyntaxError - malformed def statment - 3
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error8.py", line 3
         def ( arg )  :
@@ -442,7 +442,7 @@ SyntaxError - can't assign to literal - 1
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error9.py", line 3
         1 = a
@@ -479,7 +479,7 @@ SyntaxError - can't assign to literal - 2
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error10.py", line 3
         1 = 2
@@ -512,7 +512,7 @@ SyntaxError - can't assign to literal - 3
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error52.py", line 7
         {1, 2, 3} = 4
@@ -546,7 +546,7 @@ SyntaxError - can't assign to literal - 4
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error53.py", line 7
         {1 : 2, 2 : 4} = 5
@@ -580,7 +580,7 @@ SyntaxError - can't assign to literal - 5
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error54.py", line 4
         1 = a = b
@@ -614,7 +614,7 @@ SyntaxError - import X from Y
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error11.py", line 3
         import pen from turtle
@@ -652,7 +652,7 @@ SyntaxError - EOL while scanning string literal
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error12.py", line 3
         alphabet = 'abc
@@ -683,7 +683,7 @@ SyntaxError - assignment to keyword (None)
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error13.py", line 4
         None = 1
@@ -714,7 +714,7 @@ SyntaxError - assignment to keyword (__debug__)
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error14.py", line 4
         __debug__ = 1
@@ -745,7 +745,7 @@ SyntaxError - unmatched closing parenthesis
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error15.py", line 6
         3, 4,))
@@ -775,7 +775,7 @@ SyntaxError - unclosed parenthesis- 1
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error16.py", line 3
         if x == 1:
@@ -800,7 +800,7 @@ SyntaxError - unclosed parenthesis- 1
         The opening parenthesis `(` on line 2 is not closed.
         
             2: x = int('1'
-                      ^
+                      |
         
 
 SyntaxError - unclosed parenthesis - 2
@@ -810,7 +810,7 @@ SyntaxError - unclosed parenthesis - 2
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error17.py", line 3
         d = a*a
@@ -834,7 +834,10 @@ SyntaxError - unclosed parenthesis - 2
         The opening parenthesis `(` on line 2 is not closed.
         
             2: a = (b+c
-                   ^
+                   |
+        It is also possible that you forgot a comma between items in a tuple, 
+        or between function arguments, 
+        before the position indicated by --> and ^.
         
 
 SyntaxError - mismatched brackets
@@ -844,7 +847,7 @@ SyntaxError - mismatched brackets
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error18.py", line 2
         x = (1, 2, 3]
@@ -879,7 +882,7 @@ SyntaxError - mismatched brackets - 2
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error19.py", line 4
         3]
@@ -918,7 +921,7 @@ SyntaxError - print is a function
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error20.py", line 2
         print 'hello'
@@ -950,7 +953,7 @@ SyntaxError - Python keyword as function name
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error21.py", line 3
         def pass():
@@ -982,7 +985,7 @@ SyntaxError - break outside loop
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error22.py", line 4
         break
@@ -1011,7 +1014,7 @@ SyntaxError - continue outside loop
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error23.py", line 4
         continue
@@ -1040,7 +1043,7 @@ SyntaxError - quote inside a string
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error24.py", line 3
         message = 'don't'
@@ -1076,7 +1079,7 @@ SyntaxError - missing comma in a dict
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error25.py", line 5
         'c': 3,
@@ -1099,7 +1102,11 @@ SyntaxError - missing comma in a dict
         I make an effort below to guess what caused the problem
         but I might guess incorrectly.
         
-        It is possible that you forgot a comma between items in a set or dict
+        The opening curly bracket `{` on line 3 is not closed.
+        
+            3: a = {'a': 1,
+                   |
+        It is also possible that you forgot a comma between items in a set or dict
         before the position indicated by --> and ^.
         
 
@@ -1110,7 +1117,7 @@ SyntaxError - missing comma in a set
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error26.py", line 3
         a = {1, 2  3}
@@ -1142,7 +1149,7 @@ SyntaxError - missing comma in a list
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error27.py", line 3
         a = [1, 2  3]
@@ -1174,7 +1181,7 @@ SyntaxError - missing comma in a tuple
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error28.py", line 3
         a = (1, 2  3)
@@ -1206,7 +1213,7 @@ SyntaxError - missing comma between function args
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error29.py", line 4
         def a(b, c d):
@@ -1240,7 +1247,7 @@ SyntaxError - can't assign to function call - 1
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error30.py", line 6
         len('a') = 3
@@ -1274,7 +1281,7 @@ SyntaxError - can't assign to function call - 2
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error31.py", line 6
         func(a, b=3) = 4
@@ -1308,7 +1315,7 @@ SyntaxError - used equal sign instead of colon
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error32.py", line 4
         ages = {'Alice'=22, 'Bob'=24}
@@ -1342,7 +1349,7 @@ SyntaxError - non-default argument follows default argument
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error33.py", line 5
         def test(a=1, b):
@@ -1385,7 +1392,7 @@ SyntaxError - positional argument follows keyword argument
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error34.py", line 5
         test(a=1, b)
@@ -1427,7 +1434,7 @@ SyntaxError - f-string: unterminated string
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error35.py", line 4
         print(f"Bob is {age['Bob]} years old.")
@@ -1460,7 +1467,7 @@ SyntaxError - unclosed bracket
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error36.py", line 7
         print(foo())
@@ -1485,7 +1492,9 @@ SyntaxError - unclosed bracket
         The opening square bracket `[` on line 5 is not closed.
         
             5:     return [1, 2, 3
-                          ^
+                          |
+        It is also possible that you forgot a comma between items in a list
+        before the position indicated by --> and ^.
         
 
 SyntaxError - unexpected EOF while parsing
@@ -1495,7 +1504,7 @@ SyntaxError - unexpected EOF while parsing
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error37.py", line 8
     SyntaxError: unexpected EOF while parsing
@@ -1520,7 +1529,7 @@ SyntaxError - unexpected EOF while parsing
         The opening square bracket `[` on line 5 is not closed.
         
             5:     return [1, 2, 3,
-                          ^
+                          |
         
 
 SyntaxError - name is parameter and global
@@ -1530,7 +1539,7 @@ SyntaxError - name is parameter and global
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error38.py", line 6
         global x
@@ -1566,7 +1575,7 @@ SyntaxError - keyword as attribute
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error39.py", line 12
         a.pass = 2
@@ -1599,7 +1608,7 @@ SyntaxError - content passed continuation line character
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error40.py", line 5
         print(\t)
@@ -1631,7 +1640,7 @@ SyntaxError - keyword can't be an expression
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error41.py", line 7
         a = dict('key'=1)
@@ -1669,7 +1678,7 @@ SyntaxError - invalid character in identifier
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error42.py", line 6
         🤖 = 'Reeborg'
@@ -1699,7 +1708,7 @@ SyntaxError - keyword cannot be argument in def - 1
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error43.py", line 5
         def f(None=1):
@@ -1733,7 +1742,7 @@ SyntaxError - keyword cannot be argument in def - 2
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error44.py", line 5
         def f(x, True):
@@ -1767,7 +1776,7 @@ SyntaxError - keyword cannot be argument in def - 3
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error45.py", line 5
         def f(*None):
@@ -1801,7 +1810,7 @@ SyntaxError - keyword cannot be argument in def - 4
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error46.py", line 5
         def f(**None):
@@ -1835,7 +1844,7 @@ SyntaxError - delete function call
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error47.py", line 5
         del f(a)
@@ -1869,7 +1878,7 @@ SyntaxError - assigned prior to global declaration
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error48.py", line 7
         global p
@@ -1899,7 +1908,7 @@ SyntaxError - used prior to global declaration
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error49.py", line 7
         global r
@@ -1929,7 +1938,7 @@ SyntaxError - assigned prior to nonlocal declaration
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error50.py", line 9
         nonlocal q
@@ -1960,7 +1969,7 @@ SyntaxError - used prior to nonlocal declaration
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error51.py", line 9
         nonlocal s
@@ -1991,7 +2000,7 @@ SyntaxError - named assignment with Python constant
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error55.py", line 4
         (True := 1)
@@ -2022,7 +2031,7 @@ SyntaxError - assignment to operator
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error56.py", line 4
         a + 1 = 2
@@ -2052,7 +2061,7 @@ SyntaxError - using the backquote character
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error57.py", line 3
         a = `1`
@@ -2086,7 +2095,7 @@ SyntaxError - assign to generator expression
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error58.py", line 3
         (x for x in x) = 1
@@ -2115,7 +2124,7 @@ SyntaxError - assign to conditional expression
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error59.py", line 3
         a if 1 else b = 1
@@ -2146,7 +2155,7 @@ SyntaxError - name is parameter and nonlocal
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error60.py", line 5
         nonlocal x
@@ -2177,7 +2186,7 @@ SyntaxError - name is global and nonlocal
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error61.py", line 7
         global xy
@@ -2208,7 +2217,7 @@ SyntaxError - nonlocal variable not found
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error62.py", line 5
         nonlocal ab
@@ -2238,7 +2247,7 @@ SyntaxError - nonlocal variable not found at module level
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error63.py", line 4
         nonlocal cd
@@ -2268,7 +2277,7 @@ SyntaxError - keyword arg only once in function definition
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error64.py", line 4
         def f(aa=1, aa=2):
@@ -2301,7 +2310,7 @@ SyntaxError - keyword arg only once in function call
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error65.py", line 4
         f(ad=1, ad=2)
@@ -2331,7 +2340,7 @@ SyntaxError - unexpected EOF while parsing 2
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error66.py", line 4
     IndentationError: expected an indented block
@@ -2360,7 +2369,7 @@ SyntaxError - print is a function 2
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error67.py", line 2
         print len('hello')
@@ -2391,7 +2400,7 @@ SyntaxError - copy/paste from interpreter
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error68.py", line 2
         >>> print("Hello World!")
@@ -2424,7 +2433,7 @@ SyntaxError - Using pip from interpreter
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error69.py", line 2
         pip install friendly
@@ -2458,7 +2467,7 @@ SyntaxError - Using pip from interpreter 2
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error70.py", line 2
         python -m pip install friendly
@@ -2492,7 +2501,7 @@ SyntaxError - dot followed by parenthesis
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error71.py", line 2
         print(len.('hello'))
@@ -2522,7 +2531,7 @@ SyntaxError - cannot assign to f-string
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error72.py", line 6
         f'{x}' = 42
@@ -2553,7 +2562,7 @@ SyntaxError - raising multiple exceptions
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error73.py", line 2
         raise X, Y
@@ -2583,7 +2592,7 @@ SyntaxError - parenthesis around generator expression
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error74.py", line 6
         f(x for x in L, 1)
@@ -2614,7 +2623,7 @@ SyntaxError - invalid character (bad quote)
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error75.py", line 3
         a = « hello »
@@ -2647,7 +2656,7 @@ SyntaxError - single = instead of double == with if
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error76.py", line 3
         if i % 2 = 0:
@@ -2682,7 +2691,7 @@ SyntaxError - single = instead of double == with elif
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error77.py", line 5
         elif i % 2 = 0:
@@ -2718,7 +2727,7 @@ SyntaxError - single = instead of double == with while
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 134, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error78.py", line 4
         while a = 1:
@@ -2745,4 +2754,105 @@ SyntaxError - single = instead of double == with while
         
         You used an assignment operator `=`; perhaps you meant to use 
         an equality operator, `==`, or the walrus operator `:=`.
+        
+
+SyntaxError - forgot a comma in an f-string
+-------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error79.py", line 3
+        (x y)
+           ^
+    SyntaxError: f-string: invalid syntax
+    
+        Did you forget something between `x` and `y`?
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error79.py'
+    beyond the location indicated by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: f"{x y}"
+             ^
+
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
+        
+        Python indicates that the error is caused by `y` written just after `x`.
+        Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `x` and `y`.
+
+SyntaxError - Valid names cannot begin with a number
+----------------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error80.py", line 3
+        36abc = 3
+          ^
+    SyntaxError: invalid syntax
+    
+        Valid names cannot begin with a number.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error80.py'
+    beyond the location indicated by --> and ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: 36abc = 3
+            ^
+
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
+        
+        Valid names cannot begin with a number.
+        
+
+SyntaxError - unclosed parenthesis - 3
+--------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 138, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error81.py", line 7
+        if 2:
+            ^
+    SyntaxError: invalid syntax
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error81.py'
+    beyond the location indicated by --> and ^.
+    
+        4:     if 1:
+        5:         print(((123))
+        6: 
+    --> 7: if 2:
+               ^
+        8:     print(123))
+
+        I make an effort below to guess what caused the problem
+        but I might guess incorrectly.
+        
+        The opening parenthesis `(` on line 5 is not closed.
+        
+            5:         print(((123))
+                            |
         

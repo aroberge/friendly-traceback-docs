@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback &mdash; Friendly tracebacks 0.2.3a documentation</title>
+  <title>friendly_traceback &mdash; Friendly tracebacks 0.2.6 documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.2.3a
+                0.2.6
               </div>
             
           
@@ -245,7 +245,8 @@
 <span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">session</span>
 
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">editors_helper</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">friendly_rich</span>
+
+<span class="kn">from</span> <span class="nn">.theme</span> <span class="kn">import</span> <span class="n">rich_available</span>
 
 <span class="c1"># Ensure that warnings are not shown to the end user, as they could</span>
 <span class="c1"># cause confusion.  Eventually, we might want to interpret them like</span>
@@ -336,7 +337,7 @@
     <span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">console</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">use_rich</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">theme</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span>
+    <span class="n">style</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span>
     <span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Given a filename (relative or absolute path) ending with the &quot;.py&quot;</span>
@@ -373,9 +374,9 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="n">redirect</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">use_rich</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">friendly_rich</span><span class="o">.</span><span class="n">rich_available</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">rich_available</span><span class="p">:</span>
             <span class="n">session</span><span class="o">.</span><span class="n">use_rich</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="n">session</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="s2">&quot;rich&quot;</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="n">theme</span><span class="p">)</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="s2">&quot;rich&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="p">[</span><span class="n">filename</span><span class="p">]</span>
@@ -386,7 +387,7 @@
             <span class="n">local_vars</span><span class="o">=</span><span class="n">module_globals</span><span class="p">,</span>
             <span class="n">use_rich</span><span class="o">=</span><span class="n">use_rich</span><span class="p">,</span>
             <span class="n">banner</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="n">theme</span><span class="o">=</span><span class="n">theme</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span>
             <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -420,7 +421,7 @@
     <span class="n">include</span><span class="o">=</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">,</span>
     <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span>
     <span class="n">banner</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">theme</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span>
+    <span class="n">style</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Starts a Friendly console.&quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">console</span>
@@ -431,7 +432,7 @@
         <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span>
         <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span>
         <span class="n">banner</span><span class="o">=</span><span class="n">banner</span><span class="p">,</span>
-        <span class="n">theme</span><span class="o">=</span><span class="n">theme</span><span class="p">,</span>
+        <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span>
     <span class="p">)</span></div>
 
 
