@@ -225,7 +225,6 @@
 <span class="sd">If you find that some additional functionality would be useful to</span>
 <span class="sd">have as part of the public API, please let us know.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-
 <span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="n">valid_version</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="o">.</span><span class="n">major</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="o">.</span><span class="n">minor</span> <span class="o">&gt;=</span> <span class="mi">6</span>
@@ -238,15 +237,16 @@
 
 <span class="c1"># ===========================================</span>
 
+<span class="kn">import</span> <span class="nn">inspect</span>
 <span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
-<span class="kn">from</span> <span class="nn">.version</span> <span class="kn">import</span> <span class="n">__version__</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">editors_helpers</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">path_info</span>
 <span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">session</span>
-
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">editors_helper</span>
-
+<span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
 <span class="kn">from</span> <span class="nn">.theme</span> <span class="kn">import</span> <span class="n">rich_available</span>
+<span class="kn">from</span> <span class="nn">.version</span> <span class="kn">import</span> <span class="n">__version__</span>  <span class="c1"># noqa</span>
 
 <span class="c1"># Ensure that warnings are not shown to the end user, as they could</span>
 <span class="c1"># cause confusion.  Eventually, we might want to interpret them like</span>
@@ -267,6 +267,7 @@
     <span class="sd">&quot;&quot;&quot;Deprecated: Use explain_traceback() instead.&quot;&quot;&quot;</span>
     <span class="c1"># The reason for removing this is to avoid confusion with</span>
     <span class="c1"># explain() used in the console.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;explain() is deprecated; please use explain_traceback().&quot;</span><span class="p">)</span>
     <span class="n">session</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="n">redirect</span><span class="p">)</span></div>
 
 
@@ -372,23 +373,35 @@
 <span class="sd">    the default, and ``light`` are available. ``light`` is meant for</span>
 <span class="sd">    light coloured background and has not been extensively tested.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">if</span> <span class="n">args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="p">[</span><span class="n">filename</span><span class="p">]</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">filename</span><span class="o">.</span><span class="n">is_absolute</span><span class="p">():</span>
+            <span class="n">frame</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">stack</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="c1"># This is the file from which run() is called</span>
+            <span class="n">run_filename</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">frame</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">f_code</span><span class="o">.</span><span class="n">co_filename</span><span class="p">)</span>
+            <span class="n">run_dir</span> <span class="o">=</span> <span class="n">run_filename</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">run_dir</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">filename</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;The file </span><span class="si">{filename}</span><span class="s2"> does not exist&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">))</span>
+            <span class="k">return</span>
+
     <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="n">redirect</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">use_rich</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">rich_available</span><span class="p">:</span>
             <span class="n">session</span><span class="o">.</span><span class="n">use_rich</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="n">session</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="s2">&quot;rich&quot;</span><span class="p">)</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="s2">&quot;rich&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="p">[</span><span class="n">filename</span><span class="p">]</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
-    <span class="n">module_globals</span> <span class="o">=</span> <span class="n">editors_helper</span><span class="o">.</span><span class="n">exec_code</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">)</span>
+    <span class="n">module_globals</span> <span class="o">=</span> <span class="n">editors_helpers</span><span class="o">.</span><span class="n">exec_code</span><span class="p">(</span>
+        <span class="n">path</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span>
+    <span class="p">)</span>
     <span class="k">if</span> <span class="n">console</span><span class="p">:</span>
         <span class="n">start_console</span><span class="p">(</span>
-            <span class="n">local_vars</span><span class="o">=</span><span class="n">module_globals</span><span class="p">,</span>
-            <span class="n">use_rich</span><span class="o">=</span><span class="n">use_rich</span><span class="p">,</span>
-            <span class="n">banner</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span>
-            <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span>
+            <span class="n">local_vars</span><span class="o">=</span><span class="n">module_globals</span><span class="p">,</span> <span class="n">use_rich</span><span class="o">=</span><span class="n">use_rich</span><span class="p">,</span> <span class="n">banner</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span>
         <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">module_globals</span></div>
@@ -416,12 +429,7 @@
 
 
 <div class="viewcode-block" id="start_console"><a class="viewcode-back" href="../api.html#friendly_traceback.start_console">[docs]</a><span class="k">def</span> <span class="nf">start_console</span><span class="p">(</span>
-    <span class="n">local_vars</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">use_rich</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">include</span><span class="o">=</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">,</span>
-    <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span>
-    <span class="n">banner</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">style</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span>
+    <span class="n">local_vars</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_rich</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">banner</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Starts a Friendly console.&quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">console</span>
@@ -432,7 +440,6 @@
         <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span>
         <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span>
         <span class="n">banner</span><span class="o">=</span><span class="n">banner</span><span class="p">,</span>
-        <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span>
     <span class="p">)</span></div>
 
 

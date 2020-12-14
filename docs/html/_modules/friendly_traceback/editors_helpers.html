@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.third_party_api &mdash; Friendly tracebacks 0.1.12a documentation</title>
+  <title>friendly_traceback.editors_helpers &mdash; Friendly tracebacks 0.2.7a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.1.12a
+                0.2.7a
               </div>
             
           
@@ -190,7 +190,7 @@
         
           <li><a href="../friendly_traceback.html">friendly_traceback</a> &raquo;</li>
         
-      <li>friendly_traceback.third_party_api</li>
+      <li>friendly_traceback.editors_helpers</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -205,60 +205,64 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for friendly_traceback.third_party_api</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;The functions in this module have been created so that user of tools,</span>
-<span class="sd">like the editor Mu, could use Friendly-traceback.</span>
+  <h1>Source code for friendly_traceback.editors_helpers</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">editors_helpers.py</span>
+<span class="sd">------------------</span>
 
-<span class="sd">See https://aroberge.github.io/friendly-traceback-docs/docs/html/mu.html</span>
-<span class="sd">for an example.</span>
+<span class="sd">The functions in this module have been created so that user editors/IDEs</span>
+<span class="sd">could use Friendly-traceback without having to change the content of</span>
+<span class="sd">their own programs.</span>
 
-<span class="sd">Note that most tools can be written so as to make direct use of the</span>
-<span class="sd">standard API.</span>
+<span class="sd">None of these are part of the public API.</span>
+
+<span class="sd">If you make use of any other function here, please file an issue so</span>
+<span class="sd">it can be determined if it should be added to the public API.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="kn">from</span> <span class="nn">.core</span> <span class="kn">import</span> <span class="n">explain_traceback</span>
 <span class="kn">from</span> <span class="nn">.source_cache</span> <span class="kn">import</span> <span class="n">cache</span>
 <span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
-<span class="kn">from</span> <span class="nn">.session</span> <span class="kn">import</span> <span class="n">session</span>
+<span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">session</span>
 
 
-<div class="viewcode-block" id="advanced_check_syntax"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.advanced_check_syntax">[docs]</a><span class="k">def</span> <span class="nf">advanced_check_syntax</span><span class="p">(</span>
-    <span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;Fake filename&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span>
+<div class="viewcode-block" id="check_syntax"><a class="viewcode-back" href="../../plugins.html#friendly_traceback.editors_helpers.check_syntax">[docs]</a><span class="k">def</span> <span class="nf">check_syntax</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;Fake filename&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This uses Python&#39;s ``compile()`` builtin which does some analysis of</span>
-<span class="sd">       its code argument and will raise an exception if it identifies</span>
-<span class="sd">       some syntax errors, but also some less common &quot;overflow&quot; and &quot;value&quot;</span>
-<span class="sd">       errors.</span>
+<span class="sd">    its code argument and will raise an exception if it identifies</span>
+<span class="sd">    some syntax errors, but also some less common &quot;overflow&quot; and &quot;value&quot;</span>
+<span class="sd">    errors.</span>
 
-<span class="sd">       Compared with ``check_syntax()``, the prefix ``advanced_`` simply refers</span>
-<span class="sd">       to the greater number of arguments, which are specified as</span>
-<span class="sd">       keywords-only arguments.</span>
+<span class="sd">    Note that there are a few syntax errors that are not caught by this,</span>
+<span class="sd">    as they are identified by Python very late in its execution</span>
+<span class="sd">    process. See for example</span>
+<span class="sd">    `this blog post &lt;https://aroberge.blogspot.com/2019/12/a-tiny-python-exception-oddity.html&gt;`_</span>
 
-<span class="sd">       This function can either be used on a file, using the ``path`` argument, or</span>
-<span class="sd">       on some code passed as a string, using the ``source`` argument.</span>
-<span class="sd">       For the latter case, one can also specify a corresponding ``filename``:</span>
-<span class="sd">       this could be useful if this function is invoked from a GUI-based</span>
-<span class="sd">       editor.</span>
+<span class="sd">    This function can either be used on a file, using the ``path`` argument, or</span>
+<span class="sd">    on some code passed as a string, using the ``source`` argument.</span>
+<span class="sd">    For the latter case, one can also specify a corresponding ``filename``:</span>
+<span class="sd">    this could be useful if this function is invoked from a GUI-based</span>
+<span class="sd">    editor.</span>
 
-<span class="sd">       Note that the ``path`` argument, if provided, takes precedence</span>
-<span class="sd">       over the ``source`` argument.</span>
+<span class="sd">    Note that the ``path`` argument, if provided, takes precedence</span>
+<span class="sd">    over the ``source`` argument.</span>
 
-<span class="sd">       Two additional named arguments, ``verbosity`` and ``lang``, can be</span>
-<span class="sd">       provided to temporarily set the values to be used during this function</span>
-<span class="sd">       call. The original values are restored at the end.</span>
+<span class="sd">    Two additional named arguments, ``include`` and ``lang``, can be</span>
+<span class="sd">    provided to temporarily set the values to be used during this function</span>
+<span class="sd">    call. The original values are restored at the end.</span>
 
-<span class="sd">       If friendly-traceback exception hook has not been set up prior</span>
-<span class="sd">       to calling check_syntax, it will only be used for the duration</span>
-<span class="sd">       of this function call.</span>
+<span class="sd">    If friendly-traceback exception hook has not been set up prior</span>
+<span class="sd">    to calling check_syntax, it will only be used for the duration</span>
+<span class="sd">    of this function call.</span>
 
-<span class="sd">       Returns a tuple containing a code object and a filename if no exception</span>
-<span class="sd">       has been raised, False otherwise.</span>
+<span class="sd">    Returns a tuple containing a code object and a filename if no exception</span>
+<span class="sd">    has been raised, False otherwise.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
 
-    <span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_verbosity</span> <span class="o">=</span> <span class="n">_save_settings</span><span class="p">()</span>
+    <span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_include</span> <span class="o">=</span> <span class="n">_save_settings</span><span class="p">()</span>
     <span class="n">saved_lang</span> <span class="o">=</span> <span class="n">_temp_set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -267,110 +271,84 @@
                 <span class="n">source</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
                 <span class="n">filename</span> <span class="o">=</span> <span class="n">path</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception caught&quot;</span><span class="p">)</span>
             <span class="c1"># Do not show the Python traceback which would include</span>
             <span class="c1">#  the call to open() in the traceback</span>
-            <span class="k">if</span> <span class="n">verbosity</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">session</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">include</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="s2">&quot;no_tb&quot;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">session</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
-            <span class="n">explain_traceback</span><span class="p">()</span>
-            <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_verbosity</span><span class="p">)</span>
+                <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">()</span>
+            <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_include</span><span class="p">)</span>
             <span class="k">return</span> <span class="kc">False</span>
 
     <span class="n">cache</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">code</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;exec&quot;</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">verbosity</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">session</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># our default</span>
+        <span class="k">if</span> <span class="n">include</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="s2">&quot;explain&quot;</span><span class="p">)</span>  <span class="c1"># our default</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">session</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
-        <span class="n">explain_traceback</span><span class="p">()</span>
-        <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_verbosity</span><span class="p">)</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">()</span>
+        <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_include</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">False</span>
 
-    <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_verbosity</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">code</span><span class="p">,</span> <span class="n">filename</span></div>
+    <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_include</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">code</span></div>
 
 
-<div class="viewcode-block" id="check_syntax"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.check_syntax">[docs]</a><span class="k">def</span> <span class="nf">check_syntax</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Given a filename (relative or absolute path), this function calls the</span>
-<span class="sd">       more keyword-based advanced_check_syntax(),</span>
-<span class="sd">       and will raise an exception if it identifies</span>
-<span class="sd">       some syntax errors, but also some less common &quot;overflow&quot; and &quot;value&quot;</span>
-<span class="sd">       errors.  advanced_check_syntax() provides a more flexibility</span>
-
-<span class="sd">       If friendly-traceback exception hook has not been set up prior</span>
-<span class="sd">       to calling check_syntax, it will only be used for the duration</span>
-<span class="sd">       of this function call.</span>
-
-<span class="sd">       Returns False if problems have been found, None otherwise.</span>
-<span class="sd">       &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">advanced_check_syntax</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">):</span>
-        <span class="k">return</span> <span class="kc">None</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span></div>
-
-
-<div class="viewcode-block" id="exec_code"><a class="viewcode-back" href="../../api.html#friendly_traceback.public_api.exec_code">[docs]</a><span class="k">def</span> <span class="nf">exec_code</span><span class="p">(</span>
-    <span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;Fake filename&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span>
-<span class="p">):</span>
+<div class="viewcode-block" id="exec_code"><a class="viewcode-back" href="../../plugins.html#friendly_traceback.editors_helpers.exec_code">[docs]</a><span class="k">def</span> <span class="nf">exec_code</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This uses check_syntax to see if the code is valid and, if so,</span>
-<span class="sd">       executes it into an empty dict as globals. If no exception is</span>
-<span class="sd">       raised, this dict is returned. If an exception is raised, False</span>
-<span class="sd">       is returned.</span>
+<span class="sd">    executes it into a globals dict containing only</span>
+<span class="sd">    ``{&quot;__name__&quot;: &quot;__main__&quot;}``.</span>
+<span class="sd">    If no ``SyntaxError`` exception is raised, this dict is returned;</span>
+<span class="sd">    otherwise, an empty dict is returned.</span>
 
-<span class="sd">       It can either be used on a file, using the ``path`` argument, or</span>
-<span class="sd">       on some code passed as a string, using the ``source`` argument.</span>
-<span class="sd">       For the latter case, one can also specify a corresponding ``filename``:</span>
-<span class="sd">       this could be useful if this function is invoked from a GUI-based</span>
-<span class="sd">       editor.</span>
+<span class="sd">    It can either be used on a file, using the ``path`` argument, or</span>
+<span class="sd">    on some code passed as a string, using the ``source`` argument.</span>
 
-<span class="sd">       Note that the ``path`` argument, if provided, takes precedence</span>
-<span class="sd">       over the ``source`` argument.</span>
+<span class="sd">    Note that the ``path`` argument, if provided, takes precedence</span>
+<span class="sd">    over the ``source`` argument.</span>
 
-<span class="sd">       Two additional named arguments, ``verbosity`` and ``lang``, can be</span>
-<span class="sd">       provided to temporarily set the values to be used during this function</span>
-<span class="sd">       call. The original values are restored at the end.</span>
+<span class="sd">    Two additional named arguments, ``include`` and ``lang``, can be</span>
+<span class="sd">    provided to temporarily set the values to be used during this function</span>
+<span class="sd">    call. The original values are restored at the end.</span>
 
-<span class="sd">       If friendly-traceback exception hook has not been set up prior</span>
-<span class="sd">       to calling check_syntax, it will only be used for the duration</span>
-<span class="sd">       of this function call.</span>
+<span class="sd">    If friendly-traceback exception hook has not been set up prior</span>
+<span class="sd">    to calling check_syntax, it will only be used for the duration</span>
+<span class="sd">    of this function call.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">advanced_check_syntax</span><span class="p">(</span>
-        <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="n">verbosity</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span>
-    <span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">check_syntax</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">code</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{}</span>
 
-    <span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_verbosity</span> <span class="o">=</span> <span class="n">_save_settings</span><span class="p">()</span>
+    <span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_include</span> <span class="o">=</span> <span class="n">_save_settings</span><span class="p">()</span>
     <span class="n">saved_lang</span> <span class="o">=</span> <span class="n">_temp_set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
 
-    <span class="n">my_globals</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">code</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
+    <span class="n">module_globals</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;__name__&quot;</span><span class="p">:</span> <span class="s2">&quot;__main__&quot;</span><span class="p">}</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">exec</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">my_globals</span><span class="p">)</span>
+        <span class="n">exec</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">module_globals</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">verbosity</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">session</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># our default</span>
+        <span class="k">if</span> <span class="n">include</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="s2">&quot;explain&quot;</span><span class="p">)</span>  <span class="c1"># our default</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">session</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
-        <span class="n">explain_traceback</span><span class="p">()</span>
-        <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_verbosity</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">False</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">()</span>
+        <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_include</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">module_globals</span>
 
-    <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_verbosity</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">my_globals</span></div>
+    <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_include</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">module_globals</span></div>
 
 
 <span class="k">def</span> <span class="nf">_temp_set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;If lang is not none, temporarily set session.lang to the provided</span>
-<span class="sd">       value. Keep track of the original lang setting and return it.</span>
+<span class="sd">    value. Keep track of the original lang setting and return it.</span>
 
-<span class="sd">       A value of None for saved_lang indicates that no resetting will</span>
-<span class="sd">       be required.</span>
-<span class="sd">       &quot;&quot;&quot;</span>
+<span class="sd">    A value of None for saved_lang indicates that no resetting will</span>
+<span class="sd">    be required.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">saved_lang</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">if</span> <span class="n">lang</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">saved_lang</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">lang</span>
@@ -383,17 +361,17 @@
 
 <span class="k">def</span> <span class="nf">_save_settings</span><span class="p">():</span>
     <span class="n">current_except_hook</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">excepthook</span>
-    <span class="n">current_verbosity</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">level</span>
+    <span class="n">current_include</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">include</span>
 
-    <span class="k">return</span> <span class="n">current_except_hook</span><span class="p">,</span> <span class="n">current_verbosity</span>
+    <span class="k">return</span> <span class="n">current_except_hook</span><span class="p">,</span> <span class="n">current_include</span>
 
 
-<span class="k">def</span> <span class="nf">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_verbosity</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Resets both verbosity and lang to their original values&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_include</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Resets both include and lang to their original values&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">saved_lang</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">session</span><span class="o">.</span><span class="n">install_gettext</span><span class="p">(</span><span class="n">saved_lang</span><span class="p">)</span>
-    <span class="n">session</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">saved_verbosity</span><span class="p">)</span>
-    <span class="c1"># set_verbosity(0) restores sys.excepthook to sys.__excepthook__</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">saved_include</span><span class="p">)</span>
+    <span class="c1"># set_include(0) restores sys.excepthook to sys.__excepthook__</span>
     <span class="c1"># which might not be what is wanted. So, we reset sys.excepthook last</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">excepthook</span> <span class="o">=</span> <span class="n">saved_except_hook</span>
 </pre></div>

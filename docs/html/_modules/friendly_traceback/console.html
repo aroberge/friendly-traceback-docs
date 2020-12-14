@@ -228,8 +228,8 @@
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">theme</span>
 
 <span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">session</span>
+<span class="kn">from</span> <span class="nn">.console_helpers</span> <span class="kn">import</span> <span class="n">helpers</span>
 <span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
-<span class="kn">from</span> <span class="nn">.path_info</span> <span class="kn">import</span> <span class="n">path_utils</span>
 
 
 <span class="n">BANNER</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Friendly Console version </span><span class="si">{}</span><span class="s2">. [Python version: </span><span class="si">{}</span><span class="s2">]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
@@ -617,32 +617,13 @@
     <span class="k">if</span> <span class="n">banner</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">banner</span> <span class="o">=</span> <span class="n">BANNER</span>
 
-    <span class="n">console_defaults</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;explain&quot;</span><span class="p">:</span> <span class="n">explain</span><span class="p">,</span>
-        <span class="s2">&quot;what&quot;</span><span class="p">:</span> <span class="n">what</span><span class="p">,</span>
-        <span class="s2">&quot;where&quot;</span><span class="p">:</span> <span class="n">where</span><span class="p">,</span>
-        <span class="s2">&quot;why&quot;</span><span class="p">:</span> <span class="n">why</span><span class="p">,</span>
-        <span class="s2">&quot;more&quot;</span><span class="p">:</span> <span class="n">more</span><span class="p">,</span>
-        <span class="s2">&quot;get_lang&quot;</span><span class="p">:</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_lang</span><span class="p">,</span>
-        <span class="s2">&quot;set_lang&quot;</span><span class="p">:</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_lang</span><span class="p">,</span>
-        <span class="s2">&quot;get_include&quot;</span><span class="p">:</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_include</span><span class="p">,</span>
-        <span class="s2">&quot;set_include&quot;</span><span class="p">:</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_include</span><span class="p">,</span>
-        <span class="s2">&quot;hint&quot;</span><span class="p">:</span> <span class="n">hint</span><span class="p">,</span>
-        <span class="s2">&quot;friendly_tb&quot;</span><span class="p">:</span> <span class="n">friendly_tb</span><span class="p">,</span>
-        <span class="s2">&quot;python_tb&quot;</span><span class="p">:</span> <span class="n">python_tb</span><span class="p">,</span>
-        <span class="s2">&quot;debug_tb&quot;</span><span class="p">:</span> <span class="n">debug_tb</span><span class="p">,</span>
-        <span class="s2">&quot;debug&quot;</span><span class="p">:</span> <span class="n">debug</span><span class="p">,</span>
-        <span class="s2">&quot;show_paths&quot;</span><span class="p">:</span> <span class="n">path_utils</span><span class="o">.</span><span class="n">show_paths</span><span class="p">,</span>
-        <span class="s2">&quot;_info&quot;</span><span class="p">:</span> <span class="n">_info</span><span class="p">,</span>
-    <span class="p">}</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">is_installed</span><span class="p">():</span>
         <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">local_vars</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">local_vars</span> <span class="o">=</span> <span class="n">console_defaults</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">local_vars</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">console_defaults</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">local_vars</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Make sure we don&#39;t overwrite with our own functions</span>
+        <span class="n">helpers</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">local_vars</span><span class="p">)</span>
 
-    <span class="n">console</span> <span class="o">=</span> <span class="n">FriendlyConsole</span><span class="p">(</span><span class="nb">locals</span><span class="o">=</span><span class="n">local_vars</span><span class="p">,</span> <span class="n">use_rich</span><span class="o">=</span><span class="n">use_rich</span><span class="p">)</span>
+    <span class="n">console</span> <span class="o">=</span> <span class="n">FriendlyConsole</span><span class="p">(</span><span class="nb">locals</span><span class="o">=</span><span class="n">helpers</span><span class="p">,</span> <span class="n">use_rich</span><span class="o">=</span><span class="n">use_rich</span><span class="p">)</span>
     <span class="n">console</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">banner</span><span class="o">=</span><span class="n">banner</span><span class="p">)</span></div>
 </pre></div>
 

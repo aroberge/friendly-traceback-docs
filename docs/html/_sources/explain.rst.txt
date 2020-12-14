@@ -1,4 +1,0 @@
-explain()
-----------
-
-More to come.
