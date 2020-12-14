@@ -69,7 +69,7 @@ AttributeError - class attribute
     -->35:         a.x  # Testing instance
        36:     except Exception as e:
 
-            a: <test_attribute_error.test_attribute_error.<locals>.A object>
+            a: <A object> from test_attribute_error.test_attribute_error
         
 
 
@@ -503,7 +503,7 @@ RecursionError
     --> 8:         a()
         9:     except Exception as e:
 
-            a: <function test_function_recursion_error.<locals>.a>
+            a: <function a> from test_function_recursion_error
         
     Exception raised on line 6 of file TESTS:\runtime\test_recursion_error.py.
     
@@ -513,7 +513,7 @@ RecursionError
                          ^^^
        7:     try:
 
-            a: <function test_function_recursion_error.<locals>.a>
+            a: <function a> from test_function_recursion_error
         
 
 
@@ -1355,17 +1355,17 @@ TypeError - 13: wrong number of positional arguments
         fn(1)
     TypeError: test_type_error13.<locals>.fn() takes 0 positional arguments but 1 was given
     
-        Perhaps you forgot `self` when defining `test_type_error13.<locals>.fn`.
+        Perhaps you forgot `self` when defining `fn`.
         
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-        You apparently have called the function `test_type_error13.<locals>.fn` with
+        You apparently have called the function `fn` with
         1 positional argument(s) while it requires 0
         such positional argument(s).
-        Perhaps you forgot `self` when defining `test_type_error13.<locals>.fn`.
+        Perhaps you forgot `self` when defining `fn`.
         
     Exception raised on line 427 of file TESTS:\runtime\test_type_error.py.
     
@@ -1374,7 +1374,7 @@ TypeError - 13: wrong number of positional arguments
     -->427:         fn(1)
        428:     except Exception as e:
 
-            fn: <function test_type_error13.<locals>.fn>
+            fn: <function fn> from test_type_error13
         
 
 
@@ -1389,17 +1389,17 @@ TypeError - 13a: wrong number of positional arguments
         A().f(1)
     TypeError: test_type_error13a.<locals>.A.f() takes 1 positional argument but 2 were given
     
-        Perhaps you forgot `self` when defining `test_type_error13a.<locals>.A.f`.
+        Perhaps you forgot `self` when defining `A.f`.
         
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-        You apparently have called the function `test_type_error13a.<locals>.A.f` with
+        You apparently have called the function `A.f` with
         2 positional argument(s) while it requires 1
         such positional argument(s).
-        Perhaps you forgot `self` when defining `test_type_error13a.<locals>.A.f`.
+        Perhaps you forgot `self` when defining `A.f`.
         
     Exception raised on line 446 of file TESTS:\runtime\test_type_error.py.
     
@@ -1408,7 +1408,7 @@ TypeError - 13a: wrong number of positional arguments
     -->446:         A().f(1)
        447:     except Exception as e:
 
-            A: <class 'test_type_error.test_type_error13a.<locals>.A'>
+            A: <class A> from test_type_error.test_type_error13a
         
 
 
@@ -1438,7 +1438,7 @@ TypeError - 14: missing positional arguments
     -->465:         fn(1)
        466:     except Exception as e:
 
-            fn: <function test_type_error14.<locals>.fn>
+            fn: <function fn> from test_type_error14
         
 
 

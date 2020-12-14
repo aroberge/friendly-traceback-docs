@@ -69,7 +69,7 @@ AttributeError - class attribute
     -->35:         a.x  # Testing instance
        36:     except Exception as e:
 
-            a: <test_attribute_error.test_attribute_error.<locals>.A object>
+            a: <A object> from test_attribute_error.test_attribute_error
         
 
 
@@ -503,7 +503,7 @@ RecursionError
     --> 8:         a()
         9:     except Exception as e:
 
-            a: <function test_function_recursion_error.<locals>.a>
+            a: <function a> from test_function_recursion_error
         
     Exception raised on line 6 of file TESTS:\runtime\test_recursion_error.py.
     
@@ -513,7 +513,7 @@ RecursionError
                          ^^^
        7:     try:
 
-            a: <function test_function_recursion_error.<locals>.a>
+            a: <function a> from test_function_recursion_error
         
 
 
@@ -1371,7 +1371,7 @@ TypeError - 13: wrong number of positional arguments
     -->427:         fn(1)
        428:     except Exception as e:
 
-            fn: <function test_type_error13.<locals>.fn>
+            fn: <function fn> from test_type_error13
         
 
 
@@ -1405,7 +1405,7 @@ TypeError - 13a: wrong number of positional arguments
     -->446:         A().f(1)
        447:     except Exception as e:
 
-            A: <class 'test_type_error.test_type_error13a.<locals>.A'>
+            A: <class A> from test_type_error.test_type_error13a
         
 
 
@@ -1435,7 +1435,7 @@ TypeError - 14: missing positional arguments
     -->465:         fn(1)
        466:     except Exception as e:
 
-            fn: <function test_type_error14.<locals>.fn>
+            fn: <function fn> from test_type_error14
         
 
 

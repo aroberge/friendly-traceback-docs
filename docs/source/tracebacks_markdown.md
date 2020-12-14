@@ -79,7 +79,7 @@ The object `a` has no attribute named `x`.
 ```
 
 ```python
-    a: <test_attribute_error.test_attribute_error.<locals>.A object>
+    a: <A object> from test_attribute_error.test_attribute_error
 
 ```
 
@@ -654,7 +654,7 @@ and that your program would never stop.
 ```
 
 ```python
-    a: <function test_function_recursion_error.<locals>.a>
+    a: <function a> from test_function_recursion_error
 
 ```
 
@@ -671,7 +671,7 @@ and that your program would never stop.
 ```
 
 ```python
-    a: <function test_function_recursion_error.<locals>.a>
+    a: <function a> from test_function_recursion_error
 
 ```
 
@@ -1793,7 +1793,7 @@ such positional argument(s).
 ```
 
 ```python
-    fn: <function test_type_error13.<locals>.fn>
+    fn: <function fn> from test_type_error13
 
 ```
 
@@ -1839,7 +1839,7 @@ Perhaps you forgot `self` when defining `f`.
 ```
 
 ```python
-    A: <class 'test_type_error.test_type_error13a.<locals>.A'>
+    A: <class A> from test_type_error.test_type_error13a
 
 ```
 
@@ -1879,7 +1879,7 @@ fewer positional arguments than it requires (2 missing).
 ```
 
 ```python
-    fn: <function test_type_error14.<locals>.fn>
+    fn: <function fn> from test_type_error14
 
 ```
 
