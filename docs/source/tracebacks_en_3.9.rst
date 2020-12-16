@@ -837,33 +837,36 @@ TypeError - 10: comparison between incompatible types
         
 
 
-TypeError - 11: bad operand type for unary ~
+TypeError - 11: bad operand type for unary +
 --------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 349, in test_type_error11
-        a = ~(1, 2, 3)
-    TypeError: bad operand type for unary ~: 'tuple'
+      File "TESTS:\runtime\test_type_error.py", line 363, in test_type_error11
+        a =+ "def"
+    TypeError: bad operand type for unary +: 'str'
     
+        Perhaps you meant to write `+=` instead of `=+`
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by tring to do an operation not allowed on a given type of object.
     
-        You tried to use the unary operator '~'
-        with the following type of object: a `tuple`.
+        You tried to use the unary operator '+'
+        with the following type of object: a string (`str`).
         This operation is not defined for this type of object.
         
-    Exception raised on line 349 of file TESTS:\runtime\test_type_error.py.
+        Perhaps you meant to write `+=` instead of `=+`
+        
+    Exception raised on line 363 of file TESTS:\runtime\test_type_error.py.
     
-       347: 
-       348:     try:
-    -->349:         a = ~(1, 2, 3)
-                        ^^^^^^^^^^
-       350:         print(a)
+       361:     try:
+       362:         a = "abc"
+    -->363:         a =+ "def"
+                       ^^^^^^^
+       364:         print(a)
 
 
 TypeError - 12: object does not support item assignment
@@ -873,7 +876,7 @@ TypeError - 12: object does not support item assignment
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 365, in test_type_error12
+      File "TESTS:\runtime\test_type_error.py", line 380, in test_type_error12
         a[0] = 0
     TypeError: 'tuple' object does not support item assignment
     
@@ -887,12 +890,12 @@ TypeError - 12: object does not support item assignment
         You tried change part of such an immutable object: a `tuple`,
         most likely by using an indexing operation.
         
-    Exception raised on line 365 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 380 of file TESTS:\runtime\test_type_error.py.
     
-       363:     a = (1, 2, 3)
-       364:     try:
-    -->365:         a[0] = 0
-       366:     except Exception as e:
+       378:     a = (1, 2, 3)
+       379:     try:
+    -->380:         a[0] = 0
+       381:     except Exception as e:
 
             a[0]: 1
             a: (1, 2, 3)
@@ -906,7 +909,7 @@ TypeError - 13: wrong number of positional arguments
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 398, in test_type_error13
+      File "TESTS:\runtime\test_type_error.py", line 413, in test_type_error13
         A().f(1)
     TypeError: f() takes 1 positional argument but 2 were given
     
@@ -922,12 +925,12 @@ TypeError - 13: wrong number of positional arguments
         such positional argument(s).
         Perhaps you forgot `self` when defining `f`.
         
-    Exception raised on line 398 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 413 of file TESTS:\runtime\test_type_error.py.
     
-       396: 
-       397:     try:
-    -->398:         A().f(1)
-       399:     except Exception as e:
+       411: 
+       412:     try:
+    -->413:         A().f(1)
+       414:     except Exception as e:
 
             A: <class A> from test_type_error.test_type_error13
         
@@ -940,7 +943,7 @@ TypeError - 14: missing positional arguments
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 417, in test_type_error14
+      File "TESTS:\runtime\test_type_error.py", line 432, in test_type_error14
         fn(1)
     TypeError: fn() missing 2 required positional arguments: 'b' and 'c'
     
@@ -952,12 +955,12 @@ TypeError - 14: missing positional arguments
         You apparently have called the function 'fn()' with
         fewer positional arguments than it requires (2 missing).
         
-    Exception raised on line 417 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 432 of file TESTS:\runtime\test_type_error.py.
     
-       415: 
-       416:     try:
-    -->417:         fn(1)
-       418:     except Exception as e:
+       430: 
+       431:     try:
+    -->432:         fn(1)
+       433:     except Exception as e:
 
             fn: <function fn> from test_type_error14
         
@@ -970,7 +973,7 @@ TypeError - 15: list object is not callable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 443, in test_type_error15
+      File "TESTS:\runtime\test_type_error.py", line 458, in test_type_error15
         _ = [1, 2](3, 4)
     TypeError: 'list' object is not callable
     
@@ -986,13 +989,13 @@ TypeError - 15: list object is not callable
         which Python took as an indication of a function call.
         Perhaps you had a missing comma before the tuple.
         
-    Exception raised on line 443 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 458 of file TESTS:\runtime\test_type_error.py.
     
-       441: 
-       442:     try:
-    -->443:         _ = [1, 2](3, 4)
+       456: 
+       457:     try:
+    -->458:         _ = [1, 2](3, 4)
                         ^^^^^^^^^^^^
-       444:     except Exception as e:
+       459:     except Exception as e:
 
 
 TypeError - 16: exception derived from BaseException
@@ -1002,7 +1005,7 @@ TypeError - 16: exception derived from BaseException
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 456, in test_type_error16
+      File "TESTS:\runtime\test_type_error.py", line 471, in test_type_error16
         raise "exception"
     TypeError: exceptions must derive from BaseException
     
@@ -1013,12 +1016,12 @@ TypeError - 16: exception derived from BaseException
     
         In Python 3, exceptions must be derived from BaseException.
         
-    Exception raised on line 456 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 471 of file TESTS:\runtime\test_type_error.py.
     
-       454: def test_type_error16():
-       455:     try:
-    -->456:         raise "exception"
-       457:     except Exception as e:
+       469: def test_type_error16():
+       470:     try:
+    -->471:         raise "exception"
+       472:     except Exception as e:
 
 
 UnboundLocalError - 1: missing global

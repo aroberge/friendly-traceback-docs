@@ -836,34 +836,44 @@ TypeError - 10: comparison between incompatible types
         
 
 
-TypeError - 11: bad operand type for unary ~
+TypeError - 11: bad operand type for unary +
 --------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 349, in test_type_error11
-        a = ~(1, 2, 3)
-    TypeError: bad operand type for unary ~: 'tuple'
+      File "TESTS:\trb_common.py", line 163, in create_tracebacks
+        result, message = getattr(mod, function)()
+      File "TESTS:\runtime\test_type_error.py", line 371, in test_type_error11
+        assert "Perhaps you meant to write `+=`" in result
+    AssertionError:
     
-    Une exception `TypeError` est généralement causée une tentative
-    de combiner deux types d’objets incompatibles,
-    en invoquant une fonction avec le mauvais type d’objet,
-    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    Aucune information n’est disponible sur cette exception.
     
-        Vous avez essayé d’utiliser l’opérateur unaire '~'
-        avec le type d’objet suivant: un `tuple`.
-        Cette opération n’est pas définie pour ce type d’objet.
-        
-    Exception levée à la ligne 349 du fichier TESTS:\runtime\test_type_error.py.
+    L'exécution s'est arrêtée à la ligne 163 du fichier TESTS:\trb_common.py
     
-       347: 
-       348:     try:
-    -->349:         a = ~(1, 2, 3)
-                        ^^^^^^^^^^
-       350:         print(a)
+       161:                     mod = __import__(name)
+       162:                     if function is not None:
+    -->163:                         result, message = getattr(mod, function)()
+       164:                         save_messages[function] = message
 
+            result: '\n    Traceback (most recent call last):\n      File "TESTS...'
+                len(result): 894
+            message: "'<' not supported between instances of 'int' and 'str'"
+            mod: <module test_type_error> from TESTS:\runtime\test_type_error.py
+            function: 'test_type_error11'
+        
+    Exception levée à la ligne 371 du fichier TESTS:\runtime\test_type_error.py.
+    
+       369:     assert not "debug_warning" in result, "Internal error found."
+       370:     assert "TypeError: bad operand type for unary +: 'str'" in result
+    -->371:     assert "Perhaps you meant to write `+=`" in result
+       372:     if friendly_traceback.get_lang() == "en":
+
+            result: '\n    Traceback (most recent call last):\n      File "TESTS...'
+                len(result): 1042
+        
 
 TypeError - 12: object does not support item assignment
 -------------------------------------------------------
@@ -872,7 +882,7 @@ TypeError - 12: object does not support item assignment
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 365, in test_type_error12
+      File "TESTS:\runtime\test_type_error.py", line 380, in test_type_error12
         a[0] = 0
     TypeError: 'tuple' object does not support item assignment
     
@@ -886,12 +896,12 @@ TypeError - 12: object does not support item assignment
         Vous avez essayé de modifier une partie d’un tel objet immuable: un `tuple`,
         probablement en utilisant une opération d’indexation.
         
-    Exception levée à la ligne 365 du fichier TESTS:\runtime\test_type_error.py.
+    Exception levée à la ligne 380 du fichier TESTS:\runtime\test_type_error.py.
     
-       363:     a = (1, 2, 3)
-       364:     try:
-    -->365:         a[0] = 0
-       366:     except Exception as e:
+       378:     a = (1, 2, 3)
+       379:     try:
+    -->380:         a[0] = 0
+       381:     except Exception as e:
 
             a[0]: 1
             a: (1, 2, 3)
@@ -905,7 +915,7 @@ TypeError - 13: wrong number of positional arguments
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 398, in test_type_error13
+      File "TESTS:\runtime\test_type_error.py", line 413, in test_type_error13
         A().f(1)
     TypeError: f() takes 1 positional argument but 2 were given
     
@@ -920,12 +930,12 @@ TypeError - 13: wrong number of positional arguments
         2 arguments positionnels alors qu'elle en requiert 1.
         Peut-être avez-vous oublié `self` lors de la définition de `f`.
         
-    Exception levée à la ligne 398 du fichier TESTS:\runtime\test_type_error.py.
+    Exception levée à la ligne 413 du fichier TESTS:\runtime\test_type_error.py.
     
-       396: 
-       397:     try:
-    -->398:         A().f(1)
-       399:     except Exception as e:
+       411: 
+       412:     try:
+    -->413:         A().f(1)
+       414:     except Exception as e:
 
             A: <class A> from test_type_error.test_type_error13
         
@@ -938,7 +948,7 @@ TypeError - 14: missing positional arguments
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 417, in test_type_error14
+      File "TESTS:\runtime\test_type_error.py", line 432, in test_type_error14
         fn(1)
     TypeError: fn() missing 2 required positional arguments: 'b' and 'c'
     
@@ -950,12 +960,12 @@ TypeError - 14: missing positional arguments
         Vous avez apparemment invoqué la fonction 'fn()' avec
         moins d'arguments positionnels qu'il n'en faut (2 manquent).
         
-    Exception levée à la ligne 417 du fichier TESTS:\runtime\test_type_error.py.
+    Exception levée à la ligne 432 du fichier TESTS:\runtime\test_type_error.py.
     
-       415: 
-       416:     try:
-    -->417:         fn(1)
-       418:     except Exception as e:
+       430: 
+       431:     try:
+    -->432:         fn(1)
+       433:     except Exception as e:
 
             fn: <function fn> from test_type_error14
         
@@ -968,7 +978,7 @@ TypeError - 15: list object is not callable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 443, in test_type_error15
+      File "TESTS:\runtime\test_type_error.py", line 458, in test_type_error15
         _ = [1, 2](3, 4)
     TypeError: 'list' object is not callable
     
@@ -984,13 +994,13 @@ TypeError - 15: list object is not callable
         que Python a pris comme indiquant une invocation de fonction.
         Peut-être que vous aviez une virgule manquante avant le tuple.
         
-    Exception levée à la ligne 443 du fichier TESTS:\runtime\test_type_error.py.
+    Exception levée à la ligne 458 du fichier TESTS:\runtime\test_type_error.py.
     
-       441: 
-       442:     try:
-    -->443:         _ = [1, 2](3, 4)
+       456: 
+       457:     try:
+    -->458:         _ = [1, 2](3, 4)
                         ^^^^^^^^^^^^
-       444:     except Exception as e:
+       459:     except Exception as e:
 
 
 TypeError - 16: exception derived from BaseException
@@ -1000,7 +1010,7 @@ TypeError - 16: exception derived from BaseException
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 456, in test_type_error16
+      File "TESTS:\runtime\test_type_error.py", line 471, in test_type_error16
         raise "exception"
     TypeError: exceptions must derive from BaseException
     
@@ -1011,12 +1021,12 @@ TypeError - 16: exception derived from BaseException
     
         Dans Python 3, les exceptions doivent être dérivées de BaseException.
         
-    Exception levée à la ligne 456 du fichier TESTS:\runtime\test_type_error.py.
+    Exception levée à la ligne 471 du fichier TESTS:\runtime\test_type_error.py.
     
-       454: def test_type_error16():
-       455:     try:
-    -->456:         raise "exception"
-       457:     except Exception as e:
+       469: def test_type_error16():
+       470:     try:
+    -->471:         raise "exception"
+       472:     except Exception as e:
 
 
 UnboundLocalError - 1: missing global

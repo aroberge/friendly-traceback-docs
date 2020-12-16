@@ -148,7 +148,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-8-unsupported-operand-type-s-for">TypeError - 8: unsupported operand type(s) for &gt;&gt;=</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-9-unsupported-operand-type-s-for">TypeError - 9: unsupported operand type(s) for &#64;=</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-10-comparison-between-incompatible-types">TypeError - 10: comparison between incompatible types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#typeerror-11-bad-operand-type-for-unary">TypeError - 11: bad operand type for unary ~</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typeerror-11-bad-operand-type-for-unary">TypeError - 11: bad operand type for unary +</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-12-object-does-not-support-item-assignment">TypeError - 12: object does not support item assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-13-wrong-number-of-positional-arguments">TypeError - 13: wrong number of positional arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-14-missing-positional-arguments">TypeError - 14: missing positional arguments</a></li>
@@ -993,35 +993,38 @@ Exception raised on line 311 of file TESTS:\runtime\test_type_error.py.
 </div>
 </div>
 <div class="section" id="typeerror-11-bad-operand-type-for-unary">
-<h2>TypeError - 11: bad operand type for unary ~<a class="headerlink" href="#typeerror-11-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
+<h2>TypeError - 11: bad operand type for unary +<a class="headerlink" href="#typeerror-11-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 349, in test_type_error11
-    a = ~(1, 2, 3)
-TypeError: bad operand type for unary ~: &#39;tuple&#39;
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 363, in test_type_error11
+    a =+ &quot;def&quot;
+TypeError: bad operand type for unary +: &#39;str&#39;
 
+    Perhaps you meant to write `+=` instead of `=+`
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by tring to do an operation not allowed on a given type of object.
 
-    You tried to use the unary operator &#39;~&#39;
-    with the following type of object: a `tuple`.
+    You tried to use the unary operator &#39;+&#39;
+    with the following type of object: a string (`str`).
     This operation is not defined for this type of object.
 
-Exception raised on line 349 of file TESTS:\runtime\test_type_error.py.
+    Perhaps you meant to write `+=` instead of `=+`
 
-   347:
-   348:     try:
---&gt;349:         a = ~(1, 2, 3)
-                    ^^^^^^^^^^
-   350:         print(a)
+Exception raised on line 363 of file TESTS:\runtime\test_type_error.py.
+
+   361:     try:
+   362:         a = &quot;abc&quot;
+--&gt;363:         a =+ &quot;def&quot;
+                   ^^^^^^^
+   364:         print(a)
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-12-object-does-not-support-item-assignment">
 <h2>TypeError - 12: object does not support item assignment<a class="headerlink" href="#typeerror-12-object-does-not-support-item-assignment" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 365, in test_type_error12
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 380, in test_type_error12
     a[0] = 0
 TypeError: &#39;tuple&#39; object does not support item assignment
 
@@ -1035,12 +1038,12 @@ or by tring to do an operation not allowed on a given type of object.
     You tried change part of such an immutable object: a `tuple`,
     most likely by using an indexing operation.
 
-Exception raised on line 365 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 380 of file TESTS:\runtime\test_type_error.py.
 
-   363:     a = (1, 2, 3)
-   364:     try:
---&gt;365:         a[0] = 0
-   366:     except Exception as e:
+   378:     a = (1, 2, 3)
+   379:     try:
+--&gt;380:         a[0] = 0
+   381:     except Exception as e:
 
         a[0]: 1
         a: (1, 2, 3)
@@ -1050,7 +1053,7 @@ Exception raised on line 365 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-13-wrong-number-of-positional-arguments">
 <h2>TypeError - 13: wrong number of positional arguments<a class="headerlink" href="#typeerror-13-wrong-number-of-positional-arguments" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 398, in test_type_error13
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 413, in test_type_error13
     A().f(1)
 TypeError: f() takes 1 positional argument but 2 were given
 
@@ -1066,12 +1069,12 @@ or by tring to do an operation not allowed on a given type of object.
     such positional argument(s).
     Perhaps you forgot `self` when defining `f`.
 
-Exception raised on line 398 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 413 of file TESTS:\runtime\test_type_error.py.
 
-   396:
-   397:     try:
---&gt;398:         A().f(1)
-   399:     except Exception as e:
+   411:
+   412:     try:
+--&gt;413:         A().f(1)
+   414:     except Exception as e:
 
         A: &lt;class A&gt; from test_type_error.test_type_error13
 </pre></div>
@@ -1080,7 +1083,7 @@ Exception raised on line 398 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-14-missing-positional-arguments">
 <h2>TypeError - 14: missing positional arguments<a class="headerlink" href="#typeerror-14-missing-positional-arguments" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 417, in test_type_error14
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 432, in test_type_error14
     fn(1)
 TypeError: fn() missing 2 required positional arguments: &#39;b&#39; and &#39;c&#39;
 
@@ -1092,12 +1095,12 @@ or by tring to do an operation not allowed on a given type of object.
     You apparently have called the function &#39;fn()&#39; with
     fewer positional arguments than it requires (2 missing).
 
-Exception raised on line 417 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 432 of file TESTS:\runtime\test_type_error.py.
 
-   415:
-   416:     try:
---&gt;417:         fn(1)
-   418:     except Exception as e:
+   430:
+   431:     try:
+--&gt;432:         fn(1)
+   433:     except Exception as e:
 
         fn: &lt;function fn&gt; from test_type_error14
 </pre></div>
@@ -1106,7 +1109,7 @@ Exception raised on line 417 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-15-list-object-is-not-callable">
 <h2>TypeError - 15: list object is not callable<a class="headerlink" href="#typeerror-15-list-object-is-not-callable" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 443, in test_type_error15
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 458, in test_type_error15
     _ = [1, 2](3, 4)
 TypeError: &#39;list&#39; object is not callable
 
@@ -1122,20 +1125,20 @@ or by tring to do an operation not allowed on a given type of object.
     which Python took as an indication of a function call.
     Perhaps you had a missing comma before the tuple.
 
-Exception raised on line 443 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 458 of file TESTS:\runtime\test_type_error.py.
 
-   441:
-   442:     try:
---&gt;443:         _ = [1, 2](3, 4)
+   456:
+   457:     try:
+--&gt;458:         _ = [1, 2](3, 4)
                     ^^^^^^^^^^^^
-   444:     except Exception as e:
+   459:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-16-exception-derived-from-baseexception">
 <h2>TypeError - 16: exception derived from BaseException<a class="headerlink" href="#typeerror-16-exception-derived-from-baseexception" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 456, in test_type_error16
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 471, in test_type_error16
     raise &quot;exception&quot;
 TypeError: exceptions must derive from BaseException
 
@@ -1146,12 +1149,12 @@ or by tring to do an operation not allowed on a given type of object.
 
     In Python 3, exceptions must be derived from BaseException.
 
-Exception raised on line 456 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 471 of file TESTS:\runtime\test_type_error.py.
 
-   454: def test_type_error16():
-   455:     try:
---&gt;456:         raise &quot;exception&quot;
-   457:     except Exception as e:
+   469: def test_type_error16():
+   470:     try:
+--&gt;471:         raise &quot;exception&quot;
+   472:     except Exception as e:
 </pre></div>
 </div>
 </div>
