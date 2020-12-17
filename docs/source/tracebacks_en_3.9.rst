@@ -524,25 +524,25 @@ TypeError - 1: concatenate two different types
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 38, in test_type_error1
+      File "TESTS:\runtime\test_type_error.py", line 36, in test_type_error1
         result = a_tuple + a_list
     TypeError: can only concatenate tuple (not "list") to tuple
     
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
-    or by tring to do an operation not allowed on a given type of object.
+    or by trying to do an operation not allowed on a given type of object.
     
         You tried to concatenate (add) two different types of objects:
         a `tuple` and a `list`
         
-    Exception raised on line 38 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 36 of file TESTS:\runtime\test_type_error.py.
     
-       36:         a_tuple = (1, 2, 3)
-       37:         a_list = [1, 2, 3]
-    -->38:         result = a_tuple + a_list
+       34:         a_tuple = (1, 2, 3)
+       35:         a_list = [1, 2, 3]
+    -->36:         result = a_tuple + a_list
                             ^^^^^^^^^^^^^^^^
-       39:     except Exception as e:
+       37:     except Exception as e:
 
             a_tuple: (1, 2, 3)
             a_list: [1, 2, 3]
@@ -556,24 +556,24 @@ TypeError - 2: unsupported operand type(s) for +=
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 95, in test_type_error2
+      File "TESTS:\runtime\test_type_error.py", line 90, in test_type_error2
         b -= a
     TypeError: unsupported operand type(s) for -=: 'list' and 'tuple'
     
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
-    or by tring to do an operation not allowed on a given type of object.
+    or by trying to do an operation not allowed on a given type of object.
     
         You tried to subtract two incompatible types of objects:
         a `list` and a `tuple`
         
-    Exception raised on line 95 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 90 of file TESTS:\runtime\test_type_error.py.
     
-       93:         a = (1, 2)
-       94:         b = [3, 4]
-    -->95:         b -= a
-       96:     except Exception as e:
+       88:         a = (1, 2)
+       89:         b = [3, 4]
+    -->90:         b -= a
+       91:     except Exception as e:
 
             b: [3, 4]
             a: (1, 2)
@@ -587,7 +587,7 @@ TypeError - 3: unsupported operand type(s) for -=
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_common.py", line 163, in create_tracebacks
+      File "TESTS:\trb_common.py", line 171, in create_tracebacks
         result, message = getattr(mod, function)()
     AttributeError: module 'test_type_error' has no attribute 'test_type_error3'
     
@@ -601,13 +601,13 @@ TypeError - 3: unsupported operand type(s) for -=
         the following names which are attributes of module `test_type_error`:
         `test_type_error13, test_type_error9, test_type_error8, test_type_error7, test_type_error6`
         
-    Exception raised on line 163 of file TESTS:\trb_common.py.
+    Exception raised on line 171 of file TESTS:\trb_common.py.
     
-       161:                     mod = __import__(name)
-       162:                     if function is not None:
-    -->163:                         result, message = getattr(mod, function)()
+       169:                     mod = __import__(name)
+       170:                     if function is not None:
+    -->171:                         result, message = getattr(mod, function)()
                                                       ^^^^^^^^^^^^^^^^^^^^^^
-       164:                         save_messages[function] = message
+       172:                         save_messages[function] = message
 
             mod: <module test_type_error> from TESTS:\runtime\test_type_error.py
             function: 'test_type_error3'
@@ -620,24 +620,24 @@ TypeError - 4: unsupported operand type(s) for ``*=``
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 124, in test_type_error4
+      File "TESTS:\runtime\test_type_error.py", line 118, in test_type_error4
         b *= a
     TypeError: unsupported operand type(s) for *=: 'set' and 'complex'
     
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
-    or by tring to do an operation not allowed on a given type of object.
+    or by trying to do an operation not allowed on a given type of object.
     
         You tried to multiply two incompatible types of objects:
         a `set` and a complex number
         
-    Exception raised on line 124 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 118 of file TESTS:\runtime\test_type_error.py.
     
-       122:         a = 1j
-       123:         b = {2, 3}
-    -->124:         b *= a
-       125:     except Exception as e:
+       116:         a = 1j
+       117:         b = {2, 3}
+    -->118:         b *= a
+       119:     except Exception as e:
 
             b: {2, 3}
             a: 1j
@@ -651,24 +651,24 @@ TypeError - 5: unsupported operand type(s) for //=
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 179, in test_type_error5
+      File "TESTS:\runtime\test_type_error.py", line 170, in test_type_error5
         b //= a
     TypeError: unsupported operand type(s) for //=: 'float' and 'dict'
     
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
-    or by tring to do an operation not allowed on a given type of object.
+    or by trying to do an operation not allowed on a given type of object.
     
         You tried to divide two incompatible types of objects:
         a number (`float`) and a dictionary (`dict`)
         
-    Exception raised on line 179 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 170 of file TESTS:\runtime\test_type_error.py.
     
-       177:         a = {1: 1, 2: 2}
-       178:         b = 3.1416
-    -->179:         b //= a
-       180:     except Exception as e:
+       168:         a = {1: 1, 2: 2}
+       169:         b = 3.1416
+    -->170:         b //= a
+       171:     except Exception as e:
 
             b: 3.1416
             a: {1: 1, 2: 2}
@@ -682,25 +682,25 @@ TypeError - 6: unsupported operand type(s) for &=
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 208, in test_type_error6
+      File "TESTS:\runtime\test_type_error.py", line 198, in test_type_error6
         b &= a
     TypeError: unsupported operand type(s) for &=: 'int' and 'str'
     
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
-    or by tring to do an operation not allowed on a given type of object.
+    or by trying to do an operation not allowed on a given type of object.
     
         You tried to perform the bitwise operation &=
         on two incompatible types of objects:
         an integer (`int`) and a string (`str`)
         
-    Exception raised on line 208 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 198 of file TESTS:\runtime\test_type_error.py.
     
-       206:         a = "a"
-       207:         b = 2
-    -->208:         b &= a
-       209:     except Exception as e:
+       196:         a = "a"
+       197:         b = 2
+    -->198:         b &= a
+       199:     except Exception as e:
 
             b: 2
             a: 'a'
@@ -714,25 +714,25 @@ TypeError - 7: unsupported operand type(s) for ``**=``
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 237, in test_type_error7
+      File "TESTS:\runtime\test_type_error.py", line 226, in test_type_error7
         a **= b
     TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
     
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
-    or by tring to do an operation not allowed on a given type of object.
+    or by trying to do an operation not allowed on a given type of object.
     
         You tried to exponentiate (raise to a power)
         using two incompatible types of objects:
         a dictionary (`dict`) and a number (`float`)
         
-    Exception raised on line 237 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 226 of file TESTS:\runtime\test_type_error.py.
     
-       235:         a = {1: 1, 2: 2}
-       236:         b = 3.1416
-    -->237:         a **= b
-       238:     except Exception as e:
+       224:         a = {1: 1, 2: 2}
+       225:         b = 3.1416
+    -->226:         a **= b
+       227:     except Exception as e:
 
             a: {1: 1, 2: 2}
             b: 3.1416
@@ -746,25 +746,25 @@ TypeError - 8: unsupported operand type(s) for >>=
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 266, in test_type_error8
+      File "TESTS:\runtime\test_type_error.py", line 254, in test_type_error8
         a >>= b
     TypeError: unsupported operand type(s) for >>=: 'str' and 'int'
     
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
-    or by tring to do an operation not allowed on a given type of object.
+    or by trying to do an operation not allowed on a given type of object.
     
         You tried to perform the bit shifting operation >>=
         on two incompatible types of objects:
         a string (`str`) and an integer (`int`)
         
-    Exception raised on line 266 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 254 of file TESTS:\runtime\test_type_error.py.
     
-       264:         a = "a"
-       265:         b = 42
-    -->266:         a >>= b
-       267:     except Exception as e:
+       252:         a = "a"
+       253:         b = 42
+    -->254:         a >>= b
+       255:     except Exception as e:
 
             a: 'a'
             b: 42
@@ -778,14 +778,14 @@ TypeError - 9: unsupported operand type(s) for @=
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 295, in test_type_error9
+      File "TESTS:\runtime\test_type_error.py", line 282, in test_type_error9
         a @= b
     TypeError: unsupported operand type(s) for @=: 'str' and 'int'
     
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
-    or by tring to do an operation not allowed on a given type of object.
+    or by trying to do an operation not allowed on a given type of object.
     
         You tried to use the operator @=
         using two incompatible types of objects:
@@ -793,12 +793,12 @@ TypeError - 9: unsupported operand type(s) for @=
         This operator is normally used only
         for multiplication of matrices.
         
-    Exception raised on line 295 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 282 of file TESTS:\runtime\test_type_error.py.
     
-       293:         a = "a"
-       294:         b = 2
-    -->295:         a @= b
-       296:     except Exception as e:
+       280:         a = "a"
+       281:         b = 2
+    -->282:         a @= b
+       283:     except Exception as e:
 
             a: 'a'
             b: 2
@@ -812,25 +812,25 @@ TypeError - 10: comparison between incompatible types
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 311, in test_type_error10
+      File "TESTS:\runtime\test_type_error.py", line 298, in test_type_error10
         b < a
     TypeError: '<' not supported between instances of 'int' and 'str'
     
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
-    or by tring to do an operation not allowed on a given type of object.
+    or by trying to do an operation not allowed on a given type of object.
     
         You tried to do an order comparison (<)
         between two incompatible types of objects:
         an integer (`int`) and a string (`str`)
         
-    Exception raised on line 311 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 298 of file TESTS:\runtime\test_type_error.py.
     
-       309:         a = "a"
-       310:         b = 42
-    -->311:         b < a
-       312:     except Exception as e:
+       296:         a = "a"
+       297:         b = 42
+    -->298:         b < a
+       299:     except Exception as e:
 
             b: 42
             a: 'a'
@@ -844,7 +844,7 @@ TypeError - 11: bad operand type for unary +
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 363, in test_type_error11
+      File "TESTS:\runtime\test_type_error.py", line 348, in test_type_error11
         a =+ "def"
     TypeError: bad operand type for unary +: 'str'
     
@@ -852,7 +852,7 @@ TypeError - 11: bad operand type for unary +
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
-    or by tring to do an operation not allowed on a given type of object.
+    or by trying to do an operation not allowed on a given type of object.
     
         You tried to use the unary operator '+'
         with the following type of object: a string (`str`).
@@ -860,13 +860,13 @@ TypeError - 11: bad operand type for unary +
         
         Perhaps you meant to write `+=` instead of `=+`
         
-    Exception raised on line 363 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 348 of file TESTS:\runtime\test_type_error.py.
     
-       361:     try:
-       362:         a = "abc"
-    -->363:         a =+ "def"
+       346:         # fmt: off
+       347:         a = "abc"
+    -->348:         a =+ "def"
                        ^^^^^^^
-       364:         print(a)
+       349:         # fmt: on
 
 
 TypeError - 12: object does not support item assignment
@@ -876,26 +876,26 @@ TypeError - 12: object does not support item assignment
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 380, in test_type_error12
+      File "TESTS:\runtime\test_type_error.py", line 366, in test_type_error12
         a[0] = 0
     TypeError: 'tuple' object does not support item assignment
     
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
-    or by tring to do an operation not allowed on a given type of object.
+    or by trying to do an operation not allowed on a given type of object.
     
         In Python, some objects are known as immutable:
         once defined, their value cannot be changed.
         You tried change part of such an immutable object: a `tuple`,
         most likely by using an indexing operation.
         
-    Exception raised on line 380 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 366 of file TESTS:\runtime\test_type_error.py.
     
-       378:     a = (1, 2, 3)
-       379:     try:
-    -->380:         a[0] = 0
-       381:     except Exception as e:
+       364:     a = (1, 2, 3)
+       365:     try:
+    -->366:         a[0] = 0
+       367:     except Exception as e:
 
             a[0]: 1
             a: (1, 2, 3)
@@ -909,7 +909,7 @@ TypeError - 13: wrong number of positional arguments
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 413, in test_type_error13
+      File "TESTS:\runtime\test_type_error.py", line 398, in test_type_error13
         A().f(1)
     TypeError: f() takes 1 positional argument but 2 were given
     
@@ -918,19 +918,19 @@ TypeError - 13: wrong number of positional arguments
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
-    or by tring to do an operation not allowed on a given type of object.
+    or by trying to do an operation not allowed on a given type of object.
     
         You apparently have called the function `f` with
         2 positional argument(s) while it requires 1
         such positional argument(s).
         Perhaps you forgot `self` when defining `f`.
         
-    Exception raised on line 413 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 398 of file TESTS:\runtime\test_type_error.py.
     
-       411: 
-       412:     try:
-    -->413:         A().f(1)
-       414:     except Exception as e:
+       396: 
+       397:     try:
+    -->398:         A().f(1)
+       399:     except Exception as e:
 
             A: <class A> from test_type_error.test_type_error13
         
@@ -943,24 +943,24 @@ TypeError - 14: missing positional arguments
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 432, in test_type_error14
+      File "TESTS:\runtime\test_type_error.py", line 417, in test_type_error14
         fn(1)
     TypeError: fn() missing 2 required positional arguments: 'b' and 'c'
     
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
-    or by tring to do an operation not allowed on a given type of object.
+    or by trying to do an operation not allowed on a given type of object.
     
         You apparently have called the function 'fn()' with
         fewer positional arguments than it requires (2 missing).
         
-    Exception raised on line 432 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 417 of file TESTS:\runtime\test_type_error.py.
     
-       430: 
-       431:     try:
-    -->432:         fn(1)
-       433:     except Exception as e:
+       415: 
+       416:     try:
+    -->417:         fn(1)
+       418:     except Exception as e:
 
             fn: <function fn> from test_type_error14
         
@@ -973,7 +973,7 @@ TypeError - 15: list object is not callable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 458, in test_type_error15
+      File "TESTS:\runtime\test_type_error.py", line 442, in test_type_error15
         _ = [1, 2](3, 4)
     TypeError: 'list' object is not callable
     
@@ -982,20 +982,20 @@ TypeError - 15: list object is not callable
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
-    or by tring to do an operation not allowed on a given type of object.
+    or by trying to do an operation not allowed on a given type of object.
     
         I suspect that you had an object of this type, a `list`,
         followed by what looked like a tuple, '(...)',
         which Python took as an indication of a function call.
         Perhaps you had a missing comma before the tuple.
         
-    Exception raised on line 458 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 442 of file TESTS:\runtime\test_type_error.py.
     
-       456: 
-       457:     try:
-    -->458:         _ = [1, 2](3, 4)
+       440: 
+       441:     try:
+    -->442:         _ = [1, 2](3, 4)
                         ^^^^^^^^^^^^
-       459:     except Exception as e:
+       443:     except Exception as e:
 
 
 TypeError - 16: exception derived from BaseException
@@ -1005,23 +1005,79 @@ TypeError - 16: exception derived from BaseException
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 471, in test_type_error16
+      File "TESTS:\runtime\test_type_error.py", line 455, in test_type_error16
         raise "exception"
     TypeError: exceptions must derive from BaseException
     
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
-    or by tring to do an operation not allowed on a given type of object.
+    or by trying to do an operation not allowed on a given type of object.
     
         In Python 3, exceptions must be derived from BaseException.
         
-    Exception raised on line 471 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 455 of file TESTS:\runtime\test_type_error.py.
     
-       469: def test_type_error16():
-       470:     try:
-    -->471:         raise "exception"
-       472:     except Exception as e:
+       453: def test_type_error16():
+       454:     try:
+    -->455:         raise "exception"
+       456:     except Exception as e:
+
+
+TypeError - 17: can't multiply sequence by non-int
+--------------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_type_error.py", line 469, in test_type_error17
+        "a" * "2"
+    TypeError: can't multiply sequence by non-int of type 'str'
+    
+    A `TypeError` is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by trying to do an operation not allowed on a given type of object.
+    
+        Perhaps you forgot to convert a string into an integer using `int()`.
+    Exception raised on line 469 of file TESTS:\runtime\test_type_error.py.
+    
+       467: def test_type_error17():
+       468:     try:
+    -->469:         "a" * "2"
+       470:     except Exception as e:
+
+
+TypeError - 18: object cannot be interpreted as an integer
+----------------------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_type_error.py", line 517, in test_type_error18
+        range(c, d)
+    TypeError: 'str' object cannot be interpreted as an integer
+    
+        Did you forget to convert `c, d` into integers?
+    A `TypeError` is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by trying to do an operation not allowed on a given type of object.
+    
+        You wrote an object of type `str` where an integer was expected.
+        Perhaps you forgot to convert `c, d` into integers.
+    Exception raised on line 517 of file TESTS:\runtime\test_type_error.py.
+    
+       515:     c, d = "2", "3"
+       516:     try:
+    -->517:         range(c, d)
+       518:     except Exception as e:
+
+            c: '2'
+            d: '3'
+        
 
 
 UnboundLocalError - 1: missing global

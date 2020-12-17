@@ -174,6 +174,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-14-missing-positional-arguments">TypeError - 14: missing positional arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-15-list-object-is-not-callable">TypeError - 15: list object is not callable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-16-exception-derived-from-baseexception">TypeError - 16: exception derived from BaseException</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typeerror-17-can-t-multiply-sequence-by-non-int">TypeError - 17: can’t multiply sequence by non-int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typeerror-18-object-cannot-be-interpreted-as-an-integer">TypeError - 18: object cannot be interpreted as an integer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unboundlocalerror-1-missing-global">UnboundLocalError - 1: missing global</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unboundlocalerror-2-missing-nonlocal">UnboundLocalError - 2: missing nonlocal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unknown-exception">Unknown exception</a></li>
@@ -713,7 +715,7 @@ Exception levée à la ligne 6 du fichier TESTS:\runtime\test_recursion_error.py
 <div class="section" id="typeerror-1-concatenate-two-different-types">
 <h2>TypeError - 1: concatenate two different types<a class="headerlink" href="#typeerror-1-concatenate-two-different-types" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 38, in test_type_error1
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 36, in test_type_error1
     result = a_tuple + a_list
 TypeError: can only concatenate tuple (not &quot;list&quot;) to tuple
 
@@ -725,13 +727,13 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
     Vous avez essayé de concaténer (additionner) deux types d’objets différents:
     un `tuple` et une liste (`list`)
 
-Exception levée à la ligne 38 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 36 du fichier TESTS:\runtime\test_type_error.py.
 
-   36:         a_tuple = (1, 2, 3)
-   37:         a_list = [1, 2, 3]
---&gt;38:         result = a_tuple + a_list
+   34:         a_tuple = (1, 2, 3)
+   35:         a_list = [1, 2, 3]
+--&gt;36:         result = a_tuple + a_list
                         ^^^^^^^^^^^^^^^^
-   39:     except Exception as e:
+   37:     except Exception as e:
 
         a_tuple: (1, 2, 3)
         a_list: [1, 2, 3]
@@ -741,7 +743,7 @@ Exception levée à la ligne 38 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-2-unsupported-operand-type-s-for">
 <h2>TypeError - 2: unsupported operand type(s) for +=<a class="headerlink" href="#typeerror-2-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 95, in test_type_error2
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 90, in test_type_error2
     b -= a
 TypeError: unsupported operand type(s) for -=: &#39;list&#39; and &#39;tuple&#39;
 
@@ -753,12 +755,12 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
     Vous avez tenté de soustraire deux types d’objets incompatibles:
     une liste (`list`) et un `tuple`
 
-Exception levée à la ligne 95 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 90 du fichier TESTS:\runtime\test_type_error.py.
 
-   93:         a = (1, 2)
-   94:         b = [3, 4]
---&gt;95:         b -= a
-   96:     except Exception as e:
+   88:         a = (1, 2)
+   89:         b = [3, 4]
+--&gt;90:         b -= a
+   91:     except Exception as e:
 
         b: [3, 4]
         a: (1, 2)
@@ -768,7 +770,7 @@ Exception levée à la ligne 95 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-3-unsupported-operand-type-s-for">
 <h2>TypeError - 3: unsupported operand type(s) for -=<a class="headerlink" href="#typeerror-3-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_common.py&quot;, line 163, in create_tracebacks
+  File &quot;TESTS:\trb_common.py&quot;, line 171, in create_tracebacks
     result, message = getattr(mod, function)()
 AttributeError: module &#39;test_type_error&#39; has no attribute &#39;test_type_error3&#39;
 
@@ -782,13 +784,13 @@ et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`
     l&#39;un des attributs suivants du module `test_type_error` :
     test_type_error13, test_type_error9, test_type_error8, test_type_error7, test_type_error6
 
-Exception levée à la ligne 163 du fichier TESTS:\trb_common.py.
+Exception levée à la ligne 171 du fichier TESTS:\trb_common.py.
 
-   161:                     mod = __import__(name)
-   162:                     if function is not None:
---&gt;163:                         result, message = getattr(mod, function)()
+   169:                     mod = __import__(name)
+   170:                     if function is not None:
+--&gt;171:                         result, message = getattr(mod, function)()
                                                   ^^^^^^^^^^^^^^^^^^^^^^
-   164:                         save_messages[function] = message
+   172:                         save_messages[function] = message
 
         mod: &lt;module test_type_error&gt; from TESTS:\runtime\test_type_error.py
         function: &#39;test_type_error3&#39;
@@ -798,7 +800,7 @@ Exception levée à la ligne 163 du fichier TESTS:\trb_common.py.
 <div class="section" id="typeerror-4-unsupported-operand-type-s-for">
 <h2>TypeError - 4: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">*=</span></code><a class="headerlink" href="#typeerror-4-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 124, in test_type_error4
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 118, in test_type_error4
     b *= a
 TypeError: unsupported operand type(s) for *=: &#39;set&#39; and &#39;complex&#39;
 
@@ -810,12 +812,12 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
     Vous avez essayé de multiplier deux types d’objets différents:
     un ensemble (`set`) et un nombre complexe (`complex`)
 
-Exception levée à la ligne 124 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 118 du fichier TESTS:\runtime\test_type_error.py.
 
-   122:         a = 1j
-   123:         b = {2, 3}
---&gt;124:         b *= a
-   125:     except Exception as e:
+   116:         a = 1j
+   117:         b = {2, 3}
+--&gt;118:         b *= a
+   119:     except Exception as e:
 
         b: {2, 3}
         a: 1j
@@ -825,7 +827,7 @@ Exception levée à la ligne 124 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-5-unsupported-operand-type-s-for">
 <h2>TypeError - 5: unsupported operand type(s) for //=<a class="headerlink" href="#typeerror-5-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 179, in test_type_error5
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 170, in test_type_error5
     b //= a
 TypeError: unsupported operand type(s) for //=: &#39;float&#39; and &#39;dict&#39;
 
@@ -837,12 +839,12 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
     Vous avez essayé de diviser deux types d’objets différents:
     un nombre (`float`) et un dictionnaire (`dict`)
 
-Exception levée à la ligne 179 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 170 du fichier TESTS:\runtime\test_type_error.py.
 
-   177:         a = {1: 1, 2: 2}
-   178:         b = 3.1416
---&gt;179:         b //= a
-   180:     except Exception as e:
+   168:         a = {1: 1, 2: 2}
+   169:         b = 3.1416
+--&gt;170:         b //= a
+   171:     except Exception as e:
 
         b: 3.1416
         a: {1: 1, 2: 2}
@@ -852,7 +854,7 @@ Exception levée à la ligne 179 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-6-unsupported-operand-type-s-for">
 <h2>TypeError - 6: unsupported operand type(s) for &amp;=<a class="headerlink" href="#typeerror-6-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 208, in test_type_error6
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 198, in test_type_error6
     b &amp;= a
 TypeError: unsupported operand type(s) for &amp;=: &#39;int&#39; and &#39;str&#39;
 
@@ -865,12 +867,12 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
     sur deux types d’objets incompatibles:
     un entier (`int`) et une chaîne de caractères (`str`)
 
-Exception levée à la ligne 208 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 198 du fichier TESTS:\runtime\test_type_error.py.
 
-   206:         a = &quot;a&quot;
-   207:         b = 2
---&gt;208:         b &amp;= a
-   209:     except Exception as e:
+   196:         a = &quot;a&quot;
+   197:         b = 2
+--&gt;198:         b &amp;= a
+   199:     except Exception as e:
 
         b: 2
         a: &#39;a&#39;
@@ -880,7 +882,7 @@ Exception levée à la ligne 208 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-7-unsupported-operand-type-s-for">
 <h2>TypeError - 7: unsupported operand type(s) for <code class="docutils literal notranslate"><span class="pre">**=</span></code><a class="headerlink" href="#typeerror-7-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 237, in test_type_error7
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 226, in test_type_error7
     a **= b
 TypeError: unsupported operand type(s) for ** or pow(): &#39;dict&#39; and &#39;float&#39;
 
@@ -893,12 +895,12 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
     en utilisant deux types d’objets incompatibles:
     un dictionnaire (`dict`) et un nombre (`float`)
 
-Exception levée à la ligne 237 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 226 du fichier TESTS:\runtime\test_type_error.py.
 
-   235:         a = {1: 1, 2: 2}
-   236:         b = 3.1416
---&gt;237:         a **= b
-   238:     except Exception as e:
+   224:         a = {1: 1, 2: 2}
+   225:         b = 3.1416
+--&gt;226:         a **= b
+   227:     except Exception as e:
 
         a: {1: 1, 2: 2}
         b: 3.1416
@@ -908,7 +910,7 @@ Exception levée à la ligne 237 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-8-unsupported-operand-type-s-for">
 <h2>TypeError - 8: unsupported operand type(s) for &gt;&gt;=<a class="headerlink" href="#typeerror-8-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 266, in test_type_error8
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 254, in test_type_error8
     a &gt;&gt;= b
 TypeError: unsupported operand type(s) for &gt;&gt;=: &#39;str&#39; and &#39;int&#39;
 
@@ -921,12 +923,12 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
     sur deux types d’objets incompatibles:
     une chaîne de caractères (`str`) et un entier (`int`)
 
-Exception levée à la ligne 266 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 254 du fichier TESTS:\runtime\test_type_error.py.
 
-   264:         a = &quot;a&quot;
-   265:         b = 42
---&gt;266:         a &gt;&gt;= b
-   267:     except Exception as e:
+   252:         a = &quot;a&quot;
+   253:         b = 42
+--&gt;254:         a &gt;&gt;= b
+   255:     except Exception as e:
 
         a: &#39;a&#39;
         b: 42
@@ -936,7 +938,7 @@ Exception levée à la ligne 266 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-9-unsupported-operand-type-s-for">
 <h2>TypeError - 9: unsupported operand type(s) for &#64;=<a class="headerlink" href="#typeerror-9-unsupported-operand-type-s-for" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 295, in test_type_error9
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 282, in test_type_error9
     a @= b
 TypeError: unsupported operand type(s) for @=: &#39;str&#39; and &#39;int&#39;
 
@@ -951,12 +953,12 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
     Cet opérateur est normalement utilisé uniquement
     pour la multiplication des matrices.
 
-Exception levée à la ligne 295 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 282 du fichier TESTS:\runtime\test_type_error.py.
 
-   293:         a = &quot;a&quot;
-   294:         b = 2
---&gt;295:         a @= b
-   296:     except Exception as e:
+   280:         a = &quot;a&quot;
+   281:         b = 2
+--&gt;282:         a @= b
+   283:     except Exception as e:
 
         a: &#39;a&#39;
         b: 2
@@ -966,7 +968,7 @@ Exception levée à la ligne 295 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-10-comparison-between-incompatible-types">
 <h2>TypeError - 10: comparison between incompatible types<a class="headerlink" href="#typeerror-10-comparison-between-incompatible-types" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 311, in test_type_error10
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 298, in test_type_error10
     b &lt; a
 TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
 
@@ -979,12 +981,12 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
     deux types d’objets incompatibles:
     un entier (`int`) et une chaîne de caractères (`str`)
 
-Exception levée à la ligne 311 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 298 du fichier TESTS:\runtime\test_type_error.py.
 
-   309:         a = &quot;a&quot;
-   310:         b = 42
---&gt;311:         b &lt; a
-   312:     except Exception as e:
+   296:         a = &quot;a&quot;
+   297:         b = 42
+--&gt;298:         b &lt; a
+   299:     except Exception as e:
 
         b: 42
         a: &#39;a&#39;
@@ -994,20 +996,20 @@ Exception levée à la ligne 311 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-11-bad-operand-type-for-unary">
 <h2>TypeError - 11: bad operand type for unary +<a class="headerlink" href="#typeerror-11-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_common.py&quot;, line 163, in create_tracebacks
+  File &quot;TESTS:\trb_common.py&quot;, line 171, in create_tracebacks
     result, message = getattr(mod, function)()
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 371, in test_type_error11
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 357, in test_type_error11
     assert &quot;Perhaps you meant to write `+=`&quot; in result
 AssertionError:
 
 Aucune information n’est disponible sur cette exception.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 163 du fichier TESTS:\trb_common.py
+L&#39;exécution s&#39;est arrêtée à la ligne 171 du fichier TESTS:\trb_common.py
 
-   161:                     mod = __import__(name)
-   162:                     if function is not None:
---&gt;163:                         result, message = getattr(mod, function)()
-   164:                         save_messages[function] = message
+   169:                     mod = __import__(name)
+   170:                     if function is not None:
+--&gt;171:                         result, message = getattr(mod, function)()
+   172:                         save_messages[function] = message
 
         result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
             len(result): 894
@@ -1015,22 +1017,22 @@ L&#39;exécution s&#39;est arrêtée à la ligne 163 du fichier TESTS:\trb_commo
         mod: &lt;module test_type_error&gt; from TESTS:\runtime\test_type_error.py
         function: &#39;test_type_error11&#39;
 
-Exception levée à la ligne 371 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 357 du fichier TESTS:\runtime\test_type_error.py.
 
-   369:     assert not &quot;debug_warning&quot; in result, &quot;Internal error found.&quot;
-   370:     assert &quot;TypeError: bad operand type for unary +: &#39;str&#39;&quot; in result
---&gt;371:     assert &quot;Perhaps you meant to write `+=`&quot; in result
-   372:     if friendly_traceback.get_lang() == &quot;en&quot;:
+   355:     assert not &quot;debug_warning&quot; in result, &quot;Internal error found.&quot;
+   356:     assert &quot;TypeError: bad operand type for unary +: &#39;str&#39;&quot; in result
+--&gt;357:     assert &quot;Perhaps you meant to write `+=`&quot; in result
+   358:     if friendly_traceback.get_lang() == &quot;en&quot;:
 
         result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
-            len(result): 1042
+            len(result): 1053
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-12-object-does-not-support-item-assignment">
 <h2>TypeError - 12: object does not support item assignment<a class="headerlink" href="#typeerror-12-object-does-not-support-item-assignment" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 380, in test_type_error12
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 366, in test_type_error12
     a[0] = 0
 TypeError: &#39;tuple&#39; object does not support item assignment
 
@@ -1044,12 +1046,12 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
     Vous avez essayé de modifier une partie d’un tel objet immuable: un `tuple`,
     probablement en utilisant une opération d’indexation.
 
-Exception levée à la ligne 380 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 366 du fichier TESTS:\runtime\test_type_error.py.
 
-   378:     a = (1, 2, 3)
-   379:     try:
---&gt;380:         a[0] = 0
-   381:     except Exception as e:
+   364:     a = (1, 2, 3)
+   365:     try:
+--&gt;366:         a[0] = 0
+   367:     except Exception as e:
 
         a[0]: 1
         a: (1, 2, 3)
@@ -1059,7 +1061,7 @@ Exception levée à la ligne 380 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-13-wrong-number-of-positional-arguments">
 <h2>TypeError - 13: wrong number of positional arguments<a class="headerlink" href="#typeerror-13-wrong-number-of-positional-arguments" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 413, in test_type_error13
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 398, in test_type_error13
     A().f(1)
 TypeError: f() takes 1 positional argument but 2 were given
 
@@ -1074,12 +1076,12 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
     2 arguments positionnels alors qu&#39;elle en requiert 1.
     Peut-être avez-vous oublié `self` lors de la définition de `f`.
 
-Exception levée à la ligne 413 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 398 du fichier TESTS:\runtime\test_type_error.py.
 
-   411:
-   412:     try:
---&gt;413:         A().f(1)
-   414:     except Exception as e:
+   396:
+   397:     try:
+--&gt;398:         A().f(1)
+   399:     except Exception as e:
 
         A: &lt;class A&gt; from test_type_error.test_type_error13
 </pre></div>
@@ -1088,7 +1090,7 @@ Exception levée à la ligne 413 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-14-missing-positional-arguments">
 <h2>TypeError - 14: missing positional arguments<a class="headerlink" href="#typeerror-14-missing-positional-arguments" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 432, in test_type_error14
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 417, in test_type_error14
     fn(1)
 TypeError: fn() missing 2 required positional arguments: &#39;b&#39; and &#39;c&#39;
 
@@ -1100,12 +1102,12 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
     Vous avez apparemment invoqué la fonction &#39;fn()&#39; avec
     moins d&#39;arguments positionnels qu&#39;il n&#39;en faut (2 manquent).
 
-Exception levée à la ligne 432 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 417 du fichier TESTS:\runtime\test_type_error.py.
 
-   430:
-   431:     try:
---&gt;432:         fn(1)
-   433:     except Exception as e:
+   415:
+   416:     try:
+--&gt;417:         fn(1)
+   418:     except Exception as e:
 
         fn: &lt;function fn&gt; from test_type_error14
 </pre></div>
@@ -1114,7 +1116,7 @@ Exception levée à la ligne 432 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-15-list-object-is-not-callable">
 <h2>TypeError - 15: list object is not callable<a class="headerlink" href="#typeerror-15-list-object-is-not-callable" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 458, in test_type_error15
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 442, in test_type_error15
     _ = [1, 2](3, 4)
 TypeError: &#39;list&#39; object is not callable
 
@@ -1130,20 +1132,20 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
     que Python a pris comme indiquant une invocation de fonction.
     Peut-être que vous aviez une virgule manquante avant le tuple.
 
-Exception levée à la ligne 458 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 442 du fichier TESTS:\runtime\test_type_error.py.
 
-   456:
-   457:     try:
---&gt;458:         _ = [1, 2](3, 4)
+   440:
+   441:     try:
+--&gt;442:         _ = [1, 2](3, 4)
                     ^^^^^^^^^^^^
-   459:     except Exception as e:
+   443:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-16-exception-derived-from-baseexception">
 <h2>TypeError - 16: exception derived from BaseException<a class="headerlink" href="#typeerror-16-exception-derived-from-baseexception" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 471, in test_type_error16
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 455, in test_type_error16
     raise &quot;exception&quot;
 TypeError: exceptions must derive from BaseException
 
@@ -1154,12 +1156,61 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
     Dans Python 3, les exceptions doivent être dérivées de BaseException.
 
-Exception levée à la ligne 471 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 455 du fichier TESTS:\runtime\test_type_error.py.
 
-   469: def test_type_error16():
-   470:     try:
---&gt;471:         raise &quot;exception&quot;
-   472:     except Exception as e:
+   453: def test_type_error16():
+   454:     try:
+--&gt;455:         raise &quot;exception&quot;
+   456:     except Exception as e:
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-17-can-t-multiply-sequence-by-non-int">
+<h2>TypeError - 17: can’t multiply sequence by non-int<a class="headerlink" href="#typeerror-17-can-t-multiply-sequence-by-non-int" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 469, in test_type_error17
+    &quot;a&quot; * &quot;2&quot;
+TypeError: can&#39;t multiply sequence by non-int of type &#39;str&#39;
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Peut-être avez-vous oublié de convertir une chaîne à un entier à l’aide de `int()`.
+Exception levée à la ligne 469 du fichier TESTS:\runtime\test_type_error.py.
+
+   467: def test_type_error17():
+   468:     try:
+--&gt;469:         &quot;a&quot; * &quot;2&quot;
+   470:     except Exception as e:
+</pre></div>
+</div>
+</div>
+<div class="section" id="typeerror-18-object-cannot-be-interpreted-as-an-integer">
+<h2>TypeError - 18: object cannot be interpreted as an integer<a class="headerlink" href="#typeerror-18-object-cannot-be-interpreted-as-an-integer" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 517, in test_type_error18
+    range(c, d)
+TypeError: &#39;str&#39; object cannot be interpreted as an integer
+
+    Avez-vous oublié de convertir `c, d` en entiers?
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Vous avez écrit un objet de type `str` là où un entier était attendu.
+    Perhaps you forgot to convert `c, d` into integers.
+Exception levée à la ligne 517 du fichier TESTS:\runtime\test_type_error.py.
+
+   515:     c, d = &quot;2&quot;, &quot;3&quot;
+   516:     try:
+--&gt;517:         range(c, d)
+   518:     except Exception as e:
+
+        c: &#39;2&#39;
+        d: &#39;3&#39;
 </pre></div>
 </div>
 </div>
