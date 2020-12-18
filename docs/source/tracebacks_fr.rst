@@ -1036,7 +1036,7 @@ TypeError - 17: can't multiply sequence by non-int
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 496, in test_type_error17
+      File "TESTS:\runtime\test_type_error.py", line 510, in test_type_error17
         "a" * "2"
     TypeError: can't multiply sequence by non-int of type 'str'
     
@@ -1050,12 +1050,12 @@ TypeError - 17: can't multiply sequence by non-int
         les listes, les tuples, les chaînes, etc., que par des entiers.
         Peut-être avez-vous oublié de convertir `"2"` en un entier.
         
-    Exception levée à la ligne 496 du fichier TESTS:\runtime\test_type_error.py.
+    Exception levée à la ligne 510 du fichier TESTS:\runtime\test_type_error.py.
     
-       494: 
-       495:     try:
-    -->496:         "a" * "2"
-       497:     except Exception as e:
+       508: 
+       509:     try:
+    -->510:         "a" * "2"
+       511:     except Exception as e:
 
 
 TypeError - 18: object cannot be interpreted as an integer
@@ -1065,7 +1065,7 @@ TypeError - 18: object cannot be interpreted as an integer
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 544, in test_type_error18
+      File "TESTS:\runtime\test_type_error.py", line 558, in test_type_error18
         range(c, d)
     TypeError: 'str' object cannot be interpreted as an integer
     
@@ -1077,12 +1077,12 @@ TypeError - 18: object cannot be interpreted as an integer
     
         Vous avez écrit un objet de type `str` là où un entier était attendu.
         Peut-être avez-vous oublié de convertir `c, d` en entiers?
-    Exception levée à la ligne 544 du fichier TESTS:\runtime\test_type_error.py.
+    Exception levée à la ligne 558 du fichier TESTS:\runtime\test_type_error.py.
     
-       542:     c, d = "2", "3"
-       543:     try:
-    -->544:         range(c, d)
-       545:     except Exception as e:
+       556:     c, d = "2", "3"
+       557:     try:
+    -->558:         range(c, d)
+       559:     except Exception as e:
 
             c: '2'
             d: '3'
