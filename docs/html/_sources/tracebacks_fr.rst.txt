@@ -1036,22 +1036,26 @@ TypeError - 17: can't multiply sequence by non-int
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 469, in test_type_error17
+      File "TESTS:\runtime\test_type_error.py", line 496, in test_type_error17
         "a" * "2"
     TypeError: can't multiply sequence by non-int of type 'str'
     
+        Avez-vous oublié de convertir `"2"` en un entier?
     Une exception `TypeError` est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-        Peut-être avez-vous oublié de convertir une chaîne à un entier à l’aide de `int()`.
-    Exception levée à la ligne 469 du fichier TESTS:\runtime\test_type_error.py.
+        Vous ne pouvez multiplier les séquences, telles que
+        les listes, les tuples, les chaînes, etc., que par des entiers.
+        Peut-être avez-vous oublié de convertir `"2"` en un entier.
+        
+    Exception levée à la ligne 496 du fichier TESTS:\runtime\test_type_error.py.
     
-       467: def test_type_error17():
-       468:     try:
-    -->469:         "a" * "2"
-       470:     except Exception as e:
+       494: 
+       495:     try:
+    -->496:         "a" * "2"
+       497:     except Exception as e:
 
 
 TypeError - 18: object cannot be interpreted as an integer
@@ -1061,7 +1065,7 @@ TypeError - 18: object cannot be interpreted as an integer
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 517, in test_type_error18
+      File "TESTS:\runtime\test_type_error.py", line 544, in test_type_error18
         range(c, d)
     TypeError: 'str' object cannot be interpreted as an integer
     
@@ -1072,13 +1076,13 @@ TypeError - 18: object cannot be interpreted as an integer
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez écrit un objet de type `str` là où un entier était attendu.
-        Perhaps you forgot to convert `c, d` into integers.
-    Exception levée à la ligne 517 du fichier TESTS:\runtime\test_type_error.py.
+        Peut-être avez-vous oublié de convertir `c, d` en entiers?
+    Exception levée à la ligne 544 du fichier TESTS:\runtime\test_type_error.py.
     
-       515:     c, d = "2", "3"
-       516:     try:
-    -->517:         range(c, d)
-       518:     except Exception as e:
+       542:     c, d = "2", "3"
+       543:     try:
+    -->544:         range(c, d)
+       545:     except Exception as e:
 
             c: '2'
             d: '3'

@@ -1168,29 +1168,33 @@ Exception levée à la ligne 455 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-17-can-t-multiply-sequence-by-non-int">
 <h2>TypeError - 17: can’t multiply sequence by non-int<a class="headerlink" href="#typeerror-17-can-t-multiply-sequence-by-non-int" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 469, in test_type_error17
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 496, in test_type_error17
     &quot;a&quot; * &quot;2&quot;
 TypeError: can&#39;t multiply sequence by non-int of type &#39;str&#39;
 
+    Avez-vous oublié de convertir `&quot;2&quot;` en un entier?
 Une exception `TypeError` est généralement causée une tentative
 de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-    Peut-être avez-vous oublié de convertir une chaîne à un entier à l’aide de `int()`.
-Exception levée à la ligne 469 du fichier TESTS:\runtime\test_type_error.py.
+    Vous ne pouvez multiplier les séquences, telles que
+    les listes, les tuples, les chaînes, etc., que par des entiers.
+    Peut-être avez-vous oublié de convertir `&quot;2&quot;` en un entier.
 
-   467: def test_type_error17():
-   468:     try:
---&gt;469:         &quot;a&quot; * &quot;2&quot;
-   470:     except Exception as e:
+Exception levée à la ligne 496 du fichier TESTS:\runtime\test_type_error.py.
+
+   494:
+   495:     try:
+--&gt;496:         &quot;a&quot; * &quot;2&quot;
+   497:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-18-object-cannot-be-interpreted-as-an-integer">
 <h2>TypeError - 18: object cannot be interpreted as an integer<a class="headerlink" href="#typeerror-18-object-cannot-be-interpreted-as-an-integer" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 517, in test_type_error18
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 544, in test_type_error18
     range(c, d)
 TypeError: &#39;str&#39; object cannot be interpreted as an integer
 
@@ -1201,13 +1205,13 @@ en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
     Vous avez écrit un objet de type `str` là où un entier était attendu.
-    Perhaps you forgot to convert `c, d` into integers.
-Exception levée à la ligne 517 du fichier TESTS:\runtime\test_type_error.py.
+    Peut-être avez-vous oublié de convertir `c, d` en entiers?
+Exception levée à la ligne 544 du fichier TESTS:\runtime\test_type_error.py.
 
-   515:     c, d = &quot;2&quot;, &quot;3&quot;
-   516:     try:
---&gt;517:         range(c, d)
-   518:     except Exception as e:
+   542:     c, d = &quot;2&quot;, &quot;3&quot;
+   543:     try:
+--&gt;544:         range(c, d)
+   545:     except Exception as e:
 
         c: &#39;2&#39;
         d: &#39;3&#39;

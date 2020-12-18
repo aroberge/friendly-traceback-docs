@@ -1352,11 +1352,14 @@ In Python 3, exceptions must be derived from BaseException.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 469, in test_type_error17
+  File "TESTS:\runtime\test_type_error.py", line 496, in test_type_error17
     "a" * "2"
 TypeError: can't multiply sequence by non-int of type 'str'
 
 ```
+
+Did you forget to convert `"2"` into an integer?
+
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
@@ -1364,16 +1367,19 @@ by calling a function with the wrong type of object,
 or by trying to do an operation not allowed on a given type of object.
 
 
-Perhaps you forgot to convert a string into an integer using `int()`.
+You can only multiply sequences, such as list, tuples,
+ strings, etc., by integers.
+Perhaps you forgot to convert `"2"` into an integer.
 
-#### Exception raised on line 469 of file TESTS:\runtime\test_type_error.py.
+
+#### Exception raised on line 496 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       467: def test_type_error17():
-       468:     try:
-    -->469:         "a" * "2"
-       470:     except Exception as e:
+       494: 
+       495:     try:
+    -->496:         "a" * "2"
+       497:     except Exception as e:
 
 ```
 
@@ -1385,7 +1391,7 @@ Perhaps you forgot to convert a string into an integer using `int()`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 517, in test_type_error18
+  File "TESTS:\runtime\test_type_error.py", line 544, in test_type_error18
     range(c, d)
 TypeError: 'str' object cannot be interpreted as an integer
 
@@ -1403,14 +1409,14 @@ or by trying to do an operation not allowed on a given type of object.
 You wrote an object of type `str` where an integer was expected.
 Perhaps you forgot to convert `c, d` into integers.
 
-#### Exception raised on line 517 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 544 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       515:     c, d = "2", "3"
-       516:     try:
-    -->517:         range(c, d)
-       518:     except Exception as e:
+       542:     c, d = "2", "3"
+       543:     try:
+    -->544:         range(c, d)
+       545:     except Exception as e:
 
 ```
 
