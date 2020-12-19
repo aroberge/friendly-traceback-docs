@@ -15,7 +15,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly-traceback version: 0.2.7a
+Friendly-traceback version: 0.2.8a
 Python version: 3.8.4
 
 
@@ -1076,7 +1076,7 @@ TypeError - 18: object cannot be interpreted as an integer
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez écrit un objet de type `str` là où un entier était attendu.
-        Peut-être avez-vous oublié de convertir `c, d` en entiers?
+        Peut-être avez-vous oublié de convertir `c, d` en entiers.
     Exception levée à la ligne 558 du fichier TESTS:\runtime\test_type_error.py.
     
        556:     c, d = "2", "3"
