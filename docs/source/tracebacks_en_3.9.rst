@@ -1164,7 +1164,7 @@ TypeError - 17: can't multiply sequence by non-int
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 514, in test_type_error17
+      File "TESTS:\runtime\test_type_error.py", line 528, in test_type_error17
         "a" * "2"
     TypeError: can't multiply sequence by non-int of type 'str'
     
@@ -1179,12 +1179,12 @@ TypeError - 17: can't multiply sequence by non-int
          strings, etc., by integers.
         Perhaps you forgot to convert `"2"` into an integer.
         
-    Exception raised on line 514 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 528 of file TESTS:\runtime\test_type_error.py.
     
-       512: 
-       513:     try:
-    -->514:         "a" * "2"
-       515:     except Exception as e:
+       526: 
+       527:     try:
+    -->528:         "a" * "2"
+       529:     except Exception as e:
 
 
 TypeError - 18: object cannot be interpreted as an integer
@@ -1194,7 +1194,7 @@ TypeError - 18: object cannot be interpreted as an integer
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 562, in test_type_error18
+      File "TESTS:\runtime\test_type_error.py", line 576, in test_type_error18
         range(c, d)
     TypeError: 'str' object cannot be interpreted as an integer
     
@@ -1207,12 +1207,12 @@ TypeError - 18: object cannot be interpreted as an integer
     
         You wrote an object of type `str` where an integer was expected.
         Perhaps you forgot to convert `c, d` into integers.
-    Exception raised on line 562 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 576 of file TESTS:\runtime\test_type_error.py.
     
-       560:     c, d = "2", "3"
-       561:     try:
-    -->562:         range(c, d)
-       563:     except Exception as e:
+       574:     c, d = "2", "3"
+       575:     try:
+    -->576:         range(c, d)
+       577:     except Exception as e:
 
             c: '2'
             d: '3'

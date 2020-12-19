@@ -1531,7 +1531,7 @@ In Python 3, exceptions must be derived from BaseException.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 514, in test_type_error17
+  File "TESTS:\runtime\test_type_error.py", line 528, in test_type_error17
     "a" * "2"
 TypeError: can't multiply sequence by non-int of type 'str'
 
@@ -1552,14 +1552,14 @@ You can only multiply sequences, such as list, tuples,
 Perhaps you forgot to convert `"2"` into an integer.
 
 
-#### Exception raised on line 514 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 528 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       512: 
-       513:     try:
-    -->514:         "a" * "2"
-       515:     except Exception as e:
+       526: 
+       527:     try:
+    -->528:         "a" * "2"
+       529:     except Exception as e:
 
 ```
 
@@ -1571,7 +1571,7 @@ Perhaps you forgot to convert `"2"` into an integer.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 562, in test_type_error18
+  File "TESTS:\runtime\test_type_error.py", line 576, in test_type_error18
     range(c, d)
 TypeError: 'str' object cannot be interpreted as an integer
 
@@ -1590,14 +1590,14 @@ or by trying to do an operation not allowed on a given type of object.
 You wrote an object of type `str` where an integer was expected.
 Perhaps you forgot to convert `c, d` into integers.
 
-#### Exception raised on line 562 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 576 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       560:     c, d = "2", "3"
-       561:     try:
-    -->562:         range(c, d)
-       563:     except Exception as e:
+       574:     c, d = "2", "3"
+       575:     try:
+    -->576:         range(c, d)
+       577:     except Exception as e:
 
 ```
 
