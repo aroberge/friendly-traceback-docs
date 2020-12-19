@@ -1125,6 +1125,7 @@ SyntaxError - missing comma in a set
     SyntaxError: invalid syntax
     
         Did you forget something between `2` and `3`?
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -1157,6 +1158,7 @@ SyntaxError - missing comma in a list
     SyntaxError: invalid syntax
     
         Did you forget something between `2` and `3`?
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -1189,6 +1191,7 @@ SyntaxError - missing comma in a tuple
     SyntaxError: invalid syntax
     
         Did you forget something between `2` and `3`?
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -1221,6 +1224,7 @@ SyntaxError - missing comma between function args
     SyntaxError: invalid syntax
     
         Did you forget something between `c` and `d`?
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -1946,6 +1950,7 @@ SyntaxError - assigned prior to nonlocal declaration
     SyntaxError: name 'q' is used prior to nonlocal declaration
     
         Did you forget to write `nonlocal` first?
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -1977,6 +1982,7 @@ SyntaxError - used prior to nonlocal declaration
     SyntaxError: name 's' is assigned to before nonlocal declaration
     
         Did you forget to add `nonlocal`?
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -2631,6 +2637,7 @@ SyntaxError - invalid character (bad quote)
     SyntaxError: invalid character '«' (U+00AB)
     
         Did you mean to use a normal quote character, `'` or `"`?
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -2771,6 +2778,7 @@ SyntaxError - forgot a comma in an f-string
     SyntaxError: f-string: invalid syntax
     
         Did you forget something between `x` and `y`?
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file

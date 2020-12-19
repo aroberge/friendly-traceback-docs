@@ -1126,6 +1126,7 @@ SyntaxError - missing comma in a set
     SyntaxError: invalid syntax
     
         Avez-vous oublié quelque chose entre `2` et `3` ?
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -1157,6 +1158,7 @@ SyntaxError - missing comma in a list
     SyntaxError: invalid syntax
     
         Avez-vous oublié quelque chose entre `2` et `3` ?
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -1188,6 +1190,7 @@ SyntaxError - missing comma in a tuple
     SyntaxError: invalid syntax
     
         Avez-vous oublié quelque chose entre `2` et `3` ?
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -1219,6 +1222,7 @@ SyntaxError - missing comma between function args
     SyntaxError: invalid syntax
     
         Avez-vous oublié quelque chose entre `c` et `d` ?
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -1950,6 +1954,7 @@ SyntaxError - assigned prior to nonlocal declaration
     SyntaxError: name 'q' is used prior to nonlocal declaration
     
         Avez-vous oublié d’ajouter `nonlocal` en premier ?
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -1981,6 +1986,7 @@ SyntaxError - used prior to nonlocal declaration
     SyntaxError: name 's' is assigned to before nonlocal declaration
     
         Avez-vous oublié d’ajouter `nonlocal` ?
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -2630,6 +2636,7 @@ SyntaxError - invalid character (bad quote)
     SyntaxError: invalid character in identifier
     
         Vouliez vous utiliser un guillemet normal, `'` ou `"` ?
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -2768,6 +2775,7 @@ SyntaxError - forgot a comma in an f-string
     SyntaxError: invalid syntax
     
         Avez-vous oublié quelque chose entre `x` et `y` ?
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier

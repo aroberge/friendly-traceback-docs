@@ -1334,6 +1334,7 @@ SyntaxError: invalid syntax
 Did you forget something between `2` and `3`?
 
 
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
@@ -1373,6 +1374,7 @@ SyntaxError: invalid syntax
 ```
 
 Did you forget something between `2` and `3`?
+
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -1416,6 +1418,7 @@ SyntaxError: invalid syntax
 Did you forget something between `2` and `3`?
 
 
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
@@ -1455,6 +1458,7 @@ SyntaxError: invalid syntax
 ```
 
 Did you forget something between `c` and `d`?
+
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -2315,6 +2319,7 @@ SyntaxError: name 'q' is used prior to nonlocal declaration
 Did you forget to write `nonlocal` first?
 
 
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
@@ -2352,6 +2357,7 @@ SyntaxError: name 's' is assigned to before nonlocal declaration
 ```
 
 Did you forget to add `nonlocal`?
+
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
@@ -3150,6 +3156,7 @@ SyntaxError: invalid character in identifier
 Did you mean to use a normal quote character, `'` or `"`?
 
 
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
@@ -3321,6 +3328,7 @@ SyntaxError: invalid syntax
 ```
 
 Did you forget something between `x` and `y`?
+
 
 
 A `SyntaxError` occurs when Python cannot understand your code.
