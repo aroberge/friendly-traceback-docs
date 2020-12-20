@@ -1111,29 +1111,33 @@ TypeError - 15: list object is not callable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 446, in test_type_error15
-        _ = [1, 2](3, 4)
+      File "TESTS:\runtime\test_type_error.py", line 456, in test_type_error15
+        _ = [1, 2](3 + 4)
     TypeError: 'list' object is not callable
     
-        Peut-être que vous aviez une virgule manquante avant le tuple.
+        Vouliez-vous dire `[1, 2][3 + 4]` ?
         
     Une exception `TypeError` est généralement causée une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-        Je soupçonne que vous aviez un objet du type « une liste (`list`) »,
-        suivi de ce qui ressemblait à un tuple, '(...) ',
-        que Python a pris comme indiquant une invocation de fonction.
-        Peut-être que vous aviez une virgule manquante avant le tuple.
+        En raison des parenthees, `(3 + 4)` est interprété par Python
+        comme indiquant une invocation de fonction pour 
+        `[1, 2]`, qui est un objet de type `list`
+        ne pouvant pas être invoqué.
         
-    Exception levée à la ligne 446 du fichier TESTS:\runtime\test_type_error.py.
+        Cependant, `[1, 2]` est une séquence.
+        Peut-être que vous vouliez utiliser `[]` au lieu de `()` et écrire
+        `[1, 2][3 + 4]`
+        
+    Exception levée à la ligne 456 du fichier TESTS:\runtime\test_type_error.py.
     
-       444: 
-       445:     try:
-    -->446:         _ = [1, 2](3, 4)
-                        ^^^^^^^^^^^^
-       447:     except Exception as e:
+       454: 
+       455:     try:
+    -->456:         _ = [1, 2](3 + 4)
+                        ^^^^^^^^^^^^^
+       457:     except Exception as e:
 
 
 TypeError - 16: exception derived from BaseException
@@ -1143,7 +1147,7 @@ TypeError - 16: exception derived from BaseException
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 459, in test_type_error16
+      File "TESTS:\runtime\test_type_error.py", line 481, in test_type_error16
         raise "exception"
     TypeError: exceptions must derive from BaseException
     
@@ -1154,12 +1158,12 @@ TypeError - 16: exception derived from BaseException
     
         Dans Python 3, les exceptions doivent être dérivées de BaseException.
         
-    Exception levée à la ligne 459 du fichier TESTS:\runtime\test_type_error.py.
+    Exception levée à la ligne 481 du fichier TESTS:\runtime\test_type_error.py.
     
-       457: def test_type_error16():
-       458:     try:
-    -->459:         raise "exception"
-       460:     except Exception as e:
+       479: def test_type_error16():
+       480:     try:
+    -->481:         raise "exception"
+       482:     except Exception as e:
 
 
 TypeError - 17: can't multiply sequence by non-int
@@ -1169,7 +1173,7 @@ TypeError - 17: can't multiply sequence by non-int
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 528, in test_type_error17
+      File "TESTS:\runtime\test_type_error.py", line 550, in test_type_error17
         "a" * "2"
     TypeError: can't multiply sequence by non-int of type 'str'
     
@@ -1184,12 +1188,12 @@ TypeError - 17: can't multiply sequence by non-int
         les listes, les tuples, les chaînes, etc., que par des entiers.
         Peut-être avez-vous oublié de convertir `"2"` en un entier.
         
-    Exception levée à la ligne 528 du fichier TESTS:\runtime\test_type_error.py.
+    Exception levée à la ligne 550 du fichier TESTS:\runtime\test_type_error.py.
     
-       526: 
-       527:     try:
-    -->528:         "a" * "2"
-       529:     except Exception as e:
+       548: 
+       549:     try:
+    -->550:         "a" * "2"
+       551:     except Exception as e:
 
 
 TypeError - 18: object cannot be interpreted as an integer
@@ -1199,7 +1203,7 @@ TypeError - 18: object cannot be interpreted as an integer
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 576, in test_type_error18
+      File "TESTS:\runtime\test_type_error.py", line 598, in test_type_error18
         range(c, d)
     TypeError: 'str' object cannot be interpreted as an integer
     
@@ -1212,12 +1216,12 @@ TypeError - 18: object cannot be interpreted as an integer
     
         Vous avez écrit un objet de type `str` là où un entier était attendu.
         Peut-être avez-vous oublié de convertir `c, d` en entiers.
-    Exception levée à la ligne 576 du fichier TESTS:\runtime\test_type_error.py.
+    Exception levée à la ligne 598 du fichier TESTS:\runtime\test_type_error.py.
     
-       574:     c, d = "2", "3"
-       575:     try:
-    -->576:         range(c, d)
-       577:     except Exception as e:
+       596:     c, d = "2", "3"
+       597:     try:
+    -->598:         range(c, d)
+       599:     except Exception as e:
 
             c: '2'
             d: '3'
