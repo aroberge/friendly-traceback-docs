@@ -16,7 +16,7 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly-traceback version: 0.2.8a
+Friendly-traceback version: 0.2.9a
 Python version: 3.10.0a1
 
 
@@ -264,6 +264,66 @@ AttributeError - using . instead of ,
 
             abcd: 'hello'
             defg: 'world'
+        
+
+
+AttributeError - builtin function with no attribute
+---------------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_attribute_error.py", line 188, in test_builtin_function
+        len.text
+    AttributeError: 'builtin_function_or_method' object has no attribute 'text'
+    
+        Did you mean `len(text)`?
+        
+    An `AttributeError` occurs when the code contains something like
+        `object.x`
+    and `x` is not a method or attribute (variable) belonging to `object`.
+    
+        `len` is a function. Perhaps you meant to write
+        `len(text)`
+        
+    Exception raised on line 188 of file TESTS:\runtime\test_attribute_error.py.
+    
+       186:     text = 'Hello world!'
+       187:     try:
+    -->188:         len.text
+       189:     except Exception as e:
+
+            text: 'Hello world!'
+        
+
+
+AttributeError - builtin module with no file
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_attribute_error.py", line 205, in test_builtin_module_with_no_file
+        sys.foo
+    AttributeError: module 'sys' has no attribute 'foo'
+    
+    An `AttributeError` occurs when the code contains something like
+        `object.x`
+    and `x` is not a method or attribute (variable) belonging to `object`.
+    
+        Python tells us that no object with name `foo` is
+        found in module `sys`.
+        
+    Exception raised on line 205 of file TESTS:\runtime\test_attribute_error.py.
+    
+       203: 
+       204:     try:
+    -->205:         sys.foo
+       206:     except Exception as e:
+
+            sys: <module sys (builtin)>
         
 
 

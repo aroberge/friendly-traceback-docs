@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.2.8a documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.2.9a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.8a
+                0.2.9a
               </div>
             
           
@@ -137,6 +137,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#attributeerror-typo-in-module-attribute">AttributeError - typo in module attribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#attributeerror-shadowning-stdlib-module">AttributeError - shadowning stdlib module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#attributeerror-using-instead-of">AttributeError - using . instead of ,</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attributeerror-builtin-function-with-no-attribute">AttributeError - builtin function with no attribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attributeerror-builtin-module-with-no-file">AttributeError - builtin module with no file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#filenotfounderror">FileNotFoundError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#importerror">ImportError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#keyerror">KeyError</a></li>
@@ -277,7 +279,7 @@ C:Usersandregithubfriendly-tracebackteststrb_english.py located in the <code cla
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.2.8a
+<p>Friendly-traceback version: 0.2.9a
 Python version: 3.10.0a1</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -491,6 +493,58 @@ Exception raised on line 171 of file TESTS:\runtime\test_attribute_error.py.
 
         abcd: &#39;hello&#39;
         defg: &#39;world&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="attributeerror-builtin-function-with-no-attribute">
+<h2>AttributeError - builtin function with no attribute<a class="headerlink" href="#attributeerror-builtin-function-with-no-attribute" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 188, in test_builtin_function
+    len.text
+AttributeError: &#39;builtin_function_or_method&#39; object has no attribute &#39;text&#39;
+
+    Did you mean `len(text)`?
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+    `len` is a function. Perhaps you meant to write
+    `len(text)`
+
+Exception raised on line 188 of file TESTS:\runtime\test_attribute_error.py.
+
+   186:     text = &#39;Hello world!&#39;
+   187:     try:
+--&gt;188:         len.text
+   189:     except Exception as e:
+
+        text: &#39;Hello world!&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="attributeerror-builtin-module-with-no-file">
+<h2>AttributeError - builtin module with no file<a class="headerlink" href="#attributeerror-builtin-module-with-no-file" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 205, in test_builtin_module_with_no_file
+    sys.foo
+AttributeError: module &#39;sys&#39; has no attribute &#39;foo&#39;
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+    Python tells us that no object with name `foo` is
+    found in module `sys`.
+
+Exception raised on line 205 of file TESTS:\runtime\test_attribute_error.py.
+
+   203:
+   204:     try:
+--&gt;205:         sys.foo
+   206:     except Exception as e:
+
+        sys: &lt;module sys (builtin)&gt;
 </pre></div>
 </div>
 </div>

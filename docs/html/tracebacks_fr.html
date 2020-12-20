@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.2.8a documentation</title>
+  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.2.9a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.8a
+                0.2.9a
               </div>
             
           
@@ -149,6 +149,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#attributeerror-typo-in-module-attribute">AttributeError - typo in module attribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#attributeerror-shadowning-stdlib-module">AttributeError - shadowning stdlib module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#attributeerror-using-instead-of">AttributeError - using . instead of ,</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attributeerror-builtin-function-with-no-attribute">AttributeError - builtin function with no attribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attributeerror-builtin-module-with-no-file">AttributeError - builtin module with no file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#filenotfounderror">FileNotFoundError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#importerror">ImportError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#keyerror">KeyError</a></li>
@@ -276,7 +278,7 @@ Ceci a besoin d’être fait de manière explicite lorsqu’on veut
 faire des corrections ou des ajouts, avant de faire la mise
 à jour du reste de la documentation avec Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.2.8a
+<p>Friendly-traceback version: 0.2.9a
 Python version: 3.8.4</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -490,6 +492,58 @@ Exception levée à la ligne 171 du fichier TESTS:\runtime\test_attribute_error.
 
         abcd: &#39;hello&#39;
         defg: &#39;world&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="attributeerror-builtin-function-with-no-attribute">
+<h2>AttributeError - builtin function with no attribute<a class="headerlink" href="#attributeerror-builtin-function-with-no-attribute" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 188, in test_builtin_function
+    len.text
+AttributeError: &#39;builtin_function_or_method&#39; object has no attribute &#39;text&#39;
+
+    Vouliez-vous dire `len(text)` ?
+
+Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+    `object.x`
+et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+
+    `len` est une fonction. Peut-être que vous vouliez écrire
+    `len(text)`
+
+Exception levée à la ligne 188 du fichier TESTS:\runtime\test_attribute_error.py.
+
+   186:     text = &#39;Hello world!&#39;
+   187:     try:
+--&gt;188:         len.text
+   189:     except Exception as e:
+
+        text: &#39;Hello world!&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="attributeerror-builtin-module-with-no-file">
+<h2>AttributeError - builtin module with no file<a class="headerlink" href="#attributeerror-builtin-module-with-no-file" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 205, in test_builtin_module_with_no_file
+    sys.foo
+AttributeError: module &#39;sys&#39; has no attribute &#39;foo&#39;
+
+Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+    `object.x`
+et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+
+    Python nous dit qu’aucun objet avec le nom `foo` n’est
+    dans le module `sys`.
+
+Exception levée à la ligne 205 du fichier TESTS:\runtime\test_attribute_error.py.
+
+   203:
+   204:     try:
+--&gt;205:         sys.foo
+   206:     except Exception as e:
+
+        sys: &lt;module sys (builtin)&gt;
 </pre></div>
 </div>
 </div>
@@ -1116,7 +1170,7 @@ Exception levée à la ligne 302 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-11-bad-operand-type-for-unary">
 <h2>TypeError - 11: bad operand type for unary +<a class="headerlink" href="#typeerror-11-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_common.py&quot;, line 187, in create_tracebacks
+  File &quot;TESTS:\trb_common.py&quot;, line 195, in create_tracebacks
     result, message = getattr(mod, function)()
   File &quot;TESTS:\runtime\test_type_error.py&quot;, line 361, in test_type_error11
     assert &quot;Perhaps you meant to write `+=`&quot; in result
@@ -1124,12 +1178,12 @@ AssertionError:
 
 Aucune information n’est disponible sur cette exception.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 187 du fichier TESTS:\trb_common.py
+L&#39;exécution s&#39;est arrêtée à la ligne 195 du fichier TESTS:\trb_common.py
 
-   185:                     mod = __import__(name)
-   186:                     if function is not None:
---&gt;187:                         result, message = getattr(mod, function)()
-   188:                         save_messages[function] = message
+   193:                     mod = __import__(name)
+   194:                     if function is not None:
+--&gt;195:                         result, message = getattr(mod, function)()
+   196:                         save_messages[function] = message
 
         result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
             len(result): 894

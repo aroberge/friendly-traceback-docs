@@ -15,7 +15,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly-traceback version: 0.2.8a
+Friendly-traceback version: 0.2.9a
 Python version: 3.8.4
 
 
@@ -263,6 +263,66 @@ AttributeError - using . instead of ,
 
             abcd: 'hello'
             defg: 'world'
+        
+
+
+AttributeError - builtin function with no attribute
+---------------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_attribute_error.py", line 188, in test_builtin_function
+        len.text
+    AttributeError: 'builtin_function_or_method' object has no attribute 'text'
+    
+        Vouliez-vous dire `len(text)` ?
+        
+    Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+        `object.x`
+    et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+    
+        `len` est une fonction. Peut-être que vous vouliez écrire
+        `len(text)`
+        
+    Exception levée à la ligne 188 du fichier TESTS:\runtime\test_attribute_error.py.
+    
+       186:     text = 'Hello world!'
+       187:     try:
+    -->188:         len.text
+       189:     except Exception as e:
+
+            text: 'Hello world!'
+        
+
+
+AttributeError - builtin module with no file
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_attribute_error.py", line 205, in test_builtin_module_with_no_file
+        sys.foo
+    AttributeError: module 'sys' has no attribute 'foo'
+    
+    Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+        `object.x`
+    et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+    
+        Python nous dit qu’aucun objet avec le nom `foo` n’est
+        dans le module `sys`.
+        
+    Exception levée à la ligne 205 du fichier TESTS:\runtime\test_attribute_error.py.
+    
+       203: 
+       204:     try:
+    -->205:         sys.foo
+       206:     except Exception as e:
+
+            sys: <module sys (builtin)>
         
 
 
@@ -976,7 +1036,7 @@ TypeError - 11: bad operand type for unary +
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_common.py", line 187, in create_tracebacks
+      File "TESTS:\trb_common.py", line 195, in create_tracebacks
         result, message = getattr(mod, function)()
       File "TESTS:\runtime\test_type_error.py", line 361, in test_type_error11
         assert "Perhaps you meant to write `+=`" in result
@@ -984,12 +1044,12 @@ TypeError - 11: bad operand type for unary +
     
     Aucune information n’est disponible sur cette exception.
     
-    L'exécution s'est arrêtée à la ligne 187 du fichier TESTS:\trb_common.py
+    L'exécution s'est arrêtée à la ligne 195 du fichier TESTS:\trb_common.py
     
-       185:                     mod = __import__(name)
-       186:                     if function is not None:
-    -->187:                         result, message = getattr(mod, function)()
-       188:                         save_messages[function] = message
+       193:                     mod = __import__(name)
+       194:                     if function is not None:
+    -->195:                         result, message = getattr(mod, function)()
+       196:                         save_messages[function] = message
 
             result: '\n    Traceback (most recent call last):\n      File "TESTS...'
                 len(result): 894
