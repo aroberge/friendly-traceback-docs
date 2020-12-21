@@ -18,11 +18,12 @@ Python version: 3.8.4
 ---
 
 ## ArithmeticError
+### Generic
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_arithmetic_error.py", line 9, in test_arithmetic_error
+  File "TESTS:\runtime\test_arithmetic_error.py", line 9, in test_Generic
     raise ArithmeticError('error')
 ArithmeticError: error
 
@@ -48,12 +49,89 @@ normally, a more specific exception should have been raised.
 
 ---
 
-## AttributeError - class attribute
+## AttributeError
+### Builtin function
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 36, in test_generic
+  File "TESTS:\runtime\test_attribute_error.py", line 188, in test_Builtin_function
+    len.text
+AttributeError: 'builtin_function_or_method' object has no attribute 'text'
+
+```
+
+Did you mean `len(text)`?
+
+
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+
+`len` is a function. Perhaps you meant to write
+`len(text)`
+
+
+#### Exception raised on line 188 of file TESTS:\runtime\test_attribute_error.py.
+
+
+```python
+       186:     text = 'Hello world!'
+       187:     try:
+    -->188:         len.text
+       189:     except Exception as e:
+
+```
+
+```python
+    text: 'Hello world!'
+
+```
+
+### Builtin module with no file
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_attribute_error.py", line 205, in test_Builtin_module_with_no_file
+    sys.foo
+AttributeError: module 'sys' has no attribute 'foo'
+
+```
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+
+Python tells us that no object with name `foo` is
+found in module `sys`.
+
+
+#### Exception raised on line 205 of file TESTS:\runtime\test_attribute_error.py.
+
+
+```python
+       203: 
+       204:     try:
+    -->205:         sys.foo
+       206:     except Exception as e:
+
+```
+
+```python
+    sys: <module sys (builtin)>
+
+```
+
+### Generic
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_attribute_error.py", line 36, in test_Generic
     a.x  # Testing instance
 AttributeError: 'A' object has no attribute 'x'
 
@@ -79,19 +157,92 @@ The object `a` has no attribute named `x`.
 ```
 
 ```python
-    a: <A object> from test_attribute_error.test_generic
+    a: <A object> from test_attribute_error.test_Generic
 
 ```
 
-
----
-
-## AttributeError - typo in object attribute
+### Module attribute typo
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 52, in test_object_attribute_typo
+  File "TESTS:\runtime\test_attribute_error.py", line 113, in test_Module_attribute_typo
+    math.cost
+AttributeError: module 'math' has no attribute 'cost'
+
+```
+
+Did you mean one of the following: `cos, cosh, acos`?
+
+
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+
+Instead of writing `math.cost`, perhaps you meant to write one of 
+the following names which are attributes of module `math`:
+`cos, cosh, acos`
+
+
+#### Exception raised on line 113 of file TESTS:\runtime\test_attribute_error.py.
+
+
+```python
+       111: 
+       112:     try:
+    -->113:         math.cost
+       114:     except Exception as e:
+
+```
+
+```python
+    math: <module math (builtin)>
+
+```
+
+### Nonetype
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_attribute_error.py", line 152, in test_Nonetype
+    a.b
+AttributeError: 'NoneType' object has no attribute 'b'
+
+```
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+
+You are attempting to access the attribute `b`
+for a variable whose value is `None`.
+
+#### Exception raised on line 152 of file TESTS:\runtime\test_attribute_error.py.
+
+
+```python
+       150:     a = None
+       151:     try:
+    -->152:         a.b
+       153:     except Exception as e:
+
+```
+
+```python
+    a: None
+
+```
+
+### Object attribute typo
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_attribute_error.py", line 52, in test_Object_attribute_typo
     a.appendh(4)
 AttributeError: 'list' object has no attribute 'appendh'
 
@@ -126,15 +277,96 @@ Perhaps you meant to write `a.append` instead of `a.appendh`
 
 ```
 
-
----
-
-## AttributeError - using builtin
+### Perhaps comma
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 68, in test_use_builtin
+  File "TESTS:\runtime\test_attribute_error.py", line 171, in test_Perhaps_comma
+    a = [abcd
+AttributeError: 'str' object has no attribute 'defg'
+
+```
+
+Did you mean to separate object names by a comma?
+
+
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+
+`defg` is not an attribute of `abcd`.
+However, both `abcd` and `defg` are known objects.
+Perhaps you wrote a period to separate these two objects, 
+instead of using a comma.
+
+
+#### Exception raised on line 171 of file TESTS:\runtime\test_attribute_error.py.
+
+
+```python
+       169:     # fmt: off
+       170:     try:
+    -->171:         a = [abcd
+       172:         .defg]
+
+```
+
+```python
+    abcd: 'hello'
+    defg: 'world'
+
+```
+
+### Shadow stdlib module
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_attribute_error.py", line 134, in test_Shadow_stdlib_module
+    turtle.Pen
+AttributeError: module 'turtle' has no attribute 'Pen'
+
+```
+
+Did you give your program the same name as a Python module?
+
+
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+
+You imported a module named `turtle` from `TESTS:\turtle.py`.
+There is also a module named `turtle` in Python's standard library.
+Perhaps you need to rename your module.
+
+
+#### Exception raised on line 134 of file TESTS:\runtime\test_attribute_error.py.
+
+
+```python
+       132: 
+       133:     try:
+    -->134:         turtle.Pen
+       135:     except Exception as e:
+
+```
+
+```python
+    turtle: <module turtle> from TESTS:\turtle.py
+
+```
+
+### Use builtin
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_attribute_error.py", line 68, in test_Use_builtin
     a.length()
 AttributeError: 'list' object has no attribute 'length'
 
@@ -170,15 +402,12 @@ Perhaps you can use the Python builtin function `len` instead:
 
 ```
 
-
----
-
-## AttributeError - use synonym
+### Use synonym
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 84, in test_use_synonym
+  File "TESTS:\runtime\test_attribute_error.py", line 84, in test_Use_synonym
     a.add(4)
 AttributeError: 'list' object has no attribute 'add'
 
@@ -218,228 +447,13 @@ However, `a` has the following attributes with similar meanings:
 
 ---
 
-## AttributeError - typo in module attribute
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 113, in test_module_attribute_typo
-    math.cost
-AttributeError: module 'math' has no attribute 'cost'
-
-```
-
-Did you mean one of the following: `cos, cosh, acos`?
-
-
-
-An `AttributeError` occurs when the code contains something like
-    `object.x`
-and `x` is not a method or attribute (variable) belonging to `object`.
-
-
-Instead of writing `math.cost`, perhaps you meant to write one of 
-the following names which are attributes of module `math`:
-`cos, cosh, acos`
-
-
-#### Exception raised on line 113 of file TESTS:\runtime\test_attribute_error.py.
-
-
-```python
-       111: 
-       112:     try:
-    -->113:         math.cost
-       114:     except Exception as e:
-
-```
-
-```python
-    math: <module math (builtin)>
-
-```
-
-
----
-
-## AttributeError - shadowning stdlib module
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 134, in test_shadow_stdlib_module
-    turtle.Pen
-AttributeError: module 'turtle' has no attribute 'Pen'
-
-```
-
-Did you give your program the same name as a Python module?
-
-
-
-An `AttributeError` occurs when the code contains something like
-    `object.x`
-and `x` is not a method or attribute (variable) belonging to `object`.
-
-
-You imported a module named `turtle` from `TESTS:\turtle.py`.
-There is also a module named `turtle` in Python's standard library.
-Perhaps you need to rename your module.
-
-
-#### Exception raised on line 134 of file TESTS:\runtime\test_attribute_error.py.
-
-
-```python
-       132: 
-       133:     try:
-    -->134:         turtle.Pen
-       135:     except Exception as e:
-
-```
-
-```python
-    turtle: <module turtle> from TESTS:\turtle.py
-
-```
-
-
----
-
-## AttributeError - using . instead of ,
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 171, in test_perhaps_comma
-    a = [abcd
-AttributeError: 'str' object has no attribute 'defg'
-
-```
-
-Did you mean to separate object names by a comma?
-
-
-
-An `AttributeError` occurs when the code contains something like
-    `object.x`
-and `x` is not a method or attribute (variable) belonging to `object`.
-
-
-`defg` is not an attribute of `abcd`.
-However, both `abcd` and `defg` are known objects.
-Perhaps you wrote a period to separate these two objects, 
-instead of using a comma.
-
-
-#### Exception raised on line 171 of file TESTS:\runtime\test_attribute_error.py.
-
-
-```python
-       169:     # fmt: off
-       170:     try:
-    -->171:         a = [abcd
-       172:         .defg]
-
-```
-
-```python
-    abcd: 'hello'
-    defg: 'world'
-
-```
-
-
----
-
-## AttributeError - builtin function with no attribute
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 188, in test_builtin_function
-    len.text
-AttributeError: 'builtin_function_or_method' object has no attribute 'text'
-
-```
-
-Did you mean `len(text)`?
-
-
-
-An `AttributeError` occurs when the code contains something like
-    `object.x`
-and `x` is not a method or attribute (variable) belonging to `object`.
-
-
-`len` is a function. Perhaps you meant to write
-`len(text)`
-
-
-#### Exception raised on line 188 of file TESTS:\runtime\test_attribute_error.py.
-
-
-```python
-       186:     text = 'Hello world!'
-       187:     try:
-    -->188:         len.text
-       189:     except Exception as e:
-
-```
-
-```python
-    text: 'Hello world!'
-
-```
-
-
----
-
-## AttributeError - builtin module with no file
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 205, in test_builtin_module_with_no_file
-    sys.foo
-AttributeError: module 'sys' has no attribute 'foo'
-
-```
-
-An `AttributeError` occurs when the code contains something like
-    `object.x`
-and `x` is not a method or attribute (variable) belonging to `object`.
-
-
-Python tells us that no object with name `foo` is
-found in module `sys`.
-
-
-#### Exception raised on line 205 of file TESTS:\runtime\test_attribute_error.py.
-
-
-```python
-       203: 
-       204:     try:
-    -->205:         sys.foo
-       206:     except Exception as e:
-
-```
-
-```python
-    sys: <module sys (builtin)>
-
-```
-
-
----
-
 ## FileNotFoundError
+### Generic
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_file_not_found_error.py", line 6, in test_file_not_found_error
+  File "TESTS:\runtime\test_file_not_found_error.py", line 6, in test_Generic
     open("does_not_exist")
 FileNotFoundError: [Errno 2] No such file or directory: 'does_not_exist'
 
@@ -458,7 +472,7 @@ file that cannot be found is `does_not_exist`.
 
 
 ```python
-       4: def test_file_not_found_error():
+       4: def test_Generic():
        5:     try:
     -->6:         open("does_not_exist")
        7:     except Exception as e:
@@ -469,11 +483,67 @@ file that cannot be found is `does_not_exist`.
 ---
 
 ## ImportError
+### Circular import
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_import_error.py", line 6, in test_import_error
+  File "TESTS:\runtime\test_import_error.py", line 20, in test_Circular_import
+    import circular_a
+  File "TESTS:\circular_a.py", line 2, in <module>
+    import circular_b
+  File "TESTS:\circular_b.py", line 2, in <module>
+    from circular_a import a
+ImportError: cannot import name 'a' from partially initialized module 'circular_a' (most likely due to a circular import) (C:\Users\andre\github\friendly-traceback\tests\circular_a.py)
+
+```
+
+An `ImportError` exception indicates that a certain object could not
+be imported from a module or package. Most often, this is
+because the name of the object is not spelled correctly.
+
+
+The object that could not be imported is `a`.
+The module or package where it was 
+expected to be found is `circular_a`.
+
+The problem was likely caused by what is known as a 'circular import'.
+First, Python imported and started executing the code in file
+   'TESTS:\runtime\test_import_error.py'.
+which imports module `circular_a`.
+During this process, the code in another file,
+   'TESTS:\circular_b.py'
+was executed. However in this last file, an attempt was made
+to import the original module `circular_a`
+a second time, before Python had completed the first import.
+
+
+#### Execution stopped on line 20 of file TESTS:\runtime\test_import_error.py.
+
+
+```python
+       18: def test_Circular_import():
+       19:     try:
+    -->20:         import circular_a
+       21:     except Exception as e:
+
+```
+
+#### Exception raised on line 2 of file TESTS:\circular_b.py.
+
+
+```python
+       1: """File used in for test_circular_import() in test_import_error.py"""
+    -->2: from circular_a import a
+
+```
+
+### Simple import error
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_import_error.py", line 6, in test_Simple_import_error
     from math import Pi
 ImportError: cannot import name 'Pi' from 'math' (unknown location)
 
@@ -495,7 +565,7 @@ Perhaps you meant to import `pi` (from `math`) instead of `Pi`
 
 
 ```python
-       4: def test_import_error():
+       4: def test_Simple_import_error():
        5:     try:
     -->6:         from math import Pi
        7:     except Exception as e:
@@ -505,79 +575,49 @@ Perhaps you meant to import `pi` (from `math`) instead of `Pi`
 
 ---
 
-## KeyError
+## IndexError
+### Long list
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_key_error.py", line 7, in test_key_error
-    d["c"]
-KeyError: 'c'
+  File "TESTS:\runtime\test_index_error.py", line 22, in test_Long_list
+    print(a[50], b[0])
+IndexError: list index out of range
 
 ```
 
-A `KeyError` is raised when a value is not found as a
-key in a Python dict.
+An `IndexError` occurs when you are try to get an item from a list,
+a tuple, or a similar object (sequence), by using an index which
+does not exists; typically, this is because the index you give
+is greater than the length of the sequence.
+Reminder: the first item of a sequence is at index 0.
 
 
-In your program, the key that cannot be found is `'c'`.
-
-
-#### Exception raised on line 7 of file TESTS:\runtime\test_key_error.py.
+#### Exception raised on line 22 of file TESTS:\runtime\test_index_error.py.
 
 
 ```python
-       5:     d = {"a": 1, "b": 2}
-       6:     try:
-    -->7:         d["c"]
-       8:     except Exception as e:
+       20:     b = tuple(range(50))
+       21:     try:
+    -->22:         print(a[50], b[0])
+                         ^^^^^
+       23:     except Exception as e:
 
 ```
 
 ```python
-    d: {'a': 1, 'b': 2}
+    a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
+        len(a): 40
 
 ```
 
-
----
-
-## LookupError
+### Short tuple
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_lookup_error.py", line 10, in test_lookup_error
-    raise LookupError("Fake message")
-LookupError: Fake message
-
-```
-
-`LookupError` is the base class for the exceptions that are raised
-when a key or index used on a mapping or sequence is invalid.
-It can also be raised directly by codecs.lookup().
-
-
-#### Exception raised on line 10 of file TESTS:\runtime\test_lookup_error.py.
-
-
-```python
-        8:         # other than possibly codecs.lookup(), which is why we raise
-        9:         # it directly here for our example.
-    -->10:         raise LookupError("Fake message")
-       11:     except Exception as e:
-
-```
-
-
----
-
-## IndexError - short tuple
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_index_error.py", line 8, in test_index_error1
+  File "TESTS:\runtime\test_index_error.py", line 8, in test_Short_tuple
     print(a[3], b[2])
 IndexError: tuple index out of range
 
@@ -610,39 +650,69 @@ Reminder: the first item of a sequence is at index 0.
 
 ---
 
-## IndexError - long list
+## KeyError
+### Generic
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_index_error.py", line 22, in test_index_error2
-    print(a[50], b[0])
-IndexError: list index out of range
+  File "TESTS:\runtime\test_key_error.py", line 7, in test_Generic
+    d["c"]
+KeyError: 'c'
 
 ```
 
-An `IndexError` occurs when you are try to get an item from a list,
-a tuple, or a similar object (sequence), by using an index which
-does not exists; typically, this is because the index you give
-is greater than the length of the sequence.
-Reminder: the first item of a sequence is at index 0.
+A `KeyError` is raised when a value is not found as a
+key in a Python dict.
 
 
-#### Exception raised on line 22 of file TESTS:\runtime\test_index_error.py.
+In your program, the key that cannot be found is `'c'`.
+
+
+#### Exception raised on line 7 of file TESTS:\runtime\test_key_error.py.
 
 
 ```python
-       20:     b = tuple(range(50))
-       21:     try:
-    -->22:         print(a[50], b[0])
-                         ^^^^^
-       23:     except Exception as e:
+       5:     d = {"a": 1, "b": 2}
+       6:     try:
+    -->7:         d["c"]
+       8:     except Exception as e:
 
 ```
 
 ```python
-    a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
-        len(a): 40
+    d: {'a': 1, 'b': 2}
+
+```
+
+
+---
+
+## LookupError
+### Generic
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_lookup_error.py", line 10, in test_Generic
+    raise LookupError("Fake message")
+LookupError: Fake message
+
+```
+
+`LookupError` is the base class for the exceptions that are raised
+when a key or index used on a mapping or sequence is invalid.
+It can also be raised directly by codecs.lookup().
+
+
+#### Exception raised on line 10 of file TESTS:\runtime\test_lookup_error.py.
+
+
+```python
+        8:         # other than possibly codecs.lookup(), which is why we raise
+        9:         # it directly here for our example.
+    -->10:         raise LookupError("Fake message")
+       11:     except Exception as e:
 
 ```
 
@@ -650,11 +720,12 @@ Reminder: the first item of a sequence is at index 0.
 ---
 
 ## ModuleNotFoundError
+### Standard library module
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_module_not_found_error.py", line 6, in test_module_not_found_error
+  File "TESTS:\runtime\test_module_not_found_error.py", line 6, in test_Standard_library_module
     import Tkinter
 ModuleNotFoundError: No module named 'Tkinter'
 
@@ -678,7 +749,7 @@ The name of the module that could not be imported is `Tkinter`.
 
 
 ```python
-       4: def test_module_not_found_error():
+       4: def test_Standard_library_module():
        5:     try:
     -->6:         import Tkinter
        7:     except Exception as e:
@@ -688,90 +759,13 @@ The name of the module that could not be imported is `Tkinter`.
 
 ---
 
-## NameError - 1
+## NameError
+### Annotated variable
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_name_error.py", line 6, in test_name_error
-    this = something
-NameError: name 'something' is not defined
-
-```
-
-A `NameError` exception indicates that a variable or
-function name is not known to Python.
-Most often, this is because there is a spelling mistake.
-However, sometimes it is because the name is used
-before being defined or given a value.
-
-
-In your program, `something` is an unknown name.
-I have no additional information for you.
-
-#### Exception raised on line 6 of file TESTS:\runtime\test_name_error.py.
-
-
-```python
-       4: def test_name_error():
-       5:     try:
-    -->6:         this = something
-       7:     except Exception as e:
-
-```
-
-
----
-
-## NameError - 2
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_name_error.py", line 20, in test_name_error2
-    x = babs(-1)
-NameError: name 'babs' is not defined
-
-```
-
-Did you mean `abs`?
-
-
-
-A `NameError` exception indicates that a variable or
-function name is not known to Python.
-Most often, this is because there is a spelling mistake.
-However, sometimes it is because the name is used
-before being defined or given a value.
-
-
-In your program, `babs` is an unknown name.
-Instead of writing `babs`, perhaps you meant one of the following:
-*   Local scope: `nabs`
-*   Global scope: `fabs`
-*   Python builtins: `abs`
-
-
-#### Exception raised on line 20 of file TESTS:\runtime\test_name_error.py.
-
-
-```python
-       18:     nabs = 1
-       19:     try:
-    -->20:         x = babs(-1)
-       21:     except Exception as e:
-
-```
-
-
----
-
-## NameError - 3
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_name_error.py", line 35, in test_name_error3
+  File "TESTS:\runtime\test_name_error.py", line 21, in test_Annotated_variable
     y = x
 NameError: name 'x' is not defined
 
@@ -799,26 +793,55 @@ instead of
     x = 3
 
 
-#### Exception raised on line 35 of file TESTS:\runtime\test_name_error.py.
+#### Exception raised on line 21 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
-       33: def test_name_error3():
-       34:     try:
-    -->35:         y = x
-       36:     except Exception as e:
+       19: def test_Annotated_variable():
+       20:     try:
+    -->21:         y = x
+       22:     except Exception as e:
 
 ```
 
-
----
-
-## NameError - 4
+### Generic
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_name_error.py", line 48, in test_name_error4
+  File "TESTS:\runtime\test_name_error.py", line 6, in test_Generic
+    this = something
+NameError: name 'something' is not defined
+
+```
+
+A `NameError` exception indicates that a variable or
+function name is not known to Python.
+Most often, this is because there is a spelling mistake.
+However, sometimes it is because the name is used
+before being defined or given a value.
+
+
+In your program, `something` is an unknown name.
+I have no additional information for you.
+
+#### Exception raised on line 6 of file TESTS:\runtime\test_name_error.py.
+
+
+```python
+       4: def test_Generic():
+       5:     try:
+    -->6:         this = something
+       7:     except Exception as e:
+
+```
+
+### Synonym
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_name_error.py", line 46, in test_Synonym
     cost  # wrote from math import * above
 NameError: name 'cost' is not defined
 
@@ -840,14 +863,14 @@ Instead of writing `cost`, perhaps you meant one of the following:
 *   Global scope: `cos`, `cosh`, `acos`
 
 
-#### Exception raised on line 48 of file TESTS:\runtime\test_name_error.py.
+#### Exception raised on line 46 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
-       46: def test_name_error4():
-       47:     try:
-    -->48:         cost  # wrote from math import * above
-       49:     except Exception as e:
+       44: 
+       45:     try:
+    -->46:         cost  # wrote from math import * above
+       47:     except Exception as e:
 
 ```
 
@@ -855,11 +878,12 @@ Instead of writing `cost`, perhaps you meant one of the following:
 ---
 
 ## OverflowError
+### Generic
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_overflow_error.py", line 6, in test_overflow_error
+  File "TESTS:\runtime\test_overflow_error.py", line 6, in test_Generic
     2.0 ** 1600
 OverflowError: (34, 'Result too large')
 
@@ -873,7 +897,7 @@ is too large to be handled by the computer's processor.
 
 
 ```python
-       4: def test_overflow_error():
+       4: def test_Generic():
        5:     try:
     -->6:         2.0 ** 1600
        7:     except Exception as e:
@@ -884,11 +908,12 @@ is too large to be handled by the computer's processor.
 ---
 
 ## RecursionError
+### Generic
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_recursion_error.py", line 8, in test_function_recursion_error
+  File "TESTS:\runtime\test_recursion_error.py", line 8, in test_Generic
     a()
 
        ... More lines not shown. ...
@@ -919,7 +944,7 @@ and that your program would never stop.
 ```
 
 ```python
-    a: <function a> from test_function_recursion_error
+    a: <function a> from test_Generic
 
 ```
 
@@ -927,7 +952,7 @@ and that your program would never stop.
 
 
 ```python
-       4: def test_function_recursion_error():
+       4: def test_Generic():
        5:     def a():
     -->6:         return a()
                          ^^^
@@ -936,19 +961,59 @@ and that your program would never stop.
 ```
 
 ```python
-    a: <function a> from test_function_recursion_error
+    a: <function a> from test_Generic
 
 ```
 
 
 ---
 
-## TypeError - 1: concatenate two different types
+## TypeError
+### Bad type for unary operator
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 36, in test_type_error1
+  File "TESTS:\runtime\test_type_error.py", line 324, in test_Bad_type_for_unary_operator
+    a =+ "def"
+TypeError: bad operand type for unary +: 'str'
+
+```
+
+Perhaps you meant to write `+=` instead of `=+`
+
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.
+
+
+You tried to use the unary operator '+'
+with the following type of object: a string (`str`).
+This operation is not defined for this type of object.
+
+Perhaps you meant to write `+=` instead of `=+`
+
+
+#### Exception raised on line 324 of file TESTS:\runtime\test_type_error.py.
+
+
+```python
+       322:         # fmt: off
+       323:         a = "abc"
+    -->324:         a =+ "def"
+                       ^^^^^^^
+       325:         # fmt: on
+
+```
+
+### Can only concatenate
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_type_error.py", line 36, in test_Can_only_concatenate
     result = a_tuple + a_list
 TypeError: can only concatenate tuple (not "list") to tuple
 
@@ -982,19 +1047,20 @@ a `tuple` and a `list`
 
 ```
 
-
----
-
-## TypeError - 2: unsupported operand type(s) for +=
+### Cannot multiply by non int
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 66, in test_type_error2
-    one += two
-TypeError: unsupported operand type(s) for +=: 'int' and 'str'
+  File "TESTS:\runtime\test_type_error.py", line 532, in test_Cannot_multiply_by_non_int
+    "a" * "2"
+TypeError: can't multiply sequence by non-int of type 'str'
 
 ```
+
+Did you forget to convert `"2"` into an integer?
+
+
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
@@ -1002,329 +1068,28 @@ by calling a function with the wrong type of object,
 or by trying to do an operation not allowed on a given type of object.
 
 
-You tried to add two incompatible types of objects:
-an integer (`int`) and a string (`str`)
+You can only multiply sequences, such as list, tuples,
+ strings, etc., by integers.
+Perhaps you forgot to convert `"2"` into an integer.
 
 
-#### Exception raised on line 66 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 532 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       64:         one = 1
-       65:         two = "two"
-    -->66:         one += two
-       67:     except Exception as e:
+       530: 
+       531:     try:
+    -->532:         "a" * "2"
+       533:     except Exception as e:
 
 ```
 
-```python
-    one: 1
-    two: 'two'
-
-```
-
-
----
-
-## TypeError - 3: unsupported operand type(s) for -=
+### Comparison not supported
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 94, in test_type_error3
-    b -= a
-TypeError: unsupported operand type(s) for -=: 'list' and 'tuple'
-
-```
-
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by trying to do an operation not allowed on a given type of object.
-
-
-You tried to subtract two incompatible types of objects:
-a `list` and a `tuple`
-
-
-#### Exception raised on line 94 of file TESTS:\runtime\test_type_error.py.
-
-
-```python
-       92:         a = (1, 2)
-       93:         b = [3, 4]
-    -->94:         b -= a
-       95:     except Exception as e:
-
-```
-
-```python
-    b: [3, 4]
-    a: (1, 2)
-
-```
-
-
----
-
-## TypeError - 4: unsupported operand type(s) for ``*=``
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 122, in test_type_error4
-    b *= a
-TypeError: unsupported operand type(s) for *=: 'set' and 'complex'
-
-```
-
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by trying to do an operation not allowed on a given type of object.
-
-
-You tried to multiply two incompatible types of objects:
-a `set` and a complex number
-
-
-#### Exception raised on line 122 of file TESTS:\runtime\test_type_error.py.
-
-
-```python
-       120:         a = 1j
-       121:         b = {2, 3}
-    -->122:         b *= a
-       123:     except Exception as e:
-
-```
-
-```python
-    b: {2, 3}
-    a: 1j
-
-```
-
-
----
-
-## TypeError - 5: unsupported operand type(s) for //=
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 174, in test_type_error5
-    b //= a
-TypeError: unsupported operand type(s) for //=: 'float' and 'dict'
-
-```
-
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by trying to do an operation not allowed on a given type of object.
-
-
-You tried to divide two incompatible types of objects:
-a number (`float`) and a dictionary (`dict`)
-
-
-#### Exception raised on line 174 of file TESTS:\runtime\test_type_error.py.
-
-
-```python
-       172:         a = {1: 1, 2: 2}
-       173:         b = 3.1416
-    -->174:         b //= a
-       175:     except Exception as e:
-
-```
-
-```python
-    b: 3.1416
-    a: {1: 1, 2: 2}
-
-```
-
-
----
-
-## TypeError - 6: unsupported operand type(s) for &=
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 202, in test_type_error6
-    b &= a
-TypeError: unsupported operand type(s) for &=: 'int' and 'str'
-
-```
-
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by trying to do an operation not allowed on a given type of object.
-
-
-You tried to perform the bitwise operation &=
-on two incompatible types of objects:
-an integer (`int`) and a string (`str`)
-
-
-#### Exception raised on line 202 of file TESTS:\runtime\test_type_error.py.
-
-
-```python
-       200:         a = "a"
-       201:         b = 2
-    -->202:         b &= a
-       203:     except Exception as e:
-
-```
-
-```python
-    b: 2
-    a: 'a'
-
-```
-
-
----
-
-## TypeError - 7: unsupported operand type(s) for ``**=``
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 230, in test_type_error7
-    a **= b
-TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'float'
-
-```
-
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by trying to do an operation not allowed on a given type of object.
-
-
-You tried to exponentiate (raise to a power)
-using two incompatible types of objects:
-a dictionary (`dict`) and a number (`float`)
-
-
-#### Exception raised on line 230 of file TESTS:\runtime\test_type_error.py.
-
-
-```python
-       228:         a = {1: 1, 2: 2}
-       229:         b = 3.1416
-    -->230:         a **= b
-       231:     except Exception as e:
-
-```
-
-```python
-    a: {1: 1, 2: 2}
-    b: 3.1416
-
-```
-
-
----
-
-## TypeError - 8: unsupported operand type(s) for >>=
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 258, in test_type_error8
-    a >>= b
-TypeError: unsupported operand type(s) for >>=: 'str' and 'int'
-
-```
-
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by trying to do an operation not allowed on a given type of object.
-
-
-You tried to perform the bit shifting operation >>=
-on two incompatible types of objects:
-a string (`str`) and an integer (`int`)
-
-
-#### Exception raised on line 258 of file TESTS:\runtime\test_type_error.py.
-
-
-```python
-       256:         a = "a"
-       257:         b = 42
-    -->258:         a >>= b
-       259:     except Exception as e:
-
-```
-
-```python
-    a: 'a'
-    b: 42
-
-```
-
-
----
-
-## TypeError - 9: unsupported operand type(s) for @=
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 286, in test_type_error9
-    a @= b
-TypeError: unsupported operand type(s) for @=: 'str' and 'int'
-
-```
-
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by trying to do an operation not allowed on a given type of object.
-
-
-You tried to use the operator @=
-using two incompatible types of objects:
-a string (`str`) and an integer (`int`).
-This operator is normally used only
-for multiplication of matrices.
-
-
-#### Exception raised on line 286 of file TESTS:\runtime\test_type_error.py.
-
-
-```python
-       284:         a = "a"
-       285:         b = 2
-    -->286:         a @= b
-       287:     except Exception as e:
-
-```
-
-```python
-    a: 'a'
-    b: 2
-
-```
-
-
----
-
-## TypeError - 10: comparison between incompatible types
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 302, in test_type_error10
+  File "TESTS:\runtime\test_type_error.py", line 274, in test_Comparison_not_supported
     b < a
 TypeError: '<' not supported between instances of 'int' and 'str'
 
@@ -1341,14 +1106,14 @@ between two incompatible types of objects:
 an integer (`int`) and a string (`str`)
 
 
-#### Exception raised on line 302 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 274 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       300:         a = "a"
-       301:         b = 42
-    -->302:         b < a
-       303:     except Exception as e:
+       272:         a = "a"
+       273:         b = 42
+    -->274:         b < a
+       275:     except Exception as e:
 
 ```
 
@@ -1358,59 +1123,14 @@ an integer (`int`) and a string (`str`)
 
 ```
 
-
----
-
-## TypeError - 11: bad operand type for unary +
+### Derive from BaseException
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 352, in test_type_error11
-    a =+ "def"
-TypeError: bad operand type for unary +: 'str'
-
-```
-
-Perhaps you meant to write `+=` instead of `=+`
-
-
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by trying to do an operation not allowed on a given type of object.
-
-
-You tried to use the unary operator '+'
-with the following type of object: a string (`str`).
-This operation is not defined for this type of object.
-
-Perhaps you meant to write `+=` instead of `=+`
-
-
-#### Exception raised on line 352 of file TESTS:\runtime\test_type_error.py.
-
-
-```python
-       350:         # fmt: off
-       351:         a = "abc"
-    -->352:         a =+ "def"
-                       ^^^^^^^
-       353:         # fmt: on
-
-```
-
-
----
-
-## TypeError - 12: object does not support item assignment
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 370, in test_type_error12
-    a[0] = 0
-TypeError: 'tuple' object does not support item assignment
+  File "TESTS:\runtime\test_type_error.py", line 463, in test_Derive_from_BaseException
+    raise "exception"
+TypeError: exceptions must derive from BaseException
 
 ```
 
@@ -1420,44 +1140,32 @@ by calling a function with the wrong type of object,
 or by trying to do an operation not allowed on a given type of object.
 
 
-In Python, some objects are known as immutable:
-once defined, their value cannot be changed.
-You tried change part of such an immutable object: a `tuple`,
-most likely by using an indexing operation.
+In Python 3, exceptions must be derived from BaseException.
 
 
-#### Exception raised on line 370 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 463 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       368:     a = (1, 2, 3)
-       369:     try:
-    -->370:         a[0] = 0
-       371:     except Exception as e:
+       461: def test_Derive_from_BaseException():
+       462:     try:
+    -->463:         raise "exception"
+       464:     except Exception as e:
 
 ```
 
-```python
-    a[0]: 1
-    a: (1, 2, 3)
-
-```
-
-
----
-
-## TypeError - 13: wrong number of positional arguments
+### Not an integer
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 402, in test_type_error13
-    A().f(1)
-TypeError: f() takes 1 positional argument but 2 were given
+  File "TESTS:\runtime\test_type_error.py", line 580, in test_Not_an_integer
+    range(c, d)
+TypeError: 'str' object cannot be interpreted as an integer
 
 ```
 
-Perhaps you forgot `self` when defining `f`.
+Did you forget to convert `c, d` into integers?
 
 
 
@@ -1467,77 +1175,32 @@ by calling a function with the wrong type of object,
 or by trying to do an operation not allowed on a given type of object.
 
 
-You apparently have called the function `f` with
-2 positional argument(s) while it requires 1
-such positional argument(s).
-Perhaps you forgot `self` when defining `f`.
+You wrote an object of type `str` where an integer was expected.
+Perhaps you forgot to convert `c, d` into integers.
 
-
-#### Exception raised on line 402 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 580 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       400: 
-       401:     try:
-    -->402:         A().f(1)
-       403:     except Exception as e:
+       578:     c, d = "2", "3"
+       579:     try:
+    -->580:         range(c, d)
+       581:     except Exception as e:
 
 ```
 
 ```python
-    A: <class A> from test_type_error.test_type_error13
+    c: '2'
+    d: '3'
 
 ```
 
-
----
-
-## TypeError - 14: missing positional arguments
+### Not callable
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 421, in test_type_error14
-    fn(1)
-TypeError: fn() missing 2 required positional arguments: 'b' and 'c'
-
-```
-
-A `TypeError` is usually caused by trying
-to combine two incompatible types of objects,
-by calling a function with the wrong type of object,
-or by trying to do an operation not allowed on a given type of object.
-
-
-You apparently have called the function 'fn()' with
-fewer positional arguments than it requires (2 missing).
-
-
-#### Exception raised on line 421 of file TESTS:\runtime\test_type_error.py.
-
-
-```python
-       419: 
-       420:     try:
-    -->421:         fn(1)
-       422:     except Exception as e:
-
-```
-
-```python
-    fn: <function fn> from test_type_error14
-
-```
-
-
----
-
-## TypeError - 15: list object is not callable
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 478, in test_type_error15
+  File "TESTS:\runtime\test_type_error.py", line 450, in test_Not_callable
     _ = [1, 2](3 + 4)
 TypeError: 'list' object is not callable
 
@@ -1563,29 +1226,26 @@ Perhaps you meant to use `[]` instead of `()` and write
 `[1, 2][3 + 4]`
 
 
-#### Exception raised on line 478 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 450 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       476: 
-       477:     try:
-    -->478:         _ = [1, 2](3 + 4)
+       448: 
+       449:     try:
+    -->450:         _ = [1, 2](3 + 4)
                         ^^^^^^^^^^^^^
-       479:     except Exception as e:
+       451:     except Exception as e:
 
 ```
 
-
----
-
-## TypeError - 16: exception derived from BaseException
+### Too few positional argument
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 491, in test_type_error16
-    raise "exception"
-TypeError: exceptions must derive from BaseException
+  File "TESTS:\runtime\test_type_error.py", line 393, in test_Too_few_positional_argument
+    fn(1)
+TypeError: fn() missing 2 required positional arguments: 'b' and 'c'
 
 ```
 
@@ -1595,35 +1255,38 @@ by calling a function with the wrong type of object,
 or by trying to do an operation not allowed on a given type of object.
 
 
-In Python 3, exceptions must be derived from BaseException.
+You apparently have called the function 'fn()' with
+fewer positional arguments than it requires (2 missing).
 
 
-#### Exception raised on line 491 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 393 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       489: def test_type_error16():
-       490:     try:
-    -->491:         raise "exception"
-       492:     except Exception as e:
+       391: 
+       392:     try:
+    -->393:         fn(1)
+       394:     except Exception as e:
 
 ```
 
+```python
+    fn: <function fn> from test_Too_few_positional_argument
 
----
+```
 
-## TypeError - 17: can't multiply sequence by non-int
+### Too many positional argument
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 560, in test_type_error17
-    "a" * "2"
-TypeError: can't multiply sequence by non-int of type 'str'
+  File "TESTS:\runtime\test_type_error.py", line 374, in test_Too_many_positional_argument
+    A().f(1)
+TypeError: f() takes 1 positional argument but 2 were given
 
 ```
 
-Did you forget to convert `"2"` into an integer?
+Perhaps you forgot `self` when defining `f`.
 
 
 
@@ -1633,39 +1296,38 @@ by calling a function with the wrong type of object,
 or by trying to do an operation not allowed on a given type of object.
 
 
-You can only multiply sequences, such as list, tuples,
- strings, etc., by integers.
-Perhaps you forgot to convert `"2"` into an integer.
+You apparently have called the function `f` with
+2 positional argument(s) while it requires 1
+such positional argument(s).
+Perhaps you forgot `self` when defining `f`.
 
 
-#### Exception raised on line 560 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 374 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       558: 
-       559:     try:
-    -->560:         "a" * "2"
-       561:     except Exception as e:
+       372: 
+       373:     try:
+    -->374:         A().f(1)
+       375:     except Exception as e:
 
 ```
 
+```python
+    A: <class A> from test_type_error.test_Too_many_positional_argument
 
----
+```
 
-## TypeError - 18: object cannot be interpreted as an integer
+### Tuple no item assignment
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 608, in test_type_error18
-    range(c, d)
-TypeError: 'str' object cannot be interpreted as an integer
+  File "TESTS:\runtime\test_type_error.py", line 342, in test_Tuple_no_item_assignment
+    a[0] = 0
+TypeError: 'tuple' object does not support item assignment
 
 ```
-
-Did you forget to convert `c, d` into integers?
-
-
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
@@ -1673,35 +1335,80 @@ by calling a function with the wrong type of object,
 or by trying to do an operation not allowed on a given type of object.
 
 
-You wrote an object of type `str` where an integer was expected.
-Perhaps you forgot to convert `c, d` into integers.
+In Python, some objects are known as immutable:
+once defined, their value cannot be changed.
+You tried change part of such an immutable object: a `tuple`,
+most likely by using an indexing operation.
 
-#### Exception raised on line 608 of file TESTS:\runtime\test_type_error.py.
+
+#### Exception raised on line 342 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       606:     c, d = "2", "3"
-       607:     try:
-    -->608:         range(c, d)
-       609:     except Exception as e:
+       340:     a = (1, 2, 3)
+       341:     try:
+    -->342:         a[0] = 0
+       343:     except Exception as e:
 
 ```
 
 ```python
-    c: '2'
-    d: '3'
+    a[0]: 1
+    a: (1, 2, 3)
+
+```
+
+### Unsupported operand types
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_type_error.py", line 258, in test_Unsupported_operand_types
+    a @= b
+TypeError: unsupported operand type(s) for @=: 'str' and 'int'
+
+```
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.
+
+
+You tried to use the operator @=
+using two incompatible types of objects:
+a string (`str`) and an integer (`int`).
+This operator is normally used only
+for multiplication of matrices.
+
+
+#### Exception raised on line 258 of file TESTS:\runtime\test_type_error.py.
+
+
+```python
+       256:         a = "a"
+       257:         b = 2
+    -->258:         a @= b
+       259:     except Exception as e:
+
+```
+
+```python
+    a: 'a'
+    b: 2
 
 ```
 
 
 ---
 
-## UnboundLocalError - 1: missing global
+## UnboundLocalError
+### Missing global
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_unbound_local_error.py", line 27, in test_unbound_local_error_missing_global
+  File "TESTS:\runtime\test_unbound_local_error.py", line 27, in test_Missing_global
     outer_missing_global()
   File "TESTS:\runtime\test_unbound_local_error.py", line 11, in outer_missing_global
     inner()
@@ -1764,15 +1471,12 @@ should have been included as the first line inside your function.
 
 ```
 
-
----
-
-## UnboundLocalError - 2: missing nonlocal
+### Missing nonlocal
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_unbound_local_error.py", line 48, in test_unbound_local_error_missing_nonlocal
+  File "TESTS:\runtime\test_unbound_local_error.py", line 48, in test_Missing_nonlocal
     outer_missing_nonlocal()
   File "TESTS:\runtime\test_unbound_local_error.py", line 20, in outer_missing_nonlocal
     inner()
@@ -1833,12 +1537,47 @@ should have been included as the first line inside your function.
 
 ---
 
-## ValueError - 1: not enough to unpack
+## UnknownError
+### Generic
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_value_error.py", line 20, in test_not_enough_values_to_unpack
+  File "TESTS:\runtime\test_unknown_error.py", line 10, in test_Generic
+    raise MyException("Some informative message about an unknown exception.")
+MyException: Some informative message about an unknown exception.
+
+```
+
+No information is available about this exception.
+
+
+#### Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.
+
+
+```python
+        8: def test_Generic():
+        9:     try:
+    -->10:         raise MyException("Some informative message about an unknown exception.")
+       11:     except Exception as e:
+
+```
+
+```python
+    global MyException: <class test_unknown_error.MyException>
+
+```
+
+
+---
+
+## ValueError
+### Not enough values to unpack
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_value_error.py", line 20, in test_Not_enough_values_to_unpack
     a, b, c = d
 ValueError: not enough values to unpack (expected 3, got 2)
 
@@ -1870,15 +1609,12 @@ than the length of the iterable, a string (`str`) of length 2.
 
 ```
 
-
----
-
-## ValueError - 2: too many to unpack
+### Too many values to unpack
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_value_error.py", line 35, in test_too_many_values_to_unpack
+  File "TESTS:\runtime\test_value_error.py", line 35, in test_Too_many_values_to_unpack
     a, b = c
 ValueError: too many values to unpack (expected 2)
 
@@ -1913,45 +1649,13 @@ than the length of the iterable, a `list` of length 3.
 
 ---
 
-## Unknown exception
+## ZeroDivisionError
+### Division operator
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_unknown_error.py", line 10, in test_function_unknown_error
-    raise MyException("Some informative message about an unknown exception.")
-MyException: Some informative message about an unknown exception.
-
-```
-
-No information is available about this exception.
-
-
-#### Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.
-
-
-```python
-        8: def test_function_unknown_error():
-        9:     try:
-    -->10:         raise MyException("Some informative message about an unknown exception.")
-       11:     except Exception as e:
-
-```
-
-```python
-    global MyException: <class test_unknown_error.MyException>
-
-```
-
-
----
-
-## ZeroDivisionError - 1
-
-
-```pytb
-Traceback (most recent call last):
-  File "TESTS:\runtime\test_zero_division_error.py", line 6, in test_zero_division_error
+  File "TESTS:\runtime\test_zero_division_error.py", line 6, in test_Division_operator
     1 / 0
 ZeroDivisionError: division by zero
 
@@ -1969,22 +1673,19 @@ using the modulo operator `%`:
 
 
 ```python
-       4: def test_zero_division_error():
+       4: def test_Division_operator():
        5:     try:
     -->6:         1 / 0
        7:     except Exception as e:
 
 ```
 
-
----
-
-## ZeroDivisionError - 2
+### Modulo operator
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_zero_division_error.py", line 21, in test_zero_division_error2
+  File "TESTS:\runtime\test_zero_division_error.py", line 21, in test_Modulo_operator
     1 % zero
 ZeroDivisionError: integer division or modulo by zero
 

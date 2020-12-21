@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨 &mdash; Friendly tracebacks 0.2.9a documentation</title>
+  <title>IPython and Jupyter notebooks &mdash; Friendly tracebacks 0.2.9a documentation</title>
   
 
   
@@ -36,8 +36,7 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation and basic usage" href="usage.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -51,7 +50,7 @@
           
 
           
-            <a href="#" class="icon icon-home" alt="Documentation Home"> Friendly tracebacks
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly tracebacks
           
 
           
@@ -93,7 +92,6 @@
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
@@ -156,7 +154,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Friendly tracebacks</a>
+          <a href="index.html">Friendly tracebacks</a>
         
       </nav>
 
@@ -185,15 +183,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome  歡迎光臨</li>
+      <li>IPython and Jupyter notebooks</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/ipython.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -201,76 +199,15 @@
   </ul>
 
   
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="usage.html" class="btn btn-neutral float-right" title="Installation and basic usage" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-  </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="bienvenue-bienvenido-welcome">
-<h1>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome  歡迎光臨<a class="headerlink" href="#bienvenue-bienvenido-welcome" title="Permalink to this headline">¶</a></h1>
-<p><strong>Friendly tracebacks</strong> - Simplified Python tracebacks translatable into
-any language.</p>
-<p><a class="reference external" href="https://github.com/aroberge/Friendly-traceback">Code on Github</a></p>
-<div class="section" id="in-a-nutshell">
-<h2>In a nutshell<a class="headerlink" href="#in-a-nutshell" title="Permalink to this headline">¶</a></h2>
-<p>There exists many Python projects, including some listed below,
-whose primary goal is to supplement the information
-given by Python traceback to make them more useful for <strong>advanced</strong> programmers.
-Friendly-traceback is <strong>not</strong> one of these projects.</p>
-<p>While Friendly-traceback can be useful for advanced programmers,
-it is aimed aimed primarily at beginners and/or at users
-who would like to get information about traceback in their own language.
-Friendly-traceback can give more detailed information as to
-<strong>where</strong> an exception occurred, <strong>what</strong> a given exception means and
-<strong>why</strong> it might have occurred (including, sometimes, how to fix it).</p>
-<p>While Friendly-traceback can be used on its own with a specially
-designed console, a better option would be to use it together with
-GUI-based editors/IDE. We explain how to do so later.
-For now, we just show one quick example.</p>
-</div>
-<div class="section" id="a-quick-look">
-<h2>A quick look<a class="headerlink" href="#a-quick-look" title="Permalink to this headline">¶</a></h2>
-<p>First, we show what happens when we use Python
-to run a program that raises an exception.</p>
-<a class="reference internal image-reference" href="_images/python_indexerror.png"><img alt="Python IndexError example" src="_images/python_indexerror.png" style="width: 555.0px; height: 114.0px;" /></a>
-<p>Not exactly the most helpful information for beginners …</p>
-<p>Here’s the corresponding version from Friendly-traceback,
-making use of
-<a class="reference external" href="https://github.com/willmcgugan/rich">Rich</a> which has been
-installed separately.</p>
-<a class="reference internal image-reference" href="_images/friendly_indexerror_en.png"><img alt="Friendly IndexError example in English" src="_images/friendly_indexerror_en.png" style="width: 555.0px; height: 584.0px;" /></a>
-<p>One unique feature of Friendly-traceback is that all the information
-it provides can be translated into another language; currently, only
-English (by default) and French are available.</p>
-<a class="reference internal image-reference" href="_images/friendly_indexerror_fr.png"><img alt="Friendly IndexError in French" src="_images/friendly_indexerror_fr.png" style="width: 555.0px; height: 582.5px;" /></a>
-<p><strong>Keep reading if you want to find out more.</strong></p>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-</div>
-<div class="section" id="to-do">
-<h2>To do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h2>
-<p>We sometimes add notes about planned changes or additions to the documentation
-in various sections. Any such note is listed below.</p>
-</div>
+  <div class="section" id="ipython-and-jupyter-notebooks">
+<h1>IPython and Jupyter notebooks<a class="headerlink" href="#ipython-and-jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
+<p>Friendly-traceback supports IPython console and Jupyter notebooks.
+This needs to be documented.</p>
 </div>
 
 
@@ -278,13 +215,6 @@ in various sections. Any such note is listed below.</p>
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="usage.html" class="btn btn-neutral float-right" title="Installation and basic usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-    </div>
   
 
   <hr/>

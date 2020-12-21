@@ -74,6 +74,7 @@ English (by default) and French are available.
    editor
    mu
    thonny
+   IPython and Jupyter notebooks <ipython>
    tracebacks
 
 .. toctree::
@@ -110,7 +111,6 @@ English (by default) and French are available.
    :hidden:
    :caption: All the tracebacks!
 
-   all_tb
    known
    Friendly tracebacks - Python 3.6 in English <tracebacks_en_3.6>
    SyntaxError - Python 3.6 in English <syntax_tracebacks_en_3.6>

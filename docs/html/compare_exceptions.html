@@ -118,7 +118,6 @@
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="all_tb.html">Why all the tracebacks?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="known.html">Generic information about various exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
@@ -228,17 +227,24 @@ If the information is the same for Python 3.6 and
 afterwards, we only show the differences between 3.7 and 3.8.</p>
 <div>
 <div class='filename-header'>
-test_import_error</div>
+Circular import</div>
+<pre class='highlight friendly-small-pre'><b>3.6: </b>cannot import name 'a'
+<b>3.7: </b>cannot import name 'a' from 'circular_a' (C:\Users\andre\github\friendly-traceback\tests\circular_a.py)
+</pre>
+<pre class='highlight friendly-small-pre'><b>3.8: </b>cannot import name 'a' from partially initialized module 'circular_a' (most likely due to a circular import) (C:\Users\andre\github\friendly-traceback\tests\circular_a.py)
+</pre>
+<div class='filename-header'>
+Simple import error</div>
 <pre class='highlight friendly-small-pre'><b>3.6: </b>cannot import name 'Pi'
 <b>3.7: </b>cannot import name 'Pi' from 'math' (unknown location)
 </pre>
-<div class='filename-header'>test_type_error13</div>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>f() takes 1 positional argument but 2 were given
-<b>3.10: </b>test_type_error13.&lt;locals&gt;.A.f() takes 1 positional argument but 2 were given
-</pre>
-<div class='filename-header'>test_type_error14</div>
+<div class='filename-header'>Too few positional argument</div>
 <pre class='highlight friendly-small-pre'><b>3.9: </b>fn() missing 2 required positional arguments: 'b' and 'c'
-<b>3.10: </b>test_type_error14.&lt;locals&gt;.fn() missing 2 required positional arguments: 'b' and 'c'
+<b>3.10: </b>test_Too_few_positional_argument.&lt;locals&gt;.fn() missing 2 required positional arguments: 'b' and 'c'
+</pre>
+<div class='filename-header'>Too many positional argument</div>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>f() takes 1 positional argument but 2 were given
+<b>3.10: </b>test_Too_many_positional_argument.&lt;locals&gt;.A.f() takes 1 positional argument but 2 were given
 </pre>
 </div>
 </div>
