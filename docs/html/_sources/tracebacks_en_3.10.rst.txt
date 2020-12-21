@@ -1166,7 +1166,7 @@ TypeError - 15: list object is not callable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 456, in test_type_error15
+      File "TESTS:\runtime\test_type_error.py", line 478, in test_type_error15
         _ = [1, 2](3 + 4)
     TypeError: 'list' object is not callable
     
@@ -1186,13 +1186,13 @@ TypeError - 15: list object is not callable
         Perhaps you meant to use `[]` instead of `()` and write
         `[1, 2][3 + 4]`
         
-    Exception raised on line 456 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 478 of file TESTS:\runtime\test_type_error.py.
     
-       454: 
-       455:     try:
-    -->456:         _ = [1, 2](3 + 4)
+       476: 
+       477:     try:
+    -->478:         _ = [1, 2](3 + 4)
                         ^^^^^^^^^^^^^
-       457:     except Exception as e:
+       479:     except Exception as e:
 
 
 TypeError - 16: exception derived from BaseException
@@ -1202,7 +1202,7 @@ TypeError - 16: exception derived from BaseException
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 481, in test_type_error16
+      File "TESTS:\runtime\test_type_error.py", line 491, in test_type_error16
         raise "exception"
     TypeError: exceptions must derive from BaseException
     
@@ -1213,12 +1213,12 @@ TypeError - 16: exception derived from BaseException
     
         In Python 3, exceptions must be derived from BaseException.
         
-    Exception raised on line 481 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 491 of file TESTS:\runtime\test_type_error.py.
     
-       479: def test_type_error16():
-       480:     try:
-    -->481:         raise "exception"
-       482:     except Exception as e:
+       489: def test_type_error16():
+       490:     try:
+    -->491:         raise "exception"
+       492:     except Exception as e:
 
 
 TypeError - 17: can't multiply sequence by non-int
@@ -1228,7 +1228,7 @@ TypeError - 17: can't multiply sequence by non-int
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 550, in test_type_error17
+      File "TESTS:\runtime\test_type_error.py", line 560, in test_type_error17
         "a" * "2"
     TypeError: can't multiply sequence by non-int of type 'str'
     
@@ -1243,12 +1243,12 @@ TypeError - 17: can't multiply sequence by non-int
          strings, etc., by integers.
         Perhaps you forgot to convert `"2"` into an integer.
         
-    Exception raised on line 550 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 560 of file TESTS:\runtime\test_type_error.py.
     
-       548: 
-       549:     try:
-    -->550:         "a" * "2"
-       551:     except Exception as e:
+       558: 
+       559:     try:
+    -->560:         "a" * "2"
+       561:     except Exception as e:
 
 
 TypeError - 18: object cannot be interpreted as an integer
@@ -1258,7 +1258,7 @@ TypeError - 18: object cannot be interpreted as an integer
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 598, in test_type_error18
+      File "TESTS:\runtime\test_type_error.py", line 608, in test_type_error18
         range(c, d)
     TypeError: 'str' object cannot be interpreted as an integer
     
@@ -1271,12 +1271,12 @@ TypeError - 18: object cannot be interpreted as an integer
     
         You wrote an object of type `str` where an integer was expected.
         Perhaps you forgot to convert `c, d` into integers.
-    Exception raised on line 598 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 608 of file TESTS:\runtime\test_type_error.py.
     
-       596:     c, d = "2", "3"
-       597:     try:
-    -->598:         range(c, d)
-       599:     except Exception as e:
+       606:     c, d = "2", "3"
+       607:     try:
+    -->608:         range(c, d)
+       609:     except Exception as e:
 
             c: '2'
             d: '3'

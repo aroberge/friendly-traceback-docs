@@ -1292,7 +1292,7 @@ Exception levée à la ligne 421 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-15-list-object-is-not-callable">
 <h2>TypeError - 15: list object is not callable<a class="headerlink" href="#typeerror-15-list-object-is-not-callable" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 456, in test_type_error15
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 478, in test_type_error15
     _ = [1, 2](3 + 4)
 TypeError: &#39;list&#39; object is not callable
 
@@ -1312,20 +1312,20 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
     Peut-être que vous vouliez utiliser `[]` au lieu de `()` et écrire
     `[1, 2][3 + 4]`
 
-Exception levée à la ligne 456 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 478 du fichier TESTS:\runtime\test_type_error.py.
 
-   454:
-   455:     try:
---&gt;456:         _ = [1, 2](3 + 4)
+   476:
+   477:     try:
+--&gt;478:         _ = [1, 2](3 + 4)
                     ^^^^^^^^^^^^^
-   457:     except Exception as e:
+   479:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-16-exception-derived-from-baseexception">
 <h2>TypeError - 16: exception derived from BaseException<a class="headerlink" href="#typeerror-16-exception-derived-from-baseexception" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 481, in test_type_error16
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 491, in test_type_error16
     raise &quot;exception&quot;
 TypeError: exceptions must derive from BaseException
 
@@ -1336,19 +1336,19 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
     Dans Python 3, les exceptions doivent être dérivées de BaseException.
 
-Exception levée à la ligne 481 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 491 du fichier TESTS:\runtime\test_type_error.py.
 
-   479: def test_type_error16():
-   480:     try:
---&gt;481:         raise &quot;exception&quot;
-   482:     except Exception as e:
+   489: def test_type_error16():
+   490:     try:
+--&gt;491:         raise &quot;exception&quot;
+   492:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-17-can-t-multiply-sequence-by-non-int">
 <h2>TypeError - 17: can’t multiply sequence by non-int<a class="headerlink" href="#typeerror-17-can-t-multiply-sequence-by-non-int" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 550, in test_type_error17
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 560, in test_type_error17
     &quot;a&quot; * &quot;2&quot;
 TypeError: can&#39;t multiply sequence by non-int of type &#39;str&#39;
 
@@ -1363,19 +1363,19 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
     les listes, les tuples, les chaînes, etc., que par des entiers.
     Peut-être avez-vous oublié de convertir `&quot;2&quot;` en un entier.
 
-Exception levée à la ligne 550 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 560 du fichier TESTS:\runtime\test_type_error.py.
 
-   548:
-   549:     try:
---&gt;550:         &quot;a&quot; * &quot;2&quot;
-   551:     except Exception as e:
+   558:
+   559:     try:
+--&gt;560:         &quot;a&quot; * &quot;2&quot;
+   561:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-18-object-cannot-be-interpreted-as-an-integer">
 <h2>TypeError - 18: object cannot be interpreted as an integer<a class="headerlink" href="#typeerror-18-object-cannot-be-interpreted-as-an-integer" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 598, in test_type_error18
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 608, in test_type_error18
     range(c, d)
 TypeError: &#39;str&#39; object cannot be interpreted as an integer
 
@@ -1388,12 +1388,12 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
     Vous avez écrit un objet de type `str` là où un entier était attendu.
     Peut-être avez-vous oublié de convertir `c, d` en entiers.
-Exception levée à la ligne 598 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 608 du fichier TESTS:\runtime\test_type_error.py.
 
-   596:     c, d = &quot;2&quot;, &quot;3&quot;
-   597:     try:
---&gt;598:         range(c, d)
-   599:     except Exception as e:
+   606:     c, d = &quot;2&quot;, &quot;3&quot;
+   607:     try:
+--&gt;608:         range(c, d)
+   609:     except Exception as e:
 
         c: &#39;2&#39;
         d: &#39;3&#39;

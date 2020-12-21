@@ -1287,7 +1287,7 @@ Exception raised on line 421 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-15-list-object-is-not-callable">
 <h2>TypeError - 15: list object is not callable<a class="headerlink" href="#typeerror-15-list-object-is-not-callable" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 456, in test_type_error15
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 478, in test_type_error15
     _ = [1, 2](3 + 4)
 TypeError: &#39;list&#39; object is not callable
 
@@ -1307,20 +1307,20 @@ or by trying to do an operation not allowed on a given type of object.
     Perhaps you meant to use `[]` instead of `()` and write
     `[1, 2][3 + 4]`
 
-Exception raised on line 456 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 478 of file TESTS:\runtime\test_type_error.py.
 
-   454:
-   455:     try:
---&gt;456:         _ = [1, 2](3 + 4)
+   476:
+   477:     try:
+--&gt;478:         _ = [1, 2](3 + 4)
                     ^^^^^^^^^^^^^
-   457:     except Exception as e:
+   479:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-16-exception-derived-from-baseexception">
 <h2>TypeError - 16: exception derived from BaseException<a class="headerlink" href="#typeerror-16-exception-derived-from-baseexception" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 481, in test_type_error16
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 491, in test_type_error16
     raise &quot;exception&quot;
 TypeError: exceptions must derive from BaseException
 
@@ -1331,19 +1331,19 @@ or by trying to do an operation not allowed on a given type of object.
 
     In Python 3, exceptions must be derived from BaseException.
 
-Exception raised on line 481 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 491 of file TESTS:\runtime\test_type_error.py.
 
-   479: def test_type_error16():
-   480:     try:
---&gt;481:         raise &quot;exception&quot;
-   482:     except Exception as e:
+   489: def test_type_error16():
+   490:     try:
+--&gt;491:         raise &quot;exception&quot;
+   492:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-17-can-t-multiply-sequence-by-non-int">
 <h2>TypeError - 17: can’t multiply sequence by non-int<a class="headerlink" href="#typeerror-17-can-t-multiply-sequence-by-non-int" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 550, in test_type_error17
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 560, in test_type_error17
     &quot;a&quot; * &quot;2&quot;
 TypeError: can&#39;t multiply sequence by non-int of type &#39;str&#39;
 
@@ -1358,19 +1358,19 @@ or by trying to do an operation not allowed on a given type of object.
      strings, etc., by integers.
     Perhaps you forgot to convert `&quot;2&quot;` into an integer.
 
-Exception raised on line 550 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 560 of file TESTS:\runtime\test_type_error.py.
 
-   548:
-   549:     try:
---&gt;550:         &quot;a&quot; * &quot;2&quot;
-   551:     except Exception as e:
+   558:
+   559:     try:
+--&gt;560:         &quot;a&quot; * &quot;2&quot;
+   561:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="typeerror-18-object-cannot-be-interpreted-as-an-integer">
 <h2>TypeError - 18: object cannot be interpreted as an integer<a class="headerlink" href="#typeerror-18-object-cannot-be-interpreted-as-an-integer" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 598, in test_type_error18
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 608, in test_type_error18
     range(c, d)
 TypeError: &#39;str&#39; object cannot be interpreted as an integer
 
@@ -1383,12 +1383,12 @@ or by trying to do an operation not allowed on a given type of object.
 
     You wrote an object of type `str` where an integer was expected.
     Perhaps you forgot to convert `c, d` into integers.
-Exception raised on line 598 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 608 of file TESTS:\runtime\test_type_error.py.
 
-   596:     c, d = &quot;2&quot;, &quot;3&quot;
-   597:     try:
---&gt;598:         range(c, d)
-   599:     except Exception as e:
+   606:     c, d = &quot;2&quot;, &quot;3&quot;
+   607:     try:
+--&gt;608:         range(c, d)
+   609:     except Exception as e:
 
         c: &#39;2&#39;
         d: &#39;3&#39;
