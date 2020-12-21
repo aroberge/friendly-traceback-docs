@@ -1036,7 +1036,7 @@ TypeError - 11: bad operand type for unary +
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_common.py", line 195, in create_tracebacks
+      File "TESTS:\trb_common.py", line 203, in create_tracebacks
         result, message = getattr(mod, function)()
       File "TESTS:\runtime\test_type_error.py", line 361, in test_type_error11
         assert "Perhaps you meant to write `+=`" in result
@@ -1044,12 +1044,12 @@ TypeError - 11: bad operand type for unary +
     
     Aucune information n’est disponible sur cette exception.
     
-    L'exécution s'est arrêtée à la ligne 195 du fichier TESTS:\trb_common.py
+    L'exécution s'est arrêtée à la ligne 203 du fichier TESTS:\trb_common.py
     
-       193:                     mod = __import__(name)
-       194:                     if function is not None:
-    -->195:                         result, message = getattr(mod, function)()
-       196:                         save_messages[function] = message
+       201:                     mod = __import__(name)
+       202:                     if function is not None:
+    -->203:                         result, message = getattr(mod, function)()
+       204:                         save_messages[function] = message
 
             result: '\n    Traceback (most recent call last):\n      File "TESTS...'
                 len(result): 894
@@ -1389,6 +1389,66 @@ UnboundLocalError - 2: missing nonlocal
        16: 
        17:     def inner():
     -->18:         spam_missing_nonlocal += 1
+
+
+ValueError - 1: not enough to unpack
+------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_value_error.py", line 20, in test_not_enough_values_to_unpack
+        a, b, c = d
+    ValueError: not enough values to unpack (expected 3, got 2)
+    
+    Une exception `ValueError` indique qu'une fonction ou une opération
+    a reçu un argument du bon type, mais une valeur inappropriée.
+    
+        Le dépaquetage ('unpack') est un moyen pratique d’attribuer un nom
+        à chaque élément d’un itérable.
+        Dans ce cas-ci, il y a plus de noms (3)
+        que la longueur de l’itérable, une chaîne de caractères (`str`) de longueur 2.
+        
+    Exception levée à la ligne 20 du fichier TESTS:\runtime\test_value_error.py.
+    
+       18:     d = "ab"
+       19:     try:
+    -->20:         a, b, c = d
+       21:     except Exception as e:
+
+            d: 'ab'
+        
+
+
+ValueError - 2: too many to unpack
+----------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_value_error.py", line 35, in test_too_many_values_to_unpack
+        a, b = c
+    ValueError: too many values to unpack (expected 2)
+    
+    Une exception `ValueError` indique qu'une fonction ou une opération
+    a reçu un argument du bon type, mais une valeur inappropriée.
+    
+        Le dépaquetage ('unpack') est un moyen pratique d’attribuer un nom
+        à chaque élément d’un itérable.
+        Dans ce cas-ci, il y a moins de noms (2)
+        que la longueur de l’itérable, une liste (`list`) de longueur 3.
+        
+    Exception levée à la ligne 35 du fichier TESTS:\runtime\test_value_error.py.
+    
+       33:     c = [1, 2, 3]
+       34:     try:
+    -->35:         a, b = c
+       36:     except Exception as e:
+
+            c: [1, 2, 3]
+        
 
 
 Unknown exception

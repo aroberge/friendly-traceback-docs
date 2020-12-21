@@ -184,6 +184,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-18-object-cannot-be-interpreted-as-an-integer">TypeError - 18: object cannot be interpreted as an integer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unboundlocalerror-1-missing-global">UnboundLocalError - 1: missing global</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unboundlocalerror-2-missing-nonlocal">UnboundLocalError - 2: missing nonlocal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#valueerror-1-not-enough-to-unpack">ValueError - 1: not enough to unpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#valueerror-2-too-many-to-unpack">ValueError - 2: too many to unpack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unknown-exception">Unknown exception</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#zerodivisionerror-2">ZeroDivisionError - 2</a></li>
@@ -1170,7 +1172,7 @@ Exception levée à la ligne 302 du fichier TESTS:\runtime\test_type_error.py.
 <div class="section" id="typeerror-11-bad-operand-type-for-unary">
 <h2>TypeError - 11: bad operand type for unary +<a class="headerlink" href="#typeerror-11-bad-operand-type-for-unary" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_common.py&quot;, line 195, in create_tracebacks
+  File &quot;TESTS:\trb_common.py&quot;, line 203, in create_tracebacks
     result, message = getattr(mod, function)()
   File &quot;TESTS:\runtime\test_type_error.py&quot;, line 361, in test_type_error11
     assert &quot;Perhaps you meant to write `+=`&quot; in result
@@ -1178,12 +1180,12 @@ AssertionError:
 
 Aucune information n’est disponible sur cette exception.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 195 du fichier TESTS:\trb_common.py
+L&#39;exécution s&#39;est arrêtée à la ligne 203 du fichier TESTS:\trb_common.py
 
-   193:                     mod = __import__(name)
-   194:                     if function is not None:
---&gt;195:                         result, message = getattr(mod, function)()
-   196:                         save_messages[function] = message
+   201:                     mod = __import__(name)
+   202:                     if function is not None:
+--&gt;203:                         result, message = getattr(mod, function)()
+   204:                         save_messages[function] = message
 
         result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
             len(result): 894
@@ -1491,6 +1493,58 @@ Exception levée à la ligne 18 du fichier TESTS:\runtime\test_unbound_local_err
    16:
    17:     def inner():
 --&gt;18:         spam_missing_nonlocal += 1
+</pre></div>
+</div>
+</div>
+<div class="section" id="valueerror-1-not-enough-to-unpack">
+<h2>ValueError - 1: not enough to unpack<a class="headerlink" href="#valueerror-1-not-enough-to-unpack" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_value_error.py&quot;, line 20, in test_not_enough_values_to_unpack
+    a, b, c = d
+ValueError: not enough values to unpack (expected 3, got 2)
+
+Une exception `ValueError` indique qu&#39;une fonction ou une opération
+a reçu un argument du bon type, mais une valeur inappropriée.
+
+    Le dépaquetage (&#39;unpack&#39;) est un moyen pratique d’attribuer un nom
+    à chaque élément d’un itérable.
+    Dans ce cas-ci, il y a plus de noms (3)
+    que la longueur de l’itérable, une chaîne de caractères (`str`) de longueur 2.
+
+Exception levée à la ligne 20 du fichier TESTS:\runtime\test_value_error.py.
+
+   18:     d = &quot;ab&quot;
+   19:     try:
+--&gt;20:         a, b, c = d
+   21:     except Exception as e:
+
+        d: &#39;ab&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="valueerror-2-too-many-to-unpack">
+<h2>ValueError - 2: too many to unpack<a class="headerlink" href="#valueerror-2-too-many-to-unpack" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_value_error.py&quot;, line 35, in test_too_many_values_to_unpack
+    a, b = c
+ValueError: too many values to unpack (expected 2)
+
+Une exception `ValueError` indique qu&#39;une fonction ou une opération
+a reçu un argument du bon type, mais une valeur inappropriée.
+
+    Le dépaquetage (&#39;unpack&#39;) est un moyen pratique d’attribuer un nom
+    à chaque élément d’un itérable.
+    Dans ce cas-ci, il y a moins de noms (2)
+    que la longueur de l’itérable, une liste (`list`) de longueur 3.
+
+Exception levée à la ligne 35 du fichier TESTS:\runtime\test_value_error.py.
+
+   33:     c = [1, 2, 3]
+   34:     try:
+--&gt;35:         a, b = c
+   36:     except Exception as e:
+
+        c: [1, 2, 3]
 </pre></div>
 </div>
 </div>

@@ -1833,6 +1833,86 @@ should have been included as the first line inside your function.
 
 ---
 
+## ValueError - 1: not enough to unpack
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_value_error.py", line 20, in test_not_enough_values_to_unpack
+    a, b, c = d
+ValueError: not enough values to unpack (expected 3, got 2)
+
+```
+
+A `ValueError` indicates that a function or an operation
+received an argument of the right type, but an inappropriate value.
+
+
+Unpacking is a convenient way to assign a name,
+to each item of an iterable.
+In this instance, there are more names (3)
+than the length of the iterable, a string (`str`) of length 2.
+
+
+#### Exception raised on line 20 of file TESTS:\runtime\test_value_error.py.
+
+
+```python
+       18:     d = "ab"
+       19:     try:
+    -->20:         a, b, c = d
+       21:     except Exception as e:
+
+```
+
+```python
+    d: 'ab'
+
+```
+
+
+---
+
+## ValueError - 2: too many to unpack
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_value_error.py", line 35, in test_too_many_values_to_unpack
+    a, b = c
+ValueError: too many values to unpack (expected 2)
+
+```
+
+A `ValueError` indicates that a function or an operation
+received an argument of the right type, but an inappropriate value.
+
+
+Unpacking is a convenient way to assign a name,
+to each item of an iterable.
+In this instance, there are fewer names (2)
+than the length of the iterable, a `list` of length 3.
+
+
+#### Exception raised on line 35 of file TESTS:\runtime\test_value_error.py.
+
+
+```python
+       33:     c = [1, 2, 3]
+       34:     try:
+    -->35:         a, b = c
+       36:     except Exception as e:
+
+```
+
+```python
+    c: [1, 2, 3]
+
+```
+
+
+---
+
 ## Unknown exception
 
 

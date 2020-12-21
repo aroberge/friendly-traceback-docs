@@ -166,6 +166,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#typeerror-18-object-cannot-be-interpreted-as-an-integer">TypeError - 18: object cannot be interpreted as an integer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unboundlocalerror-1-missing-global">UnboundLocalError - 1: missing global</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unboundlocalerror-2-missing-nonlocal">UnboundLocalError - 2: missing nonlocal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#valueerror-1-not-enough-to-unpack">ValueError - 1: not enough to unpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#valueerror-2-too-many-to-unpack">ValueError - 2: too many to unpack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unknown-exception">Unknown exception</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#zerodivisionerror-1">ZeroDivisionError - 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#zerodivisionerror-2">ZeroDivisionError - 2</a></li>
@@ -1484,6 +1486,58 @@ Exception raised on line 18 of file TESTS:\runtime\test_unbound_local_error.py.
    16:
    17:     def inner():
 --&gt;18:         spam_missing_nonlocal += 1
+</pre></div>
+</div>
+</div>
+<div class="section" id="valueerror-1-not-enough-to-unpack">
+<h2>ValueError - 1: not enough to unpack<a class="headerlink" href="#valueerror-1-not-enough-to-unpack" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_value_error.py&quot;, line 20, in test_not_enough_values_to_unpack
+    a, b, c = d
+ValueError: not enough values to unpack (expected 3, got 2)
+
+A `ValueError` indicates that a function or an operation
+received an argument of the right type, but an inappropriate value.
+
+    Unpacking is a convenient way to assign a name,
+    to each item of an iterable.
+    In this instance, there are more names (3)
+    than the length of the iterable, a string (`str`) of length 2.
+
+Exception raised on line 20 of file TESTS:\runtime\test_value_error.py.
+
+   18:     d = &quot;ab&quot;
+   19:     try:
+--&gt;20:         a, b, c = d
+   21:     except Exception as e:
+
+        d: &#39;ab&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="valueerror-2-too-many-to-unpack">
+<h2>ValueError - 2: too many to unpack<a class="headerlink" href="#valueerror-2-too-many-to-unpack" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_value_error.py&quot;, line 35, in test_too_many_values_to_unpack
+    a, b = c
+ValueError: too many values to unpack (expected 2)
+
+A `ValueError` indicates that a function or an operation
+received an argument of the right type, but an inappropriate value.
+
+    Unpacking is a convenient way to assign a name,
+    to each item of an iterable.
+    In this instance, there are fewer names (2)
+    than the length of the iterable, a `list` of length 3.
+
+Exception raised on line 35 of file TESTS:\runtime\test_value_error.py.
+
+   33:     c = [1, 2, 3]
+   34:     try:
+--&gt;35:         a, b = c
+   36:     except Exception as e:
+
+        c: [1, 2, 3]
 </pre></div>
 </div>
 </div>

@@ -311,6 +311,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#exception-raised-on-line-18-of-file-tests-runtime-test-unbound-local-error-py">Exception raised on line 18 of file TESTS:\runtime\test_unbound_local_error.py.</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#valueerror-1-not-enough-to-unpack">ValueError - 1: not enough to unpack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exception-raised-on-line-20-of-file-tests-runtime-test-value-error-py">Exception raised on line 20 of file TESTS:\runtime\test_value_error.py.</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#valueerror-2-too-many-to-unpack">ValueError - 2: too many to unpack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exception-raised-on-line-35-of-file-tests-runtime-test-value-error-py">Exception raised on line 35 of file TESTS:\runtime\test_value_error.py.</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#unknown-exception">Unknown exception</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#exception-raised-on-line-10-of-file-tests-runtime-test-unknown-error-py">Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.</a></li>
 </ul>
@@ -1692,6 +1700,62 @@ Perhaps the statement</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">16</span><span class="p">:</span> 
        <span class="mi">17</span><span class="p">:</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
     <span class="o">--&gt;</span><span class="mi">18</span><span class="p">:</span>         <span class="n">spam_missing_nonlocal</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="valueerror-1-not-enough-to-unpack">
+<h2>ValueError - 1: not enough to unpack<a class="headerlink" href="#valueerror-1-not-enough-to-unpack" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_value_error.py&quot;</span>, line <span class="m">20</span>, in <span class="n">test_not_enough_values_to_unpack</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">d</span>
+<span class="gr">ValueError</span>: <span class="n">not enough values to unpack (expected 3, got 2)</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> indicates that a function or an operation
+received an argument of the right type, but an inappropriate value.</p>
+<p>Unpacking is a convenient way to assign a name,
+to each item of an iterable.
+In this instance, there are more names (3)
+than the length of the iterable, a string (<code class="docutils literal notranslate"><span class="pre">str</span></code>) of length 2.</p>
+<div class="section" id="exception-raised-on-line-20-of-file-tests-runtime-test-value-error-py">
+<h3>Exception raised on line 20 of file TESTS:\runtime\test_value_error.py.<a class="headerlink" href="#exception-raised-on-line-20-of-file-tests-runtime-test-value-error-py" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">18</span><span class="p">:</span>     <span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;ab&quot;</span>
+       <span class="mi">19</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">20</span><span class="p">:</span>         <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">d</span>
+       <span class="mi">21</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">d</span><span class="p">:</span> <span class="s1">&#39;ab&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="valueerror-2-too-many-to-unpack">
+<h2>ValueError - 2: too many to unpack<a class="headerlink" href="#valueerror-2-too-many-to-unpack" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_value_error.py&quot;</span>, line <span class="m">35</span>, in <span class="n">test_too_many_values_to_unpack</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
+<span class="gr">ValueError</span>: <span class="n">too many values to unpack (expected 2)</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> indicates that a function or an operation
+received an argument of the right type, but an inappropriate value.</p>
+<p>Unpacking is a convenient way to assign a name,
+to each item of an iterable.
+In this instance, there are fewer names (2)
+than the length of the iterable, a <code class="docutils literal notranslate"><span class="pre">list</span></code> of length 3.</p>
+<div class="section" id="exception-raised-on-line-35-of-file-tests-runtime-test-value-error-py">
+<h3>Exception raised on line 35 of file TESTS:\runtime\test_value_error.py.<a class="headerlink" href="#exception-raised-on-line-35-of-file-tests-runtime-test-value-error-py" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">33</span><span class="p">:</span>     <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+       <span class="mi">34</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">35</span><span class="p">:</span>         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
+       <span class="mi">36</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">c</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
