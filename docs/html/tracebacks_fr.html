@@ -175,6 +175,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#modulenotfounderror">ModuleNotFoundError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#not-a-package">Not a package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#standard-library-module">Standard library module</a></li>
 </ul>
 </li>
@@ -670,6 +671,35 @@ Exception levée à la ligne 10 du fichier TESTS:\runtime\test_lookup_error.py.
 </div>
 <div class="section" id="modulenotfounderror">
 <h2>ModuleNotFoundError<a class="headerlink" href="#modulenotfounderror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="not-a-package">
+<h3>Not a package<a class="headerlink" href="#not-a-package" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_module_not_found_error.py&quot;, line 41, in test_Not_a_package
+    import os.pathh
+ModuleNotFoundError: No module named &#39;os.pathh&#39;; &#39;os&#39; is not a package
+
+    Vouliez-vous dire `import os.path` ?
+
+Une exception `ModuleNotFoundError` indique que vous
+essayez d’importer un module qui ne peut pas être trouvé par Python.
+Cela pourrait être parce que vous fait une faute d&#39;orthographe en
+écrivant le nom du module, ou parce qu’il n’est pas installé sur votre ordinateur.
+
+    Peut-être que vous vouliez dire `import os.path`.
+    `path` est un nom semblable à `pathh` et est un module qui
+    peut être importé de `os`.
+    D’autres objets avec des noms similaires qui font partie de
+    `os` comprennent `fspath`.
+
+Exception levée à la ligne 41 du fichier TESTS:\runtime\test_module_not_found_error.py.
+
+   39:
+   40:     try:
+--&gt;41:         import os.pathh
+   42:     except Exception as e:
+</pre></div>
+</div>
+</div>
 <div class="section" id="standard-library-module">
 <h3>Standard library module<a class="headerlink" href="#standard-library-module" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):

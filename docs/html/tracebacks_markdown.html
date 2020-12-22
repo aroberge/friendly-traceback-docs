@@ -231,6 +231,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#modulenotfounderror">ModuleNotFoundError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#not-a-package">Not a package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-41-of-file-tests-runtime-test-module-not-found-error-py">Exception raised on line 41 of file TESTS:\runtime\test_module_not_found_error.py.</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#standard-library-module">Standard library module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-6-of-file-tests-runtime-test-module-not-found-error-py">Exception raised on line 6 of file TESTS:\runtime\test_module_not_found_error.py.</a></li>
 </ul>
@@ -977,6 +981,34 @@ It can also be raised directly by codecs.lookup().</p>
 <hr class="docutils" />
 <div class="section" id="modulenotfounderror">
 <h2>ModuleNotFoundError<a class="headerlink" href="#modulenotfounderror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="not-a-package">
+<h3>Not a package<a class="headerlink" href="#not-a-package" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_module_not_found_error.py&quot;</span>, line <span class="m">41</span>, in <span class="n">test_Not_a_package</span>
+    <span class="kn">import</span> <span class="nn">os.pathh</span>
+<span class="gr">ModuleNotFoundError</span>: <span class="n">No module named &#39;os.pathh&#39;; &#39;os&#39; is not a package</span>
+</pre></div>
+</div>
+<p>Did you mean <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">os.path</span></code>?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code> exception indicates that you
+are trying to import a module that cannot be found by Python.
+This could be because you misspelled the name of the module
+or because it is not installed on your computer.</p>
+<p>Perhaps you meant <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">os.path</span></code>.
+<code class="docutils literal notranslate"><span class="pre">path</span></code> is a name similar to <code class="docutils literal notranslate"><span class="pre">pathh</span></code> and is a module that
+can be imported from <code class="docutils literal notranslate"><span class="pre">os</span></code>.
+Other objects with similar names that are part of
+<code class="docutils literal notranslate"><span class="pre">os</span></code> include <code class="docutils literal notranslate"><span class="pre">fspath</span></code>.</p>
+<div class="section" id="exception-raised-on-line-41-of-file-tests-runtime-test-module-not-found-error-py">
+<h4>Exception raised on line 41 of file TESTS:\runtime\test_module_not_found_error.py.<a class="headerlink" href="#exception-raised-on-line-41-of-file-tests-runtime-test-module-not-found-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">39</span><span class="p">:</span> 
+       <span class="mi">40</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">41</span><span class="p">:</span>         <span class="kn">import</span> <span class="nn">os.pathh</span>
+       <span class="mi">42</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="standard-library-module">
 <h3>Standard library module<a class="headerlink" href="#standard-library-module" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>

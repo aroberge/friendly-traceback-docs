@@ -605,6 +605,38 @@ ModuleNotFoundError
 -------------------
 
 
+Not a package
+~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_module_not_found_error.py", line 41, in test_Not_a_package
+        import os.pathh
+    ModuleNotFoundError: No module named 'os.pathh'; 'os' is not a package
+    
+        Did you mean `import os.path`?
+        
+    A `ModuleNotFoundError` exception indicates that you
+    are trying to import a module that cannot be found by Python.
+    This could be because you misspelled the name of the module
+    or because it is not installed on your computer.
+    
+        Perhaps you meant `import os.path`.
+        `path` is a name similar to `pathh` and is a module that
+        can be imported from `os`.
+        Other objects with similar names that are part of
+         `os` include `fspath`.
+        
+    Exception raised on line 41 of file TESTS:\runtime\test_module_not_found_error.py.
+    
+       39: 
+       40:     try:
+    -->41:         import os.pathh
+       42:     except Exception as e:
+
+
 Standard library module
 ~~~~~~~~~~~~~~~~~~~~~~~
 
