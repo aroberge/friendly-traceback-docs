@@ -47,6 +47,9 @@ Generic
     --> 9:         raise ArithmeticError('error')
        10:     except Exception as e:
 
+            ArithmeticError: <class ArithmeticError>
+        
+
 
 AttributeError
 --------------
@@ -80,6 +83,7 @@ Builtin function
        189:     except Exception as e:
 
             text: 'Hello world!'
+            len: <builtin function len>
         
 
 
@@ -221,6 +225,7 @@ Generic
             _: <bound method GNUTranslations.gettext of <gettext.GNUTranslations object>
             match3: <re.Match object; span=(0, 38), match="NoneType object has no attribute b">
             match3.group: <builtin method group of re.Match object>
+            format: <builtin function format>
         
 
     Traceback (most recent call last):
@@ -241,6 +246,9 @@ Generic
        5:     try:
     -->6:         open("does_not_exist")
        7:     except Exception as e:
+
+            open: <builtin function open>
+        
 
 
 ImportError
@@ -438,6 +446,9 @@ Generic
         9:         # it directly here for our example.
     -->10:         raise LookupError("Fake message")
        11:     except Exception as e:
+
+            LookupError: <class LookupError>
+        
 
 
 ModuleNotFoundError

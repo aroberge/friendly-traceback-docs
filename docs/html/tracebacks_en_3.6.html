@@ -94,6 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
@@ -344,6 +345,8 @@ Exception raised on line 9 of file TESTS:\runtime\test_arithmetic_error.py.
     8:         # likely be raised.
 --&gt; 9:         raise ArithmeticError(&#39;error&#39;)
    10:     except Exception as e:
+
+        ArithmeticError: &lt;class ArithmeticError&gt;
 </pre></div>
 </div>
 </div>
@@ -374,6 +377,7 @@ Exception raised on line 188 of file TESTS:\runtime\test_attribute_error.py.
    189:     except Exception as e:
 
         text: &#39;Hello world!&#39;
+        len: &lt;builtin function len&gt;
 </pre></div>
 </div>
 </div>
@@ -643,6 +647,8 @@ Exception raised on line 6 of file TESTS:\runtime\test_file_not_found_error.py.
    5:     try:
 --&gt;6:         open(&quot;does_not_exist&quot;)
    7:     except Exception as e:
+
+        open: &lt;builtin function open&gt;
 </pre></div>
 </div>
 </div>
@@ -818,6 +824,8 @@ Exception raised on line 10 of file TESTS:\runtime\test_lookup_error.py.
     9:         # it directly here for our example.
 --&gt;10:         raise LookupError(&quot;Fake message&quot;)
    11:     except Exception as e:
+
+        LookupError: &lt;class LookupError&gt;
 </pre></div>
 </div>
 </div>
@@ -1010,7 +1018,7 @@ Exception raised on line 6 of file TESTS:\runtime\test_recursion_error.py.
 <div class="section" id="bad-type-for-unary-operator">
 <h3>Bad type for unary operator<a class="headerlink" href="#bad-type-for-unary-operator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 324, in test_Bad_type_for_unary_operator
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 348, in test_Bad_type_for_unary_operator
     a =+ &quot;def&quot;
 TypeError: bad operand type for unary +: &#39;str&#39;
 
@@ -1026,13 +1034,13 @@ or by trying to do an operation not allowed on a given type of object.
 
     Perhaps you meant to write `+=` instead of `=+`
 
-Exception raised on line 324 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 348 of file TESTS:\runtime\test_type_error.py.
 
-   322:         # fmt: off
-   323:         a = &quot;abc&quot;
---&gt;324:         a =+ &quot;def&quot;
+   346:         # fmt: off
+   347:         a = &quot;abc&quot;
+--&gt;348:         a =+ &quot;def&quot;
                    ^^^^^^^
-   325:         # fmt: on
+   349:         # fmt: on
 </pre></div>
 </div>
 </div>
@@ -1067,7 +1075,7 @@ Exception raised on line 36 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="cannot-multiply-by-non-int">
 <h3>Cannot multiply by non int<a class="headerlink" href="#cannot-multiply-by-non-int" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 532, in test_Cannot_multiply_by_non_int
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 557, in test_Cannot_multiply_by_non_int
     &quot;a&quot; * &quot;2&quot;
 TypeError: can&#39;t multiply sequence by non-int of type &#39;str&#39;
 
@@ -1082,19 +1090,19 @@ or by trying to do an operation not allowed on a given type of object.
      strings, etc., by integers.
     Perhaps you forgot to convert `&quot;2&quot;` into an integer.
 
-Exception raised on line 532 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 557 of file TESTS:\runtime\test_type_error.py.
 
-   530:
-   531:     try:
---&gt;532:         &quot;a&quot; * &quot;2&quot;
-   533:     except Exception as e:
+   555:
+   556:     try:
+--&gt;557:         &quot;a&quot; * &quot;2&quot;
+   558:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="comparison-not-supported">
 <h3>Comparison not supported<a class="headerlink" href="#comparison-not-supported" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 274, in test_Comparison_not_supported
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 298, in test_Comparison_not_supported
     b &lt; a
 TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
 
@@ -1107,12 +1115,12 @@ or by trying to do an operation not allowed on a given type of object.
     between two incompatible types of objects:
     an integer (`int`) and a string (`str`)
 
-Exception raised on line 274 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 298 of file TESTS:\runtime\test_type_error.py.
 
-   272:         a = &quot;a&quot;
-   273:         b = 42
---&gt;274:         b &lt; a
-   275:     except Exception as e:
+   296:         a = &quot;a&quot;
+   297:         b = 42
+--&gt;298:         b &lt; a
+   299:     except Exception as e:
 
         b: 42
         a: &#39;a&#39;
@@ -1122,7 +1130,7 @@ Exception raised on line 274 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="derive-from-baseexception">
 <h3>Derive from BaseException<a class="headerlink" href="#derive-from-baseexception" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 463, in test_Derive_from_BaseException
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 488, in test_Derive_from_BaseException
     raise &quot;exception&quot;
 TypeError: exceptions must derive from BaseException
 
@@ -1133,19 +1141,19 @@ or by trying to do an operation not allowed on a given type of object.
 
     In Python 3, exceptions must be derived from BaseException.
 
-Exception raised on line 463 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 488 of file TESTS:\runtime\test_type_error.py.
 
-   461: def test_Derive_from_BaseException():
-   462:     try:
---&gt;463:         raise &quot;exception&quot;
-   464:     except Exception as e:
+   486: def test_Derive_from_BaseException():
+   487:     try:
+--&gt;488:         raise &quot;exception&quot;
+   489:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="not-an-integer">
 <h3>Not an integer<a class="headerlink" href="#not-an-integer" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 580, in test_Not_an_integer
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 605, in test_Not_an_integer
     range(c, d)
 TypeError: &#39;str&#39; object cannot be interpreted as an integer
 
@@ -1158,22 +1166,23 @@ or by trying to do an operation not allowed on a given type of object.
 
     You wrote an object of type `str` where an integer was expected.
     Perhaps you forgot to convert `c, d` into integers.
-Exception raised on line 580 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 605 of file TESTS:\runtime\test_type_error.py.
 
-   578:     c, d = &quot;2&quot;, &quot;3&quot;
-   579:     try:
---&gt;580:         range(c, d)
-   581:     except Exception as e:
+   603:     c, d = &quot;2&quot;, &quot;3&quot;
+   604:     try:
+--&gt;605:         range(c, d)
+   606:     except Exception as e:
 
         c: &#39;2&#39;
         d: &#39;3&#39;
+        range: &lt;class range&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="not-callable">
 <h3>Not callable<a class="headerlink" href="#not-callable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 450, in test_Not_callable
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 475, in test_Not_callable
     _ = [1, 2](3 + 4)
 TypeError: &#39;list&#39; object is not callable
 
@@ -1193,20 +1202,20 @@ or by trying to do an operation not allowed on a given type of object.
     Perhaps you meant to use `[]` instead of `()` and write
     `[1, 2][3 + 4]`
 
-Exception raised on line 450 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 475 of file TESTS:\runtime\test_type_error.py.
 
-   448:
-   449:     try:
---&gt;450:         _ = [1, 2](3 + 4)
+   473:
+   474:     try:
+--&gt;475:         _ = [1, 2](3 + 4)
                     ^^^^^^^^^^^^^
-   451:     except Exception as e:
+   476:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="too-few-positional-argument">
 <h3>Too few positional argument<a class="headerlink" href="#too-few-positional-argument" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 393, in test_Too_few_positional_argument
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 418, in test_Too_few_positional_argument
     fn(1)
 TypeError: fn() missing 2 required positional arguments: &#39;b&#39; and &#39;c&#39;
 
@@ -1218,12 +1227,12 @@ or by trying to do an operation not allowed on a given type of object.
     You apparently have called the function &#39;fn()&#39; with
     fewer positional arguments than it requires (2 missing).
 
-Exception raised on line 393 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 418 of file TESTS:\runtime\test_type_error.py.
 
-   391:
-   392:     try:
---&gt;393:         fn(1)
-   394:     except Exception as e:
+   416:
+   417:     try:
+--&gt;418:         fn(1)
+   419:     except Exception as e:
 
         fn: &lt;function fn&gt; from test_Too_few_positional_argument
 </pre></div>
@@ -1232,7 +1241,7 @@ Exception raised on line 393 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="too-many-positional-argument">
 <h3>Too many positional argument<a class="headerlink" href="#too-many-positional-argument" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 374, in test_Too_many_positional_argument
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 399, in test_Too_many_positional_argument
     A().f(1)
 TypeError: f() takes 1 positional argument but 2 were given
 
@@ -1248,12 +1257,12 @@ or by trying to do an operation not allowed on a given type of object.
     such positional argument(s).
     Perhaps you forgot `self` when defining `f`.
 
-Exception raised on line 374 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 399 of file TESTS:\runtime\test_type_error.py.
 
-   372:
-   373:     try:
---&gt;374:         A().f(1)
-   375:     except Exception as e:
+   397:
+   398:     try:
+--&gt;399:         A().f(1)
+   400:     except Exception as e:
 
         A: &lt;class A&gt; from test_type_error.test_Too_many_positional_argument
 </pre></div>
@@ -1262,9 +1271,11 @@ Exception raised on line 374 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="tuple-no-item-assignment">
 <h3>Tuple no item assignment<a class="headerlink" href="#tuple-no-item-assignment" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 342, in test_Tuple_no_item_assignment
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 366, in test_Tuple_no_item_assignment
     a[0] = 0
 TypeError: &#39;tuple&#39; object does not support item assignment
+
+    Did you mean to use a list?
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
@@ -1275,13 +1286,14 @@ or by trying to do an operation not allowed on a given type of object.
     once defined, their value cannot be changed.
     You tried change part of such an immutable object: a `tuple`,
     most likely by using an indexing operation.
+    Perhaps you meant to use a list instead.
 
-Exception raised on line 342 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 366 of file TESTS:\runtime\test_type_error.py.
 
-   340:     a = (1, 2, 3)
-   341:     try:
---&gt;342:         a[0] = 0
-   343:     except Exception as e:
+   364:     a = (1, 2, 3)
+   365:     try:
+--&gt;366:         a[0] = 0
+   367:     except Exception as e:
 
         a[0]: 1
         a: (1, 2, 3)
@@ -1291,7 +1303,7 @@ Exception raised on line 342 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="unsupported-operand-types">
 <h3>Unsupported operand types<a class="headerlink" href="#unsupported-operand-types" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 258, in test_Unsupported_operand_types
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 282, in test_Unsupported_operand_types
     a @= b
 TypeError: unsupported operand type(s) for @=: &#39;str&#39; and &#39;int&#39;
 
@@ -1306,12 +1318,12 @@ or by trying to do an operation not allowed on a given type of object.
     This operator is normally used only
     for multiplication of matrices.
 
-Exception raised on line 258 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 282 of file TESTS:\runtime\test_type_error.py.
 
-   256:         a = &quot;a&quot;
-   257:         b = 2
---&gt;258:         a @= b
-   259:     except Exception as e:
+   280:         a = &quot;a&quot;
+   281:         b = 2
+--&gt;282:         a @= b
+   283:     except Exception as e:
 
         a: &#39;a&#39;
         b: 2
@@ -1444,7 +1456,7 @@ Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.
 <div class="section" id="not-enough-values-to-unpack">
 <h3>Not enough values to unpack<a class="headerlink" href="#not-enough-values-to-unpack" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_value_error.py&quot;, line 20, in test_Not_enough_values_to_unpack
+  File &quot;TESTS:\runtime\test_value_error.py&quot;, line 28, in test_Not_enough_values_to_unpack
     a, b, c = d
 ValueError: not enough values to unpack (expected 3, got 2)
 
@@ -1456,12 +1468,12 @@ received an argument of the right type, but an inappropriate value.
     In this instance, there are more names (3)
     than the length of the iterable, a string (`str`) of length 2.
 
-Exception raised on line 20 of file TESTS:\runtime\test_value_error.py.
+Exception raised on line 28 of file TESTS:\runtime\test_value_error.py.
 
-   18:     d = &quot;ab&quot;
-   19:     try:
---&gt;20:         a, b, c = d
-   21:     except Exception as e:
+   26:     d = &quot;ab&quot;
+   27:     try:
+--&gt;28:         a, b, c = d
+   29:     except Exception as e:
 
         d: &#39;ab&#39;
 </pre></div>
@@ -1470,7 +1482,7 @@ Exception raised on line 20 of file TESTS:\runtime\test_value_error.py.
 <div class="section" id="too-many-values-to-unpack">
 <h3>Too many values to unpack<a class="headerlink" href="#too-many-values-to-unpack" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_value_error.py&quot;, line 35, in test_Too_many_values_to_unpack
+  File &quot;TESTS:\runtime\test_value_error.py&quot;, line 43, in test_Too_many_values_to_unpack
     a, b = c
 ValueError: too many values to unpack (expected 2)
 
@@ -1482,12 +1494,12 @@ received an argument of the right type, but an inappropriate value.
     In this instance, there are fewer names (2)
     than the length of the iterable, a `list` of length 3.
 
-Exception raised on line 35 of file TESTS:\runtime\test_value_error.py.
+Exception raised on line 43 of file TESTS:\runtime\test_value_error.py.
 
-   33:     c = [1, 2, 3]
-   34:     try:
---&gt;35:         a, b = c
-   36:     except Exception as e:
+   41:     c = [1, 2, 3]
+   42:     try:
+--&gt;43:         a, b = c
+   44:     except Exception as e:
 
         c: [1, 2, 3]
 </pre></div>

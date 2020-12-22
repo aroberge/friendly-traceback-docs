@@ -94,6 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
@@ -722,7 +723,8 @@ beyond the location indicated by --&gt; and ^.
         1 = a
     where `1`, on the left-hand side of the equal sign,
     is or includes an actual object of type `int`
-    and is not simply the name of a variable. Perhaps you meant to write:
+    and is not simply the name of a variable.
+    Perhaps you meant to write:
 
         a = 1
 </pre></div>
@@ -1059,9 +1061,6 @@ beyond the location indicated by --&gt; and ^.
 
         2: a = (b+c
                |
-    It is also possible that you forgot a comma between items in a tuple,
-    or between function arguments,
-    before the position indicated by --&gt; and ^.
 </pre></div>
 </div>
 </div>
@@ -1334,7 +1333,7 @@ beyond the location indicated by --&gt; and ^.
     but I might guess incorrectly.
 
     Python indicates that the error is caused by `3` written just after `2`.
-    Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `2` and `3`.
+    Perhaps you forgot a comma or an operator, like `+`, `*`, `in`, etc., between `2` and `3`.
 </pre></div>
 </div>
 </div>
@@ -1365,7 +1364,7 @@ beyond the location indicated by --&gt; and ^.
     but I might guess incorrectly.
 
     Python indicates that the error is caused by `3` written just after `2`.
-    Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `2` and `3`.
+    Perhaps you forgot a comma or an operator, like `+`, `*`, `in`, etc., between `2` and `3`.
 </pre></div>
 </div>
 </div>
@@ -1396,7 +1395,7 @@ beyond the location indicated by --&gt; and ^.
     but I might guess incorrectly.
 
     Python indicates that the error is caused by `3` written just after `2`.
-    Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `2` and `3`.
+    Perhaps you forgot a comma or an operator, like `+`, `*`, `in`, etc., between `2` and `3`.
 </pre></div>
 </div>
 </div>
@@ -1429,7 +1428,7 @@ beyond the location indicated by --&gt; and ^.
     but I might guess incorrectly.
 
     Python indicates that the error is caused by `d` written just after `c`.
-    Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `c` and `d`.
+    Perhaps you forgot a comma or an operator, like `+`, `*`, `in`, etc., between `c` and `d`.
 </pre></div>
 </div>
 </div>
@@ -1664,8 +1663,6 @@ beyond the location indicated by --&gt; and ^.
 
         5:     return [1, 2, 3
                       |
-    It is also possible that you forgot a comma between items in a list
-    before the position indicated by --&gt; and ^.
 </pre></div>
 </div>
 </div>
@@ -2843,7 +2840,7 @@ beyond the location indicated by --&gt; and ^.
     but I might guess incorrectly.
 
     Python indicates that the error is caused by `y` written just after `x`.
-    Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `x` and `y`.
+    Perhaps you forgot a comma or an operator, like `+`, `*`, `in`, etc., between `x` and `y`.
 </pre></div>
 </div>
 </div>

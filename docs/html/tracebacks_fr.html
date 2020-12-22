@@ -94,6 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
@@ -309,6 +310,8 @@ Exception levée à la ligne 9 du fichier TESTS:\runtime\test_arithmetic_error.p
     8:         # likely be raised.
 --&gt; 9:         raise ArithmeticError(&#39;error&#39;)
    10:     except Exception as e:
+
+        ArithmeticError: &lt;class ArithmeticError&gt;
 </pre></div>
 </div>
 </div>
@@ -339,6 +342,7 @@ Exception levée à la ligne 188 du fichier TESTS:\runtime\test_attribute_error.
    189:     except Exception as e:
 
         text: &#39;Hello world!&#39;
+        len: &lt;builtin function len&gt;
 </pre></div>
 </div>
 </div>
@@ -463,6 +467,7 @@ Exception levée à la ligne 36 du fichier FRIENDLY:\friendly_traceback\runtime_
         _: &lt;bound method GNUTranslations.gettext of &lt;gettext.GNUTranslations object&gt;
         match3: &lt;re.Match object; span=(0, 38), match=&quot;NoneType object has no attribute b&quot;&gt;
         match3.group: &lt;builtin method group of re.Match object&gt;
+        format: &lt;builtin function format&gt;
 
 
 Traceback (most recent call last):
@@ -483,6 +488,8 @@ Exception levée à la ligne 6 du fichier TESTS:\runtime\test_file_not_found_err
    5:     try:
 --&gt;6:         open(&quot;does_not_exist&quot;)
    7:     except Exception as e:
+
+        open: &lt;builtin function open&gt;
 </pre></div>
 </div>
 </div>
@@ -655,6 +662,8 @@ Exception levée à la ligne 10 du fichier TESTS:\runtime\test_lookup_error.py.
     9:         # it directly here for our example.
 --&gt;10:         raise LookupError(&quot;Fake message&quot;)
    11:     except Exception as e:
+
+        LookupError: &lt;class LookupError&gt;
 </pre></div>
 </div>
 </div>

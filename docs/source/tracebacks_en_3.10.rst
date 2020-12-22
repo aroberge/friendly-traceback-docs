@@ -48,6 +48,9 @@ Generic
     --> 9:         raise ArithmeticError('error')
        10:     except Exception as e:
 
+            ArithmeticError: <class ArithmeticError>
+        
+
 
 AttributeError
 --------------
@@ -81,6 +84,7 @@ Builtin function
        189:     except Exception as e:
 
             text: 'Hello world!'
+            len: <builtin function len>
         
 
 
@@ -392,6 +396,9 @@ Generic
     -->6:         open("does_not_exist")
        7:     except Exception as e:
 
+            open: <builtin function open>
+        
+
 
 ImportError
 -----------
@@ -589,6 +596,9 @@ Generic
         9:         # it directly here for our example.
     -->10:         raise LookupError("Fake message")
        11:     except Exception as e:
+
+            LookupError: <class LookupError>
+        
 
 
 ModuleNotFoundError
@@ -808,7 +818,7 @@ Bad type for unary operator
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 324, in test_Bad_type_for_unary_operator
+      File "TESTS:\runtime\test_type_error.py", line 348, in test_Bad_type_for_unary_operator
         a =+ "def"
     TypeError: bad operand type for unary +: 'str'
     
@@ -824,13 +834,13 @@ Bad type for unary operator
         
         Perhaps you meant to write `+=` instead of `=+`
         
-    Exception raised on line 324 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 348 of file TESTS:\runtime\test_type_error.py.
     
-       322:         # fmt: off
-       323:         a = "abc"
-    -->324:         a =+ "def"
+       346:         # fmt: off
+       347:         a = "abc"
+    -->348:         a =+ "def"
                        ^^^^^^^
-       325:         # fmt: on
+       349:         # fmt: on
 
 
 Can only concatenate
@@ -872,7 +882,7 @@ Cannot multiply by non int
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 532, in test_Cannot_multiply_by_non_int
+      File "TESTS:\runtime\test_type_error.py", line 557, in test_Cannot_multiply_by_non_int
         "a" * "2"
     TypeError: can't multiply sequence by non-int of type 'str'
     
@@ -887,12 +897,12 @@ Cannot multiply by non int
          strings, etc., by integers.
         Perhaps you forgot to convert `"2"` into an integer.
         
-    Exception raised on line 532 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 557 of file TESTS:\runtime\test_type_error.py.
     
-       530: 
-       531:     try:
-    -->532:         "a" * "2"
-       533:     except Exception as e:
+       555: 
+       556:     try:
+    -->557:         "a" * "2"
+       558:     except Exception as e:
 
 
 Comparison not supported
@@ -902,7 +912,7 @@ Comparison not supported
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 274, in test_Comparison_not_supported
+      File "TESTS:\runtime\test_type_error.py", line 298, in test_Comparison_not_supported
         b < a
     TypeError: '<' not supported between instances of 'int' and 'str'
     
@@ -915,12 +925,12 @@ Comparison not supported
         between two incompatible types of objects:
         an integer (`int`) and a string (`str`)
         
-    Exception raised on line 274 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 298 of file TESTS:\runtime\test_type_error.py.
     
-       272:         a = "a"
-       273:         b = 42
-    -->274:         b < a
-       275:     except Exception as e:
+       296:         a = "a"
+       297:         b = 42
+    -->298:         b < a
+       299:     except Exception as e:
 
             b: 42
             a: 'a'
@@ -934,7 +944,7 @@ Derive from BaseException
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 463, in test_Derive_from_BaseException
+      File "TESTS:\runtime\test_type_error.py", line 488, in test_Derive_from_BaseException
         raise "exception"
     TypeError: exceptions must derive from BaseException
     
@@ -945,12 +955,12 @@ Derive from BaseException
     
         In Python 3, exceptions must be derived from BaseException.
         
-    Exception raised on line 463 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 488 of file TESTS:\runtime\test_type_error.py.
     
-       461: def test_Derive_from_BaseException():
-       462:     try:
-    -->463:         raise "exception"
-       464:     except Exception as e:
+       486: def test_Derive_from_BaseException():
+       487:     try:
+    -->488:         raise "exception"
+       489:     except Exception as e:
 
 
 Not an integer
@@ -960,7 +970,7 @@ Not an integer
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 580, in test_Not_an_integer
+      File "TESTS:\runtime\test_type_error.py", line 605, in test_Not_an_integer
         range(c, d)
     TypeError: 'str' object cannot be interpreted as an integer
     
@@ -973,15 +983,16 @@ Not an integer
     
         You wrote an object of type `str` where an integer was expected.
         Perhaps you forgot to convert `c, d` into integers.
-    Exception raised on line 580 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 605 of file TESTS:\runtime\test_type_error.py.
     
-       578:     c, d = "2", "3"
-       579:     try:
-    -->580:         range(c, d)
-       581:     except Exception as e:
+       603:     c, d = "2", "3"
+       604:     try:
+    -->605:         range(c, d)
+       606:     except Exception as e:
 
             c: '2'
             d: '3'
+            range: <class range>
         
 
 
@@ -992,7 +1003,7 @@ Not callable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 450, in test_Not_callable
+      File "TESTS:\runtime\test_type_error.py", line 475, in test_Not_callable
         _ = [1, 2](3 + 4)
     TypeError: 'list' object is not callable
     
@@ -1012,13 +1023,13 @@ Not callable
         Perhaps you meant to use `[]` instead of `()` and write
         `[1, 2][3 + 4]`
         
-    Exception raised on line 450 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 475 of file TESTS:\runtime\test_type_error.py.
     
-       448: 
-       449:     try:
-    -->450:         _ = [1, 2](3 + 4)
+       473: 
+       474:     try:
+    -->475:         _ = [1, 2](3 + 4)
                         ^^^^^^^^^^^^^
-       451:     except Exception as e:
+       476:     except Exception as e:
 
 
 Too few positional argument
@@ -1028,7 +1039,7 @@ Too few positional argument
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 393, in test_Too_few_positional_argument
+      File "TESTS:\runtime\test_type_error.py", line 418, in test_Too_few_positional_argument
         fn(1)
     TypeError: test_Too_few_positional_argument.<locals>.fn() missing 2 required positional arguments: 'b' and 'c'
     
@@ -1040,12 +1051,12 @@ Too few positional argument
         You apparently have called the function 'test_Too_few_positional_argument.<locals>.fn()' with
         fewer positional arguments than it requires (2 missing).
         
-    Exception raised on line 393 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 418 of file TESTS:\runtime\test_type_error.py.
     
-       391: 
-       392:     try:
-    -->393:         fn(1)
-       394:     except Exception as e:
+       416: 
+       417:     try:
+    -->418:         fn(1)
+       419:     except Exception as e:
 
             fn: <function fn> from test_Too_few_positional_argument
         
@@ -1058,7 +1069,7 @@ Too many positional argument
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 374, in test_Too_many_positional_argument
+      File "TESTS:\runtime\test_type_error.py", line 399, in test_Too_many_positional_argument
         A().f(1)
     TypeError: test_Too_many_positional_argument.<locals>.A.f() takes 1 positional argument but 2 were given
     
@@ -1074,12 +1085,12 @@ Too many positional argument
         such positional argument(s).
         Perhaps you forgot `self` when defining `A.f`.
         
-    Exception raised on line 374 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 399 of file TESTS:\runtime\test_type_error.py.
     
-       372: 
-       373:     try:
-    -->374:         A().f(1)
-       375:     except Exception as e:
+       397: 
+       398:     try:
+    -->399:         A().f(1)
+       400:     except Exception as e:
 
             A: <class A> from test_type_error.test_Too_many_positional_argument
         
@@ -1092,10 +1103,12 @@ Tuple no item assignment
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 342, in test_Tuple_no_item_assignment
+      File "TESTS:\runtime\test_type_error.py", line 366, in test_Tuple_no_item_assignment
         a[0] = 0
     TypeError: 'tuple' object does not support item assignment
     
+        Did you mean to use a list?
+        
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
@@ -1105,13 +1118,14 @@ Tuple no item assignment
         once defined, their value cannot be changed.
         You tried change part of such an immutable object: a `tuple`,
         most likely by using an indexing operation.
+        Perhaps you meant to use a list instead.
         
-    Exception raised on line 342 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 366 of file TESTS:\runtime\test_type_error.py.
     
-       340:     a = (1, 2, 3)
-       341:     try:
-    -->342:         a[0] = 0
-       343:     except Exception as e:
+       364:     a = (1, 2, 3)
+       365:     try:
+    -->366:         a[0] = 0
+       367:     except Exception as e:
 
             a[0]: 1
             a: (1, 2, 3)
@@ -1125,7 +1139,7 @@ Unsupported operand types
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 258, in test_Unsupported_operand_types
+      File "TESTS:\runtime\test_type_error.py", line 282, in test_Unsupported_operand_types
         a @= b
     TypeError: unsupported operand type(s) for @=: 'str' and 'int'
     
@@ -1140,12 +1154,12 @@ Unsupported operand types
         This operator is normally used only
         for multiplication of matrices.
         
-    Exception raised on line 258 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 282 of file TESTS:\runtime\test_type_error.py.
     
-       256:         a = "a"
-       257:         b = 2
-    -->258:         a @= b
-       259:     except Exception as e:
+       280:         a = "a"
+       281:         b = 2
+    -->282:         a @= b
+       283:     except Exception as e:
 
             a: 'a'
             b: 2
@@ -1296,7 +1310,7 @@ Not enough values to unpack
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_value_error.py", line 20, in test_Not_enough_values_to_unpack
+      File "TESTS:\runtime\test_value_error.py", line 28, in test_Not_enough_values_to_unpack
         a, b, c = d
     ValueError: not enough values to unpack (expected 3, got 2)
     
@@ -1308,12 +1322,12 @@ Not enough values to unpack
         In this instance, there are more names (3)
         than the length of the iterable, a string (`str`) of length 2.
         
-    Exception raised on line 20 of file TESTS:\runtime\test_value_error.py.
+    Exception raised on line 28 of file TESTS:\runtime\test_value_error.py.
     
-       18:     d = "ab"
-       19:     try:
-    -->20:         a, b, c = d
-       21:     except Exception as e:
+       26:     d = "ab"
+       27:     try:
+    -->28:         a, b, c = d
+       29:     except Exception as e:
 
             d: 'ab'
         
@@ -1326,7 +1340,7 @@ Too many values to unpack
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_value_error.py", line 35, in test_Too_many_values_to_unpack
+      File "TESTS:\runtime\test_value_error.py", line 43, in test_Too_many_values_to_unpack
         a, b = c
     ValueError: too many values to unpack (expected 2)
     
@@ -1338,12 +1352,12 @@ Too many values to unpack
         In this instance, there are fewer names (2)
         than the length of the iterable, a `list` of length 3.
         
-    Exception raised on line 35 of file TESTS:\runtime\test_value_error.py.
+    Exception raised on line 43 of file TESTS:\runtime\test_value_error.py.
     
-       33:     c = [1, 2, 3]
-       34:     try:
-    -->35:         a, b = c
-       36:     except Exception as e:
+       41:     c = [1, 2, 3]
+       42:     try:
+    -->43:         a, b = c
+       44:     except Exception as e:
 
             c: [1, 2, 3]
         

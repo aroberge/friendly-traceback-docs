@@ -472,7 +472,8 @@ SyntaxError - can't assign to literal - 1
             1 = a
         où `1`, du côté gauche du signe d'égalité
         est ou inclut un objet de type `int`
-        et n'est pas simplement le nom d'une variable.  Peut-être que vous vouliez plutôt écrire :
+        et n'est pas simplement le nom d'une variable.
+        Peut-être que vous vouliez plutôt écrire :
         
             a = 1
         
@@ -510,6 +511,7 @@ SyntaxError - can't assign to literal - 2
         est ou inclut un objet de type `int`
         et n'est pas simplement le nom d'une variable.
         
+        
 
 SyntaxError - can't assign to literal - 3
 -----------------------------------------
@@ -543,6 +545,7 @@ SyntaxError - can't assign to literal - 3
         où `{1, 2, 3}`, du côté gauche du signe d'égalité
         est ou inclut un objet de type `set`
         et n'est pas simplement le nom d'une variable.
+        
         
 
 SyntaxError - can't assign to literal - 4
@@ -578,6 +581,7 @@ SyntaxError - can't assign to literal - 4
         est ou inclut un objet de type `dict`
         et n'est pas simplement le nom d'une variable.
         
+        
 
 SyntaxError - can't assign to literal - 5
 -----------------------------------------
@@ -611,6 +615,7 @@ SyntaxError - can't assign to literal - 5
         où `...`, du côté gauche du signe d'égalité
         est ou inclut un objet 
         et n'est pas simplement le nom d'une variable.
+        
         
 
 SyntaxError - import X from Y
@@ -836,8 +841,6 @@ SyntaxError - unclosed parenthesis - 2
         
             2: a = (b+c
                    |
-        Il est également possible que vous ayez oublié une virgule entre les éléments d'un tuple,
-        ou entre les arguments d'une fonction, avant la position indiquée par --> et ^.
         
 
 SyntaxError - mismatched brackets
@@ -1141,7 +1144,8 @@ SyntaxError - missing comma in a set
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
-        Peut-être avez-vous oublié une virgule ou un opérateur, comme '+', '*', etc., entre `2` et `3`.
+        Peut-être avez-vous oublié une virgule ou un opérateur, comme `+`, `*`, `in`, etc., entre `2` et `3`.
+        
 
 SyntaxError - missing comma in a list
 -------------------------------------
@@ -1173,7 +1177,8 @@ SyntaxError - missing comma in a list
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
-        Peut-être avez-vous oublié une virgule ou un opérateur, comme '+', '*', etc., entre `2` et `3`.
+        Peut-être avez-vous oublié une virgule ou un opérateur, comme `+`, `*`, `in`, etc., entre `2` et `3`.
+        
 
 SyntaxError - missing comma in a tuple
 --------------------------------------
@@ -1205,7 +1210,8 @@ SyntaxError - missing comma in a tuple
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
-        Peut-être avez-vous oublié une virgule ou un opérateur, comme '+', '*', etc., entre `2` et `3`.
+        Peut-être avez-vous oublié une virgule ou un opérateur, comme `+`, `*`, `in`, etc., entre `2` et `3`.
+        
 
 SyntaxError - missing comma between function args
 -------------------------------------------------
@@ -1239,7 +1245,8 @@ SyntaxError - missing comma between function args
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Python indique que l’erreur est causée par `d` écrit tout juste après `c`.
-        Peut-être avez-vous oublié une virgule ou un opérateur, comme '+', '*', etc., entre `c` et `d`.
+        Peut-être avez-vous oublié une virgule ou un opérateur, comme `+`, `*`, `in`, etc., entre `c` et `d`.
+        
 
 SyntaxError - can't assign to function call - 1
 -----------------------------------------------
@@ -1493,8 +1500,6 @@ SyntaxError - unclosed bracket
         
             5:     return [1, 2, 3
                           |
-        Il est également possible que vous ayez oublié une virgule entre les éléments d'une liste
-        avant la position indiquée par --> et ^.
         
 
 SyntaxError - unexpected EOF while parsing
@@ -2063,6 +2068,7 @@ SyntaxError - assignment to operator
         Vous avez écrit une expression qui inclut des opérations mathématiques
         du côté gauche du signe d'égalité; ceci devrait être
         utilisé uniquement pour attribuer une valeur à une variable.
+        
 
 SyntaxError - using the backquote character
 -------------------------------------------
@@ -2788,7 +2794,8 @@ SyntaxError - forgot a comma in an f-string
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Python indique que l’erreur est causée par `y` écrit tout juste après `x`.
-        Peut-être avez-vous oublié une virgule ou un opérateur, comme '+', '*', etc., entre `x` et `y`.
+        Peut-être avez-vous oublié une virgule ou un opérateur, comme `+`, `*`, `in`, etc., entre `x` et `y`.
+        
 
 SyntaxError - Valid names cannot begin with a number
 ----------------------------------------------------

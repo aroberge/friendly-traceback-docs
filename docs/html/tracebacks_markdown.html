@@ -94,6 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
@@ -268,7 +269,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror">TypeError</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#bad-type-for-unary-operator">Bad type for unary operator</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-324-of-file-tests-runtime-test-type-error-py">Exception raised on line 324 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-348-of-file-tests-runtime-test-type-error-py">Exception raised on line 348 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#can-only-concatenate">Can only concatenate</a><ul>
@@ -276,39 +277,39 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#cannot-multiply-by-non-int">Cannot multiply by non int</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-532-of-file-tests-runtime-test-type-error-py">Exception raised on line 532 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-557-of-file-tests-runtime-test-type-error-py">Exception raised on line 557 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#comparison-not-supported">Comparison not supported</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-274-of-file-tests-runtime-test-type-error-py">Exception raised on line 274 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-298-of-file-tests-runtime-test-type-error-py">Exception raised on line 298 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#derive-from-baseexception">Derive from BaseException</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-463-of-file-tests-runtime-test-type-error-py">Exception raised on line 463 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-488-of-file-tests-runtime-test-type-error-py">Exception raised on line 488 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#not-an-integer">Not an integer</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-580-of-file-tests-runtime-test-type-error-py">Exception raised on line 580 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-605-of-file-tests-runtime-test-type-error-py">Exception raised on line 605 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#not-callable">Not callable</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-450-of-file-tests-runtime-test-type-error-py">Exception raised on line 450 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-475-of-file-tests-runtime-test-type-error-py">Exception raised on line 475 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#too-few-positional-argument">Too few positional argument</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-393-of-file-tests-runtime-test-type-error-py">Exception raised on line 393 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-418-of-file-tests-runtime-test-type-error-py">Exception raised on line 418 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#too-many-positional-argument">Too many positional argument</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-374-of-file-tests-runtime-test-type-error-py">Exception raised on line 374 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-399-of-file-tests-runtime-test-type-error-py">Exception raised on line 399 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#tuple-no-item-assignment">Tuple no item assignment</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-342-of-file-tests-runtime-test-type-error-py">Exception raised on line 342 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-366-of-file-tests-runtime-test-type-error-py">Exception raised on line 366 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#unsupported-operand-types">Unsupported operand types</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-258-of-file-tests-runtime-test-type-error-py">Exception raised on line 258 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-282-of-file-tests-runtime-test-type-error-py">Exception raised on line 282 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 </ul>
@@ -335,11 +336,11 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#valueerror">ValueError</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#not-enough-values-to-unpack">Not enough values to unpack</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-20-of-file-tests-runtime-test-value-error-py">Exception raised on line 20 of file TESTS:\runtime\test_value_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-28-of-file-tests-runtime-test-value-error-py">Exception raised on line 28 of file TESTS:\runtime\test_value_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#too-many-values-to-unpack">Too many values to unpack</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-35-of-file-tests-runtime-test-value-error-py">Exception raised on line 35 of file TESTS:\runtime\test_value_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-43-of-file-tests-runtime-test-value-error-py">Exception raised on line 43 of file TESTS:\runtime\test_value_error.py.</a></li>
 </ul>
 </li>
 </ul>
@@ -471,6 +472,9 @@ normally, a more specific exception should have been raised.</p>
        <span class="mi">10</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="ne">ArithmeticError</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">ArithmeticError</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -500,6 +504,7 @@ and <code class="docutils literal notranslate"><span class="pre">x</span></code>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">text</span><span class="p">:</span> <span class="s1">&#39;Hello world!&#39;</span>
+    <span class="nb">len</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">builtin</span> <span class="n">function</span> <span class="nb">len</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -777,6 +782,9 @@ file that cannot be found is <code class="docutils literal notranslate"><span cl
        <span class="mi">7</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="nb">open</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">builtin</span> <span class="n">function</span> <span class="nb">open</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -958,6 +966,9 @@ It can also be raised directly by codecs.lookup().</p>
         <span class="mi">9</span><span class="p">:</span>         <span class="c1"># it directly here for our example.</span>
     <span class="o">--&gt;</span><span class="mi">10</span><span class="p">:</span>         <span class="k">raise</span> <span class="ne">LookupError</span><span class="p">(</span><span class="s2">&quot;Fake message&quot;</span><span class="p">)</span>
        <span class="mi">11</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="ne">LookupError</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">LookupError</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -1163,7 +1174,7 @@ and that your program would never stop.</p>
 <div class="section" id="bad-type-for-unary-operator">
 <h3>Bad type for unary operator<a class="headerlink" href="#bad-type-for-unary-operator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">324</span>, in <span class="n">test_Bad_type_for_unary_operator</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">348</span>, in <span class="n">test_Bad_type_for_unary_operator</span>
     <span class="n">a</span> <span class="o">=+</span> <span class="s2">&quot;def&quot;</span>
 <span class="gr">TypeError</span>: <span class="n">bad operand type for unary +: &#39;str&#39;</span>
 </pre></div>
@@ -1177,13 +1188,13 @@ or by trying to do an operation not allowed on a given type of object.</p>
 with the following type of object: a string (<code class="docutils literal notranslate"><span class="pre">str</span></code>).
 This operation is not defined for this type of object.</p>
 <p>Perhaps you meant to write <code class="docutils literal notranslate"><span class="pre">+=</span></code> instead of <code class="docutils literal notranslate"><span class="pre">=+</span></code></p>
-<div class="section" id="exception-raised-on-line-324-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 324 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-324-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">322</span><span class="p">:</span>         <span class="c1"># fmt: off</span>
-       <span class="mi">323</span><span class="p">:</span>         <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>
-    <span class="o">--&gt;</span><span class="mi">324</span><span class="p">:</span>         <span class="n">a</span> <span class="o">=+</span> <span class="s2">&quot;def&quot;</span>
+<div class="section" id="exception-raised-on-line-348-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 348 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-348-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">346</span><span class="p">:</span>         <span class="c1"># fmt: off</span>
+       <span class="mi">347</span><span class="p">:</span>         <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>
+    <span class="o">--&gt;</span><span class="mi">348</span><span class="p">:</span>         <span class="n">a</span> <span class="o">=+</span> <span class="s2">&quot;def&quot;</span>
                        <span class="o">^^^^^^^</span>
-       <span class="mi">325</span><span class="p">:</span>         <span class="c1"># fmt: on</span>
+       <span class="mi">349</span><span class="p">:</span>         <span class="c1"># fmt: on</span>
 </pre></div>
 </div>
 </div>
@@ -1220,7 +1231,7 @@ a <code class="docutils literal notranslate"><span class="pre">tuple</span></cod
 <div class="section" id="cannot-multiply-by-non-int">
 <h3>Cannot multiply by non int<a class="headerlink" href="#cannot-multiply-by-non-int" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">532</span>, in <span class="n">test_Cannot_multiply_by_non_int</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">557</span>, in <span class="n">test_Cannot_multiply_by_non_int</span>
     <span class="s2">&quot;a&quot;</span> <span class="o">*</span> <span class="s2">&quot;2&quot;</span>
 <span class="gr">TypeError</span>: <span class="n">can&#39;t multiply sequence by non-int of type &#39;str&#39;</span>
 </pre></div>
@@ -1233,12 +1244,12 @@ or by trying to do an operation not allowed on a given type of object.</p>
 <p>You can only multiply sequences, such as list, tuples,
 strings, etc., by integers.
 Perhaps you forgot to convert <code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code> into an integer.</p>
-<div class="section" id="exception-raised-on-line-532-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 532 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-532-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">530</span><span class="p">:</span> 
-       <span class="mi">531</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">532</span><span class="p">:</span>         <span class="s2">&quot;a&quot;</span> <span class="o">*</span> <span class="s2">&quot;2&quot;</span>
-       <span class="mi">533</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-557-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 557 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-557-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">555</span><span class="p">:</span> 
+       <span class="mi">556</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">557</span><span class="p">:</span>         <span class="s2">&quot;a&quot;</span> <span class="o">*</span> <span class="s2">&quot;2&quot;</span>
+       <span class="mi">558</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 </div>
@@ -1246,7 +1257,7 @@ Perhaps you forgot to convert <code class="docutils literal notranslate"><span c
 <div class="section" id="comparison-not-supported">
 <h3>Comparison not supported<a class="headerlink" href="#comparison-not-supported" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">274</span>, in <span class="n">test_Comparison_not_supported</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">298</span>, in <span class="n">test_Comparison_not_supported</span>
     <span class="n">b</span> <span class="o">&lt;</span> <span class="n">a</span>
 <span class="gr">TypeError</span>: <span class="n">&#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;</span>
 </pre></div>
@@ -1258,12 +1269,12 @@ or by trying to do an operation not allowed on a given type of object.</p>
 <p>You tried to do an order comparison (&lt;)
 between two incompatible types of objects:
 an integer (<code class="docutils literal notranslate"><span class="pre">int</span></code>) and a string (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</p>
-<div class="section" id="exception-raised-on-line-274-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 274 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-274-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">272</span><span class="p">:</span>         <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
-       <span class="mi">273</span><span class="p">:</span>         <span class="n">b</span> <span class="o">=</span> <span class="mi">42</span>
-    <span class="o">--&gt;</span><span class="mi">274</span><span class="p">:</span>         <span class="n">b</span> <span class="o">&lt;</span> <span class="n">a</span>
-       <span class="mi">275</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-298-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 298 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-298-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">296</span><span class="p">:</span>         <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
+       <span class="mi">297</span><span class="p">:</span>         <span class="n">b</span> <span class="o">=</span> <span class="mi">42</span>
+    <span class="o">--&gt;</span><span class="mi">298</span><span class="p">:</span>         <span class="n">b</span> <span class="o">&lt;</span> <span class="n">a</span>
+       <span class="mi">299</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">b</span><span class="p">:</span> <span class="mi">42</span>
@@ -1275,7 +1286,7 @@ an integer (<code class="docutils literal notranslate"><span class="pre">int</sp
 <div class="section" id="derive-from-baseexception">
 <h3>Derive from BaseException<a class="headerlink" href="#derive-from-baseexception" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">463</span>, in <span class="n">test_Derive_from_BaseException</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">488</span>, in <span class="n">test_Derive_from_BaseException</span>
     <span class="k">raise</span> <span class="s2">&quot;exception&quot;</span>
 <span class="gr">TypeError</span>: <span class="n">exceptions must derive from BaseException</span>
 </pre></div>
@@ -1285,12 +1296,12 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by trying to do an operation not allowed on a given type of object.</p>
 <p>In Python 3, exceptions must be derived from BaseException.</p>
-<div class="section" id="exception-raised-on-line-463-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 463 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-463-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">461</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Derive_from_BaseException</span><span class="p">():</span>
-       <span class="mi">462</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">463</span><span class="p">:</span>         <span class="k">raise</span> <span class="s2">&quot;exception&quot;</span>
-       <span class="mi">464</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-488-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 488 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-488-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">486</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Derive_from_BaseException</span><span class="p">():</span>
+       <span class="mi">487</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">488</span><span class="p">:</span>         <span class="k">raise</span> <span class="s2">&quot;exception&quot;</span>
+       <span class="mi">489</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 </div>
@@ -1298,7 +1309,7 @@ or by trying to do an operation not allowed on a given type of object.</p>
 <div class="section" id="not-an-integer">
 <h3>Not an integer<a class="headerlink" href="#not-an-integer" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">580</span>, in <span class="n">test_Not_an_integer</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">605</span>, in <span class="n">test_Not_an_integer</span>
     <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
 <span class="gr">TypeError</span>: <span class="n">&#39;str&#39; object cannot be interpreted as an integer</span>
 </pre></div>
@@ -1310,16 +1321,17 @@ by calling a function with the wrong type of object,
 or by trying to do an operation not allowed on a given type of object.</p>
 <p>You wrote an object of type <code class="docutils literal notranslate"><span class="pre">str</span></code> where an integer was expected.
 Perhaps you forgot to convert <code class="docutils literal notranslate"><span class="pre">c,</span> <span class="pre">d</span></code> into integers.</p>
-<div class="section" id="exception-raised-on-line-580-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 580 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-580-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">578</span><span class="p">:</span>     <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span>
-       <span class="mi">579</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">580</span><span class="p">:</span>         <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
-       <span class="mi">581</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-605-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 605 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-605-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">603</span><span class="p">:</span>     <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span>
+       <span class="mi">604</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">605</span><span class="p">:</span>         <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+       <span class="mi">606</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">c</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span>
     <span class="n">d</span><span class="p">:</span> <span class="s1">&#39;3&#39;</span>
+    <span class="nb">range</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">range</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -1327,7 +1339,7 @@ Perhaps you forgot to convert <code class="docutils literal notranslate"><span c
 <div class="section" id="not-callable">
 <h3>Not callable<a class="headerlink" href="#not-callable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">450</span>, in <span class="n">test_Not_callable</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">475</span>, in <span class="n">test_Not_callable</span>
     <span class="n">_</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">](</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
 <span class="gr">TypeError</span>: <span class="n">&#39;list&#39; object is not callable</span>
 </pre></div>
@@ -1344,13 +1356,13 @@ which cannot be called.</p>
 <p>However, <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code> is a sequence.
 Perhaps you meant to use <code class="docutils literal notranslate"><span class="pre">[]</span></code> instead of <code class="docutils literal notranslate"><span class="pre">()</span></code> and write
 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2][3</span> <span class="pre">+</span> <span class="pre">4]</span></code></p>
-<div class="section" id="exception-raised-on-line-450-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 450 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-450-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">448</span><span class="p">:</span> 
-       <span class="mi">449</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">450</span><span class="p">:</span>         <span class="n">_</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">](</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
+<div class="section" id="exception-raised-on-line-475-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 475 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-475-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">473</span><span class="p">:</span> 
+       <span class="mi">474</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">475</span><span class="p">:</span>         <span class="n">_</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">](</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
                         <span class="o">^^^^^^^^^^^^^</span>
-       <span class="mi">451</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+       <span class="mi">476</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 </div>
@@ -1358,7 +1370,7 @@ Perhaps you meant to use <code class="docutils literal notranslate"><span class=
 <div class="section" id="too-few-positional-argument">
 <h3>Too few positional argument<a class="headerlink" href="#too-few-positional-argument" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">393</span>, in <span class="n">test_Too_few_positional_argument</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">418</span>, in <span class="n">test_Too_few_positional_argument</span>
     <span class="n">fn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="gr">TypeError</span>: <span class="n">fn() missing 2 required positional arguments: &#39;b&#39; and &#39;c&#39;</span>
 </pre></div>
@@ -1369,12 +1381,12 @@ by calling a function with the wrong type of object,
 or by trying to do an operation not allowed on a given type of object.</p>
 <p>You apparently have called the function ‘fn()’ with
 fewer positional arguments than it requires (2 missing).</p>
-<div class="section" id="exception-raised-on-line-393-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 393 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-393-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">391</span><span class="p">:</span> 
-       <span class="mi">392</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">393</span><span class="p">:</span>         <span class="n">fn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-       <span class="mi">394</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-418-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 418 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-418-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">416</span><span class="p">:</span> 
+       <span class="mi">417</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">418</span><span class="p">:</span>         <span class="n">fn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+       <span class="mi">419</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">fn</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">fn</span><span class="o">&gt;</span> <span class="kn">from</span> <span class="nn">test_Too_few_positional_argument</span>
@@ -1385,7 +1397,7 @@ fewer positional arguments than it requires (2 missing).</p>
 <div class="section" id="too-many-positional-argument">
 <h3>Too many positional argument<a class="headerlink" href="#too-many-positional-argument" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">374</span>, in <span class="n">test_Too_many_positional_argument</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">399</span>, in <span class="n">test_Too_many_positional_argument</span>
     <span class="n">A</span><span class="p">()</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="gr">TypeError</span>: <span class="n">f() takes 1 positional argument but 2 were given</span>
 </pre></div>
@@ -1399,12 +1411,12 @@ or by trying to do an operation not allowed on a given type of object.</p>
 2 positional argument(s) while it requires 1
 such positional argument(s).
 Perhaps you forgot <code class="docutils literal notranslate"><span class="pre">self</span></code> when defining <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p>
-<div class="section" id="exception-raised-on-line-374-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 374 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-374-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">372</span><span class="p">:</span> 
-       <span class="mi">373</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">374</span><span class="p">:</span>         <span class="n">A</span><span class="p">()</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-       <span class="mi">375</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-399-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 399 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-399-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">397</span><span class="p">:</span> 
+       <span class="mi">398</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">399</span><span class="p">:</span>         <span class="n">A</span><span class="p">()</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+       <span class="mi">400</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">A</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">A</span><span class="o">&gt;</span> <span class="kn">from</span> <span class="nn">test_type_error.test_Too_many_positional_argument</span>
@@ -1415,11 +1427,12 @@ Perhaps you forgot <code class="docutils literal notranslate"><span class="pre">
 <div class="section" id="tuple-no-item-assignment">
 <h3>Tuple no item assignment<a class="headerlink" href="#tuple-no-item-assignment" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">342</span>, in <span class="n">test_Tuple_no_item_assignment</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">366</span>, in <span class="n">test_Tuple_no_item_assignment</span>
     <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="gr">TypeError</span>: <span class="n">&#39;tuple&#39; object does not support item assignment</span>
 </pre></div>
 </div>
+<p>Did you mean to use a list?</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
@@ -1427,13 +1440,14 @@ or by trying to do an operation not allowed on a given type of object.</p>
 <p>In Python, some objects are known as immutable:
 once defined, their value cannot be changed.
 You tried change part of such an immutable object: a <code class="docutils literal notranslate"><span class="pre">tuple</span></code>,
-most likely by using an indexing operation.</p>
-<div class="section" id="exception-raised-on-line-342-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 342 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-342-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">340</span><span class="p">:</span>     <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-       <span class="mi">341</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">342</span><span class="p">:</span>         <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-       <span class="mi">343</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+most likely by using an indexing operation.
+Perhaps you meant to use a list instead.</p>
+<div class="section" id="exception-raised-on-line-366-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 366 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-366-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">364</span><span class="p">:</span>     <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+       <span class="mi">365</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">366</span><span class="p">:</span>         <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+       <span class="mi">367</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="mi">1</span>
@@ -1445,7 +1459,7 @@ most likely by using an indexing operation.</p>
 <div class="section" id="unsupported-operand-types">
 <h3>Unsupported operand types<a class="headerlink" href="#unsupported-operand-types" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">258</span>, in <span class="n">test_Unsupported_operand_types</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">282</span>, in <span class="n">test_Unsupported_operand_types</span>
     <span class="n">a</span> <span class="o">@=</span> <span class="n">b</span>
 <span class="gr">TypeError</span>: <span class="n">unsupported operand type(s) for @=: &#39;str&#39; and &#39;int&#39;</span>
 </pre></div>
@@ -1459,12 +1473,12 @@ using two incompatible types of objects:
 a string (<code class="docutils literal notranslate"><span class="pre">str</span></code>) and an integer (<code class="docutils literal notranslate"><span class="pre">int</span></code>).
 This operator is normally used only
 for multiplication of matrices.</p>
-<div class="section" id="exception-raised-on-line-258-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 258 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-258-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">256</span><span class="p">:</span>         <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
-       <span class="mi">257</span><span class="p">:</span>         <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="o">--&gt;</span><span class="mi">258</span><span class="p">:</span>         <span class="n">a</span> <span class="o">@=</span> <span class="n">b</span>
-       <span class="mi">259</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-282-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 282 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-282-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">280</span><span class="p">:</span>         <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
+       <span class="mi">281</span><span class="p">:</span>         <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="o">--&gt;</span><span class="mi">282</span><span class="p">:</span>         <span class="n">a</span> <span class="o">@=</span> <span class="n">b</span>
+       <span class="mi">283</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">a</span><span class="p">:</span> <span class="s1">&#39;a&#39;</span>
@@ -1609,7 +1623,7 @@ Perhaps the statement</p>
 <div class="section" id="not-enough-values-to-unpack">
 <h3>Not enough values to unpack<a class="headerlink" href="#not-enough-values-to-unpack" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_value_error.py&quot;</span>, line <span class="m">20</span>, in <span class="n">test_Not_enough_values_to_unpack</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_value_error.py&quot;</span>, line <span class="m">28</span>, in <span class="n">test_Not_enough_values_to_unpack</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">d</span>
 <span class="gr">ValueError</span>: <span class="n">not enough values to unpack (expected 3, got 2)</span>
 </pre></div>
@@ -1620,12 +1634,12 @@ received an argument of the right type, but an inappropriate value.</p>
 to each item of an iterable.
 In this instance, there are more names (3)
 than the length of the iterable, a string (<code class="docutils literal notranslate"><span class="pre">str</span></code>) of length 2.</p>
-<div class="section" id="exception-raised-on-line-20-of-file-tests-runtime-test-value-error-py">
-<h4>Exception raised on line 20 of file TESTS:\runtime\test_value_error.py.<a class="headerlink" href="#exception-raised-on-line-20-of-file-tests-runtime-test-value-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">18</span><span class="p">:</span>     <span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;ab&quot;</span>
-       <span class="mi">19</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">20</span><span class="p">:</span>         <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">d</span>
-       <span class="mi">21</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-28-of-file-tests-runtime-test-value-error-py">
+<h4>Exception raised on line 28 of file TESTS:\runtime\test_value_error.py.<a class="headerlink" href="#exception-raised-on-line-28-of-file-tests-runtime-test-value-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">26</span><span class="p">:</span>     <span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;ab&quot;</span>
+       <span class="mi">27</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">28</span><span class="p">:</span>         <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">d</span>
+       <span class="mi">29</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">d</span><span class="p">:</span> <span class="s1">&#39;ab&#39;</span>
@@ -1636,7 +1650,7 @@ than the length of the iterable, a string (<code class="docutils literal notrans
 <div class="section" id="too-many-values-to-unpack">
 <h3>Too many values to unpack<a class="headerlink" href="#too-many-values-to-unpack" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_value_error.py&quot;</span>, line <span class="m">35</span>, in <span class="n">test_Too_many_values_to_unpack</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_value_error.py&quot;</span>, line <span class="m">43</span>, in <span class="n">test_Too_many_values_to_unpack</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
 <span class="gr">ValueError</span>: <span class="n">too many values to unpack (expected 2)</span>
 </pre></div>
@@ -1647,12 +1661,12 @@ received an argument of the right type, but an inappropriate value.</p>
 to each item of an iterable.
 In this instance, there are fewer names (2)
 than the length of the iterable, a <code class="docutils literal notranslate"><span class="pre">list</span></code> of length 3.</p>
-<div class="section" id="exception-raised-on-line-35-of-file-tests-runtime-test-value-error-py">
-<h4>Exception raised on line 35 of file TESTS:\runtime\test_value_error.py.<a class="headerlink" href="#exception-raised-on-line-35-of-file-tests-runtime-test-value-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">33</span><span class="p">:</span>     <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-       <span class="mi">34</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">35</span><span class="p">:</span>         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
-       <span class="mi">36</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-43-of-file-tests-runtime-test-value-error-py">
+<h4>Exception raised on line 43 of file TESTS:\runtime\test_value_error.py.<a class="headerlink" href="#exception-raised-on-line-43-of-file-tests-runtime-test-value-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">41</span><span class="p">:</span>     <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+       <span class="mi">42</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">43</span><span class="p">:</span>         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
+       <span class="mi">44</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">c</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>

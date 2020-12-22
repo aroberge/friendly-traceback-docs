@@ -550,7 +550,8 @@ You wrote an expression like
     1 = a
 where `1`, on the left-hand side of the equal sign,
 is or includes an actual object of type `int`
-and is not simply the name of a variable. Perhaps you meant to write:
+and is not simply the name of a variable.
+Perhaps you meant to write:
 
     a = 1
 
@@ -594,6 +595,7 @@ where `1`, on the left-hand side of the equal sign,
 is or includes an actual object of type `int`
 and is not simply the name of a variable.
 
+
 ---
 
 ## SyntaxError - can't assign to literal - 3
@@ -633,6 +635,7 @@ You wrote an expression like
 where `{1, 2, 3}`, on the left-hand side of the equal sign,
 is or includes an actual object of type `set`
 and is not simply the name of a variable.
+
 
 ---
 
@@ -674,6 +677,7 @@ where `{1 : 2, 2 : 4}`, on the left-hand side of the equal sign,
 is or includes an actual object of type `dict`
 and is not simply the name of a variable.
 
+
 ---
 
 ## SyntaxError - can't assign to literal - 5
@@ -713,6 +717,7 @@ You wrote an expression like
 where `...`, on the left-hand side of the equal sign,
 is or includes an actual object 
 and is not simply the name of a variable.
+
 
 ---
 
@@ -991,9 +996,6 @@ The opening parenthesis `(` on line 2 is not closed.
 
     2: a = (b+c
            |
-It is also possible that you forgot a comma between items in a tuple, 
-or between function arguments, 
-before the position indicated by --> and ^.
 
 ---
 
@@ -1355,7 +1357,7 @@ I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
 Python indicates that the error is caused by `3` written just after `2`.
-Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `2` and `3`.
+Perhaps you forgot a comma or an operator, like `+`, `*`, `in`, etc., between `2` and `3`.
 
 ---
 
@@ -1397,7 +1399,7 @@ I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
 Python indicates that the error is caused by `3` written just after `2`.
-Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `2` and `3`.
+Perhaps you forgot a comma or an operator, like `+`, `*`, `in`, etc., between `2` and `3`.
 
 ---
 
@@ -1439,7 +1441,7 @@ I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
 Python indicates that the error is caused by `3` written just after `2`.
-Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `2` and `3`.
+Perhaps you forgot a comma or an operator, like `+`, `*`, `in`, etc., between `2` and `3`.
 
 ---
 
@@ -1483,7 +1485,7 @@ I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
 Python indicates that the error is caused by `d` written just after `c`.
-Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `c` and `d`.
+Perhaps you forgot a comma or an operator, like `+`, `*`, `in`, etc., between `c` and `d`.
 
 ---
 
@@ -1783,8 +1785,6 @@ The opening square bracket `[` on line 5 is not closed.
 
     5:     return [1, 2, 3
                   |
-It is also possible that you forgot a comma between items in a list
-before the position indicated by --> and ^.
 
 ---
 
@@ -3349,7 +3349,7 @@ I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
 Python indicates that the error is caused by `y` written just after `x`.
-Perhaps you forgot a comma or an operator, like `+`, `*`, etc., between `x` and `y`.
+Perhaps you forgot a comma or an operator, like `+`, `*`, `in`, etc., between `x` and `y`.
 
 ---
 
