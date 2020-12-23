@@ -1099,6 +1099,41 @@ Not callable
        477:     except Exception as e:
 
 
+Object is not subscriptable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_type_error.py", line 685, in test_Object_is_not_subscriptable
+        a = f[1]
+    TypeError: 'function' object is not subscriptable
+    
+        Vouliez-vous dire `f(1)` ?
+        
+    Une exception `TypeError` est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    
+        Les objets subscriptibles sont généralement des conteneurs à partir
+        desquels on peut tirer des éléments en utilisant la notation '[...] `.
+        
+        Peut-être que vous vouliez plutôt écrire `f(1)`.
+        
+    Exception levée à la ligne 685 du fichier TESTS:\runtime\test_type_error.py.
+    
+       683:         pass
+       684:     try:
+    -->685:         a = f[1]
+                        ^^^^
+       686:     except Exception as e:
+
+            f: <function f> from test_Object_is_not_subscriptable
+        
+
+
 Slice indices must be integers or None
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

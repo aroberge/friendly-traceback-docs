@@ -1336,6 +1336,50 @@ Perhaps you meant to use `[]` instead of `()` and write
 
 ```
 
+### Object is not subscriptable
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_type_error.py", line 685, in test_Object_is_not_subscriptable
+    a = f[1]
+TypeError: 'function' object is not subscriptable
+
+```
+
+Did you mean `f(1)`?
+
+
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.
+
+
+Subscriptable objects are typically containers from which
+you can retrieve item using the notation `[...]`.
+
+Perhaps you meant to write `f(1)`.
+
+
+#### Exception raised on line 685 of file TESTS:\runtime\test_type_error.py.
+
+
+```python
+       683:         pass
+       684:     try:
+    -->685:         a = f[1]
+                        ^^^^
+       686:     except Exception as e:
+
+```
+
+```python
+    f: <function f> from test_Object_is_not_subscriptable
+
+```
+
 ### Slice indices must be integers or None
 
 

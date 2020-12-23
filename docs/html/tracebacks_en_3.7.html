@@ -190,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#indices-must-be-integers-or-slices">Indices must be integers or slices</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#not-an-integer">Not an integer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#not-callable">Not callable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#object-is-not-subscriptable">Object is not subscriptable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slice-indices-must-be-integers-or-none">Slice indices must be integers or None</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#too-few-positional-argument">Too few positional argument</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#too-many-positional-argument">Too many positional argument</a></li>
@@ -1274,6 +1275,37 @@ Exception raised on line 476 of file TESTS:\runtime\test_type_error.py.
 --&gt;476:         _ = [1, 2](3 + 4)
                     ^^^^^^^^^^^^^
    477:     except Exception as e:
+</pre></div>
+</div>
+</div>
+<div class="section" id="object-is-not-subscriptable">
+<h3>Object is not subscriptable<a class="headerlink" href="#object-is-not-subscriptable" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 685, in test_Object_is_not_subscriptable
+    a = f[1]
+TypeError: &#39;function&#39; object is not subscriptable
+
+    Did you mean `f(1)`?
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.
+
+    Subscriptable objects are typically containers from which
+    you can retrieve item using the notation `[...]`.
+
+    Perhaps you meant to write `f(1)`.
+
+Exception raised on line 685 of file TESTS:\runtime\test_type_error.py.
+
+   683:         pass
+   684:     try:
+--&gt;685:         a = f[1]
+                    ^^^^
+   686:     except Exception as e:
+
+        f: &lt;function f&gt; from test_Object_is_not_subscriptable
 </pre></div>
 </div>
 </div>
