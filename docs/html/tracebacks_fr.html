@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.2.9a documentation</title>
+  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.2.10a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.9a
+                0.2.10a
               </div>
             
           
@@ -150,6 +150,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#builtin-module-with-no-file">Builtin module with no file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Generic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-attribute-typo">Module attribute typo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nonetype">Nonetype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#object-attribute-typo">Object attribute typo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#perhaps-comma">Perhaps comma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shadow-stdlib-module">Shadow stdlib module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-builtin">Use builtin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-synonym">Use synonym</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#filenotfounderror">FileNotFoundError</a><ul>
@@ -193,11 +199,42 @@
 <li class="toctree-l3"><a class="reference internal" href="#id7">Generic</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#typeerror">TypeError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unboundlocalerror">UnboundLocalError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unknownerror">UnknownError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#valueerror">ValueError</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#zerodivisionerror">ZeroDivisionError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typeerror">TypeError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bad-type-for-unary-operator">Bad type for unary operator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#can-only-concatenate">Can only concatenate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cannot-multiply-by-non-int">Cannot multiply by non int</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comparison-not-supported">Comparison not supported</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#derive-from-baseexception">Derive from BaseException</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indices-must-be-integers-or-slices">Indices must be integers or slices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#not-an-integer">Not an integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#not-callable">Not callable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slice-indices-must-be-integers-or-none">Slice indices must be integers or None</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#too-few-positional-argument">Too few positional argument</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#too-many-positional-argument">Too many positional argument</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tuple-no-item-assignment">Tuple no item assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unhachable-type">Unhachable type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unsupported-operand-types">Unsupported operand types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#unboundlocalerror">UnboundLocalError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#missing-global">Missing global</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#missing-nonlocal">Missing nonlocal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#unknownerror">UnknownError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Generic</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#valueerror">ValueError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#not-enough-values-to-unpack">Not enough values to unpack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#too-many-values-to-unpack">Too many values to unpack</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#zerodivisionerror">ZeroDivisionError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#division-operator">Division operator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modulo-operator">Modulo operator</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
@@ -289,7 +326,7 @@ Ceci a besoin d’être fait de manière explicite lorsqu’on veut
 faire des corrections ou des ajouts, avant de faire la mise
 à jour du reste de la documentation avec Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.2.9a
+<p>Friendly-traceback version: 0.2.10a
 Python version: 3.8.4</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -424,54 +461,180 @@ Exception levée à la ligne 113 du fichier TESTS:\runtime\test_attribute_error.
 </pre></div>
 </div>
 </div>
+<div class="section" id="nonetype">
+<h3>Nonetype<a class="headerlink" href="#nonetype" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 152, in test_Nonetype
+    a.b
+AttributeError: &#39;NoneType&#39; object has no attribute &#39;b&#39;
+
+Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+    `object.x`
+et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+
+    Exception soulevée par Friendly-traceback.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
+
+Exception levée à la ligne 152 du fichier TESTS:\runtime\test_attribute_error.py.
+
+   150:     a = None
+   151:     try:
+--&gt;152:         a.b
+   153:     except Exception as e:
+
+        a: None
+</pre></div>
+</div>
+</div>
+<div class="section" id="object-attribute-typo">
+<h3>Object attribute typo<a class="headerlink" href="#object-attribute-typo" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 52, in test_Object_attribute_typo
+    a.appendh(4)
+AttributeError: &#39;list&#39; object has no attribute &#39;appendh&#39;
+
+    Vouliez-vous dire `append` ?
+
+Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+    `object.x`
+et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+
+    Peut-être que vous vouliez plutôt écrire : `a.append` au lieu de `a.appendh`.
+
+Exception levée à la ligne 52 du fichier TESTS:\runtime\test_attribute_error.py.
+
+   50:     try:
+   51:         a = [1, 2, 3]
+--&gt;52:         a.appendh(4)
+               ^^^^^^^^^
+   53:     except Exception as e:
+
+        a: [1, 2, 3]
+</pre></div>
+</div>
+</div>
+<div class="section" id="perhaps-comma">
+<h3>Perhaps comma<a class="headerlink" href="#perhaps-comma" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 171, in test_Perhaps_comma
+    a = [abcd
+AttributeError: &#39;str&#39; object has no attribute &#39;defg&#39;
+
+    Vouliez-vous séparer les noms d’objets par une virgule ?
+
+Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+    `object.x`
+et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+
+    `defg` n’est pas un attribut de `abcd`.
+    Cependant, les objets `abcd` et `defg` sont des objets connus.
+    Peut-être avez-vous écrit une période pour séparer ces deux objets,
+    au lieu d’utiliser une virgule.
+
+Exception levée à la ligne 171 du fichier TESTS:\runtime\test_attribute_error.py.
+
+   169:     # fmt: off
+   170:     try:
+--&gt;171:         a = [abcd
+   172:         .defg]
+
+        abcd: &#39;hello&#39;
+        defg: &#39;world&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="shadow-stdlib-module">
+<h3>Shadow stdlib module<a class="headerlink" href="#shadow-stdlib-module" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 134, in test_Shadow_stdlib_module
+    turtle.Pen
+AttributeError: module &#39;turtle&#39; has no attribute &#39;Pen&#39;
+
+    Avez-vous donné à votre programme le même nom qu’un module Python ?
+
+Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+    `object.x`
+et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+
+    Vous avez importé un module nommé `turtle` de `TESTS:\turtle.py`.
+    Il y a aussi un module nommé `turtle` dans la bibliothèque standard de Python.
+    Peut-être avez-vous besoin de renommer votre module.
+
+Exception levée à la ligne 134 du fichier TESTS:\runtime\test_attribute_error.py.
+
+   132:
+   133:     try:
+--&gt;134:         turtle.Pen
+   135:     except Exception as e:
+
+        turtle: &lt;module turtle&gt; from TESTS:\turtle.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-builtin">
+<h3>Use builtin<a class="headerlink" href="#use-builtin" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 68, in test_Use_builtin
+    a.length()
+AttributeError: &#39;list&#39; object has no attribute &#39;length&#39;
+
+    Vouliez-vous utiliser `len(a)` ?
+
+Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+    `object.x`
+et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+
+    L’objet `a` n’a pas d’attribut nommé `length`.
+    Peut-être pouvez-vous utiliser la fonction Python builtin `len` à la place:
+    `len(a)`.
+Exception levée à la ligne 68 du fichier TESTS:\runtime\test_attribute_error.py.
+
+   66:     try:
+   67:         a = [1, 2, 3]
+--&gt;68:         a.length()
+               ^^^^^^^^
+   69:     except Exception as e:
+
+        a: [1, 2, 3]
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-synonym">
+<h3>Use synonym<a class="headerlink" href="#use-synonym" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 84, in test_Use_synonym
+    a.add(4)
+AttributeError: &#39;list&#39; object has no attribute &#39;add&#39;
+
+    Vouliez-vous dire `append` ?
+
+Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+    `object.x`
+et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+
+    L’objet `a` n’a pas d’attribut nommé `add`.
+    Toutefois, `a` a les attributs suivants avec des sens similaires:
+    &#39;append, extend, insert&#39;.
+
+Exception levée à la ligne 84 du fichier TESTS:\runtime\test_attribute_error.py.
+
+   82:     try:
+   83:         a = [1, 2, 3]
+--&gt;84:         a.add(4)
+               ^^^^^
+   85:     except Exception as e:
+
+        a: [1, 2, 3]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="filenotfounderror">
 <h2>FileNotFoundError<a class="headerlink" href="#filenotfounderror" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
 <h3>Generic<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_common.py&quot;, line 74, in create_tracebacks
-    result, message = function()
-
-       ... Plus de lignes non affichées. ...
-
-  File &quot;FRIENDLY:\friendly_traceback\info_specific.py&quot;, line 41, in _attribute_error
-    return attribute_error.get_cause(value, frame, tb_data)
-  File &quot;FRIENDLY:\friendly_traceback\runtime_errors\attribute_error.py&quot;, line 36, in get_cause
-    cause = _(
-KeyError: &#39;attar&#39;
-
-Une exception `KeyError` est levée lorsqu’une valeur n’est pas trouvée
-en tant que clé dans un dictionnaire (dict) Python.
-
-    Dans votre programme, la clé inconnue est `&#39;attar&#39;`.
-
-L&#39;exécution s&#39;est arrêtée à la ligne 74 du fichier TESTS:\trb_common.py
-
-   72:                             function = getattr(mod, name)
-   73:                             if callable(function):
---&gt;74:                                 result, message = function()
-   75:                                 title = name[5:].replace(&quot;_&quot;, &quot; &quot;)
-
-        result: &#39;\n    Traceback (most recent call last):\n      File &quot;TESTS...&#39;
-            len(result): 900
-        message: &quot;module &#39;math&#39; has no attribute &#39;cost&#39;&quot;
-        function: &lt;function test_Nonetype&gt;
-
-Exception levée à la ligne 36 du fichier FRIENDLY:\friendly_traceback\runtime_errors\attribute_error.py.
-
-   34:     elif match3:
-   35:         if match3.group(1) == &quot;NoneType&quot;:
---&gt;36:             cause = _(
-   37:                 &quot;You are attempting to access the attribute `{attr}`\n&quot;
-
-        _: &lt;bound method GNUTranslations.gettext of &lt;gettext.GNUTranslations object&gt;
-        match3: &lt;re.Match object; span=(0, 38), match=&quot;NoneType object has no attribute b&quot;&gt;
-        match3.group: &lt;builtin method group of re.Match object&gt;
-        format: &lt;builtin function format&gt;
-
-
-Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_file_not_found_error.py&quot;, line 6, in test_Generic
     open(&quot;does_not_exist&quot;)
 FileNotFoundError: [Errno 2] No such file or directory: &#39;does_not_exist&#39;
@@ -848,6 +1011,7 @@ Exception levée à la ligne 6 du fichier TESTS:\runtime\test_overflow_error.py.
 
        ... Plus de lignes non affichées. ...
 
+    return a()
   File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 6, in a
     return a()
   File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 6, in a
@@ -883,18 +1047,632 @@ Exception levée à la ligne 6 du fichier TESTS:\runtime\test_recursion_error.py
 </div>
 <div class="section" id="typeerror">
 <h2>TypeError<a class="headerlink" href="#typeerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bad-type-for-unary-operator">
+<h3>Bad type for unary operator<a class="headerlink" href="#bad-type-for-unary-operator" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 348, in test_Bad_type_for_unary_operator
+    a =+ &quot;def&quot;
+TypeError: bad operand type for unary +: &#39;str&#39;
+
+    Peut-être que vous vouliez plutôt écrire `+=` au lieu de `=+`
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Vous avez essayé d’utiliser l’opérateur unaire &#39;+&#39;
+    avec le type d’objet suivant: une chaîne de caractères (`str`).
+    Cette opération n’est pas définie pour ce type d’objet.
+
+    Peut-être que vous vouliez plutôt écrire `+=` au lieu de `=+`
+
+Exception levée à la ligne 348 du fichier TESTS:\runtime\test_type_error.py.
+
+   346:         # fmt: off
+   347:         a = &quot;abc&quot;
+--&gt;348:         a =+ &quot;def&quot;
+                   ^^^^^^^
+   349:         # fmt: on
+</pre></div>
+</div>
+</div>
+<div class="section" id="can-only-concatenate">
+<h3>Can only concatenate<a class="headerlink" href="#can-only-concatenate" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 36, in test_Can_only_concatenate
+    result = a_tuple + a_list
+TypeError: can only concatenate tuple (not &quot;list&quot;) to tuple
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Vous avez essayé de concaténer (additionner) deux types d’objets différents:
+    un `tuple` et une liste (`list`)
+
+Exception levée à la ligne 36 du fichier TESTS:\runtime\test_type_error.py.
+
+   34:         a_tuple = (1, 2, 3)
+   35:         a_list = [1, 2, 3]
+--&gt;36:         result = a_tuple + a_list
+                        ^^^^^^^^^^^^^^^^
+   37:     except Exception as e:
+
+        a_tuple: (1, 2, 3)
+        a_list: [1, 2, 3]
+</pre></div>
+</div>
+</div>
+<div class="section" id="cannot-multiply-by-non-int">
+<h3>Cannot multiply by non int<a class="headerlink" href="#cannot-multiply-by-non-int" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 546, in test_Cannot_multiply_by_non_int
+    &quot;a&quot; * &quot;2&quot;
+TypeError: can&#39;t multiply sequence by non-int of type &#39;str&#39;
+
+    Avez-vous oublié de convertir `&quot;2&quot;` en un entier ?
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Vous ne pouvez multiplier les séquences, telles que
+    les listes, les tuples, les chaînes, etc., que par des entiers.
+    Peut-être avez-vous oublié de convertir `&quot;2&quot;` en un entier.
+
+Exception levée à la ligne 546 du fichier TESTS:\runtime\test_type_error.py.
+
+   544:
+   545:     try:
+--&gt;546:         &quot;a&quot; * &quot;2&quot;
+   547:     except Exception as e:
+</pre></div>
+</div>
+</div>
+<div class="section" id="comparison-not-supported">
+<h3>Comparison not supported<a class="headerlink" href="#comparison-not-supported" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 298, in test_Comparison_not_supported
+    b &lt; a
+TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    En utilisant &lt;, vous avez tenté de comparer
+    deux types d’objets incompatibles:
+    un entier (`int`) et une chaîne de caractères (`str`)
+
+Exception levée à la ligne 298 du fichier TESTS:\runtime\test_type_error.py.
+
+   296:         a = &quot;a&quot;
+   297:         b = 42
+--&gt;298:         b &lt; a
+   299:     except Exception as e:
+
+        b: 42
+        a: &#39;a&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="derive-from-baseexception">
+<h3>Derive from BaseException<a class="headerlink" href="#derive-from-baseexception" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 489, in test_Derive_from_BaseException
+    raise &quot;exception&quot;
+TypeError: exceptions must derive from BaseException
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Dans Python 3, les exceptions doivent être dérivées de BaseException.
+
+Exception levée à la ligne 489 du fichier TESTS:\runtime\test_type_error.py.
+
+   487: def test_Derive_from_BaseException():
+   488:     try:
+--&gt;489:         raise &quot;exception&quot;
+   490:     except Exception as e:
+</pre></div>
+</div>
+</div>
+<div class="section" id="indices-must-be-integers-or-slices">
+<h3>Indices must be integers or slices<a class="headerlink" href="#indices-must-be-integers-or-slices" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 628, in test_Indices_must_be_integers_or_slices
+    [1, 2, 3][&quot;2&quot;]
+TypeError: list indices must be integers or slices, not str
+
+    Avez-vous oublié de convertir `&quot;2&quot;` en un entier ?
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Dans l’expression `[1, 2, 3][&quot;2&quot;]`
+    ce qui est inclus entre les crochets, `[...]`,
+    doit être soit un entier ou une tranche
+    (`start:stop` ou `start:stop:step`)
+    et vous l’avez utilisé une chaîne de caractères (`str`) la place.
+
+    Peut-être avez-vous oublié de convertir `&quot;2&quot;` en un entier.
+
+Exception levée à la ligne 628 du fichier TESTS:\runtime\test_type_error.py.
+
+   626:
+   627:     try:
+--&gt;628:         [1, 2, 3][&quot;2&quot;]
+   629:     except Exception as e:
+</pre></div>
+</div>
+</div>
+<div class="section" id="not-an-integer">
+<h3>Not an integer<a class="headerlink" href="#not-an-integer" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 591, in test_Not_an_integer
+    range(c, d)
+TypeError: &#39;str&#39; object cannot be interpreted as an integer
+
+    Avez-vous oublié de convertir `c, d` en entiers ?
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Vous avez écrit un objet de type `str` là où un entier était attendu.
+    Peut-être avez-vous oublié de convertir `c, d` en entiers.
+Exception levée à la ligne 591 du fichier TESTS:\runtime\test_type_error.py.
+
+   589:     c, d = &quot;2&quot;, &quot;3&quot;
+   590:     try:
+--&gt;591:         range(c, d)
+   592:     except Exception as e:
+
+        c: &#39;2&#39;
+        d: &#39;3&#39;
+        range: &lt;class range&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="not-callable">
+<h3>Not callable<a class="headerlink" href="#not-callable" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 476, in test_Not_callable
+    _ = [1, 2](3 + 4)
+TypeError: &#39;list&#39; object is not callable
+
+    Vouliez-vous dire `[1, 2][3 + 4]` ?
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    En raison des parenthees, `(3 + 4)` est interprété par Python
+    comme indiquant une invocation de fonction pour
+    `[1, 2]`, qui est un objet de type `list`
+    ne pouvant pas être invoqué.
+
+    Cependant, `[1, 2]` est une séquence.
+    Peut-être que vous vouliez utiliser `[]` au lieu de `()` et écrire
+    `[1, 2][3 + 4]`
+
+Exception levée à la ligne 476 du fichier TESTS:\runtime\test_type_error.py.
+
+   474:
+   475:     try:
+--&gt;476:         _ = [1, 2](3 + 4)
+                    ^^^^^^^^^^^^^
+   477:     except Exception as e:
+</pre></div>
+</div>
+</div>
+<div class="section" id="slice-indices-must-be-integers-or-none">
+<h3>Slice indices must be integers or None<a class="headerlink" href="#slice-indices-must-be-integers-or-none" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 642, in test_Slice_indices_must_be_integers_or_None
+    [1, 2, 3][1.0:2.0]
+TypeError: slice indices must be integers or None or have an __index__ method
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Lors de l’utilisation d’une tranche pour extraire une gamme d’éléments
+    d’une séquence, c’est-à-dire quelque chose comme
+    `[start:stop]` ou `[start:stop:step]`
+    chacune des variables `start`, `stop`, et `step` doit être soit un entier, soit `None`,
+    ou possiblement un autre objet ayant une méthode `__index__`.
+
+Exception levée à la ligne 642 du fichier TESTS:\runtime\test_type_error.py.
+
+   640: def test_Slice_indices_must_be_integers_or_None():
+   641:     try:
+--&gt;642:         [1, 2, 3][1.0:2.0]
+   643:     except Exception as e:
+</pre></div>
+</div>
+</div>
+<div class="section" id="too-few-positional-argument">
+<h3>Too few positional argument<a class="headerlink" href="#too-few-positional-argument" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 418, in test_Too_few_positional_argument
+    fn(1)
+TypeError: fn() missing 2 required positional arguments: &#39;b&#39; and &#39;c&#39;
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Vous avez apparemment invoqué la fonction &#39;fn()&#39; avec
+    moins d&#39;arguments positionnels qu&#39;il n&#39;en faut (2 manquent).
+
+Exception levée à la ligne 418 du fichier TESTS:\runtime\test_type_error.py.
+
+   416:
+   417:     try:
+--&gt;418:         fn(1)
+   419:     except Exception as e:
+
+        fn: &lt;function fn&gt; from test_Too_few_positional_argument
+</pre></div>
+</div>
+</div>
+<div class="section" id="too-many-positional-argument">
+<h3>Too many positional argument<a class="headerlink" href="#too-many-positional-argument" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 399, in test_Too_many_positional_argument
+    A().f(1)
+TypeError: f() takes 1 positional argument but 2 were given
+
+    Peut-être avez-vous oublié `self` lors de la définition de `f`.
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Vous avez apparemment invoqué la fonction `f` avec
+    2 arguments positionnels alors qu&#39;elle en requiert 1.
+    Peut-être avez-vous oublié `self` lors de la définition de `f`.
+
+Exception levée à la ligne 399 du fichier TESTS:\runtime\test_type_error.py.
+
+   397:
+   398:     try:
+--&gt;399:         A().f(1)
+   400:     except Exception as e:
+
+        A: &lt;class A&gt; from test_type_error.test_Too_many_positional_argument
+</pre></div>
+</div>
+</div>
+<div class="section" id="tuple-no-item-assignment">
+<h3>Tuple no item assignment<a class="headerlink" href="#tuple-no-item-assignment" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 366, in test_Tuple_no_item_assignment
+    a[0] = 0
+TypeError: &#39;tuple&#39; object does not support item assignment
+
+    Voulez-vous utiliser une liste?
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Dans Python, certains objets sont connus comme immuables:
+    une fois définis, leur valeur ne peut pas être modifiée.
+    Vous avez essayé de modifier une partie d’un tel objet immuable: un `tuple`,
+    probablement en utilisant une opération d’indexation.
+    Peut-être que vous vouliez plutôt utiliser une liste.
+
+Exception levée à la ligne 366 du fichier TESTS:\runtime\test_type_error.py.
+
+   364:     a = (1, 2, 3)
+   365:     try:
+--&gt;366:         a[0] = 0
+   367:     except Exception as e:
+
+        a[0]: 1
+        a: (1, 2, 3)
+</pre></div>
+</div>
+</div>
+<div class="section" id="unhachable-type">
+<h3>Unhachable type<a class="headerlink" href="#unhachable-type" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 659, in test_Unhachable_type
+    {[1, 2]: 1}
+TypeError: unhashable type: &#39;list&#39;
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Les objets non hachables sont des objets qui ne changent pas de valeur
+    une fois qu’ils sont créés. Seuls les objets non hachables peuvent être utilisés
+    comme éléments de `set` ou des clés de `dict`.
+    Au lieu d’utiliser une liste (`list`), envisagez d’utiliser un `tuple`.
+
+Exception levée à la ligne 659 du fichier TESTS:\runtime\test_type_error.py.
+
+   657: def test_Unhachable_type():
+   658:     try:
+--&gt;659:         {[1, 2]: 1}
+   660:     except Exception as e:
+</pre></div>
+</div>
+</div>
+<div class="section" id="unsupported-operand-types">
+<h3>Unsupported operand types<a class="headerlink" href="#unsupported-operand-types" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 282, in test_Unsupported_operand_types
+    a @= b
+TypeError: unsupported operand type(s) for @=: &#39;str&#39; and &#39;int&#39;
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Vous avez essayé d’utiliser l’opérateur @=
+    à l’aide de deux types d’objets incompatibles:
+    une chaîne de caractères (`str`) et un entier (`int`).
+    Cet opérateur est normalement utilisé uniquement
+    pour la multiplication des matrices.
+
+Exception levée à la ligne 282 du fichier TESTS:\runtime\test_type_error.py.
+
+   280:         a = &quot;a&quot;
+   281:         b = 2
+--&gt;282:         a @= b
+   283:     except Exception as e:
+
+        a: &#39;a&#39;
+        b: 2
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="unboundlocalerror">
 <h2>UnboundLocalError<a class="headerlink" href="#unboundlocalerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="missing-global">
+<h3>Missing global<a class="headerlink" href="#missing-global" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 27, in test_Missing_global
+    outer_missing_global()
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 11, in outer_missing_global
+    inner()
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 9, in inner
+    spam_missing_global += 1
+UnboundLocalError: local variable &#39;spam_missing_global&#39; referenced before assignment
+
+    Avez-vous oublié d’ajouter `global spam_missing_global` ?
+
+En Python, les variables utilisées à l’intérieur d’une fonction sont appelées
+variables «locales».
+Avant d’utiliser une variable locale, une valeur doit lui être attribuée.
+Une variable utilisée avant l’attribution d’une valeur est supposée
+être définie en dehors de cette fonction;
+elle est connu comme une variable «globale» (`global` ou parfois `nonlocal`).
+Vous ne pouvez pas assigner une valeur à une telle variable globale
+à l’intérieur d’une fonction sans d’abord confirmer à python
+qu’il s’agit d’une variable globale, sinon vous verrez une exception `UnboundLocalError`.
+
+    Le nom `spam_missing_global` existe dans la portée global.
+    Peut-être la déclaration
+
+        global spam_missing_global
+
+    aurait dû être incluse comme première ligne à l’intérieur de votre fonction.
+
+L&#39;exécution s&#39;est arrêtée à la ligne 27 du fichier TESTS:\runtime\test_unbound_local_error.py
+
+   25:
+   26:     try:
+--&gt;27:         outer_missing_global()
+   28:     except Exception as e:
+
+        global outer_missing_global: &lt;function outer_missing_global&gt;
+
+Exception levée à la ligne 9 du fichier TESTS:\runtime\test_unbound_local_error.py.
+
+    7: def outer_missing_global():
+    8:     def inner():
+--&gt; 9:         spam_missing_global += 1
+
+        global spam_missing_global: 1
+</pre></div>
+</div>
+</div>
+<div class="section" id="missing-nonlocal">
+<h3>Missing nonlocal<a class="headerlink" href="#missing-nonlocal" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 48, in test_Missing_nonlocal
+    outer_missing_nonlocal()
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 20, in outer_missing_nonlocal
+    inner()
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 18, in inner
+    spam_missing_nonlocal += 1
+UnboundLocalError: local variable &#39;spam_missing_nonlocal&#39; referenced before assignment
+
+    Avez-vous oublié d’ajouter `nonlocal spam_missing_nonlocal` ?
+
+En Python, les variables utilisées à l’intérieur d’une fonction sont appelées
+variables «locales».
+Avant d’utiliser une variable locale, une valeur doit lui être attribuée.
+Une variable utilisée avant l’attribution d’une valeur est supposée
+être définie en dehors de cette fonction;
+elle est connu comme une variable «globale» (`global` ou parfois `nonlocal`).
+Vous ne pouvez pas assigner une valeur à une telle variable globale
+à l’intérieur d’une fonction sans d’abord confirmer à python
+qu’il s’agit d’une variable globale, sinon vous verrez une exception `UnboundLocalError`.
+
+    Le nom `spam_missing_nonlocal` existe dans la portée nonlocal.
+    Peut-être la déclaration
+
+        nonlocal spam_missing_nonlocal
+
+    aurait dû être incluse comme première ligne à l’intérieur de votre fonction.
+
+L&#39;exécution s&#39;est arrêtée à la ligne 48 du fichier TESTS:\runtime\test_unbound_local_error.py
+
+   46:
+   47:     try:
+--&gt;48:         outer_missing_nonlocal()
+   49:     except Exception as e:
+
+        global outer_missing_nonlocal: &lt;function outer_missing_nonlocal&gt;
+
+Exception levée à la ligne 18 du fichier TESTS:\runtime\test_unbound_local_error.py.
+
+   16:
+   17:     def inner():
+--&gt;18:         spam_missing_nonlocal += 1
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="unknownerror">
 <h2>UnknownError<a class="headerlink" href="#unknownerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>Generic<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_unknown_error.py&quot;, line 10, in test_Generic
+    raise MyException(&quot;Some informative message about an unknown exception.&quot;)
+MyException: Some informative message about an unknown exception.
+
+Aucune information n’est disponible sur cette exception.
+
+Exception levée à la ligne 10 du fichier TESTS:\runtime\test_unknown_error.py.
+
+    8: def test_Generic():
+    9:     try:
+--&gt;10:         raise MyException(&quot;Some informative message about an unknown exception.&quot;)
+   11:     except Exception as e:
+
+        global MyException: &lt;class test_unknown_error.MyException&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="valueerror">
 <h2>ValueError<a class="headerlink" href="#valueerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="not-enough-values-to-unpack">
+<h3>Not enough values to unpack<a class="headerlink" href="#not-enough-values-to-unpack" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_value_error.py&quot;, line 28, in test_Not_enough_values_to_unpack
+    a, b, c = d
+ValueError: not enough values to unpack (expected 3, got 2)
+
+Une exception `ValueError` indique qu&#39;une fonction ou une opération
+a reçu un argument du bon type, mais une valeur inappropriée.
+
+    Le dépaquetage (&#39;unpack&#39;) est un moyen pratique d’attribuer un nom
+    à chaque élément d’un itérable.
+    Dans ce cas-ci, il y a plus de noms (3)
+    que la longueur de l’itérable, une chaîne de caractères (`str`) de longueur 2.
+
+Exception levée à la ligne 28 du fichier TESTS:\runtime\test_value_error.py.
+
+   26:     d = &quot;ab&quot;
+   27:     try:
+--&gt;28:         a, b, c = d
+   29:     except Exception as e:
+
+        d: &#39;ab&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="too-many-values-to-unpack">
+<h3>Too many values to unpack<a class="headerlink" href="#too-many-values-to-unpack" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_value_error.py&quot;, line 43, in test_Too_many_values_to_unpack
+    a, b = c
+ValueError: too many values to unpack (expected 2)
+
+Une exception `ValueError` indique qu&#39;une fonction ou une opération
+a reçu un argument du bon type, mais une valeur inappropriée.
+
+    Le dépaquetage (&#39;unpack&#39;) est un moyen pratique d’attribuer un nom
+    à chaque élément d’un itérable.
+    Dans ce cas-ci, il y a moins de noms (2)
+    que la longueur de l’itérable, une liste (`list`) de longueur 3.
+
+Exception levée à la ligne 43 du fichier TESTS:\runtime\test_value_error.py.
+
+   41:     c = [1, 2, 3]
+   42:     try:
+--&gt;43:         a, b = c
+   44:     except Exception as e:
+
+        c: [1, 2, 3]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="zerodivisionerror">
 <h2>ZeroDivisionError<a class="headerlink" href="#zerodivisionerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="division-operator">
+<h3>Division operator<a class="headerlink" href="#division-operator" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 6, in test_Division_operator
+    1 / 0
+ZeroDivisionError: division by zero
+
+Une exception de type `ZeroDivisionError` se produit lorsque
+vous tentez de diviser une valeur par zéro:
+    `résultat = ma_variable / 0.`
+Ceci peut également se produire si vous calculez le reste d’une division
+à l’aide de l’opérateur modulo &#39;%&#39;
+    `résultat = ma_variable % 0`
+
+Exception levée à la ligne 6 du fichier TESTS:\runtime\test_zero_division_error.py.
+
+   4: def test_Division_operator():
+   5:     try:
+--&gt;6:         1 / 0
+   7:     except Exception as e:
+</pre></div>
+</div>
+</div>
+<div class="section" id="modulo-operator">
+<h3>Modulo operator<a class="headerlink" href="#modulo-operator" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 21, in test_Modulo_operator
+    1 % zero
+ZeroDivisionError: integer division or modulo by zero
+
+Une exception de type `ZeroDivisionError` se produit lorsque
+vous tentez de diviser une valeur par zéro:
+    `résultat = ma_variable / 0.`
+Ceci peut également se produire si vous calculez le reste d’une division
+à l’aide de l’opérateur modulo &#39;%&#39;
+    `résultat = ma_variable % 0`
+
+Exception levée à la ligne 21 du fichier TESTS:\runtime\test_zero_division_error.py.
+
+   19:     zero = 0
+   20:     try:
+--&gt;21:         1 % zero
+   22:     except Exception as e:
+
+        zero: 0
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 

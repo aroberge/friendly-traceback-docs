@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.2.9a documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.2.10a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.9a
+                0.2.10a
               </div>
             
           
@@ -185,11 +185,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#cannot-multiply-by-non-int">Cannot multiply by non int</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#comparison-not-supported">Comparison not supported</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#derive-from-baseexception">Derive from BaseException</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indices-must-be-integers-or-slices">Indices must be integers or slices</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#not-an-integer">Not an integer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#not-callable">Not callable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slice-indices-must-be-integers-or-none">Slice indices must be integers or None</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#too-few-positional-argument">Too few positional argument</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#too-many-positional-argument">Too many positional argument</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tuple-no-item-assignment">Tuple no item assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unhachable-type">Unhachable type</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#unsupported-operand-types">Unsupported operand types</a></li>
 </ul>
 </li>
@@ -324,7 +327,7 @@ trb_english.py located in the <code class="docutils literal notranslate"><span c
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.2.9a
+<p>Friendly-traceback version: 0.2.10a
 Python version: 3.6.8</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -1010,6 +1013,7 @@ Exception raised on line 6 of file TESTS:\runtime\test_overflow_error.py.
 
        ... More lines not shown. ...
 
+    return a()
   File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 6, in a
     return a()
   File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 6, in a
@@ -1105,7 +1109,7 @@ Exception raised on line 36 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="cannot-multiply-by-non-int">
 <h3>Cannot multiply by non int<a class="headerlink" href="#cannot-multiply-by-non-int" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 557, in test_Cannot_multiply_by_non_int
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 546, in test_Cannot_multiply_by_non_int
     &quot;a&quot; * &quot;2&quot;
 TypeError: can&#39;t multiply sequence by non-int of type &#39;str&#39;
 
@@ -1120,12 +1124,12 @@ or by trying to do an operation not allowed on a given type of object.
      strings, etc., by integers.
     Perhaps you forgot to convert `&quot;2&quot;` into an integer.
 
-Exception raised on line 557 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 546 of file TESTS:\runtime\test_type_error.py.
 
-   555:
-   556:     try:
---&gt;557:         &quot;a&quot; * &quot;2&quot;
-   558:     except Exception as e:
+   544:
+   545:     try:
+--&gt;546:         &quot;a&quot; * &quot;2&quot;
+   547:     except Exception as e:
 </pre></div>
 </div>
 </div>
@@ -1160,7 +1164,7 @@ Exception raised on line 298 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="derive-from-baseexception">
 <h3>Derive from BaseException<a class="headerlink" href="#derive-from-baseexception" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 488, in test_Derive_from_BaseException
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 489, in test_Derive_from_BaseException
     raise &quot;exception&quot;
 TypeError: exceptions must derive from BaseException
 
@@ -1171,19 +1175,50 @@ or by trying to do an operation not allowed on a given type of object.
 
     In Python 3, exceptions must be derived from BaseException.
 
-Exception raised on line 488 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 489 of file TESTS:\runtime\test_type_error.py.
 
-   486: def test_Derive_from_BaseException():
-   487:     try:
---&gt;488:         raise &quot;exception&quot;
-   489:     except Exception as e:
+   487: def test_Derive_from_BaseException():
+   488:     try:
+--&gt;489:         raise &quot;exception&quot;
+   490:     except Exception as e:
+</pre></div>
+</div>
+</div>
+<div class="section" id="indices-must-be-integers-or-slices">
+<h3>Indices must be integers or slices<a class="headerlink" href="#indices-must-be-integers-or-slices" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 628, in test_Indices_must_be_integers_or_slices
+    [1, 2, 3][&quot;2&quot;]
+TypeError: list indices must be integers or slices, not str
+
+    Did you forget to convert `&quot;2&quot;` into an integer?
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.
+
+    In the expression `[1, 2, 3][&quot;2&quot;]`
+    what is included between the square brackets, `[...]`,
+    must be either an integer or a slice
+    (`start:stop` or `start:stop:step`)
+    and you have used a string (`str`) instead.
+
+    Perhaps you forgot to convert `&quot;2&quot;` into an integer.
+
+Exception raised on line 628 of file TESTS:\runtime\test_type_error.py.
+
+   626:
+   627:     try:
+--&gt;628:         [1, 2, 3][&quot;2&quot;]
+   629:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="not-an-integer">
 <h3>Not an integer<a class="headerlink" href="#not-an-integer" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 605, in test_Not_an_integer
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 591, in test_Not_an_integer
     range(c, d)
 TypeError: &#39;str&#39; object cannot be interpreted as an integer
 
@@ -1196,12 +1231,12 @@ or by trying to do an operation not allowed on a given type of object.
 
     You wrote an object of type `str` where an integer was expected.
     Perhaps you forgot to convert `c, d` into integers.
-Exception raised on line 605 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 591 of file TESTS:\runtime\test_type_error.py.
 
-   603:     c, d = &quot;2&quot;, &quot;3&quot;
-   604:     try:
---&gt;605:         range(c, d)
-   606:     except Exception as e:
+   589:     c, d = &quot;2&quot;, &quot;3&quot;
+   590:     try:
+--&gt;591:         range(c, d)
+   592:     except Exception as e:
 
         c: &#39;2&#39;
         d: &#39;3&#39;
@@ -1212,7 +1247,7 @@ Exception raised on line 605 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="not-callable">
 <h3>Not callable<a class="headerlink" href="#not-callable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 475, in test_Not_callable
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 476, in test_Not_callable
     _ = [1, 2](3 + 4)
 TypeError: &#39;list&#39; object is not callable
 
@@ -1232,13 +1267,40 @@ or by trying to do an operation not allowed on a given type of object.
     Perhaps you meant to use `[]` instead of `()` and write
     `[1, 2][3 + 4]`
 
-Exception raised on line 475 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 476 of file TESTS:\runtime\test_type_error.py.
 
-   473:
-   474:     try:
---&gt;475:         _ = [1, 2](3 + 4)
+   474:
+   475:     try:
+--&gt;476:         _ = [1, 2](3 + 4)
                     ^^^^^^^^^^^^^
-   476:     except Exception as e:
+   477:     except Exception as e:
+</pre></div>
+</div>
+</div>
+<div class="section" id="slice-indices-must-be-integers-or-none">
+<h3>Slice indices must be integers or None<a class="headerlink" href="#slice-indices-must-be-integers-or-none" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 642, in test_Slice_indices_must_be_integers_or_None
+    [1, 2, 3][1.0:2.0]
+TypeError: slice indices must be integers or None or have an __index__ method
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.
+
+    When using a slice to extract a range of elements
+    from a sequence, that is something like
+    `[start:stop]` or `[start:stop:step]`
+    each of `start`, `stop`, `step` must be either an integer, `None`,
+    or possibly some other object having an `__index__` method.
+
+Exception raised on line 642 of file TESTS:\runtime\test_type_error.py.
+
+   640: def test_Slice_indices_must_be_integers_or_None():
+   641:     try:
+--&gt;642:         [1, 2, 3][1.0:2.0]
+   643:     except Exception as e:
 </pre></div>
 </div>
 </div>
@@ -1327,6 +1389,32 @@ Exception raised on line 366 of file TESTS:\runtime\test_type_error.py.
 
         a[0]: 1
         a: (1, 2, 3)
+</pre></div>
+</div>
+</div>
+<div class="section" id="unhachable-type">
+<h3>Unhachable type<a class="headerlink" href="#unhachable-type" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 659, in test_Unhachable_type
+    {[1, 2]: 1}
+TypeError: unhashable type: &#39;list&#39;
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.
+
+    Unhashable objects are objects that do not change value
+    once they are created. Only unhashable objects can be used
+    as elements of `set` or keys of `dict`.
+    Instead of using a `list`, consider using a `tuple`.
+
+Exception raised on line 659 of file TESTS:\runtime\test_type_error.py.
+
+   657: def test_Unhachable_type():
+   658:     try:
+--&gt;659:         {[1, 2]: 1}
+   660:     except Exception as e:
 </pre></div>
 </div>
 </div>

@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.2.9a
+Friendly-traceback version: 0.2.10a
 Python version: 3.8.4
 
 
@@ -973,6 +973,7 @@ Traceback (most recent call last):
 
        ... More lines not shown. ...
 
+    return a()
   File "TESTS:\runtime\test_recursion_error.py", line 6, in a
     return a()
   File "TESTS:\runtime\test_recursion_error.py", line 6, in a
@@ -1107,7 +1108,7 @@ a `tuple` and a `list`
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 557, in test_Cannot_multiply_by_non_int
+  File "TESTS:\runtime\test_type_error.py", line 546, in test_Cannot_multiply_by_non_int
     "a" * "2"
 TypeError: can't multiply sequence by non-int of type 'str'
 
@@ -1128,14 +1129,14 @@ You can only multiply sequences, such as list, tuples,
 Perhaps you forgot to convert `"2"` into an integer.
 
 
-#### Exception raised on line 557 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 546 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       555: 
-       556:     try:
-    -->557:         "a" * "2"
-       558:     except Exception as e:
+       544: 
+       545:     try:
+    -->546:         "a" * "2"
+       547:     except Exception as e:
 
 ```
 
@@ -1183,7 +1184,7 @@ an integer (`int`) and a string (`str`)
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 488, in test_Derive_from_BaseException
+  File "TESTS:\runtime\test_type_error.py", line 489, in test_Derive_from_BaseException
     raise "exception"
 TypeError: exceptions must derive from BaseException
 
@@ -1198,14 +1199,55 @@ or by trying to do an operation not allowed on a given type of object.
 In Python 3, exceptions must be derived from BaseException.
 
 
-#### Exception raised on line 488 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 489 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       486: def test_Derive_from_BaseException():
-       487:     try:
-    -->488:         raise "exception"
-       489:     except Exception as e:
+       487: def test_Derive_from_BaseException():
+       488:     try:
+    -->489:         raise "exception"
+       490:     except Exception as e:
+
+```
+
+### Indices must be integers or slices
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_type_error.py", line 628, in test_Indices_must_be_integers_or_slices
+    [1, 2, 3]["2"]
+TypeError: list indices must be integers or slices, not str
+
+```
+
+Did you forget to convert `"2"` into an integer?
+
+
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.
+
+
+In the expression `[1, 2, 3]["2"]`
+what is included between the square brackets, `[...]`,
+must be either an integer or a slice
+(`start:stop` or `start:stop:step`) 
+and you have used a string (`str`) instead.
+
+Perhaps you forgot to convert `"2"` into an integer.
+
+
+#### Exception raised on line 628 of file TESTS:\runtime\test_type_error.py.
+
+
+```python
+       626: 
+       627:     try:
+    -->628:         [1, 2, 3]["2"]
+       629:     except Exception as e:
 
 ```
 
@@ -1214,7 +1256,7 @@ In Python 3, exceptions must be derived from BaseException.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 605, in test_Not_an_integer
+  File "TESTS:\runtime\test_type_error.py", line 591, in test_Not_an_integer
     range(c, d)
 TypeError: 'str' object cannot be interpreted as an integer
 
@@ -1233,14 +1275,14 @@ or by trying to do an operation not allowed on a given type of object.
 You wrote an object of type `str` where an integer was expected.
 Perhaps you forgot to convert `c, d` into integers.
 
-#### Exception raised on line 605 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 591 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       603:     c, d = "2", "3"
-       604:     try:
-    -->605:         range(c, d)
-       606:     except Exception as e:
+       589:     c, d = "2", "3"
+       590:     try:
+    -->591:         range(c, d)
+       592:     except Exception as e:
 
 ```
 
@@ -1256,7 +1298,7 @@ Perhaps you forgot to convert `c, d` into integers.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 475, in test_Not_callable
+  File "TESTS:\runtime\test_type_error.py", line 476, in test_Not_callable
     _ = [1, 2](3 + 4)
 TypeError: 'list' object is not callable
 
@@ -1282,15 +1324,50 @@ Perhaps you meant to use `[]` instead of `()` and write
 `[1, 2][3 + 4]`
 
 
-#### Exception raised on line 475 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 476 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       473: 
-       474:     try:
-    -->475:         _ = [1, 2](3 + 4)
+       474: 
+       475:     try:
+    -->476:         _ = [1, 2](3 + 4)
                         ^^^^^^^^^^^^^
-       476:     except Exception as e:
+       477:     except Exception as e:
+
+```
+
+### Slice indices must be integers or None
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_type_error.py", line 642, in test_Slice_indices_must_be_integers_or_None
+    [1, 2, 3][1.0:2.0]
+TypeError: slice indices must be integers or None or have an __index__ method
+
+```
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.
+
+
+When using a slice to extract a range of elements
+from a sequence, that is something like
+`[start:stop]` or `[start:stop:step]`
+each of `start`, `stop`, `step` must be either an integer, `None`,
+or possibly some other object having an `__index__` method.
+
+
+#### Exception raised on line 642 of file TESTS:\runtime\test_type_error.py.
+
+
+```python
+       640: def test_Slice_indices_must_be_integers_or_None():
+       641:     try:
+    -->642:         [1, 2, 3][1.0:2.0]
+       643:     except Exception as e:
 
 ```
 
@@ -1416,6 +1493,40 @@ Perhaps you meant to use a list instead.
 ```python
     a[0]: 1
     a: (1, 2, 3)
+
+```
+
+### Unhachable type
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_type_error.py", line 659, in test_Unhachable_type
+    {[1, 2]: 1}
+TypeError: unhashable type: 'list'
+
+```
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.
+
+
+Unhashable objects are objects that do not change value
+once they are created. Only unhashable objects can be used
+as elements of `set` or keys of `dict`.
+Instead of using a `list`, consider using a `tuple`.
+
+
+#### Exception raised on line 659 of file TESTS:\runtime\test_type_error.py.
+
+
+```python
+       657: def test_Unhachable_type():
+       658:     try:
+    -->659:         {[1, 2]: 1}
+       660:     except Exception as e:
 
 ```
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly tracebacks 0.2.9a documentation</title>
+  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly tracebacks 0.2.10a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.9a
+                0.2.10a
               </div>
             
           
@@ -281,7 +281,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#cannot-multiply-by-non-int">Cannot multiply by non int</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-557-of-file-tests-runtime-test-type-error-py">Exception raised on line 557 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-546-of-file-tests-runtime-test-type-error-py">Exception raised on line 546 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#comparison-not-supported">Comparison not supported</a><ul>
@@ -289,15 +289,23 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#derive-from-baseexception">Derive from BaseException</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-488-of-file-tests-runtime-test-type-error-py">Exception raised on line 488 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-489-of-file-tests-runtime-test-type-error-py">Exception raised on line 489 of file TESTS:\runtime\test_type_error.py.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#indices-must-be-integers-or-slices">Indices must be integers or slices</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-628-of-file-tests-runtime-test-type-error-py">Exception raised on line 628 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#not-an-integer">Not an integer</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-605-of-file-tests-runtime-test-type-error-py">Exception raised on line 605 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-591-of-file-tests-runtime-test-type-error-py">Exception raised on line 591 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#not-callable">Not callable</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-475-of-file-tests-runtime-test-type-error-py">Exception raised on line 475 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-476-of-file-tests-runtime-test-type-error-py">Exception raised on line 476 of file TESTS:\runtime\test_type_error.py.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#slice-indices-must-be-integers-or-none">Slice indices must be integers or None</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-642-of-file-tests-runtime-test-type-error-py">Exception raised on line 642 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#too-few-positional-argument">Too few positional argument</a><ul>
@@ -310,6 +318,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#tuple-no-item-assignment">Tuple no item assignment</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-366-of-file-tests-runtime-test-type-error-py">Exception raised on line 366 of file TESTS:\runtime\test_type_error.py.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unhachable-type">Unhachable type</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-659-of-file-tests-runtime-test-type-error-py">Exception raised on line 659 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#unsupported-operand-types">Unsupported operand types</a><ul>
@@ -451,7 +463,7 @@ trb_english_markdown.py located in the <code class="docutils literal notranslate
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.
 </p>
-</div><p>Friendly-traceback version: 0.2.9a
+</div><p>Friendly-traceback version: 0.2.10a
 Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="arithmeticerror">
@@ -1162,6 +1174,7 @@ is too large to be handled by the computer’s processor.</p>
 
 <span class="x">       ... More lines not shown. ...</span>
 
+<span class="x">    return a()</span>
   File <span class="nb">&quot;TESTS:\runtime\test_recursion_error.py&quot;</span>, line <span class="m">6</span>, in <span class="n">a</span>
     <span class="k">return</span> <span class="n">a</span><span class="p">()</span>
   File <span class="nb">&quot;TESTS:\runtime\test_recursion_error.py&quot;</span>, line <span class="m">6</span>, in <span class="n">a</span>
@@ -1263,7 +1276,7 @@ a <code class="docutils literal notranslate"><span class="pre">tuple</span></cod
 <div class="section" id="cannot-multiply-by-non-int">
 <h3>Cannot multiply by non int<a class="headerlink" href="#cannot-multiply-by-non-int" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">557</span>, in <span class="n">test_Cannot_multiply_by_non_int</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">546</span>, in <span class="n">test_Cannot_multiply_by_non_int</span>
     <span class="s2">&quot;a&quot;</span> <span class="o">*</span> <span class="s2">&quot;2&quot;</span>
 <span class="gr">TypeError</span>: <span class="n">can&#39;t multiply sequence by non-int of type &#39;str&#39;</span>
 </pre></div>
@@ -1276,12 +1289,12 @@ or by trying to do an operation not allowed on a given type of object.</p>
 <p>You can only multiply sequences, such as list, tuples,
 strings, etc., by integers.
 Perhaps you forgot to convert <code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code> into an integer.</p>
-<div class="section" id="exception-raised-on-line-557-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 557 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-557-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">555</span><span class="p">:</span> 
-       <span class="mi">556</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">557</span><span class="p">:</span>         <span class="s2">&quot;a&quot;</span> <span class="o">*</span> <span class="s2">&quot;2&quot;</span>
-       <span class="mi">558</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-546-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 546 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-546-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">544</span><span class="p">:</span> 
+       <span class="mi">545</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">546</span><span class="p">:</span>         <span class="s2">&quot;a&quot;</span> <span class="o">*</span> <span class="s2">&quot;2&quot;</span>
+       <span class="mi">547</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 </div>
@@ -1318,7 +1331,7 @@ an integer (<code class="docutils literal notranslate"><span class="pre">int</sp
 <div class="section" id="derive-from-baseexception">
 <h3>Derive from BaseException<a class="headerlink" href="#derive-from-baseexception" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">488</span>, in <span class="n">test_Derive_from_BaseException</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">489</span>, in <span class="n">test_Derive_from_BaseException</span>
     <span class="k">raise</span> <span class="s2">&quot;exception&quot;</span>
 <span class="gr">TypeError</span>: <span class="n">exceptions must derive from BaseException</span>
 </pre></div>
@@ -1328,12 +1341,41 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by trying to do an operation not allowed on a given type of object.</p>
 <p>In Python 3, exceptions must be derived from BaseException.</p>
-<div class="section" id="exception-raised-on-line-488-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 488 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-488-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">486</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Derive_from_BaseException</span><span class="p">():</span>
-       <span class="mi">487</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">488</span><span class="p">:</span>         <span class="k">raise</span> <span class="s2">&quot;exception&quot;</span>
-       <span class="mi">489</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-489-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 489 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-489-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">487</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Derive_from_BaseException</span><span class="p">():</span>
+       <span class="mi">488</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">489</span><span class="p">:</span>         <span class="k">raise</span> <span class="s2">&quot;exception&quot;</span>
+       <span class="mi">490</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="indices-must-be-integers-or-slices">
+<h3>Indices must be integers or slices<a class="headerlink" href="#indices-must-be-integers-or-slices" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">628</span>, in <span class="n">test_Indices_must_be_integers_or_slices</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">][</span><span class="s2">&quot;2&quot;</span><span class="p">]</span>
+<span class="gr">TypeError</span>: <span class="n">list indices must be integers or slices, not str</span>
+</pre></div>
+</div>
+<p>Did you forget to convert <code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code> into an integer?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.</p>
+<p>In the expression <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3][&quot;2&quot;]</span></code>
+what is included between the square brackets, <code class="docutils literal notranslate"><span class="pre">[...]</span></code>,
+must be either an integer or a slice
+(<code class="docutils literal notranslate"><span class="pre">start:stop</span></code> or <code class="docutils literal notranslate"><span class="pre">start:stop:step</span></code>)
+and you have used a string (<code class="docutils literal notranslate"><span class="pre">str</span></code>) instead.</p>
+<p>Perhaps you forgot to convert <code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code> into an integer.</p>
+<div class="section" id="exception-raised-on-line-628-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 628 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-628-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">626</span><span class="p">:</span> 
+       <span class="mi">627</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">628</span><span class="p">:</span>         <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">][</span><span class="s2">&quot;2&quot;</span><span class="p">]</span>
+       <span class="mi">629</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 </div>
@@ -1341,7 +1383,7 @@ or by trying to do an operation not allowed on a given type of object.</p>
 <div class="section" id="not-an-integer">
 <h3>Not an integer<a class="headerlink" href="#not-an-integer" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">605</span>, in <span class="n">test_Not_an_integer</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">591</span>, in <span class="n">test_Not_an_integer</span>
     <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
 <span class="gr">TypeError</span>: <span class="n">&#39;str&#39; object cannot be interpreted as an integer</span>
 </pre></div>
@@ -1353,12 +1395,12 @@ by calling a function with the wrong type of object,
 or by trying to do an operation not allowed on a given type of object.</p>
 <p>You wrote an object of type <code class="docutils literal notranslate"><span class="pre">str</span></code> where an integer was expected.
 Perhaps you forgot to convert <code class="docutils literal notranslate"><span class="pre">c,</span> <span class="pre">d</span></code> into integers.</p>
-<div class="section" id="exception-raised-on-line-605-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 605 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-605-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">603</span><span class="p">:</span>     <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span>
-       <span class="mi">604</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">605</span><span class="p">:</span>         <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
-       <span class="mi">606</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-591-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 591 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-591-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">589</span><span class="p">:</span>     <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span>
+       <span class="mi">590</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">591</span><span class="p">:</span>         <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+       <span class="mi">592</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">c</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span>
@@ -1371,7 +1413,7 @@ Perhaps you forgot to convert <code class="docutils literal notranslate"><span c
 <div class="section" id="not-callable">
 <h3>Not callable<a class="headerlink" href="#not-callable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">475</span>, in <span class="n">test_Not_callable</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">476</span>, in <span class="n">test_Not_callable</span>
     <span class="n">_</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">](</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
 <span class="gr">TypeError</span>: <span class="n">&#39;list&#39; object is not callable</span>
 </pre></div>
@@ -1388,13 +1430,40 @@ which cannot be called.</p>
 <p>However, <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code> is a sequence.
 Perhaps you meant to use <code class="docutils literal notranslate"><span class="pre">[]</span></code> instead of <code class="docutils literal notranslate"><span class="pre">()</span></code> and write
 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2][3</span> <span class="pre">+</span> <span class="pre">4]</span></code></p>
-<div class="section" id="exception-raised-on-line-475-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 475 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-475-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">473</span><span class="p">:</span> 
-       <span class="mi">474</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">475</span><span class="p">:</span>         <span class="n">_</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">](</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
+<div class="section" id="exception-raised-on-line-476-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 476 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-476-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">474</span><span class="p">:</span> 
+       <span class="mi">475</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">476</span><span class="p">:</span>         <span class="n">_</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">](</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
                         <span class="o">^^^^^^^^^^^^^</span>
-       <span class="mi">476</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+       <span class="mi">477</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="slice-indices-must-be-integers-or-none">
+<h3>Slice indices must be integers or None<a class="headerlink" href="#slice-indices-must-be-integers-or-none" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">642</span>, in <span class="n">test_Slice_indices_must_be_integers_or_None</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">][</span><span class="mf">1.0</span><span class="p">:</span><span class="mf">2.0</span><span class="p">]</span>
+<span class="gr">TypeError</span>: <span class="n">slice indices must be integers or None or have an __index__ method</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.</p>
+<p>When using a slice to extract a range of elements
+from a sequence, that is something like
+<code class="docutils literal notranslate"><span class="pre">[start:stop]</span></code> or <code class="docutils literal notranslate"><span class="pre">[start:stop:step]</span></code>
+each of <code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">stop</span></code>, <code class="docutils literal notranslate"><span class="pre">step</span></code> must be either an integer, <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+or possibly some other object having an <code class="docutils literal notranslate"><span class="pre">__index__</span></code> method.</p>
+<div class="section" id="exception-raised-on-line-642-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 642 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-642-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">640</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Slice_indices_must_be_integers_or_None</span><span class="p">():</span>
+       <span class="mi">641</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">642</span><span class="p">:</span>         <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">][</span><span class="mf">1.0</span><span class="p">:</span><span class="mf">2.0</span><span class="p">]</span>
+       <span class="mi">643</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 </div>
@@ -1484,6 +1553,32 @@ Perhaps you meant to use a list instead.</p>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="mi">1</span>
     <span class="n">a</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="unhachable-type">
+<h3>Unhachable type<a class="headerlink" href="#unhachable-type" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">659</span>, in <span class="n">test_Unhachable_type</span>
+    <span class="p">{[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="gr">TypeError</span>: <span class="n">unhashable type: &#39;list&#39;</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.</p>
+<p>Unhashable objects are objects that do not change value
+once they are created. Only unhashable objects can be used
+as elements of <code class="docutils literal notranslate"><span class="pre">set</span></code> or keys of <code class="docutils literal notranslate"><span class="pre">dict</span></code>.
+Instead of using a <code class="docutils literal notranslate"><span class="pre">list</span></code>, consider using a <code class="docutils literal notranslate"><span class="pre">tuple</span></code>.</p>
+<div class="section" id="exception-raised-on-line-659-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 659 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-659-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">657</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Unhachable_type</span><span class="p">():</span>
+       <span class="mi">658</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">659</span><span class="p">:</span>         <span class="p">{[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span> <span class="mi">1</span><span class="p">}</span>
+       <span class="mi">660</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 </div>

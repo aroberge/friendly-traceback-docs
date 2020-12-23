@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Syntax errors - markdown_docs format &mdash; Friendly tracebacks 0.2.9a documentation</title>
+  <title>Syntax errors - markdown_docs format &mdash; Friendly tracebacks 0.2.10a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.9a
+                0.2.10a
               </div>
             
           
@@ -223,6 +223,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-valid-names-cannot-begin-with-a-number">SyntaxError - Valid names cannot begin with a number</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unclosed-parenthesis-3">SyntaxError - unclosed parenthesis - 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-forgot-a-multiplication-operator">SyntaxError - forgot a multiplication operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-space-between-names">SyntaxError - space between names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-use-star-operator">SyntaxError - can’t use star operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-use-double-star-operator">SyntaxError - can’t use double star operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-use-return-outside-function">SyntaxError - can’t use return outside function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-too-many-nested-blocks">SyntaxError - too many nested blocks</a></li>
 </ul>
 </li>
 </ul>
@@ -313,13 +318,13 @@ trb_syntax_markdown.py located in the <code class="docutils literal notranslate"
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.
 </p>
-</div><p>Friendly-traceback version: 0.2.9a
+</div><p>Friendly-traceback version: 0.2.10a
 Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="indentationerror-1-expected-an-indented-block">
 <h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_indentation_error1.py&quot;</span>, line <span class="m">4</span>
     <span class="k">pass</span>
@@ -346,7 +351,7 @@ was expected to begin a new indented block.</p>
 <div class="section" id="indentationerror-2-unexpected-indent">
 <h2>IndentationError - 2: unexpected indent<a class="headerlink" href="#indentationerror-2-unexpected-indent" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_indentation_error2.py&quot;</span>, line <span class="m">4</span>
     <span class="k">pass</span>
@@ -374,7 +379,7 @@ does not match the indentation of the previous line.</p>
 <div class="section" id="indentationerror-3-unindent-does-not-match">
 <h2>IndentationError - 3: unindent does not match …<a class="headerlink" href="#indentationerror-3-unindent-does-not-match" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_indentation_error3.py&quot;</span>, line <span class="m">4</span>
     <span class="k">pass</span>
@@ -402,7 +407,7 @@ and is not aligned vertically with another block of code.</p>
 <div class="section" id="taberror">
 <h2>TabError<a class="headerlink" href="#taberror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_tab_error.py&quot;</span>, line <span class="m">7</span>
     <span class="k">pass</span>
@@ -431,7 +436,7 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="section" id="syntaxerror-assign-to-keyword">
 <h2>SyntaxError - Assign to keyword<a class="headerlink" href="#syntaxerror-assign-to-keyword" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error1.py&quot;</span>, line <span class="m">3</span>
     <span class="k">def</span> <span class="o">=</span> <span class="mi">2</span>
@@ -458,7 +463,7 @@ This is not allowed.</p>
 <div class="section" id="syntaxerror-missing-colon-1">
 <h2>SyntaxError - Missing colon - 1<a class="headerlink" href="#syntaxerror-missing-colon-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error2.py&quot;</span>, line <span class="m">3</span>
     <span class="k">if</span> <span class="kc">True</span>
@@ -487,7 +492,7 @@ but I might guess incorrectly.</p>
 <div class="section" id="syntaxerror-missing-colon-2">
 <h2>SyntaxError - Missing colon - 2<a class="headerlink" href="#syntaxerror-missing-colon-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error3.py&quot;</span>, line <span class="m">3</span>
     <span class="k">while</span> <span class="kc">True</span>  <span class="c1"># a comment</span>
@@ -516,7 +521,7 @@ forgot to add a colon <code class="docutils literal notranslate"><span class="pr
 <div class="section" id="syntaxerror-elif-not-else-if">
 <h2>SyntaxError - elif, not else if<a class="headerlink" href="#syntaxerror-elif-not-else-if" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error4.py&quot;</span>, line <span class="m">5</span>
     <span class="k">else</span> <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
@@ -546,7 +551,7 @@ but wrote <code class="docutils literal notranslate"><span class="pre">else</spa
 <div class="section" id="syntaxerror-elif-not-elseif">
 <h2>SyntaxError - elif, not elseif<a class="headerlink" href="#syntaxerror-elif-not-elseif" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error5.py&quot;</span>, line <span class="m">5</span>
     <span class="n">elseif</span> <span class="kc">True</span><span class="p">:</span>
@@ -576,7 +581,7 @@ but wrote <code class="docutils literal notranslate"><span class="pre">elseif</s
 <div class="section" id="syntaxerror-malformed-def-statment-1">
 <h2>SyntaxError - malformed def statment - 1<a class="headerlink" href="#syntaxerror-malformed-def-statment-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error6.py&quot;</span>, line <span class="m">3</span>
     <span class="k">def</span> <span class="p">:</span>
@@ -607,7 +612,7 @@ The correct syntax is:</p>
 <div class="section" id="syntaxerror-malformed-def-statment-2">
 <h2>SyntaxError - malformed def statment - 2<a class="headerlink" href="#syntaxerror-malformed-def-statment-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error7.py&quot;</span>, line <span class="m">3</span>
     <span class="k">def</span> <span class="nf">name</span>  <span class="p">:</span>
@@ -639,7 +644,7 @@ The correct syntax is:</p>
 <div class="section" id="syntaxerror-malformed-def-statment-3">
 <h2>SyntaxError - malformed def statment - 3<a class="headerlink" href="#syntaxerror-malformed-def-statment-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error8.py&quot;</span>, line <span class="m">3</span>
     <span class="k">def</span> <span class="p">(</span> <span class="n">arg</span> <span class="p">)</span>  <span class="p">:</span>
@@ -670,7 +675,7 @@ The correct syntax is:</p>
 <div class="section" id="syntaxerror-can-t-assign-to-literal-1">
 <h2>SyntaxError - can’t assign to literal - 1<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error9.py&quot;</span>, line <span class="m">3</span>
     <span class="mi">1</span> <span class="o">=</span> <span class="n">a</span>
@@ -705,7 +710,7 @@ Perhaps you meant to write:</p>
 <div class="section" id="syntaxerror-can-t-assign-to-literal-2">
 <h2>SyntaxError - can’t assign to literal - 2<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error10.py&quot;</span>, line <span class="m">3</span>
     <span class="mi">1</span> <span class="o">=</span> <span class="mi">2</span>
@@ -735,7 +740,7 @@ and is not simply the name of a variable.</p>
 <div class="section" id="syntaxerror-can-t-assign-to-literal-3">
 <h2>SyntaxError - can’t assign to literal - 3<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error52.py&quot;</span>, line <span class="m">7</span>
     <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span> <span class="o">=</span> <span class="mi">4</span>
@@ -766,7 +771,7 @@ and is not simply the name of a variable.</p>
 <div class="section" id="syntaxerror-can-t-assign-to-literal-4">
 <h2>SyntaxError - can’t assign to literal - 4<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-4" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error53.py&quot;</span>, line <span class="m">7</span>
     <span class="p">{</span><span class="mi">1</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span> <span class="p">:</span> <span class="mi">4</span><span class="p">}</span> <span class="o">=</span> <span class="mi">5</span>
@@ -797,7 +802,7 @@ and is not simply the name of a variable.</p>
 <div class="section" id="syntaxerror-can-t-assign-to-literal-5">
 <h2>SyntaxError - can’t assign to literal - 5<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-5" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error54.py&quot;</span>, line <span class="m">4</span>
     <span class="mi">1</span> <span class="o">=</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
@@ -828,7 +833,7 @@ and is not simply the name of a variable.</p>
 <div class="section" id="syntaxerror-import-x-from-y">
 <h2>SyntaxError - import X from Y<a class="headerlink" href="#syntaxerror-import-x-from-y" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error11.py&quot;</span>, line <span class="m">3</span>
     <span class="kn">import</span> <span class="nn">pen</span> <span class="kn">from</span> <span class="nn">turtle</span>
@@ -861,7 +866,7 @@ but I might guess incorrectly.</p>
 <div class="section" id="syntaxerror-eol-while-scanning-string-literal">
 <h2>SyntaxError - EOL while scanning string literal<a class="headerlink" href="#syntaxerror-eol-while-scanning-string-literal" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error12.py&quot;</span>, line <span class="m">3</span>
     <span class="n">alphabet</span> <span class="o">=</span> <span class="s1">&#39;abc</span>
@@ -887,7 +892,7 @@ but never ended the string with another quote on that line.</p>
 <div class="section" id="syntaxerror-assignment-to-keyword-none">
 <h2>SyntaxError - assignment to keyword (None)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-none" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error13.py&quot;</span>, line <span class="m">4</span>
     <span class="kc">None</span> <span class="o">=</span> <span class="mi">1</span>
@@ -913,7 +918,7 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="section" id="syntaxerror-assignment-to-keyword-debug">
 <h2>SyntaxError - assignment to keyword (<strong>debug</strong>)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-debug" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error14.py&quot;</span>, line <span class="m">4</span>
     <span class="n">__debug__</span> <span class="o">=</span> <span class="mi">1</span>
@@ -939,7 +944,7 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="section" id="syntaxerror-unmatched-closing-parenthesis">
 <h2>SyntaxError - unmatched closing parenthesis<a class="headerlink" href="#syntaxerror-unmatched-closing-parenthesis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error15.py&quot;</span>, line <span class="m">6</span>
     <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,))</span>
@@ -965,7 +970,7 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="section" id="syntaxerror-unclosed-parenthesis-1">
 <h2>SyntaxError - unclosed parenthesis- 1<a class="headerlink" href="#syntaxerror-unclosed-parenthesis-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error16.py&quot;</span>, line <span class="m">3</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -996,7 +1001,7 @@ but I might guess incorrectly.</p>
 <div class="section" id="syntaxerror-unclosed-parenthesis-2">
 <h2>SyntaxError - unclosed parenthesis - 2<a class="headerlink" href="#syntaxerror-unclosed-parenthesis-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error17.py&quot;</span>, line <span class="m">3</span>
     <span class="n">d</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">a</span>
@@ -1026,7 +1031,7 @@ but I might guess incorrectly.</p>
 <div class="section" id="syntaxerror-mismatched-brackets">
 <h2>SyntaxError - mismatched brackets<a class="headerlink" href="#syntaxerror-mismatched-brackets" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error18.py&quot;</span>, line <span class="m">2</span>
     <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -1056,7 +1061,7 @@ does not match the opening <code class="docutils literal notranslate"><span clas
 <div class="section" id="syntaxerror-mismatched-brackets-2">
 <h2>SyntaxError - mismatched brackets - 2<a class="headerlink" href="#syntaxerror-mismatched-brackets-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error19.py&quot;</span>, line <span class="m">4</span>
     <span class="mi">3</span><span class="p">]</span>
@@ -1090,7 +1095,7 @@ does not match the opening <code class="docutils literal notranslate"><span clas
 <div class="section" id="syntaxerror-print-is-a-function">
 <h2>SyntaxError - print is a function<a class="headerlink" href="#syntaxerror-print-is-a-function" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error20.py&quot;</span>, line <span class="m">2</span>
     <span class="nb">print</span> <span class="s1">&#39;hello&#39;</span>
@@ -1118,7 +1123,7 @@ Now, <code class="docutils literal notranslate"><span class="pre">print</span></
 <div class="section" id="syntaxerror-python-keyword-as-function-name">
 <h2>SyntaxError - Python keyword as function name<a class="headerlink" href="#syntaxerror-python-keyword-as-function-name" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error21.py&quot;</span>, line <span class="m">3</span>
     <span class="k">def</span> <span class="nf">pass</span><span class="p">():</span>
@@ -1145,7 +1150,7 @@ but I might guess incorrectly.</p>
 <div class="section" id="syntaxerror-break-outside-loop">
 <h2>SyntaxError - break outside loop<a class="headerlink" href="#syntaxerror-break-outside-loop" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error22.py&quot;</span>, line <span class="m">4</span>
     <span class="k">break</span>
@@ -1170,7 +1175,7 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="section" id="syntaxerror-continue-outside-loop">
 <h2>SyntaxError - continue outside loop<a class="headerlink" href="#syntaxerror-continue-outside-loop" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error23.py&quot;</span>, line <span class="m">4</span>
     <span class="k">continue</span>
@@ -1195,7 +1200,7 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="section" id="syntaxerror-quote-inside-a-string">
 <h2>SyntaxError - quote inside a string<a class="headerlink" href="#syntaxerror-quote-inside-a-string" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error24.py&quot;</span>, line <span class="m">3</span>
     <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;don&#39;</span><span class="n">t</span><span class="s1">&#39;</span>
@@ -1225,7 +1230,7 @@ that was enclosed in quotes of the same kind.</p>
 <div class="section" id="syntaxerror-missing-comma-in-a-dict">
 <h2>SyntaxError - missing comma in a dict<a class="headerlink" href="#syntaxerror-missing-comma-in-a-dict" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error25.py&quot;</span>, line <span class="m">5</span>
     <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
@@ -1259,7 +1264,7 @@ before the position indicated by –&gt; and ^.</p>
 <div class="section" id="syntaxerror-missing-comma-in-a-set">
 <h2>SyntaxError - missing comma in a set<a class="headerlink" href="#syntaxerror-missing-comma-in-a-set" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error26.py&quot;</span>, line <span class="m">3</span>
     <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>  <span class="mi">3</span><span class="p">}</span>
@@ -1287,7 +1292,7 @@ Perhaps you forgot a comma or an operator, like <code class="docutils literal no
 <div class="section" id="syntaxerror-missing-comma-in-a-list">
 <h2>SyntaxError - missing comma in a list<a class="headerlink" href="#syntaxerror-missing-comma-in-a-list" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error27.py&quot;</span>, line <span class="m">3</span>
     <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>  <span class="mi">3</span><span class="p">]</span>
@@ -1315,7 +1320,7 @@ Perhaps you forgot a comma or an operator, like <code class="docutils literal no
 <div class="section" id="syntaxerror-missing-comma-in-a-tuple">
 <h2>SyntaxError - missing comma in a tuple<a class="headerlink" href="#syntaxerror-missing-comma-in-a-tuple" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error28.py&quot;</span>, line <span class="m">3</span>
     <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>  <span class="mi">3</span><span class="p">)</span>
@@ -1343,7 +1348,7 @@ Perhaps you forgot a comma or an operator, like <code class="docutils literal no
 <div class="section" id="syntaxerror-missing-comma-between-function-args">
 <h2>SyntaxError - missing comma between function args<a class="headerlink" href="#syntaxerror-missing-comma-between-function-args" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error29.py&quot;</span>, line <span class="m">4</span>
     <span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="n">d</span><span class="p">):</span>
@@ -1373,7 +1378,7 @@ Perhaps you forgot a comma or an operator, like <code class="docutils literal no
 <div class="section" id="syntaxerror-can-t-assign-to-function-call-1">
 <h2>SyntaxError - can’t assign to function call - 1<a class="headerlink" href="#syntaxerror-can-t-assign-to-function-call-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error30.py&quot;</span>, line <span class="m">6</span>
     <span class="nb">len</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">3</span>
@@ -1403,7 +1408,7 @@ or includes a function call and is not simply the name of a variable.</p>
 <div class="section" id="syntaxerror-can-t-assign-to-function-call-2">
 <h2>SyntaxError - can’t assign to function call - 2<a class="headerlink" href="#syntaxerror-can-t-assign-to-function-call-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error31.py&quot;</span>, line <span class="m">6</span>
     <span class="n">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="mi">4</span>
@@ -1433,7 +1438,7 @@ a function call and not the name of a variable.</p>
 <div class="section" id="syntaxerror-used-equal-sign-instead-of-colon">
 <h2>SyntaxError - used equal sign instead of colon<a class="headerlink" href="#syntaxerror-used-equal-sign-instead-of-colon" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error32.py&quot;</span>, line <span class="m">4</span>
     <span class="n">ages</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Alice&#39;</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="o">=</span><span class="mi">24</span><span class="p">}</span>
@@ -1462,7 +1467,7 @@ before or at the position indicated by –&gt; and ^.</p>
 <div class="section" id="syntaxerror-non-default-argument-follows-default-argument">
 <h2>SyntaxError - non-default argument follows default argument<a class="headerlink" href="#syntaxerror-non-default-argument-follows-default-argument" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error33.py&quot;</span>, line <span class="m">5</span>
     <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -1501,7 +1506,7 @@ According to Python, you used positional arguments after keyword ones.</p>
 <div class="section" id="syntaxerror-positional-argument-follows-keyword-argument">
 <h2>SyntaxError - positional argument follows keyword argument<a class="headerlink" href="#syntaxerror-positional-argument-follows-keyword-argument" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error34.py&quot;</span>, line <span class="m">5</span>
     <span class="n">test</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
@@ -1539,7 +1544,7 @@ According to Python, you used positional arguments after keyword ones.</p>
 <div class="section" id="syntaxerror-f-string-unterminated-string">
 <h2>SyntaxError - f-string: unterminated string<a class="headerlink" href="#syntaxerror-f-string-unterminated-string" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error35.py&quot;</span>, line <span class="m">4</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bob is </span><span class="si">{</span><span class="n">age</span><span class="p">[</span><span class="s1">&#39;Bob]} years old.&quot;)</span>
@@ -1567,7 +1572,7 @@ single quote (‘) or double quote (“), without a matching closing one.</p>
 <div class="section" id="syntaxerror-unclosed-bracket">
 <h2>SyntaxError - unclosed bracket<a class="headerlink" href="#syntaxerror-unclosed-bracket" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error36.py&quot;</span>, line <span class="m">7</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">foo</span><span class="p">())</span>
@@ -1598,7 +1603,7 @@ but I might guess incorrectly.</p>
 <div class="section" id="syntaxerror-unexpected-eof-while-parsing">
 <h2>SyntaxError - unexpected EOF while parsing<a class="headerlink" href="#syntaxerror-unexpected-eof-while-parsing" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error37.py&quot;</span>, line <span class="m">8</span>
 <span class="gr">SyntaxError</span>: <span class="n">unexpected EOF while parsing</span>
@@ -1628,7 +1633,7 @@ and expected more content.</p>
 <div class="section" id="syntaxerror-name-is-parameter-and-global">
 <h2>SyntaxError - name is parameter and global<a class="headerlink" href="#syntaxerror-name-is-parameter-and-global" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error38.py&quot;</span>, line <span class="m">6</span>
     <span class="k">global</span> <span class="n">x</span>
@@ -1660,7 +1665,7 @@ inside that function, which is the contrary of what <code class="docutils litera
 <div class="section" id="syntaxerror-keyword-as-attribute">
 <h2>SyntaxError - keyword as attribute<a class="headerlink" href="#syntaxerror-keyword-as-attribute" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error39.py&quot;</span>, line <span class="m">12</span>
     <span class="n">a</span><span class="o">.</span><span class="k">pass</span> <span class="o">=</span> <span class="mi">2</span>
@@ -1687,7 +1692,7 @@ but I might guess incorrectly.</p>
 <div class="section" id="syntaxerror-content-passed-continuation-line-character">
 <h2>SyntaxError - content passed continuation line character<a class="headerlink" href="#syntaxerror-content-passed-continuation-line-character" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error40.py&quot;</span>, line <span class="m">5</span>
     <span class="nb">print</span><span class="p">(</span>\<span class="n">t</span><span class="p">)</span>
@@ -1714,7 +1719,7 @@ I am guessing that you forgot to enclose some content in a string.</p>
 <div class="section" id="syntaxerror-keyword-can-t-be-an-expression">
 <h2>SyntaxError - keyword can’t be an expression<a class="headerlink" href="#syntaxerror-keyword-can-t-be-an-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error41.py&quot;</span>, line <span class="m">7</span>
     <span class="n">a</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1750,7 +1755,7 @@ or contains a period, etc.</p>
 <div class="section" id="syntaxerror-invalid-character-in-identifier">
 <h2>SyntaxError - invalid character in identifier<a class="headerlink" href="#syntaxerror-invalid-character-in-identifier" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 138, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error42.py&quot;, line 6
     🤖 = &#39;Reeborg&#39;
@@ -1777,7 +1782,7 @@ This includes many emojis.</p>
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-1">
 <h2>SyntaxError - keyword cannot be argument in def - 1<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error43.py&quot;</span>, line <span class="m">5</span>
     <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="kc">None</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
@@ -1806,7 +1811,7 @@ but I might guess incorrectly.</p>
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-2">
 <h2>SyntaxError - keyword cannot be argument in def - 2<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error44.py&quot;</span>, line <span class="m">5</span>
     <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kc">True</span><span class="p">):</span>
@@ -1835,7 +1840,7 @@ but I might guess incorrectly.</p>
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-3">
 <h2>SyntaxError - keyword cannot be argument in def - 3<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error45.py&quot;</span>, line <span class="m">5</span>
     <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="kc">None</span><span class="p">):</span>
@@ -1864,7 +1869,7 @@ but I might guess incorrectly.</p>
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-4">
 <h2>SyntaxError - keyword cannot be argument in def - 4<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-4" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error46.py&quot;</span>, line <span class="m">5</span>
     <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">**</span><span class="kc">None</span><span class="p">):</span>
@@ -1893,7 +1898,7 @@ but I might guess incorrectly.</p>
 <div class="section" id="syntaxerror-delete-function-call">
 <h2>SyntaxError - delete function call<a class="headerlink" href="#syntaxerror-delete-function-call" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error47.py&quot;</span>, line <span class="m">5</span>
     <span class="k">del</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -1925,7 +1930,7 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="section" id="syntaxerror-assigned-prior-to-global-declaration">
 <h2>SyntaxError - assigned prior to global declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-global-declaration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error48.py&quot;</span>, line <span class="m">7</span>
     <span class="k">global</span> <span class="n">p</span>
@@ -1951,7 +1956,7 @@ before declaring it as a global variable.</p>
 <div class="section" id="syntaxerror-used-prior-to-global-declaration">
 <h2>SyntaxError - used prior to global declaration<a class="headerlink" href="#syntaxerror-used-prior-to-global-declaration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error49.py&quot;</span>, line <span class="m">7</span>
     <span class="k">global</span> <span class="n">r</span>
@@ -1977,7 +1982,7 @@ before declaring it as a global variable.</p>
 <div class="section" id="syntaxerror-assigned-prior-to-nonlocal-declaration">
 <h2>SyntaxError - assigned prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error50.py&quot;</span>, line <span class="m">9</span>
     <span class="k">nonlocal</span> <span class="n">q</span>
@@ -2004,7 +2009,7 @@ before declaring it as a nonlocal variable.</p>
 <div class="section" id="syntaxerror-used-prior-to-nonlocal-declaration">
 <h2>SyntaxError - used prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-used-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error51.py&quot;</span>, line <span class="m">9</span>
     <span class="k">nonlocal</span> <span class="n">s</span>
@@ -2031,7 +2036,7 @@ before declaring it as a nonlocal variable.</p>
 <div class="section" id="syntaxerror-named-assignment-with-python-constant">
 <h2>SyntaxError - named assignment with Python constant<a class="headerlink" href="#syntaxerror-named-assignment-with-python-constant" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error55.py&quot;</span>, line <span class="m">4</span>
     <span class="p">(</span><span class="kc">True</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">)</span>
@@ -2057,7 +2062,7 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="section" id="syntaxerror-assignment-to-operator">
 <h2>SyntaxError - assignment to operator<a class="headerlink" href="#syntaxerror-assignment-to-operator" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error56.py&quot;</span>, line <span class="m">4</span>
     <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">2</span>
@@ -2084,7 +2089,7 @@ only used to assign a value to a variable.</p>
 <div class="section" id="syntaxerror-using-the-backquote-character">
 <h2>SyntaxError - using the backquote character<a class="headerlink" href="#syntaxerror-using-the-backquote-character" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 138, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error57.py&quot;, line 3
     a = `1`
@@ -2113,7 +2118,7 @@ in this latter case, use the function <code class="docutils literal notranslate"
 <div class="section" id="syntaxerror-assign-to-generator-expression">
 <h2>SyntaxError - assign to generator expression<a class="headerlink" href="#syntaxerror-assign-to-generator-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error58.py&quot;</span>, line <span class="m">3</span>
     <span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span>
@@ -2138,7 +2143,7 @@ generator expression instead of the name of a variable.</p>
 <div class="section" id="syntaxerror-assign-to-conditional-expression">
 <h2>SyntaxError - assign to conditional expression<a class="headerlink" href="#syntaxerror-assign-to-conditional-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error59.py&quot;</span>, line <span class="m">3</span>
     <span class="n">a</span> <span class="k">if</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
@@ -2167,7 +2172,7 @@ A conditional expression has the following form:</p>
 <div class="section" id="syntaxerror-name-is-parameter-and-nonlocal">
 <h2>SyntaxError - name is parameter and nonlocal<a class="headerlink" href="#syntaxerror-name-is-parameter-and-nonlocal" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error60.py&quot;</span>, line <span class="m">5</span>
     <span class="k">nonlocal</span> <span class="n">x</span>
@@ -2194,7 +2199,7 @@ before declaring it also as a nonlocal variable:
 <div class="section" id="syntaxerror-name-is-global-and-nonlocal">
 <h2>SyntaxError - name is global and nonlocal<a class="headerlink" href="#syntaxerror-name-is-global-and-nonlocal" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error61.py&quot;</span>, line <span class="m">7</span>
     <span class="k">global</span> <span class="n">xy</span>
@@ -2221,7 +2226,7 @@ A variable can be global, or nonlocal, but not both at the same time.</p>
 <div class="section" id="syntaxerror-nonlocal-variable-not-found">
 <h2>SyntaxError - nonlocal variable not found<a class="headerlink" href="#syntaxerror-nonlocal-variable-not-found" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error62.py&quot;</span>, line <span class="m">5</span>
     <span class="k">nonlocal</span> <span class="n">ab</span>
@@ -2247,7 +2252,7 @@ nonlocal variable but it cannot be found.</p>
 <div class="section" id="syntaxerror-nonlocal-variable-not-found-at-module-level">
 <h2>SyntaxError - nonlocal variable not found at module level<a class="headerlink" href="#syntaxerror-nonlocal-variable-not-found-at-module-level" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error63.py&quot;</span>, line <span class="m">4</span>
     <span class="k">nonlocal</span> <span class="n">cd</span>
@@ -2274,7 +2279,7 @@ given a value outside that function.</p>
 <div class="section" id="syntaxerror-keyword-arg-only-once-in-function-definition">
 <h2>SyntaxError - keyword arg only once in function definition<a class="headerlink" href="#syntaxerror-keyword-arg-only-once-in-function-definition" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error64.py&quot;</span>, line <span class="m">4</span>
     <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">aa</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">aa</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
@@ -2304,7 +2309,7 @@ beyond the location indicated by –&gt; and ^.</p>
 <div class="section" id="syntaxerror-keyword-arg-only-once-in-function-call">
 <h2>SyntaxError - keyword arg only once in function call<a class="headerlink" href="#syntaxerror-keyword-arg-only-once-in-function-call" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error65.py&quot;</span>, line <span class="m">4</span>
     <span class="n">f</span><span class="p">(</span><span class="n">ad</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ad</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -2330,7 +2335,7 @@ Each keyword argument should appear only once in a function call.</p>
 <div class="section" id="syntaxerror-unexpected-eof-while-parsing-2">
 <h2>SyntaxError - unexpected EOF while parsing 2<a class="headerlink" href="#syntaxerror-unexpected-eof-while-parsing-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error66.py&quot;</span>, line <span class="m">4</span>
 <span class="gr">SyntaxError</span>: <span class="n">unexpected EOF while parsing</span>
@@ -2354,7 +2359,7 @@ and expected more content.</p>
 <div class="section" id="syntaxerror-print-is-a-function-2">
 <h2>SyntaxError - print is a function 2<a class="headerlink" href="#syntaxerror-print-is-a-function-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error67.py&quot;</span>, line <span class="m">2</span>
     <span class="nb">print</span> <span class="nb">len</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
@@ -2380,7 +2385,7 @@ Now, <code class="docutils literal notranslate"><span class="pre">print</span></
 <div class="section" id="syntaxerror-copy-paste-from-interpreter">
 <h2>SyntaxError - copy/paste from interpreter<a class="headerlink" href="#syntaxerror-copy-paste-from-interpreter" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error68.py&quot;</span>, line <span class="m">2</span>
     <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
@@ -2407,7 +2412,7 @@ The Python prompt, <code class="docutils literal notranslate"><span class="pre">
 <div class="section" id="syntaxerror-using-pip-from-interpreter">
 <h2>SyntaxError - Using pip from interpreter<a class="headerlink" href="#syntaxerror-using-pip-from-interpreter" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error69.py&quot;</span>, line <span class="m">2</span>
     <span class="n">pip</span> <span class="n">install</span> <span class="n">friendly</span>
@@ -2435,7 +2440,7 @@ not from a Python interpreter.</p>
 <div class="section" id="syntaxerror-using-pip-from-interpreter-2">
 <h2>SyntaxError - Using pip from interpreter 2<a class="headerlink" href="#syntaxerror-using-pip-from-interpreter-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error70.py&quot;</span>, line <span class="m">2</span>
     <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">friendly</span>
@@ -2463,7 +2468,7 @@ not from a Python interpreter.</p>
 <div class="section" id="syntaxerror-dot-followed-by-parenthesis">
 <h2>SyntaxError - dot followed by parenthesis<a class="headerlink" href="#syntaxerror-dot-followed-by-parenthesis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error71.py&quot;</span>, line <span class="m">2</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="o">.</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">))</span>
@@ -2488,7 +2493,7 @@ but I might guess incorrectly.</p>
 <div class="section" id="syntaxerror-cannot-assign-to-f-string">
 <h2>SyntaxError - cannot assign to f-string<a class="headerlink" href="#syntaxerror-cannot-assign-to-f-string" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error72.py&quot;</span>, line <span class="m">6</span>
     <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span> <span class="o">=</span> <span class="mi">42</span>
@@ -2515,7 +2520,7 @@ An f-string should only appear on the right-hand side of the equal sign.</p>
 <div class="section" id="syntaxerror-raising-multiple-exceptions">
 <h2>SyntaxError - raising multiple exceptions<a class="headerlink" href="#syntaxerror-raising-multiple-exceptions" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error73.py&quot;</span>, line <span class="m">2</span>
     <span class="k">raise</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span>
@@ -2540,7 +2545,7 @@ but I might guess incorrectly.</p>
 <div class="section" id="syntaxerror-parenthesis-around-generator-expression">
 <h2>SyntaxError - parenthesis around generator expression<a class="headerlink" href="#syntaxerror-parenthesis-around-generator-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error74.py&quot;</span>, line <span class="m">6</span>
     <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">L</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -2567,7 +2572,7 @@ You must add parentheses enclosing that expression.</p>
 <div class="section" id="syntaxerror-invalid-character-bad-quote">
 <h2>SyntaxError - invalid character (bad quote)<a class="headerlink" href="#syntaxerror-invalid-character-bad-quote" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 138, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error75.py&quot;, line 3
     a = « hello »
@@ -2596,7 +2601,7 @@ This can happen if you copy-pasted code.</p>
 <div class="section" id="syntaxerror-single-instead-of-double-with-if">
 <h2>SyntaxError - single = instead of double == with if<a class="headerlink" href="#syntaxerror-single-instead-of-double-with-if" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error76.py&quot;</span>, line <span class="m">3</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span>
@@ -2625,7 +2630,7 @@ with an <code class="docutils literal notranslate"><span class="pre">if</span></
 <div class="section" id="syntaxerror-single-instead-of-double-with-elif">
 <h2>SyntaxError - single = instead of double == with elif<a class="headerlink" href="#syntaxerror-single-instead-of-double-with-elif" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error77.py&quot;</span>, line <span class="m">5</span>
     <span class="k">elif</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span>
@@ -2655,7 +2660,7 @@ with an <code class="docutils literal notranslate"><span class="pre">elif</span>
 <div class="section" id="syntaxerror-single-instead-of-double-with-while">
 <h2>SyntaxError - single = instead of double == with while<a class="headerlink" href="#syntaxerror-single-instead-of-double-with-while" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error78.py&quot;</span>, line <span class="m">4</span>
     <span class="k">while</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span>
@@ -2685,7 +2690,7 @@ an equality operator, <code class="docutils literal notranslate"><span class="pr
 <div class="section" id="syntaxerror-forgot-a-comma-in-an-f-string">
 <h2>SyntaxError - forgot a comma in an f-string<a class="headerlink" href="#syntaxerror-forgot-a-comma-in-an-f-string" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;&lt;fstring&gt;&quot;</span>, line <span class="m">1</span>
     <span class="p">(</span><span class="n">x</span> <span class="n">y</span><span class="p">)</span>
@@ -2711,7 +2716,7 @@ Perhaps you forgot a comma or an operator, like <code class="docutils literal no
 <div class="section" id="syntaxerror-valid-names-cannot-begin-with-a-number">
 <h2>SyntaxError - Valid names cannot begin with a number<a class="headerlink" href="#syntaxerror-valid-names-cannot-begin-with-a-number" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error80.py&quot;</span>, line <span class="m">3</span>
     <span class="mi">36</span><span class="n">abc</span> <span class="o">=</span> <span class="mi">3</span>
@@ -2738,7 +2743,7 @@ but I might guess incorrectly.</p>
 <div class="section" id="syntaxerror-unclosed-parenthesis-3">
 <h2>SyntaxError - unclosed parenthesis - 3<a class="headerlink" href="#syntaxerror-unclosed-parenthesis-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error81.py&quot;</span>, line <span class="m">7</span>
     <span class="k">if</span> <span class="mi">2</span><span class="p">:</span>
@@ -2770,7 +2775,7 @@ but I might guess incorrectly.</p>
 <div class="section" id="syntaxerror-forgot-a-multiplication-operator">
 <h2>SyntaxError - forgot a multiplication operator<a class="headerlink" href="#syntaxerror-forgot-a-multiplication-operator" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">138</span>, in <span class="n">create_tracebacks</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error82.py&quot;</span>, line <span class="m">3</span>
     <span class="n">tau</span> <span class="o">=</span> <span class="mi">2</span><span class="n">pi</span>
@@ -2793,6 +2798,126 @@ beyond the location indicated by –&gt; and ^.</p>
 but I might guess incorrectly.</p>
 <p>Valid names cannot begin with a number.
 Perhaps you forgot a multiplication operator, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">pi</span></code>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="syntaxerror-space-between-names">
+<h2>SyntaxError - space between names<a class="headerlink" href="#syntaxerror-space-between-names" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error83.py&quot;</span>, line <span class="m">4</span>
+    <span class="n">a</span><span class="o">-</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">cannot assign to operator</span>
+</pre></div>
+</div>
+<p>Did you mean <code class="docutils literal notranslate"><span class="pre">a_b</span></code>?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error83.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to operator</span>
+<span class="s2">       2: or (Python 3.8) cannot assign to operator&quot;&quot;&quot;</span>
+       <span class="mi">3</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+          <span class="o">^</span>
+</pre></div>
+</div>
+<p>You wrote an expression that includes some mathematical operations
+on the left-hand side of the equal sign which should be
+only used to assign a value to a variable.
+Perhaps you meant to write <code class="docutils literal notranslate"><span class="pre">a_b</span></code> instead of <code class="docutils literal notranslate"><span class="pre">a-b</span></code></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="syntaxerror-can-t-use-star-operator">
+<h2>SyntaxError - can’t use star operator<a class="headerlink" href="#syntaxerror-can-t-use-star-operator" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error84.py&quot;</span>, line <span class="m">3</span>
+    <span class="o">*</span><span class="n">a</span>
+    <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">can&#39;t use starred expression here</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error84.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: can&#39;t use starred expression here&quot;&quot;&quot;</span>
+       <span class="mi">2</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="o">*</span><span class="n">a</span>
+          <span class="o">^</span>
+</pre></div>
+</div>
+<p>The star operator <code class="docutils literal notranslate"><span class="pre">*</span></code> is interpreted to mean that
+iterable unpacking is to be used to assign a name
+to each item of an iterable, which does not make sense here.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="syntaxerror-can-t-use-double-star-operator">
+<h2>SyntaxError - can’t use double star operator<a class="headerlink" href="#syntaxerror-can-t-use-double-star-operator" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;&lt;fstring&gt;&quot;</span>, line <span class="m">1</span>
+    <span class="p">(</span><span class="o">**</span><span class="n">k</span><span class="p">)</span>
+     <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘<fstring>’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="o">**</span><span class="n">k</span><span class="p">)</span>
+           <span class="o">^</span>
+</pre></div>
+</div>
+<p>I make an effort below to guess what caused the problem
+but I might guess incorrectly.</p>
+<p>The double star operator <code class="docutils literal notranslate"><span class="pre">**</span></code> is likely interpreted to mean that
+dict unpacking is to be used which does not make sense here.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="syntaxerror-can-t-use-return-outside-function">
+<h2>SyntaxError - can’t use return outside function<a class="headerlink" href="#syntaxerror-can-t-use-return-outside-function" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error86.py&quot;</span>, line <span class="m">3</span>
+    <span class="k">return</span>
+    <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">&#39;return&#39; outside function</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error86.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: &#39;return&#39; outside function&quot;&quot;&quot;</span>
+       <span class="mi">2</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="k">return</span>
+          <span class="o">^</span>
+</pre></div>
+</div>
+<p>You can only use a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement inside a function or method.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="syntaxerror-too-many-nested-blocks">
+<h2>SyntaxError - too many nested blocks<a class="headerlink" href="#syntaxerror-too-many-nested-blocks" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">143</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="gr">  File &quot;None&quot;, line None</span>
+<span class="gr">SyntaxError</span>: <span class="n">too many statically nested blocks</span>
+</pre></div>
+</div>
+<p>Seriously?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>You cannot be serious!</p>
+<p>In case this is a mistake in a real program, please
+consider reducing the number of nested code blocks.</p>
 </div>
 </div>
 
