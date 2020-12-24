@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.2.10a
+Friendly-traceback version: 0.2.11a
 Python version: 3.6.8
 
 
@@ -626,6 +626,8 @@ SyntaxError - import X from Y
                       ^
     SyntaxError: invalid syntax
     
+        Did you mean `from turtle import pen`?
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file

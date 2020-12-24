@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.2.10a
+Friendly-traceback version: 0.2.11a
 Python version: 3.8.4
 
 
@@ -896,7 +896,7 @@ I have no additional information for you.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_name_error.py", line 46, in test_Synonym
+  File "TESTS:\runtime\test_name_error.py", line 66, in test_Synonym
     cost  # wrote from math import * above
 NameError: name 'cost' is not defined
 
@@ -918,14 +918,14 @@ Instead of writing `cost`, perhaps you meant one of the following:
 *   Global scope: `cos`, `cosh`, `acos`
 
 
-#### Exception raised on line 46 of file TESTS:\runtime\test_name_error.py.
+#### Exception raised on line 66 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
-       44: 
-       45:     try:
-    -->46:         cost  # wrote from math import * above
-       47:     except Exception as e:
+       64: 
+       65:     try:
+    -->66:         cost  # wrote from math import * above
+       67:     except Exception as e:
 
 ```
 
@@ -1140,6 +1140,41 @@ Perhaps you forgot to convert `"2"` into an integer.
 
 ```
 
+### Cannot unpack non iterable object
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_type_error.py", line 724, in test_Cannot_unpack_non_iterable_object
+    a, b = 42.0
+TypeError: cannot unpack non-iterable float object
+
+```
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.
+
+
+Unpacking is a convenient way to assign a name,
+to each item of an iterable.
+An iterable is an object capable of returning its members one at a time.
+Python containers (`list, tuple, dict`, etc.) are iterables,
+but not objects of type `float`.
+
+
+#### Exception raised on line 724 of file TESTS:\runtime\test_type_error.py.
+
+
+```python
+       722: def test_Cannot_unpack_non_iterable_object():
+       723:     try:
+    -->724:         a, b = 42.0
+       725:     except Exception as e:
+
+```
+
 ### Comparison not supported
 
 
@@ -1336,12 +1371,50 @@ Perhaps you meant to use `[]` instead of `()` and write
 
 ```
 
+### Object is not iterable
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_type_error.py", line 710, in test_Object_is_not_iterable
+    list(42)
+TypeError: 'int' object is not iterable
+
+```
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.
+
+
+An iterable is an object capable of returning its members one at a time.
+Python containers (`list, tuple, dict`, etc.) are iterables.
+An iterable is required here.
+
+
+#### Exception raised on line 710 of file TESTS:\runtime\test_type_error.py.
+
+
+```python
+       708: def test_Object_is_not_iterable():
+       709:     try:
+    -->710:         list(42)
+       711:     except Exception as e:
+
+```
+
+```python
+    list: <class list>
+
+```
+
 ### Object is not subscriptable
 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_type_error.py", line 685, in test_Object_is_not_subscriptable
+  File "TESTS:\runtime\test_type_error.py", line 696, in test_Object_is_not_subscriptable
     a = f[1]
 TypeError: 'function' object is not subscriptable
 
@@ -1363,15 +1436,15 @@ you can retrieve item using the notation `[...]`.
 Perhaps you meant to write `f(1)`.
 
 
-#### Exception raised on line 685 of file TESTS:\runtime\test_type_error.py.
+#### Exception raised on line 696 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
-       683:         pass
-       684:     try:
-    -->685:         a = f[1]
+       694: 
+       695:     try:
+    -->696:         a = f[1]
                         ^^^^
-       686:     except Exception as e:
+       697:     except Exception as e:
 
 ```
 

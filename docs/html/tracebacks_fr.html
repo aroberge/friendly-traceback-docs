@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.2.10a documentation</title>
+  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.2.11a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.10a
+                0.2.11a
               </div>
             
           
@@ -203,11 +203,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#bad-type-for-unary-operator">Bad type for unary operator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#can-only-concatenate">Can only concatenate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cannot-multiply-by-non-int">Cannot multiply by non int</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cannot-unpack-non-iterable-object">Cannot unpack non iterable object</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#comparison-not-supported">Comparison not supported</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#derive-from-baseexception">Derive from BaseException</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#indices-must-be-integers-or-slices">Indices must be integers or slices</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#not-an-integer">Not an integer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#not-callable">Not callable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#object-is-not-iterable">Object is not iterable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#object-is-not-subscriptable">Object is not subscriptable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slice-indices-must-be-integers-or-none">Slice indices must be integers or None</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#too-few-positional-argument">Too few positional argument</a></li>
@@ -327,7 +329,7 @@ Ceci a besoin d’être fait de manière explicite lorsqu’on veut
 faire des corrections ou des ajouts, avant de faire la mise
 à jour du reste de la documentation avec Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.2.10a
+<p>Friendly-traceback version: 0.2.11a
 Python version: 3.8.4</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -954,7 +956,7 @@ Exception levée à la ligne 6 du fichier TESTS:\runtime\test_name_error.py.
 <div class="section" id="synonym">
 <h3>Synonym<a class="headerlink" href="#synonym" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 46, in test_Synonym
+  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 66, in test_Synonym
     cost  # wrote from math import * above
 NameError: name &#39;cost&#39; is not defined
 
@@ -970,12 +972,12 @@ utilisé avant qu&#39;on ne lui ait associé une valeur.
     Au lieu d’écrire `cost`, peut-être que vous vouliez écrire l&#39;un des noms suivants :
     *    Portée globale : `cos`, `cosh`, `acos`
 
-Exception levée à la ligne 46 du fichier TESTS:\runtime\test_name_error.py.
+Exception levée à la ligne 66 du fichier TESTS:\runtime\test_name_error.py.
 
-   44:
-   45:     try:
---&gt;46:         cost  # wrote from math import * above
-   47:     except Exception as e:
+   64:
+   65:     try:
+--&gt;66:         cost  # wrote from math import * above
+   67:     except Exception as e:
 </pre></div>
 </div>
 </div>
@@ -1132,6 +1134,33 @@ Exception levée à la ligne 546 du fichier TESTS:\runtime\test_type_error.py.
 </pre></div>
 </div>
 </div>
+<div class="section" id="cannot-unpack-non-iterable-object">
+<h3>Cannot unpack non iterable object<a class="headerlink" href="#cannot-unpack-non-iterable-object" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 724, in test_Cannot_unpack_non_iterable_object
+    a, b = 42.0
+TypeError: cannot unpack non-iterable float object
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Le dépaquetage (&#39;unpack&#39;) est un moyen pratique d’attribuer un nom
+    à chaque élément d’un itérable.
+    Un itérable est un objet capable de renvoyer ses membres un à la fois.
+    Les contenants python (`list, tuple, dict`, etc.) sont itérables,
+    mais pas les objets de type `float`.
+
+Exception levée à la ligne 724 du fichier TESTS:\runtime\test_type_error.py.
+
+   722: def test_Cannot_unpack_non_iterable_object():
+   723:     try:
+--&gt;724:         a, b = 42.0
+   725:     except Exception as e:
+</pre></div>
+</div>
+</div>
 <div class="section" id="comparison-not-supported">
 <h3>Comparison not supported<a class="headerlink" href="#comparison-not-supported" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -1276,10 +1305,37 @@ Exception levée à la ligne 476 du fichier TESTS:\runtime\test_type_error.py.
 </pre></div>
 </div>
 </div>
+<div class="section" id="object-is-not-iterable">
+<h3>Object is not iterable<a class="headerlink" href="#object-is-not-iterable" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 710, in test_Object_is_not_iterable
+    list(42)
+TypeError: &#39;int&#39; object is not iterable
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    Un itérable est un objet capable de renvoyer ses membres un à la fois.
+    Les contenants python (`list, tuple, dict`, etc.) sont itérables.
+    Une itérable est requis ici.
+
+Exception levée à la ligne 710 du fichier TESTS:\runtime\test_type_error.py.
+
+   708: def test_Object_is_not_iterable():
+   709:     try:
+--&gt;710:         list(42)
+   711:     except Exception as e:
+
+        list: &lt;class list&gt;
+</pre></div>
+</div>
+</div>
 <div class="section" id="object-is-not-subscriptable">
 <h3>Object is not subscriptable<a class="headerlink" href="#object-is-not-subscriptable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 685, in test_Object_is_not_subscriptable
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 696, in test_Object_is_not_subscriptable
     a = f[1]
 TypeError: &#39;function&#39; object is not subscriptable
 
@@ -1295,13 +1351,13 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
     Peut-être que vous vouliez plutôt écrire `f(1)`.
 
-Exception levée à la ligne 685 du fichier TESTS:\runtime\test_type_error.py.
+Exception levée à la ligne 696 du fichier TESTS:\runtime\test_type_error.py.
 
-   683:         pass
-   684:     try:
---&gt;685:         a = f[1]
+   694:
+   695:     try:
+--&gt;696:         a = f[1]
                     ^^^^
-   686:     except Exception as e:
+   697:     except Exception as e:
 
         f: &lt;function f&gt; from test_Object_is_not_subscriptable
 </pre></div>

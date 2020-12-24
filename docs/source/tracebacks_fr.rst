@@ -15,7 +15,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly-traceback version: 0.2.10a
+Friendly-traceback version: 0.2.11a
 Python version: 3.8.4
 
 
@@ -741,7 +741,7 @@ Synonym
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_name_error.py", line 46, in test_Synonym
+      File "TESTS:\runtime\test_name_error.py", line 66, in test_Synonym
         cost  # wrote from math import * above
     NameError: name 'cost' is not defined
     
@@ -757,12 +757,12 @@ Synonym
         Au lieu d’écrire `cost`, peut-être que vous vouliez écrire l'un des noms suivants :
         *    Portée globale : `cos`, `cosh`, `acos`
         
-    Exception levée à la ligne 46 du fichier TESTS:\runtime\test_name_error.py.
+    Exception levée à la ligne 66 du fichier TESTS:\runtime\test_name_error.py.
     
-       44: 
-       45:     try:
-    -->46:         cost  # wrote from math import * above
-       47:     except Exception as e:
+       64: 
+       65:     try:
+    -->66:         cost  # wrote from math import * above
+       67:     except Exception as e:
 
 
 OverflowError
@@ -938,6 +938,36 @@ Cannot multiply by non int
        547:     except Exception as e:
 
 
+Cannot unpack non iterable object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_type_error.py", line 724, in test_Cannot_unpack_non_iterable_object
+        a, b = 42.0
+    TypeError: cannot unpack non-iterable float object
+    
+    Une exception `TypeError` est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    
+        Le dépaquetage ('unpack') est un moyen pratique d’attribuer un nom
+        à chaque élément d’un itérable.
+        Un itérable est un objet capable de renvoyer ses membres un à la fois.
+        Les contenants python (`list, tuple, dict`, etc.) sont itérables,
+        mais pas les objets de type `float`.
+        
+    Exception levée à la ligne 724 du fichier TESTS:\runtime\test_type_error.py.
+    
+       722: def test_Cannot_unpack_non_iterable_object():
+       723:     try:
+    -->724:         a, b = 42.0
+       725:     except Exception as e:
+
+
 Comparison not supported
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1099,6 +1129,37 @@ Not callable
        477:     except Exception as e:
 
 
+Object is not iterable
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_type_error.py", line 710, in test_Object_is_not_iterable
+        list(42)
+    TypeError: 'int' object is not iterable
+    
+    Une exception `TypeError` est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    
+        Un itérable est un objet capable de renvoyer ses membres un à la fois.
+        Les contenants python (`list, tuple, dict`, etc.) sont itérables.
+        Une itérable est requis ici.
+        
+    Exception levée à la ligne 710 du fichier TESTS:\runtime\test_type_error.py.
+    
+       708: def test_Object_is_not_iterable():
+       709:     try:
+    -->710:         list(42)
+       711:     except Exception as e:
+
+            list: <class list>
+        
+
+
 Object is not subscriptable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1106,7 +1167,7 @@ Object is not subscriptable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 685, in test_Object_is_not_subscriptable
+      File "TESTS:\runtime\test_type_error.py", line 696, in test_Object_is_not_subscriptable
         a = f[1]
     TypeError: 'function' object is not subscriptable
     
@@ -1122,13 +1183,13 @@ Object is not subscriptable
         
         Peut-être que vous vouliez plutôt écrire `f(1)`.
         
-    Exception levée à la ligne 685 du fichier TESTS:\runtime\test_type_error.py.
+    Exception levée à la ligne 696 du fichier TESTS:\runtime\test_type_error.py.
     
-       683:         pass
-       684:     try:
-    -->685:         a = f[1]
+       694: 
+       695:     try:
+    -->696:         a = f[1]
                         ^^^^
-       686:     except Exception as e:
+       697:     except Exception as e:
 
             f: <function f> from test_Object_is_not_subscriptable
         

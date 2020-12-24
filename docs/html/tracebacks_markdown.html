@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly tracebacks 0.2.10a documentation</title>
+  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly tracebacks 0.2.11a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.10a
+                0.2.11a
               </div>
             
           
@@ -251,7 +251,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#synonym">Synonym</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-46-of-file-tests-runtime-test-name-error-py">Exception raised on line 46 of file TESTS:\runtime\test_name_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-66-of-file-tests-runtime-test-name-error-py">Exception raised on line 66 of file TESTS:\runtime\test_name_error.py.</a></li>
 </ul>
 </li>
 </ul>
@@ -284,6 +284,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-546-of-file-tests-runtime-test-type-error-py">Exception raised on line 546 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#cannot-unpack-non-iterable-object">Cannot unpack non iterable object</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-724-of-file-tests-runtime-test-type-error-py">Exception raised on line 724 of file TESTS:\runtime\test_type_error.py.</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#comparison-not-supported">Comparison not supported</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-298-of-file-tests-runtime-test-type-error-py">Exception raised on line 298 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
@@ -304,8 +308,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-476-of-file-tests-runtime-test-type-error-py">Exception raised on line 476 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#object-is-not-iterable">Object is not iterable</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-710-of-file-tests-runtime-test-type-error-py">Exception raised on line 710 of file TESTS:\runtime\test_type_error.py.</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#object-is-not-subscriptable">Object is not subscriptable</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-685-of-file-tests-runtime-test-type-error-py">Exception raised on line 685 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-696-of-file-tests-runtime-test-type-error-py">Exception raised on line 696 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#slice-indices-must-be-integers-or-none">Slice indices must be integers or None</a><ul>
@@ -467,7 +475,7 @@ trb_english_markdown.py located in the <code class="docutils literal notranslate
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.
 </p>
-</div><p>Friendly-traceback version: 0.2.10a
+</div><p>Friendly-traceback version: 0.2.11a
 Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="arithmeticerror">
@@ -1116,7 +1124,7 @@ I have no additional information for you.</p>
 <div class="section" id="synonym">
 <h3>Synonym<a class="headerlink" href="#synonym" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_name_error.py&quot;</span>, line <span class="m">46</span>, in <span class="n">test_Synonym</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_name_error.py&quot;</span>, line <span class="m">66</span>, in <span class="n">test_Synonym</span>
     <span class="n">cost</span>  <span class="c1"># wrote from math import * above</span>
 <span class="gr">NameError</span>: <span class="n">name &#39;cost&#39; is not defined</span>
 </pre></div>
@@ -1132,12 +1140,12 @@ Instead of writing <code class="docutils literal notranslate"><span class="pre">
 <ul class="simple">
 <li><p>Global scope: <code class="docutils literal notranslate"><span class="pre">cos</span></code>, <code class="docutils literal notranslate"><span class="pre">cosh</span></code>, <code class="docutils literal notranslate"><span class="pre">acos</span></code></p></li>
 </ul>
-<div class="section" id="exception-raised-on-line-46-of-file-tests-runtime-test-name-error-py">
-<h4>Exception raised on line 46 of file TESTS:\runtime\test_name_error.py.<a class="headerlink" href="#exception-raised-on-line-46-of-file-tests-runtime-test-name-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">44</span><span class="p">:</span> 
-       <span class="mi">45</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">46</span><span class="p">:</span>         <span class="n">cost</span>  <span class="c1"># wrote from math import * above</span>
-       <span class="mi">47</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-66-of-file-tests-runtime-test-name-error-py">
+<h4>Exception raised on line 66 of file TESTS:\runtime\test_name_error.py.<a class="headerlink" href="#exception-raised-on-line-66-of-file-tests-runtime-test-name-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">64</span><span class="p">:</span> 
+       <span class="mi">65</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">66</span><span class="p">:</span>         <span class="n">cost</span>  <span class="c1"># wrote from math import * above</span>
+       <span class="mi">67</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 </div>
@@ -1303,6 +1311,33 @@ Perhaps you forgot to convert <code class="docutils literal notranslate"><span c
 </div>
 </div>
 </div>
+<div class="section" id="cannot-unpack-non-iterable-object">
+<h3>Cannot unpack non iterable object<a class="headerlink" href="#cannot-unpack-non-iterable-object" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">724</span>, in <span class="n">test_Cannot_unpack_non_iterable_object</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">42.0</span>
+<span class="gr">TypeError</span>: <span class="n">cannot unpack non-iterable float object</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.</p>
+<p>Unpacking is a convenient way to assign a name,
+to each item of an iterable.
+An iterable is an object capable of returning its members one at a time.
+Python containers (<code class="docutils literal notranslate"><span class="pre">list,</span> <span class="pre">tuple,</span> <span class="pre">dict</span></code>, etc.) are iterables,
+but not objects of type <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<div class="section" id="exception-raised-on-line-724-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 724 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-724-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">722</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Cannot_unpack_non_iterable_object</span><span class="p">():</span>
+       <span class="mi">723</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">724</span><span class="p">:</span>         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">42.0</span>
+       <span class="mi">725</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="comparison-not-supported">
 <h3>Comparison not supported<a class="headerlink" href="#comparison-not-supported" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
@@ -1445,10 +1480,38 @@ Perhaps you meant to use <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 </div>
+<div class="section" id="object-is-not-iterable">
+<h3>Object is not iterable<a class="headerlink" href="#object-is-not-iterable" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">710</span>, in <span class="n">test_Object_is_not_iterable</span>
+    <span class="nb">list</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="gr">TypeError</span>: <span class="n">&#39;int&#39; object is not iterable</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.</p>
+<p>An iterable is an object capable of returning its members one at a time.
+Python containers (<code class="docutils literal notranslate"><span class="pre">list,</span> <span class="pre">tuple,</span> <span class="pre">dict</span></code>, etc.) are iterables.
+An iterable is required here.</p>
+<div class="section" id="exception-raised-on-line-710-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 710 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-710-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">708</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Object_is_not_iterable</span><span class="p">():</span>
+       <span class="mi">709</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">710</span><span class="p">:</span>         <span class="nb">list</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+       <span class="mi">711</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="nb">list</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">list</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="object-is-not-subscriptable">
 <h3>Object is not subscriptable<a class="headerlink" href="#object-is-not-subscriptable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">685</span>, in <span class="n">test_Object_is_not_subscriptable</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">696</span>, in <span class="n">test_Object_is_not_subscriptable</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="gr">TypeError</span>: <span class="n">&#39;function&#39; object is not subscriptable</span>
 </pre></div>
@@ -1461,13 +1524,13 @@ or by trying to do an operation not allowed on a given type of object.</p>
 <p>Subscriptable objects are typically containers from which
 you can retrieve item using the notation <code class="docutils literal notranslate"><span class="pre">[...]</span></code>.</p>
 <p>Perhaps you meant to write <code class="docutils literal notranslate"><span class="pre">f(1)</span></code>.</p>
-<div class="section" id="exception-raised-on-line-685-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 685 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-685-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">683</span><span class="p">:</span>         <span class="k">pass</span>
-       <span class="mi">684</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">685</span><span class="p">:</span>         <span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="section" id="exception-raised-on-line-696-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 696 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-696-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">694</span><span class="p">:</span> 
+       <span class="mi">695</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">696</span><span class="p">:</span>         <span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
                         <span class="o">^^^^</span>
-       <span class="mi">686</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+       <span class="mi">697</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">f</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">f</span><span class="o">&gt;</span> <span class="kn">from</span> <span class="nn">test_Object_is_not_subscriptable</span>

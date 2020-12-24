@@ -16,7 +16,7 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly-traceback version: 0.2.10a
+Friendly-traceback version: 0.2.11a
 Python version: 3.10.0a3
 
 
@@ -741,7 +741,7 @@ Synonym
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_name_error.py", line 46, in test_Synonym
+      File "TESTS:\runtime\test_name_error.py", line 66, in test_Synonym
         cost  # wrote from math import * above
     NameError: name 'cost' is not defined
     
@@ -757,12 +757,12 @@ Synonym
         Instead of writing `cost`, perhaps you meant one of the following:
         *   Global scope: `cos`, `cosh`, `acos`
         
-    Exception raised on line 46 of file TESTS:\runtime\test_name_error.py.
+    Exception raised on line 66 of file TESTS:\runtime\test_name_error.py.
     
-       44: 
-       45:     try:
-    -->46:         cost  # wrote from math import * above
-       47:     except Exception as e:
+       64: 
+       65:     try:
+    -->66:         cost  # wrote from math import * above
+       67:     except Exception as e:
 
 
 OverflowError
@@ -938,6 +938,36 @@ Cannot multiply by non int
        547:     except Exception as e:
 
 
+Cannot unpack non iterable object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_type_error.py", line 724, in test_Cannot_unpack_non_iterable_object
+        a, b = 42.0
+    TypeError: cannot unpack non-iterable float object
+    
+    A `TypeError` is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by trying to do an operation not allowed on a given type of object.
+    
+        Unpacking is a convenient way to assign a name,
+        to each item of an iterable.
+        An iterable is an object capable of returning its members one at a time.
+        Python containers (`list, tuple, dict`, etc.) are iterables,
+        but not objects of type `float`.
+        
+    Exception raised on line 724 of file TESTS:\runtime\test_type_error.py.
+    
+       722: def test_Cannot_unpack_non_iterable_object():
+       723:     try:
+    -->724:         a, b = 42.0
+       725:     except Exception as e:
+
+
 Comparison not supported
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1099,6 +1129,37 @@ Not callable
        477:     except Exception as e:
 
 
+Object is not iterable
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_type_error.py", line 710, in test_Object_is_not_iterable
+        list(42)
+    TypeError: 'int' object is not iterable
+    
+    A `TypeError` is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by trying to do an operation not allowed on a given type of object.
+    
+        An iterable is an object capable of returning its members one at a time.
+        Python containers (`list, tuple, dict`, etc.) are iterables.
+        An iterable is required here.
+        
+    Exception raised on line 710 of file TESTS:\runtime\test_type_error.py.
+    
+       708: def test_Object_is_not_iterable():
+       709:     try:
+    -->710:         list(42)
+       711:     except Exception as e:
+
+            list: <class list>
+        
+
+
 Object is not subscriptable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1106,7 +1167,7 @@ Object is not subscriptable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 685, in test_Object_is_not_subscriptable
+      File "TESTS:\runtime\test_type_error.py", line 696, in test_Object_is_not_subscriptable
         a = f[1]
     TypeError: 'function' object is not subscriptable
     
@@ -1122,13 +1183,13 @@ Object is not subscriptable
         
         Perhaps you meant to write `f(1)`.
         
-    Exception raised on line 685 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 696 of file TESTS:\runtime\test_type_error.py.
     
-       683:         pass
-       684:     try:
-    -->685:         a = f[1]
+       694: 
+       695:     try:
+    -->696:         a = f[1]
                         ^^^^
-       686:     except Exception as e:
+       697:     except Exception as e:
 
             f: <function f> from test_Object_is_not_subscriptable
         

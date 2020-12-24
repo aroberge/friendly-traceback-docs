@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.2.10a
+Friendly-traceback version: 0.2.11a
 Python version: 3.8.4
 
 
@@ -734,6 +734,10 @@ Traceback (most recent call last):
 SyntaxError: invalid syntax
 
 ```
+
+Did you mean `from turtle import pen`?
+
+
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
