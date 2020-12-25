@@ -27,21 +27,18 @@ You can install Friendly-traceback from Pypi in the usual way::
 Suggestions
 ~~~~~~~~~~~
 
-If the environment in which you plan to use Friendly-traceback
-supports `Rich <https://github.com/willmcgugan/rich>`_, we
-**strongly** suggest you install Rich so that Friendly-traceback
-can make use of it by default::
-
-    python -m pip install rich
+If possible, Friendly-traceback makes use of 
+`Rich <https://github.com/willmcgugan/rich>`_.
 
 Note however that some programming environments,
 such as IDLE and other IDEs do not support Rich; this does not
 prevent you from using Friendly-traceback, but the display
 will definitely not look as nice.
-The only editor/IDE capable of fully making use of Rich that we know
+The only editor/IDE capable of **fully** making use of Rich that we know
 of is `Microsoft Visual Studio Code <https://code.visualstudio.com/>`_.
 Pycharm's embedded console, at least on Windows, does not fully
-support Rich.
+support Rich. At present, Jupyter notebooks can potentially use
+Rich partially.
 
 If you use Rich on Windows from a terminal,
 we also **very strongly suggest** that you use the new

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly tracebacks 0.2.11a documentation</title>
+  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly tracebacks 0.2.13a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.11a
+                0.2.13a
               </div>
             
           
@@ -475,7 +475,7 @@ trb_english_markdown.py located in the <code class="docutils literal notranslate
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.
 </p>
-</div><p>Friendly-traceback version: 0.2.11a
+</div><p>Friendly-traceback version: 0.2.12a
 Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="arithmeticerror">
@@ -1091,6 +1091,7 @@ Perhaps you had used a colon instead of an equal sign and written</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">19</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Annotated_variable</span><span class="p">():</span>
        <span class="mi">20</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
     <span class="o">--&gt;</span><span class="mi">21</span><span class="p">:</span>         <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+                       <span class="o">^</span>
        <span class="mi">22</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
@@ -1116,6 +1117,7 @@ I have no additional information for you.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">4</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Generic</span><span class="p">():</span>
        <span class="mi">5</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
     <span class="o">--&gt;</span><span class="mi">6</span><span class="p">:</span>         <span class="n">this</span> <span class="o">=</span> <span class="n">something</span>
+                         <span class="o">^^^^^^^^^</span>
        <span class="mi">7</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
@@ -1145,6 +1147,7 @@ Instead of writing <code class="docutils literal notranslate"><span class="pre">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">64</span><span class="p">:</span> 
        <span class="mi">65</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
     <span class="o">--&gt;</span><span class="mi">66</span><span class="p">:</span>         <span class="n">cost</span>  <span class="c1"># wrote from math import * above</span>
+                   <span class="o">^^^^</span>
        <span class="mi">67</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>

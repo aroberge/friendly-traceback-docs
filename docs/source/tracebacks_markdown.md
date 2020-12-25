@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.2.11a
+Friendly-traceback version: 0.2.12a
 Python version: 3.8.4
 
 
@@ -855,6 +855,7 @@ instead of
        19: def test_Annotated_variable():
        20:     try:
     -->21:         y = x
+                       ^
        22:     except Exception as e:
 
 ```
@@ -887,6 +888,7 @@ I have no additional information for you.
        4: def test_Generic():
        5:     try:
     -->6:         this = something
+                         ^^^^^^^^^
        7:     except Exception as e:
 
 ```
@@ -925,6 +927,7 @@ Instead of writing `cost`, perhaps you meant one of the following:
        64: 
        65:     try:
     -->66:         cost  # wrote from math import * above
+                   ^^^^
        67:     except Exception as e:
 
 ```

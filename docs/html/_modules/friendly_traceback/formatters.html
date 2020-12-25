@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.formatters &mdash; Friendly tracebacks 0.2.11a documentation</title>
+  <title>friendly_traceback.formatters &mdash; Friendly tracebacks 0.2.13a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.2.11a
+                0.2.13a
               </div>
             
           
@@ -276,7 +276,6 @@
 <span class="c1"># authoritative list of items to consider.</span>
 
 <span class="n">items_in_order</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;debug_warning&quot;</span><span class="p">,</span>
     <span class="s2">&quot;header&quot;</span><span class="p">,</span>
     <span class="s2">&quot;message&quot;</span><span class="p">,</span>  <span class="c1"># The last line of a Python traceback</span>
     <span class="s2">&quot;original_python_traceback&quot;</span><span class="p">,</span>
@@ -329,7 +328,6 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># We first define the indentation to appear before each item</span>
     <span class="n">repl_items</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;debug_warning&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
         <span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
         <span class="s2">&quot;original_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
         <span class="s2">&quot;shortened_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
@@ -436,7 +434,6 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># We first define the indentation to appear before each item</span>
     <span class="n">pre_items</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;debug_warning&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
         <span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
         <span class="s2">&quot;original_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
         <span class="s2">&quot;shortened_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
@@ -502,7 +499,6 @@
     <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="n">markdown_items</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;debug_warning&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;# &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;# &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;suggest&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">),</span>
@@ -592,7 +588,7 @@
         <span class="s2">&quot;exception_raised_source&quot;</span><span class="p">,</span>
         <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="s2">&quot;friendly_tb&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;shortened_traceback&quot;</span><span class="p">,</span> <span class="s2">&quot;suggest&quot;</span><span class="p">,</span> <span class="s2">&quot;debug_warning&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;friendly_tb&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;shortened_traceback&quot;</span><span class="p">,</span> <span class="s2">&quot;suggest&quot;</span><span class="p">},</span>
     <span class="s2">&quot;python_tb&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">},</span>
     <span class="s2">&quot;debug_tb&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;original_python_traceback&quot;</span><span class="p">},</span>
 <span class="p">}</span>

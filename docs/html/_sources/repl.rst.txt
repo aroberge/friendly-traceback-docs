@@ -12,9 +12,8 @@ Console basics
 As a rule, we do not recommend that beginners write their programs
 in a console (repl) but that they use an editor instead.
 However, using a console is useful to demonstrate various
-features of Friendly-traceback. Furthermore, as we will see when
-we discuss using Friendly-traceback with editors, knowing
-the console basics shown here might come in handy.
+features of Friendly-traceback which can be made available
+in many editor/IDE environments.
 
 
 what()
@@ -60,16 +59,12 @@ if we prefer. We can even specify a language other than English ...
 as long as it is French - hopefully, support for more languages will be added
 by contributors::
 
-    >>> what("IndentationError", lang='fr')
+    >>> set_lang('fr')
+    >>> what("IndentationError")
 
     Une exception de type IndentationError se produit lorsqu'une ligne de code n'est pas
     indentée (c'est-à-dire alignée verticalement avec les autres lignes) de la façon
     attendue.
-
-.. sidebar:: French?
-
-    Currently, language selection has to be done "globally",
-    except for ``what()`` as shown here.
 
 
 why()
@@ -92,6 +87,8 @@ that provided by the terse hint shown after the traceback.
     used a fancy unicode quotation mark instead of a normal single or double
     quote for a string. This can happen if you copy-pasted code.
 
+More generally, ``why()`` attempts to find the exact cause of an
+exception and suggest some ways to fix the code.
 
 where()
 -------
@@ -189,5 +186,5 @@ to keep in mind as it might be more useful later.
 API
 ---
 
-.. automodule:: friendly_traceback.console
+.. automodule:: friendly_traceback.console_helpers
    :members:

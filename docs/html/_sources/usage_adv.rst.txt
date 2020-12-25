@@ -1,6 +1,11 @@
 Other details for advanced users
 =================================
 
+.. note::
+
+    Some additional information might be available from the command line::
+
+       python -m friendly_traceback -h
 
 
 Where the output is written?

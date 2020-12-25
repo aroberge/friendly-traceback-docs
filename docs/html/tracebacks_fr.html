@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.2.11a documentation</title>
+  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.2.13a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.11a
+                0.2.13a
               </div>
             
           
@@ -329,7 +329,7 @@ Ceci a besoin d’être fait de manière explicite lorsqu’on veut
 faire des corrections ou des ajouts, avant de faire la mise
 à jour du reste de la documentation avec Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.2.11a
+<p>Friendly-traceback version: 0.2.12a
 Python version: 3.8.4</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -925,6 +925,7 @@ Exception levée à la ligne 21 du fichier TESTS:\runtime\test_name_error.py.
    19: def test_Annotated_variable():
    20:     try:
 --&gt;21:         y = x
+                   ^
    22:     except Exception as e:
 </pre></div>
 </div>
@@ -949,6 +950,7 @@ Exception levée à la ligne 6 du fichier TESTS:\runtime\test_name_error.py.
    4: def test_Generic():
    5:     try:
 --&gt;6:         this = something
+                     ^^^^^^^^^
    7:     except Exception as e:
 </pre></div>
 </div>
@@ -977,6 +979,7 @@ Exception levée à la ligne 66 du fichier TESTS:\runtime\test_name_error.py.
    64:
    65:     try:
 --&gt;66:         cost  # wrote from math import * above
+               ^^^^
    67:     except Exception as e:
 </pre></div>
 </div>

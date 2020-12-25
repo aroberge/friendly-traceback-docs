@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.console &mdash; Friendly tracebacks 0.2.11a documentation</title>
+  <title>friendly_traceback.console &mdash; Friendly tracebacks 0.2.13a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.2.11a
+                0.2.13a
               </div>
             
           
@@ -224,7 +224,6 @@
 <span class="kn">import</span> <span class="nn">friendly_traceback</span>
 
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">source_cache</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">info_generic</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">theme</span>
 
 <span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">session</span>
@@ -266,7 +265,10 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">saved_builtins</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">builtins</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rich_console</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">if</span> <span class="n">theme</span><span class="o">.</span><span class="n">rich_available</span> <span class="ow">and</span> <span class="n">use_rich</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">rich_console</span> <span class="o">=</span> <span class="n">theme</span><span class="o">.</span><span class="n">init_rich_console</span><span class="p">()</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rich_console</span> <span class="o">=</span> <span class="n">theme</span><span class="o">.</span><span class="n">init_rich_console</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    Installed version of Rich is too old.</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">))</span>
         <span class="k">elif</span> <span class="n">use_rich</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    Rich is not installed.</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">))</span>
 
@@ -498,114 +500,6 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rich_console</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rich_console</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;[bold #009999]&quot;</span> <span class="o">+</span> <span class="n">prompt</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span></div></div>
-
-
-<span class="c1"># ============================================</span>
-<span class="c1">#</span>
-<span class="c1"># Functions defined to be used in the console</span>
-<span class="c1">#</span>
-<span class="c1"># ============================================</span>
-
-
-<div class="viewcode-block" id="explain"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console.explain">[docs]</a><span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Shows the previously recorded traceback info again,</span>
-<span class="sd">    with the specified verbosity level.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">old_include</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_include</span><span class="p">()</span>
-    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>
-    <span class="n">session</span><span class="o">.</span><span class="n">show_traceback_info_again</span><span class="p">()</span>
-    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">old_include</span><span class="p">)</span></div>
-
-
-<span class="k">def</span> <span class="nf">_info</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Debugging tool: shows the complete content of traceback info.&quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No recorded traceback</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recorded traceback information:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">use_rich</span><span class="p">:</span>  <span class="c1"># will automatically pretty print</span>
-        <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span>
-
-    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-
-<div class="viewcode-block" id="more"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console.more">[docs]</a><span class="k">def</span> <span class="nf">more</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Used to display information additional to the minimal traceback,</span>
-<span class="sd">    with the exception of the generic information.</span>
-<span class="sd">    Potentially useful for advanced users.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;more&quot;</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="what"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console.what">[docs]</a><span class="k">def</span> <span class="nf">what</span><span class="p">(</span><span class="n">exception</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;If known, shows the generic explanation about a given exception.&quot;&quot;&quot;</span>
-
-    <span class="k">if</span> <span class="n">exception</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">exception</span><span class="p">,</span> <span class="s2">&quot;__name__&quot;</span><span class="p">):</span>
-            <span class="n">exception</span> <span class="o">=</span> <span class="n">exception</span><span class="o">.</span><span class="vm">__name__</span>
-        <span class="k">if</span> <span class="n">lang</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">old_lang</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_lang</span><span class="p">()</span>
-            <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="n">info_generic</span><span class="o">.</span><span class="n">get_generic_explanation</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">lang</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="n">old_lang</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">pre</span><span class="p">:</span>  <span class="c1"># for documentation</span>
-            <span class="n">lines</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-                <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="s2">&quot;    &quot;</span> <span class="o">+</span> <span class="n">line</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-        <span class="k">return</span>
-
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;what&quot;</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="where"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console.where">[docs]</a><span class="k">def</span> <span class="nf">where</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Shows the information about where the exception occurred&quot;&quot;&quot;</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;where&quot;</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="why"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console.why">[docs]</a><span class="k">def</span> <span class="nf">why</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Shows the likely cause of the exception.&quot;&quot;&quot;</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;why&quot;</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="hint"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console.hint">[docs]</a><span class="k">def</span> <span class="nf">hint</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Shows hint/suggestion if available.&quot;&quot;&quot;</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;hint&quot;</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="friendly_tb"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console.friendly_tb">[docs]</a><span class="k">def</span> <span class="nf">friendly_tb</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Shows the friendly traceback, which includes the hint/suggestion</span>
-<span class="sd">    if available.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="python_tb"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console.python_tb">[docs]</a><span class="k">def</span> <span class="nf">python_tb</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Shows the Python traceback, excluding files from friendly-traceback</span>
-<span class="sd">    itself.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;python_tb&quot;</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="debug_tb"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console.debug_tb">[docs]</a><span class="k">def</span> <span class="nf">debug_tb</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Shows the true Python traceback, which includes</span>
-<span class="sd">    files from friendly-traceback itself.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="debug"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console.debug">[docs]</a><span class="k">def</span> <span class="nf">debug</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;This functions displays the true traceback recorded, that</span>
-<span class="sd">    includes friendly-traceback&#39;s own code.</span>
-<span class="sd">    It also adds the suggestion/hint from friendly-traceback</span>
-<span class="sd">    and sets a debug flag for the current session.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">session</span><span class="o">.</span><span class="n">_debug</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="start_console"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console.start_console">[docs]</a><span class="k">def</span> <span class="nf">start_console</span><span class="p">(</span>

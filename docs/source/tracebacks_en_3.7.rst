@@ -16,7 +16,7 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly-traceback version: 0.2.11a
+Friendly-traceback version: 0.2.12a
 Python version: 3.7.8
 
 
@@ -706,6 +706,7 @@ Annotated variable
        19: def test_Annotated_variable():
        20:     try:
     -->21:         y = x
+                       ^
        22:     except Exception as e:
 
 
@@ -733,6 +734,7 @@ Generic
        4: def test_Generic():
        5:     try:
     -->6:         this = something
+                         ^^^^^^^^^
        7:     except Exception as e:
 
 
@@ -764,6 +766,7 @@ Synonym
        64: 
        65:     try:
     -->66:         cost  # wrote from math import * above
+                   ^^^^
        67:     except Exception as e:
 
 

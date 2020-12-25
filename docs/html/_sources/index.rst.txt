@@ -43,8 +43,7 @@ Not exactly the most helpful information for beginners ...
 
 Here's the corresponding version from Friendly-traceback,
 making use of
-`Rich <https://github.com/willmcgugan/rich>`_ which has been
-installed separately.
+`Rich <https://github.com/willmcgugan/rich>`_ 
 
 .. image:: images/friendly_indexerror_en.png
    :scale: 50 %
@@ -146,6 +145,6 @@ To do
 ------
 
 We sometimes add notes about planned changes or additions to the documentation
-in various sections. Any such note is listed below.
+in various sections. Any such note is listed below as a visible reminder.
 
 .. todolist::
