@@ -903,7 +903,7 @@ Can only concatenate
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
         Vous avez essayé de concaténer (additionner) deux types d’objets différents:
-        un `tuple` et une liste (`list`)
+        un `tuple` et une liste (`list`).
         
     Exception levée à la ligne 36 du fichier TESTS:\runtime\test_type_error.py.
     
@@ -1030,7 +1030,7 @@ Comparison not supported
     
         En utilisant <, vous avez tenté de comparer
         deux types d’objets incompatibles:
-        un entier (`int`) et une chaîne de caractères (`str`)
+        un entier (`int`) et une chaîne de caractères (`str`).
         
     Exception levée à la ligne 298 du fichier TESTS:\runtime\test_type_error.py.
     

@@ -905,7 +905,7 @@ Can only concatenate
     or by trying to do an operation not allowed on a given type of object.
     
         You tried to concatenate (add) two different types of objects:
-        a `tuple` and a `list`
+        a `tuple` and a `list`.
         
     Exception raised on line 36 of file TESTS:\runtime\test_type_error.py.
     
@@ -1030,7 +1030,7 @@ Comparison not supported
     
         You tried to do an order comparison (<)
         between two incompatible types of objects:
-        an integer (`int`) and a string (`str`)
+        an integer (`int`) and a string (`str`).
         
     Exception raised on line 298 of file TESTS:\runtime\test_type_error.py.
     
