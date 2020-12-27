@@ -202,6 +202,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#typeerror">TypeError</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#bad-type-for-unary-operator">Bad type for unary operator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#can-only-concatenate">Can only concatenate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cannot-convert-dictionary-update-sequence">Cannot convert dictionary update sequence</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cannot-multiply-by-non-int">Cannot multiply by non int</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cannot-unpack-non-iterable-object">Cannot unpack non iterable object</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#comparison-not-supported">Comparison not supported</a></li>
@@ -329,7 +330,7 @@ Ceci a besoin d’être fait de manière explicite lorsqu’on veut
 faire des corrections ou des ajouts, avant de faire la mise
 à jour du reste de la documentation avec Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.2.12a
+<p>Friendly-traceback version: 0.2.13a
 Python version: 3.8.4</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -735,7 +736,7 @@ Exception levée à la ligne 6 du fichier TESTS:\runtime\test_import_error.py.
 <div class="section" id="long-list">
 <h3>Long list<a class="headerlink" href="#long-list" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_index_error.py&quot;, line 22, in test_Long_list
+  File &quot;TESTS:\runtime\test_index_error.py&quot;, line 24, in test_Long_list
     print(a[50], b[0])
 IndexError: list index out of range
 
@@ -743,15 +744,17 @@ Une exception `IndexError` se produit lorsque vous essayez d’obtenir un élém
 d&#39;une liste, d&#39;un tuple, ou d&#39;un objet similaire (séquence), à l’aide d’un index qui
 n’existe pas; typiquement, c’est parce que l’index que vous donnez
 est plus grand que la longueur de la séquence.
-Rappel: le premier élément d&#39;une séquence est à l&#39;index 0.
 
-Exception levée à la ligne 22 du fichier TESTS:\runtime\test_index_error.py.
+    Vous avez essayé d’obtenir l’élément avec l’index `50` de `a`,
+    une liste (`list`) de longueur `40`.
 
-   20:     b = tuple(range(50))
-   21:     try:
---&gt;22:         print(a[50], b[0])
+Exception levée à la ligne 24 du fichier TESTS:\runtime\test_index_error.py.
+
+   22:     b = tuple(range(50))
+   23:     try:
+--&gt;24:         print(a[50], b[0])
                      ^^^^^
-   23:     except Exception as e:
+   25:     except Exception as e:
 
         a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
             len(a): 40
@@ -765,11 +768,16 @@ Exception levée à la ligne 22 du fichier TESTS:\runtime\test_index_error.py.
     print(a[3], b[2])
 IndexError: tuple index out of range
 
+    N’oubliez pas : le premier élément d&#39;un objet de type `un `tuple`` est à l’indice 0.
+
 Une exception `IndexError` se produit lorsque vous essayez d’obtenir un élément
 d&#39;une liste, d&#39;un tuple, ou d&#39;un objet similaire (séquence), à l’aide d’un index qui
 n’existe pas; typiquement, c’est parce que l’index que vous donnez
 est plus grand que la longueur de la séquence.
-Rappel: le premier élément d&#39;une séquence est à l&#39;index 0.
+
+    Vous avez essayé d’obtenir l’élément avec l’index `3` de `a`,
+    un `tuple` de longueur `3`.
+    Le plus grand indice valide de `a` est `2`.
 
 Exception levée à la ligne 8 du fichier TESTS:\runtime\test_index_error.py.
 
@@ -1107,6 +1115,36 @@ Exception levée à la ligne 36 du fichier TESTS:\runtime\test_type_error.py.
 
         a_tuple: (1, 2, 3)
         a_list: [1, 2, 3]
+</pre></div>
+</div>
+</div>
+<div class="section" id="cannot-convert-dictionary-update-sequence">
+<h3>Cannot convert dictionary update sequence<a class="headerlink" href="#cannot-convert-dictionary-update-sequence" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 752, in test_Cannot_convert_dictionary_update_sequence
+    dd.update([1, 2, 3])
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+
+    Peut-être que vous vouliez plutôt utiliser la méthode `dict.fromkeys()`.
+
+Une exception `TypeError` est généralement causée une tentative
+de combiner deux types d’objets incompatibles,
+en invoquant une fonction avec le mauvais type d’objet,
+ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
+
+    `dict.update()` n’accepte pas une séquence comme argument.
+    Au lieu d’écrire `dd.update([1, 2, 3])`
+    peut-être devriez-vous utiliser la méthode `dict.fromkeys()` : `dd.update( dict.fromkeys([1, 2, 3]) )`.
+
+Exception levée à la ligne 752 du fichier TESTS:\runtime\test_type_error.py.
+
+   750:     dd = {&quot;a&quot;: &quot;a&quot;}
+   751:     try:
+--&gt;752:         dd.update([1, 2, 3])
+   753:     except Exception as e:
+
+        dd: {&#39;a&#39;: &#39;a&#39;}
+        dd.update: &lt;builtin method update of dict object&gt;
 </pre></div>
 </div>
 </div>

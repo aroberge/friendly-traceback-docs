@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.2.12a
+Friendly-traceback version: 0.2.13a
 Python version: 3.8.4
 
 

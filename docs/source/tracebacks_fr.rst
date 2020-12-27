@@ -15,7 +15,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly-traceback version: 0.2.12a
+Friendly-traceback version: 0.2.13a
 Python version: 3.8.4
 
 
@@ -488,7 +488,7 @@ Long list
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_index_error.py", line 22, in test_Long_list
+      File "TESTS:\runtime\test_index_error.py", line 24, in test_Long_list
         print(a[50], b[0])
     IndexError: list index out of range
     
@@ -496,15 +496,17 @@ Long list
     d'une liste, d'un tuple, ou d'un objet similaire (séquence), à l’aide d’un index qui
     n’existe pas; typiquement, c’est parce que l’index que vous donnez
     est plus grand que la longueur de la séquence.
-    Rappel: le premier élément d'une séquence est à l'index 0.
     
-    Exception levée à la ligne 22 du fichier TESTS:\runtime\test_index_error.py.
+        Vous avez essayé d’obtenir l’élément avec l’index `50` de `a`,
+        une liste (`list`) de longueur `40`.
+        
+    Exception levée à la ligne 24 du fichier TESTS:\runtime\test_index_error.py.
     
-       20:     b = tuple(range(50))
-       21:     try:
-    -->22:         print(a[50], b[0])
+       22:     b = tuple(range(50))
+       23:     try:
+    -->24:         print(a[50], b[0])
                          ^^^^^
-       23:     except Exception as e:
+       25:     except Exception as e:
 
             a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
                 len(a): 40
@@ -522,12 +524,17 @@ Short tuple
         print(a[3], b[2])
     IndexError: tuple index out of range
     
+        N’oubliez pas : le premier élément d'un objet de type `un `tuple`` est à l’indice 0.
+        
     Une exception `IndexError` se produit lorsque vous essayez d’obtenir un élément
     d'une liste, d'un tuple, ou d'un objet similaire (séquence), à l’aide d’un index qui
     n’existe pas; typiquement, c’est parce que l’index que vous donnez
     est plus grand que la longueur de la séquence.
-    Rappel: le premier élément d'une séquence est à l'index 0.
     
+        Vous avez essayé d’obtenir l’élément avec l’index `3` de `a`,
+        un `tuple` de longueur `3`.
+        Le plus grand indice valide de `a` est `2`.
+        
     Exception levée à la ligne 8 du fichier TESTS:\runtime\test_index_error.py.
     
         6:     b = [1, 2, 3]
@@ -908,6 +915,40 @@ Can only concatenate
 
             a_tuple: (1, 2, 3)
             a_list: [1, 2, 3]
+        
+
+
+Cannot convert dictionary update sequence
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_type_error.py", line 752, in test_Cannot_convert_dictionary_update_sequence
+        dd.update([1, 2, 3])
+    TypeError: cannot convert dictionary update sequence element #0 to a sequence
+    
+        Peut-être que vous vouliez plutôt utiliser la méthode `dict.fromkeys()`.
+        
+    Une exception `TypeError` est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    
+        `dict.update()` n’accepte pas une séquence comme argument.
+        Au lieu d’écrire `dd.update([1, 2, 3])`
+        peut-être devriez-vous utiliser la méthode `dict.fromkeys()` : `dd.update( dict.fromkeys([1, 2, 3]) )`.
+        
+    Exception levée à la ligne 752 du fichier TESTS:\runtime\test_type_error.py.
+    
+       750:     dd = {"a": "a"}
+       751:     try:
+    -->752:         dd.update([1, 2, 3])
+       753:     except Exception as e:
+
+            dd: {'a': 'a'}
+            dd.update: <builtin method update of dict object>
         
 
 

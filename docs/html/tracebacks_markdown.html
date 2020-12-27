@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#indexerror">IndexError</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#long-list">Long list</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-22-of-file-tests-runtime-test-index-error-py">Exception raised on line 22 of file TESTS:\runtime\test_index_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-24-of-file-tests-runtime-test-index-error-py">Exception raised on line 24 of file TESTS:\runtime\test_index_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#short-tuple">Short tuple</a><ul>
@@ -278,6 +278,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#can-only-concatenate">Can only concatenate</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-36-of-file-tests-runtime-test-type-error-py">Exception raised on line 36 of file TESTS:\runtime\test_type_error.py.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cannot-convert-dictionary-update-sequence">Cannot convert dictionary update sequence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-752-of-file-tests-runtime-test-type-error-py">Exception raised on line 752 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#cannot-multiply-by-non-int">Cannot multiply by non int</a><ul>
@@ -475,7 +479,7 @@ trb_english_markdown.py located in the <code class="docutils literal notranslate
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.
 </p>
-</div><p>Friendly-traceback version: 0.2.12a
+</div><p>Friendly-traceback version: 0.2.13a
 Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="arithmeticerror">
@@ -893,7 +897,7 @@ because the name of the object is not spelled correctly.</p>
 <div class="section" id="long-list">
 <h3>Long list<a class="headerlink" href="#long-list" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_index_error.py&quot;</span>, line <span class="m">22</span>, in <span class="n">test_Long_list</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_index_error.py&quot;</span>, line <span class="m">24</span>, in <span class="n">test_Long_list</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">50</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="gr">IndexError</span>: <span class="n">list index out of range</span>
 </pre></div>
@@ -901,15 +905,16 @@ because the name of the object is not spelled correctly.</p>
 <p>An <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> occurs when you are try to get an item from a list,
 a tuple, or a similar object (sequence), by using an index which
 does not exists; typically, this is because the index you give
-is greater than the length of the sequence.
-Reminder: the first item of a sequence is at index 0.</p>
-<div class="section" id="exception-raised-on-line-22-of-file-tests-runtime-test-index-error-py">
-<h4>Exception raised on line 22 of file TESTS:\runtime\test_index_error.py.<a class="headerlink" href="#exception-raised-on-line-22-of-file-tests-runtime-test-index-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">20</span><span class="p">:</span>     <span class="n">b</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
-       <span class="mi">21</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">22</span><span class="p">:</span>         <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">50</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+is greater than the length of the sequence.</p>
+<p>You have tried to get the item with index <code class="docutils literal notranslate"><span class="pre">50</span></code> of <code class="docutils literal notranslate"><span class="pre">a</span></code>,
+a <code class="docutils literal notranslate"><span class="pre">list</span></code> of length <code class="docutils literal notranslate"><span class="pre">40</span></code>.</p>
+<div class="section" id="exception-raised-on-line-24-of-file-tests-runtime-test-index-error-py">
+<h4>Exception raised on line 24 of file TESTS:\runtime\test_index_error.py.<a class="headerlink" href="#exception-raised-on-line-24-of-file-tests-runtime-test-index-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">22</span><span class="p">:</span>     <span class="n">b</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
+       <span class="mi">23</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">24</span><span class="p">:</span>         <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">50</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
                          <span class="o">^^^^^</span>
-       <span class="mi">23</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+       <span class="mi">25</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">a</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
@@ -926,11 +931,14 @@ Reminder: the first item of a sequence is at index 0.</p>
 <span class="gr">IndexError</span>: <span class="n">tuple index out of range</span>
 </pre></div>
 </div>
+<p>Remember: the first item of a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> is at index 0.</p>
 <p>An <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> occurs when you are try to get an item from a list,
 a tuple, or a similar object (sequence), by using an index which
 does not exists; typically, this is because the index you give
-is greater than the length of the sequence.
-Reminder: the first item of a sequence is at index 0.</p>
+is greater than the length of the sequence.</p>
+<p>You have tried to get the item with index <code class="docutils literal notranslate"><span class="pre">3</span></code> of <code class="docutils literal notranslate"><span class="pre">a</span></code>,
+a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <code class="docutils literal notranslate"><span class="pre">3</span></code>.
+The largest valid index of <code class="docutils literal notranslate"><span class="pre">a</span></code> is <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
 <div class="section" id="exception-raised-on-line-8-of-file-tests-runtime-test-index-error-py">
 <h4>Exception raised on line 8 of file TESTS:\runtime\test_index_error.py.<a class="headerlink" href="#exception-raised-on-line-8-of-file-tests-runtime-test-index-error-py" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">6</span><span class="p">:</span>     <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -1284,6 +1292,36 @@ a <code class="docutils literal notranslate"><span class="pre">tuple</span></cod
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">a_tuple</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
     <span class="n">a_list</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="cannot-convert-dictionary-update-sequence">
+<h3>Cannot convert dictionary update sequence<a class="headerlink" href="#cannot-convert-dictionary-update-sequence" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">752</span>, in <span class="n">test_Cannot_convert_dictionary_update_sequence</span>
+    <span class="n">dd</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gr">TypeError</span>: <span class="n">cannot convert dictionary update sequence element #0 to a sequence</span>
+</pre></div>
+</div>
+<p>Perhaps you need to use the <code class="docutils literal notranslate"><span class="pre">dict.fromkeys()</span></code> method.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.</p>
+<p><code class="docutils literal notranslate"><span class="pre">dict.update()</span></code> does not accept a sequence as an argument.
+Instead of writing <code class="docutils literal notranslate"><span class="pre">dd.update([1,</span> <span class="pre">2,</span> <span class="pre">3])</span></code>
+perhaps you should use the <code class="docutils literal notranslate"><span class="pre">dict.fromkeys()</span></code> method: <code class="docutils literal notranslate"><span class="pre">dd.update(</span> <span class="pre">dict.fromkeys([1,</span> <span class="pre">2,</span> <span class="pre">3])</span> <span class="pre">)</span></code>.</p>
+<div class="section" id="exception-raised-on-line-752-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 752 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-752-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">750</span><span class="p">:</span>     <span class="n">dd</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;a&quot;</span><span class="p">}</span>
+       <span class="mi">751</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">752</span><span class="p">:</span>         <span class="n">dd</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+       <span class="mi">753</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">dd</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;a&#39;</span><span class="p">}</span>
+    <span class="n">dd</span><span class="o">.</span><span class="n">update</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">builtin</span> <span class="n">method</span> <span class="n">update</span> <span class="n">of</span> <span class="nb">dict</span> <span class="nb">object</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>

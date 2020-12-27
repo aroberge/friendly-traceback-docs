@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.2.12a
+Friendly-traceback version: 0.2.13a
 Python version: 3.8.4
 
 
@@ -592,7 +592,7 @@ Perhaps you meant to import `pi` (from `math`) instead of `Pi`
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_index_error.py", line 22, in test_Long_list
+  File "TESTS:\runtime\test_index_error.py", line 24, in test_Long_list
     print(a[50], b[0])
 IndexError: list index out of range
 
@@ -602,18 +602,21 @@ An `IndexError` occurs when you are try to get an item from a list,
 a tuple, or a similar object (sequence), by using an index which
 does not exists; typically, this is because the index you give
 is greater than the length of the sequence.
-Reminder: the first item of a sequence is at index 0.
 
 
-#### Exception raised on line 22 of file TESTS:\runtime\test_index_error.py.
+You have tried to get the item with index `50` of `a`,
+a `list` of length `40`.
+
+
+#### Exception raised on line 24 of file TESTS:\runtime\test_index_error.py.
 
 
 ```python
-       20:     b = tuple(range(50))
-       21:     try:
-    -->22:         print(a[50], b[0])
+       22:     b = tuple(range(50))
+       23:     try:
+    -->24:         print(a[50], b[0])
                          ^^^^^
-       23:     except Exception as e:
+       25:     except Exception as e:
 
 ```
 
@@ -634,11 +637,19 @@ IndexError: tuple index out of range
 
 ```
 
+Remember: the first item of a `tuple` is at index 0.
+
+
+
 An `IndexError` occurs when you are try to get an item from a list,
 a tuple, or a similar object (sequence), by using an index which
 does not exists; typically, this is because the index you give
 is greater than the length of the sequence.
-Reminder: the first item of a sequence is at index 0.
+
+
+You have tried to get the item with index `3` of `a`,
+a `tuple` of length `3`.
+The largest valid index of `a` is `2`.
 
 
 #### Exception raised on line 8 of file TESTS:\runtime\test_index_error.py.
@@ -1103,6 +1114,49 @@ a `tuple` and a `list`
 ```python
     a_tuple: (1, 2, 3)
     a_list: [1, 2, 3]
+
+```
+
+### Cannot convert dictionary update sequence
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_type_error.py", line 752, in test_Cannot_convert_dictionary_update_sequence
+    dd.update([1, 2, 3])
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+
+```
+
+Perhaps you need to use the `dict.fromkeys()` method.
+
+
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.
+
+
+`dict.update()` does not accept a sequence as an argument.
+Instead of writing `dd.update([1, 2, 3])`
+perhaps you should use the `dict.fromkeys()` method: `dd.update( dict.fromkeys([1, 2, 3]) )`.
+
+
+#### Exception raised on line 752 of file TESTS:\runtime\test_type_error.py.
+
+
+```python
+       750:     dd = {"a": "a"}
+       751:     try:
+    -->752:         dd.update([1, 2, 3])
+       753:     except Exception as e:
+
+```
+
+```python
+    dd: {'a': 'a'}
+    dd.update: <builtin method update of dict object>
 
 ```
 
