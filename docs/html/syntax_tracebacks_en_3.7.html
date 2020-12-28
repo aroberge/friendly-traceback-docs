@@ -215,6 +215,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-use-double-star-operator">SyntaxError - can’t use double star operator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-can-t-use-return-outside-function">SyntaxError - can’t use return outside function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#syntaxerror-too-many-nested-blocks">SyntaxError - too many nested blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-named-arguments-must-follow-bare">SyntaxError - named arguments must follow bare *</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-use-j-instead-of-i">SyntaxError - use j instead of i</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-do-not-import-from-future">SyntaxError - do not import * from __future__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-typo-in-future">SyntaxError - typo in __future__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-unkown-feature-in-future">SyntaxError - unkown feature in __future__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-not-a-chance">SyntaxError - Not a chance!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxerror-future-at-beginning">SyntaxError - __future__ at beginning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
@@ -332,7 +339,7 @@ Python version: 3.7.8</p>
 <div class="section" id="indentationerror-1-expected-an-indented-block">
 <h2>IndentationError - 1: expected an indented block<a class="headerlink" href="#indentationerror-1-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_indentation_error1.py&quot;, line 4
     pass
@@ -360,7 +367,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="indentationerror-2-unexpected-indent">
 <h2>IndentationError - 2: unexpected indent<a class="headerlink" href="#indentationerror-2-unexpected-indent" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_indentation_error2.py&quot;, line 4
     pass
@@ -389,7 +396,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="indentationerror-3-unindent-does-not-match">
 <h2>IndentationError - 3: unindent does not match …<a class="headerlink" href="#indentationerror-3-unindent-does-not-match" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_indentation_error3.py&quot;, line 4
     pass
@@ -418,7 +425,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="taberror">
 <h2>TabError<a class="headerlink" href="#taberror" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_tab_error.py&quot;, line 7
     pass
@@ -447,7 +454,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-assign-to-keyword">
 <h2>SyntaxError - Assign to keyword<a class="headerlink" href="#syntaxerror-assign-to-keyword" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error1.py&quot;, line 3
     def = 2
@@ -476,7 +483,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-missing-colon-1">
 <h2>SyntaxError - Missing colon - 1<a class="headerlink" href="#syntaxerror-missing-colon-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error2.py&quot;, line 3
     if True
@@ -508,7 +515,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-missing-colon-2">
 <h2>SyntaxError - Missing colon - 2<a class="headerlink" href="#syntaxerror-missing-colon-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error3.py&quot;, line 3
     while True  # a comment
@@ -540,7 +547,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-elif-not-else-if">
 <h2>SyntaxError - elif, not else if<a class="headerlink" href="#syntaxerror-elif-not-else-if" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error4.py&quot;, line 5
     else if True:
@@ -573,7 +580,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-elif-not-elseif">
 <h2>SyntaxError - elif, not elseif<a class="headerlink" href="#syntaxerror-elif-not-elseif" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error5.py&quot;, line 5
     elseif True:
@@ -606,7 +613,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-malformed-def-statment-1">
 <h2>SyntaxError - malformed def statment - 1<a class="headerlink" href="#syntaxerror-malformed-def-statment-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error6.py&quot;, line 3
     def :
@@ -638,7 +645,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-malformed-def-statment-2">
 <h2>SyntaxError - malformed def statment - 2<a class="headerlink" href="#syntaxerror-malformed-def-statment-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error7.py&quot;, line 3
     def name  :
@@ -672,7 +679,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-malformed-def-statment-3">
 <h2>SyntaxError - malformed def statment - 3<a class="headerlink" href="#syntaxerror-malformed-def-statment-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error8.py&quot;, line 3
     def ( arg )  :
@@ -704,7 +711,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-can-t-assign-to-literal-1">
 <h2>SyntaxError - can’t assign to literal - 1<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error9.py&quot;, line 3
     1 = a
@@ -738,7 +745,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-can-t-assign-to-literal-2">
 <h2>SyntaxError - can’t assign to literal - 2<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error10.py&quot;, line 3
     1 = 2
@@ -768,7 +775,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-can-t-assign-to-literal-3">
 <h2>SyntaxError - can’t assign to literal - 3<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error52.py&quot;, line 7
     {1, 2, 3} = 4
@@ -799,7 +806,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-can-t-assign-to-literal-4">
 <h2>SyntaxError - can’t assign to literal - 4<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-4" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error53.py&quot;, line 7
     {1 : 2, 2 : 4} = 5
@@ -830,7 +837,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-can-t-assign-to-literal-5">
 <h2>SyntaxError - can’t assign to literal - 5<a class="headerlink" href="#syntaxerror-can-t-assign-to-literal-5" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error54.py&quot;, line 4
     1 = a = b
@@ -861,7 +868,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-import-x-from-y">
 <h2>SyntaxError - import X from Y<a class="headerlink" href="#syntaxerror-import-x-from-y" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error11.py&quot;, line 3
     import pen from turtle
@@ -896,7 +903,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-eol-while-scanning-string-literal">
 <h2>SyntaxError - EOL while scanning string literal<a class="headerlink" href="#syntaxerror-eol-while-scanning-string-literal" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error12.py&quot;, line 3
     alphabet = &#39;abc
@@ -924,7 +931,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-assignment-to-keyword-none">
 <h2>SyntaxError - assignment to keyword (None)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-none" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error13.py&quot;, line 4
     None = 1
@@ -951,7 +958,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-assignment-to-keyword-debug">
 <h2>SyntaxError - assignment to keyword (__debug__)<a class="headerlink" href="#syntaxerror-assignment-to-keyword-debug" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error14.py&quot;, line 4
     __debug__ = 1
@@ -978,7 +985,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-unmatched-closing-parenthesis">
 <h2>SyntaxError - unmatched closing parenthesis<a class="headerlink" href="#syntaxerror-unmatched-closing-parenthesis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error15.py&quot;, line 6
     3, 4,))
@@ -1011,7 +1018,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-unclosed-parenthesis-1">
 <h2>SyntaxError - unclosed parenthesis- 1<a class="headerlink" href="#syntaxerror-unclosed-parenthesis-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error16.py&quot;, line 3
     if x == 1:
@@ -1043,7 +1050,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-unclosed-parenthesis-2">
 <h2>SyntaxError - unclosed parenthesis - 2<a class="headerlink" href="#syntaxerror-unclosed-parenthesis-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error17.py&quot;, line 3
     d = a*a
@@ -1074,7 +1081,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-mismatched-brackets">
 <h2>SyntaxError - mismatched brackets<a class="headerlink" href="#syntaxerror-mismatched-brackets" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error18.py&quot;, line 2
     x = (1, 2, 3]
@@ -1104,7 +1111,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-mismatched-brackets-2">
 <h2>SyntaxError - mismatched brackets - 2<a class="headerlink" href="#syntaxerror-mismatched-brackets-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error19.py&quot;, line 4
     3]
@@ -1138,7 +1145,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-print-is-a-function">
 <h2>SyntaxError - print is a function<a class="headerlink" href="#syntaxerror-print-is-a-function" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error20.py&quot;, line 2
     print &#39;hello&#39;
@@ -1167,7 +1174,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-python-keyword-as-function-name">
 <h2>SyntaxError - Python keyword as function name<a class="headerlink" href="#syntaxerror-python-keyword-as-function-name" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error21.py&quot;, line 3
     def pass():
@@ -1196,7 +1203,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-break-outside-loop">
 <h2>SyntaxError - break outside loop<a class="headerlink" href="#syntaxerror-break-outside-loop" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error22.py&quot;, line 4
     break
@@ -1222,7 +1229,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-continue-outside-loop">
 <h2>SyntaxError - continue outside loop<a class="headerlink" href="#syntaxerror-continue-outside-loop" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error23.py&quot;, line 4
     continue
@@ -1248,7 +1255,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-quote-inside-a-string">
 <h2>SyntaxError - quote inside a string<a class="headerlink" href="#syntaxerror-quote-inside-a-string" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error24.py&quot;, line 3
     message = &#39;don&#39;t&#39;
@@ -1281,7 +1288,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-missing-comma-in-a-dict">
 <h2>SyntaxError - missing comma in a dict<a class="headerlink" href="#syntaxerror-missing-comma-in-a-dict" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error25.py&quot;, line 5
     &#39;c&#39;: 3,
@@ -1316,7 +1323,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-missing-comma-in-a-set">
 <h2>SyntaxError - missing comma in a set<a class="headerlink" href="#syntaxerror-missing-comma-in-a-set" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error26.py&quot;, line 3
     a = {1, 2  3}
@@ -1347,7 +1354,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-missing-comma-in-a-list">
 <h2>SyntaxError - missing comma in a list<a class="headerlink" href="#syntaxerror-missing-comma-in-a-list" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error27.py&quot;, line 3
     a = [1, 2  3]
@@ -1378,7 +1385,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-missing-comma-in-a-tuple">
 <h2>SyntaxError - missing comma in a tuple<a class="headerlink" href="#syntaxerror-missing-comma-in-a-tuple" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error28.py&quot;, line 3
     a = (1, 2  3)
@@ -1409,7 +1416,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-missing-comma-between-function-args">
 <h2>SyntaxError - missing comma between function args<a class="headerlink" href="#syntaxerror-missing-comma-between-function-args" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error29.py&quot;, line 4
     def a(b, c d):
@@ -1442,7 +1449,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-can-t-assign-to-function-call-1">
 <h2>SyntaxError - can’t assign to function call - 1<a class="headerlink" href="#syntaxerror-can-t-assign-to-function-call-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error30.py&quot;, line 6
     len(&#39;a&#39;) = 3
@@ -1473,7 +1480,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-can-t-assign-to-function-call-2">
 <h2>SyntaxError - can’t assign to function call - 2<a class="headerlink" href="#syntaxerror-can-t-assign-to-function-call-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error31.py&quot;, line 6
     func(a, b=3) = 4
@@ -1504,7 +1511,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-used-equal-sign-instead-of-colon">
 <h2>SyntaxError - used equal sign instead of colon<a class="headerlink" href="#syntaxerror-used-equal-sign-instead-of-colon" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error32.py&quot;, line 4
     ages = {&#39;Alice&#39;=22, &#39;Bob&#39;=24}
@@ -1535,7 +1542,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-non-default-argument-follows-default-argument">
 <h2>SyntaxError - non-default argument follows default argument<a class="headerlink" href="#syntaxerror-non-default-argument-follows-default-argument" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error33.py&quot;, line 5
     def test(a=1, b):
@@ -1575,7 +1582,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-positional-argument-follows-keyword-argument">
 <h2>SyntaxError - positional argument follows keyword argument<a class="headerlink" href="#syntaxerror-positional-argument-follows-keyword-argument" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error34.py&quot;, line 5
     test(a=1, b)
@@ -1614,7 +1621,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-f-string-unterminated-string">
 <h2>SyntaxError - f-string: unterminated string<a class="headerlink" href="#syntaxerror-f-string-unterminated-string" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error35.py&quot;, line 4
     print(f&quot;Bob is {age[&#39;Bob]} years old.&quot;)
@@ -1644,7 +1651,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-unclosed-bracket">
 <h2>SyntaxError - unclosed bracket<a class="headerlink" href="#syntaxerror-unclosed-bracket" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error36.py&quot;, line 7
     print(foo())
@@ -1676,7 +1683,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-unexpected-eof-while-parsing">
 <h2>SyntaxError - unexpected EOF while parsing<a class="headerlink" href="#syntaxerror-unexpected-eof-while-parsing" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error37.py&quot;, line 8
 SyntaxError: unexpected EOF while parsing
@@ -1708,7 +1715,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-name-is-parameter-and-global">
 <h2>SyntaxError - name is parameter and global<a class="headerlink" href="#syntaxerror-name-is-parameter-and-global" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error38.py&quot;, line 6
     global x
@@ -1741,7 +1748,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-keyword-as-attribute">
 <h2>SyntaxError - keyword as attribute<a class="headerlink" href="#syntaxerror-keyword-as-attribute" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error39.py&quot;, line 12
     a.pass = 2
@@ -1770,7 +1777,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-content-passed-continuation-line-character">
 <h2>SyntaxError - content passed continuation line character<a class="headerlink" href="#syntaxerror-content-passed-continuation-line-character" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error40.py&quot;, line 5
     print(\t)
@@ -1798,7 +1805,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-keyword-can-t-be-an-expression">
 <h2>SyntaxError - keyword can’t be an expression<a class="headerlink" href="#syntaxerror-keyword-can-t-be-an-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error41.py&quot;, line 7
     a = dict(&#39;key&#39;=1)
@@ -1830,7 +1837,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-invalid-character-in-identifier">
 <h2>SyntaxError - invalid character in identifier<a class="headerlink" href="#syntaxerror-invalid-character-in-identifier" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error42.py&quot;, line 6
     🤖 = &#39;Reeborg&#39;
@@ -1858,7 +1865,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-1">
 <h2>SyntaxError - keyword cannot be argument in def - 1<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error43.py&quot;, line 5
     def f(None=1):
@@ -1889,7 +1896,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-2">
 <h2>SyntaxError - keyword cannot be argument in def - 2<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error44.py&quot;, line 5
     def f(x, True):
@@ -1920,7 +1927,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-3">
 <h2>SyntaxError - keyword cannot be argument in def - 3<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error45.py&quot;, line 5
     def f(*None):
@@ -1951,7 +1958,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-keyword-cannot-be-argument-in-def-4">
 <h2>SyntaxError - keyword cannot be argument in def - 4<a class="headerlink" href="#syntaxerror-keyword-cannot-be-argument-in-def-4" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error46.py&quot;, line 5
     def f(**None):
@@ -1982,7 +1989,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-delete-function-call">
 <h2>SyntaxError - delete function call<a class="headerlink" href="#syntaxerror-delete-function-call" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error47.py&quot;, line 5
     del f(a)
@@ -2013,7 +2020,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-assigned-prior-to-global-declaration">
 <h2>SyntaxError - assigned prior to global declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-global-declaration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error48.py&quot;, line 7
     global p
@@ -2040,7 +2047,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-used-prior-to-global-declaration">
 <h2>SyntaxError - used prior to global declaration<a class="headerlink" href="#syntaxerror-used-prior-to-global-declaration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error49.py&quot;, line 7
     global r
@@ -2067,7 +2074,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-assigned-prior-to-nonlocal-declaration">
 <h2>SyntaxError - assigned prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-assigned-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error50.py&quot;, line 9
     nonlocal q
@@ -2096,7 +2103,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-used-prior-to-nonlocal-declaration">
 <h2>SyntaxError - used prior to nonlocal declaration<a class="headerlink" href="#syntaxerror-used-prior-to-nonlocal-declaration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error51.py&quot;, line 9
     nonlocal s
@@ -2125,7 +2132,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-named-assignment-with-python-constant">
 <h2>SyntaxError - named assignment with Python constant<a class="headerlink" href="#syntaxerror-named-assignment-with-python-constant" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error55.py&quot;, line 4
     (True := 1)
@@ -2158,7 +2165,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-assignment-to-operator">
 <h2>SyntaxError - assignment to operator<a class="headerlink" href="#syntaxerror-assignment-to-operator" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error56.py&quot;, line 4
     a + 1 = 2
@@ -2186,7 +2193,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-using-the-backquote-character">
 <h2>SyntaxError - using the backquote character<a class="headerlink" href="#syntaxerror-using-the-backquote-character" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error57.py&quot;, line 3
     a = `1`
@@ -2218,7 +2225,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-assign-to-generator-expression">
 <h2>SyntaxError - assign to generator expression<a class="headerlink" href="#syntaxerror-assign-to-generator-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error58.py&quot;, line 3
     (x for x in x) = 1
@@ -2244,7 +2251,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-assign-to-conditional-expression">
 <h2>SyntaxError - assign to conditional expression<a class="headerlink" href="#syntaxerror-assign-to-conditional-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error59.py&quot;, line 3
     a if 1 else b = 1
@@ -2273,7 +2280,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-name-is-parameter-and-nonlocal">
 <h2>SyntaxError - name is parameter and nonlocal<a class="headerlink" href="#syntaxerror-name-is-parameter-and-nonlocal" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error60.py&quot;, line 5
     nonlocal x
@@ -2301,7 +2308,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-name-is-global-and-nonlocal">
 <h2>SyntaxError - name is global and nonlocal<a class="headerlink" href="#syntaxerror-name-is-global-and-nonlocal" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error61.py&quot;, line 7
     global xy
@@ -2329,7 +2336,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-nonlocal-variable-not-found">
 <h2>SyntaxError - nonlocal variable not found<a class="headerlink" href="#syntaxerror-nonlocal-variable-not-found" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error62.py&quot;, line 5
     nonlocal ab
@@ -2356,7 +2363,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-nonlocal-variable-not-found-at-module-level">
 <h2>SyntaxError - nonlocal variable not found at module level<a class="headerlink" href="#syntaxerror-nonlocal-variable-not-found-at-module-level" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error63.py&quot;, line 4
     nonlocal cd
@@ -2384,7 +2391,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-keyword-arg-only-once-in-function-definition">
 <h2>SyntaxError - keyword arg only once in function definition<a class="headerlink" href="#syntaxerror-keyword-arg-only-once-in-function-definition" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error64.py&quot;, line 4
     def f(aa=1, aa=2):
@@ -2414,7 +2421,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-keyword-arg-only-once-in-function-call">
 <h2>SyntaxError - keyword arg only once in function call<a class="headerlink" href="#syntaxerror-keyword-arg-only-once-in-function-call" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error65.py&quot;, line 4
     f(ad=1, ad=2)
@@ -2441,7 +2448,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-unexpected-eof-while-parsing-2">
 <h2>SyntaxError - unexpected EOF while parsing 2<a class="headerlink" href="#syntaxerror-unexpected-eof-while-parsing-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error66.py&quot;, line 4
 SyntaxError: unexpected EOF while parsing
@@ -2466,7 +2473,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-print-is-a-function-2">
 <h2>SyntaxError - print is a function 2<a class="headerlink" href="#syntaxerror-print-is-a-function-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error67.py&quot;, line 2
     print len(&#39;hello&#39;)
@@ -2494,7 +2501,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-copy-paste-from-interpreter">
 <h2>SyntaxError - copy/paste from interpreter<a class="headerlink" href="#syntaxerror-copy-paste-from-interpreter" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error68.py&quot;, line 2
     &gt;&gt;&gt; print(&quot;Hello World!&quot;)
@@ -2524,7 +2531,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-using-pip-from-interpreter">
 <h2>SyntaxError - Using pip from interpreter<a class="headerlink" href="#syntaxerror-using-pip-from-interpreter" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error69.py&quot;, line 2
     pip install friendly
@@ -2555,7 +2562,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-using-pip-from-interpreter-2">
 <h2>SyntaxError - Using pip from interpreter 2<a class="headerlink" href="#syntaxerror-using-pip-from-interpreter-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error70.py&quot;, line 2
     python -m pip install friendly
@@ -2586,7 +2593,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-dot-followed-by-parenthesis">
 <h2>SyntaxError - dot followed by parenthesis<a class="headerlink" href="#syntaxerror-dot-followed-by-parenthesis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error71.py&quot;, line 2
     print(len.(&#39;hello&#39;))
@@ -2613,7 +2620,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-cannot-assign-to-f-string">
 <h2>SyntaxError - cannot assign to f-string<a class="headerlink" href="#syntaxerror-cannot-assign-to-f-string" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error72.py&quot;, line 6
     f&#39;{x}&#39; = 42
@@ -2641,7 +2648,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-raising-multiple-exceptions">
 <h2>SyntaxError - raising multiple exceptions<a class="headerlink" href="#syntaxerror-raising-multiple-exceptions" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error73.py&quot;, line 2
     raise X, Y
@@ -2668,7 +2675,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-parenthesis-around-generator-expression">
 <h2>SyntaxError - parenthesis around generator expression<a class="headerlink" href="#syntaxerror-parenthesis-around-generator-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error74.py&quot;, line 6
     f(x for x in L, 1)
@@ -2696,7 +2703,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-invalid-character-bad-quote">
 <h2>SyntaxError - invalid character (bad quote)<a class="headerlink" href="#syntaxerror-invalid-character-bad-quote" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error75.py&quot;, line 3
     a = « hello »
@@ -2727,7 +2734,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-single-instead-of-double-with-if">
 <h2>SyntaxError - single = instead of double == with if<a class="headerlink" href="#syntaxerror-single-instead-of-double-with-if" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error76.py&quot;, line 3
     if i % 2 = 0:
@@ -2759,7 +2766,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-single-instead-of-double-with-elif">
 <h2>SyntaxError - single = instead of double == with elif<a class="headerlink" href="#syntaxerror-single-instead-of-double-with-elif" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error77.py&quot;, line 5
     elif i % 2 = 0:
@@ -2792,7 +2799,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-single-instead-of-double-with-while">
 <h2>SyntaxError - single = instead of double == with while<a class="headerlink" href="#syntaxerror-single-instead-of-double-with-while" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error78.py&quot;, line 4
     while a = 1:
@@ -2825,7 +2832,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-forgot-a-comma-in-an-f-string">
 <h2>SyntaxError - forgot a comma in an f-string<a class="headerlink" href="#syntaxerror-forgot-a-comma-in-an-f-string" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;&lt;fstring&gt;&quot;, line 1
     (x y)
@@ -2854,7 +2861,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-valid-names-cannot-begin-with-a-number">
 <h2>SyntaxError - Valid names cannot begin with a number<a class="headerlink" href="#syntaxerror-valid-names-cannot-begin-with-a-number" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error80.py&quot;, line 3
     36abc = 3
@@ -2884,7 +2891,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-unclosed-parenthesis-3">
 <h2>SyntaxError - unclosed parenthesis - 3<a class="headerlink" href="#syntaxerror-unclosed-parenthesis-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error81.py&quot;, line 7
     if 2:
@@ -2917,7 +2924,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-forgot-a-multiplication-operator">
 <h2>SyntaxError - forgot a multiplication operator<a class="headerlink" href="#syntaxerror-forgot-a-multiplication-operator" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error82.py&quot;, line 3
     tau = 2pi
@@ -2948,7 +2955,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-space-between-names">
 <h2>SyntaxError - space between names<a class="headerlink" href="#syntaxerror-space-between-names" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error83.py&quot;, line 4
     a-b = 2
@@ -2979,7 +2986,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-can-t-use-star-operator">
 <h2>SyntaxError - can’t use star operator<a class="headerlink" href="#syntaxerror-can-t-use-star-operator" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error84.py&quot;, line 3
     *a
@@ -3006,7 +3013,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-can-t-use-double-star-operator">
 <h2>SyntaxError - can’t use double star operator<a class="headerlink" href="#syntaxerror-can-t-use-double-star-operator" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;&lt;fstring&gt;&quot;, line 1
     (**k)
@@ -3033,7 +3040,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-can-t-use-return-outside-function">
 <h2>SyntaxError - can’t use return outside function<a class="headerlink" href="#syntaxerror-can-t-use-return-outside-function" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error86.py&quot;, line 3
     return
@@ -3058,7 +3065,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="section" id="syntaxerror-too-many-nested-blocks">
 <h2>SyntaxError - too many nested blocks<a class="headerlink" href="#syntaxerror-too-many-nested-blocks" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;None&quot;, line None
 SyntaxError: too many statically nested blocks
@@ -3074,10 +3081,203 @@ A `SyntaxError` occurs when Python cannot understand your code.
 </pre></div>
 </div>
 </div>
+<div class="section" id="syntaxerror-named-arguments-must-follow-bare">
+<h2>SyntaxError - named arguments must follow bare *<a class="headerlink" href="#syntaxerror-named-arguments-must-follow-bare" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error88.py&quot;, line 4
+    def f(*):
+         ^
+SyntaxError: named arguments must follow bare *
+
+    Did you forget something after `*`?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error88.py&#39;
+beyond the location indicated by --&gt; and ^.
+
+   1: # SyntaxError: named arguments must follow bare *
+   2:
+   3:
+--&gt;4: def f(*):
+           ^
+   5:     pass
+
+    Assuming you were defining a function, you need
+    to replace `*` by either `*arguments` or
+    by `*, named_argument=value`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-use-j-instead-of-i">
+<h2>SyntaxError - use j instead of i<a class="headerlink" href="#syntaxerror-use-j-instead-of-i" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error89.py&quot;, line 3
+    a = 3.0 i
+            ^
+SyntaxError: invalid syntax
+
+    Did you mean `3.0 j`?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error89.py&#39;
+beyond the location indicated by --&gt; and ^.
+
+   1: # SyntaxError: invalid syntax
+   2:
+--&gt;3: a = 3.0 i
+              ^
+
+    I make an effort below to guess what caused the problem
+    but I might guess incorrectly.
+
+    Perhaps you thought that `i` could be used to represent
+    the square root of -1. In Python, `j` (or `1j`) is used for this
+    and perhaps you meant to write `3.0 j`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-do-not-import-from-future">
+<h2>SyntaxError - do not import * from __future__<a class="headerlink" href="#syntaxerror-do-not-import-from-future" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error90.py&quot;, line 1
+    from __future__ import *
+   ^
+SyntaxError: future feature * is not defined
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error90.py&#39;
+beyond the location indicated by --&gt; and ^.
+
+--&gt;1: from __future__ import *
+     ^
+
+    When using a `from __future__ import` statement,
+    you must import specific named features.
+
+    The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-typo-in-future">
+<h2>SyntaxError - typo in __future__<a class="headerlink" href="#syntaxerror-typo-in-future" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error91.py&quot;, line 1
+    from __future__ import divisio
+   ^
+SyntaxError: future feature divisio is not defined
+
+    Did you mean `division`?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error91.py&#39;
+beyond the location indicated by --&gt; and ^.
+
+--&gt;1: from __future__ import divisio
+     ^
+
+    Instead of `divisio`, perhaps you meant to import `division`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-unkown-feature-in-future">
+<h2>SyntaxError - unkown feature in __future__<a class="headerlink" href="#syntaxerror-unkown-feature-in-future" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error92.py&quot;, line 1
+    from __future__ import something
+   ^
+SyntaxError: future feature something is not defined
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error92.py&#39;
+beyond the location indicated by --&gt; and ^.
+
+--&gt;1: from __future__ import something
+     ^
+
+    `something` is not a valid feature of module `__future__`.
+
+    The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-not-a-chance">
+<h2>SyntaxError - Not a chance!<a class="headerlink" href="#syntaxerror-not-a-chance" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error93.py&quot;, line 1
+    from __future__ import braces
+   ^
+SyntaxError: not a chance
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error93.py&#39;
+beyond the location indicated by --&gt; and ^.
+
+--&gt;1: from __future__ import braces
+     ^
+
+    I suspect you wrote `from __future__ import braces` following
+    someone else&#39;s suggestion. This will never work.
+
+    Unlike other programming languages, Python&#39;s code block are defined by
+    their indentation level, and not by using some curly braces, like `{...}`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntaxerror-future-at-beginning">
+<h2>SyntaxError - __future__ at beginning<a class="headerlink" href="#syntaxerror-future-at-beginning" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error94.py&quot;, line 3
+    from __future__ import generators
+   ^
+SyntaxError: from __future__ imports must occur at the beginning of the file
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error94.py&#39;
+beyond the location indicated by --&gt; and ^.
+
+   1:
+   2: def fn():
+--&gt;3:     from __future__ import generators
+         ^
+
+    A `from __future__ import` statement changes the way Python
+    interprets the code in a file.
+    It must appear at the beginning of the file.
+</pre></div>
+</div>
+</div>
 <div class="section" id="walrus-operator-does-not-exist-yet">
 <h2>Walrus operator does not exist - yet<a class="headerlink" href="#walrus-operator-does-not-exist-yet" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 143, in create_tracebacks
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 150, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error_walrus.py&quot;, line 3
     print(walrus := True)
