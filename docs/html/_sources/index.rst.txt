@@ -89,8 +89,8 @@ English (by default) and French are available.
    :hidden:
    :caption: Use in your project
 
-   api
    lies
+   api
    formatter
    usage_adv
    plugins

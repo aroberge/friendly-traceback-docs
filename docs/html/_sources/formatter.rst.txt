@@ -38,17 +38,19 @@ Currently, a formatter must accept two arguments:
             "cause",
             "last_call_header",
             "last_call_source",
-            "last_call_variables_header",
             "last_call_variables",
             "exception_raised_header",
             "exception_raised_source",
-            "exception_raised_variables_header",
             "exception_raised_variables",
         ]
 
    New items are likely going to be added in the near future:
    is it suggested that you look at the actual code if you plan to
    create your own formatter.
+
+.. tip::
+
+    Use ``show_info()`` in a Friendly console to see all possible items.
 
 
 2. A string (``include``) which specifies which parts of the friendly

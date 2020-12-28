@@ -153,14 +153,6 @@ gettext's option of falling back to the hard-coded version if needed.
     specific version.
 
 
-No dependencies
-----------------
-
-For now at least, Friendly-traceback has no required dependencies other than
-modules found in Python's standard library. If possible, we would like
-to keep it this way.
-
-
 Other similar projects
 ------------------------
 
@@ -176,8 +168,8 @@ The following is an incomplete list of projects or modules to look at:
 - https://docs.python.org/3/library/cgitb.html
 - https://github.com/albertz/py_better_exchook/
 - https://github.com/Infinidat/infi.traceback
+- https://github.com/willmcgugan/rich
 - https://github.com/laurb9/rich-traceback
-- http://www.wotevah.com/code/log.py
 - https://github.com/ipython/ipython/blob/master/IPython/core/ultratb.py
 - https://github.com/patrys/great-justice
 - https://github.com/Qix-/better-exceptions
