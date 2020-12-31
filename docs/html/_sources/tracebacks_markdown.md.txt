@@ -850,7 +850,7 @@ before being defined or given a value.
 
 In your program, `x` is an unknown name.
 A type hint found for `x` in the global scope.
-Perhaps you had used a colon instead of an equal sign and written
+Perhaps you had used a colon instead of an equal sign and wrote
 
     x : 3
 

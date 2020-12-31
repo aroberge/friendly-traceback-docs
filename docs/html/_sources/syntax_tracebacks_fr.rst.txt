@@ -1041,7 +1041,15 @@ Missing comma in a set
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
-        Peut-être avez-vous oublié une virgule ou un opérateur, comme `+`, `*`, `in`, etc., entre `2` et `3`.
+        Peut-être que vous vouliez insérer un opérateur comme `+, -, *, ","`
+        entre `2` et `3`.
+        Les lignes de code suivantes ne causeraient pas des `SyntaxError :
+        
+            a = {1, 2 +  3}
+            a = {1, 2 -  3}
+            a = {1, 2 *  3}
+            a = {1, 2,  3}
+        N.B. : ce ne sont là que quelques-uns des choix possibles.
         
 
 Missing comma in a list
@@ -1074,7 +1082,15 @@ Missing comma in a list
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
-        Peut-être avez-vous oublié une virgule ou un opérateur, comme `+`, `*`, `in`, etc., entre `2` et `3`.
+        Peut-être que vous vouliez insérer un opérateur comme `+, -, *, ","`
+        entre `2` et `3`.
+        Les lignes de code suivantes ne causeraient pas des `SyntaxError :
+        
+            a = [1, 2 +  3]
+            a = [1, 2 -  3]
+            a = [1, 2 *  3]
+            a = [1, 2,  3]
+        N.B. : ce ne sont là que quelques-uns des choix possibles.
         
 
 Missing comma in a tuple
@@ -1107,7 +1123,15 @@ Missing comma in a tuple
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
-        Peut-être avez-vous oublié une virgule ou un opérateur, comme `+`, `*`, `in`, etc., entre `2` et `3`.
+        Peut-être que vous vouliez insérer un opérateur comme `+, -, *, ","`
+        entre `2` et `3`.
+        Les lignes de code suivantes ne causeraient pas des `SyntaxError :
+        
+            a = (1, 2 +  3)
+            a = (1, 2 -  3)
+            a = (1, 2 *  3)
+            a = (1, 2,  3)
+        N.B. : ce ne sont là que quelques-uns des choix possibles.
         
 
 Missing comma between function args
@@ -1124,7 +1148,7 @@ Missing comma between function args
                    ^
     SyntaxError: invalid syntax
     
-        Avez-vous oublié quelque chose entre `c` et `d` ?
+        Vouliez-vous dire `def a(b, c, d):` ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1142,7 +1166,11 @@ Missing comma between function args
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Python indique que l’erreur est causée par `d` écrit tout juste après `c`.
-        Peut-être avez-vous oublié une virgule ou un opérateur, comme `+`, `*`, `in`, etc., entre `c` et `d`.
+        Peut-être que vous vouliez écrire `,` entre
+        `c` et `d` :
+        
+            def a(b, c, d):
+        ce qui ne causerait pas de `SyntaxError`.
         
 
 Cannot assign to function call - 1
@@ -2768,8 +2796,8 @@ Single = instead of double == with while
         un opérateur d'égalité, `==`, ou l'opérateur `:=`.
         
 
-Forgot a comma in an f-string
------------------------------
+Forgot an operator in an f-string
+---------------------------------
 
 .. code-block:: none
 
@@ -2796,7 +2824,15 @@ Forgot a comma in an f-string
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
         Python indique que l’erreur est causée par `y` écrit tout juste après `x`.
-        Peut-être avez-vous oublié une virgule ou un opérateur, comme `+`, `*`, `in`, etc., entre `x` et `y`.
+        Peut-être que vous vouliez insérer un opérateur comme `+, -, *, ","`
+        entre `x` et `y`.
+        Les lignes de code suivantes ne causeraient pas des `SyntaxError :
+        
+            (x + y)
+            (x - y)
+            (x * y)
+            (x, y)
+        N.B. : ce ne sont là que quelques-uns des choix possibles.
         
 
 Valid names cannot begin with a number

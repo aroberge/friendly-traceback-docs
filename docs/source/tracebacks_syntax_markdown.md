@@ -1237,8 +1237,16 @@ beyond the location indicated by --> and ^.
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-Python indicates that the error is caused by `3` written just after `2`.
-Perhaps you forgot a comma or an operator, like `+`, `*`, `in`, etc., between `2` and `3`.
+Python indicates that the error is caused by `3` written immediately after `2`.
+Perhaps you meant to insert an operator like `+, -, *, ","`
+between `2` and `3`.
+The following lines of code would not cause any `SyntaxError`:
+
+    a = {1, 2 +  3}
+    a = {1, 2 -  3}
+    a = {1, 2 *  3}
+    a = {1, 2,  3}
+Note: these are just some of the possible choices.
 
 ---
 
@@ -1279,8 +1287,16 @@ beyond the location indicated by --> and ^.
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-Python indicates that the error is caused by `3` written just after `2`.
-Perhaps you forgot a comma or an operator, like `+`, `*`, `in`, etc., between `2` and `3`.
+Python indicates that the error is caused by `3` written immediately after `2`.
+Perhaps you meant to insert an operator like `+, -, *, ","`
+between `2` and `3`.
+The following lines of code would not cause any `SyntaxError`:
+
+    a = [1, 2 +  3]
+    a = [1, 2 -  3]
+    a = [1, 2 *  3]
+    a = [1, 2,  3]
+Note: these are just some of the possible choices.
 
 ---
 
@@ -1321,8 +1337,16 @@ beyond the location indicated by --> and ^.
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-Python indicates that the error is caused by `3` written just after `2`.
-Perhaps you forgot a comma or an operator, like `+`, `*`, `in`, etc., between `2` and `3`.
+Python indicates that the error is caused by `3` written immediately after `2`.
+Perhaps you meant to insert an operator like `+, -, *, ","`
+between `2` and `3`.
+The following lines of code would not cause any `SyntaxError`:
+
+    a = (1, 2 +  3)
+    a = (1, 2 -  3)
+    a = (1, 2 *  3)
+    a = (1, 2,  3)
+Note: these are just some of the possible choices.
 
 ---
 
@@ -1340,7 +1364,7 @@ SyntaxError: invalid syntax
 
 ```
 
-Did you forget something between `c` and `d`?
+Did you mean `def a(b, c, d):`?
 
 
 
@@ -1365,8 +1389,12 @@ beyond the location indicated by --> and ^.
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-Python indicates that the error is caused by `d` written just after `c`.
-Perhaps you forgot a comma or an operator, like `+`, `*`, `in`, etc., between `c` and `d`.
+Python indicates that the error is caused by `d` written immediately after `c`.
+Perhaps you meant to write `,` between
+`c` and `d`:
+
+    def a(b, c, d):
+which would not cause a `SyntaxError`.
 
 ---
 
@@ -3317,7 +3345,7 @@ an equality operator, `==`, or the walrus operator `:=`.
 
 ---
 
-## Forgot a comma in an f-string
+## Forgot an operator in an f-string
 
 
 ```pytb
@@ -3352,8 +3380,16 @@ beyond the location indicated by --> and ^.
 I make an effort below to guess what caused the problem
 but I might guess incorrectly.
 
-Python indicates that the error is caused by `y` written just after `x`.
-Perhaps you forgot a comma or an operator, like `+`, `*`, `in`, etc., between `x` and `y`.
+Python indicates that the error is caused by `y` written immediately after `x`.
+Perhaps you meant to insert an operator like `+, -, *, ","`
+between `x` and `y`.
+The following lines of code would not cause any `SyntaxError`:
+
+    (x + y)
+    (x - y)
+    (x * y)
+    (x, y)
+Note: these are just some of the possible choices.
 
 ---
 
