@@ -50,7 +50,7 @@ IndentationError: expected an indented block
     -->4: pass
              ^
 
-        In this case, the line identified above
+        The line identified above
         was expected to begin a new indented block.
         
 
@@ -81,7 +81,7 @@ IndentationError: unexpected indent
     -->4:       pass
                ^
 
-        In this case, the line identified above
+        The line identified above
         is more indented than expected and 
         does not match the indentation of the previous line.
         
@@ -113,7 +113,7 @@ IndentationError: unindent does not match ...
     -->4:     pass
                   ^
 
-        In this case, the line identified above is
+        The line identified above is
         less indented than the preceding one,
         and is not aligned vertically with another block of code.
         

@@ -55,7 +55,7 @@ IndentationError: expected an indented block
     -->4: pass
           ^
 
-        Dans ce cas-ci, la ligne indiquée ci-dessus par --> devrait
+        La ligne indiquée ci-dessus par --> devrait
         normalement commencer un nouveau bloc de code indenté.
         
 
@@ -87,7 +87,7 @@ IndentationError: unexpected indent
     -->4:       pass
                ^
 
-        Dans ce cas-ci, la ligne indiquée ci-dessus par -->
+        La ligne indiquée ci-dessus par -->
         est plus indentée que ce qui était attendu et ne
         correspond pas à l'indentation de la ligne précédente.
         
@@ -120,7 +120,7 @@ IndentationError: unindent does not match ...
     -->4:     pass
                   ^
 
-        Dans ce cas-ci, la ligne indiquée ci-dessus par -->
+        La ligne indiquée ci-dessus par -->
         est moins indentée que la ligne précédente
         et n’est pas alignée verticalement avec un autre bloc de code.
         
@@ -2452,7 +2452,7 @@ Copy/paste from interpreter
         ^
     SyntaxError: invalid syntax
     
-        Avez-vous utilisé copier-coller ?
+        Avez-vous utilisé le copier-coller ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     

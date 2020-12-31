@@ -49,7 +49,7 @@ beyond the location indicated by --> and ^.
 
 ```
 
-In this case, the line identified above
+The line identified above
 was expected to begin a new indented block.
 
 ---
@@ -86,7 +86,7 @@ beyond the location indicated by --> and ^.
 
 ```
 
-In this case, the line identified above
+The line identified above
 is more indented than expected and 
 does not match the indentation of the previous line.
 
@@ -124,7 +124,7 @@ beyond the location indicated by --> and ^.
 
 ```
 
-In this case, the line identified above is
+The line identified above is
 less indented than the preceding one,
 and is not aligned vertically with another block of code.
 
