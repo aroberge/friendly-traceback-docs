@@ -15,7 +15,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly-traceback version: 0.2.14a
+Friendly-traceback version: 0.2.15a
 Python version: 3.8.4
 
 
@@ -191,10 +191,8 @@ Nonetype
         `object.x`
     et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
     
-        Exception soulevée par Friendly-traceback.
-        Veuillez signaler cet exemple à
-        https://github.com/aroberge/friendly-traceback/issues
-        
+        Vous tentez d’accéder à l’attribut `b`
+        pour une variable dont la valeur est `None`.
     Exception levée à la ligne 152 du fichier TESTS:\runtime\test_attribute_error.py.
     
        150:     a = None
