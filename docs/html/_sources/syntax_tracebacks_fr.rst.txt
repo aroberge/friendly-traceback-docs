@@ -182,8 +182,6 @@ Assign to keyword
     -->3: def = 2
               ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Vous essayiez d’assigner une valeur au mot clé Python `def`.
         Ceci n’est pas permis.
         
@@ -288,8 +286,6 @@ Write elif, not else if
                ^
        6:     print('ok')
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Vous avez écrit `else if`
         au lieu d'utiliser le mot-clé `elif`.
         
@@ -324,8 +320,6 @@ Write elif, not elseif
                  ^
        6:     print('ok')
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Vous avez écrit `elseif`
         au lieu d'utiliser le mot-clé `elif`.
         
@@ -540,8 +534,6 @@ Inversion: import X from Y
     -->3: import pen from turtle
                      ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Vous avez écrit quelque chose comme
             import pen from turtle
         au lieu de
@@ -966,8 +958,6 @@ Quote inside a string
     -->3: message = 'don't'
                          ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Il semble y avoir un identificateur Python (nom de variable)
         immédiatement après une chaîne.
         Je soupçonne que vous essayiez d'utiliser un apostrophe ou un guillemet
@@ -1236,9 +1226,9 @@ Cannot assign to function call - 2
 
         Vous avez écrit une expression comme
         
-            ma_fonction(…) = une certaine valeur
+            func(...) = une certaine valeur
         
-        où `ma_fonction(…)`, du côté gauche du signe d'égalité
+        où `func(...)`, du côté gauche du signe d'égalité
         est une fonction et non le nom d’une variable.
         
 
@@ -1388,9 +1378,9 @@ f-string: unterminated string
     -->4: print(f"Bob is {age['Bob]} years old.")
                 ^
 
-        À l'intérieur d'une "f-string", qui est une chaîne de caractères préfixée de la lettre f,
-        vous avez une autre chaîne de caractère qui débute soit avec un apostrophe (')
-        ou des guillemets ("), mais n'est pas terminé par un autre caractère semblable.
+        Inside the f-string `f"Bob is {age['Bob]} years old."`, 
+        you have another string, which starts with either a
+        single quote (') or double quote ("), without a matching closing one.
         
 
 Unclosed bracket
@@ -1513,6 +1503,8 @@ Keyword as attribute
           ^
     SyntaxError: invalid syntax
     
+        `pass` cannot be used as an attribute.
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -1525,8 +1517,6 @@ Keyword as attribute
     -->12: a.pass = 2
              ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Vous avez tenté d'utiliser le mot clé Python `pass` comme attribut.
         Ceci n’est pas permis.
         
@@ -1629,10 +1619,8 @@ Invalid character in identifier
     -->6: 🤖 = 'Reeborg'
           ^
 
-        Vous avez probablement utilisé un caractère unicode qui n'est pas autorisé
-        dans le nom d'une variable dans Python.
-        Cela comprend de nombreux emojis.
-        
+        Python indique que vous avez utilisé le caractère unicode `🤖`
+        ce qui n’est pas permis.
         
 
 Keyword cannot be argument in def - 1
@@ -2127,8 +2115,6 @@ Using the backquote character
     -->3: a = `1`
               ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Vous utilisez le charactère d'accent grave.
         Soit que vous vouliez utiliser un apostrophe, ',
         ou que vous avez copié du code de Python 2;
@@ -2375,8 +2361,8 @@ Keyword arg only once in function call
     -->4: f(ad=1, ad=2)
                   ^
 
-        Vous avez invoqué une fonction en répétant le même argument nommé.
-        Chaque argument de ce type ne peut apparaître qu'une seule fois.
+        You have called a function repeating the same keyword argument (`ad`).
+        Each keyword argument should appear only once in a function call.
         
 
 IndentationError/SyntaxError depending on version
@@ -2432,8 +2418,6 @@ print is a function 2
     -->2: print len('hello')
                 ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Dans l'ancienne version de Python, `print` était un mot clé.
         Maintenant, `print` est une fonction; vous devez utiliser des parenthèses pour l'invoquer.
         
@@ -2464,8 +2448,6 @@ Copy/paste from interpreter
     -->2: >>> print("Hello World!")
           ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         On dirait que vous avez copié-collé le code d’un interprète interactif.
         L’invite Python, `>>>`, ne doit pas être incluse dans votre code.
         
@@ -2496,8 +2478,6 @@ Using pip from interpreter
     -->2: pip install friendly
               ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Il semble que vous essayez d’utiliser pip pour installer un module.
         `pip` est une commande qui doit être invoquée dans un terminal,
         pas dans un interprète Python.
@@ -2529,8 +2509,6 @@ Using pip from interpreter 2
     -->2: python -m pip install friendly
                     ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Il semble que vous essayez d’utiliser pip pour installer un module.
         `pip` est une commande qui doit être invoquée dans un terminal,
         pas dans un interprète Python.
@@ -2560,8 +2538,6 @@ Dot followed by parenthesis
     -->2: print(len.('hello'))
                     ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Vous ne pouvez pas avoir un point `.` suivi de `(`.
         
 
@@ -2591,10 +2567,9 @@ Cannot assign to f-string
     -->6: f'{x}' = 42
           ^
 
-        Vous avez écrit une expression qui a une chaine de
-        caractères formatés (aussi appelé f-string)
-        sur le côté gauche du signe d'égalité.
-        Une f-string ne doit apparaître que sur le côté droit du signe d’égalité.
+        You wrote an expression that has the f-string `f'{x}'`
+        on the left-hand side of the equal sign.
+        An f-string should only appear on the right-hand side of an equal sign.
         
 
 Raising multiple exceptions
@@ -2621,8 +2596,6 @@ Raising multiple exceptions
     -->2: raise X, Y
                  ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Je crois que vous essayez de lever une exception en utilisant la syntaxe de Python 2.
         
 
@@ -2684,12 +2657,11 @@ Invalid character (bad quote)
     -->3: a = « hello »
               ^
 
-        Python indique que vous avez utilisé des caractères unicode non permis
-        comme étant partie d’un nom de variable; cela inclut de nombreux emojis.
-        Cependant, je soupçonne que vous avez utilisé un guillemet unicode 
-        au lieu d’un guillemet normal (simple ou double) pour une chaîne de caractères.
-        Cela peut se produire si vous utilisez du copier-coller.
-        
+        Avez-vous utilisé le copier-coller ?
+        Python indique que vous avez utilisé le caractère unicode `«`
+        ce qui n’est pas permis.
+        Je soupçonne que vous avez utilisé un guillemet unicode
+        au lieu d'un guillemet normal (simple ou double) pour une chaîne de caractères.
         
 
 Single = instead of double == with if
@@ -2706,7 +2678,7 @@ Single = instead of double == with if
                  ^
     SyntaxError: invalid syntax
     
-        Peut-être que vous aviez besoin de `==` au lieu de `=`.
+        Peut-être que vous aviez besoin de `==` ou `:=` au lieu de `=`.
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -2720,10 +2692,8 @@ Single = instead of double == with if
                        ^
        4:         print(i)
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
-        Vous avez utilisé un opérateur d’affectation `=` au lieu d’un opérateur d'égalité `==` 
-        avec un énoncé `if`.
+        Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser 
+        un opérateur d'égalité, `==`, ou l'opérateur `:=`.
         
 
 Single = instead of double == with elif
@@ -2740,7 +2710,7 @@ Single = instead of double == with elif
                    ^
     SyntaxError: invalid syntax
     
-        Peut-être que vous aviez besoin de `==` au lieu de `=`.
+        Peut-être que vous aviez besoin de `==` ou `:=` au lieu de `=`.
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -2755,10 +2725,8 @@ Single = instead of double == with elif
                          ^
        6:         print(i)
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
-        Vous avez utilisé un opérateur d’affectation `=` au lieu d’un opérateur d'égalité `==` 
-        avec un énoncé `elif`.
+        Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser 
+        un opérateur d'égalité, `==`, ou l'opérateur `:=`.
         
 
 Single = instead of double == with while
@@ -2790,8 +2758,6 @@ Single = instead of double == with while
                   ^
        5:     a = 2
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser 
         un opérateur d'égalité, `==`, ou l'opérateur `:=`.
         
@@ -3022,8 +2988,6 @@ Cannot use double star operator
     -->1: (**k)
            ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         L’opérateur double astérisque, `**` est probablement interprété comme signifiant
         qu'un déballage de `dict` doit être utilisé ce qui n’a pas de sens ici.
         

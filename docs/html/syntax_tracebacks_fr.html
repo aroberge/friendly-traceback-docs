@@ -476,8 +476,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: def = 2
           ^
 
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-
     Vous essayiez d’assigner une valeur au mot clé Python `def`.
     Ceci n’est pas permis.
 </pre></div>
@@ -570,8 +568,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
            ^
    6:     print(&#39;ok&#39;)
 
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-
     Vous avez écrit `else if`
     au lieu d&#39;utiliser le mot-clé `elif`.
 </pre></div>
@@ -601,8 +597,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: elseif True:
              ^
    6:     print(&#39;ok&#39;)
-
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez écrit `elseif`
     au lieu d&#39;utiliser le mot-clé `elif`.
@@ -793,8 +787,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: import pen from turtle
                  ^
-
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez écrit quelque chose comme
         import pen from turtle
@@ -1177,8 +1169,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: message = &#39;don&#39;t&#39;
                      ^
 
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-
     Il semble y avoir un identificateur Python (nom de variable)
     immédiatement après une chaîne.
     Je soupçonne que vous essayiez d&#39;utiliser un apostrophe ou un guillemet
@@ -1426,9 +1416,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
     Vous avez écrit une expression comme
 
-        ma_fonction(…) = une certaine valeur
+        func(...) = une certaine valeur
 
-    où `ma_fonction(…)`, du côté gauche du signe d&#39;égalité
+    où `func(...)`, du côté gauche du signe d&#39;égalité
     est une fonction et non le nom d’une variable.
 </pre></div>
 </div>
@@ -1566,9 +1556,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: print(f&quot;Bob is {age[&#39;Bob]} years old.&quot;)
             ^
 
-    À l&#39;intérieur d&#39;une &quot;f-string&quot;, qui est une chaîne de caractères préfixée de la lettre f,
-    vous avez une autre chaîne de caractère qui débute soit avec un apostrophe (&#39;)
-    ou des guillemets (&quot;), mais n&#39;est pas terminé par un autre caractère semblable.
+    Inside the f-string `f&quot;Bob is {age[&#39;Bob]} years old.&quot;`,
+    you have another string, which starts with either a
+    single quote (&#39;) or double quote (&quot;), without a matching closing one.
 </pre></div>
 </div>
 </div>
@@ -1679,6 +1669,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
       ^
 SyntaxError: invalid syntax
 
+    `pass` cannot be used as an attribute.
+
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
 Python peut seulement comprendre le code du fichier
@@ -1690,8 +1682,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    11: a.x = 1
 --&gt;12: a.pass = 2
          ^
-
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez tenté d&#39;utiliser le mot clé Python `pass` comme attribut.
     Ceci n’est pas permis.
@@ -1783,9 +1773,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6: 🤖 = &#39;Reeborg&#39;
       ^
 
-    Vous avez probablement utilisé un caractère unicode qui n&#39;est pas autorisé
-    dans le nom d&#39;une variable dans Python.
-    Cela comprend de nombreux emojis.
+    Python indique que vous avez utilisé le caractère unicode `🤖`
+    ce qui n’est pas permis.
 </pre></div>
 </div>
 </div>
@@ -2227,8 +2216,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = `1`
           ^
 
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-
     Vous utilisez le charactère d&#39;accent grave.
     Soit que vous vouliez utiliser un apostrophe, &#39;,
     ou que vous avez copié du code de Python 2;
@@ -2454,8 +2441,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: f(ad=1, ad=2)
               ^
 
-    Vous avez invoqué une fonction en répétant le même argument nommé.
-    Chaque argument de ce type ne peut apparaître qu&#39;une seule fois.
+    You have called a function repeating the same keyword argument (`ad`).
+    Each keyword argument should appear only once in a function call.
 </pre></div>
 </div>
 </div>
@@ -2504,8 +2491,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;2: print len(&#39;hello&#39;)
             ^
 
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-
     Dans l&#39;ancienne version de Python, `print` était un mot clé.
     Maintenant, `print` est une fonction; vous devez utiliser des parenthèses pour l&#39;invoquer.
 </pre></div>
@@ -2533,8 +2518,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;2: &gt;&gt;&gt; print(&quot;Hello World!&quot;)
       ^
 
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-
     On dirait que vous avez copié-collé le code d’un interprète interactif.
     L’invite Python, `&gt;&gt;&gt;`, ne doit pas être incluse dans votre code.
 </pre></div>
@@ -2561,8 +2544,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: pip install friendly
           ^
-
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Il semble que vous essayez d’utiliser pip pour installer un module.
     `pip` est une commande qui doit être invoquée dans un terminal,
@@ -2592,8 +2573,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;2: python -m pip install friendly
                 ^
 
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-
     Il semble que vous essayez d’utiliser pip pour installer un module.
     `pip` est une commande qui doit être invoquée dans un terminal,
     pas dans un interprète Python.
@@ -2619,8 +2598,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: print(len.(&#39;hello&#39;))
                 ^
-
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous ne pouvez pas avoir un point `.` suivi de `(`.
 </pre></div>
@@ -2648,10 +2625,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6: f&#39;{x}&#39; = 42
       ^
 
-    Vous avez écrit une expression qui a une chaine de
-    caractères formatés (aussi appelé f-string)
-    sur le côté gauche du signe d&#39;égalité.
-    Une f-string ne doit apparaître que sur le côté droit du signe d’égalité.
+    You wrote an expression that has the f-string `f&#39;{x}&#39;`
+    on the left-hand side of the equal sign.
+    An f-string should only appear on the right-hand side of an equal sign.
 </pre></div>
 </div>
 </div>
@@ -2674,8 +2650,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: raise X, Y
              ^
-
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Je crois que vous essayez de lever une exception en utilisant la syntaxe de Python 2.
 </pre></div>
@@ -2732,11 +2706,11 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = « hello »
           ^
 
-    Python indique que vous avez utilisé des caractères unicode non permis
-    comme étant partie d’un nom de variable; cela inclut de nombreux emojis.
-    Cependant, je soupçonne que vous avez utilisé un guillemet unicode
-    au lieu d’un guillemet normal (simple ou double) pour une chaîne de caractères.
-    Cela peut se produire si vous utilisez du copier-coller.
+    Avez-vous utilisé le copier-coller ?
+    Python indique que vous avez utilisé le caractère unicode `«`
+    ce qui n’est pas permis.
+    Je soupçonne que vous avez utilisé un guillemet unicode
+    au lieu d&#39;un guillemet normal (simple ou double) pour une chaîne de caractères.
 </pre></div>
 </div>
 </div>
@@ -2750,7 +2724,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
              ^
 SyntaxError: invalid syntax
 
-    Peut-être que vous aviez besoin de `==` au lieu de `=`.
+    Peut-être que vous aviez besoin de `==` ou `:=` au lieu de `=`.
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -2764,10 +2738,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                    ^
    4:         print(i)
 
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-
-    Vous avez utilisé un opérateur d’affectation `=` au lieu d’un opérateur d&#39;égalité `==`
-    avec un énoncé `if`.
+    Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser
+    un opérateur d&#39;égalité, `==`, ou l&#39;opérateur `:=`.
 </pre></div>
 </div>
 </div>
@@ -2781,7 +2753,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                ^
 SyntaxError: invalid syntax
 
-    Peut-être que vous aviez besoin de `==` au lieu de `=`.
+    Peut-être que vous aviez besoin de `==` ou `:=` au lieu de `=`.
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -2796,10 +2768,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                      ^
    6:         print(i)
 
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-
-    Vous avez utilisé un opérateur d’affectation `=` au lieu d’un opérateur d&#39;égalité `==`
-    avec un énoncé `elif`.
+    Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser
+    un opérateur d&#39;égalité, `==`, ou l&#39;opérateur `:=`.
 </pre></div>
 </div>
 </div>
@@ -2827,8 +2797,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: while a = 1:
               ^
    5:     a = 2
-
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser
     un opérateur d&#39;égalité, `==`, ou l&#39;opérateur `:=`.
@@ -3038,8 +3006,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
 --&gt;1: (**k)
        ^
-
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     L’opérateur double astérisque, `**` est probablement interprété comme signifiant
     qu&#39;un déballage de `dict` doit être utilisé ce qui n’a pas de sens ici.

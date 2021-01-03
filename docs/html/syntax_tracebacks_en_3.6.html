@@ -472,9 +472,6 @@ beyond the location indicated by --&gt; and ^.
 --&gt;3: def = 2
           ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
     You were trying to assign a value to the Python keyword `def`.
     This is not allowed.
 </pre></div>
@@ -569,9 +566,6 @@ beyond the location indicated by --&gt; and ^.
             ^
    6:     print(&#39;ok&#39;)
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
     You likely meant to use Python&#39;s `elif` keyword
     but wrote `else if` instead
 </pre></div>
@@ -601,9 +595,6 @@ beyond the location indicated by --&gt; and ^.
 --&gt;5: elseif True:
                 ^
    6:     print(&#39;ok&#39;)
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     You likely meant to use Python&#39;s `elif` keyword
     but wrote `elseif` instead
@@ -794,9 +785,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: import pen from turtle
                     ^
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     You wrote something like
 
@@ -1182,9 +1170,6 @@ beyond the location indicated by --&gt; and ^.
 --&gt;3: message = &#39;don&#39;t&#39;
                      ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
     There appears to be a Python identifier (variable name)
     immediately following a string.
     I suspect that you were trying to use a quote inside a string
@@ -1436,9 +1421,9 @@ beyond the location indicated by --&gt; and ^.
 
     You wrote an expression like
 
-        my_function(...) = some value
+        func(...) = some value
 
-    where `my_function(...)`, on the left-hand side of the equal sign, is
+    where `func(...)`, on the left-hand side of the equal sign, is
     a function call and not the name of a variable.
 </pre></div>
 </div>
@@ -1577,7 +1562,7 @@ beyond the location indicated by --&gt; and ^.
 --&gt;4: print(f&quot;Bob is {age[&#39;Bob]} years old.&quot;)
            ^
 
-    Inside an f-string, which is a string prefixed by the letter f,
+    Inside the f-string `(`,
     you have another string, which starts with either a
     single quote (&#39;) or double quote (&quot;), without a matching closing one.
 </pre></div>
@@ -1690,6 +1675,8 @@ beyond the location indicated by --&gt; and ^.
          ^
 SyntaxError: invalid syntax
 
+    `pass` cannot be used as an attribute.
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 Python could not understand the code in the file
@@ -1701,9 +1688,6 @@ beyond the location indicated by --&gt; and ^.
    11: a.x = 1
 --&gt;12: a.pass = 2
             ^
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     You cannot use the Python keyword `pass` as an attribute.
 </pre></div>
@@ -1791,9 +1775,8 @@ beyond the location indicated by --&gt; and ^.
 --&gt;6: 🤖 = &#39;Reeborg&#39;
       ^
 
-    You likely used some unicode character that is not allowed
-    as part of a variable name in Python.
-    This includes many emojis.
+    Python indicates that you used the unicode character `🤖`
+    which is not allowed.
 </pre></div>
 </div>
 </div>
@@ -2167,7 +2150,7 @@ beyond the location indicated by --&gt; and ^.
           ^
 SyntaxError: invalid syntax
 
-    Your Python version might be too old.
+    Your Python version does not support this f-string feature.
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -2180,9 +2163,6 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: (True := 1)
             ^
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     You appear to be using the operator `:=`, sometimes called
     the walrus operator. This operator requires the use of
@@ -2240,9 +2220,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: a = `1`
           ^
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     You are using the backquote character.
     Either you meant to write a single quote, &#39;, or copied Python 2 code;
@@ -2468,7 +2445,7 @@ beyond the location indicated by --&gt; and ^.
 --&gt;4: f(ad=1, ad=2)
              ^
 
-    You have called a function repeating the same keyword argument.
+    You have called a function repeating the same keyword argument (`ad`).
     Each keyword argument should appear only once in a function call.
 </pre></div>
 </div>
@@ -2518,9 +2495,6 @@ beyond the location indicated by --&gt; and ^.
 --&gt;2: print len(&#39;hello&#39;)
               ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
     In older version of Python, `print` was a keyword.
     Now, `print` is a function; you need to use parentheses to call it.
 </pre></div>
@@ -2548,9 +2522,6 @@ beyond the location indicated by --&gt; and ^.
 --&gt;2: &gt;&gt;&gt; print(&quot;Hello World!&quot;)
        ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
     It looks like you copy-pasted code from an interactive interpreter.
     The Python prompt, `&gt;&gt;&gt;`, should not be included in your code.
 </pre></div>
@@ -2577,9 +2548,6 @@ beyond the location indicated by --&gt; and ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: pip install friendly
                 ^
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     It looks as if you are attempting to use pip to install a module.
     `pip` is a command that needs to run in a terminal,
@@ -2609,9 +2577,6 @@ beyond the location indicated by --&gt; and ^.
 --&gt;2: python -m pip install friendly
                   ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
     It looks as if you are attempting to use pip to install a module.
     `pip` is a command that needs to run in a terminal,
     not from a Python interpreter.
@@ -2637,9 +2602,6 @@ beyond the location indicated by --&gt; and ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: print(len.(&#39;hello&#39;))
                 ^
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     You cannot have a dot `.` followed by `(`.
 </pre></div>
@@ -2667,7 +2629,7 @@ beyond the location indicated by --&gt; and ^.
 --&gt;6: f&#39;{x}&#39; = 42
      ^
 
-    You wrote an expression that has an f-string
+    You wrote an expression that has the f-string `f&#39;{x}&#39;`
     on the left-hand side of the equal sign.
     An f-string should only appear on the right-hand side of the equal sign.
 </pre></div>
@@ -2692,9 +2654,6 @@ beyond the location indicated by --&gt; and ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: raise X, Y
              ^
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     It looks like you are trying to raise an exception using Python 2 syntax.
 </pre></div>
@@ -2751,11 +2710,11 @@ beyond the location indicated by --&gt; and ^.
 --&gt;3: a = « hello »
           ^
 
-    Python indicates that you used some unicode characters not allowed
-    as part of a variable name; this includes many emojis.
-    However, I suspect that you used a fancy unicode quotation mark
+    Did you use copy-paste?
+    Python indicates that you used the unicode character `«`
+    which is not allowed.
+    I suspect that you used a fancy unicode quotation mark
     instead of a normal single or double quote for a string.
-    This can happen if you copy-pasted code.
 </pre></div>
 </div>
 </div>
@@ -2783,11 +2742,7 @@ beyond the location indicated by --&gt; and ^.
                    ^
    4:         print(i)
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
-    You used an assignment operator `=` instead of an equality operator `==`
-    with an `if` statement.
+    You used an assignment operator `=` instead of an equality operator `==`.
 </pre></div>
 </div>
 </div>
@@ -2816,11 +2771,7 @@ beyond the location indicated by --&gt; and ^.
                      ^
    6:         print(i)
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
-    You used an assignment operator `=` instead of an equality operator `==`
-    with an `elif` statement.
+    You used an assignment operator `=` instead of an equality operator `==`.
 </pre></div>
 </div>
 </div>
@@ -2849,11 +2800,7 @@ beyond the location indicated by --&gt; and ^.
               ^
    5:     a = 2
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
-    You used an assignment operator `=` instead of an equality operator `==`
-    with a `while` statement.
+    You used an assignment operator `=` instead of an equality operator `==`.
 </pre></div>
 </div>
 </div>
@@ -3064,9 +3011,6 @@ beyond the location indicated by --&gt; and ^.
 
 --&gt;1: (**k)
         ^
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     The double star operator `**` is likely interpreted to mean that
     dict unpacking is to be used which does not make sense here.
@@ -3321,7 +3265,7 @@ beyond the location indicated by --&gt; and ^.
                  ^
 SyntaxError: invalid syntax
 
-    Your Python version might be too old.
+    Your Python version does not support this f-string feature.
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -3333,9 +3277,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: print(walrus := True)
                    ^
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     You appear to be using the operator `:=`, sometimes called
     the walrus operator. This operator requires the use of

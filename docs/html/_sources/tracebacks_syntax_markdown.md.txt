@@ -198,9 +198,6 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
 You were trying to assign a value to the Python keyword `def`.
 This is not allowed.
 
@@ -331,9 +328,6 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
 You likely meant to use Python's `elif` keyword
 but wrote `else if` instead
 
@@ -375,9 +369,6 @@ beyond the location indicated by --> and ^.
        6:     print('ok')
 
 ```
-
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
 
 You likely meant to use Python's `elif` keyword
 but wrote `elseif` instead
@@ -631,9 +622,6 @@ beyond the location indicated by --> and ^.
                      ^
 
 ```
-
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
 
 You wrote something like
 
@@ -1146,9 +1134,6 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
 There appears to be a Python identifier (variable name)
 immediately following a string.
 I suspect that you were trying to use a quote inside a string
@@ -1471,9 +1456,9 @@ beyond the location indicated by --> and ^.
 
 You wrote an expression like
 
-    my_function(...) = some value
+    func(...) = some value
 
-where `my_function(...)`, on the left-hand side of the equal sign, is
+where `func(...)`, on the left-hand side of the equal sign, is
 a function call and not the name of a variable.
 
 ---
@@ -1650,7 +1635,7 @@ beyond the location indicated by --> and ^.
 
 ```
 
-Inside an f-string, which is a string prefixed by the letter f, 
+Inside the f-string `f"Bob is {age['Bob]} years old."`, 
 you have another string, which starts with either a
 single quote (') or double quote ("), without a matching closing one.
 
@@ -1794,6 +1779,10 @@ SyntaxError: invalid syntax
 
 ```
 
+`pass` cannot be used as an attribute.
+
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
@@ -1810,9 +1799,6 @@ beyond the location indicated by --> and ^.
              ^
 
 ```
-
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
 
 You cannot use the Python keyword `pass` as an attribute.
 
@@ -1932,10 +1918,8 @@ beyond the location indicated by --> and ^.
 
 ```
 
-You likely used some unicode character that is not allowed
-as part of a variable name in Python.
-This includes many emojis.
-
+Python indicates that you used the unicode character `🤖`
+which is not allowed.
 
 ---
 
@@ -2524,9 +2508,6 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
 You are using the backquote character.
 Either you meant to write a single quote, ', or copied Python 2 code;
 in this latter case, use the function `repr(x)`.
@@ -2823,7 +2804,7 @@ beyond the location indicated by --> and ^.
 
 ```
 
-You have called a function repeating the same keyword argument.
+You have called a function repeating the same keyword argument (`ad`).
 Each keyword argument should appear only once in a function call.
 
 ---
@@ -2892,9 +2873,6 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
 In older version of Python, `print` was a keyword.
 Now, `print` is a function; you need to use parentheses to call it.
 
@@ -2933,9 +2911,6 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
 It looks like you copy-pasted code from an interactive interpreter.
 The Python prompt, `>>>`, should not be included in your code.
 
@@ -2973,9 +2948,6 @@ beyond the location indicated by --> and ^.
               ^
 
 ```
-
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
 
 It looks as if you are attempting to use pip to install a module.
 `pip` is a command that needs to run in a terminal,
@@ -3016,9 +2988,6 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
 It looks as if you are attempting to use pip to install a module.
 `pip` is a command that needs to run in a terminal,
 not from a Python interpreter.
@@ -3053,9 +3022,6 @@ beyond the location indicated by --> and ^.
                     ^
 
 ```
-
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
 
 You cannot have a dot `.` followed by `(`.
 
@@ -3092,9 +3058,9 @@ beyond the location indicated by --> and ^.
 
 ```
 
-You wrote an expression that has an f-string
+You wrote an expression that has the f-string `f'{x}'`
 on the left-hand side of the equal sign.
-An f-string should only appear on the right-hand side of the equal sign.
+An f-string should only appear on the right-hand side of an equal sign.
 
 ---
 
@@ -3126,9 +3092,6 @@ beyond the location indicated by --> and ^.
                  ^
 
 ```
-
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
 
 It looks like you are trying to raise an exception using Python 2 syntax.
 
@@ -3205,12 +3168,11 @@ beyond the location indicated by --> and ^.
 
 ```
 
-Python indicates that you used some unicode characters not allowed
-as part of a variable name; this includes many emojis.
-However, I suspect that you used a fancy unicode quotation mark
+Did you use copy-paste?
+Python indicates that you used the unicode character `«`
+which is not allowed.
+I suspect that you used a fancy unicode quotation mark
 instead of a normal single or double quote for a string.
-This can happen if you copy-pasted code.
-
 
 ---
 
@@ -3228,7 +3190,7 @@ SyntaxError: invalid syntax
 
 ```
 
-Perhaps you needed `==` instead of `=`.
+Perhaps you needed `==` or `:=` instead of `=`.
 
 
 
@@ -3249,11 +3211,8 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
-You used an assignment operator `=` instead of an equality operator `==` 
-with an `if` statement.
+You used an assignment operator `=`; perhaps you meant to use 
+an equality operator, `==`, or the walrus operator `:=`.
 
 ---
 
@@ -3271,7 +3230,7 @@ SyntaxError: invalid syntax
 
 ```
 
-Perhaps you needed `==` instead of `=`.
+Perhaps you needed `==` or `:=` instead of `=`.
 
 
 
@@ -3293,11 +3252,8 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
-You used an assignment operator `=` instead of an equality operator `==` 
-with an `elif` statement.
+You used an assignment operator `=`; perhaps you meant to use 
+an equality operator, `==`, or the walrus operator `:=`.
 
 ---
 
@@ -3336,9 +3292,6 @@ beyond the location indicated by --> and ^.
        5:     a = 2
 
 ```
-
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
 
 You used an assignment operator `=`; perhaps you meant to use 
 an equality operator, `==`, or the walrus operator `:=`.
@@ -3623,9 +3576,6 @@ beyond the location indicated by --> and ^.
            ^
 
 ```
-
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
 
 The double star operator `**` is likely interpreted to mean that
 dict unpacking is to be used which does not make sense here.

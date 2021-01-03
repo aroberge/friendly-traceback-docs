@@ -120,6 +120,27 @@ raise_syntax_error31</div>
 
 </pre>
 <div class='filename-header'>
+raise_syntax_error35</div>
+<h5>Different explanation</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>Inside the f-string `(`, 
+you have another string, which starts with either a
+single quote (') or double quote ("), without a matching closing one.
+
+<b>3.8: </b>Inside the f-string `f"Bob is {age['Bob]} years old."`, 
+you have another string, which starts with either a
+single quote (') or double quote ("), without a matching closing one.
+
+</pre>
+<pre class='highlight friendly-small-pre'><b>3.8: </b>Inside the f-string `f"Bob is {age['Bob]} years old."`, 
+you have another string, which starts with either a
+single quote (') or double quote ("), without a matching closing one.
+
+<b>3.9: </b>Inside the f-string `)`, 
+you have another string, which starts with either a
+single quote (') or double quote ("), without a matching closing one.
+
+</pre>
+<div class='filename-header'>
 raise_syntax_error41</div>
 <h5>Different messages</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: keyword can't be an expression
@@ -154,16 +175,6 @@ or contains a period, etc.
 <pre class='highlight friendly-small-pre'><b>3.8: </b>SyntaxError: invalid character in identifier
 
 <b>3.9: </b>SyntaxError: invalid character '🤖' (U+1F916)
-
-</pre>
-<h5>Different explanation</h5>
-<pre class='highlight friendly-small-pre'><b>3.8: </b>You likely used some unicode character that is not allowed
-as part of a variable name in Python.
-This includes many emojis.
-
-
-<b>3.9: </b>Python indicates that you used the unicode character `🤖`
-which is not allowed.
 
 </pre>
 <div class='filename-header'>
@@ -207,17 +218,11 @@ raise_syntax_error55</div>
 
 </pre>
 <h5>Different explanation</h5>
-<pre class='highlight friendly-small-pre'><b>3.6: </b>I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
-You appear to be using the operator `:=`, sometimes called
+<pre class='highlight friendly-small-pre'><b>3.6: </b>You appear to be using the operator `:=`, sometimes called
 the walrus operator. This operator requires the use of
 Python 3.8 or newer. You are using version 3.6.
 
-<b>3.7: </b>I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
-You appear to be using the operator `:=`, sometimes called
+<b>3.7: </b>You appear to be using the operator `:=`, sometimes called
 the walrus operator. This operator requires the use of
 Python 3.8 or newer. You are using version 3.7.
 
@@ -281,6 +286,16 @@ raise_syntax_error72</div>
 <b>3.8: </b>SyntaxError: cannot assign to f-string expression
 
 </pre>
+<h5>Different explanation</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>You wrote an expression that has the f-string `f'{x}'`
+on the left-hand side of the equal sign.
+An f-string should only appear on the right-hand side of the equal sign.
+
+<b>3.8: </b>You wrote an expression that has the f-string `f'{x}'`
+on the left-hand side of the equal sign.
+An f-string should only appear on the right-hand side of an equal sign.
+
+</pre>
 <div class='filename-header'>
 raise_syntax_error74</div>
 <h5>Different messages</h5>
@@ -296,34 +311,30 @@ raise_syntax_error74</div>
 <b>3.9: </b>SyntaxError: invalid character '«' (U+00AB)
 
 </pre>
+<div class='filename-header'>
+raise_syntax_error76</div>
 <h5>Different explanation</h5>
-<pre class='highlight friendly-small-pre'><b>3.8: </b>Python indicates that you used some unicode characters not allowed
-as part of a variable name; this includes many emojis.
-However, I suspect that you used a fancy unicode quotation mark
-instead of a normal single or double quote for a string.
-This can happen if you copy-pasted code.
+<pre class='highlight friendly-small-pre'><b>3.7: </b>You used an assignment operator `=` instead of an equality operator `==`.
 
+<b>3.8: </b>You used an assignment operator `=`; perhaps you meant to use 
+an equality operator, `==`, or the walrus operator `:=`.
 
-<b>3.9: </b>Did you use copy-paste?
-Python indicates that you used the unicode character `«`
-which is not allowed.
-I suspect that you used a fancy unicode quotation mark
-instead of a normal single or double quote for a string.
+</pre>
+<div class='filename-header'>
+raise_syntax_error77</div>
+<h5>Different explanation</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>You used an assignment operator `=` instead of an equality operator `==`.
+
+<b>3.8: </b>You used an assignment operator `=`; perhaps you meant to use 
+an equality operator, `==`, or the walrus operator `:=`.
 
 </pre>
 <div class='filename-header'>
 raise_syntax_error78</div>
 <h5>Different explanation</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>I make an effort below to guess what caused the problem
-but I might guess incorrectly.
+<pre class='highlight friendly-small-pre'><b>3.7: </b>You used an assignment operator `=` instead of an equality operator `==`.
 
-You used an assignment operator `=` instead of an equality operator `==` 
-with a `while` statement.
-
-<b>3.8: </b>I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
-You used an assignment operator `=`; perhaps you meant to use 
+<b>3.8: </b>You used an assignment operator `=`; perhaps you meant to use 
 an equality operator, `==`, or the walrus operator `:=`.
 
 </pre>

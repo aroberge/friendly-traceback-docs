@@ -174,9 +174,6 @@ Assign to keyword
     -->3: def = 2
               ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         You were trying to assign a value to the Python keyword `def`.
         This is not allowed.
         
@@ -283,9 +280,6 @@ Write elif, not else if
                 ^
        6:     print('ok')
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         You likely meant to use Python's `elif` keyword
         but wrote `else if` instead
         
@@ -320,9 +314,6 @@ Write elif, not elseif
                     ^
        6:     print('ok')
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         You likely meant to use Python's `elif` keyword
         but wrote `elseif` instead
         
@@ -534,9 +525,6 @@ Inversion: import X from Y
     -->3: import pen from turtle
                         ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         You wrote something like
         
             import pen from turtle
@@ -964,9 +952,6 @@ Quote inside a string
     -->3: message = 'don't'
                          ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         There appears to be a Python identifier (variable name)
         immediately following a string.
         I suspect that you were trying to use a quote inside a string
@@ -1239,9 +1224,9 @@ Cannot assign to function call - 2
 
         You wrote an expression like
         
-            my_function(...) = some value
+            func(...) = some value
         
-        where `my_function(...)`, on the left-hand side of the equal sign, is
+        where `func(...)`, on the left-hand side of the equal sign, is
         a function call and not the name of a variable.
         
 
@@ -1392,7 +1377,7 @@ f-string: unterminated string
     -->4: print(f"Bob is {age['Bob]} years old.")
                ^
 
-        Inside an f-string, which is a string prefixed by the letter f, 
+        Inside the f-string `(`, 
         you have another string, which starts with either a
         single quote (') or double quote ("), without a matching closing one.
         
@@ -1517,6 +1502,8 @@ Keyword as attribute
              ^
     SyntaxError: invalid syntax
     
+        `pass` cannot be used as an attribute.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -1529,9 +1516,6 @@ Keyword as attribute
     -->12: a.pass = 2
                 ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         You cannot use the Python keyword `pass` as an attribute.
         
         
@@ -1630,10 +1614,8 @@ Invalid character in identifier
     -->6: 🤖 = 'Reeborg'
           ^
 
-        You likely used some unicode character that is not allowed
-        as part of a variable name in Python.
-        This includes many emojis.
-        
+        Python indicates that you used the unicode character `🤖`
+        which is not allowed.
         
 
 Keyword cannot be argument in def - 1
@@ -2049,7 +2031,7 @@ Walrus/Named assignment depending on Python version
               ^
     SyntaxError: invalid syntax
     
-        Your Python version might be too old.
+        Your Python version does not support this f-string feature.
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -2063,9 +2045,6 @@ Walrus/Named assignment depending on Python version
     -->4: (True := 1)
                 ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         You appear to be using the operator `:=`, sometimes called
         the walrus operator. This operator requires the use of
         Python 3.8 or newer. You are using version 3.6.
@@ -2129,9 +2108,6 @@ Using the backquote character
     -->3: a = `1`
               ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         You are using the backquote character.
         Either you meant to write a single quote, ', or copied Python 2 code;
         in this latter case, use the function `repr(x)`.
@@ -2377,7 +2353,7 @@ Keyword arg only once in function call
     -->4: f(ad=1, ad=2)
                  ^
 
-        You have called a function repeating the same keyword argument.
+        You have called a function repeating the same keyword argument (`ad`).
         Each keyword argument should appear only once in a function call.
         
 
@@ -2434,9 +2410,6 @@ print is a function 2
     -->2: print len('hello')
                   ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         In older version of Python, `print` was a keyword.
         Now, `print` is a function; you need to use parentheses to call it.
         
@@ -2467,9 +2440,6 @@ Copy/paste from interpreter
     -->2: >>> print("Hello World!")
            ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         It looks like you copy-pasted code from an interactive interpreter.
         The Python prompt, `>>>`, should not be included in your code.
         
@@ -2500,9 +2470,6 @@ Using pip from interpreter
     -->2: pip install friendly
                     ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         It looks as if you are attempting to use pip to install a module.
         `pip` is a command that needs to run in a terminal,
         not from a Python interpreter.
@@ -2534,9 +2501,6 @@ Using pip from interpreter 2
     -->2: python -m pip install friendly
                       ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         It looks as if you are attempting to use pip to install a module.
         `pip` is a command that needs to run in a terminal,
         not from a Python interpreter.
@@ -2566,9 +2530,6 @@ Dot followed by parenthesis
     -->2: print(len.('hello'))
                     ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         You cannot have a dot `.` followed by `(`.
         
 
@@ -2598,7 +2559,7 @@ Cannot assign to f-string
     -->6: f'{x}' = 42
          ^
 
-        You wrote an expression that has an f-string
+        You wrote an expression that has the f-string `f'{x}'`
         on the left-hand side of the equal sign.
         An f-string should only appear on the right-hand side of the equal sign.
         
@@ -2627,9 +2588,6 @@ Raising multiple exceptions
     -->2: raise X, Y
                  ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         It looks like you are trying to raise an exception using Python 2 syntax.
         
 
@@ -2691,12 +2649,11 @@ Invalid character (bad quote)
     -->3: a = « hello »
               ^
 
-        Python indicates that you used some unicode characters not allowed
-        as part of a variable name; this includes many emojis.
-        However, I suspect that you used a fancy unicode quotation mark
+        Did you use copy-paste?
+        Python indicates that you used the unicode character `«`
+        which is not allowed.
+        I suspect that you used a fancy unicode quotation mark
         instead of a normal single or double quote for a string.
-        This can happen if you copy-pasted code.
-        
         
 
 Single = instead of double == with if
@@ -2727,11 +2684,7 @@ Single = instead of double == with if
                        ^
        4:         print(i)
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
-        You used an assignment operator `=` instead of an equality operator `==` 
-        with an `if` statement.
+        You used an assignment operator `=` instead of an equality operator `==`.
         
 
 Single = instead of double == with elif
@@ -2763,11 +2716,7 @@ Single = instead of double == with elif
                          ^
        6:         print(i)
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
-        You used an assignment operator `=` instead of an equality operator `==` 
-        with an `elif` statement.
+        You used an assignment operator `=` instead of an equality operator `==`.
         
 
 Single = instead of double == with while
@@ -2799,11 +2748,7 @@ Single = instead of double == with while
                   ^
        5:     a = 2
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
-        You used an assignment operator `=` instead of an equality operator `==` 
-        with a `while` statement.
+        You used an assignment operator `=` instead of an equality operator `==`.
         
 
 Forgot an operator in an f-string
@@ -3036,9 +2981,6 @@ Cannot use double star operator
     -->1: (**k)
             ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         The double star operator `**` is likely interpreted to mean that
         dict unpacking is to be used which does not make sense here.
         
@@ -3321,7 +3263,7 @@ Walrus operator does not exist - yet
                      ^
     SyntaxError: invalid syntax
     
-        Your Python version might be too old.
+        Your Python version does not support this f-string feature.
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -3334,9 +3276,6 @@ Walrus operator does not exist - yet
     -->3: print(walrus := True)
                        ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         You appear to be using the operator `:=`, sometimes called
         the walrus operator. This operator requires the use of
         Python 3.8 or newer. You are using version 3.6.

@@ -461,8 +461,6 @@ beyond the location indicated by –&gt; and ^.</p>
               <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>You were trying to assign a value to the Python keyword <code class="docutils literal notranslate"><span class="pre">def</span></code>.
 This is not allowed.</p>
 </div>
@@ -549,8 +547,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">6</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>You likely meant to use Python’s <code class="docutils literal notranslate"><span class="pre">elif</span></code> keyword
 but wrote <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> instead</p>
 </div>
@@ -579,8 +575,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">6</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>You likely meant to use Python’s <code class="docutils literal notranslate"><span class="pre">elif</span></code> keyword
 but wrote <code class="docutils literal notranslate"><span class="pre">elseif</span></code> instead</p>
 </div>
@@ -766,8 +760,6 @@ beyond the location indicated by –&gt; and ^.</p>
                      <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>You wrote something like</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pen</span> <span class="kn">from</span> <span class="nn">turtle</span>
 </pre></div>
@@ -1134,8 +1126,6 @@ beyond the location indicated by –&gt; and ^.</p>
                          <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>There appears to be a Python identifier (variable name)
 immediately following a string.
 I suspect that you were trying to use a quote inside a string
@@ -1375,10 +1365,10 @@ beyond the location indicated by –&gt; and ^.</p>
 </pre></div>
 </div>
 <p>You wrote an expression like</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_function</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="o">=</span> <span class="n">some</span> <span class="n">value</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">func</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="o">=</span> <span class="n">some</span> <span class="n">value</span>
 </pre></div>
 </div>
-<p>where <code class="docutils literal notranslate"><span class="pre">my_function(...)</span></code>, on the left-hand side of the equal sign, is
+<p>where <code class="docutils literal notranslate"><span class="pre">func(...)</span></code>, on the left-hand side of the equal sign, is
 a function call and not the name of a variable.</p>
 </div>
 <hr class="docutils" />
@@ -1511,7 +1501,7 @@ beyond the location indicated by –&gt; and ^.</p>
                 <span class="o">^</span>
 </pre></div>
 </div>
-<p>Inside an f-string, which is a string prefixed by the letter f,
+<p>Inside the f-string <code class="docutils literal notranslate"><span class="pre">f&quot;Bob</span> <span class="pre">is</span> <span class="pre">{age['Bob]}</span> <span class="pre">years</span> <span class="pre">old.&quot;</span></code>,
 you have another string, which starts with either a
 single quote (‘) or double quote (“), without a matching closing one.</p>
 </div>
@@ -1620,6 +1610,7 @@ inside that function, which is the contrary of what <code class="docutils litera
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">pass</span></code> cannot be used as an attribute.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error39.py’
@@ -1631,8 +1622,6 @@ beyond the location indicated by –&gt; and ^.</p>
              <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>You cannot use the Python keyword <code class="docutils literal notranslate"><span class="pre">pass</span></code> as an attribute.</p>
 </div>
 <hr class="docutils" />
@@ -1721,9 +1710,8 @@ beyond the location indicated by –&gt; and ^.</p>
           ^
 </pre></div>
 </div>
-<p>You likely used some unicode character that is not allowed
-as part of a variable name in Python.
-This includes many emojis.</p>
+<p>Python indicates that you used the unicode character <code class="docutils literal notranslate"><span class="pre">🤖</span></code>
+which is not allowed.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="keyword-cannot-be-argument-in-def-1">
@@ -2148,8 +2136,6 @@ beyond the location indicated by –&gt; and ^.</p>
               ^
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>You are using the backquote character.
 Either you meant to write a single quote, ‘, or copied Python 2 code;
 in this latter case, use the function <code class="docutils literal notranslate"><span class="pre">repr(x)</span></code>.</p>
@@ -2368,7 +2354,7 @@ beyond the location indicated by –&gt; and ^.</p>
                   <span class="o">^</span>
 </pre></div>
 </div>
-<p>You have called a function repeating the same keyword argument.
+<p>You have called a function repeating the same keyword argument (<code class="docutils literal notranslate"><span class="pre">ad</span></code>).
 Each keyword argument should appear only once in a function call.</p>
 </div>
 <hr class="docutils" />
@@ -2416,8 +2402,6 @@ beyond the location indicated by –&gt; and ^.</p>
                 <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>In older version of Python, <code class="docutils literal notranslate"><span class="pre">print</span></code> was a keyword.
 Now, <code class="docutils literal notranslate"><span class="pre">print</span></code> is a function; you need to use parentheses to call it.</p>
 </div>
@@ -2443,8 +2427,6 @@ beyond the location indicated by –&gt; and ^.</p>
           <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>It looks like you copy-pasted code from an interactive interpreter.
 The Python prompt, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>, should not be included in your code.</p>
 </div>
@@ -2470,8 +2452,6 @@ beyond the location indicated by –&gt; and ^.</p>
               <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>It looks as if you are attempting to use pip to install a module.
 <code class="docutils literal notranslate"><span class="pre">pip</span></code> is a command that needs to run in a terminal,
 not from a Python interpreter.</p>
@@ -2498,8 +2478,6 @@ beyond the location indicated by –&gt; and ^.</p>
                     <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>It looks as if you are attempting to use pip to install a module.
 <code class="docutils literal notranslate"><span class="pre">pip</span></code> is a command that needs to run in a terminal,
 not from a Python interpreter.</p>
@@ -2525,8 +2503,6 @@ beyond the location indicated by –&gt; and ^.</p>
                     <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>You cannot have a dot <code class="docutils literal notranslate"><span class="pre">.</span></code> followed by <code class="docutils literal notranslate"><span class="pre">(</span></code>.</p>
 </div>
 <hr class="docutils" />
@@ -2552,9 +2528,9 @@ beyond the location indicated by –&gt; and ^.</p>
 <span class="s2">          ^</span>
 </pre></div>
 </div>
-<p>You wrote an expression that has an f-string
+<p>You wrote an expression that has the f-string <code class="docutils literal notranslate"><span class="pre">f'{x}'</span></code>
 on the left-hand side of the equal sign.
-An f-string should only appear on the right-hand side of the equal sign.</p>
+An f-string should only appear on the right-hand side of an equal sign.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="raising-multiple-exceptions">
@@ -2577,8 +2553,6 @@ beyond the location indicated by –&gt; and ^.</p>
                  <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>It looks like you are trying to raise an exception using Python 2 syntax.</p>
 </div>
 <hr class="docutils" />
@@ -2631,11 +2605,11 @@ beyond the location indicated by –&gt; and ^.</p>
               ^
 </pre></div>
 </div>
-<p>Python indicates that you used some unicode characters not allowed
-as part of a variable name; this includes many emojis.
-However, I suspect that you used a fancy unicode quotation mark
-instead of a normal single or double quote for a string.
-This can happen if you copy-pasted code.</p>
+<p>Did you use copy-paste?
+Python indicates that you used the unicode character <code class="docutils literal notranslate"><span class="pre">«</span></code>
+which is not allowed.
+I suspect that you used a fancy unicode quotation mark
+instead of a normal single or double quote for a string.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="single-instead-of-double-with-if">
@@ -2649,7 +2623,7 @@ This can happen if you copy-pasted code.</p>
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
-<p>Perhaps you needed <code class="docutils literal notranslate"><span class="pre">==</span></code> instead of <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
+<p>Perhaps you needed <code class="docutils literal notranslate"><span class="pre">==</span></code> or <code class="docutils literal notranslate"><span class="pre">:=</span></code> instead of <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error76.py’
@@ -2661,10 +2635,8 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">4</span><span class="p">:</span>         <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
-<p>You used an assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code> instead of an equality operator <code class="docutils literal notranslate"><span class="pre">==</span></code>
-with an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p>
+<p>You used an assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code>; perhaps you meant to use
+an equality operator, <code class="docutils literal notranslate"><span class="pre">==</span></code>, or the walrus operator <code class="docutils literal notranslate"><span class="pre">:=</span></code>.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="single-instead-of-double-with-elif">
@@ -2678,7 +2650,7 @@ with an <code class="docutils literal notranslate"><span class="pre">if</span></
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
-<p>Perhaps you needed <code class="docutils literal notranslate"><span class="pre">==</span></code> instead of <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
+<p>Perhaps you needed <code class="docutils literal notranslate"><span class="pre">==</span></code> or <code class="docutils literal notranslate"><span class="pre">:=</span></code> instead of <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error77.py’
@@ -2691,10 +2663,8 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">6</span><span class="p">:</span>         <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
-<p>You used an assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code> instead of an equality operator <code class="docutils literal notranslate"><span class="pre">==</span></code>
-with an <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement.</p>
+<p>You used an assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code>; perhaps you meant to use
+an equality operator, <code class="docutils literal notranslate"><span class="pre">==</span></code>, or the walrus operator <code class="docutils literal notranslate"><span class="pre">:=</span></code>.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="single-instead-of-double-with-while">
@@ -2721,8 +2691,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">5</span><span class="p">:</span>     <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>You used an assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code>; perhaps you meant to use
 an equality operator, <code class="docutils literal notranslate"><span class="pre">==</span></code>, or the walrus operator <code class="docutils literal notranslate"><span class="pre">:=</span></code>.</p>
 </div>
@@ -2923,8 +2891,6 @@ beyond the location indicated by –&gt; and ^.</p>
            <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>The double star operator <code class="docutils literal notranslate"><span class="pre">**</span></code> is likely interpreted to mean that
 dict unpacking is to be used which does not make sense here.</p>
 </div>
