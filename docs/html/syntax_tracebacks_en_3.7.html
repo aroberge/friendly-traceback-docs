@@ -398,7 +398,7 @@ beyond the location indicated by --&gt; and ^.
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
     mod = __import__(name)
-  File &quot;TESTS:\syntax\raise_indentation_error3.py&quot;, line 4
+  File &quot;TESTS:\syntax\raise_indentation_error3.py&quot;, line 5
     pass
         ^
 IndentationError: unindent does not match any outer indentation level
@@ -411,9 +411,10 @@ Python could not understand the code in the file
 beyond the location indicated by --&gt; and ^.
 
    1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
-   2: if True:
-   3:       pass
---&gt;4:     pass
+   2:
+   3: if True:
+   4:       pass
+--&gt;5:     pass
               ^
 
     The line identified above is
@@ -443,11 +444,12 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_tab_error.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-    4:
-    5: def test_tab_error():
-    6:     if True:
---&gt; 7:      pass
-            ^
+   3:
+   4:
+   5: def test_tab_error():
+   6:     if True:
+--&gt;7:       pass
+           ^
 </pre></div>
 </div>
 </div>
@@ -499,7 +501,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: if True
              ^
-   4:     pass
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -531,7 +532,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: while True  # a comment
                              ^
-   4:     pass
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -559,12 +559,12 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error4.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
    3: if False:
    4:     pass
 --&gt;5: else if True:
             ^
-   6:     print(&#39;ok&#39;)
 
     You likely meant to use Python&#39;s `elif` keyword
     but wrote `else if` instead
@@ -589,12 +589,12 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error5.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
    3: if False:
    4:     pass
 --&gt;5: elseif True:
                 ^
-   6:     print(&#39;ok&#39;)
 
     You likely meant to use Python&#39;s `elif` keyword
     but wrote `elseif` instead
@@ -621,7 +621,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: def :
           ^
-   4:     pass
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -655,7 +654,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: def name  :
                 ^
-   4:     pass
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -687,7 +685,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: def ( arg )  :
           ^
-   4:     pass
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -893,12 +890,13 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error15.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax for Python &lt; 3.8
+   2:    otherwise, SyntaxError: unmatched &#39;)&#39;
    3: &quot;&quot;&quot;
    4: a = (1,
    5:     2,
 --&gt;6:     3, 4,))
                 ^
-   7: b = 3
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1086,7 +1084,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: def pass():
              ^
-   4:     print(&quot;keyword as function name!&quot;)
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1352,7 +1349,6 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: def a(b, c d):
                  ^
-   5:     pass
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1382,6 +1378,8 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error30.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to function call
+   2:
    3: Python 3.8: SyntaxError: cannot assign to function call
    4: &quot;&quot;&quot;
    5:
@@ -1413,6 +1411,8 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error31.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to function call
+   2:
    3: Python 3.8: SyntaxError: cannot assign to function call
    4: &quot;&quot;&quot;
    5:
@@ -1475,12 +1475,12 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error33.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: non-default argument follows default argument
    2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: def test(a=1, b):
               ^
-   6:     return a + b
 
     In Python, you can define functions with only positional arguments
 
@@ -1515,6 +1515,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error34.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: positional argument follows keyword argument
    2: &quot;&quot;&quot;
    3:
    4:
@@ -1584,6 +1585,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error36.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+    3:
     4: def foo():
     5:     return [1, 2, 3
     6:
@@ -1614,6 +1616,8 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error37.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+    3:
+    4: def foo():
     5:     return [1, 2, 3,
     6:
     7: print(foo())
@@ -1648,6 +1652,8 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error38.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: name &#39;x&#39; is parameter and global
+   2: &quot;&quot;&quot;
    3:
    4:
    5: def f(x):
@@ -1656,7 +1662,7 @@ beyond the location indicated by --&gt; and ^.
 
     You are including the statement
 
-        `    global x`
+            global x
 
     indicating that `x` is a variable defined outside a function.
     You are also using the same `x` as an argument for that
@@ -1683,6 +1689,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error39.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+    8:
     9: a = A()
    10:
    11: a.x = 1
@@ -1709,6 +1716,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error40.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise
    2: SyntaxError: unexpected character after line continuation character
    3: &quot;&quot;&quot;
    4:
@@ -1737,11 +1745,14 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error41.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-    4: &quot;&quot;&quot;
-    5:
-    6:
---&gt; 7: a = dict(&#39;key&#39;=1)
-               ^
+   1: &quot;&quot;&quot;Should raise
+   2: Python &lt; 3.8: SyntaxError: keyword can&#39;t be an expression
+   3: Python 3.8:  expression cannot contain assignment, perhaps you meant &quot;==&quot;?
+   4: &quot;&quot;&quot;
+   5:
+   6:
+--&gt;7: a = dict(&#39;key&#39;=1)
+              ^
 
     You likely called a function with a named argument:
 
@@ -1769,6 +1780,8 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error42.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid character in identifier
+   2: &quot;&quot;&quot;
    3:
    4: # Robot-face character below
    5:
@@ -1796,12 +1809,12 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error43.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
    2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: def f(None=1):
                ^
-   6:     pass
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1827,12 +1840,12 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error44.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
    2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: def f(x, True):
                   ^
-   6:     pass
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1858,12 +1871,12 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error45.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
    2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: def f(*None):
                 ^
-   6:     pass
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1889,12 +1902,12 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error46.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
    2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: def f(**None):
                  ^
-   6:     pass
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -1920,6 +1933,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error47.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t or cannot delete function call
    2: &quot;&quot;&quot;
    3:
    4:
@@ -1951,11 +1965,12 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error48.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-    4:
-    5: def fn():
-    6:     p = 1
---&gt; 7:     global p
-          ^
+   3:
+   4:
+   5: def fn():
+   6:     p = 1
+--&gt;7:     global p
+         ^
 
     You assigned a value to the variable `p`
     before declaring it as a global variable.
@@ -1978,11 +1993,12 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error49.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-    4:
-    5: def fn():
-    6:     print(r)
---&gt; 7:     global r
-          ^
+   3:
+   4:
+   5: def fn():
+   6:     print(r)
+--&gt;7:     global r
+         ^
 
     You used the variable `r`
     before declaring it as a global variable.
@@ -2007,6 +2023,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error50.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+    5:     q = 1
     6:
     7:     def g():
     8:         print(q)
@@ -2036,6 +2053,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error51.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+    5:     s = 1
     6:
     7:     def g():
     8:         s = 2
@@ -2063,11 +2081,14 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error52.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-    4:
-    5:  &quot;&quot;&quot;
-    6:
---&gt; 7: {1, 2, 3} = 4
-      ^
+   1: &quot;&quot;&quot;Should raise SyntaxError:
+   2: Python 3.8: cannot assign to set display
+   3: Python 3.6, 3.7: can&#39;t assign to literal
+   4:
+   5:  &quot;&quot;&quot;
+   6:
+--&gt;7: {1, 2, 3} = 4
+     ^
 
     You wrote an expression like
 
@@ -2094,11 +2115,14 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error53.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-    4:
-    5:  &quot;&quot;&quot;
-    6:
---&gt; 7: {1 : 2, 2 : 4} = 5
-      ^
+   1: &quot;&quot;&quot;Should raise SyntaxError:
+   2: Python 3.8: cannot assign to dict display
+   3: Python 3.6, 3.7: can&#39;t assign to literal
+   4:
+   5:  &quot;&quot;&quot;
+   6:
+--&gt;7: {1 : 2, 2 : 4} = 5
+     ^
 
     You wrote an expression like
 
@@ -2298,6 +2322,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error60.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: name &#39;x&#39; is parameter and nonlocal&quot;&quot;&quot;
    2:
    3:
    4: def f(x):
@@ -2326,12 +2351,12 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error61.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-    4:
-    5:
-    6: def f():
---&gt; 7:     global xy
-          ^
-    8:     nonlocal xy
+   3: xy = 1
+   4:
+   5:
+   6: def f():
+--&gt;7:     global xy
+         ^
 
     You declared `xy` as being both a global and nonlocal variable.
     A variable can be global, or nonlocal, but not both at the same time.
@@ -2354,6 +2379,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error62.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: no binding for nonlocal &#39;ab&#39; found&quot;&quot;&quot;
    2:
    3:
    4: def f():
@@ -2414,7 +2440,6 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: def f(aa=1, aa=2):
      ^
-   5:     pass
 
     You have defined a function repeating the keyword argument
 
@@ -2623,6 +2648,8 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error72.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise
+   2: Python &lt; 3.8: SyntaxError: can&#39;t assign to literal
    3: Python &gt;= 3.8: SyntaxError: cannot assign to f-string expression
    4: &quot;&quot;&quot;
    5:
@@ -2675,6 +2702,7 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error74.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   2: def f(it, *varargs, **kwargs):
    3:     return list(it)
    4:
    5: L = range(10)
@@ -2740,7 +2768,6 @@ beyond the location indicated by --&gt; and ^.
    2: for i in range(101):
 --&gt;3:     if i % 2 = 0:
                    ^
-   4:         print(i)
 
     You used an assignment operator `=` instead of an equality operator `==`.
 </pre></div>
@@ -2764,12 +2791,12 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error77.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2: for i in range(101):
    3:     if False:
    4:         pass
 --&gt;5:     elif i % 2 = 0:
                      ^
-   6:         print(i)
 
     You used an assignment operator `=` instead of an equality operator `==`.
 </pre></div>
@@ -2798,7 +2825,6 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: while a = 1:
               ^
-   5:     a = 2
 
     You used an assignment operator `=` instead of an equality operator `==`.
 </pre></div>
@@ -2887,12 +2913,12 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error81.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-    4:     if 1:
-    5:         print(((123))
-    6:
---&gt; 7: if 2:
-           ^
-    8:     print(123))
+   4:     if 1:
+   5:         print(((123))
+   6:
+--&gt;7: if 2:
+          ^
+   8:     print(123))
 
     I make an effort below to guess what caused the problem
     but I might guess incorrectly.
@@ -3084,7 +3110,6 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: def f(*):
            ^
-   5:     pass
 
     Assuming you were defining a function, you need
     to replace `*` by either `*arguments` or

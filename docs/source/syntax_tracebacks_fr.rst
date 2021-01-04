@@ -101,7 +101,7 @@ IndentationError: unindent does not match ...
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
         mod = __import__(name)
-      File "TESTS:\syntax\raise_indentation_error3.py", line 4
+      File "TESTS:\syntax\raise_indentation_error3.py", line 5
         pass
             ^
     IndentationError: unindent does not match any outer indentation level
@@ -115,9 +115,10 @@ IndentationError: unindent does not match ...
     jusqu'à l'endroit indiqué par --> et ^.
     
        1: '''Should raise IndentationError'''
-       2: if True:
-       3:       pass
-    -->4:     pass
+       2: 
+       3: if True:
+       4:       pass
+    -->5:     pass
                   ^
 
         La ligne indiquée ci-dessus par -->
@@ -151,11 +152,12 @@ TabError
     'TESTS:\syntax\raise_tab_error.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-        4: 
-        5: def test_tab_error():
-        6:     if True:
-    --> 7: 	pass
-                ^
+       3: 
+       4: 
+       5: def test_tab_error():
+       6:     if True:
+    -->7: 	pass
+               ^
 
 Assign to keyword
 -----------------
@@ -213,7 +215,6 @@ Missing colon - if
        2: 
     -->3: if True
                  ^
-       4:     pass
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
@@ -248,7 +249,6 @@ Missing colon - while
        2: 
     -->3: while True  # a comment
                       ^
-       4:     pass
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
@@ -279,12 +279,12 @@ Write elif, not else if
     'TESTS:\syntax\raise_syntax_error4.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError"""
        2: 
        3: if False:
        4:     pass
     -->5: else if True:
                ^
-       6:     print('ok')
 
         Vous avez écrit `else if`
         au lieu d'utiliser le mot-clé `elif`.
@@ -313,12 +313,12 @@ Write elif, not elseif
     'TESTS:\syntax\raise_syntax_error5.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError"""
        2: 
        3: if False:
        4:     pass
     -->5: elseif True:
                  ^
-       6:     print('ok')
 
         Vous avez écrit `elseif`
         au lieu d'utiliser le mot-clé `elif`.
@@ -349,7 +349,6 @@ Malformed def statment - 1
        2: 
     -->3: def :
               ^
-       4:     pass
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
@@ -387,7 +386,6 @@ Malformed def statment - 2
        2: 
     -->3: def name  :
                     ^
-       4:     pass
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
@@ -423,7 +421,6 @@ Malformed def statment - 3
        2: 
     -->3: def ( arg )  :
               ^
-       4:     pass
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
@@ -655,12 +652,13 @@ Unmatched closing parenthesis
     'TESTS:\syntax\raise_syntax_error15.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: invalid syntax for Python < 3.8
+       2:    otherwise, SyntaxError: unmatched ')'
        3: """
        4: a = (1,
        5:     2,
     -->6:     3, 4,))
                     ^
-       7: b = 3
 
         Le symbole parenthèse `)` à la ligne 6 n'a pas de symbole ouvrant qui lui correspond.
         
@@ -864,7 +862,6 @@ Python keyword as function name
        2: 
     -->3: def pass():
               ^
-       4:     print("keyword as function name!")
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
@@ -1151,7 +1148,6 @@ Missing comma between function args
        3: 
     -->4: def a(b, c d):
                      ^
-       5:     pass
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
@@ -1183,6 +1179,8 @@ Cannot assign to function call - 1
     'TESTS:\syntax\raise_syntax_error30.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: can't assign to function call
+       2: 
        3: Python 3.8: SyntaxError: cannot assign to function call
        4: """
        5: 
@@ -1218,6 +1216,8 @@ Cannot assign to function call - 2
     'TESTS:\syntax\raise_syntax_error31.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: can't assign to function call
+       2: 
        3: Python 3.8: SyntaxError: cannot assign to function call
        4: """
        5: 
@@ -1285,12 +1285,12 @@ Non-default argument follows default argument
     'TESTS:\syntax\raise_syntax_error33.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: non-default argument follows default argument
        2: """
        3: 
        4: 
     -->5: def test(a=1, b):
                    ^
-       6:     return a + b
 
         Dans Python, vous pouvez définir les fonctions avec seulement des arguments de position
         
@@ -1328,6 +1328,7 @@ Positional argument follows keyword argument
     'TESTS:\syntax\raise_syntax_error34.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: positional argument follows keyword argument
        2: """
        3: 
        4: 
@@ -1403,6 +1404,7 @@ Unclosed bracket
     'TESTS:\syntax\raise_syntax_error36.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+        3: 
         4: def foo():
         5:     return [1, 2, 3
         6: 
@@ -1435,6 +1437,8 @@ Unexpected EOF while parsing
     'TESTS:\syntax\raise_syntax_error37.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+        3: 
+        4: def foo():
         5:     return [1, 2, 3,
         6: 
         7: print(foo())
@@ -1473,20 +1477,22 @@ Name is parameter and global
     'TESTS:\syntax\raise_syntax_error38.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: name 'x' is parameter and global
+       2: """
        3: 
        4: 
        5: def f(x):
     -->6:     global x
               ^
 
-        Vous avec inclus l'énoncé
+        You are including the statement
         
-            `    global x`
+                global x
         
-        indiquant que `x` est une variable définie en dehors d'une fonction.
-        Vous utilisez également le même `x` comme un argument pour cette
-        fonction; un argument de fonction est une variable locale connue seulement
-        à l'intérieur de cette fonction, ce qui est le contraire de ce que `global` sous-entendait.
+        indicating that `x` is a variable defined outside a function.
+        You are also using the same `x` as an argument for that
+        function, thus indicating that it should be variable known only
+        inside that function, which is the contrary of what `global` implied.
         
 
 Keyword as attribute
@@ -1511,6 +1517,7 @@ Keyword as attribute
     'TESTS:\syntax\raise_syntax_error39.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+        8: 
         9: a = A()
        10: 
        11: a.x = 1
@@ -1542,6 +1549,7 @@ Content passed continuation line character
     'TESTS:\syntax\raise_syntax_error40.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise
        2: SyntaxError: unexpected character after line continuation character
        3: """
        4: 
@@ -1575,11 +1583,14 @@ Keyword can't be an expression
     'TESTS:\syntax\raise_syntax_error41.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-        4: """
-        5: 
-        6: 
-    --> 7: a = dict('key'=1)
-                    ^
+       1: """Should raise
+       2: Python < 3.8: SyntaxError: keyword can't be an expression
+       3: Python 3.8:  expression cannot contain assignment, perhaps you meant "=="?
+       4: """
+       5: 
+       6: 
+    -->7: a = dict('key'=1)
+                   ^
 
         L'une des deux possibilités suivantes pourrait être la cause:
         1. Vous vouliez faire une comparaison avec `==` et vous avez écrit `=` à sa place.
@@ -1613,6 +1624,8 @@ Invalid character in identifier
     'TESTS:\syntax\raise_syntax_error42.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: invalid character in identifier
+       2: """
        3: 
        4: # Robot-face character below
        5: 
@@ -1643,12 +1656,12 @@ Keyword cannot be argument in def - 1
     'TESTS:\syntax\raise_syntax_error43.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: invalid syntax
        2: """
        3: 
        4: 
     -->5: def f(None=1):
                 ^
-       6:     pass
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
@@ -1678,12 +1691,12 @@ Keyword cannot be argument in def - 2
     'TESTS:\syntax\raise_syntax_error44.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: invalid syntax
        2: """
        3: 
        4: 
     -->5: def f(x, True):
                    ^
-       6:     pass
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
@@ -1713,12 +1726,12 @@ Keyword cannot be argument in def - 3
     'TESTS:\syntax\raise_syntax_error45.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: invalid syntax
        2: """
        3: 
        4: 
     -->5: def f(*None):
                  ^
-       6:     pass
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
@@ -1748,12 +1761,12 @@ Keyword cannot be argument in def - 4
     'TESTS:\syntax\raise_syntax_error46.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: invalid syntax
        2: """
        3: 
        4: 
     -->5: def f(**None):
                   ^
-       6:     pass
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
@@ -1783,6 +1796,7 @@ Delete function call
     'TESTS:\syntax\raise_syntax_error47.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: can't or cannot delete function call
        2: """
        3: 
        4: 
@@ -1817,11 +1831,12 @@ Name assigned prior to global declaration
     'TESTS:\syntax\raise_syntax_error48.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-        4: 
-        5: def fn():
-        6:     p = 1
-    --> 7:     global p
-               ^
+       3: 
+       4: 
+       5: def fn():
+       6:     p = 1
+    -->7:     global p
+              ^
 
         Vous avez attribué une valeur à la variable `p`
         avant de la déclarer comme une variable globale.
@@ -1847,11 +1862,12 @@ Name used prior to global declaration
     'TESTS:\syntax\raise_syntax_error49.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-        4: 
-        5: def fn():
-        6:     print(r)
-    --> 7:     global r
-               ^
+       3: 
+       4: 
+       5: def fn():
+       6:     print(r)
+    -->7:     global r
+              ^
 
         Vous avez utilisé la variable `r`
         avant de la déclarer comme une variable globale.
@@ -1879,6 +1895,7 @@ Name used prior to nonlocal declaration
     'TESTS:\syntax\raise_syntax_error50.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+        5:     q = 1
         6: 
         7:     def g():
         8:         print(q)
@@ -1911,6 +1928,7 @@ Name assigned prior to nonlocal declaration
     'TESTS:\syntax\raise_syntax_error51.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+        5:     s = 1
         6: 
         7:     def g():
         8:         s = 2
@@ -1941,11 +1959,14 @@ Cannot assign to literal - 3
     'TESTS:\syntax\raise_syntax_error52.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-        4: 
-        5:  """
-        6: 
-    --> 7: {1, 2, 3} = 4
-           ^
+       1: """Should raise SyntaxError:
+       2: Python 3.8: cannot assign to set display
+       3: Python 3.6, 3.7: can't assign to literal
+       4: 
+       5:  """
+       6: 
+    -->7: {1, 2, 3} = 4
+          ^
 
         Vous avez écrit une expression comme
         
@@ -1976,11 +1997,14 @@ Cannot assign to literal - 4
     'TESTS:\syntax\raise_syntax_error53.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-        4: 
-        5:  """
-        6: 
-    --> 7: {1 : 2, 2 : 4} = 5
-           ^
+       1: """Should raise SyntaxError:
+       2: Python 3.8: cannot assign to dict display
+       3: Python 3.6, 3.7: can't assign to literal
+       4: 
+       5:  """
+       6: 
+    -->7: {1 : 2, 2 : 4} = 5
+          ^
 
         Vous avez écrit une expression comme
         
@@ -2200,6 +2224,7 @@ Name is parameter and nonlocal
     'TESTS:\syntax\raise_syntax_error60.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: name 'x' is parameter and nonlocal"""
        2: 
        3: 
        4: def f(x):
@@ -2231,12 +2256,12 @@ Name is global and nonlocal
     'TESTS:\syntax\raise_syntax_error61.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-        4: 
-        5: 
-        6: def f():
-    --> 7:     global xy
-               ^
-        8:     nonlocal xy
+       3: xy = 1
+       4: 
+       5: 
+       6: def f():
+    -->7:     global xy
+              ^
 
         Vous avez utilisé `xy` comme étant une variable non locale et globale.
         Une variable peut être d'un seul type à la fois: soit globale, soit non locale, ou soit locale.
@@ -2262,6 +2287,7 @@ nonlocal variable not found
     'TESTS:\syntax\raise_syntax_error62.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: no binding for nonlocal 'ab' found"""
        2: 
        3: 
        4: def f():
@@ -2327,7 +2353,6 @@ Keyword arg only once in function definition
        3: 
     -->4: def f(aa=1, aa=2):
           ^
-       5:     pass
 
         Vous avez défini une fonction répétant l'argument nommé
         
@@ -2561,6 +2586,8 @@ Cannot assign to f-string
     'TESTS:\syntax\raise_syntax_error72.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise
+       2: Python < 3.8: SyntaxError: can't assign to literal
        3: Python >= 3.8: SyntaxError: cannot assign to f-string expression
        4: """
        5: 
@@ -2619,6 +2646,7 @@ Parenthesis around generator expression
     'TESTS:\syntax\raise_syntax_error74.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       2: def f(it, *varargs, **kwargs):
        3:     return list(it)
        4: 
        5: L = range(10)
@@ -2690,7 +2718,6 @@ Single = instead of double == with if
        2: for i in range(101):
     -->3:     if i % 2 = 0:
                        ^
-       4:         print(i)
 
         Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser 
         un opérateur d'égalité, `==`, ou l'opérateur `:=`.
@@ -2718,12 +2745,12 @@ Single = instead of double == with elif
     'TESTS:\syntax\raise_syntax_error77.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       1: """Should raise SyntaxError: invalid syntax"""
        2: for i in range(101):
        3:     if False:
        4:         pass
     -->5:     elif i % 2 = 0:
                          ^
-       6:         print(i)
 
         Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser 
         un opérateur d'égalité, `==`, ou l'opérateur `:=`.
@@ -2756,7 +2783,6 @@ Single = instead of double == with while
        3: 
     -->4: while a = 1:
                   ^
-       5:     a = 2
 
         Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser 
         un opérateur d'égalité, `==`, ou l'opérateur `:=`.
@@ -2853,12 +2879,12 @@ Unclosed parenthesis - 3
     'TESTS:\syntax\raise_syntax_error81.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-        4:     if 1:
-        5:         print(((123))
-        6: 
-    --> 7: if 2:
-               ^
-        8:     print(123))
+       4:     if 1:
+       5:         print(((123))
+       6: 
+    -->7: if 2:
+              ^
+       8:     print(123))
 
         Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
         
@@ -3069,7 +3095,6 @@ Named arguments must follow bare *
        3: 
     -->4: def f(*):
                 ^
-       5:     pass
 
         En supposant que vous définissiez une fonction, vous avez besoin
         de remplacer `*` soit par `*arguments` ou

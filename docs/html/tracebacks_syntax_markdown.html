@@ -388,7 +388,7 @@ does not match the indentation of the previous line.</p>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-  File <span class="nb">&quot;TESTS:\syntax\raise_indentation_error3.py&quot;</span>, line <span class="m">4</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_indentation_error3.py&quot;</span>, line <span class="m">5</span>
     <span class="k">pass</span>
         <span class="o">^</span>
 <span class="gr">IndentationError</span>: <span class="n">unindent does not match any outer indentation level</span>
@@ -400,9 +400,10 @@ not indented (aligned vertically with other lines) as expected.</p>
 ‘TESTS:\syntax\raise_indentation_error3.py’
 beyond the location indicated by –&gt; and ^.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;</span>
-       <span class="mi">2</span><span class="p">:</span> <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
-       <span class="mi">3</span><span class="p">:</span>       <span class="k">pass</span>
-    <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span>     <span class="k">pass</span>
+       <span class="mi">2</span><span class="p">:</span> 
+       <span class="mi">3</span><span class="p">:</span> <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+       <span class="mi">4</span><span class="p">:</span>       <span class="k">pass</span>
+    <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span>     <span class="k">pass</span>
                   <span class="o">^</span>
 </pre></div>
 </div>
@@ -431,11 +432,12 @@ Python’s recommendation is to always use spaces to indent your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_tab_error.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">4</span><span class="p">:</span> 
-        <span class="mi">5</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_tab_error</span><span class="p">():</span>
-        <span class="mi">6</span><span class="p">:</span>     <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="o">--&gt;</span> <span class="mi">7</span><span class="p">:</span> 	<span class="k">pass</span>
-                <span class="o">^</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">3</span><span class="p">:</span> 
+       <span class="mi">4</span><span class="p">:</span> 
+       <span class="mi">5</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_tab_error</span><span class="p">():</span>
+       <span class="mi">6</span><span class="p">:</span>     <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span> 	<span class="k">pass</span>
+               <span class="o">^</span>
 </pre></div>
 </div>
 </div>
@@ -485,7 +487,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="k">if</span> <span class="kc">True</span>
                  <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span>     <span class="k">pass</span>
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -514,7 +515,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="k">while</span> <span class="kc">True</span>  <span class="c1"># a comment</span>
                       <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span>     <span class="k">pass</span>
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -539,12 +539,12 @@ forgot to add a colon <code class="docutils literal notranslate"><span class="pr
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error4.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;</span>
+       <span class="mi">2</span><span class="p">:</span> 
        <span class="mi">3</span><span class="p">:</span> <span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
        <span class="mi">4</span><span class="p">:</span>     <span class="k">pass</span>
     <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span> <span class="k">else</span> <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
                <span class="o">^</span>
-       <span class="mi">6</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You likely meant to use Python’s <code class="docutils literal notranslate"><span class="pre">elif</span></code> keyword
@@ -567,12 +567,12 @@ but wrote <code class="docutils literal notranslate"><span class="pre">else</spa
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error5.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;</span>
+       <span class="mi">2</span><span class="p">:</span> 
        <span class="mi">3</span><span class="p">:</span> <span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
        <span class="mi">4</span><span class="p">:</span>     <span class="k">pass</span>
     <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span> <span class="n">elseif</span> <span class="kc">True</span><span class="p">:</span>
                  <span class="o">^</span>
-       <span class="mi">6</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You likely meant to use Python’s <code class="docutils literal notranslate"><span class="pre">elif</span></code> keyword
@@ -598,7 +598,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="k">def</span> <span class="p">:</span>
               <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span>     <span class="k">pass</span>
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -630,7 +629,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="k">def</span> <span class="nf">name</span>  <span class="p">:</span>
                     <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span>     <span class="k">pass</span>
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -661,7 +659,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="k">def</span> <span class="p">(</span> <span class="n">arg</span> <span class="p">)</span>  <span class="p">:</span>
               <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span>     <span class="k">pass</span>
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -863,12 +860,13 @@ beyond the location indicated by –&gt; and ^.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error15.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">3</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">       4: a = (1,</span>
-<span class="s2">       5:     2,</span>
-<span class="s2">    --&gt;6:     3, 4,))</span>
-<span class="s2">                    ^</span>
-<span class="s2">       7: b = 3</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: invalid syntax for Python &lt; 3.8</span>
+<span class="s2">       2:    otherwise, SyntaxError: unmatched &#39;)&#39;</span>
+<span class="s2">       3: &quot;&quot;&quot;</span>
+       <span class="mi">4</span><span class="p">:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span>
+       <span class="mi">5</span><span class="p">:</span>     <span class="mi">2</span><span class="p">,</span>
+    <span class="o">--&gt;</span><span class="mi">6</span><span class="p">:</span>     <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,))</span>
+                    <span class="o">^</span>
 </pre></div>
 </div>
 <p>The closing parenthesis <code class="docutils literal notranslate"><span class="pre">)</span></code> on line 6 does not match anything.</p>
@@ -1046,7 +1044,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="k">def</span> <span class="nf">pass</span><span class="p">():</span>
               <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;keyword as function name!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -1298,7 +1295,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">3</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span> <span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="n">d</span><span class="p">):</span>
                      <span class="o">^</span>
-       <span class="mi">5</span><span class="p">:</span>     <span class="k">pass</span>
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -1327,11 +1323,13 @@ Perhaps you meant to write <code class="docutils literal notranslate"><span clas
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error30.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">3</span><span class="p">:</span> <span class="n">Python</span> <span class="mf">3.8</span><span class="p">:</span> <span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">assign</span> <span class="n">to</span> <span class="n">function</span> <span class="n">call</span>
-       <span class="mi">4</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">       5: </span>
-<span class="s2">    --&gt;6: len(&#39;a&#39;) = 3</span>
-<span class="s2">          ^</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to function call</span>
+<span class="s2">       2: </span>
+<span class="s2">       3: Python 3.8: SyntaxError: cannot assign to function call</span>
+<span class="s2">       4: &quot;&quot;&quot;</span>
+       <span class="mi">5</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">6</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">3</span>
+          <span class="o">^</span>
 </pre></div>
 </div>
 <p>You wrote the expression</p>
@@ -1357,11 +1355,13 @@ or includes a function call and is not simply the name of a variable.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error31.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">3</span><span class="p">:</span> <span class="n">Python</span> <span class="mf">3.8</span><span class="p">:</span> <span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">assign</span> <span class="n">to</span> <span class="n">function</span> <span class="n">call</span>
-       <span class="mi">4</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">       5: </span>
-<span class="s2">    --&gt;6: func(a, b=3) = 4</span>
-<span class="s2">          ^</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to function call</span>
+<span class="s2">       2: </span>
+<span class="s2">       3: Python 3.8: SyntaxError: cannot assign to function call</span>
+<span class="s2">       4: &quot;&quot;&quot;</span>
+       <span class="mi">5</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">6</span><span class="p">:</span> <span class="n">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="mi">4</span>
+          <span class="o">^</span>
 </pre></div>
 </div>
 <p>You wrote an expression like</p>
@@ -1416,12 +1416,12 @@ before or at the position indicated by –&gt; and ^.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error33.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">       3: </span>
-<span class="s2">       4: </span>
-<span class="s2">    --&gt;5: def test(a=1, b):</span>
-<span class="s2">                   ^</span>
-<span class="s2">       6:     return a + b</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: non-default argument follows default argument</span>
+<span class="s2">       2: &quot;&quot;&quot;</span>
+       <span class="mi">3</span><span class="p">:</span> 
+       <span class="mi">4</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+                   <span class="o">^</span>
 </pre></div>
 </div>
 <p>In Python, you can define functions with only positional arguments</p>
@@ -1455,11 +1455,12 @@ According to Python, you used positional arguments after keyword ones.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error34.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">       3: </span>
-<span class="s2">       4: </span>
-<span class="s2">    --&gt;5: test(a=1, b)</span>
-<span class="s2">                    ^</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: positional argument follows keyword argument</span>
+<span class="s2">       2: &quot;&quot;&quot;</span>
+       <span class="mi">3</span><span class="p">:</span> 
+       <span class="mi">4</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span> <span class="n">test</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+                    <span class="o">^</span>
 </pre></div>
 </div>
 <p>In Python, you can call functions with only positional arguments</p>
@@ -1521,7 +1522,8 @@ single quote (‘) or double quote (“), without a matching closing one.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error36.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">4</span><span class="p">:</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">3</span><span class="p">:</span> 
+        <span class="mi">4</span><span class="p">:</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
         <span class="mi">5</span><span class="p">:</span>     <span class="k">return</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
         <span class="mi">6</span><span class="p">:</span> 
     <span class="o">--&gt;</span> <span class="mi">7</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">foo</span><span class="p">())</span>
@@ -1550,7 +1552,9 @@ but I might guess incorrectly.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error37.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">5</span><span class="p">:</span>     <span class="k">return</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">3</span><span class="p">:</span> 
+        <span class="mi">4</span><span class="p">:</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+        <span class="mi">5</span><span class="p">:</span>     <span class="k">return</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span>
         <span class="mi">6</span><span class="p">:</span> 
         <span class="mi">7</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">foo</span><span class="p">())</span>
     <span class="o">--&gt;</span> <span class="mi">8</span><span class="p">:</span> 
@@ -1582,7 +1586,9 @@ and expected more content.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error38.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">3</span><span class="p">:</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: name &#39;x&#39; is parameter and global</span>
+<span class="s2">       2: &quot;&quot;&quot;</span>
+       <span class="mi">3</span><span class="p">:</span> 
        <span class="mi">4</span><span class="p">:</span> 
        <span class="mi">5</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="o">--&gt;</span><span class="mi">6</span><span class="p">:</span>     <span class="k">global</span> <span class="n">x</span>
@@ -1590,7 +1596,7 @@ beyond the location indicated by –&gt; and ^.</p>
 </pre></div>
 </div>
 <p>You are including the statement</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`    global x`
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">global</span> <span class="n">x</span>
 </pre></div>
 </div>
 <p>indicating that <code class="docutils literal notranslate"><span class="pre">x</span></code> is a variable defined outside a function.
@@ -1615,7 +1621,8 @@ inside that function, which is the contrary of what <code class="docutils litera
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error39.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">9</span><span class="p">:</span> <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">8</span><span class="p">:</span> 
+        <span class="mi">9</span><span class="p">:</span> <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
        <span class="mi">10</span><span class="p">:</span> 
        <span class="mi">11</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="o">--&gt;</span><span class="mi">12</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="k">pass</span> <span class="o">=</span> <span class="mi">2</span>
@@ -1640,11 +1647,12 @@ beyond the location indicated by –&gt; and ^.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error40.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> <span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">character</span> <span class="n">after</span> <span class="n">line</span> <span class="n">continuation</span> <span class="n">character</span>
-       <span class="mi">3</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">       4: </span>
-<span class="s2">    --&gt;5: print(</span><span class="se">\t</span><span class="s2">)</span>
-<span class="s2">                   ^</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise</span>
+<span class="s2">       2: SyntaxError: unexpected character after line continuation character</span>
+<span class="s2">       3: &quot;&quot;&quot;</span>
+       <span class="mi">4</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span>\<span class="n">t</span><span class="p">)</span>
+                   <span class="o">^</span>
 </pre></div>
 </div>
 <p>You are using the continuation character <code class="docutils literal notranslate"><span class="pre">\</span></code> outside of a string,
@@ -1667,11 +1675,14 @@ I am guessing that you forgot to enclose some content in a string.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error41.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">4</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        5: </span>
-<span class="s2">        6: </span>
-<span class="s2">    --&gt; 7: a = dict(&#39;key&#39;=1)</span>
-<span class="s2">                    ^</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise</span>
+<span class="s2">       2: Python &lt; 3.8: SyntaxError: keyword can&#39;t be an expression</span>
+<span class="s2">       3: Python 3.8:  expression cannot contain assignment, perhaps you meant &quot;==&quot;?</span>
+<span class="s2">       4: &quot;&quot;&quot;</span>
+       <span class="mi">5</span><span class="p">:</span> 
+       <span class="mi">6</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                   <span class="o">^</span>
 </pre></div>
 </div>
 <p>One of the following two possibilities could be the cause:</p>
@@ -1703,7 +1714,9 @@ SyntaxError: invalid character in identifier
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error42.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       3: 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       1: &quot;&quot;&quot;Should raise SyntaxError: invalid character in identifier
+       2: &quot;&quot;&quot;
+       3: 
        4: # Robot-face character below
        5: 
     --&gt;6: 🤖 = &#39;Reeborg&#39;
@@ -1729,12 +1742,12 @@ which is not allowed.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error43.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">       3: </span>
-<span class="s2">       4: </span>
-<span class="s2">    --&gt;5: def f(None=1):</span>
-<span class="s2">                ^</span>
-<span class="s2">       6:     pass</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: invalid syntax</span>
+<span class="s2">       2: &quot;&quot;&quot;</span>
+       <span class="mi">3</span><span class="p">:</span> 
+       <span class="mi">4</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="kc">None</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+                <span class="o">^</span>
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -1758,12 +1771,12 @@ but I might guess incorrectly.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error44.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">       3: </span>
-<span class="s2">       4: </span>
-<span class="s2">    --&gt;5: def f(x, True):</span>
-<span class="s2">                   ^</span>
-<span class="s2">       6:     pass</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: invalid syntax</span>
+<span class="s2">       2: &quot;&quot;&quot;</span>
+       <span class="mi">3</span><span class="p">:</span> 
+       <span class="mi">4</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kc">True</span><span class="p">):</span>
+                   <span class="o">^</span>
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -1787,12 +1800,12 @@ but I might guess incorrectly.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error45.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">       3: </span>
-<span class="s2">       4: </span>
-<span class="s2">    --&gt;5: def f(*None):</span>
-<span class="s2">                 ^</span>
-<span class="s2">       6:     pass</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: invalid syntax</span>
+<span class="s2">       2: &quot;&quot;&quot;</span>
+       <span class="mi">3</span><span class="p">:</span> 
+       <span class="mi">4</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="kc">None</span><span class="p">):</span>
+                 <span class="o">^</span>
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -1816,12 +1829,12 @@ but I might guess incorrectly.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error46.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">       3: </span>
-<span class="s2">       4: </span>
-<span class="s2">    --&gt;5: def f(**None):</span>
-<span class="s2">                  ^</span>
-<span class="s2">       6:     pass</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: invalid syntax</span>
+<span class="s2">       2: &quot;&quot;&quot;</span>
+       <span class="mi">3</span><span class="p">:</span> 
+       <span class="mi">4</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">**</span><span class="kc">None</span><span class="p">):</span>
+                  <span class="o">^</span>
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -1845,11 +1858,12 @@ but I might guess incorrectly.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error47.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">       3: </span>
-<span class="s2">       4: </span>
-<span class="s2">    --&gt;5: del f(a)</span>
-<span class="s2">              ^</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: can&#39;t or cannot delete function call</span>
+<span class="s2">       2: &quot;&quot;&quot;</span>
+       <span class="mi">3</span><span class="p">:</span> 
+       <span class="mi">4</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span> <span class="k">del</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+              <span class="o">^</span>
 </pre></div>
 </div>
 <p>You attempted to delete a function call</p>
@@ -1877,11 +1891,12 @@ beyond the location indicated by –&gt; and ^.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error48.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">4</span><span class="p">:</span> 
-        <span class="mi">5</span><span class="p">:</span> <span class="k">def</span> <span class="nf">fn</span><span class="p">():</span>
-        <span class="mi">6</span><span class="p">:</span>     <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="o">--&gt;</span> <span class="mi">7</span><span class="p">:</span>     <span class="k">global</span> <span class="n">p</span>
-               <span class="o">^</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">3</span><span class="p">:</span> 
+       <span class="mi">4</span><span class="p">:</span> 
+       <span class="mi">5</span><span class="p">:</span> <span class="k">def</span> <span class="nf">fn</span><span class="p">():</span>
+       <span class="mi">6</span><span class="p">:</span>     <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span>     <span class="k">global</span> <span class="n">p</span>
+              <span class="o">^</span>
 </pre></div>
 </div>
 <p>You assigned a value to the variable <code class="docutils literal notranslate"><span class="pre">p</span></code>
@@ -1903,11 +1918,12 @@ before declaring it as a global variable.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error49.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">4</span><span class="p">:</span> 
-        <span class="mi">5</span><span class="p">:</span> <span class="k">def</span> <span class="nf">fn</span><span class="p">():</span>
-        <span class="mi">6</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-    <span class="o">--&gt;</span> <span class="mi">7</span><span class="p">:</span>     <span class="k">global</span> <span class="n">r</span>
-               <span class="o">^</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">3</span><span class="p">:</span> 
+       <span class="mi">4</span><span class="p">:</span> 
+       <span class="mi">5</span><span class="p">:</span> <span class="k">def</span> <span class="nf">fn</span><span class="p">():</span>
+       <span class="mi">6</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span>     <span class="k">global</span> <span class="n">r</span>
+              <span class="o">^</span>
 </pre></div>
 </div>
 <p>You used the variable <code class="docutils literal notranslate"><span class="pre">r</span></code>
@@ -1930,7 +1946,8 @@ before declaring it as a global variable.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error50.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">6</span><span class="p">:</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">5</span><span class="p">:</span>     <span class="n">q</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="mi">6</span><span class="p">:</span> 
         <span class="mi">7</span><span class="p">:</span>     <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
         <span class="mi">8</span><span class="p">:</span>         <span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
     <span class="o">--&gt;</span> <span class="mi">9</span><span class="p">:</span>         <span class="k">nonlocal</span> <span class="n">q</span>
@@ -1957,7 +1974,8 @@ before declaring it as a nonlocal variable.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error51.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">6</span><span class="p">:</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">5</span><span class="p">:</span>     <span class="n">s</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="mi">6</span><span class="p">:</span> 
         <span class="mi">7</span><span class="p">:</span>     <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
         <span class="mi">8</span><span class="p">:</span>         <span class="n">s</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="o">--&gt;</span> <span class="mi">9</span><span class="p">:</span>         <span class="k">nonlocal</span> <span class="n">s</span>
@@ -1983,11 +2001,14 @@ before declaring it as a nonlocal variable.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error52.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">4</span><span class="p">:</span> 
-        <span class="mi">5</span><span class="p">:</span>  <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        6: </span>
-<span class="s2">    --&gt; 7: {1, 2, 3} = 4</span>
-<span class="s2">           ^</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError:</span>
+<span class="s2">       2: Python 3.8: cannot assign to set display</span>
+<span class="s2">       3: Python 3.6, 3.7: can&#39;t assign to literal</span>
+<span class="s2">       4: </span>
+<span class="s2">       5:  &quot;&quot;&quot;</span>
+       <span class="mi">6</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span> <span class="o">=</span> <span class="mi">4</span>
+          <span class="o">^</span>
 </pre></div>
 </div>
 <p>You wrote an expression like</p>
@@ -2014,11 +2035,14 @@ and is not simply the name of a variable.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error53.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">4</span><span class="p">:</span> 
-        <span class="mi">5</span><span class="p">:</span>  <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        6: </span>
-<span class="s2">    --&gt; 7: {1 : 2, 2 : 4} = 5</span>
-<span class="s2">           ^</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError:</span>
+<span class="s2">       2: Python 3.8: cannot assign to dict display</span>
+<span class="s2">       3: Python 3.6, 3.7: can&#39;t assign to literal</span>
+<span class="s2">       4: </span>
+<span class="s2">       5:  &quot;&quot;&quot;</span>
+       <span class="mi">6</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span> <span class="p">:</span> <span class="mi">4</span><span class="p">}</span> <span class="o">=</span> <span class="mi">5</span>
+          <span class="o">^</span>
 </pre></div>
 </div>
 <p>You wrote an expression like</p>
@@ -2210,7 +2234,8 @@ A conditional expression has the following form:</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error60.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: name &#39;x&#39; is parameter and nonlocal&quot;&quot;&quot;</span>
+       <span class="mi">2</span><span class="p">:</span> 
        <span class="mi">3</span><span class="p">:</span> 
        <span class="mi">4</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span>     <span class="k">nonlocal</span> <span class="n">x</span>
@@ -2237,12 +2262,12 @@ before declaring it also as a nonlocal variable:
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error61.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">4</span><span class="p">:</span> 
-        <span class="mi">5</span><span class="p">:</span> 
-        <span class="mi">6</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
-    <span class="o">--&gt;</span> <span class="mi">7</span><span class="p">:</span>     <span class="k">global</span> <span class="n">xy</span>
-               <span class="o">^</span>
-        <span class="mi">8</span><span class="p">:</span>     <span class="k">nonlocal</span> <span class="n">xy</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">3</span><span class="p">:</span> <span class="n">xy</span> <span class="o">=</span> <span class="mi">1</span>
+       <span class="mi">4</span><span class="p">:</span> 
+       <span class="mi">5</span><span class="p">:</span> 
+       <span class="mi">6</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span>     <span class="k">global</span> <span class="n">xy</span>
+              <span class="o">^</span>
 </pre></div>
 </div>
 <p>You declared <code class="docutils literal notranslate"><span class="pre">xy</span></code> as being both a global and nonlocal variable.
@@ -2264,7 +2289,8 @@ A variable can be global, or nonlocal, but not both at the same time.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error62.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: no binding for nonlocal &#39;ab&#39; found&quot;&quot;&quot;</span>
+       <span class="mi">2</span><span class="p">:</span> 
        <span class="mi">3</span><span class="p">:</span> 
        <span class="mi">4</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
     <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span>     <span class="k">nonlocal</span> <span class="n">ab</span>
@@ -2322,7 +2348,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">3</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">aa</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">aa</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
           <span class="o">^</span>
-       <span class="mi">5</span><span class="p">:</span>     <span class="k">pass</span>
 </pre></div>
 </div>
 <p>You have defined a function repeating the keyword argument</p>
@@ -2521,11 +2546,13 @@ beyond the location indicated by –&gt; and ^.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error72.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">3</span><span class="p">:</span> <span class="n">Python</span> <span class="o">&gt;=</span> <span class="mf">3.8</span><span class="p">:</span> <span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">assign</span> <span class="n">to</span> <span class="n">f</span><span class="o">-</span><span class="n">string</span> <span class="n">expression</span>
-       <span class="mi">4</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">       5: </span>
-<span class="s2">    --&gt;6: f&#39;</span><span class="si">{x}</span><span class="s2">&#39; = 42</span>
-<span class="s2">          ^</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise</span>
+<span class="s2">       2: Python &lt; 3.8: SyntaxError: can&#39;t assign to literal</span>
+<span class="s2">       3: Python &gt;= 3.8: SyntaxError: cannot assign to f-string expression</span>
+<span class="s2">       4: &quot;&quot;&quot;</span>
+       <span class="mi">5</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">6</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span> <span class="o">=</span> <span class="mi">42</span>
+          <span class="o">^</span>
 </pre></div>
 </div>
 <p>You wrote an expression that has the f-string <code class="docutils literal notranslate"><span class="pre">f'{x}'</span></code>
@@ -2571,7 +2598,8 @@ beyond the location indicated by –&gt; and ^.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error74.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">3</span><span class="p">:</span>     <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="o">*</span><span class="n">varargs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+       <span class="mi">3</span><span class="p">:</span>     <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
        <span class="mi">4</span><span class="p">:</span> 
        <span class="mi">5</span><span class="p">:</span> <span class="n">L</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
     <span class="o">--&gt;</span><span class="mi">6</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">L</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -2632,7 +2660,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">):</span>
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span>     <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span>
                        <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span>         <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You used an assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code>; perhaps you meant to use
@@ -2655,12 +2682,12 @@ an equality operator, <code class="docutils literal notranslate"><span class="pr
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error77.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;</span>
+       <span class="mi">2</span><span class="p">:</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">):</span>
        <span class="mi">3</span><span class="p">:</span>     <span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
        <span class="mi">4</span><span class="p">:</span>         <span class="k">pass</span>
     <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span>     <span class="k">elif</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span>
                          <span class="o">^</span>
-       <span class="mi">6</span><span class="p">:</span>         <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You used an assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code>; perhaps you meant to use
@@ -2688,7 +2715,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">3</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span> <span class="k">while</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span>
                   <span class="o">^</span>
-       <span class="mi">5</span><span class="p">:</span>     <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <p>You used an assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code>; perhaps you meant to use
@@ -2772,12 +2798,12 @@ but I might guess incorrectly.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error81.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">4</span><span class="p">:</span>     <span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="mi">5</span><span class="p">:</span>         <span class="nb">print</span><span class="p">(((</span><span class="mi">123</span><span class="p">))</span>
-        <span class="mi">6</span><span class="p">:</span> 
-    <span class="o">--&gt;</span> <span class="mi">7</span><span class="p">:</span> <span class="k">if</span> <span class="mi">2</span><span class="p">:</span>
-               <span class="o">^</span>
-        <span class="mi">8</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="mi">123</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">4</span><span class="p">:</span>     <span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
+       <span class="mi">5</span><span class="p">:</span>         <span class="nb">print</span><span class="p">(((</span><span class="mi">123</span><span class="p">))</span>
+       <span class="mi">6</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span> <span class="k">if</span> <span class="mi">2</span><span class="p">:</span>
+              <span class="o">^</span>
+       <span class="mi">8</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="mi">123</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>I make an effort below to guess what caused the problem
@@ -2956,7 +2982,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">3</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="p">):</span>
                 <span class="o">^</span>
-       <span class="mi">5</span><span class="p">:</span>     <span class="k">pass</span>
 </pre></div>
 </div>
 <p>Assuming you were defining a function, you need

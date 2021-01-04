@@ -400,7 +400,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
     mod = __import__(name)
-  File &quot;TESTS:\syntax\raise_indentation_error3.py&quot;, line 4
+  File &quot;TESTS:\syntax\raise_indentation_error3.py&quot;, line 5
     pass
         ^
 IndentationError: unindent does not match any outer indentation level
@@ -414,9 +414,10 @@ Python peut seulement comprendre le code du fichier
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
    1: &#39;&#39;&#39;Should raise IndentationError&#39;&#39;&#39;
-   2: if True:
-   3:       pass
---&gt;4:     pass
+   2:
+   3: if True:
+   4:       pass
+--&gt;5:     pass
               ^
 
     La ligne indiquée ci-dessus par --&gt;
@@ -447,11 +448,12 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_tab_error.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-    4:
-    5: def test_tab_error():
-    6:     if True:
---&gt; 7:      pass
-            ^
+   3:
+   4:
+   5: def test_tab_error():
+   6:     if True:
+--&gt;7:       pass
+           ^
 </pre></div>
 </div>
 </div>
@@ -503,7 +505,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: if True
              ^
-   4:     pass
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -534,7 +535,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: while True  # a comment
                   ^
-   4:     pass
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -561,12 +561,12 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error4.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
    3: if False:
    4:     pass
 --&gt;5: else if True:
            ^
-   6:     print(&#39;ok&#39;)
 
     Vous avez écrit `else if`
     au lieu d&#39;utiliser le mot-clé `elif`.
@@ -591,12 +591,12 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error5.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
    3: if False:
    4:     pass
 --&gt;5: elseif True:
              ^
-   6:     print(&#39;ok&#39;)
 
     Vous avez écrit `elseif`
     au lieu d&#39;utiliser le mot-clé `elif`.
@@ -623,7 +623,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: def :
           ^
-   4:     pass
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -657,7 +656,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: def name  :
                 ^
-   4:     pass
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -689,7 +687,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: def ( arg )  :
           ^
-   4:     pass
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -894,12 +891,13 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error15.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax for Python &lt; 3.8
+   2:    otherwise, SyntaxError: unmatched &#39;)&#39;
    3: &quot;&quot;&quot;
    4: a = (1,
    5:     2,
 --&gt;6:     3, 4,))
                 ^
-   7: b = 3
 
     Le symbole parenthèse `)` à la ligne 6 n&#39;a pas de symbole ouvrant qui lui correspond.
 </pre></div>
@@ -1085,7 +1083,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: def pass():
           ^
-   4:     print(&quot;keyword as function name!&quot;)
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -1347,7 +1344,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
 --&gt;4: def a(b, c d):
                  ^
-   5:     pass
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -1376,6 +1372,8 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error30.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to function call
+   2:
    3: Python 3.8: SyntaxError: cannot assign to function call
    4: &quot;&quot;&quot;
    5:
@@ -1408,6 +1406,8 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error31.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to function call
+   2:
    3: Python 3.8: SyntaxError: cannot assign to function call
    4: &quot;&quot;&quot;
    5:
@@ -1469,12 +1469,12 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error33.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: non-default argument follows default argument
    2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: def test(a=1, b):
                ^
-   6:     return a + b
 
     Dans Python, vous pouvez définir les fonctions avec seulement des arguments de position
 
@@ -1509,6 +1509,7 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error34.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: positional argument follows keyword argument
    2: &quot;&quot;&quot;
    3:
    4:
@@ -1578,6 +1579,7 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error36.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+    3:
     4: def foo():
     5:     return [1, 2, 3
     6:
@@ -1607,6 +1609,8 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error37.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+    3:
+    4: def foo():
     5:     return [1, 2, 3,
     6:
     7: print(foo())
@@ -1642,20 +1646,22 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error38.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: name &#39;x&#39; is parameter and global
+   2: &quot;&quot;&quot;
    3:
    4:
    5: def f(x):
 --&gt;6:     global x
           ^
 
-    Vous avec inclus l&#39;énoncé
+    You are including the statement
 
-        `    global x`
+            global x
 
-    indiquant que `x` est une variable définie en dehors d&#39;une fonction.
-    Vous utilisez également le même `x` comme un argument pour cette
-    fonction; un argument de fonction est une variable locale connue seulement
-    à l&#39;intérieur de cette fonction, ce qui est le contraire de ce que `global` sous-entendait.
+    indicating that `x` is a variable defined outside a function.
+    You are also using the same `x` as an argument for that
+    function, thus indicating that it should be variable known only
+    inside that function, which is the contrary of what `global` implied.
 </pre></div>
 </div>
 </div>
@@ -1677,6 +1683,7 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error39.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+    8:
     9: a = A()
    10:
    11: a.x = 1
@@ -1704,6 +1711,7 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error40.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise
    2: SyntaxError: unexpected character after line continuation character
    3: &quot;&quot;&quot;
    4:
@@ -1733,11 +1741,14 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error41.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-    4: &quot;&quot;&quot;
-    5:
-    6:
---&gt; 7: a = dict(&#39;key&#39;=1)
-                ^
+   1: &quot;&quot;&quot;Should raise
+   2: Python &lt; 3.8: SyntaxError: keyword can&#39;t be an expression
+   3: Python 3.8:  expression cannot contain assignment, perhaps you meant &quot;==&quot;?
+   4: &quot;&quot;&quot;
+   5:
+   6:
+--&gt;7: a = dict(&#39;key&#39;=1)
+               ^
 
     L&#39;une des deux possibilités suivantes pourrait être la cause:
     1. Vous vouliez faire une comparaison avec `==` et vous avez écrit `=` à sa place.
@@ -1767,6 +1778,8 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error42.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid character in identifier
+   2: &quot;&quot;&quot;
    3:
    4: # Robot-face character below
    5:
@@ -1794,12 +1807,12 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error43.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
    2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: def f(None=1):
             ^
-   6:     pass
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -1825,12 +1838,12 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error44.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
    2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: def f(x, True):
                ^
-   6:     pass
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -1856,12 +1869,12 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error45.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
    2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: def f(*None):
              ^
-   6:     pass
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -1887,12 +1900,12 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error46.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax
    2: &quot;&quot;&quot;
    3:
    4:
 --&gt;5: def f(**None):
               ^
-   6:     pass
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -1918,6 +1931,7 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error47.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t or cannot delete function call
    2: &quot;&quot;&quot;
    3:
    4:
@@ -1949,11 +1963,12 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error48.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-    4:
-    5: def fn():
-    6:     p = 1
---&gt; 7:     global p
-           ^
+   3:
+   4:
+   5: def fn():
+   6:     p = 1
+--&gt;7:     global p
+          ^
 
     Vous avez attribué une valeur à la variable `p`
     avant de la déclarer comme une variable globale.
@@ -1976,11 +1991,12 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error49.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-    4:
-    5: def fn():
-    6:     print(r)
---&gt; 7:     global r
-           ^
+   3:
+   4:
+   5: def fn():
+   6:     print(r)
+--&gt;7:     global r
+          ^
 
     Vous avez utilisé la variable `r`
     avant de la déclarer comme une variable globale.
@@ -2005,6 +2021,7 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error50.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+    5:     q = 1
     6:
     7:     def g():
     8:         print(q)
@@ -2034,6 +2051,7 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error51.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+    5:     s = 1
     6:
     7:     def g():
     8:         s = 2
@@ -2061,11 +2079,14 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error52.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-    4:
-    5:  &quot;&quot;&quot;
-    6:
---&gt; 7: {1, 2, 3} = 4
-       ^
+   1: &quot;&quot;&quot;Should raise SyntaxError:
+   2: Python 3.8: cannot assign to set display
+   3: Python 3.6, 3.7: can&#39;t assign to literal
+   4:
+   5:  &quot;&quot;&quot;
+   6:
+--&gt;7: {1, 2, 3} = 4
+      ^
 
     Vous avez écrit une expression comme
 
@@ -2092,11 +2113,14 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error53.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-    4:
-    5:  &quot;&quot;&quot;
-    6:
---&gt; 7: {1 : 2, 2 : 4} = 5
-       ^
+   1: &quot;&quot;&quot;Should raise SyntaxError:
+   2: Python 3.8: cannot assign to dict display
+   3: Python 3.6, 3.7: can&#39;t assign to literal
+   4:
+   5:  &quot;&quot;&quot;
+   6:
+--&gt;7: {1 : 2, 2 : 4} = 5
+      ^
 
     Vous avez écrit une expression comme
 
@@ -2294,6 +2318,7 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error60.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: name &#39;x&#39; is parameter and nonlocal&quot;&quot;&quot;
    2:
    3:
    4: def f(x):
@@ -2322,12 +2347,12 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error61.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-    4:
-    5:
-    6: def f():
---&gt; 7:     global xy
-           ^
-    8:     nonlocal xy
+   3: xy = 1
+   4:
+   5:
+   6: def f():
+--&gt;7:     global xy
+          ^
 
     Vous avez utilisé `xy` comme étant une variable non locale et globale.
     Une variable peut être d&#39;un seul type à la fois: soit globale, soit non locale, ou soit locale.
@@ -2350,6 +2375,7 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error62.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: no binding for nonlocal &#39;ab&#39; found&quot;&quot;&quot;
    2:
    3:
    4: def f():
@@ -2410,7 +2436,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
 --&gt;4: def f(aa=1, aa=2):
       ^
-   5:     pass
 
     Vous avez défini une fonction répétant l&#39;argument nommé
 
@@ -2619,6 +2644,8 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error72.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise
+   2: Python &lt; 3.8: SyntaxError: can&#39;t assign to literal
    3: Python &gt;= 3.8: SyntaxError: cannot assign to f-string expression
    4: &quot;&quot;&quot;
    5:
@@ -2671,6 +2698,7 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error74.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   2: def f(it, *varargs, **kwargs):
    3:     return list(it)
    4:
    5: L = range(10)
@@ -2736,7 +2764,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2: for i in range(101):
 --&gt;3:     if i % 2 = 0:
                    ^
-   4:         print(i)
 
     Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser
     un opérateur d&#39;égalité, `==`, ou l&#39;opérateur `:=`.
@@ -2761,12 +2788,12 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error77.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2: for i in range(101):
    3:     if False:
    4:         pass
 --&gt;5:     elif i % 2 = 0:
                      ^
-   6:         print(i)
 
     Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser
     un opérateur d&#39;égalité, `==`, ou l&#39;opérateur `:=`.
@@ -2796,7 +2823,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
 --&gt;4: while a = 1:
               ^
-   5:     a = 2
 
     Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser
     un opérateur d&#39;égalité, `==`, ou l&#39;opérateur `:=`.
@@ -2884,12 +2910,12 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error81.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-    4:     if 1:
-    5:         print(((123))
-    6:
---&gt; 7: if 2:
-           ^
-    8:     print(123))
+   4:     if 1:
+   5:         print(((123))
+   6:
+--&gt;7: if 2:
+          ^
+   8:     print(123))
 
     Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
@@ -3079,7 +3105,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    3:
 --&gt;4: def f(*):
             ^
-   5:     pass
 
     En supposant que vous définissiez une fonction, vous avez besoin
     de remplacer `*` soit par `*arguments` ou
