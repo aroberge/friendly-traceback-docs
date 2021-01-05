@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.2.15a
+Friendly-traceback version: 0.2.16a
 Python version: 3.8.4
 
 
@@ -1485,6 +1485,7 @@ Name is parameter and global
         You are including the statement
         
                 global x
+        
         
         indicating that `x` is a variable defined outside a function.
         You are also using the same `x` as an argument for that
