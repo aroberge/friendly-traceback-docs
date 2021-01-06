@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.2.16a documentation</title>
+  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.2.17a documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.2.16a
+                0.2.17a
               </div>
             
           
@@ -334,7 +334,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.2.15a
+<p>Friendly-traceback version: 0.2.17a
 Python version: 3.8.4</p>
 <div class="section" id="indentationerror-expected-an-indented-block">
 <h2>IndentationError: expected an indented block<a class="headerlink" href="#indentationerror-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -493,7 +493,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
            ^
 SyntaxError: invalid syntax
 
-    Vous avez peut-être oublié les deux points, `:`.
+    Avez-vous oublié d’ajouter les deux points `:` ?
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -505,8 +505,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: if True
              ^
-
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous avez écrit un énoncé débutant avec
     `if` mais vous avez oublié d’ajouter deux points `:` à la fin.
@@ -523,7 +521,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                 ^
 SyntaxError: invalid syntax
 
-    Vous avez peut-être oublié les deux points, `:`.
+    Avez-vous oublié d’ajouter les deux points `:` ?
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -535,8 +533,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: while True  # a comment
                   ^
-
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Vous vouliez débuter une boucle `while`
     mais vous avez oublié d’ajouter deux points `:` à la fin.
@@ -1557,9 +1553,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: print(f&quot;Bob is {age[&#39;Bob]} years old.&quot;)
             ^
 
-    Inside the f-string `f&quot;Bob is {age[&#39;Bob]} years old.&quot;`,
-    you have another string, which starts with either a
-    single quote (&#39;) or double quote (&quot;), without a matching closing one.
+    À l&#39;intérieur de la chaîne `f&quot;Bob is {age[&#39;Bob]} years old.&quot;`, qui est une chaîne de caractères préfixée de la lettre f,
+    vous avez une autre chaîne de caractère qui débute soit avec un apostrophe (&#39;)
+    ou des guillemets (&quot;), mais n&#39;est pas terminé par un autre caractère semblable.
 </pre></div>
 </div>
 </div>
@@ -1654,14 +1650,15 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6:     global x
           ^
 
-    You are including the statement
+    Vous avec inclus l&#39;énoncé
 
             global x
 
-    indicating that `x` is a variable defined outside a function.
-    You are also using the same `x` as an argument for that
-    function, thus indicating that it should be variable known only
-    inside that function, which is the contrary of what `global` implied.
+
+    indiquant que `x` est une variable définie en dehors d&#39;une fonction.
+    Vous utilisez également le même `x` comme un argument pour cette
+    fonction; un argument de fonction est une variable locale connue seulement
+    à l&#39;intérieur de cette fonction, ce qui est le contraire de ce que `global` sous-entendait.
 </pre></div>
 </div>
 </div>
@@ -1675,7 +1672,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
       ^
 SyntaxError: invalid syntax
 
-    `pass` cannot be used as an attribute.
+    `pass` ne peut pas être utilisé comme n attribut.
+
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -2466,8 +2464,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: f(ad=1, ad=2)
               ^
 
-    You have called a function repeating the same keyword argument (`ad`).
-    Each keyword argument should appear only once in a function call.
+    Vous avez invoqué une fonction en répétant le même argument nommé (`ad`).
+    Chaque argument de ce type ne peut apparaître qu&#39;une seule fois.
 </pre></div>
 </div>
 </div>
@@ -2625,6 +2623,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                 ^
 
     Vous ne pouvez pas avoir un point `.` suivi de `(`.
+    Peut-être que vous devez remplacer le point par une virgule.
 </pre></div>
 </div>
 </div>
@@ -2652,9 +2651,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6: f&#39;{x}&#39; = 42
       ^
 
-    You wrote an expression that has the f-string `f&#39;{x}&#39;`
-    on the left-hand side of the equal sign.
-    An f-string should only appear on the right-hand side of an equal sign.
+    Vous avez écrit une expression qui a la chaine de
+    caractères formatés `f&#39;{x}&#39;`
+    du côté gauche du signe d&#39;égalité.
+    Une telle chaîne ne doit apparaître que du côté droit d&#39;un signe d’égalité.
 </pre></div>
 </div>
 </div>

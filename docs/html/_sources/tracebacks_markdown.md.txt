@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.2.15a
+Friendly-traceback version: 0.2.17a
 Python version: 3.8.4
 
 
@@ -1687,10 +1687,10 @@ by calling a function with the wrong type of object,
 or by trying to do an operation not allowed on a given type of object.
 
 
-Unhashable objects are objects that do not change value
-once they are created. Only unhashable objects can be used
+Only hashable objects can be used
 as elements of `set` or keys of `dict`.
-Instead of using a `list`, consider using a `tuple`.
+Hashable objects are objects that do not change value
+once they have been created.Instead of using a `list`, consider using a `tuple`.
 
 
 #### Exception raised on line 659 of file TESTS:\runtime\test_type_error.py.

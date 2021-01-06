@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.2.15a
+Friendly-traceback version: 0.2.17a
 Python version: 3.8.4
 
 
@@ -220,7 +220,7 @@ SyntaxError: invalid syntax
 
 ```
 
-Perhaps you forgot a colon `:`.
+Did you forget a colon `:`?
 
 
 
@@ -239,9 +239,6 @@ beyond the location indicated by --> and ^.
                  ^
 
 ```
-
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
 
 You wrote a statement beginning with
 `if` but forgot to add a colon `:` at the end
@@ -263,7 +260,7 @@ SyntaxError: invalid syntax
 
 ```
 
-Perhaps you forgot a colon `:`.
+Did you forget a colon `:`?
 
 
 
@@ -282,9 +279,6 @@ beyond the location indicated by --> and ^.
                       ^
 
 ```
-
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
 
 You wrote a `while` loop but
 forgot to add a colon `:` at the end
@@ -1764,6 +1758,7 @@ You are including the statement
 
         global x
 
+
 indicating that `x` is a variable defined outside a function.
 You are also using the same `x` as an argument for that
 function, thus indicating that it should be variable known only
@@ -3049,6 +3044,7 @@ beyond the location indicated by --> and ^.
 ```
 
 You cannot have a dot `.` followed by `(`.
+Perhaps you need to replace the dot by a comma.
 
 ---
 

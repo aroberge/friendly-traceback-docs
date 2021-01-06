@@ -18,8 +18,8 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.2.15a
-Python version: 3.10.0a3
+Friendly-traceback version: 0.2.17a
+Python version: 3.10.0a4
 
 
 
@@ -195,7 +195,7 @@ Missing colon - if
                ^
     SyntaxError: invalid syntax
     
-        Perhaps you forgot a colon `:`.
+        Did you forget a colon `:`?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -208,9 +208,6 @@ Missing colon - if
     -->3: if True
                  ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         You wrote a statement beginning with
         `if` but forgot to add a colon `:` at the end
         
@@ -230,7 +227,7 @@ Missing colon - while
                     ^
     SyntaxError: invalid syntax
     
-        Perhaps you forgot a colon `:`.
+        Did you forget a colon `:`?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -243,9 +240,6 @@ Missing colon - while
     -->3: while True  # a comment
                       ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         You wrote a `while` loop but
         forgot to add a colon `:` at the end
         
@@ -1486,6 +1480,7 @@ Name is parameter and global
         
                 global x
         
+        
         indicating that `x` is a variable defined outside a function.
         You are also using the same `x` as an argument for that
         function, thus indicating that it should be variable known only
@@ -1569,7 +1564,7 @@ Keyword can't be an expression
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error41.py", line 7
         a = dict('key'=1)
-                 ^
+                      ^
     SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
     
     A `SyntaxError` occurs when Python cannot understand your code.
@@ -1585,7 +1580,7 @@ Keyword can't be an expression
        5: 
        6: 
     -->7: a = dict('key'=1)
-                   ^
+                        ^
 
         One of the following two possibilities could be the cause:
         1. You meant to do a comparison with == and wrote = instead.
@@ -2554,6 +2549,7 @@ Dot followed by parenthesis
                     ^
 
         You cannot have a dot `.` followed by `(`.
+        Perhaps you need to replace the dot by a comma.
         
 
 Cannot assign to f-string

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.2.16a documentation</title>
+  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.2.17a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.16a
+                0.2.17a
               </div>
             
           
@@ -330,7 +330,7 @@ Ceci a besoin d’être fait de manière explicite lorsqu’on veut
 faire des corrections ou des ajouts, avant de faire la mise
 à jour du reste de la documentation avec Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.2.15a
+<p>Friendly-traceback version: 0.2.17a
 Python version: 3.8.4</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -1528,10 +1528,10 @@ de combiner deux types d’objets incompatibles,
 en invoquant une fonction avec le mauvais type d’objet,
 ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet donné.
 
-    Les objets non hachables sont des objets qui ne changent pas de valeur
-    une fois qu’ils sont créés. Seuls les objets non hachables peuvent être utilisés
+    Seuls les objets hachables peuvent être utilisés
     comme éléments de `set` ou des clés de `dict`.
-    Au lieu d’utiliser une liste (`list`), envisagez d’utiliser un `tuple`.
+    Les objets hachables sont des objets qui ne changent pas de valeur
+    une fois qu’ils ont été créés.Au lieu d’utiliser une liste (`list`), envisagez d’utiliser un `tuple`.
 
 Exception levée à la ligne 659 du fichier TESTS:\runtime\test_type_error.py.
 

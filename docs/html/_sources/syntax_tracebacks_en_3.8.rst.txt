@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.2.16a
+Friendly-traceback version: 0.2.17a
 Python version: 3.8.4
 
 
@@ -195,7 +195,7 @@ Missing colon - if
                ^
     SyntaxError: invalid syntax
     
-        Perhaps you forgot a colon `:`.
+        Did you forget a colon `:`?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -208,9 +208,6 @@ Missing colon - if
     -->3: if True
                  ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         You wrote a statement beginning with
         `if` but forgot to add a colon `:` at the end
         
@@ -230,7 +227,7 @@ Missing colon - while
                     ^
     SyntaxError: invalid syntax
     
-        Perhaps you forgot a colon `:`.
+        Did you forget a colon `:`?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -243,9 +240,6 @@ Missing colon - while
     -->3: while True  # a comment
                       ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         You wrote a `while` loop but
         forgot to add a colon `:` at the end
         
@@ -2555,6 +2549,7 @@ Dot followed by parenthesis
                     ^
 
         You cannot have a dot `.` followed by `(`.
+        Perhaps you need to replace the dot by a comma.
         
 
 Cannot assign to f-string

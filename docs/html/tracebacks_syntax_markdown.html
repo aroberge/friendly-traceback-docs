@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Syntax errors - markdown_docs format &mdash; Friendly tracebacks 0.2.16a documentation</title>
+  <title>Syntax errors - markdown_docs format &mdash; Friendly tracebacks 0.2.17a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.16a
+                0.2.17a
               </div>
             
           
@@ -325,7 +325,7 @@ trb_syntax_markdown.py located in the <code class="docutils literal notranslate"
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.
 </p>
-</div><p>Friendly-traceback version: 0.2.15a
+</div><p>Friendly-traceback version: 0.2.17a
 Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="indentationerror-expected-an-indented-block">
@@ -478,7 +478,7 @@ This is not allowed.</p>
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
-<p>Perhaps you forgot a colon <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+<p>Did you forget a colon <code class="docutils literal notranslate"><span class="pre">:</span></code>?</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error2.py’
@@ -489,8 +489,6 @@ beyond the location indicated by –&gt; and ^.</p>
                  <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>You wrote a statement beginning with
 <code class="docutils literal notranslate"><span class="pre">if</span></code> but forgot to add a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> at the end</p>
 </div>
@@ -506,7 +504,7 @@ but I might guess incorrectly.</p>
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
-<p>Perhaps you forgot a colon <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+<p>Did you forget a colon <code class="docutils literal notranslate"><span class="pre">:</span></code>?</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error3.py’
@@ -517,8 +515,6 @@ beyond the location indicated by –&gt; and ^.</p>
                       <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>You wrote a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop but
 forgot to add a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> at the end</p>
 </div>
@@ -2528,7 +2524,8 @@ beyond the location indicated by –&gt; and ^.</p>
                     <span class="o">^</span>
 </pre></div>
 </div>
-<p>You cannot have a dot <code class="docutils literal notranslate"><span class="pre">.</span></code> followed by <code class="docutils literal notranslate"><span class="pre">(</span></code>.</p>
+<p>You cannot have a dot <code class="docutils literal notranslate"><span class="pre">.</span></code> followed by <code class="docutils literal notranslate"><span class="pre">(</span></code>.
+Perhaps you need to replace the dot by a comma.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="cannot-assign-to-f-string">

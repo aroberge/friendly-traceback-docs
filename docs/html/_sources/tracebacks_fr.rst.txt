@@ -15,7 +15,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly-traceback version: 0.2.15a
+Friendly-traceback version: 0.2.17a
 Python version: 3.8.4
 
 
@@ -1382,10 +1382,10 @@ Unhachable type
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
     
-        Les objets non hachables sont des objets qui ne changent pas de valeur
-        une fois qu’ils sont créés. Seuls les objets non hachables peuvent être utilisés
+        Seuls les objets hachables peuvent être utilisés
         comme éléments de `set` ou des clés de `dict`.
-        Au lieu d’utiliser une liste (`list`), envisagez d’utiliser un `tuple`.
+        Les objets hachables sont des objets qui ne changent pas de valeur
+        une fois qu’ils ont été créés.Au lieu d’utiliser une liste (`list`), envisagez d’utiliser un `tuple`.
         
     Exception levée à la ligne 659 du fichier TESTS:\runtime\test_type_error.py.
     

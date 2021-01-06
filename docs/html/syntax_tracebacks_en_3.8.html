@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly tracebacks 0.2.16a documentation</title>
+  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly tracebacks 0.2.17a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.16a
+                0.2.17a
               </div>
             
           
@@ -333,7 +333,7 @@ On Windows, if Sphinx is installed on your computer, it is suggested
 instead to run make_trb.bat in the root directory as it will create
 similar files for all languages <em>and</em> update the documentation.</p>
 </div>
-<p>Friendly-traceback version: 0.2.16a
+<p>Friendly-traceback version: 0.2.17a
 Python version: 3.8.4</p>
 <div class="section" id="indentationerror-expected-an-indented-block">
 <h2>IndentationError: expected an indented block<a class="headerlink" href="#indentationerror-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -488,7 +488,7 @@ beyond the location indicated by --&gt; and ^.
            ^
 SyntaxError: invalid syntax
 
-    Perhaps you forgot a colon `:`.
+    Did you forget a colon `:`?
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -500,9 +500,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: if True
              ^
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     You wrote a statement beginning with
     `if` but forgot to add a colon `:` at the end
@@ -519,7 +516,7 @@ beyond the location indicated by --&gt; and ^.
                 ^
 SyntaxError: invalid syntax
 
-    Perhaps you forgot a colon `:`.
+    Did you forget a colon `:`?
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -531,9 +528,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: while True  # a comment
                   ^
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     You wrote a `while` loop but
     forgot to add a colon `:` at the end
@@ -2626,6 +2620,7 @@ beyond the location indicated by --&gt; and ^.
                 ^
 
     You cannot have a dot `.` followed by `(`.
+    Perhaps you need to replace the dot by a comma.
 </pre></div>
 </div>
 </div>

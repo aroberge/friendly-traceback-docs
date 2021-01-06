@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.2.16a documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.2.17a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.16a
+                0.2.17a
               </div>
             
           
@@ -331,7 +331,7 @@ trb_english.py located in the <code class="docutils literal notranslate"><span c
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.2.15a
+<p>Friendly-traceback version: 0.2.17a
 Python version: 3.6.8</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -1531,10 +1531,10 @@ to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by trying to do an operation not allowed on a given type of object.
 
-    Unhashable objects are objects that do not change value
-    once they are created. Only unhashable objects can be used
+    Only hashable objects can be used
     as elements of `set` or keys of `dict`.
-    Instead of using a `list`, consider using a `tuple`.
+    Hashable objects are objects that do not change value
+    once they have been created.Instead of using a `list`, consider using a `tuple`.
 
 Exception raised on line 659 of file TESTS:\runtime\test_type_error.py.
 

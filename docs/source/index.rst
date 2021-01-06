@@ -12,7 +12,7 @@ In a nutshell
 --------------
 
 There exists many Python projects, including some listed below,
-whose primary goal is to supplement the information
+whose **primary** goal is to supplement the information
 given by Python traceback to make them more useful for **advanced** programmers.
 Friendly-traceback is **not** one of these projects.
 
@@ -21,11 +21,12 @@ it is aimed aimed primarily at beginners and/or at users
 who would like to get information about traceback in their own language.
 Friendly-traceback can give more detailed information as to
 **where** an exception occurred, **what** a given exception means and
-**why** it might have occurred (including, sometimes, how to fix it).
+**why** it might have occurred (sometimes adding a way to fix it.)
 
 While Friendly-traceback can be used on its own with a specially
 designed console, a better option would be to use it together with
-GUI-based editors/IDE. We explain how to do so later.
+GUI-based editors/IDE including Jupyter lab and notebooks.
+We explain how to do so later.
 For now, we just show one quick example.
 
 
@@ -41,7 +42,7 @@ to run a program that raises an exception.
 
 Not exactly the most helpful information for beginners ...
 
-Here's the corresponding version from Friendly-traceback,
+Here's the corresponding version with full explanation from Friendly-traceback,
 making use of
 `Rich <https://github.com/willmcgugan/rich>`_ 
 

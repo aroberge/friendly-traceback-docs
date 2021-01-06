@@ -22,7 +22,7 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.2.15a
+Friendly-traceback version: 0.2.17a
 Python version: 3.8.4
 
 
@@ -203,7 +203,7 @@ Missing colon - if
                ^
     SyntaxError: invalid syntax
     
-        Vous avez peut-être oublié les deux points, `:`.
+        Avez-vous oublié d’ajouter les deux points `:` ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -216,8 +216,6 @@ Missing colon - if
     -->3: if True
                  ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Vous avez écrit un énoncé débutant avec
         `if` mais vous avez oublié d’ajouter deux points `:` à la fin.
         
@@ -237,7 +235,7 @@ Missing colon - while
                     ^
     SyntaxError: invalid syntax
     
-        Vous avez peut-être oublié les deux points, `:`.
+        Avez-vous oublié d’ajouter les deux points `:` ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -250,8 +248,6 @@ Missing colon - while
     -->3: while True  # a comment
                       ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Vous vouliez débuter une boucle `while`
         mais vous avez oublié d’ajouter deux points `:` à la fin.
         
@@ -1379,9 +1375,9 @@ f-string: unterminated string
     -->4: print(f"Bob is {age['Bob]} years old.")
                 ^
 
-        Inside the f-string `f"Bob is {age['Bob]} years old."`, 
-        you have another string, which starts with either a
-        single quote (') or double quote ("), without a matching closing one.
+        À l'intérieur de la chaîne `f"Bob is {age['Bob]} years old."`, qui est une chaîne de caractères préfixée de la lettre f,
+        vous avez une autre chaîne de caractère qui débute soit avec un apostrophe (')
+        ou des guillemets ("), mais n'est pas terminé par un autre caractère semblable.
         
 
 Unclosed bracket
@@ -1485,14 +1481,15 @@ Name is parameter and global
     -->6:     global x
               ^
 
-        You are including the statement
+        Vous avec inclus l'énoncé
         
                 global x
         
-        indicating that `x` is a variable defined outside a function.
-        You are also using the same `x` as an argument for that
-        function, thus indicating that it should be variable known only
-        inside that function, which is the contrary of what `global` implied.
+        
+        indiquant que `x` est une variable définie en dehors d'une fonction.
+        Vous utilisez également le même `x` comme un argument pour cette
+        fonction; un argument de fonction est une variable locale connue seulement
+        à l'intérieur de cette fonction, ce qui est le contraire de ce que `global` sous-entendait.
         
 
 Keyword as attribute
@@ -1509,7 +1506,8 @@ Keyword as attribute
           ^
     SyntaxError: invalid syntax
     
-        `pass` cannot be used as an attribute.
+        `pass` ne peut pas être utilisé comme n attribut.
+        
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -2386,8 +2384,8 @@ Keyword arg only once in function call
     -->4: f(ad=1, ad=2)
                   ^
 
-        You have called a function repeating the same keyword argument (`ad`).
-        Each keyword argument should appear only once in a function call.
+        Vous avez invoqué une fonction en répétant le même argument nommé (`ad`).
+        Chaque argument de ce type ne peut apparaître qu'une seule fois.
         
 
 IndentationError/SyntaxError depending on version
@@ -2564,6 +2562,7 @@ Dot followed by parenthesis
                     ^
 
         Vous ne pouvez pas avoir un point `.` suivi de `(`.
+        Peut-être que vous devez remplacer le point par une virgule.
         
 
 Cannot assign to f-string
@@ -2594,9 +2593,10 @@ Cannot assign to f-string
     -->6: f'{x}' = 42
           ^
 
-        You wrote an expression that has the f-string `f'{x}'`
-        on the left-hand side of the equal sign.
-        An f-string should only appear on the right-hand side of an equal sign.
+        Vous avez écrit une expression qui a la chaine de
+        caractères formatés `f'{x}'`
+        du côté gauche du signe d'égalité.
+        Une telle chaîne ne doit apparaître que du côté droit d'un signe d’égalité.
         
 
 Raising multiple exceptions
