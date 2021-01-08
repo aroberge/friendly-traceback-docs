@@ -2802,7 +2802,7 @@ Invalid hexadecimal number
                  ^
     SyntaxError: invalid syntax
     
-        Did you made a mistake in writing an hexadecimal integer?
+        Avez-vous fait une erreur en écrivant un entier hexadécimal ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -2815,13 +2815,13 @@ Invalid hexadecimal number
     -->3: a = 0x123g4
                    ^
 
-        It looks like you used an invalid character (`g`) in an hexadecimal number.
+        On dirait que vous avez utilisé un caractère invalide ('g') dans un nombre hexadecimal.
         
-        Hexadecimal numbers are base 16 integers that use the symbols `0` to `9`
-        to represent values 0 to 9, and the letters `a` to `f` (or `A` to `F`)
-        to represent values 10 to 15.
-        In Python, hexadecimal numbers start with either `0x` or `0X`,
-        followed by the characters used to represent the value of that integer.
+        Les nombres hexadécimaux sont des entiers en base 16 qui utilisent les symboles `0` à `9`
+        pour représenter les valeurs 0 à 9, et les lettres `a` à `f` (ou `A` à `F`)
+        pour représenter les valeurs 10 à 15.
+        Dans Python, les nombres hexadécimaux commencent par `0x` ou `0X`,
+        suivi des caractères utilisés pour représenter la valeur du nombre.
         
 
 Valid names cannot begin with a number
@@ -3288,7 +3288,7 @@ Invalid octal number
                ^
     SyntaxError: invalid digit '8' in octal literal
     
-        Did you made a mistake in writing an octal integer?
+        Avez-vous fait une erreur en écrivant un entier octal ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -3301,11 +3301,11 @@ Invalid octal number
     -->3: b = 0O1876
                  ^
 
-        It looks like you used an invalid character (`8`) in an octal number.
+        On dirait que vous avez utilisé un caractère invalide ('8') dans un nombre octal.
         
-        Octal numbers are base 8 integers that only use the symbols `0` to `7`
-        to represent values.
-        In Python, hexadecimal numbers start with either `0o` or `0O`,
-        (the digit zero followed by the letter `o`)
-        followed by the characters used to represent the value of that integer.
+        Les nombres octaux sont des entiers de base 8 qui n’utilisent que les symboles `0` à `7`
+        pour représenter les valeurs.
+        Dans Python, les nombres octaux commencent par `0o` ou `0O`,
+        (le chiffre zéro suivi de la lettre `o`)
+        suivi des caractères utilisés pour représenter la valeur de cet entier.
         
