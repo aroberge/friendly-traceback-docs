@@ -2774,8 +2774,8 @@ Single = instead of double == with while
         an equality operator, `==`, or the walrus operator `:=`.
         
 
-Forgot an operator in an f-string
----------------------------------
+Invalid hexadecimal number
+--------------------------
 
 .. code-block:: none
 
@@ -2784,11 +2784,11 @@ Forgot an operator in an f-string
       File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error79.py", line 3
-        (x y)
-           ^
-    SyntaxError: f-string: invalid syntax
+        a = 0x123g4
+                 ^
+    SyntaxError: invalid syntax
     
-        Did you forget something between `x` and `y`?
+        Did you made a mistake in writing an hexadecimal integer?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -2796,22 +2796,18 @@ Forgot an operator in an f-string
     'TESTS:\syntax\raise_syntax_error79.py'
     beyond the location indicated by --> and ^.
     
-    -->1: (x y)
-             ^
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: a = 0x123g4
+                   ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
+        It looks like you used an invalid character (`g`) in an hexadecimal number.
         
-        Python indicates that the error is caused by `y` written immediately after `x`.
-        Perhaps you meant to insert an operator like `+, -, *, ","`
-        between `x` and `y`.
-        The following lines of code would not cause any `SyntaxError`:
-        
-            (x + y)
-            (x - y)
-            (x * y)
-            (x, y)
-        Note: these are just some of the possible choices.
+        Hexadecimal numbers are base 16 integers that use the symbols `0` to `9`
+        to represent values 0 to 9, and the letters `a` to `f` (or `A` to `F`)
+        to represent values 10 to 15.
+        In Python, hexadecimal numbers start with either `0x` or `0X`,
+        followed by the characters used to represent the value of that integer.
         
 
 Valid names cannot begin with a number
@@ -2841,9 +2837,6 @@ Valid names cannot begin with a number
     -->3: 36abc = 3
             ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         Valid names cannot begin with a number.
         
 
@@ -2910,11 +2903,9 @@ Forgot a multiplication operator
     -->3: tau = 2pi
                  ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         Valid names cannot begin with a number.
         Perhaps you forgot a multiplication operator, `2 * pi`.
+        
         
 
 Space between names
@@ -3131,13 +3122,12 @@ use j instead of i
     -->3: a = 3.0i
                  ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         Valid names cannot begin with a number.
         Perhaps you thought that `i` could be used to represent
-        the square root of -1. In Python, `j` (or `1j`) is used for this
-        and perhaps you meant to write `3.0j`.
+        the square root of `-1`. In Python, the symbol used for this is `j`
+        and the complex part is written as `some_number` immediately
+        followed by `j`, with no spaces in between.
+        Perhaps you meant to write `3.0j`.
         
 
 Do not import * from __future__
@@ -3197,8 +3187,8 @@ Typo in __future__
         Instead of `divisio`, perhaps you meant to import `division`.
         
 
-Unkown feature in __future__
-----------------------------
+Unknown feature in __future__
+-----------------------------
 
 .. code-block:: none
 
@@ -3283,3 +3273,39 @@ __future__ at beginning
         A `from __future__ import` statement changes the way Python
         interprets the code in a file.
         It must appear at the beginning of the file.
+
+Invalid octal number
+--------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error95.py", line 3
+        b = 0O1876
+               ^
+    SyntaxError: invalid digit '8' in octal literal
+    
+        Did you made a mistake in writing an octal integer?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error95.py'
+    beyond the location indicated by --> and ^.
+    
+       1: 
+       2: 
+    -->3: b = 0O1876
+                 ^
+
+        It looks like you used an invalid character (`8`) in an octal number.
+        
+        Octal numbers are base 8 integers that only use the symbols `0` to `7`
+        to represent values.
+        In Python, hexadecimal numbers start with either `0o` or `0O`,
+        (the digit zero followed by the letter `o`)
+        followed by the characters used to represent the value of that integer.
+        

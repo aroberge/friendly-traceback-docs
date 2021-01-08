@@ -219,7 +219,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#single-instead-of-double-with-if">Single = instead of double == with if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#single-instead-of-double-with-elif">Single = instead of double == with elif</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#single-instead-of-double-with-while">Single = instead of double == with while</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#forgot-an-operator-in-an-f-string">Forgot an operator in an f-string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#invalid-hexadecimal-number">Invalid hexadecimal number</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#valid-names-cannot-begin-with-a-number">Valid names cannot begin with a number</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unclosed-parenthesis-3">Unclosed parenthesis - 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#forgot-a-multiplication-operator">Forgot a multiplication operator</a></li>
@@ -232,9 +232,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#use-j-instead-of-i">use j instead of i</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#do-not-import-from-future">Do not import * from <strong>future</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typo-in-future">Typo in <strong>future</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unkown-feature-in-future">Unkown feature in <strong>future</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unknown-feature-in-future">Unknown feature in <strong>future</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#not-a-chance">Not a chance!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#future-at-beginning"><strong>future</strong> at beginning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#invalid-octal-number">Invalid octal number</a></li>
 </ul>
 </li>
 </ul>
@@ -2718,39 +2719,34 @@ beyond the location indicated by –&gt; and ^.</p>
 an equality operator, <code class="docutils literal notranslate"><span class="pre">==</span></code>, or the walrus operator <code class="docutils literal notranslate"><span class="pre">:=</span></code>.</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="forgot-an-operator-in-an-f-string">
-<h2>Forgot an operator in an f-string<a class="headerlink" href="#forgot-an-operator-in-an-f-string" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="invalid-hexadecimal-number">
+<h2>Invalid hexadecimal number<a class="headerlink" href="#invalid-hexadecimal-number" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-  File <span class="nb">&quot;&lt;fstring&gt;&quot;</span>, line <span class="m">1</span>
-    <span class="p">(</span><span class="n">x</span> <span class="n">y</span><span class="p">)</span>
-       <span class="o">^</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error79.py&quot;</span>, line <span class="m">3</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mh">0x123</span><span class="n">g4</span>
+             <span class="o">^</span>
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
-<p>Did you forget something between <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>?</p>
+<p>Did you made a mistake in writing an hexadecimal integer?</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
-‘<fstring>’
+‘TESTS:\syntax\raise_syntax_error79.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="n">y</span><span class="p">)</span>
-             <span class="o">^</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;</span>
+       <span class="mi">2</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="n">a</span> <span class="o">=</span> <span class="mh">0x123</span><span class="n">g4</span>
+                   <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
-<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">y</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">x</span></code>.
-Perhaps you meant to insert an operator like <code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*,</span> <span class="pre">&quot;,&quot;</span></code>
-between <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.
-The following lines of code would not cause any <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
-<span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
-<span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
-<span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Note: these are just some of the possible choices.</p>
+<p>It looks like you used an invalid character (<code class="docutils literal notranslate"><span class="pre">g</span></code>) in an hexadecimal number.</p>
+<p>Hexadecimal numbers are base 16 integers that use the symbols <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">9</span></code>
+to represent values 0 to 9, and the letters <code class="docutils literal notranslate"><span class="pre">a</span></code> to <code class="docutils literal notranslate"><span class="pre">f</span></code> (or <code class="docutils literal notranslate"><span class="pre">A</span></code> to <code class="docutils literal notranslate"><span class="pre">F</span></code>)
+to represent values 10 to 15.
+In Python, hexadecimal numbers start with either <code class="docutils literal notranslate"><span class="pre">0x</span></code> or <code class="docutils literal notranslate"><span class="pre">0X</span></code>,
+followed by the characters used to represent the value of that integer.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="valid-names-cannot-begin-with-a-number">
@@ -2775,8 +2771,6 @@ beyond the location indicated by –&gt; and ^.</p>
             <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>Valid names cannot begin with a number.</p>
 </div>
 <hr class="docutils" />
@@ -2834,8 +2828,6 @@ beyond the location indicated by –&gt; and ^.</p>
                  <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>Valid names cannot begin with a number.
 Perhaps you forgot a multiplication operator, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">pi</span></code>.</p>
 </div>
@@ -3008,12 +3000,12 @@ beyond the location indicated by –&gt; and ^.</p>
                  <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>Valid names cannot begin with a number.
 Perhaps you thought that <code class="docutils literal notranslate"><span class="pre">i</span></code> could be used to represent
-the square root of -1. In Python, <code class="docutils literal notranslate"><span class="pre">j</span></code> (or <code class="docutils literal notranslate"><span class="pre">1j</span></code>) is used for this
-and perhaps you meant to write <code class="docutils literal notranslate"><span class="pre">3.0j</span></code>.</p>
+the square root of <code class="docutils literal notranslate"><span class="pre">-1</span></code>. In Python, the symbol used for this is <code class="docutils literal notranslate"><span class="pre">j</span></code>
+and the complex part is written as <code class="docutils literal notranslate"><span class="pre">some_number</span></code> immediately
+followed by <code class="docutils literal notranslate"><span class="pre">j</span></code>, with no spaces in between.
+Perhaps you meant to write <code class="docutils literal notranslate"><span class="pre">3.0j</span></code>.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="do-not-import-from-future">
@@ -3063,8 +3055,8 @@ beyond the location indicated by –&gt; and ^.</p>
 <p>Instead of <code class="docutils literal notranslate"><span class="pre">divisio</span></code>, perhaps you meant to import <code class="docutils literal notranslate"><span class="pre">division</span></code>.</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="unkown-feature-in-future">
-<h2>Unkown feature in <strong>future</strong><a class="headerlink" href="#unkown-feature-in-future" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="unknown-feature-in-future">
+<h2>Unknown feature in <strong>future</strong><a class="headerlink" href="#unknown-feature-in-future" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -3135,6 +3127,36 @@ beyond the location indicated by –&gt; and ^.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">__future__</span> <span class="pre">import</span></code> statement changes the way Python
 interprets the code in a file.
 It must appear at the beginning of the file.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="invalid-octal-number">
+<h2>Invalid octal number<a class="headerlink" href="#invalid-octal-number" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error95.py&quot;</span>, line <span class="m">3</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mo">0O1</span><span class="mi">876</span>
+           <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid digit &#39;8&#39; in octal literal</span>
+</pre></div>
+</div>
+<p>Did you made a mistake in writing an octal integer?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error95.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> 
+       <span class="mi">2</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="n">b</span> <span class="o">=</span> <span class="mo">0O1</span><span class="mi">876</span>
+                 <span class="o">^</span>
+</pre></div>
+</div>
+<p>It looks like you used an invalid character (<code class="docutils literal notranslate"><span class="pre">8</span></code>) in an octal number.</p>
+<p>Octal numbers are base 8 integers that only use the symbols <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">7</span></code>
+to represent values.
+In Python, hexadecimal numbers start with either <code class="docutils literal notranslate"><span class="pre">0o</span></code> or <code class="docutils literal notranslate"><span class="pre">0O</span></code>,
+(the digit zero followed by the letter <code class="docutils literal notranslate"><span class="pre">o</span></code>)
+followed by the characters used to represent the value of that integer.</p>
 </div>
 </div>
 

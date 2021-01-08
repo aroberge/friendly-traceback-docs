@@ -223,7 +223,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#single-instead-of-double-with-if">Single = instead of double == with if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#single-instead-of-double-with-elif">Single = instead of double == with elif</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#single-instead-of-double-with-while">Single = instead of double == with while</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#forgot-an-operator-in-an-f-string">Forgot an operator in an f-string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#invalid-hexadecimal-number">Invalid hexadecimal number</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#valid-names-cannot-begin-with-a-number">Valid names cannot begin with a number</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unclosed-parenthesis-3">Unclosed parenthesis - 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#forgot-a-multiplication-operator">Forgot a multiplication operator</a></li>
@@ -236,9 +236,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#use-j-instead-of-i">use j instead of i</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#do-not-import-from-future">Do not import * from __future__</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typo-in-future">Typo in __future__</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unkown-feature-in-future">Unkown feature in __future__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unknown-feature-in-future">Unknown feature in __future__</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#not-a-chance">Not a chance!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#future-at-beginning">__future__ at beginning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#invalid-octal-number">Invalid octal number</a></li>
 </ul>
 </li>
 </ul>
@@ -2829,39 +2830,36 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 </pre></div>
 </div>
 </div>
-<div class="section" id="forgot-an-operator-in-an-f-string">
-<h2>Forgot an operator in an f-string<a class="headerlink" href="#forgot-an-operator-in-an-f-string" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="invalid-hexadecimal-number">
+<h2>Invalid hexadecimal number<a class="headerlink" href="#invalid-hexadecimal-number" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
     mod = __import__(name)
-  File &quot;&lt;fstring&gt;&quot;, line 1
-    (x y)
-       ^
+  File &quot;TESTS:\syntax\raise_syntax_error79.py&quot;, line 3
+    a = 0x123g4
+             ^
 SyntaxError: invalid syntax
 
-    Avez-vous oublié quelque chose entre `x` et `y` ?
+    Did you made a mistake in writing an hexadecimal integer?
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
 Python peut seulement comprendre le code du fichier
-&#39;&lt;fstring&gt;&#39;
+&#39;TESTS:\syntax\raise_syntax_error79.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
---&gt;1: (x y)
-         ^
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: a = 0x123g4
+               ^
 
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+    It looks like you used an invalid character (`g`) in an hexadecimal number.
 
-    Python indique que l’erreur est causée par `y` écrit tout juste après `x`.
-    Peut-être que vous vouliez insérer un opérateur comme `+, -, *, &quot;,&quot;`
-    entre `x` et `y`.
-    Les lignes de code suivantes ne causeraient pas des `SyntaxError :
-
-        (x + y)
-        (x - y)
-        (x * y)
-        (x, y)
-    N.B. : ce ne sont là que quelques-uns des choix possibles.
+    Hexadecimal numbers are base 16 integers that use the symbols `0` to `9`
+    to represent values 0 to 9, and the letters `a` to `f` (or `A` to `F`)
+    to represent values 10 to 15.
+    In Python, hexadecimal numbers start with either `0x` or `0X`,
+    followed by the characters used to represent the value of that integer.
 </pre></div>
 </div>
 </div>
@@ -2887,8 +2885,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: 36abc = 3
         ^
-
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Les noms valides ne peuvent pas commencer par un chiffre.
 </pre></div>
@@ -2948,8 +2944,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2:
 --&gt;3: tau = 2pi
              ^
-
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
 
     Les noms valides ne peuvent pas commencer par un chiffre.
     Peut-être avez-vous oublié un opérateur de multiplication, `2 * pi`.
@@ -3135,12 +3129,12 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = 3.0i
              ^
 
-    Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-
     Les noms valides ne peuvent pas commencer par un chiffre.
     Peut-être pensiez-vous que `i` pouvait être utilisé pour représenter
-    la racine carrée de -1. Dans Python, `j` (ou `1j`) est utilisé pour ceci
-    et peut-être que vous vouliez écrire `3.0j`.
+    la racine carrée de `-1`. Dans Python, le symbole utilisé pour ceci est `j`
+    et la partie imaginaire d&#39;un nombre complexe a la forme `nombre`
+    suivie immédiatement par `j` sans aucun espace entre les deux.
+    Peut-être que vous vouliez écrire `3.0j`.
 </pre></div>
 </div>
 </div>
@@ -3195,8 +3189,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 </pre></div>
 </div>
 </div>
-<div class="section" id="unkown-feature-in-future">
-<h2>Unkown feature in __future__<a class="headerlink" href="#unkown-feature-in-future" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="unknown-feature-in-future">
+<h2>Unknown feature in __future__<a class="headerlink" href="#unknown-feature-in-future" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
     mod = __import__(name)
@@ -3271,6 +3265,39 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     Une instruction `from __future__ import` change la façon dont Python
     interprète le code dans un fichier.
     Une telle instruction doit apparaître au début du fichier.
+</pre></div>
+</div>
+</div>
+<div class="section" id="invalid-octal-number">
+<h2>Invalid octal number<a class="headerlink" href="#invalid-octal-number" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error95.py&quot;, line 3
+    b = 0O1876
+           ^
+SyntaxError: invalid digit &#39;8&#39; in octal literal
+
+    Did you made a mistake in writing an octal integer?
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error95.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1:
+   2:
+--&gt;3: b = 0O1876
+             ^
+
+    It looks like you used an invalid character (`8`) in an octal number.
+
+    Octal numbers are base 8 integers that only use the symbols `0` to `7`
+    to represent values.
+    In Python, hexadecimal numbers start with either `0o` or `0O`,
+    (the digit zero followed by the letter `o`)
+    followed by the characters used to represent the value of that integer.
 </pre></div>
 </div>
 </div>
