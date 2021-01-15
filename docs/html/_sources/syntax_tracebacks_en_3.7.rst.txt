@@ -313,8 +313,8 @@ Write elif, not elseif
         
         
 
-Malformed def statment - 1
---------------------------
+Malformed def statement - 1
+---------------------------
 
 .. code-block:: none
 
@@ -338,17 +338,14 @@ Malformed def statment - 1
     -->3: def :
               ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
-        You tried to define a function or method and did not use the correct syntax.
+        You tried to define a function and did not use the correct syntax.
         The correct syntax is:
         
-            def name ( optional_arguments ):
+            def name ( ... ):
         
 
-Malformed def statment - 2
---------------------------
+Malformed def statement - missing parentheses
+---------------------------------------------
 
 .. code-block:: none
 
@@ -357,11 +354,11 @@ Malformed def statment - 2
       File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error7.py", line 3
-        def name  :
-                  ^
+        def name:
+                ^
     SyntaxError: invalid syntax
     
-        Perhaps you forgot parentheses.
+        Did you forget parentheses?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -371,20 +368,15 @@ Malformed def statment - 2
     
        1: """Should raise SyntaxError"""
        2: 
-    -->3: def name  :
-                    ^
+    -->3: def name:
+                  ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
-        You tried to define a function or method and did not use the correct syntax.
-        The correct syntax is:
-        
-            def name ( optional_arguments ):
+        Perhaps you forgot to include parentheses.
+        You might have meant to write `def name():`
         
 
-Malformed def statment - 3
---------------------------
+Malformed def statement - 3
+---------------------------
 
 .. code-block:: none
 
@@ -408,13 +400,10 @@ Malformed def statment - 3
     -->3: def ( arg )  :
               ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
-        You tried to define a function or method and did not use the correct syntax.
+        You forgot to name your function.
         The correct syntax is:
         
-            def name ( optional_arguments ):
+            def name ( ... ):
         
 
 Cannot assign to literal - 1
@@ -647,11 +636,10 @@ Unmatched closing parenthesis
     -->6:     3, 4,))
                     ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
+        The closing parenthesis `)` on line 6 does not match the opening parenthesis `(` on line 4.
         
-        The closing parenthesis `)` on line 6 does not match anything.
-        
+            4: a = (1,
+                   ^
             6:     3, 4,))
                          ^
         
@@ -682,9 +670,6 @@ Unclosed parenthesis - 1
                    ^
        4:     print('yes')
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         The opening parenthesis `(` on line 2 is not closed.
         
             2: x = int('1'
@@ -716,9 +701,6 @@ Unclosed parenthesis - 2
     -->3: d = a*a
           ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         The opening parenthesis `(` on line 2 is not closed.
         
             2: a = (b+c
@@ -749,9 +731,6 @@ Mismatched brackets - 1
     -->2: x = (1, 2, 3]
                       ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
         
             2: x = (1, 2, 3]
@@ -784,9 +763,6 @@ Mismatched brackets - 2
     -->4:      3]
                 ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
         
             2: x = (1,
@@ -841,6 +817,8 @@ Python keyword as function name
                ^
     SyntaxError: invalid syntax
     
+        You cannot use a Python keyword as a function name.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -852,9 +830,6 @@ Python keyword as function name
     -->3: def pass():
                  ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         You tried to use the Python keyword `pass` as a function name.
         
 
@@ -963,6 +938,8 @@ Missing comma in a dict
           ^
     SyntaxError: invalid syntax
     
+        Did you forget a comma?
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -976,15 +953,12 @@ Missing comma in a dict
                  ^
        6:      }
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
-        The opening curly bracket `{` on line 3 is not closed.
-        
-            3: a = {'a': 1,
-                   |
-        It is also possible that you forgot a comma between items in a set or dict
+        Python indicates that the error is caused by `2` written immediately after `'c'`.
+        It is possible that you forgot a comma between items in a set or dict
         before the position indicated by --> and ^.
+        Perhaps you meant
+        
+            a = {'a': 1,     'b': 2,     'c': 3,     }
         
 
 Missing comma in a set
@@ -1014,18 +988,17 @@ Missing comma in a set
     -->3: a = {1, 2  3}
                      ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
-        Python indicates that the error is caused by `3` written immediately after `2`.
-        Perhaps you meant to insert an operator like `+, -, *, ","`
+        Python indicates that the error is caused by `2` written immediately after `3`.
+        It is possible that you forgot a comma between items in a set or dict
+        before the position indicated by --> and ^.
+        Perhaps you meant to insert an operator like `+, -, *`
         between `2` and `3`.
         The following lines of code would not cause any `SyntaxError`:
         
+            a = {1, 2,  3}
             a = {1, 2 +  3}
             a = {1, 2 -  3}
             a = {1, 2 *  3}
-            a = {1, 2,  3}
         Note: these are just some of the possible choices.
         
 
@@ -1056,18 +1029,17 @@ Missing comma in a list
     -->3: a = [1, 2  3]
                      ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
-        Python indicates that the error is caused by `3` written immediately after `2`.
-        Perhaps you meant to insert an operator like `+, -, *, ","`
+        Python indicates that the error is caused by `2` written immediately after `3`.
+        It is possible that you forgot a comma between items in a list
+        before the position indicated by --> and ^.
+        Perhaps you meant to insert an operator like `+, -, *`
         between `2` and `3`.
         The following lines of code would not cause any `SyntaxError`:
         
+            a = [1, 2,  3]
             a = [1, 2 +  3]
             a = [1, 2 -  3]
             a = [1, 2 *  3]
-            a = [1, 2,  3]
         Note: these are just some of the possible choices.
         
 
@@ -1098,18 +1070,18 @@ Missing comma in a tuple
     -->3: a = (1, 2  3)
                      ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
-        Python indicates that the error is caused by `3` written immediately after `2`.
-        Perhaps you meant to insert an operator like `+, -, *, ","`
+        Python indicates that the error is caused by `2` written immediately after `3`.
+        It is possible that you forgot a comma between items in a tuple, 
+        or between function arguments, 
+        before the position indicated by --> and ^.
+        Perhaps you meant to insert an operator like `+, -, *`
         between `2` and `3`.
         The following lines of code would not cause any `SyntaxError`:
         
+            a = (1, 2,  3)
             a = (1, 2 +  3)
             a = (1, 2 -  3)
             a = (1, 2 *  3)
-            a = (1, 2,  3)
         Note: these are just some of the possible choices.
         
 
@@ -1127,7 +1099,7 @@ Missing comma between function args
                    ^
     SyntaxError: invalid syntax
     
-        Did you mean `def a(b, c, d):`?
+        Did you forget a comma?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -1141,15 +1113,13 @@ Missing comma between function args
     -->4: def a(b, c d):
                      ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
-        Python indicates that the error is caused by `d` written immediately after `c`.
-        Perhaps you meant to write `,` between
-        `c` and `d`:
+        Python indicates that the error is caused by `c` written immediately after `d`.
+        It is possible that you forgot a comma between items in a tuple, 
+        or between function arguments, 
+        before the position indicated by --> and ^.
+        Perhaps you meant
         
             def a(b, c, d):
-        which would not cause a `SyntaxError`.
         
 
 Cannot assign to function call - 1
@@ -1250,9 +1220,6 @@ Used equal sign instead of colon
     -->4: ages = {'Alice'=22, 'Bob'=24}
                          ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         It is possible that you used an equal sign `=` instead of a colon `:`
         to assign values to keys in a dict
         before or at the position indicated by --> and ^.
@@ -1404,9 +1371,6 @@ Unclosed bracket
     --> 7: print(foo())
                ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         The opening square bracket `[` on line 5 is not closed.
         
             5:     return [1, 2, 3
@@ -1653,11 +1617,9 @@ Keyword cannot be argument in def - 1
     -->5: def f(None=1):
                    ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         I am guessing that you tried to use the Python keyword
-        `None` as an argument in the definition of a function.
+        `None` as an argument in the definition of a function
+        where an identifier (variable name) was expected.
         
 
 Keyword cannot be argument in def - 2
@@ -1687,11 +1649,9 @@ Keyword cannot be argument in def - 2
     -->5: def f(x, True):
                       ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         I am guessing that you tried to use the Python keyword
-        `True` as an argument in the definition of a function.
+        `True` as an argument in the definition of a function
+        where an identifier (variable name) was expected.
         
 
 Keyword cannot be argument in def - 3
@@ -1721,11 +1681,9 @@ Keyword cannot be argument in def - 3
     -->5: def f(*None):
                     ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         I am guessing that you tried to use the Python keyword
-        `None` as an argument in the definition of a function.
+        `None` as an argument in the definition of a function
+        where an identifier (variable name) was expected.
         
 
 Keyword cannot be argument in def - 4
@@ -1755,11 +1713,9 @@ Keyword cannot be argument in def - 4
     -->5: def f(**None):
                      ^
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         I am guessing that you tried to use the Python keyword
-        `None` as an argument in the definition of a function.
+        `None` as an argument in the definition of a function
+        where an identifier (variable name) was expected.
         
 
 Delete function call
@@ -2866,9 +2822,6 @@ Unclosed parenthesis - 3
               ^
        8:     print(123))
 
-        I make an effort below to guess what caused the problem
-        but I might guess incorrectly.
-        
         The opening parenthesis `(` on line 5 is not closed.
         
             5:         print(((123))

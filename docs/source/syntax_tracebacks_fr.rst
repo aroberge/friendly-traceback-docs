@@ -321,8 +321,8 @@ Write elif, not elseif
         
         
 
-Malformed def statment - 1
---------------------------
+Malformed def statement - 1
+---------------------------
 
 .. code-block:: none
 
@@ -346,18 +346,14 @@ Malformed def statment - 1
     -->3: def :
               ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+        Vous vouliez définir une fonction, mais vous avez fait des erreurs de syntaxe.
+        La syntaxe correct est :
         
-        Vous vouliez définir une fonction ou une méthode,
-        mais vous avez fait des erreurs de syntaxe.
-        La syntaxe correcte est:
-        
-            def nom ( arguments_optionnels ):
-        
+            def nom ( ... ):
         
 
-Malformed def statment - 2
---------------------------
+Malformed def statement - missing parentheses
+---------------------------------------------
 
 .. code-block:: none
 
@@ -366,11 +362,11 @@ Malformed def statment - 2
       File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error7.py", line 3
-        def name  :
-                  ^
+        def name:
+                ^
     SyntaxError: invalid syntax
     
-        Vous avez peut-être oublié d'écrire des parenthèses.
+        Avez-vous oublié d’ajouter des parenthèses ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -380,21 +376,15 @@ Malformed def statment - 2
     
        1: """Should raise SyntaxError"""
        2: 
-    -->3: def name  :
-                    ^
+    -->3: def name:
+                  ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
-        Vous vouliez définir une fonction ou une méthode,
-        mais vous avez fait des erreurs de syntaxe.
-        La syntaxe correcte est:
-        
-            def nom ( arguments_optionnels ):
-        
+        Vous avez peut-être oublié d’inclure des parenthèses.
+        Vous avez peut-être voulu écrire `def name():`
         
 
-Malformed def statment - 3
---------------------------
+Malformed def statement - 3
+---------------------------
 
 .. code-block:: none
 
@@ -418,14 +408,10 @@ Malformed def statment - 3
     -->3: def ( arg )  :
               ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
+        Vous avez oublié de nommer votre fonction.
+        La syntaxe correct est :
         
-        Vous vouliez définir une fonction ou une méthode,
-        mais vous avez fait des erreurs de syntaxe.
-        La syntaxe correcte est:
-        
-            def nom ( arguments_optionnels ):
-        
+            def nom ( ... ):
         
 
 Cannot assign to literal - 1
@@ -685,8 +671,6 @@ Unclosed parenthesis - 1
                    ^
        4:     print('yes')
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Le symbole parenthèse `(` à la ligne 2 n'est pas fermé par le symbole correspondant.
         
             2: x = int('1'
@@ -718,8 +702,6 @@ Unclosed parenthesis - 2
     -->3: d = a*a
           ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Le symbole parenthèse `(` à la ligne 2 n'est pas fermé par le symbole correspondant.
         
             2: a = (b+c
@@ -848,6 +830,8 @@ Python keyword as function name
             ^
     SyntaxError: invalid syntax
     
+        Vous avez tenté d'utiliser le mot clé Python `{kwd}` comme nom de fonction.
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -859,8 +843,6 @@ Python keyword as function name
     -->3: def pass():
               ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Vous avez tenté d'utiliser le mot clé Python `pass` comme nom de fonction.
         Ceci n’est pas permis.
         
@@ -971,6 +953,8 @@ Missing comma in a dict
         ^
     SyntaxError: invalid syntax
     
+        Avez-vous oublié une virgule ?
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -984,14 +968,12 @@ Missing comma in a dict
                ^
        6:      }
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
-        Le symbole accolade `{` à la ligne 3 n'est pas fermé par le symbole correspondant.
-        
-            3: a = {'a': 1,
-                   |
+        Python indique que l’erreur est causée par `2` écrit tout juste après `'c'`.
         Il est également possible que vous ayez oublié une virgule entre les éléments d'un ensemble (set)
         ou un dict avant la position indiquée par --> et ^.
+        Peut-être que vous vouliez plutôt
+        
+            a = {'a': 1,     'b': 2,     'c': 3,     }
         
 
 Missing comma in a set
@@ -1021,17 +1003,17 @@ Missing comma in a set
     -->3: a = {1, 2  3}
                      ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
-        Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
-        Peut-être que vous vouliez insérer un opérateur comme `+, -, *, ","`
+        Python indique que l’erreur est causée par `2` écrit tout juste après `3`.
+        Il est également possible que vous ayez oublié une virgule entre les éléments d'un ensemble (set)
+        ou un dict avant la position indiquée par --> et ^.
+        Peut-être que vous vouliez insérer un opérateur comme `+, -, *`
         entre `2` et `3`.
         Les lignes de code suivantes ne causeraient pas des `SyntaxError :
         
+            a = {1, 2,  3}
             a = {1, 2 +  3}
             a = {1, 2 -  3}
             a = {1, 2 *  3}
-            a = {1, 2,  3}
         N.B. : ce ne sont là que quelques-uns des choix possibles.
         
 
@@ -1062,17 +1044,17 @@ Missing comma in a list
     -->3: a = [1, 2  3]
                      ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
-        Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
-        Peut-être que vous vouliez insérer un opérateur comme `+, -, *, ","`
+        Python indique que l’erreur est causée par `2` écrit tout juste après `3`.
+        Il est également possible que vous ayez oublié une virgule entre les éléments d'une liste
+        avant la position indiquée par --> et ^.
+        Peut-être que vous vouliez insérer un opérateur comme `+, -, *`
         entre `2` et `3`.
         Les lignes de code suivantes ne causeraient pas des `SyntaxError :
         
+            a = [1, 2,  3]
             a = [1, 2 +  3]
             a = [1, 2 -  3]
             a = [1, 2 *  3]
-            a = [1, 2,  3]
         N.B. : ce ne sont là que quelques-uns des choix possibles.
         
 
@@ -1103,17 +1085,17 @@ Missing comma in a tuple
     -->3: a = (1, 2  3)
                      ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
-        Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
-        Peut-être que vous vouliez insérer un opérateur comme `+, -, *, ","`
+        Python indique que l’erreur est causée par `2` écrit tout juste après `3`.
+        Il est également possible que vous ayez oublié une virgule entre les éléments d'un tuple,
+        ou entre les arguments d'une fonction, avant la position indiquée par --> et ^.
+        Peut-être que vous vouliez insérer un opérateur comme `+, -, *`
         entre `2` et `3`.
         Les lignes de code suivantes ne causeraient pas des `SyntaxError :
         
+            a = (1, 2,  3)
             a = (1, 2 +  3)
             a = (1, 2 -  3)
             a = (1, 2 *  3)
-            a = (1, 2,  3)
         N.B. : ce ne sont là que quelques-uns des choix possibles.
         
 
@@ -1131,7 +1113,7 @@ Missing comma between function args
                    ^
     SyntaxError: invalid syntax
     
-        Vouliez-vous dire `def a(b, c, d):` ?
+        Avez-vous oublié une virgule ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1145,14 +1127,12 @@ Missing comma between function args
     -->4: def a(b, c d):
                      ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
-        Python indique que l’erreur est causée par `d` écrit tout juste après `c`.
-        Peut-être que vous vouliez écrire `,` entre
-        `c` et `d` :
+        Python indique que l’erreur est causée par `c` écrit tout juste après `d`.
+        Il est également possible que vous ayez oublié une virgule entre les éléments d'un tuple,
+        ou entre les arguments d'une fonction, avant la position indiquée par --> et ^.
+        Peut-être que vous vouliez plutôt
         
             def a(b, c, d):
-        ce qui ne causerait pas de `SyntaxError`.
         
 
 Cannot assign to function call - 1
@@ -1254,8 +1234,6 @@ Used equal sign instead of colon
     -->4: ages = {'Alice'=22, 'Bob'=24}
                          ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Il est possible que vous ayez utilisé un signe d'égalité `=` au lieu de deux points `:`
         pour attribuer des valeurs à une clé d'un dictionnaire
         avant ou exactement à la position indiquée par --> et ^.
@@ -1407,8 +1385,6 @@ Unclosed bracket
     --> 7: print(foo())
            ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Le symbole crochet `[` à la ligne 5 n'est pas fermé par le symbole correspondant.
         
             5:     return [1, 2, 3
@@ -1661,12 +1637,9 @@ Keyword cannot be argument in def - 1
     -->5: def f(None=1):
                 ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Vous avez tenté d'utiliser le mot clé Python `None` comme argument
-        dans la définition d'une fonction.
-        Ceci n’est pas permis.
-        
+        dans la définition d'une fonction où un identificateur
+        (nom de variable) était attendu.
         
 
 Keyword cannot be argument in def - 2
@@ -1696,12 +1669,9 @@ Keyword cannot be argument in def - 2
     -->5: def f(x, True):
                    ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Vous avez tenté d'utiliser le mot clé Python `True` comme argument
-        dans la définition d'une fonction.
-        Ceci n’est pas permis.
-        
+        dans la définition d'une fonction où un identificateur
+        (nom de variable) était attendu.
         
 
 Keyword cannot be argument in def - 3
@@ -1731,12 +1701,9 @@ Keyword cannot be argument in def - 3
     -->5: def f(*None):
                  ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Vous avez tenté d'utiliser le mot clé Python `None` comme argument
-        dans la définition d'une fonction.
-        Ceci n’est pas permis.
-        
+        dans la définition d'une fonction où un identificateur
+        (nom de variable) était attendu.
         
 
 Keyword cannot be argument in def - 4
@@ -1766,12 +1733,9 @@ Keyword cannot be argument in def - 4
     -->5: def f(**None):
                   ^
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Vous avez tenté d'utiliser le mot clé Python `None` comme argument
-        dans la définition d'une fonction.
-        Ceci n’est pas permis.
-        
+        dans la définition d'une fonction où un identificateur
+        (nom de variable) était attendu.
         
 
 Delete function call
@@ -2881,8 +2845,6 @@ Unclosed parenthesis - 3
               ^
        8:     print(123))
 
-        Ci-dessous, je tente de deviner ce que a mal tourné, mais je pourrais me tromper.
-        
         Le symbole parenthèse `(` à la ligne 5 n'est pas fermé par le symbole correspondant.
         
             5:         print(((123))

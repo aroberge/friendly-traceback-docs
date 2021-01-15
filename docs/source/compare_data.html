@@ -32,11 +32,10 @@ raise_syntax_error15</div>
 
 </pre>
 <h5>Different explanation</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>I make an effort below to guess what caused the problem
-but I might guess incorrectly.
+<pre class='highlight friendly-small-pre'><b>3.7: </b>The closing parenthesis `)` on line 6 does not match the opening parenthesis `(` on line 4.
 
-The closing parenthesis `)` on line 6 does not match anything.
-
+    4: a = (1,
+           ^
     6:     3, 4,))
                  ^
 
@@ -52,10 +51,7 @@ raise_syntax_error18</div>
 
 </pre>
 <h5>Different explanation</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
-The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
+<pre class='highlight friendly-small-pre'><b>3.7: </b>The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
 
     2: x = (1, 2, 3]
            ^       ^
@@ -80,10 +76,7 @@ raise_syntax_error19</div>
 
 </pre>
 <h5>Different explanation</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
-The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
+<pre class='highlight friendly-small-pre'><b>3.7: </b>The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
 
     2: x = (1,
            ^

@@ -996,7 +996,7 @@ Missing comma in a set
         Python indicates that the error is caused by `2` written immediately after `3`.
         It is possible that you forgot a comma between items in a set or dict
         before the position indicated by --> and ^.
-        Perhaps you meant to insert an operator like `,; +; -; *`
+        Perhaps you meant to insert an operator like `+, -, *`
         between `2` and `3`.
         The following lines of code would not cause any `SyntaxError`:
         
@@ -1037,7 +1037,7 @@ Missing comma in a list
         Python indicates that the error is caused by `2` written immediately after `3`.
         It is possible that you forgot a comma between items in a list
         before the position indicated by --> and ^.
-        Perhaps you meant to insert an operator like `,; +; -; *`
+        Perhaps you meant to insert an operator like `+, -, *`
         between `2` and `3`.
         The following lines of code would not cause any `SyntaxError`:
         
@@ -1079,7 +1079,7 @@ Missing comma in a tuple
         It is possible that you forgot a comma between items in a tuple, 
         or between function arguments, 
         before the position indicated by --> and ^.
-        Perhaps you meant to insert an operator like `,; +; -; *`
+        Perhaps you meant to insert an operator like `+, -, *`
         between `2` and `3`.
         The following lines of code would not cause any `SyntaxError`:
         
@@ -2833,7 +2833,7 @@ Unclosed parenthesis - 3
         The opening parenthesis `(` on line 5 is not closed.
         
             5:         print(((123))
-                              |
+                            |
         
 
 Forgot a multiplication operator

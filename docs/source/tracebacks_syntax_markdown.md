@@ -370,7 +370,7 @@ but wrote `elseif` instead
 
 ---
 
-## Malformed def statment - 1
+## Malformed def statement - 1
 
 
 ```pytb
@@ -400,17 +400,14 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
-You tried to define a function or method and did not use the correct syntax.
+You tried to define a function and did not use the correct syntax.
 The correct syntax is:
 
-    def name ( optional_arguments ):
+    def name ( ... ):
 
 ---
 
-## Malformed def statment - 2
+## Malformed def statement - missing parentheses
 
 
 ```pytb
@@ -418,13 +415,13 @@ Traceback (most recent call last):
   File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
     mod = __import__(name)
   File "TESTS:\syntax\raise_syntax_error7.py", line 3
-    def name  :
-              ^
+    def name:
+            ^
 SyntaxError: invalid syntax
 
 ```
 
-Perhaps you forgot parentheses.
+Did you forget parentheses?
 
 
 
@@ -439,22 +436,17 @@ beyond the location indicated by --> and ^.
 ```python
        1: """Should raise SyntaxError"""
        2: 
-    -->3: def name  :
-                    ^
+    -->3: def name:
+                  ^
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
-You tried to define a function or method and did not use the correct syntax.
-The correct syntax is:
-
-    def name ( optional_arguments ):
+Perhaps you forgot to include parentheses.
+You might have meant to write `def name():`
 
 ---
 
-## Malformed def statment - 3
+## Malformed def statement - 3
 
 
 ```pytb
@@ -484,13 +476,10 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
-You tried to define a function or method and did not use the correct syntax.
+You forgot to name your function.
 The correct syntax is:
 
-    def name ( optional_arguments ):
+    def name ( ... ):
 
 ---
 
@@ -810,9 +799,6 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
 The opening parenthesis `(` on line 2 is not closed.
 
     2: x = int('1'
@@ -849,9 +835,6 @@ beyond the location indicated by --> and ^.
           ^
 
 ```
-
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
 
 The opening parenthesis `(` on line 2 is not closed.
 
@@ -998,6 +981,10 @@ SyntaxError: invalid syntax
 
 ```
 
+You cannot use a Python keyword as a function name.
+
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
@@ -1013,9 +1000,6 @@ beyond the location indicated by --> and ^.
               ^
 
 ```
-
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
 
 You tried to use the Python keyword `pass` as a function name.
 
@@ -1146,6 +1130,10 @@ SyntaxError: invalid syntax
 
 ```
 
+Did you forget a comma?
+
+
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 
@@ -1164,15 +1152,12 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
-The opening curly bracket `{` on line 3 is not closed.
-
-    3: a = {'a': 1,
-           |
-It is also possible that you forgot a comma between items in a set or dict
+Python indicates that the error is caused by `2` written immediately after `'c'`.
+It is possible that you forgot a comma between items in a set or dict
 before the position indicated by --> and ^.
+Perhaps you meant
+
+    a = {'a': 1,     'b': 2,     'c': 3,     }
 
 ---
 
@@ -1210,18 +1195,17 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
-Python indicates that the error is caused by `3` written immediately after `2`.
-Perhaps you meant to insert an operator like `+, -, *, ","`
+Python indicates that the error is caused by `2` written immediately after `3`.
+It is possible that you forgot a comma between items in a set or dict
+before the position indicated by --> and ^.
+Perhaps you meant to insert an operator like `+, -, *`
 between `2` and `3`.
 The following lines of code would not cause any `SyntaxError`:
 
+    a = {1, 2,  3}
     a = {1, 2 +  3}
     a = {1, 2 -  3}
     a = {1, 2 *  3}
-    a = {1, 2,  3}
 Note: these are just some of the possible choices.
 
 ---
@@ -1260,18 +1244,17 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
-Python indicates that the error is caused by `3` written immediately after `2`.
-Perhaps you meant to insert an operator like `+, -, *, ","`
+Python indicates that the error is caused by `2` written immediately after `3`.
+It is possible that you forgot a comma between items in a list
+before the position indicated by --> and ^.
+Perhaps you meant to insert an operator like `+, -, *`
 between `2` and `3`.
 The following lines of code would not cause any `SyntaxError`:
 
+    a = [1, 2,  3]
     a = [1, 2 +  3]
     a = [1, 2 -  3]
     a = [1, 2 *  3]
-    a = [1, 2,  3]
 Note: these are just some of the possible choices.
 
 ---
@@ -1310,18 +1293,18 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
-Python indicates that the error is caused by `3` written immediately after `2`.
-Perhaps you meant to insert an operator like `+, -, *, ","`
+Python indicates that the error is caused by `2` written immediately after `3`.
+It is possible that you forgot a comma between items in a tuple, 
+or between function arguments, 
+before the position indicated by --> and ^.
+Perhaps you meant to insert an operator like `+, -, *`
 between `2` and `3`.
 The following lines of code would not cause any `SyntaxError`:
 
+    a = (1, 2,  3)
     a = (1, 2 +  3)
     a = (1, 2 -  3)
     a = (1, 2 *  3)
-    a = (1, 2,  3)
 Note: these are just some of the possible choices.
 
 ---
@@ -1340,7 +1323,7 @@ SyntaxError: invalid syntax
 
 ```
 
-Did you mean `def a(b, c, d):`?
+Did you forget a comma?
 
 
 
@@ -1361,15 +1344,13 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
-Python indicates that the error is caused by `d` written immediately after `c`.
-Perhaps you meant to write `,` between
-`c` and `d`:
+Python indicates that the error is caused by `c` written immediately after `d`.
+It is possible that you forgot a comma between items in a tuple, 
+or between function arguments, 
+before the position indicated by --> and ^.
+Perhaps you meant
 
     def a(b, c, d):
-which would not cause a `SyntaxError`.
 
 ---
 
@@ -1487,9 +1468,6 @@ beyond the location indicated by --> and ^.
                          ^
 
 ```
-
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
 
 It is possible that you used an equal sign `=` instead of a colon `:`
 to assign values to keys in a dict
@@ -1667,9 +1645,6 @@ beyond the location indicated by --> and ^.
            ^
 
 ```
-
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
 
 The opening square bracket `[` on line 5 is not closed.
 
@@ -1963,11 +1938,9 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
 I am guessing that you tried to use the Python keyword
-`None` as an argument in the definition of a function.
+`None` as an argument in the definition of a function
+where an identifier (variable name) was expected.
 
 ---
 
@@ -2003,11 +1976,9 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
 I am guessing that you tried to use the Python keyword
-`True` as an argument in the definition of a function.
+`True` as an argument in the definition of a function
+where an identifier (variable name) was expected.
 
 ---
 
@@ -2043,11 +2014,9 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
 I am guessing that you tried to use the Python keyword
-`None` as an argument in the definition of a function.
+`None` as an argument in the definition of a function
+where an identifier (variable name) was expected.
 
 ---
 
@@ -2083,11 +2052,9 @@ beyond the location indicated by --> and ^.
 
 ```
 
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
-
 I am guessing that you tried to use the Python keyword
-`None` as an argument in the definition of a function.
+`None` as an argument in the definition of a function
+where an identifier (variable name) was expected.
 
 ---
 
@@ -3433,9 +3400,6 @@ beyond the location indicated by --> and ^.
        8:     print(123))
 
 ```
-
-I make an effort below to guess what caused the problem
-but I might guess incorrectly.
 
 The opening parenthesis `(` on line 5 is not closed.
 

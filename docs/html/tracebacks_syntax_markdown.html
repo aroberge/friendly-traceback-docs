@@ -146,9 +146,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#missing-colon-while">Missing colon - while</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#write-elif-not-else-if">Write elif, not else if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#write-elif-not-elseif">Write elif, not elseif</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#malformed-def-statment-1">Malformed def statment - 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#malformed-def-statment-2">Malformed def statment - 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#malformed-def-statment-3">Malformed def statment - 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#malformed-def-statement-1">Malformed def statement - 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#malformed-def-statement-missing-parentheses">Malformed def statement - missing parentheses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#malformed-def-statement-3">Malformed def statement - 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cannot-assign-to-literal-1">Cannot assign to literal - 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cannot-assign-to-literal-2">Cannot assign to literal - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#inversion-import-x-from-y">Inversion: import X from Y</a></li>
@@ -576,8 +576,8 @@ beyond the location indicated by –&gt; and ^.</p>
 but wrote <code class="docutils literal notranslate"><span class="pre">elseif</span></code> instead</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="malformed-def-statment-1">
-<h2>Malformed def statment - 1<a class="headerlink" href="#malformed-def-statment-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="malformed-def-statement-1">
+<h2>Malformed def statement - 1<a class="headerlink" href="#malformed-def-statement-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -597,48 +597,41 @@ beyond the location indicated by –&gt; and ^.</p>
               <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
-<p>You tried to define a function or method and did not use the correct syntax.
+<p>You tried to define a function and did not use the correct syntax.
 The correct syntax is:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">name</span> <span class="p">(</span> <span class="n">optional_arguments</span> <span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">name</span> <span class="p">(</span> <span class="o">...</span> <span class="p">):</span>
 </pre></div>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="malformed-def-statment-2">
-<h2>Malformed def statment - 2<a class="headerlink" href="#malformed-def-statment-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="malformed-def-statement-missing-parentheses">
+<h2>Malformed def statement - missing parentheses<a class="headerlink" href="#malformed-def-statement-missing-parentheses" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error7.py&quot;</span>, line <span class="m">3</span>
-    <span class="k">def</span> <span class="nf">name</span>  <span class="p">:</span>
-              <span class="o">^</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">:</span>
+            <span class="o">^</span>
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
-<p>Perhaps you forgot parentheses.</p>
+<p>Did you forget parentheses?</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error7.py’
 beyond the location indicated by –&gt; and ^.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;</span>
        <span class="mi">2</span><span class="p">:</span> 
-    <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="k">def</span> <span class="nf">name</span>  <span class="p">:</span>
-                    <span class="o">^</span>
+    <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="k">def</span> <span class="nf">name</span><span class="p">:</span>
+                  <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
-<p>You tried to define a function or method and did not use the correct syntax.
-The correct syntax is:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">name</span> <span class="p">(</span> <span class="n">optional_arguments</span> <span class="p">):</span>
-</pre></div>
-</div>
+<p>Perhaps you forgot to include parentheses.
+You might have meant to write <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">name():</span></code></p>
 </div>
 <hr class="docutils" />
-<div class="section" id="malformed-def-statment-3">
-<h2>Malformed def statment - 3<a class="headerlink" href="#malformed-def-statment-3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="malformed-def-statement-3">
+<h2>Malformed def statement - 3<a class="headerlink" href="#malformed-def-statement-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -658,11 +651,9 @@ beyond the location indicated by –&gt; and ^.</p>
               <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
-<p>You tried to define a function or method and did not use the correct syntax.
+<p>You forgot to name your function.
 The correct syntax is:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">name</span> <span class="p">(</span> <span class="n">optional_arguments</span> <span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">name</span> <span class="p">(</span> <span class="o">...</span> <span class="p">):</span>
 </pre></div>
 </div>
 </div>
@@ -891,8 +882,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">4</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;yes&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>The opening parenthesis <code class="docutils literal notranslate"><span class="pre">(</span></code> on line 2 is not closed.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="p">:</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;1&#39;</span>
           <span class="o">|</span>
@@ -921,8 +910,6 @@ beyond the location indicated by –&gt; and ^.</p>
           <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>The opening parenthesis <code class="docutils literal notranslate"><span class="pre">(</span></code> on line 2 is not closed.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="p">:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
        <span class="o">|</span>
@@ -1033,6 +1020,7 @@ Now, <code class="docutils literal notranslate"><span class="pre">print</span></
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
+<p>You cannot use a Python keyword as a function name.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error21.py’
@@ -1043,8 +1031,6 @@ beyond the location indicated by –&gt; and ^.</p>
               <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>You tried to use the Python keyword <code class="docutils literal notranslate"><span class="pre">pass</span></code> as a function name.</p>
 </div>
 <hr class="docutils" />
@@ -1137,6 +1123,7 @@ that was enclosed in quotes of the same kind.</p>
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
+<p>Did you forget a comma?</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error25.py’
@@ -1149,15 +1136,13 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">6</span><span class="p">:</span>      <span class="p">}</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
-<p>The opening curly bracket <code class="docutils literal notranslate"><span class="pre">{</span></code> on line 3 is not closed.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="p">:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-       <span class="o">|</span>
+<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">2</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">'c'</span></code>.
+It is possible that you forgot a comma between items in a set or dict
+before the position indicated by –&gt; and ^.
+Perhaps you meant</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>     <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>     <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>     <span class="p">}</span>
 </pre></div>
 </div>
-<p>It is also possible that you forgot a comma between items in a set or dict
-before the position indicated by –&gt; and ^.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="missing-comma-in-a-set">
@@ -1182,16 +1167,16 @@ beyond the location indicated by –&gt; and ^.</p>
                      <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
-<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">3</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">2</span></code>.
-Perhaps you meant to insert an operator like <code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*,</span> <span class="pre">&quot;,&quot;</span></code>
+<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">2</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">3</span></code>.
+It is possible that you forgot a comma between items in a set or dict
+before the position indicated by –&gt; and ^.
+Perhaps you meant to insert an operator like <code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*</span></code>
 between <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code>.
 The following lines of code would not cause any <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span>  <span class="mi">3</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">}</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span>  <span class="mi">3</span><span class="p">}</span>
 <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">-</span>  <span class="mi">3</span><span class="p">}</span>
 <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span>  <span class="mi">3</span><span class="p">}</span>
-<span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Note: these are just some of the possible choices.</p>
@@ -1219,16 +1204,16 @@ beyond the location indicated by –&gt; and ^.</p>
                      <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
-<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">3</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">2</span></code>.
-Perhaps you meant to insert an operator like <code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*,</span> <span class="pre">&quot;,&quot;</span></code>
+<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">2</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">3</span></code>.
+It is possible that you forgot a comma between items in a list
+before the position indicated by –&gt; and ^.
+Perhaps you meant to insert an operator like <code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*</span></code>
 between <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code>.
 The following lines of code would not cause any <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span>  <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span>  <span class="mi">3</span><span class="p">]</span>
 <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">-</span>  <span class="mi">3</span><span class="p">]</span>
 <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span>  <span class="mi">3</span><span class="p">]</span>
-<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Note: these are just some of the possible choices.</p>
@@ -1256,16 +1241,17 @@ beyond the location indicated by –&gt; and ^.</p>
                      <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
-<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">3</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">2</span></code>.
-Perhaps you meant to insert an operator like <code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*,</span> <span class="pre">&quot;,&quot;</span></code>
+<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">2</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">3</span></code>.
+It is possible that you forgot a comma between items in a tuple,
+or between function arguments,
+before the position indicated by –&gt; and ^.
+Perhaps you meant to insert an operator like <code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*</span></code>
 between <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code>.
 The following lines of code would not cause any <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span>  <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span>  <span class="mi">3</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">-</span>  <span class="mi">3</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span>  <span class="mi">3</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Note: these are just some of the possible choices.</p>
@@ -1282,7 +1268,7 @@ The following lines of code would not cause any <code class="docutils literal no
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
-<p>Did you mean <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">a(b,</span> <span class="pre">c,</span> <span class="pre">d):</span></code>?</p>
+<p>Did you forget a comma?</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error29.py’
@@ -1294,15 +1280,14 @@ beyond the location indicated by –&gt; and ^.</p>
                      <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
-<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">d</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">c</span></code>.
-Perhaps you meant to write <code class="docutils literal notranslate"><span class="pre">,</span></code> between
-<code class="docutils literal notranslate"><span class="pre">c</span></code> and <code class="docutils literal notranslate"><span class="pre">d</span></code>:</p>
+<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">c</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">d</span></code>.
+It is possible that you forgot a comma between items in a tuple,
+or between function arguments,
+before the position indicated by –&gt; and ^.
+Perhaps you meant</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
 </pre></div>
 </div>
-<p>which would not cause a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="cannot-assign-to-function-call-1">
@@ -1391,8 +1376,6 @@ beyond the location indicated by –&gt; and ^.</p>
                          <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>It is possible that you used an equal sign <code class="docutils literal notranslate"><span class="pre">=</span></code> instead of a colon <code class="docutils literal notranslate"><span class="pre">:</span></code>
 to assign values to keys in a dict
 before or at the position indicated by –&gt; and ^.</p>
@@ -1527,8 +1510,6 @@ beyond the location indicated by –&gt; and ^.</p>
            <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>The opening square bracket <code class="docutils literal notranslate"><span class="pre">[</span></code> on line 5 is not closed.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="p">:</span>     <span class="k">return</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
               <span class="o">|</span>
@@ -1747,10 +1728,9 @@ beyond the location indicated by –&gt; and ^.</p>
                 <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>I am guessing that you tried to use the Python keyword
-<code class="docutils literal notranslate"><span class="pre">None</span></code> as an argument in the definition of a function.</p>
+<code class="docutils literal notranslate"><span class="pre">None</span></code> as an argument in the definition of a function
+where an identifier (variable name) was expected.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="keyword-cannot-be-argument-in-def-2">
@@ -1776,10 +1756,9 @@ beyond the location indicated by –&gt; and ^.</p>
                    <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>I am guessing that you tried to use the Python keyword
-<code class="docutils literal notranslate"><span class="pre">True</span></code> as an argument in the definition of a function.</p>
+<code class="docutils literal notranslate"><span class="pre">True</span></code> as an argument in the definition of a function
+where an identifier (variable name) was expected.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="keyword-cannot-be-argument-in-def-3">
@@ -1805,10 +1784,9 @@ beyond the location indicated by –&gt; and ^.</p>
                  <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>I am guessing that you tried to use the Python keyword
-<code class="docutils literal notranslate"><span class="pre">None</span></code> as an argument in the definition of a function.</p>
+<code class="docutils literal notranslate"><span class="pre">None</span></code> as an argument in the definition of a function
+where an identifier (variable name) was expected.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="keyword-cannot-be-argument-in-def-4">
@@ -1834,10 +1812,9 @@ beyond the location indicated by –&gt; and ^.</p>
                   <span class="o">^</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>I am guessing that you tried to use the Python keyword
-<code class="docutils literal notranslate"><span class="pre">None</span></code> as an argument in the definition of a function.</p>
+<code class="docutils literal notranslate"><span class="pre">None</span></code> as an argument in the definition of a function
+where an identifier (variable name) was expected.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="delete-function-call">
@@ -2797,8 +2774,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">8</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="mi">123</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>I make an effort below to guess what caused the problem
-but I might guess incorrectly.</p>
 <p>The opening parenthesis <code class="docutils literal notranslate"><span class="pre">(</span></code> on line 5 is not closed.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="p">:</span>         <span class="nb">print</span><span class="p">(((</span><span class="mi">123</span><span class="p">))</span>
                 <span class="o">|</span>

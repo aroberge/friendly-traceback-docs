@@ -139,9 +139,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#missing-colon-while">Missing colon - while</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#write-elif-not-else-if">Write elif, not else if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#write-elif-not-elseif">Write elif, not elseif</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#malformed-def-statment-1">Malformed def statment - 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#malformed-def-statment-2">Malformed def statment - 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#malformed-def-statment-3">Malformed def statment - 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#malformed-def-statement-1">Malformed def statement - 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#malformed-def-statement-missing-parentheses">Malformed def statement - missing parentheses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#malformed-def-statement-3">Malformed def statement - 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cannot-assign-to-literal-1">Cannot assign to literal - 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cannot-assign-to-literal-2">Cannot assign to literal - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#inversion-import-x-from-y">Inversion: import X from Y</a></li>
@@ -595,8 +595,8 @@ beyond the location indicated by --&gt; and ^.
 </pre></div>
 </div>
 </div>
-<div class="section" id="malformed-def-statment-1">
-<h2>Malformed def statment - 1<a class="headerlink" href="#malformed-def-statment-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="malformed-def-statement-1">
+<h2>Malformed def statement - 1<a class="headerlink" href="#malformed-def-statement-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
     mod = __import__(name)
@@ -616,27 +616,24 @@ beyond the location indicated by --&gt; and ^.
 --&gt;3: def :
           ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
-    You tried to define a function or method and did not use the correct syntax.
+    You tried to define a function and did not use the correct syntax.
     The correct syntax is:
 
-        def name ( optional_arguments ):
+        def name ( ... ):
 </pre></div>
 </div>
 </div>
-<div class="section" id="malformed-def-statment-2">
-<h2>Malformed def statment - 2<a class="headerlink" href="#malformed-def-statment-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="malformed-def-statement-missing-parentheses">
+<h2>Malformed def statement - missing parentheses<a class="headerlink" href="#malformed-def-statement-missing-parentheses" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error7.py&quot;, line 3
-    def name  :
-              ^
+    def name:
+            ^
 SyntaxError: invalid syntax
 
-    Perhaps you forgot parentheses.
+    Did you forget parentheses?
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -646,21 +643,16 @@ beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError&quot;&quot;&quot;
    2:
---&gt;3: def name  :
-                ^
+--&gt;3: def name:
+              ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
-    You tried to define a function or method and did not use the correct syntax.
-    The correct syntax is:
-
-        def name ( optional_arguments ):
+    Perhaps you forgot to include parentheses.
+    You might have meant to write `def name():`
 </pre></div>
 </div>
 </div>
-<div class="section" id="malformed-def-statment-3">
-<h2>Malformed def statment - 3<a class="headerlink" href="#malformed-def-statment-3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="malformed-def-statement-3">
+<h2>Malformed def statement - 3<a class="headerlink" href="#malformed-def-statement-3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
     mod = __import__(name)
@@ -680,13 +672,10 @@ beyond the location indicated by --&gt; and ^.
 --&gt;3: def ( arg )  :
           ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
-    You tried to define a function or method and did not use the correct syntax.
+    You forgot to name your function.
     The correct syntax is:
 
-        def name ( optional_arguments ):
+        def name ( ... ):
 </pre></div>
 </div>
 </div>
@@ -918,9 +907,6 @@ beyond the location indicated by --&gt; and ^.
                ^
    4:     print(&#39;yes&#39;)
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
     The opening parenthesis `(` on line 2 is not closed.
 
         2: x = int(&#39;1&#39;
@@ -948,9 +934,6 @@ beyond the location indicated by --&gt; and ^.
    2: a = (b+c
 --&gt;3: d = a*a
       ^
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     The opening parenthesis `(` on line 2 is not closed.
 
@@ -1066,6 +1049,8 @@ beyond the location indicated by --&gt; and ^.
         ^
 SyntaxError: invalid syntax
 
+    You cannot use a Python keyword as a function name.
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 Python could not understand the code in the file
@@ -1076,9 +1061,6 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: def pass():
           ^
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     You tried to use the Python keyword `pass` as a function name.
 </pre></div>
@@ -1176,6 +1158,8 @@ beyond the location indicated by --&gt; and ^.
     ^
 SyntaxError: invalid syntax
 
+    Did you forget a comma?
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 Python could not understand the code in the file
@@ -1189,15 +1173,12 @@ beyond the location indicated by --&gt; and ^.
            ^
    6:      }
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
-    The opening curly bracket `{` on line 3 is not closed.
-
-        3: a = {&#39;a&#39;: 1,
-               |
-    It is also possible that you forgot a comma between items in a set or dict
+    Python indicates that the error is caused by `2` written immediately after `&#39;c&#39;`.
+    It is possible that you forgot a comma between items in a set or dict
     before the position indicated by --&gt; and ^.
+    Perhaps you meant
+
+        a = {&#39;a&#39;: 1,     &#39;b&#39;: 2,     &#39;c&#39;: 3,     }
 </pre></div>
 </div>
 </div>
@@ -1224,18 +1205,17 @@ beyond the location indicated by --&gt; and ^.
 --&gt;3: a = {1, 2  3}
                  ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
-    Python indicates that the error is caused by `3` written immediately after `2`.
-    Perhaps you meant to insert an operator like `+, -, *, &quot;,&quot;`
+    Python indicates that the error is caused by `2` written immediately after `3`.
+    It is possible that you forgot a comma between items in a set or dict
+    before the position indicated by --&gt; and ^.
+    Perhaps you meant to insert an operator like `+, -, *`
     between `2` and `3`.
     The following lines of code would not cause any `SyntaxError`:
 
+        a = {1, 2,  3}
         a = {1, 2 +  3}
         a = {1, 2 -  3}
         a = {1, 2 *  3}
-        a = {1, 2,  3}
     Note: these are just some of the possible choices.
 </pre></div>
 </div>
@@ -1263,18 +1243,17 @@ beyond the location indicated by --&gt; and ^.
 --&gt;3: a = [1, 2  3]
                  ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
-    Python indicates that the error is caused by `3` written immediately after `2`.
-    Perhaps you meant to insert an operator like `+, -, *, &quot;,&quot;`
+    Python indicates that the error is caused by `2` written immediately after `3`.
+    It is possible that you forgot a comma between items in a list
+    before the position indicated by --&gt; and ^.
+    Perhaps you meant to insert an operator like `+, -, *`
     between `2` and `3`.
     The following lines of code would not cause any `SyntaxError`:
 
+        a = [1, 2,  3]
         a = [1, 2 +  3]
         a = [1, 2 -  3]
         a = [1, 2 *  3]
-        a = [1, 2,  3]
     Note: these are just some of the possible choices.
 </pre></div>
 </div>
@@ -1302,18 +1281,18 @@ beyond the location indicated by --&gt; and ^.
 --&gt;3: a = (1, 2  3)
                  ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
-    Python indicates that the error is caused by `3` written immediately after `2`.
-    Perhaps you meant to insert an operator like `+, -, *, &quot;,&quot;`
+    Python indicates that the error is caused by `2` written immediately after `3`.
+    It is possible that you forgot a comma between items in a tuple,
+    or between function arguments,
+    before the position indicated by --&gt; and ^.
+    Perhaps you meant to insert an operator like `+, -, *`
     between `2` and `3`.
     The following lines of code would not cause any `SyntaxError`:
 
+        a = (1, 2,  3)
         a = (1, 2 +  3)
         a = (1, 2 -  3)
         a = (1, 2 *  3)
-        a = (1, 2,  3)
     Note: these are just some of the possible choices.
 </pre></div>
 </div>
@@ -1328,7 +1307,7 @@ beyond the location indicated by --&gt; and ^.
                ^
 SyntaxError: invalid syntax
 
-    Did you mean `def a(b, c, d):`?
+    Did you forget a comma?
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -1342,15 +1321,13 @@ beyond the location indicated by --&gt; and ^.
 --&gt;4: def a(b, c d):
                  ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
-    Python indicates that the error is caused by `d` written immediately after `c`.
-    Perhaps you meant to write `,` between
-    `c` and `d`:
+    Python indicates that the error is caused by `c` written immediately after `d`.
+    It is possible that you forgot a comma between items in a tuple,
+    or between function arguments,
+    before the position indicated by --&gt; and ^.
+    Perhaps you meant
 
         def a(b, c, d):
-    which would not cause a `SyntaxError`.
 </pre></div>
 </div>
 </div>
@@ -1441,9 +1418,6 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: ages = {&#39;Alice&#39;=22, &#39;Bob&#39;=24}
                      ^
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     It is possible that you used an equal sign `=` instead of a colon `:`
     to assign values to keys in a dict
@@ -1583,9 +1557,6 @@ beyond the location indicated by --&gt; and ^.
     6:
 --&gt; 7: print(foo())
        ^
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     The opening square bracket `[` on line 5 is not closed.
 
@@ -1811,11 +1782,9 @@ beyond the location indicated by --&gt; and ^.
 --&gt;5: def f(None=1):
             ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
     I am guessing that you tried to use the Python keyword
-    `None` as an argument in the definition of a function.
+    `None` as an argument in the definition of a function
+    where an identifier (variable name) was expected.
 </pre></div>
 </div>
 </div>
@@ -1842,11 +1811,9 @@ beyond the location indicated by --&gt; and ^.
 --&gt;5: def f(x, True):
                ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
     I am guessing that you tried to use the Python keyword
-    `True` as an argument in the definition of a function.
+    `True` as an argument in the definition of a function
+    where an identifier (variable name) was expected.
 </pre></div>
 </div>
 </div>
@@ -1873,11 +1840,9 @@ beyond the location indicated by --&gt; and ^.
 --&gt;5: def f(*None):
              ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
     I am guessing that you tried to use the Python keyword
-    `None` as an argument in the definition of a function.
+    `None` as an argument in the definition of a function
+    where an identifier (variable name) was expected.
 </pre></div>
 </div>
 </div>
@@ -1904,11 +1869,9 @@ beyond the location indicated by --&gt; and ^.
 --&gt;5: def f(**None):
               ^
 
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
-
     I am guessing that you tried to use the Python keyword
-    `None` as an argument in the definition of a function.
+    `None` as an argument in the definition of a function
+    where an identifier (variable name) was expected.
 </pre></div>
 </div>
 </div>
@@ -2909,9 +2872,6 @@ beyond the location indicated by --&gt; and ^.
 --&gt;7: if 2:
           ^
    8:     print(123))
-
-    I make an effort below to guess what caused the problem
-    but I might guess incorrectly.
 
     The opening parenthesis `(` on line 5 is not closed.
 
