@@ -22,7 +22,7 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.2.17a
+Friendly-traceback version: 0.2.19a
 Python version: 3.8.4
 
 
@@ -968,7 +968,7 @@ Missing comma in a dict
                ^
        6:      }
 
-        Python indique que l’erreur est causée par `2` écrit tout juste après `'c'`.
+        Python indique que l’erreur est causée par `'c'` écrit tout juste après `2`.
         Il est également possible que vous ayez oublié une virgule entre les éléments d'un ensemble (set)
         ou un dict avant la position indiquée par --> et ^.
         Peut-être que vous vouliez plutôt
@@ -1003,7 +1003,7 @@ Missing comma in a set
     -->3: a = {1, 2  3}
                      ^
 
-        Python indique que l’erreur est causée par `2` écrit tout juste après `3`.
+        Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
         Il est également possible que vous ayez oublié une virgule entre les éléments d'un ensemble (set)
         ou un dict avant la position indiquée par --> et ^.
         Peut-être que vous vouliez insérer un opérateur comme `+, -, *`
@@ -1014,7 +1014,8 @@ Missing comma in a set
             a = {1, 2 +  3}
             a = {1, 2 -  3}
             a = {1, 2 *  3}
-        N.B. : ce ne sont là que quelques-uns des choix possibles.
+        Remarque : ce ne sont là que quelques-uns des choix possibles et
+        certains d’entre eux pourraient soulever d’autres types d’exceptions.
         
 
 Missing comma in a list
@@ -1044,7 +1045,7 @@ Missing comma in a list
     -->3: a = [1, 2  3]
                      ^
 
-        Python indique que l’erreur est causée par `2` écrit tout juste après `3`.
+        Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
         Il est également possible que vous ayez oublié une virgule entre les éléments d'une liste
         avant la position indiquée par --> et ^.
         Peut-être que vous vouliez insérer un opérateur comme `+, -, *`
@@ -1055,7 +1056,8 @@ Missing comma in a list
             a = [1, 2 +  3]
             a = [1, 2 -  3]
             a = [1, 2 *  3]
-        N.B. : ce ne sont là que quelques-uns des choix possibles.
+        Remarque : ce ne sont là que quelques-uns des choix possibles et
+        certains d’entre eux pourraient soulever d’autres types d’exceptions.
         
 
 Missing comma in a tuple
@@ -1085,7 +1087,7 @@ Missing comma in a tuple
     -->3: a = (1, 2  3)
                      ^
 
-        Python indique que l’erreur est causée par `2` écrit tout juste après `3`.
+        Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
         Il est également possible que vous ayez oublié une virgule entre les éléments d'un tuple,
         ou entre les arguments d'une fonction, avant la position indiquée par --> et ^.
         Peut-être que vous vouliez insérer un opérateur comme `+, -, *`
@@ -1096,7 +1098,8 @@ Missing comma in a tuple
             a = (1, 2 +  3)
             a = (1, 2 -  3)
             a = (1, 2 *  3)
-        N.B. : ce ne sont là que quelques-uns des choix possibles.
+        Remarque : ce ne sont là que quelques-uns des choix possibles et
+        certains d’entre eux pourraient soulever d’autres types d’exceptions.
         
 
 Missing comma between function args
@@ -1127,7 +1130,7 @@ Missing comma between function args
     -->4: def a(b, c d):
                      ^
 
-        Python indique que l’erreur est causée par `c` écrit tout juste après `d`.
+        Python indique que l’erreur est causée par `d` écrit tout juste après `c`.
         Il est également possible que vous ayez oublié une virgule entre les éléments d'un tuple,
         ou entre les arguments d'une fonction, avant la position indiquée par --> et ^.
         Peut-être que vous vouliez plutôt

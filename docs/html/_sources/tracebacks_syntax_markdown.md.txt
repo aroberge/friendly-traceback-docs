@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.2.17a
+Friendly-traceback version: 0.2.19a
 Python version: 3.8.4
 
 
@@ -1152,7 +1152,7 @@ beyond the location indicated by --> and ^.
 
 ```
 
-Python indicates that the error is caused by `2` written immediately after `'c'`.
+Python indicates that the error is caused by `'c'` written immediately after `2`.
 It is possible that you forgot a comma between items in a set or dict
 before the position indicated by --> and ^.
 Perhaps you meant
@@ -1195,7 +1195,7 @@ beyond the location indicated by --> and ^.
 
 ```
 
-Python indicates that the error is caused by `2` written immediately after `3`.
+Python indicates that the error is caused by `3` written immediately after `2`.
 It is possible that you forgot a comma between items in a set or dict
 before the position indicated by --> and ^.
 Perhaps you meant to insert an operator like `+, -, *`
@@ -1206,7 +1206,8 @@ The following lines of code would not cause any `SyntaxError`:
     a = {1, 2 +  3}
     a = {1, 2 -  3}
     a = {1, 2 *  3}
-Note: these are just some of the possible choices.
+Note: these are just some of the possible choices and that
+some of them might raise other types of exceptions.
 
 ---
 
@@ -1244,7 +1245,7 @@ beyond the location indicated by --> and ^.
 
 ```
 
-Python indicates that the error is caused by `2` written immediately after `3`.
+Python indicates that the error is caused by `3` written immediately after `2`.
 It is possible that you forgot a comma between items in a list
 before the position indicated by --> and ^.
 Perhaps you meant to insert an operator like `+, -, *`
@@ -1255,7 +1256,8 @@ The following lines of code would not cause any `SyntaxError`:
     a = [1, 2 +  3]
     a = [1, 2 -  3]
     a = [1, 2 *  3]
-Note: these are just some of the possible choices.
+Note: these are just some of the possible choices and that
+some of them might raise other types of exceptions.
 
 ---
 
@@ -1293,7 +1295,7 @@ beyond the location indicated by --> and ^.
 
 ```
 
-Python indicates that the error is caused by `2` written immediately after `3`.
+Python indicates that the error is caused by `3` written immediately after `2`.
 It is possible that you forgot a comma between items in a tuple, 
 or between function arguments, 
 before the position indicated by --> and ^.
@@ -1305,7 +1307,8 @@ The following lines of code would not cause any `SyntaxError`:
     a = (1, 2 +  3)
     a = (1, 2 -  3)
     a = (1, 2 *  3)
-Note: these are just some of the possible choices.
+Note: these are just some of the possible choices and that
+some of them might raise other types of exceptions.
 
 ---
 
@@ -1344,7 +1347,7 @@ beyond the location indicated by --> and ^.
 
 ```
 
-Python indicates that the error is caused by `c` written immediately after `d`.
+Python indicates that the error is caused by `d` written immediately after `c`.
 It is possible that you forgot a comma between items in a tuple, 
 or between function arguments, 
 before the position indicated by --> and ^.

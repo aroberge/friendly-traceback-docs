@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Syntax errors - markdown_docs format &mdash; Friendly tracebacks 0.2.17a documentation</title>
+  <title>Syntax errors - markdown_docs format &mdash; Friendly tracebacks 0.2.19a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.17a
+                0.2.19a
               </div>
             
           
@@ -326,7 +326,7 @@ trb_syntax_markdown.py located in the <code class="docutils literal notranslate"
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.
 </p>
-</div><p>Friendly-traceback version: 0.2.17a
+</div><p>Friendly-traceback version: 0.2.19a
 Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="indentationerror-expected-an-indented-block">
@@ -1136,7 +1136,7 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">6</span><span class="p">:</span>      <span class="p">}</span>
 </pre></div>
 </div>
-<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">2</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">'c'</span></code>.
+<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">'c'</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">2</span></code>.
 It is possible that you forgot a comma between items in a set or dict
 before the position indicated by –&gt; and ^.
 Perhaps you meant</p>
@@ -1167,7 +1167,7 @@ beyond the location indicated by –&gt; and ^.</p>
                      <span class="o">^</span>
 </pre></div>
 </div>
-<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">2</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">3</span></code>.
+<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">3</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">2</span></code>.
 It is possible that you forgot a comma between items in a set or dict
 before the position indicated by –&gt; and ^.
 Perhaps you meant to insert an operator like <code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*</span></code>
@@ -1179,7 +1179,8 @@ The following lines of code would not cause any <code class="docutils literal no
 <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span>  <span class="mi">3</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Note: these are just some of the possible choices.</p>
+<p>Note: these are just some of the possible choices and that
+some of them might raise other types of exceptions.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="missing-comma-in-a-list">
@@ -1204,7 +1205,7 @@ beyond the location indicated by –&gt; and ^.</p>
                      <span class="o">^</span>
 </pre></div>
 </div>
-<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">2</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">3</span></code>.
+<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">3</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">2</span></code>.
 It is possible that you forgot a comma between items in a list
 before the position indicated by –&gt; and ^.
 Perhaps you meant to insert an operator like <code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*</span></code>
@@ -1216,7 +1217,8 @@ The following lines of code would not cause any <code class="docutils literal no
 <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span>  <span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Note: these are just some of the possible choices.</p>
+<p>Note: these are just some of the possible choices and that
+some of them might raise other types of exceptions.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="missing-comma-in-a-tuple">
@@ -1241,7 +1243,7 @@ beyond the location indicated by –&gt; and ^.</p>
                      <span class="o">^</span>
 </pre></div>
 </div>
-<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">2</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">3</span></code>.
+<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">3</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">2</span></code>.
 It is possible that you forgot a comma between items in a tuple,
 or between function arguments,
 before the position indicated by –&gt; and ^.
@@ -1254,7 +1256,8 @@ The following lines of code would not cause any <code class="docutils literal no
 <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span>  <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note: these are just some of the possible choices.</p>
+<p>Note: these are just some of the possible choices and that
+some of them might raise other types of exceptions.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="missing-comma-between-function-args">
@@ -1280,7 +1283,7 @@ beyond the location indicated by –&gt; and ^.</p>
                      <span class="o">^</span>
 </pre></div>
 </div>
-<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">c</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">d</span></code>.
+<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">d</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">c</span></code>.
 It is possible that you forgot a comma between items in a tuple,
 or between function arguments,
 before the position indicated by –&gt; and ^.

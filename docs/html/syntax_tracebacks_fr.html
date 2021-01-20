@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.2.17a documentation</title>
+  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.2.19a documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.2.17a
+                0.2.19a
               </div>
             
           
@@ -335,7 +335,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.2.17a
+<p>Friendly-traceback version: 0.2.19a
 Python version: 3.8.4</p>
 <div class="section" id="indentationerror-expected-an-indented-block">
 <h2>IndentationError: expected an indented block<a class="headerlink" href="#indentationerror-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -1180,7 +1180,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
            ^
    6:      }
 
-    Python indique que l’erreur est causée par `2` écrit tout juste après `&#39;c&#39;`.
+    Python indique que l’erreur est causée par `&#39;c&#39;` écrit tout juste après `2`.
     Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;un ensemble (set)
     ou un dict avant la position indiquée par --&gt; et ^.
     Peut-être que vous vouliez plutôt
@@ -1212,7 +1212,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = {1, 2  3}
                  ^
 
-    Python indique que l’erreur est causée par `2` écrit tout juste après `3`.
+    Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
     Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;un ensemble (set)
     ou un dict avant la position indiquée par --&gt; et ^.
     Peut-être que vous vouliez insérer un opérateur comme `+, -, *`
@@ -1223,7 +1223,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
         a = {1, 2 +  3}
         a = {1, 2 -  3}
         a = {1, 2 *  3}
-    N.B. : ce ne sont là que quelques-uns des choix possibles.
+    Remarque : ce ne sont là que quelques-uns des choix possibles et
+    certains d’entre eux pourraient soulever d’autres types d’exceptions.
 </pre></div>
 </div>
 </div>
@@ -1250,7 +1251,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = [1, 2  3]
                  ^
 
-    Python indique que l’erreur est causée par `2` écrit tout juste après `3`.
+    Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
     Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;une liste
     avant la position indiquée par --&gt; et ^.
     Peut-être que vous vouliez insérer un opérateur comme `+, -, *`
@@ -1261,7 +1262,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
         a = [1, 2 +  3]
         a = [1, 2 -  3]
         a = [1, 2 *  3]
-    N.B. : ce ne sont là que quelques-uns des choix possibles.
+    Remarque : ce ne sont là que quelques-uns des choix possibles et
+    certains d’entre eux pourraient soulever d’autres types d’exceptions.
 </pre></div>
 </div>
 </div>
@@ -1288,7 +1290,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = (1, 2  3)
                  ^
 
-    Python indique que l’erreur est causée par `2` écrit tout juste après `3`.
+    Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
     Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;un tuple,
     ou entre les arguments d&#39;une fonction, avant la position indiquée par --&gt; et ^.
     Peut-être que vous vouliez insérer un opérateur comme `+, -, *`
@@ -1299,7 +1301,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
         a = (1, 2 +  3)
         a = (1, 2 -  3)
         a = (1, 2 *  3)
-    N.B. : ce ne sont là que quelques-uns des choix possibles.
+    Remarque : ce ne sont là que quelques-uns des choix possibles et
+    certains d’entre eux pourraient soulever d’autres types d’exceptions.
 </pre></div>
 </div>
 </div>
@@ -1327,7 +1330,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: def a(b, c d):
                  ^
 
-    Python indique que l’erreur est causée par `c` écrit tout juste après `d`.
+    Python indique que l’erreur est causée par `d` écrit tout juste après `c`.
     Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;un tuple,
     ou entre les arguments d&#39;une fonction, avant la position indiquée par --&gt; et ^.
     Peut-être que vous vouliez plutôt

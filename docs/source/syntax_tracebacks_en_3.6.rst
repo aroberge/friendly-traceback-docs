@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.2.17a
+Friendly-traceback version: 0.2.19a
 Python version: 3.6.8
 
 
@@ -953,7 +953,7 @@ Missing comma in a dict
                  ^
        6:      }
 
-        Python indicates that the error is caused by `2` written immediately after `'c'`.
+        Python indicates that the error is caused by `'c'` written immediately after `2`.
         It is possible that you forgot a comma between items in a set or dict
         before the position indicated by --> and ^.
         Perhaps you meant
@@ -988,7 +988,7 @@ Missing comma in a set
     -->3: a = {1, 2  3}
                      ^
 
-        Python indicates that the error is caused by `2` written immediately after `3`.
+        Python indicates that the error is caused by `3` written immediately after `2`.
         It is possible that you forgot a comma between items in a set or dict
         before the position indicated by --> and ^.
         Perhaps you meant to insert an operator like `+, -, *`
@@ -999,7 +999,8 @@ Missing comma in a set
             a = {1, 2 +  3}
             a = {1, 2 -  3}
             a = {1, 2 *  3}
-        Note: these are just some of the possible choices.
+        Note: these are just some of the possible choices and that
+        some of them might raise other types of exceptions.
         
 
 Missing comma in a list
@@ -1029,7 +1030,7 @@ Missing comma in a list
     -->3: a = [1, 2  3]
                      ^
 
-        Python indicates that the error is caused by `2` written immediately after `3`.
+        Python indicates that the error is caused by `3` written immediately after `2`.
         It is possible that you forgot a comma between items in a list
         before the position indicated by --> and ^.
         Perhaps you meant to insert an operator like `+, -, *`
@@ -1040,7 +1041,8 @@ Missing comma in a list
             a = [1, 2 +  3]
             a = [1, 2 -  3]
             a = [1, 2 *  3]
-        Note: these are just some of the possible choices.
+        Note: these are just some of the possible choices and that
+        some of them might raise other types of exceptions.
         
 
 Missing comma in a tuple
@@ -1070,7 +1072,7 @@ Missing comma in a tuple
     -->3: a = (1, 2  3)
                      ^
 
-        Python indicates that the error is caused by `2` written immediately after `3`.
+        Python indicates that the error is caused by `3` written immediately after `2`.
         It is possible that you forgot a comma between items in a tuple, 
         or between function arguments, 
         before the position indicated by --> and ^.
@@ -1082,7 +1084,8 @@ Missing comma in a tuple
             a = (1, 2 +  3)
             a = (1, 2 -  3)
             a = (1, 2 *  3)
-        Note: these are just some of the possible choices.
+        Note: these are just some of the possible choices and that
+        some of them might raise other types of exceptions.
         
 
 Missing comma between function args
@@ -1113,7 +1116,7 @@ Missing comma between function args
     -->4: def a(b, c d):
                      ^
 
-        Python indicates that the error is caused by `c` written immediately after `d`.
+        Python indicates that the error is caused by `d` written immediately after `c`.
         It is possible that you forgot a comma between items in a tuple, 
         or between function arguments, 
         before the position indicated by --> and ^.

@@ -15,7 +15,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly-traceback version: 0.2.17a
+Friendly-traceback version: 0.2.19a
 Python version: 3.8.4
 
 
