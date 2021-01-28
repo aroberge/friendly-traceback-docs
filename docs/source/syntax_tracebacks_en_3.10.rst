@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.2.19a
+Friendly-traceback version: 0.2.21a
 Python version: 3.10.0a4
 
 
@@ -81,9 +81,7 @@ IndentationError: unexpected indent
     -->4:       pass
                ^
 
-        The line identified above
-        is more indented than expected and 
-        does not match the indentation of the previous line.
+        The line identified above is more indented than expected.
         
 
 IndentationError: unindent does not match ...
@@ -114,9 +112,44 @@ IndentationError: unindent does not match ...
     -->5:     pass
                   ^
 
-        The line identified above is
-        less indented than the preceding one,
-        and is not aligned vertically with another block of code.
+        The line identified above is less indented than expected.
+        
+
+IndentationError: missing continuation line
+-------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_indentation_error4.py", line 6
+        "c"
+       ^
+    IndentationError: unexpected indent
+    
+    An `IndentationError` occurs when a given line of code is
+    not indented (aligned vertically with other lines) as expected.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_indentation_error4.py'
+    beyond the location indicated by --> and ^.
+    
+       2: 
+       3: def f():
+       4:      s = "a"\
+       5:          "b"
+    -->6:          "c"
+                  ^
+
+        The line identified above is more indented than expected.
+        
+        However, line 6, which is identified as having a problem,
+        consists of a single string which is also the case
+        for the preceding line.
+        Perhaps you meant to include a continuation character, `\`,
+        at the end of line 5.
         
 
 TabError
@@ -150,6 +183,36 @@ TabError
        6:     if True:
     -->7: 	pass
          ^
+
+Assign to keyword
+-----------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error0.py", line 3
+        else = 1
+        ^
+    SyntaxError: invalid syntax
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error0.py'
+    beyond the location indicated by --> and ^.
+    
+       1: """ Should raise SyntaxError"""
+       2: 
+    -->3: else = 1
+          ^
+
+        You were trying to assign a value to the Python keyword `else`.
+        This is not allowed.
+        
+        
 
 Assign to keyword
 -----------------
@@ -663,7 +726,6 @@ Unclosed parenthesis - 1
        2: x = int('1'
     -->3: if x == 1:
                    ^
-       4:     print('yes')
 
         The opening parenthesis `(` on line 2 is not closed.
         
@@ -943,7 +1005,7 @@ Missing comma in a dict
         ^
     SyntaxError: invalid syntax
     
-        Did you forget a comma?
+        Did you mean `'2_'c''`?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -980,7 +1042,7 @@ Missing comma in a set
                    ^
     SyntaxError: invalid syntax
     
-        Did you forget something between `2` and `3`?
+        Did you mean `'2_3'`?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -1006,6 +1068,9 @@ Missing comma in a set
             a = {1, 2 *  3}
         Note: these are just some of the possible choices and that
         some of them might raise other types of exceptions.
+        Perhaps you forgot that you cannot have spaces
+        in variable names and wrote `'2 3'`
+        instead of `'2_3'`.
         
 
 Missing comma in a list
@@ -1022,7 +1087,7 @@ Missing comma in a list
                    ^
     SyntaxError: invalid syntax
     
-        Did you forget something between `2` and `3`?
+        Did you mean `'2_3'`?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -1048,6 +1113,9 @@ Missing comma in a list
             a = [1, 2 *  3]
         Note: these are just some of the possible choices and that
         some of them might raise other types of exceptions.
+        Perhaps you forgot that you cannot have spaces
+        in variable names and wrote `'2 3'`
+        instead of `'2_3'`.
         
 
 Missing comma in a tuple
@@ -1064,7 +1132,7 @@ Missing comma in a tuple
                    ^
     SyntaxError: invalid syntax
     
-        Did you forget something between `2` and `3`?
+        Did you mean `'2_3'`?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -1091,6 +1159,9 @@ Missing comma in a tuple
             a = (1, 2 *  3)
         Note: these are just some of the possible choices and that
         some of them might raise other types of exceptions.
+        Perhaps you forgot that you cannot have spaces
+        in variable names and wrote `'2 3'`
+        instead of `'2_3'`.
         
 
 Missing comma between function args
@@ -1128,6 +1199,9 @@ Missing comma between function args
         Perhaps you meant
         
             def a(b, c, d):
+        Perhaps you forgot that you cannot have spaces
+        in variable names and wrote `'c d'`
+        instead of `'c_d'`.
         
 
 Cannot assign to function call - 1
@@ -1372,12 +1446,12 @@ Unclosed bracket
     'TESTS:\syntax\raise_syntax_error36.py'
     beyond the location indicated by --> and ^.
     
-        3: 
-        4: def foo():
-        5:     return [1, 2, 3
-        6: 
-    --> 7: print(foo())
-           ^
+       3: 
+       4: def foo():
+       5:     return [1, 2, 3
+       6: 
+    -->7: print(foo())
+          ^
 
         The opening square bracket `[` on line 5 is not closed.
         
@@ -2826,12 +2900,12 @@ Unclosed parenthesis - 3
     'TESTS:\syntax\raise_syntax_error81.py'
     beyond the location indicated by --> and ^.
     
+       3: if 3:
        4:     if 1:
        5:         print(((123))
        6: 
     -->7: if 2:
               ^
-       8:     print(123))
 
         The opening parenthesis `(` on line 5 is not closed.
         
@@ -3271,4 +3345,288 @@ Invalid octal number
         In Python, hexadecimal numbers start with either `0o` or `0O`,
         (the digit zero followed by the letter `o`)
         followed by the characters used to represent the value of that integer.
+        
+
+Using a string as a function name
+---------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error96.py", line 3
+        def "function"():
+            ^
+    SyntaxError: invalid syntax
+    
+        You wrote an invalid function name.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error96.py'
+    beyond the location indicated by --> and ^.
+    
+       1: 
+       2: 
+    -->3: def "function"():
+              ^
+
+        The name of a function must be a valid Python identifier,
+        that is a name that begins with a letter or an underscore character, `_`,
+        and which contains only letters, digits or the underscore character.
+        You attempted to use a string as a function name.
+        
+
+Non-identifier as a function name
+---------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error97.py", line 3
+        def 2be():
+            ^
+    SyntaxError: invalid syntax
+    
+        You wrote an invalid function name.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error97.py'
+    beyond the location indicated by --> and ^.
+    
+       1: 
+       2: 
+    -->3: def 2be():
+              ^
+
+        The name of a function must be a valid Python identifier,
+        that is a name that begins with a letter or an underscore character, `_`,
+        and which contains only letters, digits or the underscore character.
+        
+
+Triple-equal sign
+-----------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error98.py", line 3
+        x = y === z
+                ^
+    SyntaxError: invalid syntax
+    
+        Did you mean to use `is` instead of `===`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error98.py'
+    beyond the location indicated by --> and ^.
+    
+       1: 
+       2: 
+    -->3: x = y === z
+                  ^
+
+        You wrote three equal signs in a row which is allowed in some
+        programming languages, but not in Python. To check if two objects
+        are equal, use two equal signs, `==`; to see if two names represent
+        the exact same object, use the operator `is`.
+        
+
+Two consecutive names
+---------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error99.py", line 3
+        if var start := begin < end:
+               ^
+    SyntaxError: invalid syntax
+    
+        Did you mean `'var_start'`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error99.py'
+    beyond the location indicated by --> and ^.
+    
+       1: begin, end = 1, 2
+       2: 
+    -->3: if var start := begin < end:
+                 ^
+
+        Perhaps you forgot that you cannot have spaces
+        in variable names and wrote `'var start'`
+        instead of `'var_start'`.
+        
+
+Using 'and' in import statement
+-------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error100.py", line 1
+        from math import sin and cos
+                             ^
+    SyntaxError: invalid syntax
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error100.py'
+    beyond the location indicated by --> and ^.
+    
+    -->1: from math import sin and cos
+                               ^
+
+        The Python keyword `and` can only be used for boolean expressions.
+        Perhaps you meant to write
+        
+        `from math import sin , cos`
+        
+
+Annotated name cannot be global
+-------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error101.py", line 4
+        x:int = 1
+        ^
+    SyntaxError: annotated name 'x' can't be global
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error101.py'
+    beyond the location indicated by --> and ^.
+    
+       1: # SyntaxError: annotated name 'x' can't be global
+       2: def foo():
+       3:     global x
+    -->4:     x:int = 1
+              ^
+
+        The object named `x` is defined with type annotation
+        as a local variable. It cannot be declared to be a global variable.
+        
+
+Two consecutive names
+---------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error102.py", line 5
+        var start := begin < end
+            ^
+    SyntaxError: invalid syntax
+    
+        Did you mean `'var_start'`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error102.py'
+    beyond the location indicated by --> and ^.
+    
+       2: end = 4
+       3: 
+       4: if (
+    -->5:     var start := begin < end
+                  ^
+       6:    ):
+
+        Python indicates that the error is caused by `start` written immediately after `var`.
+        It is possible that you forgot a comma between items in a tuple, 
+        or between function arguments, 
+        before the position indicated by --> and ^.
+        Perhaps you meant
+        
+            if (    var, start := begin < end   ):
+        Perhaps you forgot that you cannot have spaces
+        in variable names and wrote `'var start'`
+        instead of `'var_start'`.
+        
+
+Deleting constant/keyword
+-------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error103.py", line 1
+        del True
+            ^
+    SyntaxError: cannot delete True
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error103.py'
+    beyond the location indicated by --> and ^.
+    
+    -->1: del True
+              ^
+
+        You cannot delete the constant `True`.
+        
+
+Deleting literal
+----------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error104.py", line 1
+        del "Hello world!"
+            ^
+    SyntaxError: cannot delete literal
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error104.py'
+    beyond the location indicated by --> and ^.
+    
+    -->1: del "Hello world!"
+              ^
+
+        You cannot delete the literal `"Hello world!"`.
+        You can only delete the names of objects, or
+        individual items in a container.
         

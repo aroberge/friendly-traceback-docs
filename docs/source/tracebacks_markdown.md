@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.2.19a
+Friendly-traceback version: 0.2.21a
 Python version: 3.8.4
 
 
@@ -447,6 +447,44 @@ However, `a` has the following attributes with similar meanings:
 
 ```python
     a: [1, 2, 3]
+
+```
+
+### Using slots
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_attribute_error.py", line 225, in test_Using_slots
+    f.b = 1
+AttributeError: 'F' object has no attribute 'b'
+
+```
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+
+The object `f` has no attribute named `b`.
+Note that object `f` uses `__slots__` which prevents
+the creation of new attributes.
+The following are some of its known attributes:
+`a`.
+
+#### Exception raised on line 225 of file TESTS:\runtime\test_attribute_error.py.
+
+
+```python
+       223:     f = F()
+       224:     try:
+    -->225:         f.b = 1
+       226:     except Exception as e:
+
+```
+
+```python
+    f: <F object> from test_attribute_error.test_Using_slots
 
 ```
 
@@ -2013,6 +2051,7 @@ a value by zero:
 It can also happen if you calculate the remainder of a division
 using the modulo operator `%`:
     `result = my_variable % 0`
+or if you try to raise 0 to a negative power.
 
 
 #### Exception raised on line 6 of file TESTS:\runtime\test_zero_division_error.py.
@@ -2043,6 +2082,7 @@ a value by zero:
 It can also happen if you calculate the remainder of a division
 using the modulo operator `%`:
     `result = my_variable % 0`
+or if you try to raise 0 to a negative power.
 
 
 #### Exception raised on line 21 of file TESTS:\runtime\test_zero_division_error.py.

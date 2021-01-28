@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.console_helpers &mdash; Friendly tracebacks 0.2.19a documentation</title>
+  <title>friendly_traceback.console_helpers &mdash; Friendly tracebacks 0.2.21a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.2.19a
+                0.2.21a
               </div>
             
           
@@ -327,6 +327,15 @@
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span></div>
 
 
+<span class="k">def</span> <span class="nf">_get_statement</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;This returns a &#39;Statement&#39; instance obtained for SyntaxErrors and</span>
+<span class="sd">    subclasses.</span>
+
+<span class="sd">    This is not intended for end-users but is useful in development.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">tb_data</span><span class="o">.</span><span class="n">statement</span>
+
+
 <span class="n">get_lang</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_lang</span>
 <span class="n">set_lang</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_lang</span>
 <span class="n">get_include</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_include</span>
@@ -351,6 +360,7 @@
     <span class="s2">&quot;debug&quot;</span><span class="p">:</span> <span class="n">debug</span><span class="p">,</span>
     <span class="s2">&quot;show_paths&quot;</span><span class="p">:</span> <span class="n">show_paths</span><span class="p">,</span>
     <span class="s2">&quot;show_info&quot;</span><span class="p">:</span> <span class="n">show_info</span><span class="p">,</span>
+    <span class="s2">&quot;_get_statement&quot;</span><span class="p">:</span> <span class="n">_get_statement</span><span class="p">,</span>
 <span class="p">}</span>
 
 

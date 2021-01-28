@@ -22,7 +22,7 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.2.19a
+Friendly-traceback version: 0.2.21a
 Python version: 3.8.4
 
 
@@ -87,9 +87,7 @@ IndentationError: unexpected indent
     -->4:       pass
                ^
 
-        La ligne indiquée ci-dessus par -->
-        est plus indentée que ce qui était attendu et ne
-        correspond pas à l'indentation de la ligne précédente.
+        La ligne indiquée ci-dessus par --> est plus indentée que prévu.
         
 
 IndentationError: unindent does not match ...
@@ -121,9 +119,45 @@ IndentationError: unindent does not match ...
     -->5:     pass
                   ^
 
-        La ligne indiquée ci-dessus par -->
-        est moins indentée que la ligne précédente
-        et n’est pas alignée verticalement avec un autre bloc de code.
+        La ligne indiquée ci-dessus par --> est moins indentée que prévu.
+        
+
+IndentationError: missing continuation line
+-------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_indentation_error4.py", line 6
+        "c"
+       ^
+    IndentationError: unexpected indent
+    
+    Une exception de type `IndentationError` se produit lorsqu'une ligne de code
+    n'est pas indentée (c'est-à-dire alignée verticalement avec les autres lignes)
+    de la façon attendue.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_indentation_error4.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       2: 
+       3: def f():
+       4:      s = "a"\
+       5:          "b"
+    -->6:          "c"
+                  ^
+
+        La ligne indiquée ci-dessus par --> est plus indentée que prévu.
+        
+        Toutefois, la ligne 6, qui est identifiée comme ayant un problème,
+        se compose d’une seule chaîne, ce qui est également le cas
+        pour la ligne précédente.
+        Peut-être que vous vouliez inclure un caractère de continuation, '\',
+        à la fin de la ligne 5.
         
 
 TabError
@@ -158,6 +192,36 @@ TabError
        6:     if True:
     -->7: 	pass
                ^
+
+Assign to keyword
+-----------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error0.py", line 3
+        else = 1
+        ^
+    SyntaxError: invalid syntax
+    
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error0.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: """ Should raise SyntaxError"""
+       2: 
+    -->3: else = 1
+          ^
+
+        Vous essayiez d’assigner une valeur au mot clé Python `else`.
+        Ceci n’est pas permis.
+        
+        
 
 Assign to keyword
 -----------------
@@ -669,7 +733,6 @@ Unclosed parenthesis - 1
        2: x = int('1'
     -->3: if x == 1:
                    ^
-       4:     print('yes')
 
         Le symbole parenthèse `(` à la ligne 2 n'est pas fermé par le symbole correspondant.
         
@@ -953,7 +1016,7 @@ Missing comma in a dict
         ^
     SyntaxError: invalid syntax
     
-        Avez-vous oublié une virgule ?
+        Vouliez-vous dire `'2_'c''` ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -990,7 +1053,7 @@ Missing comma in a set
                    ^
     SyntaxError: invalid syntax
     
-        Avez-vous oublié quelque chose entre `2` et `3` ?
+        Vouliez-vous dire `'2_3'` ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1016,6 +1079,9 @@ Missing comma in a set
             a = {1, 2 *  3}
         Remarque : ce ne sont là que quelques-uns des choix possibles et
         certains d’entre eux pourraient soulever d’autres types d’exceptions.
+        Peut-être avez-vous oublié que vous ne pouvez pas
+        avoir d'espaces dans des noms variables et avez écrit `'2 3'`
+        au lieu de `'2_3'`.
         
 
 Missing comma in a list
@@ -1032,7 +1098,7 @@ Missing comma in a list
                    ^
     SyntaxError: invalid syntax
     
-        Avez-vous oublié quelque chose entre `2` et `3` ?
+        Vouliez-vous dire `'2_3'` ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1058,6 +1124,9 @@ Missing comma in a list
             a = [1, 2 *  3]
         Remarque : ce ne sont là que quelques-uns des choix possibles et
         certains d’entre eux pourraient soulever d’autres types d’exceptions.
+        Peut-être avez-vous oublié que vous ne pouvez pas
+        avoir d'espaces dans des noms variables et avez écrit `'2 3'`
+        au lieu de `'2_3'`.
         
 
 Missing comma in a tuple
@@ -1074,7 +1143,7 @@ Missing comma in a tuple
                    ^
     SyntaxError: invalid syntax
     
-        Avez-vous oublié quelque chose entre `2` et `3` ?
+        Vouliez-vous dire `'2_3'` ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1100,6 +1169,9 @@ Missing comma in a tuple
             a = (1, 2 *  3)
         Remarque : ce ne sont là que quelques-uns des choix possibles et
         certains d’entre eux pourraient soulever d’autres types d’exceptions.
+        Peut-être avez-vous oublié que vous ne pouvez pas
+        avoir d'espaces dans des noms variables et avez écrit `'2 3'`
+        au lieu de `'2_3'`.
         
 
 Missing comma between function args
@@ -1136,6 +1208,9 @@ Missing comma between function args
         Peut-être que vous vouliez plutôt
         
             def a(b, c, d):
+        Peut-être avez-vous oublié que vous ne pouvez pas
+        avoir d'espaces dans des noms variables et avez écrit `'c d'`
+        au lieu de `'c_d'`.
         
 
 Cannot assign to function call - 1
@@ -1381,12 +1456,12 @@ Unclosed bracket
     'TESTS:\syntax\raise_syntax_error36.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
-        3: 
-        4: def foo():
-        5:     return [1, 2, 3
-        6: 
-    --> 7: print(foo())
-           ^
+       3: 
+       4: def foo():
+       5:     return [1, 2, 3
+       6: 
+    -->7: print(foo())
+          ^
 
         Le symbole crochet `[` à la ligne 5 n'est pas fermé par le symbole correspondant.
         
@@ -2841,12 +2916,12 @@ Unclosed parenthesis - 3
     'TESTS:\syntax\raise_syntax_error81.py'
     jusqu'à l'endroit indiqué par --> et ^.
     
+       3: if 3:
        4:     if 1:
        5:         print(((123))
        6: 
     -->7: if 2:
               ^
-       8:     print(123))
 
         Le symbole parenthèse `(` à la ligne 5 n'est pas fermé par le symbole correspondant.
         
@@ -3273,4 +3348,287 @@ Invalid octal number
         Dans Python, les nombres octaux commencent par `0o` ou `0O`,
         (le chiffre zéro suivi de la lettre `o`)
         suivi des caractères utilisés pour représenter la valeur de cet entier.
+        
+
+Using a string as a function name
+---------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error96.py", line 3
+        def "function"():
+            ^
+    SyntaxError: invalid syntax
+    
+        Vous avez écrit un nom de fonction invalide.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error96.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: 
+       2: 
+    -->3: def "function"():
+              ^
+
+        Le nom d’une fonction doit être un identificateur Python valide,
+        c’est-à-dire un nom qui commence par une lettre ou un caractère de soulignement, `_`,
+        et qui ne contient que des lettres, des chiffres ou le caractère de soulignement.
+        Vous avez essayé d’utiliser une chaîne de caractères comme nom de fonction.
+        
+
+Non-identifier as a function name
+---------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error97.py", line 3
+        def 2be():
+            ^
+    SyntaxError: invalid syntax
+    
+        Vous avez écrit un nom de fonction invalide.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error97.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: 
+       2: 
+    -->3: def 2be():
+              ^
+
+        Le nom d’une fonction doit être un identificateur Python valide,
+        c’est-à-dire un nom qui commence par une lettre ou un caractère de soulignement, `_`,
+        et qui ne contient que des lettres, des chiffres ou le caractère de soulignement.
+        
+
+Triple-equal sign
+-----------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error98.py", line 3
+        x = y === z
+                ^
+    SyntaxError: invalid syntax
+    
+        Voulez-vous utiliser `is` au lieu de `===`?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error98.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: 
+       2: 
+    -->3: x = y === z
+                  ^
+
+        Vous avez écrit trois signes égaux de suite ce qui est utilisé dans certains
+        langages de programmation, mais pas en Python. Pour vérifier si deux objets
+        sont égaux, utilisent deux signes d'égalité, `==`; pour voir si deux noms représentent
+        exactement le même objet, utilisez l’opérateur `is`.
+        
+
+Two consecutive names
+---------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error99.py", line 3
+        if var start := begin < end:
+               ^
+    SyntaxError: invalid syntax
+    
+        Vouliez-vous dire `'var_start'` ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error99.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: begin, end = 1, 2
+       2: 
+    -->3: if var start := begin < end:
+                 ^
+
+        Peut-être avez-vous oublié que vous ne pouvez pas
+        avoir d'espaces dans des noms variables et avez écrit `'var start'`
+        au lieu de `'var_start'`.
+        
+
+Using 'and' in import statement
+-------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error100.py", line 1
+        from math import sin and cos
+                             ^
+    SyntaxError: invalid syntax
+    
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error100.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+    -->1: from math import sin and cos
+                               ^
+
+        Le mot clé Python `and` ne peut être utilisé que pour les expressions booléennes.
+        Peut-être que vous vouliez écrire
+        
+        `from math import sin , cos`
+        
+
+Annotated name cannot be global
+-------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error101.py", line 4
+        x:int = 1
+        ^
+    SyntaxError: annotated name 'x' can't be global
+    
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error101.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       1: # SyntaxError: annotated name 'x' can't be global
+       2: def foo():
+       3:     global x
+    -->4:     x:int = 1
+              ^
+
+        L’objet nommé `x` est défini avec une annotation de type
+        comme une variable locale. Il ne peut pas être déclaré variable globale.
+        
+
+Two consecutive names
+---------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error102.py", line 5
+        var start := begin < end
+            ^
+    SyntaxError: invalid syntax
+    
+        Vouliez-vous dire `'var_start'` ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error102.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+       2: end = 4
+       3: 
+       4: if (
+    -->5:     var start := begin < end
+                  ^
+       6:    ):
+
+        Python indique que l’erreur est causée par `start` écrit tout juste après `var`.
+        Il est également possible que vous ayez oublié une virgule entre les éléments d'un tuple,
+        ou entre les arguments d'une fonction, avant la position indiquée par --> et ^.
+        Peut-être que vous vouliez plutôt
+        
+            if (    var, start := begin < end   ):
+        Peut-être avez-vous oublié que vous ne pouvez pas
+        avoir d'espaces dans des noms variables et avez écrit `'var start'`
+        au lieu de `'var_start'`.
+        
+
+Deleting constant/keyword
+-------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error103.py", line 1
+        del True
+            ^
+    SyntaxError: cannot delete True
+    
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error103.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+    -->1: del True
+              ^
+
+        Vous ne pouvez pas supprimer la constante `True`.
+        
+
+Deleting literal
+----------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error104.py", line 1
+        del "Hello world!"
+            ^
+    SyntaxError: cannot delete literal
+    
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error104.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+    -->1: del "Hello world!"
+              ^
+
+        Vous ne pouvez pas supprimer le littéral `"Hello world!"`.
+        Vous ne pouvez supprimer que les noms d’objets, ou
+        des items individuels dans un conteneur.
         

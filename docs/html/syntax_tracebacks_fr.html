@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.2.19a documentation</title>
+  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.2.21a documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.2.19a
+                0.2.21a
               </div>
             
           
@@ -144,8 +144,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-expected-an-indented-block">IndentationError: expected an indented block</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-unexpected-indent">IndentationError: unexpected indent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-unindent-does-not-match">IndentationError: unindent does not match …</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#indentationerror-missing-continuation-line">IndentationError: missing continuation line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#taberror">TabError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#assign-to-keyword">Assign to keyword</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Assign to keyword</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-colon-if">Missing colon - if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-colon-while">Missing colon - while</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#write-elif-not-else-if">Write elif, not else if</a></li>
@@ -240,6 +242,15 @@
 <li class="toctree-l2"><a class="reference internal" href="#not-a-chance">Not a chance!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#future-at-beginning">__future__ at beginning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#invalid-octal-number">Invalid octal number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-a-string-as-a-function-name">Using a string as a function name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#non-identifier-as-a-function-name">Non-identifier as a function name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#triple-equal-sign">Triple-equal sign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#two-consecutive-names">Two consecutive names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-and-in-import-statement">Using ‘and’ in import statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annotated-name-cannot-be-global">Annotated name cannot be global</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Two consecutive names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-constant-keyword">Deleting constant/keyword</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-literal">Deleting literal</a></li>
 </ul>
 </li>
 </ul>
@@ -335,7 +346,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.2.19a
+<p>Friendly-traceback version: 0.2.21a
 Python version: 3.8.4</p>
 <div class="section" id="indentationerror-expected-an-indented-block">
 <h2>IndentationError: expected an indented block<a class="headerlink" href="#indentationerror-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -390,9 +401,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:       pass
            ^
 
-    La ligne indiquée ci-dessus par --&gt;
-    est plus indentée que ce qui était attendu et ne
-    correspond pas à l&#39;indentation de la ligne précédente.
+    La ligne indiquée ci-dessus par --&gt; est plus indentée que prévu.
 </pre></div>
 </div>
 </div>
@@ -421,9 +430,42 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5:     pass
               ^
 
-    La ligne indiquée ci-dessus par --&gt;
-    est moins indentée que la ligne précédente
-    et n’est pas alignée verticalement avec un autre bloc de code.
+    La ligne indiquée ci-dessus par --&gt; est moins indentée que prévu.
+</pre></div>
+</div>
+</div>
+<div class="section" id="indentationerror-missing-continuation-line">
+<h2>IndentationError: missing continuation line<a class="headerlink" href="#indentationerror-missing-continuation-line" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_indentation_error4.py&quot;, line 6
+    &quot;c&quot;
+   ^
+IndentationError: unexpected indent
+
+Une exception de type `IndentationError` se produit lorsqu&#39;une ligne de code
+n&#39;est pas indentée (c&#39;est-à-dire alignée verticalement avec les autres lignes)
+de la façon attendue.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_indentation_error4.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   2:
+   3: def f():
+   4:      s = &quot;a&quot;\
+   5:          &quot;b&quot;
+--&gt;6:          &quot;c&quot;
+              ^
+
+    La ligne indiquée ci-dessus par --&gt; est plus indentée que prévu.
+
+    Toutefois, la ligne 6, qui est identifiée comme ayant un problème,
+    se compose d’une seule chaîne, ce qui est également le cas
+    pour la ligne précédente.
+    Peut-être que vous vouliez inclure un caractère de continuation, &#39;\&#39;,
+    à la fin de la ligne 5.
 </pre></div>
 </div>
 </div>
@@ -460,6 +502,32 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 </div>
 <div class="section" id="assign-to-keyword">
 <h2>Assign to keyword<a class="headerlink" href="#assign-to-keyword" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error0.py&quot;, line 3
+    else = 1
+    ^
+SyntaxError: invalid syntax
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error0.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: &quot;&quot;&quot; Should raise SyntaxError&quot;&quot;&quot;
+   2:
+--&gt;3: else = 1
+      ^
+
+    Vous essayiez d’assigner une valeur au mot clé Python `else`.
+    Ceci n’est pas permis.
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Assign to keyword<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
     mod = __import__(name)
@@ -909,7 +977,6 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
    2: x = int(&#39;1&#39;
 --&gt;3: if x == 1:
                ^
-   4:     print(&#39;yes&#39;)
 
     Le symbole parenthèse `(` à la ligne 2 n&#39;est pas fermé par le symbole correspondant.
 
@@ -1165,7 +1232,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     ^
 SyntaxError: invalid syntax
 
-    Avez-vous oublié une virgule ?
+    Vouliez-vous dire `&#39;2_&#39;c&#39;&#39;` ?
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -1199,7 +1266,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                ^
 SyntaxError: invalid syntax
 
-    Avez-vous oublié quelque chose entre `2` et `3` ?
+    Vouliez-vous dire `&#39;2_3&#39;` ?
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -1225,6 +1292,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
         a = {1, 2 *  3}
     Remarque : ce ne sont là que quelques-uns des choix possibles et
     certains d’entre eux pourraient soulever d’autres types d’exceptions.
+    Peut-être avez-vous oublié que vous ne pouvez pas
+    avoir d&#39;espaces dans des noms variables et avez écrit `&#39;2 3&#39;`
+    au lieu de `&#39;2_3&#39;`.
 </pre></div>
 </div>
 </div>
@@ -1238,7 +1308,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                ^
 SyntaxError: invalid syntax
 
-    Avez-vous oublié quelque chose entre `2` et `3` ?
+    Vouliez-vous dire `&#39;2_3&#39;` ?
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -1264,6 +1334,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
         a = [1, 2 *  3]
     Remarque : ce ne sont là que quelques-uns des choix possibles et
     certains d’entre eux pourraient soulever d’autres types d’exceptions.
+    Peut-être avez-vous oublié que vous ne pouvez pas
+    avoir d&#39;espaces dans des noms variables et avez écrit `&#39;2 3&#39;`
+    au lieu de `&#39;2_3&#39;`.
 </pre></div>
 </div>
 </div>
@@ -1277,7 +1350,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
                ^
 SyntaxError: invalid syntax
 
-    Avez-vous oublié quelque chose entre `2` et `3` ?
+    Vouliez-vous dire `&#39;2_3&#39;` ?
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -1303,6 +1376,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
         a = (1, 2 *  3)
     Remarque : ce ne sont là que quelques-uns des choix possibles et
     certains d’entre eux pourraient soulever d’autres types d’exceptions.
+    Peut-être avez-vous oublié que vous ne pouvez pas
+    avoir d&#39;espaces dans des noms variables et avez écrit `&#39;2 3&#39;`
+    au lieu de `&#39;2_3&#39;`.
 </pre></div>
 </div>
 </div>
@@ -1336,6 +1412,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     Peut-être que vous vouliez plutôt
 
         def a(b, c, d):
+    Peut-être avez-vous oublié que vous ne pouvez pas
+    avoir d&#39;espaces dans des noms variables et avez écrit `&#39;c d&#39;`
+    au lieu de `&#39;c_d&#39;`.
 </pre></div>
 </div>
 </div>
@@ -1560,12 +1639,12 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error36.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
-    3:
-    4: def foo():
-    5:     return [1, 2, 3
-    6:
---&gt; 7: print(foo())
-       ^
+   3:
+   4: def foo():
+   5:     return [1, 2, 3
+   6:
+--&gt;7: print(foo())
+      ^
 
     Le symbole crochet `[` à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
 
@@ -2880,12 +2959,12 @@ Python peut seulement comprendre le code du fichier
 &#39;TESTS:\syntax\raise_syntax_error81.py&#39;
 jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 
+   3: if 3:
    4:     if 1:
    5:         print(((123))
    6:
 --&gt;7: if 2:
           ^
-   8:     print(123))
 
     Le symbole parenthèse `(` à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
 
@@ -3270,6 +3349,262 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     Dans Python, les nombres octaux commencent par `0o` ou `0O`,
     (le chiffre zéro suivi de la lettre `o`)
     suivi des caractères utilisés pour représenter la valeur de cet entier.
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-a-string-as-a-function-name">
+<h2>Using a string as a function name<a class="headerlink" href="#using-a-string-as-a-function-name" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error96.py&quot;, line 3
+    def &quot;function&quot;():
+        ^
+SyntaxError: invalid syntax
+
+    Vous avez écrit un nom de fonction invalide.
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error96.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1:
+   2:
+--&gt;3: def &quot;function&quot;():
+          ^
+
+    Le nom d’une fonction doit être un identificateur Python valide,
+    c’est-à-dire un nom qui commence par une lettre ou un caractère de soulignement, `_`,
+    et qui ne contient que des lettres, des chiffres ou le caractère de soulignement.
+    Vous avez essayé d’utiliser une chaîne de caractères comme nom de fonction.
+</pre></div>
+</div>
+</div>
+<div class="section" id="non-identifier-as-a-function-name">
+<h2>Non-identifier as a function name<a class="headerlink" href="#non-identifier-as-a-function-name" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error97.py&quot;, line 3
+    def 2be():
+        ^
+SyntaxError: invalid syntax
+
+    Vous avez écrit un nom de fonction invalide.
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error97.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1:
+   2:
+--&gt;3: def 2be():
+          ^
+
+    Le nom d’une fonction doit être un identificateur Python valide,
+    c’est-à-dire un nom qui commence par une lettre ou un caractère de soulignement, `_`,
+    et qui ne contient que des lettres, des chiffres ou le caractère de soulignement.
+</pre></div>
+</div>
+</div>
+<div class="section" id="triple-equal-sign">
+<h2>Triple-equal sign<a class="headerlink" href="#triple-equal-sign" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error98.py&quot;, line 3
+    x = y === z
+            ^
+SyntaxError: invalid syntax
+
+    Voulez-vous utiliser `is` au lieu de `===`?
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error98.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1:
+   2:
+--&gt;3: x = y === z
+              ^
+
+    Vous avez écrit trois signes égaux de suite ce qui est utilisé dans certains
+    langages de programmation, mais pas en Python. Pour vérifier si deux objets
+    sont égaux, utilisent deux signes d&#39;égalité, `==`; pour voir si deux noms représentent
+    exactement le même objet, utilisez l’opérateur `is`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="two-consecutive-names">
+<h2>Two consecutive names<a class="headerlink" href="#two-consecutive-names" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error99.py&quot;, line 3
+    if var start := begin &lt; end:
+           ^
+SyntaxError: invalid syntax
+
+    Vouliez-vous dire `&#39;var_start&#39;` ?
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error99.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: begin, end = 1, 2
+   2:
+--&gt;3: if var start := begin &lt; end:
+             ^
+
+    Peut-être avez-vous oublié que vous ne pouvez pas
+    avoir d&#39;espaces dans des noms variables et avez écrit `&#39;var start&#39;`
+    au lieu de `&#39;var_start&#39;`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-and-in-import-statement">
+<h2>Using ‘and’ in import statement<a class="headerlink" href="#using-and-in-import-statement" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error100.py&quot;, line 1
+    from math import sin and cos
+                         ^
+SyntaxError: invalid syntax
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error100.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+--&gt;1: from math import sin and cos
+                           ^
+
+    Le mot clé Python `and` ne peut être utilisé que pour les expressions booléennes.
+    Peut-être que vous vouliez écrire
+
+    `from math import sin , cos`
+</pre></div>
+</div>
+</div>
+<div class="section" id="annotated-name-cannot-be-global">
+<h2>Annotated name cannot be global<a class="headerlink" href="#annotated-name-cannot-be-global" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error101.py&quot;, line 4
+    x:int = 1
+    ^
+SyntaxError: annotated name &#39;x&#39; can&#39;t be global
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error101.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: # SyntaxError: annotated name &#39;x&#39; can&#39;t be global
+   2: def foo():
+   3:     global x
+--&gt;4:     x:int = 1
+          ^
+
+    L’objet nommé `x` est défini avec une annotation de type
+    comme une variable locale. Il ne peut pas être déclaré variable globale.
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Two consecutive names<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error102.py&quot;, line 5
+    var start := begin &lt; end
+        ^
+SyntaxError: invalid syntax
+
+    Vouliez-vous dire `&#39;var_start&#39;` ?
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error102.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   2: end = 4
+   3:
+   4: if (
+--&gt;5:     var start := begin &lt; end
+              ^
+   6:    ):
+
+    Python indique que l’erreur est causée par `start` écrit tout juste après `var`.
+    Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;un tuple,
+    ou entre les arguments d&#39;une fonction, avant la position indiquée par --&gt; et ^.
+    Peut-être que vous vouliez plutôt
+
+        if (    var, start := begin &lt; end   ):
+    Peut-être avez-vous oublié que vous ne pouvez pas
+    avoir d&#39;espaces dans des noms variables et avez écrit `&#39;var start&#39;`
+    au lieu de `&#39;var_start&#39;`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="deleting-constant-keyword">
+<h2>Deleting constant/keyword<a class="headerlink" href="#deleting-constant-keyword" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error103.py&quot;, line 1
+    del True
+        ^
+SyntaxError: cannot delete True
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error103.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+--&gt;1: del True
+          ^
+
+    Vous ne pouvez pas supprimer la constante `True`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="deleting-literal">
+<h2>Deleting literal<a class="headerlink" href="#deleting-literal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error104.py&quot;, line 1
+    del &quot;Hello world!&quot;
+        ^
+SyntaxError: cannot delete literal
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error104.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+--&gt;1: del &quot;Hello world!&quot;
+          ^
+
+    Vous ne pouvez pas supprimer le littéral `&quot;Hello world!&quot;`.
+    Vous ne pouvez supprimer que les noms d’objets, ou
+    des items individuels dans un conteneur.
 </pre></div>
 </div>
 </div>

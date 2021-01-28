@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Syntax errors - markdown_docs format &mdash; Friendly tracebacks 0.2.19a documentation</title>
+  <title>Syntax errors - markdown_docs format &mdash; Friendly tracebacks 0.2.21a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.19a
+                0.2.21a
               </div>
             
           
@@ -140,8 +140,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-expected-an-indented-block">IndentationError: expected an indented block</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-unexpected-indent">IndentationError: unexpected indent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-unindent-does-not-match">IndentationError: unindent does not match …</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#indentationerror-missing-continuation-line">IndentationError: missing continuation line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#taberror">TabError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#assign-to-keyword">Assign to keyword</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Assign to keyword</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-colon-if">Missing colon - if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-colon-while">Missing colon - while</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#write-elif-not-else-if">Write elif, not else if</a></li>
@@ -236,6 +238,15 @@
 <li class="toctree-l2"><a class="reference internal" href="#not-a-chance">Not a chance!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#future-at-beginning"><strong>future</strong> at beginning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#invalid-octal-number">Invalid octal number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-a-string-as-a-function-name">Using a string as a function name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#non-identifier-as-a-function-name">Non-identifier as a function name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#triple-equal-sign">Triple-equal sign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#two-consecutive-names">Two consecutive names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-and-in-import-statement">Using ‘and’ in import statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annotated-name-cannot-be-global">Annotated name cannot be global</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Two consecutive names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-constant-keyword">Deleting constant/keyword</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-literal">Deleting literal</a></li>
 </ul>
 </li>
 </ul>
@@ -326,7 +337,7 @@ trb_syntax_markdown.py located in the <code class="docutils literal notranslate"
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.
 </p>
-</div><p>Friendly-traceback version: 0.2.19a
+</div><p>Friendly-traceback version: 0.2.21a
 Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="indentationerror-expected-an-indented-block">
@@ -379,9 +390,7 @@ beyond the location indicated by –&gt; and ^.</p>
                <span class="o">^</span>
 </pre></div>
 </div>
-<p>The line identified above
-is more indented than expected and
-does not match the indentation of the previous line.</p>
+<p>The line identified above is more indented than expected.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="indentationerror-unindent-does-not-match">
@@ -408,9 +417,39 @@ beyond the location indicated by –&gt; and ^.</p>
                   <span class="o">^</span>
 </pre></div>
 </div>
-<p>The line identified above is
-less indented than the preceding one,
-and is not aligned vertically with another block of code.</p>
+<p>The line identified above is less indented than expected.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="indentationerror-missing-continuation-line">
+<h2>IndentationError: missing continuation line<a class="headerlink" href="#indentationerror-missing-continuation-line" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_indentation_error4.py&quot;</span>, line <span class="m">6</span>
+    <span class="s2">&quot;c&quot;</span>
+<span class="gr">   ^</span>
+<span class="gr">IndentationError</span>: <span class="n">unexpected indent</span>
+</pre></div>
+</div>
+<p>An <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> occurs when a given line of code is
+not indented (aligned vertically with other lines) as expected.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_indentation_error4.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> 
+       <span class="mi">3</span><span class="p">:</span> <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+       <span class="mi">4</span><span class="p">:</span>      <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>\
+       <span class="mi">5</span><span class="p">:</span>          <span class="s2">&quot;b&quot;</span>
+    <span class="o">--&gt;</span><span class="mi">6</span><span class="p">:</span>          <span class="s2">&quot;c&quot;</span>
+                  <span class="o">^</span>
+</pre></div>
+</div>
+<p>The line identified above is more indented than expected.</p>
+<p>However, line 6, which is identified as having a problem,
+consists of a single string which is also the case
+for the preceding line.
+Perhaps you meant to include a continuation character, <code class="docutils literal notranslate"><span class="pre">\</span></code>,
+at the end of line 5.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="taberror">
@@ -445,6 +484,31 @@ beyond the location indicated by –&gt; and ^.</p>
 <hr class="docutils" />
 <div class="section" id="assign-to-keyword">
 <h2>Assign to keyword<a class="headerlink" href="#assign-to-keyword" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error0.py&quot;</span>, line <span class="m">3</span>
+    <span class="k">else</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error0.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot; Should raise SyntaxError&quot;&quot;&quot;</span>
+       <span class="mi">2</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="k">else</span> <span class="o">=</span> <span class="mi">1</span>
+          <span class="o">^</span>
+</pre></div>
+</div>
+<p>You were trying to assign a value to the Python keyword <code class="docutils literal notranslate"><span class="pre">else</span></code>.
+This is not allowed.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h2>Assign to keyword<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -879,7 +943,6 @@ beyond the location indicated by –&gt; and ^.</p>
        <span class="mi">2</span><span class="p">:</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;1&#39;</span>
     <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                    <span class="o">^</span>
-       <span class="mi">4</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;yes&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The opening parenthesis <code class="docutils literal notranslate"><span class="pre">(</span></code> on line 2 is not closed.</p>
@@ -1123,7 +1186,7 @@ that was enclosed in quotes of the same kind.</p>
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
-<p>Did you forget a comma?</p>
+<p>Did you mean <code class="docutils literal notranslate"><span class="pre">'2_'c''</span></code>?</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error25.py’
@@ -1156,7 +1219,7 @@ Perhaps you meant</p>
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
-<p>Did you forget something between <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code>?</p>
+<p>Did you mean <code class="docutils literal notranslate"><span class="pre">'2_3'</span></code>?</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error26.py’
@@ -1180,7 +1243,10 @@ The following lines of code would not cause any <code class="docutils literal no
 </pre></div>
 </div>
 <p>Note: these are just some of the possible choices and that
-some of them might raise other types of exceptions.</p>
+some of them might raise other types of exceptions.
+Perhaps you forgot that you cannot have spaces
+in variable names and wrote <code class="docutils literal notranslate"><span class="pre">'2</span> <span class="pre">3'</span></code>
+instead of <code class="docutils literal notranslate"><span class="pre">'2_3'</span></code>.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="missing-comma-in-a-list">
@@ -1194,7 +1260,7 @@ some of them might raise other types of exceptions.</p>
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
-<p>Did you forget something between <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code>?</p>
+<p>Did you mean <code class="docutils literal notranslate"><span class="pre">'2_3'</span></code>?</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error27.py’
@@ -1218,7 +1284,10 @@ The following lines of code would not cause any <code class="docutils literal no
 </pre></div>
 </div>
 <p>Note: these are just some of the possible choices and that
-some of them might raise other types of exceptions.</p>
+some of them might raise other types of exceptions.
+Perhaps you forgot that you cannot have spaces
+in variable names and wrote <code class="docutils literal notranslate"><span class="pre">'2</span> <span class="pre">3'</span></code>
+instead of <code class="docutils literal notranslate"><span class="pre">'2_3'</span></code>.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="missing-comma-in-a-tuple">
@@ -1232,7 +1301,7 @@ some of them might raise other types of exceptions.</p>
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
-<p>Did you forget something between <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code>?</p>
+<p>Did you mean <code class="docutils literal notranslate"><span class="pre">'2_3'</span></code>?</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error28.py’
@@ -1257,7 +1326,10 @@ The following lines of code would not cause any <code class="docutils literal no
 </pre></div>
 </div>
 <p>Note: these are just some of the possible choices and that
-some of them might raise other types of exceptions.</p>
+some of them might raise other types of exceptions.
+Perhaps you forgot that you cannot have spaces
+in variable names and wrote <code class="docutils literal notranslate"><span class="pre">'2</span> <span class="pre">3'</span></code>
+instead of <code class="docutils literal notranslate"><span class="pre">'2_3'</span></code>.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="missing-comma-between-function-args">
@@ -1291,6 +1363,9 @@ Perhaps you meant</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
 </pre></div>
 </div>
+<p>Perhaps you forgot that you cannot have spaces
+in variable names and wrote <code class="docutils literal notranslate"><span class="pre">'c</span> <span class="pre">d'</span></code>
+instead of <code class="docutils literal notranslate"><span class="pre">'c_d'</span></code>.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="cannot-assign-to-function-call-1">
@@ -1505,12 +1580,12 @@ single quote (‘) or double quote (“), without a matching closing one.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error36.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="mi">3</span><span class="p">:</span> 
-        <span class="mi">4</span><span class="p">:</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
-        <span class="mi">5</span><span class="p">:</span>     <span class="k">return</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
-        <span class="mi">6</span><span class="p">:</span> 
-    <span class="o">--&gt;</span> <span class="mi">7</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">foo</span><span class="p">())</span>
-           <span class="o">^</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">3</span><span class="p">:</span> 
+       <span class="mi">4</span><span class="p">:</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+       <span class="mi">5</span><span class="p">:</span>     <span class="k">return</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+       <span class="mi">6</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">foo</span><span class="p">())</span>
+          <span class="o">^</span>
 </pre></div>
 </div>
 <p>The opening square bracket <code class="docutils literal notranslate"><span class="pre">[</span></code> on line 5 is not closed.</p>
@@ -2769,12 +2844,12 @@ beyond the location indicated by –&gt; and ^.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\raise_syntax_error81.py’
 beyond the location indicated by –&gt; and ^.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">4</span><span class="p">:</span>     <span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">3</span><span class="p">:</span> <span class="k">if</span> <span class="mi">3</span><span class="p">:</span>
+       <span class="mi">4</span><span class="p">:</span>     <span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
        <span class="mi">5</span><span class="p">:</span>         <span class="nb">print</span><span class="p">(((</span><span class="mi">123</span><span class="p">))</span>
        <span class="mi">6</span><span class="p">:</span> 
     <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span> <span class="k">if</span> <span class="mi">2</span><span class="p">:</span>
               <span class="o">^</span>
-       <span class="mi">8</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="mi">123</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>The opening parenthesis <code class="docutils literal notranslate"><span class="pre">(</span></code> on line 5 is not closed.</p>
@@ -3135,6 +3210,249 @@ to represent values.
 In Python, hexadecimal numbers start with either <code class="docutils literal notranslate"><span class="pre">0o</span></code> or <code class="docutils literal notranslate"><span class="pre">0O</span></code>,
 (the digit zero followed by the letter <code class="docutils literal notranslate"><span class="pre">o</span></code>)
 followed by the characters used to represent the value of that integer.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="using-a-string-as-a-function-name">
+<h2>Using a string as a function name<a class="headerlink" href="#using-a-string-as-a-function-name" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error96.py&quot;</span>, line <span class="m">3</span>
+    <span class="k">def</span> <span class="s2">&quot;function&quot;</span><span class="p">():</span>
+        <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>You wrote an invalid function name.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error96.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> 
+       <span class="mi">2</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="k">def</span> <span class="s2">&quot;function&quot;</span><span class="p">():</span>
+              <span class="o">^</span>
+</pre></div>
+</div>
+<p>The name of a function must be a valid Python identifier,
+that is a name that begins with a letter or an underscore character, <code class="docutils literal notranslate"><span class="pre">_</span></code>,
+and which contains only letters, digits or the underscore character.
+You attempted to use a string as a function name.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="non-identifier-as-a-function-name">
+<h2>Non-identifier as a function name<a class="headerlink" href="#non-identifier-as-a-function-name" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error97.py&quot;</span>, line <span class="m">3</span>
+    <span class="k">def</span> <span class="mi">2</span><span class="n">be</span><span class="p">():</span>
+        <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>You wrote an invalid function name.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error97.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> 
+       <span class="mi">2</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="k">def</span> <span class="mi">2</span><span class="n">be</span><span class="p">():</span>
+              <span class="o">^</span>
+</pre></div>
+</div>
+<p>The name of a function must be a valid Python identifier,
+that is a name that begins with a letter or an underscore character, <code class="docutils literal notranslate"><span class="pre">_</span></code>,
+and which contains only letters, digits or the underscore character.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="triple-equal-sign">
+<h2>Triple-equal sign<a class="headerlink" href="#triple-equal-sign" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error98.py&quot;</span>, line <span class="m">3</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">===</span> <span class="n">z</span>
+            <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>Did you mean to use <code class="docutils literal notranslate"><span class="pre">is</span></code> instead of <code class="docutils literal notranslate"><span class="pre">===</span></code>?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error98.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> 
+       <span class="mi">2</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">===</span> <span class="n">z</span>
+                  <span class="o">^</span>
+</pre></div>
+</div>
+<p>You wrote three equal signs in a row which is allowed in some
+programming languages, but not in Python. To check if two objects
+are equal, use two equal signs, <code class="docutils literal notranslate"><span class="pre">==</span></code>; to see if two names represent
+the exact same object, use the operator <code class="docutils literal notranslate"><span class="pre">is</span></code>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="two-consecutive-names">
+<h2>Two consecutive names<a class="headerlink" href="#two-consecutive-names" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error99.py&quot;</span>, line <span class="m">3</span>
+    <span class="k">if</span> <span class="n">var</span> <span class="n">start</span> <span class="o">:=</span> <span class="n">begin</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">:</span>
+           <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>Did you mean <code class="docutils literal notranslate"><span class="pre">'var_start'</span></code>?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error99.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+       <span class="mi">2</span><span class="p">:</span> 
+    <span class="o">--&gt;</span><span class="mi">3</span><span class="p">:</span> <span class="k">if</span> <span class="n">var</span> <span class="n">start</span> <span class="o">:=</span> <span class="n">begin</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">:</span>
+                 <span class="o">^</span>
+</pre></div>
+</div>
+<p>Perhaps you forgot that you cannot have spaces
+in variable names and wrote <code class="docutils literal notranslate"><span class="pre">'var</span> <span class="pre">start'</span></code>
+instead of <code class="docutils literal notranslate"><span class="pre">'var_start'</span></code>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="using-and-in-import-statement">
+<h2>Using ‘and’ in import statement<a class="headerlink" href="#using-and-in-import-statement" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error100.py&quot;</span>, line <span class="m">1</span>
+    <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span> <span class="ow">and</span> <span class="n">cos</span>
+                         <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error100.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span> <span class="ow">and</span> <span class="n">cos</span>
+                               <span class="o">^</span>
+</pre></div>
+</div>
+<p>The Python keyword <code class="docutils literal notranslate"><span class="pre">and</span></code> can only be used for boolean expressions.
+Perhaps you meant to write</p>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">math</span> <span class="pre">import</span> <span class="pre">sin</span> <span class="pre">,</span> <span class="pre">cos</span></code></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="annotated-name-cannot-be-global">
+<h2>Annotated name cannot be global<a class="headerlink" href="#annotated-name-cannot-be-global" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error101.py&quot;</span>, line <span class="m">4</span>
+    <span class="n">x</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">annotated name &#39;x&#39; can&#39;t be global</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error101.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="c1"># SyntaxError: annotated name &#39;x&#39; can&#39;t be global</span>
+       <span class="mi">2</span><span class="p">:</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+       <span class="mi">3</span><span class="p">:</span>     <span class="k">global</span> <span class="n">x</span>
+    <span class="o">--&gt;</span><span class="mi">4</span><span class="p">:</span>     <span class="n">x</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
+              <span class="o">^</span>
+</pre></div>
+</div>
+<p>The object named <code class="docutils literal notranslate"><span class="pre">x</span></code> is defined with type annotation
+as a local variable. It cannot be declared to be a global variable.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id2">
+<h2>Two consecutive names<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error102.py&quot;</span>, line <span class="m">5</span>
+    <span class="n">var</span> <span class="n">start</span> <span class="o">:=</span> <span class="n">begin</span> <span class="o">&lt;</span> <span class="n">end</span>
+        <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>Did you mean <code class="docutils literal notranslate"><span class="pre">'var_start'</span></code>?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error102.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">2</span><span class="p">:</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">4</span>
+       <span class="mi">3</span><span class="p">:</span> 
+       <span class="mi">4</span><span class="p">:</span> <span class="k">if</span> <span class="p">(</span>
+    <span class="o">--&gt;</span><span class="mi">5</span><span class="p">:</span>     <span class="n">var</span> <span class="n">start</span> <span class="o">:=</span> <span class="n">begin</span> <span class="o">&lt;</span> <span class="n">end</span>
+                  <span class="o">^</span>
+       <span class="mi">6</span><span class="p">:</span>    <span class="p">):</span>
+</pre></div>
+</div>
+<p>Python indicates that the error is caused by <code class="docutils literal notranslate"><span class="pre">start</span></code> written immediately after <code class="docutils literal notranslate"><span class="pre">var</span></code>.
+It is possible that you forgot a comma between items in a tuple,
+or between function arguments,
+before the position indicated by –&gt; and ^.
+Perhaps you meant</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span>    <span class="n">var</span><span class="p">,</span> <span class="n">start</span> <span class="o">:=</span> <span class="n">begin</span> <span class="o">&lt;</span> <span class="n">end</span>   <span class="p">):</span>
+</pre></div>
+</div>
+<p>Perhaps you forgot that you cannot have spaces
+in variable names and wrote <code class="docutils literal notranslate"><span class="pre">'var</span> <span class="pre">start'</span></code>
+instead of <code class="docutils literal notranslate"><span class="pre">'var_start'</span></code>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="deleting-constant-keyword">
+<h2>Deleting constant/keyword<a class="headerlink" href="#deleting-constant-keyword" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error103.py&quot;</span>, line <span class="m">1</span>
+    <span class="k">del</span> <span class="kc">True</span>
+        <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">cannot delete True</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error103.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="k">del</span> <span class="kc">True</span>
+              <span class="o">^</span>
+</pre></div>
+</div>
+<p>You cannot delete the constant <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="deleting-literal">
+<h2>Deleting literal<a class="headerlink" href="#deleting-literal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error104.py&quot;</span>, line <span class="m">1</span>
+    <span class="k">del</span> <span class="s2">&quot;Hello world!&quot;</span>
+        <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">cannot delete literal</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error104.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="k">del</span> <span class="s2">&quot;Hello world!&quot;</span>
+              <span class="o">^</span>
+</pre></div>
+</div>
+<p>You cannot delete the literal <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">world!&quot;</span></code>.
+You can only delete the names of objects, or
+individual items in a container.</p>
 </div>
 </div>
 

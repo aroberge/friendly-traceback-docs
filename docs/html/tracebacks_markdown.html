@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly tracebacks 0.2.19a documentation</title>
+  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly tracebacks 0.2.21a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.19a
+                0.2.21a
               </div>
             
           
@@ -182,6 +182,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#use-synonym">Use synonym</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-84-of-file-tests-runtime-test-attribute-error-py">Exception raised on line 84 of file TESTS:\runtime\test_attribute_error.py.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#using-slots">Using slots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-225-of-file-tests-runtime-test-attribute-error-py">Exception raised on line 225 of file TESTS:\runtime\test_attribute_error.py.</a></li>
 </ul>
 </li>
 </ul>
@@ -479,7 +483,7 @@ trb_english_markdown.py located in the <code class="docutils literal notranslate
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.
 </p>
-</div><p>Friendly-traceback version: 0.2.19a
+</div><p>Friendly-traceback version: 0.2.21a
 Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="arithmeticerror">
@@ -785,6 +789,35 @@ However, <code class="docutils literal notranslate"><span class="pre">a</span></
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">a</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="using-slots">
+<h3>Using slots<a class="headerlink" href="#using-slots" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_attribute_error.py&quot;</span>, line <span class="m">225</span>, in <span class="n">test_Using_slots</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gr">AttributeError</span>: <span class="n">&#39;F&#39; object has no attribute &#39;b&#39;</span>
+</pre></div>
+</div>
+<p>An <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code> occurs when the code contains something like
+<code class="docutils literal notranslate"><span class="pre">object.x</span></code>
+and <code class="docutils literal notranslate"><span class="pre">x</span></code> is not a method or attribute (variable) belonging to <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
+<p>The object <code class="docutils literal notranslate"><span class="pre">f</span></code> has no attribute named <code class="docutils literal notranslate"><span class="pre">b</span></code>.
+Note that object <code class="docutils literal notranslate"><span class="pre">f</span></code> uses <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> which prevents
+the creation of new attributes.
+The following are some of its known attributes:
+<code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<div class="section" id="exception-raised-on-line-225-of-file-tests-runtime-test-attribute-error-py">
+<h4>Exception raised on line 225 of file TESTS:\runtime\test_attribute_error.py.<a class="headerlink" href="#exception-raised-on-line-225-of-file-tests-runtime-test-attribute-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">223</span><span class="p">:</span>     <span class="n">f</span> <span class="o">=</span> <span class="n">F</span><span class="p">()</span>
+       <span class="mi">224</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">225</span><span class="p">:</span>         <span class="n">f</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+       <span class="mi">226</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">f</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">F</span> <span class="nb">object</span><span class="o">&gt;</span> <span class="kn">from</span> <span class="nn">test_attribute_error.test_Using_slots</span>
 </pre></div>
 </div>
 </div>
@@ -1956,7 +1989,8 @@ a value by zero:
 <code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">my_variable</span> <span class="pre">/</span> <span class="pre">0.</span></code>
 It can also happen if you calculate the remainder of a division
 using the modulo operator <code class="docutils literal notranslate"><span class="pre">%</span></code>:
-<code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">my_variable</span> <span class="pre">%</span> <span class="pre">0</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">my_variable</span> <span class="pre">%</span> <span class="pre">0</span></code>
+or if you try to raise 0 to a negative power.</p>
 <div class="section" id="exception-raised-on-line-6-of-file-tests-runtime-test-zero-division-error-py">
 <h4>Exception raised on line 6 of file TESTS:\runtime\test_zero_division_error.py.<a class="headerlink" href="#exception-raised-on-line-6-of-file-tests-runtime-test-zero-division-error-py" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">4</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Division_operator</span><span class="p">():</span>
@@ -1980,7 +2014,8 @@ a value by zero:
 <code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">my_variable</span> <span class="pre">/</span> <span class="pre">0.</span></code>
 It can also happen if you calculate the remainder of a division
 using the modulo operator <code class="docutils literal notranslate"><span class="pre">%</span></code>:
-<code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">my_variable</span> <span class="pre">%</span> <span class="pre">0</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">my_variable</span> <span class="pre">%</span> <span class="pre">0</span></code>
+or if you try to raise 0 to a negative power.</p>
 <div class="section" id="exception-raised-on-line-21-of-file-tests-runtime-test-zero-division-error-py">
 <h4>Exception raised on line 21 of file TESTS:\runtime\test_zero_division_error.py.<a class="headerlink" href="#exception-raised-on-line-21-of-file-tests-runtime-test-zero-division-error-py" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">19</span><span class="p">:</span>     <span class="n">zero</span> <span class="o">=</span> <span class="mi">0</span>

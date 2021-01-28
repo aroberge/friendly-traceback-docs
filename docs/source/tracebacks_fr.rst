@@ -15,7 +15,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly-traceback version: 0.2.19a
+Friendly-traceback version: 0.2.21a
 Python version: 3.8.4
 
 
@@ -363,6 +363,37 @@ Use synonym
        85:     except Exception as e:
 
             a: [1, 2, 3]
+        
+
+
+Using slots
+~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_attribute_error.py", line 225, in test_Using_slots
+        f.b = 1
+    AttributeError: 'F' object has no attribute 'b'
+    
+    Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+        `object.x`
+    et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+    
+        L’objet `f` n’a pas d’attribut nommé `b`.
+        Notez que l’objet `f` utilise `__slots__` qui empêche
+        la création de nouveaux attributs.
+        Voici quelques-uns de ses attributs connus :
+        `a`.
+    Exception levée à la ligne 225 du fichier TESTS:\runtime\test_attribute_error.py.
+    
+       223:     f = F()
+       224:     try:
+    -->225:         f.b = 1
+       226:     except Exception as e:
+
+            f: <F object> from test_attribute_error.test_Using_slots
         
 
 
@@ -1649,6 +1680,8 @@ Division operator
     Ceci peut également se produire si vous calculez le reste d’une division 
     à l’aide de l’opérateur modulo '%'
         `résultat = ma_variable % 0`
+    ou si vous essayer d'élever 0 à une puissance négative.
+    
     
     Exception levée à la ligne 6 du fichier TESTS:\runtime\test_zero_division_error.py.
     
@@ -1675,6 +1708,8 @@ Modulo operator
     Ceci peut également se produire si vous calculez le reste d’une division 
     à l’aide de l’opérateur modulo '%'
         `résultat = ma_variable % 0`
+    ou si vous essayer d'élever 0 à une puissance négative.
+    
     
     Exception levée à la ligne 21 du fichier TESTS:\runtime\test_zero_division_error.py.
     

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.2.19a documentation</title>
+  <title>Friendly tracebacks - en Français &mdash; Friendly tracebacks 0.2.21a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.19a
+                0.2.21a
               </div>
             
           
@@ -156,6 +156,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#shadow-stdlib-module">Shadow stdlib module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-builtin">Use builtin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-synonym">Use synonym</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-slots">Using slots</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#filenotfounderror">FileNotFoundError</a><ul>
@@ -330,7 +331,7 @@ Ceci a besoin d’être fait de manière explicite lorsqu’on veut
 faire des corrections ou des ajouts, avant de faire la mise
 à jour du reste de la documentation avec Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.2.19a
+<p>Friendly-traceback version: 0.2.21a
 Python version: 3.8.4</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -628,6 +629,33 @@ Exception levée à la ligne 84 du fichier TESTS:\runtime\test_attribute_error.p
    85:     except Exception as e:
 
         a: [1, 2, 3]
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-slots">
+<h3>Using slots<a class="headerlink" href="#using-slots" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 225, in test_Using_slots
+    f.b = 1
+AttributeError: &#39;F&#39; object has no attribute &#39;b&#39;
+
+Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+    `object.x`
+et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+
+    L’objet `f` n’a pas d’attribut nommé `b`.
+    Notez que l’objet `f` utilise `__slots__` qui empêche
+    la création de nouveaux attributs.
+    Voici quelques-uns de ses attributs connus :
+    `a`.
+Exception levée à la ligne 225 du fichier TESTS:\runtime\test_attribute_error.py.
+
+   223:     f = F()
+   224:     try:
+--&gt;225:         f.b = 1
+   226:     except Exception as e:
+
+        f: &lt;F object&gt; from test_attribute_error.test_Using_slots
 </pre></div>
 </div>
 </div>
@@ -1765,6 +1793,8 @@ vous tentez de diviser une valeur par zéro:
 Ceci peut également se produire si vous calculez le reste d’une division
 à l’aide de l’opérateur modulo &#39;%&#39;
     `résultat = ma_variable % 0`
+ou si vous essayer d&#39;élever 0 à une puissance négative.
+
 
 Exception levée à la ligne 6 du fichier TESTS:\runtime\test_zero_division_error.py.
 
@@ -1788,6 +1818,8 @@ vous tentez de diviser une valeur par zéro:
 Ceci peut également se produire si vous calculez le reste d’une division
 à l’aide de l’opérateur modulo &#39;%&#39;
     `résultat = ma_variable % 0`
+ou si vous essayer d&#39;élever 0 à une puissance négative.
+
 
 Exception levée à la ligne 21 du fichier TESTS:\runtime\test_zero_division_error.py.
 

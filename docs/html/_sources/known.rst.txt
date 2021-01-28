@@ -30,7 +30,7 @@ In the case of ``StopIteration``, see
 ``BaseException``, ``Exception``, and ``ArithmeticError`` are base classes which
 are also not normally seen: some derived classes are normally used instead.
 
-Information compiled using Friendly-traceback version: 0.2.19a,
+Information compiled using Friendly-traceback version: 0.2.21a,
 Python version: 3.8.4
 
 
@@ -588,6 +588,7 @@ ZeroDivisionError
     It can also happen if you calculate the remainder of a division
     using the modulo operator `%`:
         `result = my_variable % 0`
+    or if you try to raise 0 to a negative power.
     
 
 
