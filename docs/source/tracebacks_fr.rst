@@ -1670,8 +1670,8 @@ Division operator
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_zero_division_error.py", line 6, in test_Division_operator
-        1 / 0
+      File "TESTS:\runtime\test_zero_division_error.py", line 7, in test_Division_operator
+        1 / zero
     ZeroDivisionError: division by zero
     
     Une exception de type `ZeroDivisionError` se produit lorsque
@@ -1683,12 +1683,15 @@ Division operator
     ou si vous essayer d'élever 0 à une puissance négative.
     
     
-    Exception levée à la ligne 6 du fichier TESTS:\runtime\test_zero_division_error.py.
+    Exception levée à la ligne 7 du fichier TESTS:\runtime\test_zero_division_error.py.
     
-       4: def test_Division_operator():
-       5:     try:
-    -->6:         1 / 0
-       7:     except Exception as e:
+       5:     zero = 0
+       6:     try:
+    -->7:         1 / zero
+       8:     except Exception as e:
+
+            zero: 0
+        
 
 
 Modulo operator
@@ -1698,7 +1701,7 @@ Modulo operator
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_zero_division_error.py", line 21, in test_Modulo_operator
+      File "TESTS:\runtime\test_zero_division_error.py", line 22, in test_Modulo_operator
         1 % zero
     ZeroDivisionError: integer division or modulo by zero
     
@@ -1711,12 +1714,43 @@ Modulo operator
     ou si vous essayer d'élever 0 à une puissance négative.
     
     
-    Exception levée à la ligne 21 du fichier TESTS:\runtime\test_zero_division_error.py.
+    Exception levée à la ligne 22 du fichier TESTS:\runtime\test_zero_division_error.py.
     
-       19:     zero = 0
-       20:     try:
-    -->21:         1 % zero
-       22:     except Exception as e:
+       20:     zero = 0
+       21:     try:
+    -->22:         1 % zero
+       23:     except Exception as e:
+
+            zero: 0
+        
+
+
+Raise zero negative power
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_zero_division_error.py", line 37, in test_Raise_zero_negative_power
+        zero ** -1
+    ZeroDivisionError: 0.0 cannot be raised to a negative power
+    
+    Une exception de type `ZeroDivisionError` se produit lorsque
+    vous tentez de diviser une valeur par zéro:
+        `résultat = ma_variable / 0.`
+    Ceci peut également se produire si vous calculez le reste d’une division 
+    à l’aide de l’opérateur modulo '%'
+        `résultat = ma_variable % 0`
+    ou si vous essayer d'élever 0 à une puissance négative.
+    
+    
+    Exception levée à la ligne 37 du fichier TESTS:\runtime\test_zero_division_error.py.
+    
+       35:     zero = 0
+       36:     try:
+    -->37:         zero ** -1
+       38:     except Exception as e:
 
             zero: 0
         

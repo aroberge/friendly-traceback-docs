@@ -2039,8 +2039,8 @@ than the length of the iterable, a `list` of length 3.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_zero_division_error.py", line 6, in test_Division_operator
-    1 / 0
+  File "TESTS:\runtime\test_zero_division_error.py", line 7, in test_Division_operator
+    1 / zero
 ZeroDivisionError: division by zero
 
 ```
@@ -2054,14 +2054,19 @@ using the modulo operator `%`:
 or if you try to raise 0 to a negative power.
 
 
-#### Exception raised on line 6 of file TESTS:\runtime\test_zero_division_error.py.
+#### Exception raised on line 7 of file TESTS:\runtime\test_zero_division_error.py.
 
 
 ```python
-       4: def test_Division_operator():
-       5:     try:
-    -->6:         1 / 0
-       7:     except Exception as e:
+       5:     zero = 0
+       6:     try:
+    -->7:         1 / zero
+       8:     except Exception as e:
+
+```
+
+```python
+    zero: 0
 
 ```
 
@@ -2070,7 +2075,7 @@ or if you try to raise 0 to a negative power.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_zero_division_error.py", line 21, in test_Modulo_operator
+  File "TESTS:\runtime\test_zero_division_error.py", line 22, in test_Modulo_operator
     1 % zero
 ZeroDivisionError: integer division or modulo by zero
 
@@ -2085,14 +2090,50 @@ using the modulo operator `%`:
 or if you try to raise 0 to a negative power.
 
 
-#### Exception raised on line 21 of file TESTS:\runtime\test_zero_division_error.py.
+#### Exception raised on line 22 of file TESTS:\runtime\test_zero_division_error.py.
 
 
 ```python
-       19:     zero = 0
-       20:     try:
-    -->21:         1 % zero
-       22:     except Exception as e:
+       20:     zero = 0
+       21:     try:
+    -->22:         1 % zero
+       23:     except Exception as e:
+
+```
+
+```python
+    zero: 0
+
+```
+
+### Raise zero negative power
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_zero_division_error.py", line 37, in test_Raise_zero_negative_power
+    zero ** -1
+ZeroDivisionError: 0.0 cannot be raised to a negative power
+
+```
+
+A `ZeroDivisionError` occurs when you are attempting to divide
+a value by zero:
+    `result = my_variable / 0.`
+It can also happen if you calculate the remainder of a division
+using the modulo operator `%`:
+    `result = my_variable % 0`
+or if you try to raise 0 to a negative power.
+
+
+#### Exception raised on line 37 of file TESTS:\runtime\test_zero_division_error.py.
+
+
+```python
+       35:     zero = 0
+       36:     try:
+    -->37:         zero ** -1
+       38:     except Exception as e:
 
 ```
 

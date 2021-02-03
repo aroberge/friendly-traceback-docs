@@ -383,11 +383,15 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#zerodivisionerror">ZeroDivisionError</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#division-operator">Division operator</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-6-of-file-tests-runtime-test-zero-division-error-py">Exception raised on line 6 of file TESTS:\runtime\test_zero_division_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-7-of-file-tests-runtime-test-zero-division-error-py">Exception raised on line 7 of file TESTS:\runtime\test_zero_division_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#modulo-operator">Modulo operator</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-21-of-file-tests-runtime-test-zero-division-error-py">Exception raised on line 21 of file TESTS:\runtime\test_zero_division_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-22-of-file-tests-runtime-test-zero-division-error-py">Exception raised on line 22 of file TESTS:\runtime\test_zero_division_error.py.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#raise-zero-negative-power">Raise zero negative power</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-37-of-file-tests-runtime-test-zero-division-error-py">Exception raised on line 37 of file TESTS:\runtime\test_zero_division_error.py.</a></li>
 </ul>
 </li>
 </ul>
@@ -1979,8 +1983,8 @@ than the length of the iterable, a <code class="docutils literal notranslate"><s
 <div class="section" id="division-operator">
 <h3>Division operator<a class="headerlink" href="#division-operator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_zero_division_error.py&quot;</span>, line <span class="m">6</span>, in <span class="n">test_Division_operator</span>
-    <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_zero_division_error.py&quot;</span>, line <span class="m">7</span>, in <span class="n">test_Division_operator</span>
+    <span class="mi">1</span> <span class="o">/</span> <span class="n">zero</span>
 <span class="gr">ZeroDivisionError</span>: <span class="n">division by zero</span>
 </pre></div>
 </div>
@@ -1991,12 +1995,15 @@ It can also happen if you calculate the remainder of a division
 using the modulo operator <code class="docutils literal notranslate"><span class="pre">%</span></code>:
 <code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">my_variable</span> <span class="pre">%</span> <span class="pre">0</span></code>
 or if you try to raise 0 to a negative power.</p>
-<div class="section" id="exception-raised-on-line-6-of-file-tests-runtime-test-zero-division-error-py">
-<h4>Exception raised on line 6 of file TESTS:\runtime\test_zero_division_error.py.<a class="headerlink" href="#exception-raised-on-line-6-of-file-tests-runtime-test-zero-division-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">4</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Division_operator</span><span class="p">():</span>
-       <span class="mi">5</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">6</span><span class="p">:</span>         <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
-       <span class="mi">7</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-7-of-file-tests-runtime-test-zero-division-error-py">
+<h4>Exception raised on line 7 of file TESTS:\runtime\test_zero_division_error.py.<a class="headerlink" href="#exception-raised-on-line-7-of-file-tests-runtime-test-zero-division-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">5</span><span class="p">:</span>     <span class="n">zero</span> <span class="o">=</span> <span class="mi">0</span>
+       <span class="mi">6</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span>         <span class="mi">1</span> <span class="o">/</span> <span class="n">zero</span>
+       <span class="mi">8</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">zero</span><span class="p">:</span> <span class="mi">0</span>
 </pre></div>
 </div>
 </div>
@@ -2004,7 +2011,7 @@ or if you try to raise 0 to a negative power.</p>
 <div class="section" id="modulo-operator">
 <h3>Modulo operator<a class="headerlink" href="#modulo-operator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_zero_division_error.py&quot;</span>, line <span class="m">21</span>, in <span class="n">test_Modulo_operator</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_zero_division_error.py&quot;</span>, line <span class="m">22</span>, in <span class="n">test_Modulo_operator</span>
     <span class="mi">1</span> <span class="o">%</span> <span class="n">zero</span>
 <span class="gr">ZeroDivisionError</span>: <span class="n">integer division or modulo by zero</span>
 </pre></div>
@@ -2016,12 +2023,40 @@ It can also happen if you calculate the remainder of a division
 using the modulo operator <code class="docutils literal notranslate"><span class="pre">%</span></code>:
 <code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">my_variable</span> <span class="pre">%</span> <span class="pre">0</span></code>
 or if you try to raise 0 to a negative power.</p>
-<div class="section" id="exception-raised-on-line-21-of-file-tests-runtime-test-zero-division-error-py">
-<h4>Exception raised on line 21 of file TESTS:\runtime\test_zero_division_error.py.<a class="headerlink" href="#exception-raised-on-line-21-of-file-tests-runtime-test-zero-division-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">19</span><span class="p">:</span>     <span class="n">zero</span> <span class="o">=</span> <span class="mi">0</span>
-       <span class="mi">20</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">21</span><span class="p">:</span>         <span class="mi">1</span> <span class="o">%</span> <span class="n">zero</span>
-       <span class="mi">22</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-22-of-file-tests-runtime-test-zero-division-error-py">
+<h4>Exception raised on line 22 of file TESTS:\runtime\test_zero_division_error.py.<a class="headerlink" href="#exception-raised-on-line-22-of-file-tests-runtime-test-zero-division-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">20</span><span class="p">:</span>     <span class="n">zero</span> <span class="o">=</span> <span class="mi">0</span>
+       <span class="mi">21</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">22</span><span class="p">:</span>         <span class="mi">1</span> <span class="o">%</span> <span class="n">zero</span>
+       <span class="mi">23</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">zero</span><span class="p">:</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="raise-zero-negative-power">
+<h3>Raise zero negative power<a class="headerlink" href="#raise-zero-negative-power" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_zero_division_error.py&quot;</span>, line <span class="m">37</span>, in <span class="n">test_Raise_zero_negative_power</span>
+    <span class="n">zero</span> <span class="o">**</span> <span class="o">-</span><span class="mi">1</span>
+<span class="gr">ZeroDivisionError</span>: <span class="n">0.0 cannot be raised to a negative power</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> occurs when you are attempting to divide
+a value by zero:
+<code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">my_variable</span> <span class="pre">/</span> <span class="pre">0.</span></code>
+It can also happen if you calculate the remainder of a division
+using the modulo operator <code class="docutils literal notranslate"><span class="pre">%</span></code>:
+<code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">my_variable</span> <span class="pre">%</span> <span class="pre">0</span></code>
+or if you try to raise 0 to a negative power.</p>
+<div class="section" id="exception-raised-on-line-37-of-file-tests-runtime-test-zero-division-error-py">
+<h4>Exception raised on line 37 of file TESTS:\runtime\test_zero_division_error.py.<a class="headerlink" href="#exception-raised-on-line-37-of-file-tests-runtime-test-zero-division-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">35</span><span class="p">:</span>     <span class="n">zero</span> <span class="o">=</span> <span class="mi">0</span>
+       <span class="mi">36</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">37</span><span class="p">:</span>         <span class="n">zero</span> <span class="o">**</span> <span class="o">-</span><span class="mi">1</span>
+       <span class="mi">38</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">zero</span><span class="p">:</span> <span class="mi">0</span>

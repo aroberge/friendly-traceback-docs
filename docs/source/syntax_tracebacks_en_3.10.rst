@@ -19,7 +19,7 @@ should be included here.
      similar files for all languages *and* update the documentation.
 
 Friendly-traceback version: 0.2.21a
-Python version: 3.10.0a4
+Python version: 3.10.0a5
 
 
 
@@ -256,7 +256,7 @@ Missing colon - if
       File "TESTS:\syntax\raise_syntax_error2.py", line 3
         if True
                ^
-    SyntaxError: invalid syntax
+    SyntaxError: expected ':'
     
         Did you forget a colon `:`?
         
@@ -271,6 +271,14 @@ Missing colon - if
     -->3: if True
                  ^
 
+        Python gave us the following informative message
+        about the possible cause of the error:
+        
+            expected ':'
+        
+        However, I do not recognize this information and I have
+        to guess what caused the problem, but I might be wrong.
+        
         You wrote a statement beginning with
         `if` but forgot to add a colon `:` at the end
         
@@ -288,7 +296,7 @@ Missing colon - while
       File "TESTS:\syntax\raise_syntax_error3.py", line 3
         while True  # a comment
                     ^
-    SyntaxError: invalid syntax
+    SyntaxError: expected ':'
     
         Did you forget a colon `:`?
         
@@ -303,6 +311,14 @@ Missing colon - while
     -->3: while True  # a comment
                       ^
 
+        Python gave us the following informative message
+        about the possible cause of the error:
+        
+            expected ':'
+        
+        However, I do not recognize this information and I have
+        to guess what caused the problem, but I might be wrong.
+        
         You wrote a `while` loop but
         forgot to add a colon `:` at the end
         
@@ -320,7 +336,7 @@ Write elif, not else if
       File "TESTS:\syntax\raise_syntax_error4.py", line 5
         else if True:
              ^
-    SyntaxError: invalid syntax
+    SyntaxError: expected ':'
     
         Perhaps you meant to write `elif`.
         
@@ -337,6 +353,14 @@ Write elif, not else if
     -->5: else if True:
                ^
 
+        Python gave us the following informative message
+        about the possible cause of the error:
+        
+            expected ':'
+        
+        However, I do not recognize this information and I have
+        to guess what caused the problem, but I might be wrong.
+        
         You likely meant to use Python's `elif` keyword
         but wrote `else if` instead
         
@@ -589,8 +613,8 @@ EOL while scanning string literal
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error12.py", line 3
         alphabet = 'abc
-                       ^
-    SyntaxError: EOL while scanning string literal
+                   ^
+    SyntaxError: unterminated string literal (detected at line 3)
     
         Did you forget a closing quote?
         
@@ -603,7 +627,7 @@ EOL while scanning string literal
        1: """Should raise SyntaxError: EOL while scanning string literal"""
        2: 
     -->3: alphabet = 'abc
-                         ^
+                     ^
 
         You starting writing a string with a single or double quote
         but never ended the string with another quote on that line.
@@ -711,10 +735,10 @@ Unclosed parenthesis - 1
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
         mod = __import__(name)
-      File "TESTS:\syntax\raise_syntax_error16.py", line 3
-        if x == 1:
-                 ^
-    SyntaxError: invalid syntax
+      File "TESTS:\syntax\raise_syntax_error16.py", line 2
+        x = int('1'
+               ^
+    SyntaxError: '(' was never closed
     
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -723,10 +747,17 @@ Unclosed parenthesis - 1
     beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
-       2: x = int('1'
-    -->3: if x == 1:
-                   ^
+    -->2: x = int('1'
+                 ^
 
+        Python gave us the following informative message
+        about the possible cause of the error:
+        
+            '(' was never closed
+        
+        However, I do not recognize this information and I have
+        to guess what caused the problem, but I might be wrong.
+        
         The opening parenthesis `(` on line 2 is not closed.
         
             2: x = int('1'
@@ -742,10 +773,10 @@ Unclosed parenthesis - 2
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
         mod = __import__(name)
-      File "TESTS:\syntax\raise_syntax_error17.py", line 3
-        d = a*a
-        ^
-    SyntaxError: invalid syntax
+      File "TESTS:\syntax\raise_syntax_error17.py", line 2
+        a = (b+c
+            ^
+    SyntaxError: '(' was never closed
     
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -754,10 +785,17 @@ Unclosed parenthesis - 2
     beyond the location indicated by --> and ^.
     
        1: """Should raise SyntaxError: invalid syntax"""
-       2: a = (b+c
-    -->3: d = a*a
-          ^
+    -->2: a = (b+c
+              ^
 
+        Python gave us the following informative message
+        about the possible cause of the error:
+        
+            '(' was never closed
+        
+        However, I do not recognize this information and I have
+        to guess what caused the problem, but I might be wrong.
+        
         The opening parenthesis `(` on line 2 is not closed.
         
             2: a = (b+c
@@ -969,10 +1007,10 @@ Quote inside a string
         mod = __import__(name)
       File "TESTS:\syntax\raise_syntax_error24.py", line 3
         message = 'don't'
-                       ^
-    SyntaxError: invalid syntax
+                        ^
+    SyntaxError: unterminated string literal (detected at line 3)
     
-        Perhaps you misplaced a quote.
+        Did you forget a closing quote?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -983,12 +1021,10 @@ Quote inside a string
        1: """Should raise SyntaxError: invalid syntax"""
        2: 
     -->3: message = 'don't'
-                         ^
+                          ^
 
-        There appears to be a Python identifier (variable name)
-        immediately following a string.
-        I suspect that you were trying to use a quote inside a string
-        that was enclosed in quotes of the same kind.
+        You starting writing a string with a single or double quote
+        but never ended the string with another quote on that line.
         
 
 Missing comma in a dict
@@ -1026,96 +1062,6 @@ Missing comma in a dict
         Perhaps you meant
         
             a = {'a': 1,     'b': 2,     'c': 3,     }
-        
-
-Missing comma in a set
-----------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        mod = __import__(name)
-      File "TESTS:\syntax\raise_syntax_error26.py", line 3
-        a = {1, 2  3}
-                   ^
-    SyntaxError: invalid syntax
-    
-        Did you mean `'2_3'`?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error26.py'
-    beyond the location indicated by --> and ^.
-    
-       1: """Should raise SyntaxError: invalid syntax"""
-       2: 
-    -->3: a = {1, 2  3}
-                     ^
-
-        Python indicates that the error is caused by `3` written immediately after `2`.
-        It is possible that you forgot a comma between items in a set or dict
-        before the position indicated by --> and ^.
-        Perhaps you meant to insert an operator like `+, -, *`
-        between `2` and `3`.
-        The following lines of code would not cause any `SyntaxError`:
-        
-            a = {1, 2,  3}
-            a = {1, 2 +  3}
-            a = {1, 2 -  3}
-            a = {1, 2 *  3}
-        Note: these are just some of the possible choices and that
-        some of them might raise other types of exceptions.
-        Perhaps you forgot that you cannot have spaces
-        in variable names and wrote `'2 3'`
-        instead of `'2_3'`.
-        
-
-Missing comma in a list
------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        mod = __import__(name)
-      File "TESTS:\syntax\raise_syntax_error27.py", line 3
-        a = [1, 2  3]
-                   ^
-    SyntaxError: invalid syntax
-    
-        Did you mean `'2_3'`?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error27.py'
-    beyond the location indicated by --> and ^.
-    
-       1: """Should raise SyntaxError: invalid syntax"""
-       2: 
-    -->3: a = [1, 2  3]
-                     ^
-
-        Python indicates that the error is caused by `3` written immediately after `2`.
-        It is possible that you forgot a comma between items in a list
-        before the position indicated by --> and ^.
-        Perhaps you meant to insert an operator like `+, -, *`
-        between `2` and `3`.
-        The following lines of code would not cause any `SyntaxError`:
-        
-            a = [1, 2,  3]
-            a = [1, 2 +  3]
-            a = [1, 2 -  3]
-            a = [1, 2 *  3]
-        Note: these are just some of the possible choices and that
-        some of them might raise other types of exceptions.
-        Perhaps you forgot that you cannot have spaces
-        in variable names and wrote `'2 3'`
-        instead of `'2_3'`.
         
 
 Missing comma in a tuple
@@ -1435,10 +1381,10 @@ Unclosed bracket
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
         mod = __import__(name)
-      File "TESTS:\syntax\raise_syntax_error36.py", line 7
-        print(foo())
-        ^
-    SyntaxError: invalid syntax
+      File "TESTS:\syntax\raise_syntax_error36.py", line 5
+        return [1, 2, 3
+                ^
+    SyntaxError: did you forget parentheses around the comprehension target?
     
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -1446,13 +1392,21 @@ Unclosed bracket
     'TESTS:\syntax\raise_syntax_error36.py'
     beyond the location indicated by --> and ^.
     
+       1: """Should raise SyntaxError: f-string: invalid syntax
+       2: """
        3: 
        4: def foo():
-       5:     return [1, 2, 3
-       6: 
-    -->7: print(foo())
-          ^
+    -->5:     return [1, 2, 3
+                      ^
 
+        Python gave us the following informative message
+        about the possible cause of the error:
+        
+            did you forget parentheses around the comprehension target?
+        
+        However, I do not recognize this information and I have
+        to guess what caused the problem, but I might be wrong.
+        
         The opening square bracket `[` on line 5 is not closed.
         
             5:     return [1, 2, 3
@@ -1468,8 +1422,10 @@ Unexpected EOF while parsing
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
         mod = __import__(name)
-      File "TESTS:\syntax\raise_syntax_error37.py", line 8
-    SyntaxError: unexpected EOF while parsing
+      File "TESTS:\syntax\raise_syntax_error37.py", line 5
+        return [1, 2, 3,
+               ^
+    SyntaxError: '[' was never closed
     
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -1477,18 +1433,20 @@ Unexpected EOF while parsing
     'TESTS:\syntax\raise_syntax_error37.py'
     beyond the location indicated by --> and ^.
     
-        3: 
-        4: def foo():
-        5:     return [1, 2, 3,
-        6: 
-        7: print(foo())
-    --> 8: 
-           ^
+       1: """Should raise SyntaxError: unexpected EOF while parsing
+       2: """
+       3: 
+       4: def foo():
+    -->5:     return [1, 2, 3,
+                     ^
 
-        Python tells us that it reached the end of the file
-        and expected more content.
+        Python gave us the following informative message
+        about the possible cause of the error:
         
-        I will attempt to be give a bit more information.
+            '[' was never closed
+        
+        However, I do not recognize this information and I have
+        to guess what caused the problem, but I might be wrong.
         
         The opening square bracket `[` on line 5 is not closed.
         
@@ -2730,7 +2688,7 @@ Single = instead of double == with if
       File "TESTS:\syntax\raise_syntax_error76.py", line 3
         if i % 2 = 0:
                  ^
-    SyntaxError: invalid syntax
+    SyntaxError: expected ':'
     
         Perhaps you needed `==` or `:=` instead of `=`.
         
@@ -2745,6 +2703,14 @@ Single = instead of double == with if
     -->3:     if i % 2 = 0:
                        ^
 
+        Python gave us the following informative message
+        about the possible cause of the error:
+        
+            expected ':'
+        
+        However, I do not recognize this information and I have
+        to guess what caused the problem, but I might be wrong.
+        
         You used an assignment operator `=`; perhaps you meant to use 
         an equality operator, `==`, or the walrus operator `:=`.
         
@@ -2761,7 +2727,7 @@ Single = instead of double == with elif
       File "TESTS:\syntax\raise_syntax_error77.py", line 5
         elif i % 2 = 0:
                    ^
-    SyntaxError: invalid syntax
+    SyntaxError: expected ':'
     
         Perhaps you needed `==` or `:=` instead of `=`.
         
@@ -2778,6 +2744,14 @@ Single = instead of double == with elif
     -->5:     elif i % 2 = 0:
                          ^
 
+        Python gave us the following informative message
+        about the possible cause of the error:
+        
+            expected ':'
+        
+        However, I do not recognize this information and I have
+        to guess what caused the problem, but I might be wrong.
+        
         You used an assignment operator `=`; perhaps you meant to use 
         an equality operator, `==`, or the walrus operator `:=`.
         
@@ -2794,7 +2768,7 @@ Single = instead of double == with while
       File "TESTS:\syntax\raise_syntax_error78.py", line 4
         while a = 1:
                 ^
-    SyntaxError: invalid syntax
+    SyntaxError: expected ':'
     
         Perhaps you needed `==` or `:=` instead of `=`.
         
@@ -2810,6 +2784,14 @@ Single = instead of double == with while
     -->4: while a = 1:
                   ^
 
+        Python gave us the following informative message
+        about the possible cause of the error:
+        
+            expected ':'
+        
+        However, I do not recognize this information and I have
+        to guess what caused the problem, but I might be wrong.
+        
         You used an assignment operator `=`; perhaps you meant to use 
         an equality operator, `==`, or the walrus operator `:=`.
         
@@ -3457,7 +3439,7 @@ Two consecutive names
       File "TESTS:\syntax\raise_syntax_error99.py", line 3
         if var start := begin < end:
                ^
-    SyntaxError: invalid syntax
+    SyntaxError: expected ':'
     
         Did you mean `'var_start'`?
         
@@ -3472,6 +3454,14 @@ Two consecutive names
     -->3: if var start := begin < end:
                  ^
 
+        Python gave us the following informative message
+        about the possible cause of the error:
+        
+            expected ':'
+        
+        However, I do not recognize this information and I have
+        to guess what caused the problem, but I might be wrong.
+        
         Perhaps you forgot that you cannot have spaces
         in variable names and wrote `'var start'`
         instead of `'var_start'`.

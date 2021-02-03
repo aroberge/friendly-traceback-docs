@@ -161,8 +161,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#continue-outside-loop">continue outside loop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#quote-inside-a-string">Quote inside a string</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-comma-in-a-dict">Missing comma in a dict</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#missing-comma-in-a-set">Missing comma in a set</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#missing-comma-in-a-list">Missing comma in a list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-comma-in-a-tuple">Missing comma in a tuple</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-comma-between-function-args">Missing comma between function args</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cannot-assign-to-function-call-1">Cannot assign to function call - 1</a></li>
@@ -346,7 +344,7 @@ instead to run make_trb.bat in the root directory as it will create
 similar files for all languages <em>and</em> update the documentation.</p>
 </div>
 <p>Friendly-traceback version: 0.2.21a
-Python version: 3.10.0a4</p>
+Python version: 3.10.0a5</p>
 <div class="section" id="indentationerror-expected-an-indented-block">
 <h2>IndentationError: expected an indented block<a class="headerlink" href="#indentationerror-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -554,7 +552,7 @@ beyond the location indicated by --&gt; and ^.
   File &quot;TESTS:\syntax\raise_syntax_error2.py&quot;, line 3
     if True
            ^
-SyntaxError: invalid syntax
+SyntaxError: expected &#39;:&#39;
 
     Did you forget a colon `:`?
 
@@ -569,6 +567,14 @@ beyond the location indicated by --&gt; and ^.
 --&gt;3: if True
              ^
 
+    Python gave us the following informative message
+    about the possible cause of the error:
+
+        expected &#39;:&#39;
+
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+
     You wrote a statement beginning with
     `if` but forgot to add a colon `:` at the end
 </pre></div>
@@ -582,7 +588,7 @@ beyond the location indicated by --&gt; and ^.
   File &quot;TESTS:\syntax\raise_syntax_error3.py&quot;, line 3
     while True  # a comment
                 ^
-SyntaxError: invalid syntax
+SyntaxError: expected &#39;:&#39;
 
     Did you forget a colon `:`?
 
@@ -597,6 +603,14 @@ beyond the location indicated by --&gt; and ^.
 --&gt;3: while True  # a comment
                   ^
 
+    Python gave us the following informative message
+    about the possible cause of the error:
+
+        expected &#39;:&#39;
+
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+
     You wrote a `while` loop but
     forgot to add a colon `:` at the end
 </pre></div>
@@ -610,7 +624,7 @@ beyond the location indicated by --&gt; and ^.
   File &quot;TESTS:\syntax\raise_syntax_error4.py&quot;, line 5
     else if True:
          ^
-SyntaxError: invalid syntax
+SyntaxError: expected &#39;:&#39;
 
     Perhaps you meant to write `elif`.
 
@@ -626,6 +640,14 @@ beyond the location indicated by --&gt; and ^.
    4:     pass
 --&gt;5: else if True:
            ^
+
+    Python gave us the following informative message
+    about the possible cause of the error:
+
+        expected &#39;:&#39;
+
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
 
     You likely meant to use Python&#39;s `elif` keyword
     but wrote `else if` instead
@@ -849,8 +871,8 @@ beyond the location indicated by --&gt; and ^.
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error12.py&quot;, line 3
     alphabet = &#39;abc
-                   ^
-SyntaxError: EOL while scanning string literal
+               ^
+SyntaxError: unterminated string literal (detected at line 3)
 
     Did you forget a closing quote?
 
@@ -863,7 +885,7 @@ beyond the location indicated by --&gt; and ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: EOL while scanning string literal&quot;&quot;&quot;
    2:
 --&gt;3: alphabet = &#39;abc
-                     ^
+                 ^
 
     You starting writing a string with a single or double quote
     but never ended the string with another quote on that line.
@@ -957,10 +979,10 @@ beyond the location indicated by --&gt; and ^.
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
     mod = __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error16.py&quot;, line 3
-    if x == 1:
-             ^
-SyntaxError: invalid syntax
+  File &quot;TESTS:\syntax\raise_syntax_error16.py&quot;, line 2
+    x = int(&#39;1&#39;
+           ^
+SyntaxError: &#39;(&#39; was never closed
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -969,9 +991,16 @@ Python could not understand the code in the file
 beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
-   2: x = int(&#39;1&#39;
---&gt;3: if x == 1:
-               ^
+--&gt;2: x = int(&#39;1&#39;
+             ^
+
+    Python gave us the following informative message
+    about the possible cause of the error:
+
+        &#39;(&#39; was never closed
+
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
 
     The opening parenthesis `(` on line 2 is not closed.
 
@@ -985,10 +1014,10 @@ beyond the location indicated by --&gt; and ^.
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
     mod = __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error17.py&quot;, line 3
-    d = a*a
-    ^
-SyntaxError: invalid syntax
+  File &quot;TESTS:\syntax\raise_syntax_error17.py&quot;, line 2
+    a = (b+c
+        ^
+SyntaxError: &#39;(&#39; was never closed
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -997,9 +1026,16 @@ Python could not understand the code in the file
 beyond the location indicated by --&gt; and ^.
 
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
-   2: a = (b+c
---&gt;3: d = a*a
-      ^
+--&gt;2: a = (b+c
+          ^
+
+    Python gave us the following informative message
+    about the possible cause of the error:
+
+        &#39;(&#39; was never closed
+
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
 
     The opening parenthesis `(` on line 2 is not closed.
 
@@ -1191,10 +1227,10 @@ beyond the location indicated by --&gt; and ^.
     mod = __import__(name)
   File &quot;TESTS:\syntax\raise_syntax_error24.py&quot;, line 3
     message = &#39;don&#39;t&#39;
-                   ^
-SyntaxError: invalid syntax
+                    ^
+SyntaxError: unterminated string literal (detected at line 3)
 
-    Perhaps you misplaced a quote.
+    Did you forget a closing quote?
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -1205,12 +1241,10 @@ beyond the location indicated by --&gt; and ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
    2:
 --&gt;3: message = &#39;don&#39;t&#39;
-                     ^
+                      ^
 
-    There appears to be a Python identifier (variable name)
-    immediately following a string.
-    I suspect that you were trying to use a quote inside a string
-    that was enclosed in quotes of the same kind.
+    You starting writing a string with a single or double quote
+    but never ended the string with another quote on that line.
 </pre></div>
 </div>
 </div>
@@ -1245,90 +1279,6 @@ beyond the location indicated by --&gt; and ^.
     Perhaps you meant
 
         a = {&#39;a&#39;: 1,     &#39;b&#39;: 2,     &#39;c&#39;: 3,     }
-</pre></div>
-</div>
-</div>
-<div class="section" id="missing-comma-in-a-set">
-<h2>Missing comma in a set<a class="headerlink" href="#missing-comma-in-a-set" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    mod = __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error26.py&quot;, line 3
-    a = {1, 2  3}
-               ^
-SyntaxError: invalid syntax
-
-    Did you mean `&#39;2_3&#39;`?
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error26.py&#39;
-beyond the location indicated by --&gt; and ^.
-
-   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
-   2:
---&gt;3: a = {1, 2  3}
-                 ^
-
-    Python indicates that the error is caused by `3` written immediately after `2`.
-    It is possible that you forgot a comma between items in a set or dict
-    before the position indicated by --&gt; and ^.
-    Perhaps you meant to insert an operator like `+, -, *`
-    between `2` and `3`.
-    The following lines of code would not cause any `SyntaxError`:
-
-        a = {1, 2,  3}
-        a = {1, 2 +  3}
-        a = {1, 2 -  3}
-        a = {1, 2 *  3}
-    Note: these are just some of the possible choices and that
-    some of them might raise other types of exceptions.
-    Perhaps you forgot that you cannot have spaces
-    in variable names and wrote `&#39;2 3&#39;`
-    instead of `&#39;2_3&#39;`.
-</pre></div>
-</div>
-</div>
-<div class="section" id="missing-comma-in-a-list">
-<h2>Missing comma in a list<a class="headerlink" href="#missing-comma-in-a-list" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    mod = __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error27.py&quot;, line 3
-    a = [1, 2  3]
-               ^
-SyntaxError: invalid syntax
-
-    Did you mean `&#39;2_3&#39;`?
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error27.py&#39;
-beyond the location indicated by --&gt; and ^.
-
-   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
-   2:
---&gt;3: a = [1, 2  3]
-                 ^
-
-    Python indicates that the error is caused by `3` written immediately after `2`.
-    It is possible that you forgot a comma between items in a list
-    before the position indicated by --&gt; and ^.
-    Perhaps you meant to insert an operator like `+, -, *`
-    between `2` and `3`.
-    The following lines of code would not cause any `SyntaxError`:
-
-        a = [1, 2,  3]
-        a = [1, 2 +  3]
-        a = [1, 2 -  3]
-        a = [1, 2 *  3]
-    Note: these are just some of the possible choices and that
-    some of them might raise other types of exceptions.
-    Perhaps you forgot that you cannot have spaces
-    in variable names and wrote `&#39;2 3&#39;`
-    instead of `&#39;2_3&#39;`.
 </pre></div>
 </div>
 </div>
@@ -1621,10 +1571,10 @@ beyond the location indicated by --&gt; and ^.
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
     mod = __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error36.py&quot;, line 7
-    print(foo())
-    ^
-SyntaxError: invalid syntax
+  File &quot;TESTS:\syntax\raise_syntax_error36.py&quot;, line 5
+    return [1, 2, 3
+            ^
+SyntaxError: did you forget parentheses around the comprehension target?
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -1632,12 +1582,20 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error36.py&#39;
 beyond the location indicated by --&gt; and ^.
 
+   1: &quot;&quot;&quot;Should raise SyntaxError: f-string: invalid syntax
+   2: &quot;&quot;&quot;
    3:
    4: def foo():
-   5:     return [1, 2, 3
-   6:
---&gt;7: print(foo())
-      ^
+--&gt;5:     return [1, 2, 3
+                  ^
+
+    Python gave us the following informative message
+    about the possible cause of the error:
+
+        did you forget parentheses around the comprehension target?
+
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
 
     The opening square bracket `[` on line 5 is not closed.
 
@@ -1651,8 +1609,10 @@ beyond the location indicated by --&gt; and ^.
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
     mod = __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error37.py&quot;, line 8
-SyntaxError: unexpected EOF while parsing
+  File &quot;TESTS:\syntax\raise_syntax_error37.py&quot;, line 5
+    return [1, 2, 3,
+           ^
+SyntaxError: &#39;[&#39; was never closed
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -1660,18 +1620,20 @@ Python could not understand the code in the file
 &#39;TESTS:\syntax\raise_syntax_error37.py&#39;
 beyond the location indicated by --&gt; and ^.
 
-    3:
-    4: def foo():
-    5:     return [1, 2, 3,
-    6:
-    7: print(foo())
---&gt; 8:
-       ^
+   1: &quot;&quot;&quot;Should raise SyntaxError: unexpected EOF while parsing
+   2: &quot;&quot;&quot;
+   3:
+   4: def foo():
+--&gt;5:     return [1, 2, 3,
+                 ^
 
-    Python tells us that it reached the end of the file
-    and expected more content.
+    Python gave us the following informative message
+    about the possible cause of the error:
 
-    I will attempt to be give a bit more information.
+        &#39;[&#39; was never closed
+
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
 
     The opening square bracket `[` on line 5 is not closed.
 
@@ -2792,7 +2754,7 @@ beyond the location indicated by --&gt; and ^.
   File &quot;TESTS:\syntax\raise_syntax_error76.py&quot;, line 3
     if i % 2 = 0:
              ^
-SyntaxError: invalid syntax
+SyntaxError: expected &#39;:&#39;
 
     Perhaps you needed `==` or `:=` instead of `=`.
 
@@ -2807,6 +2769,14 @@ beyond the location indicated by --&gt; and ^.
 --&gt;3:     if i % 2 = 0:
                    ^
 
+    Python gave us the following informative message
+    about the possible cause of the error:
+
+        expected &#39;:&#39;
+
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+
     You used an assignment operator `=`; perhaps you meant to use
     an equality operator, `==`, or the walrus operator `:=`.
 </pre></div>
@@ -2820,7 +2790,7 @@ beyond the location indicated by --&gt; and ^.
   File &quot;TESTS:\syntax\raise_syntax_error77.py&quot;, line 5
     elif i % 2 = 0:
                ^
-SyntaxError: invalid syntax
+SyntaxError: expected &#39;:&#39;
 
     Perhaps you needed `==` or `:=` instead of `=`.
 
@@ -2837,6 +2807,14 @@ beyond the location indicated by --&gt; and ^.
 --&gt;5:     elif i % 2 = 0:
                      ^
 
+    Python gave us the following informative message
+    about the possible cause of the error:
+
+        expected &#39;:&#39;
+
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+
     You used an assignment operator `=`; perhaps you meant to use
     an equality operator, `==`, or the walrus operator `:=`.
 </pre></div>
@@ -2850,7 +2828,7 @@ beyond the location indicated by --&gt; and ^.
   File &quot;TESTS:\syntax\raise_syntax_error78.py&quot;, line 4
     while a = 1:
             ^
-SyntaxError: invalid syntax
+SyntaxError: expected &#39;:&#39;
 
     Perhaps you needed `==` or `:=` instead of `=`.
 
@@ -2865,6 +2843,14 @@ beyond the location indicated by --&gt; and ^.
    3:
 --&gt;4: while a = 1:
               ^
+
+    Python gave us the following informative message
+    about the possible cause of the error:
+
+        expected &#39;:&#39;
+
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
 
     You used an assignment operator `=`; perhaps you meant to use
     an equality operator, `==`, or the walrus operator `:=`.
@@ -3450,7 +3436,7 @@ beyond the location indicated by --&gt; and ^.
   File &quot;TESTS:\syntax\raise_syntax_error99.py&quot;, line 3
     if var start := begin &lt; end:
            ^
-SyntaxError: invalid syntax
+SyntaxError: expected &#39;:&#39;
 
     Did you mean `&#39;var_start&#39;`?
 
@@ -3464,6 +3450,14 @@ beyond the location indicated by --&gt; and ^.
    2:
 --&gt;3: if var start := begin &lt; end:
              ^
+
+    Python gave us the following informative message
+    about the possible cause of the error:
+
+        expected &#39;:&#39;
+
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
 
     Perhaps you forgot that you cannot have spaces
     in variable names and wrote `&#39;var start&#39;`
