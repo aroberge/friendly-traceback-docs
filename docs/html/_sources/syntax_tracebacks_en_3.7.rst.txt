@@ -1000,7 +1000,7 @@ Missing comma in a dict
           ^
     SyntaxError: invalid syntax
     
-        Did you mean `'2_'c''`?
+        Did you forget a comma?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -1037,7 +1037,7 @@ Missing comma in a set
                    ^
     SyntaxError: invalid syntax
     
-        Did you mean `'2_3'`?
+        Did you forget something between `2` and `3`?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -1063,9 +1063,6 @@ Missing comma in a set
             a = {1, 2 *  3}
         Note: these are just some of the possible choices and that
         some of them might raise other types of exceptions.
-        Perhaps you forgot that you cannot have spaces
-        in variable names and wrote `'2 3'`
-        instead of `'2_3'`.
         
 
 Missing comma in a list
@@ -1082,7 +1079,7 @@ Missing comma in a list
                    ^
     SyntaxError: invalid syntax
     
-        Did you mean `'2_3'`?
+        Did you forget something between `2` and `3`?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -1108,9 +1105,6 @@ Missing comma in a list
             a = [1, 2 *  3]
         Note: these are just some of the possible choices and that
         some of them might raise other types of exceptions.
-        Perhaps you forgot that you cannot have spaces
-        in variable names and wrote `'2 3'`
-        instead of `'2_3'`.
         
 
 Missing comma in a tuple
@@ -1127,7 +1121,7 @@ Missing comma in a tuple
                    ^
     SyntaxError: invalid syntax
     
-        Did you mean `'2_3'`?
+        Did you forget something between `2` and `3`?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -1154,9 +1148,6 @@ Missing comma in a tuple
             a = (1, 2 *  3)
         Note: these are just some of the possible choices and that
         some of them might raise other types of exceptions.
-        Perhaps you forgot that you cannot have spaces
-        in variable names and wrote `'2 3'`
-        instead of `'2_3'`.
         
 
 Missing comma between function args

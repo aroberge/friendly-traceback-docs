@@ -1204,7 +1204,7 @@ SyntaxError: invalid syntax
 
 ```
 
-Did you mean `'2_'c''`?
+Did you forget a comma?
 
 
 
@@ -1249,7 +1249,7 @@ SyntaxError: invalid syntax
 
 ```
 
-Did you mean `'2_3'`?
+Did you forget something between `2` and `3`?
 
 
 
@@ -1282,9 +1282,6 @@ The following lines of code would not cause any `SyntaxError`:
     a = {1, 2 *  3}
 Note: these are just some of the possible choices and that
 some of them might raise other types of exceptions.
-Perhaps you forgot that you cannot have spaces
-in variable names and wrote `'2 3'`
-instead of `'2_3'`.
 
 ---
 
@@ -1302,7 +1299,7 @@ SyntaxError: invalid syntax
 
 ```
 
-Did you mean `'2_3'`?
+Did you forget something between `2` and `3`?
 
 
 
@@ -1335,9 +1332,6 @@ The following lines of code would not cause any `SyntaxError`:
     a = [1, 2 *  3]
 Note: these are just some of the possible choices and that
 some of them might raise other types of exceptions.
-Perhaps you forgot that you cannot have spaces
-in variable names and wrote `'2 3'`
-instead of `'2_3'`.
 
 ---
 
@@ -1355,7 +1349,7 @@ SyntaxError: invalid syntax
 
 ```
 
-Did you mean `'2_3'`?
+Did you forget something between `2` and `3`?
 
 
 
@@ -1389,9 +1383,6 @@ The following lines of code would not cause any `SyntaxError`:
     a = (1, 2 *  3)
 Note: these are just some of the possible choices and that
 some of them might raise other types of exceptions.
-Perhaps you forgot that you cannot have spaces
-in variable names and wrote `'2 3'`
-instead of `'2_3'`.
 
 ---
 

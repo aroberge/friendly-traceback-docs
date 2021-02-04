@@ -1016,7 +1016,7 @@ Missing comma in a dict
         ^
     SyntaxError: invalid syntax
     
-        Vouliez-vous dire `'2_'c''` ?
+        Avez-vous oublié une virgule ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1053,7 +1053,7 @@ Missing comma in a set
                    ^
     SyntaxError: invalid syntax
     
-        Vouliez-vous dire `'2_3'` ?
+        Avez-vous oublié quelque chose entre `2` et `3` ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1079,9 +1079,6 @@ Missing comma in a set
             a = {1, 2 *  3}
         Remarque : ce ne sont là que quelques-uns des choix possibles et
         certains d’entre eux pourraient soulever d’autres types d’exceptions.
-        Peut-être avez-vous oublié que vous ne pouvez pas
-        avoir d'espaces dans des noms variables et avez écrit `'2 3'`
-        au lieu de `'2_3'`.
         
 
 Missing comma in a list
@@ -1098,7 +1095,7 @@ Missing comma in a list
                    ^
     SyntaxError: invalid syntax
     
-        Vouliez-vous dire `'2_3'` ?
+        Avez-vous oublié quelque chose entre `2` et `3` ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1124,9 +1121,6 @@ Missing comma in a list
             a = [1, 2 *  3]
         Remarque : ce ne sont là que quelques-uns des choix possibles et
         certains d’entre eux pourraient soulever d’autres types d’exceptions.
-        Peut-être avez-vous oublié que vous ne pouvez pas
-        avoir d'espaces dans des noms variables et avez écrit `'2 3'`
-        au lieu de `'2_3'`.
         
 
 Missing comma in a tuple
@@ -1143,7 +1137,7 @@ Missing comma in a tuple
                    ^
     SyntaxError: invalid syntax
     
-        Vouliez-vous dire `'2_3'` ?
+        Avez-vous oublié quelque chose entre `2` et `3` ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -1169,9 +1163,6 @@ Missing comma in a tuple
             a = (1, 2 *  3)
         Remarque : ce ne sont là que quelques-uns des choix possibles et
         certains d’entre eux pourraient soulever d’autres types d’exceptions.
-        Peut-être avez-vous oublié que vous ne pouvez pas
-        avoir d'espaces dans des noms variables et avez écrit `'2 3'`
-        au lieu de `'2_3'`.
         
 
 Missing comma between function args
