@@ -247,6 +247,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id2">Two consecutive names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deleting-constant-keyword">Deleting constant/keyword</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deleting-literal">Deleting literal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#eol-unescaped-backslash">EOL unescaped backslash</a></li>
 </ul>
 </li>
 </ul>
@@ -3444,6 +3445,33 @@ beyond the location indicated by –&gt; and ^.</p>
 <p>You cannot delete the literal <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">world!&quot;</span></code>.
 You can only delete the names of objects, or
 individual items in a container.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="eol-unescaped-backslash">
+<h2>EOL unescaped backslash<a class="headerlink" href="#eol-unescaped-backslash" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error105.py&quot;</span>, line <span class="m">1</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;abc</span><span class="se">\&quot;</span>
+              <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">EOL while scanning string literal</span>
+</pre></div>
+</div>
+<p>Did you forget to escape a backslash character?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error105.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;abc</span><span class="se">\&quot;</span>
+                    <span class="o">^</span>
+</pre></div>
+</div>
+<p>You starting writing a string with a single or double quote
+but never ended the string with another quote on that line.
+Perhaps you meant to write the backslash character, <code class="docutils literal notranslate"><span class="pre">\</span></code>
+as the last character in the string and forgot that you
+needed to escape it by writing two <code class="docutils literal notranslate"><span class="pre">\</span></code> in a row.</p>
 </div>
 </div>
 

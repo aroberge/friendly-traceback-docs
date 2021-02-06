@@ -3623,3 +3623,36 @@ Deleting literal
         Vous ne pouvez supprimer que les noms d’objets, ou
         des items individuels dans un conteneur.
         
+
+EOL unescaped backslash
+-----------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error105.py", line 1
+        a = "abc\"
+                  ^
+    SyntaxError: EOL while scanning string literal
+    
+        Avez-vous oublié d’échapper un caractère barre oblique inverse ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error105.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+    -->1: a = "abc\"
+                    ^
+
+        Vous aviez commencé à écrire une chaîne de caractères
+        avec un guillemet simple ou double, mais n'avez jamais
+        terminé la chaîne avec un autre guillemet sur cette ligne.
+        Peut-être que vous vouliez écrire une barre oblique inverse, `\`
+        comme le dernier caractère de la chaîne et vous oublié que vous
+        deviez en écrire deux `\` d’affilée.
+        

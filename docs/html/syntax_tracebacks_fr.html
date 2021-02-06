@@ -251,6 +251,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id2">Two consecutive names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deleting-constant-keyword">Deleting constant/keyword</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deleting-literal">Deleting literal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#eol-unescaped-backslash">EOL unescaped backslash</a></li>
 </ul>
 </li>
 </ul>
@@ -3596,6 +3597,36 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
     Vous ne pouvez pas supprimer le littéral `&quot;Hello world!&quot;`.
     Vous ne pouvez supprimer que les noms d’objets, ou
     des items individuels dans un conteneur.
+</pre></div>
+</div>
+</div>
+<div class="section" id="eol-unescaped-backslash">
+<h2>EOL unescaped backslash<a class="headerlink" href="#eol-unescaped-backslash" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error105.py&quot;, line 1
+    a = &quot;abc\&quot;
+              ^
+SyntaxError: EOL while scanning string literal
+
+    Avez-vous oublié d’échapper un caractère barre oblique inverse ?
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error105.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+--&gt;1: a = &quot;abc\&quot;
+                ^
+
+    Vous aviez commencé à écrire une chaîne de caractères
+    avec un guillemet simple ou double, mais n&#39;avez jamais
+    terminé la chaîne avec un autre guillemet sur cette ligne.
+    Peut-être que vous vouliez écrire une barre oblique inverse, `\`
+    comme le dernier caractère de la chaîne et vous oublié que vous
+    deviez en écrire deux `\` d’affilée.
 </pre></div>
 </div>
 </div>

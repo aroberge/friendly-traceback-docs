@@ -232,6 +232,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#annotated-name-cannot-be-global">Annotated name cannot be global</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deleting-constant-keyword">Deleting constant/keyword</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deleting-literal">Deleting literal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#eol-unescaped-backslash">EOL unescaped backslash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
@@ -3509,6 +3510,35 @@ beyond the location indicated by --&gt; and ^.
     You cannot delete the literal `&quot;Hello world!&quot;`.
     You can only delete the names of objects, or
     individual items in a container.
+</pre></div>
+</div>
+</div>
+<div class="section" id="eol-unescaped-backslash">
+<h2>EOL unescaped backslash<a class="headerlink" href="#eol-unescaped-backslash" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error105.py&quot;, line 1
+    a = &quot;abc\&quot;
+              ^
+SyntaxError: EOL while scanning string literal
+
+    Did you forget to escape a backslash character?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error105.py&#39;
+beyond the location indicated by --&gt; and ^.
+
+--&gt;1: a = &quot;abc\&quot;
+                ^
+
+    You starting writing a string with a single or double quote
+    but never ended the string with another quote on that line.
+    Perhaps you meant to write the backslash character, `\`
+    as the last character in the string and forgot that you
+    needed to escape it by writing two `\` in a row.
 </pre></div>
 </div>
 </div>

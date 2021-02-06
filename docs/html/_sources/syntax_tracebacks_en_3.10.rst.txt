@@ -3617,3 +3617,35 @@ Deleting literal
         You can only delete the names of objects, or
         individual items in a container.
         
+
+EOL unescaped backslash
+-----------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error105.py", line 1
+        a = "abc\"
+            ^
+    SyntaxError: unterminated string literal (detected at line 1)
+    
+        Did you forget to escape a backslash character?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error105.py'
+    beyond the location indicated by --> and ^.
+    
+    -->1: a = "abc\"
+              ^
+
+        You starting writing a string with a single or double quote
+        but never ended the string with another quote on that line.
+        Perhaps you meant to write the backslash character, `\`
+        as the last character in the string and forgot that you
+        needed to escape it by writing two `\` in a row.
+        
