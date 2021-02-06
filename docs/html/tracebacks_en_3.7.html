@@ -218,7 +218,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#zerodivisionerror">ZeroDivisionError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#complex-division">Complex division</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#division-operator">Division operator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#divmod">Divmod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#float-division">Float division</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#float-modulo">Float modulo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#integer-division-operator">Integer division operator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#modulo-operator">Modulo operator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#raise-zero-negative-power">Raise zero negative power</a></li>
 </ul>
@@ -1784,6 +1789,33 @@ Exception raised on line 43 of file TESTS:\runtime\test_value_error.py.
 </div>
 <div class="section" id="zerodivisionerror">
 <h2>ZeroDivisionError<a class="headerlink" href="#zerodivisionerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="complex-division">
+<h3>Complex division<a class="headerlink" href="#complex-division" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 97, in test_Complex_division
+    1 / zero
+ZeroDivisionError: complex division by zero
+
+A `ZeroDivisionError` occurs when you are attempting to divide a value
+by zero either directly or by using some other mathematical operation.
+
+    You are dividing by the following term
+
+         zero
+
+    which is equal to zero.
+
+Exception raised on line 97 of file TESTS:\runtime\test_zero_division_error.py.
+
+   95:     zero = 0j
+   96:     try:
+--&gt;97:         1 / zero
+   98:     except Exception as e:
+
+        zero: 0j
+</pre></div>
+</div>
+</div>
 <div class="section" id="division-operator">
 <h3>Division operator<a class="headerlink" href="#division-operator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -1791,13 +1823,14 @@ Exception raised on line 43 of file TESTS:\runtime\test_value_error.py.
     1 / zero
 ZeroDivisionError: division by zero
 
-A `ZeroDivisionError` occurs when you are attempting to divide
-a value by zero:
-    `result = my_variable / 0.`
-It can also happen if you calculate the remainder of a division
-using the modulo operator `%`:
-    `result = my_variable % 0`
-or if you try to raise 0 to a negative power.
+A `ZeroDivisionError` occurs when you are attempting to divide a value
+by zero either directly or by using some other mathematical operation.
+
+    You are dividing by the following term
+
+         zero
+
+    which is equal to zero.
 
 Exception raised on line 7 of file TESTS:\runtime\test_zero_division_error.py.
 
@@ -1810,27 +1843,133 @@ Exception raised on line 7 of file TESTS:\runtime\test_zero_division_error.py.
 </pre></div>
 </div>
 </div>
-<div class="section" id="modulo-operator">
-<h3>Modulo operator<a class="headerlink" href="#modulo-operator" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="divmod">
+<h3>Divmod<a class="headerlink" href="#divmod" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 22, in test_Modulo_operator
-    1 % zero
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 52, in test_Divmod
+    divmod(1, zero)
 ZeroDivisionError: integer division or modulo by zero
 
-A `ZeroDivisionError` occurs when you are attempting to divide
-a value by zero:
-    `result = my_variable / 0.`
-It can also happen if you calculate the remainder of a division
-using the modulo operator `%`:
-    `result = my_variable % 0`
-or if you try to raise 0 to a negative power.
+A `ZeroDivisionError` occurs when you are attempting to divide a value
+by zero either directly or by using some other mathematical operation.
+
+    The second argument of the `divmod()` function is zero.
+
+Exception raised on line 52 of file TESTS:\runtime\test_zero_division_error.py.
+
+   50:     zero = 0
+   51:     try:
+--&gt;52:         divmod(1, zero)
+   53:     except Exception as e:
+
+        zero: 0
+        divmod: &lt;builtin function divmod&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="float-division">
+<h3>Float division<a class="headerlink" href="#float-division" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 82, in test_Float_division
+    1 / zero
+ZeroDivisionError: float division by zero
+
+A `ZeroDivisionError` occurs when you are attempting to divide a value
+by zero either directly or by using some other mathematical operation.
+
+    You are dividing by the following term
+
+         zero
+
+    which is equal to zero.
+
+Exception raised on line 82 of file TESTS:\runtime\test_zero_division_error.py.
+
+   80:     zero = 0.
+   81:     try:
+--&gt;82:         1 / zero
+   83:     except Exception as e:
+
+        zero: 0.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="float-modulo">
+<h3>Float modulo<a class="headerlink" href="#float-modulo" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 67, in test_Float_modulo
+    1 % zero
+ZeroDivisionError: float modulo
+
+A `ZeroDivisionError` occurs when you are attempting to divide a value
+by zero either directly or by using some other mathematical operation.
+
+    Using the modulo operator, you are dividing by the following term
+
+         zero
+
+    which is equal to zero.
+
+Exception raised on line 67 of file TESTS:\runtime\test_zero_division_error.py.
+
+   65:     zero = 0.
+   66:     try:
+--&gt;67:         1 % zero
+   68:     except Exception as e:
+
+        zero: 0.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="integer-division-operator">
+<h3>Integer division operator<a class="headerlink" href="#integer-division-operator" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 22, in test_Integer_division_operator
+    1 // zero
+ZeroDivisionError: integer division or modulo by zero
+
+A `ZeroDivisionError` occurs when you are attempting to divide a value
+by zero either directly or by using some other mathematical operation.
+
+    You are dividing by the following term
+
+         zero
+
+    which is equal to zero.
 
 Exception raised on line 22 of file TESTS:\runtime\test_zero_division_error.py.
 
    20:     zero = 0
    21:     try:
---&gt;22:         1 % zero
+--&gt;22:         1 // zero
    23:     except Exception as e:
+
+        zero: 0
+</pre></div>
+</div>
+</div>
+<div class="section" id="modulo-operator">
+<h3>Modulo operator<a class="headerlink" href="#modulo-operator" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 37, in test_Modulo_operator
+    1 % zero
+ZeroDivisionError: integer division or modulo by zero
+
+A `ZeroDivisionError` occurs when you are attempting to divide a value
+by zero either directly or by using some other mathematical operation.
+
+    Using the modulo operator, you are dividing by the following term
+
+         zero
+
+    which is equal to zero.
+
+Exception raised on line 37 of file TESTS:\runtime\test_zero_division_error.py.
+
+   35:     zero = 0
+   36:     try:
+--&gt;37:         1 % zero
+   38:     except Exception as e:
 
         zero: 0
 </pre></div>
@@ -1839,24 +1978,22 @@ Exception raised on line 22 of file TESTS:\runtime\test_zero_division_error.py.
 <div class="section" id="raise-zero-negative-power">
 <h3>Raise zero negative power<a class="headerlink" href="#raise-zero-negative-power" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 37, in test_Raise_zero_negative_power
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 112, in test_Raise_zero_negative_power
     zero ** -1
 ZeroDivisionError: 0.0 cannot be raised to a negative power
 
-A `ZeroDivisionError` occurs when you are attempting to divide
-a value by zero:
-    `result = my_variable / 0.`
-It can also happen if you calculate the remainder of a division
-using the modulo operator `%`:
-    `result = my_variable % 0`
-or if you try to raise 0 to a negative power.
+A `ZeroDivisionError` occurs when you are attempting to divide a value
+by zero either directly or by using some other mathematical operation.
 
-Exception raised on line 37 of file TESTS:\runtime\test_zero_division_error.py.
+    You are attempting to raise the number 0 to a negative power
+    which is equivalent to dividing by zero.
 
-   35:     zero = 0
-   36:     try:
---&gt;37:         zero ** -1
-   38:     except Exception as e:
+Exception raised on line 112 of file TESTS:\runtime\test_zero_division_error.py.
+
+   110:     zero = 0
+   111:     try:
+--&gt;112:         zero ** -1
+   113:     except Exception as e:
 
         zero: 0
 </pre></div>

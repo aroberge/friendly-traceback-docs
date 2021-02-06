@@ -1663,6 +1663,37 @@ ZeroDivisionError
 -----------------
 
 
+Complex division
+~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_zero_division_error.py", line 97, in test_Complex_division
+        1 / zero
+    ZeroDivisionError: complex division by zero
+    
+    Une exception de type `ZeroDivisionError` se produit lorsque vous essayez de diviser une valeur
+    par zéro soit directement ou en utilisant une autre opération mathématique.
+    
+        Vous divisez par le terme suivant
+        
+             zero
+        
+        qui est égal à zéro.
+        
+    Exception levée à la ligne 97 du fichier TESTS:\runtime\test_zero_division_error.py.
+    
+       95:     zero = 0j
+       96:     try:
+    -->97:         1 / zero
+       98:     except Exception as e:
+
+            zero: 0j
+        
+
+
 Division operator
 ~~~~~~~~~~~~~~~~~
 
@@ -1674,21 +1705,142 @@ Division operator
         1 / zero
     ZeroDivisionError: division by zero
     
-    Une exception de type `ZeroDivisionError` se produit lorsque
-    vous tentez de diviser une valeur par zéro:
-        `résultat = ma_variable / 0.`
-    Ceci peut également se produire si vous calculez le reste d’une division 
-    à l’aide de l’opérateur modulo '%'
-        `résultat = ma_variable % 0`
-    ou si vous essayer d'élever 0 à une puissance négative.
+    Une exception de type `ZeroDivisionError` se produit lorsque vous essayez de diviser une valeur
+    par zéro soit directement ou en utilisant une autre opération mathématique.
     
-    
+        Vous divisez par le terme suivant
+        
+             zero
+        
+        qui est égal à zéro.
+        
     Exception levée à la ligne 7 du fichier TESTS:\runtime\test_zero_division_error.py.
     
        5:     zero = 0
        6:     try:
     -->7:         1 / zero
        8:     except Exception as e:
+
+            zero: 0
+        
+
+
+Divmod
+~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_zero_division_error.py", line 52, in test_Divmod
+        divmod(1, zero)
+    ZeroDivisionError: integer division or modulo by zero
+    
+    Une exception de type `ZeroDivisionError` se produit lorsque vous essayez de diviser une valeur
+    par zéro soit directement ou en utilisant une autre opération mathématique.
+    
+        Le deuxième argument de la fonction `divmod()` est égal à zéro.
+        
+    Exception levée à la ligne 52 du fichier TESTS:\runtime\test_zero_division_error.py.
+    
+       50:     zero = 0
+       51:     try:
+    -->52:         divmod(1, zero)
+       53:     except Exception as e:
+
+            zero: 0
+            divmod: <builtin function divmod>
+        
+
+
+Float division
+~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_zero_division_error.py", line 82, in test_Float_division
+        1 / zero
+    ZeroDivisionError: float division by zero
+    
+    Une exception de type `ZeroDivisionError` se produit lorsque vous essayez de diviser une valeur
+    par zéro soit directement ou en utilisant une autre opération mathématique.
+    
+        Vous divisez par le terme suivant
+        
+             zero
+        
+        qui est égal à zéro.
+        
+    Exception levée à la ligne 82 du fichier TESTS:\runtime\test_zero_division_error.py.
+    
+       80:     zero = 0.
+       81:     try:
+    -->82:         1 / zero
+       83:     except Exception as e:
+
+            zero: 0.0
+        
+
+
+Float modulo
+~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_zero_division_error.py", line 67, in test_Float_modulo
+        1 % zero
+    ZeroDivisionError: float modulo
+    
+    Une exception de type `ZeroDivisionError` se produit lorsque vous essayez de diviser une valeur
+    par zéro soit directement ou en utilisant une autre opération mathématique.
+    
+        En utilisant l’opérateur modulo, vous divisez par le terme suivant
+        
+             zero
+        
+        qui est égal à zéro.
+        
+    Exception levée à la ligne 67 du fichier TESTS:\runtime\test_zero_division_error.py.
+    
+       65:     zero = 0.
+       66:     try:
+    -->67:         1 % zero
+       68:     except Exception as e:
+
+            zero: 0.0
+        
+
+
+Integer division operator
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_zero_division_error.py", line 22, in test_Integer_division_operator
+        1 // zero
+    ZeroDivisionError: integer division or modulo by zero
+    
+    Une exception de type `ZeroDivisionError` se produit lorsque vous essayez de diviser une valeur
+    par zéro soit directement ou en utilisant une autre opération mathématique.
+    
+        Vous divisez par le terme suivant
+        
+             zero
+        
+        qui est égal à zéro.
+        
+    Exception levée à la ligne 22 du fichier TESTS:\runtime\test_zero_division_error.py.
+    
+       20:     zero = 0
+       21:     try:
+    -->22:         1 // zero
+       23:     except Exception as e:
 
             zero: 0
         
@@ -1701,25 +1853,25 @@ Modulo operator
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_zero_division_error.py", line 22, in test_Modulo_operator
+      File "TESTS:\runtime\test_zero_division_error.py", line 37, in test_Modulo_operator
         1 % zero
     ZeroDivisionError: integer division or modulo by zero
     
-    Une exception de type `ZeroDivisionError` se produit lorsque
-    vous tentez de diviser une valeur par zéro:
-        `résultat = ma_variable / 0.`
-    Ceci peut également se produire si vous calculez le reste d’une division 
-    à l’aide de l’opérateur modulo '%'
-        `résultat = ma_variable % 0`
-    ou si vous essayer d'élever 0 à une puissance négative.
+    Une exception de type `ZeroDivisionError` se produit lorsque vous essayez de diviser une valeur
+    par zéro soit directement ou en utilisant une autre opération mathématique.
     
+        En utilisant l’opérateur modulo, vous divisez par le terme suivant
+        
+             zero
+        
+        qui est égal à zéro.
+        
+    Exception levée à la ligne 37 du fichier TESTS:\runtime\test_zero_division_error.py.
     
-    Exception levée à la ligne 22 du fichier TESTS:\runtime\test_zero_division_error.py.
-    
-       20:     zero = 0
-       21:     try:
-    -->22:         1 % zero
-       23:     except Exception as e:
+       35:     zero = 0
+       36:     try:
+    -->37:         1 % zero
+       38:     except Exception as e:
 
             zero: 0
         
@@ -1732,25 +1884,22 @@ Raise zero negative power
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_zero_division_error.py", line 37, in test_Raise_zero_negative_power
+      File "TESTS:\runtime\test_zero_division_error.py", line 112, in test_Raise_zero_negative_power
         zero ** -1
     ZeroDivisionError: 0.0 cannot be raised to a negative power
     
-    Une exception de type `ZeroDivisionError` se produit lorsque
-    vous tentez de diviser une valeur par zéro:
-        `résultat = ma_variable / 0.`
-    Ceci peut également se produire si vous calculez le reste d’une division 
-    à l’aide de l’opérateur modulo '%'
-        `résultat = ma_variable % 0`
-    ou si vous essayer d'élever 0 à une puissance négative.
+    Une exception de type `ZeroDivisionError` se produit lorsque vous essayez de diviser une valeur
+    par zéro soit directement ou en utilisant une autre opération mathématique.
     
+        Vous essayez d'élever le nombre 0 à une puissance négative
+        ce qui équivaut à diviser par zéro.
+        
+    Exception levée à la ligne 112 du fichier TESTS:\runtime\test_zero_division_error.py.
     
-    Exception levée à la ligne 37 du fichier TESTS:\runtime\test_zero_division_error.py.
-    
-       35:     zero = 0
-       36:     try:
-    -->37:         zero ** -1
-       38:     except Exception as e:
+       110:     zero = 0
+       111:     try:
+    -->112:         zero ** -1
+       113:     except Exception as e:
 
             zero: 0
         

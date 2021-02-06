@@ -582,13 +582,8 @@ ZeroDivisionError
 
 .. code-block:: none
 
-    A `ZeroDivisionError` occurs when you are attempting to divide
-    a value by zero:
-        `result = my_variable / 0.`
-    It can also happen if you calculate the remainder of a division
-    using the modulo operator `%`:
-        `result = my_variable % 0`
-    or if you try to raise 0 to a negative power.
+    A `ZeroDivisionError` occurs when you are attempting to divide a value
+    by zero either directly or by using some other mathematical operation.
     
 
 
