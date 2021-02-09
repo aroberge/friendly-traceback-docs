@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly tracebacks 0.2.21a documentation</title>
+  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly tracebacks 0.2.23a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.21a
+                0.2.23a
               </div>
             
           
@@ -237,6 +237,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#deleting-constant-keyword">Deleting constant/keyword</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deleting-literal">Deleting literal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#eol-unescaped-backslash">EOL unescaped backslash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#f-string-with-backslash">f-string with backslash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unterminated-triple-quoted-string">Unterminated triple quoted string</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
@@ -346,7 +348,7 @@ On Windows, if Sphinx is installed on your computer, it is suggested
 instead to run make_trb.bat in the root directory as it will create
 similar files for all languages <em>and</em> update the documentation.</p>
 </div>
-<p>Friendly-traceback version: 0.2.21a
+<p>Friendly-traceback version: 0.2.23a
 Python version: 3.8.4</p>
 <div class="section" id="indentationerror-expected-an-indented-block">
 <h2>IndentationError: expected an indented block<a class="headerlink" href="#indentationerror-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -3614,6 +3616,65 @@ beyond the location indicated by --&gt; and ^.
     Perhaps you meant to write the backslash character, `\`
     as the last character in the string and forgot that you
     needed to escape it by writing two `\` in a row.
+</pre></div>
+</div>
+</div>
+<div class="section" id="f-string-with-backslash">
+<h2>f-string with backslash<a class="headerlink" href="#f-string-with-backslash" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error106.py&quot;, line 2
+    print(f&quot;{&#39;\n&#39;.join(names)}&quot;)
+          ^
+SyntaxError: f-string expression part cannot include a backslash
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error106.py&#39;
+beyond the location indicated by --&gt; and ^.
+
+   1: names = [&#39;a&#39;, &#39;b&#39;]
+--&gt;2: print(f&quot;{&#39;\n&#39;.join(names)}&quot;)
+            ^
+
+    You have written an f-string whose content `{...}`
+    includes a backslash; this is not allowed.
+    Perhaps you can replace the part that contains a backslash by
+    some variable. For example, suppose that you have an f-string like:
+
+        f&quot;{... &#39;hello\n&#39; ...}&quot;
+
+    you could write this as
+
+        hello = &#39;hello\n&#39;
+        f&quot;{... hello ...}&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="unterminated-triple-quoted-string">
+<h2>Unterminated triple quoted string<a class="headerlink" href="#unterminated-triple-quoted-string" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error107.py&quot;, line 4
+    some_text = &quot;&quot;&quot;In a land
+populated by weird animals,
+a ...
+                                                               ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error107.py&#39;
+for an unspecified reason.
+
+   1: some_text =
+
+    You started writing a triple-quoted string but never wrote
+    the triple quotes needed to end the string.
 </pre></div>
 </div>
 </div>

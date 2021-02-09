@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.formatters &mdash; Friendly tracebacks 0.2.21a documentation</title>
+  <title>friendly_traceback.formatters &mdash; Friendly tracebacks 0.2.23a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.2.21a
+                0.2.23a
               </div>
             
           
@@ -313,6 +313,7 @@
     <span class="s2">&quot;exception_raised_variables&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 
+
 <span class="c1"># ===============================</span>
 <span class="c1">#</span>
 <span class="c1">#  Next, we have the five formatters.</span>
@@ -344,7 +345,7 @@
                 <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">indentation</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]:</span>
-        <span class="k">return</span> <span class="n">_no_result</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">no_result</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
 
@@ -362,6 +363,7 @@
     <span class="k">return</span> <span class="n">text</span>
 
 
+<span class="c1"># TODO: move to ipython.py</span>
 <div class="viewcode-block" id="jupyter"><a class="viewcode-back" href="../../formatter.html#friendly_traceback.formatters.jupyter">[docs]</a><span class="k">def</span> <span class="nf">jupyter</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Jupyter formatter using pygments and html format.&quot;&quot;&quot;</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
@@ -452,7 +454,7 @@
                 <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">indentation</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]:</span>
-        <span class="k">return</span> <span class="n">_no_result</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">no_result</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
 
@@ -552,11 +554,11 @@
             <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="n">content</span> <span class="o">+</span> <span class="n">suffix</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]:</span>
-        <span class="k">return</span> <span class="n">_no_result</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">no_result</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="p">)</span>
     <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">_no_result</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="p">):</span>
+<div class="viewcode-block" id="no_result"><a class="viewcode-back" href="../../formatter.html#friendly_traceback.formatters.no_result">[docs]</a><span class="k">def</span> <span class="nf">no_result</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Should normally only be called if no result is available</span>
 <span class="sd">    from either hint() or why().</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -569,7 +571,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;I have no suggestion to offer.&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Internal error: include = </span><span class="si">{</span><span class="n">include</span><span class="si">}</span><span class="s2"> in formatters._no_result()&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Internal error: include = </span><span class="si">{</span><span class="n">include</span><span class="si">}</span><span class="s2"> in formatters.no_result()&quot;</span></div>
 
 
 <span class="n">items_groups</span> <span class="o">=</span> <span class="p">{</span>

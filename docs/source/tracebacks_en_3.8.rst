@@ -16,7 +16,7 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly-traceback version: 0.2.21a
+Friendly-traceback version: 0.2.23a
 Python version: 3.8.4
 
 
@@ -299,6 +299,40 @@ Shadow stdlib module
        135:     except Exception as e:
 
             turtle: <module turtle> from TESTS:\turtle.py
+        
+
+
+Tuple by accident
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_attribute_error.py", line 240, in test_Tuple_by_accident
+        something.upper()
+    AttributeError: 'tuple' object has no attribute 'upper'
+    
+        Did you write a comma by mistake?
+        
+    An `AttributeError` occurs when the code contains something like
+        `object.x`
+    and `x` is not a method or attribute (variable) belonging to `object`.
+    
+        `something` is a tuple that contains a single item
+        which does have `'upper'` as an attribute.
+        Perhaps you added a trailing comma by mistake at the end of the line
+        where you defined `something`.
+        
+    Exception raised on line 240 of file TESTS:\runtime\test_attribute_error.py.
+    
+       238:     something = "abc",  # note trailing comma
+       239:     try:
+    -->240:         something.upper()
+                    ^^^^^^^^^^^^^^^
+       241:     except Exception as e:
+
+            something: ('abc',)
         
 
 

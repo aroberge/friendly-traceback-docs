@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.2.21a
+Friendly-traceback version: 0.2.23a
 Python version: 3.8.4
 
 
@@ -3639,4 +3639,69 @@ EOL unescaped backslash
         Perhaps you meant to write the backslash character, `\`
         as the last character in the string and forgot that you
         needed to escape it by writing two `\` in a row.
+        
+
+f-string with backslash
+-----------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error106.py", line 2
+        print(f"{'\n'.join(names)}")
+              ^
+    SyntaxError: f-string expression part cannot include a backslash
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error106.py'
+    beyond the location indicated by --> and ^.
+    
+       1: names = ['a', 'b']
+    -->2: print(f"{'\n'.join(names)}")
+                ^
+
+        You have written an f-string whose content `{...}`
+        includes a backslash; this is not allowed.
+        Perhaps you can replace the part that contains a backslash by
+        some variable. For example, suppose that you have an f-string like:
+        
+            f"{... 'hello\n' ...}"
+        
+        you could write this as
+        
+            hello = 'hello\n'
+            f"{... hello ...}"
+        
+
+Unterminated triple quoted string
+---------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error107.py", line 4
+        some_text = """In a land
+    populated by weird animals,
+    a ...
+                                                                   ^
+    SyntaxError: EOF while scanning triple-quoted string literal
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error107.py'
+    for an unspecified reason.
+    
+       1: some_text =
+
+        You started writing a triple-quoted string but never wrote
+        the triple quotes needed to end the string.
         

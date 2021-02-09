@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.2.21a documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly tracebacks 0.2.23a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.21a
+                0.2.23a
               </div>
             
           
@@ -138,6 +138,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#object-attribute-typo">Object attribute typo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#perhaps-comma">Perhaps comma</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#shadow-stdlib-module">Shadow stdlib module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tuple-by-accident">Tuple by accident</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-builtin">Use builtin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-synonym">Use synonym</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-slots">Using slots</a></li>
@@ -338,7 +339,7 @@ trb_english.py located in the <code class="docutils literal notranslate"><span c
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.2.21a
+<p>Friendly-traceback version: 0.2.23a
 Python version: 3.8.4</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -579,6 +580,36 @@ Exception raised on line 134 of file TESTS:\runtime\test_attribute_error.py.
    135:     except Exception as e:
 
         turtle: &lt;module turtle&gt; from TESTS:\turtle.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="tuple-by-accident">
+<h3>Tuple by accident<a class="headerlink" href="#tuple-by-accident" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 240, in test_Tuple_by_accident
+    something.upper()
+AttributeError: &#39;tuple&#39; object has no attribute &#39;upper&#39;
+
+    Did you write a comma by mistake?
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+    `something` is a tuple that contains a single item
+    which does have `&#39;upper&#39;` as an attribute.
+    Perhaps you added a trailing comma by mistake at the end of the line
+    where you defined `something`.
+
+Exception raised on line 240 of file TESTS:\runtime\test_attribute_error.py.
+
+   238:     something = &quot;abc&quot;,  # note trailing comma
+   239:     try:
+--&gt;240:         something.upper()
+                ^^^^^^^^^^^^^^^
+   241:     except Exception as e:
+
+        something: (&#39;abc&#39;,)
 </pre></div>
 </div>
 </div>
