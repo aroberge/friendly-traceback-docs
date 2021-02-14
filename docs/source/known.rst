@@ -54,7 +54,11 @@ AssertionError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 AttributeError
 ~~~~~~~~~~~~~~
@@ -70,91 +74,143 @@ BaseException
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 BlockingIOError
 ~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 BrokenPipeError
 ~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 BufferError
 ~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 ChildProcessError
 ~~~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 ConnectionAbortedError
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 ConnectionError
 ~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 ConnectionRefusedError
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 ConnectionResetError
 ~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 EOFError
 ~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 EnvironmentError
 ~~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 Exception
 ~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 FileExistsError
 ~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 FileNotFoundError
 ~~~~~~~~~~~~~~~~~
@@ -170,21 +226,33 @@ FloatingPointError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 GeneratorExit
 ~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 IOError
 ~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 ImportError
 ~~~~~~~~~~~
@@ -218,14 +286,22 @@ InterruptedError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 IsADirectoryError
 ~~~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 KeyError
 ~~~~~~~~
@@ -240,7 +316,11 @@ KeyboardInterrupt
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 LookupError
 ~~~~~~~~~~~
@@ -256,7 +336,11 @@ MemoryError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 ModuleNotFoundError
 ~~~~~~~~~~~~~~~~~~~
@@ -284,21 +368,33 @@ NotADirectoryError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 NotImplementedError
 ~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 OSError
 ~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 OverflowError
 ~~~~~~~~~~~~~
@@ -313,14 +409,22 @@ PermissionError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 ProcessLookupError
 ~~~~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 RecursionError
 ~~~~~~~~~~~~~~
@@ -337,28 +441,44 @@ ReferenceError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 RuntimeError
 ~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 StopAsyncIteration
 ~~~~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 StopIteration
 ~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 SyntaxError
 ~~~~~~~~~~~
@@ -372,14 +492,22 @@ SystemError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 SystemExit
 ~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 TabError
 ~~~~~~~~
@@ -398,7 +526,11 @@ TimeoutError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 TypeError
 ~~~~~~~~~
@@ -429,28 +561,44 @@ UnicodeDecodeError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 UnicodeEncodeError
 ~~~~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 UnicodeError
 ~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 UnicodeTranslateError
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 ValueError
 ~~~~~~~~~~
@@ -465,7 +613,11 @@ WindowsError
 
 .. code-block:: none
 
-    No information is available about this exception.
+    No information is known about this exception.
+    Please report this example to
+    https://github.com/aroberge/friendly-traceback/issues
+    If you are using the Friendly console, use `www()` to
+    do an Internet search for this particular case.
 
 ZeroDivisionError
 ~~~~~~~~~~~~~~~~~

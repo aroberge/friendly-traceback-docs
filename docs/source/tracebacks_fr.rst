@@ -1617,8 +1617,12 @@ Generic
         raise MyException("Some informative message about an unknown exception.")
     MyException: Some informative message about an unknown exception.
     
-    Aucune information n’est disponible sur cette exception.
+    Aucune information n’est connue à propos de cette exception.
+    Veuillez signaler cet exemple à
+    https://github.com/aroberge/friendly-traceback/issues
     
+    Si vous utilisez la console Friendly, utilisez `www()` pour
+    faire une recherche sur Internet pour ce cas particulier.
     Exception levée à la ligne 10 du fichier TESTS:\runtime\test_unknown_error.py.
     
         8: def test_Generic():

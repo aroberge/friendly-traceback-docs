@@ -319,13 +319,12 @@
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="debug"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console_helpers.debug">[docs]</a><span class="k">def</span> <span class="nf">debug</span><span class="p">():</span>
+<div class="viewcode-block" id="debug"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console_helpers.debug">[docs]</a><span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="n">flag</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This functions displays the true traceback recorded, that</span>
 <span class="sd">    includes friendly-traceback&#39;s own code.</span>
-<span class="sd">    It also adds the suggestion/hint from friendly-traceback</span>
-<span class="sd">    and sets a debug flag for the current session.</span>
+<span class="sd">    It also sets a debug flag for the current session.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">debug_helper</span><span class="o">.</span><span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">debug_helper</span><span class="o">.</span><span class="n">DEBUG</span> <span class="o">=</span> <span class="n">flag</span>
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span></div>
 
 
