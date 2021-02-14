@@ -1984,6 +1984,7 @@ https://github.com/aroberge/friendly-traceback/issues
 If you are using the Friendly console, use `www()` to
 do an Internet search for this particular case.
 
+
 #### Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.
 
 

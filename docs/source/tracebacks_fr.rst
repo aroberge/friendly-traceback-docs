@@ -1623,6 +1623,7 @@ Generic
     
     Si vous utilisez la console Friendly, utilisez `www()` pour
     faire une recherche sur Internet pour ce cas particulier.
+    
     Exception levée à la ligne 10 du fichier TESTS:\runtime\test_unknown_error.py.
     
         8: def test_Generic():
