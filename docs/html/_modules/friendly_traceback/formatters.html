@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.formatters &mdash; Friendly tracebacks 0.2.23a documentation</title>
+  <title>friendly_traceback.formatters &mdash; Friendly tracebacks 0.2.31a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.2.23a
+                0.2.31a
               </div>
             
           
@@ -263,7 +263,6 @@
         <span class="kn">from</span> <span class="nn">pygments.formatters</span> <span class="kn">import</span> <span class="n">HtmlFormatter</span>  <span class="c1"># noqa</span>
         <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>  <span class="c1"># noqa</span>
 
-        <span class="n">INSERTED_CSS</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="n">ipython_available</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
         <span class="k">pass</span>
@@ -296,15 +295,18 @@
 <span class="p">]</span>
 
 
-<span class="n">default_indentation</span> <span class="o">=</span> <span class="p">{</span>  <span class="c1"># used with repl and pre formatters.</span>
+<span class="n">repl_indentation</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;header&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;original_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;shortened_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
     <span class="s2">&quot;suggest&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">,</span>
     <span class="s2">&quot;generic&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
     <span class="s2">&quot;parsing_error&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
     <span class="s2">&quot;parsing_error_source&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
     <span class="s2">&quot;cause_header&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;cause&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cause&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
     <span class="s2">&quot;last_call_header&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
     <span class="s2">&quot;last_call_source&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
     <span class="s2">&quot;last_call_variables&quot;</span><span class="p">:</span> <span class="s2">&quot;double&quot;</span><span class="p">,</span>
@@ -327,20 +329,13 @@
 <span class="sd">    The only change made to the content of &quot;info&quot; is</span>
 <span class="sd">    some added indentation.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># We first define the indentation to appear before each item</span>
-    <span class="n">repl_items</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;original_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;shortened_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
-    <span class="p">}</span>
-    <span class="n">repl_items</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">default_indentation</span><span class="p">)</span>
 
     <span class="n">items_to_show</span> <span class="o">=</span> <span class="n">select_items</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>
     <span class="n">spacing</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;single&quot;</span><span class="p">:</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;double&quot;</span><span class="p">:</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items_to_show</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
-            <span class="n">indentation</span> <span class="o">=</span> <span class="n">spacing</span><span class="p">[</span><span class="n">repl_items</span><span class="p">[</span><span class="n">item</span><span class="p">]]</span>
+            <span class="n">indentation</span> <span class="o">=</span> <span class="n">spacing</span><span class="p">[</span><span class="n">repl_indentation</span><span class="p">[</span><span class="n">item</span><span class="p">]]</span>
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>
                 <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">indentation</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span>
 
@@ -363,7 +358,9 @@
     <span class="k">return</span> <span class="n">text</span>
 
 
-<span class="c1"># TODO: move to ipython.py</span>
+<span class="c1"># For some reason, moving this to friendly_traceback.ipython</span>
+<span class="c1"># and trying to import it from there uninstalls everything: it is as though</span>
+<span class="c1"># it starts a new iPython subprocess.</span>
 <div class="viewcode-block" id="jupyter"><a class="viewcode-back" href="../../formatter.html#friendly_traceback.formatters.jupyter">[docs]</a><span class="k">def</span> <span class="nf">jupyter</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Jupyter formatter using pygments and html format.&quot;&quot;&quot;</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
@@ -437,12 +434,15 @@
 <span class="sd">    some added indentation.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># We first define the indentation to appear before each item</span>
-    <span class="n">pre_items</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;original_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;shortened_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
-    <span class="p">}</span>
-    <span class="n">pre_items</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">default_indentation</span><span class="p">)</span>
+    <span class="n">pre_items</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="o">**</span><span class="n">repl_indentation</span><span class="p">)</span>
+
+    <span class="n">pre_items</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+        <span class="o">**</span><span class="p">{</span>
+            <span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;original_python_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;shortened_traceback&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
 
     <span class="n">items_to_show</span> <span class="o">=</span> <span class="n">select_items</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>
     <span class="n">spacing</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;single&quot;</span><span class="p">:</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;double&quot;</span><span class="p">:</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>

@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.2.21a
+Friendly-traceback version: 0.2.31a
 Python version: 3.10.0a5
 
 
@@ -50,9 +50,9 @@ IndentationError: expected an indented block
     -->4: pass
           ^
 
-        The line identified above
-        was expected to begin a new indented block.
-        
+    The line identified above
+    was expected to begin a new indented block.
+    
 
 IndentationError: unexpected indent
 -----------------------------------
@@ -81,8 +81,8 @@ IndentationError: unexpected indent
     -->4:       pass
                ^
 
-        The line identified above is more indented than expected.
-        
+    The line identified above is more indented than expected.
+    
 
 IndentationError: unindent does not match ...
 ---------------------------------------------
@@ -112,8 +112,8 @@ IndentationError: unindent does not match ...
     -->5:     pass
                   ^
 
-        The line identified above is less indented than expected.
-        
+    The line identified above is less indented than expected.
+    
 
 IndentationError: missing continuation line
 -------------------------------------------
@@ -143,14 +143,14 @@ IndentationError: missing continuation line
     -->6:          "c"
                   ^
 
-        The line identified above is more indented than expected.
-        
-        However, line 6, which is identified as having a problem,
-        consists of a single string which is also the case
-        for the preceding line.
-        Perhaps you meant to include a continuation character, `\`,
-        at the end of line 5.
-        
+    The line identified above is more indented than expected.
+    
+    However, line 6, which is identified as having a problem,
+    consists of a single string which is also the case
+    for the preceding line.
+    Perhaps you meant to include a continuation character, `\`,
+    at the end of line 5.
+    
 
 TabError
 --------
@@ -209,10 +209,10 @@ Assign to keyword
     -->3: else = 1
           ^
 
-        You were trying to assign a value to the Python keyword `else`.
-        This is not allowed.
-        
-        
+    You were trying to assign a value to the Python keyword `else`.
+    This is not allowed.
+    
+    
 
 Assign to keyword
 -----------------
@@ -239,10 +239,10 @@ Assign to keyword
     -->3: def = 2
               ^
 
-        You were trying to assign a value to the Python keyword `def`.
-        This is not allowed.
-        
-        
+    You were trying to assign a value to the Python keyword `def`.
+    This is not allowed.
+    
+    
 
 Missing colon - if
 ------------------
@@ -271,18 +271,18 @@ Missing colon - if
     -->3: if True
                  ^
 
-        Python gave us the following informative message
-        about the possible cause of the error:
-        
-            expected ':'
-        
-        However, I do not recognize this information and I have
-        to guess what caused the problem, but I might be wrong.
-        
-        You wrote a statement beginning with
-        `if` but forgot to add a colon `:` at the end
-        
-        
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        expected ':'
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    You wrote a statement beginning with
+    `if` but forgot to add a colon `:` at the end
+    
+    
 
 Missing colon - while
 ---------------------
@@ -311,18 +311,18 @@ Missing colon - while
     -->3: while True  # a comment
                       ^
 
-        Python gave us the following informative message
-        about the possible cause of the error:
-        
-            expected ':'
-        
-        However, I do not recognize this information and I have
-        to guess what caused the problem, but I might be wrong.
-        
-        You wrote a `while` loop but
-        forgot to add a colon `:` at the end
-        
-        
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        expected ':'
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    You wrote a `while` loop but
+    forgot to add a colon `:` at the end
+    
+    
 
 Write elif, not else if
 -----------------------
@@ -353,18 +353,18 @@ Write elif, not else if
     -->5: else if True:
                ^
 
-        Python gave us the following informative message
-        about the possible cause of the error:
-        
-            expected ':'
-        
-        However, I do not recognize this information and I have
-        to guess what caused the problem, but I might be wrong.
-        
-        You likely meant to use Python's `elif` keyword
-        but wrote `else if` instead
-        
-        
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        expected ':'
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    You likely meant to use Python's `elif` keyword
+    but wrote `else if` instead
+    
+    
 
 Write elif, not elseif
 ----------------------
@@ -395,10 +395,10 @@ Write elif, not elseif
     -->5: elseif True:
                  ^
 
-        You likely meant to use Python's `elif` keyword
-        but wrote `elseif` instead
-        
-        
+    You likely meant to use Python's `elif` keyword
+    but wrote `elseif` instead
+    
+    
 
 Malformed def statement - 1
 ---------------------------
@@ -425,11 +425,11 @@ Malformed def statement - 1
     -->3: def :
               ^
 
-        You tried to define a function and did not use the correct syntax.
-        The correct syntax is:
-        
-            def name ( ... ):
-        
+    You tried to define a function and did not use the correct syntax.
+    The correct syntax is:
+    
+        def name ( ... ):
+    
 
 Malformed def statement - missing parentheses
 ---------------------------------------------
@@ -458,9 +458,9 @@ Malformed def statement - missing parentheses
     -->3: def name:
                   ^
 
-        Perhaps you forgot to include parentheses.
-        You might have meant to write `def name():`
-        
+    Perhaps you forgot to include parentheses.
+    You might have meant to write `def name():`
+    
 
 Malformed def statement - 3
 ---------------------------
@@ -487,11 +487,11 @@ Malformed def statement - 3
     -->3: def ( arg )  :
               ^
 
-        You forgot to name your function.
-        The correct syntax is:
-        
-            def name ( ... ):
-        
+    You forgot to name your function.
+    The correct syntax is:
+    
+        def name ( ... ):
+    
 
 Cannot assign to literal - 1
 ----------------------------
@@ -519,17 +519,17 @@ Cannot assign to literal - 1
     -->3: 1 = a
           ^
 
-        You wrote an expression like
-        
-            1 = a
-        where `1`, on the left-hand side of the equal sign,
-        is or includes an actual object of type `int`
-        and is not simply the name of a variable.
-        Perhaps you meant to write:
-        
-            a = 1
-        
-        
+    You wrote an expression like
+    
+        1 = a
+    where `1`, on the left-hand side of the equal sign,
+    is or includes an actual object of type `int`
+    and is not simply the name of a variable.
+    Perhaps you meant to write:
+    
+        a = 1
+    
+    
 
 Cannot assign to literal - 2
 ----------------------------
@@ -556,14 +556,14 @@ Cannot assign to literal - 2
     -->3: 1 = 2
           ^
 
-        You wrote an expression like
-        
-            1 = 2
-        where `1`, on the left-hand side of the equal sign,
-        is or includes an actual object of type `int`
-        and is not simply the name of a variable.
-        
-        
+    You wrote an expression like
+    
+        1 = 2
+    where `1`, on the left-hand side of the equal sign,
+    is or includes an actual object of type `int`
+    and is not simply the name of a variable.
+    
+    
 
 Inversion: import X from Y
 --------------------------
@@ -592,15 +592,15 @@ Inversion: import X from Y
     -->3: import pen from turtle
                      ^
 
-        You wrote something like
-        
-            import pen from turtle
-        instead of
-        
-            from turtle import pen
-        
-        
-        
+    You wrote something like
+    
+        import pen from turtle
+    instead of
+    
+        from turtle import pen
+    
+    
+    
 
 EOL while scanning string literal
 ---------------------------------
@@ -629,9 +629,9 @@ EOL while scanning string literal
     -->3: alphabet = 'abc
                      ^
 
-        You starting writing a string with a single or double quote
-        but never ended the string with another quote on that line.
-        
+    You starting writing a string with a single or double quote
+    but never ended the string with another quote on that line.
+    
 
 Assignment to keyword (None)
 ----------------------------
@@ -660,9 +660,9 @@ Assignment to keyword (None)
     -->4: None = 1
           ^
 
-        `None` is a constant in Python; you cannot assign it a value.
-        
-        
+    `None` is a constant in Python; you cannot assign it a value.
+    
+    
 
 Assignment to keyword (__debug__)
 ---------------------------------
@@ -691,9 +691,9 @@ Assignment to keyword (__debug__)
     -->4: __debug__ = 1
           ^
 
-        `__debug__` is a constant in Python; you cannot assign it a value.
-        
-        
+    `__debug__` is a constant in Python; you cannot assign it a value.
+    
+    
 
 Unmatched closing parenthesis
 -----------------------------
@@ -723,8 +723,8 @@ Unmatched closing parenthesis
     -->6:     3, 4,))
                     ^
 
-        The closing parenthesis `)` on line 6 does not match anything.
-        
+    The closing parenthesis `)` on line 6 does not match anything.
+    
 
 Unclosed parenthesis - 1
 ------------------------
@@ -750,19 +750,19 @@ Unclosed parenthesis - 1
     -->2: x = int('1'
                  ^
 
-        Python gave us the following informative message
-        about the possible cause of the error:
-        
-            '(' was never closed
-        
-        However, I do not recognize this information and I have
-        to guess what caused the problem, but I might be wrong.
-        
-        The opening parenthesis `(` on line 2 is not closed.
-        
-            2: x = int('1'
-                      |
-        
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        '(' was never closed
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    The opening parenthesis `(` on line 2 is not closed.
+    
+        2: x = int('1'
+                  |
+    
 
 Unclosed parenthesis - 2
 ------------------------
@@ -788,19 +788,19 @@ Unclosed parenthesis - 2
     -->2: a = (b+c
               ^
 
-        Python gave us the following informative message
-        about the possible cause of the error:
-        
-            '(' was never closed
-        
-        However, I do not recognize this information and I have
-        to guess what caused the problem, but I might be wrong.
-        
-        The opening parenthesis `(` on line 2 is not closed.
-        
-            2: a = (b+c
-                   |
-        
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        '(' was never closed
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    The opening parenthesis `(` on line 2 is not closed.
+    
+        2: a = (b+c
+               |
+    
 
 Mismatched brackets - 1
 -----------------------
@@ -826,16 +826,16 @@ Mismatched brackets - 1
     -->2: x = (1, 2, 3]
                       ^
 
-        Python tells us that the closing `]` on the last line shown
-        does not match the opening `(`.
-        
-        I will attempt to be give a bit more information.
-        
-        The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
-        
-            2: x = (1, 2, 3]
-                   ^       ^
-        
+    Python tells us that the closing `]` on the last line shown
+    does not match the opening `(`.
+    
+    I will attempt to be give a bit more information.
+    
+    The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
+    
+        2: x = (1, 2, 3]
+               ^       ^
+    
 
 Mismatched brackets - 2
 -----------------------
@@ -863,18 +863,18 @@ Mismatched brackets - 2
     -->4:      3]
                 ^
 
-        Python tells us that the closing `]` on the last line shown
-        does not match the opening `(` on line 2.
-        
-        I will attempt to be give a bit more information.
-        
-        The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
-        
-            2: x = (1,
-                   ^
-            4:      3]
-                     ^
-        
+    Python tells us that the closing `]` on the last line shown
+    does not match the opening `(` on line 2.
+    
+    I will attempt to be give a bit more information.
+    
+    The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
+    
+        2: x = (1,
+               ^
+        4:      3]
+                 ^
+    
 
 print is a function
 -------------------
@@ -900,13 +900,13 @@ print is a function
     -->2: print 'hello'
                 ^
 
-        Perhaps you need to type
-        
-             print('hello')
-        
-        In older version of Python, `print` was a keyword.
-        Now, `print` is a function; you need to use parentheses to call it.
-        
+    Perhaps you need to type
+    
+         print('hello')
+    
+    In older version of Python, `print` was a keyword.
+    Now, `print` is a function; you need to use parentheses to call it.
+    
 
 Python keyword as function name
 -------------------------------
@@ -935,8 +935,8 @@ Python keyword as function name
     -->3: def pass():
               ^
 
-        You tried to use the Python keyword `pass` as a function name.
-        
+    You tried to use the Python keyword `pass` as a function name.
+    
 
 break outside loop
 ------------------
@@ -964,8 +964,8 @@ break outside loop
     -->4:     break
               ^
 
-        The Python keyword `break` can only be used inside a for loop or inside a while loop.
-        
+    The Python keyword `break` can only be used inside a for loop or inside a while loop.
+    
 
 continue outside loop
 ---------------------
@@ -993,8 +993,8 @@ continue outside loop
     -->4:     continue
               ^
 
-        The Python keyword `continue` can only be used inside a for loop or inside a while loop.
-        
+    The Python keyword `continue` can only be used inside a for loop or inside a while loop.
+    
 
 Quote inside a string
 ---------------------
@@ -1023,9 +1023,9 @@ Quote inside a string
     -->3: message = 'don't'
                           ^
 
-        You starting writing a string with a single or double quote
-        but never ended the string with another quote on that line.
-        
+    You starting writing a string with a single or double quote
+    but never ended the string with another quote on that line.
+    
 
 Missing comma in a dict
 -----------------------
@@ -1056,13 +1056,13 @@ Missing comma in a dict
                ^
        6:      }
 
-        Python indicates that the error is caused by `'c'` written immediately after `2`.
-        It is possible that you forgot a comma between items in a set or dict
-        before the position indicated by --> and ^.
-        Perhaps you meant
-        
-            a = {'a': 1,     'b': 2,     'c': 3,     }
-        
+    Python indicates that the error is caused by `'c'` written immediately after `2`.
+    It is possible that you forgot a comma between items in a set or dict
+    before the position indicated by --> and ^.
+    Perhaps you meant
+    
+        a = {'a': 1,     'b': 2,     'c': 3,     }
+    
 
 Missing comma in a tuple
 ------------------------
@@ -1091,21 +1091,21 @@ Missing comma in a tuple
     -->3: a = (1, 2  3)
                      ^
 
-        Python indicates that the error is caused by `3` written immediately after `2`.
-        It is possible that you forgot a comma between items in a tuple, 
-        or between function arguments, 
-        before the position indicated by --> and ^.
-        Perhaps you meant to insert an operator like `+, -, *`
-        between `2` and `3`.
-        The following lines of code would not cause any `SyntaxError`:
-        
-            a = (1, 2,  3)
-            a = (1, 2 +  3)
-            a = (1, 2 -  3)
-            a = (1, 2 *  3)
-        Note: these are just some of the possible choices and that
-        some of them might raise other types of exceptions.
-        
+    Python indicates that the error is caused by `3` written immediately after `2`.
+    It is possible that you forgot a comma between items in a tuple, 
+    or between function arguments, 
+    before the position indicated by --> and ^.
+    Perhaps you meant to insert an operator like `+, -, *`
+    between `2` and `3`.
+    The following lines of code would not cause any `SyntaxError`:
+    
+        a = (1, 2,  3)
+        a = (1, 2 +  3)
+        a = (1, 2 -  3)
+        a = (1, 2 *  3)
+    Note: these are just some of the possible choices and that
+    some of them might raise other types of exceptions.
+    
 
 Missing comma between function args
 -----------------------------------
@@ -1135,17 +1135,17 @@ Missing comma between function args
     -->4: def a(b, c d):
                      ^
 
-        Python indicates that the error is caused by `d` written immediately after `c`.
-        It is possible that you forgot a comma between items in a tuple, 
-        or between function arguments, 
-        before the position indicated by --> and ^.
-        Perhaps you meant
-        
-            def a(b, c, d):
-        Perhaps you forgot that you cannot have spaces
-        in variable names and wrote `'c d'`
-        instead of `'c_d'`.
-        
+    Python indicates that the error is caused by `d` written immediately after `c`.
+    It is possible that you forgot a comma between items in a tuple, 
+    or between function arguments, 
+    before the position indicated by --> and ^.
+    Perhaps you meant
+    
+        def a(b, c, d):
+    Perhaps you forgot that you cannot have spaces
+    in variable names and wrote `'c d'`
+    instead of `'c_d'`.
+    
 
 Cannot assign to function call - 1
 ----------------------------------
@@ -1175,13 +1175,13 @@ Cannot assign to function call - 1
     -->6: len('a') = 3
           ^
 
-        You wrote the expression
-        
-            len('a') = 3
-        
-        where `len('a')`, on the left-hand side of the equal sign, either is
-        or includes a function call and is not simply the name of a variable.
-        
+    You wrote the expression
+    
+        len('a') = 3
+    
+    where `len('a')`, on the left-hand side of the equal sign, either is
+    or includes a function call and is not simply the name of a variable.
+    
 
 Cannot assign to function call - 2
 ----------------------------------
@@ -1211,13 +1211,13 @@ Cannot assign to function call - 2
     -->6: func(a, b=3) = 4
           ^
 
-        You wrote an expression like
-        
-            func(...) = some value
-        
-        where `func(...)`, on the left-hand side of the equal sign, is
-        a function call and not the name of a variable.
-        
+    You wrote an expression like
+    
+        func(...) = some value
+    
+    where `func(...)`, on the left-hand side of the equal sign, is
+    a function call and not the name of a variable.
+    
 
 Used equal sign instead of colon
 --------------------------------
@@ -1245,10 +1245,10 @@ Used equal sign instead of colon
     -->4: ages = {'Alice'=22, 'Bob'=24}
                          ^
 
-        It is possible that you used an equal sign `=` instead of a colon `:`
-        to assign values to keys in a dict
-        before or at the position indicated by --> and ^.
-        
+    It is possible that you used an equal sign `=` instead of a colon `:`
+    to assign values to keys in a dict
+    before or at the position indicated by --> and ^.
+    
 
 Non-default argument follows default argument
 ---------------------------------------------
@@ -1277,21 +1277,21 @@ Non-default argument follows default argument
     -->5: def test(a=1, b):
                          ^
 
-        In Python, you can define functions with only positional arguments
-        
-            def test(a, b, c): ...
-        
-        or only keyword arguments
-        
-            def test(a=1, b=2, c=3): ...
-        
-        or a combination of the two
-        
-            def test(a, b, c=3): ...
-        
-        but with the keyword arguments appearing after all the positional ones.
-        According to Python, you used positional arguments after keyword ones.
-        
+    In Python, you can define functions with only positional arguments
+    
+        def test(a, b, c): ...
+    
+    or only keyword arguments
+    
+        def test(a=1, b=2, c=3): ...
+    
+    or a combination of the two
+    
+        def test(a, b, c=3): ...
+    
+    but with the keyword arguments appearing after all the positional ones.
+    According to Python, you used positional arguments after keyword ones.
+    
 
 Positional argument follows keyword argument
 --------------------------------------------
@@ -1320,21 +1320,21 @@ Positional argument follows keyword argument
     -->5: test(a=1, b)
                      ^
 
-        In Python, you can call functions with only positional arguments
-        
-            test(1, 2, 3)
-        
-        or only keyword arguments
-        
-            test(a=1, b=2, c=3)
-        
-        or a combination of the two
-        
-            test(1, 2, c=3)
-        
-        but with the keyword arguments appearing after all the positional ones.
-        According to Python, you used positional arguments after keyword ones.
-        
+    In Python, you can call functions with only positional arguments
+    
+        test(1, 2, 3)
+    
+    or only keyword arguments
+    
+        test(a=1, b=2, c=3)
+    
+    or a combination of the two
+    
+        test(1, 2, c=3)
+    
+    but with the keyword arguments appearing after all the positional ones.
+    According to Python, you used positional arguments after keyword ones.
+    
 
 f-string: unterminated string
 -----------------------------
@@ -1364,10 +1364,10 @@ f-string: unterminated string
     -->4: print(f"Bob is {age['Bob]} years old.")
                                                 ^
 
-        Inside the f-string `)`, 
-        you have another string, which starts with either a
-        single quote (') or double quote ("), without a matching closing one.
-        
+    Inside the f-string `)`, 
+    you have another string, which starts with either a
+    single quote (') or double quote ("), without a matching closing one.
+    
 
 Unclosed bracket
 ----------------
@@ -1396,19 +1396,19 @@ Unclosed bracket
     -->5:     return [1, 2, 3
                       ^
 
-        Python gave us the following informative message
-        about the possible cause of the error:
-        
-            did you forget parentheses around the comprehension target?
-        
-        However, I do not recognize this information and I have
-        to guess what caused the problem, but I might be wrong.
-        
-        The opening square bracket `[` on line 5 is not closed.
-        
-            5:     return [1, 2, 3
-                          |
-        
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        did you forget parentheses around the comprehension target?
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    The opening square bracket `[` on line 5 is not closed.
+    
+        5:     return [1, 2, 3
+                      |
+    
 
 Unexpected EOF while parsing
 ----------------------------
@@ -1437,19 +1437,19 @@ Unexpected EOF while parsing
     -->5:     return [1, 2, 3,
                      ^
 
-        Python gave us the following informative message
-        about the possible cause of the error:
-        
-            '[' was never closed
-        
-        However, I do not recognize this information and I have
-        to guess what caused the problem, but I might be wrong.
-        
-        The opening square bracket `[` on line 5 is not closed.
-        
-            5:     return [1, 2, 3,
-                          |
-        
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        '[' was never closed
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    The opening square bracket `[` on line 5 is not closed.
+    
+        5:     return [1, 2, 3,
+                      |
+    
 
 Name is parameter and global
 ----------------------------
@@ -1479,16 +1479,16 @@ Name is parameter and global
     -->6:     global x
               ^
 
-        You are including the statement
-        
-                global x
-        
-        
-        indicating that `x` is a variable defined outside a function.
-        You are also using the same `x` as an argument for that
-        function, thus indicating that it should be variable known only
-        inside that function, which is the contrary of what `global` implied.
-        
+    You are including the statement
+    
+            global x
+    
+    
+    indicating that `x` is a variable defined outside a function.
+    You are also using the same `x` as an argument for that
+    function, thus indicating that it should be variable known only
+    inside that function, which is the contrary of what `global` implied.
+    
 
 Keyword as attribute
 --------------------
@@ -1519,9 +1519,9 @@ Keyword as attribute
     -->12: a.pass = 2
              ^
 
-        You cannot use the Python keyword `pass` as an attribute.
-        
-        
+    You cannot use the Python keyword `pass` as an attribute.
+    
+    
 
 Content passed continuation line character
 ------------------------------------------
@@ -1550,11 +1550,11 @@ Content passed continuation line character
     -->5: print(\t)
          ^
 
-        You are using the continuation character `\` outside of a string,
-        and it is followed by some other character(s).
-        I am guessing that you forgot to enclose some content in a string.
-        
-        
+    You are using the continuation character `\` outside of a string,
+    and it is followed by some other character(s).
+    I am guessing that you forgot to enclose some content in a string.
+    
+    
 
 Keyword can't be an expression
 ------------------------------
@@ -1585,17 +1585,17 @@ Keyword can't be an expression
     -->7: a = dict('key'=1)
                         ^
 
-        One of the following two possibilities could be the cause:
-        1. You meant to do a comparison with == and wrote = instead.
-        2. You called a function with a named argument:
-        
-               a_function(invalid=something)
-        
-        where `invalid` is not a valid variable name in Python
-        either because it starts with a number, or is a string,
-        or contains a period, etc.
-        
-        
+    One of the following two possibilities could be the cause:
+    1. You meant to do a comparison with == and wrote = instead.
+    2. You called a function with a named argument:
+    
+           a_function(invalid=something)
+    
+    where `invalid` is not a valid variable name in Python
+    either because it starts with a number, or is a string,
+    or contains a period, etc.
+    
+    
 
 Invalid character in identifier
 -------------------------------
@@ -1625,9 +1625,9 @@ Invalid character in identifier
     -->6: 🤖 = 'Reeborg'
           ^
 
-        Python indicates that you used the unicode character `🤖`
-        which is not allowed.
-        
+    Python indicates that you used the unicode character `🤖`
+    which is not allowed.
+    
 
 Keyword cannot be argument in def - 1
 -------------------------------------
@@ -1656,10 +1656,10 @@ Keyword cannot be argument in def - 1
     -->5: def f(None=1):
                 ^
 
-        I am guessing that you tried to use the Python keyword
-        `None` as an argument in the definition of a function
-        where an identifier (variable name) was expected.
-        
+    I am guessing that you tried to use the Python keyword
+    `None` as an argument in the definition of a function
+    where an identifier (variable name) was expected.
+    
 
 Keyword cannot be argument in def - 2
 -------------------------------------
@@ -1688,10 +1688,10 @@ Keyword cannot be argument in def - 2
     -->5: def f(x, True):
                    ^
 
-        I am guessing that you tried to use the Python keyword
-        `True` as an argument in the definition of a function
-        where an identifier (variable name) was expected.
-        
+    I am guessing that you tried to use the Python keyword
+    `True` as an argument in the definition of a function
+    where an identifier (variable name) was expected.
+    
 
 Keyword cannot be argument in def - 3
 -------------------------------------
@@ -1720,10 +1720,10 @@ Keyword cannot be argument in def - 3
     -->5: def f(*None):
                  ^
 
-        I am guessing that you tried to use the Python keyword
-        `None` as an argument in the definition of a function
-        where an identifier (variable name) was expected.
-        
+    I am guessing that you tried to use the Python keyword
+    `None` as an argument in the definition of a function
+    where an identifier (variable name) was expected.
+    
 
 Keyword cannot be argument in def - 4
 -------------------------------------
@@ -1752,10 +1752,10 @@ Keyword cannot be argument in def - 4
     -->5: def f(**None):
                   ^
 
-        I am guessing that you tried to use the Python keyword
-        `None` as an argument in the definition of a function
-        where an identifier (variable name) was expected.
-        
+    I am guessing that you tried to use the Python keyword
+    `None` as an argument in the definition of a function
+    where an identifier (variable name) was expected.
+    
 
 Delete function call
 --------------------
@@ -1784,13 +1784,13 @@ Delete function call
     -->5: del f(a)
               ^
 
-        You attempted to delete a function call
-        
-            del f(a)
-        instead of deleting the function's name
-        
-            del f
-        
+    You attempted to delete a function call
+    
+        del f(a)
+    instead of deleting the function's name
+    
+        del f
+    
 
 Name assigned prior to global declaration
 -----------------------------------------
@@ -1819,9 +1819,9 @@ Name assigned prior to global declaration
     -->7:     global p
               ^
 
-        You assigned a value to the variable `p`
-        before declaring it as a global variable.
-        
+    You assigned a value to the variable `p`
+    before declaring it as a global variable.
+    
 
 Name used prior to global declaration
 -------------------------------------
@@ -1850,9 +1850,9 @@ Name used prior to global declaration
     -->7:     global r
               ^
 
-        You used the variable `r`
-        before declaring it as a global variable.
-        
+    You used the variable `r`
+    before declaring it as a global variable.
+    
 
 Name used prior to nonlocal declaration
 ---------------------------------------
@@ -1883,9 +1883,9 @@ Name used prior to nonlocal declaration
     --> 9:         nonlocal q
                    ^
 
-        You used the variable `q`
-        before declaring it as a nonlocal variable.
-        
+    You used the variable `q`
+    before declaring it as a nonlocal variable.
+    
 
 Name assigned prior to nonlocal declaration
 -------------------------------------------
@@ -1916,9 +1916,9 @@ Name assigned prior to nonlocal declaration
     --> 9:         nonlocal s
                    ^
 
-        You assigned a value to the variable `s`
-        before declaring it as a nonlocal variable.
-        
+    You assigned a value to the variable `s`
+    before declaring it as a nonlocal variable.
+    
 
 Cannot assign to literal - 3
 ----------------------------
@@ -1949,14 +1949,14 @@ Cannot assign to literal - 3
     -->7: {1, 2, 3} = 4
           ^
 
-        You wrote an expression like
-        
-            {1, 2, 3} = 4
-        where `{1, 2, 3}`, on the left-hand side of the equal sign,
-        is or includes an actual object of type `set`
-        and is not simply the name of a variable.
-        
-        
+    You wrote an expression like
+    
+        {1, 2, 3} = 4
+    where `{1, 2, 3}`, on the left-hand side of the equal sign,
+    is or includes an actual object of type `set`
+    and is not simply the name of a variable.
+    
+    
 
 Cannot assign to literal - 4
 ----------------------------
@@ -1987,14 +1987,14 @@ Cannot assign to literal - 4
     -->7: {1 : 2, 2 : 4} = 5
           ^
 
-        You wrote an expression like
-        
-            {1 : 2, 2 : 4} = 5
-        where `{1 : 2, 2 : 4}`, on the left-hand side of the equal sign,
-        is or includes an actual object of type `dict`
-        and is not simply the name of a variable.
-        
-        
+    You wrote an expression like
+    
+        {1 : 2, 2 : 4} = 5
+    where `{1 : 2, 2 : 4}`, on the left-hand side of the equal sign,
+    is or includes an actual object of type `dict`
+    and is not simply the name of a variable.
+    
+    
 
 Cannot assign to literal - 5
 ----------------------------
@@ -2022,14 +2022,14 @@ Cannot assign to literal - 5
     -->4: 1 = a = b
           ^
 
-        You wrote an expression like
-        
-            ... = variable_name
-        where `...`, on the left-hand side of the equal sign,
-        is or includes an actual object 
-        and is not simply the name of a variable.
-        
-        
+    You wrote an expression like
+    
+        ... = variable_name
+    where `...`, on the left-hand side of the equal sign,
+    is or includes an actual object 
+    and is not simply the name of a variable.
+    
+    
 
 Walrus/Named assignment depending on Python version
 ---------------------------------------------------
@@ -2058,9 +2058,9 @@ Walrus/Named assignment depending on Python version
     -->4: (True := 1)
            ^
 
-        `True` is a constant in Python; you cannot assign it a value.
-        
-        
+    `True` is a constant in Python; you cannot assign it a value.
+    
+    
 
 Named assignment with Python constant
 -------------------------------------
@@ -2088,10 +2088,10 @@ Named assignment with Python constant
     -->4: a + 1 = 2
           ^
 
-        You wrote an expression that includes some mathematical operations
-        on the left-hand side of the equal sign which should be
-        only used to assign a value to a variable.
-        
+    You wrote an expression that includes some mathematical operations
+    on the left-hand side of the equal sign which should be
+    only used to assign a value to a variable.
+    
 
 Using the backquote character
 -----------------------------
@@ -2120,9 +2120,9 @@ Using the backquote character
     -->3: a = `1`
               ^
 
-        You are using the backquote character.
-        Either you meant to write a single quote, ', or copied Python 2 code;
-        in this latter case, use the function `repr(x)`.
+    You are using the backquote character.
+    Either you meant to write a single quote, ', or copied Python 2 code;
+    in this latter case, use the function `repr(x)`.
 
 Assign to generator expression
 ------------------------------
@@ -2149,9 +2149,9 @@ Assign to generator expression
     -->3: (x for x in x) = 1
           ^
 
-        On the left-hand side of an equal sign, you have a
-        generator expression instead of the name of a variable.
-        
+    On the left-hand side of an equal sign, you have a
+    generator expression instead of the name of a variable.
+    
 
 Assign to conditional expression
 --------------------------------
@@ -2178,11 +2178,11 @@ Assign to conditional expression
     -->3: a if 1 else b = 1
           ^
 
-        On the left-hand side of an equal sign, you have a
-        conditional expression instead of the name of a variable.
-        A conditional expression has the following form:
-        
-            variable = object if condition else other_object
+    On the left-hand side of an equal sign, you have a
+    conditional expression instead of the name of a variable.
+    A conditional expression has the following form:
+    
+        variable = object if condition else other_object
 
 Name is parameter and nonlocal
 ------------------------------
@@ -2211,10 +2211,10 @@ Name is parameter and nonlocal
     -->5:     nonlocal x
               ^
 
-        You used `x` as a parameter for a function
-        before declaring it also as a nonlocal variable:
-        `x` cannot be both at the same time.
-        
+    You used `x` as a parameter for a function
+    before declaring it also as a nonlocal variable:
+    `x` cannot be both at the same time.
+    
 
 Name is global and nonlocal
 ---------------------------
@@ -2243,9 +2243,9 @@ Name is global and nonlocal
     -->7:     global xy
               ^
 
-        You declared `xy` as being both a global and nonlocal variable.
-        A variable can be global, or nonlocal, but not both at the same time.
-        
+    You declared `xy` as being both a global and nonlocal variable.
+    A variable can be global, or nonlocal, but not both at the same time.
+    
 
 nonlocal variable not found
 ---------------------------
@@ -2274,9 +2274,9 @@ nonlocal variable not found
     -->5:     nonlocal ab
               ^
 
-        You declared the variable `ab` as being a
-        nonlocal variable but it cannot be found.
-        
+    You declared the variable `ab` as being a
+    nonlocal variable but it cannot be found.
+    
 
 nonlocal variable not found at module level
 -------------------------------------------
@@ -2304,9 +2304,9 @@ nonlocal variable not found at module level
     -->4: nonlocal cd
           ^
 
-        You used the nonlocal keyword at a module level.
-        The nonlocal keyword refers to a variable inside a function
-        given a value outside that function.
+    You used the nonlocal keyword at a module level.
+    The nonlocal keyword refers to a variable inside a function
+    given a value outside that function.
 
 Keyword arg only once in function definition
 --------------------------------------------
@@ -2334,11 +2334,11 @@ Keyword arg only once in function definition
     -->4: def f(aa=1, aa=2):
           ^
 
-        You have defined a function repeating the keyword argument
-        
-            aa
-        twice; each keyword argument should appear only once in a function definition.
-        
+    You have defined a function repeating the keyword argument
+    
+        aa
+    twice; each keyword argument should appear only once in a function definition.
+    
 
 Keyword arg only once in function call
 --------------------------------------
@@ -2366,9 +2366,9 @@ Keyword arg only once in function call
     -->4: f(ad=1, ad=2)
                   ^
 
-        You have called a function repeating the same keyword argument (`ad`).
-        Each keyword argument should appear only once in a function call.
-        
+    You have called a function repeating the same keyword argument (`ad`).
+    Each keyword argument should appear only once in a function call.
+    
 
 IndentationError/SyntaxError depending on version
 -------------------------------------------------
@@ -2395,9 +2395,9 @@ IndentationError/SyntaxError depending on version
     -->4: 
           ^
 
-        The line identified above
-        was expected to begin a new indented block.
-        
+    The line identified above
+    was expected to begin a new indented block.
+    
 
 print is a function 2
 ---------------------
@@ -2423,9 +2423,9 @@ print is a function 2
     -->2: print len('hello')
                 ^
 
-        In older version of Python, `print` was a keyword.
-        Now, `print` is a function; you need to use parentheses to call it.
-        
+    In older version of Python, `print` was a keyword.
+    Now, `print` is a function; you need to use parentheses to call it.
+    
 
 Copy/paste from interpreter
 ---------------------------
@@ -2453,9 +2453,9 @@ Copy/paste from interpreter
     -->2: >>> print("Hello World!")
           ^
 
-        It looks like you copy-pasted code from an interactive interpreter.
-        The Python prompt, `>>>`, should not be included in your code.
-        
+    It looks like you copy-pasted code from an interactive interpreter.
+    The Python prompt, `>>>`, should not be included in your code.
+    
 
 Using pip from interpreter
 --------------------------
@@ -2483,10 +2483,10 @@ Using pip from interpreter
     -->2: pip install friendly
               ^
 
-        It looks as if you are attempting to use pip to install a module.
-        `pip` is a command that needs to run in a terminal,
-        not from a Python interpreter.
-        
+    It looks as if you are attempting to use pip to install a module.
+    `pip` is a command that needs to run in a terminal,
+    not from a Python interpreter.
+    
 
 Using pip from interpreter 2
 ----------------------------
@@ -2514,10 +2514,10 @@ Using pip from interpreter 2
     -->2: python -m pip install friendly
                     ^
 
-        It looks as if you are attempting to use pip to install a module.
-        `pip` is a command that needs to run in a terminal,
-        not from a Python interpreter.
-        
+    It looks as if you are attempting to use pip to install a module.
+    `pip` is a command that needs to run in a terminal,
+    not from a Python interpreter.
+    
 
 Dot followed by parenthesis
 ---------------------------
@@ -2543,9 +2543,9 @@ Dot followed by parenthesis
     -->2: print(len.('hello'))
                     ^
 
-        You cannot have a dot `.` followed by `(`.
-        Perhaps you need to replace the dot by a comma.
-        
+    You cannot have a dot `.` followed by `(`.
+    Perhaps you need to replace the dot by a comma.
+    
 
 Cannot assign to f-string
 -------------------------
@@ -2575,10 +2575,10 @@ Cannot assign to f-string
     -->6: f'{x}' = 42
           ^
 
-        You wrote an expression that has the f-string `f'{x}'`
-        on the left-hand side of the equal sign.
-        An f-string should only appear on the right-hand side of an equal sign.
-        
+    You wrote an expression that has the f-string `f'{x}'`
+    on the left-hand side of the equal sign.
+    An f-string should only appear on the right-hand side of an equal sign.
+    
 
 Raising multiple exceptions
 ---------------------------
@@ -2604,8 +2604,8 @@ Raising multiple exceptions
     -->2: raise X, Y
                  ^
 
-        It looks like you are trying to raise an exception using Python 2 syntax.
-        
+    It looks like you are trying to raise an exception using Python 2 syntax.
+    
 
 Parenthesis around generator expression
 ---------------------------------------
@@ -2634,10 +2634,10 @@ Parenthesis around generator expression
     -->6: f(x for x in L, 1)
             ^
 
-        You are using a generator expression, something of the form
-            `x for x in thing`
-        You must add parentheses enclosing that expression.
-        
+    You are using a generator expression, something of the form
+        `x for x in thing`
+    You must add parentheses enclosing that expression.
+    
 
 Invalid character (bad quote)
 -----------------------------
@@ -2666,12 +2666,12 @@ Invalid character (bad quote)
     -->3: a = « hello »
               ^
 
-        Did you use copy-paste?
-        Python indicates that you used the unicode character `«`
-        which is not allowed.
-        I suspect that you used a fancy unicode quotation mark
-        instead of a normal single or double quote for a string.
-        
+    Did you use copy-paste?
+    Python indicates that you used the unicode character `«`
+    which is not allowed.
+    I suspect that you used a fancy unicode quotation mark
+    instead of a normal single or double quote for a string.
+    
 
 Single = instead of double == with if
 -------------------------------------
@@ -2700,17 +2700,17 @@ Single = instead of double == with if
     -->3:     if i % 2 = 0:
                        ^
 
-        Python gave us the following informative message
-        about the possible cause of the error:
-        
-            expected ':'
-        
-        However, I do not recognize this information and I have
-        to guess what caused the problem, but I might be wrong.
-        
-        You used an assignment operator `=`; perhaps you meant to use 
-        an equality operator, `==`, or the walrus operator `:=`.
-        
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        expected ':'
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    You used an assignment operator `=`; perhaps you meant to use 
+    an equality operator, `==`, or the walrus operator `:=`.
+    
 
 Single = instead of double == with elif
 ---------------------------------------
@@ -2741,17 +2741,17 @@ Single = instead of double == with elif
     -->5:     elif i % 2 = 0:
                          ^
 
-        Python gave us the following informative message
-        about the possible cause of the error:
-        
-            expected ':'
-        
-        However, I do not recognize this information and I have
-        to guess what caused the problem, but I might be wrong.
-        
-        You used an assignment operator `=`; perhaps you meant to use 
-        an equality operator, `==`, or the walrus operator `:=`.
-        
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        expected ':'
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    You used an assignment operator `=`; perhaps you meant to use 
+    an equality operator, `==`, or the walrus operator `:=`.
+    
 
 Single = instead of double == with while
 ----------------------------------------
@@ -2781,17 +2781,17 @@ Single = instead of double == with while
     -->4: while a = 1:
                   ^
 
-        Python gave us the following informative message
-        about the possible cause of the error:
-        
-            expected ':'
-        
-        However, I do not recognize this information and I have
-        to guess what caused the problem, but I might be wrong.
-        
-        You used an assignment operator `=`; perhaps you meant to use 
-        an equality operator, `==`, or the walrus operator `:=`.
-        
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        expected ':'
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    You used an assignment operator `=`; perhaps you meant to use 
+    an equality operator, `==`, or the walrus operator `:=`.
+    
 
 Invalid hexadecimal number
 --------------------------
@@ -2820,14 +2820,14 @@ Invalid hexadecimal number
     -->3: a = 0x123g4
                    ^
 
-        It looks like you used an invalid character (`g`) in an hexadecimal number.
-        
-        Hexadecimal numbers are base 16 integers that use the symbols `0` to `9`
-        to represent values 0 to 9, and the letters `a` to `f` (or `A` to `F`)
-        to represent values 10 to 15.
-        In Python, hexadecimal numbers start with either `0x` or `0X`,
-        followed by the characters used to represent the value of that integer.
-        
+    It looks like you used an invalid character (`g`) in an hexadecimal number.
+    
+    Hexadecimal numbers are base 16 integers that use the symbols `0` to `9`
+    to represent values 0 to 9, and the letters `a` to `f` (or `A` to `F`)
+    to represent values 10 to 15.
+    In Python, hexadecimal numbers start with either `0x` or `0X`,
+    followed by the characters used to represent the value of that integer.
+    
 
 Valid names cannot begin with a number
 --------------------------------------
@@ -2856,8 +2856,8 @@ Valid names cannot begin with a number
     -->3: 36abc = 3
             ^
 
-        Valid names cannot begin with a number.
-        
+    Valid names cannot begin with a number.
+    
 
 Unclosed parenthesis - 3
 ------------------------
@@ -2886,11 +2886,11 @@ Unclosed parenthesis - 3
     -->7: if 2:
               ^
 
-        The opening parenthesis `(` on line 5 is not closed.
-        
-            5:         print(((123))
-                            |
-        
+    The opening parenthesis `(` on line 5 is not closed.
+    
+        5:         print(((123))
+                        |
+    
 
 Forgot a multiplication operator
 --------------------------------
@@ -2919,10 +2919,10 @@ Forgot a multiplication operator
     -->3: tau = 2pi
                  ^
 
-        Valid names cannot begin with a number.
-        Perhaps you forgot a multiplication operator, `2 * pi`.
-        
-        
+    Valid names cannot begin with a number.
+    Perhaps you forgot a multiplication operator, `2 * pi`.
+    
+    
 
 Space between names
 -------------------
@@ -2952,11 +2952,11 @@ Space between names
     -->4: a-b = 2
           ^
 
-        You wrote an expression that includes some mathematical operations
-        on the left-hand side of the equal sign which should be
-        only used to assign a value to a variable.
-        Perhaps you meant to write `a_b` instead of `a-b`
-        
+    You wrote an expression that includes some mathematical operations
+    on the left-hand side of the equal sign which should be
+    only used to assign a value to a variable.
+    Perhaps you meant to write `a_b` instead of `a-b`
+    
 
 Cannot use star operator
 ------------------------
@@ -2983,10 +2983,10 @@ Cannot use star operator
     -->3: *a
           ^
 
-        The star operator `*` is interpreted to mean that
-        iterable unpacking is to be used to assign a name
-        to each item of an iterable, which does not make sense here.
-        
+    The star operator `*` is interpreted to mean that
+    iterable unpacking is to be used to assign a name
+    to each item of an iterable, which does not make sense here.
+    
 
 Cannot use double star operator
 -------------------------------
@@ -3011,9 +3011,9 @@ Cannot use double star operator
     -->1: (**k)
            ^
 
-        The double star operator `**` is likely interpreted to mean that
-        dict unpacking is to be used which does not make sense here.
-        
+    The double star operator `**` is likely interpreted to mean that
+    dict unpacking is to be used which does not make sense here.
+    
 
 Cannot use return outside function
 ----------------------------------
@@ -3040,8 +3040,8 @@ Cannot use return outside function
     -->3: return
           ^
 
-        You can only use a `return` statement inside a function or method.
-        
+    You can only use a `return` statement inside a function or method.
+    
 
 Too many nested blocks
 ----------------------
@@ -3072,11 +3072,11 @@ Too many nested blocks
     -->22:                      while 22:
                                 ^
 
-        You cannot be serious!
-        
-        In case this is a mistake in a real program, please
-        consider reducing the number of nested code blocks.
-        
+    You cannot be serious!
+    
+    In case this is a mistake in a real program, please
+    consider reducing the number of nested code blocks.
+    
 
 Named arguments must follow bare *
 ----------------------------------
@@ -3106,10 +3106,10 @@ Named arguments must follow bare *
     -->4: def f(*):
                  ^
 
-        Assuming you were defining a function, you need
-        to replace `*` by either `*arguments` or
-        by `*, named_argument=value`.
-        
+    Assuming you were defining a function, you need
+    to replace `*` by either `*arguments` or
+    by `*, named_argument=value`.
+    
 
 use j instead of i
 ------------------
@@ -3138,13 +3138,13 @@ use j instead of i
     -->3: a = 3.0i
                  ^
 
-        Valid names cannot begin with a number.
-        Perhaps you thought that `i` could be used to represent
-        the square root of `-1`. In Python, the symbol used for this is `j`
-        and the complex part is written as `some_number` immediately
-        followed by `j`, with no spaces in between.
-        Perhaps you meant to write `3.0j`.
-        
+    Valid names cannot begin with a number.
+    Perhaps you thought that `i` could be used to represent
+    the square root of `-1`. In Python, the symbol used for this is `j`
+    and the complex part is written as `some_number` immediately
+    followed by `j`, with no spaces in between.
+    Perhaps you meant to write `3.0j`.
+    
 
 Do not import * from __future__
 -------------------------------
@@ -3169,11 +3169,11 @@ Do not import * from __future__
     -->1: from __future__ import *
           ^
 
-        When using a `from __future__ import` statement,
-        you must import specific named features.
-        
-        The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
-        
+    When using a `from __future__ import` statement,
+    you must import specific named features.
+    
+    The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
+    
 
 Typo in __future__
 ------------------
@@ -3200,8 +3200,8 @@ Typo in __future__
     -->1: from __future__ import divisio
           ^
 
-        Instead of `divisio`, perhaps you meant to import `division`.
-        
+    Instead of `divisio`, perhaps you meant to import `division`.
+    
 
 Unknown feature in __future__
 -----------------------------
@@ -3226,10 +3226,10 @@ Unknown feature in __future__
     -->1: from __future__ import something
           ^
 
-        `something` is not a valid feature of module `__future__`.
-        
-        The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
-        
+    `something` is not a valid feature of module `__future__`.
+    
+    The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
+    
 
 Not a chance!
 -------------
@@ -3254,12 +3254,12 @@ Not a chance!
     -->1: from __future__ import braces
           ^
 
-        I suspect you wrote `from __future__ import braces` following
-        someone else's suggestion. This will never work.
-        
-        Unlike other programming languages, Python's code block are defined by
-        their indentation level, and not by using some curly braces, like `{...}`.
-        
+    I suspect you wrote `from __future__ import braces` following
+    someone else's suggestion. This will never work.
+    
+    Unlike other programming languages, Python's code block are defined by
+    their indentation level, and not by using some curly braces, like `{...}`.
+    
 
 __future__ at beginning
 -----------------------
@@ -3286,9 +3286,9 @@ __future__ at beginning
     -->3:     from __future__ import generators
               ^
 
-        A `from __future__ import` statement changes the way Python
-        interprets the code in a file.
-        It must appear at the beginning of the file.
+    A `from __future__ import` statement changes the way Python
+    interprets the code in a file.
+    It must appear at the beginning of the file.
 
 Invalid octal number
 --------------------
@@ -3317,14 +3317,14 @@ Invalid octal number
     -->3: b = 0O1876
                  ^
 
-        It looks like you used an invalid character (`8`) in an octal number.
-        
-        Octal numbers are base 8 integers that only use the symbols `0` to `7`
-        to represent values.
-        In Python, hexadecimal numbers start with either `0o` or `0O`,
-        (the digit zero followed by the letter `o`)
-        followed by the characters used to represent the value of that integer.
-        
+    It looks like you used an invalid character (`8`) in an octal number.
+    
+    Octal numbers are base 8 integers that only use the symbols `0` to `7`
+    to represent values.
+    In Python, hexadecimal numbers start with either `0o` or `0O`,
+    (the digit zero followed by the letter `o`)
+    followed by the characters used to represent the value of that integer.
+    
 
 Using a string as a function name
 ---------------------------------
@@ -3353,11 +3353,11 @@ Using a string as a function name
     -->3: def "function"():
               ^
 
-        The name of a function must be a valid Python identifier,
-        that is a name that begins with a letter or an underscore character, `_`,
-        and which contains only letters, digits or the underscore character.
-        You attempted to use a string as a function name.
-        
+    The name of a function must be a valid Python identifier,
+    that is a name that begins with a letter or an underscore character, `_`,
+    and which contains only letters, digits or the underscore character.
+    You attempted to use a string as a function name.
+    
 
 Non-identifier as a function name
 ---------------------------------
@@ -3386,10 +3386,10 @@ Non-identifier as a function name
     -->3: def 2be():
               ^
 
-        The name of a function must be a valid Python identifier,
-        that is a name that begins with a letter or an underscore character, `_`,
-        and which contains only letters, digits or the underscore character.
-        
+    The name of a function must be a valid Python identifier,
+    that is a name that begins with a letter or an underscore character, `_`,
+    and which contains only letters, digits or the underscore character.
+    
 
 Triple-equal sign
 -----------------
@@ -3418,11 +3418,11 @@ Triple-equal sign
     -->3: x = y === z
                   ^
 
-        You wrote three equal signs in a row which is allowed in some
-        programming languages, but not in Python. To check if two objects
-        are equal, use two equal signs, `==`; to see if two names represent
-        the exact same object, use the operator `is`.
-        
+    You wrote three equal signs in a row which is allowed in some
+    programming languages, but not in Python. To check if two objects
+    are equal, use two equal signs, `==`; to see if two names represent
+    the exact same object, use the operator `is`.
+    
 
 Two consecutive names
 ---------------------
@@ -3451,18 +3451,18 @@ Two consecutive names
     -->3: if var start := begin < end:
                  ^
 
-        Python gave us the following informative message
-        about the possible cause of the error:
-        
-            expected ':'
-        
-        However, I do not recognize this information and I have
-        to guess what caused the problem, but I might be wrong.
-        
-        Perhaps you forgot that you cannot have spaces
-        in variable names and wrote `'var start'`
-        instead of `'var_start'`.
-        
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        expected ':'
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    Perhaps you forgot that you cannot have spaces
+    in variable names and wrote `'var start'`
+    instead of `'var_start'`.
+    
 
 Using 'and' in import statement
 -------------------------------
@@ -3487,11 +3487,11 @@ Using 'and' in import statement
     -->1: from math import sin and cos
                                ^
 
-        The Python keyword `and` can only be used for boolean expressions.
-        Perhaps you meant to write
-        
-        `from math import sin , cos`
-        
+    The Python keyword `and` can only be used for boolean expressions.
+    Perhaps you meant to write
+    
+    `from math import sin , cos`
+    
 
 Annotated name cannot be global
 -------------------------------
@@ -3519,9 +3519,9 @@ Annotated name cannot be global
     -->4:     x:int = 1
               ^
 
-        The object named `x` is defined with type annotation
-        as a local variable. It cannot be declared to be a global variable.
-        
+    The object named `x` is defined with type annotation
+    as a local variable. It cannot be declared to be a global variable.
+    
 
 Two consecutive names
 ---------------------
@@ -3552,17 +3552,17 @@ Two consecutive names
                   ^
        6:    ):
 
-        Python indicates that the error is caused by `start` written immediately after `var`.
-        It is possible that you forgot a comma between items in a tuple, 
-        or between function arguments, 
-        before the position indicated by --> and ^.
-        Perhaps you meant
-        
-            if (    var, start := begin < end   ):
-        Perhaps you forgot that you cannot have spaces
-        in variable names and wrote `'var start'`
-        instead of `'var_start'`.
-        
+    Python indicates that the error is caused by `start` written immediately after `var`.
+    It is possible that you forgot a comma between items in a tuple, 
+    or between function arguments, 
+    before the position indicated by --> and ^.
+    Perhaps you meant
+    
+        if (    var, start := begin < end   ):
+    Perhaps you forgot that you cannot have spaces
+    in variable names and wrote `'var start'`
+    instead of `'var_start'`.
+    
 
 Deleting constant/keyword
 -------------------------
@@ -3587,8 +3587,8 @@ Deleting constant/keyword
     -->1: del True
               ^
 
-        You cannot delete the constant `True`.
-        
+    You cannot delete the constant `True`.
+    
 
 Deleting literal
 ----------------
@@ -3613,10 +3613,10 @@ Deleting literal
     -->1: del "Hello world!"
               ^
 
-        You cannot delete the literal `"Hello world!"`.
-        You can only delete the names of objects, or
-        individual items in a container.
-        
+    You cannot delete the literal `"Hello world!"`.
+    You can only delete the names of objects, or
+    individual items in a container.
+    
 
 EOL unescaped backslash
 -----------------------
@@ -3643,9 +3643,108 @@ EOL unescaped backslash
     -->1: a = "abc\"
               ^
 
-        You starting writing a string with a single or double quote
-        but never ended the string with another quote on that line.
-        Perhaps you meant to write the backslash character, `\`
-        as the last character in the string and forgot that you
-        needed to escape it by writing two `\` in a row.
-        
+    You starting writing a string with a single or double quote
+    but never ended the string with another quote on that line.
+    Perhaps you meant to write the backslash character, `\`
+    as the last character in the string and forgot that you
+    needed to escape it by writing two `\` in a row.
+    
+
+f-string with backslash
+-----------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error106.py", line 2
+        print(f"{'\n'.join(names)}")
+                                   ^
+    SyntaxError: f-string expression part cannot include a backslash
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error106.py'
+    beyond the location indicated by --> and ^.
+    
+       1: names = ['a', 'b']
+    -->2: print(f"{'\n'.join(names)}")
+                                     ^
+
+    You have written an f-string whose content `{...}`
+    includes a backslash; this is not allowed.
+    Perhaps you can replace the part that contains a backslash by
+    some variable. For example, suppose that you have an f-string like:
+    
+        f"{... 'hello\n' ...}"
+    
+    you could write this as
+    
+        hello = 'hello\n'
+        f"{... hello ...}"
+    
+
+Unterminated triple quoted string
+---------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error107.py", line 1
+        some_text = """In a land
+                    ^
+    SyntaxError: unterminated triple-quoted string literal (detected at line 4)
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error107.py'
+    beyond the location indicated by --> and ^.
+    
+    -->1: some_text =
+                      ^
+
+    You started writing a triple-quoted string but never wrote
+    the triple quotes needed to end the string.
+    
+
+Incorrect use of 'from module import ... as ...
+-----------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error108.py", line 2
+        from math import (sin, cos) as funcs
+                                    ^
+    SyntaxError: invalid syntax
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error108.py'
+    beyond the location indicated by --> and ^.
+    
+       1: # issue 158
+    -->2: from math import (sin, cos) as funcs
+                                      ^
+
+    I am guessing that you are trying to import at least one object
+    from module `math` and rename it using the Python keyword `as`;
+    this keyword can only be used to rename one object at a time
+    using a well defined syntax.
+    I suggest that you split up any such import statement with each object
+    renamed on a separate line as follows:
+    
+        from math import object_1 as name_1
+        from math import object_2 as name_2  # if needed
+    

@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.2.21a
+Friendly-traceback version: 0.2.31a
 Python version: 3.8.4
 
 
@@ -4389,3 +4389,121 @@ but never ended the string with another quote on that line.
 Perhaps you meant to write the backslash character, `\`
 as the last character in the string and forgot that you
 needed to escape it by writing two `\` in a row.
+
+---
+
+## f-string with backslash
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+    mod = __import__(name)
+  File "TESTS:\syntax\raise_syntax_error106.py", line 2
+    print(f"{'\n'.join(names)}")
+          ^
+SyntaxError: f-string expression part cannot include a backslash
+
+```
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\raise_syntax_error106.py'
+beyond the location indicated by --> and ^.
+
+
+```python
+       1: names = ['a', 'b']
+    -->2: print(f"{'\n'.join(names)}")
+                ^
+
+```
+
+You have written an f-string whose content `{...}`
+includes a backslash; this is not allowed.
+Perhaps you can replace the part that contains a backslash by
+some variable. For example, suppose that you have an f-string like:
+
+    f"{... 'hello\n' ...}"
+
+you could write this as
+
+    hello = 'hello\n'
+    f"{... hello ...}"
+
+---
+
+## Unterminated triple quoted string
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+    mod = __import__(name)
+  File "TESTS:\syntax\raise_syntax_error107.py", line 4
+    some_text = """In a land
+populated by weird animals,
+a ...
+                                                               ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+```
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\raise_syntax_error107.py'
+for an unspecified reason.
+
+
+```python
+       1: some_text =
+
+```
+
+You started writing a triple-quoted string but never wrote
+the triple quotes needed to end the string.
+
+---
+
+## Incorrect use of 'from module import ... as ...
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+    mod = __import__(name)
+  File "TESTS:\syntax\raise_syntax_error108.py", line 2
+    from math import (sin, cos) as funcs
+                                ^
+SyntaxError: invalid syntax
+
+```
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\raise_syntax_error108.py'
+beyond the location indicated by --> and ^.
+
+
+```python
+       1: # issue 158
+    -->2: from math import (sin, cos) as funcs
+                                      ^
+
+```
+
+I am guessing that you are trying to import at least one object
+from module `math` and rename it using the Python keyword `as`;
+this keyword can only be used to rename one object at a time
+using a well defined syntax.
+I suggest that you split up any such import statement with each object
+renamed on a separate line as follows:
+
+    from math import object_1 as name_1
+    from math import object_2 as name_2  # if needed

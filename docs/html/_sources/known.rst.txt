@@ -30,7 +30,7 @@ In the case of ``StopIteration``, see
 ``BaseException``, ``Exception``, and ``ArithmeticError`` are base classes which
 are also not normally seen: some derived classes are normally used instead.
 
-Information compiled using Friendly-traceback version: 0.2.21a,
+Information compiled using Friendly-traceback version: 0.2.31a,
 Python version: 3.8.4
 
 
@@ -48,8 +48,6 @@ ArithmeticError
     that are raised for various arithmetic errors.
     It is unusual that you are seeing this exception;
     normally, a more specific exception should have been raised.
-    
-
 
 AssertionError
 ~~~~~~~~~~~~~~
@@ -57,8 +55,6 @@ AssertionError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 AttributeError
 ~~~~~~~~~~~~~~
@@ -68,8 +64,6 @@ AttributeError
     An `AttributeError` occurs when the code contains something like
         `object.x`
     and `x` is not a method or attribute (variable) belonging to `object`.
-    
-
 
 BaseException
 ~~~~~~~~~~~~~
@@ -77,8 +71,6 @@ BaseException
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 BlockingIOError
 ~~~~~~~~~~~~~~~
@@ -86,8 +78,6 @@ BlockingIOError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 BrokenPipeError
 ~~~~~~~~~~~~~~~
@@ -95,8 +85,6 @@ BrokenPipeError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 BufferError
 ~~~~~~~~~~~
@@ -104,8 +92,6 @@ BufferError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 ChildProcessError
 ~~~~~~~~~~~~~~~~~
@@ -113,8 +99,6 @@ ChildProcessError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 ConnectionAbortedError
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -122,8 +106,6 @@ ConnectionAbortedError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 ConnectionError
 ~~~~~~~~~~~~~~~
@@ -131,8 +113,6 @@ ConnectionError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 ConnectionRefusedError
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -140,8 +120,6 @@ ConnectionRefusedError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 ConnectionResetError
 ~~~~~~~~~~~~~~~~~~~~
@@ -149,8 +127,6 @@ ConnectionResetError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 EOFError
 ~~~~~~~~
@@ -158,8 +134,6 @@ EOFError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 EnvironmentError
 ~~~~~~~~~~~~~~~~
@@ -167,8 +141,6 @@ EnvironmentError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 Exception
 ~~~~~~~~~
@@ -176,8 +148,6 @@ Exception
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 FileExistsError
 ~~~~~~~~~~~~~~~
@@ -185,8 +155,6 @@ FileExistsError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 FileNotFoundError
 ~~~~~~~~~~~~~~~~~
@@ -196,8 +164,6 @@ FileNotFoundError
     A `FileNotFoundError` exception indicates that you
     are trying to open a file that cannot be found by Python.
     This could be because you misspelled the name of the file.
-    
-
 
 FloatingPointError
 ~~~~~~~~~~~~~~~~~~
@@ -205,8 +171,6 @@ FloatingPointError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 GeneratorExit
 ~~~~~~~~~~~~~
@@ -214,8 +178,6 @@ GeneratorExit
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 IOError
 ~~~~~~~
@@ -223,8 +185,6 @@ IOError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 ImportError
 ~~~~~~~~~~~
@@ -234,8 +194,6 @@ ImportError
     An `ImportError` exception indicates that a certain object could not
     be imported from a module or package. Most often, this is
     because the name of the object is not spelled correctly.
-    
-
 
 IndentationError
 ~~~~~~~~~~~~~~~~
@@ -244,8 +202,6 @@ IndentationError
 
     An `IndentationError` occurs when a given line of code is
     not indented (aligned vertically with other lines) as expected.
-    
-
 
 IndexError
 ~~~~~~~~~~
@@ -256,8 +212,6 @@ IndexError
     a tuple, or a similar object (sequence), by using an index which
     does not exists; typically, this is because the index you give
     is greater than the length of the sequence.
-    
-
 
 InterruptedError
 ~~~~~~~~~~~~~~~~
@@ -265,8 +219,6 @@ InterruptedError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 IsADirectoryError
 ~~~~~~~~~~~~~~~~~
@@ -274,8 +226,6 @@ IsADirectoryError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 KeyError
 ~~~~~~~~
@@ -284,8 +234,6 @@ KeyError
 
     A `KeyError` is raised when a value is not found as a
     key in a Python dict.
-    
-
 
 KeyboardInterrupt
 ~~~~~~~~~~~~~~~~~
@@ -293,8 +241,6 @@ KeyboardInterrupt
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 LookupError
 ~~~~~~~~~~~
@@ -304,8 +250,6 @@ LookupError
     `LookupError` is the base class for the exceptions that are raised
     when a key or index used on a mapping or sequence is invalid.
     It can also be raised directly by codecs.lookup().
-    
-
 
 MemoryError
 ~~~~~~~~~~~
@@ -313,8 +257,6 @@ MemoryError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 ModuleNotFoundError
 ~~~~~~~~~~~~~~~~~~~
@@ -325,8 +267,6 @@ ModuleNotFoundError
     are trying to import a module that cannot be found by Python.
     This could be because you misspelled the name of the module
     or because it is not installed on your computer.
-    
-
 
 NameError
 ~~~~~~~~~
@@ -338,8 +278,6 @@ NameError
     Most often, this is because there is a spelling mistake.
     However, sometimes it is because the name is used
     before being defined or given a value.
-    
-
 
 NotADirectoryError
 ~~~~~~~~~~~~~~~~~~
@@ -347,8 +285,6 @@ NotADirectoryError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 NotImplementedError
 ~~~~~~~~~~~~~~~~~~~
@@ -356,8 +292,6 @@ NotImplementedError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 OSError
 ~~~~~~~
@@ -365,8 +299,6 @@ OSError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 OverflowError
 ~~~~~~~~~~~~~
@@ -375,8 +307,6 @@ OverflowError
 
     An `OverflowError` is raised when the result of an arithmetic operation
     is too large to be handled by the computer's processor.
-    
-
 
 PermissionError
 ~~~~~~~~~~~~~~~
@@ -384,8 +314,6 @@ PermissionError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 ProcessLookupError
 ~~~~~~~~~~~~~~~~~~
@@ -393,8 +321,6 @@ ProcessLookupError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 RecursionError
 ~~~~~~~~~~~~~~
@@ -405,8 +331,6 @@ RecursionError
     directly or indirectly, too many times.
     It almost always indicates that you made an error in your code
     and that your program would never stop.
-    
-
 
 ReferenceError
 ~~~~~~~~~~~~~~
@@ -414,8 +338,6 @@ ReferenceError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 RuntimeError
 ~~~~~~~~~~~~
@@ -423,8 +345,6 @@ RuntimeError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 StopAsyncIteration
 ~~~~~~~~~~~~~~~~~~
@@ -432,8 +352,6 @@ StopAsyncIteration
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 StopIteration
 ~~~~~~~~~~~~~
@@ -441,8 +359,6 @@ StopIteration
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 SyntaxError
 ~~~~~~~~~~~
@@ -450,8 +366,6 @@ SyntaxError
 .. code-block:: none
 
     A `SyntaxError` occurs when Python cannot understand your code.
-    
-
 
 SystemError
 ~~~~~~~~~~~
@@ -459,8 +373,6 @@ SystemError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 SystemExit
 ~~~~~~~~~~
@@ -468,8 +380,6 @@ SystemExit
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 TabError
 ~~~~~~~~
@@ -482,8 +392,6 @@ TabError
     Indenting your code means to have block of codes aligned vertically
     by inserting either spaces or tab characters at the beginning of lines.
     Python's recommendation is to always use spaces to indent your code.
-    
-
 
 TimeoutError
 ~~~~~~~~~~~~
@@ -491,8 +399,6 @@ TimeoutError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 TypeError
 ~~~~~~~~~
@@ -503,8 +409,6 @@ TypeError
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
-    
-
 
 UnboundLocalError
 ~~~~~~~~~~~~~~~~~
@@ -519,8 +423,6 @@ UnboundLocalError
     a global variable inside a function without first indicating to
     Python that this is a global variable, otherwise you will see
     an `UnboundLocalError`.
-    
-
 
 UnicodeDecodeError
 ~~~~~~~~~~~~~~~~~~
@@ -528,8 +430,6 @@ UnicodeDecodeError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 UnicodeEncodeError
 ~~~~~~~~~~~~~~~~~~
@@ -537,8 +437,6 @@ UnicodeEncodeError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 UnicodeError
 ~~~~~~~~~~~~
@@ -546,8 +444,6 @@ UnicodeError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 UnicodeTranslateError
 ~~~~~~~~~~~~~~~~~~~~~
@@ -555,8 +451,6 @@ UnicodeTranslateError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 ValueError
 ~~~~~~~~~~
@@ -565,8 +459,6 @@ ValueError
 
     A `ValueError` indicates that a function or an operation
     received an argument of the right type, but an inappropriate value.
-    
-
 
 WindowsError
 ~~~~~~~~~~~~
@@ -574,8 +466,6 @@ WindowsError
 .. code-block:: none
 
     No information is available about this exception.
-    
-
 
 ZeroDivisionError
 ~~~~~~~~~~~~~~~~~
@@ -584,8 +474,6 @@ ZeroDivisionError
 
     A `ZeroDivisionError` occurs when you are attempting to divide a value
     by zero either directly or by using some other mathematical operation.
-    
-
 
 
 Warnings
@@ -597,8 +485,6 @@ BytesWarning
 .. code-block:: none
 
     No information is available about this warning.
-    
-
 
 DeprecationWarning
 ~~~~~~~~~~~~~~~~~~
@@ -606,8 +492,6 @@ DeprecationWarning
 .. code-block:: none
 
     No information is available about this warning.
-    
-
 
 FutureWarning
 ~~~~~~~~~~~~~
@@ -615,8 +499,6 @@ FutureWarning
 .. code-block:: none
 
     No information is available about this warning.
-    
-
 
 ImportWarning
 ~~~~~~~~~~~~~
@@ -624,8 +506,6 @@ ImportWarning
 .. code-block:: none
 
     No information is available about this warning.
-    
-
 
 PendingDeprecationWarning
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -633,8 +513,6 @@ PendingDeprecationWarning
 .. code-block:: none
 
     No information is available about this warning.
-    
-
 
 ResourceWarning
 ~~~~~~~~~~~~~~~
@@ -642,8 +520,6 @@ ResourceWarning
 .. code-block:: none
 
     No information is available about this warning.
-    
-
 
 RuntimeWarning
 ~~~~~~~~~~~~~~
@@ -651,8 +527,6 @@ RuntimeWarning
 .. code-block:: none
 
     No information is available about this warning.
-    
-
 
 SyntaxWarning
 ~~~~~~~~~~~~~
@@ -660,8 +534,6 @@ SyntaxWarning
 .. code-block:: none
 
     No information is available about this warning.
-    
-
 
 UnicodeWarning
 ~~~~~~~~~~~~~~
@@ -669,8 +541,6 @@ UnicodeWarning
 .. code-block:: none
 
     No information is available about this warning.
-    
-
 
 UserWarning
 ~~~~~~~~~~~
@@ -678,8 +548,6 @@ UserWarning
 .. code-block:: none
 
     No information is available about this warning.
-    
-
 
 Warning
 ~~~~~~~
@@ -687,5 +555,3 @@ Warning
 .. code-block:: none
 
     No information is available about this warning.
-    
-

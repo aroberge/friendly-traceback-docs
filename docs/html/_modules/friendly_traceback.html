@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback &mdash; Friendly tracebacks 0.2.23a documentation</title>
+  <title>friendly_traceback &mdash; Friendly tracebacks 0.2.31a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.2.23a
+                0.2.31a
               </div>
             
           
@@ -244,7 +244,6 @@
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">editors_helpers</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">formatters</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">path_info</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">token_utils</span>  <span class="c1"># noqa</span>
 <span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">session</span>
 <span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
 <span class="kn">from</span> <span class="nn">.theme</span> <span class="kn">import</span> <span class="n">rich_available</span>
@@ -298,7 +297,7 @@
 <span class="sd">    written anywhere desired.</span>
 
 <span class="sd">    By default, flushes all the captured content.</span>
-<span class="sd">    However, this can be overriden if desired.</span>
+<span class="sd">    However, this can be overridden if desired.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get_captured</span><span class="p">(</span><span class="n">flush</span><span class="o">=</span><span class="n">flush</span><span class="p">)</span></div>
 
@@ -317,7 +316,7 @@
 <span class="sd">        redirect: stream to be used to send the output.</span>
 <span class="sd">                  The default is sys.stderr</span>
 
-<span class="sd">        include: controls the amout of information displayed.</span>
+<span class="sd">        include: controls the amount of information displayed.</span>
 <span class="sd">        See set_include() for details.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="n">redirect</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">)</span></div>
@@ -357,7 +356,7 @@
 
 <span class="sd">    Other arguments include:</span>
 
-<span class="sd">    ``lang``: language used; currenly only ``en`` (default) and ``fr``</span>
+<span class="sd">    ``lang``: language used; currently only ``en`` (default) and ``fr``</span>
 <span class="sd">    are available.</span>
 
 <span class="sd">    ``include``: specifies what information is to be included if an</span>
@@ -409,7 +408,7 @@
         <span class="k">return</span> <span class="n">module_globals</span></div>
 
 
-<div class="viewcode-block" id="set_formatter"><a class="viewcode-back" href="../api.html#friendly_traceback.set_formatter">[docs]</a><span class="k">def</span> <span class="nf">set_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+<div class="viewcode-block" id="set_formatter"><a class="viewcode-back" href="../api.html#friendly_traceback.set_formatter">[docs]</a><span class="k">def</span> <span class="nf">set_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Sets the default formatter. If no argument is given, the default</span>
 <span class="sd">    formatter is used.</span>
 
@@ -417,7 +416,7 @@
 <span class="sd">    as well an additional argument whose value is subject to change.</span>
 <span class="sd">    See formatters.py for details.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">session</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span></div>
+    <span class="n">session</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="show_again"><a class="viewcode-back" href="../api.html#friendly_traceback.show_again">[docs]</a><span class="k">def</span> <span class="nf">show_again</span><span class="p">():</span>
@@ -520,17 +519,6 @@
 <div class="viewcode-block" id="get_stream"><a class="viewcode-back" href="../api.html#friendly_traceback.get_stream">[docs]</a><span class="k">def</span> <span class="nf">get_stream</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Returns the value of the current stream used for output.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">write_err</span></div>
-
-
-<span class="c1"># -----------------------------------------</span>
-<span class="c1">#   Deprecated functions</span>
-<span class="c1"># -----------------------------------------</span>
-
-
-<div class="viewcode-block" id="set_level"><a class="viewcode-back" href="../api.html#friendly_traceback.set_level">[docs]</a><span class="k">def</span> <span class="nf">set_level</span><span class="p">(</span><span class="n">verbosity_level</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Deprecated. Details about new API to be provided later.&quot;&quot;&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;friendly-traceback set_level is deprecated; defaults will be used.&quot;</span><span class="p">)</span>
-    <span class="n">set_include</span><span class="p">(</span><span class="s2">&quot;explain&quot;</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

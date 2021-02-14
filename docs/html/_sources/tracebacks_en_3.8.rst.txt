@@ -16,7 +16,7 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly-traceback version: 0.2.23a
+Friendly-traceback version: 0.2.31a
 Python version: 3.8.4
 
 
@@ -73,9 +73,9 @@ Builtin function
         `object.x`
     and `x` is not a method or attribute (variable) belonging to `object`.
     
-        `len` is a function. Perhaps you meant to write
-        `len(text)`
-        
+    `len` is a function. Perhaps you meant to write
+    `len(text)`
+    
     Exception raised on line 188 of file TESTS:\runtime\test_attribute_error.py.
     
        186:     text = 'Hello world!'
@@ -103,9 +103,9 @@ Builtin module with no file
         `object.x`
     and `x` is not a method or attribute (variable) belonging to `object`.
     
-        Python tells us that no object with name `foo` is
-        found in module `sys`.
-        
+    Python tells us that no object with name `foo` is
+    found in module `sys`.
+    
     Exception raised on line 205 of file TESTS:\runtime\test_attribute_error.py.
     
        203: 
@@ -132,8 +132,8 @@ Generic
         `object.x`
     and `x` is not a method or attribute (variable) belonging to `object`.
     
-        The object `a` has no attribute named `x`.
-        
+    The object `a` has no attribute named `x`.
+    
     Exception raised on line 36 of file TESTS:\runtime\test_attribute_error.py.
     
        34:     try:
@@ -162,10 +162,10 @@ Module attribute typo
         `object.x`
     and `x` is not a method or attribute (variable) belonging to `object`.
     
-        Instead of writing `math.cost`, perhaps you meant to write one of 
-        the following names which are attributes of module `math`:
-        `cos, cosh, acos`
-        
+    Instead of writing `math.cost`, perhaps you meant to write one of 
+    the following names which are attributes of module `math`:
+    `cos, cosh, acos`
+    
     Exception raised on line 113 of file TESTS:\runtime\test_attribute_error.py.
     
        111: 
@@ -192,8 +192,8 @@ Nonetype
         `object.x`
     and `x` is not a method or attribute (variable) belonging to `object`.
     
-        You are attempting to access the attribute `b`
-        for a variable whose value is `None`.
+    You are attempting to access the attribute `b`
+    for a variable whose value is `None`.
     Exception raised on line 152 of file TESTS:\runtime\test_attribute_error.py.
     
        150:     a = None
@@ -222,8 +222,8 @@ Object attribute typo
         `object.x`
     and `x` is not a method or attribute (variable) belonging to `object`.
     
-        Perhaps you meant to write `a.append` instead of `a.appendh`
-        
+    Perhaps you meant to write `a.append` instead of `a.appendh`
+    
     Exception raised on line 52 of file TESTS:\runtime\test_attribute_error.py.
     
        50:     try:
@@ -253,11 +253,11 @@ Perhaps comma
         `object.x`
     and `x` is not a method or attribute (variable) belonging to `object`.
     
-        `defg` is not an attribute of `abcd`.
-        However, both `abcd` and `defg` are known objects.
-        Perhaps you wrote a period to separate these two objects, 
-        instead of using a comma.
-        
+    `defg` is not an attribute of `abcd`.
+    However, both `abcd` and `defg` are known objects.
+    Perhaps you wrote a period to separate these two objects, 
+    instead of using a comma.
+    
     Exception raised on line 171 of file TESTS:\runtime\test_attribute_error.py.
     
        169:     # fmt: off
@@ -287,10 +287,10 @@ Shadow stdlib module
         `object.x`
     and `x` is not a method or attribute (variable) belonging to `object`.
     
-        You imported a module named `turtle` from `TESTS:\turtle.py`.
-        There is also a module named `turtle` in Python's standard library.
-        Perhaps you need to rename your module.
-        
+    You imported a module named `turtle` from `TESTS:\turtle.py`.
+    There is also a module named `turtle` in Python's standard library.
+    Perhaps you need to rename your module.
+    
     Exception raised on line 134 of file TESTS:\runtime\test_attribute_error.py.
     
        132: 
@@ -319,11 +319,11 @@ Tuple by accident
         `object.x`
     and `x` is not a method or attribute (variable) belonging to `object`.
     
-        `something` is a tuple that contains a single item
-        which does have `'upper'` as an attribute.
-        Perhaps you added a trailing comma by mistake at the end of the line
-        where you defined `something`.
-        
+    `something` is a tuple that contains a single item
+    which does have `'upper'` as an attribute.
+    Perhaps you added a trailing comma by mistake at the end of the line
+    where you defined `something`.
+    
     Exception raised on line 240 of file TESTS:\runtime\test_attribute_error.py.
     
        238:     something = "abc",  # note trailing comma
@@ -353,9 +353,9 @@ Use builtin
         `object.x`
     and `x` is not a method or attribute (variable) belonging to `object`.
     
-        The object `a` has no attribute named `length`.
-        Perhaps you can use the Python builtin function `len` instead:
-        `len(a)`.
+    The object `a` has no attribute named `length`.
+    Perhaps you can use the Python builtin function `len` instead:
+    `len(a)`.
     Exception raised on line 68 of file TESTS:\runtime\test_attribute_error.py.
     
        66:     try:
@@ -385,10 +385,10 @@ Use synonym
         `object.x`
     and `x` is not a method or attribute (variable) belonging to `object`.
     
-        The object `a` has no attribute named `add`.
-        However, `a` has the following attributes with similar meanings:
-        `append, extend, insert`.
-        
+    The object `a` has no attribute named `add`.
+    However, `a` has the following attributes with similar meanings:
+    `append, extend, insert`.
+    
     Exception raised on line 84 of file TESTS:\runtime\test_attribute_error.py.
     
        82:     try:
@@ -416,11 +416,11 @@ Using slots
         `object.x`
     and `x` is not a method or attribute (variable) belonging to `object`.
     
-        The object `f` has no attribute named `b`.
-        Note that object `f` uses `__slots__` which prevents
-        the creation of new attributes.
-        The following are some of its known attributes:
-        `a`.
+    The object `f` has no attribute named `b`.
+    Note that object `f` uses `__slots__` which prevents
+    the creation of new attributes.
+    The following are some of its known attributes:
+    `a`.
     Exception raised on line 225 of file TESTS:\runtime\test_attribute_error.py.
     
        223:     f = F()
@@ -451,9 +451,9 @@ Generic
     are trying to open a file that cannot be found by Python.
     This could be because you misspelled the name of the file.
     
-        In your program, the name of the
-        file that cannot be found is `does_not_exist`.
-        
+    In your program, the name of the
+    file that cannot be found is `does_not_exist`.
+    
     Exception raised on line 6 of file TESTS:\runtime\test_file_not_found_error.py.
     
        4: def test_Generic():
@@ -488,20 +488,20 @@ Circular import
     be imported from a module or package. Most often, this is
     because the name of the object is not spelled correctly.
     
-        The object that could not be imported is `a`.
-        The module or package where it was 
-        expected to be found is `circular_a`.
-        
-        The problem was likely caused by what is known as a 'circular import'.
-        First, Python imported and started executing the code in file
-           'TESTS:\runtime\test_import_error.py'.
-        which imports module `circular_a`.
-        During this process, the code in another file,
-           'TESTS:\circular_b.py'
-        was executed. However in this last file, an attempt was made
-        to import the original module `circular_a`
-        a second time, before Python had completed the first import.
-        
+    The object that could not be imported is `a`.
+    The module or package where it was 
+    expected to be found is `circular_a`.
+    
+    The problem was likely caused by what is known as a 'circular import'.
+    First, Python imported and started executing the code in file
+       'TESTS:\runtime\test_import_error.py'.
+    which imports module `circular_a`.
+    During this process, the code in another file,
+       'TESTS:\circular_b.py'
+    was executed. However in this last file, an attempt was made
+    to import the original module `circular_a`
+    a second time, before Python had completed the first import.
+    
     Execution stopped on line 20 of file TESTS:\runtime\test_import_error.py.
     
        18: def test_Circular_import():
@@ -532,8 +532,8 @@ Simple import error
     be imported from a module or package. Most often, this is
     because the name of the object is not spelled correctly.
     
-        Perhaps you meant to import `pi` (from `math`) instead of `Pi`
-        
+    Perhaps you meant to import `pi` (from `math`) instead of `Pi`
+    
     Exception raised on line 6 of file TESTS:\runtime\test_import_error.py.
     
        4: def test_Simple_import_error():
@@ -562,9 +562,9 @@ Long list
     does not exists; typically, this is because the index you give
     is greater than the length of the sequence.
     
-        You have tried to get the item with index `50` of `a`,
-        a `list` of length `40`.
-        
+    You have tried to get the item with index `50` of `a`,
+    a `list` of length `40`.
+    
     Exception raised on line 24 of file TESTS:\runtime\test_index_error.py.
     
        22:     b = tuple(range(50))
@@ -596,10 +596,10 @@ Short tuple
     does not exists; typically, this is because the index you give
     is greater than the length of the sequence.
     
-        You have tried to get the item with index `3` of `a`,
-        a `tuple` of length `3`.
-        The largest valid index of `a` is `2`.
-        
+    You have tried to get the item with index `3` of `a`,
+    a `tuple` of length `3`.
+    The largest valid index of `a` is `2`.
+    
     Exception raised on line 8 of file TESTS:\runtime\test_index_error.py.
     
         6:     b = [1, 2, 3]
@@ -630,8 +630,8 @@ Generic
     A `KeyError` is raised when a value is not found as a
     key in a Python dict.
     
-        In your program, the key that cannot be found is `'c'`.
-        
+    In your program, the key that cannot be found is `'c'`.
+    
     Exception raised on line 7 of file TESTS:\runtime\test_key_error.py.
     
        5:     d = {"a": 1, "b": 2}
@@ -695,12 +695,12 @@ Not a package
     This could be because you misspelled the name of the module
     or because it is not installed on your computer.
     
-        Perhaps you meant `import os.path`.
-        `path` is a name similar to `pathh` and is a module that
-        can be imported from `os`.
-        Other objects with similar names that are part of
-         `os` include `fspath`.
-        
+    Perhaps you meant `import os.path`.
+    `path` is a name similar to `pathh` and is a module that
+    can be imported from `os`.
+    Other objects with similar names that are part of
+     `os` include `fspath`.
+    
     Exception raised on line 41 of file TESTS:\runtime\test_module_not_found_error.py.
     
        39: 
@@ -727,9 +727,9 @@ Standard library module
     This could be because you misspelled the name of the module
     or because it is not installed on your computer.
     
-        The name of the module that could not be imported is `Tkinter`.
-        `tkinter` is an existing module that has a similar name.
-        
+    The name of the module that could not be imported is `Tkinter`.
+    `tkinter` is an existing module that has a similar name.
+    
     Exception raised on line 6 of file TESTS:\runtime\test_module_not_found_error.py.
     
        4: def test_Standard_library_module():
@@ -761,16 +761,16 @@ Annotated variable
     However, sometimes it is because the name is used
     before being defined or given a value.
     
-        In your program, `x` is an unknown name.
-        A type hint found for `x` in the global scope.
-        Perhaps you had used a colon instead of an equal sign and wrote
-        
-            x : 3
-        
-        instead of
-        
-            x = 3
-        
+    In your program, `x` is an unknown name.
+    A type hint found for `x` in the global scope.
+    Perhaps you had used a colon instead of an equal sign and wrote
+    
+        x : 3
+    
+    instead of
+    
+        x = 3
+    
     Exception raised on line 21 of file TESTS:\runtime\test_name_error.py.
     
        19: def test_Annotated_variable():
@@ -797,8 +797,9 @@ Generic
     However, sometimes it is because the name is used
     before being defined or given a value.
     
-        In your program, `something` is an unknown name.
-        I have no additional information for you.
+    In your program, `something` is an unknown name.
+    I have no additional information for you.
+    
     Exception raised on line 6 of file TESTS:\runtime\test_name_error.py.
     
        4: def test_Generic():
@@ -827,10 +828,10 @@ Synonym
     However, sometimes it is because the name is used
     before being defined or given a value.
     
-        In your program, `cost` is an unknown name.
-        Instead of writing `cost`, perhaps you meant one of the following:
-        *   Global scope: `cos`, `cosh`, `acos`
-        
+    In your program, `cost` is an unknown name.
+    Instead of writing `cost`, perhaps you meant one of the following:
+    *   Global scope: `cos`, `cosh`, `acos`
+    
     Exception raised on line 66 of file TESTS:\runtime\test_name_error.py.
     
        64: 
@@ -936,12 +937,12 @@ Bad type for unary operator
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        You tried to use the unary operator '+'
-        with the following type of object: a string (`str`).
-        This operation is not defined for this type of object.
-        
-        Perhaps you meant to write `+=` instead of `=+`
-        
+    You tried to use the unary operator '+'
+    with the following type of object: a string (`str`).
+    This operation is not defined for this type of object.
+    
+    Perhaps you meant to write `+=` instead of `=+`
+    
     Exception raised on line 348 of file TESTS:\runtime\test_type_error.py.
     
        346:         # fmt: off
@@ -967,9 +968,9 @@ Can only concatenate
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        You tried to concatenate (add) two different types of objects:
-        a `tuple` and a `list`.
-        
+    You tried to concatenate (add) two different types of objects:
+    a `tuple` and a `list`.
+    
     Exception raised on line 36 of file TESTS:\runtime\test_type_error.py.
     
        34:         a_tuple = (1, 2, 3)
@@ -1001,10 +1002,10 @@ Cannot convert dictionary update sequence
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        `dict.update()` does not accept a sequence as an argument.
-        Instead of writing `dd.update([1, 2, 3])`
-        perhaps you should use the `dict.fromkeys()` method: `dd.update( dict.fromkeys([1, 2, 3]) )`.
-        
+    `dict.update()` does not accept a sequence as an argument.
+    Instead of writing `dd.update([1, 2, 3])`
+    perhaps you should use the `dict.fromkeys()` method: `dd.update( dict.fromkeys([1, 2, 3]) )`.
+    
     Exception raised on line 752 of file TESTS:\runtime\test_type_error.py.
     
        750:     dd = {"a": "a"}
@@ -1035,10 +1036,10 @@ Cannot multiply by non int
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        You can only multiply sequences, such as list, tuples,
-         strings, etc., by integers.
-        Perhaps you forgot to convert `"2"` into an integer.
-        
+    You can only multiply sequences, such as list, tuples,
+     strings, etc., by integers.
+    Perhaps you forgot to convert `"2"` into an integer.
+    
     Exception raised on line 546 of file TESTS:\runtime\test_type_error.py.
     
        544: 
@@ -1063,12 +1064,12 @@ Cannot unpack non iterable object
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        Unpacking is a convenient way to assign a name,
-        to each item of an iterable.
-        An iterable is an object capable of returning its members one at a time.
-        Python containers (`list, tuple, dict`, etc.) are iterables,
-        but not objects of type `float`.
-        
+    Unpacking is a convenient way to assign a name,
+    to each item of an iterable.
+    An iterable is an object capable of returning its members one at a time.
+    Python containers (`list, tuple, dict`, etc.) are iterables,
+    but not objects of type `float`.
+    
     Exception raised on line 724 of file TESTS:\runtime\test_type_error.py.
     
        722: def test_Cannot_unpack_non_iterable_object():
@@ -1093,10 +1094,10 @@ Comparison not supported
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        You tried to do an order comparison (<)
-        between two incompatible types of objects:
-        an integer (`int`) and a string (`str`).
-        
+    You tried to do an order comparison (<)
+    between two incompatible types of objects:
+    an integer (`int`) and a string (`str`).
+    
     Exception raised on line 298 of file TESTS:\runtime\test_type_error.py.
     
        296:         a = "a"
@@ -1125,8 +1126,8 @@ Derive from BaseException
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        In Python 3, exceptions must be derived from BaseException.
-        
+    In Python 3, exceptions must be derived from BaseException.
+    
     Exception raised on line 489 of file TESTS:\runtime\test_type_error.py.
     
        487: def test_Derive_from_BaseException():
@@ -1153,14 +1154,14 @@ Indices must be integers or slices
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        In the expression `[1, 2, 3]["2"]`
-        what is included between the square brackets, `[...]`,
-        must be either an integer or a slice
-        (`start:stop` or `start:stop:step`) 
-        and you have used a string (`str`) instead.
-        
-        Perhaps you forgot to convert `"2"` into an integer.
-        
+    In the expression `[1, 2, 3]["2"]`
+    what is included between the square brackets, `[...]`,
+    must be either an integer or a slice
+    (`start:stop` or `start:stop:step`) 
+    and you have used a string (`str`) instead.
+    
+    Perhaps you forgot to convert `"2"` into an integer.
+    
     Exception raised on line 628 of file TESTS:\runtime\test_type_error.py.
     
        626: 
@@ -1187,8 +1188,8 @@ Not an integer
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        You wrote an object of type `str` where an integer was expected.
-        Perhaps you forgot to convert `c, d` into integers.
+    You wrote an object of type `str` where an integer was expected.
+    Perhaps you forgot to convert `c, d` into integers.
     Exception raised on line 591 of file TESTS:\runtime\test_type_error.py.
     
        589:     c, d = "2", "3"
@@ -1220,15 +1221,15 @@ Not callable
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        Because of the surrounding parenthesis, `(3 + 4)` 
-        is interpreted by Python as indicating a function call for 
-        `[1, 2]`, which is an object of type `list`
-        which cannot be called.
-        
-        However, `[1, 2]` is a sequence.
-        Perhaps you meant to use `[]` instead of `()` and write
-        `[1, 2][3 + 4]`
-        
+    Because of the surrounding parenthesis, `(3 + 4)` 
+    is interpreted by Python as indicating a function call for 
+    `[1, 2]`, which is an object of type `list`
+    which cannot be called.
+    
+    However, `[1, 2]` is a sequence.
+    Perhaps you meant to use `[]` instead of `()` and write
+    `[1, 2][3 + 4]`
+    
     Exception raised on line 476 of file TESTS:\runtime\test_type_error.py.
     
        474: 
@@ -1254,10 +1255,10 @@ Object is not iterable
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        An iterable is an object capable of returning its members one at a time.
-        Python containers (`list, tuple, dict`, etc.) are iterables.
-        An iterable is required here.
-        
+    An iterable is an object capable of returning its members one at a time.
+    Python containers (`list, tuple, dict`, etc.) are iterables.
+    An iterable is required here.
+    
     Exception raised on line 710 of file TESTS:\runtime\test_type_error.py.
     
        708: def test_Object_is_not_iterable():
@@ -1287,11 +1288,11 @@ Object is not subscriptable
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        Subscriptable objects are typically containers from which
-        you can retrieve item using the notation `[...]`.
-        
-        Perhaps you meant to write `f(1)`.
-        
+    Subscriptable objects are typically containers from which
+    you can retrieve item using the notation `[...]`.
+    
+    Perhaps you meant to write `f(1)`.
+    
     Exception raised on line 696 of file TESTS:\runtime\test_type_error.py.
     
        694: 
@@ -1320,12 +1321,12 @@ Slice indices must be integers or None
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        When using a slice to extract a range of elements
-        from a sequence, that is something like
-        `[start:stop]` or `[start:stop:step]`
-        each of `start`, `stop`, `step` must be either an integer, `None`,
-        or possibly some other object having an `__index__` method.
-        
+    When using a slice to extract a range of elements
+    from a sequence, that is something like
+    `[start:stop]` or `[start:stop:step]`
+    each of `start`, `stop`, `step` must be either an integer, `None`,
+    or possibly some other object having an `__index__` method.
+    
     Exception raised on line 642 of file TESTS:\runtime\test_type_error.py.
     
        640: def test_Slice_indices_must_be_integers_or_None():
@@ -1350,9 +1351,9 @@ Too few positional argument
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        You apparently have called the function 'fn()' with
-        fewer positional arguments than it requires (2 missing).
-        
+    You apparently have called the function 'fn()' with
+    fewer positional arguments than it requires (2 missing).
+    
     Exception raised on line 418 of file TESTS:\runtime\test_type_error.py.
     
        416: 
@@ -1382,11 +1383,11 @@ Too many positional argument
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        You apparently have called the function `f` with
-        2 positional argument(s) while it requires 1
-        such positional argument(s).
-        Perhaps you forgot `self` when defining `f`.
-        
+    You apparently have called the function `f` with
+    2 positional argument(s) while it requires 1
+    such positional argument(s).
+    Perhaps you forgot `self` when defining `f`.
+    
     Exception raised on line 399 of file TESTS:\runtime\test_type_error.py.
     
        397: 
@@ -1416,12 +1417,12 @@ Tuple no item assignment
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        In Python, some objects are known as immutable:
-        once defined, their value cannot be changed.
-        You tried change part of such an immutable object: a `tuple`,
-        most likely by using an indexing operation.
-        Perhaps you meant to use a list instead.
-        
+    In Python, some objects are known as immutable:
+    once defined, their value cannot be changed.
+    You tried change part of such an immutable object: a `tuple`,
+    most likely by using an indexing operation.
+    Perhaps you meant to use a list instead.
+    
     Exception raised on line 366 of file TESTS:\runtime\test_type_error.py.
     
        364:     a = (1, 2, 3)
@@ -1450,11 +1451,11 @@ Unhachable type
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        Only hashable objects can be used
-        as elements of `set` or keys of `dict`.
-        Hashable objects are objects that do not change value
-        once they have been created.Instead of using a `list`, consider using a `tuple`.
-        
+    Only hashable objects can be used
+    as elements of `set` or keys of `dict`.
+    Hashable objects are objects that do not change value
+    once they have been created.Instead of using a `list`, consider using a `tuple`.
+    
     Exception raised on line 659 of file TESTS:\runtime\test_type_error.py.
     
        657: def test_Unhachable_type():
@@ -1479,12 +1480,12 @@ Unsupported operand types
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-        You tried to use the operator @=
-        using two incompatible types of objects:
-        a string (`str`) and an integer (`int`).
-        This operator is normally used only
-        for multiplication of matrices.
-        
+    You tried to use the operator @=
+    using two incompatible types of objects:
+    a string (`str`) and an integer (`int`).
+    This operator is normally used only
+    for multiplication of matrices.
+    
     Exception raised on line 282 of file TESTS:\runtime\test_type_error.py.
     
        280:         a = "a"
@@ -1527,13 +1528,13 @@ Missing global
     Python that this is a global variable, otherwise you will see
     an `UnboundLocalError`.
     
-        The name `spam_missing_global` exists in the global scope.
-        Perhaps the statement
-        
-            global spam_missing_global
-        
-        should have been included as the first line inside your function.
-        
+    The name `spam_missing_global` exists in the global scope.
+    Perhaps the statement
+    
+        global spam_missing_global
+    
+    should have been included as the first line inside your function.
+    
     Execution stopped on line 27 of file TESTS:\runtime\test_unbound_local_error.py.
     
        25: 
@@ -1579,13 +1580,13 @@ Missing nonlocal
     Python that this is a global variable, otherwise you will see
     an `UnboundLocalError`.
     
-        The name `spam_missing_nonlocal` exists in the nonlocal scope.
-        Perhaps the statement
-        
-            nonlocal spam_missing_nonlocal
-        
-        should have been included as the first line inside your function.
-        
+    The name `spam_missing_nonlocal` exists in the nonlocal scope.
+    Perhaps the statement
+    
+        nonlocal spam_missing_nonlocal
+    
+    should have been included as the first line inside your function.
+    
     Execution stopped on line 48 of file TESTS:\runtime\test_unbound_local_error.py.
     
        46: 
@@ -1648,11 +1649,11 @@ Not enough values to unpack
     A `ValueError` indicates that a function or an operation
     received an argument of the right type, but an inappropriate value.
     
-        Unpacking is a convenient way to assign a name,
-        to each item of an iterable.
-        In this instance, there are more names (3)
-        than the length of the iterable, a string (`str`) of length 2.
-        
+    Unpacking is a convenient way to assign a name,
+    to each item of an iterable.
+    In this instance, there are more names (3)
+    than the length of the iterable, a string (`str`) of length 2.
+    
     Exception raised on line 28 of file TESTS:\runtime\test_value_error.py.
     
        26:     d = "ab"
@@ -1678,11 +1679,11 @@ Too many values to unpack
     A `ValueError` indicates that a function or an operation
     received an argument of the right type, but an inappropriate value.
     
-        Unpacking is a convenient way to assign a name,
-        to each item of an iterable.
-        In this instance, there are fewer names (2)
-        than the length of the iterable, a `list` of length 3.
-        
+    Unpacking is a convenient way to assign a name,
+    to each item of an iterable.
+    In this instance, there are fewer names (2)
+    than the length of the iterable, a `list` of length 3.
+    
     Exception raised on line 43 of file TESTS:\runtime\test_value_error.py.
     
        41:     c = [1, 2, 3]
@@ -1712,12 +1713,12 @@ Complex division
     A `ZeroDivisionError` occurs when you are attempting to divide a value
     by zero either directly or by using some other mathematical operation.
     
-        You are dividing by the following term
-        
-             zero
-        
-        which is equal to zero.
-        
+    You are dividing by the following term
+    
+         zero
+    
+    which is equal to zero.
+    
     Exception raised on line 97 of file TESTS:\runtime\test_zero_division_error.py.
     
        95:     zero = 0j
@@ -1743,12 +1744,12 @@ Division operator
     A `ZeroDivisionError` occurs when you are attempting to divide a value
     by zero either directly or by using some other mathematical operation.
     
-        You are dividing by the following term
-        
-             zero
-        
-        which is equal to zero.
-        
+    You are dividing by the following term
+    
+         zero
+    
+    which is equal to zero.
+    
     Exception raised on line 7 of file TESTS:\runtime\test_zero_division_error.py.
     
        5:     zero = 0
@@ -1774,8 +1775,8 @@ Divmod
     A `ZeroDivisionError` occurs when you are attempting to divide a value
     by zero either directly or by using some other mathematical operation.
     
-        The second argument of the `divmod()` function is zero.
-        
+    The second argument of the `divmod()` function is zero.
+    
     Exception raised on line 52 of file TESTS:\runtime\test_zero_division_error.py.
     
        50:     zero = 0
@@ -1802,12 +1803,12 @@ Float division
     A `ZeroDivisionError` occurs when you are attempting to divide a value
     by zero either directly or by using some other mathematical operation.
     
-        You are dividing by the following term
-        
-             zero
-        
-        which is equal to zero.
-        
+    You are dividing by the following term
+    
+         zero
+    
+    which is equal to zero.
+    
     Exception raised on line 82 of file TESTS:\runtime\test_zero_division_error.py.
     
        80:     zero = 0.
@@ -1833,12 +1834,12 @@ Float modulo
     A `ZeroDivisionError` occurs when you are attempting to divide a value
     by zero either directly or by using some other mathematical operation.
     
-        Using the modulo operator, you are dividing by the following term
-        
-             zero
-        
-        which is equal to zero.
-        
+    Using the modulo operator, you are dividing by the following term
+    
+         zero
+    
+    which is equal to zero.
+    
     Exception raised on line 67 of file TESTS:\runtime\test_zero_division_error.py.
     
        65:     zero = 0.
@@ -1864,12 +1865,12 @@ Integer division operator
     A `ZeroDivisionError` occurs when you are attempting to divide a value
     by zero either directly or by using some other mathematical operation.
     
-        You are dividing by the following term
-        
-             zero
-        
-        which is equal to zero.
-        
+    You are dividing by the following term
+    
+         zero
+    
+    which is equal to zero.
+    
     Exception raised on line 22 of file TESTS:\runtime\test_zero_division_error.py.
     
        20:     zero = 0
@@ -1895,12 +1896,12 @@ Modulo operator
     A `ZeroDivisionError` occurs when you are attempting to divide a value
     by zero either directly or by using some other mathematical operation.
     
-        Using the modulo operator, you are dividing by the following term
-        
-             zero
-        
-        which is equal to zero.
-        
+    Using the modulo operator, you are dividing by the following term
+    
+         zero
+    
+    which is equal to zero.
+    
     Exception raised on line 37 of file TESTS:\runtime\test_zero_division_error.py.
     
        35:     zero = 0
@@ -1926,9 +1927,9 @@ Raise zero negative power
     A `ZeroDivisionError` occurs when you are attempting to divide a value
     by zero either directly or by using some other mathematical operation.
     
-        You are attempting to raise the number 0 to a negative power
-        which is equivalent to dividing by zero.
-        
+    You are attempting to raise the number 0 to a negative power
+    which is equivalent to dividing by zero.
+    
     Exception raised on line 112 of file TESTS:\runtime\test_zero_division_error.py.
     
        110:     zero = 0

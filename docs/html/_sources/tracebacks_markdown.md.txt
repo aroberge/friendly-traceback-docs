@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.2.21a
+Friendly-traceback version: 0.2.31a
 Python version: 3.8.4
 
 
@@ -364,6 +364,49 @@ Perhaps you need to rename your module.
 
 ```python
     turtle: <module turtle> from TESTS:\turtle.py
+
+```
+
+### Tuple by accident
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_attribute_error.py", line 240, in test_Tuple_by_accident
+    something.upper()
+AttributeError: 'tuple' object has no attribute 'upper'
+
+```
+
+Did you write a comma by mistake?
+
+
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+
+`something` is a tuple that contains a single item
+which does have `'upper'` as an attribute.
+Perhaps you added a trailing comma by mistake at the end of the line
+where you defined `something`.
+
+
+#### Exception raised on line 240 of file TESTS:\runtime\test_attribute_error.py.
+
+
+```python
+       238:     something = "abc",  # note trailing comma
+       239:     try:
+    -->240:         something.upper()
+                    ^^^^^^^^^^^^^^^
+       241:     except Exception as e:
+
+```
+
+```python
+    something: ('abc',)
 
 ```
 
@@ -929,6 +972,7 @@ before being defined or given a value.
 
 In your program, `something` is an unknown name.
 I have no additional information for you.
+
 
 #### Exception raised on line 6 of file TESTS:\runtime\test_name_error.py.
 

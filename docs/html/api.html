@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Public API &mdash; Friendly tracebacks 0.2.23a documentation</title>
+  <title>Public API &mdash; Friendly tracebacks 0.2.31a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.23a
+                0.2.31a
               </div>
             
           
@@ -290,7 +290,7 @@ the default English strings are used.</p>
 <dd><p>Returns the result of captured output as a string which can be
 written anywhere desired.</p>
 <p>By default, flushes all the captured content.
-However, this can be overriden if desired.</p>
+However, this can be overridden if desired.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -313,7 +313,7 @@ for <code class="docutils literal notranslate"><span class="pre">SystemExist</sp
 <dt>redirect: stream to be used to send the output.</dt><dd><p>The default is sys.stderr</p>
 </dd>
 </dl>
-<p>include: controls the amout of information displayed.
+<p>include: controls the amount of information displayed.
 See set_include() for details.</p>
 </div></blockquote>
 </dd></dl>
@@ -337,7 +337,7 @@ which the module (<code class="docutils literal notranslate"><span class="pre">f
 as an interactive session in a Friendly console, with the module
 dict being used as the locals dict.</p>
 <p>Other arguments include:</p>
-<p><code class="docutils literal notranslate"><span class="pre">lang</span></code>: language used; currenly only <code class="docutils literal notranslate"><span class="pre">en</span></code> (default) and <code class="docutils literal notranslate"><span class="pre">fr</span></code>
+<p><code class="docutils literal notranslate"><span class="pre">lang</span></code>: language used; currently only <code class="docutils literal notranslate"><span class="pre">en</span></code> (default) and <code class="docutils literal notranslate"><span class="pre">fr</span></code>
 are available.</p>
 <p><code class="docutils literal notranslate"><span class="pre">include</span></code>: specifies what information is to be included if an
 exception is raised.</p>
@@ -355,7 +355,7 @@ light coloured background and has not been extensively tested.</p>
 
 <dl class="py function">
 <dt id="friendly_traceback.set_formatter">
-<code class="sig-name descname">set_formatter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">formatter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback.html#set_formatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.set_formatter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_formatter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">formatter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback.html#set_formatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.set_formatter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the default formatter. If no argument is given, the default
 formatter is used.</p>
 <p>A custom formatter must accept <code class="docutils literal notranslate"><span class="pre">info</span></code> as a required arguments
@@ -385,12 +385,6 @@ See formatters.py for details.</p>
 <dd><p>Sets the language to be used for the display.</p>
 <p>If no translations exist for that language, the original
 English strings will be used.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.set_level">
-<code class="sig-name descname">set_level</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">verbosity_level</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback.html#set_level"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.set_level" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deprecated. Details about new API to be provided later.</p>
 </dd></dl>
 
 <dl class="py function">

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly tracebacks 0.2.23a documentation</title>
+  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly tracebacks 0.2.31a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.23a
+                0.2.31a
               </div>
             
           
@@ -174,6 +174,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#shadow-stdlib-module">Shadow stdlib module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-134-of-file-tests-runtime-test-attribute-error-py">Exception raised on line 134 of file TESTS:\runtime\test_attribute_error.py.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tuple-by-accident">Tuple by accident</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-240-of-file-tests-runtime-test-attribute-error-py">Exception raised on line 240 of file TESTS:\runtime\test_attribute_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#use-builtin">Use builtin</a><ul>
@@ -507,7 +511,7 @@ trb_english_markdown.py located in the <code class="docutils literal notranslate
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.
 </p>
-</div><p>Friendly-traceback version: 0.2.21a
+</div><p>Friendly-traceback version: 0.2.31a
 Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="arithmeticerror">
@@ -755,6 +759,36 @@ Perhaps you need to rename your module.</p>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">turtle</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">module</span> <span class="n">turtle</span><span class="o">&gt;</span> <span class="kn">from</span> <span class="nn">TESTS</span><span class="p">:</span>\<span class="n">turtle</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tuple-by-accident">
+<h3>Tuple by accident<a class="headerlink" href="#tuple-by-accident" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_attribute_error.py&quot;</span>, line <span class="m">240</span>, in <span class="n">test_Tuple_by_accident</span>
+    <span class="n">something</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="gr">AttributeError</span>: <span class="n">&#39;tuple&#39; object has no attribute &#39;upper&#39;</span>
+</pre></div>
+</div>
+<p>Did you write a comma by mistake?</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code> occurs when the code contains something like
+<code class="docutils literal notranslate"><span class="pre">object.x</span></code>
+and <code class="docutils literal notranslate"><span class="pre">x</span></code> is not a method or attribute (variable) belonging to <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">something</span></code> is a tuple that contains a single item
+which does have <code class="docutils literal notranslate"><span class="pre">'upper'</span></code> as an attribute.
+Perhaps you added a trailing comma by mistake at the end of the line
+where you defined <code class="docutils literal notranslate"><span class="pre">something</span></code>.</p>
+<div class="section" id="exception-raised-on-line-240-of-file-tests-runtime-test-attribute-error-py">
+<h4>Exception raised on line 240 of file TESTS:\runtime\test_attribute_error.py.<a class="headerlink" href="#exception-raised-on-line-240-of-file-tests-runtime-test-attribute-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">238</span><span class="p">:</span>     <span class="n">something</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span>  <span class="c1"># note trailing comma</span>
+       <span class="mi">239</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">240</span><span class="p">:</span>         <span class="n">something</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+                    <span class="o">^^^^^^^^^^^^^^^</span>
+       <span class="mi">241</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">something</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,)</span>
 </pre></div>
 </div>
 </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.2.23a documentation</title>
+  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly tracebacks 0.2.31a documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.2.23a
+                0.2.31a
               </div>
             
           
@@ -252,6 +252,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#deleting-constant-keyword">Deleting constant/keyword</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deleting-literal">Deleting literal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#eol-unescaped-backslash">EOL unescaped backslash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#f-string-with-backslash">f-string with backslash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unterminated-triple-quoted-string">Unterminated triple quoted string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#incorrect-use-of-from-module-import-as">Incorrect use of ‘from module import … as …</a></li>
 </ul>
 </li>
 </ul>
@@ -347,7 +350,7 @@ plutôt suggéré d’exécuter make_trb.bat qui est au premier niveau
 du répertoire de fichier. Si vous faites ceci, la documentation pour
 toutes les langues sera automatiquement mise à jour.</p>
 </div>
-<p>Friendly-traceback version: 0.2.21a
+<p>Friendly-traceback version: 0.2.31a
 Python version: 3.8.4</p>
 <div class="section" id="indentationerror-expected-an-indented-block">
 <h2>IndentationError: expected an indented block<a class="headerlink" href="#indentationerror-expected-an-indented-block" title="Permalink to this headline">¶</a></h2>
@@ -373,8 +376,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: pass
       ^
 
-    La ligne indiquée ci-dessus par --&gt; devrait
-    normalement commencer un nouveau bloc de code indenté.
+La ligne indiquée ci-dessus par --&gt; devrait
+normalement commencer un nouveau bloc de code indenté.
 </pre></div>
 </div>
 </div>
@@ -402,7 +405,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:       pass
            ^
 
-    La ligne indiquée ci-dessus par --&gt; est plus indentée que prévu.
+La ligne indiquée ci-dessus par --&gt; est plus indentée que prévu.
 </pre></div>
 </div>
 </div>
@@ -431,7 +434,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5:     pass
               ^
 
-    La ligne indiquée ci-dessus par --&gt; est moins indentée que prévu.
+La ligne indiquée ci-dessus par --&gt; est moins indentée que prévu.
 </pre></div>
 </div>
 </div>
@@ -460,13 +463,13 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6:          &quot;c&quot;
               ^
 
-    La ligne indiquée ci-dessus par --&gt; est plus indentée que prévu.
+La ligne indiquée ci-dessus par --&gt; est plus indentée que prévu.
 
-    Toutefois, la ligne 6, qui est identifiée comme ayant un problème,
-    se compose d’une seule chaîne, ce qui est également le cas
-    pour la ligne précédente.
-    Peut-être que vous vouliez inclure un caractère de continuation, &#39;\&#39;,
-    à la fin de la ligne 5.
+Toutefois, la ligne 6, qui est identifiée comme ayant un problème,
+se compose d’une seule chaîne, ce qui est également le cas
+pour la ligne précédente.
+Peut-être que vous vouliez inclure un caractère de continuation, &#39;\&#39;,
+à la fin de la ligne 5.
 </pre></div>
 </div>
 </div>
@@ -522,8 +525,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: else = 1
       ^
 
-    Vous essayiez d’assigner une valeur au mot clé Python `else`.
-    Ceci n’est pas permis.
+Vous essayiez d’assigner une valeur au mot clé Python `else`.
+Ceci n’est pas permis.
 </pre></div>
 </div>
 </div>
@@ -548,8 +551,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: def = 2
           ^
 
-    Vous essayiez d’assigner une valeur au mot clé Python `def`.
-    Ceci n’est pas permis.
+Vous essayiez d’assigner une valeur au mot clé Python `def`.
+Ceci n’est pas permis.
 </pre></div>
 </div>
 </div>
@@ -576,8 +579,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: if True
              ^
 
-    Vous avez écrit un énoncé débutant avec
-    `if` mais vous avez oublié d’ajouter deux points `:` à la fin.
+Vous avez écrit un énoncé débutant avec
+`if` mais vous avez oublié d’ajouter deux points `:` à la fin.
 </pre></div>
 </div>
 </div>
@@ -604,8 +607,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: while True  # a comment
                   ^
 
-    Vous vouliez débuter une boucle `while`
-    mais vous avez oublié d’ajouter deux points `:` à la fin.
+Vous vouliez débuter une boucle `while`
+mais vous avez oublié d’ajouter deux points `:` à la fin.
 </pre></div>
 </div>
 </div>
@@ -634,8 +637,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: else if True:
            ^
 
-    Vous avez écrit `else if`
-    au lieu d&#39;utiliser le mot-clé `elif`.
+Vous avez écrit `else if`
+au lieu d&#39;utiliser le mot-clé `elif`.
 </pre></div>
 </div>
 </div>
@@ -664,8 +667,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: elseif True:
              ^
 
-    Vous avez écrit `elseif`
-    au lieu d&#39;utiliser le mot-clé `elif`.
+Vous avez écrit `elseif`
+au lieu d&#39;utiliser le mot-clé `elif`.
 </pre></div>
 </div>
 </div>
@@ -690,10 +693,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: def :
           ^
 
-    Vous vouliez définir une fonction, mais vous avez fait des erreurs de syntaxe.
-    La syntaxe correct est :
+Vous vouliez définir une fonction, mais vous avez fait des erreurs de syntaxe.
+La syntaxe correct est :
 
-        def nom ( ... ):
+    def nom ( ... ):
 </pre></div>
 </div>
 </div>
@@ -720,8 +723,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: def name:
               ^
 
-    Vous avez peut-être oublié d’inclure des parenthèses.
-    Vous avez peut-être voulu écrire `def name():`
+Vous avez peut-être oublié d’inclure des parenthèses.
+Vous avez peut-être voulu écrire `def name():`
 </pre></div>
 </div>
 </div>
@@ -746,10 +749,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: def ( arg )  :
           ^
 
-    Vous avez oublié de nommer votre fonction.
-    La syntaxe correct est :
+Vous avez oublié de nommer votre fonction.
+La syntaxe correct est :
 
-        def nom ( ... ):
+    def nom ( ... ):
 </pre></div>
 </div>
 </div>
@@ -775,15 +778,15 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: 1 = a
       ^
 
-    Vous avez écrit une expression comme
+Vous avez écrit une expression comme
 
-        1 = a
-    où `1`, du côté gauche du signe d&#39;égalité
-    est ou inclut un objet de type `int`
-    et n&#39;est pas simplement le nom d&#39;une variable.
-    Peut-être que vous vouliez plutôt écrire :
+    1 = a
+où `1`, du côté gauche du signe d&#39;égalité
+est ou inclut un objet de type `int`
+et n&#39;est pas simplement le nom d&#39;une variable.
+Peut-être que vous vouliez plutôt écrire :
 
-        a = 1
+    a = 1
 </pre></div>
 </div>
 </div>
@@ -808,12 +811,12 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: 1 = 2
       ^
 
-    Vous avez écrit une expression comme
+Vous avez écrit une expression comme
 
-        1 = 2
-    où `1`, du côté gauche du signe d&#39;égalité
-    est ou inclut un objet de type `int`
-    et n&#39;est pas simplement le nom d&#39;une variable.
+    1 = 2
+où `1`, du côté gauche du signe d&#39;égalité
+est ou inclut un objet de type `int`
+et n&#39;est pas simplement le nom d&#39;une variable.
 </pre></div>
 </div>
 </div>
@@ -840,10 +843,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: import pen from turtle
                  ^
 
-    Vous avez écrit quelque chose comme
-        import pen from turtle
-    au lieu de
-        from turtle import pen
+Vous avez écrit quelque chose comme
+    import pen from turtle
+au lieu de
+    from turtle import pen
 </pre></div>
 </div>
 </div>
@@ -870,9 +873,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: alphabet = &#39;abc
                      ^
 
-    Vous aviez commencé à écrire une chaîne de caractères
-    avec un guillemet simple ou double, mais n&#39;avez jamais
-    terminé la chaîne avec un autre guillemet sur cette ligne.
+Vous aviez commencé à écrire une chaîne de caractères
+avec un guillemet simple ou double, mais n&#39;avez jamais
+terminé la chaîne avec un autre guillemet sur cette ligne.
 </pre></div>
 </div>
 </div>
@@ -899,7 +902,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: None = 1
       ^
 
-    `None` est une constante dans python; vous ne pouvez pas lui assigner une valeur.
+`None` est une constante dans python; vous ne pouvez pas lui assigner une valeur.
 </pre></div>
 </div>
 </div>
@@ -926,7 +929,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: __debug__ = 1
       ^
 
-    `__debug__` est une constante dans python; vous ne pouvez pas lui assigner une valeur.
+`__debug__` est une constante dans python; vous ne pouvez pas lui assigner une valeur.
 </pre></div>
 </div>
 </div>
@@ -954,7 +957,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6:     3, 4,))
                 ^
 
-    Le symbole parenthèse `)` à la ligne 6 n&#39;a pas de symbole ouvrant qui lui correspond.
+Le symbole parenthèse `)` à la ligne 6 n&#39;a pas de symbole ouvrant qui lui correspond.
 </pre></div>
 </div>
 </div>
@@ -979,10 +982,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: if x == 1:
                ^
 
-    Le symbole parenthèse `(` à la ligne 2 n&#39;est pas fermé par le symbole correspondant.
+Le symbole parenthèse `(` à la ligne 2 n&#39;est pas fermé par le symbole correspondant.
 
-        2: x = int(&#39;1&#39;
-                  |
+    2: x = int(&#39;1&#39;
+              |
 </pre></div>
 </div>
 </div>
@@ -1007,10 +1010,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: d = a*a
       ^
 
-    Le symbole parenthèse `(` à la ligne 2 n&#39;est pas fermé par le symbole correspondant.
+Le symbole parenthèse `(` à la ligne 2 n&#39;est pas fermé par le symbole correspondant.
 
-        2: a = (b+c
-               |
+    2: a = (b+c
+           |
 </pre></div>
 </div>
 </div>
@@ -1034,16 +1037,16 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;2: x = (1, 2, 3]
                   ^
 
-    Python nous dit que la parenthèse de droite `]` ne correspond pas
-    à la parenthèse de gauche `(`.
+Python nous dit que la parenthèse de droite `]` ne correspond pas
+à la parenthèse de gauche `(`.
 
-    Je vais essayer de donner un peu plus d&#39;informations.
+Je vais essayer de donner un peu plus d&#39;informations.
 
 
-    Le symbole crochet `]` à la ligne 2 ne correspond pas au symbole parenthèse `(` à la ligne 2.
+Le symbole crochet `]` à la ligne 2 ne correspond pas au symbole parenthèse `(` à la ligne 2.
 
-        2: x = (1, 2, 3]
-               ^       ^
+    2: x = (1, 2, 3]
+           ^       ^
 </pre></div>
 </div>
 </div>
@@ -1069,18 +1072,18 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:      3]
             ^
 
-    Python nous dit que la parenthèse de droite `]` sur la dernière ligne
-    ne correspond pas à la parenthèse de gauche `(` sur la ligne 2.
+Python nous dit que la parenthèse de droite `]` sur la dernière ligne
+ne correspond pas à la parenthèse de gauche `(` sur la ligne 2.
 
-    Je vais essayer de donner un peu plus d&#39;informations.
+Je vais essayer de donner un peu plus d&#39;informations.
 
 
-    Le symbole crochet `]` à la ligne 4 ne correspond pas au symbole parenthèse `(` à la ligne 2.
+Le symbole crochet `]` à la ligne 4 ne correspond pas au symbole parenthèse `(` à la ligne 2.
 
-        2: x = (1,
-               ^
-        4:      3]
-                 ^
+    2: x = (1,
+           ^
+    4:      3]
+             ^
 </pre></div>
 </div>
 </div>
@@ -1104,12 +1107,12 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;2: print &#39;hello&#39;
             ^
 
-    Peut-être que vous avez besoin d&#39;écrire
+Peut-être que vous avez besoin d&#39;écrire
 
-         print(&#39;hello&#39;)
+     print(&#39;hello&#39;)
 
-    Dans l&#39;ancienne version de Python, `print` était un mot clé.
-    Maintenant, `print` est une fonction; vous devez utiliser des parenthèses pour l&#39;invoquer.
+Dans l&#39;ancienne version de Python, `print` était un mot clé.
+Maintenant, `print` est une fonction; vous devez utiliser des parenthèses pour l&#39;invoquer.
 </pre></div>
 </div>
 </div>
@@ -1136,8 +1139,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: def pass():
           ^
 
-    Vous avez tenté d&#39;utiliser le mot clé Python `pass` comme nom de fonction.
-    Ceci n’est pas permis.
+Vous avez tenté d&#39;utiliser le mot clé Python `pass` comme nom de fonction.
+Ceci n’est pas permis.
 </pre></div>
 </div>
 </div>
@@ -1163,7 +1166,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:     break
           ^
 
-    Le mot-clé Python `break` ne peut être utilisé qu&#39;à l&#39;intérieur d&#39;une boucle `for` ou à l&#39;intérieur d&#39;une boucle `while`.
+Le mot-clé Python `break` ne peut être utilisé qu&#39;à l&#39;intérieur d&#39;une boucle `for` ou à l&#39;intérieur d&#39;une boucle `while`.
 </pre></div>
 </div>
 </div>
@@ -1189,7 +1192,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:     continue
           ^
 
-    Le mot-clé Python `continue` ne peut être utilisé qu&#39;à l&#39;intérieur d&#39;une boucle `for` ou à l&#39;intérieur d&#39;une boucle `while`.
+Le mot-clé Python `continue` ne peut être utilisé qu&#39;à l&#39;intérieur d&#39;une boucle `for` ou à l&#39;intérieur d&#39;une boucle `while`.
 </pre></div>
 </div>
 </div>
@@ -1216,10 +1219,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: message = &#39;don&#39;t&#39;
                      ^
 
-    Il semble y avoir un identificateur Python (nom de variable)
-    immédiatement après une chaîne.
-    Je soupçonne que vous essayiez d&#39;utiliser un apostrophe ou un guillemet
-    à l&#39;intérieur d&#39;une chaîne qui était délimitée par ces mêmes caractères.
+Il semble y avoir un identificateur Python (nom de variable)
+immédiatement après une chaîne.
+Je soupçonne que vous essayiez d&#39;utiliser un apostrophe ou un guillemet
+à l&#39;intérieur d&#39;une chaîne qui était délimitée par ces mêmes caractères.
 </pre></div>
 </div>
 </div>
@@ -1248,12 +1251,12 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
            ^
    6:      }
 
-    Python indique que l’erreur est causée par `&#39;c&#39;` écrit tout juste après `2`.
-    Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;un ensemble (set)
-    ou un dict avant la position indiquée par --&gt; et ^.
-    Peut-être que vous vouliez plutôt
+Python indique que l’erreur est causée par `&#39;c&#39;` écrit tout juste après `2`.
+Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;un ensemble (set)
+ou un dict avant la position indiquée par --&gt; et ^.
+Peut-être que vous vouliez plutôt
 
-        a = {&#39;a&#39;: 1,     &#39;b&#39;: 2,     &#39;c&#39;: 3,     }
+    a = {&#39;a&#39;: 1,     &#39;b&#39;: 2,     &#39;c&#39;: 3,     }
 </pre></div>
 </div>
 </div>
@@ -1280,19 +1283,19 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = {1, 2  3}
                  ^
 
-    Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
-    Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;un ensemble (set)
-    ou un dict avant la position indiquée par --&gt; et ^.
-    Peut-être que vous vouliez insérer un opérateur comme `+, -, *`
-    entre `2` et `3`.
-    Les lignes de code suivantes ne causeraient pas des `SyntaxError :
+Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
+Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;un ensemble (set)
+ou un dict avant la position indiquée par --&gt; et ^.
+Peut-être que vous vouliez insérer un opérateur comme `+, -, *`
+entre `2` et `3`.
+Les lignes de code suivantes ne causeraient pas des `SyntaxError :
 
-        a = {1, 2,  3}
-        a = {1, 2 +  3}
-        a = {1, 2 -  3}
-        a = {1, 2 *  3}
-    Remarque : ce ne sont là que quelques-uns des choix possibles et
-    certains d’entre eux pourraient soulever d’autres types d’exceptions.
+    a = {1, 2,  3}
+    a = {1, 2 +  3}
+    a = {1, 2 -  3}
+    a = {1, 2 *  3}
+Remarque : ce ne sont là que quelques-uns des choix possibles et
+certains d’entre eux pourraient soulever d’autres types d’exceptions.
 </pre></div>
 </div>
 </div>
@@ -1319,19 +1322,19 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = [1, 2  3]
                  ^
 
-    Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
-    Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;une liste
-    avant la position indiquée par --&gt; et ^.
-    Peut-être que vous vouliez insérer un opérateur comme `+, -, *`
-    entre `2` et `3`.
-    Les lignes de code suivantes ne causeraient pas des `SyntaxError :
+Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
+Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;une liste
+avant la position indiquée par --&gt; et ^.
+Peut-être que vous vouliez insérer un opérateur comme `+, -, *`
+entre `2` et `3`.
+Les lignes de code suivantes ne causeraient pas des `SyntaxError :
 
-        a = [1, 2,  3]
-        a = [1, 2 +  3]
-        a = [1, 2 -  3]
-        a = [1, 2 *  3]
-    Remarque : ce ne sont là que quelques-uns des choix possibles et
-    certains d’entre eux pourraient soulever d’autres types d’exceptions.
+    a = [1, 2,  3]
+    a = [1, 2 +  3]
+    a = [1, 2 -  3]
+    a = [1, 2 *  3]
+Remarque : ce ne sont là que quelques-uns des choix possibles et
+certains d’entre eux pourraient soulever d’autres types d’exceptions.
 </pre></div>
 </div>
 </div>
@@ -1358,19 +1361,19 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = (1, 2  3)
                  ^
 
-    Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
-    Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;un tuple,
-    ou entre les arguments d&#39;une fonction, avant la position indiquée par --&gt; et ^.
-    Peut-être que vous vouliez insérer un opérateur comme `+, -, *`
-    entre `2` et `3`.
-    Les lignes de code suivantes ne causeraient pas des `SyntaxError :
+Python indique que l’erreur est causée par `3` écrit tout juste après `2`.
+Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;un tuple,
+ou entre les arguments d&#39;une fonction, avant la position indiquée par --&gt; et ^.
+Peut-être que vous vouliez insérer un opérateur comme `+, -, *`
+entre `2` et `3`.
+Les lignes de code suivantes ne causeraient pas des `SyntaxError :
 
-        a = (1, 2,  3)
-        a = (1, 2 +  3)
-        a = (1, 2 -  3)
-        a = (1, 2 *  3)
-    Remarque : ce ne sont là que quelques-uns des choix possibles et
-    certains d’entre eux pourraient soulever d’autres types d’exceptions.
+    a = (1, 2,  3)
+    a = (1, 2 +  3)
+    a = (1, 2 -  3)
+    a = (1, 2 *  3)
+Remarque : ce ne sont là que quelques-uns des choix possibles et
+certains d’entre eux pourraient soulever d’autres types d’exceptions.
 </pre></div>
 </div>
 </div>
@@ -1398,15 +1401,15 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: def a(b, c d):
                  ^
 
-    Python indique que l’erreur est causée par `d` écrit tout juste après `c`.
-    Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;un tuple,
-    ou entre les arguments d&#39;une fonction, avant la position indiquée par --&gt; et ^.
-    Peut-être que vous vouliez plutôt
+Python indique que l’erreur est causée par `d` écrit tout juste après `c`.
+Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;un tuple,
+ou entre les arguments d&#39;une fonction, avant la position indiquée par --&gt; et ^.
+Peut-être que vous vouliez plutôt
 
-        def a(b, c, d):
-    Peut-être avez-vous oublié que vous ne pouvez pas
-    avoir d&#39;espaces dans des noms variables et avez écrit `&#39;c d&#39;`
-    au lieu de `&#39;c_d&#39;`.
+    def a(b, c, d):
+Peut-être avez-vous oublié que vous ne pouvez pas
+avoir d&#39;espaces dans des noms variables et avez écrit `&#39;c d&#39;`
+au lieu de `&#39;c_d&#39;`.
 </pre></div>
 </div>
 </div>
@@ -1434,13 +1437,13 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6: len(&#39;a&#39;) = 3
       ^
 
-    Vous avez écrit une expression comme
+Vous avez écrit une expression comme
 
-        len(&#39;a&#39;) = 3
+    len(&#39;a&#39;) = 3
 
-    où `len(&#39;a&#39;)`, à la gauche du signe d&#39;égalité est soit l&#39;invocation
-    d&#39;une fonction, ou inclus une telle invocation,
-    et n&#39;est pas simplement le nom d&#39;une variable.
+où `len(&#39;a&#39;)`, à la gauche du signe d&#39;égalité est soit l&#39;invocation
+d&#39;une fonction, ou inclus une telle invocation,
+et n&#39;est pas simplement le nom d&#39;une variable.
 </pre></div>
 </div>
 </div>
@@ -1468,12 +1471,12 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6: func(a, b=3) = 4
       ^
 
-    Vous avez écrit une expression comme
+Vous avez écrit une expression comme
 
-        func(...) = une certaine valeur
+    func(...) = une certaine valeur
 
-    où `func(...)`, du côté gauche du signe d&#39;égalité
-    est une fonction et non le nom d’une variable.
+où `func(...)`, du côté gauche du signe d&#39;égalité
+est une fonction et non le nom d’une variable.
 </pre></div>
 </div>
 </div>
@@ -1499,9 +1502,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: ages = {&#39;Alice&#39;=22, &#39;Bob&#39;=24}
                      ^
 
-    Il est possible que vous ayez utilisé un signe d&#39;égalité `=` au lieu de deux points `:`
-    pour attribuer des valeurs à une clé d&#39;un dictionnaire
-    avant ou exactement à la position indiquée par --&gt; et ^.
+Il est possible que vous ayez utilisé un signe d&#39;égalité `=` au lieu de deux points `:`
+pour attribuer des valeurs à une clé d&#39;un dictionnaire
+avant ou exactement à la position indiquée par --&gt; et ^.
 </pre></div>
 </div>
 </div>
@@ -1528,20 +1531,20 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: def test(a=1, b):
                ^
 
-    Dans Python, vous pouvez définir les fonctions avec seulement des arguments de position
+Dans Python, vous pouvez définir les fonctions avec seulement des arguments de position
 
-        def test(a, b, c): ...
+    def test(a, b, c): ...
 
-    ou seulement des arguments nommés
+ou seulement des arguments nommés
 
-        def test(a=1, b=2, c=3): ...
+    def test(a=1, b=2, c=3): ...
 
-    ou une combinaison des deux
+ou une combinaison des deux
 
-        def test(a, b, c=3): ...
+    def test(a, b, c=3): ...
 
-    mais avec les arguments nommés apparaissant après tous les arguments positionnels.
-    Selon Python, vous avez utilisé des arguments positionnels après des arguments nommés.
+mais avec les arguments nommés apparaissant après tous les arguments positionnels.
+Selon Python, vous avez utilisé des arguments positionnels après des arguments nommés.
 </pre></div>
 </div>
 </div>
@@ -1568,20 +1571,20 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: test(a=1, b)
                 ^
 
-    Dans Python, vous pouvez invoquer les fonctions avec seulement des arguments de position
+Dans Python, vous pouvez invoquer les fonctions avec seulement des arguments de position
 
-        test(1, 2, 3)
+    test(1, 2, 3)
 
-    ou seulement des arguments nommés
+ou seulement des arguments nommés
 
-        test (a=1, b=2, c=3)
+    test (a=1, b=2, c=3)
 
-    ou une combinaison des deux
+ou une combinaison des deux
 
-        test(1, 2, c=3)
+    test(1, 2, c=3)
 
-    mais avec les arguments nommés apparaissant après tous les arguments positionnels.
-    Selon Python, vous avez utilisé des arguments positionnels après des arguments nommés.
+mais avec les arguments nommés apparaissant après tous les arguments positionnels.
+Selon Python, vous avez utilisé des arguments positionnels après des arguments nommés.
 </pre></div>
 </div>
 </div>
@@ -1609,9 +1612,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: print(f&quot;Bob is {age[&#39;Bob]} years old.&quot;)
             ^
 
-    À l&#39;intérieur de la chaîne `f&quot;Bob is {age[&#39;Bob]} years old.&quot;`, qui est une chaîne de caractères préfixée de la lettre f,
-    vous avez une autre chaîne de caractère qui débute soit avec un apostrophe (&#39;)
-    ou des guillemets (&quot;), mais n&#39;est pas terminé par un autre caractère semblable.
+À l&#39;intérieur de la chaîne `f&quot;Bob is {age[&#39;Bob]} years old.&quot;`, qui est une chaîne de caractères préfixée de la lettre f,
+vous avez une autre chaîne de caractère qui débute soit avec un apostrophe (&#39;)
+ou des guillemets (&quot;), mais n&#39;est pas terminé par un autre caractère semblable.
 </pre></div>
 </div>
 </div>
@@ -1638,10 +1641,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;7: print(foo())
       ^
 
-    Le symbole crochet `[` à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
+Le symbole crochet `[` à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
 
-        5:     return [1, 2, 3
-                      |
+    5:     return [1, 2, 3
+                  |
 </pre></div>
 </div>
 </div>
@@ -1667,16 +1670,16 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt; 8:
        ^
 
-    Python nous dit qu&#39;il a atteint la fin du fichier
-    et s&#39;attendait à plus de contenu.
+Python nous dit qu&#39;il a atteint la fin du fichier
+et s&#39;attendait à plus de contenu.
 
-    Je vais essayer de donner un peu plus d&#39;informations.
+Je vais essayer de donner un peu plus d&#39;informations.
 
 
-    Le symbole crochet `[` à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
+Le symbole crochet `[` à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
 
-        5:     return [1, 2, 3,
-                      |
+    5:     return [1, 2, 3,
+                  |
 </pre></div>
 </div>
 </div>
@@ -1704,15 +1707,15 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6:     global x
           ^
 
-    Vous avec inclus l&#39;énoncé
+Vous avec inclus l&#39;énoncé
 
-            global x
+        global x
 
 
-    indiquant que `x` est une variable définie en dehors d&#39;une fonction.
-    Vous utilisez également le même `x` comme un argument pour cette
-    fonction; un argument de fonction est une variable locale connue seulement
-    à l&#39;intérieur de cette fonction, ce qui est le contraire de ce que `global` sous-entendait.
+indiquant que `x` est une variable définie en dehors d&#39;une fonction.
+Vous utilisez également le même `x` comme un argument pour cette
+fonction; un argument de fonction est une variable locale connue seulement
+à l&#39;intérieur de cette fonction, ce qui est le contraire de ce que `global` sous-entendait.
 </pre></div>
 </div>
 </div>
@@ -1742,8 +1745,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;12: a.pass = 2
          ^
 
-    Vous avez tenté d&#39;utiliser le mot clé Python `pass` comme attribut.
-    Ceci n’est pas permis.
+Vous avez tenté d&#39;utiliser le mot clé Python `pass` comme attribut.
+Ceci n’est pas permis.
 </pre></div>
 </div>
 </div>
@@ -1770,10 +1773,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: print(\t)
                ^
 
-    Vous utilisez le caractère de continuation `\` en dehors d&#39;une chaîne de caractères,
-    et il est suivi par au moins un autre caractère.
-    Je suppose que vous avez oublié de terminer la chaîne par un guillemet
-    ou un apostrophe.
+Vous utilisez le caractère de continuation `\` en dehors d&#39;une chaîne de caractères,
+et il est suivi par au moins un autre caractère.
+Je suppose que vous avez oublié de terminer la chaîne par un guillemet
+ou un apostrophe.
 </pre></div>
 </div>
 </div>
@@ -1802,15 +1805,15 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;7: a = dict(&#39;key&#39;=1)
                ^
 
-    L&#39;une des deux possibilités suivantes pourrait être la cause:
-    1. Vous vouliez faire une comparaison avec `==` et vous avez écrit `=` à sa place.
-    2. Vous avez invoqué une fonction avec un argument nommé:
+L&#39;une des deux possibilités suivantes pourrait être la cause:
+1. Vous vouliez faire une comparaison avec `==` et vous avez écrit `=` à sa place.
+2. Vous avez invoqué une fonction avec un argument nommé:
 
-            une_fonction (invalide=quelque_chose)
+        une_fonction (invalide=quelque_chose)
 
-    où `invalide` n&#39;est pas un nom de variable valide dans Python
-    soit parce qu&#39;il commence par un nombre, soit qu&#39;il est une chaîne,
-    ou contient un point, etc.
+où `invalide` n&#39;est pas un nom de variable valide dans Python
+soit parce qu&#39;il commence par un nombre, soit qu&#39;il est une chaîne,
+ou contient un point, etc.
 </pre></div>
 </div>
 </div>
@@ -1838,8 +1841,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6: 🤖 = &#39;Reeborg&#39;
       ^
 
-    Python indique que vous avez utilisé le caractère unicode `🤖`
-    ce qui n’est pas permis.
+Python indique que vous avez utilisé le caractère unicode `🤖`
+ce qui n’est pas permis.
 </pre></div>
 </div>
 </div>
@@ -1866,9 +1869,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: def f(None=1):
             ^
 
-    Vous avez tenté d&#39;utiliser le mot clé Python `None` comme argument
-    dans la définition d&#39;une fonction où un identificateur
-    (nom de variable) était attendu.
+Vous avez tenté d&#39;utiliser le mot clé Python `None` comme argument
+dans la définition d&#39;une fonction où un identificateur
+(nom de variable) était attendu.
 </pre></div>
 </div>
 </div>
@@ -1895,9 +1898,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: def f(x, True):
                ^
 
-    Vous avez tenté d&#39;utiliser le mot clé Python `True` comme argument
-    dans la définition d&#39;une fonction où un identificateur
-    (nom de variable) était attendu.
+Vous avez tenté d&#39;utiliser le mot clé Python `True` comme argument
+dans la définition d&#39;une fonction où un identificateur
+(nom de variable) était attendu.
 </pre></div>
 </div>
 </div>
@@ -1924,9 +1927,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: def f(*None):
              ^
 
-    Vous avez tenté d&#39;utiliser le mot clé Python `None` comme argument
-    dans la définition d&#39;une fonction où un identificateur
-    (nom de variable) était attendu.
+Vous avez tenté d&#39;utiliser le mot clé Python `None` comme argument
+dans la définition d&#39;une fonction où un identificateur
+(nom de variable) était attendu.
 </pre></div>
 </div>
 </div>
@@ -1953,9 +1956,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: def f(**None):
               ^
 
-    Vous avez tenté d&#39;utiliser le mot clé Python `None` comme argument
-    dans la définition d&#39;une fonction où un identificateur
-    (nom de variable) était attendu.
+Vous avez tenté d&#39;utiliser le mot clé Python `None` comme argument
+dans la définition d&#39;une fonction où un identificateur
+(nom de variable) était attendu.
 </pre></div>
 </div>
 </div>
@@ -1982,12 +1985,12 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5: del f(a)
           ^
 
-    Vous avez tenté de supprimer un appel de fonction
+Vous avez tenté de supprimer un appel de fonction
 
-        del f(a)
-    au lieu de supprimer le nom de la fonction
+    del f(a)
+au lieu de supprimer le nom de la fonction
 
-        del f
+    del f
 </pre></div>
 </div>
 </div>
@@ -2014,8 +2017,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;7:     global p
           ^
 
-    Vous avez attribué une valeur à la variable `p`
-    avant de la déclarer comme une variable globale.
+Vous avez attribué une valeur à la variable `p`
+avant de la déclarer comme une variable globale.
 </pre></div>
 </div>
 </div>
@@ -2042,8 +2045,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;7:     global r
           ^
 
-    Vous avez utilisé la variable `r`
-    avant de la déclarer comme une variable globale.
+Vous avez utilisé la variable `r`
+avant de la déclarer comme une variable globale.
 </pre></div>
 </div>
 </div>
@@ -2072,8 +2075,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt; 9:         nonlocal q
                ^
 
-    Vous avez utilisé la variable `q`
-    avant de la déclarer comme variable non locale.
+Vous avez utilisé la variable `q`
+avant de la déclarer comme variable non locale.
 </pre></div>
 </div>
 </div>
@@ -2102,8 +2105,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt; 9:         nonlocal s
                ^
 
-    Vous avez attribué une valeur à la variable `s`
-    avant de la déclarer comme variable non locale.
+Vous avez attribué une valeur à la variable `s`
+avant de la déclarer comme variable non locale.
 </pre></div>
 </div>
 </div>
@@ -2132,12 +2135,12 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;7: {1, 2, 3} = 4
       ^
 
-    Vous avez écrit une expression comme
+Vous avez écrit une expression comme
 
-        {1, 2, 3} = 4
-    où `{1, 2, 3}`, du côté gauche du signe d&#39;égalité
-    est ou inclut un objet de type `set`
-    et n&#39;est pas simplement le nom d&#39;une variable.
+    {1, 2, 3} = 4
+où `{1, 2, 3}`, du côté gauche du signe d&#39;égalité
+est ou inclut un objet de type `set`
+et n&#39;est pas simplement le nom d&#39;une variable.
 </pre></div>
 </div>
 </div>
@@ -2166,12 +2169,12 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;7: {1 : 2, 2 : 4} = 5
       ^
 
-    Vous avez écrit une expression comme
+Vous avez écrit une expression comme
 
-        {1 : 2, 2 : 4} = 5
-    où `{1 : 2, 2 : 4}`, du côté gauche du signe d&#39;égalité
-    est ou inclut un objet de type `dict`
-    et n&#39;est pas simplement le nom d&#39;une variable.
+    {1 : 2, 2 : 4} = 5
+où `{1 : 2, 2 : 4}`, du côté gauche du signe d&#39;égalité
+est ou inclut un objet de type `dict`
+et n&#39;est pas simplement le nom d&#39;une variable.
 </pre></div>
 </div>
 </div>
@@ -2197,12 +2200,12 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: 1 = a = b
       ^
 
-    Vous avez écrit une expression comme
+Vous avez écrit une expression comme
 
-        ... = nom_de_variable
-    où `...`, du côté gauche du signe d&#39;égalité
-    est ou inclut un objet
-    et n&#39;est pas simplement le nom d&#39;une variable.
+    ... = nom_de_variable
+où `...`, du côté gauche du signe d&#39;égalité
+est ou inclut un objet
+et n&#39;est pas simplement le nom d&#39;une variable.
 </pre></div>
 </div>
 </div>
@@ -2229,7 +2232,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: (True := 1)
        ^
 
-    `True` est une constante dans python; vous ne pouvez pas lui assigner une valeur.
+`True` est une constante dans python; vous ne pouvez pas lui assigner une valeur.
 </pre></div>
 </div>
 </div>
@@ -2255,9 +2258,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: a + 1 = 2
       ^
 
-    Vous avez écrit une expression qui inclut des opérations mathématiques
-    du côté gauche du signe d&#39;égalité; ceci devrait être
-    utilisé uniquement pour attribuer une valeur à une variable.
+Vous avez écrit une expression qui inclut des opérations mathématiques
+du côté gauche du signe d&#39;égalité; ceci devrait être
+utilisé uniquement pour attribuer une valeur à une variable.
 </pre></div>
 </div>
 </div>
@@ -2284,10 +2287,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = `1`
           ^
 
-    Vous utilisez le charactère d&#39;accent grave.
-    Soit que vous vouliez utiliser un apostrophe, &#39;,
-    ou que vous avez copié du code de Python 2;
-    dans ce dernier cas, utilisez la fonction `repr(x)`.
+Vous utilisez le charactère d&#39;accent grave.
+Soit que vous vouliez utiliser un apostrophe, &#39;,
+ou que vous avez copié du code de Python 2;
+dans ce dernier cas, utilisez la fonction `repr(x)`.
 </pre></div>
 </div>
 </div>
@@ -2312,8 +2315,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: (x for x in x) = 1
       ^
 
-    Du côté gauche d&#39;un signe d&#39;égalité, vous avez une
-    expression génératrice au lieu du nom d&#39;une variable.
+Du côté gauche d&#39;un signe d&#39;égalité, vous avez une
+expression génératrice au lieu du nom d&#39;une variable.
 </pre></div>
 </div>
 </div>
@@ -2338,11 +2341,11 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a if 1 else b = 1
       ^
 
-    Du côté gauche d&#39;un signe d&#39;égalité, vous avez une
-    expression conditionnelle au lieu du nom d&#39;une variable.
-    Une expression conditionnelle doit avoir la forme suivante:
+Du côté gauche d&#39;un signe d&#39;égalité, vous avez une
+expression conditionnelle au lieu du nom d&#39;une variable.
+Une expression conditionnelle doit avoir la forme suivante:
 
-        variable = objet if condition else autre_objet
+    variable = objet if condition else autre_objet
 </pre></div>
 </div>
 </div>
@@ -2369,9 +2372,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5:     nonlocal x
           ^
 
-    Vous avez utilisé `x` comme paramètre pour une fonction
-    avant de la déclarer également comme une variable non locale :
-    `x` ne peut pas être les deux en même temps.
+Vous avez utilisé `x` comme paramètre pour une fonction
+avant de la déclarer également comme une variable non locale :
+`x` ne peut pas être les deux en même temps.
 </pre></div>
 </div>
 </div>
@@ -2398,8 +2401,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;7:     global xy
           ^
 
-    Vous avez utilisé `xy` comme étant une variable non locale et globale.
-    Une variable peut être d&#39;un seul type à la fois: soit globale, soit non locale, ou soit locale.
+Vous avez utilisé `xy` comme étant une variable non locale et globale.
+Une variable peut être d&#39;un seul type à la fois: soit globale, soit non locale, ou soit locale.
 </pre></div>
 </div>
 </div>
@@ -2426,8 +2429,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5:     nonlocal ab
           ^
 
-    Vous avez déclaré la variable `ab` comme non locale
-    mais elle n&#39;existe pas ailleurs.
+Vous avez déclaré la variable `ab` comme non locale
+mais elle n&#39;existe pas ailleurs.
 </pre></div>
 </div>
 </div>
@@ -2453,9 +2456,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: nonlocal cd
       ^
 
-    Vous avez utilisé le mot clé nonlocal au niveau d&#39;un module.
-    Le mot clé nonlocal fait référence à une variable à l&#39;intérieur d&#39;une fonction
-    qui a une valeur attribuée à l&#39;extérieur de cette fonction.
+Vous avez utilisé le mot clé nonlocal au niveau d&#39;un module.
+Le mot clé nonlocal fait référence à une variable à l&#39;intérieur d&#39;une fonction
+qui a une valeur attribuée à l&#39;extérieur de cette fonction.
 </pre></div>
 </div>
 </div>
@@ -2481,10 +2484,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: def f(aa=1, aa=2):
       ^
 
-    Vous avez défini une fonction répétant l&#39;argument nommé
+Vous avez défini une fonction répétant l&#39;argument nommé
 
-        aa
-    deux fois; chaque argument nommé ne doit apparaître qu&#39;une seule fois dans une définition de fonction.
+    aa
+deux fois; chaque argument nommé ne doit apparaître qu&#39;une seule fois dans une définition de fonction.
 </pre></div>
 </div>
 </div>
@@ -2510,8 +2513,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: f(ad=1, ad=2)
               ^
 
-    Vous avez invoqué une fonction en répétant le même argument nommé (`ad`).
-    Chaque argument de ce type ne peut apparaître qu&#39;une seule fois.
+Vous avez invoqué une fonction en répétant le même argument nommé (`ad`).
+Chaque argument de ce type ne peut apparaître qu&#39;une seule fois.
 </pre></div>
 </div>
 </div>
@@ -2535,8 +2538,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:
       ^
 
-    Python nous dit qu&#39;il a atteint la fin du fichier
-    et s&#39;attendait à plus de contenu.
+Python nous dit qu&#39;il a atteint la fin du fichier
+et s&#39;attendait à plus de contenu.
 </pre></div>
 </div>
 </div>
@@ -2560,8 +2563,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;2: print len(&#39;hello&#39;)
             ^
 
-    Dans l&#39;ancienne version de Python, `print` était un mot clé.
-    Maintenant, `print` est une fonction; vous devez utiliser des parenthèses pour l&#39;invoquer.
+Dans l&#39;ancienne version de Python, `print` était un mot clé.
+Maintenant, `print` est une fonction; vous devez utiliser des parenthèses pour l&#39;invoquer.
 </pre></div>
 </div>
 </div>
@@ -2587,8 +2590,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;2: &gt;&gt;&gt; print(&quot;Hello World!&quot;)
       ^
 
-    On dirait que vous avez copié-collé le code d’un interprète interactif.
-    L’invite Python, `&gt;&gt;&gt;`, ne doit pas être incluse dans votre code.
+On dirait que vous avez copié-collé le code d’un interprète interactif.
+L’invite Python, `&gt;&gt;&gt;`, ne doit pas être incluse dans votre code.
 </pre></div>
 </div>
 </div>
@@ -2614,9 +2617,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;2: pip install friendly
           ^
 
-    Il semble que vous essayez d’utiliser pip pour installer un module.
-    `pip` est une commande qui doit être invoquée dans un terminal,
-    pas dans un interprète Python.
+Il semble que vous essayez d’utiliser pip pour installer un module.
+`pip` est une commande qui doit être invoquée dans un terminal,
+pas dans un interprète Python.
 </pre></div>
 </div>
 </div>
@@ -2642,9 +2645,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;2: python -m pip install friendly
                 ^
 
-    Il semble que vous essayez d’utiliser pip pour installer un module.
-    `pip` est une commande qui doit être invoquée dans un terminal,
-    pas dans un interprète Python.
+Il semble que vous essayez d’utiliser pip pour installer un module.
+`pip` est une commande qui doit être invoquée dans un terminal,
+pas dans un interprète Python.
 </pre></div>
 </div>
 </div>
@@ -2668,8 +2671,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;2: print(len.(&#39;hello&#39;))
                 ^
 
-    Vous ne pouvez pas avoir un point `.` suivi de `(`.
-    Peut-être que vous devez remplacer le point par une virgule.
+Vous ne pouvez pas avoir un point `.` suivi de `(`.
+Peut-être que vous devez remplacer le point par une virgule.
 </pre></div>
 </div>
 </div>
@@ -2697,10 +2700,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6: f&#39;{x}&#39; = 42
       ^
 
-    Vous avez écrit une expression qui a la chaine de
-    caractères formatés `f&#39;{x}&#39;`
-    du côté gauche du signe d&#39;égalité.
-    Une telle chaîne ne doit apparaître que du côté droit d&#39;un signe d’égalité.
+Vous avez écrit une expression qui a la chaine de
+caractères formatés `f&#39;{x}&#39;`
+du côté gauche du signe d&#39;égalité.
+Une telle chaîne ne doit apparaître que du côté droit d&#39;un signe d’égalité.
 </pre></div>
 </div>
 </div>
@@ -2724,7 +2727,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;2: raise X, Y
              ^
 
-    Je crois que vous essayez de lever une exception en utilisant la syntaxe de Python 2.
+Je crois que vous essayez de lever une exception en utilisant la syntaxe de Python 2.
 </pre></div>
 </div>
 </div>
@@ -2751,9 +2754,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;6: f(x for x in L, 1)
         ^
 
-    Vous utilisez une expression de générateur, quelque chose de la forme
-        `x for x in objet`
-    Vous devez ajouter des parenthèses qui entourent cette expression.
+Vous utilisez une expression de générateur, quelque chose de la forme
+    `x for x in objet`
+Vous devez ajouter des parenthèses qui entourent cette expression.
 </pre></div>
 </div>
 </div>
@@ -2780,11 +2783,11 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = « hello »
           ^
 
-    Avez-vous utilisé le copier-coller ?
-    Python indique que vous avez utilisé le caractère unicode `«`
-    ce qui n’est pas permis.
-    Je soupçonne que vous avez utilisé un guillemet unicode
-    au lieu d&#39;un guillemet normal (simple ou double) pour une chaîne de caractères.
+Avez-vous utilisé le copier-coller ?
+Python indique que vous avez utilisé le caractère unicode `«`
+ce qui n’est pas permis.
+Je soupçonne que vous avez utilisé un guillemet unicode
+au lieu d&#39;un guillemet normal (simple ou double) pour une chaîne de caractères.
 </pre></div>
 </div>
 </div>
@@ -2811,8 +2814,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3:     if i % 2 = 0:
                    ^
 
-    Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser
-    un opérateur d&#39;égalité, `==`, ou l&#39;opérateur `:=`.
+Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser
+un opérateur d&#39;égalité, `==`, ou l&#39;opérateur `:=`.
 </pre></div>
 </div>
 </div>
@@ -2841,8 +2844,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;5:     elif i % 2 = 0:
                      ^
 
-    Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser
-    un opérateur d&#39;égalité, `==`, ou l&#39;opérateur `:=`.
+Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser
+un opérateur d&#39;égalité, `==`, ou l&#39;opérateur `:=`.
 </pre></div>
 </div>
 </div>
@@ -2870,8 +2873,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: while a = 1:
               ^
 
-    Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser
-    un opérateur d&#39;égalité, `==`, ou l&#39;opérateur `:=`.
+Vous avez utilisé un opérateur d’affectation `=`; vous vouliez peut-être utiliser
+un opérateur d&#39;égalité, `==`, ou l&#39;opérateur `:=`.
 </pre></div>
 </div>
 </div>
@@ -2898,13 +2901,13 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = 0x123g4
                ^
 
-    On dirait que vous avez utilisé un caractère invalide (&#39;g&#39;) dans un nombre hexadecimal.
+On dirait que vous avez utilisé un caractère invalide (&#39;g&#39;) dans un nombre hexadecimal.
 
-    Les nombres hexadécimaux sont des entiers en base 16 qui utilisent les symboles `0` à `9`
-    pour représenter les valeurs 0 à 9, et les lettres `a` à `f` (ou `A` à `F`)
-    pour représenter les valeurs 10 à 15.
-    Dans Python, les nombres hexadécimaux commencent par `0x` ou `0X`,
-    suivi des caractères utilisés pour représenter la valeur du nombre.
+Les nombres hexadécimaux sont des entiers en base 16 qui utilisent les symboles `0` à `9`
+pour représenter les valeurs 0 à 9, et les lettres `a` à `f` (ou `A` à `F`)
+pour représenter les valeurs 10 à 15.
+Dans Python, les nombres hexadécimaux commencent par `0x` ou `0X`,
+suivi des caractères utilisés pour représenter la valeur du nombre.
 </pre></div>
 </div>
 </div>
@@ -2931,7 +2934,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: 36abc = 3
         ^
 
-    Les noms valides ne peuvent pas commencer par un chiffre.
+Les noms valides ne peuvent pas commencer par un chiffre.
 </pre></div>
 </div>
 </div>
@@ -2958,10 +2961,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;7: if 2:
           ^
 
-    Le symbole parenthèse `(` à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
+Le symbole parenthèse `(` à la ligne 5 n&#39;est pas fermé par le symbole correspondant.
 
-        5:         print(((123))
-                        |
+    5:         print(((123))
+                    |
 </pre></div>
 </div>
 </div>
@@ -2988,8 +2991,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: tau = 2pi
              ^
 
-    Les noms valides ne peuvent pas commencer par un chiffre.
-    Peut-être avez-vous oublié un opérateur de multiplication, `2 * pi`.
+Les noms valides ne peuvent pas commencer par un chiffre.
+Peut-être avez-vous oublié un opérateur de multiplication, `2 * pi`.
 </pre></div>
 </div>
 </div>
@@ -3017,10 +3020,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: a-b = 2
       ^
 
-    Vous avez écrit une expression qui inclut des opérations mathématiques
-    du côté gauche du signe d&#39;égalité; ceci devrait être
-    utilisé uniquement pour attribuer une valeur à une variable.
-    Peut-être que vous vouliez plutôt écrire `a_b` au lieu de `a-b`.
+Vous avez écrit une expression qui inclut des opérations mathématiques
+du côté gauche du signe d&#39;égalité; ceci devrait être
+utilisé uniquement pour attribuer une valeur à une variable.
+Peut-être que vous vouliez plutôt écrire `a_b` au lieu de `a-b`.
 </pre></div>
 </div>
 </div>
@@ -3045,9 +3048,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: *a
       ^
 
-    L’opérateur astérisque `*` est interprété comme signifiant que
-    le déballage itérable doit être utilisé pour attribuer un nom
-    à chaque élément d’un itérable, ce qui n’a pas de sens ici.
+L’opérateur astérisque `*` est interprété comme signifiant que
+le déballage itérable doit être utilisé pour attribuer un nom
+à chaque élément d’un itérable, ce qui n’a pas de sens ici.
 </pre></div>
 </div>
 </div>
@@ -3070,8 +3073,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;1: (**k)
        ^
 
-    L’opérateur double astérisque, `**` est probablement interprété comme signifiant
-    qu&#39;un déballage de `dict` doit être utilisé ce qui n’a pas de sens ici.
+L’opérateur double astérisque, `**` est probablement interprété comme signifiant
+qu&#39;un déballage de `dict` doit être utilisé ce qui n’a pas de sens ici.
 </pre></div>
 </div>
 </div>
@@ -3096,7 +3099,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: return
       ^
 
-    Vous ne pouvez utiliser un énoncé `return` qu&#39;à l’intérieur d’une fonction ou d’une méthode.
+Vous ne pouvez utiliser un énoncé `return` qu&#39;à l’intérieur d’une fonction ou d’une méthode.
 </pre></div>
 </div>
 </div>
@@ -3112,10 +3115,10 @@ SyntaxError: too many statically nested blocks
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
-    Vous n&#39;êtes pas sérieux !
+Vous n&#39;êtes pas sérieux !
 
-    Dans le cas où il s’agit d’une erreur dans un vrai programme, s’il vous plaît
-    songez à réduire le nombre de blocs de code imbriqués.
+Dans le cas où il s’agit d’une erreur dans un vrai programme, s’il vous plaît
+songez à réduire le nombre de blocs de code imbriqués.
 </pre></div>
 </div>
 </div>
@@ -3143,9 +3146,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4: def f(*):
             ^
 
-    En supposant que vous définissiez une fonction, vous avez besoin
-    de remplacer `*` soit par `*arguments` ou
-    par `*, argument=valeur`.
+En supposant que vous définissiez une fonction, vous avez besoin
+de remplacer `*` soit par `*arguments` ou
+par `*, argument=valeur`.
 </pre></div>
 </div>
 </div>
@@ -3172,12 +3175,12 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: a = 3.0i
              ^
 
-    Les noms valides ne peuvent pas commencer par un chiffre.
-    Peut-être pensiez-vous que `i` pouvait être utilisé pour représenter
-    la racine carrée de `-1`. Dans Python, le symbole utilisé pour ceci est `j`
-    et la partie imaginaire d&#39;un nombre complexe a la forme `nombre`
-    suivie immédiatement par `j` sans aucun espace entre les deux.
-    Peut-être que vous vouliez écrire `3.0j`.
+Les noms valides ne peuvent pas commencer par un chiffre.
+Peut-être pensiez-vous que `i` pouvait être utilisé pour représenter
+la racine carrée de `-1`. Dans Python, le symbole utilisé pour ceci est `j`
+et la partie imaginaire d&#39;un nombre complexe a la forme `nombre`
+suivie immédiatement par `j` sans aucun espace entre les deux.
+Peut-être que vous vouliez écrire `3.0j`.
 </pre></div>
 </div>
 </div>
@@ -3200,10 +3203,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;1: from __future__ import *
       ^
 
-    Lors de l’utilisation d’un énoncé `from __future__ import`,
-    vous devez importer des noms spécifiques.
+Lors de l’utilisation d’un énoncé `from __future__ import`,
+vous devez importer des noms spécifiques.
 
-    Les valeurs disponibles sont `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
+Les valeurs disponibles sont `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
 </pre></div>
 </div>
 </div>
@@ -3228,7 +3231,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;1: from __future__ import divisio
       ^
 
-    Au lieu de `divisio`, peut-être que vous vouliez plutôt importer `division`.
+Au lieu de `divisio`, peut-être que vous vouliez plutôt importer `division`.
 </pre></div>
 </div>
 </div>
@@ -3251,9 +3254,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;1: from __future__ import something
       ^
 
-    `something` n’est pas un attribut valide du module `__future__`.
+`something` n’est pas un attribut valide du module `__future__`.
 
-    Les valeurs disponibles sont `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
+Les valeurs disponibles sont `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
 </pre></div>
 </div>
 </div>
@@ -3276,11 +3279,11 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;1: from __future__ import braces
       ^
 
-    Je soupçonne que vous avez écrit `from __future__ import braces`
-    suivant une suggestion de quelqu’un d’autre. Ça ne marchera jamais.
+Je soupçonne que vous avez écrit `from __future__ import braces`
+suivant une suggestion de quelqu’un d’autre. Ça ne marchera jamais.
 
-    Contrairement à d’autres langages de programmation, les blocs de code Python sont définis par
-    leur niveau d’indentation, et non pas en utilisant des accolades, comme `{...}`.
+Contrairement à d’autres langages de programmation, les blocs de code Python sont définis par
+leur niveau d’indentation, et non pas en utilisant des accolades, comme `{...}`.
 </pre></div>
 </div>
 </div>
@@ -3305,9 +3308,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3:     from __future__ import generators
           ^
 
-    Une instruction `from __future__ import` change la façon dont Python
-    interprète le code dans un fichier.
-    Une telle instruction doit apparaître au début du fichier.
+Une instruction `from __future__ import` change la façon dont Python
+interprète le code dans un fichier.
+Une telle instruction doit apparaître au début du fichier.
 </pre></div>
 </div>
 </div>
@@ -3334,13 +3337,13 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: b = 0O1876
              ^
 
-    On dirait que vous avez utilisé un caractère invalide (&#39;8&#39;) dans un nombre octal.
+On dirait que vous avez utilisé un caractère invalide (&#39;8&#39;) dans un nombre octal.
 
-    Les nombres octaux sont des entiers de base 8 qui n’utilisent que les symboles `0` à `7`
-    pour représenter les valeurs.
-    Dans Python, les nombres octaux commencent par `0o` ou `0O`,
-    (le chiffre zéro suivi de la lettre `o`)
-    suivi des caractères utilisés pour représenter la valeur de cet entier.
+Les nombres octaux sont des entiers de base 8 qui n’utilisent que les symboles `0` à `7`
+pour représenter les valeurs.
+Dans Python, les nombres octaux commencent par `0o` ou `0O`,
+(le chiffre zéro suivi de la lettre `o`)
+suivi des caractères utilisés pour représenter la valeur de cet entier.
 </pre></div>
 </div>
 </div>
@@ -3367,10 +3370,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: def &quot;function&quot;():
           ^
 
-    Le nom d’une fonction doit être un identificateur Python valide,
-    c’est-à-dire un nom qui commence par une lettre ou un caractère de soulignement, `_`,
-    et qui ne contient que des lettres, des chiffres ou le caractère de soulignement.
-    Vous avez essayé d’utiliser une chaîne de caractères comme nom de fonction.
+Le nom d’une fonction doit être un identificateur Python valide,
+c’est-à-dire un nom qui commence par une lettre ou un caractère de soulignement, `_`,
+et qui ne contient que des lettres, des chiffres ou le caractère de soulignement.
+Vous avez essayé d’utiliser une chaîne de caractères comme nom de fonction.
 </pre></div>
 </div>
 </div>
@@ -3397,9 +3400,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: def 2be():
           ^
 
-    Le nom d’une fonction doit être un identificateur Python valide,
-    c’est-à-dire un nom qui commence par une lettre ou un caractère de soulignement, `_`,
-    et qui ne contient que des lettres, des chiffres ou le caractère de soulignement.
+Le nom d’une fonction doit être un identificateur Python valide,
+c’est-à-dire un nom qui commence par une lettre ou un caractère de soulignement, `_`,
+et qui ne contient que des lettres, des chiffres ou le caractère de soulignement.
 </pre></div>
 </div>
 </div>
@@ -3426,10 +3429,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: x = y === z
               ^
 
-    Vous avez écrit trois signes égaux de suite ce qui est utilisé dans certains
-    langages de programmation, mais pas en Python. Pour vérifier si deux objets
-    sont égaux, utilisent deux signes d&#39;égalité, `==`; pour voir si deux noms représentent
-    exactement le même objet, utilisez l’opérateur `is`.
+Vous avez écrit trois signes égaux de suite ce qui est utilisé dans certains
+langages de programmation, mais pas en Python. Pour vérifier si deux objets
+sont égaux, utilisent deux signes d&#39;égalité, `==`; pour voir si deux noms représentent
+exactement le même objet, utilisez l’opérateur `is`.
 </pre></div>
 </div>
 </div>
@@ -3456,9 +3459,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;3: if var start := begin &lt; end:
              ^
 
-    Peut-être avez-vous oublié que vous ne pouvez pas
-    avoir d&#39;espaces dans des noms variables et avez écrit `&#39;var start&#39;`
-    au lieu de `&#39;var_start&#39;`.
+Peut-être avez-vous oublié que vous ne pouvez pas
+avoir d&#39;espaces dans des noms variables et avez écrit `&#39;var start&#39;`
+au lieu de `&#39;var_start&#39;`.
 </pre></div>
 </div>
 </div>
@@ -3481,10 +3484,10 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;1: from math import sin and cos
                            ^
 
-    Le mot clé Python `and` ne peut être utilisé que pour les expressions booléennes.
-    Peut-être que vous vouliez écrire
+Le mot clé Python `and` ne peut être utilisé que pour les expressions booléennes.
+Peut-être que vous vouliez écrire
 
-    `from math import sin , cos`
+`from math import sin , cos`
 </pre></div>
 </div>
 </div>
@@ -3510,8 +3513,8 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;4:     x:int = 1
           ^
 
-    L’objet nommé `x` est défini avec une annotation de type
-    comme une variable locale. Il ne peut pas être déclaré variable globale.
+L’objet nommé `x` est défini avec une annotation de type
+comme une variable locale. Il ne peut pas être déclaré variable globale.
 </pre></div>
 </div>
 </div>
@@ -3540,15 +3543,15 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
               ^
    6:    ):
 
-    Python indique que l’erreur est causée par `start` écrit tout juste après `var`.
-    Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;un tuple,
-    ou entre les arguments d&#39;une fonction, avant la position indiquée par --&gt; et ^.
-    Peut-être que vous vouliez plutôt
+Python indique que l’erreur est causée par `start` écrit tout juste après `var`.
+Il est également possible que vous ayez oublié une virgule entre les éléments d&#39;un tuple,
+ou entre les arguments d&#39;une fonction, avant la position indiquée par --&gt; et ^.
+Peut-être que vous vouliez plutôt
 
-        if (    var, start := begin &lt; end   ):
-    Peut-être avez-vous oublié que vous ne pouvez pas
-    avoir d&#39;espaces dans des noms variables et avez écrit `&#39;var start&#39;`
-    au lieu de `&#39;var_start&#39;`.
+    if (    var, start := begin &lt; end   ):
+Peut-être avez-vous oublié que vous ne pouvez pas
+avoir d&#39;espaces dans des noms variables et avez écrit `&#39;var start&#39;`
+au lieu de `&#39;var_start&#39;`.
 </pre></div>
 </div>
 </div>
@@ -3571,7 +3574,7 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;1: del True
           ^
 
-    Vous ne pouvez pas supprimer la constante `True`.
+Vous ne pouvez pas supprimer la constante `True`.
 </pre></div>
 </div>
 </div>
@@ -3594,9 +3597,9 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;1: del &quot;Hello world!&quot;
           ^
 
-    Vous ne pouvez pas supprimer le littéral `&quot;Hello world!&quot;`.
-    Vous ne pouvez supprimer que les noms d’objets, ou
-    des items individuels dans un conteneur.
+Vous ne pouvez pas supprimer le littéral `&quot;Hello world!&quot;`.
+Vous ne pouvez supprimer que les noms d’objets, ou
+des items individuels dans un conteneur.
 </pre></div>
 </div>
 </div>
@@ -3621,12 +3624,103 @@ jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
 --&gt;1: a = &quot;abc\&quot;
                 ^
 
-    Vous aviez commencé à écrire une chaîne de caractères
-    avec un guillemet simple ou double, mais n&#39;avez jamais
-    terminé la chaîne avec un autre guillemet sur cette ligne.
-    Peut-être que vous vouliez écrire une barre oblique inverse, `\`
-    comme le dernier caractère de la chaîne et vous oublié que vous
-    deviez en écrire deux `\` d’affilée.
+Vous aviez commencé à écrire une chaîne de caractères
+avec un guillemet simple ou double, mais n&#39;avez jamais
+terminé la chaîne avec un autre guillemet sur cette ligne.
+Peut-être que vous vouliez écrire une barre oblique inverse, `\`
+comme le dernier caractère de la chaîne et vous oublié que vous
+deviez en écrire deux `\` d’affilée.
+</pre></div>
+</div>
+</div>
+<div class="section" id="f-string-with-backslash">
+<h2>f-string with backslash<a class="headerlink" href="#f-string-with-backslash" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error106.py&quot;, line 2
+    print(f&quot;{&#39;\n&#39;.join(names)}&quot;)
+          ^
+SyntaxError: f-string expression part cannot include a backslash
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error106.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: names = [&#39;a&#39;, &#39;b&#39;]
+--&gt;2: print(f&quot;{&#39;\n&#39;.join(names)}&quot;)
+            ^
+
+Vous avez écrit une chaîne de caractères formatés dont le contenu `{...}`
+comprend une barre oblique inverse; ce n’est pas permis.
+Peut-être pouvez-vous remplacer la partie qui contient une barre oblique inverse par
+une variable. Par exemple, supposons que vous avez une chaîne comme suit :
+
+    f&quot;{... &#39;bonjour\n&#39;...}&quot;
+
+vous pourriez écrire ceci comme
+
+    bonjour = &#39;bonjour\n&#39;
+    f&quot;{... bonjour ...}&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="unterminated-triple-quoted-string">
+<h2>Unterminated triple quoted string<a class="headerlink" href="#unterminated-triple-quoted-string" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error107.py&quot;, line 4
+    some_text = &quot;&quot;&quot;In a land
+populated by weird animals,
+a ...
+                                                               ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python ne peut pas comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error107.py&#39;
+pour une raison non spécifiée.
+
+   1: some_text =
+
+Vous avez commencé à écrire une chaîne débutant avec des triples guillemets,
+sans inclure les triples guillemets nécessaires pour mettre fin à la chaîne.
+</pre></div>
+</div>
+</div>
+<div class="section" id="incorrect-use-of-from-module-import-as">
+<h2>Incorrect use of ‘from module import … as …<a class="headerlink" href="#incorrect-use-of-from-module-import-as" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error108.py&quot;, line 2
+    from math import (sin, cos) as funcs
+                                ^
+SyntaxError: invalid syntax
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error108.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+   1: # issue 158
+--&gt;2: from math import (sin, cos) as funcs
+                                  ^
+
+Je suppose que vous essayez d’importer au moins un objet
+à partir du module `math` pour le renommer en utilisant le mot clé Python `as`;
+ce mot clé ne peut être utilisé que pour renommer un objet à la fois
+en utilisant une syntaxe bien définie.
+Je vous suggère de diviser une telle déclaration d’importation avec chaque objet
+renommé sur une ligne séparée comme suit:
+
+    from math import objet_1 as nom_1
+    from math import objet_2 as nom_2 # si nécessaire
 </pre></div>
 </div>
 </div>

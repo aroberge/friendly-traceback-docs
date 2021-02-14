@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Syntax errors - markdown_docs format &mdash; Friendly tracebacks 0.2.23a documentation</title>
+  <title>Syntax errors - markdown_docs format &mdash; Friendly tracebacks 0.2.31a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.23a
+                0.2.31a
               </div>
             
           
@@ -248,6 +248,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#deleting-constant-keyword">Deleting constant/keyword</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deleting-literal">Deleting literal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#eol-unescaped-backslash">EOL unescaped backslash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#f-string-with-backslash">f-string with backslash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unterminated-triple-quoted-string">Unterminated triple quoted string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#incorrect-use-of-from-module-import-as">Incorrect use of ‘from module import … as …</a></li>
 </ul>
 </li>
 </ul>
@@ -338,7 +341,7 @@ trb_syntax_markdown.py located in the <code class="docutils literal notranslate"
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.
 </p>
-</div><p>Friendly-traceback version: 0.2.21a
+</div><p>Friendly-traceback version: 0.2.31a
 Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="indentationerror-expected-an-indented-block">
@@ -3472,6 +3475,96 @@ but never ended the string with another quote on that line.
 Perhaps you meant to write the backslash character, <code class="docutils literal notranslate"><span class="pre">\</span></code>
 as the last character in the string and forgot that you
 needed to escape it by writing two <code class="docutils literal notranslate"><span class="pre">\</span></code> in a row.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="f-string-with-backslash">
+<h2>f-string with backslash<a class="headerlink" href="#f-string-with-backslash" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error106.py&quot;</span>, line <span class="m">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">names</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+          <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">f-string expression part cannot include a backslash</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error106.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
+    <span class="o">--&gt;</span><span class="mi">2</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">names</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="o">^</span>
+</pre></div>
+</div>
+<p>You have written an f-string whose content <code class="docutils literal notranslate"><span class="pre">{...}</span></code>
+includes a backslash; this is not allowed.
+Perhaps you can replace the part that contains a backslash by
+some variable. For example, suppose that you have an f-string like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="o">...</span> <span class="s1">&#39;hello</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">...</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>you could write this as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span> <span class="o">=</span> <span class="s1">&#39;hello</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="o">...</span> <span class="n">hello</span> <span class="o">...</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="unterminated-triple-quoted-string">
+<h2>Unterminated triple quoted string<a class="headerlink" href="#unterminated-triple-quoted-string" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error107.py&quot;</span>, line <span class="m">4</span>
+    <span class="n">some_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;In a land</span>
+<span class="gr">populated by weird animals,</span>
+<span class="gr">a ...</span>
+<span class="gr">                                                               ^</span>
+<span class="gr">SyntaxError</span>: <span class="n">EOF while scanning triple-quoted string literal</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error107.py’
+for an unspecified reason.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="n">some_text</span> <span class="o">=</span>
+</pre></div>
+</div>
+<p>You started writing a triple-quoted string but never wrote
+the triple quotes needed to end the string.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="incorrect-use-of-from-module-import-as">
+<h2>Incorrect use of ‘from module import … as …<a class="headerlink" href="#incorrect-use-of-from-module-import-as" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error108.py&quot;</span>, line <span class="m">2</span>
+    <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="p">(</span><span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">)</span> <span class="k">as</span> <span class="n">funcs</span>
+                                <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error108.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span><span class="p">:</span> <span class="c1"># issue 158</span>
+    <span class="o">--&gt;</span><span class="mi">2</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="p">(</span><span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">)</span> <span class="k">as</span> <span class="n">funcs</span>
+                                      <span class="o">^</span>
+</pre></div>
+</div>
+<p>I am guessing that you are trying to import at least one object
+from module <code class="docutils literal notranslate"><span class="pre">math</span></code> and rename it using the Python keyword <code class="docutils literal notranslate"><span class="pre">as</span></code>;
+this keyword can only be used to rename one object at a time
+using a well defined syntax.
+I suggest that you split up any such import statement with each object
+renamed on a separate line as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">object_1</span> <span class="k">as</span> <span class="n">name_1</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">object_2</span> <span class="k">as</span> <span class="n">name_2</span>  <span class="c1"># if needed</span>
+</pre></div>
+</div>
 </div>
 </div>
 

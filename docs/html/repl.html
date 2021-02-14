@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Console basics &mdash; Friendly tracebacks 0.2.23a documentation</title>
+  <title>Console basics &mdash; Friendly tracebacks 0.2.31a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.23a
+                0.2.31a
               </div>
             
           
@@ -518,6 +518,42 @@ currently used.</p>
 <dd><p>Shows the likely cause of the exception.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt id="friendly_traceback.console_helpers.Friendly.www">
+<code class="sig-name descname">www</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">python</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.www" title="Permalink to this definition">¶</a></dt>
+<dd><p>This uses the <code class="docutils literal notranslate"><span class="pre">webbrowser</span></code> module to open a tab (or window) in the
+default browser, linking to a specific url.</p>
+<ul>
+<li><p>If no arguments are provided, and no exception has been raised, this opens
+Friendly-traceback documentation.</p></li>
+<li><p>If no arguments are provided, and an exception has been raised, in most
+cases, an internet search will be done using the exception message as the
+search string. In a few cases, Friendly-traceback will link to a
+specific site based on its determination of the cause of the exception.</p></li>
+<li><p>If no search argument is provided, but <code class="docutils literal notranslate"><span class="pre">python</span></code> is specified to be <code class="docutils literal notranslate"><span class="pre">True</span></code>,
+we will have the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If no exception has been raised, this opens the Python documentation</p></li>
+<li><p>If an exception has been raised, in most cases a search of the Python
+documentation will be done using the exception name as the search term.
+In a few cases, Friendly-traceback will link to a
+specific site based on its determination of the cause of the exception.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>If a search (string) argument is provided, we have three possibilities:</p>
+<ul class="simple">
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">python</span></code> argument is <code class="docutils literal notranslate"><span class="pre">True</span></code>, a search will be done in the
+Python documentation site; otherwise</p></li>
+<li><p>if the search term contains the string “friendly” (independent of case),
+Friendly-traceback documentation will open</p></li>
+<li><p>otherwise, an internet search will be done using the search string provided.</p></li>
+</ul>
+</li>
+</ul>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py function">
@@ -649,6 +685,42 @@ currently used.</p>
 <dt id="friendly_traceback.console_helpers.why">
 <code class="sig-name descname">why</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/console_helpers.html#why"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.why" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the likely cause of the exception.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="friendly_traceback.console_helpers.www">
+<code class="sig-name descname">www</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">python</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/console_helpers.html#www"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.www" title="Permalink to this definition">¶</a></dt>
+<dd><p>This uses the <code class="docutils literal notranslate"><span class="pre">webbrowser</span></code> module to open a tab (or window) in the
+default browser, linking to a specific url.</p>
+<ul>
+<li><p>If no arguments are provided, and no exception has been raised, this opens
+Friendly-traceback documentation.</p></li>
+<li><p>If no arguments are provided, and an exception has been raised, in most
+cases, an internet search will be done using the exception message as the
+search string. In a few cases, Friendly-traceback will link to a
+specific site based on its determination of the cause of the exception.</p></li>
+<li><p>If no search argument is provided, but <code class="docutils literal notranslate"><span class="pre">python</span></code> is specified to be <code class="docutils literal notranslate"><span class="pre">True</span></code>,
+we will have the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If no exception has been raised, this opens the Python documentation</p></li>
+<li><p>If an exception has been raised, in most cases a search of the Python
+documentation will be done using the exception name as the search term.
+In a few cases, Friendly-traceback will link to a
+specific site based on its determination of the cause of the exception.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>If a search (string) argument is provided, we have three possibilities:</p>
+<ul class="simple">
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">python</span></code> argument is <code class="docutils literal notranslate"><span class="pre">True</span></code>, a search will be done in the
+Python documentation site; otherwise</p></li>
+<li><p>if the search term contains the string “friendly” (independent of case),
+Friendly-traceback documentation will open</p></li>
+<li><p>otherwise, an internet search will be done using the search string provided.</p></li>
+</ul>
+</li>
+</ul>
 </dd></dl>
 
 </div>

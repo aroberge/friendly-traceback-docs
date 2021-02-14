@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.console_helpers &mdash; Friendly tracebacks 0.2.23a documentation</title>
+  <title>friendly_traceback.console_helpers &mdash; Friendly tracebacks 0.2.31a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.2.23a
+                0.2.31a
               </div>
             
           
@@ -217,6 +217,7 @@
 <span class="sd">not be listed here.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
+<span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">friendly_traceback</span>
 
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">debug_helper</span>
@@ -224,6 +225,7 @@
 <span class="kn">from</span> <span class="nn">.formatters</span> <span class="kn">import</span> <span class="n">items_in_order</span>
 <span class="kn">from</span> <span class="nn">.info_generic</span> <span class="kn">import</span> <span class="n">get_generic_explanation</span>
 <span class="kn">from</span> <span class="nn">.path_info</span> <span class="kn">import</span> <span class="n">show_paths</span>
+<span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
 
 
 <div class="viewcode-block" id="explain"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console_helpers.explain">[docs]</a><span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">):</span>
@@ -336,6 +338,89 @@
     <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">tb_data</span><span class="o">.</span><span class="n">statement</span>
 
 
+<div class="viewcode-block" id="www"><a class="viewcode-back" href="../../repl.html#friendly_traceback.console_helpers.www">[docs]</a><span class="k">def</span> <span class="nf">www</span><span class="p">(</span><span class="n">search</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">python</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This uses the ``webbrowser`` module to open a tab (or window) in the</span>
+<span class="sd">    default browser, linking to a specific url.</span>
+
+<span class="sd">    * If no arguments are provided, and no exception has been raised, this opens</span>
+<span class="sd">      Friendly-traceback documentation.</span>
+
+<span class="sd">    * If no arguments are provided, and an exception has been raised, in most</span>
+<span class="sd">      cases, an internet search will be done using the exception message as the</span>
+<span class="sd">      search string. In a few cases, Friendly-traceback will link to a</span>
+<span class="sd">      specific site based on its determination of the cause of the exception.</span>
+
+<span class="sd">    * If no search argument is provided, but ``python`` is specified to be ``True``,</span>
+<span class="sd">      we will have the following:</span>
+
+<span class="sd">        * If no exception has been raised, this opens the Python documentation</span>
+
+<span class="sd">        * If an exception has been raised, in most cases a search of the Python</span>
+<span class="sd">          documentation will be done using the exception name as the search term.</span>
+<span class="sd">          In a few cases, Friendly-traceback will link to a</span>
+<span class="sd">          specific site based on its determination of the cause of the exception.</span>
+
+<span class="sd">    * If a search (string) argument is provided, we have three possibilities:</span>
+
+<span class="sd">      * If the ``python`` argument is ``True``, a search will be done in the</span>
+<span class="sd">        Python documentation site; otherwise</span>
+<span class="sd">      * if the search term contains the string &quot;friendly&quot; (independent of case),</span>
+<span class="sd">        Friendly-traceback documentation will open</span>
+<span class="sd">      * otherwise, an internet search will be done using the search string provided.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">urllib</span>
+    <span class="kn">import</span> <span class="nn">webbrowser</span>
+
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+
+    <span class="k">if</span> <span class="n">search</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">search</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+            <span class="n">_</span><span class="p">(</span><span class="s2">&quot;The first argument of `www()` must be either `None` or a string.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">search</span> <span class="ow">is</span> <span class="kc">True</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">python</span><span class="p">:</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+                <span class="n">_</span><span class="p">(</span>
+                    <span class="s2">&quot;If you wish to open Python&#39;s documentation, use</span><span class="se">\n</span><span class="s2">&quot;</span>
+                    <span class="s2">&quot;`www(python=True)`.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="n">quote</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">quote</span>  <span class="c1"># noqa</span>
+
+    <span class="n">ddg_url</span> <span class="o">=</span> <span class="s2">&quot;https://duckduckgo.com?q=&quot;</span>
+    <span class="n">friendly_url</span> <span class="o">=</span> <span class="s2">&quot;https://aroberge.github.io/friendly-traceback-docs/docs/html/&quot;</span>
+    <span class="n">python_docs_url</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;https://docs.python.org/3/&quot;</span><span class="p">)</span>
+    <span class="n">python_search_url</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;https://docs.python.org/3/search.html?q=&quot;</span><span class="p">)</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span>
+
+    <span class="k">if</span> <span class="n">search</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">python</span><span class="p">:</span>  <span class="c1"># default search</span>
+        <span class="k">if</span> <span class="n">info</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">friendly_url</span>
+        <span class="k">elif</span> <span class="s2">&quot;python_link&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;python_link&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">ddg_url</span> <span class="o">+</span> <span class="n">quote</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">search</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">info</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;python_link&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;python_link&quot;</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">info</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># an exception has been raised</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">python_search_url</span> <span class="o">+</span> <span class="n">session</span><span class="o">.</span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">tb_data</span><span class="o">.</span><span class="n">exception_name</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">python_docs_url</span>
+    <span class="k">elif</span> <span class="n">python</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">python_search_url</span> <span class="o">+</span> <span class="n">quote</span><span class="p">(</span><span class="n">search</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="s2">&quot;friendly&quot;</span> <span class="ow">in</span> <span class="n">search</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">friendly_url</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ddg_url</span> <span class="o">+</span> <span class="n">quote</span><span class="p">(</span><span class="n">search</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">webbrowser</span><span class="o">.</span><span class="n">open_new_tab</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;The default web browser cannot be used for searching.&quot;</span><span class="p">))</span></div>
+
+
 <span class="n">get_lang</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_lang</span>
 <span class="n">set_lang</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_lang</span>
 <span class="n">get_include</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">get_include</span>
@@ -361,6 +446,7 @@
     <span class="s2">&quot;show_paths&quot;</span><span class="p">:</span> <span class="n">show_paths</span><span class="p">,</span>
     <span class="s2">&quot;show_info&quot;</span><span class="p">:</span> <span class="n">show_info</span><span class="p">,</span>
     <span class="s2">&quot;_get_statement&quot;</span><span class="p">:</span> <span class="n">_get_statement</span><span class="p">,</span>
+    <span class="s2">&quot;www&quot;</span><span class="p">:</span> <span class="n">www</span><span class="p">,</span>
 <span class="p">}</span>
 
 
@@ -374,8 +460,8 @@
     <span class="k">pass</span></div>
 
 
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">helpers</span><span class="p">:</span>
-    <span class="nb">setattr</span><span class="p">(</span><span class="n">Friendly</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">helpers</span><span class="p">[</span><span class="n">item</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">helper</span> <span class="ow">in</span> <span class="n">helpers</span><span class="p">:</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">Friendly</span><span class="p">,</span> <span class="n">helper</span><span class="p">,</span> <span class="n">helpers</span><span class="p">[</span><span class="n">helper</span><span class="p">])</span>
 
 <span class="n">helpers</span><span class="p">[</span><span class="s2">&quot;Friendly&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Friendly</span>
 
