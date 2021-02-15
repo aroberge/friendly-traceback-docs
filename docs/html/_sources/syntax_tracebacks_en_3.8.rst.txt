@@ -3814,3 +3814,62 @@ Comprehension with condition (with else)
         [f(x) for x in sequence if condition]  # 'if' after 'for'
     
     
+
+Forgot 'o' for octal
+--------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error111.py", line 1
+        x = 01
+             ^
+    SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+    
+        Did you mean `0o1`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error111.py'
+    beyond the location indicated by --> and ^.
+    
+    -->1: x = 01
+               ^
+
+    Perhaps you meant to write the octal number `0o1`
+    and forgot the letter 'o', or perhaps you meant to write
+    a decimal integer and did not know that it could not start with zeros.
+    
+
+Integer with leading zeros
+--------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error112.py", line 1
+        x = 000_123_456
+                      ^
+    SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+    
+        Did you mean `123_456`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error112.py'
+    beyond the location indicated by --> and ^.
+    
+    -->1: x = 000_123_456
+                        ^
+
+    Perhaps you meant to write the integer `123_456`
+    and did not know that it could not start with zeros.
+    

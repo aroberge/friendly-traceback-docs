@@ -3830,3 +3830,62 @@ Comprehension with condition (with else)
         [f(x) pour x in séquence si condition]  # 'if' après 'for'
     
     
+
+Forgot 'o' for octal
+--------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error111.py", line 1
+        x = 01
+             ^
+    SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+    
+        Vouliez-vous dire `0o1` ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error111.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+    -->1: x = 01
+               ^
+
+    Peut-être que vous vouliez écrire le nombre octal `0o1`
+    et oublié la lettre 'o', ou peut-être vous vouliez écrire
+    un entier décimal et ne saviez pas qu’il ne pouvait pas commencer par des zéros.
+    
+
+Integer with leading zeros
+--------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error112.py", line 1
+        x = 000_123_456
+                      ^
+    SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+    
+        Vouliez-vous dire `123_456` ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error112.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+    -->1: x = 000_123_456
+                        ^
+
+    Peut-être que vous vouliez écrire l'entier décimal `123_456`
+    et ne saviez pas qu’il ne pouvait pas commencer par des zéros.
+    

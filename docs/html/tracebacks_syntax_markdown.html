@@ -253,6 +253,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#incorrect-use-of-from-module-import-as">Incorrect use of ‘from module import … as …</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#comprehension-with-condition-no-else">Comprehension with condition (no else)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#comprehension-with-condition-with-else">Comprehension with condition (with else)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#forgot-o-for-octal">Forgot ‘o’ for octal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#integer-with-leading-zeros">Integer with leading zeros</a></li>
 </ul>
 </li>
 </ul>
@@ -3633,6 +3635,55 @@ condition can be either</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sequence</span> <span class="k">if</span> <span class="n">condition</span><span class="p">]</span>  <span class="c1"># &#39;if&#39; after &#39;for&#39;</span>
 </pre></div>
 </div>
+</div>
+<hr class="docutils" />
+<div class="section" id="forgot-o-for-octal">
+<h2>Forgot ‘o’ for octal<a class="headerlink" href="#forgot-o-for-octal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error111.py&quot;</span>, line <span class="m">1</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">01</span>
+         <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers</span>
+</pre></div>
+</div>
+<p>Did you mean <code class="docutils literal notranslate"><span class="pre">0o1</span></code>?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error111.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">01</span>
+               <span class="o">^</span>
+</pre></div>
+</div>
+<p>Perhaps you meant to write the octal number <code class="docutils literal notranslate"><span class="pre">0o1</span></code>
+and forgot the letter ‘o’, or perhaps you meant to write
+a decimal integer and did not know that it could not start with zeros.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="integer-with-leading-zeros">
+<h2>Integer with leading zeros<a class="headerlink" href="#integer-with-leading-zeros" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error112.py&quot;</span>, line <span class="m">1</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">000_123_456</span>
+                  <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers</span>
+</pre></div>
+</div>
+<p>Did you mean <code class="docutils literal notranslate"><span class="pre">123_456</span></code>?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error112.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">000_123_456</span>
+                        <span class="o">^</span>
+</pre></div>
+</div>
+<p>Perhaps you meant to write the integer <code class="docutils literal notranslate"><span class="pre">123_456</span></code>
+and did not know that it could not start with zeros.</p>
 </div>
 </div>
 
