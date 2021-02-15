@@ -3756,3 +3756,77 @@ Incorrect use of 'from module import ... as ...
         from math import objet_1 as nom_1
         from math import objet_2 as nom_2 # si nécessaire
     
+
+Comprehension with condition (no else)
+--------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error109.py", line 1
+        a = [f(x) if condition for x in sequence]
+                               ^
+    SyntaxError: invalid syntax
+    
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error109.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+    -->1: a = [f(x) if condition for x in sequence]
+                                 ^
+
+    Je suppose que vous écriviez une compréhension ou une expression génératrice
+    et avez utiliser le mauvais ordre pour une condition.
+    L'ordre correct dépend de la présence ou non d'une clause `else`.
+    Par exemple, le bon ordre pour une compréhension de liste avec
+    une condition est
+    
+        [f(x) if condition else autre for x in séquence]  # 'if' avant 'for'
+    
+    ou, s'il n'y a pas de `else`
+    
+        [f(x) pour x in séquence si condition]  # 'if' après 'for'
+    
+    
+
+Comprehension with condition (with else)
+----------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error110.py", line 1
+        a = [f(x) for x in sequence if condition else other]
+                                                 ^
+    SyntaxError: invalid syntax
+    
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error110.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+    -->1: a = [f(x) for x in sequence if condition else other]
+                                                   ^
+
+    Je suppose que vous écriviez une compréhension ou une expression génératrice
+    et avez utiliser le mauvais ordre pour une condition.
+    L'ordre correct dépend de la présence ou non d'une clause `else`.
+    Par exemple, le bon ordre pour une compréhension de liste avec
+    une condition est
+    
+        [f(x) if condition else autre for x in séquence]  # 'if' avant 'for'
+    
+    ou, s'il n'y a pas de `else`
+    
+        [f(x) pour x in séquence si condition]  # 'if' après 'for'
+    
+    

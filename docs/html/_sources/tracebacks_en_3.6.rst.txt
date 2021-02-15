@@ -632,7 +632,7 @@ Generic
     A `KeyError` is raised when a value is not found as a
     key in a Python dict.
     
-    In your program, the key that cannot be found is `'c'`.
+    In your program, the key that cannot be found is `c`.
     
     Exception raised on line 7 of file TESTS:\runtime\test_key_error.py.
     

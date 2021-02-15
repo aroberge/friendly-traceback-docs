@@ -628,7 +628,7 @@ Generic
     Une exception `KeyError` est levée lorsqu’une valeur n’est pas trouvée
     en tant que clé dans un dictionnaire (dict) Python.
     
-    Dans votre programme, la clé inconnue est `'c'`.
+    Dans votre programme, la clé inconnue est `c`.
     
     Exception levée à la ligne 7 du fichier TESTS:\runtime\test_key_error.py.
     

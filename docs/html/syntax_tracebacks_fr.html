@@ -255,6 +255,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#f-string-with-backslash">f-string with backslash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unterminated-triple-quoted-string">Unterminated triple quoted string</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#incorrect-use-of-from-module-import-as">Incorrect use of ‘from module import … as …</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comprehension-with-condition-no-else">Comprehension with condition (no else)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comprehension-with-condition-with-else">Comprehension with condition (with else)</a></li>
 </ul>
 </li>
 </ul>
@@ -3721,6 +3723,72 @@ renommé sur une ligne séparée comme suit:
 
     from math import objet_1 as nom_1
     from math import objet_2 as nom_2 # si nécessaire
+</pre></div>
+</div>
+</div>
+<div class="section" id="comprehension-with-condition-no-else">
+<h2>Comprehension with condition (no else)<a class="headerlink" href="#comprehension-with-condition-no-else" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error109.py&quot;, line 1
+    a = [f(x) if condition for x in sequence]
+                           ^
+SyntaxError: invalid syntax
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error109.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+--&gt;1: a = [f(x) if condition for x in sequence]
+                             ^
+
+Je suppose que vous écriviez une compréhension ou une expression génératrice
+et avez utiliser le mauvais ordre pour une condition.
+L&#39;ordre correct dépend de la présence ou non d&#39;une clause `else`.
+Par exemple, le bon ordre pour une compréhension de liste avec
+une condition est
+
+    [f(x) if condition else autre for x in séquence]  # &#39;if&#39; avant &#39;for&#39;
+
+ou, s&#39;il n&#39;y a pas de `else`
+
+    [f(x) pour x in séquence si condition]  # &#39;if&#39; après &#39;for&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="comprehension-with-condition-with-else">
+<h2>Comprehension with condition (with else)<a class="headerlink" href="#comprehension-with-condition-with-else" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error110.py&quot;, line 1
+    a = [f(x) for x in sequence if condition else other]
+                                             ^
+SyntaxError: invalid syntax
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\raise_syntax_error110.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par --&gt; et ^.
+
+--&gt;1: a = [f(x) for x in sequence if condition else other]
+                                               ^
+
+Je suppose que vous écriviez une compréhension ou une expression génératrice
+et avez utiliser le mauvais ordre pour une condition.
+L&#39;ordre correct dépend de la présence ou non d&#39;une clause `else`.
+Par exemple, le bon ordre pour une compréhension de liste avec
+une condition est
+
+    [f(x) if condition else autre for x in séquence]  # &#39;if&#39; avant &#39;for&#39;
+
+ou, s&#39;il n&#39;y a pas de `else`
+
+    [f(x) pour x in séquence si condition]  # &#39;if&#39; après &#39;for&#39;
 </pre></div>
 </div>
 </div>

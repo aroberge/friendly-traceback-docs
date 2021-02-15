@@ -3748,3 +3748,77 @@ Incorrect use of 'from module import ... as ...
         from math import object_1 as name_1
         from math import object_2 as name_2  # if needed
     
+
+Comprehension with condition (no else)
+--------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error109.py", line 1
+        a = [f(x) if condition for x in sequence]
+                               ^
+    SyntaxError: invalid syntax
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error109.py'
+    beyond the location indicated by --> and ^.
+    
+    -->1: a = [f(x) if condition for x in sequence]
+                                 ^
+
+    I am guessing that you were writing a comprehension or a generator expression
+    and use the wrong order for a condition.
+    The correct order depends if there is an `else` clause or not.
+    For example, the correct order for a list comprehensions with
+    condition can be either
+    
+        [f(x) if condition else other for x in sequence]  # 'if' before 'for'
+    
+    or, if there is no `else`
+    
+        [f(x) for x in sequence if condition]  # 'if' after 'for'
+    
+    
+
+Comprehension with condition (with else)
+----------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error110.py", line 1
+        a = [f(x) for x in sequence if condition else other]
+                                                 ^
+    SyntaxError: invalid syntax
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\raise_syntax_error110.py'
+    beyond the location indicated by --> and ^.
+    
+    -->1: a = [f(x) for x in sequence if condition else other]
+                                                   ^
+
+    I am guessing that you were writing a comprehension or a generator expression
+    and use the wrong order for a condition.
+    The correct order depends if there is an `else` clause or not.
+    For example, the correct order for a list comprehensions with
+    condition can be either
+    
+        [f(x) if condition else other for x in sequence]  # 'if' before 'for'
+    
+    or, if there is no `else`
+    
+        [f(x) for x in sequence if condition]  # 'if' after 'for'
+    
+    
