@@ -238,6 +238,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#comprehension-with-condition-with-else">Comprehension with condition (with else)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#forgot-o-for-octal">Forgot ‘o’ for octal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#integer-with-leading-zeros">Integer with leading zeros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-for-tuples-in-comprehension">Missing () for tuples in comprehension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#binary-f-string-not-allowed">Binary f-string not allowed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-operator-does-not-exist-yet">Walrus operator does not exist - yet</a></li>
 </ul>
 </li>
@@ -3756,6 +3758,65 @@ beyond the location indicated by --&gt; and ^.
 
 Perhaps you meant to write the integer `123_456`
 and did not know that it could not start with zeros.
+</pre></div>
+</div>
+</div>
+<div class="section" id="missing-for-tuples-in-comprehension">
+<h2>Missing () for tuples in comprehension<a class="headerlink" href="#missing-for-tuples-in-comprehension" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error113.py&quot;, line 1
+    x = [i, i**2 for i in range(10)]
+                   ^
+SyntaxError: invalid syntax
+
+    Did you forget parentheses?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error113.py&#39;
+beyond the location indicated by --&gt; and ^.
+
+--&gt;1: x = [i, i**2 for i in range(10)]
+                     ^
+
+I am guessing that you were writing a comprehension or a generator expression
+and forgot to include parentheses around tuples.
+As an example, instead of writing
+
+    [i, i**2 for i in range(10)]
+
+you would need to write
+
+    [(i, i**2) for i in range(10)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="binary-f-string-not-allowed">
+<h2>Binary f-string not allowed<a class="headerlink" href="#binary-f-string-not-allowed" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    mod = __import__(name)
+  File &quot;TESTS:\syntax\raise_syntax_error114.py&quot;, line 1
+    greet = bf&quot;Hello {name}&quot;
+                           ^
+SyntaxError: invalid syntax
+
+    `bf` is an illegal string prefix.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\raise_syntax_error114.py&#39;
+beyond the location indicated by --&gt; and ^.
+
+--&gt;1: greet = bf&quot;Hello {name}&quot;
+                             ^
+
+I am guessing that you wanted a binary f-string;
+this is not allowed.
 </pre></div>
 </div>
 </div>

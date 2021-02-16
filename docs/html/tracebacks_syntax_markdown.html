@@ -255,6 +255,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#comprehension-with-condition-with-else">Comprehension with condition (with else)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#forgot-o-for-octal">Forgot ‘o’ for octal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#integer-with-leading-zeros">Integer with leading zeros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-for-tuples-in-comprehension">Missing () for tuples in comprehension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#binary-f-string-not-allowed">Binary f-string not allowed</a></li>
 </ul>
 </li>
 </ul>
@@ -3684,6 +3686,62 @@ beyond the location indicated by –&gt; and ^.</p>
 </div>
 <p>Perhaps you meant to write the integer <code class="docutils literal notranslate"><span class="pre">123_456</span></code>
 and did not know that it could not start with zeros.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="missing-for-tuples-in-comprehension">
+<h2>Missing () for tuples in comprehension<a class="headerlink" href="#missing-for-tuples-in-comprehension" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error113.py&quot;</span>, line <span class="m">1</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+                 <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>Did you forget parentheses?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error113.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+                       <span class="o">^</span>
+</pre></div>
+</div>
+<p>I am guessing that you were writing a comprehension or a generator expression
+and forgot to include parentheses around tuples.
+As an example, instead of writing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>you would need to write</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="binary-f-string-not-allowed">
+<h2>Binary f-string not allowed<a class="headerlink" href="#binary-f-string-not-allowed" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">42</span>, in <span class="n">create_tracebacks</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\raise_syntax_error114.py&quot;</span>, line <span class="m">1</span>
+    <span class="n">greet</span> <span class="o">=</span> <span class="n">bf</span><span class="s2">&quot;Hello </span><span class="si">{name}</span><span class="s2">&quot;</span>
+              <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">bf</span></code> is an illegal string prefix.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\raise_syntax_error114.py’
+beyond the location indicated by –&gt; and ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="n">greet</span> <span class="o">=</span> <span class="n">bf</span><span class="s2">&quot;Hello </span><span class="si">{name}</span><span class="s2">&quot;</span>
+                    <span class="o">^</span>
+</pre></div>
+</div>
+<p>I am guessing that you wanted a binary f-string;
+this is not allowed.</p>
 </div>
 </div>
 

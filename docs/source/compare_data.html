@@ -1,18 +1,143 @@
 <div>
-<div class='filename-header'>raise_syntax_error66</div>
+<div class='filename-header'>
+raise_syntax_error54</div>
 <h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.8: </b>SyntaxError: unexpected EOF while parsing
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
 
-<b>3.9: </b>IndentationError: expected an indented block
+<b>3.8: </b>SyntaxError: cannot assign to literal
+
+</pre>
+<div class='filename-header'>raise_syntax_error75</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.8: </b>SyntaxError: invalid character in identifier
+
+<b>3.9: </b>SyntaxError: invalid character '«' (U+00AB)
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error83</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to operator
+
+<b>3.8: </b>SyntaxError: cannot assign to operator
+
+</pre>
+<div class='filename-header'>raise_syntax_error105</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: EOL while scanning string literal
+
+<b>3.10: </b>SyntaxError: unterminated string literal (detected at line 1)
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error53</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
+
+<b>3.8: </b>SyntaxError: cannot assign to dict display
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error13</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to keyword
+
+<b>3.8: </b>SyntaxError: cannot assign to None
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error35</div>
+<h5>Different explanation - by Friendly-traceback</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>Inside the f-string `(`, 
+you have another string, which starts with either a
+single quote (') or double quote ("), without a matching closing one.
+
+<b>3.8: </b>Inside the f-string `f"Bob is {age['Bob]} years old."`, 
+you have another string, which starts with either a
+single quote (') or double quote ("), without a matching closing one.
+
+</pre>
+<pre class='highlight friendly-small-pre'><b>3.8: </b>Inside the f-string `f"Bob is {age['Bob]} years old."`, 
+you have another string, which starts with either a
+single quote (') or double quote ("), without a matching closing one.
+
+<b>3.9: </b>Inside the f-string `)`, 
+you have another string, which starts with either a
+single quote (') or double quote ("), without a matching closing one.
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error55</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid syntax
+
+<b>3.8: </b>SyntaxError: cannot use assignment expressions with True
 
 </pre>
 <h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.8: </b>Python tells us that it reached the end of the file
-and expected more content.
+<pre class='highlight friendly-small-pre'><b>3.6: </b>You appear to be using the operator `:=`, sometimes called
+the walrus operator. This operator requires the use of
+Python 3.8 or newer. You are using version 3.6.
+
+<b>3.7: </b>You appear to be using the operator `:=`, sometimes called
+the walrus operator. This operator requires the use of
+Python 3.8 or newer. You are using version 3.7.
+
+</pre>
+<pre class='highlight friendly-small-pre'><b>3.8: </b>`True` is a constant in Python; you cannot assign it a value.
 
 
-<b>3.9: </b>The line identified above
-was expected to begin a new indented block.
+</pre>
+<div class='filename-header'>
+raise_syntax_error18</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid syntax
+
+<b>3.8: </b>SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
+
+</pre>
+<h5>Different explanation - by Friendly-traceback</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
+
+    2: x = (1, 2, 3]
+           ^       ^
+
+<b>3.8: </b>Python tells us that the closing `]` on the last line shown
+does not match the opening `(`.
+
+I will attempt to be give a bit more information.
+
+The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
+
+    2: x = (1, 2, 3]
+           ^       ^
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error15</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid syntax
+
+<b>3.8: </b>SyntaxError: unmatched ')'
+
+</pre>
+<h5>Different explanation - by Friendly-traceback</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>The closing parenthesis `)` on line 6 does not match the opening parenthesis `(` on line 4.
+
+    4: a = (1,
+           ^
+    6:     3, 4,))
+                 ^
+
+<b>3.8: </b>The closing parenthesis `)` on line 6 does not match anything.
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error59</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to conditional expression
+
+<b>3.8: </b>SyntaxError: cannot assign to conditional expression
 
 </pre>
 <div class='filename-header'>raise_syntax_error24</div>
@@ -32,36 +157,93 @@ that was enclosed in quotes of the same kind.
 but never ended the string with another quote on that line.
 
 </pre>
-<div class='filename-header'>
-raise_syntax_error47</div>
+<div class='filename-header'>raise_syntax_error77</div>
 <h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't delete function call
+<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
 
-<b>3.8: </b>SyntaxError: cannot delete function call
+<b>3.10: </b>SyntaxError: expected ':'
+
+</pre>
+<h5>Different explanation - by Friendly-traceback</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>You used an assignment operator `=` instead of an equality operator `==`.
+
+<b>3.8: </b>You used an assignment operator `=`; perhaps you meant to use 
+an equality operator, `==`, or the walrus operator `:=`.
+
+</pre>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>You used an assignment operator `=`; perhaps you meant to use 
+an equality operator, `==`, or the walrus operator `:=`.
+
+<b>3.10: </b>Python gave us the following informative message
+about the possible cause of the error:
+
+    expected ':'
+
+However, I do not recognize this information and I have
+to guess what caused the problem, but I might be wrong.
+
+You used an assignment operator `=`; perhaps you meant to use 
+an equality operator, `==`, or the walrus operator `:=`.
+
+</pre>
+<div class='filename-header'>raise_syntax_error76</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
+
+<b>3.10: </b>SyntaxError: expected ':'
+
+</pre>
+<h5>Different explanation - by Friendly-traceback</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>You used an assignment operator `=` instead of an equality operator `==`.
+
+<b>3.8: </b>You used an assignment operator `=`; perhaps you meant to use 
+an equality operator, `==`, or the walrus operator `:=`.
+
+</pre>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>You used an assignment operator `=`; perhaps you meant to use 
+an equality operator, `==`, or the walrus operator `:=`.
+
+<b>3.10: </b>Python gave us the following informative message
+about the possible cause of the error:
+
+    expected ':'
+
+However, I do not recognize this information and I have
+to guess what caused the problem, but I might be wrong.
+
+You used an assignment operator `=`; perhaps you meant to use 
+an equality operator, `==`, or the walrus operator `:=`.
 
 </pre>
 <div class='filename-header'>
-raise_syntax_error111</div>
+raise_syntax_error52</div>
 <h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid token
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
 
-<b>3.8: </b>SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+<b>3.8: </b>SyntaxError: cannot assign to set display
 
 </pre>
 <div class='filename-header'>
-raise_syntax_error74</div>
+raise_syntax_error10</div>
 <h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.6: </b>SyntaxError: Generator expression must be parenthesized if not sole argument
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
 
-<b>3.7: </b>SyntaxError: Generator expression must be parenthesized
+<b>3.8: </b>SyntaxError: cannot assign to literal
+
+</pre>
+<div class='filename-header'>raise_syntax_error12</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: EOL while scanning string literal
+
+<b>3.10: </b>SyntaxError: unterminated string literal (detected at line 3)
 
 </pre>
 <div class='filename-header'>
-raise_syntax_error58</div>
+raise_syntax_error30</div>
 <h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to generator expression
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to function call
 
-<b>3.8: </b>SyntaxError: cannot assign to generator expression
+<b>3.8: </b>SyntaxError: cannot assign to function call
 
 </pre>
 <div class='filename-header'>
@@ -85,43 +267,69 @@ in variable names and wrote `'var start'`
 instead of `'var_start'`.
 
 </pre>
-<div class='filename-header'>raise_syntax_error36</div>
+<div class='filename-header'>
+raise_syntax_error41</div>
 <h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: keyword can't be an expression
 
-<b>3.10: </b>SyntaxError: did you forget parentheses around the comprehension target?
+<b>3.8: </b>SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
 
 </pre>
 <h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>The opening square bracket `[` on line 5 is not closed.
+<pre class='highlight friendly-small-pre'><b>3.7: </b>You likely called a function with a named argument:
 
-    5:     return [1, 2, 3
-                  |
+   `a_function(invalid=something)`
+
+where `invalid` is not a valid variable name in Python
+either because it starts with a number, or is a string,
+or contains a period, etc.
+
+
+<b>3.8: </b>One of the following two possibilities could be the cause:
+1. You meant to do a comparison with == and wrote = instead.
+2. You called a function with a named argument:
+
+       a_function(invalid=something)
+
+where `invalid` is not a valid variable name in Python
+either because it starts with a number, or is a string,
+or contains a period, etc.
+
+
+</pre>
+<div class='filename-header'>raise_syntax_error2</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
+
+<b>3.10: </b>SyntaxError: expected ':'
+
+</pre>
+<h5>Different explanation - by Friendly-traceback</h5>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>You wrote a statement beginning with
+`if` but forgot to add a colon `:` at the end
+
 
 <b>3.10: </b>Python gave us the following informative message
 about the possible cause of the error:
 
-    did you forget parentheses around the comprehension target?
+    expected ':'
 
 However, I do not recognize this information and I have
 to guess what caused the problem, but I might be wrong.
 
-The opening square bracket `[` on line 5 is not closed.
+You wrote a statement beginning with
+`if` but forgot to add a colon `:` at the end
 
-    5:     return [1, 2, 3
-                  |
 
 </pre>
 <div class='filename-header'>
-raise_syntax_error90</div>
+raise_syntax_error92</div>
 <h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.6: </b>When using a `from __future__ import` statement,
-you must import specific named features.
+<pre class='highlight friendly-small-pre'><b>3.6: </b>`something` is not a valid feature of module `__future__`.
 
 The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop`.
 
-<b>3.7: </b>When using a `from __future__ import` statement,
-you must import specific named features.
+<b>3.7: </b>`something` is not a valid feature of module `__future__`.
 
 The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
 
@@ -159,218 +367,6 @@ The opening square bracket `[` on line 5 is not closed.
 
 </pre>
 <div class='filename-header'>
-raise_syntax_error10</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
-
-<b>3.8: </b>SyntaxError: cannot assign to literal
-
-</pre>
-<div class='filename-header'>
-raise_syntax_error55</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid syntax
-
-<b>3.8: </b>SyntaxError: cannot use assignment expressions with True
-
-</pre>
-<h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.6: </b>You appear to be using the operator `:=`, sometimes called
-the walrus operator. This operator requires the use of
-Python 3.8 or newer. You are using version 3.6.
-
-<b>3.7: </b>You appear to be using the operator `:=`, sometimes called
-the walrus operator. This operator requires the use of
-Python 3.8 or newer. You are using version 3.7.
-
-</pre>
-<pre class='highlight friendly-small-pre'><b>3.8: </b>`True` is a constant in Python; you cannot assign it a value.
-
-
-</pre>
-<div class='filename-header'>raise_syntax_error2</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
-
-<b>3.10: </b>SyntaxError: expected ':'
-
-</pre>
-<h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>You wrote a statement beginning with
-`if` but forgot to add a colon `:` at the end
-
-
-<b>3.10: </b>Python gave us the following informative message
-about the possible cause of the error:
-
-    expected ':'
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
-
-You wrote a statement beginning with
-`if` but forgot to add a colon `:` at the end
-
-
-</pre>
-<div class='filename-header'>
-raise_syntax_error54</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
-
-<b>3.8: </b>SyntaxError: cannot assign to literal
-
-</pre>
-<div class='filename-header'>
-raise_syntax_error31</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to function call
-
-<b>3.8: </b>SyntaxError: cannot assign to function call
-
-</pre>
-<div class='filename-header'>
-raise_syntax_error56</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to operator
-
-<b>3.8: </b>SyntaxError: cannot assign to operator
-
-</pre>
-<div class='filename-header'>raise_syntax_error85</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.8: </b>SyntaxError: invalid syntax
-
-<b>3.9: </b>SyntaxError: f-string: invalid syntax
-
-</pre>
-<div class='filename-header'>
-raise_syntax_error9</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
-
-<b>3.8: </b>SyntaxError: cannot assign to literal
-
-</pre>
-<div class='filename-header'>
-raise_syntax_error59</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to conditional expression
-
-<b>3.8: </b>SyntaxError: cannot assign to conditional expression
-
-</pre>
-<div class='filename-header'>
-raise_syntax_error104</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't delete literal
-
-<b>3.8: </b>SyntaxError: cannot delete literal
-
-</pre>
-<div class='filename-header'>raise_syntax_error77</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
-
-<b>3.10: </b>SyntaxError: expected ':'
-
-</pre>
-<h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>You used an assignment operator `=` instead of an equality operator `==`.
-
-<b>3.8: </b>You used an assignment operator `=`; perhaps you meant to use 
-an equality operator, `==`, or the walrus operator `:=`.
-
-</pre>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>You used an assignment operator `=`; perhaps you meant to use 
-an equality operator, `==`, or the walrus operator `:=`.
-
-<b>3.10: </b>Python gave us the following informative message
-about the possible cause of the error:
-
-    expected ':'
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
-
-You used an assignment operator `=`; perhaps you meant to use 
-an equality operator, `==`, or the walrus operator `:=`.
-
-</pre>
-<div class='filename-header'>raise_syntax_error75</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.8: </b>SyntaxError: invalid character in identifier
-
-<b>3.9: </b>SyntaxError: invalid character '«' (U+00AB)
-
-</pre>
-<div class='filename-header'>
-raise_syntax_error92</div>
-<h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.6: </b>`something` is not a valid feature of module `__future__`.
-
-The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop`.
-
-<b>3.7: </b>`something` is not a valid feature of module `__future__`.
-
-The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
-
-</pre>
-<div class='filename-header'>
-raise_syntax_error19</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid syntax
-
-<b>3.8: </b>SyntaxError: closing parenthesis ']' does not match opening parenthesis '(' on line 2
-
-</pre>
-<h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
-
-    2: x = (1,
-           ^
-    4:      3]
-             ^
-
-<b>3.8: </b>Python tells us that the closing `]` on the last line shown
-does not match the opening `(` on line 2.
-
-I will attempt to be give a bit more information.
-
-The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
-
-    2: x = (1,
-           ^
-    4:      3]
-             ^
-
-</pre>
-<div class='filename-header'>raise_syntax_error4</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
-
-<b>3.10: </b>SyntaxError: expected ':'
-
-</pre>
-<h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>You likely meant to use Python's `elif` keyword
-but wrote `else if` instead
-
-
-<b>3.10: </b>Python gave us the following informative message
-about the possible cause of the error:
-
-    expected ':'
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
-
-You likely meant to use Python's `elif` keyword
-but wrote `else if` instead
-
-
-</pre>
-<div class='filename-header'>
 raise_syntax_error72</div>
 <h5>Different messages - from Python</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
@@ -386,6 +382,49 @@ An f-string should only appear on the right-hand side of the equal sign.
 <b>3.8: </b>You wrote an expression that has the f-string `f'{x}'`
 on the left-hand side of the equal sign.
 An f-string should only appear on the right-hand side of an equal sign.
+
+</pre>
+<div class='filename-header'>raise_syntax_error16</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
+
+<b>3.10: </b>SyntaxError: '(' was never closed
+
+</pre>
+<h5>Different explanation - by Friendly-traceback</h5>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>The opening parenthesis `(` on line 2 is not closed.
+
+    2: x = int('1'
+              |
+
+<b>3.10: </b>Python gave us the following informative message
+about the possible cause of the error:
+
+    '(' was never closed
+
+However, I do not recognize this information and I have
+to guess what caused the problem, but I might be wrong.
+
+The opening parenthesis `(` on line 2 is not closed.
+
+    2: x = int('1'
+              |
+
+</pre>
+<div class='filename-header'>raise_syntax_error66</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.8: </b>SyntaxError: unexpected EOF while parsing
+
+<b>3.9: </b>IndentationError: expected an indented block
+
+</pre>
+<h5>Different explanation - by Friendly-traceback</h5>
+<pre class='highlight friendly-small-pre'><b>3.8: </b>Python tells us that it reached the end of the file
+and expected more content.
+
+
+<b>3.9: </b>The line identified above
+was expected to begin a new indented block.
 
 </pre>
 <div class='filename-header'>
@@ -424,8 +463,15 @@ in variable names and wrote `'var start'`
 instead of `'var_start'`.
 
 </pre>
+<div class='filename-header'>raise_syntax_error113</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
+
+<b>3.10: </b>SyntaxError: did you forget parentheses around the comprehension target?
+
+</pre>
 <div class='filename-header'>
-raise_syntax_error112</div>
+raise_syntax_error111</div>
 <h5>Different messages - from Python</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid token
 
@@ -433,170 +479,19 @@ raise_syntax_error112</div>
 
 </pre>
 <div class='filename-header'>
-raise_syntax_error_walrus</div>
+raise_syntax_error95</div>
 <h5>Different messages - from Python</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid syntax
 
-<b>3.8: </b>Likely not a SyntaxError
-</pre>
-<h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.6: </b>You appear to be using the operator `:=`, sometimes called
-the walrus operator. This operator requires the use of
-Python 3.8 or newer. You are using version 3.6.
-
-<b>3.7: </b>You appear to be using the operator `:=`, sometimes called
-the walrus operator. This operator requires the use of
-Python 3.8 or newer. You are using version 3.7.
-
-</pre>
-<pre class='highlight friendly-small-pre'><b>3.8: </b>Likely not a SyntaxError
-</pre>
-<div class='filename-header'>raise_syntax_error76</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
-
-<b>3.10: </b>SyntaxError: expected ':'
-
-</pre>
-<h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>You used an assignment operator `=` instead of an equality operator `==`.
-
-<b>3.8: </b>You used an assignment operator `=`; perhaps you meant to use 
-an equality operator, `==`, or the walrus operator `:=`.
-
-</pre>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>You used an assignment operator `=`; perhaps you meant to use 
-an equality operator, `==`, or the walrus operator `:=`.
-
-<b>3.10: </b>Python gave us the following informative message
-about the possible cause of the error:
-
-    expected ':'
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
-
-You used an assignment operator `=`; perhaps you meant to use 
-an equality operator, `==`, or the walrus operator `:=`.
-
-</pre>
-<div class='filename-header'>raise_syntax_error65</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.8: </b>SyntaxError: keyword argument repeated
-
-<b>3.9: </b>SyntaxError: keyword argument repeated: ad
-
-</pre>
-<div class='filename-header'>raise_syntax_error16</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
-
-<b>3.10: </b>SyntaxError: '(' was never closed
-
-</pre>
-<h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>The opening parenthesis `(` on line 2 is not closed.
-
-    2: x = int('1'
-              |
-
-<b>3.10: </b>Python gave us the following informative message
-about the possible cause of the error:
-
-    '(' was never closed
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
-
-The opening parenthesis `(` on line 2 is not closed.
-
-    2: x = int('1'
-              |
+<b>3.8: </b>SyntaxError: invalid digit '8' in octal literal
 
 </pre>
 <div class='filename-header'>
-raise_syntax_error15</div>
+raise_syntax_error47</div>
 <h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid syntax
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't delete function call
 
-<b>3.8: </b>SyntaxError: unmatched ')'
-
-</pre>
-<h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>The closing parenthesis `)` on line 6 does not match the opening parenthesis `(` on line 4.
-
-    4: a = (1,
-           ^
-    6:     3, 4,))
-                 ^
-
-<b>3.8: </b>The closing parenthesis `)` on line 6 does not match anything.
-
-</pre>
-<div class='filename-header'>
-raise_syntax_error14</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: assignment to keyword
-
-<b>3.8: </b>SyntaxError: cannot assign to __debug__
-
-</pre>
-<div class='filename-header'>raise_syntax_error17</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
-
-<b>3.10: </b>SyntaxError: '(' was never closed
-
-</pre>
-<h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>The opening parenthesis `(` on line 2 is not closed.
-
-    2: a = (b+c
-           |
-
-<b>3.10: </b>Python gave us the following informative message
-about the possible cause of the error:
-
-    '(' was never closed
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
-
-The opening parenthesis `(` on line 2 is not closed.
-
-    2: a = (b+c
-           |
-
-</pre>
-<div class='filename-header'>raise_syntax_error26</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
-
-<b>3.10: </b>Likely not a SyntaxError
-</pre>
-<h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>Python indicates that the error is caused by `3` written immediately after `2`.
-It is possible that you forgot a comma between items in a set or dict
-before the position indicated by --> and ^.
-Perhaps you meant to insert an operator like `+, -, *`
-between `2` and `3`.
-The following lines of code would not cause any `SyntaxError`:
-
-    a = {1, 2,  3}
-    a = {1, 2 +  3}
-    a = {1, 2 -  3}
-    a = {1, 2 *  3}
-Note: these are just some of the possible choices and that
-some of them might raise other types of exceptions.
-
-<b>3.10: </b>Likely not a SyntaxError
-</pre>
-<div class='filename-header'>
-raise_syntax_error52</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
-
-<b>3.8: </b>SyntaxError: cannot assign to set display
+<b>3.8: </b>SyntaxError: cannot delete function call
 
 </pre>
 <div class='filename-header'>raise_syntax_error78</div>
@@ -628,51 +523,145 @@ You used an assignment operator `=`; perhaps you meant to use
 an equality operator, `==`, or the walrus operator `:=`.
 
 </pre>
-<div class='filename-header'>raise_syntax_error27</div>
+<div class='filename-header'>raise_syntax_error4</div>
 <h5>Different messages - from Python</h5>
 <pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
 
-<b>3.10: </b>Likely not a SyntaxError
+<b>3.10: </b>SyntaxError: expected ':'
+
 </pre>
 <h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>Python indicates that the error is caused by `3` written immediately after `2`.
-It is possible that you forgot a comma between items in a list
-before the position indicated by --> and ^.
-Perhaps you meant to insert an operator like `+, -, *`
-between `2` and `3`.
-The following lines of code would not cause any `SyntaxError`:
+<pre class='highlight friendly-small-pre'><b>3.9: </b>You likely meant to use Python's `elif` keyword
+but wrote `else if` instead
 
-    a = [1, 2,  3]
-    a = [1, 2 +  3]
-    a = [1, 2 -  3]
-    a = [1, 2 *  3]
-Note: these are just some of the possible choices and that
-some of them might raise other types of exceptions.
 
-<b>3.10: </b>Likely not a SyntaxError
+<b>3.10: </b>Python gave us the following informative message
+about the possible cause of the error:
+
+    expected ':'
+
+However, I do not recognize this information and I have
+to guess what caused the problem, but I might be wrong.
+
+You likely meant to use Python's `elif` keyword
+but wrote `else if` instead
+
+
 </pre>
-<div class='filename-header'>raise_syntax_error107</div>
+<div class='filename-header'>raise_syntax_error17</div>
 <h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: EOF while scanning triple-quoted string literal
+<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
 
-<b>3.10: </b>SyntaxError: unterminated triple-quoted string literal (detected at line 4)
+<b>3.10: </b>SyntaxError: '(' was never closed
+
+</pre>
+<h5>Different explanation - by Friendly-traceback</h5>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>The opening parenthesis `(` on line 2 is not closed.
+
+    2: a = (b+c
+           |
+
+<b>3.10: </b>Python gave us the following informative message
+about the possible cause of the error:
+
+    '(' was never closed
+
+However, I do not recognize this information and I have
+to guess what caused the problem, but I might be wrong.
+
+The opening parenthesis `(` on line 2 is not closed.
+
+    2: a = (b+c
+           |
 
 </pre>
 <div class='filename-header'>
-raise_syntax_error95</div>
+raise_syntax_error74</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.6: </b>SyntaxError: Generator expression must be parenthesized if not sole argument
+
+<b>3.7: </b>SyntaxError: Generator expression must be parenthesized
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error104</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't delete literal
+
+<b>3.8: </b>SyntaxError: cannot delete literal
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error58</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to generator expression
+
+<b>3.8: </b>SyntaxError: cannot assign to generator expression
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error90</div>
+<h5>Different explanation - by Friendly-traceback</h5>
+<pre class='highlight friendly-small-pre'><b>3.6: </b>When using a `from __future__ import` statement,
+you must import specific named features.
+
+The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop`.
+
+<b>3.7: </b>When using a `from __future__ import` statement,
+you must import specific named features.
+
+The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
+
+</pre>
+<div class='filename-header'>raise_syntax_error85</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.8: </b>SyntaxError: invalid syntax
+
+<b>3.9: </b>SyntaxError: f-string: invalid syntax
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error112</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid token
+
+<b>3.8: </b>SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error14</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: assignment to keyword
+
+<b>3.8: </b>SyntaxError: cannot assign to __debug__
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error31</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to function call
+
+<b>3.8: </b>SyntaxError: cannot assign to function call
+
+</pre>
+<div class='filename-header'>
+raise_syntax_error_walrus</div>
 <h5>Different messages - from Python</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid syntax
 
-<b>3.8: </b>SyntaxError: invalid digit '8' in octal literal
+<b>3.8: </b>Likely not a SyntaxError
+</pre>
+<h5>Different explanation - by Friendly-traceback</h5>
+<pre class='highlight friendly-small-pre'><b>3.6: </b>You appear to be using the operator `:=`, sometimes called
+the walrus operator. This operator requires the use of
+Python 3.8 or newer. You are using version 3.6.
+
+<b>3.7: </b>You appear to be using the operator `:=`, sometimes called
+the walrus operator. This operator requires the use of
+Python 3.8 or newer. You are using version 3.7.
 
 </pre>
-<div class='filename-header'>
-raise_syntax_error53</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
-
-<b>3.8: </b>SyntaxError: cannot assign to dict display
-
+<pre class='highlight friendly-small-pre'><b>3.8: </b>Likely not a SyntaxError
 </pre>
 <div class='filename-header'>raise_syntax_error3</div>
 <h5>Different messages - from Python</h5>
@@ -700,73 +689,77 @@ forgot to add a colon `:` at the end
 
 </pre>
 <div class='filename-header'>
-raise_syntax_error13</div>
+raise_syntax_error19</div>
 <h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to keyword
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid syntax
 
-<b>3.8: </b>SyntaxError: cannot assign to None
+<b>3.8: </b>SyntaxError: closing parenthesis ']' does not match opening parenthesis '(' on line 2
 
 </pre>
+<h5>Different explanation - by Friendly-traceback</h5>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
+
+    2: x = (1,
+           ^
+    4:      3]
+             ^
+
+<b>3.8: </b>Python tells us that the closing `]` on the last line shown
+does not match the opening `(` on line 2.
+
+I will attempt to be give a bit more information.
+
+The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
+
+    2: x = (1,
+           ^
+    4:      3]
+             ^
+
+</pre>
+<div class='filename-header'>raise_syntax_error36</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
+
+<b>3.10: </b>Likely not a SyntaxError
+</pre>
+<h5>Different explanation - by Friendly-traceback</h5>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>The opening square bracket `[` on line 5 is not closed.
+
+    5:     return [1, 2, 3
+                  |
+
+<b>3.10: </b>Likely not a SyntaxError
+</pre>
+<div class='filename-header'>raise_syntax_error27</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
+
+<b>3.10: </b>Likely not a SyntaxError
+</pre>
+<h5>Different explanation - by Friendly-traceback</h5>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>Python indicates that the error is caused by `3` written immediately after `2`.
+It is possible that you forgot a comma between items in a list
+before the position indicated by --> and ^.
+Perhaps you meant to insert an operator like `+, -, *`
+between `2` and `3`.
+The following lines of code would not cause any `SyntaxError`:
+
+    a = [1, 2,  3]
+    a = [1, 2 +  3]
+    a = [1, 2 -  3]
+    a = [1, 2 *  3]
+Note: these are just some of the possible choices and that
+some of them might raise other types of exceptions.
+
+<b>3.10: </b>Likely not a SyntaxError
+</pre>
 <div class='filename-header'>
-raise_syntax_error83</div>
+raise_syntax_error56</div>
 <h5>Different messages - from Python</h5>
 <pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to operator
 
 <b>3.8: </b>SyntaxError: cannot assign to operator
-
-</pre>
-<div class='filename-header'>
-raise_syntax_error103</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't delete keyword
-
-<b>3.8: </b>SyntaxError: cannot delete True
-
-</pre>
-<div class='filename-header'>
-raise_syntax_error18</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: invalid syntax
-
-<b>3.8: </b>SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
-
-</pre>
-<h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
-
-    2: x = (1, 2, 3]
-           ^       ^
-
-<b>3.8: </b>Python tells us that the closing `]` on the last line shown
-does not match the opening `(`.
-
-I will attempt to be give a bit more information.
-
-The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
-
-    2: x = (1, 2, 3]
-           ^       ^
-
-</pre>
-<div class='filename-header'>
-raise_syntax_error35</div>
-<h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>Inside the f-string `(`, 
-you have another string, which starts with either a
-single quote (') or double quote ("), without a matching closing one.
-
-<b>3.8: </b>Inside the f-string `f"Bob is {age['Bob]} years old."`, 
-you have another string, which starts with either a
-single quote (') or double quote ("), without a matching closing one.
-
-</pre>
-<pre class='highlight friendly-small-pre'><b>3.8: </b>Inside the f-string `f"Bob is {age['Bob]} years old."`, 
-you have another string, which starts with either a
-single quote (') or double quote ("), without a matching closing one.
-
-<b>3.9: </b>Inside the f-string `)`, 
-you have another string, which starts with either a
-single quote (') or double quote ("), without a matching closing one.
 
 </pre>
 <div class='filename-header'>raise_syntax_error42</div>
@@ -777,55 +770,56 @@ single quote (') or double quote ("), without a matching closing one.
 
 </pre>
 <div class='filename-header'>
-raise_syntax_error30</div>
+raise_syntax_error103</div>
 <h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to function call
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't delete keyword
 
-<b>3.8: </b>SyntaxError: cannot assign to function call
+<b>3.8: </b>SyntaxError: cannot delete True
 
 </pre>
-<div class='filename-header'>raise_syntax_error12</div>
+<div class='filename-header'>raise_syntax_error26</div>
 <h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: EOL while scanning string literal
+<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: invalid syntax
 
-<b>3.10: </b>SyntaxError: unterminated string literal (detected at line 3)
-
+<b>3.10: </b>Likely not a SyntaxError
 </pre>
-<div class='filename-header'>raise_syntax_error105</div>
-<h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: EOL while scanning string literal
+<h5>Different explanation - by Friendly-traceback</h5>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>Python indicates that the error is caused by `3` written immediately after `2`.
+It is possible that you forgot a comma between items in a set or dict
+before the position indicated by --> and ^.
+Perhaps you meant to insert an operator like `+, -, *`
+between `2` and `3`.
+The following lines of code would not cause any `SyntaxError`:
 
-<b>3.10: </b>SyntaxError: unterminated string literal (detected at line 1)
+    a = {1, 2,  3}
+    a = {1, 2 +  3}
+    a = {1, 2 -  3}
+    a = {1, 2 *  3}
+Note: these are just some of the possible choices and that
+some of them might raise other types of exceptions.
+
+<b>3.10: </b>Likely not a SyntaxError
+</pre>
+<div class='filename-header'>raise_syntax_error107</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.9: </b>SyntaxError: EOF while scanning triple-quoted string literal
+
+<b>3.10: </b>SyntaxError: unterminated triple-quoted string literal (detected at line 4)
 
 </pre>
 <div class='filename-header'>
-raise_syntax_error41</div>
+raise_syntax_error9</div>
 <h5>Different messages - from Python</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: keyword can't be an expression
+<pre class='highlight friendly-small-pre'><b>3.7: </b>SyntaxError: can't assign to literal
 
-<b>3.8: </b>SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
+<b>3.8: </b>SyntaxError: cannot assign to literal
 
 </pre>
-<h5>Different explanation - by Friendly-traceback</h5>
-<pre class='highlight friendly-small-pre'><b>3.7: </b>You likely called a function with a named argument:
+<div class='filename-header'>raise_syntax_error65</div>
+<h5>Different messages - from Python</h5>
+<pre class='highlight friendly-small-pre'><b>3.8: </b>SyntaxError: keyword argument repeated
 
-   `a_function(invalid=something)`
-
-where `invalid` is not a valid variable name in Python
-either because it starts with a number, or is a string,
-or contains a period, etc.
-
-
-<b>3.8: </b>One of the following two possibilities could be the cause:
-1. You meant to do a comparison with == and wrote = instead.
-2. You called a function with a named argument:
-
-       a_function(invalid=something)
-
-where `invalid` is not a valid variable name in Python
-either because it starts with a number, or is a string,
-or contains a period, etc.
-
+<b>3.9: </b>SyntaxError: keyword argument repeated: ad
 
 </pre>
 </div>

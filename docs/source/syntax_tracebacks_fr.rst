@@ -3889,3 +3889,69 @@ Integer with leading zeros
     Peut-être que vous vouliez écrire l'entier décimal `123_456`
     et ne saviez pas qu’il ne pouvait pas commencer par des zéros.
     
+
+Missing () for tuples in comprehension
+--------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error113.py", line 1
+        x = [i, i**2 for i in range(10)]
+                     ^
+    SyntaxError: invalid syntax
+    
+        Avez-vous oublié d’ajouter des parenthèses ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error113.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+    -->1: x = [i, i**2 for i in range(10)]
+                       ^
+
+    Je suppose que vous écriviez une compréhension ou une expression génératrice
+    et vous avez oublié d’inclure des parenthèses autour des tuples.
+    Voici un exemple: au lieu d’écrire
+    
+        [i, i**2 for i in range(10)]
+    
+    vous auriez besoin d’écrire
+    
+        [(i, i**2) for i in range(10)]
+    
+    
+
+Binary f-string not allowed
+---------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        mod = __import__(name)
+      File "TESTS:\syntax\raise_syntax_error114.py", line 1
+        greet = bf"Hello {name}"
+                  ^
+    SyntaxError: invalid syntax
+    
+        `bf` est un préfixe de chaîne illégal.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\raise_syntax_error114.py'
+    jusqu'à l'endroit indiqué par --> et ^.
+    
+    -->1: greet = bf"Hello {name}"
+                    ^
+
+    Je devine que vous vouliez une chaîne "f-string" binaire;
+    ceci n’est pas permis.
+    

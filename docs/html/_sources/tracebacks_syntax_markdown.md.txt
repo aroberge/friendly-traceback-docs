@@ -4668,3 +4668,85 @@ beyond the location indicated by --> and ^.
 
 Perhaps you meant to write the integer `123_456`
 and did not know that it could not start with zeros.
+
+---
+
+## Missing () for tuples in comprehension
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+    mod = __import__(name)
+  File "TESTS:\syntax\raise_syntax_error113.py", line 1
+    x = [i, i**2 for i in range(10)]
+                 ^
+SyntaxError: invalid syntax
+
+```
+
+Did you forget parentheses?
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\raise_syntax_error113.py'
+beyond the location indicated by --> and ^.
+
+
+```python
+    -->1: x = [i, i**2 for i in range(10)]
+                       ^
+
+```
+
+I am guessing that you were writing a comprehension or a generator expression
+and forgot to include parentheses around tuples.
+As an example, instead of writing
+
+    [i, i**2 for i in range(10)]
+
+you would need to write
+
+    [(i, i**2) for i in range(10)]
+
+
+---
+
+## Binary f-string not allowed
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+    mod = __import__(name)
+  File "TESTS:\syntax\raise_syntax_error114.py", line 1
+    greet = bf"Hello {name}"
+              ^
+SyntaxError: invalid syntax
+
+```
+
+`bf` is an illegal string prefix.
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\raise_syntax_error114.py'
+beyond the location indicated by --> and ^.
+
+
+```python
+    -->1: greet = bf"Hello {name}"
+                    ^
+
+```
+
+I am guessing that you wanted a binary f-string;
+this is not allowed.
