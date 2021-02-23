@@ -16,7 +16,7 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly-traceback version: 0.2.31a
+Friendly-traceback version: 0.2.33a
 Python version: 3.7.8
 
 
@@ -618,6 +618,52 @@ KeyError
 --------
 
 
+ChainMap
+~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "C:\Users\andre\AppData\Local\Programs\Python\Python37-32\lib\collections\__init__.py", line 984, in pop
+        return self.maps[0].pop(key, *args)
+    KeyError: 42
+    
+        During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_key_error.py", line 23, in test_ChainMap
+        d.pop(42)
+      File "PYTHON_LIB:\collections\__init__.py", line 986, in pop
+        raise KeyError('Key not found in the first mapping: {!r}'.format(key))
+    KeyError: 'Key not found in the first mapping: 42'
+    
+    A `KeyError` is raised when a value is not found as a
+    key in a Python dict.
+    
+    In your program, the key that cannot be found is `42`.
+    
+    Execution stopped on line 23 of file TESTS:\runtime\test_key_error.py.
+    
+       21:     d = ChainMap({}, {})
+       22:     try:
+    -->23:         d.pop(42)
+       24:     except Exception as e:
+
+            d: ChainMap({}, {})
+        
+    Exception raised on line 986 of file PYTHON_LIB:\collections\__init__.py.
+    
+       984:             return self.maps[0].pop(key, *args)
+       985:         except KeyError:
+    -->986:             raise KeyError('Key not found in the first mapping: {!r}'.format(key))
+
+            key: 42
+            KeyError: <class KeyError>
+            format: <builtin function format>
+        
+
+
 Generic
 ~~~~~~~
 
@@ -993,7 +1039,7 @@ Cannot convert dictionary update sequence
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 752, in test_Cannot_convert_dictionary_update_sequence
+      File "TESTS:\runtime\test_type_error.py", line 742, in test_Cannot_convert_dictionary_update_sequence
         dd.update([1, 2, 3])
     TypeError: cannot convert dictionary update sequence element #0 to a sequence
     
@@ -1008,15 +1054,14 @@ Cannot convert dictionary update sequence
     Instead of writing `dd.update([1, 2, 3])`
     perhaps you should use the `dict.fromkeys()` method: `dd.update( dict.fromkeys([1, 2, 3]) )`.
     
-    Exception raised on line 752 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 742 of file TESTS:\runtime\test_type_error.py.
     
-       750:     dd = {"a": "a"}
-       751:     try:
-    -->752:         dd.update([1, 2, 3])
-       753:     except Exception as e:
+       740:     dd = {"a": "a"}
+       741:     try:
+    -->742:         dd.update([1, 2, 3])
+       743:     except Exception as e:
 
             dd: {'a': 'a'}
-            dd.update: <builtin method update of dict object>
         
 
 
@@ -1057,7 +1102,7 @@ Cannot unpack non iterable object
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 724, in test_Cannot_unpack_non_iterable_object
+      File "TESTS:\runtime\test_type_error.py", line 714, in test_Cannot_unpack_non_iterable_object
         a, b = 42.0
     TypeError: cannot unpack non-iterable float object
     
@@ -1072,12 +1117,12 @@ Cannot unpack non iterable object
     Python containers (`list, tuple, dict`, etc.) are iterables,
     but not objects of type `float`.
     
-    Exception raised on line 724 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 714 of file TESTS:\runtime\test_type_error.py.
     
-       722: def test_Cannot_unpack_non_iterable_object():
-       723:     try:
-    -->724:         a, b = 42.0
-       725:     except Exception as e:
+       712: def test_Cannot_unpack_non_iterable_object():
+       713:     try:
+    -->714:         a, b = 42.0
+       715:     except Exception as e:
 
 
 Comparison not supported
@@ -1120,7 +1165,7 @@ Derive from BaseException
 
     Traceback (most recent call last):
       File "TESTS:\runtime\test_type_error.py", line 489, in test_Derive_from_BaseException
-        raise "exception"
+        raise "exception"  # noqa
     TypeError: exceptions must derive from BaseException
     
     A `TypeError` is usually caused by trying
@@ -1134,7 +1179,7 @@ Derive from BaseException
     
        487: def test_Derive_from_BaseException():
        488:     try:
-    -->489:         raise "exception"
+    -->489:         raise "exception"  # noqa
        490:     except Exception as e:
 
 
@@ -1248,7 +1293,7 @@ Object is not iterable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 710, in test_Object_is_not_iterable
+      File "TESTS:\runtime\test_type_error.py", line 700, in test_Object_is_not_iterable
         list(42)
     TypeError: 'int' object is not iterable
     
@@ -1261,12 +1306,12 @@ Object is not iterable
     Python containers (`list, tuple, dict`, etc.) are iterables.
     An iterable is required here.
     
-    Exception raised on line 710 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 700 of file TESTS:\runtime\test_type_error.py.
     
-       708: def test_Object_is_not_iterable():
-       709:     try:
-    -->710:         list(42)
-       711:     except Exception as e:
+       698: def test_Object_is_not_iterable():
+       699:     try:
+    -->700:         list(42)
+       701:     except Exception as e:
 
             list: <class list>
         
@@ -1279,7 +1324,7 @@ Object is not subscriptable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 696, in test_Object_is_not_subscriptable
+      File "TESTS:\runtime\test_type_error.py", line 686, in test_Object_is_not_subscriptable
         a = f[1]
     TypeError: 'function' object is not subscriptable
     
@@ -1295,13 +1340,13 @@ Object is not subscriptable
     
     Perhaps you meant to write `f(1)`.
     
-    Exception raised on line 696 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 686 of file TESTS:\runtime\test_type_error.py.
     
-       694: 
-       695:     try:
-    -->696:         a = f[1]
+       684: 
+       685:     try:
+    -->686:         a = f[1]
                         ^^^^
-       697:     except Exception as e:
+       687:     except Exception as e:
 
             f: <function f> from test_Object_is_not_subscriptable
         

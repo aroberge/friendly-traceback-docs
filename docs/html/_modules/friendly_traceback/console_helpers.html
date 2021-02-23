@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly_traceback.console_helpers &mdash; Friendly tracebacks 0.2.31a documentation</title>
+  <title>friendly_traceback.console_helpers &mdash; Friendly tracebacks 0.2.33a documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.2.31a
+                0.2.33a
               </div>
             
           
@@ -399,7 +399,10 @@
         <span class="k">elif</span> <span class="s2">&quot;python_link&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
             <span class="n">url</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;python_link&quot;</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="n">ddg_url</span> <span class="o">+</span> <span class="n">quote</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">])</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot; (&quot;</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+                <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">ddg_url</span> <span class="o">+</span> <span class="n">quote</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">search</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">info</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;python_link&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
             <span class="n">url</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;python_link&quot;</span><span class="p">]</span>

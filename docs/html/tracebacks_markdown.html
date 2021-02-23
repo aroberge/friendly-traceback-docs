@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly tracebacks 0.2.31a documentation</title>
+  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly tracebacks 0.2.33a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.31a
+                0.2.33a
               </div>
             
           
@@ -225,6 +225,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#keyerror">KeyError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#chainmap">ChainMap</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#execution-stopped-on-line-23-of-file-tests-runtime-test-key-error-py">Execution stopped on line 23 of file TESTS:\runtime\test_key_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-967-of-file-python-lib-collections-init-py">Exception raised on line 967 of file PYTHON_LIB:\collections_<em>init</em>_.py.</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">Generic</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-7-of-file-tests-runtime-test-key-error-py">Exception raised on line 7 of file TESTS:\runtime\test_key_error.py.</a></li>
 </ul>
@@ -289,7 +294,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#cannot-convert-dictionary-update-sequence">Cannot convert dictionary update sequence</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-752-of-file-tests-runtime-test-type-error-py">Exception raised on line 752 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-742-of-file-tests-runtime-test-type-error-py">Exception raised on line 742 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#cannot-multiply-by-non-int">Cannot multiply by non int</a><ul>
@@ -297,7 +302,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#cannot-unpack-non-iterable-object">Cannot unpack non iterable object</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-724-of-file-tests-runtime-test-type-error-py">Exception raised on line 724 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-714-of-file-tests-runtime-test-type-error-py">Exception raised on line 714 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#comparison-not-supported">Comparison not supported</a><ul>
@@ -321,11 +326,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#object-is-not-iterable">Object is not iterable</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-710-of-file-tests-runtime-test-type-error-py">Exception raised on line 710 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-700-of-file-tests-runtime-test-type-error-py">Exception raised on line 700 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#object-is-not-subscriptable">Object is not subscriptable</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-696-of-file-tests-runtime-test-type-error-py">Exception raised on line 696 of file TESTS:\runtime\test_type_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-686-of-file-tests-runtime-test-type-error-py">Exception raised on line 686 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#slice-indices-must-be-integers-or-none">Slice indices must be integers or None</a><ul>
@@ -511,7 +516,7 @@ trb_english_markdown.py located in the <code class="docutils literal notranslate
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.
 </p>
-</div><p>Friendly-traceback version: 0.2.31a
+</div><p>Friendly-traceback version: 0.2.33a
 Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="arithmeticerror">
@@ -1048,6 +1053,52 @@ The largest valid index of <code class="docutils literal notranslate"><span clas
 <hr class="docutils" />
 <div class="section" id="keyerror">
 <h2>KeyError<a class="headerlink" href="#keyerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="chainmap">
+<h3>ChainMap<a class="headerlink" href="#chainmap" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;C:\Users\andre\AppData\Local\Programs\Python\Python38-32\lib\collections\__init__.py&quot;</span>, line <span class="m">965</span>, in <span class="n">pop</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="gr">KeyError</span>: <span class="n">42</span>
+
+<span class="x">    During handling of the above exception, another exception occurred:</span>
+
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_key_error.py&quot;</span>, line <span class="m">23</span>, in <span class="n">test_ChainMap</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+  File <span class="nb">&quot;PYTHON_LIB:\collections\__init__.py&quot;</span>, line <span class="m">967</span>, in <span class="n">pop</span>
+    <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s1">&#39;Key not found in the first mapping: </span><span class="si">{!r}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+<span class="gr">KeyError</span>: <span class="n">&#39;Key not found in the first mapping: 42&#39;</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> is raised when a value is not found as a
+key in a Python dict.</p>
+<p>In your program, the key that cannot be found is <code class="docutils literal notranslate"><span class="pre">42</span></code>.</p>
+<div class="section" id="execution-stopped-on-line-23-of-file-tests-runtime-test-key-error-py">
+<h4>Execution stopped on line 23 of file TESTS:\runtime\test_key_error.py.<a class="headerlink" href="#execution-stopped-on-line-23-of-file-tests-runtime-test-key-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">21</span><span class="p">:</span>     <span class="n">d</span> <span class="o">=</span> <span class="n">ChainMap</span><span class="p">({},</span> <span class="p">{})</span>
+       <span class="mi">22</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">23</span><span class="p">:</span>         <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+       <span class="mi">24</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">d</span><span class="p">:</span> <span class="n">ChainMap</span><span class="p">({},</span> <span class="p">{})</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exception-raised-on-line-967-of-file-python-lib-collections-init-py">
+<h4>Exception raised on line 967 of file PYTHON_LIB:\collections_<em>init</em>_.py.<a class="headerlink" href="#exception-raised-on-line-967-of-file-python-lib-collections-init-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">965</span><span class="p">:</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+       <span class="mi">966</span><span class="p">:</span>         <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">967</span><span class="p">:</span>             <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s1">&#39;Key not found in the first mapping: </span><span class="si">{!r}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">key</span><span class="p">:</span> <span class="mi">42</span>
+    <span class="ne">KeyError</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">KeyError</span><span class="o">&gt;</span>
+    <span class="nb">format</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">builtin</span> <span class="n">function</span> <span class="nb">format</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="id3">
 <h3>Generic<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
@@ -1390,7 +1441,7 @@ a <code class="docutils literal notranslate"><span class="pre">tuple</span></cod
 <div class="section" id="cannot-convert-dictionary-update-sequence">
 <h3>Cannot convert dictionary update sequence<a class="headerlink" href="#cannot-convert-dictionary-update-sequence" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">752</span>, in <span class="n">test_Cannot_convert_dictionary_update_sequence</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">742</span>, in <span class="n">test_Cannot_convert_dictionary_update_sequence</span>
     <span class="n">dd</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="gr">TypeError</span>: <span class="n">cannot convert dictionary update sequence element #0 to a sequence</span>
 </pre></div>
@@ -1403,16 +1454,15 @@ or by trying to do an operation not allowed on a given type of object.</p>
 <p><code class="docutils literal notranslate"><span class="pre">dict.update()</span></code> does not accept a sequence as an argument.
 Instead of writing <code class="docutils literal notranslate"><span class="pre">dd.update([1,</span> <span class="pre">2,</span> <span class="pre">3])</span></code>
 perhaps you should use the <code class="docutils literal notranslate"><span class="pre">dict.fromkeys()</span></code> method: <code class="docutils literal notranslate"><span class="pre">dd.update(</span> <span class="pre">dict.fromkeys([1,</span> <span class="pre">2,</span> <span class="pre">3])</span> <span class="pre">)</span></code>.</p>
-<div class="section" id="exception-raised-on-line-752-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 752 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-752-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">750</span><span class="p">:</span>     <span class="n">dd</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;a&quot;</span><span class="p">}</span>
-       <span class="mi">751</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">752</span><span class="p">:</span>         <span class="n">dd</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-       <span class="mi">753</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-742-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 742 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-742-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">740</span><span class="p">:</span>     <span class="n">dd</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;a&quot;</span><span class="p">}</span>
+       <span class="mi">741</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">742</span><span class="p">:</span>         <span class="n">dd</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+       <span class="mi">743</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">dd</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;a&#39;</span><span class="p">}</span>
-    <span class="n">dd</span><span class="o">.</span><span class="n">update</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">builtin</span> <span class="n">method</span> <span class="n">update</span> <span class="n">of</span> <span class="nb">dict</span> <span class="nb">object</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -1446,7 +1496,7 @@ Perhaps you forgot to convert <code class="docutils literal notranslate"><span c
 <div class="section" id="cannot-unpack-non-iterable-object">
 <h3>Cannot unpack non iterable object<a class="headerlink" href="#cannot-unpack-non-iterable-object" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">724</span>, in <span class="n">test_Cannot_unpack_non_iterable_object</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">714</span>, in <span class="n">test_Cannot_unpack_non_iterable_object</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">42.0</span>
 <span class="gr">TypeError</span>: <span class="n">cannot unpack non-iterable float object</span>
 </pre></div>
@@ -1460,12 +1510,12 @@ to each item of an iterable.
 An iterable is an object capable of returning its members one at a time.
 Python containers (<code class="docutils literal notranslate"><span class="pre">list,</span> <span class="pre">tuple,</span> <span class="pre">dict</span></code>, etc.) are iterables,
 but not objects of type <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
-<div class="section" id="exception-raised-on-line-724-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 724 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-724-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">722</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Cannot_unpack_non_iterable_object</span><span class="p">():</span>
-       <span class="mi">723</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">724</span><span class="p">:</span>         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">42.0</span>
-       <span class="mi">725</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-714-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 714 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-714-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">712</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Cannot_unpack_non_iterable_object</span><span class="p">():</span>
+       <span class="mi">713</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">714</span><span class="p">:</span>         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">42.0</span>
+       <span class="mi">715</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 </div>
@@ -1503,7 +1553,7 @@ an integer (<code class="docutils literal notranslate"><span class="pre">int</sp
 <h3>Derive from BaseException<a class="headerlink" href="#derive-from-baseexception" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">489</span>, in <span class="n">test_Derive_from_BaseException</span>
-    <span class="k">raise</span> <span class="s2">&quot;exception&quot;</span>
+    <span class="k">raise</span> <span class="s2">&quot;exception&quot;</span>  <span class="c1"># noqa</span>
 <span class="gr">TypeError</span>: <span class="n">exceptions must derive from BaseException</span>
 </pre></div>
 </div>
@@ -1516,7 +1566,7 @@ or by trying to do an operation not allowed on a given type of object.</p>
 <h4>Exception raised on line 489 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-489-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">487</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Derive_from_BaseException</span><span class="p">():</span>
        <span class="mi">488</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">489</span><span class="p">:</span>         <span class="k">raise</span> <span class="s2">&quot;exception&quot;</span>
+    <span class="o">--&gt;</span><span class="mi">489</span><span class="p">:</span>         <span class="k">raise</span> <span class="s2">&quot;exception&quot;</span>  <span class="c1"># noqa</span>
        <span class="mi">490</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
@@ -1615,7 +1665,7 @@ Perhaps you meant to use <code class="docutils literal notranslate"><span class=
 <div class="section" id="object-is-not-iterable">
 <h3>Object is not iterable<a class="headerlink" href="#object-is-not-iterable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">710</span>, in <span class="n">test_Object_is_not_iterable</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">700</span>, in <span class="n">test_Object_is_not_iterable</span>
     <span class="nb">list</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="gr">TypeError</span>: <span class="n">&#39;int&#39; object is not iterable</span>
 </pre></div>
@@ -1627,12 +1677,12 @@ or by trying to do an operation not allowed on a given type of object.</p>
 <p>An iterable is an object capable of returning its members one at a time.
 Python containers (<code class="docutils literal notranslate"><span class="pre">list,</span> <span class="pre">tuple,</span> <span class="pre">dict</span></code>, etc.) are iterables.
 An iterable is required here.</p>
-<div class="section" id="exception-raised-on-line-710-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 710 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-710-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">708</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Object_is_not_iterable</span><span class="p">():</span>
-       <span class="mi">709</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">710</span><span class="p">:</span>         <span class="nb">list</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-       <span class="mi">711</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="section" id="exception-raised-on-line-700-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 700 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-700-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">698</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Object_is_not_iterable</span><span class="p">():</span>
+       <span class="mi">699</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">700</span><span class="p">:</span>         <span class="nb">list</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+       <span class="mi">701</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="nb">list</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">list</span><span class="o">&gt;</span>
@@ -1643,7 +1693,7 @@ An iterable is required here.</p>
 <div class="section" id="object-is-not-subscriptable">
 <h3>Object is not subscriptable<a class="headerlink" href="#object-is-not-subscriptable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">696</span>, in <span class="n">test_Object_is_not_subscriptable</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">686</span>, in <span class="n">test_Object_is_not_subscriptable</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="gr">TypeError</span>: <span class="n">&#39;function&#39; object is not subscriptable</span>
 </pre></div>
@@ -1656,13 +1706,13 @@ or by trying to do an operation not allowed on a given type of object.</p>
 <p>Subscriptable objects are typically containers from which
 you can retrieve item using the notation <code class="docutils literal notranslate"><span class="pre">[...]</span></code>.</p>
 <p>Perhaps you meant to write <code class="docutils literal notranslate"><span class="pre">f(1)</span></code>.</p>
-<div class="section" id="exception-raised-on-line-696-of-file-tests-runtime-test-type-error-py">
-<h4>Exception raised on line 696 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-696-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">694</span><span class="p">:</span> 
-       <span class="mi">695</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">696</span><span class="p">:</span>         <span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="section" id="exception-raised-on-line-686-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 686 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-686-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">684</span><span class="p">:</span> 
+       <span class="mi">685</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">686</span><span class="p">:</span>         <span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
                         <span class="o">^^^^</span>
-       <span class="mi">697</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+       <span class="mi">687</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">f</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">f</span><span class="o">&gt;</span> <span class="kn">from</span> <span class="nn">test_Object_is_not_subscriptable</span>
