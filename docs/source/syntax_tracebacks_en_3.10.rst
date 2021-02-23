@@ -1647,7 +1647,7 @@ f-string: unterminated string
     -->4: print(f"Bob is {age['Bob]} years old.")
                                                 ^
 
-    Inside the f-string `)`, 
+    Inside the f-string `f"Bob is {age['Bob]} years old."`, 
     you have another string, which starts with either a
     single quote (') or double quote ("), without a matching closing one.
     

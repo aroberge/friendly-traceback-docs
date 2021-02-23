@@ -304,7 +304,7 @@ Cannot assign to f-string
 
     You wrote an expression that has the f-string `f'{x}'`
     on the left-hand side of the equal sign.
-    An f-string should only appear on the right-hand side of the equal sign.
+    An f-string should only appear on the right-hand side of an equal sign.
     
 
 Cannot assign to function call: single = sign
@@ -1639,7 +1639,7 @@ f-string: unterminated string
     -->4: print(f"Bob is {age['Bob]} years old.")
                ^
 
-    Inside the f-string `(`, 
+    Inside the f-string `f"Bob is {age['Bob]} years old."`, 
     you have another string, which starts with either a
     single quote (') or double quote ("), without a matching closing one.
     
