@@ -69,6 +69,7 @@ English (by default) and French are available.
    :hidden:
    :caption: Begin here
 
+   install
    usage
    Console basics <repl>
    editor

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨 &mdash; Friendly tracebacks 0.2.33a documentation</title>
+  <title>Installation &mdash; Friendly tracebacks 0.2.33a documentation</title>
   
 
   
@@ -37,7 +37,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="install.html" /> 
+    <link rel="next" title="Basic usage" href="usage.html" />
+    <link rel="prev" title="Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -51,7 +52,7 @@
           
 
           
-            <a href="#" class="icon icon-home" alt="Documentation Home"> Friendly tracebacks
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly tracebacks
           
 
           
@@ -87,8 +88,11 @@
             
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Installation</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
@@ -157,7 +161,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Friendly tracebacks</a>
+          <a href="index.html">Friendly tracebacks</a>
         
       </nav>
 
@@ -186,15 +190,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome  歡迎光臨</li>
+      <li>Installation</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/install.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -204,8 +208,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="install.html" class="btn btn-neutral float-right" title="Installation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="usage.html" class="btn btn-neutral float-right" title="Basic usage" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -214,63 +220,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="bienvenue-bienvenido-welcome">
-<h1>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome  歡迎光臨<a class="headerlink" href="#bienvenue-bienvenido-welcome" title="Permalink to this headline">¶</a></h1>
-<p><strong>Friendly tracebacks</strong> - Simplified Python tracebacks translatable into
-any language.</p>
-<p><a class="reference external" href="https://github.com/aroberge/Friendly-traceback">Code on Github</a></p>
-<div class="section" id="in-a-nutshell">
-<h2>In a nutshell<a class="headerlink" href="#in-a-nutshell" title="Permalink to this headline">¶</a></h2>
-<p>There exists many Python projects, including some listed below,
-whose <strong>primary</strong> goal is to supplement the information
-given by Python traceback to make them more useful for <strong>advanced</strong> programmers.
-Friendly-traceback is <strong>not</strong> one of these projects.</p>
-<p>While Friendly-traceback can be useful for advanced programmers,
-it is aimed aimed primarily at beginners and/or at users
-who would like to get information about traceback in their own language.
-Friendly-traceback can give more detailed information as to
-<strong>where</strong> an exception occurred, <strong>what</strong> a given exception means and
-<strong>why</strong> it might have occurred (sometimes adding a way to fix it.)</p>
-<p>While Friendly-traceback can be used on its own with a specially
-designed console, a better option would be to use it together with
-GUI-based editors/IDE including Jupyter lab and notebooks.
-We explain how to do so later.
-For now, we just show one quick example.</p>
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><img alt="mu_logo" src="_images/mu_logo.png" /> If you use Mu, you might want to go to <a class="reference internal" href="mu.html#mu-instructions"><span class="std std-ref">Using with Mu</span></a>
+and come back here afterwards.</p>
 </div>
-<div class="section" id="a-quick-look">
-<h2>A quick look<a class="headerlink" href="#a-quick-look" title="Permalink to this headline">¶</a></h2>
-<p>First, we show what happens when we use Python
-to run a program that raises an exception.</p>
-<a class="reference internal image-reference" href="_images/python_indexerror.png"><img alt="Python IndexError example" src="_images/python_indexerror.png" style="width: 555.0px; height: 114.0px;" /></a>
-<p>Not exactly the most helpful information for beginners …</p>
-<p>Here’s the corresponding version with full explanation from Friendly-traceback,
-making use of
-<a class="reference external" href="https://github.com/willmcgugan/rich">Rich</a></p>
-<a class="reference internal image-reference" href="_images/friendly_indexerror_en.png"><img alt="Friendly IndexError example in English" src="_images/friendly_indexerror_en.png" style="width: 555.0px; height: 584.0px;" /></a>
-<p>One unique feature of Friendly-traceback is that all the information
-it provides can be translated into another language; currently, only
-English (by default) and French are available.</p>
-<a class="reference internal image-reference" href="_images/friendly_indexerror_fr.png"><img alt="Friendly IndexError in French" src="_images/friendly_indexerror_fr.png" style="width: 555.0px; height: 582.5px;" /></a>
-<p><strong>Keep reading if you want to find out more.</strong></p>
-<div class="toctree-wrapper compound">
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><img alt="thonny_logo" src="_images/thonny_logo.png" /> If you use Thonny, you might want to go to <a class="reference internal" href="thonny.html#using-thonny"><span class="std std-ref">Using with Thonny</span></a>
+and come back here afterwards.</p>
 </div>
-<div class="toctree-wrapper compound">
+<div class="section" id="id1">
+<h2>Installation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<img alt="error using pip inside a console" src="_images/pip.png" />
+<p>You can install Friendly-traceback from Pypi in the usual way:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">friendly</span><span class="o">-</span><span class="n">traceback</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-</div>
-<div class="section" id="to-do">
-<h2>To do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h2>
-<p>We sometimes add notes about planned changes or additions to the documentation
-in various sections. Any such note is listed below as a visible reminder.</p>
+<p>In the command shown above,
+<code class="docutils literal notranslate"><span class="pre">python</span></code> refers to whatever you need to type to invoke your
+favourite Python interpreter.
+It could be <code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">python3</span></code>, <code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">-3.8</span></code>, etc.</p>
 </div>
 </div>
 
@@ -282,8 +254,10 @@ in various sections. Any such note is listed below as a visible reminder.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="install.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="usage.html" class="btn btn-neutral float-right" title="Basic usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

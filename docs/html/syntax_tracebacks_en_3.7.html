@@ -89,7 +89,8 @@
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Installation and basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
@@ -126,6 +127,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">SyntaxError - Python 3.7 in English</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#using-and-in-import-statement">Using ‘and’ in import statement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#annotated-name-cannot-be-global">Annotated name cannot be global</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#incorrect-use-of-from-module-import-as">Incorrect use of ‘from module import … as …</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#name-assigned-prior-to-global-declaration">Name assigned prior to global declaration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#name-used-prior-to-global-declaration">Name used prior to global declaration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#name-used-prior-to-nonlocal-declaration">Name used prior to nonlocal declaration</a></li>
@@ -147,10 +149,18 @@
 <li class="toctree-l2"><a class="reference internal" href="#assign-to-math-operation">Assign to math operation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-named-assignment-depending-on-python-version">Walrus/Named assignment depending on Python version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#break-outside-loop">break outside loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cannot-use-star-operator">Cannot use star operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cannot-use-double-star-operator">Cannot use double star operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-for-tuples-in-comprehension">Missing () for tuples in comprehension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comprehension-with-condition-no-else">Comprehension with condition (no else)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comprehension-with-condition-with-else">Comprehension with condition (with else)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#continue-outside-loop">continue outside loop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#copy-paste-from-interpreter">Copy/paste from interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#named-arguments-must-follow-bare">Named arguments must follow bare *</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-misused-as-code-block">def: misused as code block</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-keyword-arg-only-once-in-function-definition">def: Keyword arg only once in function definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#non-identifier-as-a-function-name">Non-identifier as a function name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-a-string-as-a-function-name">Using a string as a function name</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-keyword-cannot-be-argument-in-def-1">def: keyword cannot be argument in def - 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-keyword-cannot-be-argument-in-def-2">def: keyword cannot be argument in def - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-keyword-cannot-be-argument-in-def-3">def: keyword cannot be argument in def - 3</a></li>
@@ -161,7 +171,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#def-missing-function-name">def: missing function name</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-name-is-parameter-and-global">def: name is parameter and global</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-non-default-argument-follows-default-argument">def: non-default argument follows default argument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#single-number-used-as-arg-in-function-def">Single number used as arg in function def</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-positional-argument-follows-keyword-argument">def: positional argument follows keyword argument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#single-string-used-as-arg-in-function-def">Single string used as arg in function def</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-tuple-as-function-argument">def: tuple as function argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-tuple-as-function-argument-2">def: tuple as function argument - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deleting-constant-keyword">Deleting constant/keyword</a></li>
@@ -172,16 +184,31 @@
 <li class="toctree-l2"><a class="reference internal" href="#write-elif-not-elseif">Write elif, not elseif</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#eol-while-scanning-string-literal">EOL while scanning string literal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#used-equal-sign-instead-of-colon">Used equal sign instead of colon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parens-around-multiple-exceptions">Parens around multiple exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#binary-f-string-not-allowed">Binary f-string not allowed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#f-string-unterminated-string">f-string: unterminated string</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#f-string-with-backslash">f-string with backslash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#not-a-chance">Not a chance!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#do-not-import-from-future">Do not import * from __future__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#future-at-beginning">__future__ at beginning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typo-in-future">Typo in __future__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unknown-feature-in-future">Unknown feature in __future__</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parenthesis-around-generator-expression">Parenthesis around generator expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#space-between-names">Space between names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-j-instead-of-i">use j instead of i</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#import-inversion-import-x-from-y">Import inversion: import X from Y</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-expected-an-indented-block">IndentationError: expected an indented block</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-unexpected-indent">IndentationError: unexpected indent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-unindent-does-not-match">IndentationError: unindent does not match …</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-missing-continuation-line">IndentationError: missing continuation line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#forgot-o-for-octal">Forgot ‘o’ for octal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#integer-with-leading-zeros">Integer with leading zeros</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#invalid-character-in-identifier">Invalid character in identifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#invalid-hexadecimal-number">Invalid hexadecimal number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#valid-names-cannot-begin-with-a-number">Valid names cannot begin with a number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#forgot-a-multiplication-operator">Forgot a multiplication operator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#keyword-can-t-be-an-expression">Keyword can’t be an expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#invalid-octal-number">Invalid octal number</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#keyword-arg-only-once-in-function-call">Keyword arg only once in function call</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#keyword-as-attribute">Keyword as attribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lambda-with-parentheses-around-arguments">lambda with parentheses around arguments</a></li>
@@ -203,49 +230,23 @@
 <li class="toctree-l2"><a class="reference internal" href="#print-is-a-function-2">print is a function 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#quote-inside-a-string">Quote inside a string</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#raising-multiple-exceptions">Raising multiple exceptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unclosed-bracket">Unclosed bracket</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unclosed-parenthesis-1">Unclosed parenthesis - 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unclosed-parenthesis-2">Unclosed parenthesis - 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#content-passed-continuation-line-character">Content passed continuation line character</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unexpected-eof-while-parsing">Unexpected EOF while parsing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unmatched-closing-parenthesis">Unmatched closing parenthesis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mismatched-brackets-1">Mismatched brackets - 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mismatched-brackets-2">Mismatched brackets - 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#invalid-character-bad-quote">Invalid character (bad quote)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cannot-use-return-outside-function">Cannot use return outside function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#single-instead-of-double-with-if">Single = instead of double == with if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#single-instead-of-double-with-elif">Single = instead of double == with elif</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#single-instead-of-double-with-while">Single = instead of double == with while</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#invalid-hexadecimal-number">Invalid hexadecimal number</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#valid-names-cannot-begin-with-a-number">Valid names cannot begin with a number</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unclosed-parenthesis-3">Unclosed parenthesis - 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#forgot-a-multiplication-operator">Forgot a multiplication operator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#space-between-names">Space between names</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cannot-use-star-operator">Cannot use star operator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cannot-use-double-star-operator">Cannot use double star operator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cannot-use-return-outside-function">Cannot use return outside function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#too-many-nested-blocks">Too many nested blocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#named-arguments-must-follow-bare">Named arguments must follow bare *</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#use-j-instead-of-i">use j instead of i</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#do-not-import-from-future">Do not import * from __future__</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#typo-in-future">Typo in __future__</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unknown-feature-in-future">Unknown feature in __future__</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#not-a-chance">Not a chance!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#future-at-beginning">__future__ at beginning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#invalid-octal-number">Invalid octal number</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-a-string-as-a-function-name">Using a string as a function name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#non-identifier-as-a-function-name">Non-identifier as a function name</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#triple-equal-sign">Triple-equal sign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unclosed-bracket">Unclosed bracket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unclosed-parenthesis-1">Unclosed parenthesis - 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unclosed-parenthesis-2">Unclosed parenthesis - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unclosed-parenthesis-3">Unclosed parenthesis - 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#content-passed-continuation-line-character">Content passed continuation line character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unexpected-eof-while-parsing">Unexpected EOF while parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#invalid-character-unicode-quote">Invalid character (unicode quote)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unmatched-closing-parenthesis">Unmatched closing parenthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mismatched-brackets-1">Mismatched brackets - 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mismatched-brackets-2">Mismatched brackets - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unterminated-triple-quoted-string">Unterminated triple quoted string</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#incorrect-use-of-from-module-import-as">Incorrect use of ‘from module import … as …</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#comprehension-with-condition-no-else">Comprehension with condition (no else)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#comprehension-with-condition-with-else">Comprehension with condition (with else)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#forgot-o-for-octal">Forgot ‘o’ for octal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#integer-with-leading-zeros">Integer with leading zeros</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#missing-for-tuples-in-comprehension">Missing () for tuples in comprehension</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#binary-f-string-not-allowed">Binary f-string not allowed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#parens-around-multiple-exceptions">Parens around multiple exceptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#single-number-used-as-arg-in-function-def">Single number used as arg in function def</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#single-string-used-as-arg-in-function-def">Single string used as arg in function def</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#taberror">TabError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#eol-unescaped-backslash">EOL unescaped backslash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-the-backquote-character">Using the backquote character</a></li>
@@ -413,6 +414,38 @@ beyond the location indicated by ^.
 
 The object named `x` is defined with type annotation
 as a local variable. It cannot be declared to be a global variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="incorrect-use-of-from-module-import-as">
+<h2>Incorrect use of ‘from module import … as …<a class="headerlink" href="#incorrect-use-of-from-module-import-as" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\as_instead_of_comma_in_import.py&quot;, line 2
+    from math import (sin, cos) as funcs
+                                 ^
+SyntaxError: invalid syntax
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\as_instead_of_comma_in_import.py&#39;
+beyond the location indicated by ^.
+
+   1: # issue 158
+--&gt;2: from math import (sin, cos) as funcs
+                                   ^
+
+I am guessing that you are trying to import at least one object
+from module `math` and rename it using the Python keyword `as`;
+this keyword can only be used to rename one object at a time
+using a well defined syntax.
+I suggest that you split up any such import statement with each object
+renamed on a separate line as follows:
+
+    from math import object_1 as name_1
+    from math import object_2 as name_2  # if needed
 </pre></div>
 </div>
 </div>
@@ -1058,6 +1091,156 @@ The Python keyword `break` can only be used inside a `for` loop or inside a `whi
 </pre></div>
 </div>
 </div>
+<div class="section" id="cannot-use-star-operator">
+<h2>Cannot use star operator<a class="headerlink" href="#cannot-use-star-operator" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\cannot_use_star.py&quot;, line 3
+    *a
+   ^
+SyntaxError: can&#39;t use starred expression here
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\cannot_use_star.py&#39;
+beyond the location indicated by ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t use starred expression here&quot;&quot;&quot;
+   2:
+--&gt;3: *a
+     ^
+
+The star operator `*` is interpreted to mean that
+iterable unpacking is to be used to assign a name
+to each item of an iterable, which does not make sense here.
+</pre></div>
+</div>
+</div>
+<div class="section" id="cannot-use-double-star-operator">
+<h2>Cannot use double star operator<a class="headerlink" href="#cannot-use-double-star-operator" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;&lt;fstring&gt;&quot;, line 1
+    (**k)
+      ^
+SyntaxError: invalid syntax
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;&lt;fstring&gt;&#39;
+beyond the location indicated by ^.
+
+--&gt;1: (**k)
+        ^
+
+The double star operator `**` is likely interpreted to mean that
+dict unpacking is to be used which does not make sense here.
+</pre></div>
+</div>
+</div>
+<div class="section" id="missing-for-tuples-in-comprehension">
+<h2>Missing () for tuples in comprehension<a class="headerlink" href="#missing-for-tuples-in-comprehension" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\comprehension_missing_tuple_paren.py&quot;, line 1
+    x = [i, i**2 for i in range(10)]
+                   ^
+SyntaxError: invalid syntax
+
+    Did you forget parentheses?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\comprehension_missing_tuple_paren.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: x = [i, i**2 for i in range(10)]
+                     ^
+
+I am guessing that you were writing a comprehension or a generator expression
+and forgot to include parentheses around tuples.
+As an example, instead of writing
+
+    [i, i**2 for i in range(10)]
+
+you would need to write
+
+    [(i, i**2) for i in range(10)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="comprehension-with-condition-no-else">
+<h2>Comprehension with condition (no else)<a class="headerlink" href="#comprehension-with-condition-no-else" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\comprehension_with_condition_no_else.py&quot;, line 1
+    a = [f(x) if condition for x in sequence]
+                             ^
+SyntaxError: invalid syntax
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\comprehension_with_condition_no_else.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: a = [f(x) if condition for x in sequence]
+                               ^
+
+I am guessing that you were writing a comprehension or a generator expression
+and use the wrong order for a condition.
+The correct order depends if there is an `else` clause or not.
+For example, the correct order for a list comprehensions with
+condition can be either
+
+    [f(x) if condition else other for x in sequence]  # &#39;if&#39; before &#39;for&#39;
+
+or, if there is no `else`
+
+    [f(x) for x in sequence if condition]  # &#39;if&#39; after &#39;for&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="comprehension-with-condition-with-else">
+<h2>Comprehension with condition (with else)<a class="headerlink" href="#comprehension-with-condition-with-else" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\comprehension_with_condition_with_else.py&quot;, line 1
+    a = [f(x) for x in sequence if condition else other]
+                                                ^
+SyntaxError: invalid syntax
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\comprehension_with_condition_with_else.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: a = [f(x) for x in sequence if condition else other]
+                                                  ^
+
+I am guessing that you were writing a comprehension or a generator expression
+and use the wrong order for a condition.
+The correct order depends if there is an `else` clause or not.
+For example, the correct order for a list comprehensions with
+condition can be either
+
+    [f(x) if condition else other for x in sequence]  # &#39;if&#39; before &#39;for&#39;
+
+or, if there is no `else`
+
+    [f(x) for x in sequence if condition]  # &#39;if&#39; after &#39;for&#39;
+</pre></div>
+</div>
+</div>
 <div class="section" id="continue-outside-loop">
 <h2>continue outside loop<a class="headerlink" href="#continue-outside-loop" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -1108,6 +1291,36 @@ beyond the location indicated by ^.
 
 It looks like you copy-pasted code from an interactive interpreter.
 The Python prompt, `&gt;&gt;&gt;`, should not be included in your code.
+</pre></div>
+</div>
+</div>
+<div class="section" id="named-arguments-must-follow-bare">
+<h2>Named arguments must follow bare *<a class="headerlink" href="#named-arguments-must-follow-bare" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_bare_star_arg.py&quot;, line 4
+    def f(*):
+         ^
+SyntaxError: named arguments must follow bare *
+
+    Did you forget something after `*`?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\def_bare_star_arg.py&#39;
+beyond the location indicated by ^.
+
+   1: # SyntaxError: named arguments must follow bare *
+   2:
+   3:
+--&gt;4: def f(*):
+           ^
+
+Assuming you were defining a function, you need
+to replace `*` by either `*arguments` or
+by `*, named_argument=value`.
 </pre></div>
 </div>
 </div>
@@ -1165,6 +1378,68 @@ You have defined a function repeating the keyword argument
 
     aa
 twice; each keyword argument should appear only once in a function definition.
+</pre></div>
+</div>
+</div>
+<div class="section" id="non-identifier-as-a-function-name">
+<h2>Non-identifier as a function name<a class="headerlink" href="#non-identifier-as-a-function-name" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_function_name_invalid.py&quot;, line 3
+    def 2be():
+        ^
+SyntaxError: invalid syntax
+
+    You wrote an invalid function name.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\def_function_name_invalid.py&#39;
+beyond the location indicated by ^.
+
+   1:
+   2:
+--&gt;3: def 2be():
+          ^
+
+The name of a function must be a valid Python identifier,
+that is a name that begins with a letter or an underscore character, `_`,
+and which contains only letters, digits or the underscore character.
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-a-string-as-a-function-name">
+<h2>Using a string as a function name<a class="headerlink" href="#using-a-string-as-a-function-name" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_function_name_string.py&quot;, line 3
+    def &quot;function&quot;():
+                 ^
+SyntaxError: invalid syntax
+
+    The name of a function must be a valid Python identifier,
+    that is a name that begins with a letter or an underscore character, `_`,
+    and which contains only letters, digits or the underscore character.
+    You attempted to use a string as a function name.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\def_function_name_string.py&#39;
+beyond the location indicated by ^.
+
+   1:
+   2:
+--&gt;3: def &quot;function&quot;():
+                   ^
+
+The name of a function must be a valid Python identifier,
+that is a name that begins with a letter or an underscore character, `_`,
+and which contains only letters, digits or the underscore character.
+You attempted to use a string as a function name.
 </pre></div>
 </div>
 </div>
@@ -1479,6 +1754,32 @@ According to Python, you used positional arguments after keyword ones.
 </pre></div>
 </div>
 </div>
+<div class="section" id="single-number-used-as-arg-in-function-def">
+<h2>Single number used as arg in function def<a class="headerlink" href="#single-number-used-as-arg-in-function-def" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_number_as_arg.py&quot;, line 1
+    def f(1):
+          ^
+SyntaxError: invalid syntax
+
+    You cannot use numbers as function arguments.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\def_number_as_arg.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: def f(1):
+            ^
+
+You used a number as an argument when defining a function.
+You can only use identifiers (variable names) as function arguments.
+</pre></div>
+</div>
+</div>
 <div class="section" id="def-positional-argument-follows-keyword-argument">
 <h2>def: positional argument follows keyword argument<a class="headerlink" href="#def-positional-argument-follows-keyword-argument" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -1516,6 +1817,32 @@ or a combination of the two
 
 but with the keyword arguments appearing after all the positional ones.
 According to Python, you used positional arguments after keyword ones.
+</pre></div>
+</div>
+</div>
+<div class="section" id="single-string-used-as-arg-in-function-def">
+<h2>Single string used as arg in function def<a class="headerlink" href="#single-string-used-as-arg-in-function-def" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_string_as_arg.py&quot;, line 1
+    def f(&quot;1&quot;):
+            ^
+SyntaxError: invalid syntax
+
+    You cannot use strings as function arguments.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\def_string_as_arg.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: def f(&quot;1&quot;):
+              ^
+
+You used a string as an argument when defining a function.
+You can only use identifiers (variable names) as function arguments.
 </pre></div>
 </div>
 </div>
@@ -1797,6 +2124,65 @@ before or at the position indicated by ^.
 </pre></div>
 </div>
 </div>
+<div class="section" id="parens-around-multiple-exceptions">
+<h2>Parens around multiple exceptions<a class="headerlink" href="#parens-around-multiple-exceptions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\except_multiple_exceptions.py&quot;, line 3
+    except NameError, ValueError as err:
+                    ^
+SyntaxError: invalid syntax
+
+    Did you forget parentheses?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\except_multiple_exceptions.py&#39;
+beyond the location indicated by ^.
+
+   1: try:
+   2:     pass
+--&gt;3: except NameError, ValueError as err:
+                      ^
+
+I am guessing that you wanted to use an `except` statement
+with multiple exception types. If that is the case, you must
+surround them with parentheses.
+
+If you are using a Friendly console, you might want to
+use the function `www()` which will open a browser at
+a relevant place in the Python documentation.
+</pre></div>
+</div>
+</div>
+<div class="section" id="binary-f-string-not-allowed">
+<h2>Binary f-string not allowed<a class="headerlink" href="#binary-f-string-not-allowed" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\f_string_binary.py&quot;, line 1
+    greet = bf&quot;Hello {name}&quot;
+                           ^
+SyntaxError: invalid syntax
+
+    `bf` is an illegal string prefix.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\f_string_binary.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: greet = bf&quot;Hello {name}&quot;
+                             ^
+
+I am guessing that you wanted a binary f-string;
+this is not allowed.
+</pre></div>
+</div>
+</div>
 <div class="section" id="f-string-unterminated-string">
 <h2>f-string: unterminated string<a class="headerlink" href="#f-string-unterminated-string" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -1861,6 +2247,154 @@ you could write this as
 </pre></div>
 </div>
 </div>
+<div class="section" id="not-a-chance">
+<h2>Not a chance!<a class="headerlink" href="#not-a-chance" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\future_braces.py&quot;, line 1
+    from __future__ import braces
+   ^
+SyntaxError: not a chance
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\future_braces.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: from __future__ import braces
+     ^
+
+I suspect you wrote `from __future__ import braces` following
+someone else&#39;s suggestion. This will never work.
+
+Unlike other programming languages, Python&#39;s code block are defined by
+their indentation level, and not by using some curly braces, like `{...}`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="do-not-import-from-future">
+<h2>Do not import * from __future__<a class="headerlink" href="#do-not-import-from-future" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\future_import_star.py&quot;, line 1
+    from __future__ import *
+   ^
+SyntaxError: future feature * is not defined
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\future_import_star.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: from __future__ import *
+     ^
+
+When using a `from __future__ import` statement,
+you must import specific named features.
+
+The available features are `nested_scopes,
+ generators,
+ division,
+ absolute_import,
+ with_statement,
+ print_function,
+ unicode_literals,
+ barry_as_FLUFL,
+ generator_stop,
+ annotations`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="future-at-beginning">
+<h2>__future__ at beginning<a class="headerlink" href="#future-at-beginning" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\future_must_be_first.py&quot;, line 3
+    from __future__ import generators
+   ^
+SyntaxError: from __future__ imports must occur at the beginning of the file
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\future_must_be_first.py&#39;
+beyond the location indicated by ^.
+
+   1:
+   2: def fn():
+--&gt;3:     from __future__ import generators
+         ^
+
+A `from __future__ import` statement changes the way Python
+interprets the code in a file.
+It must appear at the beginning of the file.
+</pre></div>
+</div>
+</div>
+<div class="section" id="typo-in-future">
+<h2>Typo in __future__<a class="headerlink" href="#typo-in-future" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\future_typo.py&quot;, line 1
+    from __future__ import divisio
+   ^
+SyntaxError: future feature divisio is not defined
+
+    Did you mean `division`?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\future_typo.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: from __future__ import divisio
+     ^
+
+Instead of `divisio`, perhaps you meant to import `division`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="unknown-feature-in-future">
+<h2>Unknown feature in __future__<a class="headerlink" href="#unknown-feature-in-future" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\future_unknown.py&quot;, line 1
+    from __future__ import something
+   ^
+SyntaxError: future feature something is not defined
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\future_unknown.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: from __future__ import something
+     ^
+
+`something` is not a valid feature of module `__future__`.
+
+The available features are `nested_scopes,
+ generators,
+ division,
+ absolute_import,
+ with_statement,
+ print_function,
+ unicode_literals,
+ barry_as_FLUFL,
+ generator_stop,
+ annotations`.
+</pre></div>
+</div>
+</div>
 <div class="section" id="parenthesis-around-generator-expression">
 <h2>Parenthesis around generator expression<a class="headerlink" href="#parenthesis-around-generator-expression" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -1885,8 +2419,73 @@ beyond the location indicated by ^.
        ^
 
 You are using a generator expression, something of the form
-    `x for x in thing`
+
+    x for x in thing
+
 You must add parentheses enclosing that expression.
+</pre></div>
+</div>
+</div>
+<div class="section" id="space-between-names">
+<h2>Space between names<a class="headerlink" href="#space-between-names" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\hyphen_instead_of_underscore.py&quot;, line 4
+    a-b = 2
+   ^
+SyntaxError: can&#39;t assign to operator
+
+    Did you mean `a_b`?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\hyphen_instead_of_underscore.py&#39;
+beyond the location indicated by ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to operator
+   2: or (Python 3.8) cannot assign to operator&quot;&quot;&quot;
+   3:
+--&gt;4: a-b = 2
+     ^
+
+You wrote an expression that includes some mathematical operations
+on the left-hand side of the equal sign which should be
+only used to assign a value to a variable.
+Perhaps you meant to write `a_b` instead of `a-b`
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-j-instead-of-i">
+<h2>use j instead of i<a class="headerlink" href="#use-j-instead-of-i" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\imaginary_i.py&quot;, line 3
+    a = 3.0i
+           ^
+SyntaxError: invalid syntax
+
+    Did you mean `3.0j`?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\imaginary_i.py&#39;
+beyond the location indicated by ^.
+
+   1: # SyntaxError: invalid syntax
+   2:
+--&gt;3: a = 3.0i
+             ^
+
+Valid names cannot begin with a number.
+Perhaps you thought that `i` could be used to represent
+the square root of `-1`. In Python, the symbol used for this is `j`
+and the complex part is written as `some_number` immediately
+followed by `j`, with no spaces in between.
+Perhaps you meant to write `3.0j`.
 </pre></div>
 </div>
 </div>
@@ -2039,6 +2638,59 @@ at the end of line 5.
 </pre></div>
 </div>
 </div>
+<div class="section" id="forgot-o-for-octal">
+<h2>Forgot ‘o’ for octal<a class="headerlink" href="#forgot-o-for-octal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\integer_with_leading_zero_1.py&quot;, line 1
+    x = 01
+         ^
+SyntaxError: invalid token
+
+    Did you mean `0o1`?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\integer_with_leading_zero_1.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: x = 01
+           ^
+
+Perhaps you meant to write the octal number `0o1`
+and forgot the letter &#39;o&#39;, or perhaps you meant to write
+a decimal integer and did not know that it could not start with zeros.
+</pre></div>
+</div>
+</div>
+<div class="section" id="integer-with-leading-zeros">
+<h2>Integer with leading zeros<a class="headerlink" href="#integer-with-leading-zeros" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\integer_with_leading_zero_2.py&quot;, line 1
+    x = 000_123_456
+                  ^
+SyntaxError: invalid token
+
+    Did you mean `123_456`?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\integer_with_leading_zero_2.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: x = 000_123_456
+                    ^
+
+Perhaps you meant to write the integer `123_456`
+and did not know that it could not start with zeros.
+</pre></div>
+</div>
+</div>
 <div class="section" id="invalid-character-in-identifier">
 <h2>Invalid character in identifier<a class="headerlink" href="#invalid-character-in-identifier" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -2065,6 +2717,94 @@ beyond the location indicated by ^.
 
 Python indicates that you used the unicode character `🤖`
 which is not allowed.
+</pre></div>
+</div>
+</div>
+<div class="section" id="invalid-hexadecimal-number">
+<h2>Invalid hexadecimal number<a class="headerlink" href="#invalid-hexadecimal-number" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\invalid_hexadecimal.py&quot;, line 3
+    a = 0x123g4
+              ^
+SyntaxError: invalid syntax
+
+    Did you made a mistake in writing an hexadecimal integer?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\invalid_hexadecimal.py&#39;
+beyond the location indicated by ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: a = 0x123g4
+                ^
+
+It looks like you used an invalid character (`g`) in an hexadecimal number.
+
+Hexadecimal numbers are base 16 integers that use the symbols `0` to `9`
+to represent values 0 to 9, and the letters `a` to `f` (or `A` to `F`)
+to represent values 10 to 15.
+In Python, hexadecimal numbers start with either `0x` or `0X`,
+followed by the characters used to represent the value of that integer.
+</pre></div>
+</div>
+</div>
+<div class="section" id="valid-names-cannot-begin-with-a-number">
+<h2>Valid names cannot begin with a number<a class="headerlink" href="#valid-names-cannot-begin-with-a-number" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\invalid_identifier.py&quot;, line 3
+    36abc = 3
+        ^
+SyntaxError: invalid syntax
+
+    Valid names cannot begin with a number.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\invalid_identifier.py&#39;
+beyond the location indicated by ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: 36abc = 3
+          ^
+
+Valid names cannot begin with a number.
+</pre></div>
+</div>
+</div>
+<div class="section" id="forgot-a-multiplication-operator">
+<h2>Forgot a multiplication operator<a class="headerlink" href="#forgot-a-multiplication-operator" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\invalid_identifier_2.py&quot;, line 3
+    tau = 2pi
+            ^
+SyntaxError: invalid syntax
+
+    Perhaps you forgot a multiplication operator, `2 * pi`.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\invalid_identifier_2.py&#39;
+beyond the location indicated by ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: tau = 2pi
+              ^
+
+Valid names cannot begin with a number.
+Perhaps you forgot a multiplication operator, `2 * pi`.
 </pre></div>
 </div>
 </div>
@@ -2095,11 +2835,44 @@ beyond the location indicated by ^.
 
 You likely called a function with a named argument:
 
-   `a_function(invalid=something)`
+    a_function(invalid=something)
 
 where `invalid` is not a valid variable name in Python
 either because it starts with a number, or is a string,
 or contains a period, etc.
+</pre></div>
+</div>
+</div>
+<div class="section" id="invalid-octal-number">
+<h2>Invalid octal number<a class="headerlink" href="#invalid-octal-number" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\invalid_octal.py&quot;, line 3
+    b = 0O1876
+             ^
+SyntaxError: invalid syntax
+
+    Did you made a mistake in writing an octal integer?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\invalid_octal.py&#39;
+beyond the location indicated by ^.
+
+   1:
+   2:
+--&gt;3: b = 0O1876
+               ^
+
+It looks like you used an invalid character (`8`) in an octal number.
+
+Octal numbers are base 8 integers that only use the symbols `0` to `7`
+to represent values.
+In Python, hexadecimal numbers start with either `0o` or `0O`,
+(the digit zero followed by the letter `o`)
+followed by the characters used to represent the value of that integer.
 </pre></div>
 </div>
 </div>
@@ -2321,7 +3094,10 @@ It is possible that you forgot a comma between items in a set or dict
 before the position indicated by ^.
 Perhaps you meant
 
-    a = {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3,}
+    a = {&#39;a&#39;: 1,
+ &#39;b&#39;: 2,
+ &#39;c&#39;: 3,
+}
 </pre></div>
 </div>
 </div>
@@ -2724,6 +3500,164 @@ It looks like you are trying to raise an exception using Python 2 syntax.
 </pre></div>
 </div>
 </div>
+<div class="section" id="cannot-use-return-outside-function">
+<h2>Cannot use return outside function<a class="headerlink" href="#cannot-use-return-outside-function" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\return_outside_function.py&quot;, line 3
+    return
+   ^
+SyntaxError: &#39;return&#39; outside function
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\return_outside_function.py&#39;
+beyond the location indicated by ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: &#39;return&#39; outside function&quot;&quot;&quot;
+   2:
+--&gt;3: return
+     ^
+
+You can only use a `return` statement inside a function or method.
+</pre></div>
+</div>
+</div>
+<div class="section" id="single-instead-of-double-with-if">
+<h2>Single = instead of double == with if<a class="headerlink" href="#single-instead-of-double-with-if" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\single_equal_with_if.py&quot;, line 3
+    if i % 2 = 0:
+             ^
+SyntaxError: invalid syntax
+
+    Perhaps you needed `==` instead of `=`.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\single_equal_with_if.py&#39;
+beyond the location indicated by ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2: for i in range(101):
+--&gt;3:     if i % 2 = 0:
+                   ^
+
+You used an assignment operator `=` instead of an equality operator `==`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="single-instead-of-double-with-elif">
+<h2>Single = instead of double == with elif<a class="headerlink" href="#single-instead-of-double-with-elif" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\single_equal_with_elif.py&quot;, line 5
+    elif i % 2 = 0:
+               ^
+SyntaxError: invalid syntax
+
+    Perhaps you needed `==` instead of `=`.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\single_equal_with_elif.py&#39;
+beyond the location indicated by ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2: for i in range(101):
+   3:     if False:
+   4:         pass
+--&gt;5:     elif i % 2 = 0:
+                     ^
+
+You used an assignment operator `=` instead of an equality operator `==`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="single-instead-of-double-with-while">
+<h2>Single = instead of double == with while<a class="headerlink" href="#single-instead-of-double-with-while" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\single_equal_with_while.py&quot;, line 4
+    while a = 1:
+            ^
+SyntaxError: invalid syntax
+
+    Perhaps you needed `==` instead of `=`.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\single_equal_with_while.py&#39;
+beyond the location indicated by ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2: a = 1
+   3:
+--&gt;4: while a = 1:
+              ^
+
+You used an assignment operator `=` instead of an equality operator `==`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="too-many-nested-blocks">
+<h2>Too many nested blocks<a class="headerlink" href="#too-many-nested-blocks" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;None&quot;, line None
+SyntaxError: too many statically nested blocks
+
+    Seriously?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+You cannot be serious!
+
+In case this is a mistake in a real program, please
+consider reducing the number of nested code blocks.
+</pre></div>
+</div>
+</div>
+<div class="section" id="triple-equal-sign">
+<h2>Triple-equal sign<a class="headerlink" href="#triple-equal-sign" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\triple_equal.py&quot;, line 3
+    x = y === z
+            ^
+SyntaxError: invalid syntax
+
+    Did you mean to use `is` instead of `===`?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\triple_equal.py&#39;
+beyond the location indicated by ^.
+
+   1:
+   2:
+--&gt;3: x = y === z
+              ^
+
+You wrote three equal signs in a row which is allowed in some
+programming languages, but not in Python. To check if two objects
+are equal, use two equal signs, `==`; to see if two names represent
+the exact same object, use the operator `is`.
+</pre></div>
+</div>
+</div>
 <div class="section" id="unclosed-bracket">
 <h2>Unclosed bracket<a class="headerlink" href="#unclosed-bracket" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -2810,6 +3744,36 @@ The opening parenthesis `(` on line 2 is not closed.
 </pre></div>
 </div>
 </div>
+<div class="section" id="unclosed-parenthesis-3">
+<h2>Unclosed parenthesis - 3<a class="headerlink" href="#unclosed-parenthesis-3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\unclosed_paren_3.py&quot;, line 7
+    if 2:
+        ^
+SyntaxError: invalid syntax
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\unclosed_paren_3.py&#39;
+beyond the location indicated by ^.
+
+   3: if 3:
+   4:     if 1:
+   5:         print(((123))
+   6:
+--&gt;7: if 2:
+          ^
+
+The opening parenthesis `(` on line 5 is not closed.
+
+    5:         print(((123))
+                    ^
+</pre></div>
+</div>
+</div>
 <div class="section" id="content-passed-continuation-line-character">
 <h2>Content passed continuation line character<a class="headerlink" href="#content-passed-continuation-line-character" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -2870,6 +3834,37 @@ The opening square bracket `[` on line 5 is not closed.
 
     5:     return [1, 2, 3,
                   ^
+</pre></div>
+</div>
+</div>
+<div class="section" id="invalid-character-unicode-quote">
+<h2>Invalid character (unicode quote)<a class="headerlink" href="#invalid-character-unicode-quote" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\unicode_quote.py&quot;, line 3
+    a = « hello »
+        ^
+SyntaxError: invalid character in identifier
+
+    Did you mean to use a normal quote character, `&#39;` or `&quot;`?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\unicode_quote.py&#39;
+beyond the location indicated by ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid character in identifier for Python &lt;=3.8
+   2:    and  SyntaxError: invalid character &#39;«&#39; (U+00AB) in Python 3.9&quot;&quot;&quot;
+--&gt;3: a = « hello »
+          ^
+
+Did you use copy-paste?
+Python indicates that you used the unicode character `«`
+which is not allowed.
+I suspect that you used a fancy unicode quotation mark
+instead of a normal single or double quote for a string.
 </pre></div>
 </div>
 </div>
@@ -2962,688 +3957,12 @@ The closing square bracket `]` on line 4 does not match the opening parenthesis 
 </pre></div>
 </div>
 </div>
-<div class="section" id="invalid-character-bad-quote">
-<h2>Invalid character (bad quote)<a class="headerlink" href="#invalid-character-bad-quote" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error75.py&quot;, line 3
-    a = « hello »
-        ^
-SyntaxError: invalid character in identifier
-
-    Did you mean to use a normal quote character, `&#39;` or `&quot;`?
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error75.py&#39;
-beyond the location indicated by ^.
-
-   1: &quot;&quot;&quot;Should raise SyntaxError: invalid character in identifier for Python &lt;=3.8
-   2:    and  SyntaxError: invalid character &#39;«&#39; (U+00AB) in Python 3.9&quot;&quot;&quot;
---&gt;3: a = « hello »
-          ^
-
-Did you use copy-paste?
-Python indicates that you used the unicode character `«`
-which is not allowed.
-I suspect that you used a fancy unicode quotation mark
-instead of a normal single or double quote for a string.
-</pre></div>
-</div>
-</div>
-<div class="section" id="single-instead-of-double-with-if">
-<h2>Single = instead of double == with if<a class="headerlink" href="#single-instead-of-double-with-if" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error76.py&quot;, line 3
-    if i % 2 = 0:
-             ^
-SyntaxError: invalid syntax
-
-    Perhaps you needed `==` instead of `=`.
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error76.py&#39;
-beyond the location indicated by ^.
-
-   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
-   2: for i in range(101):
---&gt;3:     if i % 2 = 0:
-                   ^
-
-You used an assignment operator `=` instead of an equality operator `==`.
-</pre></div>
-</div>
-</div>
-<div class="section" id="single-instead-of-double-with-elif">
-<h2>Single = instead of double == with elif<a class="headerlink" href="#single-instead-of-double-with-elif" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error77.py&quot;, line 5
-    elif i % 2 = 0:
-               ^
-SyntaxError: invalid syntax
-
-    Perhaps you needed `==` instead of `=`.
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error77.py&#39;
-beyond the location indicated by ^.
-
-   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
-   2: for i in range(101):
-   3:     if False:
-   4:         pass
---&gt;5:     elif i % 2 = 0:
-                     ^
-
-You used an assignment operator `=` instead of an equality operator `==`.
-</pre></div>
-</div>
-</div>
-<div class="section" id="single-instead-of-double-with-while">
-<h2>Single = instead of double == with while<a class="headerlink" href="#single-instead-of-double-with-while" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error78.py&quot;, line 4
-    while a = 1:
-            ^
-SyntaxError: invalid syntax
-
-    Perhaps you needed `==` instead of `=`.
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error78.py&#39;
-beyond the location indicated by ^.
-
-   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
-   2: a = 1
-   3:
---&gt;4: while a = 1:
-              ^
-
-You used an assignment operator `=` instead of an equality operator `==`.
-</pre></div>
-</div>
-</div>
-<div class="section" id="invalid-hexadecimal-number">
-<h2>Invalid hexadecimal number<a class="headerlink" href="#invalid-hexadecimal-number" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error79.py&quot;, line 3
-    a = 0x123g4
-              ^
-SyntaxError: invalid syntax
-
-    Did you made a mistake in writing an hexadecimal integer?
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error79.py&#39;
-beyond the location indicated by ^.
-
-   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
-   2:
---&gt;3: a = 0x123g4
-                ^
-
-It looks like you used an invalid character (`g`) in an hexadecimal number.
-
-Hexadecimal numbers are base 16 integers that use the symbols `0` to `9`
-to represent values 0 to 9, and the letters `a` to `f` (or `A` to `F`)
-to represent values 10 to 15.
-In Python, hexadecimal numbers start with either `0x` or `0X`,
-followed by the characters used to represent the value of that integer.
-</pre></div>
-</div>
-</div>
-<div class="section" id="valid-names-cannot-begin-with-a-number">
-<h2>Valid names cannot begin with a number<a class="headerlink" href="#valid-names-cannot-begin-with-a-number" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error80.py&quot;, line 3
-    36abc = 3
-        ^
-SyntaxError: invalid syntax
-
-    Valid names cannot begin with a number.
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error80.py&#39;
-beyond the location indicated by ^.
-
-   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
-   2:
---&gt;3: 36abc = 3
-          ^
-
-Valid names cannot begin with a number.
-</pre></div>
-</div>
-</div>
-<div class="section" id="unclosed-parenthesis-3">
-<h2>Unclosed parenthesis - 3<a class="headerlink" href="#unclosed-parenthesis-3" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error81.py&quot;, line 7
-    if 2:
-        ^
-SyntaxError: invalid syntax
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error81.py&#39;
-beyond the location indicated by ^.
-
-   3: if 3:
-   4:     if 1:
-   5:         print(((123))
-   6:
---&gt;7: if 2:
-          ^
-
-The opening parenthesis `(` on line 5 is not closed.
-
-    5:         print(((123))
-                    ^
-</pre></div>
-</div>
-</div>
-<div class="section" id="forgot-a-multiplication-operator">
-<h2>Forgot a multiplication operator<a class="headerlink" href="#forgot-a-multiplication-operator" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error82.py&quot;, line 3
-    tau = 2pi
-            ^
-SyntaxError: invalid syntax
-
-    Perhaps you forgot a multiplication operator, `2 * pi`.
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error82.py&#39;
-beyond the location indicated by ^.
-
-   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
-   2:
---&gt;3: tau = 2pi
-              ^
-
-Valid names cannot begin with a number.
-Perhaps you forgot a multiplication operator, `2 * pi`.
-</pre></div>
-</div>
-</div>
-<div class="section" id="space-between-names">
-<h2>Space between names<a class="headerlink" href="#space-between-names" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error83.py&quot;, line 4
-    a-b = 2
-   ^
-SyntaxError: can&#39;t assign to operator
-
-    Did you mean `a_b`?
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error83.py&#39;
-beyond the location indicated by ^.
-
-   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t assign to operator
-   2: or (Python 3.8) cannot assign to operator&quot;&quot;&quot;
-   3:
---&gt;4: a-b = 2
-     ^
-
-You wrote an expression that includes some mathematical operations
-on the left-hand side of the equal sign which should be
-only used to assign a value to a variable.
-Perhaps you meant to write `a_b` instead of `a-b`
-</pre></div>
-</div>
-</div>
-<div class="section" id="cannot-use-star-operator">
-<h2>Cannot use star operator<a class="headerlink" href="#cannot-use-star-operator" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error84.py&quot;, line 3
-    *a
-   ^
-SyntaxError: can&#39;t use starred expression here
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error84.py&#39;
-beyond the location indicated by ^.
-
-   1: &quot;&quot;&quot;Should raise SyntaxError: can&#39;t use starred expression here&quot;&quot;&quot;
-   2:
---&gt;3: *a
-     ^
-
-The star operator `*` is interpreted to mean that
-iterable unpacking is to be used to assign a name
-to each item of an iterable, which does not make sense here.
-</pre></div>
-</div>
-</div>
-<div class="section" id="cannot-use-double-star-operator">
-<h2>Cannot use double star operator<a class="headerlink" href="#cannot-use-double-star-operator" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;&lt;fstring&gt;&quot;, line 1
-    (**k)
-      ^
-SyntaxError: invalid syntax
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;&lt;fstring&gt;&#39;
-beyond the location indicated by ^.
-
---&gt;1: (**k)
-        ^
-
-The double star operator `**` is likely interpreted to mean that
-dict unpacking is to be used which does not make sense here.
-</pre></div>
-</div>
-</div>
-<div class="section" id="cannot-use-return-outside-function">
-<h2>Cannot use return outside function<a class="headerlink" href="#cannot-use-return-outside-function" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error86.py&quot;, line 3
-    return
-   ^
-SyntaxError: &#39;return&#39; outside function
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error86.py&#39;
-beyond the location indicated by ^.
-
-   1: &quot;&quot;&quot;Should raise SyntaxError: &#39;return&#39; outside function&quot;&quot;&quot;
-   2:
---&gt;3: return
-     ^
-
-You can only use a `return` statement inside a function or method.
-</pre></div>
-</div>
-</div>
-<div class="section" id="too-many-nested-blocks">
-<h2>Too many nested blocks<a class="headerlink" href="#too-many-nested-blocks" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;None&quot;, line None
-SyntaxError: too many statically nested blocks
-
-    Seriously?
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-You cannot be serious!
-
-In case this is a mistake in a real program, please
-consider reducing the number of nested code blocks.
-</pre></div>
-</div>
-</div>
-<div class="section" id="named-arguments-must-follow-bare">
-<h2>Named arguments must follow bare *<a class="headerlink" href="#named-arguments-must-follow-bare" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error88.py&quot;, line 4
-    def f(*):
-         ^
-SyntaxError: named arguments must follow bare *
-
-    Did you forget something after `*`?
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error88.py&#39;
-beyond the location indicated by ^.
-
-   1: # SyntaxError: named arguments must follow bare *
-   2:
-   3:
---&gt;4: def f(*):
-           ^
-
-Assuming you were defining a function, you need
-to replace `*` by either `*arguments` or
-by `*, named_argument=value`.
-</pre></div>
-</div>
-</div>
-<div class="section" id="use-j-instead-of-i">
-<h2>use j instead of i<a class="headerlink" href="#use-j-instead-of-i" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error89.py&quot;, line 3
-    a = 3.0i
-           ^
-SyntaxError: invalid syntax
-
-    Did you mean `3.0j`?
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error89.py&#39;
-beyond the location indicated by ^.
-
-   1: # SyntaxError: invalid syntax
-   2:
---&gt;3: a = 3.0i
-             ^
-
-Valid names cannot begin with a number.
-Perhaps you thought that `i` could be used to represent
-the square root of `-1`. In Python, the symbol used for this is `j`
-and the complex part is written as `some_number` immediately
-followed by `j`, with no spaces in between.
-Perhaps you meant to write `3.0j`.
-</pre></div>
-</div>
-</div>
-<div class="section" id="do-not-import-from-future">
-<h2>Do not import * from __future__<a class="headerlink" href="#do-not-import-from-future" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error90.py&quot;, line 1
-    from __future__ import *
-   ^
-SyntaxError: future feature * is not defined
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error90.py&#39;
-beyond the location indicated by ^.
-
---&gt;1: from __future__ import *
-     ^
-
-When using a `from __future__ import` statement,
-you must import specific named features.
-
-The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
-</pre></div>
-</div>
-</div>
-<div class="section" id="typo-in-future">
-<h2>Typo in __future__<a class="headerlink" href="#typo-in-future" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error91.py&quot;, line 1
-    from __future__ import divisio
-   ^
-SyntaxError: future feature divisio is not defined
-
-    Did you mean `division`?
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error91.py&#39;
-beyond the location indicated by ^.
-
---&gt;1: from __future__ import divisio
-     ^
-
-Instead of `divisio`, perhaps you meant to import `division`.
-</pre></div>
-</div>
-</div>
-<div class="section" id="unknown-feature-in-future">
-<h2>Unknown feature in __future__<a class="headerlink" href="#unknown-feature-in-future" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error92.py&quot;, line 1
-    from __future__ import something
-   ^
-SyntaxError: future feature something is not defined
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error92.py&#39;
-beyond the location indicated by ^.
-
---&gt;1: from __future__ import something
-     ^
-
-`something` is not a valid feature of module `__future__`.
-
-The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
-</pre></div>
-</div>
-</div>
-<div class="section" id="not-a-chance">
-<h2>Not a chance!<a class="headerlink" href="#not-a-chance" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error93.py&quot;, line 1
-    from __future__ import braces
-   ^
-SyntaxError: not a chance
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error93.py&#39;
-beyond the location indicated by ^.
-
---&gt;1: from __future__ import braces
-     ^
-
-I suspect you wrote `from __future__ import braces` following
-someone else&#39;s suggestion. This will never work.
-
-Unlike other programming languages, Python&#39;s code block are defined by
-their indentation level, and not by using some curly braces, like `{...}`.
-</pre></div>
-</div>
-</div>
-<div class="section" id="future-at-beginning">
-<h2>__future__ at beginning<a class="headerlink" href="#future-at-beginning" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error94.py&quot;, line 3
-    from __future__ import generators
-   ^
-SyntaxError: from __future__ imports must occur at the beginning of the file
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error94.py&#39;
-beyond the location indicated by ^.
-
-   1:
-   2: def fn():
---&gt;3:     from __future__ import generators
-         ^
-
-A `from __future__ import` statement changes the way Python
-interprets the code in a file.
-It must appear at the beginning of the file.
-</pre></div>
-</div>
-</div>
-<div class="section" id="invalid-octal-number">
-<h2>Invalid octal number<a class="headerlink" href="#invalid-octal-number" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error95.py&quot;, line 3
-    b = 0O1876
-             ^
-SyntaxError: invalid syntax
-
-    Did you made a mistake in writing an octal integer?
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error95.py&#39;
-beyond the location indicated by ^.
-
-   1:
-   2:
---&gt;3: b = 0O1876
-               ^
-
-It looks like you used an invalid character (`8`) in an octal number.
-
-Octal numbers are base 8 integers that only use the symbols `0` to `7`
-to represent values.
-In Python, hexadecimal numbers start with either `0o` or `0O`,
-(the digit zero followed by the letter `o`)
-followed by the characters used to represent the value of that integer.
-</pre></div>
-</div>
-</div>
-<div class="section" id="using-a-string-as-a-function-name">
-<h2>Using a string as a function name<a class="headerlink" href="#using-a-string-as-a-function-name" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error96.py&quot;, line 3
-    def &quot;function&quot;():
-                 ^
-SyntaxError: invalid syntax
-
-    The name of a function must be a valid Python identifier,
-    that is a name that begins with a letter or an underscore character, `_`,
-    and which contains only letters, digits or the underscore character.
-    You attempted to use a string as a function name.
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error96.py&#39;
-beyond the location indicated by ^.
-
-   1:
-   2:
---&gt;3: def &quot;function&quot;():
-                   ^
-
-The name of a function must be a valid Python identifier,
-that is a name that begins with a letter or an underscore character, `_`,
-and which contains only letters, digits or the underscore character.
-You attempted to use a string as a function name.
-</pre></div>
-</div>
-</div>
-<div class="section" id="non-identifier-as-a-function-name">
-<h2>Non-identifier as a function name<a class="headerlink" href="#non-identifier-as-a-function-name" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error97.py&quot;, line 3
-    def 2be():
-        ^
-SyntaxError: invalid syntax
-
-    You wrote an invalid function name.
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error97.py&#39;
-beyond the location indicated by ^.
-
-   1:
-   2:
---&gt;3: def 2be():
-          ^
-
-The name of a function must be a valid Python identifier,
-that is a name that begins with a letter or an underscore character, `_`,
-and which contains only letters, digits or the underscore character.
-</pre></div>
-</div>
-</div>
-<div class="section" id="triple-equal-sign">
-<h2>Triple-equal sign<a class="headerlink" href="#triple-equal-sign" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error98.py&quot;, line 3
-    x = y === z
-            ^
-SyntaxError: invalid syntax
-
-    Did you mean to use `is` instead of `===`?
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error98.py&#39;
-beyond the location indicated by ^.
-
-   1:
-   2:
---&gt;3: x = y === z
-              ^
-
-You wrote three equal signs in a row which is allowed in some
-programming languages, but not in Python. To check if two objects
-are equal, use two equal signs, `==`; to see if two names represent
-the exact same object, use the operator `is`.
-</pre></div>
-</div>
-</div>
 <div class="section" id="unterminated-triple-quoted-string">
 <h2>Unterminated triple quoted string<a class="headerlink" href="#unterminated-triple-quoted-string" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
     __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error107.py&quot;, line 4
+  File &quot;TESTS:\syntax\unterminated_triple_quote_string.py&quot;, line 4
     some_text = &quot;&quot;&quot;In a land
 populated by weird animals,
 a ...
@@ -3653,308 +3972,13 @@ SyntaxError: EOF while scanning triple-quoted string literal
 A `SyntaxError` occurs when Python cannot understand your code.
 
 Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error107.py&#39;
+&#39;TESTS:\syntax\unterminated_triple_quote_string.py&#39;
 for an unspecified reason.
 
    1: some_text =
 
 You started writing a triple-quoted string but never wrote
 the triple quotes needed to end the string.
-</pre></div>
-</div>
-</div>
-<div class="section" id="incorrect-use-of-from-module-import-as">
-<h2>Incorrect use of ‘from module import … as …<a class="headerlink" href="#incorrect-use-of-from-module-import-as" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error108.py&quot;, line 2
-    from math import (sin, cos) as funcs
-                                 ^
-SyntaxError: invalid syntax
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error108.py&#39;
-beyond the location indicated by ^.
-
-   1: # issue 158
---&gt;2: from math import (sin, cos) as funcs
-                                   ^
-
-I am guessing that you are trying to import at least one object
-from module `math` and rename it using the Python keyword `as`;
-this keyword can only be used to rename one object at a time
-using a well defined syntax.
-I suggest that you split up any such import statement with each object
-renamed on a separate line as follows:
-
-    from math import object_1 as name_1
-    from math import object_2 as name_2  # if needed
-</pre></div>
-</div>
-</div>
-<div class="section" id="comprehension-with-condition-no-else">
-<h2>Comprehension with condition (no else)<a class="headerlink" href="#comprehension-with-condition-no-else" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error109.py&quot;, line 1
-    a = [f(x) if condition for x in sequence]
-                             ^
-SyntaxError: invalid syntax
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error109.py&#39;
-beyond the location indicated by ^.
-
---&gt;1: a = [f(x) if condition for x in sequence]
-                               ^
-
-I am guessing that you were writing a comprehension or a generator expression
-and use the wrong order for a condition.
-The correct order depends if there is an `else` clause or not.
-For example, the correct order for a list comprehensions with
-condition can be either
-
-    [f(x) if condition else other for x in sequence]  # &#39;if&#39; before &#39;for&#39;
-
-or, if there is no `else`
-
-    [f(x) for x in sequence if condition]  # &#39;if&#39; after &#39;for&#39;
-</pre></div>
-</div>
-</div>
-<div class="section" id="comprehension-with-condition-with-else">
-<h2>Comprehension with condition (with else)<a class="headerlink" href="#comprehension-with-condition-with-else" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error110.py&quot;, line 1
-    a = [f(x) for x in sequence if condition else other]
-                                                ^
-SyntaxError: invalid syntax
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error110.py&#39;
-beyond the location indicated by ^.
-
---&gt;1: a = [f(x) for x in sequence if condition else other]
-                                                  ^
-
-I am guessing that you were writing a comprehension or a generator expression
-and use the wrong order for a condition.
-The correct order depends if there is an `else` clause or not.
-For example, the correct order for a list comprehensions with
-condition can be either
-
-    [f(x) if condition else other for x in sequence]  # &#39;if&#39; before &#39;for&#39;
-
-or, if there is no `else`
-
-    [f(x) for x in sequence if condition]  # &#39;if&#39; after &#39;for&#39;
-</pre></div>
-</div>
-</div>
-<div class="section" id="forgot-o-for-octal">
-<h2>Forgot ‘o’ for octal<a class="headerlink" href="#forgot-o-for-octal" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error111.py&quot;, line 1
-    x = 01
-         ^
-SyntaxError: invalid token
-
-    Did you mean `0o1`?
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error111.py&#39;
-beyond the location indicated by ^.
-
---&gt;1: x = 01
-           ^
-
-Perhaps you meant to write the octal number `0o1`
-and forgot the letter &#39;o&#39;, or perhaps you meant to write
-a decimal integer and did not know that it could not start with zeros.
-</pre></div>
-</div>
-</div>
-<div class="section" id="integer-with-leading-zeros">
-<h2>Integer with leading zeros<a class="headerlink" href="#integer-with-leading-zeros" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error112.py&quot;, line 1
-    x = 000_123_456
-                  ^
-SyntaxError: invalid token
-
-    Did you mean `123_456`?
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error112.py&#39;
-beyond the location indicated by ^.
-
---&gt;1: x = 000_123_456
-                    ^
-
-Perhaps you meant to write the integer `123_456`
-and did not know that it could not start with zeros.
-</pre></div>
-</div>
-</div>
-<div class="section" id="missing-for-tuples-in-comprehension">
-<h2>Missing () for tuples in comprehension<a class="headerlink" href="#missing-for-tuples-in-comprehension" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error113.py&quot;, line 1
-    x = [i, i**2 for i in range(10)]
-                   ^
-SyntaxError: invalid syntax
-
-    Did you forget parentheses?
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error113.py&#39;
-beyond the location indicated by ^.
-
---&gt;1: x = [i, i**2 for i in range(10)]
-                     ^
-
-I am guessing that you were writing a comprehension or a generator expression
-and forgot to include parentheses around tuples.
-As an example, instead of writing
-
-    [i, i**2 for i in range(10)]
-
-you would need to write
-
-    [(i, i**2) for i in range(10)]
-</pre></div>
-</div>
-</div>
-<div class="section" id="binary-f-string-not-allowed">
-<h2>Binary f-string not allowed<a class="headerlink" href="#binary-f-string-not-allowed" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error114.py&quot;, line 1
-    greet = bf&quot;Hello {name}&quot;
-                           ^
-SyntaxError: invalid syntax
-
-    `bf` is an illegal string prefix.
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error114.py&#39;
-beyond the location indicated by ^.
-
---&gt;1: greet = bf&quot;Hello {name}&quot;
-                             ^
-
-I am guessing that you wanted a binary f-string;
-this is not allowed.
-</pre></div>
-</div>
-</div>
-<div class="section" id="parens-around-multiple-exceptions">
-<h2>Parens around multiple exceptions<a class="headerlink" href="#parens-around-multiple-exceptions" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error115.py&quot;, line 3
-    except NameError, ValueError as err:
-                    ^
-SyntaxError: invalid syntax
-
-    Did you forget parentheses?
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error115.py&#39;
-beyond the location indicated by ^.
-
-   1: try:
-   2:     pass
---&gt;3: except NameError, ValueError as err:
-                      ^
-
-I am guessing that you wanted to use an `except` statement
-with multiple exception types. If that is the case, you must
-surround them with parentheses.
-
-If you are using a Friendly console, you might want to
-use the function `www()` which will open a browser at
-a relevant place in the Python documentation.
-</pre></div>
-</div>
-</div>
-<div class="section" id="single-number-used-as-arg-in-function-def">
-<h2>Single number used as arg in function def<a class="headerlink" href="#single-number-used-as-arg-in-function-def" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error116.py&quot;, line 1
-    def f(1):
-          ^
-SyntaxError: invalid syntax
-
-    You cannot use numbers as function arguments.
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error116.py&#39;
-beyond the location indicated by ^.
-
---&gt;1: def f(1):
-            ^
-
-You used a number as an argument when defining a function.
-You can only use identifiers (variable names) as function arguments.
-</pre></div>
-</div>
-</div>
-<div class="section" id="single-string-used-as-arg-in-function-def">
-<h2>Single string used as arg in function def<a class="headerlink" href="#single-string-used-as-arg-in-function-def" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
-    __import__(name)
-  File &quot;TESTS:\syntax\raise_syntax_error119.py&quot;, line 1
-    def f(&quot;1&quot;):
-            ^
-SyntaxError: invalid syntax
-
-    You cannot use strings as function arguments.
-
-A `SyntaxError` occurs when Python cannot understand your code.
-
-Python could not understand the code in the file
-&#39;TESTS:\syntax\raise_syntax_error119.py&#39;
-beyond the location indicated by ^.
-
---&gt;1: def f(&quot;1&quot;):
-              ^
-
-You used a string as an argument when defining a function.
-You can only use identifiers (variable names) as function arguments.
 </pre></div>
 </div>
 </div>

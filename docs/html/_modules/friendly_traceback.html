@@ -87,7 +87,8 @@
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../usage.html">Installation and basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Basic usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../repl.html">Console basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu.html">Using with Mu</a></li>
@@ -475,21 +476,23 @@
     <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">lang</span></div>
 
 
+<span class="k">def</span> <span class="nf">_include_choices</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Prints the available choices for arguments to set_include()&quot;&quot;&quot;</span>
+    <span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="nb">repr</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">formatters</span><span class="o">.</span><span class="n">items_groups</span> <span class="k">if</span> <span class="n">key</span> <span class="o">!=</span> <span class="s2">&quot;header&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="s2">&quot;,</span><span class="se">\n</span><span class="s2">        &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">choices</span><span class="p">)</span>
+
+
 <div class="viewcode-block" id="set_include"><a class="viewcode-back" href="../repl.html#friendly_traceback.set_include">[docs]</a><span class="k">def</span> <span class="nf">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Specifies the information to include in the traceback.</span>
 
-<span class="sd">    Currently allowed values include &quot;explain&quot;, &quot;what&quot;, &quot;where&quot;, &quot;why&quot;,</span>
-<span class="sd">    &quot;hint&quot;, &quot;friendly_tb&quot;, &quot;python_tb&quot;, &quot;debug_tb&quot;.</span>
+<span class="sd">    The allowed values are:</span>
 
-<span class="sd">    The full list of available values is available from the command line::</span>
-
-<span class="sd">        python -m friendly_traceback --show-include</span>
-
-<span class="sd">    or, when using a friendly-console::</span>
-
-<span class="sd">        show_include_choices()</span>
+<span class="sd">        {choices}</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">)</span></div>
+
+
+<span class="n">set_include</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">set_include</span><span class="o">.</span><span class="vm">__doc__</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">choices</span><span class="o">=</span><span class="n">_include_choices</span><span class="p">())</span>
 
 
 <div class="viewcode-block" id="get_include"><a class="viewcode-back" href="../repl.html#friendly_traceback.get_include">[docs]</a><span class="k">def</span> <span class="nf">get_include</span><span class="p">():</span>
@@ -497,12 +500,6 @@
 <span class="sd">    traceback. See ``set_include()`` for details.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get_include</span><span class="p">()</span></div>
-
-
-<div class="viewcode-block" id="show_include_choices"><a class="viewcode-back" href="../repl.html#friendly_traceback.show_include_choices">[docs]</a><span class="k">def</span> <span class="nf">show_include_choices</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Prints the available choices for arguments to set_include()&quot;&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">formatters</span><span class="o">.</span><span class="n">items_groups</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">key</span><span class="p">))</span></div>
 
 
 <div class="viewcode-block" id="set_stream"><a class="viewcode-back" href="../api.html#friendly_traceback.set_stream">[docs]</a><span class="k">def</span> <span class="nf">set_stream</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>

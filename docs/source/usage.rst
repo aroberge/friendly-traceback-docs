@@ -1,66 +1,13 @@
-Installation and basic usage
-=============================
-
-.. hint::
-
-    |mu_logo| If you use Mu, you should skip this and go to :ref:`mu_instructions`.
-
-.. |mu_logo| image:: images/mu_logo.png
-
-
-.. hint::
-
-    |thonny_logo| If you use Thonny, you should skip this and go to :ref:`using_thonny`.
-
-.. |thonny_logo| image:: images/thonny_logo.png
-
-
-Installation
--------------
-
-You can install Friendly-traceback from Pypi in the usual way::
-
-
-    python -m pip install friendly-traceback
-
-
-Suggestions
-~~~~~~~~~~~
-
-If possible, Friendly-traceback makes use of 
-`Rich <https://github.com/willmcgugan/rich>`_.
-
-Note however that some programming environments,
-such as IDLE and other IDEs do not support Rich; this does not
-prevent you from using Friendly-traceback, but the display
-will definitely not look as nice.
-The only editor/IDE capable of **fully** making use of Rich that we know
-of is `Microsoft Visual Studio Code <https://code.visualstudio.com/>`_.
-Pycharm's embedded console, at least on Windows, does not fully
-support Rich. At present, Jupyter notebooks can potentially use
-Rich partially.
-
-If you use Rich on Windows from a terminal,
-we also **very strongly suggest** that you use the new
-`Windows Terminal <https://github.com/microsoft/terminal>`_; this is
-what we have used for various screen captures.
-See :ref:`themes` for screenshot taken with with other terminals
-on Windows.
-
-If you are a Mac or Linux user,
-and use Friendly-traceback with Rich installed,
-we'd gladly accept any screenshot that you could provide so that they
-could be included in this documentation.
-
-
-Usage
------
+Basic usage
+============
 
 There are various ways of using Friendly-traceback.
 We only list here the basic scenarios available from a
 terminal or from within a Python interpreter.
 More options are possible, including running from an editor/IDE
 as described later in this documentation.
+
+To get started, we recommend using **one of the first three** following options.
 
 
 1. Execute a Python program::
@@ -108,9 +55,36 @@ All of the above support additional options allowing one
 to select a different language (only French for now) or
 changing the information that is shown by default.
 
-
 More information about various additional options is
 provided later in this documentation.
 As a shortcut, you can
 also type ``python -m friendly_traceback -h`` in a terminal.
 
+
+Suggestions
+~~~~~~~~~~~
+
+If you use Rich on Windows from a terminal,
+we also **very strongly suggest** that you use the new
+`Windows Terminal <https://github.com/microsoft/terminal>`_; this is
+what we have used for various screen captures.
+See :ref:`themes` for screenshot taken with with other terminals
+on Windows.
+
+If you are a Mac or Linux user,
+and use Friendly-traceback with Rich installed,
+we'd gladly accept any screenshot that you could provide so that they
+could be included in this documentation.
+
+If possible, Friendly-traceback makes use of
+`Rich <https://github.com/willmcgugan/rich>`_ to add colour to its output.
+
+Note however that some programming environments,
+such as IDLE and other IDEs do not support Rich; this does not
+prevent you from using Friendly-traceback, but the display
+will definitely not look as nice.
+The only editor/IDE capable of **fully** making use of Rich that we know
+of is `Microsoft Visual Studio Code <https://code.visualstudio.com/>`_.
+Pycharm's embedded console, at least on Windows, does not fully
+support Rich. Jupyter notebooks and JupyterLab can also use Rich adequately
+when a dark theme is used.

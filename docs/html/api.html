@@ -89,7 +89,8 @@
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Installation and basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
@@ -367,16 +368,21 @@ See formatters.py for details.</p>
 <dt id="friendly_traceback.set_include">
 <code class="sig-name descname">set_include</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback.html#set_include"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.set_include" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the information to include in the traceback.</p>
-<p>Currently allowed values include “explain”, “what”, “where”, “why”,
-“hint”, “friendly_tb”, “python_tb”, “debug_tb”.</p>
-<p>The full list of available values is available from the command line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">friendly_traceback</span> <span class="o">--</span><span class="n">show</span><span class="o">-</span><span class="n">include</span>
-</pre></div>
-</div>
-<p>or, when using a friendly-console:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">show_include_choices</span><span class="p">()</span>
-</pre></div>
-</div>
+<p>The allowed values are:</p>
+<blockquote>
+<div><p>‘message’,
+‘hint’,
+‘generic’,
+‘what’,
+‘why’,
+‘where’,
+‘friendly_tb’,
+‘python_tb’,
+‘debug_tb’,
+‘more’,
+‘explain’,
+‘no_tb’</p>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py function">
@@ -403,12 +409,6 @@ output is saved and can be later retrieved by <code class="docutils literal notr
 <p>Primarily intended to be used when the user changes
 a verbosity level to view the last computed traceback
 in a given language.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.show_include_choices">
-<code class="sig-name descname">show_include_choices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback.html#show_include_choices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.show_include_choices" title="Permalink to this definition">¶</a></dt>
-<dd><p>Prints the available choices for arguments to set_include()</p>
 </dd></dl>
 
 <dl class="py function">

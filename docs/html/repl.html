@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Using with an editor or IDE" href="editor.html" />
-    <link rel="prev" title="Installation and basic usage" href="usage.html" /> 
+    <link rel="prev" title="Basic usage" href="usage.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,7 +89,8 @@
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Installation and basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Console basics</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#what">what()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#why">why()</a></li>
@@ -219,7 +220,7 @@
         <a href="editor.html" class="btn btn-neutral float-right" title="Using with an editor or IDE" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="usage.html" class="btn btn-neutral float-left" title="Installation and basic usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="usage.html" class="btn btn-neutral float-left" title="Basic usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -457,16 +458,21 @@ itself.</p>
 <dt id="friendly_traceback.console_helpers.Friendly.set_include">
 <code class="sig-name descname">set_include</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.set_include" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the information to include in the traceback.</p>
-<p>Currently allowed values include “explain”, “what”, “where”, “why”,
-“hint”, “friendly_tb”, “python_tb”, “debug_tb”.</p>
-<p>The full list of available values is available from the command line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">friendly_traceback</span> <span class="o">--</span><span class="n">show</span><span class="o">-</span><span class="n">include</span>
-</pre></div>
-</div>
-<p>or, when using a friendly-console:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">show_include_choices</span><span class="p">()</span>
-</pre></div>
-</div>
+<p>The allowed values are:</p>
+<blockquote>
+<div><p>‘message’,
+‘hint’,
+‘generic’,
+‘what’,
+‘why’,
+‘where’,
+‘friendly_tb’,
+‘python_tb’,
+‘debug_tb’,
+‘more’,
+‘explain’,
+‘no_tb’</p>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -475,12 +481,6 @@ itself.</p>
 <dd><p>Sets the language to be used for the display.</p>
 <p>If no translations exist for that language, the original
 English strings will be used.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.show_include_choices">
-<code class="sig-name descname">show_include_choices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.show_include_choices" title="Permalink to this definition">¶</a></dt>
-<dd><p>Prints the available choices for arguments to set_include()</p>
 </dd></dl>
 
 <dl class="py method">
@@ -625,16 +625,21 @@ itself.</p>
 <dt id="friendly_traceback.console_helpers.set_include">
 <code class="sig-name descname">set_include</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback.html#set_include"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.set_include" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the information to include in the traceback.</p>
-<p>Currently allowed values include “explain”, “what”, “where”, “why”,
-“hint”, “friendly_tb”, “python_tb”, “debug_tb”.</p>
-<p>The full list of available values is available from the command line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">friendly_traceback</span> <span class="o">--</span><span class="n">show</span><span class="o">-</span><span class="n">include</span>
-</pre></div>
-</div>
-<p>or, when using a friendly-console:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">show_include_choices</span><span class="p">()</span>
-</pre></div>
-</div>
+<p>The allowed values are:</p>
+<blockquote>
+<div><p>‘message’,
+‘hint’,
+‘generic’,
+‘what’,
+‘why’,
+‘where’,
+‘friendly_tb’,
+‘python_tb’,
+‘debug_tb’,
+‘more’,
+‘explain’,
+‘no_tb’</p>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py function">
@@ -643,12 +648,6 @@ itself.</p>
 <dd><p>Sets the language to be used for the display.</p>
 <p>If no translations exist for that language, the original
 English strings will be used.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.show_include_choices">
-<code class="sig-name descname">show_include_choices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback.html#show_include_choices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.show_include_choices" title="Permalink to this definition">¶</a></dt>
-<dd><p>Prints the available choices for arguments to set_include()</p>
 </dd></dl>
 
 <dl class="py function">
@@ -736,7 +735,7 @@ Friendly-traceback documentation will open</p></li>
         <a href="editor.html" class="btn btn-neutral float-right" title="Using with an editor or IDE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="usage.html" class="btn btn-neutral float-left" title="Installation and basic usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="usage.html" class="btn btn-neutral float-left" title="Basic usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

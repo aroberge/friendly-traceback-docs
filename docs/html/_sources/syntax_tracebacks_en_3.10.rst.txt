@@ -82,6 +82,41 @@ Annotated name cannot be global
     as a local variable. It cannot be declared to be a global variable.
     
 
+Incorrect use of 'from module import ... as ...
+-----------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\as_instead_of_comma_in_import.py", line 2
+        from math import (sin, cos) as funcs
+                                    ^
+    SyntaxError: invalid syntax
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\as_instead_of_comma_in_import.py'
+    beyond the location indicated by ^.
+    
+       1: # issue 158
+    -->2: from math import (sin, cos) as funcs
+                                      ^
+
+    I am guessing that you are trying to import at least one object
+    from module `math` and rename it using the Python keyword `as`;
+    this keyword can only be used to rename one object at a time
+    using a well defined syntax.
+    I suggest that you split up any such import statement with each object
+    renamed on a separate line as follows:
+    
+        from math import object_1 as name_1
+        from math import object_2 as name_2  # if needed
+    
+
 Name assigned prior to global declaration
 -----------------------------------------
 
@@ -795,6 +830,174 @@ break outside loop
     The Python keyword `break` can only be used inside a `for` loop or inside a `while` loop.
     
 
+Cannot use star operator
+------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\cannot_use_star.py", line 3
+        *a
+        ^
+    SyntaxError: can't use starred expression here
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\cannot_use_star.py'
+    beyond the location indicated by ^.
+    
+       1: """Should raise SyntaxError: can't use starred expression here"""
+       2: 
+    -->3: *a
+          ^
+
+    The star operator `*` is interpreted to mean that
+    iterable unpacking is to be used to assign a name
+    to each item of an iterable, which does not make sense here.
+    
+
+Cannot use double star operator
+-------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\cannot_use_double_star.py", line 4
+        (**k)
+         ^
+    SyntaxError: f-string: invalid syntax
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\cannot_use_double_star.py'
+    beyond the location indicated by ^.
+    
+    -->1: (**k)
+           ^
+
+    The double star operator `**` is likely interpreted to mean that
+    dict unpacking is to be used which does not make sense here.
+    
+
+Missing () for tuples in comprehension
+--------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\comprehension_missing_tuple_paren.py", line 1
+        x = [i, i**2 for i in range(10)]
+             ^
+    SyntaxError: did you forget parentheses around the comprehension target?
+    
+        Did you forget parentheses?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\comprehension_missing_tuple_paren.py'
+    beyond the location indicated by ^.
+    
+    -->1: x = [i, i**2 for i in range(10)]
+               ^
+
+    I am guessing that you were writing a comprehension or a generator expression
+    and forgot to include parentheses around tuples.
+    As an example, instead of writing
+    
+        [i, i**2 for i in range(10)]
+    
+    you would need to write
+    
+        [(i, i**2) for i in range(10)]
+    
+    
+
+Comprehension with condition (no else)
+--------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\comprehension_with_condition_no_else.py", line 1
+        a = [f(x) if condition for x in sequence]
+                               ^
+    SyntaxError: invalid syntax
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\comprehension_with_condition_no_else.py'
+    beyond the location indicated by ^.
+    
+    -->1: a = [f(x) if condition for x in sequence]
+                                 ^
+
+    I am guessing that you were writing a comprehension or a generator expression
+    and use the wrong order for a condition.
+    The correct order depends if there is an `else` clause or not.
+    For example, the correct order for a list comprehensions with
+    condition can be either
+    
+        [f(x) if condition else other for x in sequence]  # 'if' before 'for'
+    
+    or, if there is no `else`
+    
+        [f(x) for x in sequence if condition]  # 'if' after 'for'
+    
+    
+
+Comprehension with condition (with else)
+----------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\comprehension_with_condition_with_else.py", line 1
+        a = [f(x) for x in sequence if condition else other]
+                                                 ^
+    SyntaxError: invalid syntax
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\comprehension_with_condition_with_else.py'
+    beyond the location indicated by ^.
+    
+    -->1: a = [f(x) for x in sequence if condition else other]
+                                                   ^
+
+    I am guessing that you were writing a comprehension or a generator expression
+    and use the wrong order for a condition.
+    The correct order depends if there is an `else` clause or not.
+    For example, the correct order for a list comprehensions with
+    condition can be either
+    
+        [f(x) if condition else other for x in sequence]  # 'if' before 'for'
+    
+    or, if there is no `else`
+    
+        [f(x) for x in sequence if condition]  # 'if' after 'for'
+    
+    
+
 continue outside loop
 ---------------------
 
@@ -852,6 +1055,39 @@ Copy/paste from interpreter
 
     It looks like you copy-pasted code from an interactive interpreter.
     The Python prompt, `>>>`, should not be included in your code.
+    
+
+Named arguments must follow bare *
+----------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_bare_star_arg.py", line 4
+        def f(*):
+               ^
+    SyntaxError: named arguments must follow bare *
+    
+        Did you forget something after `*`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\def_bare_star_arg.py'
+    beyond the location indicated by ^.
+    
+       1: # SyntaxError: named arguments must follow bare *
+       2: 
+       3: 
+    -->4: def f(*):
+                 ^
+
+    Assuming you were defining a function, you need
+    to replace `*` by either `*arguments` or
+    by `*, named_argument=value`.
     
 
 def: misused as code block
@@ -915,6 +1151,74 @@ def: Keyword arg only once in function definition
     
         aa
     twice; each keyword argument should appear only once in a function definition.
+    
+
+Non-identifier as a function name
+---------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_function_name_invalid.py", line 3
+        def 2be():
+            ^
+    SyntaxError: invalid syntax
+    
+        You wrote an invalid function name.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\def_function_name_invalid.py'
+    beyond the location indicated by ^.
+    
+       1: 
+       2: 
+    -->3: def 2be():
+              ^
+
+    The name of a function must be a valid Python identifier,
+    that is a name that begins with a letter or an underscore character, `_`,
+    and which contains only letters, digits or the underscore character.
+    
+
+Using a string as a function name
+---------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_function_name_string.py", line 3
+        def "function"():
+            ^
+    SyntaxError: invalid syntax
+    
+        The name of a function must be a valid Python identifier,
+        that is a name that begins with a letter or an underscore character, `_`,
+        and which contains only letters, digits or the underscore character.
+        You attempted to use a string as a function name.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\def_function_name_string.py'
+    beyond the location indicated by ^.
+    
+       1: 
+       2: 
+    -->3: def "function"():
+              ^
+
+    The name of a function must be a valid Python identifier,
+    that is a name that begins with a letter or an underscore character, `_`,
+    and which contains only letters, digits or the underscore character.
+    You attempted to use a string as a function name.
     
 
 def: keyword cannot be argument in def - 1
@@ -1258,6 +1562,35 @@ def: non-default argument follows default argument
     According to Python, you used positional arguments after keyword ones.
     
 
+Single number used as arg in function def
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_number_as_arg.py", line 1
+        def f(1):
+              ^
+    SyntaxError: invalid syntax
+    
+        You cannot use numbers as function arguments.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\def_number_as_arg.py'
+    beyond the location indicated by ^.
+    
+    -->1: def f(1):
+                ^
+
+    You used a number as an argument when defining a function.
+    You can only use identifiers (variable names) as function arguments.
+    
+
 def: positional argument follows keyword argument
 -------------------------------------------------
 
@@ -1299,6 +1632,35 @@ def: positional argument follows keyword argument
     
     but with the keyword arguments appearing after all the positional ones.
     According to Python, you used positional arguments after keyword ones.
+    
+
+Single string used as arg in function def
+-----------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_string_as_arg.py", line 1
+        def f("1"):
+              ^
+    SyntaxError: invalid syntax
+    
+        You cannot use strings as function arguments.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\def_string_as_arg.py'
+    beyond the location indicated by ^.
+    
+    -->1: def f("1"):
+                ^
+
+    You used a string as an argument when defining a function.
+    You can only use identifiers (variable names) as function arguments.
     
 
 def: tuple as function argument
@@ -1619,6 +1981,79 @@ Used equal sign instead of colon
     before or at the position indicated by ^.
     
 
+Parens around multiple exceptions
+---------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\except_multiple_exceptions.py", line 3
+        except NameError, ValueError as err:
+                        ^
+    SyntaxError: expected ':'
+    
+        Did you forget parentheses?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\except_multiple_exceptions.py'
+    beyond the location indicated by ^.
+    
+       1: try:
+       2:     pass
+    -->3: except NameError, ValueError as err:
+                          ^
+
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        expected ':'
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    I am guessing that you wanted to use an `except` statement
+    with multiple exception types. If that is the case, you must
+    surround them with parentheses.
+    
+    If you are using a Friendly console, you might want to
+    use the function `www()` which will open a browser at
+    a relevant place in the Python documentation.
+    
+
+Binary f-string not allowed
+---------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\f_string_binary.py", line 1
+        greet = bf"Hello {name}"
+                  ^
+    SyntaxError: invalid syntax
+    
+        `bf` is an illegal string prefix.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\f_string_binary.py'
+    beyond the location indicated by ^.
+    
+    -->1: greet = bf"Hello {name}"
+                    ^
+
+    I am guessing that you wanted a binary f-string;
+    this is not allowed.
+    
+
 f-string: unterminated string
 -----------------------------
 
@@ -1689,6 +2124,168 @@ f-string with backslash
         f"{... hello ...}"
     
 
+Not a chance!
+-------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\future_braces.py", line 1
+        from __future__ import braces
+        ^
+    SyntaxError: not a chance
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\future_braces.py'
+    beyond the location indicated by ^.
+    
+    -->1: from __future__ import braces
+          ^
+
+    I suspect you wrote `from __future__ import braces` following
+    someone else's suggestion. This will never work.
+    
+    Unlike other programming languages, Python's code block are defined by
+    their indentation level, and not by using some curly braces, like `{...}`.
+    
+
+Do not import * from __future__
+-------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\future_import_star.py", line 1
+        from __future__ import *
+        ^
+    SyntaxError: future feature * is not defined
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\future_import_star.py'
+    beyond the location indicated by ^.
+    
+    -->1: from __future__ import *
+          ^
+
+    When using a `from __future__ import` statement,
+    you must import specific named features.
+    
+    The available features are `nested_scopes,
+     generators,
+     division,
+     absolute_import,
+     with_statement,
+     print_function,
+     unicode_literals,
+     barry_as_FLUFL,
+     generator_stop,
+     annotations`.
+    
+
+__future__ at beginning
+-----------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\future_must_be_first.py", line 3
+        from __future__ import generators
+        ^
+    SyntaxError: from __future__ imports must occur at the beginning of the file
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\future_must_be_first.py'
+    beyond the location indicated by ^.
+    
+       1: 
+       2: def fn():
+    -->3:     from __future__ import generators
+              ^
+
+    A `from __future__ import` statement changes the way Python
+    interprets the code in a file.
+    It must appear at the beginning of the file.
+
+Typo in __future__
+------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\future_typo.py", line 1
+        from __future__ import divisio
+        ^
+    SyntaxError: future feature divisio is not defined
+    
+        Did you mean `division`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\future_typo.py'
+    beyond the location indicated by ^.
+    
+    -->1: from __future__ import divisio
+          ^
+
+    Instead of `divisio`, perhaps you meant to import `division`.
+    
+
+Unknown feature in __future__
+-----------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\future_unknown.py", line 1
+        from __future__ import something
+        ^
+    SyntaxError: future feature something is not defined
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\future_unknown.py'
+    beyond the location indicated by ^.
+    
+    -->1: from __future__ import something
+          ^
+
+    `something` is not a valid feature of module `__future__`.
+    
+    The available features are `nested_scopes,
+     generators,
+     division,
+     absolute_import,
+     with_statement,
+     print_function,
+     unicode_literals,
+     barry_as_FLUFL,
+     generator_stop,
+     annotations`.
+    
+
 Parenthesis around generator expression
 ---------------------------------------
 
@@ -1717,8 +2314,79 @@ Parenthesis around generator expression
             ^
 
     You are using a generator expression, something of the form
-        `x for x in thing`
+    
+        x for x in thing
+    
     You must add parentheses enclosing that expression.
+    
+
+Space between names
+-------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\hyphen_instead_of_underscore.py", line 4
+        a-b = 2
+        ^
+    SyntaxError: cannot assign to operator
+    
+        Did you mean `a_b`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\hyphen_instead_of_underscore.py'
+    beyond the location indicated by ^.
+    
+       1: """Should raise SyntaxError: can't assign to operator
+       2: or (Python 3.8) cannot assign to operator"""
+       3: 
+    -->4: a-b = 2
+          ^
+
+    You wrote an expression that includes some mathematical operations
+    on the left-hand side of the equal sign which should be
+    only used to assign a value to a variable.
+    Perhaps you meant to write `a_b` instead of `a-b`
+    
+
+use j instead of i
+------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\imaginary_i.py", line 3
+        a = 3.0i
+               ^
+    SyntaxError: invalid syntax
+    
+        Did you mean `3.0j`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\imaginary_i.py'
+    beyond the location indicated by ^.
+    
+       1: # SyntaxError: invalid syntax
+       2: 
+    -->3: a = 3.0i
+                 ^
+
+    Valid names cannot begin with a number.
+    Perhaps you thought that `i` could be used to represent
+    the square root of `-1`. In Python, the symbol used for this is `j`
+    and the complex part is written as `some_number` immediately
+    followed by `j`, with no spaces in between.
+    Perhaps you meant to write `3.0j`.
     
 
 Import inversion: import X from Y
@@ -1887,6 +2555,65 @@ IndentationError: missing continuation line
     at the end of line 5.
     
 
+Forgot 'o' for octal
+--------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\integer_with_leading_zero_1.py", line 1
+        x = 01
+             ^
+    SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+    
+        Did you mean `0o1`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\integer_with_leading_zero_1.py'
+    beyond the location indicated by ^.
+    
+    -->1: x = 01
+               ^
+
+    Perhaps you meant to write the octal number `0o1`
+    and forgot the letter 'o', or perhaps you meant to write
+    a decimal integer and did not know that it could not start with zeros.
+    
+
+Integer with leading zeros
+--------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\integer_with_leading_zero_2.py", line 1
+        x = 000_123_456
+                      ^
+    SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+    
+        Did you mean `123_456`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\integer_with_leading_zero_2.py'
+    beyond the location indicated by ^.
+    
+    -->1: x = 000_123_456
+                        ^
+
+    Perhaps you meant to write the integer `123_456`
+    and did not know that it could not start with zeros.
+    
+
 Invalid character in identifier
 -------------------------------
 
@@ -1919,6 +2646,104 @@ Invalid character in identifier
     which is not allowed.
     
 
+Invalid hexadecimal number
+--------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\invalid_hexadecimal.py", line 3
+        a = 0x123g4
+                 ^
+    SyntaxError: invalid syntax
+    
+        Did you made a mistake in writing an hexadecimal integer?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\invalid_hexadecimal.py'
+    beyond the location indicated by ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: a = 0x123g4
+                   ^
+
+    It looks like you used an invalid character (`g`) in an hexadecimal number.
+    
+    Hexadecimal numbers are base 16 integers that use the symbols `0` to `9`
+    to represent values 0 to 9, and the letters `a` to `f` (or `A` to `F`)
+    to represent values 10 to 15.
+    In Python, hexadecimal numbers start with either `0x` or `0X`,
+    followed by the characters used to represent the value of that integer.
+    
+
+Valid names cannot begin with a number
+--------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\invalid_identifier.py", line 3
+        36abc = 3
+          ^
+    SyntaxError: invalid syntax
+    
+        Valid names cannot begin with a number.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\invalid_identifier.py'
+    beyond the location indicated by ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: 36abc = 3
+            ^
+
+    Valid names cannot begin with a number.
+    
+
+Forgot a multiplication operator
+--------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\invalid_identifier_2.py", line 3
+        tau = 2pi
+               ^
+    SyntaxError: invalid syntax
+    
+        Perhaps you forgot a multiplication operator, `2 * pi`.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\invalid_identifier_2.py'
+    beyond the location indicated by ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: tau = 2pi
+                 ^
+
+    Valid names cannot begin with a number.
+    Perhaps you forgot a multiplication operator, `2 * pi`.
+    
+    
+
 Keyword can't be an expression
 ------------------------------
 
@@ -1949,17 +2774,51 @@ Keyword can't be an expression
                         ^
 
     One of the following two possibilities could be the cause:
+    1. You meant to do a comparison with == and wrote = instead.
+    2. You called a function with a named argument:
     
-    (1) You meant to do a comparison with == and wrote = instead.
-    
-    (2) You called a function with a named argument:
-    
-        a_function(invalid=...)
+            a_function(invalid=...)
     
     where `invalid` is not a valid identifier (variable name) in Python
     either because it starts with a number, or is a string,
     or contains a period, etc.
     
+    
+
+Invalid octal number
+--------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\invalid_octal.py", line 3
+        b = 0O1876
+               ^
+    SyntaxError: invalid digit '8' in octal literal
+    
+        Did you made a mistake in writing an octal integer?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\invalid_octal.py'
+    beyond the location indicated by ^.
+    
+       1: 
+       2: 
+    -->3: b = 0O1876
+                 ^
+
+    It looks like you used an invalid character (`8`) in an octal number.
+    
+    Octal numbers are base 8 integers that only use the symbols `0` to `7`
+    to represent values.
+    In Python, hexadecimal numbers start with either `0o` or `0O`,
+    (the digit zero followed by the letter `o`)
+    followed by the characters used to represent the value of that integer.
     
 
 Keyword arg only once in function call
@@ -2225,7 +3084,10 @@ Missing comma in a dict
     before the position indicated by ^.
     Perhaps you meant
     
-        a = {'a': 1, 'b': 2, 'c': 3,}
+        a = {'a': 1,
+     'b': 2,
+     'c': 3,
+    }
     
 
 Missing comma in a tuple
@@ -2579,6 +3441,222 @@ Raising multiple exceptions
     It looks like you are trying to raise an exception using Python 2 syntax.
     
 
+Cannot use return outside function
+----------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\return_outside_function.py", line 3
+        return
+        ^
+    SyntaxError: 'return' outside function
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\return_outside_function.py'
+    beyond the location indicated by ^.
+    
+       1: """Should raise SyntaxError: 'return' outside function"""
+       2: 
+    -->3: return
+          ^
+
+    You can only use a `return` statement inside a function or method.
+    
+
+Single = instead of double == with if
+-------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\single_equal_with_if.py", line 3
+        if i % 2 = 0:
+                 ^
+    SyntaxError: expected ':'
+    
+        Perhaps you needed `==` or `:=` instead of `=`.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\single_equal_with_if.py'
+    beyond the location indicated by ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: for i in range(101):
+    -->3:     if i % 2 = 0:
+                       ^
+
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        expected ':'
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    You used an assignment operator `=`; perhaps you meant to use 
+    an equality operator, `==`, or the walrus operator `:=`.
+    
+
+Single = instead of double == with elif
+---------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\single_equal_with_elif.py", line 5
+        elif i % 2 = 0:
+                   ^
+    SyntaxError: expected ':'
+    
+        Perhaps you needed `==` or `:=` instead of `=`.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\single_equal_with_elif.py'
+    beyond the location indicated by ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: for i in range(101):
+       3:     if False:
+       4:         pass
+    -->5:     elif i % 2 = 0:
+                         ^
+
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        expected ':'
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    You used an assignment operator `=`; perhaps you meant to use 
+    an equality operator, `==`, or the walrus operator `:=`.
+    
+
+Single = instead of double == with while
+----------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\single_equal_with_while.py", line 4
+        while a = 1:
+                ^
+    SyntaxError: expected ':'
+    
+        Perhaps you needed `==` or `:=` instead of `=`.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\single_equal_with_while.py'
+    beyond the location indicated by ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: a = 1
+       3: 
+    -->4: while a = 1:
+                  ^
+
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        expected ':'
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    You used an assignment operator `=`; perhaps you meant to use 
+    an equality operator, `==`, or the walrus operator `:=`.
+    
+
+Too many nested blocks
+----------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\too_many_nested_blocks.py", line 22
+        while 22:
+        ^
+    SyntaxError: too many statically nested blocks
+    
+        Seriously?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\too_many_nested_blocks.py'
+    beyond the location indicated by ^.
+    
+       18:                  while 18:
+       19:                   while 19:
+       20:                    while 20:
+       21:                     while 21:
+    -->22:                      while 22:
+                                ^
+
+    You cannot be serious!
+    
+    In case this is a mistake in a real program, please
+    consider reducing the number of nested code blocks.
+    
+
+Triple-equal sign
+-----------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\triple_equal.py", line 3
+        x = y === z
+                ^
+    SyntaxError: invalid syntax
+    
+        Did you mean to use `is` instead of `===`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\triple_equal.py'
+    beyond the location indicated by ^.
+    
+       1: 
+       2: 
+    -->3: x = y === z
+                  ^
+
+    You wrote three equal signs in a row which is allowed in some
+    programming languages, but not in Python. To check if two objects
+    are equal, use two equal signs, `==`; to see if two names represent
+    the exact same object, use the operator `is`.
+    
+
 Unclosed parenthesis - 1
 ------------------------
 
@@ -2656,6 +3734,39 @@ Unclosed parenthesis - 2
                ^
     
 
+Unclosed parenthesis - 3
+------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\unclosed_paren_3.py", line 7
+        if 2:
+            ^
+    SyntaxError: invalid syntax
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\unclosed_paren_3.py'
+    beyond the location indicated by ^.
+    
+       3: if 3:
+       4:     if 1:
+       5:         print(((123))
+       6: 
+    -->7: if 2:
+              ^
+
+    The opening parenthesis `(` on line 5 is not closed.
+    
+        5:         print(((123))
+                        ^
+    
+
 Content passed continuation line character
 ------------------------------------------
 
@@ -2726,6 +3837,40 @@ Unexpected EOF while parsing
     
         5:     return [1, 2, 3,
                       ^
+    
+
+Invalid character (unicode quote)
+---------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\unicode_quote.py", line 3
+        a = « hello »
+            ^
+    SyntaxError: invalid character '«' (U+00AB)
+    
+        Did you mean to use a normal quote character, `'` or `"`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\unicode_quote.py'
+    beyond the location indicated by ^.
+    
+       1: """Should raise SyntaxError: invalid character in identifier for Python <=3.8
+       2:    and  SyntaxError: invalid character '«' (U+00AB) in Python 3.9"""
+    -->3: a = « hello »
+              ^
+
+    Did you use copy-paste?
+    Python indicates that you used the unicode character `«`
+    which is not allowed.
+    I suspect that you used a fancy unicode quotation mark
+    instead of a normal single or double quote for a string.
     
 
 Unmatched closing parenthesis
@@ -2833,794 +3978,6 @@ Mismatched brackets - 2
                  ^
     
 
-Invalid character (bad quote)
------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error75.py", line 3
-        a = « hello »
-            ^
-    SyntaxError: invalid character '«' (U+00AB)
-    
-        Did you mean to use a normal quote character, `'` or `"`?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error75.py'
-    beyond the location indicated by ^.
-    
-       1: """Should raise SyntaxError: invalid character in identifier for Python <=3.8
-       2:    and  SyntaxError: invalid character '«' (U+00AB) in Python 3.9"""
-    -->3: a = « hello »
-              ^
-
-    Did you use copy-paste?
-    Python indicates that you used the unicode character `«`
-    which is not allowed.
-    I suspect that you used a fancy unicode quotation mark
-    instead of a normal single or double quote for a string.
-    
-
-Single = instead of double == with if
--------------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error76.py", line 3
-        if i % 2 = 0:
-                 ^
-    SyntaxError: expected ':'
-    
-        Perhaps you needed `==` or `:=` instead of `=`.
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error76.py'
-    beyond the location indicated by ^.
-    
-       1: """Should raise SyntaxError: invalid syntax"""
-       2: for i in range(101):
-    -->3:     if i % 2 = 0:
-                       ^
-
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        expected ':'
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
-    You used an assignment operator `=`; perhaps you meant to use 
-    an equality operator, `==`, or the walrus operator `:=`.
-    
-
-Single = instead of double == with elif
----------------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error77.py", line 5
-        elif i % 2 = 0:
-                   ^
-    SyntaxError: expected ':'
-    
-        Perhaps you needed `==` or `:=` instead of `=`.
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error77.py'
-    beyond the location indicated by ^.
-    
-       1: """Should raise SyntaxError: invalid syntax"""
-       2: for i in range(101):
-       3:     if False:
-       4:         pass
-    -->5:     elif i % 2 = 0:
-                         ^
-
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        expected ':'
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
-    You used an assignment operator `=`; perhaps you meant to use 
-    an equality operator, `==`, or the walrus operator `:=`.
-    
-
-Single = instead of double == with while
-----------------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error78.py", line 4
-        while a = 1:
-                ^
-    SyntaxError: expected ':'
-    
-        Perhaps you needed `==` or `:=` instead of `=`.
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error78.py'
-    beyond the location indicated by ^.
-    
-       1: """Should raise SyntaxError: invalid syntax"""
-       2: a = 1
-       3: 
-    -->4: while a = 1:
-                  ^
-
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        expected ':'
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
-    You used an assignment operator `=`; perhaps you meant to use 
-    an equality operator, `==`, or the walrus operator `:=`.
-    
-
-Invalid hexadecimal number
---------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error79.py", line 3
-        a = 0x123g4
-                 ^
-    SyntaxError: invalid syntax
-    
-        Did you made a mistake in writing an hexadecimal integer?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error79.py'
-    beyond the location indicated by ^.
-    
-       1: """Should raise SyntaxError: invalid syntax"""
-       2: 
-    -->3: a = 0x123g4
-                   ^
-
-    It looks like you used an invalid character (`g`) in an hexadecimal number.
-    
-    Hexadecimal numbers are base 16 integers that use the symbols `0` to `9`
-    to represent values 0 to 9, and the letters `a` to `f` (or `A` to `F`)
-    to represent values 10 to 15.
-    In Python, hexadecimal numbers start with either `0x` or `0X`,
-    followed by the characters used to represent the value of that integer.
-    
-
-Valid names cannot begin with a number
---------------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error80.py", line 3
-        36abc = 3
-          ^
-    SyntaxError: invalid syntax
-    
-        Valid names cannot begin with a number.
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error80.py'
-    beyond the location indicated by ^.
-    
-       1: """Should raise SyntaxError: invalid syntax"""
-       2: 
-    -->3: 36abc = 3
-            ^
-
-    Valid names cannot begin with a number.
-    
-
-Unclosed parenthesis - 3
-------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error81.py", line 7
-        if 2:
-            ^
-    SyntaxError: invalid syntax
-    
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error81.py'
-    beyond the location indicated by ^.
-    
-       3: if 3:
-       4:     if 1:
-       5:         print(((123))
-       6: 
-    -->7: if 2:
-              ^
-
-    The opening parenthesis `(` on line 5 is not closed.
-    
-        5:         print(((123))
-                        ^
-    
-
-Forgot a multiplication operator
---------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error82.py", line 3
-        tau = 2pi
-               ^
-    SyntaxError: invalid syntax
-    
-        Perhaps you forgot a multiplication operator, `2 * pi`.
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error82.py'
-    beyond the location indicated by ^.
-    
-       1: """Should raise SyntaxError: invalid syntax"""
-       2: 
-    -->3: tau = 2pi
-                 ^
-
-    Valid names cannot begin with a number.
-    Perhaps you forgot a multiplication operator, `2 * pi`.
-    
-    
-
-Space between names
--------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error83.py", line 4
-        a-b = 2
-        ^
-    SyntaxError: cannot assign to operator
-    
-        Did you mean `a_b`?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error83.py'
-    beyond the location indicated by ^.
-    
-       1: """Should raise SyntaxError: can't assign to operator
-       2: or (Python 3.8) cannot assign to operator"""
-       3: 
-    -->4: a-b = 2
-          ^
-
-    You wrote an expression that includes some mathematical operations
-    on the left-hand side of the equal sign which should be
-    only used to assign a value to a variable.
-    Perhaps you meant to write `a_b` instead of `a-b`
-    
-
-Cannot use star operator
-------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error84.py", line 3
-        *a
-        ^
-    SyntaxError: can't use starred expression here
-    
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error84.py'
-    beyond the location indicated by ^.
-    
-       1: """Should raise SyntaxError: can't use starred expression here"""
-       2: 
-    -->3: *a
-          ^
-
-    The star operator `*` is interpreted to mean that
-    iterable unpacking is to be used to assign a name
-    to each item of an iterable, which does not make sense here.
-    
-
-Cannot use double star operator
--------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error85.py", line 4
-        (**k)
-         ^
-    SyntaxError: f-string: invalid syntax
-    
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error85.py'
-    beyond the location indicated by ^.
-    
-    -->1: (**k)
-           ^
-
-    The double star operator `**` is likely interpreted to mean that
-    dict unpacking is to be used which does not make sense here.
-    
-
-Cannot use return outside function
-----------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error86.py", line 3
-        return
-        ^
-    SyntaxError: 'return' outside function
-    
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error86.py'
-    beyond the location indicated by ^.
-    
-       1: """Should raise SyntaxError: 'return' outside function"""
-       2: 
-    -->3: return
-          ^
-
-    You can only use a `return` statement inside a function or method.
-    
-
-Too many nested blocks
-----------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error87.py", line 22
-        while 22:
-        ^
-    SyntaxError: too many statically nested blocks
-    
-        Seriously?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error87.py'
-    beyond the location indicated by ^.
-    
-       18:                  while 18:
-       19:                   while 19:
-       20:                    while 20:
-       21:                     while 21:
-    -->22:                      while 22:
-                                ^
-
-    You cannot be serious!
-    
-    In case this is a mistake in a real program, please
-    consider reducing the number of nested code blocks.
-    
-
-Named arguments must follow bare *
-----------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error88.py", line 4
-        def f(*):
-               ^
-    SyntaxError: named arguments must follow bare *
-    
-        Did you forget something after `*`?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error88.py'
-    beyond the location indicated by ^.
-    
-       1: # SyntaxError: named arguments must follow bare *
-       2: 
-       3: 
-    -->4: def f(*):
-                 ^
-
-    Assuming you were defining a function, you need
-    to replace `*` by either `*arguments` or
-    by `*, named_argument=value`.
-    
-
-use j instead of i
-------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error89.py", line 3
-        a = 3.0i
-               ^
-    SyntaxError: invalid syntax
-    
-        Did you mean `3.0j`?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error89.py'
-    beyond the location indicated by ^.
-    
-       1: # SyntaxError: invalid syntax
-       2: 
-    -->3: a = 3.0i
-                 ^
-
-    Valid names cannot begin with a number.
-    Perhaps you thought that `i` could be used to represent
-    the square root of `-1`. In Python, the symbol used for this is `j`
-    and the complex part is written as `some_number` immediately
-    followed by `j`, with no spaces in between.
-    Perhaps you meant to write `3.0j`.
-    
-
-Do not import * from __future__
--------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error90.py", line 1
-        from __future__ import *
-        ^
-    SyntaxError: future feature * is not defined
-    
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error90.py'
-    beyond the location indicated by ^.
-    
-    -->1: from __future__ import *
-          ^
-
-    When using a `from __future__ import` statement,
-    you must import specific named features.
-    
-    The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
-    
-
-Typo in __future__
-------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error91.py", line 1
-        from __future__ import divisio
-        ^
-    SyntaxError: future feature divisio is not defined
-    
-        Did you mean `division`?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error91.py'
-    beyond the location indicated by ^.
-    
-    -->1: from __future__ import divisio
-          ^
-
-    Instead of `divisio`, perhaps you meant to import `division`.
-    
-
-Unknown feature in __future__
------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error92.py", line 1
-        from __future__ import something
-        ^
-    SyntaxError: future feature something is not defined
-    
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error92.py'
-    beyond the location indicated by ^.
-    
-    -->1: from __future__ import something
-          ^
-
-    `something` is not a valid feature of module `__future__`.
-    
-    The available features are `nested_scopes, generators, division, absolute_import, with_statement, print_function, unicode_literals, barry_as_FLUFL, generator_stop, annotations`.
-    
-
-Not a chance!
--------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error93.py", line 1
-        from __future__ import braces
-        ^
-    SyntaxError: not a chance
-    
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error93.py'
-    beyond the location indicated by ^.
-    
-    -->1: from __future__ import braces
-          ^
-
-    I suspect you wrote `from __future__ import braces` following
-    someone else's suggestion. This will never work.
-    
-    Unlike other programming languages, Python's code block are defined by
-    their indentation level, and not by using some curly braces, like `{...}`.
-    
-
-__future__ at beginning
------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error94.py", line 3
-        from __future__ import generators
-        ^
-    SyntaxError: from __future__ imports must occur at the beginning of the file
-    
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error94.py'
-    beyond the location indicated by ^.
-    
-       1: 
-       2: def fn():
-    -->3:     from __future__ import generators
-              ^
-
-    A `from __future__ import` statement changes the way Python
-    interprets the code in a file.
-    It must appear at the beginning of the file.
-
-Invalid octal number
---------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error95.py", line 3
-        b = 0O1876
-               ^
-    SyntaxError: invalid digit '8' in octal literal
-    
-        Did you made a mistake in writing an octal integer?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error95.py'
-    beyond the location indicated by ^.
-    
-       1: 
-       2: 
-    -->3: b = 0O1876
-                 ^
-
-    It looks like you used an invalid character (`8`) in an octal number.
-    
-    Octal numbers are base 8 integers that only use the symbols `0` to `7`
-    to represent values.
-    In Python, hexadecimal numbers start with either `0o` or `0O`,
-    (the digit zero followed by the letter `o`)
-    followed by the characters used to represent the value of that integer.
-    
-
-Using a string as a function name
----------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error96.py", line 3
-        def "function"():
-            ^
-    SyntaxError: invalid syntax
-    
-        The name of a function must be a valid Python identifier,
-        that is a name that begins with a letter or an underscore character, `_`,
-        and which contains only letters, digits or the underscore character.
-        You attempted to use a string as a function name.
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error96.py'
-    beyond the location indicated by ^.
-    
-       1: 
-       2: 
-    -->3: def "function"():
-              ^
-
-    The name of a function must be a valid Python identifier,
-    that is a name that begins with a letter or an underscore character, `_`,
-    and which contains only letters, digits or the underscore character.
-    You attempted to use a string as a function name.
-    
-
-Non-identifier as a function name
----------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error97.py", line 3
-        def 2be():
-            ^
-    SyntaxError: invalid syntax
-    
-        You wrote an invalid function name.
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error97.py'
-    beyond the location indicated by ^.
-    
-       1: 
-       2: 
-    -->3: def 2be():
-              ^
-
-    The name of a function must be a valid Python identifier,
-    that is a name that begins with a letter or an underscore character, `_`,
-    and which contains only letters, digits or the underscore character.
-    
-
-Triple-equal sign
------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error98.py", line 3
-        x = y === z
-                ^
-    SyntaxError: invalid syntax
-    
-        Did you mean to use `is` instead of `===`?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error98.py'
-    beyond the location indicated by ^.
-    
-       1: 
-       2: 
-    -->3: x = y === z
-                  ^
-
-    You wrote three equal signs in a row which is allowed in some
-    programming languages, but not in Python. To check if two objects
-    are equal, use two equal signs, `==`; to see if two names represent
-    the exact same object, use the operator `is`.
-    
-
 Unterminated triple quoted string
 ---------------------------------
 
@@ -3630,7 +3987,7 @@ Unterminated triple quoted string
     Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
         __import__(name)
-      File "TESTS:\syntax\raise_syntax_error107.py", line 1
+      File "TESTS:\syntax\unterminated_triple_quote_string.py", line 1
         some_text = """In a land
                     ^
     SyntaxError: unterminated triple-quoted string literal (detected at line 4)
@@ -3638,7 +3995,7 @@ Unterminated triple quoted string
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error107.py'
+    'TESTS:\syntax\unterminated_triple_quote_string.py'
     beyond the location indicated by ^.
     
     -->1: some_text =
@@ -3646,342 +4003,6 @@ Unterminated triple quoted string
 
     You started writing a triple-quoted string but never wrote
     the triple quotes needed to end the string.
-    
-
-Incorrect use of 'from module import ... as ...
------------------------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error108.py", line 2
-        from math import (sin, cos) as funcs
-                                    ^
-    SyntaxError: invalid syntax
-    
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error108.py'
-    beyond the location indicated by ^.
-    
-       1: # issue 158
-    -->2: from math import (sin, cos) as funcs
-                                      ^
-
-    I am guessing that you are trying to import at least one object
-    from module `math` and rename it using the Python keyword `as`;
-    this keyword can only be used to rename one object at a time
-    using a well defined syntax.
-    I suggest that you split up any such import statement with each object
-    renamed on a separate line as follows:
-    
-        from math import object_1 as name_1
-        from math import object_2 as name_2  # if needed
-    
-
-Comprehension with condition (no else)
---------------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error109.py", line 1
-        a = [f(x) if condition for x in sequence]
-                               ^
-    SyntaxError: invalid syntax
-    
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error109.py'
-    beyond the location indicated by ^.
-    
-    -->1: a = [f(x) if condition for x in sequence]
-                                 ^
-
-    I am guessing that you were writing a comprehension or a generator expression
-    and use the wrong order for a condition.
-    The correct order depends if there is an `else` clause or not.
-    For example, the correct order for a list comprehensions with
-    condition can be either
-    
-        [f(x) if condition else other for x in sequence]  # 'if' before 'for'
-    
-    or, if there is no `else`
-    
-        [f(x) for x in sequence if condition]  # 'if' after 'for'
-    
-    
-
-Comprehension with condition (with else)
-----------------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error110.py", line 1
-        a = [f(x) for x in sequence if condition else other]
-                                                 ^
-    SyntaxError: invalid syntax
-    
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error110.py'
-    beyond the location indicated by ^.
-    
-    -->1: a = [f(x) for x in sequence if condition else other]
-                                                   ^
-
-    I am guessing that you were writing a comprehension or a generator expression
-    and use the wrong order for a condition.
-    The correct order depends if there is an `else` clause or not.
-    For example, the correct order for a list comprehensions with
-    condition can be either
-    
-        [f(x) if condition else other for x in sequence]  # 'if' before 'for'
-    
-    or, if there is no `else`
-    
-        [f(x) for x in sequence if condition]  # 'if' after 'for'
-    
-    
-
-Forgot 'o' for octal
---------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error111.py", line 1
-        x = 01
-             ^
-    SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
-    
-        Did you mean `0o1`?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error111.py'
-    beyond the location indicated by ^.
-    
-    -->1: x = 01
-               ^
-
-    Perhaps you meant to write the octal number `0o1`
-    and forgot the letter 'o', or perhaps you meant to write
-    a decimal integer and did not know that it could not start with zeros.
-    
-
-Integer with leading zeros
---------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error112.py", line 1
-        x = 000_123_456
-                      ^
-    SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
-    
-        Did you mean `123_456`?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error112.py'
-    beyond the location indicated by ^.
-    
-    -->1: x = 000_123_456
-                        ^
-
-    Perhaps you meant to write the integer `123_456`
-    and did not know that it could not start with zeros.
-    
-
-Missing () for tuples in comprehension
---------------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error113.py", line 1
-        x = [i, i**2 for i in range(10)]
-             ^
-    SyntaxError: did you forget parentheses around the comprehension target?
-    
-        Did you forget parentheses?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error113.py'
-    beyond the location indicated by ^.
-    
-    -->1: x = [i, i**2 for i in range(10)]
-               ^
-
-    I am guessing that you were writing a comprehension or a generator expression
-    and forgot to include parentheses around tuples.
-    As an example, instead of writing
-    
-        [i, i**2 for i in range(10)]
-    
-    you would need to write
-    
-        [(i, i**2) for i in range(10)]
-    
-    
-
-Binary f-string not allowed
----------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error114.py", line 1
-        greet = bf"Hello {name}"
-                  ^
-    SyntaxError: invalid syntax
-    
-        `bf` is an illegal string prefix.
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error114.py'
-    beyond the location indicated by ^.
-    
-    -->1: greet = bf"Hello {name}"
-                    ^
-
-    I am guessing that you wanted a binary f-string;
-    this is not allowed.
-    
-
-Parens around multiple exceptions
----------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error115.py", line 3
-        except NameError, ValueError as err:
-                        ^
-    SyntaxError: expected ':'
-    
-        Did you forget parentheses?
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error115.py'
-    beyond the location indicated by ^.
-    
-       1: try:
-       2:     pass
-    -->3: except NameError, ValueError as err:
-                          ^
-
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        expected ':'
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
-    I am guessing that you wanted to use an `except` statement
-    with multiple exception types. If that is the case, you must
-    surround them with parentheses.
-    
-    If you are using a Friendly console, you might want to
-    use the function `www()` which will open a browser at
-    a relevant place in the Python documentation.
-    
-
-Single number used as arg in function def
------------------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error116.py", line 1
-        def f(1):
-              ^
-    SyntaxError: invalid syntax
-    
-        You cannot use numbers as function arguments.
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error116.py'
-    beyond the location indicated by ^.
-    
-    -->1: def f(1):
-                ^
-
-    You used a number as an argument when defining a function.
-    You can only use identifiers (variable names) as function arguments.
-    
-
-Single string used as arg in function def
------------------------------------------
-
-.. code-block:: none
-
-
-    Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
-        __import__(name)
-      File "TESTS:\syntax\raise_syntax_error119.py", line 1
-        def f("1"):
-              ^
-    SyntaxError: invalid syntax
-    
-        You cannot use strings as function arguments.
-        
-    A `SyntaxError` occurs when Python cannot understand your code.
-    
-    Python could not understand the code in the file
-    'TESTS:\syntax\raise_syntax_error119.py'
-    beyond the location indicated by ^.
-    
-    -->1: def f("1"):
-                ^
-
-    You used a string as an argument when defining a function.
-    You can only use identifiers (variable names) as function arguments.
     
 
 TabError
