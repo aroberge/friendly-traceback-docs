@@ -16,8 +16,8 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly-traceback version: 0.2.33a
-Python version: 3.10.0a5
+Friendly-traceback version: 0.2.34a
+Python version: 3.10.0a6
 
 
 
@@ -623,7 +623,7 @@ ChainMap
 
 
     Traceback (most recent call last):
-      File "C:\Users\andre\AppData\Local\Programs\Python\Python310\lib\collections\__init__.py", line 1044, in pop
+      File "C:\Users\andre\AppData\Local\Programs\Python\Python310\lib\collections\__init__.py", line 1045, in pop
         return self.maps[0].pop(key, *args)
     KeyError: 42
     
@@ -632,7 +632,7 @@ ChainMap
     Traceback (most recent call last):
       File "TESTS:\runtime\test_key_error.py", line 23, in test_ChainMap
         d.pop(42)
-      File "PYTHON_LIB:\collections\__init__.py", line 1046, in pop
+      File "PYTHON_LIB:\collections\__init__.py", line 1047, in pop
         raise KeyError(f'Key not found in the first mapping: {key!r}')
     KeyError: 'Key not found in the first mapping: 42'
     
@@ -650,11 +650,11 @@ ChainMap
 
             d: ChainMap({}, {})
         
-    Exception raised on line 1046 of file PYTHON_LIB:\collections\__init__.py.
+    Exception raised on line 1047 of file PYTHON_LIB:\collections\__init__.py.
     
-       1044:             return self.maps[0].pop(key, *args)
-       1045:         except KeyError:
-    -->1046:             raise KeyError(f'Key not found in the first mapping: {key!r}')
+       1045:             return self.maps[0].pop(key, *args)
+       1046:         except KeyError:
+    -->1047:             raise KeyError(f'Key not found in the first mapping: {key!r}')
 
             : 42
             KeyError: <class KeyError>

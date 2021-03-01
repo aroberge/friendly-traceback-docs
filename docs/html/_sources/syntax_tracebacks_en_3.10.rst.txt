@@ -18,8 +18,8 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly-traceback version: 0.2.33a
-Python version: 3.10.0a5
+Friendly-traceback version: 0.2.34a
+Python version: 3.10.0a6
 
 
 
@@ -1992,8 +1992,8 @@ Parens around multiple exceptions
         __import__(name)
       File "TESTS:\syntax\except_multiple_exceptions.py", line 3
         except NameError, ValueError as err:
-                        ^
-    SyntaxError: expected ':'
+               ^
+    SyntaxError: exception group must be parenthesized
     
         Did you forget parentheses?
         
@@ -2006,16 +2006,8 @@ Parens around multiple exceptions
        1: try:
        2:     pass
     -->3: except NameError, ValueError as err:
-                          ^
+                 ^
 
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        expected ':'
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
     I am guessing that you wanted to use an `except` statement
     with multiple exception types. If that is the case, you must
     surround them with parentheses.
@@ -2984,7 +2976,7 @@ Missing colon - if
                ^
     SyntaxError: expected ':'
     
-        Did you forget a colon `:`?
+        Did you forget a colon?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -2997,17 +2989,7 @@ Missing colon - if
     -->3: if True
                  ^
 
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        expected ':'
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
-    You wrote a statement beginning with
-    `if` but forgot to add a colon `:` at the end.
-    
+    Python expected a colon at the position indicated.
     
 
 Missing colon - while
@@ -3024,7 +3006,7 @@ Missing colon - while
                     ^
     SyntaxError: expected ':'
     
-        Did you forget a colon `:`?
+        Did you forget a colon?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -3037,17 +3019,7 @@ Missing colon - while
     -->3: while True  # a comment
                       ^
 
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        expected ':'
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
-    You wrote a `while` loop but
-    forgot to add a colon `:` at the end
-    
+    Python expected a colon at the position indicated.
     
 
 Missing comma in a dict
@@ -3088,6 +3060,90 @@ Missing comma in a dict
      'b': 2,
      'c': 3,
     }
+    
+
+Missing comma in a list
+-----------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\missing_comma_in_list.py", line 3
+        a = [1, 2  3]
+                   ^
+    SyntaxError: invalid syntax
+    
+        Did you forget something between `2` and `3`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\missing_comma_in_list.py'
+    beyond the location indicated by ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: a = [1, 2  3]
+                     ^
+
+    Python indicates that the error is caused by `3` written immediately after `2`.
+    It is possible that you forgot a comma between items in a list
+    before the position indicated by ^.
+    Perhaps you meant to insert an operator like `+, -, *`
+    between `2` and `3`.
+    The following lines of code would not cause any `SyntaxError`:
+    
+        a = [1, 2,  3]
+        a = [1, 2 +  3]
+        a = [1, 2 -  3]
+        a = [1, 2 *  3]
+    Note: these are just some of the possible choices and that
+    some of them might raise other types of exceptions.
+    
+
+Missing comma in a set
+----------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\missing_comma_in_set.py", line 3
+        a = {1, 2  3}
+                   ^
+    SyntaxError: invalid syntax
+    
+        Did you forget something between `2` and `3`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\missing_comma_in_set.py'
+    beyond the location indicated by ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+       2: 
+    -->3: a = {1, 2  3}
+                     ^
+
+    Python indicates that the error is caused by `3` written immediately after `2`.
+    It is possible that you forgot a comma between items in a set or dict
+    before the position indicated by ^.
+    Perhaps you meant to insert an operator like `+, -, *`
+    between `2` and `3`.
+    The following lines of code would not cause any `SyntaxError`:
+    
+        a = {1, 2,  3}
+        a = {1, 2 +  3}
+        a = {1, 2 -  3}
+        a = {1, 2 *  3}
+    Note: these are just some of the possible choices and that
+    some of them might raise other types of exceptions.
     
 
 Missing comma in a tuple
@@ -3655,6 +3711,45 @@ Triple-equal sign
     programming languages, but not in Python. To check if two objects
     are equal, use two equal signs, `==`; to see if two names represent
     the exact same object, use the operator `is`.
+    
+
+Unclosed bracket
+----------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\unclosed_bracket.py", line 5
+        return [1, 2, 3
+               ^
+    SyntaxError: '[' was never closed
+    
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\unclosed_bracket.py'
+    beyond the location indicated by ^.
+    
+        3: 
+        4: def foo():
+    --> 5:     return [1, 2, 3
+                      ^
+
+    Python gave us the following informative message
+    about the possible cause of the error:
+    
+        '[' was never closed
+    
+    However, I do not recognize this information and I have
+    to guess what caused the problem, but I might be wrong.
+    
+    The opening square bracket `[` on line 5 is not closed.
+    
+        5:     return [1, 2, 3
+                      ^
     
 
 Unclosed parenthesis - 1

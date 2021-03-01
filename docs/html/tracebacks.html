@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Multiple tracebacks &mdash; Friendly tracebacks 0.2.33a documentation</title>
+  <title>Multiple tracebacks &mdash; Friendly tracebacks 0.2.34a documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Some thoughts on the design of Friendly-traceback" href="design.html" />
-    <link rel="prev" title="IPython and Jupyter notebooks" href="ipython.html" /> 
+    <link rel="next" title="Everything about the Friendly console" href="repl_more.html" />
+    <link rel="prev" title="www()" href="www.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.33a
+                0.2.34a
               </div>
             
           
@@ -88,13 +88,21 @@
             
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Friendly console</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Installation and basic usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="where.html">where()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Multiple tracebacks</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#running-a-module-from-the-command-line">Running a module from the command line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#importing-a-module">Importing a module</a></li>
@@ -102,6 +110,25 @@
 <li class="toctree-l2"><a class="reference internal" href="#lines-suppressed-recursion-example">Lines suppressed: recursion example</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other consoles</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s repl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
@@ -110,7 +137,6 @@
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Learn to lie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formatter.html">Custom formatter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Other details for advanced users</a></li>
@@ -119,8 +145,6 @@
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="suggest.html">Suggest an addition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Add a new Exception case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
@@ -210,10 +234,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="design.html" class="btn btn-neutral float-right" title="Some thoughts on the design of Friendly-traceback" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="repl_more.html" class="btn btn-neutral float-right" title="Everything about the Friendly console" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ipython.html" class="btn btn-neutral float-left" title="IPython and Jupyter notebooks" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="www.html" class="btn btn-neutral float-left" title="www()" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -222,8 +246,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="multiple-tracebacks">
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The documentation is being partially rewritten prior to
+releasing the next milestone version (0.3).
+Some information given
+here (especially images) may not reflect the state of the
+project.</p>
+</div>
+<div class="section" id="multiple-tracebacks">
 <span id="id1"></span><h1>Multiple tracebacks<a class="headerlink" href="#multiple-tracebacks" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You might want to skip this section if it is the first time
+you read through this documentation.</p>
+</div>
 <p>In addition to providing additional information about the actual cause
 of an exception, compared with a traditional traceback, the traceback
 itself is formatted differently than a traditional Python traceback.
@@ -353,10 +390,10 @@ formatting and French as the language used.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="design.html" class="btn btn-neutral float-right" title="Some thoughts on the design of Friendly-traceback" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="repl_more.html" class="btn btn-neutral float-right" title="Everything about the Friendly console" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ipython.html" class="btn btn-neutral float-left" title="IPython and Jupyter notebooks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="www.html" class="btn btn-neutral float-left" title="www()" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -366,7 +403,7 @@ formatting and French as the language used.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2019, André Roberge
+        &copy; Copyright André Roberge
 
     </p>
   </div>

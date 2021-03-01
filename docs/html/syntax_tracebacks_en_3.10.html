@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly tracebacks 0.2.33a documentation</title>
+  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly tracebacks 0.2.34a documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.33a
+                0.2.34a
               </div>
             
           
@@ -89,14 +89,41 @@
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="beginner.html">Useful information for beginners</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu: installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Using with Thonny: installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Friendly console</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="where.html">where()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other consoles</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
@@ -105,7 +132,6 @@
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Learn to lie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formatter.html">Custom formatter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Other details for advanced users</a></li>
@@ -114,8 +140,6 @@
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="suggest.html">Suggest an addition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Add a new Exception case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
@@ -223,6 +247,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#missing-colon-if">Missing colon - if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-colon-while">Missing colon - while</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-comma-in-a-dict">Missing comma in a dict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-comma-in-a-list">Missing comma in a list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-comma-in-a-set">Missing comma in a set</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-comma-in-a-tuple">Missing comma in a tuple</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#name-is-global-and-nonlocal">Name is global and nonlocal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#name-is-parameter-and-nonlocal">Name is parameter and nonlocal</a></li>
@@ -240,6 +266,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#single-instead-of-double-with-while">Single = instead of double == with while</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#too-many-nested-blocks">Too many nested blocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#triple-equal-sign">Triple-equal sign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unclosed-bracket">Unclosed bracket</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unclosed-parenthesis-1">Unclosed parenthesis - 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unclosed-parenthesis-2">Unclosed parenthesis - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unclosed-parenthesis-3">Unclosed parenthesis - 3</a></li>
@@ -343,7 +370,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="friendly-syntaxerror-tracebacks-in-english">
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The documentation is being partially rewritten prior to
+releasing the next milestone version (0.3).
+Some information given
+here (especially images) may not reflect the state of the
+project.</p>
+</div>
+<div class="section" id="friendly-syntaxerror-tracebacks-in-english">
 <h1>Friendly SyntaxError tracebacks - in English<a class="headerlink" href="#friendly-syntaxerror-tracebacks-in-english" title="Permalink to this headline">¶</a></h1>
 <p>Friendly-traceback aims to provide friendlier feedback when an exception
 is raised than what is done by Python.
@@ -360,8 +395,8 @@ On Windows, if Sphinx is installed on your computer, it is suggested
 instead to run make_trb.bat in the root directory as it will create
 similar files for all languages <em>and</em> update the documentation.</p>
 </div>
-<p>Friendly-traceback version: 0.2.33a
-Python version: 3.10.0a5</p>
+<p>Friendly-traceback version: 0.2.34a
+Python version: 3.10.0a6</p>
 <div class="section" id="using-and-in-import-statement">
 <h2>Using ‘and’ in import statement<a class="headerlink" href="#using-and-in-import-statement" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -2136,8 +2171,8 @@ before or at the position indicated by ^.
     __import__(name)
   File &quot;TESTS:\syntax\except_multiple_exceptions.py&quot;, line 3
     except NameError, ValueError as err:
-                    ^
-SyntaxError: expected &#39;:&#39;
+           ^
+SyntaxError: exception group must be parenthesized
 
     Did you forget parentheses?
 
@@ -2150,15 +2185,7 @@ beyond the location indicated by ^.
    1: try:
    2:     pass
 --&gt;3: except NameError, ValueError as err:
-                      ^
-
-Python gave us the following informative message
-about the possible cause of the error:
-
-    expected &#39;:&#39;
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
+             ^
 
 I am guessing that you wanted to use an `except` statement
 with multiple exception types. If that is the case, you must
@@ -3034,7 +3061,7 @@ was expected to begin a new indented block.
            ^
 SyntaxError: expected &#39;:&#39;
 
-    Did you forget a colon `:`?
+    Did you forget a colon?
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -3047,16 +3074,7 @@ beyond the location indicated by ^.
 --&gt;3: if True
              ^
 
-Python gave us the following informative message
-about the possible cause of the error:
-
-    expected &#39;:&#39;
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
-
-You wrote a statement beginning with
-`if` but forgot to add a colon `:` at the end.
+Python expected a colon at the position indicated.
 </pre></div>
 </div>
 </div>
@@ -3070,7 +3088,7 @@ You wrote a statement beginning with
                 ^
 SyntaxError: expected &#39;:&#39;
 
-    Did you forget a colon `:`?
+    Did you forget a colon?
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -3083,16 +3101,7 @@ beyond the location indicated by ^.
 --&gt;3: while True  # a comment
                   ^
 
-Python gave us the following informative message
-about the possible cause of the error:
-
-    expected &#39;:&#39;
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
-
-You wrote a `while` loop but
-forgot to add a colon `:` at the end
+Python expected a colon at the position indicated.
 </pre></div>
 </div>
 </div>
@@ -3130,6 +3139,84 @@ Perhaps you meant
  &#39;b&#39;: 2,
  &#39;c&#39;: 3,
 }
+</pre></div>
+</div>
+</div>
+<div class="section" id="missing-comma-in-a-list">
+<h2>Missing comma in a list<a class="headerlink" href="#missing-comma-in-a-list" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\missing_comma_in_list.py&quot;, line 3
+    a = [1, 2  3]
+               ^
+SyntaxError: invalid syntax
+
+    Did you forget something between `2` and `3`?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\missing_comma_in_list.py&#39;
+beyond the location indicated by ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: a = [1, 2  3]
+                 ^
+
+Python indicates that the error is caused by `3` written immediately after `2`.
+It is possible that you forgot a comma between items in a list
+before the position indicated by ^.
+Perhaps you meant to insert an operator like `+, -, *`
+between `2` and `3`.
+The following lines of code would not cause any `SyntaxError`:
+
+    a = [1, 2,  3]
+    a = [1, 2 +  3]
+    a = [1, 2 -  3]
+    a = [1, 2 *  3]
+Note: these are just some of the possible choices and that
+some of them might raise other types of exceptions.
+</pre></div>
+</div>
+</div>
+<div class="section" id="missing-comma-in-a-set">
+<h2>Missing comma in a set<a class="headerlink" href="#missing-comma-in-a-set" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\missing_comma_in_set.py&quot;, line 3
+    a = {1, 2  3}
+               ^
+SyntaxError: invalid syntax
+
+    Did you forget something between `2` and `3`?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\missing_comma_in_set.py&#39;
+beyond the location indicated by ^.
+
+   1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
+   2:
+--&gt;3: a = {1, 2  3}
+                 ^
+
+Python indicates that the error is caused by `3` written immediately after `2`.
+It is possible that you forgot a comma between items in a set or dict
+before the position indicated by ^.
+Perhaps you meant to insert an operator like `+, -, *`
+between `2` and `3`.
+The following lines of code would not cause any `SyntaxError`:
+
+    a = {1, 2,  3}
+    a = {1, 2 +  3}
+    a = {1, 2 -  3}
+    a = {1, 2 *  3}
+Note: these are just some of the possible choices and that
+some of them might raise other types of exceptions.
 </pre></div>
 </div>
 </div>
@@ -3650,6 +3737,42 @@ the exact same object, use the operator `is`.
 </pre></div>
 </div>
 </div>
+<div class="section" id="unclosed-bracket">
+<h2>Unclosed bracket<a class="headerlink" href="#unclosed-bracket" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\unclosed_bracket.py&quot;, line 5
+    return [1, 2, 3
+           ^
+SyntaxError: &#39;[&#39; was never closed
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\unclosed_bracket.py&#39;
+beyond the location indicated by ^.
+
+    3:
+    4: def foo():
+--&gt; 5:     return [1, 2, 3
+                  ^
+
+Python gave us the following informative message
+about the possible cause of the error:
+
+    &#39;[&#39; was never closed
+
+However, I do not recognize this information and I have
+to guess what caused the problem, but I might be wrong.
+
+The opening square bracket `[` on line 5 is not closed.
+
+    5:     return [1, 2, 3
+                  ^
+</pre></div>
+</div>
+</div>
 <div class="section" id="unclosed-parenthesis-1">
 <h2>Unclosed parenthesis - 1<a class="headerlink" href="#unclosed-parenthesis-1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -4146,7 +4269,7 @@ If you remove `var`, you will have a valid Python statement.
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2019, André Roberge
+        &copy; Copyright André Roberge
 
     </p>
   </div>

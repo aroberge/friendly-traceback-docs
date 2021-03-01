@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Why all the tracebacks? &mdash; Friendly tracebacks 0.2.9a documentation</title>
+  <title>Google’s colab &mdash; Friendly tracebacks 0.2.34a documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Generic information about various exceptions" href="known.html" />
-    <link rel="prev" title="Notes on translations - using gettext" href="translation_notes.html" /> 
+    <link rel="next" title="Some thoughts on the design of Friendly-traceback" href="design.html" />
+    <link rel="prev" title="Visual Studio Code" href="vs_code.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.9a
+                0.2.34a
               </div>
             
           
@@ -89,12 +89,40 @@
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Installation and basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Friendly console</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="where.html">where()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other consoles</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s repl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Google’s colab</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
@@ -104,7 +132,6 @@
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Learn to lie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formatter.html">Custom formatter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Other details for advanced users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugins.html">Editor plugins</a></li>
@@ -112,13 +139,10 @@
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="suggest.html">Suggest an addition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Add a new Exception case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Why all the tracebacks?</a></li>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="known.html">Generic information about various exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
@@ -188,13 +212,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Why all the tracebacks?</li>
+      <li>Google’s colab</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/all_tb.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/colab.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -204,10 +228,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="known.html" class="btn btn-neutral float-right" title="Generic information about various exceptions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="design.html" class="btn btn-neutral float-right" title="Some thoughts on the design of Friendly-traceback" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="translation_notes.html" class="btn btn-neutral float-left" title="Notes on translations - using gettext" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vs_code.html" class="btn btn-neutral float-left" title="Visual Studio Code" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -216,16 +240,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="why-all-the-tracebacks">
-<h1>Why all the tracebacks?<a class="headerlink" href="#why-all-the-tracebacks" title="Permalink to this headline">¶</a></h1>
-<p>This documentation contains essentially all the tracebacks
-generated from unit tests, for all Python versions. We do this for
-two reasons. First, so that interested users can browse through and
-perhaps find cases where the explanation provided could be improved.
-Secondly, these traceback capture more information than what
-we check in the unit tests. In this way, when we run all tests,
-we can use something like “git diff” to see if any unexpected changes
-occur.</p>
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The documentation is being partially rewritten prior to
+releasing the next milestone version (0.3).
+Some information given
+here (especially images) may not reflect the state of the
+project.</p>
+</div>
+<div class="section" id="google-s-colab">
+<h1>Google’s colab<a class="headerlink" href="#google-s-colab" title="Permalink to this headline">¶</a></h1>
+<p>Explain.</p>
 </div>
 
 
@@ -236,10 +261,10 @@ occur.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="known.html" class="btn btn-neutral float-right" title="Generic information about various exceptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="design.html" class="btn btn-neutral float-right" title="Some thoughts on the design of Friendly-traceback" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="translation_notes.html" class="btn btn-neutral float-left" title="Notes on translations - using gettext" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vs_code.html" class="btn btn-neutral float-left" title="Visual Studio Code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -249,7 +274,7 @@ occur.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2019, André Roberge
+        &copy; Copyright André Roberge
 
     </p>
   </div>

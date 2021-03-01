@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Suggest an addition &mdash; Friendly tracebacks 0.2.33a documentation</title>
+  <title>Suggest an addition &mdash; Friendly tracebacks 0.2.34a documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Developer: Add a new Exception case" href="adding_exception.html" />
+    <link rel="next" title="Notes on translations - using gettext" href="translation_notes.html" />
     <link rel="prev" title="Editor plugins" href="plugins.html" /> 
 </head>
 
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.33a
+                0.2.34a
               </div>
             
           
@@ -89,13 +89,40 @@
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Installation and basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Friendly console</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="where.html">where()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other consoles</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s repl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
@@ -104,7 +131,6 @@
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Learn to lie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formatter.html">Custom formatter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Other details for advanced users</a></li>
@@ -113,8 +139,6 @@
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Suggest an addition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Add a new Exception case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
@@ -204,7 +228,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="adding_exception.html" class="btn btn-neutral float-right" title="Developer: Add a new Exception case" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="translation_notes.html" class="btn btn-neutral float-right" title="Notes on translations - using gettext" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="plugins.html" class="btn btn-neutral float-left" title="Editor plugins" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -216,7 +240,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="suggest-an-addition">
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The documentation is being partially rewritten prior to
+releasing the next milestone version (0.3).
+Some information given
+here (especially images) may not reflect the state of the
+project.</p>
+</div>
+<div class="section" id="suggest-an-addition">
 <h1>Suggest an addition<a class="headerlink" href="#suggest-an-addition" title="Permalink to this headline">¶</a></h1>
 <p>The more cases Friendly-traceback will include, the more useful
 it will be.
@@ -229,19 +261,6 @@ exception and an explanation that would be understandable by
 beginners and helpful to them to understand what that exception means.
 Please include which version of Python and Friendly-traceback you are
 using.</p>
-<p>If you have not used Friendly-traceback and would like to see if you
-can find some new cases, you can either clone the code repository
-or install it from pypi.org (note that the version on pypi.org would
-likely not include as many cases as the development version).
-Once you have Friendly-traceback on your computer, start its console
-from a command line using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">friendly_traceback</span>
-</pre></div>
-</div>
-<p>and start writing code like you normally would.</p>
-<p>If you want to go beyond simply making a suggestion and wish to
-submit code dealing with this case, please consult
-<a class="reference internal" href="adding_exception.html#adding-exception"><span class="std std-ref">Developer: Add a new Exception case</span></a>.</p>
 </div>
 
 
@@ -252,7 +271,7 @@ submit code dealing with this case, please consult
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="adding_exception.html" class="btn btn-neutral float-right" title="Developer: Add a new Exception case" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="translation_notes.html" class="btn btn-neutral float-right" title="Notes on translations - using gettext" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="plugins.html" class="btn btn-neutral float-left" title="Editor plugins" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -265,7 +284,7 @@ submit code dealing with this case, please consult
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2019, André Roberge
+        &copy; Copyright André Roberge
 
     </p>
   </div>

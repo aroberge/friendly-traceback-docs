@@ -10,12 +10,12 @@ as described later in this documentation.
 To get started, we recommend using **one of the first three** following options.
 
 
-1. Execute a Python program::
+1. Execute a Python program, as we have already shown at the beginning::
 
-    $ python -m friendly_traceback hello.py
+    $ python -m friendly_traceback example.py
 
 
-2. Start the friendly console::
+2. You can also start a Friendly console::
 
     $ python -m friendly_traceback
 
@@ -24,22 +24,31 @@ To get started, we recommend using **one of the first three** following options.
    to start Friendly-traceback's console after executing
    a program::
 
-    $ python -im friendly_traceback hello.py
+    $ python -im friendly_traceback example.py
 
 
-4. As an exception hook::
+If this is the first time that you are using Friendly-traceback,
+we suggest that you go to the next page, ignoring the content below.
+
+
+Other ways
+----------
+
+
+
+4. You can use Friendly-traceback as an exception hook::
 
     import friendly_traceback
     friendly_traceback.install()  # replaces the default sys.excepthook
 
 
-5. Starting the console from an interpreter::
+5. Starting the console from any Python interpreter::
 
     >>> import friendly_traceback
     >>> friendly_traceback.start_console()
 
 
-6. Catching exceptions locally::
+6. You can also use it to catch exceptions locally::
 
     import friendly_traceback
 

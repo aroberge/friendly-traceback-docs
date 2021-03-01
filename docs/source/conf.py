@@ -28,7 +28,7 @@ from friendly_traceback import __version__  # pylint: disable=import-error
 # -- Project information -----------------------------------------------------
 
 project = "Friendly tracebacks"
-copyright = "2019, André Roberge"
+copyright = "André Roberge"
 author = "André Roberge"
 
 # Sphinx: The short X.Y version
@@ -85,15 +85,15 @@ rst_epilog = """
 .. |france| image:: images/france.png
 """
 
-# rst_prolog = """
-# .. warning::
+rst_prolog = """
+.. warning::
 
-#     This is alpha software, currently in development.
-
-#     The current documentation is likely not up to date and
-#     is definitely imcomplete, but it does give a good idea of
-#     what this project is about.
-# """
+    The documentation is being partially rewritten prior to
+    releasing the next milestone version (0.3).
+    Some information given
+    here (especially images) may not reflect the state of the
+    project.
+"""
 #
 add_module_names = False
 # -- Options for HTML output -------------------------------------------------

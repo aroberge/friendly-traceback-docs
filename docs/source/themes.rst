@@ -16,7 +16,8 @@ properly, Friendly-traceback includes its own "theme".
 One problem I had was to figure out
 all the possible styling elements. It turned out that I had "solved"
 this problem in 2008 when I created the Pygments Tango style for
-a project I worked (Crunchy) where I did my best to include all
+an old project of mine (Crunchy, done with Johannes Woolard)
+where I did my best to include all
 possible styling elements, while minimizing the numbers of colours
 used. While Tango had been designed for a light coloured background,
 the new style has been designed for a dark coloured background.
@@ -89,5 +90,5 @@ always welcome, suggested changes to the current default theme
 will likely be ignored since the end result appear to be
 completely dependent on the environment.
 
-We might consider supporting custom themes, but this will likely
+I might consider supporting custom themes, but this will likely
 be a lower priority item.

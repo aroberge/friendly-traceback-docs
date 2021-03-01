@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; Friendly tracebacks 0.2.33a documentation</title>
+  <title>Installation &mdash; Friendly tracebacks 0.2.34a documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Basic usage" href="usage.html" />
-    <link rel="prev" title="Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨" href="index.html" /> 
+    <link rel="next" title="Using with Mu: installation" href="install_mu.html" />
+    <link rel="prev" title="Useful information for beginners" href="beginner.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.33a
+                0.2.34a
               </div>
             
           
@@ -89,17 +89,44 @@
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="beginner.html">Useful information for beginners</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Installation</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu: installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Using with Thonny: installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Friendly console</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="where.html">where()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other consoles</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
@@ -108,7 +135,6 @@
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Learn to lie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formatter.html">Custom formatter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Other details for advanced users</a></li>
@@ -117,8 +143,6 @@
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="suggest.html">Suggest an addition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Add a new Exception case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
@@ -208,10 +232,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="usage.html" class="btn btn-neutral float-right" title="Basic usage" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="install_mu.html" class="btn btn-neutral float-right" title="Using with Mu: installation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="beginner.html" class="btn btn-neutral float-left" title="Useful information for beginners" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -220,25 +244,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="installation">
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The documentation is being partially rewritten prior to
+releasing the next milestone version (0.3).
+Some information given
+here (especially images) may not reflect the state of the
+project.</p>
+</div>
+<div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p><img alt="mu_logo" src="_images/mu_logo.png" /> If you use Mu, you might want to go to <a class="reference internal" href="mu.html#mu-instructions"><span class="std std-ref">Using with Mu</span></a>
-and come back here afterwards.</p>
-</div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p><img alt="thonny_logo" src="_images/thonny_logo.png" /> If you use Thonny, you might want to go to <a class="reference internal" href="thonny.html#using-thonny"><span class="std std-ref">Using with Thonny</span></a>
-and come back here afterwards.</p>
+<p><img alt="mu_logo" src="_images/mu_logo.png" /> If you use Mu, you might want to go to the next page.</p>
 </div>
 <div class="section" id="id1">
 <h2>Installation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<img alt="error using pip inside a console" src="_images/pip.png" />
-<p>You can install Friendly-traceback from Pypi in the usual way:</p>
+<p>You can install Friendly-traceback from <a class="reference external" href="https://pypi.org/">PyPI</a> in the usual way:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">friendly</span><span class="o">-</span><span class="n">traceback</span>
 </pre></div>
 </div>
+<p>Of course, if this is the first time you install a package from PyPI,
+you might get some weird error. This is what it might look if you
+had already been using Friendly-traceback.</p>
+<a class="reference internal image-reference" href="_images/pip.png"><img alt="error using pip inside a console" src="_images/pip.png" style="width: 580.8000000000001px; height: 259.2px;" /></a>
 <p>In the command shown above,
 <code class="docutils literal notranslate"><span class="pre">python</span></code> refers to whatever you need to type to invoke your
 favourite Python interpreter.
@@ -254,10 +283,10 @@ It could be <code class="docutils literal notranslate"><span class="pre">python<
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="usage.html" class="btn btn-neutral float-right" title="Basic usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="install_mu.html" class="btn btn-neutral float-right" title="Using with Mu: installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="beginner.html" class="btn btn-neutral float-left" title="Useful information for beginners" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -267,7 +296,7 @@ It could be <code class="docutils literal notranslate"><span class="pre">python<
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2019, André Roberge
+        &copy; Copyright André Roberge
 
     </p>
   </div>

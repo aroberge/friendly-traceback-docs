@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using with an editor or IDE &mdash; Friendly tracebacks 0.2.33a documentation</title>
+  <title>Using with an editor or IDE &mdash; Friendly tracebacks 0.2.34a documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Using with Mu" href="mu.html" />
-    <link rel="prev" title="Console basics" href="repl.html" /> 
+    <link rel="next" title="IDLE: using the editor" href="idle.html" />
+    <link rel="prev" title="Other repl" href="other_repl.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.33a
+                0.2.34a
               </div>
             
           
@@ -88,19 +88,44 @@
             
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Installation and basic usage</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Friendly console</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="where.html">where()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other consoles</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s repl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
+<ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Using with an editor or IDE</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#using-with-idle">Using with IDLE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-microsoft-vs-code">Using Microsoft VS Code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-command-line-arguments">Using command line arguments</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
@@ -109,7 +134,6 @@
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Learn to lie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formatter.html">Custom formatter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Other details for advanced users</a></li>
@@ -118,8 +142,6 @@
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="suggest.html">Suggest an addition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Add a new Exception case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
@@ -209,10 +231,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="mu.html" class="btn btn-neutral float-right" title="Using with Mu" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="idle.html" class="btn btn-neutral float-right" title="IDLE: using the editor" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="repl.html" class="btn btn-neutral float-left" title="Console basics" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="other_repl.html" class="btn btn-neutral float-left" title="Other repl" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -221,84 +243,70 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="using-with-an-editor-or-ide">
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The documentation is being partially rewritten prior to
+releasing the next milestone version (0.3).
+Some information given
+here (especially images) may not reflect the state of the
+project.</p>
+</div>
+<div class="section" id="using-with-an-editor-or-ide">
 <span id="using-editor"></span><h1>Using with an editor or IDE<a class="headerlink" href="#using-with-an-editor-or-ide" title="Permalink to this headline">¶</a></h1>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>To use Friendly-traceback with an editor or IDE,
-create a second file to be used as a “launcher”, containing
-the following:</p>
+<p>Suppose that you are using an editor or IDE to work on a file called
+<code class="docutils literal notranslate"><span class="pre">my_program.py</span></code> and your editor has an option (perhaps from a menu or by
+clicking a button)
+to run <code class="docutils literal notranslate"><span class="pre">my_program.py</span></code> using Python. However, you’d like to
+run this program with Friendly-traceback’s help as though it was
+invoked the usual way:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">friendly_traceback</span> <span class="n">my_program</span><span class="o">.</span><span class="n">py</span>
+<span class="c1"># or</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">im</span> <span class="n">friendly_traceback</span> <span class="n">my_program</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>The simplest way to do this is to create a second file
+(let’s call it <code class="docutils literal notranslate"><span class="pre">friendly_run.py</span></code>) located in the same folder as
+your program:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>some_folder/
+        |-------- friendly_run.py
+        |-------- my_program.py
+</pre></div>
+</div>
+<p>In <strong>its simplest version</strong>, <code class="docutils literal notranslate"><span class="pre">friendly_run.py</span></code> will contain the
+following two lines of code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly_traceback</span> <span class="kn">import</span> <span class="n">run</span>
-
 <span class="n">run</span><span class="p">(</span><span class="s2">&quot;my_program.py&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="using-with-idle">
-<h2>Using with IDLE<a class="headerlink" href="#using-with-idle" title="Permalink to this headline">¶</a></h2>
-<p>Since IDLE is part of the standard library, it is often the first
-editor that is used by beginners learning Python.
-Let’s have a look at what happens if we run
-the following program with IDLE using the
-“Run -&gt; Run Module” menu item.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">Pi</span><span class="p">)</span>
+<p>Instead of executing <code class="docutils literal notranslate"><span class="pre">my_program.py</span></code>, have your editor or IDE run
+<code class="docutils literal notranslate"><span class="pre">friendly_run.py</span></code> instead.</p>
+<p>Depending on the editor or IDE that you use, some minor differences
+may have to be included on the above, as described in the following
+pages.</p>
+<p>The above default is equivalent to executing the following:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -im friendly_traceback my_program.py
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="_images/idle.png"><img alt="Screen capture of IDLE" src="_images/idle.png" style="width: 686.0px; height: 150.5px;" /></a>
-<p>The information about the error is written in red
-(sent to <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>), but we can still interact
-with the program afterwards, with the variables
-defined in the original program being available
-in IDLE’s console.</p>
-<p>Let’s do something similar, but using Friendly-traceback
-as a program launcher.  The above program was saved
-in a file named “error.py”. Let’s create a second
-file with the following content:</p>
+<p>which starts a Friendly console at the end of the program’s execution.
+If you want instead the equivalent to:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m friendly_traceback my_program.py
+</pre></div>
+</div>
+<p>use the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly_traceback</span> <span class="kn">import</span> <span class="n">run</span>
-
-<span class="n">run</span><span class="p">(</span><span class="s2">&quot;error.py&quot;</span><span class="p">)</span>
+<span class="n">run</span><span class="p">(</span><span class="s2">&quot;my_program.py&quot;</span><span class="p">,</span> <span class="n">console</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>The following is what happens if we run it, and do
-further interactions aftewards.</p>
-<a class="reference internal image-reference" href="_images/idle-friendly.png"><img alt="Screen capture of IDLE" src="_images/idle-friendly.png" style="width: 686.0px; height: 172.5px;" /></a>
-<p>We stil get a traceback that looks similar to Python’s
-standard traceback, but that has an added hint
-as to what might be the cause of the exception: here
-it was because we wrote <code class="docutils literal notranslate"><span class="pre">Pi</span></code> with an uppercase <code class="docutils literal notranslate"><span class="pre">P</span></code>.</p>
-<p>Like it was the case with Python running inside IDLE,
-we have access to the variables that were in the program
-that was run.</p>
-<p>Notice how the prompt is blue instead of black: this is
-because we are running the friendly console which uses
-<code class="docutils literal notranslate"><span class="pre">print()</span></code> or <code class="docutils literal notranslate"><span class="pre">input()</span></code> calls.</p>
-<p>As shown below, we can ask for more details about
-the exception, as was shown in the previous section.</p>
-<a class="reference internal image-reference" href="_images/idle-friendly2.png"><img alt="Screen capture of IDLE" src="_images/idle-friendly2.png" style="width: 686.0px; height: 481.5px;" /></a>
-</div>
-<div class="section" id="using-microsoft-vs-code">
-<h2>Using Microsoft VS Code<a class="headerlink" href="#using-microsoft-vs-code" title="Permalink to this headline">¶</a></h2>
-<p>Let’s do the same thing, this time using Microsoft Visual Studio Code,
-using an environment in which Rich is installed.
-This time, our code launcher is modified as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly_traceback</span> <span class="kn">import</span> <span class="n">run</span>
-
-<span class="n">run</span><span class="p">(</span><span class="s2">&quot;error.py&quot;</span><span class="p">,</span> <span class="n">use_rich</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-<a class="reference internal image-reference" href="_images/vs-code.png"><img alt="Screen capture VS Code" src="_images/vs-code.png" style="width: 696.5px; height: 500.0px;" /></a>
-<p>Some output when the terminal starts it execution, but prior to running
-our program, has been removed from the screen capture above.</p>
-<p>As you can see, this is much more pleasant to look at then what
-we see using IDLE.</p>
 </div>
 <div class="section" id="using-command-line-arguments">
 <h2>Using command line arguments<a class="headerlink" href="#using-command-line-arguments" title="Permalink to this headline">¶</a></h2>
 <p>Suppose you wish to run a program that expect command line arguments.
-Here’s an example, taken from our unit tests:</p>
+For example, you might have written a program that adds some
+numbers passed as arguments on the command line:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python adder.py 1 2.5 3
+The sum is 6.5.
+</pre></div>
+</div>
+<p>Here’s an example, taken from our unit tests:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Demonstration of a program that uses command line arguments</span>
 <span class="kn">import</span> <span class="nn">argparse</span>
 
@@ -323,6 +331,9 @@ Here’s an example, taken from our unit tests:</p>
     <span class="n">console</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2.5&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">)</span>
 <span class="p">)</span>
+
+<span class="c1"># after the program is run, we could get access to some local variables</span>
+
 <span class="k">assert</span> <span class="s2">&quot;total&quot;</span> <span class="ow">in</span> <span class="n">mod_dict</span>
 <span class="k">assert</span> <span class="n">mod_dict</span><span class="p">[</span><span class="s2">&quot;total&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">6.5</span>
 </pre></div>
@@ -338,10 +349,10 @@ Here’s an example, taken from our unit tests:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mu.html" class="btn btn-neutral float-right" title="Using with Mu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="idle.html" class="btn btn-neutral float-right" title="IDLE: using the editor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="repl.html" class="btn btn-neutral float-left" title="Console basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="other_repl.html" class="btn btn-neutral float-left" title="Other repl" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -351,7 +362,7 @@ Here’s an example, taken from our unit tests:</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2019, André Roberge
+        &copy; Copyright André Roberge
 
     </p>
   </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Learn to lie &mdash; Friendly tracebacks 0.2.33a documentation</title>
+  <title>where() &mdash; Friendly tracebacks 0.2.34a documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Public API" href="api.html" />
-    <link rel="prev" title="Themes and colours" href="themes.html" /> 
+    <link rel="next" title="explain()" href="explain.html" />
+    <link rel="prev" title="why()" href="why.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.33a
+                0.2.34a
               </div>
             
           
@@ -89,13 +89,40 @@
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Installation and basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu: installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Using with Thonny: installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Friendly console</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="why.html">why()</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">where()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other consoles</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s repl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
@@ -103,8 +130,7 @@
 <li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Learn to lie</a></li>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formatter.html">Custom formatter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Other details for advanced users</a></li>
@@ -113,8 +139,6 @@
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="suggest.html">Suggest an addition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Add a new Exception case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
@@ -188,13 +212,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Learn to lie</li>
+      <li>where()</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/lies.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/where.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -204,10 +228,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="api.html" class="btn btn-neutral float-right" title="Public API" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="explain.html" class="btn btn-neutral float-right" title="explain()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="themes.html" class="btn btn-neutral float-left" title="Themes and colours" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="why.html" class="btn btn-neutral float-left" title="why()" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -216,20 +240,71 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="learn-to-lie">
-<h1>Learn to lie<a class="headerlink" href="#learn-to-lie" title="Permalink to this headline">¶</a></h1>
-<p>Let me let you in on a secret:
-occasionally, Friendly-traceback will lie to you.
-And I encourage you to do the same.</p>
-<p>Actually, if you have read the section
-<a class="reference internal" href="tracebacks.html#multiple-tracebacks"><span class="std std-ref">Multiple tracebacks</span></a>, you already have seen that the
-traceback shown usually does not include modules from Friendly-traceback
-itself.  You can do the same for your own modules
-using something like the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">my_module</span>
-<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">add_excluded_path</span><span class="p">(</span><span class="n">my_module</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The documentation is being partially rewritten prior to
+releasing the next milestone version (0.3).
+Some information given
+here (especially images) may not reflect the state of the
+project.</p>
+</div>
+<div class="section" id="where">
+<h1>where()<a class="headerlink" href="#where" title="Permalink to this headline">¶</a></h1>
+<p>Python traceback give information about where an exception was raised and
+more. But it does so in a way that’s not entirely friendly to users.
+Let’s look at a different example, and see how Friendly-traceback
+can give a bit more information about the location of the problem.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">test_4</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;friendly-console:10&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+    <span class="n">test_4</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="go">       ... More lines not shown. ...</span>
+
+<span class="go">    test_2(x)</span>
+<span class="go">  File &quot;&lt;friendly-console:7&gt;&quot;, line 2, in test_2</span>
+<span class="go">    test_1(x)</span>
+<span class="go">  File &quot;&lt;friendly-console:8&gt;&quot;, line 3, in test_1</span>
+<span class="go">    print(arg + something + others)</span>
+<span class="go">NameError: name &#39;others&#39; is not defined</span>
+
+<span class="go">Did you mean other?</span>
 </pre></div>
 </div>
+<p>By default, Friendly-traceback limits the length of the traceback
+shown to the user.
+[If you want to see a full traceback instead, use <code class="docutils literal notranslate"><span class="pre">python_tb()</span></code> or
+see <a class="reference internal" href="tracebacks.html#multiple-tracebacks"><span class="std std-ref">Multiple tracebacks</span></a> for more details.]
+Still, Python tracebacks can be rather too terse looking for
+beginners, making it difficult for them to grasp where the error occurred.</p>
+<p>Let’s see if we can give a bit more information about this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">where</span><span class="p">()</span>
+
+<span class="go">Execution stopped on line 1 of file &#39;&lt;friendly-console:10&gt;&#39;.</span>
+
+<span class="go">    --&gt;1: test_4(42)</span>
+
+<span class="go">    test_4: &lt;function test_4&gt;</span>
+
+<span class="go">Exception raised on line 3 of file &#39;&lt;friendly-console:8&gt;&#39;.</span>
+
+<span class="go">       1: def test_1(arg):</span>
+<span class="go">       2:     other = 3</span>
+<span class="go">    --&gt;3:     print(arg + something + others)</span>
+<span class="go">                                      ^^^^^^</span>
+
+<span class="go">    arg: 42</span>
+<span class="go">    global something: 4</span>
+<span class="go">    print: &lt;builtin function print&gt;</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Friendly-traceback gives detailed information about two locations
+at most: where the program stopped and where the exception was
+raised. It shows a few lines of code near the source of the problem,
+and gives some information about what it thinks might be
+relevant identifiers.</p>
 </div>
 
 
@@ -240,10 +315,10 @@ using something like the following:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="api.html" class="btn btn-neutral float-right" title="Public API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="explain.html" class="btn btn-neutral float-right" title="explain()" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="themes.html" class="btn btn-neutral float-left" title="Themes and colours" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="why.html" class="btn btn-neutral float-left" title="why()" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -253,7 +328,7 @@ using something like the following:</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2019, André Roberge
+        &copy; Copyright André Roberge
 
     </p>
   </div>

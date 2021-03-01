@@ -21,9 +21,9 @@ it is aimed aimed primarily at beginners and/or at users
 who would like to get information about traceback in their own language.
 Friendly-traceback can give more detailed information as to
 **where** an exception occurred, **what** a given exception means and
-**why** it might have occurred (sometimes adding a way to fix it.)
+**why** it might have occurred (sometimes adding suggestions as to how to fix it.)
 
-While Friendly-traceback can be used on its own with a specially
+Even though Friendly-traceback can be used on its own with a specially
 designed console, a better option would be to use it together with
 GUI-based editors/IDE including Jupyter lab and notebooks.
 We explain how to do so later.
@@ -33,8 +33,19 @@ For now, we just show one quick example.
 A quick look
 ------------
 
+Consider the following program::
+
+    # example.py
+    def get_last(seq):
+        last_index = len(seq)
+        return seq[last_index]
+
+    print(get_last([1, 2, 3]))
+
+
+
 First, we show what happens when we use Python
-to run a program that raises an exception.
+to run this program.
 
 .. image:: images/python_indexerror.png
    :scale: 50 %
@@ -44,7 +55,7 @@ Not exactly the most helpful information for beginners ...
 
 Here's the corresponding version with full explanation from Friendly-traceback,
 making use of
-`Rich <https://github.com/willmcgugan/rich>`_ 
+`Rich <https://github.com/willmcgugan/rich>`_ to produce a colourful output.
 
 .. image:: images/friendly_indexerror_en.png
    :scale: 50 %
@@ -69,14 +80,53 @@ English (by default) and French are available.
    :hidden:
    :caption: Begin here
 
+   beginner
    install
+   install_mu
+   install_thonny
    usage
-   Console basics <repl>
+
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: Friendly console
+
+   repl
+   what
+   why
+   where
+   explain
+   more
+   www
+   tracebacks
+   repl_more
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: Other consoles
+
+   pyrepl
+   idle_repl
+   vs_code_repl
+   ipython_repl
+   other_repl
+
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: Editors and Notebooks
+
    editor
+   idle
    mu
    thonny
-   IPython and Jupyter notebooks <ipython>
-   tracebacks
+   ipython
+   vs_code
+   colab
+
 
 .. toctree::
    :maxdepth: 1
@@ -91,7 +141,6 @@ English (by default) and French are available.
    :hidden:
    :caption: Use in your project
 
-   lies
    api
    formatter
    usage_adv
@@ -103,8 +152,6 @@ English (by default) and French are available.
    :caption: Contribute
 
    suggest
-   adding_exception
-   syntax_error
    translation_notes
 
 .. toctree::

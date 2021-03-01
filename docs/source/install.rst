@@ -3,30 +3,29 @@ Installation
 
 .. hint::
 
-    |mu_logo| If you use Mu, you might want to go to :ref:`mu_instructions`
-    and come back here afterwards.
+    |mu_logo| If you use Mu, you might want to go to the next page.
 
 .. |mu_logo| image:: images/mu_logo.png
 
-
-.. hint::
-
-    |thonny_logo| If you use Thonny, you might want to go to :ref:`using_thonny`
-    and come back here afterwards.
-
-.. |thonny_logo| image:: images/thonny_logo.png
 
 
 Installation
 -------------
 
-.. image:: images/pip.png
-   :alt: error using pip inside a console
-
-You can install Friendly-traceback from Pypi in the usual way::
+You can install Friendly-traceback from `PyPI <https://pypi.org/>`_ in the usual way::
 
 
     python -m pip install friendly-traceback
+
+
+Of course, if this is the first time you install a package from PyPI,
+you might get some weird error. This is what it might look if you
+had already been using Friendly-traceback.
+
+
+.. image:: images/pip.png
+   :scale: 80 %
+   :alt: error using pip inside a console
 
 
 In the command shown above,

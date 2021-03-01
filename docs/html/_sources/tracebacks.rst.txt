@@ -3,6 +3,13 @@
 Multiple tracebacks
 ====================
 
+
+.. tip::
+
+    You might want to skip this section if it is the first time
+    you read through this documentation.
+
+
 In addition to providing additional information about the actual cause
 of an exception, compared with a traditional traceback, the traceback
 itself is formatted differently than a traditional Python traceback.

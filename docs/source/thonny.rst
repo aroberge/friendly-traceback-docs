@@ -1,4 +1,3 @@
-.. _using_thonny:
 
 Using with Thonny
 =================

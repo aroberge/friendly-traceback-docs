@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Console basics &mdash; Friendly tracebacks 0.2.33a documentation</title>
+  <title>Console basics &mdash; Friendly tracebacks 0.2.34a documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Using with an editor or IDE" href="editor.html" />
+    <link rel="next" title="what()" href="what.html" />
     <link rel="prev" title="Basic usage" href="usage.html" /> 
 </head>
 
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.33a
+                0.2.34a
               </div>
             
           
@@ -88,27 +88,41 @@
             
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu: installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Using with Thonny: installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Console basics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#what">what()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#why">why()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#where">where()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#explain">explain()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#more">more()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#more-about-explain">More about explain()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-friendly_traceback.console_helpers">API</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#console-helpers-py">console_helpers.py</a></li>
 </ul>
-</li>
+<p class="caption"><span class="caption-text">Friendly console</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Console basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="where.html">where()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
 </ul>
-</li>
+<p class="caption"><span class="caption-text">Other consoles</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s repl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
@@ -117,7 +131,6 @@
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="lies.html">Learn to lie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Public API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formatter.html">Custom formatter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage_adv.html">Other details for advanced users</a></li>
@@ -126,8 +139,6 @@
 <p class="caption"><span class="caption-text">Contribute</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="suggest.html">Suggest an addition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adding_exception.html">Developer: Add a new Exception case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_error.html">Developer: Add a new SyntaxError case</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation_notes.html">Notes on translations - using gettext</a></li>
 </ul>
 <p class="caption"><span class="caption-text">All the tracebacks!</span></p>
@@ -217,7 +228,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="editor.html" class="btn btn-neutral float-right" title="Using with an editor or IDE" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="what.html" class="btn btn-neutral float-right" title="what()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="usage.html" class="btn btn-neutral float-left" title="Basic usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -229,499 +240,66 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="console-basics">
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The documentation is being partially rewritten prior to
+releasing the next milestone version (0.3).
+Some information given
+here (especially images) may not reflect the state of the
+project.</p>
+</div>
+<div class="section" id="console-basics">
 <span id="using-repl"></span><h1>Console basics<a class="headerlink" href="#console-basics" title="Permalink to this headline">¶</a></h1>
 <div class="sidebar">
 <p class="sidebar-title">Using screenshots</p>
 <p>Below, we occasionnally use some screenshots, done in a Rich-friendly
 console, but we also write some examples as text so that they
-can provide the required information to people relying on screen readers.</p>
+can provide the required information to people relying on screen readers.
+If you are such a user and need help because the use of screenshots
+prevents you from understanding the explanations, please do not hesitate to
+reach out to me: <a class="reference external" href="mailto:andre&#46;roberge&#37;&#52;&#48;gmail&#46;com">andre<span>&#46;</span>roberge<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
 </div>
-<p>As a rule, we do not recommend that beginners write their programs
-in a console (repl) but that they use an editor instead.
+<p>As a rule, I do not recommend that beginners write their programs
+in a console (repl) but that they use an editor instead or a
+notebook environment as it is easier to edit and correct mistakes.
 However, using a console is useful to demonstrate various
 features of Friendly-traceback which can be made available
-in many editor/IDE environments.</p>
-<div class="section" id="what">
-<h2>what()<a class="headerlink" href="#what" title="Permalink to this headline">¶</a></h2>
-<p>Imagine that you are a beginner. You write some code and are
-suddenly confronted with the following:</p>
-<a class="reference internal image-reference" href="_images/greet_what_1.png"><img alt="Screen capture of unbound local error" src="_images/greet_what_1.png" style="width: 642.6px; height: 157.79999999999998px;" /></a>
-<p>You see <code class="docutils literal notranslate"><span class="pre">UnboundLocalError</span></code>, and have no idea what it might mean,
-in spite of the hint provided by Friendly-traceback.
-Rather than heading to StackOverflow to ask a question and have it
-immediately closed as being a duplicate, you simply ask <code class="docutils literal notranslate"><span class="pre">what()</span></code>
-and Friendly-traceback tries to help you.</p>
-<a class="reference internal image-reference" href="_images/greet_what_2.png"><img alt="Screen capture of explanation about unbound local error" src="_images/greet_what_2.png" style="width: 666.0px; height: 215.4px;" /></a>
-<p><code class="docutils literal notranslate"><span class="pre">what()</span></code> only gives here some generic information about what an <code class="docutils literal notranslate"><span class="pre">UnboundLocalError</span></code> is.
-Later, we’ll see how Friendly-traceback can often give more useful
-information regarding the exact cause of the exception, and how to fix it.</p>
-<p><code class="docutils literal notranslate"><span class="pre">what()</span></code> can be useful even if an exception has not been raised.
-In principle, you can get information about any exception by passing it as
-an object:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">what</span><span class="p">(</span><span class="ne">IndexError</span><span class="p">)</span>
+in many editor/IDE environments.
+Furthermore, the combination of using an editor and a console
+can be quite useful.</p>
+<p>The example I will be using is the same as the one shown on the
+first page of this documentation: I have a file with the
+following content:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># example.py</span>
+<span class="k">def</span> <span class="nf">get_last</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
+    <span class="n">last_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seq</span><span class="p">[</span><span class="n">last_index</span><span class="p">]</span>
 
-<span class="go">An IndexError occurs when you are try to get an item from a list, a tuple, or a similar</span>
-<span class="go">object (sequence), by using an index which does not exists; typically, this is because</span>
-<span class="go">the index you give is greater than the length of the sequence. Reminder: the first item</span>
-<span class="go">of a sequence is at index 0.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_last</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
 </pre></div>
 </div>
-<p>Instead of using a known Exception object, we can pass its name as a string
-if we prefer. We can even specify a language other than English …
-as long as it is French - hopefully, support for more languages will be added
-by contributors:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">set_lang</span><span class="p">(</span><span class="s1">&#39;fr&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">what</span><span class="p">(</span><span class="s2">&quot;IndentationError&quot;</span><span class="p">)</span>
-
-<span class="go">Une exception de type IndentationError se produit lorsqu&#39;une ligne de code n&#39;est pas</span>
-<span class="go">indentée (c&#39;est-à-dire alignée verticalement avec les autres lignes) de la façon</span>
-<span class="go">attendue.</span>
+<p>However, instead of using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">friendly_traceback</span> <span class="n">example</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="why">
-<h2>why()<a class="headerlink" href="#why" title="Permalink to this headline">¶</a></h2>
-<p>You are a beginner reading some code found in a tutorial on the web
-and decide to try it out by copy-pasting it.</p>
-<a class="reference internal image-reference" href="_images/why_1.png"><img alt="Screen capture of syntax error" src="_images/why_1.png" style="width: 611.4px; height: 171.6px;" /></a>
-<p>So, this didn’t work, but you’d like to find out a bit more information than
-that provided by the terse hint shown after the traceback.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">why</span><span class="p">()</span>
-<span class="go">Python indicates that you used some unicode characters not allowed as part</span>
-<span class="go">of a variable name; this includes many emojis. However, I suspect that you</span>
-<span class="go">used a fancy unicode quotation mark instead of a normal single or double</span>
-<span class="go">quote for a string. This can happen if you copy-pasted code.</span>
-</pre></div>
-</div>
-<p>More generally, <code class="docutils literal notranslate"><span class="pre">why()</span></code> attempts to find the exact cause of an
-exception and suggest some ways to fix the code.</p>
-</div>
-<div class="section" id="where">
-<h2>where()<a class="headerlink" href="#where" title="Permalink to this headline">¶</a></h2>
-<p>Python traceback give information about where an exception was raised and
-more. But it does so in a way that’s not entirely friendly to users.
-Let’s look at a different example, and see how Friendly-traceback
-can give a bit more information about the location of the problem.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">test_4</span><span class="p">()</span>
-
-<span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;friendly-console:4&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-    <span class="n">test_4</span><span class="p">()</span>
-  File <span class="nb">&quot;&lt;friendly-console:3&gt;&quot;</span>, line <span class="m">2</span>, in <span class="n">test_4</span>
-    <span class="n">test_2</span><span class="p">()</span>
-  File <span class="nb">&quot;&lt;friendly-console:2&gt;&quot;</span>, line <span class="m">2</span>, in <span class="n">test_2</span>
-    <span class="n">test_1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-  File <span class="nb">&quot;&lt;friendly-console:1&gt;&quot;</span>, line <span class="m">2</span>, in <span class="n">test_1</span>
-    <span class="n">x</span> <span class="o">+=</span> <span class="n">y</span>
-<span class="gr">NameError</span>: <span class="n">name &#39;y&#39; is not defined</span>
-</pre></div>
-</div>
-<p>This might be confusing to a beginner. Let’s see if we can
-give a bit more information about where the error occurred:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">where</span><span class="p">()</span>
-
-<span class="go">Execution stopped on line 1 of file &#39;&lt;friendly-console:4&gt;&#39;.</span>
-
-<span class="go">    --&gt;1: test_4()</span>
-
-<span class="go">    Known objects shown above:</span>
-
-<span class="go">    test_4: &lt;function test_4&gt;</span>
-
-<span class="go">Exception raised on line 2 of file &#39;&lt;friendly-console:1&gt;&#39;.</span>
-
-<span class="go">       1: def test_1(x):</span>
-<span class="go">    --&gt;2:     x += y</span>
-<span class="go">       3:</span>
-
-<span class="go">    Known objects shown above:</span>
-
-<span class="go">    global test_1: &lt;function test_1&gt;</span>
-<span class="go">    x: 3</span>
-</pre></div>
-</div>
-<p>Friendly-traceback gives detailed information about two locations
-at most: where the program stopped and where the exception was
-raised. It shows a few lines of code near the source of the problem,
-and gives some information about each identifier appearing
-on these lines of code.</p>
-</div>
-<div class="section" id="explain">
-<h2>explain()<a class="headerlink" href="#explain" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes, it might make sense to show all the available information at
-once. This is what <code class="docutils literal notranslate"><span class="pre">explain()</span></code> does. Let’s illustrate it with
-a screen capture.</p>
-<a class="reference internal image-reference" href="_images/explain.png"><img alt="Screen capture illustrating the use of explain()" src="_images/explain.png" style="width: 741.5px; height: 825.0px;" /></a>
-<p><code class="docutils literal notranslate"><span class="pre">explain()</span></code> shows everything: a friendly traceback with an
-added <code class="docutils literal notranslate"><span class="pre">hint()</span></code> (more on this later), as well as the output of
-<code class="docutils literal notranslate"><span class="pre">what()</span></code>, <code class="docutils literal notranslate"><span class="pre">where()</span></code> and <code class="docutils literal notranslate"><span class="pre">why()</span></code>.</p>
-</div>
-<div class="section" id="more">
-<h2>more()<a class="headerlink" href="#more" title="Permalink to this headline">¶</a></h2>
-<p>After a while, users do not need to see the display of <code class="docutils literal notranslate"><span class="pre">what()</span></code> as
-they have learned to recognize most exceptions. However, after
-seeing a traceback, they might want to see more information
-about <code class="docutils literal notranslate"><span class="pre">where()</span></code> and <code class="docutils literal notranslate"><span class="pre">why()</span></code>: this is what <code class="docutils literal notranslate"><span class="pre">more()</span></code> does.</p>
-<p>We purposely do not show an example, and leave it up to you to try!</p>
-</div>
-<div class="section" id="more-about-explain">
-<h2>More about explain()<a class="headerlink" href="#more-about-explain" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">explain()</span></code> is a bit more versatile than we let it on: it can
-take an argument that can change its behaviour.
-For example, <code class="docutils literal notranslate"><span class="pre">explain(&quot;what&quot;)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">what()</span></code>;
-<code class="docutils literal notranslate"><span class="pre">explain(&quot;why&quot;)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">why()</span></code>.
-For the console, this is clearly redundant. However, it is something
-to keep in mind as it might be more useful later.</p>
-</div>
-<div class="section" id="module-friendly_traceback.console_helpers">
-<span id="api"></span><h2>API<a class="headerlink" href="#module-friendly_traceback.console_helpers" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="console-helpers-py">
-<h3>console_helpers.py<a class="headerlink" href="#console-helpers-py" title="Permalink to this headline">¶</a></h3>
-<p>Functions that can be used in a friendly console or in other interactive
-environments such as in a Jupyter notebook.</p>
-<p>We suggest to use <code class="docutils literal notranslate"><span class="pre">dir()</span></code> to see all possible choices as some might
-not be listed here.</p>
-<dl class="py class">
-<dt id="friendly_traceback.console_helpers.Friendly">
-<em class="property">class </em><code class="sig-name descname">Friendly</code><a class="reference internal" href="_modules/friendly_traceback/console_helpers.html#Friendly"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly" title="Permalink to this definition">¶</a></dt>
-<dd><p>Helper class which can be used in a console if one of the
-helper functions gets redefined.</p>
-<p>For example, we can write Friendly.explain() as equivalent to explain().</p>
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.debug">
-<code class="sig-name descname">debug</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.debug" title="Permalink to this definition">¶</a></dt>
-<dd><p>This functions displays the true traceback recorded, that
-includes friendly-traceback’s own code.
-It also sets a debug flag for the current session.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.debug_tb">
-<code class="sig-name descname">debug_tb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.debug_tb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows the true Python traceback, which includes
-files from friendly-traceback itself.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.explain">
-<code class="sig-name descname">explain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.explain" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows the previously recorded traceback info again,
-with the specified verbosity level.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.friendly_tb">
-<code class="sig-name descname">friendly_tb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.friendly_tb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows the friendly traceback, which includes the hint/suggestion
-if available.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.get_include">
-<code class="sig-name descname">get_include</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.get_include" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrieves the value used to determine what to include in the
-traceback. See <code class="docutils literal notranslate"><span class="pre">set_include()</span></code> for details.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.get_lang">
-<code class="sig-name descname">get_lang</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.get_lang" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the current language that had been set for translations.</p>
-<p>Note that the value returned may not reflect truly what is being
-see by the end user: if the translations do not exist for that language,
-the default English strings are used.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.hint">
-<code class="sig-name descname">hint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.hint" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows hint/suggestion if available.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.more">
-<code class="sig-name descname">more</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.more" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used to display information additional to the minimal traceback,
-with the exception of the generic information.
-Potentially useful for advanced users.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.python_tb">
-<code class="sig-name descname">python_tb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.python_tb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows the Python traceback, excluding files from friendly-traceback
-itself.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.set_include">
-<code class="sig-name descname">set_include</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.set_include" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specifies the information to include in the traceback.</p>
-<p>The allowed values are:</p>
-<blockquote>
-<div><p>‘message’,
-‘hint’,
-‘generic’,
-‘what’,
-‘why’,
-‘where’,
-‘friendly_tb’,
-‘python_tb’,
-‘debug_tb’,
-‘more’,
-‘explain’,
-‘no_tb’</p>
-</div></blockquote>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.set_lang">
-<code class="sig-name descname">set_lang</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.set_lang" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sets the language to be used for the display.</p>
-<p>If no translations exist for that language, the original
-English strings will be used.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.show_info">
-<code class="sig-name descname">show_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.show_info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Debugging tool: shows the complete content of traceback info.</p>
-<p>Prints <code class="docutils literal notranslate"><span class="pre">None</span></code> for a given item if it is not present.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.show_paths">
-<code class="sig-name descname">show_paths</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.show_paths" title="Permalink to this definition">¶</a></dt>
-<dd><p>To avoid displaying very long file paths to the user,
-Friendly-traceback tries to shorten them using some easily
-recognized synonyms. This function shows the path synonyms
-currently used.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.what">
-<code class="sig-name descname">what</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pre</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.what" title="Permalink to this definition">¶</a></dt>
-<dd><p>If known, shows the generic explanation about a given exception.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.where">
-<code class="sig-name descname">where</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.where" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows the information about where the exception occurred</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.why">
-<code class="sig-name descname">why</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.why" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows the likely cause of the exception.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly_traceback.console_helpers.Friendly.www">
-<code class="sig-name descname">www</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">python</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.www" title="Permalink to this definition">¶</a></dt>
-<dd><p>This uses the <code class="docutils literal notranslate"><span class="pre">webbrowser</span></code> module to open a tab (or window) in the
-default browser, linking to a specific url.</p>
-<ul>
-<li><p>If no arguments are provided, and no exception has been raised, this opens
-Friendly-traceback documentation.</p></li>
-<li><p>If no arguments are provided, and an exception has been raised, in most
-cases, an internet search will be done using the exception message as the
-search string. In a few cases, Friendly-traceback will link to a
-specific site based on its determination of the cause of the exception.</p></li>
-<li><p>If no search argument is provided, but <code class="docutils literal notranslate"><span class="pre">python</span></code> is specified to be <code class="docutils literal notranslate"><span class="pre">True</span></code>,
-we will have the following:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>If no exception has been raised, this opens the Python documentation</p></li>
-<li><p>If an exception has been raised, in most cases a search of the Python
-documentation will be done using the exception name as the search term.
-In a few cases, Friendly-traceback will link to a
-specific site based on its determination of the cause of the exception.</p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>If a search (string) argument is provided, we have three possibilities:</p>
-<ul class="simple">
-<li><p>If the <code class="docutils literal notranslate"><span class="pre">python</span></code> argument is <code class="docutils literal notranslate"><span class="pre">True</span></code>, a search will be done in the
-Python documentation site; otherwise</p></li>
-<li><p>if the search term contains the string “friendly” (independent of case),
-Friendly-traceback documentation will open</p></li>
-<li><p>otherwise, an internet search will be done using the search string provided.</p></li>
-</ul>
-</li>
-</ul>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.debug">
-<code class="sig-name descname">debug</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">flag</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/console_helpers.html#debug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.debug" title="Permalink to this definition">¶</a></dt>
-<dd><p>This functions displays the true traceback recorded, that
-includes friendly-traceback’s own code.
-It also sets a debug flag for the current session.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.debug_tb">
-<code class="sig-name descname">debug_tb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/console_helpers.html#debug_tb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.debug_tb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows the true Python traceback, which includes
-files from friendly-traceback itself.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.explain">
-<code class="sig-name descname">explain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'explain'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/console_helpers.html#explain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.explain" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows the previously recorded traceback info again,
-with the specified verbosity level.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.friendly_tb">
-<code class="sig-name descname">friendly_tb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/console_helpers.html#friendly_tb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.friendly_tb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows the friendly traceback, which includes the hint/suggestion
-if available.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.get_include">
-<code class="sig-name descname">get_include</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback.html#get_include"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.get_include" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrieves the value used to determine what to include in the
-traceback. See <code class="docutils literal notranslate"><span class="pre">set_include()</span></code> for details.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.get_lang">
-<code class="sig-name descname">get_lang</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback.html#get_lang"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.get_lang" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the current language that had been set for translations.</p>
-<p>Note that the value returned may not reflect truly what is being
-see by the end user: if the translations do not exist for that language,
-the default English strings are used.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.hint">
-<code class="sig-name descname">hint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/console_helpers.html#hint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.hint" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows hint/suggestion if available.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.more">
-<code class="sig-name descname">more</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/console_helpers.html#more"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.more" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used to display information additional to the minimal traceback,
-with the exception of the generic information.
-Potentially useful for advanced users.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.python_tb">
-<code class="sig-name descname">python_tb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/console_helpers.html#python_tb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.python_tb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows the Python traceback, excluding files from friendly-traceback
-itself.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.set_include">
-<code class="sig-name descname">set_include</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback.html#set_include"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.set_include" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specifies the information to include in the traceback.</p>
-<p>The allowed values are:</p>
-<blockquote>
-<div><p>‘message’,
-‘hint’,
-‘generic’,
-‘what’,
-‘why’,
-‘where’,
-‘friendly_tb’,
-‘python_tb’,
-‘debug_tb’,
-‘more’,
-‘explain’,
-‘no_tb’</p>
-</div></blockquote>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.set_lang">
-<code class="sig-name descname">set_lang</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">'en'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback.html#set_lang"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.set_lang" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sets the language to be used for the display.</p>
-<p>If no translations exist for that language, the original
-English strings will be used.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.show_info">
-<code class="sig-name descname">show_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/console_helpers.html#show_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.show_info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Debugging tool: shows the complete content of traceback info.</p>
-<p>Prints <code class="docutils literal notranslate"><span class="pre">None</span></code> for a given item if it is not present.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.show_paths">
-<code class="sig-name descname">show_paths</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/path_info.html#show_paths"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.show_paths" title="Permalink to this definition">¶</a></dt>
-<dd><p>To avoid displaying very long file paths to the user,
-Friendly-traceback tries to shorten them using some easily
-recognized synonyms. This function shows the path synonyms
-currently used.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.what">
-<code class="sig-name descname">what</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pre</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/console_helpers.html#what"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.what" title="Permalink to this definition">¶</a></dt>
-<dd><p>If known, shows the generic explanation about a given exception.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.where">
-<code class="sig-name descname">where</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/console_helpers.html#where"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.where" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows the information about where the exception occurred</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.why">
-<code class="sig-name descname">why</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/console_helpers.html#why"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.why" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows the likely cause of the exception.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly_traceback.console_helpers.www">
-<code class="sig-name descname">www</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">python</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/console_helpers.html#www"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.www" title="Permalink to this definition">¶</a></dt>
-<dd><p>This uses the <code class="docutils literal notranslate"><span class="pre">webbrowser</span></code> module to open a tab (or window) in the
-default browser, linking to a specific url.</p>
-<ul>
-<li><p>If no arguments are provided, and no exception has been raised, this opens
-Friendly-traceback documentation.</p></li>
-<li><p>If no arguments are provided, and an exception has been raised, in most
-cases, an internet search will be done using the exception message as the
-search string. In a few cases, Friendly-traceback will link to a
-specific site based on its determination of the cause of the exception.</p></li>
-<li><p>If no search argument is provided, but <code class="docutils literal notranslate"><span class="pre">python</span></code> is specified to be <code class="docutils literal notranslate"><span class="pre">True</span></code>,
-we will have the following:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>If no exception has been raised, this opens the Python documentation</p></li>
-<li><p>If an exception has been raised, in most cases a search of the Python
-documentation will be done using the exception name as the search term.
-In a few cases, Friendly-traceback will link to a
-specific site based on its determination of the cause of the exception.</p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>If a search (string) argument is provided, we have three possibilities:</p>
-<ul class="simple">
-<li><p>If the <code class="docutils literal notranslate"><span class="pre">python</span></code> argument is <code class="docutils literal notranslate"><span class="pre">True</span></code>, a search will be done in the
-Python documentation site; otherwise</p></li>
-<li><p>if the search term contains the string “friendly” (independent of case),
-Friendly-traceback documentation will open</p></li>
-<li><p>otherwise, an internet search will be done using the search string provided.</p></li>
-</ul>
-</li>
-</ul>
-</dd></dl>
-
-</div>
-</div>
+<p>to run this file, I will add an additional <code class="docutils literal notranslate"><span class="pre">i</span></code> flag so that <code class="docutils literal notranslate"><span class="pre">-m</span></code> become <code class="docutils literal notranslate"><span class="pre">-im</span></code>;
+as a result, a Friendly console will be available after the program ends
+so that we can execute more Python commands.</p>
+<a class="reference internal image-reference" href="_images/friendly_interactive_indexerror_en.png"><img alt="Friendly IndexError interactive example in English" src="_images/friendly_interactive_indexerror_en.png" style="width: 566.5px; height: 221.0px;" /></a>
+<p>In the image above, the red arrow points to the the interactive prompt
+where we can type more command.</p>
+<p>Let’s do this again but choosing French as the default language: this will
+help to better identify various parts and compare what information
+is obtained from Python (as it won’t be translated) and what additional
+information is provided by Friendly traceback.</p>
+<a class="reference internal image-reference" href="_images/friendly_interactive_indexerror_fr.png"><img alt="Friendly IndexError interactive example in French" src="_images/friendly_interactive_indexerror_fr.png" style="width: 566.5px; height: 224.0px;" /></a>
+<p>In the image above, the part identified by (1) is essentially the normal
+Python traceback. Depending on how long it gets, it can get shortened
+by Friendly-traceback as is explained later [<a class="reference internal" href="tracebacks.html#multiple-tracebacks"><span class="std std-ref">Multiple tracebacks</span></a>].</p>
+<p>Part (2) is a “hint” <strong>occasionally</strong> provided by Friendly-traceback
+that can be useful in identifying the cause of the problem. We will see
+shortly how to get Friendly-traceback to give us additional information
+as to the possible cause of this error.</p>
 </div>
 
 
@@ -732,7 +310,7 @@ Friendly-traceback documentation will open</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="editor.html" class="btn btn-neutral float-right" title="Using with an editor or IDE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="what.html" class="btn btn-neutral float-right" title="what()" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="usage.html" class="btn btn-neutral float-left" title="Basic usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -745,7 +323,7 @@ Friendly-traceback documentation will open</p></li>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2019, André Roberge
+        &copy; Copyright André Roberge
 
     </p>
   </div>

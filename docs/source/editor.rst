@@ -4,106 +4,78 @@
 Using with an editor or IDE
 ============================
 
-.. tip::
-
-   To use Friendly-traceback with an editor or IDE,
-   create a second file to be used as a "launcher", containing
-   the following::
-
-        from friendly_traceback import run
-
-        run("my_program.py")
-
-Using with IDLE
----------------
-
-Since IDLE is part of the standard library, it is often the first
-editor that is used by beginners learning Python.
-Let's have a look at what happens if we run
-the following program with IDLE using the 
-"Run -> Run Module" menu item.
-
-.. code-block:: python
-
-    from math import *
-
-    y = 1
-    x = cos(Pi)
-
-.. image:: images/idle.png
-   :scale: 50 %
-   :alt: Screen capture of IDLE
+Suppose that you are using an editor or IDE to work on a file called
+``my_program.py`` and your editor has an option (perhaps from a menu or by
+clicking a button)
+to run ``my_program.py`` using Python. However, you'd like to
+run this program with Friendly-traceback's help as though it was
+invoked the usual way::
 
 
-The information about the error is written in red
-(sent to ``sys.stderr``), but we can still interact
-with the program afterwards, with the variables
-defined in the original program being available
-in IDLE's console.
+    python -m friendly_traceback my_program.py
+    # or
+    python -im friendly_traceback my_program.py
 
-Let's do something similar, but using Friendly-traceback
-as a program launcher.  The above program was saved
-in a file named "error.py". Let's create a second
-file with the following content::
+
+The simplest way to do this is to create a second file
+(let's call it ``friendly_run.py``) located in the same folder as
+your program:
+
+.. code-block:: none
+
+    some_folder/
+            |-------- friendly_run.py
+            |-------- my_program.py
+
+
+In **its simplest version**, ``friendly_run.py`` will contain the
+following two lines of code::
 
     from friendly_traceback import run
-
-    run("error.py")
-
-The following is what happens if we run it, and do
-further interactions aftewards.
-
-.. image:: images/idle-friendly.png
-   :scale: 50 %
-   :alt: Screen capture of IDLE
-
-We stil get a traceback that looks similar to Python's
-standard traceback, but that has an added hint
-as to what might be the cause of the exception: here
-it was because we wrote ``Pi`` with an uppercase ``P``.
-
-Like it was the case with Python running inside IDLE,
-we have access to the variables that were in the program
-that was run.
-
-Notice how the prompt is blue instead of black: this is
-because we are running the friendly console which uses
-``print()`` or ``input()`` calls.
-
-As shown below, we can ask for more details about
-the exception, as was shown in the previous section.
-
-.. image:: images/idle-friendly2.png
-   :scale: 50 %
-   :alt: Screen capture of IDLE
+    run("my_program.py")
 
 
-Using Microsoft VS Code
------------------------
+Instead of executing ``my_program.py``, have your editor or IDE run
+``friendly_run.py`` instead.
 
-Let's do the same thing, this time using Microsoft Visual Studio Code,
-using an environment in which Rich is installed.
-This time, our code launcher is modified as follows::
+Depending on the editor or IDE that you use, some minor differences
+may have to be included on the above, as described in the following
+pages.
+
+
+The above default is equivalent to executing the following:
+
+.. code-block:: none
+
+    python -im friendly_traceback my_program.py
+
+which starts a Friendly console at the end of the program's execution.
+If you want instead the equivalent to:
+
+.. code-block:: none
+
+    python -m friendly_traceback my_program.py
+
+
+use the following::
 
     from friendly_traceback import run
-
-    run("error.py", use_rich=True)
-
-.. image:: images/vs-code.png
-   :scale: 50 %
-   :alt: Screen capture VS Code
-
-Some output when the terminal starts it execution, but prior to running
-our program, has been removed from the screen capture above.
-
-As you can see, this is much more pleasant to look at then what
-we see using IDLE.
+    run("my_program.py", console=False)
 
 
 Using command line arguments
 -----------------------------
 
 Suppose you wish to run a program that expect command line arguments.
+For example, you might have written a program that adds some
+numbers passed as arguments on the command line:
+
+.. code-block:: none
+
+    $ python adder.py 1 2.5 3
+    The sum is 6.5.
+
+
 Here's an example, taken from our unit tests::
 
     # Demonstration of a program that uses command line arguments
@@ -131,6 +103,9 @@ Running the program with the following code will result in
         console=False,
         args=("1", "2.5", "3")
     )
+
+    # after the program is run, we could get access to some local variables
+
     assert "total" in mod_dict
     assert mod_dict["total"] == 6.5
 

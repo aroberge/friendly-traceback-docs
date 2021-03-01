@@ -1,0 +1,48 @@
+.. _using_thonny:
+
+.. tip::  Skip this page if you are not using Thonny.
+
+.. sidebar:: A bit of history
+
+    Starting with version 3.2.5, Thonny included built-in support for
+    an early version of Friendly-traceback. As Friendly-traceback evolved,
+    we suggested that the built-in support be temporarily removed so as to avoid
+    any incompatibility; this has happened in newer versions of Thonny.
+
+    In the near future, we hope to add a way to add back some built-in
+    support for Friendly-traceback in Thonny, to complement its built-in
+    "Assistant".
+
+
+Using with Thonny: installation
+===============================
+
+
+`Thonny <https://github.com/thonny/thonny/>`_ is a fantastic
+programming environment for learning Python.
+While it does not support traceback theming with Rich, we nonetheless
+highly recommend it to beginners and instructors.
+
+
+Thonny is highly configurable. Among the tools
+it provides is the ability to install packages either from pypi or
+others found locally.
+
+.. image:: images/thonny_manage_packages1.png
+   :scale: 50 %
+   :alt: thonny manage packages
+
+If you have already installed Friendly-traceback,
+the first step is to ensure that Thonny can see that Friendly-traceback
+is installed. If not, it means that Thonny uses a different environment
+than the one in which you installed Friendly-traceback;
+in this case, you can use Thonny's package manager to
+install Friendly-traceback.
+
+As you can see, Friendly-traceback is indeed installed on my
+computer, along with many other packages.
+
+.. image:: images/thonny_manage_packages2.png
+   :scale: 50 %
+   :alt: thonny manage packages
+
