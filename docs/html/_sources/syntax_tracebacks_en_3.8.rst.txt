@@ -1873,7 +1873,7 @@ Write elif, not else if
                ^
 
     You likely meant to use Python's `elif` keyword
-    but wrote `else if` instead
+    but wrote `else if` instead.
     
     
 
@@ -1907,7 +1907,7 @@ Write elif, not elseif
                  ^
 
     You likely meant to use Python's `elif` keyword
-    but wrote `elseif` instead
+    but wrote `elseif` instead.
     
     
 
@@ -3961,11 +3961,6 @@ Mismatched brackets - 1
     -->2: x = (1, 2, 3]
                       ^
 
-    Python tells us that the closing `]` on the last line shown
-    does not match the opening `(`.
-    
-    I will attempt to be give a bit more information.
-    
     The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
     
         2: x = (1, 2, 3]
@@ -3998,11 +3993,6 @@ Mismatched brackets - 2
     -->4:      3]
                 ^
 
-    Python tells us that the closing `]` on the last line shown
-    does not match the opening `(` on line 2.
-    
-    I will attempt to be give a bit more information.
-    
     The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
     
         2: x = (1,

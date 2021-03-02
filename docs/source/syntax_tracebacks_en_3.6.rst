@@ -1873,7 +1873,7 @@ Write elif, not else if
                 ^
 
     You likely meant to use Python's `elif` keyword
-    but wrote `else if` instead
+    but wrote `else if` instead.
     
     
 
@@ -1907,7 +1907,7 @@ Write elif, not elseif
                     ^
 
     You likely meant to use Python's `elif` keyword
-    but wrote `elseif` instead
+    but wrote `elseif` instead.
     
     
 

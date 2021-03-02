@@ -2065,16 +2065,11 @@ beyond the location indicated by ^.
 --&gt;5: else if True:
            ^
 
-Python gave us the following informative message
-about the possible cause of the error:
-
-    expected &#39;:&#39;
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
-
+Python expected a colon at the position indicated.
+However, adding a colon or replacing something else by a colon
+would not fix the problem.
 You likely meant to use Python&#39;s `elif` keyword
-but wrote `else if` instead
+but wrote `else if` instead.
 </pre></div>
 </div>
 </div>
@@ -2104,7 +2099,7 @@ beyond the location indicated by ^.
              ^
 
 You likely meant to use Python&#39;s `elif` keyword
-but wrote `elseif` instead
+but wrote `elseif` instead.
 </pre></div>
 </div>
 </div>
@@ -3061,7 +3056,7 @@ was expected to begin a new indented block.
            ^
 SyntaxError: expected &#39;:&#39;
 
-    Did you forget a colon?
+    Did you forget a colon `:`?
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -3074,7 +3069,8 @@ beyond the location indicated by ^.
 --&gt;3: if True
              ^
 
-Python expected a colon at the position indicated.
+You wrote a statement beginning with
+`if` but forgot to add a colon `:` at the end.
 </pre></div>
 </div>
 </div>
@@ -3088,7 +3084,7 @@ Python expected a colon at the position indicated.
                 ^
 SyntaxError: expected &#39;:&#39;
 
-    Did you forget a colon?
+    Did you forget a colon `:`?
 
 A `SyntaxError` occurs when Python cannot understand your code.
 
@@ -3101,7 +3097,8 @@ beyond the location indicated by ^.
 --&gt;3: while True  # a comment
                   ^
 
-Python expected a colon at the position indicated.
+You wrote a `while` loop but
+forgot to add a colon `:` at the end
 </pre></div>
 </div>
 </div>
@@ -3587,14 +3584,9 @@ beyond the location indicated by ^.
 --&gt;3:     if i % 2 = 0:
                    ^
 
-Python gave us the following informative message
-about the possible cause of the error:
-
-    expected &#39;:&#39;
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
-
+Python expected a colon at the position indicated.
+However, adding a colon or replacing something else by a colon
+would not fix the problem.
 You used an assignment operator `=`; perhaps you meant to use
 an equality operator, `==`, or the walrus operator `:=`.
 </pre></div>
@@ -3625,14 +3617,9 @@ beyond the location indicated by ^.
 --&gt;5:     elif i % 2 = 0:
                      ^
 
-Python gave us the following informative message
-about the possible cause of the error:
-
-    expected &#39;:&#39;
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
-
+Python expected a colon at the position indicated.
+However, adding a colon or replacing something else by a colon
+would not fix the problem.
 You used an assignment operator `=`; perhaps you meant to use
 an equality operator, `==`, or the walrus operator `:=`.
 </pre></div>
@@ -3662,14 +3649,9 @@ beyond the location indicated by ^.
 --&gt;4: while a = 1:
               ^
 
-Python gave us the following informative message
-about the possible cause of the error:
-
-    expected &#39;:&#39;
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
-
+Python expected a colon at the position indicated.
+However, adding a colon or replacing something else by a colon
+would not fix the problem.
 You used an assignment operator `=`; perhaps you meant to use
 an equality operator, `==`, or the walrus operator `:=`.
 </pre></div>
@@ -3747,6 +3729,8 @@ the exact same object, use the operator `is`.
            ^
 SyntaxError: &#39;[&#39; was never closed
 
+    The square bracket `[` was never closed.
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 Python could not understand the code in the file
@@ -3757,14 +3741,6 @@ beyond the location indicated by ^.
     4: def foo():
 --&gt; 5:     return [1, 2, 3
                   ^
-
-Python gave us the following informative message
-about the possible cause of the error:
-
-    &#39;[&#39; was never closed
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
 
 The opening square bracket `[` on line 5 is not closed.
 
@@ -3783,6 +3759,8 @@ The opening square bracket `[` on line 5 is not closed.
            ^
 SyntaxError: &#39;(&#39; was never closed
 
+    The parenthesis `(` was never closed.
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 Python could not understand the code in the file
@@ -3792,14 +3770,6 @@ beyond the location indicated by ^.
    1: &quot;&quot;&quot;Should raise SyntaxError: invalid syntax&quot;&quot;&quot;
 --&gt;2: x = int(&#39;1&#39;
              ^
-
-Python gave us the following informative message
-about the possible cause of the error:
-
-    &#39;(&#39; was never closed
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
 
 The opening parenthesis `(` on line 2 is not closed.
 
@@ -3818,6 +3788,8 @@ The opening parenthesis `(` on line 2 is not closed.
         ^
 SyntaxError: &#39;(&#39; was never closed
 
+    The parenthesis `(` was never closed.
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 Python could not understand the code in the file
@@ -3828,14 +3800,6 @@ beyond the location indicated by ^.
 --&gt;2: a = (b+c
           ^
    3: d = a*a
-
-Python gave us the following informative message
-about the possible cause of the error:
-
-    &#39;(&#39; was never closed
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
 
 The opening parenthesis `(` on line 2 is not closed.
 
@@ -3913,6 +3877,8 @@ I am guessing that you forgot to enclose some content in a string.
            ^
 SyntaxError: &#39;[&#39; was never closed
 
+    The square bracket `[` was never closed.
+
 A `SyntaxError` occurs when Python cannot understand your code.
 
 Python could not understand the code in the file
@@ -3923,14 +3889,6 @@ beyond the location indicated by ^.
     4: def foo():
 --&gt; 5:     return [1, 2, 3,
                   ^
-
-Python gave us the following informative message
-about the possible cause of the error:
-
-    &#39;[&#39; was never closed
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
 
 The opening square bracket `[` on line 5 is not closed.
 
@@ -4018,11 +3976,6 @@ beyond the location indicated by ^.
 --&gt;2: x = (1, 2, 3]
                   ^
 
-Python tells us that the closing `]` on the last line shown
-does not match the opening `(`.
-
-I will attempt to be give a bit more information.
-
 The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
 
     2: x = (1, 2, 3]
@@ -4051,11 +4004,6 @@ beyond the location indicated by ^.
    3:      2,
 --&gt;4:      3]
             ^
-
-Python tells us that the closing `]` on the last line shown
-does not match the opening `(` on line 2.
-
-I will attempt to be give a bit more information.
 
 The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
 
@@ -4201,14 +4149,9 @@ beyond the location indicated by ^.
 --&gt;3: if var start := begin &lt; end:
              ^
 
-Python gave us the following informative message
-about the possible cause of the error:
-
-    expected &#39;:&#39;
-
-However, I do not recognize this information and I have
-to guess what caused the problem, but I might be wrong.
-
+Python expected a colon at the position indicated.
+However, adding a colon or replacing something else by a colon
+would not fix the problem.
 It looks like you were trying to declare that `start` was
 a variable using the word `var`.
 If you remove `var`, you will have a valid Python statement.

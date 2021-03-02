@@ -3974,12 +3974,6 @@ Mismatched brackets - 1
     -->2: x = (1, 2, 3]
                       ^
 
-    Python nous dit que la parenthèse de droite `]` ne correspond pas
-    à la parenthèse de gauche `(`.
-    
-    Je vais essayer de donner un peu plus d'informations.
-    
-    
     Le symbole crochet `]` à la ligne 2 ne correspond pas au symbole parenthèse `(` à la ligne 2.
     
         2: x = (1, 2, 3]
@@ -4012,12 +4006,6 @@ Mismatched brackets - 2
     -->4:      3]
                 ^
 
-    Python nous dit que la parenthèse de droite `]` sur la dernière ligne
-    ne correspond pas à la parenthèse de gauche `(` sur la ligne 2.
-    
-    Je vais essayer de donner un peu plus d'informations.
-    
-    
     Le symbole crochet `]` à la ligne 4 ne correspond pas au symbole parenthèse `(` à la ligne 2.
     
         2: x = (1,

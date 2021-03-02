@@ -1872,16 +1872,11 @@ Write elif, not else if
     -->5: else if True:
                ^
 
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        expected ':'
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
+    Python expected a colon at the position indicated.
+    However, adding a colon or replacing something else by a colon
+    would not fix the problem.
     You likely meant to use Python's `elif` keyword
-    but wrote `else if` instead
+    but wrote `else if` instead.
     
     
 
@@ -1915,7 +1910,7 @@ Write elif, not elseif
                  ^
 
     You likely meant to use Python's `elif` keyword
-    but wrote `elseif` instead
+    but wrote `elseif` instead.
     
     
 
@@ -2976,7 +2971,7 @@ Missing colon - if
                ^
     SyntaxError: expected ':'
     
-        Did you forget a colon?
+        Did you forget a colon `:`?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -2989,7 +2984,9 @@ Missing colon - if
     -->3: if True
                  ^
 
-    Python expected a colon at the position indicated.
+    You wrote a statement beginning with
+    `if` but forgot to add a colon `:` at the end.
+    
     
 
 Missing colon - while
@@ -3006,7 +3003,7 @@ Missing colon - while
                     ^
     SyntaxError: expected ':'
     
-        Did you forget a colon?
+        Did you forget a colon `:`?
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -3019,7 +3016,9 @@ Missing colon - while
     -->3: while True  # a comment
                       ^
 
-    Python expected a colon at the position indicated.
+    You wrote a `while` loop but
+    forgot to add a colon `:` at the end
+    
     
 
 Missing comma in a dict
@@ -3552,14 +3551,9 @@ Single = instead of double == with if
     -->3:     if i % 2 = 0:
                        ^
 
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        expected ':'
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
+    Python expected a colon at the position indicated.
+    However, adding a colon or replacing something else by a colon
+    would not fix the problem.
     You used an assignment operator `=`; perhaps you meant to use 
     an equality operator, `==`, or the walrus operator `:=`.
     
@@ -3593,14 +3587,9 @@ Single = instead of double == with elif
     -->5:     elif i % 2 = 0:
                          ^
 
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        expected ':'
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
+    Python expected a colon at the position indicated.
+    However, adding a colon or replacing something else by a colon
+    would not fix the problem.
     You used an assignment operator `=`; perhaps you meant to use 
     an equality operator, `==`, or the walrus operator `:=`.
     
@@ -3633,14 +3622,9 @@ Single = instead of double == with while
     -->4: while a = 1:
                   ^
 
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        expected ':'
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
+    Python expected a colon at the position indicated.
+    However, adding a colon or replacing something else by a colon
+    would not fix the problem.
     You used an assignment operator `=`; perhaps you meant to use 
     an equality operator, `==`, or the walrus operator `:=`.
     
@@ -3727,6 +3711,8 @@ Unclosed bracket
                ^
     SyntaxError: '[' was never closed
     
+        The square bracket `[` was never closed.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -3738,14 +3724,6 @@ Unclosed bracket
     --> 5:     return [1, 2, 3
                       ^
 
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        '[' was never closed
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
     The opening square bracket `[` on line 5 is not closed.
     
         5:     return [1, 2, 3
@@ -3766,6 +3744,8 @@ Unclosed parenthesis - 1
                ^
     SyntaxError: '(' was never closed
     
+        The parenthesis `(` was never closed.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -3776,14 +3756,6 @@ Unclosed parenthesis - 1
     -->2: x = int('1'
                  ^
 
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        '(' was never closed
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
     The opening parenthesis `(` on line 2 is not closed.
     
         2: x = int('1'
@@ -3804,6 +3776,8 @@ Unclosed parenthesis - 2
             ^
     SyntaxError: '(' was never closed
     
+        The parenthesis `(` was never closed.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -3815,14 +3789,6 @@ Unclosed parenthesis - 2
               ^
        3: d = a*a
 
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        '(' was never closed
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
     The opening parenthesis `(` on line 2 is not closed.
     
         2: a = (b+c
@@ -3909,6 +3875,8 @@ Unexpected EOF while parsing
                ^
     SyntaxError: '[' was never closed
     
+        The square bracket `[` was never closed.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -3920,14 +3888,6 @@ Unexpected EOF while parsing
     --> 5:     return [1, 2, 3,
                       ^
 
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        '[' was never closed
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
     The opening square bracket `[` on line 5 is not closed.
     
         5:     return [1, 2, 3,
@@ -4023,11 +3983,6 @@ Mismatched brackets - 1
     -->2: x = (1, 2, 3]
                       ^
 
-    Python tells us that the closing `]` on the last line shown
-    does not match the opening `(`.
-    
-    I will attempt to be give a bit more information.
-    
     The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
     
         2: x = (1, 2, 3]
@@ -4060,11 +4015,6 @@ Mismatched brackets - 2
     -->4:      3]
                 ^
 
-    Python tells us that the closing `]` on the last line shown
-    does not match the opening `(` on line 2.
-    
-    I will attempt to be give a bit more information.
-    
     The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
     
         2: x = (1,
@@ -4222,14 +4172,9 @@ Would-be variable declaration
     -->3: if var start := begin < end:
                  ^
 
-    Python gave us the following informative message
-    about the possible cause of the error:
-    
-        expected ':'
-    
-    However, I do not recognize this information and I have
-    to guess what caused the problem, but I might be wrong.
-    
+    Python expected a colon at the position indicated.
+    However, adding a colon or replacing something else by a colon
+    would not fix the problem.
     It looks like you were trying to declare that `start` was
     a variable using the word `var`.
     If you remove `var`, you will have a valid Python statement.

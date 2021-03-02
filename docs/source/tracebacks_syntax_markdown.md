@@ -2265,7 +2265,7 @@ beyond the location indicated by ^.
 ```
 
 You likely meant to use Python's `elif` keyword
-but wrote `else if` instead
+but wrote `else if` instead.
 
 
 ---
@@ -2307,7 +2307,7 @@ beyond the location indicated by ^.
 ```
 
 You likely meant to use Python's `elif` keyword
-but wrote `elseif` instead
+but wrote `elseif` instead.
 
 
 ---
@@ -4801,11 +4801,6 @@ beyond the location indicated by ^.
 
 ```
 
-Python tells us that the closing `]` on the last line shown
-does not match the opening `(`.
-
-I will attempt to be give a bit more information.
-
 The closing square bracket `]` on line 2 does not match the opening parenthesis `(` on line 2.
 
     2: x = (1, 2, 3]
@@ -4843,11 +4838,6 @@ beyond the location indicated by ^.
                 ^
 
 ```
-
-Python tells us that the closing `]` on the last line shown
-does not match the opening `(` on line 2.
-
-I will attempt to be give a bit more information.
 
 The closing square bracket `]` on line 4 does not match the opening parenthesis `(` on line 2.
 
