@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>IPython’s console &mdash; Friendly tracebacks 0.2.34a documentation</title>
+  <title>IPython’s console &mdash; Friendly-traceback 0.2.38 documentation</title>
   
 
   
@@ -52,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly tracebacks
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly-traceback
           
 
           
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.34a
+                0.2.38
               </div>
             
           
@@ -89,9 +89,10 @@
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="beginner.html">Useful information for beginners</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu: installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Friendly console</span></p>
@@ -103,13 +104,14 @@
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s repl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_repl.html">Mu’s REPL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">IPython’s console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
@@ -120,7 +122,7 @@
 <li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
@@ -181,7 +183,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly tracebacks</a>
+          <a href="index.html">Friendly-traceback</a>
         
       </nav>
 
@@ -250,7 +252,15 @@ project.</p>
 </div>
 <div class="section" id="ipython-s-console">
 <h1>IPython’s console<a class="headerlink" href="#ipython-s-console" title="Permalink to this headline">¶</a></h1>
-<p>quick overview</p>
+<p>Friendly-traceback can be used together with IPython when running
+in a standard terminal. Unfortunately, I have not been able to
+find a reliable way to use colours in this situation; as a result,
+the default mode is perhaps not as readable as in other cases.</p>
+<a class="reference internal image-reference" href="_images/ipython-console-repl.png"><img alt="_images/ipython-console-repl.png" src="_images/ipython-console-repl.png" style="width: 501.5px; height: 423.5px;" /></a>
+<p>However, being able to integrate with IPython exception handling
+means that Friendly-traceback can be used with Jupyter notebooks.
+Furthermore, as was shown previously, it can also be used with
+Mu’s REPL which is a Jupyter console.</p>
 </div>
 
 

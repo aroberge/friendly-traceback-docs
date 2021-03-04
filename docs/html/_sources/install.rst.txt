@@ -3,7 +3,7 @@ Installation
 
 .. hint::
 
-    |mu_logo| If you use Mu, you might want to go to the next page.
+    |mu_logo| Skip this page if you use Mu.
 
 .. |mu_logo| image:: images/mu_logo.png
 

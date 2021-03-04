@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>IDLE’s shell &mdash; Friendly tracebacks 0.2.34a documentation</title>
+  <title>IDLE’s shell &mdash; Friendly-traceback 0.2.38 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Visual Studio Code’s terminal" href="vs_code_repl.html" />
+    <link rel="next" title="Mu’s REPL" href="mu_repl.html" />
     <link rel="prev" title="Using another REPL" href="pyrepl.html" /> 
 </head>
 
@@ -52,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly tracebacks
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly-traceback
           
 
           
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.34a
+                0.2.38
               </div>
             
           
@@ -92,7 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="beginner.html">Useful information for beginners</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu: installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Using with Thonny: installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Friendly console</span></p>
@@ -104,13 +104,14 @@
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">IDLE’s shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_repl.html">Mu’s REPL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
@@ -121,7 +122,7 @@
 <li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
@@ -182,7 +183,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly tracebacks</a>
+          <a href="index.html">Friendly-traceback</a>
         
       </nav>
 
@@ -229,7 +230,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="vs_code_repl.html" class="btn btn-neutral float-right" title="Visual Studio Code’s terminal" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mu_repl.html" class="btn btn-neutral float-right" title="Mu’s REPL" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="pyrepl.html" class="btn btn-neutral float-left" title="Using another REPL" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -261,12 +262,13 @@ using the following two instructions when beginning a session:</p>
 </pre></div>
 </div>
 </div>
-<p>IDLE is very often the first editor/IDE that Python beginners use.
+<p>Since it is almost always included with Python,
+IDLE is very often the first editor/IDE that Python beginners use.
 It comes with its own repl (also known as its “shell”) which does
 syntax coloring. By default, it uses blue for anything printed normally
 (to stdout) and red for anything printed as part of an exception (to stderr).
-When a SyntaxError is recognized, it highlight (with red background)
-the location of that error.</p>
+When a SyntaxError is recognized, the location of that error is
+highlighted, with red background.</p>
 <a class="reference internal image-reference" href="_images/idle.png"><img alt="Screen capture of IDLE's shell" src="_images/idle.png" style="width: 823.1999999999999px; height: 243.6px;" /></a>
 <p>We can use the Friendly console within IDLE’s shell by first using
 a special import statement:</p>
@@ -276,7 +278,8 @@ a special import statement:</p>
 <p>To start the Friendly console, we need to then use <code class="docutils literal notranslate"><span class="pre">start_console()</span></code>.</p>
 <a class="reference internal image-reference" href="_images/idle-friendly.png"><img alt="Screen capture of the Friendly console within IDLE" src="_images/idle-friendly.png" style="width: 823.1999999999999px; height: 889.8px;" /></a>
 <p>As you can see, the prompt is in blue as it is “printed” using
-the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function.  Friendly’s output within IDLE uses
+the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function.</p>
+<p>Friendly’s output within IDLE uses
 three different colours: black for code, red for anything related
 to a traceback, and blue for everything else. It also adopts
 IDLE’s feature of highlighting the location of an error using
@@ -292,7 +295,7 @@ import statement as before,</p>
 <p>we use <code class="docutils literal notranslate"><span class="pre">install()</span></code> to replace IDLE’s handling of runtime errors
 by Friendly-traceback’s version.</p>
 <a class="reference internal image-reference" href="_images/idle-friendly2.png"><img alt="Screen capture of the Friendly console within IDLE" src="_images/idle-friendly2.png" style="width: 823.1999999999999px; height: 421.8px;" /></a>
-<p>However, since syntax errors cannot (yet) be processed by Friendly-traceback
+<p>Unfortunately, since syntax errors cannot (yet) be processed by Friendly-traceback
 in this mode, we do not recommend to use it in this way.</p>
 <p>IDLE’s developers are aware of this current limitation and might
 provide in a future version a way for Friendly-traceback to “hook” into IDLE’s
@@ -307,7 +310,7 @@ mechanism for dealing with syntax errors.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vs_code_repl.html" class="btn btn-neutral float-right" title="Visual Studio Code’s terminal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mu_repl.html" class="btn btn-neutral float-right" title="Mu’s REPL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="pyrepl.html" class="btn btn-neutral float-left" title="Using another REPL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

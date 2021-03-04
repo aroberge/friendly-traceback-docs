@@ -46,6 +46,8 @@ Compare this with what happens when we use a Friendly console:
    :scale: 50 %
    :alt: Python's interpreter
 
+The name of the "file" is ``<friendly-console:N>`` where ``N`` is a different
+integer for each "file".
 
 Notice how the traceback shown by Friendly-traceback includes the lines
 of code that caused the problem.  To find the cause of the problems
@@ -65,7 +67,7 @@ These two lines of code are shown below (1).
    :alt: Python's interpreter
 
 For the function ``start_console``, we use the option ``use_rich=True`` (2) so
-that we get the coloured output; some other REPL do not permit
+that we get the coloured output when using a terminal; some other REPL do not permit
 to show coloured output in this way.
 
 Since we are using the Friendly console, functions such as ``what()`` (3)
@@ -95,3 +97,5 @@ or::
     import friendly_traceback
     ...
     friendly_traceback.what()  # when needed to use it
+
+which we do not consider to be "friendly".

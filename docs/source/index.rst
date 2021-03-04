@@ -99,7 +99,7 @@ English (by default) and French are available.
    explain
    more
    www
-   tracebacks
+   multiple_tracebacks
    repl_more
 
 .. toctree::
@@ -109,6 +109,7 @@ English (by default) and French are available.
 
    pyrepl
    idle_repl
+   mu_repl
    vs_code_repl
    ipython_repl
    other_repl
@@ -123,7 +124,7 @@ English (by default) and French are available.
    idle
    mu
    thonny
-   ipython
+   jupyter
    vs_code
    colab
 

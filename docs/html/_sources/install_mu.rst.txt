@@ -41,16 +41,22 @@ If you click on it, it will bring the following dialog.
 .. image:: images/mu_dialog1.png
    :alt: Mu dialog
 
-Click on the triangular "arrow" until the Third Party Packages tab is shown.
+Click on the triangular "arrow" until the *Third Party Packages* tab is shown.
 
 .. image:: images/mu_dialog2.png
    :alt: Mu dialog
 
 Enter "Friendly-traceback" and click "ok".  Friendly-traceback should
-be installed. The version installed should be 0.2.34 or newer.
-The screen capture below was done with an earlier version;
-newer versions of Friendly-traceback install some additional packages.
+be installed. The version installed should be 0.2.36 or newer.
 
 .. image:: images/mu_dialog3.png
    :alt: Mu dialog
 
+Friendly-traceback uses other packages that are installed at the same
+time. If you look at the *Third Party Packages* tab again, you
+should see something like this:
+
+.. image:: images/mu_dialog4.png
+   :alt: Mu dialog
+
+Note that the exact packages listed might be different than what you see here.

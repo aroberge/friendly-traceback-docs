@@ -17,8 +17,8 @@ You can choose to see three different tracebacks:
 ``friendly_tb``, ``python_tb``, ``debug_tb``.
 Of these three, ``python_tb`` is designed to reproduce fairly accurately
 what would be seen if a program would be run without
-friendly-traceback. Still, it does include some minor differences
-depending on the context.
+friendly-traceback. In a few cases, it will have some minor differences
+compared with a normal Python traceback.
 
 In this section, we compare these three tracebacks with the normal
 Python traceback in three different settings:
@@ -51,8 +51,9 @@ the code shown above using Python.
    :alt: Screen capture showing a normal python traceback.
 
 Next, we run the same module using Friendly-traceback
-showing the ``python_tb`` case. In this particular case,
-the only difference with the
+showing the ``python_tb`` case; this is done using ``--include python_tb``
+as a command line option.
+In this particular case, the only difference with the
 normal Python traceback is the addition of an empty line preceding
 the traceback, with the goal of increasing readability.
 
@@ -91,7 +92,7 @@ When doing the same with Friendly-traceback, it is the ``friendly_tb``
 that is shown by default. It has three differences compared with
 the normal Python traceback:
 
-1. The name of the console is different.
+1. The name of the console is different (``<friendly-console:...>`` instead of ``<stdin>``.)
 2. Paths are shortened (more about this below)
 3. As before, any "hint" available is automatically shown.
 

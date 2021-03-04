@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Everything about the Friendly console &mdash; Friendly tracebacks 0.2.34a documentation</title>
+  <title>Everything about the Friendly console &mdash; Friendly-traceback 0.2.38 documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Using another REPL" href="pyrepl.html" />
-    <link rel="prev" title="Multiple tracebacks" href="tracebacks.html" /> 
+    <link rel="prev" title="Multiple tracebacks" href="multiple_tracebacks.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -52,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly tracebacks
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly-traceback
           
 
           
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.34a
+                0.2.38
               </div>
             
           
@@ -89,9 +89,10 @@
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="beginner.html">Useful information for beginners</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu: installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Friendly console</span></p>
@@ -103,7 +104,7 @@
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Everything about the Friendly console</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#console-helpers-py">console_helpers.py</a></li>
 </ul>
@@ -112,7 +113,8 @@
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s repl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_repl.html">Mu’s REPL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
@@ -123,7 +125,7 @@
 <li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
@@ -184,7 +186,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly tracebacks</a>
+          <a href="index.html">Friendly-traceback</a>
         
       </nav>
 
@@ -234,7 +236,7 @@
         <a href="pyrepl.html" class="btn btn-neutral float-right" title="Using another REPL" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tracebacks.html" class="btn btn-neutral float-left" title="Multiple tracebacks" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="multiple_tracebacks.html" class="btn btn-neutral float-left" title="Multiple tracebacks" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -333,6 +335,16 @@ Potentially useful for advanced users.</p>
 <em class="property">static </em><code class="sig-name descname">python_tb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.python_tb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the Python traceback, excluding files from friendly-traceback
 itself.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="friendly_traceback.console_helpers.Friendly.set_formatter">
+<em class="property">static </em><code class="sig-name descname">set_formatter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">formatter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly_traceback.console_helpers.Friendly.set_formatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the default formatter. If no argument is given, the default
+formatter is used.</p>
+<p>A custom formatter must accept <code class="docutils literal notranslate"><span class="pre">info</span></code> as a required arguments
+as well an additional argument whose value is subject to change.
+See formatters.py for details.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -503,6 +515,16 @@ itself.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt id="friendly_traceback.console_helpers.set_formatter">
+<code class="sig-name descname">set_formatter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">formatter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback.html#set_formatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.set_formatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the default formatter. If no argument is given, the default
+formatter is used.</p>
+<p>A custom formatter must accept <code class="docutils literal notranslate"><span class="pre">info</span></code> as a required arguments
+as well an additional argument whose value is subject to change.
+See formatters.py for details.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="friendly_traceback.console_helpers.set_include">
 <code class="sig-name descname">set_include</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback.html#set_include"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.console_helpers.set_include" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the information to include in the traceback.</p>
@@ -615,7 +637,7 @@ Friendly-traceback documentation will open</p></li>
         <a href="pyrepl.html" class="btn btn-neutral float-right" title="Using another REPL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tracebacks.html" class="btn btn-neutral float-left" title="Multiple tracebacks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="multiple_tracebacks.html" class="btn btn-neutral float-left" title="Multiple tracebacks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

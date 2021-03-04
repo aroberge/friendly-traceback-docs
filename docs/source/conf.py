@@ -27,7 +27,7 @@ from friendly_traceback import __version__  # pylint: disable=import-error
 
 # -- Project information -----------------------------------------------------
 
-project = "Friendly tracebacks"
+project = "Friendly-traceback"
 copyright = "André Roberge"
 author = "André Roberge"
 

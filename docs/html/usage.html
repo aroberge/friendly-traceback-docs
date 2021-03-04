@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Basic usage &mdash; Friendly tracebacks 0.2.34a documentation</title>
+  <title>Basic usage &mdash; Friendly-traceback 0.2.38 documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Console basics" href="repl.html" />
-    <link rel="prev" title="Using with Thonny" href="install_thonny.html" /> 
+    <link rel="prev" title="Information for Thonny" href="install_thonny.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -52,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly tracebacks
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly-traceback
           
 
           
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.34a
+                0.2.38
               </div>
             
           
@@ -89,12 +89,13 @@
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="beginner.html">Useful information for beginners</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu: installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Basic usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#other-ways">Other ways</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#suggestions">Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#suggestions">Suggestions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#other-ways">Other ways</a></li>
 </ul>
 </li>
 </ul>
@@ -109,13 +110,14 @@
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s repl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_repl.html">Mu’s REPL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
@@ -126,7 +128,7 @@
 <li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
@@ -187,7 +189,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly tracebacks</a>
+          <a href="index.html">Friendly-traceback</a>
         
       </nav>
 
@@ -237,7 +239,7 @@
         <a href="repl.html" class="btn btn-neutral float-right" title="Console basics" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="install_thonny.html" class="btn btn-neutral float-left" title="Using with Thonny" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="install_thonny.html" class="btn btn-neutral float-left" title="Information for Thonny" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -261,7 +263,8 @@ We only list here the basic scenarios available from a
 terminal or from within a Python interpreter.
 More options are possible, including running from an editor/IDE
 as described later in this documentation.</p>
-<p>To get started, we recommend using <strong>one of the first three</strong> following options.</p>
+<p>For those that know how to run programs <strong>from a terminal</strong>,
+we recommend using <strong>one of the first three</strong> following options.</p>
 <ol class="arabic">
 <li><p>Execute a Python program, as we have already shown at the beginning:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback example.py
@@ -281,10 +284,37 @@ a program:</p>
 </div>
 </li>
 </ol>
-<p>If this is the first time that you are using Friendly-traceback,
-we suggest that you go to the next page, ignoring the content below.</p>
+<p>All of the above assume that you are using a terminal with a dark background.
+If you are using a terminal with a light background, you might want to
+add <code class="docutils literal notranslate"><span class="pre">--style</span> <span class="pre">light</span></code> as a command line option.</p>
+<div class="section" id="suggestions">
+<h2>Suggestions<a class="headerlink" href="#suggestions" title="Permalink to this headline">¶</a></h2>
+<p>If you are a Windows user we <strong>very strongly suggest</strong> that you use the new
+<a class="reference external" href="https://github.com/microsoft/terminal">Windows Terminal</a>
+that you can get from the Windows Store; this is
+what we have used for various screen captures.
+See <a class="reference internal" href="themes.html#themes"><span class="std std-ref">Themes and colours</span></a> for screenshot taken with with other terminals
+on Windows.</p>
+<p>If you are a Mac or Linux user,
+and use Friendly-traceback with Rich installed,
+we’d gladly accept any screenshot that you could provide so that they
+could be included in this documentation.</p>
+<p>If possible, Friendly-traceback makes use of
+<a class="reference external" href="https://github.com/willmcgugan/rich">Rich</a> to add colour to its output.
+Note however that some programming environments,
+such as IDLE and other IDEs do not support Rich; this does not
+prevent you from using Friendly-traceback, but the display
+will definitely not look as nice.
+The only editor/IDE capable of <strong>fully</strong> making use of Rich that we know
+of is <a class="reference external" href="https://code.visualstudio.com/">Microsoft Visual Studio Code</a>.
+Pycharm’s embedded console, at least on Windows, does not fully
+support Rich. Jupyter notebooks and JupyterLab can also use Rich adequately
+when a dark theme is used.</p>
 <div class="section" id="other-ways">
-<h2>Other ways<a class="headerlink" href="#other-ways" title="Permalink to this headline">¶</a></h2>
+<h3>Other ways<a class="headerlink" href="#other-ways" title="Permalink to this headline">¶</a></h3>
+<p>The following ways of using Friendly-traceback are described
+in more details later. We simply list them here as useful
+summary for experienced Python programmers.</p>
 <ol class="arabic" start="4">
 <li><p>You can use Friendly-traceback as an exception hook:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
@@ -318,29 +348,6 @@ changing the information that is shown by default.</p>
 provided later in this documentation.
 As a shortcut, you can
 also type <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">friendly_traceback</span> <span class="pre">-h</span></code> in a terminal.</p>
-<div class="section" id="suggestions">
-<h3>Suggestions<a class="headerlink" href="#suggestions" title="Permalink to this headline">¶</a></h3>
-<p>If you use Rich on Windows from a terminal,
-we also <strong>very strongly suggest</strong> that you use the new
-<a class="reference external" href="https://github.com/microsoft/terminal">Windows Terminal</a>; this is
-what we have used for various screen captures.
-See <a class="reference internal" href="themes.html#themes"><span class="std std-ref">Themes and colours</span></a> for screenshot taken with with other terminals
-on Windows.</p>
-<p>If you are a Mac or Linux user,
-and use Friendly-traceback with Rich installed,
-we’d gladly accept any screenshot that you could provide so that they
-could be included in this documentation.</p>
-<p>If possible, Friendly-traceback makes use of
-<a class="reference external" href="https://github.com/willmcgugan/rich">Rich</a> to add colour to its output.</p>
-<p>Note however that some programming environments,
-such as IDLE and other IDEs do not support Rich; this does not
-prevent you from using Friendly-traceback, but the display
-will definitely not look as nice.
-The only editor/IDE capable of <strong>fully</strong> making use of Rich that we know
-of is <a class="reference external" href="https://code.visualstudio.com/">Microsoft Visual Studio Code</a>.
-Pycharm’s embedded console, at least on Windows, does not fully
-support Rich. Jupyter notebooks and JupyterLab can also use Rich adequately
-when a dark theme is used.</p>
 </div>
 </div>
 </div>
@@ -356,7 +363,7 @@ when a dark theme is used.</p>
         <a href="repl.html" class="btn btn-neutral float-right" title="Console basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="install_thonny.html" class="btn btn-neutral float-left" title="Using with Thonny" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="install_thonny.html" class="btn btn-neutral float-left" title="Information for Thonny" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

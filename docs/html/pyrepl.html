@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using another REPL &mdash; Friendly tracebacks 0.2.34a documentation</title>
+  <title>Using another REPL &mdash; Friendly-traceback 0.2.38 documentation</title>
   
 
   
@@ -52,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly tracebacks
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly-traceback
           
 
           
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.34a
+                0.2.38
               </div>
             
           
@@ -92,7 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="beginner.html">Useful information for beginners</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu: installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Using with Thonny: installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Friendly console</span></p>
@@ -104,7 +104,7 @@
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
@@ -115,6 +115,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_repl.html">Mu’s REPL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
@@ -125,7 +126,7 @@
 <li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
@@ -186,7 +187,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly tracebacks</a>
+          <a href="index.html">Friendly-traceback</a>
         
       </nav>
 
@@ -286,6 +287,8 @@ it appears to be saved in a file which is always named <code class="docutils lit
 The actual code entered on a given line of each such “file” is never available.</p>
 <p>Compare this with what happens when we use a Friendly console:</p>
 <a class="reference internal image-reference" href="_images/py_repl2.png"><img alt="Python's interpreter" src="_images/py_repl2.png" style="width: 524.0px; height: 245.5px;" /></a>
+<p>The name of the “file” is <code class="docutils literal notranslate"><span class="pre">&lt;friendly-console:N&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">N</span></code> is a different
+integer for each “file”.</p>
 <p>Notice how the traceback shown by Friendly-traceback includes the lines
 of code that caused the problem.  To find the cause of the problems
 that gave rise to a traceback, Friendly-traceback needs to have this
@@ -299,7 +302,7 @@ start a console using the following:</p>
 <p>These two lines of code are shown below (1).</p>
 <a class="reference internal image-reference" href="_images/py_repl3.png"><img alt="Python's interpreter" src="_images/py_repl3.png" style="width: 524.0px; height: 435.5px;" /></a>
 <p>For the function <code class="docutils literal notranslate"><span class="pre">start_console</span></code>, we use the option <code class="docutils literal notranslate"><span class="pre">use_rich=True</span></code> (2) so
-that we get the coloured output; some other REPL do not permit
+that we get the coloured output when using a terminal; some other REPL do not permit
 to show coloured output in this way.</p>
 <p>Since we are using the Friendly console, functions such as <code class="docutils literal notranslate"><span class="pre">what()</span></code> (3)
 are available.</p>
@@ -327,6 +330,7 @@ either list every single function required:</p>
 <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">what</span><span class="p">()</span>  <span class="c1"># when needed to use it</span>
 </pre></div>
 </div>
+<p>which we do not consider to be “friendly”.</p>
 </div>
 </div>
 

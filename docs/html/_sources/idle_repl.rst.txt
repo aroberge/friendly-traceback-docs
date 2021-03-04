@@ -12,12 +12,13 @@ IDLE's shell
         start_console()
 
 
+Since it is almost always included with Python,
 IDLE is very often the first editor/IDE that Python beginners use.
 It comes with its own repl (also known as its "shell") which does
 syntax coloring. By default, it uses blue for anything printed normally
 (to stdout) and red for anything printed as part of an exception (to stderr).
-When a SyntaxError is recognized, it highlight (with red background)
-the location of that error.
+When a SyntaxError is recognized, the location of that error is
+highlighted, with red background.
 
 .. image:: images/idle.png
    :scale: 60 %
@@ -36,7 +37,9 @@ To start the Friendly console, we need to then use ``start_console()``.
    :alt: Screen capture of the Friendly console within IDLE
 
 As you can see, the prompt is in blue as it is "printed" using
-the ``input()`` function.  Friendly's output within IDLE uses
+the ``input()`` function.  
+
+Friendly's output within IDLE uses
 three different colours: black for code, red for anything related
 to a traceback, and blue for everything else. It also adopts
 IDLE's feature of highlighting the location of an error using
@@ -63,7 +66,7 @@ by Friendly-traceback's version.
    :scale: 60 %
    :alt: Screen capture of the Friendly console within IDLE
 
-However, since syntax errors cannot (yet) be processed by Friendly-traceback
+Unfortunately, since syntax errors cannot (yet) be processed by Friendly-traceback
 in this mode, we do not recommend to use it in this way.
 
 IDLE's developers are aware of this current limitation and might

@@ -14,14 +14,12 @@
     "Assistant".
 
 
-Using with Thonny: installation
+Information for Thonny
 ===============================
 
 
 `Thonny <https://github.com/thonny/thonny/>`_ is a fantastic
 programming environment for learning Python.
-While it does not support traceback theming with Rich, we nonetheless
-highly recommend it to beginners and instructors.
 
 
 Thonny is highly configurable. Among the tools

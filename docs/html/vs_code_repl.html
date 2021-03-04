@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Visual Studio Code’s terminal &mdash; Friendly tracebacks 0.2.34a documentation</title>
+  <title>Visual Studio Code’s terminal &mdash; Friendly-traceback 0.2.38 documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="IPython’s console" href="ipython_repl.html" />
-    <link rel="prev" title="IDLE’s repl" href="idle_repl.html" /> 
+    <link rel="prev" title="Mu’s REPL" href="mu_repl.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -52,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly tracebacks
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly-traceback
           
 
           
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.34a
+                0.2.38
               </div>
             
           
@@ -89,9 +89,10 @@
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="beginner.html">Useful information for beginners</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Using with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu: installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Friendly console</span></p>
@@ -103,13 +104,14 @@
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s repl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_repl.html">Mu’s REPL</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Visual Studio Code’s terminal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
@@ -120,7 +122,7 @@
 <li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ipython.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
@@ -181,7 +183,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly tracebacks</a>
+          <a href="index.html">Friendly-traceback</a>
         
       </nav>
 
@@ -231,7 +233,7 @@
         <a href="ipython_repl.html" class="btn btn-neutral float-right" title="IPython’s console" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="idle_repl.html" class="btn btn-neutral float-left" title="IDLE’s repl" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mu_repl.html" class="btn btn-neutral float-left" title="Mu’s REPL" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -250,7 +252,21 @@ project.</p>
 </div>
 <div class="section" id="visual-studio-code-s-terminal">
 <h1>Visual Studio Code’s terminal<a class="headerlink" href="#visual-studio-code-s-terminal" title="Permalink to this headline">¶</a></h1>
-<p>Using the embedded terminal</p>
+<p>You can start the friendly console in Visual Studio Code’s terminal
+in the same way as mentioned before:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">friendly_traceback</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/vs_code_repl1.png"><img alt="Screen capture showing VS code terminal in dark mode" src="_images/vs_code_repl1.png" style="width: 641.5px; height: 328.0px;" /></a>
+<p>This is designed for a dark coloured terminal; the closer the
+background to your chosen VS code theme is to black, the
+better it likely will look.</p>
+<p>If you use a light coloured theme, you should use the
+following instead:</p>
+<blockquote>
+<div><p>python -m friendly_traceback –style light</p>
+</div></blockquote>
+<a class="reference internal image-reference" href="_images/vs_code_repl2.png"><img alt="Screen capture showing VS code terminal in light mode" src="_images/vs_code_repl2.png" style="width: 718.5px; height: 377.5px;" /></a>
 </div>
 
 
@@ -264,7 +280,7 @@ project.</p>
         <a href="ipython_repl.html" class="btn btn-neutral float-right" title="IPython’s console" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="idle_repl.html" class="btn btn-neutral float-left" title="IDLE’s repl" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mu_repl.html" class="btn btn-neutral float-left" title="Mu’s REPL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
