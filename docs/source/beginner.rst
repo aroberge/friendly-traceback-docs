@@ -8,6 +8,10 @@ Useful information for beginners
     next page.
 
 
+The information in this page is not intended to take the place of a
+complete introduction for beginners.
+
+
 What is a REPL?
 ---------------
 
@@ -18,24 +22,58 @@ this code, interprets what it means, and might "print" (show) some
 result before showing another prompt waiting for us to enter
 more code.
 
-Other synonyms of REPL are "console", "shell", "interpreter".
+Other synonyms of REPL are "console", "shell", and "interpreter".
 
+.. image:: images/python_terminal.png
+   :scale: 50 %
+   :alt: Python runing in a terminal
 
-.. todo:: add screen capture
+In the image shown above, I have started a python interpreter
+using the command ``python``, and entered the code
+``print('Hello world!')`` at the prompt.
+
+The ``python`` command refers to whatever you need to type to invoke your
+favourite Python interpreter in a terminal on your computer.
+It could be ``python``, ``python3``, ``py -3.8``, etc.
 
 
 How to run a Python program
 ----------------------------
 
-.. todo:: add screen captures showing how to run Python programs.
+Instead of using an interpreter to type code when prompted
+by Python, you can use an editor, save your program in
+a file (named ``hello.py`` in my example) and run
+it in a terminal by using the command
+``python hello.py``.
 
+.. image:: images/python_terminal2.png
+   :scale: 50 %
+   :alt: Python runing in a terminal
 
-* Show a program created in an editor and run in a terminal
-* Show a program run using IDLE
-* Show a program run using MU
+Another option is to use a program like IDLE which includes
+both an editor and a python interpreter.
 
+.. image:: images/python_idle.png
+   :scale: 50 %
+   :alt: Python runing in IDLE
 
-In the command shown above,
-``python`` refers to whatever you need to type to invoke your
-favourite Python interpreter.
-It could be ``python``, ``python3``, ``py -3.8``, etc.
+There exists many other editors designed to be used
+by Python programmers.
+For example, some of you might be familiar with Mu:
+
+.. image:: images/beginner_mu.png
+   :scale: 50 %
+   :alt: Python runing in Mu
+
+Summary
+-------
+
+You can run Python programs by typing ``python ...`` in a terminal
+or by using and editor with a built-in menu for running Python programs.
+
+In the early part of this documentation, the examples I will use
+will be mostly done using ``python ...`` in a terminal.
+Even if this is not the way that you normally run Python programs,
+it would be most helpful if you tried to follow along by doing
+something similar to what I show.
+

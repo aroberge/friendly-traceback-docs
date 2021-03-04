@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Everything about the Friendly console" href="repl_more.html" />
-    <link rel="prev" title="www()" href="www.html" /> 
+    <link rel="prev" title="History" href="history.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -104,6 +104,7 @@
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">History</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Multiple tracebacks</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#running-a-module-from-the-command-line">Running a module from the command line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#importing-a-module">Importing a module</a></li>
@@ -112,6 +113,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul>
@@ -239,7 +241,7 @@
         <a href="repl_more.html" class="btn btn-neutral float-right" title="Everything about the Friendly console" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="www.html" class="btn btn-neutral float-left" title="www()" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="history.html" class="btn btn-neutral float-left" title="History" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -252,8 +254,7 @@
 <p class="admonition-title">Warning</p>
 <p>The documentation is being partially rewritten prior to
 releasing the next milestone version (0.3).
-Some information given
-here (especially images) may not reflect the state of the
+Some information given here (especially images) may not reflect the state of the
 project.</p>
 </div>
 <div class="section" id="multiple-tracebacks">
@@ -272,14 +273,14 @@ Of these three, <code class="docutils literal notranslate"><span class="pre">pyt
 what would be seen if a program would be run without
 friendly-traceback. In a few cases, it will have some minor differences
 compared with a normal Python traceback.</p>
-<p>In this section, we compare these three tracebacks with the normal
+<p>In this section, I compare these three tracebacks with the normal
 Python traceback in three different settings:</p>
 <ul class="simple">
 <li><p>Running a module from the command line.</p></li>
 <li><p>Importing a module.</p></li>
 <li><p>Writing code in the interpreter.</p></li>
 </ul>
-<p>For the first two, the module we will run contains the following:</p>
+<p>For the first two, the module I will run contains the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
 
 <span class="k">def</span> <span class="nf">is_lowercase</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
@@ -290,27 +291,27 @@ Python traceback in three different settings:</p>
 </div>
 <div class="section" id="running-a-module-from-the-command-line">
 <h2>Running a module from the command line<a class="headerlink" href="#running-a-module-from-the-command-line" title="Permalink to this headline">¶</a></h2>
-<p>First, we show the result of running a module containing
+<p>First, I show the result of running a module containing
 the code shown above using Python.</p>
 <a class="reference internal image-reference" href="_images/tb_python1.png"><img alt="Screen capture showing a normal python traceback." src="_images/tb_python1.png" style="width: 433.5px; height: 113.0px;" /></a>
-<p>Next, we run the same module using Friendly-traceback
+<p>Next, I run the same module using Friendly-traceback
 showing the <code class="docutils literal notranslate"><span class="pre">python_tb</span></code> case; this is done using <code class="docutils literal notranslate"><span class="pre">--include</span> <span class="pre">python_tb</span></code>
 as a command line option.
 In this particular case, the only difference with the
 normal Python traceback is the addition of an empty line preceding
 the traceback, with the goal of increasing readability.</p>
 <a class="reference internal image-reference" href="_images/python_tb1.png"><img alt="Screen capture showing a simulated python traceback." src="_images/python_tb1.png" style="width: 442.0px; height: 129.0px;" /></a>
-<p>With the <code class="docutils literal notranslate"><span class="pre">friendly_tb</span></code> option, we see a “hint” added to the traceback;
+<p>With the <code class="docutils literal notranslate"><span class="pre">friendly_tb</span></code> option, you see a “hint” added to the traceback;
 in some instances, no such hint can be provided.</p>
 <a class="reference internal image-reference" href="_images/friendly_tb1.png"><img alt="Screen capture showing a friendly traceback." src="_images/friendly_tb1.png" style="width: 449.0px; height: 171.5px;" /></a>
-<p>Finally, we use the <code class="docutils literal notranslate"><span class="pre">debug_tb</span></code> to show the real traceback produced
+<p>Finally, I use the <code class="docutils literal notranslate"><span class="pre">debug_tb</span></code> to show the real traceback produced
 when running this example using Friendly-traceback: it includes
 code from Friendly-traceback itself.</p>
 <a class="reference internal image-reference" href="_images/debug_tb1.png"><img alt="Screen capture showing a the true traceback." src="_images/debug_tb1.png" style="width: 718.0px; height: 333.5px;" /></a>
 </div>
 <div class="section" id="importing-a-module">
 <h2>Importing a module<a class="headerlink" href="#importing-a-module" title="Permalink to this headline">¶</a></h2>
-<p>Let’s compare what happens if we import the same module instead
+<p>Let’s compare what happens if I import the same module instead
 from a console, starting with Python’s own.</p>
 <a class="reference internal image-reference" href="_images/tb_python2.png"><img alt="Screen capture showing a normal python traceback." src="_images/tb_python2.png" style="width: 548.0px; height: 120.0px;" /></a>
 <p>When doing the same with Friendly-traceback, it is the <code class="docutils literal notranslate"><span class="pre">friendly_tb</span></code>
@@ -322,12 +323,12 @@ the normal Python traceback:</p>
 <li><p>As before, any “hint” available is automatically shown.</p></li>
 </ol>
 <a class="reference internal image-reference" href="_images/friendly_tb2.png"><img alt="Screen capture showing a friendly traceback." src="_images/friendly_tb2.png" style="width: 520.0px; height: 205.0px;" /></a>
-<p>We can see the simulated Python traceback by entering <code class="docutils literal notranslate"><span class="pre">python_tb()</span></code>;
+<p>You can see the simulated Python traceback by entering <code class="docutils literal notranslate"><span class="pre">python_tb()</span></code>;
 as before, and except for the name of the console,
 the only difference with a normal Python traceback is the addition of
 an empty line preceding the traceback.</p>
 <a class="reference internal image-reference" href="_images/python_tb2.png"><img alt="Screen capture showing a simulated python traceback." src="_images/python_tb2.png" style="width: 552.0px; height: 176.0px;" /></a>
-<p>Finally, we can use <code class="docutils literal notranslate"><span class="pre">debug_tb()</span></code> to see the complete traceback.</p>
+<p>Finally, you can use <code class="docutils literal notranslate"><span class="pre">debug_tb()</span></code> to see the complete traceback.</p>
 <a class="reference internal image-reference" href="_images/debug_tb2.png"><img alt="Screen capture showing a the true traceback." src="_images/debug_tb2.png" style="width: 681.5px; height: 182.5px;" /></a>
 </div>
 <div class="section" id="using-the-interpreter">
@@ -340,15 +341,15 @@ content of the line that was executed.</p>
 it is the <code class="docutils literal notranslate"><span class="pre">friendly_tb</span></code> that is shown by default.
 It includes the line of code that was executed for each “file”.</p>
 <a class="reference internal image-reference" href="_images/friendly_tb3.png"><img alt="Screen capture showing a friendly traceback." src="_images/friendly_tb3.png" style="width: 430.5px; height: 263.0px;" /></a>
-<p>The same is true for the <code class="docutils literal notranslate"><span class="pre">python_tb()</span></code>; we could remove this information
-to make it more similar to a “true” Python traceback but we feel that
+<p>The same is true for the <code class="docutils literal notranslate"><span class="pre">python_tb()</span></code>; I could remove this information
+to make it more similar to a “true” Python traceback but I feel that
 the loss of information would not be helpful.</p>
 <a class="reference internal image-reference" href="_images/python_tb3.png"><img alt="Screen capture showing a simulated python traceback." src="_images/python_tb3.png" style="width: 429.5px; height: 152.5px;" /></a>
-<p>As before, we can use <code class="docutils literal notranslate"><span class="pre">debug_tb()</span></code> to see the complete traceback.</p>
+<p>As before, I can use <code class="docutils literal notranslate"><span class="pre">debug_tb()</span></code> to see the complete traceback.</p>
 <a class="reference internal image-reference" href="_images/debug_tb3.png"><img alt="Screen capture showing a the true traceback." src="_images/debug_tb3.png" style="width: 630.5px; height: 150.5px;" /></a>
 <p>Since paths can be quite long, when showing information about an
 exception, Friendly-traceback will attempt to reduce the length
-of the path shown. We’ve seen before an example where <code class="docutils literal notranslate"><span class="pre">HOME_DIR</span></code>
+of the path shown. You’ve seen before an example where <code class="docutils literal notranslate"><span class="pre">HOME_DIR</span></code>
 was substituted for the user’s home directory. A more significant
 reduction is shown when the path for a module from the Python standard library
 is shown.</p>
@@ -369,7 +370,7 @@ is shown.</p>
 <p>Try running this using Python. Not only will you get a
 <code class="docutils literal notranslate"><span class="pre">RecursionError</span></code> but you’ll get something like 2000 lines included.
 This is not exactly user friendly.  It is also what
-would be shown if we used <code class="docutils literal notranslate"><span class="pre">debug_tb()</span></code>. Let’s skip this, and
+would be shown if I had used <code class="docutils literal notranslate"><span class="pre">debug_tb()</span></code>. Let’s skip this, and
 only look at the output from the other two tracebacks, starting
 with <code class="docutils literal notranslate"><span class="pre">friendly_tb()</span></code> which is shown by default.</p>
 <a class="reference internal image-reference" href="_images/recursion1.png"><img alt="Screen capture showing lines suppressed" src="_images/recursion1.png" style="width: 372.5px; height: 278.0px;" /></a>
@@ -396,7 +397,7 @@ formatting and French as the language used.</p>
         <a href="repl_more.html" class="btn btn-neutral float-right" title="Everything about the Friendly console" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="www.html" class="btn btn-neutral float-left" title="www()" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="history.html" class="btn btn-neutral float-left" title="History" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -104,8 +104,10 @@
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">History</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul>
@@ -246,8 +248,7 @@
 <p class="admonition-title">Warning</p>
 <p>The documentation is being partially rewritten prior to
 releasing the next milestone version (0.3).
-Some information given
-here (especially images) may not reflect the state of the
+Some information given here (especially images) may not reflect the state of the
 project.</p>
 </div>
 <div class="section" id="idle-using-the-editor">
@@ -265,7 +266,7 @@ the following program with IDLE using the
 </div>
 <a class="reference internal image-reference" href="_images/idle.png"><img alt="Screen capture of IDLE" src="_images/idle.png" style="width: 686.0px; height: 203.0px;" /></a>
 <p>The information about the error is written in red
-(sent to <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>), but we can still interact
+(sent to <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>), but you can still interact
 with the program afterwards, with the variables
 defined in the original program being available
 in IDLE’s console.</p>
@@ -278,20 +279,20 @@ file with the following content:</p>
 <span class="n">run</span><span class="p">(</span><span class="s2">&quot;error.py&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The following is what happens if we run it, and do
+<p>The following is what happens if I run it, and do
 further interactions aftewards.</p>
 <a class="reference internal image-reference" href="_images/idle-friendly.png"><img alt="Screen capture of IDLE" src="_images/idle-friendly.png" style="width: 686.0px; height: 741.5px;" /></a>
-<p>We stil get a traceback that looks similar to Python’s
+<p>I stil get a traceback that looks similar to Python’s
 standard traceback, but that has an added hint
 as to what might be the cause of the exception: here
-it was because we wrote <code class="docutils literal notranslate"><span class="pre">Pi</span></code> with an uppercase <code class="docutils literal notranslate"><span class="pre">P</span></code>.</p>
+it was because I wrote <code class="docutils literal notranslate"><span class="pre">Pi</span></code> with an uppercase <code class="docutils literal notranslate"><span class="pre">P</span></code>.</p>
 <p>Like it was the case with Python running inside IDLE,
-we have access to the variables that were in the program
+I have access to the variables that were in the program
 that was run.</p>
 <p>Notice how the prompt is blue instead of black: this is
-because we are running the friendly console which uses
+because I am running the friendly console which uses
 <code class="docutils literal notranslate"><span class="pre">print()</span></code> or <code class="docutils literal notranslate"><span class="pre">input()</span></code> calls.</p>
-<p>As shown below, we can ask for more details about
+<p>As shown below, I can ask for more details about
 the exception, as was shown in the previous section.</p>
 <a class="reference internal image-reference" href="_images/idle-friendly2.png"><img alt="Screen capture of IDLE" src="_images/idle-friendly2.png" style="width: 686.0px; height: 351.5px;" /></a>
 </div>

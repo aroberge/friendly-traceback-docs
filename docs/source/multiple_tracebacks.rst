@@ -20,7 +20,7 @@ what would be seen if a program would be run without
 friendly-traceback. In a few cases, it will have some minor differences
 compared with a normal Python traceback.
 
-In this section, we compare these three tracebacks with the normal
+In this section, I compare these three tracebacks with the normal
 Python traceback in three different settings:
 
 * Running a module from the command line.
@@ -30,7 +30,7 @@ Python traceback in three different settings:
 * Writing code in the interpreter.
 
 
-For the first two, the module we will run contains the following::
+For the first two, the module I will run contains the following::
 
     import string
 
@@ -43,14 +43,14 @@ For the first two, the module we will run contains the following::
 Running a module from the command line
 ---------------------------------------
 
-First, we show the result of running a module containing
+First, I show the result of running a module containing
 the code shown above using Python.
 
 .. image:: images/tb_python1.png
    :scale: 50 %
    :alt: Screen capture showing a normal python traceback.
 
-Next, we run the same module using Friendly-traceback
+Next, I run the same module using Friendly-traceback
 showing the ``python_tb`` case; this is done using ``--include python_tb``
 as a command line option.
 In this particular case, the only difference with the
@@ -61,14 +61,14 @@ the traceback, with the goal of increasing readability.
    :scale: 50 %
    :alt: Screen capture showing a simulated python traceback.
 
-With the ``friendly_tb`` option, we see a "hint" added to the traceback;
+With the ``friendly_tb`` option, you see a "hint" added to the traceback;
 in some instances, no such hint can be provided.
 
 .. image:: images/friendly_tb1.png
    :scale: 50 %
    :alt: Screen capture showing a friendly traceback.
 
-Finally, we use the ``debug_tb`` to show the real traceback produced
+Finally, I use the ``debug_tb`` to show the real traceback produced
 when running this example using Friendly-traceback: it includes
 code from Friendly-traceback itself.
 
@@ -80,7 +80,7 @@ code from Friendly-traceback itself.
 Importing a module
 ------------------
 
-Let's compare what happens if we import the same module instead
+Let's compare what happens if I import the same module instead
 from a console, starting with Python's own.
 
 .. image:: images/tb_python2.png
@@ -101,7 +101,7 @@ the normal Python traceback:
    :scale: 50 %
    :alt: Screen capture showing a friendly traceback.
 
-We can see the simulated Python traceback by entering ``python_tb()``;
+You can see the simulated Python traceback by entering ``python_tb()``;
 as before, and except for the name of the console,
 the only difference with a normal Python traceback is the addition of
 an empty line preceding the traceback.
@@ -110,7 +110,7 @@ an empty line preceding the traceback.
    :scale: 50 %
    :alt: Screen capture showing a simulated python traceback.
 
-Finally, we can use ``debug_tb()`` to see the complete traceback.
+Finally, you can use ``debug_tb()`` to see the complete traceback.
 
 .. image:: images/debug_tb2.png
    :scale: 50 %
@@ -137,15 +137,15 @@ It includes the line of code that was executed for each "file".
    :scale: 50 %
    :alt: Screen capture showing a friendly traceback.
 
-The same is true for the ``python_tb()``; we could remove this information
-to make it more similar to a "true" Python traceback but we feel that
+The same is true for the ``python_tb()``; I could remove this information
+to make it more similar to a "true" Python traceback but I feel that
 the loss of information would not be helpful.
 
 .. image:: images/python_tb3.png
    :scale: 50 %
    :alt: Screen capture showing a simulated python traceback.
 
-As before, we can use ``debug_tb()`` to see the complete traceback.
+As before, I can use ``debug_tb()`` to see the complete traceback.
 
 .. image:: images/debug_tb3.png
    :scale: 50 %
@@ -153,7 +153,7 @@ As before, we can use ``debug_tb()`` to see the complete traceback.
 
 Since paths can be quite long, when showing information about an
 exception, Friendly-traceback will attempt to reduce the length
-of the path shown. We've seen before an example where ``HOME_DIR``
+of the path shown. You've seen before an example where ``HOME_DIR``
 was substituted for the user's home directory. A more significant
 reduction is shown when the path for a module from the Python standard library
 is shown.
@@ -182,7 +182,7 @@ Consider the following::
 Try running this using Python. Not only will you get a
 ``RecursionError`` but you'll get something like 2000 lines included.
 This is not exactly user friendly.  It is also what
-would be shown if we used ``debug_tb()``. Let's skip this, and
+would be shown if I had used ``debug_tb()``. Let's skip this, and
 only look at the output from the other two tracebacks, starting
 with ``friendly_tb()`` which is shown by default.
 

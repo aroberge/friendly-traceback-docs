@@ -1,33 +1,44 @@
 
-Bienvenue 환영합니다 Bienvenido - ようこそ Welcome  歡迎光臨
-========================================================================
-
-**Friendly tracebacks** - Simplified Python tracebacks translatable into
-any language.
-
 `Code on Github <https://github.com/aroberge/Friendly-traceback>`_
 
 
-In a nutshell
---------------
+Bienvenue 환영합니다 Bienvenido - ようこそ Welcome  歡迎光臨
+========================================================================
 
-There exists many Python projects, including some listed below,
+**Friendly-traceback** helps users understand what caused a given
+exception in their Python program, and how to fix it.
+
+There exists many Python projects
 whose **primary** goal is to supplement the information
 given by Python traceback to make them more useful for **advanced** programmers.
-Friendly-traceback is **not** one of these projects.
+To my knowledge, of all those projects, Friendly-traceback is the only one
+designed with beginners in mind.
 
-While Friendly-traceback can be useful for advanced programmers,
-it is aimed aimed primarily at beginners and/or at users
+.. sidebar:: Using screenshots
+
+    In this documentation, I most often use some screenshots,
+    as I believe that they are more easily understandable by most users.
+    Occasionally, I write some examples as text so that they
+    can provide the required information to people relying on screen readers.
+    If you are such a user and need help because the use of screenshots
+    prevents you from understanding the explanations, please do not hesitate to
+    reach out to me: andre.roberge@gmail.com
+
+
+To be more specific, while Friendly-traceback 
+can be useful for advanced programmers,
+it strives to present the information in a way that is easily
+understood by beginners and/or by users
 who would like to get information about traceback in their own language.
 Friendly-traceback can give more detailed information as to
 **where** an exception occurred, **what** a given exception means and
 **why** it might have occurred (sometimes adding suggestions as to how to fix it.)
 
 Even though Friendly-traceback can be used on its own with a specially
-designed console, a better option would be to use it together with
-GUI-based editors/IDE including Jupyter lab and notebooks.
-We explain how to do so later.
-For now, we just show one quick example.
+designed console, a better option might be to use it together with
+GUI-based editors/IDE including JupyterLab and Jupyter notebooks.
+I explain how to do so later.
+For now, I'll just show one quick example.
 
 
 A quick look
@@ -42,9 +53,7 @@ Consider the following program::
 
     print(get_last([1, 2, 3]))
 
-
-
-First, we show what happens when we use Python
+First, here is what happens when I use Python
 to run this program.
 
 .. image:: images/python_indexerror.png
@@ -61,11 +70,9 @@ making use of
    :scale: 50 %
    :alt: Friendly IndexError example in English
 
-
 One unique feature of Friendly-traceback is that all the information
 it provides can be translated into another language; currently, only
 English (by default) and French are available.
-
 
 .. image:: images/friendly_indexerror_fr.png
    :scale: 50 %
@@ -99,8 +106,10 @@ English (by default) and French are available.
    explain
    more
    www
+   history
    multiple_tracebacks
    repl_more
+   about_warnings
 
 .. toctree::
    :maxdepth: 1
@@ -194,7 +203,8 @@ English (by default) and French are available.
 To do
 ------
 
-We sometimes add notes about planned changes or additions to the documentation
-in various sections. Any such note is listed below as a visible reminder.
+I sometimes add notes about planned changes or additions to the documentation
+in various sections. Any such note is listed below as a visible reminder,
+mostly for my own purpose.
 
 .. todolist::

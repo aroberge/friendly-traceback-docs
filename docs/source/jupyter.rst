@@ -113,37 +113,3 @@ browser intead of a notebook. Here's what it looks like with the
 
 .. image:: images/jupyter-lab-dark-console-rich.png
    :scale: 40 %
-
-
-Visual Studio Code
--------------------
-
-Visual Studio Code also supports IPython notebook.
-Here's an example using the 'rich' formatter with the default dark
-theme for VS Code.
-
-.. image:: images/ipython-vs-code1.png
-   :scale: 35 %
-
-.. image:: images/ipython-vs-code2.png
-   :scale: 35 %
-
-
-Google Colab
--------------
-
-One can also use Google Colab notebooks. First, Friendly-traceback must
-be installed.
-
-.. image:: images/colab-install.png
-   :scale: 50 %
-
-Then, we can proceed as for the other notebooks.
-
-
-.. image:: images/colab-jupyter1.png
-   :scale: 50 %
-
-
-.. image:: images/colab-jupyter2.png
-   :scale: 50 %

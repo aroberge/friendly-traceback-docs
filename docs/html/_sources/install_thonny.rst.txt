@@ -4,12 +4,13 @@
 
 .. sidebar:: A bit of history
 
-    Starting with version 3.2.5, Thonny included built-in support for
+    Starting with version 3.2.5, the creator of Thonny kindly
+    included built-in support for
     an early version of Friendly-traceback. As Friendly-traceback evolved,
-    we suggested that the built-in support be temporarily removed so as to avoid
+    I suggested that the built-in support be temporarily removed so as to avoid
     any incompatibility; this has happened in newer versions of Thonny.
 
-    In the near future, we hope to add a way to add back some built-in
+    In the near future, I hope to add a way to add back some built-in
     support for Friendly-traceback in Thonny, to complement its built-in
     "Assistant".
 

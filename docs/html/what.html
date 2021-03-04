@@ -107,8 +107,10 @@
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">History</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul>
@@ -249,8 +251,7 @@
 <p class="admonition-title">Warning</p>
 <p>The documentation is being partially rewritten prior to
 releasing the next milestone version (0.3).
-Some information given
-here (especially images) may not reflect the state of the
+Some information given here (especially images) may not reflect the state of the
 project.</p>
 </div>
 <div class="section" id="what">
@@ -265,7 +266,7 @@ immediately closed as being a duplicate, you simply ask <code class="docutils li
 and Friendly-traceback tries to help you.</p>
 <a class="reference internal image-reference" href="_images/greet_what_2.png"><img alt="Screen capture of explanation about unbound local error" src="_images/greet_what_2.png" style="width: 666.0px; height: 215.4px;" /></a>
 <p><code class="docutils literal notranslate"><span class="pre">what()</span></code> only gives here some generic information about what an <code class="docutils literal notranslate"><span class="pre">UnboundLocalError</span></code> is.
-Later, we’ll see how Friendly-traceback can often give more useful
+Later, you will see how Friendly-traceback can often give more useful
 information regarding the exact cause of the exception, and how to fix it.</p>
 <p><code class="docutils literal notranslate"><span class="pre">what()</span></code> can be useful even if an exception has not been raised.
 In principle, you can get information about any exception by passing it as
@@ -278,8 +279,8 @@ an object:</p>
 <span class="go">of a sequence is at index 0.</span>
 </pre></div>
 </div>
-<p>Instead of using a known Exception object, we can pass its name as a string
-if we prefer. We can even specify a language other than English …
+<p>Instead of using a known Exception object, you can pass its name as a string
+if you prefer. You can even specify a language other than English …
 as long as it is French - hopefully, support for more languages will be added
 by contributors:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">set_lang</span><span class="p">(</span><span class="s1">&#39;fr&#39;</span><span class="p">)</span>
@@ -295,7 +296,7 @@ by contributors:</p>
 <p>You will occasionally see errors that are not known by Friendly-traceback.
 Here’s an example:</p>
 <a class="reference internal image-reference" href="_images/what_www.png"><img alt="Screen capture of unknown error" src="_images/what_www.png" style="width: 679.8px; height: 289.8px;" /></a>
-<p>Notice how we entered the command <code class="docutils literal notranslate"><span class="pre">www(python=True)</span></code> at the end:
+<p>Notice how I entered the command <code class="docutils literal notranslate"><span class="pre">www(python=True)</span></code> at the end:
 this resulted in opening a web browser and doing
 a search for the name of the most recent
 exception raised in the online Python documentation.</p>
@@ -304,7 +305,7 @@ exception raised in the online Python documentation.</p>
 (3.9.2 in the above). If this is not the version you are using, you
 can select the correct one from the dropdown selector at the top
 of the Python documentation page.
-If we had set the language to French instead of
+If I had set the language to French instead of
 English [which could have been done with <code class="docutils literal notranslate"><span class="pre">set_lang('fr')</span></code>], the search
 would have been done in the French version of the Python documentation.</p>
 </div>

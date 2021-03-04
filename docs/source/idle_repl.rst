@@ -25,12 +25,12 @@ highlighted, with red background.
    :alt: Screen capture of IDLE's shell
 
 
-We can use the Friendly console within IDLE's shell by first using
+You can use the Friendly console within IDLE's shell by first using
 a special import statement::
 
     from friendly_traceback.idle import *
 
-To start the Friendly console, we need to then use ``start_console()``.
+To start the Friendly console, you need to then use ``start_console()``.
 
 .. image:: images/idle-friendly.png
    :scale: 60 %
@@ -58,7 +58,7 @@ import statement as before,
 
     from friendly_traceback.idle import *
 
-we use ``install()`` to replace IDLE's handling of runtime errors
+I used ``install()`` to replace IDLE's handling of runtime errors
 by Friendly-traceback's version.
 
 
@@ -67,7 +67,7 @@ by Friendly-traceback's version.
    :alt: Screen capture of the Friendly console within IDLE
 
 Unfortunately, since syntax errors cannot (yet) be processed by Friendly-traceback
-in this mode, we do not recommend to use it in this way.
+in this mode, I do not recommend to use it in this way.
 
 IDLE's developers are aware of this current limitation and might
 provide in a future version a way for Friendly-traceback to "hook" into IDLE's

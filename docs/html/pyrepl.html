@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="IDLE’s shell" href="idle_repl.html" />
-    <link rel="prev" title="Everything about the Friendly console" href="repl_more.html" /> 
+    <link rel="prev" title="One last thing" href="about_warnings.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -104,8 +104,10 @@
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">History</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the Friendly console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul class="current">
@@ -237,7 +239,7 @@
         <a href="idle_repl.html" class="btn btn-neutral float-right" title="IDLE’s shell" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="repl_more.html" class="btn btn-neutral float-left" title="Everything about the Friendly console" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="about_warnings.html" class="btn btn-neutral float-left" title="One last thing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -250,8 +252,7 @@
 <p class="admonition-title">Warning</p>
 <p>The documentation is being partially rewritten prior to
 releasing the next milestone version (0.3).
-Some information given
-here (especially images) may not reflect the state of the
+Some information given here (especially images) may not reflect the state of the
 project.</p>
 </div>
 <div class="section" id="using-another-repl">
@@ -268,7 +269,7 @@ two lines of code, which will look like the following:</p>
 <div class="sidebar">
 <p class="sidebar-title">Reminder</p>
 <p>A REPL (Read-Eval-Print Loop) is an interactive mode where
-we are invited to type in some Python code after a
+you are invited to type in some Python code after a
 <strong>prompt</strong> (most often written as <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>). Python reads
 this code, interprets what it means, and might “print” (show) some
 result before showing another prompt waiting for us to enter
@@ -276,16 +277,16 @@ more code.</p>
 <p>Other synonyms of REPL are <em>console</em>, <em>shell</em>, and <em>interpreter</em>.</p>
 </div>
 <p>Many programming environments include their own REPL.
-Depending on which of these we use, we can enable Friendly-traceback
+Depending on which of these you use, you can enable Friendly-traceback
 in different ways.</p>
 <div class="section" id="python-s-repl">
 <h2>Python’s REPL<a class="headerlink" href="#python-s-repl" title="Permalink to this headline">¶</a></h2>
-<p>First, we compare using Python’s own REPL with using the Friendly console.</p>
+<p>First, I compare using Python’s own REPL with using the Friendly console.</p>
 <a class="reference internal image-reference" href="_images/py_repl.png"><img alt="Python's interpreter" src="_images/py_repl.png" style="width: 524.0px; height: 196.5px;" /></a>
-<p>Each time we enter a line of code or a block of code in a Python interpreter,
+<p>Each time I entered a line of code or a block of code in a Python interpreter,
 it appears to be saved in a file which is always named <code class="docutils literal notranslate"><span class="pre">&lt;stdin&gt;</span></code>.
 The actual code entered on a given line of each such “file” is never available.</p>
-<p>Compare this with what happens when we use a Friendly console:</p>
+<p>Compare this with what happens when I use a Friendly console:</p>
 <a class="reference internal image-reference" href="_images/py_repl2.png"><img alt="Python's interpreter" src="_images/py_repl2.png" style="width: 524.0px; height: 245.5px;" /></a>
 <p>The name of the “file” is <code class="docutils literal notranslate"><span class="pre">&lt;friendly-console:N&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">N</span></code> is a different
 integer for each “file”.</p>
@@ -293,7 +294,7 @@ integer for each “file”.</p>
 of code that caused the problem.  To find the cause of the problems
 that gave rise to a traceback, Friendly-traceback needs to have this
 information.  For this reason, Friendly-traceback cannot be
-“installed” in a standard Python interpreter. We can however
+“installed” in a standard Python interpreter. I can however
 start a console using the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly_traceback</span> <span class="kn">import</span> <span class="n">start_console</span>
 <span class="n">start_console</span><span class="p">(</span><span class="n">use_rich</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -301,17 +302,17 @@ start a console using the following:</p>
 </div>
 <p>These two lines of code are shown below (1).</p>
 <a class="reference internal image-reference" href="_images/py_repl3.png"><img alt="Python's interpreter" src="_images/py_repl3.png" style="width: 524.0px; height: 435.5px;" /></a>
-<p>For the function <code class="docutils literal notranslate"><span class="pre">start_console</span></code>, we use the option <code class="docutils literal notranslate"><span class="pre">use_rich=True</span></code> (2) so
-that we get the coloured output when using a terminal; some other REPL do not permit
+<p>For the function <code class="docutils literal notranslate"><span class="pre">start_console</span></code>, I used the option <code class="docutils literal notranslate"><span class="pre">use_rich=True</span></code> (2) so
+that I got the coloured output when using a terminal; some other REPL do not permit
 to show coloured output in this way.</p>
-<p>Since we are using the Friendly console, functions such as <code class="docutils literal notranslate"><span class="pre">what()</span></code> (3)
+<p>Since I am using the Friendly console, functions such as <code class="docutils literal notranslate"><span class="pre">what()</span></code> (3)
 are available.</p>
 </div>
 <div class="section" id="other-repl">
 <h2>Other REPL<a class="headerlink" href="#other-repl" title="Permalink to this headline">¶</a></h2>
 <p>Unlike Python’s REPL, some other REPL (but not all) are designed so
-that we can get the information about the lines of code which lead to
-an exception. In this case, we can use these REPL directly and not
+that you can get the information about the lines of code which lead to
+an exception. In this case, you can use these REPL directly and not
 start the Friendly console using <code class="docutils literal notranslate"><span class="pre">start_console()</span></code>. However, in order
 to make sure that functions like <code class="docutils literal notranslate"><span class="pre">what()</span></code>, <code class="docutils literal notranslate"><span class="pre">why()</span></code>, etc., are
 available, the first line of code will have to be something like:</p>
@@ -319,7 +320,7 @@ available, the first line of code will have to be something like:</p>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">*</span></code>, which is often not recommended, is required here so that
-we can use functions like <code class="docutils literal notranslate"><span class="pre">what()</span></code>, etc.  The alternative would be to
+you can use functions like <code class="docutils literal notranslate"><span class="pre">what()</span></code>, etc.  The alternative would be to
 either list every single function required:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly_traceback.some_version</span> <span class="kn">import</span> <span class="n">what</span><span class="p">,</span> <span class="n">why</span><span class="p">,</span> <span class="n">where</span><span class="p">,</span> <span class="o">...</span>
 </pre></div>
@@ -330,7 +331,7 @@ either list every single function required:</p>
 <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">what</span><span class="p">()</span>  <span class="c1"># when needed to use it</span>
 </pre></div>
 </div>
-<p>which we do not consider to be “friendly”.</p>
+<p>which I do not consider to be “friendly”.</p>
 </div>
 </div>
 
@@ -345,7 +346,7 @@ either list every single function required:</p>
         <a href="idle_repl.html" class="btn btn-neutral float-right" title="IDLE’s shell" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="repl_more.html" class="btn btn-neutral float-left" title="Everything about the Friendly console" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="about_warnings.html" class="btn btn-neutral float-left" title="One last thing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

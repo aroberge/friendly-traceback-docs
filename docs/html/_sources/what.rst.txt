@@ -21,7 +21,7 @@ and Friendly-traceback tries to help you.
 
 
 ``what()`` only gives here some generic information about what an ``UnboundLocalError`` is.
-Later, we'll see how Friendly-traceback can often give more useful
+Later, you will see how Friendly-traceback can often give more useful
 information regarding the exact cause of the exception, and how to fix it.
 
 ``what()`` can be useful even if an exception has not been raised.
@@ -36,8 +36,8 @@ an object::
     of a sequence is at index 0.
 
 
-Instead of using a known Exception object, we can pass its name as a string
-if we prefer. We can even specify a language other than English ...
+Instead of using a known Exception object, you can pass its name as a string
+if you prefer. You can even specify a language other than English ...
 as long as it is French - hopefully, support for more languages will be added
 by contributors::
 
@@ -60,7 +60,7 @@ Here's an example:
    :alt: Screen capture of unknown error
 
 
-Notice how we entered the command ``www(python=True)`` at the end:
+Notice how I entered the command ``www(python=True)`` at the end:
 this resulted in opening a web browser and doing
 a search for the name of the most recent
 exception raised in the online Python documentation.
@@ -73,6 +73,6 @@ The search will always be done on the most recent Python version
 (3.9.2 in the above). If this is not the version you are using, you
 can select the correct one from the dropdown selector at the top
 of the Python documentation page.
-If we had set the language to French instead of
+If I had set the language to French instead of
 English [which could have been done with ``set_lang('fr')``], the search
 would have been done in the French version of the Python documentation.

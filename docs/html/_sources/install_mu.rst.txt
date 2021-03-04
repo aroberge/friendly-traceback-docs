@@ -27,9 +27,11 @@ Installation
 I assume that you have installed Mu on your computer.
 Mu picks up the language to use from the computer default settings,
 which explains why French appears on the screen capture below.
-However, that information is not available to Friendly-traceback.
+However, that language settings not used Friendly-traceback;
+there are other ways to make Friendly-traceback aware of your favourite
+language. [For now, only French and English are available.]
 
-After you start it, you should see a gear icon at the bottom right
+After you start Mu, you should see a gear icon at the bottom right
 corner.
 
 .. image:: images/mu.png
