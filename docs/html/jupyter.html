@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>IPython and Jupyter notebooks &mdash; Friendly-traceback 0.2.38 documentation</title>
+  <title>IPython and Jupyter notebooks &mdash; Friendly-traceback 0.2.39 documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Visual Studio Code" href="vs_code.html" />
-    <link rel="prev" title="Using with Thonny" href="thonny.html" /> 
+    <link rel="prev" title="Using with Mu" href="mu.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.38
+                0.2.39
               </div>
             
           
@@ -123,12 +123,12 @@
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">IPython and Jupyter notebooks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installation-and-usage">Installation and usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#basic-example-not-ipython">Basic example (not IPython)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-the-ipython-console-in-a-terminal">Using the IPython console in a terminal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#jupyterlab-notebook">JupyterLab notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dark-background">Dark background</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#about-the-hash-digest">About the hash_digest</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
@@ -241,7 +241,7 @@
         <a href="vs_code.html" class="btn btn-neutral float-right" title="Visual Studio Code" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="thonny.html" class="btn btn-neutral float-left" title="Using with Thonny" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mu.html" class="btn btn-neutral float-left" title="Using with Mu" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -254,7 +254,8 @@
 <p class="admonition-title">Warning</p>
 <p>The documentation is being partially rewritten prior to
 releasing the next milestone version (0.3).
-Some information given here (especially images) may not reflect the state of the
+Some information given here (especially images)
+may not reflect the state of the
 project.</p>
 </div>
 <div class="section" id="ipython-and-jupyter-notebooks">
@@ -263,76 +264,46 @@ project.</p>
 Currently, this has been done more as a proof of concept than anything
 else: we are not aware of anyone else having made use of this feature.
 We also almost never test it; please feel free to report any issues.</p>
-<div class="section" id="installation-and-usage">
-<h2>Installation and usage<a class="headerlink" href="#installation-and-usage" title="Permalink to this headline">¶</a></h2>
-<p>To use Friendly-traceback in such environments, you need to do one or
-two things:</p>
-<ol class="arabic simple">
-<li><p>Import a special module that does the automatic installation and makes
-console commands available.</p></li>
-<li><p>Optionally, set a different formatter.</p></li>
-</ol>
-<p>Through various screenshots below, we document how to use Friendly-traceback
-with IPython, and show what you might expect.</p>
-<p>The available commands are the same as those using a friendly-console;
-see <a class="reference internal" href="repl.html#using-repl"><span class="std std-ref">Console basics</span></a> for details.  Since this documentation could be
-out of date, it is suggested that you use Python’s <code class="docutils literal notranslate"><span class="pre">dir()</span></code> to see
-what commands area available.</p>
-</div>
-<div class="section" id="basic-example-not-ipython">
-<h2>Basic example (not IPython)<a class="headerlink" href="#basic-example-not-ipython" title="Permalink to this headline">¶</a></h2>
-<p>In what follows, we will always use the same example to generate an
-exception:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>After the exception is raised, we will get more information using
-<code class="docutils literal notranslate"><span class="pre">explain()</span></code>, so that we can show how well, or how poorly in a few cases,
-the information is displayed.</p>
-<p>For comparison, we start with the traceback shown using our
-friendly-console on Windows.</p>
-<a class="reference internal image-reference" href="_images/friendly-ipython-section.png"><img alt="_images/friendly-ipython-section.png" src="_images/friendly-ipython-section.png" style="width: 560.0px; height: 602.0px;" /></a>
-</div>
-<div class="section" id="using-the-ipython-console-in-a-terminal">
-<h2>Using the IPython console in a terminal<a class="headerlink" href="#using-the-ipython-console-in-a-terminal" title="Permalink to this headline">¶</a></h2>
-<p>In this section, we document our use of the IPython console in a
-Windows Terminal; we use the old-style <cite>cmd</cite> rather than the Windows
-PowerShell.</p>
-<a class="reference internal image-reference" href="_images/ipython-console-repl.png"><img alt="_images/ipython-console-repl.png" src="_images/ipython-console-repl.png" style="width: 401.20000000000005px; height: 338.8px;" /></a>
-<p>By default, the ‘repl’ formatter is used: this is something that just
-copies the information provided by Friendly-traceback with no added
-formatting.</p>
-<p>We can change this to use the ‘rich’ formatter, which is the same
-as for the non-IPython example above. However, the colours are
-completely different.</p>
-<a class="reference internal image-reference" href="_images/ipython-console-rich1.png"><img alt="_images/ipython-console-rich1.png" src="_images/ipython-console-rich1.png" style="width: 628.4000000000001px; height: 478.0px;" /></a>
-<p>Furthermore, occasionally some file names are highlighted in such
-a way as to make them almost unreadable.</p>
-<a class="reference internal image-reference" href="_images/ipython-console-rich2.png"><img alt="_images/ipython-console-rich2.png" src="_images/ipython-console-rich2.png" style="width: 628.4000000000001px; height: 578.4px;" /></a>
-<p>However, most IPython users will likely work in a different environment
-than a traditional console.</p>
-</div>
 <div class="section" id="jupyterlab-notebook">
 <h2>JupyterLab notebook<a class="headerlink" href="#jupyterlab-notebook" title="Permalink to this headline">¶</a></h2>
 <p>By default, tracebacks in JupyterLab notebooks (or Juypter notebooks)
-displayed in a browser are given a pink background.
-This remains the case if we use install Friendly-traceback without
-specifying a special formatter.</p>
-<a class="reference internal image-reference" href="_images/jupyter-lab-default.png"><img alt="_images/jupyter-lab-default.png" src="_images/jupyter-lab-default.png" style="width: 560.0px; height: 339.5px;" /></a>
-<p>Using the ‘jupyter’ formatter definitely improves the appearance.</p>
-<a class="reference internal image-reference" href="_images/jupyter-lab-jupyter.png"><img alt="_images/jupyter-lab-jupyter.png" src="_images/jupyter-lab-jupyter.png" style="width: 677.0px; height: 741.5px;" /></a>
-<p>This formatter uses some HTML display feature of IPython.
-If we change the settings of JupyterLab to a dark theme, the
-display remains quite readable.</p>
-<a class="reference internal image-reference" href="_images/jupyter-lab-dark.png"><img alt="_images/jupyter-lab-dark.png" src="_images/jupyter-lab-dark.png" style="width: 679.0px; height: 727.5px;" /></a>
-<p>However, in this case, the ‘rich’ formatter might perhaps yield better
+displayed in a browser are given a pink background (1).</p>
+<a class="reference internal image-reference" href="_images/jupyter-lab-error.png"><img alt="_images/jupyter-lab-error.png" src="_images/jupyter-lab-error.png" style="width: 503.4px; height: 226.2px;" /></a>
+<p>The “location” of the error (2) includes is of the form
+<code class="docutils literal notranslate"><span class="pre">&lt;ipython-input-A-B&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">A</span></code> is the code block number
+and <code class="docutils literal notranslate"><span class="pre">B</span></code> is an internal value (“hash_digest”) of no particular use
+to a end user. This hash_digest is removed by Friendly-traceback
+as shown below.</p>
+<a class="reference internal image-reference" href="_images/jupyter-lab-default.png"><img alt="_images/jupyter-lab-default.png" src="_images/jupyter-lab-default.png" style="width: 458.4px; height: 823.8px;" /></a>
+<ol class="arabic simple">
+<li><p>Tracebacks shown by Friendly-traceback do not have a pink background.</p></li>
+<li><p>The <em>formatter</em> value is changed from the default to <code class="docutils literal notranslate"><span class="pre">'repl'</span></code>.</p></li>
+<li><p>This <code class="docutils literal notranslate"><span class="pre">'repl'</span></code> choice results in a plain output on pink background.</p></li>
+<li><p>A different syntax colouring (<code class="docutils literal notranslate"><span class="pre">'rich'</span></code> formatter with <code class="docutils literal notranslate"><span class="pre">'light'</span></code> style)
+is also available. Note that, by default, the default style is <code class="docutils literal notranslate"><span class="pre">'dark'</span></code>.</p></li>
+<li><p>The default formatter is known as <code class="docutils literal notranslate"><span class="pre">'jupyter'</span></code>.</p></li>
+</ol>
+</div>
+<div class="section" id="dark-background">
+<h2>Dark background<a class="headerlink" href="#dark-background" title="Permalink to this headline">¶</a></h2>
+<p>JupyterLab also gives the choice of a dark background theme.</p>
+<a class="reference internal image-reference" href="_images/jupyter-lab-dark.png"><img alt="_images/jupyter-lab-dark.png" src="_images/jupyter-lab-dark.png" style="width: 462.59999999999997px; height: 622.8px;" /></a>
+<p>However, in this case, the <code class="docutils literal notranslate"><span class="pre">'rich'</span></code> formatter might perhaps yield better
 looking tracebacks.</p>
-<a class="reference internal image-reference" href="_images/jupyter-lab-dark-rich.png"><img alt="_images/jupyter-lab-dark-rich.png" src="_images/jupyter-lab-dark-rich.png" style="width: 698.4000000000001px; height: 604.8000000000001px;" /></a>
-<p>In a JupyterLab environment, we can also use a console within a
-browser intead of a notebook. Here’s what it looks like with the
-‘rich’ formatter.</p>
-<a class="reference internal image-reference" href="_images/jupyter-lab-dark-console-rich.png"><img alt="_images/jupyter-lab-dark-console-rich.png" src="_images/jupyter-lab-dark-console-rich.png" style="width: 674.8000000000001px; height: 596.4px;" /></a>
+<a class="reference internal image-reference" href="_images/jupyter-lab-dark-rich.png"><img alt="_images/jupyter-lab-dark-rich.png" src="_images/jupyter-lab-dark-rich.png" style="width: 746.4px; height: 795.6px;" /></a>
+<div class="section" id="about-the-hash-digest">
+<h3>About the hash_digest<a class="headerlink" href="#about-the-hash-digest" title="Permalink to this headline">¶</a></h3>
+<p>The hash_digest is meant to uniquely identify the content of a code block.
+However, this does not appear the case when the same code is entered
+in different cells for sessions where one uses more than one notebook.
+<a class="reference external" href="https://github.com/ipython/ipython/issues/12755">I suggested what I believe is a better approach</a> using
+the kernel number instead of the hash_digest: the combination of
+the code-block number and kernel number should be unique.
+However, IPython developers are certainly swamped with issues to consider
+and would be right not to consider this a high priority item to look at,
+although it might prevent some messages one occasionally gets about
+the need to restart a kernel.</p>
+</div>
 </div>
 </div>
 
@@ -347,7 +318,7 @@ browser intead of a notebook. Here’s what it looks like with the
         <a href="vs_code.html" class="btn btn-neutral float-right" title="Visual Studio Code" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="thonny.html" class="btn btn-neutral float-left" title="Using with Thonny" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mu.html" class="btn btn-neutral float-left" title="Using with Mu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

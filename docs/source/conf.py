@@ -90,7 +90,8 @@ rst_prolog = """
 
     The documentation is being partially rewritten prior to
     releasing the next milestone version (0.3).
-    Some information given here (especially images) may not reflect the state of the
+    Some information given here (especially images)
+    may not reflect the state of the
     project.
 """
 #

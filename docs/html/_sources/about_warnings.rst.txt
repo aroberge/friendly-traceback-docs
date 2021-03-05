@@ -7,5 +7,5 @@ Friendly-traceback's console currently include two additional
 features that could possibly be of interest.
 
 .. image:: images/warnings_examples.png
-   :scale: 50 %
+   :scale: 70 %
    :alt: Python IndexError example

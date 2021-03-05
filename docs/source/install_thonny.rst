@@ -27,16 +27,17 @@ Thonny is highly configurable. Among the tools
 it provides is the ability to install packages either from pypi or
 others found locally.
 
-.. image:: images/thonny_manage_packages1.png
-   :scale: 50 %
-   :alt: thonny manage packages
-
 If you have already installed Friendly-traceback,
 the first step is to ensure that Thonny can see that Friendly-traceback
 is installed. If not, it means that Thonny uses a different environment
 than the one in which you installed Friendly-traceback;
 in this case, you can use Thonny's package manager to
 install Friendly-traceback.
+
+.. image:: images/thonny_manage_packages1.png
+   :scale: 50 %
+   :alt: thonny manage packages
+
 
 As you can see, Friendly-traceback is indeed installed on my
 computer, along with many other packages.

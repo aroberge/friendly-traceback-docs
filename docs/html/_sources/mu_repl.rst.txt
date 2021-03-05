@@ -11,12 +11,12 @@ with the image of a keyboard.
 
 To use Friendly-traceback in Mu's REPL, include the following line of code::
 
-    from friendly_traceback.mu_repl import *
+    from friendly_traceback.mu import *
 
 Here's what it looks like.
 
 .. image:: images/mu_repl2.png
-   :scale: 50 %
+   :scale: 60 %
    :alt: Screen capture showing Friendly-traceback's output in Mu's REPL
 
 
@@ -28,7 +28,7 @@ Normal tracebacks produced without using Friendly-traceback are nicely
 coloured.
 
 .. image:: images/mu_repl3.png
-   :scale: 50 %
+   :scale: 60 %
    :alt: Screen capture a normal traceback in Mu's REPL.
 
 .. todo::

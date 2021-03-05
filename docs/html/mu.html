@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using with Mu &mdash; Friendly-traceback 0.2.38 documentation</title>
+  <title>Using with Mu &mdash; Friendly-traceback 0.2.39 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Using with Thonny" href="thonny.html" />
+    <link rel="next" title="IPython and Jupyter notebooks" href="jupyter.html" />
     <link rel="prev" title="IDLE: using the editor" href="idle.html" /> 
 </head>
 
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.38
+                0.2.39
               </div>
             
           
@@ -127,7 +127,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#using-friendly-traceback-with-mu">Using Friendly-traceback with Mu</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
@@ -236,7 +235,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="thonny.html" class="btn btn-neutral float-right" title="Using with Thonny" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="jupyter.html" class="btn btn-neutral float-right" title="IPython and Jupyter notebooks" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="idle.html" class="btn btn-neutral float-left" title="IDLE: using the editor" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -252,7 +251,8 @@
 <p class="admonition-title">Warning</p>
 <p>The documentation is being partially rewritten prior to
 releasing the next milestone version (0.3).
-Some information given here (especially images) may not reflect the state of the
+Some information given here (especially images)
+may not reflect the state of the
 project.</p>
 </div>
 <div class="section" id="using-with-mu">
@@ -267,14 +267,24 @@ First, I show what happens when I run test.py with Mu.</p>
 <div class="section" id="using-friendly-traceback-with-mu">
 <h2>Using Friendly-traceback with Mu<a class="headerlink" href="#using-friendly-traceback-with-mu" title="Permalink to this headline">¶</a></h2>
 <p>To use Friendly-traceback with Mu, I need to use a second,
-very short program, and run that program instead.</p>
-<a class="reference internal image-reference" href="_images/test_problem_friendly.png"><img alt="Mu with friendly running test_problem" src="_images/test_problem_friendly.png" style="width: 752.0px; height: 530.0px;" /></a>
+very short program, and run that program instead:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly_traceback.mu</span> <span class="kn">import</span> <span class="n">run</span>
+<span class="n">run</span><span class="p">(</span><span class="s2">&quot;test.py&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/test_problem_friendly.png"><img alt="Mu with friendly running test_problem" src="_images/test_problem_friendly.png" style="width: 481.79999999999995px; height: 398.4px;" /></a>
 <p>As should be expected, a traceback is shown, with a hint added.
 By typing <code class="docutils literal notranslate"><span class="pre">why()</span></code> at the prompt, Friendly-traceback gives me
 more information.</p>
 <p>You likely will not be surprised to know that
 I can ask Friendly-traceback to provide explanations in French instead:</p>
-<a class="reference internal image-reference" href="_images/test_problem_fr.png"><img alt="Mu with friendly running test_problem" src="_images/test_problem_fr.png" style="width: 752.0px; height: 530.0px;" /></a>
+<a class="reference internal image-reference" href="_images/test_problem_fr.png"><img alt="Mu with friendly running test_problem" src="_images/test_problem_fr.png" style="width: 535.1999999999999px; height: 388.2px;" /></a>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Find a way to produce coloured output in Mu’s REPL after code execution.
+Note that <strong>this REPL</strong> is not a Jupyter QtConsole, unlike what was shown
+about Mu’s REPL before.</p>
+</div>
 </div>
 </div>
 
@@ -286,7 +296,7 @@ I can ask Friendly-traceback to provide explanations in French instead:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="thonny.html" class="btn btn-neutral float-right" title="Using with Thonny" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="jupyter.html" class="btn btn-neutral float-right" title="IPython and Jupyter notebooks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="idle.html" class="btn btn-neutral float-left" title="IDLE: using the editor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

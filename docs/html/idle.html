@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>IDLE: using the editor &mdash; Friendly-traceback 0.2.38 documentation</title>
+  <title>IDLE: using the editor &mdash; Friendly-traceback 0.2.39 documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.38
+                0.2.39
               </div>
             
           
@@ -123,7 +123,6 @@
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thonny.html">Using with Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
@@ -248,7 +247,8 @@
 <p class="admonition-title">Warning</p>
 <p>The documentation is being partially rewritten prior to
 releasing the next milestone version (0.3).
-Some information given here (especially images) may not reflect the state of the
+Some information given here (especially images)
+may not reflect the state of the
 project.</p>
 </div>
 <div class="section" id="idle-using-the-editor">
@@ -256,45 +256,14 @@ project.</p>
 <p>Since IDLE is part of the standard library, it is often the first
 editor that is used by beginners learning Python.
 Let’s have a look at what happens if we run
-the following program with IDLE using the
+a program with IDLE using the
 “Run -&gt; Run Module” menu item.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">Pi</span><span class="p">)</span>
-</pre></div>
-</div>
-<a class="reference internal image-reference" href="_images/idle.png"><img alt="Screen capture of IDLE" src="_images/idle.png" style="width: 686.0px; height: 203.0px;" /></a>
-<p>The information about the error is written in red
-(sent to <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>), but you can still interact
-with the program afterwards, with the variables
-defined in the original program being available
-in IDLE’s console.</p>
-<p>Let’s do something similar, but using Friendly-traceback
-as a program launcher.  The above program was saved
-in a file named “error.py”. Let’s create a second
-file with the following content:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly_traceback</span> <span class="kn">import</span> <span class="n">run</span>
-
-<span class="n">run</span><span class="p">(</span><span class="s2">&quot;error.py&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>The following is what happens if I run it, and do
-further interactions aftewards.</p>
-<a class="reference internal image-reference" href="_images/idle-friendly.png"><img alt="Screen capture of IDLE" src="_images/idle-friendly.png" style="width: 686.0px; height: 741.5px;" /></a>
-<p>I stil get a traceback that looks similar to Python’s
-standard traceback, but that has an added hint
-as to what might be the cause of the exception: here
-it was because I wrote <code class="docutils literal notranslate"><span class="pre">Pi</span></code> with an uppercase <code class="docutils literal notranslate"><span class="pre">P</span></code>.</p>
-<p>Like it was the case with Python running inside IDLE,
-I have access to the variables that were in the program
-that was run.</p>
-<p>Notice how the prompt is blue instead of black: this is
-because I am running the friendly console which uses
-<code class="docutils literal notranslate"><span class="pre">print()</span></code> or <code class="docutils literal notranslate"><span class="pre">input()</span></code> calls.</p>
-<p>As shown below, I can ask for more details about
-the exception, as was shown in the previous section.</p>
-<a class="reference internal image-reference" href="_images/idle-friendly2.png"><img alt="Screen capture of IDLE" src="_images/idle-friendly2.png" style="width: 686.0px; height: 351.5px;" /></a>
+<a class="reference internal image-reference" href="_images/python_idle.png"><img alt="Screen capture of IDLE" src="_images/python_idle.png" style="width: 482.5px; height: 383.0px;" /></a>
+<p>Below, I did something similar, but using Friendly-traceback
+as a program launcher, and using French as the default
+language. After the program’s execution had been
+completed, I entered more code, making a syntax error.</p>
+<a class="reference internal image-reference" href="_images/friendly_idle.png"><img alt="Screen capture of IDLE using friendly to launch a program" src="_images/friendly_idle.png" style="width: 482.0px; height: 672.0px;" /></a>
 </div>
 
 

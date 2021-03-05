@@ -24,14 +24,7 @@ our program.
 Using the notebook in VS Code
 -----------------------------
 
-Visual Studio Code also supports Jupyter notebooks.
-Here's an example using the 'rich' formatter with the default dark
-theme for VS Code.
+Visual Studio Code also supports Jupyter notebooks in exactly the
+same way as described previously::
 
-.. image:: images/ipython-vs-code1.png
-   :scale: 35 %
-
-.. image:: images/ipython-vs-code2.png
-   :scale: 35 %
-
-
+    from friendly_traceback.jupyter import *

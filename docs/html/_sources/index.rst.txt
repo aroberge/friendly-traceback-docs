@@ -132,7 +132,6 @@ English (by default) and French are available.
    editor
    idle
    mu
-   thonny
    jupyter
    vs_code
    colab

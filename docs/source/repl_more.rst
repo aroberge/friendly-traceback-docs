@@ -1,3 +1,5 @@
+.. _console_api:
+
 
 Everything about the Friendly console
 =======================================
