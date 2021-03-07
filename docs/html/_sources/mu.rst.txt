@@ -3,7 +3,7 @@ Using with Mu
 =============
 
 
-Before using Friendly-traceback with Mu
+Before using Friendly with Mu
 ----------------------------------------
 
 I have created a test module, called test.py, that raises
@@ -14,13 +14,13 @@ First, I show what happens when I run test.py with Mu.
    :scale: 50 %
    :alt: Mu running test_problem
 
-Using Friendly-traceback with Mu
+Using Friendly with Mu
 --------------------------------
 
-To use Friendly-traceback with Mu, I need to use a second,
+To use Friendly with Mu, I need to use a second,
 very short program, and run that program instead::
 
-    from friendly_traceback.mu import run
+    from friendly.mu import run
     run("test.py")
 
 .. image:: images/test_problem_friendly.png
@@ -28,12 +28,12 @@ very short program, and run that program instead::
    :alt: Mu with friendly running test_problem
 
 As should be expected, a traceback is shown, with a hint added.
-By typing ``why()`` at the prompt, Friendly-traceback gives me
+By typing ``why()`` at the prompt, Friendly gives me
 more information.
 
 
 You likely will not be surprised to know that
-I can ask Friendly-traceback to provide explanations in French instead:
+I can ask Friendly to provide explanations in French instead:
 
 .. image:: images/test_problem_fr.png
    :scale: 60 %

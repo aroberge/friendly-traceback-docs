@@ -22,12 +22,12 @@ warnings.simplefilter("ignore")
 
 sys.path.insert(0, os.path.abspath("../../../friendly-traceback"))
 
-from friendly_traceback import __version__  # pylint: disable=import-error
+from friendly import __version__  # pylint: disable=import-error
 
 
 # -- Project information -----------------------------------------------------
 
-project = "Friendly-traceback"
+project = "Friendly"
 copyright = "André Roberge"
 author = "André Roberge"
 
@@ -88,11 +88,8 @@ rst_epilog = """
 rst_prolog = """
 .. warning::
 
-    The documentation is being partially rewritten prior to
-    releasing the next milestone version (0.3).
-    Some information given here (especially images)
-    may not reflect the state of the
-    project.
+    This project has changed its name. Wherever you see ``friendly_traceback``,
+    replace it simply by ``friendly``.
 """
 #
 add_module_names = False
@@ -136,7 +133,7 @@ html_css_files = [
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "Friendlytracebacksdoc"
+htmlhelp_basename = "Friendlydoc"
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -162,8 +159,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "Friendlytracebacks.tex",
-        "Friendly tracebacks Documentation",
+        "Friendly.tex",
+        "Friendly Documentation",
         "André Roberge",
         "manual",
     )
@@ -175,7 +172,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, "friendlytracebacks", "Friendly tracebacks Documentation", [author], 1)
+    (master_doc, "friendly", "Friendly Documentation", [author], 1)
 ]
 
 
@@ -187,10 +184,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "Friendlytracebacks",
-        "Friendly tracebacks Documentation",
+        "Friendly",
+        "Friendly  Documentation",
         author,
-        "Friendlytracebacks",
+        "Friendly",
         "One line description of project.",
         "Miscellaneous",
     )

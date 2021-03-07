@@ -1,4 +1,4 @@
-Some thoughts on the design of Friendly-traceback
+Some thoughts on the design of Friendly
 =================================================
 
 The following are thoughts on the design of this project.
@@ -7,7 +7,7 @@ The content of this file **will** be changed as this project evolve.
 Original purpose
 ------------------
 
-Friendly-traceback's primary purpose is to make it easier for
+Friendly's primary purpose is to make it easier for
 beginners and/or for people that have limited knowledge of English
 to understand what caused a program to generate a traceback.
 
@@ -19,7 +19,7 @@ to understand what went wrong and how to fix it.
 Revised purpose
 ----------------
 
-As Friendly-traceback was developed, we found that going beyond
+As Friendly was developed, we found that going beyond
 providing an explanation for the traceback printed by Python
 was potentially very useful. This is something that is currently
 done by Thonny_ which, in some cases, even attempts to identify more than
@@ -37,14 +37,14 @@ or revealed by clicking on a button.
    :scale: 100 %
 
 
-For now, Friendly-traceback tries to identify the most likely cause
+For now, Friendly tries to identify the most likely cause
 of the exception, but some consideration has been given to
 include more than one possible explanation in some cases.
 
 Gradual reveal
 ---------------
 
-Initially, it was thought that the information provided by Friendly-traceback
+Initially, it was thought that the information provided by Friendly
 should be shown all at once. As we accumulated more and more cases,
 we realised that this could yield a huge amount of material which could
 be rather daunting for beginners. Eventually, this lead to the
@@ -65,20 +65,20 @@ About Warnings
 In addition to generating exceptions, Python can provide some Warnings
 to users. For now, these are simply silenced but we would like to
 consider including them in the information provided by
-Friendly-traceback.
+Friendly.
 
 Location of the exception
 --------------------------
 
 While a Python traceback includes the information from all the frames
-that were involved, Friendly-traceback focus on the first and last frame,
+that were involved, Friendly focus on the first and last frame,
 as these are more likely to contain the relevant information to the user.
 
 
 Variable information
 ---------------------
 
-Friendly-traceback include the value of all known variables found
+Friendly include the value of all known variables found
 on the lines of code shown; earlier versions, such
 as that shown in the example below, included only variable information
 from a single line of code. In the example below (``IndexError``), this
@@ -108,7 +108,7 @@ Sometimes, the offending code actually occurred well before: for example,
 an open bracket might have been inserted many lines prior to where
 the absence of the corresponding closing bracket was noted to cause an error.
 
-For ``SyntaxError``, Friendly-traceback does a fairly simple analysis
+For ``SyntaxError``, Friendly does a fairly simple analysis
 of the code and tries to identify a single cause which produced the
 error.
 
@@ -122,13 +122,13 @@ Localization
 ---------------
 
 It is possible to translate almost all the text provided
-by Friendly-traceback.
+by Friendly.
 
 When using Python, it is customary to determine which language should
 be used to provide translations by a call to
 ``locale.getdefaultlocale()``.  In an earlier version, we did this
 but have decided to use English as the default and let the user
-(which could be another program that imports Friendly-traceback)
+(which could be another program that imports Friendly)
 decide what language should be used.
 
 The information provided by ``locale.getdefaultlocale()`` includes

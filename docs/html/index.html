@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨 &mdash; Friendly-traceback 0.2.39 documentation</title>
+  <title>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨 &mdash; Friendly 0.2.90 documentation</title>
   
 
   
@@ -51,7 +51,7 @@
           
 
           
-            <a href="#" class="icon icon-home" alt="Documentation Home"> Friendly-traceback
+            <a href="#" class="icon icon-home" alt="Documentation Home"> Friendly
           
 
           
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.2.39
+                0.2.90
               </div>
             
           
@@ -128,7 +128,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
@@ -183,7 +183,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Friendly-traceback</a>
+          <a href="#">Friendly</a>
         
       </nav>
 
@@ -242,21 +242,18 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The documentation is being partially rewritten prior to
-releasing the next milestone version (0.3).
-Some information given here (especially images)
-may not reflect the state of the
-project.</p>
+<p>This project has changed its name. Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
+replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
 </div>
-<p><a class="reference external" href="https://github.com/aroberge/Friendly-traceback">Code on Github</a></p>
+<p><a class="reference external" href="https://github.com/aroberge/Friendly">Code on Github</a></p>
 <div class="section" id="bienvenue-bienvenido-welcome">
 <h1>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome  歡迎光臨<a class="headerlink" href="#bienvenue-bienvenido-welcome" title="Permalink to this headline">¶</a></h1>
-<p><strong>Friendly-traceback</strong> helps users understand what caused a given
+<p><strong>Friendly</strong> helps users understand what caused a given
 exception in their Python program, and how to fix it.</p>
 <p>There exists many Python projects
 whose <strong>primary</strong> goal is to supplement the information
 given by Python traceback to make them more useful for <strong>advanced</strong> programmers.
-To my knowledge, of all those projects, Friendly-traceback is the only one
+To my knowledge, of all those projects, Friendly is the only one
 designed with beginners in mind.</p>
 <div class="sidebar">
 <p class="sidebar-title">Using screenshots</p>
@@ -268,15 +265,15 @@ If you are such a user and need help because the use of screenshots
 prevents you from understanding the explanations, please do not hesitate to
 reach out to me: <a class="reference external" href="mailto:andre&#46;roberge&#37;&#52;&#48;gmail&#46;com">andre<span>&#46;</span>roberge<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
 </div>
-<p>To be more specific, while Friendly-traceback
+<p>To be more specific, while Friendly
 can be useful for advanced programmers,
 it strives to present the information in a way that is easily
 understood by beginners and/or by users
 who would like to get information about traceback in their own language.
-Friendly-traceback can give more detailed information as to
+Friendly can give more detailed information as to
 <strong>where</strong> an exception occurred, <strong>what</strong> a given exception means and
 <strong>why</strong> it might have occurred (sometimes adding suggestions as to how to fix it.)</p>
-<p>Even though Friendly-traceback can be used on its own with a specially
+<p>Even though Friendly can be used on its own with a specially
 designed console, a better option might be to use it together with
 GUI-based editors/IDE including JupyterLab and Jupyter notebooks.
 I explain how to do so later.
@@ -296,11 +293,11 @@ For now, I’ll just show one quick example.</p>
 to run this program.</p>
 <a class="reference internal image-reference" href="_images/python_indexerror.png"><img alt="Python IndexError example" src="_images/python_indexerror.png" style="width: 566.5px; height: 112.5px;" /></a>
 <p>Not exactly the most helpful information for beginners …</p>
-<p>Here’s the corresponding version with full explanation from Friendly-traceback,
+<p>Here’s the corresponding version with full explanation from Friendly,
 making use of
 <a class="reference external" href="https://github.com/willmcgugan/rich">Rich</a> to produce a colourful output.</p>
 <a class="reference internal image-reference" href="_images/friendly_indexerror_en.png"><img alt="Friendly IndexError example in English" src="_images/friendly_indexerror_en.png" style="width: 566.5px; height: 576.5px;" /></a>
-<p>One unique feature of Friendly-traceback is that all the information
+<p>One unique feature of Friendly is that all the information
 it provides can be translated into another language; currently, only
 English (by default) and French are available.</p>
 <a class="reference internal image-reference" href="_images/friendly_indexerror_fr.png"><img alt="Friendly IndexError in French" src="_images/friendly_indexerror_fr.png" style="width: 566.5px; height: 590.0px;" /></a>
@@ -333,31 +330,31 @@ in various sections. Any such note is listed below as a visible reminder,
 mostly for my own purpose.</p>
 <div class="admonition-todo admonition">
 <p class="admonition-title">Todo</p>
+<p>Find a way to produce coloured output in Mu’s REPL after code execution.
+Note that <strong>this REPL</strong> is not a Jupyter QtConsole, unlike what was shown
+about Mu’s REPL before.</p>
+</div>
+<p class="todo-source">(The <a class="reference internal" href="mu.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\mu.rst, line 43.)</p>
+<div class="admonition-todo admonition">
+<p class="admonition-title">Todo</p>
 <p>Find a way to produce coloured output in Mu’s REPL.</p>
 </div>
 <p class="todo-source">(The <a class="reference internal" href="mu_repl.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\mu_repl.rst, line 34.)</p>
 <div class="admonition-todo admonition">
 <p class="admonition-title">Todo</p>
-<p>Ensure that Friendly-traceback can be integrated within Thonny
+<p>Ensure that Friendly can be integrated within Thonny
 and used to supplement Thonny’s own “Assistant”.</p>
 </div>
 <p class="todo-source">(The <a class="reference internal" href="other_repl.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\other_repl.rst, line 21.)</p>
 <div class="admonition-todo admonition">
 <p class="admonition-title">Todo</p>
-<p>Determine if there would be interest in integrating Friendly-traceback
+<p>Determine if there would be interest in integrating Friendly
 with <a class="reference external" href="https://github.com/prompt-toolkit/ptpython">ptpython</a>.
 This might perhaps be done by monkey-patching
 <a class="reference external" href="https://github.com/prompt-toolkit/ptpython/blob/caff15a461b64dee36c22608d36170830cafd5f3/ptpython/repl.py#L497">_handle_exception</a>
 or by having ptpython’s developer enable custom <code class="docutils literal notranslate"><span class="pre">sys.excepthook</span></code>.</p>
 </div>
 <p class="todo-source">(The <a class="reference internal" href="other_repl.html#id2"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\other_repl.rst, line 27.)</p>
-<div class="admonition-todo admonition">
-<p class="admonition-title">Todo</p>
-<p>Find a way to produce coloured output in Mu’s REPL after code execution.
-Note that <strong>this REPL</strong> is not a Jupyter QtConsole, unlike what was shown
-about Mu’s REPL before.</p>
-</div>
-<p class="todo-source">(The <a class="reference internal" href="mu.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\mu.rst, line 43.)</p>
 </div>
 </div>
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>IPython and Jupyter notebooks &mdash; Friendly-traceback 0.2.39 documentation</title>
+  <title>IPython and Jupyter notebooks &mdash; Friendly 0.2.90 documentation</title>
   
 
   
@@ -52,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly-traceback
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly
           
 
           
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.39
+                0.2.90
               </div>
             
           
@@ -136,7 +136,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
@@ -191,7 +191,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly-traceback</a>
+          <a href="index.html">Friendly</a>
         
       </nav>
 
@@ -252,15 +252,12 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The documentation is being partially rewritten prior to
-releasing the next milestone version (0.3).
-Some information given here (especially images)
-may not reflect the state of the
-project.</p>
+<p>This project has changed its name. Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
+replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
 </div>
 <div class="section" id="ipython-and-jupyter-notebooks">
 <h1>IPython and Jupyter notebooks<a class="headerlink" href="#ipython-and-jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
-<p>Friendly-traceback supports IPython console and Jupyter notebooks and variants.
+<p>Friendly supports IPython console and Jupyter notebooks and variants.
 Currently, this has been done more as a proof of concept than anything
 else: we are not aware of anyone else having made use of this feature.
 We also almost never test it; please feel free to report any issues.</p>
@@ -272,11 +269,11 @@ displayed in a browser are given a pink background (1).</p>
 <p>The “location” of the error (2) includes is of the form
 <code class="docutils literal notranslate"><span class="pre">&lt;ipython-input-A-B&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">A</span></code> is the code block number
 and <code class="docutils literal notranslate"><span class="pre">B</span></code> is an internal value (“hash_digest”) of no particular use
-to a end user. This hash_digest is removed by Friendly-traceback
+to a end user. This hash_digest is removed by Friendly
 as shown below.</p>
 <a class="reference internal image-reference" href="_images/jupyter-lab-default.png"><img alt="_images/jupyter-lab-default.png" src="_images/jupyter-lab-default.png" style="width: 458.4px; height: 823.8px;" /></a>
 <ol class="arabic simple">
-<li><p>Tracebacks shown by Friendly-traceback do not have a pink background.</p></li>
+<li><p>Tracebacks shown by Friendly do not have a pink background.</p></li>
 <li><p>The <em>formatter</em> value is changed from the default to <code class="docutils literal notranslate"><span class="pre">'repl'</span></code>.</p></li>
 <li><p>This <code class="docutils literal notranslate"><span class="pre">'repl'</span></code> choice results in a plain output on pink background.</p></li>
 <li><p>A different syntax colouring (<code class="docutils literal notranslate"><span class="pre">'rich'</span></code> formatter with <code class="docutils literal notranslate"><span class="pre">'light'</span></code> style)

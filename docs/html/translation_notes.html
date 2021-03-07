@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Notes on translations - using gettext &mdash; Friendly-traceback 0.2.39 documentation</title>
+  <title>Notes on translations - using gettext &mdash; Friendly 0.2.90 documentation</title>
   
 
   
@@ -52,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly-traceback
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly
           
 
           
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.39
+                0.2.90
               </div>
             
           
@@ -129,7 +129,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
@@ -193,7 +193,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly-traceback</a>
+          <a href="index.html">Friendly</a>
         
       </nav>
 
@@ -254,11 +254,8 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The documentation is being partially rewritten prior to
-releasing the next milestone version (0.3).
-Some information given here (especially images)
-may not reflect the state of the
-project.</p>
+<p>This project has changed its name. Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
+replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
 </div>
 <div class="section" id="notes-on-translations-using-gettext">
 <h1>Notes on translations - using gettext<a class="headerlink" href="#notes-on-translations-using-gettext" title="Permalink to this headline">¶</a></h1>
@@ -283,9 +280,9 @@ to the user in their preferred language.</p>
 <h2>Structure of this project<a class="headerlink" href="#structure-of-this-project" title="Permalink to this headline">¶</a></h2>
 <p>Below, I make references to various files. Here’s a simplified view of the
 directory structure of this project, showing only a few relevant files:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Friendly</span><span class="o">-</span><span class="n">traceback</span><span class="o">/</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Friendly</span><span class="o">/</span>
     <span class="n">demos</span><span class="o">/</span>
-    <span class="n">friendly_traceback</span><span class="o">/</span>
+    <span class="n">friendly</span><span class="o">/</span>
         <span class="n">locales</span><span class="o">/</span>
             <span class="n">fr</span><span class="o">/</span>
                 <span class="n">LC_MESSAGES</span><span class="o">/</span>
@@ -409,10 +406,10 @@ and email address) which will be automatically used, so that you don’t
 have to edit the created file by hand.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Please, do not contribute translations to Friendly-traceback
+<p>Please, do not contribute translations to Friendly
 where you attribute the copyright to yourself.
 Either do not include any copyright information
-or attribute it to the Friendly-traceback project.</p>
+or attribute it to the Friendly project.</p>
 </div>
 </div>
 <div class="section" id="telling-python-to-use-the-translations">
@@ -508,13 +505,13 @@ Since <code class="docutils literal notranslate"><span class="pre">.po</span></c
 they are not automatically added when creating a package with setuptools.
 One way to include them is to write the following in a file named
 <code class="docutils literal notranslate"><span class="pre">manifest.in</span></code> written where <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> is found:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>recursive-include friendly_traceback/locales *.*
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>recursive-include friendly/locales *.*
 </pre></div>
 </div>
 <p>Also (instead?), if using a <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file, include the following:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[options.package_data]
 * =
-    friendly_traceback/locales/*
+    friendly/locales/*
 </pre></div>
 </div>
 </div>

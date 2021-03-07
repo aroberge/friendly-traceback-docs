@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Custom formatter &mdash; Friendly-traceback 0.2.39 documentation</title>
+  <title>Custom formatter &mdash; Friendly 0.2.90 documentation</title>
   
 
   
@@ -52,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly-traceback
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly
           
 
           
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.39
+                0.2.90
               </div>
             
           
@@ -129,7 +129,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
@@ -187,7 +187,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly-traceback</a>
+          <a href="index.html">Friendly</a>
         
       </nav>
 
@@ -248,26 +248,23 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The documentation is being partially rewritten prior to
-releasing the next milestone version (0.3).
-Some information given here (especially images)
-may not reflect the state of the
-project.</p>
+<p>This project has changed its name. Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
+replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
 </div>
 <div class="section" id="custom-formatter">
 <h1>Custom formatter<a class="headerlink" href="#custom-formatter" title="Permalink to this headline">¶</a></h1>
-<p>Friendly-traceback comes with various formatters which style
+<p>Friendly comes with various formatters which style
 the information differently based on the environment.
 If the builtin formatters do not meet your need, you can design
 your own and set it as a default using either:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly</span>
 <span class="kn">from</span> <span class="nn">my_module</span> <span class="kn">import</span> <span class="n">my_formatter</span>
 
-<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="n">my_formatter</span><span class="p">)</span>
+<span class="n">friendly</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="n">my_formatter</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or, from the command line:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m friendly_traceback --format path.to.my_module.my_formatter
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m friendly --format path.to.my_module.my_formatter
 </pre></div>
 </div>
 <p>Currently, a formatter must accept two arguments:</p>
@@ -308,26 +305,26 @@ create your own formatter.</p>
 <ol class="arabic simple" start="2">
 <li><p>A string (<code class="docutils literal notranslate"><span class="pre">include</span></code>) which specifies which parts of the friendly
 traceback should be shown, and whose value is currently set
-using <code class="docutils literal notranslate"><span class="pre">friendly_traceback.set_include(...)</span></code>.</p></li>
+using <code class="docutils literal notranslate"><span class="pre">friendly.set_include(...)</span></code>.</p></li>
 </ol>
 <p>The second argument _might_ change in the future. If you only plan
-on making use of the traceback information compiled by Friendly-traceback
+on making use of the traceback information compiled by Friendly
 and determine what to show (and in which order) on your own, to ensure
-that future version of Friendly-traceback will be compatible with
+that future version of Friendly will be compatible with
 your formatter, we suggest the following definition:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_formatter</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="o">**</span><span class="n">ignore</span><span class="p">):</span>
     <span class="o">....</span>
 </pre></div>
 </div>
-<span class="target" id="module-friendly_traceback.formatters"></span><div class="section" id="formatters-py">
+<span class="target" id="module-friendly.formatters"></span><div class="section" id="formatters-py">
 <h2>formatters.py<a class="headerlink" href="#formatters-py" title="Permalink to this headline">¶</a></h2>
 <p>Default formatters showing all or only part of the available information.</p>
 <p>A formatter is a function that takes two arguments:</p>
 <ol class="arabic simple">
-<li><p>a dict (named <code class="docutils literal notranslate"><span class="pre">info</span></code> everywhere in friendly-traceback files) containing
+<li><p>a dict (named <code class="docutils literal notranslate"><span class="pre">info</span></code> everywhere in friendly files) containing
 all the information that can be shown to the user, as well as some
 entries that are meant to be used only internally as the full
-friendly-traceback information is obtained.</p></li>
+friendly information is obtained.</p></li>
 <li><p>A second argument which is meant to convey what information should be shown.
 This second argument used to be a single integer (“verbosity level”).
 It is currently recently being replaced by a single string. However,
@@ -361,16 +358,16 @@ in colour in a console using Rich (<a class="reference external" href="https://g
 </li>
 </ul>
 <dl class="py function">
-<dt id="friendly_traceback.formatters.jupyter">
-<code class="sig-name descname">jupyter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'friendly_tb'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/formatters.html#jupyter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.formatters.jupyter" title="Permalink to this definition">¶</a></dt>
+<dt id="friendly.formatters.jupyter">
+<code class="sig-name descname">jupyter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'friendly_tb'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/formatters.html#jupyter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.formatters.jupyter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Default formatter, primarily for console usage.</p>
 <p>The only change made to the content of “info” is
 some added indentation.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="friendly_traceback.formatters.markdown">
-<code class="sig-name descname">markdown</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'friendly_tb'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/formatters.html#markdown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.formatters.markdown" title="Permalink to this definition">¶</a></dt>
+<dt id="friendly.formatters.markdown">
+<code class="sig-name descname">markdown</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'friendly_tb'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/formatters.html#markdown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.formatters.markdown" title="Permalink to this definition">¶</a></dt>
 <dd><p>Traceback formatted with markdown syntax.</p>
 <p>Some minor changes of the traceback info content are done,
 for nicer final display when the markdown generated content
@@ -378,8 +375,8 @@ if further processed.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="friendly_traceback.formatters.markdown_docs">
-<code class="sig-name descname">markdown_docs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'explain'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/formatters.html#markdown_docs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.formatters.markdown_docs" title="Permalink to this definition">¶</a></dt>
+<dt id="friendly.formatters.markdown_docs">
+<code class="sig-name descname">markdown_docs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'explain'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/formatters.html#markdown_docs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.formatters.markdown_docs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Traceback formatted with markdown syntax, where each
 header is shifted down by 2 (h1 -&gt; h3, etc.) so that they
 can be inserted in a document, without creating artificial
@@ -390,15 +387,15 @@ is further processed.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="friendly_traceback.formatters.no_result">
-<code class="sig-name descname">no_result</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/formatters.html#no_result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.formatters.no_result" title="Permalink to this definition">¶</a></dt>
+<dt id="friendly.formatters.no_result">
+<code class="sig-name descname">no_result</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/formatters.html#no_result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.formatters.no_result" title="Permalink to this definition">¶</a></dt>
 <dd><p>Should normally only be called if no result is available
 from either hint() or why().</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="friendly_traceback.formatters.pre">
-<code class="sig-name descname">pre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'friendly_tb'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/formatters.html#pre"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.formatters.pre" title="Permalink to this definition">¶</a></dt>
+<dt id="friendly.formatters.pre">
+<code class="sig-name descname">pre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'friendly_tb'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/formatters.html#pre"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.formatters.pre" title="Permalink to this definition">¶</a></dt>
 <dd><p>Formatter that produces an output that is suitable for
 insertion in a RestructuredText (.rst) code block,
 with pre-formatted indentation.</p>
@@ -407,16 +404,16 @@ some added indentation.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="friendly_traceback.formatters.repl">
-<code class="sig-name descname">repl</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'friendly_tb'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/formatters.html#repl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.formatters.repl" title="Permalink to this definition">¶</a></dt>
+<dt id="friendly.formatters.repl">
+<code class="sig-name descname">repl</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'friendly_tb'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/formatters.html#repl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.formatters.repl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Default formatter, primarily for console usage.</p>
 <p>The only change made to the content of “info” is
 some added indentation.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="friendly_traceback.formatters.rich_markdown">
-<code class="sig-name descname">rich_markdown</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'friendly_tb'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/formatters.html#rich_markdown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.formatters.rich_markdown" title="Permalink to this definition">¶</a></dt>
+<dt id="friendly.formatters.rich_markdown">
+<code class="sig-name descname">rich_markdown</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'friendly_tb'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/formatters.html#rich_markdown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.formatters.rich_markdown" title="Permalink to this definition">¶</a></dt>
 <dd><p>Traceback formatted with with markdown syntax suitable for
 printing in color in the console using Rich.</p>
 <p>Some minor changes of the traceback info content are done,

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using with an editor or IDE &mdash; Friendly-traceback 0.2.39 documentation</title>
+  <title>Using with an editor or IDE &mdash; Friendly 0.2.90 documentation</title>
   
 
   
@@ -52,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly-traceback
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly
           
 
           
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.39
+                0.2.90
               </div>
             
           
@@ -132,7 +132,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
@@ -187,7 +187,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly-traceback</a>
+          <a href="index.html">Friendly</a>
         
       </nav>
 
@@ -248,11 +248,8 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The documentation is being partially rewritten prior to
-releasing the next milestone version (0.3).
-Some information given here (especially images)
-may not reflect the state of the
-project.</p>
+<p>This project has changed its name. Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
+replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
 </div>
 <div class="section" id="using-with-an-editor-or-ide">
 <span id="using-editor"></span><h1>Using with an editor or IDE<a class="headerlink" href="#using-with-an-editor-or-ide" title="Permalink to this headline">¶</a></h1>
@@ -260,11 +257,11 @@ project.</p>
 <code class="docutils literal notranslate"><span class="pre">my_program.py</span></code> and your editor has an option (perhaps from a menu or by
 clicking a button)
 to run <code class="docutils literal notranslate"><span class="pre">my_program.py</span></code> using Python. However, you’d like to
-run this program with Friendly-traceback’s help as though it was
+run this program with Friendly’s help as though it was
 invoked the usual way:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">friendly_traceback</span> <span class="n">my_program</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">friendly</span> <span class="n">my_program</span><span class="o">.</span><span class="n">py</span>
 <span class="c1"># or</span>
-<span class="n">python</span> <span class="o">-</span><span class="n">im</span> <span class="n">friendly_traceback</span> <span class="n">my_program</span><span class="o">.</span><span class="n">py</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">im</span> <span class="n">friendly</span> <span class="n">my_program</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>The simplest way to do this is to create a second file
@@ -277,7 +274,7 @@ your program:</p>
 </div>
 <p>In <strong>its simplest version</strong>, <code class="docutils literal notranslate"><span class="pre">friendly_run.py</span></code> will contain the
 following two lines of code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly_traceback</span> <span class="kn">import</span> <span class="n">run</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly</span> <span class="kn">import</span> <span class="n">run</span>
 <span class="n">run</span><span class="p">(</span><span class="s2">&quot;my_program.py&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -287,16 +284,16 @@ following two lines of code:</p>
 may have to be included on the above, as described in the following
 pages.</p>
 <p>The above default is equivalent to executing the following:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -im friendly_traceback my_program.py
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -im friendly my_program.py
 </pre></div>
 </div>
 <p>which starts a Friendly console at the end of the program’s execution.
 If you want instead the equivalent to:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m friendly_traceback my_program.py
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m friendly my_program.py
 </pre></div>
 </div>
 <p>use the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly_traceback</span> <span class="kn">import</span> <span class="n">run</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly</span> <span class="kn">import</span> <span class="n">run</span>
 <span class="n">run</span><span class="p">(</span><span class="s2">&quot;my_program.py&quot;</span><span class="p">,</span> <span class="n">console</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -327,9 +324,9 @@ The sum is 6.5.
 </div>
 <p>Running the program with the following code will result in
 <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">sum</span> <span class="pre">is</span> <span class="pre">6.5.</span></code> being printed:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly</span>
 
-<span class="n">mod_dict</span> <span class="o">=</span> <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+<span class="n">mod_dict</span> <span class="o">=</span> <span class="n">friendly</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
     <span class="s2">&quot;tests/adder.py&quot;</span><span class="p">,</span>
     <span class="n">console</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2.5&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">)</span>

@@ -5,7 +5,7 @@ Other details for advanced users
 
     Some additional information might be available from the command line::
 
-       python -m friendly_traceback -h
+       python -m friendly -h
 
 
 Where the output is written?
@@ -14,22 +14,22 @@ Where the output is written?
 By default, friendly tracebacks are written to ``sys.stderr``.
 However, it is possible to override this choice, as follows::
 
-    friendly_traceback.set_stream(stream)
+    friendly.set_stream(stream)
 
 Thus, the default amounts to::
 
-    friendly_traceback.set_stream(sys.stderr)
+    friendly.set_stream(sys.stderr)
 
 A special option exists to capture the output as a string::
 
-    friendly_traceback.set_stream("capture")
+    friendly.set_stream("capture")
 
 Later, this captured output can be retrieved using::
 
-    output = friendly_traceback.get_output()
+    output = friendly.get_output()
 
     # equivalent to
-    output = friendly_traceback.get_output(flush=True)
+    output = friendly.get_output(flush=True)
 
 
 The value shown for the ``flush`` parameter is the default; this means that
@@ -48,11 +48,11 @@ Language used
 
 The language used can be explicitly set as follows::
 
-    friendly_traceback.set_lang("fr")  # two-letter code for French
+    friendly.set_lang("fr")  # two-letter code for French
 
 The language currently used can be obtained using::
 
-    lang = friendly_traceback.get_lang()
+    lang = friendly.get_lang()
 
 If the language requested does not exist, no error is raised nor any warning
 given, but the choice reverts to the default (English).
@@ -62,30 +62,30 @@ in the section about design.
 As an exception hook
 ---------------------
 
-When "installing" Friendly-traceback, one can use various optional
+When "installing" Friendly, one can use various optional
 parameters::
 
-    friendly_traceback.install(lang="fr", redirect="capture", include="explain")
+    friendly.install(lang="fr", redirect="capture", include="explain")
 
 This is equivalent to writing::
 
-    friendly_traceback.install()
-    friendly_traceback.set_lang("fr")
-    friendly_traceback.set_stream("capture")
-    friendly_traceback.set_include("explain")
+    friendly.install()
+    friendly.set_lang("fr")
+    friendly.set_stream("capture")
+    friendly.set_include("explain")
 
 
 Catching exception locally
 --------------------------
 
-As mentioned before, another way to use Friendly-traceback is to catch
+As mentioned before, another way to use Friendly is to catch
 exceptions where they are expected to arise, such as::
 
 
     try:
         # Some code
     except Exception:
-        friendly_traceback.explain_traceback()
+        friendly.explain_traceback()
 
 This uses the default of writing to ``sys.stderr``.
 One can also **temporarily** redirect the output to any stream::
@@ -93,13 +93,13 @@ One can also **temporarily** redirect the output to any stream::
     try:
         # Some code
     except Exception:
-        friendly_traceback.explain_traceback(redirect=stream)
+        friendly.explain_traceback(redirect=stream)
 
-By default, Friendly-traceback takes its information from ``sys.exc_info()``.
+By default, Friendly takes its information from ``sys.exc_info()``.
 It may happen that this is not what we want to show.
 For example, the `showtraceback method in Python's code.py <https://github.com/python/cpython/blob/3.7/Lib/code.py#L131>`_ replaces one of the items prior to
 showing the traceback to the user; we currently also do something similar in
-Friendly-traceback's own console.
+Friendly's own console.
 
 Finally, if one wishes to *temporarily* change some other option mentioned above,
 it can be done as in the following example::
@@ -107,10 +107,10 @@ it can be done as in the following example::
     try:
         # Some code
     except Exception:
-        lang = friendly_traceback.get_lang()
-        friendly_traceback.set_lang("fr")
-        friendly_traceback.explain_traceback()
-        friendly_traceback.set_lang(lang)
+        lang = friendly.get_lang()
+        friendly.set_lang("fr")
+        friendly.explain_traceback()
+        friendly.set_lang(lang)
 
 
 Running another script
@@ -118,7 +118,7 @@ Running another script
 
 We have already given an example of running another script::
 
-    $ python -m friendly_traceback demos/hello.py
+    $ python -m friendly demos/hello.py
 
     Hello world!
     Running as main!
@@ -127,7 +127,7 @@ What if the separate script has its own command line arguments?
 If they are simply positional arguments, you can simply tack them
 on at the end of the argument list. An example can be found
 in the ``demos/`` directory, which can be run directly or using
-Friendly-traceback.
+Friendly.
 
 .. code-block::
 
@@ -136,22 +136,22 @@ Friendly-traceback.
 
 .. code-block::
 
-    $ python -m friendly_traceback demos/adder.py 1 2 3
+    $ python -m friendly demos/adder.py 1 2 3
     The sum is 6.0
 
 Note that this works even if you specify command line arguments
-that are specific to Friendly-traceback::
+that are specific to Friendly::
 
-    $ python -m friendly_traceback --lang fr demos/adder.py 1 2 3
+    $ python -m friendly --lang fr demos/adder.py 1 2 3
     The sum is 6.0
 
 However, what if one wants to run a script that uses optional named arguments
-similarly to how Friendly-traceback can use ``--lang`` and other optional
+similarly to how Friendly can use ``--lang`` and other optional
 arguments? In this case, use ``--`` to separate the list of arguments
 to be used by the script from those written previously and
-intended to be used by Friendly-traceback::
+intended to be used by Friendly::
 
-    $ python -m friendly_traceback --lang fr demos/adder.py -- --to_int 1 2 3
+    $ python -m friendly --lang fr demos/adder.py -- --to_int 1 2 3
     The sum is 6
 
 An alterative is to use either a ``sitecustomize.py``
@@ -162,8 +162,8 @@ For example, you can use the following approach.
 
 1. Create a ``usercustomize.py`` file whose content is the following::
 
-    import friendly_traceback
-    friendly_traceback.install()
+    import friendly
+    friendly.install()
     # specify other desired options here
 
 2. Set the ``PYTHONPATH`` environment variable to that directory.
@@ -172,5 +172,5 @@ For example, you can use the following approach.
 
        set PYTHONPATH=%CD%
 
-You can now run your script normally: Friendly-traceback exception
+You can now run your script normally: Friendly exception
 handling will be used by default on it.

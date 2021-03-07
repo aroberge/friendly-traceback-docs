@@ -4,11 +4,11 @@ IDLE's shell
 
 .. admonition:: Summary
 
-    Friendly-traceback has a special mode for IDLE.
+    Friendly has a special mode for IDLE.
     It is strongly recommended to use the Friendly console by
     using the following two instructions when beginning a session::
 
-        from friendly_traceback.idle import *
+        from friendly.idle import *
         start_console()
 
 
@@ -28,7 +28,7 @@ highlighted, with red background.
 You can use the Friendly console within IDLE's shell by first using
 a special import statement::
 
-    from friendly_traceback.idle import *
+    from friendly.idle import *
 
 To start the Friendly console, you need to then use ``start_console()``.
 
@@ -56,19 +56,19 @@ import statement as before,
 
 .. code-block::python
 
-    from friendly_traceback.idle import *
+    from friendly.idle import *
 
 I used ``install()`` to replace IDLE's handling of runtime errors
-by Friendly-traceback's version.
+by Friendly's version.
 
 
 .. image:: images/idle-friendly2.png
    :scale: 60 %
    :alt: Screen capture of the Friendly console within IDLE
 
-Unfortunately, since syntax errors cannot (yet) be processed by Friendly-traceback
+Unfortunately, since syntax errors cannot (yet) be processed by Friendly
 in this mode, I do not recommend to use it in this way.
 
 IDLE's developers are aware of this current limitation and might
-provide in a future version a way for Friendly-traceback to "hook" into IDLE's
+provide in a future version a way for Friendly to "hook" into IDLE's
 mechanism for dealing with syntax errors.

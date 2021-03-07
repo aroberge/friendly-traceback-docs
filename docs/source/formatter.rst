@@ -1,21 +1,21 @@
 Custom formatter
 ================
 
-Friendly-traceback comes with various formatters which style
+Friendly comes with various formatters which style
 the information differently based on the environment.
 If the builtin formatters do not meet your need, you can design
 your own and set it as a default using either::
 
-    import friendly_traceback
+    import friendly
     from my_module import my_formatter
 
-    friendly_traceback.set_formatter(formatter=my_formatter)
+    friendly.set_formatter(formatter=my_formatter)
 
 or, from the command line:
 
 .. code-block:: none
 
-    python -m friendly_traceback --format path.to.my_module.my_formatter
+    python -m friendly --format path.to.my_module.my_formatter
     
 
 Currently, a formatter must accept two arguments:
@@ -55,16 +55,16 @@ Currently, a formatter must accept two arguments:
 
 2. A string (``include``) which specifies which parts of the friendly
    traceback should be shown, and whose value is currently set
-   using ``friendly_traceback.set_include(...)``.
+   using ``friendly.set_include(...)``.
 
 The second argument _might_ change in the future. If you only plan
-on making use of the traceback information compiled by Friendly-traceback
+on making use of the traceback information compiled by Friendly
 and determine what to show (and in which order) on your own, to ensure
-that future version of Friendly-traceback will be compatible with
+that future version of Friendly will be compatible with
 your formatter, we suggest the following definition::
 
     def my_formatter(info, **ignore):
         ....
 
-.. automodule:: friendly_traceback.formatters
+.. automodule:: friendly.formatters
    :members:

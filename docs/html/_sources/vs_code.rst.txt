@@ -8,7 +8,7 @@ Rich greatly improves the look of the output, we recommend using
 it by adding an optional argument to ``run`` as follows::
 
 
-    from friendly_traceback import run
+    from friendly import run
 
     run("error.py", use_rich=True)
 
@@ -27,4 +27,4 @@ Using the notebook in VS Code
 Visual Studio Code also supports Jupyter notebooks in exactly the
 same way as described previously::
 
-    from friendly_traceback.jupyter import *
+    from friendly.jupyter import *

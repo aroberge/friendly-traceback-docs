@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Friendly tracebacks - en Français &mdash; Friendly-traceback 0.2.39 documentation</title>
+  <title>Friendly tracebacks - en Français &mdash; Friendly 0.2.90 documentation</title>
   
 
   
@@ -52,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly-traceback
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly
           
 
           
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.39
+                0.2.90
               </div>
             
           
@@ -129,7 +129,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
@@ -293,7 +293,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly-traceback</a>
+          <a href="index.html">Friendly</a>
         
       </nav>
 
@@ -354,18 +354,15 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The documentation is being partially rewritten prior to
-releasing the next milestone version (0.3).
-Some information given here (especially images)
-may not reflect the state of the
-project.</p>
+<p>This project has changed its name. Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
+replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
 </div>
 <div class="section" id="france-friendly-tracebacks-en-francais">
 <h1><img alt="france" src="_images/france.png" /> Friendly tracebacks - en Français<a class="headerlink" href="#france-friendly-tracebacks-en-francais" title="Permalink to this headline">¶</a></h1>
-<p>Le but principal de friendly-traceback est de fournir des rétroactions plus
+<p>Le but principal de friendly est de fournir des rétroactions plus
 conviviales que les fameux <strong>tracebacks</strong> de Python lorsqu’une exception survient.
 Ci-dessous, on peut voir quelques exemples. Le but éventuel est de documenter
-ici tous les exemples possibles tels qu’interprétés par friendly-traceback.</p>
+ici tous les exemples possibles tels qu’interprétés par friendly.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Le contenu de cette page a été généré par l’exécution de
@@ -374,7 +371,7 @@ Ceci a besoin d’être fait de manière explicite lorsqu’on veut
 faire des corrections ou des ajouts, avant de faire la mise
 à jour du reste de la documentation avec Sphinx.</p>
 </div>
-<p>Friendly-traceback version: 0.2.34a
+<p>Friendly version: 0.2.34a
 Python version: 3.8.4</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -772,7 +769,7 @@ Exception levée à la ligne 6 du fichier TESTS:\runtime\test_file_not_found_err
     import circular_b
   File &quot;TESTS:\circular_b.py&quot;, line 2, in &lt;module&gt;
     from circular_a import a
-ImportError: cannot import name &#39;a&#39; from partially initialized module &#39;circular_a&#39; (most likely due to a circular import) (C:\Users\andre\github\friendly-traceback\tests\circular_a.py)
+ImportError: cannot import name &#39;a&#39; from partially initialized module &#39;circular_a&#39; (most likely due to a circular import) (C:\Users\andre\github\friendly\tests\circular_a.py)
 
 L&#39;exception `ImportError` indique qu’un certain objet n’a pas pu
 être importé à partir d’un module ou d’un paquet. Très souvent, c’est
@@ -1826,7 +1823,7 @@ MyException: Some informative message about an unknown exception.
 
 Aucune information n’est connue à propos de cette exception.
 Veuillez signaler cet exemple à
-https://github.com/aroberge/friendly-traceback/issues
+https://github.com/aroberge/friendly/issues
 
 Si vous utilisez la console Friendly, utilisez `www()` pour
 faire une recherche sur Internet pour ce cas particulier.

@@ -3,7 +3,7 @@
 Themes and colours
 ===================
 
-As mentioned before, Friendly-traceback can make use of
+As mentioned before, Friendly can make use of
 `Rich <https://github.com/willmcgugan/rich>`_ if it is installed.
 Syntax colouring is done by Rich using Pygments.
 While Pygments comes with many different styles (colour schemes),
@@ -11,8 +11,8 @@ most of them do not define colours for all possible parts of
 a Python traceback: depending on the style, we sometimes end up with
 some text with the same colour as the background.
 
-To ensure that all of Friendly-traceback's output would be styled
-properly, Friendly-traceback includes its own "theme".
+To ensure that all of Friendly's output would be styled
+properly, Friendly includes its own "theme".
 One problem I had was to figure out
 all the possible styling elements. It turned out that I had "solved"
 this problem in 2008 when I created the Pygments Tango style for
@@ -32,7 +32,7 @@ Much to my surprise, even though the colours I have chosen are not standard
 colours, they are much altered by ConEmu depending on the chosen
 colour scheme.
 
-Friendly-traceback default theme using Windows Terminal
+Friendly default theme using Windows Terminal
 --------------------------------------------------------
 
 .. image:: images/theme_terminal.png
@@ -85,7 +85,7 @@ together with Python's IDLE:
 Conclusion
 -----------
 
-While suggestions for improving Friendly-traceback are generally
+While suggestions for improving Friendly are generally
 always welcome, suggested changes to the current default theme
 will likely be ignored since the end result appear to be
 completely dependent on the environment.

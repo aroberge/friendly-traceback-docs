@@ -12,15 +12,15 @@ Installation
 Installation
 -------------
 
-You can install Friendly-traceback from `PyPI <https://pypi.org/>`_ in the usual way::
+You can install Friendly from `PyPI <https://pypi.org/>`_ in the usual way::
 
 
-    python -m pip install friendly-traceback
+    python -m pip install friendly
 
 
 Of course, if this is the first time you install a package from PyPI,
 you might get some weird error. This is what it might look if you
-had already been using Friendly-traceback.
+had already been using Friendly.
 
 
 .. image:: images/pip.png

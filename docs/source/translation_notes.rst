@@ -29,9 +29,9 @@ Structure of this project
 Below, I make references to various files. Here's a simplified view of the
 directory structure of this project, showing only a few relevant files::
 
-    Friendly-traceback/
+    Friendly/
         demos/
-        friendly_traceback/
+        friendly/
             locales/
                 fr/
                     LC_MESSAGES/
@@ -166,10 +166,10 @@ have to edit the created file by hand.
 
 .. warning::
 
-    Please, do not contribute translations to Friendly-traceback
+    Please, do not contribute translations to Friendly
     where you attribute the copyright to yourself.
     Either do not include any copyright information
-    or attribute it to the Friendly-traceback project.
+    or attribute it to the Friendly project.
 
 Telling Python to use the translations
 --------------------------------------
@@ -274,7 +274,7 @@ One way to include them is to write the following in a file named
 
 .. code-block:: none
 
-    recursive-include friendly_traceback/locales *.*
+    recursive-include friendly/locales *.*
 
 Also (instead?), if using a ``setup.cfg`` file, include the following:
 
@@ -282,4 +282,4 @@ Also (instead?), if using a ``setup.cfg`` file, include the following:
 
     [options.package_data]
     * =
-        friendly_traceback/locales/*
+        friendly/locales/*

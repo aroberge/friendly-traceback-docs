@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Editor plugins &mdash; Friendly-traceback 0.2.39 documentation</title>
+  <title>Editor plugins &mdash; Friendly 0.2.90 documentation</title>
   
 
   
@@ -52,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly-traceback
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly
           
 
           
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.39
+                0.2.90
               </div>
             
           
@@ -129,7 +129,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
@@ -187,7 +187,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly-traceback</a>
+          <a href="index.html">Friendly</a>
         
       </nav>
 
@@ -248,21 +248,18 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The documentation is being partially rewritten prior to
-releasing the next milestone version (0.3).
-Some information given here (especially images)
-may not reflect the state of the
-project.</p>
+<p>This project has changed its name. Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
+replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
 </div>
 <div class="section" id="editor-plugins">
 <h1>Editor plugins<a class="headerlink" href="#editor-plugins" title="Permalink to this headline">¶</a></h1>
 <p>As mentioned in <a class="reference internal" href="editor.html#using-editor"><span class="std std-ref">Using with an editor or IDE</span></a>, one can launch a program
-by writing an auxiliary file that uses <code class="docutils literal notranslate"><span class="pre">friendly_traceback.run()</span></code>.
+by writing an auxiliary file that uses <code class="docutils literal notranslate"><span class="pre">friendly.run()</span></code>.
 Perhaps your favourite editor support plugins that can replace
 such auxiliary scripts by a menu item or an additional button.
 If that is the case, we encourage you to do so, and let us know
 so that we can make other users aware.</p>
-<p><code class="docutils literal notranslate"><span class="pre">friendly_traceback.run()</span></code> makes use of another function
+<p><code class="docutils literal notranslate"><span class="pre">friendly.run()</span></code> makes use of another function
 called <code class="docutils literal notranslate"><span class="pre">exec_code()</span></code> found in <code class="docutils literal notranslate"><span class="pre">editors_helpers.py</span></code>.
 This file contains additional functions that might be useful
 to turn into plugins, for example enabling to check the
@@ -270,7 +267,7 @@ syntax without actually running a program.</p>
 <p>Again, if you do so, let us know, and we will add any function
 you use to the public API. In the meantime,
 here’s some information about these functions.</p>
-<span class="target" id="module-friendly_traceback.editors_helpers"></span><div class="section" id="editors-helpers-py">
+<span class="target" id="module-friendly.editors_helpers"></span><div class="section" id="editors-helpers-py">
 <h2>editors_helpers.py<a class="headerlink" href="#editors-helpers-py" title="Permalink to this headline">¶</a></h2>
 <p>The functions in this module have been created so that user editors/IDEs
 could use Friendly-traceback without having to change the content of
@@ -279,8 +276,8 @@ their own programs.</p>
 <p>If you make use of any other function here, please file an issue so
 it can be determined if it should be added to the public API.</p>
 <dl class="py function">
-<dt id="friendly_traceback.editors_helpers.check_syntax">
-<code class="sig-name descname">check_syntax</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">source</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">'Fake filename'</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/editors_helpers.html#check_syntax"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.editors_helpers.check_syntax" title="Permalink to this definition">¶</a></dt>
+<dt id="friendly.editors_helpers.check_syntax">
+<code class="sig-name descname">check_syntax</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">source</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">'Fake filename'</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/editors_helpers.html#check_syntax"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.editors_helpers.check_syntax" title="Permalink to this definition">¶</a></dt>
 <dd><p>This uses Python’s <code class="docutils literal notranslate"><span class="pre">compile()</span></code> builtin which does some analysis of
 its code argument and will raise an exception if it identifies
 some syntax errors, but also some less common “overflow” and “value”
@@ -299,7 +296,7 @@ over the <code class="docutils literal notranslate"><span class="pre">source</sp
 <p>Two additional named arguments, <code class="docutils literal notranslate"><span class="pre">include</span></code> and <code class="docutils literal notranslate"><span class="pre">lang</span></code>, can be
 provided to temporarily set the values to be used during this function
 call. The original values are restored at the end.</p>
-<p>If friendly-traceback exception hook has not been set up prior
+<p>If friendly exception hook has not been set up prior
 to calling check_syntax, it will only be used for the duration
 of this function call.</p>
 <p>Returns a tuple containing a code object and a filename if no exception
@@ -307,8 +304,8 @@ has been raised, False otherwise.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="friendly_traceback.editors_helpers.exec_code">
-<code class="sig-name descname">exec_code</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">source</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly_traceback/editors_helpers.html#exec_code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly_traceback.editors_helpers.exec_code" title="Permalink to this definition">¶</a></dt>
+<dt id="friendly.editors_helpers.exec_code">
+<code class="sig-name descname">exec_code</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">source</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/editors_helpers.html#exec_code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.editors_helpers.exec_code" title="Permalink to this definition">¶</a></dt>
 <dd><p>This uses check_syntax to see if the code is valid and, if so,
 executes it into a globals dict containing only
 <code class="docutils literal notranslate"><span class="pre">{&quot;__name__&quot;:</span> <span class="pre">&quot;__main__&quot;}</span></code>.
@@ -321,7 +318,7 @@ over the <code class="docutils literal notranslate"><span class="pre">source</sp
 <p>Two additional named arguments, <code class="docutils literal notranslate"><span class="pre">include</span></code> and <code class="docutils literal notranslate"><span class="pre">lang</span></code>, can be
 provided to temporarily set the values to be used during this function
 call. The original values are restored at the end.</p>
-<p>If friendly-traceback exception hook has not been set up prior
+<p>If friendly exception hook has not been set up prior
 to calling check_syntax, it will only be used for the duration
 of this function call.</p>
 </dd></dl>

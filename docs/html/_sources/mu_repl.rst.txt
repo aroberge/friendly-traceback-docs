@@ -9,22 +9,22 @@ with the image of a keyboard.
    :alt: Screen capture showing Mu's interface with the REPL started.
 
 
-To use Friendly-traceback in Mu's REPL, include the following line of code::
+To use Friendly in Mu's REPL, include the following line of code::
 
-    from friendly_traceback.mu import *
+    from friendly.mu import *
 
 Here's what it looks like.
 
 .. image:: images/mu_repl2.png
    :scale: 60 %
-   :alt: Screen capture showing Friendly-traceback's output in Mu's REPL
+   :alt: Screen capture showing Friendly's output in Mu's REPL
 
 
 Future work
 -----------
 
 The REPL included in MU is known as a *Jupyter QtConsole*.
-Normal tracebacks produced without using Friendly-traceback are nicely
+Normal tracebacks produced without using Friendly are nicely
 coloured.
 
 .. image:: images/mu_repl3.png

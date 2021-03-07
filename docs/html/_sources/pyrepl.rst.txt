@@ -6,7 +6,7 @@ Using another REPL
    Depending on which REPL you are using, you will need to use
    two lines of code, which will look like the following::
 
-        from friendly_traceback.some_version import something
+        from friendly.some_version import something
         do_something()
 
 .. sidebar:: Reminder
@@ -21,7 +21,7 @@ Using another REPL
     Other synonyms of REPL are *console*, *shell*, and *interpreter*.
 
 Many programming environments include their own REPL.
-Depending on which of these you use, you can enable Friendly-traceback
+Depending on which of these you use, you can enable Friendly
 in different ways.
 
 
@@ -49,14 +49,14 @@ Compare this with what happens when I use a Friendly console:
 The name of the "file" is ``<friendly-console:N>`` where ``N`` is a different
 integer for each "file".
 
-Notice how the traceback shown by Friendly-traceback includes the lines
+Notice how the traceback shown by Friendly includes the lines
 of code that caused the problem.  To find the cause of the problems
-that gave rise to a traceback, Friendly-traceback needs to have this
-information.  For this reason, Friendly-traceback cannot be
+that gave rise to a traceback, Friendly needs to have this
+information.  For this reason, Friendly cannot be
 "installed" in a standard Python interpreter. I can however
 start a console using the following::
 
-    from friendly_traceback import start_console
+    from friendly import start_console
     start_console(use_rich=True)
 
 
@@ -84,18 +84,18 @@ start the Friendly console using ``start_console()``. However, in order
 to make sure that functions like ``what()``, ``why()``, etc., are
 available, the first line of code will have to be something like::
 
-    from friendly_traceback.some_version import *
+    from friendly.some_version import *
 
 The ``import *``, which is often not recommended, is required here so that
 you can use functions like ``what()``, etc.  The alternative would be to
 either list every single function required::
 
-    from friendly_traceback.some_version import what, why, where, ...
+    from friendly.some_version import what, why, where, ...
 
 or::
 
-    import friendly_traceback
+    import friendly
     ...
-    friendly_traceback.what()  # when needed to use it
+    friendly.what()  # when needed to use it
 
 which I do not consider to be "friendly".

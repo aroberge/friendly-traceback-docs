@@ -10,10 +10,10 @@ suddenly confronted with the following:
 
 
 You see ``UnboundLocalError``, and have no idea what it might mean,
-in spite of the hint provided by Friendly-traceback.
+in spite of the hint provided by Friendly.
 Rather than heading to StackOverflow to ask a question and have it
 immediately closed as being a duplicate, you simply ask ``what()``
-and Friendly-traceback tries to help you.
+and Friendly tries to help you.
 
 .. image:: images/greet_what_2.png
    :scale: 60 %
@@ -21,7 +21,7 @@ and Friendly-traceback tries to help you.
 
 
 ``what()`` only gives here some generic information about what an ``UnboundLocalError`` is.
-Later, you will see how Friendly-traceback can often give more useful
+Later, you will see how Friendly can often give more useful
 information regarding the exact cause of the exception, and how to fix it.
 
 ``what()`` can be useful even if an exception has not been raised.
@@ -52,7 +52,7 @@ by contributors::
 www(python=True)
 ------------------
 
-You will occasionally see errors that are not known by Friendly-traceback.
+You will occasionally see errors that are not known by Friendly.
 Here's an example:
 
 .. image:: images/what_www.png

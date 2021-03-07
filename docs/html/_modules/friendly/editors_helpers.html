@@ -1,0 +1,452 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>friendly.editors_helpers &mdash; Friendly 0.2.90 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Friendly
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.90
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Begin here</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../beginner.html">Useful information for beginners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install_mu.html">Using with Mu: installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install_thonny.html">Information for Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Basic usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Friendly console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../repl.html">Console basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../what.html">what()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../where.html">where()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../explain.html">explain()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../more.html">more()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../www.html">www()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../history.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../multiple_tracebacks.html">Multiple tracebacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../repl_more.html">Everything about the Friendly console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about_warnings.html">One last thing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other consoles</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pyrepl.html">Using another REPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../idle_repl.html">IDLE’s shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mu_repl.html">Mu’s REPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vs_code_repl.html">Visual Studio Code’s terminal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython_repl.html">IPython’s console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../other_repl.html">Other repl</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../editor.html">Using with an editor or IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../idle.html">IDLE: using the editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mu.html">Using with Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyter.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vs_code.html">Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../colab.html">Google’s colab</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Thoughts on design</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Some thoughts on the design of Friendly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../themes.html">Themes and colours</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Use in your project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Public API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../formatter.html">Custom formatter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_adv.html">Other details for advanced users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins.html">Editor plugins</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../suggest.html">Suggest an addition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../translation_notes.html">Notes on translations - using gettext</a></li>
+</ul>
+<p class="caption"><span class="caption-text">All the tracebacks!</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../known.html">Generic information about various exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_en_3.6.html">Friendly tracebacks - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_en_3.6.html">SyntaxError - Python 3.6 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_en_3.7.html">Friendly tracebacks - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_en_3.7.html">SyntaxError - Python 3.7 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_en_3.8.html">Friendly tracebacks - Python 3.8 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_en_3.8.html">SyntaxError - Python 3.8 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_en_3.9.html">Friendly tracebacks - Python 3.9 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_en_3.9.html">SyntaxError - Python 3.9 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_en_3.10.html">Friendly tracebacks - Python 3.10 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_en_3.10.html">SyntaxError - Python 3.10 in English</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compare_exceptions.html">Comparing Exception messages between Python versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compare.html">Comparison between Python versions: SyntaxErrors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Markdown examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_markdown.html">Friendly tracebacks - markdown_docs format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_syntax_markdown.html">Syntax errors - markdown_docs format</a></li>
+</ul>
+<p class="caption"><span class="caption-text">En français</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Friendly</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../friendly.html">friendly</a> &raquo;</li>
+        
+      <li>friendly.editors_helpers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for friendly.editors_helpers</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">editors_helpers.py</span>
+<span class="sd">------------------</span>
+
+<span class="sd">The functions in this module have been created so that user editors/IDEs</span>
+<span class="sd">could use Friendly-traceback without having to change the content of</span>
+<span class="sd">their own programs.</span>
+
+<span class="sd">None of these are part of the public API.</span>
+
+<span class="sd">If you make use of any other function here, please file an issue so</span>
+<span class="sd">it can be determined if it should be added to the public API.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">.source_cache</span> <span class="kn">import</span> <span class="n">cache</span>
+<span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
+<span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">session</span>
+
+
+<div class="viewcode-block" id="check_syntax"><a class="viewcode-back" href="../../plugins.html#friendly.editors_helpers.check_syntax">[docs]</a><span class="k">def</span> <span class="nf">check_syntax</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;Fake filename&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This uses Python&#39;s ``compile()`` builtin which does some analysis of</span>
+<span class="sd">    its code argument and will raise an exception if it identifies</span>
+<span class="sd">    some syntax errors, but also some less common &quot;overflow&quot; and &quot;value&quot;</span>
+<span class="sd">    errors.</span>
+
+<span class="sd">    Note that there are a few syntax errors that are not caught by this,</span>
+<span class="sd">    as they are identified by Python very late in its execution</span>
+<span class="sd">    process. See for example</span>
+<span class="sd">    `this blog post &lt;https://aroberge.blogspot.com/2019/12/a-tiny-python-exception-oddity.html&gt;`_</span>
+
+<span class="sd">    This function can either be used on a file, using the ``path`` argument, or</span>
+<span class="sd">    on some code passed as a string, using the ``source`` argument.</span>
+<span class="sd">    For the latter case, one can also specify a corresponding ``filename``:</span>
+<span class="sd">    this could be useful if this function is invoked from a GUI-based</span>
+<span class="sd">    editor.</span>
+
+<span class="sd">    Note that the ``path`` argument, if provided, takes precedence</span>
+<span class="sd">    over the ``source`` argument.</span>
+
+<span class="sd">    Two additional named arguments, ``include`` and ``lang``, can be</span>
+<span class="sd">    provided to temporarily set the values to be used during this function</span>
+<span class="sd">    call. The original values are restored at the end.</span>
+
+<span class="sd">    If friendly exception hook has not been set up prior</span>
+<span class="sd">    to calling check_syntax, it will only be used for the duration</span>
+<span class="sd">    of this function call.</span>
+
+<span class="sd">    Returns a tuple containing a code object and a filename if no exception</span>
+<span class="sd">    has been raised, False otherwise.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+
+    <span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_include</span> <span class="o">=</span> <span class="n">_save_settings</span><span class="p">()</span>
+    <span class="n">saved_lang</span> <span class="o">=</span> <span class="n">_temp_set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">source</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+                <span class="n">filename</span> <span class="o">=</span> <span class="n">path</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception caught&quot;</span><span class="p">)</span>
+            <span class="c1"># Do not show the Python traceback which would include</span>
+            <span class="c1">#  the call to open() in the traceback</span>
+            <span class="k">if</span> <span class="n">include</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="s2">&quot;no_tb&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">()</span>
+            <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_include</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="n">cache</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">code</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;exec&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">include</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="s2">&quot;explain&quot;</span><span class="p">)</span>  <span class="c1"># our default</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">()</span>
+        <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_include</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_include</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">code</span></div>
+
+
+<div class="viewcode-block" id="exec_code"><a class="viewcode-back" href="../../plugins.html#friendly.editors_helpers.exec_code">[docs]</a><span class="k">def</span> <span class="nf">exec_code</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This uses check_syntax to see if the code is valid and, if so,</span>
+<span class="sd">    executes it into a globals dict containing only</span>
+<span class="sd">    ``{&quot;__name__&quot;: &quot;__main__&quot;}``.</span>
+<span class="sd">    If no ``SyntaxError`` exception is raised, this dict is returned;</span>
+<span class="sd">    otherwise, an empty dict is returned.</span>
+
+<span class="sd">    It can either be used on a file, using the ``path`` argument, or</span>
+<span class="sd">    on some code passed as a string, using the ``source`` argument.</span>
+
+<span class="sd">    Note that the ``path`` argument, if provided, takes precedence</span>
+<span class="sd">    over the ``source`` argument.</span>
+
+<span class="sd">    Two additional named arguments, ``include`` and ``lang``, can be</span>
+<span class="sd">    provided to temporarily set the values to be used during this function</span>
+<span class="sd">    call. The original values are restored at the end.</span>
+
+<span class="sd">    If friendly exception hook has not been set up prior</span>
+<span class="sd">    to calling check_syntax, it will only be used for the duration</span>
+<span class="sd">    of this function call.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">check_syntax</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">code</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{}</span>
+
+    <span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_include</span> <span class="o">=</span> <span class="n">_save_settings</span><span class="p">()</span>
+    <span class="n">saved_lang</span> <span class="o">=</span> <span class="n">_temp_set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
+
+    <span class="n">module_globals</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;__name__&quot;</span><span class="p">:</span> <span class="s2">&quot;__main__&quot;</span><span class="p">}</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">exec</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">module_globals</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">include</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="s2">&quot;explain&quot;</span><span class="p">)</span>  <span class="c1"># our default</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">()</span>
+        <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_include</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">module_globals</span>
+
+    <span class="n">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_include</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">module_globals</span></div>
+
+
+<span class="k">def</span> <span class="nf">_temp_set_lang</span><span class="p">(</span><span class="n">lang</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;If lang is not none, temporarily set session.lang to the provided</span>
+<span class="sd">    value. Keep track of the original lang setting and return it.</span>
+
+<span class="sd">    A value of None for saved_lang indicates that no resetting will</span>
+<span class="sd">    be required.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">saved_lang</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">lang</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">saved_lang</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">lang</span>
+        <span class="k">if</span> <span class="n">saved_lang</span> <span class="o">!=</span> <span class="n">lang</span><span class="p">:</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">install_gettext</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">saved_lang</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">saved_lang</span>
+
+
+<span class="k">def</span> <span class="nf">_save_settings</span><span class="p">():</span>
+    <span class="n">current_except_hook</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">excepthook</span>
+    <span class="n">current_include</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">include</span>
+
+    <span class="k">return</span> <span class="n">current_except_hook</span><span class="p">,</span> <span class="n">current_include</span>
+
+
+<span class="k">def</span> <span class="nf">_reset</span><span class="p">(</span><span class="n">saved_except_hook</span><span class="p">,</span> <span class="n">saved_lang</span><span class="p">,</span> <span class="n">saved_include</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Resets both include and lang to their original values&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">saved_lang</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">install_gettext</span><span class="p">(</span><span class="n">saved_lang</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">saved_include</span><span class="p">)</span>
+    <span class="c1"># set_include(0) restores sys.excepthook to sys.__excepthook__</span>
+    <span class="c1"># which might not be what is wanted. So, we reset sys.excepthook last</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">excepthook</span> <span class="o">=</span> <span class="n">saved_except_hook</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright André Roberge
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

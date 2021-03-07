@@ -7,7 +7,7 @@ As a rule, I do not recommend that beginners write their programs
 in a console (repl) but that they use an editor instead or a
 notebook environment as it is easier to edit and correct mistakes.
 However, using a console is useful to demonstrate various
-features of Friendly-traceback which can be made available
+features of Friendly which can be made available
 in many editor/IDE environments.
 Furthermore, the combination of using an editor and a console
 can be quite useful.
@@ -25,7 +25,7 @@ following content::
 
 However, instead of using::
 
-    python -m friendly_traceback example.py
+    python -m friendly example.py
 
 to run this file, I will add an additional ``i`` flag so that ``-m`` become ``-im``;
 as a result, a Friendly console will be available after the program ends
@@ -50,9 +50,9 @@ information is provided by Friendly traceback.
 
 In the image above, the part identified by (1) is essentially the normal
 Python traceback. Depending on how long it gets, it can get shortened
-by Friendly-traceback as is explained later [:ref:`multiple_tracebacks`].
+by Friendly as is explained later [:ref:`multiple_tracebacks`].
 
-Part (2) is a "hint" **occasionally** provided by Friendly-traceback
+Part (2) is a "hint" **occasionally** provided by Friendly
 that can be useful in identifying the cause of the problem. You will see
-shortly how to get Friendly-traceback to give additional information
+shortly how to get Friendly to give additional information
 as to the possible cause of this error.

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Themes and colours &mdash; Friendly-traceback 0.2.39 documentation</title>
+  <title>Themes and colours &mdash; Friendly 0.2.90 documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Public API" href="api.html" />
-    <link rel="prev" title="Some thoughts on the design of Friendly-traceback" href="design.html" /> 
+    <link rel="prev" title="Some thoughts on the design of Friendly" href="design.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -52,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly-traceback
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly
           
 
           
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.39
+                0.2.90
               </div>
             
           
@@ -129,9 +129,9 @@
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Themes and colours</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#friendly-traceback-default-theme-using-windows-terminal">Friendly-traceback default theme using Windows Terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#friendly-default-theme-using-windows-terminal">Friendly default theme using Windows Terminal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#conemu-base16-theme">ConEmu: base16 theme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#conemu-default-windows-theme">ConEmu: default windows theme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#conemu-powershell-theme">ConEmu: powershell theme</a></li>
@@ -193,7 +193,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly-traceback</a>
+          <a href="index.html">Friendly</a>
         
       </nav>
 
@@ -243,7 +243,7 @@
         <a href="api.html" class="btn btn-neutral float-right" title="Public API" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of Friendly-traceback" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of Friendly" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -254,23 +254,20 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The documentation is being partially rewritten prior to
-releasing the next milestone version (0.3).
-Some information given here (especially images)
-may not reflect the state of the
-project.</p>
+<p>This project has changed its name. Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
+replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
 </div>
 <div class="section" id="themes-and-colours">
 <span id="themes"></span><h1>Themes and colours<a class="headerlink" href="#themes-and-colours" title="Permalink to this headline">¶</a></h1>
-<p>As mentioned before, Friendly-traceback can make use of
+<p>As mentioned before, Friendly can make use of
 <a class="reference external" href="https://github.com/willmcgugan/rich">Rich</a> if it is installed.
 Syntax colouring is done by Rich using Pygments.
 While Pygments comes with many different styles (colour schemes),
 most of them do not define colours for all possible parts of
 a Python traceback: depending on the style, we sometimes end up with
 some text with the same colour as the background.</p>
-<p>To ensure that all of Friendly-traceback’s output would be styled
-properly, Friendly-traceback includes its own “theme”.
+<p>To ensure that all of Friendly’s output would be styled
+properly, Friendly includes its own “theme”.
 One problem I had was to figure out
 all the possible styling elements. It turned out that I had “solved”
 this problem in 2008 when I created the Pygments Tango style for
@@ -288,8 +285,8 @@ using different colour schemes available from ConEmu’s settings.
 Much to my surprise, even though the colours I have chosen are not standard
 colours, they are much altered by ConEmu depending on the chosen
 colour scheme.</p>
-<div class="section" id="friendly-traceback-default-theme-using-windows-terminal">
-<h2>Friendly-traceback default theme using Windows Terminal<a class="headerlink" href="#friendly-traceback-default-theme-using-windows-terminal" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="friendly-default-theme-using-windows-terminal">
+<h2>Friendly default theme using Windows Terminal<a class="headerlink" href="#friendly-default-theme-using-windows-terminal" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="_images/theme_terminal.png"><img alt="Default theme using Windows Terminal" src="_images/theme_terminal.png" style="width: 628.4000000000001px; height: 375.6px;" /></a>
 </div>
 <div class="section" id="conemu-base16-theme">
@@ -319,7 +316,7 @@ together with Python’s IDLE:</p>
 </div>
 <div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
-<p>While suggestions for improving Friendly-traceback are generally
+<p>While suggestions for improving Friendly are generally
 always welcome, suggested changes to the current default theme
 will likely be ignored since the end result appear to be
 completely dependent on the environment.</p>
@@ -339,7 +336,7 @@ be a lower priority item.</p>
         <a href="api.html" class="btn btn-neutral float-right" title="Public API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of Friendly-traceback" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="design.html" class="btn btn-neutral float-left" title="Some thoughts on the design of Friendly" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

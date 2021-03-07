@@ -13,7 +13,7 @@ a program with IDLE using the
    :alt: Screen capture of IDLE
 
 
-Below, I did something similar, but using Friendly-traceback
+Below, I did something similar, but using Friendly
 as a program launcher, and using French as the default
 language. After the program's execution had been
 completed, I entered more code, making a syntax error.

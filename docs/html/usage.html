@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Basic usage &mdash; Friendly-traceback 0.2.39 documentation</title>
+  <title>Basic usage &mdash; Friendly 0.2.90 documentation</title>
   
 
   
@@ -52,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly-traceback
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly
           
 
           
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.2.39
+                0.2.90
               </div>
             
           
@@ -135,7 +135,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Thoughts on design</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly-traceback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Some thoughts on the design of Friendly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="themes.html">Themes and colours</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Use in your project</span></p>
@@ -190,7 +190,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly-traceback</a>
+          <a href="index.html">Friendly</a>
         
       </nav>
 
@@ -251,15 +251,12 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The documentation is being partially rewritten prior to
-releasing the next milestone version (0.3).
-Some information given here (especially images)
-may not reflect the state of the
-project.</p>
+<p>This project has changed its name. Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
+replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
 </div>
 <div class="section" id="basic-usage">
 <h1>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
-<p>There are various ways of using Friendly-traceback.
+<p>There are various ways of using Friendly.
 I only list here the basic scenarios available from a
 terminal or from within a Python interpreter.
 More options are possible, including running from an editor/IDE
@@ -268,19 +265,19 @@ as described later in this documentation.</p>
 I recommend using <strong>one of the first three</strong> following options.</p>
 <ol class="arabic">
 <li><p>Execute a Python program, as I have already shown at the beginning:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback example.py
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly example.py
 </pre></div>
 </div>
 </li>
 <li><p>You can also start a Friendly console:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly_traceback
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly
 </pre></div>
 </div>
 </li>
 <li><p>Combining the two options above by using Python’s <code class="docutils literal notranslate"><span class="pre">-i</span></code> flag
-to start Friendly-traceback’s console after executing
+to start Friendly’s console after executing
 a program:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -im friendly_traceback example.py
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -im friendly example.py
 </pre></div>
 </div>
 </li>
@@ -297,14 +294,14 @@ what I have used for various screen captures.
 See <a class="reference internal" href="themes.html#themes"><span class="std std-ref">Themes and colours</span></a> for screenshot taken with with other terminals
 on Windows.</p>
 <p>If you are a Mac or Linux user,
-and use Friendly-traceback with Rich installed,
+and use Friendly with Rich installed,
 I would gladly accept any screenshot that you could provide so that they
 could be included in this documentation.</p>
-<p>If possible, Friendly-traceback makes use of
+<p>If possible, Friendly makes use of
 <a class="reference external" href="https://github.com/willmcgugan/rich">Rich</a> to add colour to its output.
 Note however that some programming environments,
 such as IDLE and other IDEs do not support Rich; this does not
-prevent you from using Friendly-traceback, but the display
+prevent you from using Friendly, but the display
 will definitely not look as nice.
 The only editor/IDE capable of <strong>fully</strong> making use of Rich that I know
 of is <a class="reference external" href="https://code.visualstudio.com/">Microsoft Visual Studio Code</a>.
@@ -313,31 +310,31 @@ Pycharm’s embedded console, at least on Windows, does not fully
 support Rich.</p>
 <div class="section" id="other-ways">
 <h3>Other ways<a class="headerlink" href="#other-ways" title="Permalink to this headline">¶</a></h3>
-<p>The following ways of using Friendly-traceback are described
+<p>The following ways of using Friendly are described
 in more details later. I simply list them here as useful
 summary for experienced Python programmers.</p>
 <ol class="arabic" start="4">
-<li><p>You can use Friendly-traceback as an exception hook:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
-<span class="n">friendly_traceback</span><span class="o">.</span><span class="n">install</span><span class="p">()</span>  <span class="c1"># replaces the default sys.excepthook</span>
+<li><p>You can use Friendly as an exception hook:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly</span>
+<span class="n">friendly</span><span class="o">.</span><span class="n">install</span><span class="p">()</span>  <span class="c1"># replaces the default sys.excepthook</span>
 </pre></div>
 </div>
 </li>
 <li><p>Starting the console from any Python interpreter:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">friendly_traceback</span><span class="o">.</span><span class="n">start_console</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">friendly</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">friendly</span><span class="o">.</span><span class="n">start_console</span><span class="p">()</span>
 </pre></div>
 </div>
 </li>
 <li><p>You can also use it to catch exceptions locally:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly_traceback</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly</span>
 
 <span class="o">...</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="c1"># Some code</span>
 <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-    <span class="n">friendly_traceback</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">()</span>
+    <span class="n">friendly</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">()</span>
 </pre></div>
 </div>
 </li>
@@ -348,7 +345,7 @@ changing the information that is shown by default.</p>
 <p>More information about various additional options is
 provided later in this documentation.
 As a shortcut, you can
-also type <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">friendly_traceback</span> <span class="pre">-h</span></code> in a terminal.</p>
+also type <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">friendly</span> <span class="pre">-h</span></code> in a terminal.</p>
 </div>
 </div>
 </div>

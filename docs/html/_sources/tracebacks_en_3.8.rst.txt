@@ -2,11 +2,11 @@
 Friendly tracebacks - in English
 ======================================
 
-Friendly-traceback aims to provide friendlier feedback when an exception
+Friendly aims to provide friendlier feedback when an exception
 is raised than what is done by Python.
 Below, we can find some examples. SyntaxError cases, as well as TabError and
 IndentationError cases, are shown in a separate page.
-Ideally, an example of each case handled by friendly-traceback
+Ideally, an example of each case handled by friendly
 should be included here.
 
 .. note::
@@ -16,7 +16,7 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly-traceback version: 0.2.34a
+Friendly version: 0.2.34a
 Python version: 3.8.4
 
 
@@ -482,7 +482,7 @@ Circular import
         import circular_b
       File "TESTS:\circular_b.py", line 2, in <module>
         from circular_a import a
-    ImportError: cannot import name 'a' from partially initialized module 'circular_a' (most likely due to a circular import) (C:\Users\andre\github\friendly-traceback\tests\circular_a.py)
+    ImportError: cannot import name 'a' from partially initialized module 'circular_a' (most likely due to a circular import) (C:\Users\andre\github\friendly\tests\circular_a.py)
     
     An `ImportError` exception indicates that a certain object could not
     be imported from a module or package. Most often, this is
@@ -1665,7 +1665,7 @@ Generic
     
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly-traceback/issues
+    https://github.com/aroberge/friendly/issues
     
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.

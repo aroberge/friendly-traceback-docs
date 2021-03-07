@@ -4,7 +4,7 @@ Visual Studio Code's terminal
 You can start the friendly console in Visual Studio Code's terminal
 in the same way as mentioned before::
 
-    python -m friendly_traceback
+    python -m friendly
 
 .. image:: images/vs_code_repl1.png
    :scale: 50 %
@@ -18,7 +18,7 @@ better it likely will look.
 If you use a light coloured theme, you should use the
 following instead:
 
-    python -m friendly_traceback --style light
+    python -m friendly --style light
 
 
 .. image:: images/vs_code_repl2.png

@@ -4,7 +4,7 @@ where()
 
 Python traceback give information about where an exception was raised and
 more. But it does so in a way that's not entirely friendly to users.
-Let's look at a different example, and see how Friendly-traceback
+Let's look at a different example, and see how Friendly
 can give a bit more information about the location of the problem.
 
 
@@ -28,7 +28,7 @@ can give a bit more information about the location of the problem.
     Did you mean other?
 
 
-By default, Friendly-traceback limits the length of the traceback
+By default, Friendly limits the length of the traceback
 shown to the user.
 [If you want to see a full traceback instead, use ``python_tb()`` or
 see :ref:`multiple_tracebacks` for more details.]
@@ -58,7 +58,7 @@ Let's see how () can get a bit more information about this::
         print: <builtin function print>
     >>>
 
-Friendly-traceback gives detailed information about two locations
+Friendly gives detailed information about two locations
 at most: where the program stopped and where the exception was
 raised. It shows a few lines of code near the source of the problem,
 and gives some information about what it thinks might be

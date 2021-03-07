@@ -8,13 +8,13 @@ Suppose that you are using an editor or IDE to work on a file called
 ``my_program.py`` and your editor has an option (perhaps from a menu or by
 clicking a button)
 to run ``my_program.py`` using Python. However, you'd like to
-run this program with Friendly-traceback's help as though it was
+run this program with Friendly's help as though it was
 invoked the usual way::
 
 
-    python -m friendly_traceback my_program.py
+    python -m friendly my_program.py
     # or
-    python -im friendly_traceback my_program.py
+    python -im friendly my_program.py
 
 
 The simplest way to do this is to create a second file
@@ -31,7 +31,7 @@ your program:
 In **its simplest version**, ``friendly_run.py`` will contain the
 following two lines of code::
 
-    from friendly_traceback import run
+    from friendly import run
     run("my_program.py")
 
 
@@ -47,19 +47,19 @@ The above default is equivalent to executing the following:
 
 .. code-block:: none
 
-    python -im friendly_traceback my_program.py
+    python -im friendly my_program.py
 
 which starts a Friendly console at the end of the program's execution.
 If you want instead the equivalent to:
 
 .. code-block:: none
 
-    python -m friendly_traceback my_program.py
+    python -m friendly my_program.py
 
 
 use the following::
 
-    from friendly_traceback import run
+    from friendly import run
     run("my_program.py", console=False)
 
 
@@ -96,9 +96,9 @@ Here's an example, taken from our unit tests::
 Running the program with the following code will result in
 ``The sum is 6.5.`` being printed::
 
-    import friendly_traceback
+    import friendly
 
-    mod_dict = friendly_traceback.run(
+    mod_dict = friendly.run(
         "tests/adder.py",
         console=False,
         args=("1", "2.5", "3")

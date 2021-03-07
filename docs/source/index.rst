@@ -1,17 +1,17 @@
 
-`Code on Github <https://github.com/aroberge/Friendly-traceback>`_
+`Code on Github <https://github.com/aroberge/Friendly>`_
 
 
 Bienvenue 환영합니다 Bienvenido - ようこそ Welcome  歡迎光臨
 ========================================================================
 
-**Friendly-traceback** helps users understand what caused a given
+**Friendly** helps users understand what caused a given
 exception in their Python program, and how to fix it.
 
 There exists many Python projects
 whose **primary** goal is to supplement the information
 given by Python traceback to make them more useful for **advanced** programmers.
-To my knowledge, of all those projects, Friendly-traceback is the only one
+To my knowledge, of all those projects, Friendly is the only one
 designed with beginners in mind.
 
 .. sidebar:: Using screenshots
@@ -25,16 +25,16 @@ designed with beginners in mind.
     reach out to me: andre.roberge@gmail.com
 
 
-To be more specific, while Friendly-traceback 
+To be more specific, while Friendly 
 can be useful for advanced programmers,
 it strives to present the information in a way that is easily
 understood by beginners and/or by users
 who would like to get information about traceback in their own language.
-Friendly-traceback can give more detailed information as to
+Friendly can give more detailed information as to
 **where** an exception occurred, **what** a given exception means and
 **why** it might have occurred (sometimes adding suggestions as to how to fix it.)
 
-Even though Friendly-traceback can be used on its own with a specially
+Even though Friendly can be used on its own with a specially
 designed console, a better option might be to use it together with
 GUI-based editors/IDE including JupyterLab and Jupyter notebooks.
 I explain how to do so later.
@@ -62,7 +62,7 @@ to run this program.
 
 Not exactly the most helpful information for beginners ...
 
-Here's the corresponding version with full explanation from Friendly-traceback,
+Here's the corresponding version with full explanation from Friendly,
 making use of
 `Rich <https://github.com/willmcgugan/rich>`_ to produce a colourful output.
 
@@ -70,7 +70,7 @@ making use of
    :scale: 50 %
    :alt: Friendly IndexError example in English
 
-One unique feature of Friendly-traceback is that all the information
+One unique feature of Friendly is that all the information
 it provides can be translated into another language; currently, only
 English (by default) and French are available.
 

@@ -17,7 +17,7 @@ You can choose to see three different tracebacks:
 ``friendly_tb``, ``python_tb``, ``debug_tb``.
 Of these three, ``python_tb`` is designed to reproduce fairly accurately
 what would be seen if a program would be run without
-friendly-traceback. In a few cases, it will have some minor differences
+friendly. In a few cases, it will have some minor differences
 compared with a normal Python traceback.
 
 In this section, I compare these three tracebacks with the normal
@@ -50,7 +50,7 @@ the code shown above using Python.
    :scale: 50 %
    :alt: Screen capture showing a normal python traceback.
 
-Next, I run the same module using Friendly-traceback
+Next, I run the same module using Friendly
 showing the ``python_tb`` case; this is done using ``--include python_tb``
 as a command line option.
 In this particular case, the only difference with the
@@ -69,8 +69,8 @@ in some instances, no such hint can be provided.
    :alt: Screen capture showing a friendly traceback.
 
 Finally, I use the ``debug_tb`` to show the real traceback produced
-when running this example using Friendly-traceback: it includes
-code from Friendly-traceback itself.
+when running this example using Friendly: it includes
+code from Friendly itself.
 
 .. image:: images/debug_tb1.png
    :scale: 50 %
@@ -88,7 +88,7 @@ from a console, starting with Python's own.
    :alt: Screen capture showing a normal python traceback.
 
 
-When doing the same with Friendly-traceback, it is the ``friendly_tb``
+When doing the same with Friendly, it is the ``friendly_tb``
 that is shown by default. It has three differences compared with
 the normal Python traceback:
 
@@ -128,7 +128,7 @@ content of the line that was executed.
    :alt: Screen capture showing a normal python traceback.
 
 
-As before, when doing the same with Friendly-traceback,
+As before, when doing the same with Friendly,
 it is the ``friendly_tb`` that is shown by default.
 It includes the line of code that was executed for each "file".
 
@@ -152,7 +152,7 @@ As before, I can use ``debug_tb()`` to see the complete traceback.
    :alt: Screen capture showing a the true traceback.
 
 Since paths can be quite long, when showing information about an
-exception, Friendly-traceback will attempt to reduce the length
+exception, Friendly will attempt to reduce the length
 of the path shown. You've seen before an example where ``HOME_DIR``
 was substituted for the user's home directory. A more significant
 reduction is shown when the path for a module from the Python standard library
@@ -161,7 +161,7 @@ is shown.
 
 .. image:: images/shorter_path.png
    :scale: 50 %
-   :alt: Screen capture showing the paths shortened by Friendly-traceback
+   :alt: Screen capture showing the paths shortened by Friendly
 
 
 

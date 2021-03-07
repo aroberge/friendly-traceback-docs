@@ -16,5 +16,5 @@ methods of a ``Friendly`` class.  All available such
 functions are listed below.
 
 
-.. automodule:: friendly_traceback.console_helpers
+.. automodule:: friendly.console_helpers
    :members:
