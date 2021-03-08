@@ -10,14 +10,14 @@ Generic information about various exceptions
      documentation using Sphinx.
 
 This file contains the generic information provided by
-Friendly about built-in exceptions.
+Friendly-traceback about built-in exceptions.
 By "generic information" we mean the information provided using
 ``what()`` in a friendly console.
 
-Some exceptions will never be seen by users of Friendly.
+Some exceptions will never be seen by users of Friendly-traceback.
 
 For exemple, ``SystemExit`` and ``KeyboardInterrupt`` are never
-intercepted by Friendly. Furthermore, exceptions such as
+intercepted by Friendly-traceback. Furthermore, exceptions such as
 ``GeneratorExit``, ``StopIteration``, ``FloatingPointError``, and
 ``StopAsyncIteration``, would likely never be seen.
 
@@ -30,7 +30,7 @@ In the case of ``StopIteration``, see
 ``BaseException``, ``Exception``, and ``ArithmeticError`` are base classes which
 are also not normally seen: some derived classes are normally used instead.
 
-Information compiled using Friendly version: 0.2.34a,
+Information compiled using Friendly-traceback version: 0.2.92,
 Python version: 3.8.4
 
 
@@ -56,7 +56,7 @@ AssertionError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -76,7 +76,7 @@ BaseException
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -87,7 +87,7 @@ BlockingIOError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -98,7 +98,7 @@ BrokenPipeError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -109,7 +109,7 @@ BufferError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -120,7 +120,7 @@ ChildProcessError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -131,7 +131,7 @@ ConnectionAbortedError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -142,7 +142,7 @@ ConnectionError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -153,7 +153,7 @@ ConnectionRefusedError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -164,7 +164,7 @@ ConnectionResetError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -175,7 +175,7 @@ EOFError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -186,7 +186,7 @@ EnvironmentError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -197,7 +197,7 @@ Exception
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -208,7 +208,7 @@ FileExistsError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -228,7 +228,7 @@ FloatingPointError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -239,7 +239,7 @@ GeneratorExit
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -250,7 +250,7 @@ IOError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -288,7 +288,7 @@ InterruptedError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -299,7 +299,7 @@ IsADirectoryError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -318,7 +318,7 @@ KeyboardInterrupt
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -338,7 +338,7 @@ MemoryError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -370,7 +370,7 @@ NotADirectoryError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -381,7 +381,7 @@ NotImplementedError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -392,7 +392,7 @@ OSError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -411,7 +411,7 @@ PermissionError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -422,7 +422,7 @@ ProcessLookupError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -443,7 +443,7 @@ ReferenceError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -454,7 +454,7 @@ RuntimeError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -465,7 +465,7 @@ StopAsyncIteration
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -476,7 +476,7 @@ StopIteration
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -494,7 +494,7 @@ SystemError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -505,7 +505,7 @@ SystemExit
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -528,7 +528,7 @@ TimeoutError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -563,7 +563,7 @@ UnicodeDecodeError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -574,7 +574,7 @@ UnicodeEncodeError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -585,7 +585,7 @@ UnicodeError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -596,7 +596,7 @@ UnicodeTranslateError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -615,7 +615,7 @@ WindowsError
 
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 

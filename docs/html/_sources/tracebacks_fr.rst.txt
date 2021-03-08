@@ -2,10 +2,10 @@
 |france| Friendly tracebacks - en Français
 ===========================================
 
-Le but principal de friendly est de fournir des rétroactions plus
+Le but principal de friendly-traceback est de fournir des rétroactions plus
 conviviales que les fameux **tracebacks** de Python lorsqu'une exception survient.
 Ci-dessous, on peut voir quelques exemples. Le but éventuel est de documenter
-ici tous les exemples possibles tels qu'interprétés par friendly.
+ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
 
 .. note::
 
@@ -15,7 +15,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly.
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly version: 0.2.34a
+Friendly-traceback version: 0.2.92
 Python version: 3.8.4
 
 
@@ -481,7 +481,7 @@ Circular import
         import circular_b
       File "TESTS:\circular_b.py", line 2, in <module>
         from circular_a import a
-    ImportError: cannot import name 'a' from partially initialized module 'circular_a' (most likely due to a circular import) (C:\Users\andre\github\friendly\tests\circular_a.py)
+    ImportError: cannot import name 'a' from partially initialized module 'circular_a' (most likely due to a circular import) (C:\Users\andre\github\friendly-traceback\tests\circular_a.py)
     
     L'exception `ImportError` indique qu’un certain objet n’a pas pu
     être importé à partir d’un module ou d’un paquet. Très souvent, c’est
@@ -1664,7 +1664,7 @@ Generic
     
     Aucune information n’est connue à propos de cette exception.
     Veuillez signaler cet exemple à
-    https://github.com/aroberge/friendly/issues
+    https://github.com/aroberge/friendly-traceback/issues
     
     Si vous utilisez la console Friendly, utilisez `www()` pour
     faire une recherche sur Internet pour ce cas particulier.

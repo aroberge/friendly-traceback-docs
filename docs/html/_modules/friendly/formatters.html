@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>friendly.formatters &mdash; Friendly 0.2.90 documentation</title>
+  <title>friendly.formatters &mdash; Friendly 0.2.92 documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.2.90
+                0.2.92
               </div>
             
           
@@ -280,19 +280,19 @@
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
 
-<span class="kn">from</span> <span class="nn">.theme</span> <span class="kn">import</span> <span class="n">pygments_available</span>
+<span class="kn">from</span> <span class="nn">pygments</span> <span class="kn">import</span> <span class="n">highlight</span>
+<span class="kn">from</span> <span class="nn">pygments.lexers</span> <span class="kn">import</span> <span class="n">PythonLexer</span><span class="p">,</span> <span class="n">PythonTracebackLexer</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span> <span class="nn">pygments.formatters</span> <span class="kn">import</span> <span class="n">HtmlFormatter</span>  <span class="c1"># noqa</span>
+
 
 <span class="n">ipython_available</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="k">if</span> <span class="n">pygments_available</span><span class="p">:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">pygments</span> <span class="kn">import</span> <span class="n">highlight</span>  <span class="c1"># noqa</span>
-        <span class="kn">from</span> <span class="nn">pygments.lexers</span> <span class="kn">import</span> <span class="n">PythonLexer</span><span class="p">,</span> <span class="n">PythonTracebackLexer</span>  <span class="c1"># noqa</span>
-        <span class="kn">from</span> <span class="nn">pygments.formatters</span> <span class="kn">import</span> <span class="n">HtmlFormatter</span>  <span class="c1"># noqa</span>
-        <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>  <span class="c1"># noqa</span>
+<span class="k">try</span><span class="p">:</span>
 
-        <span class="n">ipython_available</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-        <span class="k">pass</span>
+    <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>  <span class="c1"># noqa</span>
+
+    <span class="n">ipython_available</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="k">pass</span>
 
 <span class="n">RICH_HEADER</span> <span class="o">=</span> <span class="kc">False</span>
 
