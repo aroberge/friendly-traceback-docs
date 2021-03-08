@@ -67,7 +67,7 @@ making use of
 `Rich <https://github.com/willmcgugan/rich>`_ to produce a colourful output.
 
 .. image:: images/friendly_indexerror_en.png
-   :scale: 50 %
+   :scale: 40 %
    :alt: Friendly IndexError example in English
 
 One unique feature of Friendly is that all the information
@@ -75,7 +75,7 @@ it provides can be translated into another language; currently, only
 English (by default) and French are available.
 
 .. image:: images/friendly_indexerror_fr.png
-   :scale: 50 %
+   :scale: 40 %
    :alt: Friendly IndexError in French
 
 
