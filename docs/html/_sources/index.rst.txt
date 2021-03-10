@@ -1,17 +1,17 @@
 
-`Code on Github <https://github.com/aroberge/Friendly>`_
+`Code on Github <https://github.com/aroberge/friendly>`_
 
 
 Bienvenue 환영합니다 Bienvenido - ようこそ Welcome  歡迎光臨
 ========================================================================
 
-**Friendly** helps users understand what caused a given
+**friendly** helps users understand what caused a given
 exception in their Python program, and how to fix it.
 
 There exists many Python projects
 whose **primary** goal is to supplement the information
 given by Python traceback to make them more useful for **advanced** programmers.
-To my knowledge, of all those projects, Friendly is the only one
+To my knowledge, of all those projects, friendly is the only one
 designed with beginners in mind.
 
 .. sidebar:: Using screenshots
@@ -25,16 +25,16 @@ designed with beginners in mind.
     reach out to me: andre.roberge@gmail.com
 
 
-To be more specific, while Friendly 
+To be more specific, while friendly 
 can be useful for advanced programmers,
 it strives to present the information in a way that is easily
 understood by beginners and/or by users
 who would like to get information about traceback in their own language.
-Friendly can give more detailed information as to
+friendly can give more detailed information as to
 **where** an exception occurred, **what** a given exception means and
 **why** it might have occurred (sometimes adding suggestions as to how to fix it.)
 
-Even though Friendly can be used on its own with a specially
+Even though friendly can be used on its own with a specially
 designed console, a better option might be to use it together with
 GUI-based editors/IDE including JupyterLab and Jupyter notebooks.
 I explain how to do so later.
@@ -62,21 +62,21 @@ to run this program.
 
 Not exactly the most helpful information for beginners ...
 
-Here's the corresponding version with full explanation from Friendly,
+Here's the corresponding version with full explanation from friendly,
 making use of
 `Rich <https://github.com/willmcgugan/rich>`_ to produce a colourful output.
 
 .. image:: images/friendly_indexerror_en.png
    :scale: 40 %
-   :alt: Friendly IndexError example in English
+   :alt: friendly IndexError example in English
 
-One unique feature of Friendly is that all the information
+One unique feature of friendly is that all the information
 it provides can be translated into another language; currently, only
 English (by default) and French are available.
 
 .. image:: images/friendly_indexerror_fr.png
    :scale: 40 %
-   :alt: Friendly IndexError in French
+   :alt: friendly IndexError in French
 
 
 **Keep reading if you want to find out more.**
@@ -97,7 +97,7 @@ English (by default) and French are available.
 .. toctree::
    :maxdepth: 1
    :hidden:
-   :caption: Friendly console
+   :caption: friendly console
 
    repl
    what
@@ -169,15 +169,15 @@ English (by default) and French are available.
    :caption: All the tracebacks!
 
    known
-   Friendly tracebacks - Python 3.6 in English <tracebacks_en_3.6>
+   friendly tracebacks - Python 3.6 in English <tracebacks_en_3.6>
    SyntaxError - Python 3.6 in English <syntax_tracebacks_en_3.6>
-   Friendly tracebacks - Python 3.7 in English <tracebacks_en_3.7>
+   friendly tracebacks - Python 3.7 in English <tracebacks_en_3.7>
    SyntaxError - Python 3.7 in English <syntax_tracebacks_en_3.7>
-   Friendly tracebacks - Python 3.8 in English <tracebacks_en_3.8>
+   friendly tracebacks - Python 3.8 in English <tracebacks_en_3.8>
    SyntaxError - Python 3.8 in English <syntax_tracebacks_en_3.8>
-   Friendly tracebacks - Python 3.9 in English <tracebacks_en_3.9>
+   friendly tracebacks - Python 3.9 in English <tracebacks_en_3.9>
    SyntaxError - Python 3.9 in English <syntax_tracebacks_en_3.9>
-   Friendly tracebacks - Python 3.10 in English <tracebacks_en_3.10>
+   friendly tracebacks - Python 3.10 in English <tracebacks_en_3.10>
    SyntaxError - Python 3.10 in English <syntax_tracebacks_en_3.10>
    compare_exceptions
    compare

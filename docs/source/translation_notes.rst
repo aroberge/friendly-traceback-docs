@@ -29,7 +29,7 @@ Structure of this project
 Below, I make references to various files. Here's a simplified view of the
 directory structure of this project, showing only a few relevant files::
 
-    Friendly/
+    friendly/
         demos/
         friendly/
             locales/
@@ -166,10 +166,10 @@ have to edit the created file by hand.
 
 .. warning::
 
-    Please, do not contribute translations to Friendly
+    Please, do not contribute translations to friendly
     where you attribute the copyright to yourself.
     Either do not include any copyright information
-    or attribute it to the Friendly project.
+    or attribute it to the friendly project.
 
 Telling Python to use the translations
 --------------------------------------

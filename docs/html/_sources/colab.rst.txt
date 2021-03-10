@@ -4,7 +4,7 @@ Google's colab
 
 One can also use Google Colab notebooks. However, the following should be noted:
 
-1. Friendly must be installed using ``!pip install friendly``.
+1. friendly must be installed using ``!pip install friendly``.
 
 2. As for Jupyter notebooks, ``from friendly.jupyter import *``
    must be used.

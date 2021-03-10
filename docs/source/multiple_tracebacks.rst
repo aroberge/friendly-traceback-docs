@@ -50,7 +50,7 @@ the code shown above using Python.
    :scale: 50 %
    :alt: Screen capture showing a normal python traceback.
 
-Next, I run the same module using Friendly
+Next, I run the same module using friendly
 showing the ``python_tb`` case; this is done using ``--include python_tb``
 as a command line option.
 In this particular case, the only difference with the
@@ -69,8 +69,8 @@ in some instances, no such hint can be provided.
    :alt: Screen capture showing a friendly traceback.
 
 Finally, I use the ``debug_tb`` to show the real traceback produced
-when running this example using Friendly: it includes
-code from Friendly itself.
+when running this example using friendly: it includes
+code from friendly itself.
 
 .. image:: images/debug_tb1.png
    :scale: 50 %
@@ -88,7 +88,7 @@ from a console, starting with Python's own.
    :alt: Screen capture showing a normal python traceback.
 
 
-When doing the same with Friendly, it is the ``friendly_tb``
+When doing the same with friendly, it is the ``friendly_tb``
 that is shown by default. It has three differences compared with
 the normal Python traceback:
 
@@ -128,7 +128,7 @@ content of the line that was executed.
    :alt: Screen capture showing a normal python traceback.
 
 
-As before, when doing the same with Friendly,
+As before, when doing the same with friendly,
 it is the ``friendly_tb`` that is shown by default.
 It includes the line of code that was executed for each "file".
 
@@ -152,7 +152,7 @@ As before, I can use ``debug_tb()`` to see the complete traceback.
    :alt: Screen capture showing a the true traceback.
 
 Since paths can be quite long, when showing information about an
-exception, Friendly will attempt to reduce the length
+exception, friendly will attempt to reduce the length
 of the path shown. You've seen before an example where ``FRIENDLY``
 was substituted for the name of the directory where ``friendly``
 is located; this particular example will rarely be seen by an end-user.
@@ -164,7 +164,7 @@ for a module from the Python standard library, as shown below.
 
 .. image:: images/shorter_path.png
    :scale: 50 %
-   :alt: Screen capture showing the paths shortened by Friendly
+   :alt: Screen capture showing the paths shortened by friendly
 
 
 

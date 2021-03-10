@@ -1,7 +1,7 @@
 IPython and Jupyter notebooks
 ==============================
 
-Friendly supports IPython console and Jupyter notebooks and variants.
+friendly supports IPython console and Jupyter notebooks and variants.
 Currently, this has been done more as a proof of concept than anything
 else: we are not aware of anyone else having made use of this feature.
 We also almost never test it; please feel free to report any issues.
@@ -18,13 +18,13 @@ displayed in a browser are given a pink background (1).
 The "location" of the error (2) includes is of the form
 ``<ipython-input-A-B>`` where ``A`` is the code block number
 and ``B`` is an internal value ("hash_digest") of no particular use
-to a end user. This hash_digest is removed by Friendly
+to a end user. This hash_digest is removed by friendly
 as shown below.
 
 .. image:: images/jupyter-lab-default.png
    :scale: 60 %
 
-1. Tracebacks shown by Friendly do not have a pink background.
+1. Tracebacks shown by friendly do not have a pink background.
 
 2. The *formatter* value is changed from the default to ``'repl'``.
 

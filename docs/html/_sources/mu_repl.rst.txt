@@ -9,7 +9,7 @@ with the image of a keyboard.
    :alt: Screen capture showing Mu's interface with the REPL started.
 
 
-To use Friendly in Mu's REPL, include the following line of code::
+To use friendly in Mu's REPL, include the following line of code::
 
     from friendly.mu import *
 
@@ -17,14 +17,14 @@ Here's what it looks like.
 
 .. image:: images/mu_repl2.png
    :scale: 60 %
-   :alt: Screen capture showing Friendly's output in Mu's REPL
+   :alt: Screen capture showing friendly's output in Mu's REPL
 
 
 Future work
 -----------
 
 The REPL included in MU is known as a *Jupyter QtConsole*.
-Normal tracebacks produced without using Friendly are nicely
+Normal tracebacks produced without using friendly are nicely
 coloured.
 
 .. image:: images/mu_repl3.png

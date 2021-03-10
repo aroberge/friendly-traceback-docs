@@ -1,5 +1,5 @@
 
-|france| Friendly SyntaxError tracebacks - en Français
+|france| friendly SyntaxError tracebacks - en Français
 ======================================================
 
 Le but principal de friendly-traceback est de fournir des rétroactions plus
@@ -22,7 +22,7 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly-traceback version: 0.2.92
+friendly-traceback version: 0.2.92
 Python version: 3.8.4
 
 
@@ -2012,7 +2012,7 @@ Parens around multiple exceptions
     avec plusieurs types d’exception. Si c’est le cas, vous devez
     les entourer de parenthèses.
     
-    Si vous utilisez une console Friendly, vous pouvez
+    Si vous utilisez une console friendly, vous pouvez
     utiliser la fonction `www()` qui ouvrira un navigateur à
     une place pertinente dans la documentation Python.
     

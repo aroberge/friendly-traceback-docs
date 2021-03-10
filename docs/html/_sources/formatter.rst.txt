@@ -1,7 +1,7 @@
 Custom formatter
 ================
 
-Friendly comes with various formatters which style
+friendly comes with various formatters which style
 the information differently based on the environment.
 If the builtin formatters do not meet your need, you can design
 your own and set it as a default using either::
@@ -50,7 +50,7 @@ Currently, a formatter must accept two arguments:
 
 .. tip::
 
-    Use ``show_info()`` in a Friendly console to see all possible items.
+    Use ``show_info()`` in a friendly console to see all possible items.
 
 
 2. A string (``include``) which specifies which parts of the friendly
@@ -58,9 +58,9 @@ Currently, a formatter must accept two arguments:
    using ``friendly.set_include(...)``.
 
 The second argument _might_ change in the future. If you only plan
-on making use of the traceback information compiled by Friendly
+on making use of the traceback information compiled by friendly
 and determine what to show (and in which order) on your own, to ensure
-that future version of Friendly will be compatible with
+that future version of friendly will be compatible with
 your formatter, we suggest the following definition::
 
     def my_formatter(info, **ignore):

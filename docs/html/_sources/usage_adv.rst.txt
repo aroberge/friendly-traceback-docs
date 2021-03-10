@@ -62,7 +62,7 @@ in the section about design.
 As an exception hook
 ---------------------
 
-When "installing" Friendly, one can use various optional
+When "installing" friendly, one can use various optional
 parameters::
 
     friendly.install(lang="fr", redirect="capture", include="explain")
@@ -78,7 +78,7 @@ This is equivalent to writing::
 Catching exception locally
 --------------------------
 
-As mentioned before, another way to use Friendly is to catch
+As mentioned before, another way to use friendly is to catch
 exceptions where they are expected to arise, such as::
 
 
@@ -95,11 +95,11 @@ One can also **temporarily** redirect the output to any stream::
     except Exception:
         friendly.explain_traceback(redirect=stream)
 
-By default, Friendly takes its information from ``sys.exc_info()``.
+By default, friendly takes its information from ``sys.exc_info()``.
 It may happen that this is not what we want to show.
 For example, the `showtraceback method in Python's code.py <https://github.com/python/cpython/blob/3.7/Lib/code.py#L131>`_ replaces one of the items prior to
 showing the traceback to the user; we currently also do something similar in
-Friendly's own console.
+friendly's own console.
 
 Finally, if one wishes to *temporarily* change some other option mentioned above,
 it can be done as in the following example::
@@ -127,7 +127,7 @@ What if the separate script has its own command line arguments?
 If they are simply positional arguments, you can simply tack them
 on at the end of the argument list. An example can be found
 in the ``demos/`` directory, which can be run directly or using
-Friendly.
+friendly.
 
 .. code-block::
 
@@ -140,16 +140,16 @@ Friendly.
     The sum is 6.0
 
 Note that this works even if you specify command line arguments
-that are specific to Friendly::
+that are specific to friendly::
 
     $ python -m friendly --lang fr demos/adder.py 1 2 3
     The sum is 6.0
 
 However, what if one wants to run a script that uses optional named arguments
-similarly to how Friendly can use ``--lang`` and other optional
+similarly to how friendly can use ``--lang`` and other optional
 arguments? In this case, use ``--`` to separate the list of arguments
 to be used by the script from those written previously and
-intended to be used by Friendly::
+intended to be used by friendly::
 
     $ python -m friendly --lang fr demos/adder.py -- --to_int 1 2 3
     The sum is 6
@@ -172,5 +172,5 @@ For example, you can use the following approach.
 
        set PYTHONPATH=%CD%
 
-You can now run your script normally: Friendly exception
+You can now run your script normally: friendly exception
 handling will be used by default on it.

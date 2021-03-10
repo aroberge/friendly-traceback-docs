@@ -1,8 +1,8 @@
 
-Friendly tracebacks - in English
+friendly tracebacks - in English
 ======================================
 
-Friendly-traceback aims to provide friendlier feedback when an exception
+friendly-traceback aims to provide friendlier feedback when an exception
 is raised than what is done by Python.
 Below, we can find some examples. SyntaxError cases, as well as TabError and
 IndentationError cases, are shown in a separate page.
@@ -16,7 +16,7 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly-traceback version: 0.2.92
+friendly-traceback version: 0.2.92
 Python version: 3.10.0a6
 
 
@@ -1666,7 +1666,7 @@ Generic
     Please report this example to
     https://github.com/aroberge/friendly-traceback/issues
     
-    If you are using the Friendly console, use `www()` to
+    If you are using the friendly console, use `www()` to
     do an Internet search for this particular case.
     
     Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.

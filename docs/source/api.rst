@@ -4,12 +4,12 @@ Public API
 
 Before getting Sphinx to document the public API automatically,
 I need to let you in on a little secret:
-occasionally, Friendly will lie to you.
+occasionally, friendly will lie to you.
 Furthermore, I encourage you to do the same.
 
 Actually, if you have read the section
 :ref:`multiple_tracebacks`, you already have seen that the
-traceback shown usually does not include modules from Friendly
+traceback shown usually does not include modules from friendly
 itself.  You can do the same for your own modules
 using something like the following::
 

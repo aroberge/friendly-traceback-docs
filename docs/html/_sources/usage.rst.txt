@@ -1,7 +1,7 @@
 Basic usage
 ============
 
-There are various ways of using Friendly.
+There are various ways of using friendly.
 I only list here the basic scenarios available from a
 terminal or from within a Python interpreter.
 More options are possible, including running from an editor/IDE
@@ -16,13 +16,13 @@ I recommend using **one of the first three** following options.
     $ python -m friendly example.py
 
 
-2. You can also start a Friendly console::
+2. You can also start a friendly console::
 
     $ python -m friendly
 
 
 3. Combining the two options above by using Python's ``-i`` flag
-   to start Friendly's console after executing
+   to start friendly's console after executing
    a program::
 
     $ python -im friendly example.py
@@ -44,15 +44,15 @@ See :ref:`themes` for screenshot taken with with other terminals
 on Windows.
 
 If you are a Mac or Linux user,
-and use Friendly with Rich installed,
+and use friendly with Rich installed,
 I would gladly accept any screenshot that you could provide so that they
 could be included in this documentation.
 
-If possible, Friendly makes use of
+If possible, friendly makes use of
 `Rich <https://github.com/willmcgugan/rich>`_ to add colour to its output.
 Note however that some programming environments,
 such as IDLE and other IDEs do not support Rich; this does not
-prevent you from using Friendly, but the display
+prevent you from using friendly, but the display
 will definitely not look as nice.
 The only editor/IDE capable of **fully** making use of Rich that I know
 of is `Microsoft Visual Studio Code <https://code.visualstudio.com/>`_.
@@ -64,12 +64,12 @@ support Rich.
 Other ways
 ----------
 
-The following ways of using Friendly are described
+The following ways of using friendly are described
 in more details later. I simply list them here as useful
 summary for experienced Python programmers.
 
 
-4. You can use Friendly as an exception hook::
+4. You can use friendly as an exception hook::
 
     import friendly
     friendly.install()  # replaces the default sys.excepthook

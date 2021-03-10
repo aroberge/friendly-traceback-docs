@@ -929,6 +929,7 @@ Generic
     
            ... More lines not shown. ...
     
+      File "TESTS:\runtime\test_recursion_error.py", line 6, in a
         return a()
       File "TESTS:\runtime\test_recursion_error.py", line 6, in a
         return a()

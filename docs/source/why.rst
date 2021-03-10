@@ -27,7 +27,7 @@ exception and suggest some ways to fix the code.
 Using www()
 -----------
 
-Occasionally, Friendly will be unable to give you an explanation,
+Occasionally, friendly will be unable to give you an explanation,
 or you will find that the explanation it gave is not sufficient.
 If that is the case, you can use ``www()`` with no arguments
 to automatically open your browser and

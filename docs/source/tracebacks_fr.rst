@@ -1,5 +1,5 @@
 
-|france| Friendly tracebacks - en Français
+|france| friendly tracebacks - en Français
 ===========================================
 
 Le but principal de friendly-traceback est de fournir des rétroactions plus
@@ -15,7 +15,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly-traceback version: 0.2.92
+friendly-traceback version: 0.2.92
 Python version: 3.8.4
 
 
@@ -1666,7 +1666,7 @@ Generic
     Veuillez signaler cet exemple à
     https://github.com/aroberge/friendly-traceback/issues
     
-    Si vous utilisez la console Friendly, utilisez `www()` pour
+    Si vous utilisez la console friendly, utilisez `www()` pour
     faire une recherche sur Internet pour ce cas particulier.
     
     Exception levée à la ligne 10 du fichier TESTS:\runtime\test_unknown_error.py.

@@ -12,7 +12,7 @@ Installation
 Installation
 -------------
 
-You can install Friendly from `PyPI <https://pypi.org/>`_ in the usual way::
+You can install friendly from `PyPI <https://pypi.org/>`_ in the usual way::
 
 
     python -m pip install friendly
@@ -20,7 +20,7 @@ You can install Friendly from `PyPI <https://pypi.org/>`_ in the usual way::
 
 Of course, if this is the first time you install a package from PyPI,
 you might get some weird error. This is what it might look if you
-had already been using Friendly.
+had already been using friendly.
 
 
 .. image:: images/pip.png

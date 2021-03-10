@@ -8,7 +8,7 @@ Suppose that you are using an editor or IDE to work on a file called
 ``my_program.py`` and your editor has an option (perhaps from a menu or by
 clicking a button)
 to run ``my_program.py`` using Python. However, you'd like to
-run this program with Friendly's help as though it was
+run this program with friendly's help as though it was
 invoked the usual way::
 
 
@@ -49,7 +49,7 @@ The above default is equivalent to executing the following:
 
     python -im friendly my_program.py
 
-which starts a Friendly console at the end of the program's execution.
+which starts a friendly console at the end of the program's execution.
 If you want instead the equivalent to:
 
 .. code-block:: none
