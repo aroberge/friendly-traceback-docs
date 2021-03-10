@@ -32,20 +32,21 @@ as a result, a Friendly console will be available after the program ends
 so that we can execute more Python commands.
 
 .. image:: images/friendly_interactive_indexerror_en.png
-   :scale: 50 %
+   :scale: 60 %
    :alt: Friendly IndexError interactive example in English
 
 In the image above, the red arrow points to the the interactive prompt
 where we can type more command.
 
-Let's do this again but choosing French as the default language: this will
+Let's do this again but choosing French as the default language
+with the ``--lang fr`` option: this will
 help to better identify various parts and compare what information
 is obtained from Python (as it won't be translated) and what additional
-information is provided by Friendly traceback.
+information is provided by Friendly.
 
 
 .. image:: images/friendly_interactive_indexerror_fr.png
-   :scale: 50 %
+   :scale: 60 %
    :alt: Friendly IndexError interactive example in French
 
 In the image above, the part identified by (1) is essentially the normal

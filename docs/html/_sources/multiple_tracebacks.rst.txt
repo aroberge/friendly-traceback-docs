@@ -116,8 +116,8 @@ Finally, you can use ``debug_tb()`` to see the complete traceback.
    :scale: 50 %
    :alt: Screen capture showing a the true traceback.
 
-Using the interpreter
-----------------------
+More about the friendly interpreter
+---------------------------------------------
 
 When using a normal Python interpreter, the traceback generated
 includes only a list of "files" without including the actual
@@ -153,10 +153,13 @@ As before, I can use ``debug_tb()`` to see the complete traceback.
 
 Since paths can be quite long, when showing information about an
 exception, Friendly will attempt to reduce the length
-of the path shown. You've seen before an example where ``HOME_DIR``
-was substituted for the user's home directory. A more significant
-reduction is shown when the path for a module from the Python standard library
-is shown.
+of the path shown. You've seen before an example where ``FRIENDLY``
+was substituted for the name of the directory where ``friendly``
+is located; this particular example will rarely be seen by an end-user.
+However, sometimes ``HOME_DIR`` will be shown instead of the full
+path to the user's home directory.
+A much more significant reduction in length occurs when the path
+for a module from the Python standard library, as shown below.
 
 
 .. image:: images/shorter_path.png
@@ -191,21 +194,13 @@ with ``friendly_tb()`` which is shown by default.
    :alt: Screen capture showing lines suppressed
 
 
-As a rule, and not only for the ``RecursionError`` cases,
-the ``friendly_tb`` default will only show a few intermediate lines
+As a rule, and **not only** for the ``RecursionError`` cases,
+the ``friendly_tb()`` default will only show a few intermediate lines
 of code, to avoid filling the screen with too much information.
 
-By contrast, such suppression is only done in the ``RecursionError``
-cases for the ``python_tb``.
+A similar, but not quite as extensive suppression is also done for
+``python_tb()`` but **only** for ``RecursionError`` cases.
 
 .. image:: images/recursion2.png
-   :scale: 50 %
-   :alt: Screen capture showing lines suppressed
-
-
-The final example is that of ``friendly_tb`` shown using Rich for
-formatting and French as the language used.
-
-.. image:: images/recursion3.png
    :scale: 50 %
    :alt: Screen capture showing lines suppressed

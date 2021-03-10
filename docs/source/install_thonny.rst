@@ -43,6 +43,6 @@ As you can see, Friendly is indeed installed on my
 computer, along with many other packages.
 
 .. image:: images/thonny_manage_packages2.png
-   :scale: 50 %
+   :scale: 80 %
    :alt: thonny manage packages
 

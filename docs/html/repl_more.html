@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Everything about the Friendly console &mdash; Friendly 0.2.92 documentation</title>
   
@@ -17,7 +17,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -30,7 +33,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -52,7 +54,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Friendly
+            <a href="index.html" class="icon icon-home"> Friendly
           
 
           
@@ -212,6 +214,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -223,7 +227,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/repl_more.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -234,10 +238,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="about_warnings.html" class="btn btn-neutral float-right" title="One last thing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="about_warnings.html" class="btn btn-neutral float-right" title="One last thing" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="multiple_tracebacks.html" class="btn btn-neutral float-left" title="Multiple tracebacks" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="multiple_tracebacks.html" class="btn btn-neutral float-left" title="Multiple tracebacks" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
       
   </div>
   
@@ -265,13 +269,13 @@ functions are listed below.</p>
 environments such as in a Jupyter notebook.</p>
 <dl class="py class">
 <dt id="friendly.console_helpers.Friendly">
-<em class="property">class </em><code class="sig-name descname">Friendly</code><a class="reference internal" href="_modules/friendly/console_helpers.html#Friendly"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.Friendly" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Friendly</span></code><a class="reference internal" href="_modules/friendly/console_helpers.html#Friendly"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.Friendly" title="Permalink to this definition">¶</a></dt>
 <dd><p>Helper class which can be used in a console if one of the
 helper functions gets redefined.</p>
 <p>For example, we can write Friendly.explain() as equivalent to explain().</p>
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.back">
-<em class="property">static </em><code class="sig-name descname">back</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.back" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">back</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.back" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes the last recorded traceback item.</p>
 <p>The intention is to allow recovering from a typo when trying interactively
 to find out specific information about a given exception.</p>
@@ -281,7 +285,7 @@ not change the language in which a given traceback information was recorded.</p>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.debug">
-<em class="property">static </em><code class="sig-name descname">debug</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">flag</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.debug" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">debug</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.debug" title="Permalink to this definition">¶</a></dt>
 <dd><p>This functions displays the true traceback recorded, that
 includes friendly’s own code.
 It also sets a debug flag for the current session.</p>
@@ -289,35 +293,35 @@ It also sets a debug flag for the current session.</p>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.debug_tb">
-<em class="property">static </em><code class="sig-name descname">debug_tb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.debug_tb" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">debug_tb</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.debug_tb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the true Python traceback, which includes
 files from friendly itself.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.explain">
-<em class="property">static </em><code class="sig-name descname">explain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'explain'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.explain" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">explain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'explain'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.explain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the previously recorded traceback info again,
 with the specified verbosity level.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.friendly_tb">
-<em class="property">static </em><code class="sig-name descname">friendly_tb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.friendly_tb" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">friendly_tb</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.friendly_tb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the friendly traceback, which includes the hint/suggestion
 if available.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.get_include">
-<em class="property">static </em><code class="sig-name descname">get_include</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.get_include" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_include</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.get_include" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves the value used to determine what to include in the
 traceback. See <code class="docutils literal notranslate"><span class="pre">set_include()</span></code> for details.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.get_lang">
-<em class="property">static </em><code class="sig-name descname">get_lang</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.get_lang" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_lang</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.get_lang" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the current language that had been set for translations.</p>
 <p>Note that the value returned may not reflect truly what is being
 see by the end user: if the translations do not exist for that language,
@@ -326,19 +330,19 @@ the default English strings are used.</p>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.hint">
-<em class="property">static </em><code class="sig-name descname">hint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.hint" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">hint</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.hint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows hint/suggestion if available.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.history">
-<em class="property">static </em><code class="sig-name descname">history</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.history" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">history</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.history" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prints the list of error messages recorded so far.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.more">
-<em class="property">static </em><code class="sig-name descname">more</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.more" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">more</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.more" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used to display information additional to the minimal traceback,
 with the exception of the generic information.
 Potentially useful for advanced users.</p>
@@ -346,14 +350,14 @@ Potentially useful for advanced users.</p>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.python_tb">
-<em class="property">static </em><code class="sig-name descname">python_tb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.python_tb" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">python_tb</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.python_tb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the Python traceback, excluding files from friendly
 itself.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.set_formatter">
-<em class="property">static </em><code class="sig-name descname">set_formatter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">formatter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.set_formatter" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">set_formatter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formatter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.set_formatter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the default formatter. If no argument is given, the default
 formatter is used.</p>
 <p>A custom formatter must accept <code class="docutils literal notranslate"><span class="pre">info</span></code> as a required arguments
@@ -363,7 +367,7 @@ See formatters.py for details.</p>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.set_include">
-<em class="property">static </em><code class="sig-name descname">set_include</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include</span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.set_include" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">set_include</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">include</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.set_include" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the information to include in the traceback.</p>
 <p>The allowed values are:</p>
 <blockquote>
@@ -384,7 +388,7 @@ See formatters.py for details.</p>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.set_lang">
-<em class="property">static </em><code class="sig-name descname">set_lang</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">'en'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.set_lang" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">set_lang</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'en'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.set_lang" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the language to be used for the display.</p>
 <p>If no translations exist for that language, the original
 English strings will be used.</p>
@@ -392,14 +396,14 @@ English strings will be used.</p>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.show_info">
-<em class="property">static </em><code class="sig-name descname">show_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.show_info" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">show_info</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.show_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Debugging tool: shows the complete content of traceback info.</p>
 <p>Prints <code class="docutils literal notranslate"><span class="pre">None</span></code> for a given item if it is not present.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.show_paths">
-<em class="property">static </em><code class="sig-name descname">show_paths</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.show_paths" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">show_paths</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.show_paths" title="Permalink to this definition">¶</a></dt>
 <dd><p>To avoid displaying very long file paths to the user,
 Friendly-traceback tries to shorten them using some easily
 recognized synonyms. This function shows the path synonyms
@@ -408,25 +412,25 @@ currently used.</p>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.what">
-<em class="property">static </em><code class="sig-name descname">what</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pre</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.what" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">what</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.what" title="Permalink to this definition">¶</a></dt>
 <dd><p>If known, shows the generic explanation about a given exception.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.where">
-<em class="property">static </em><code class="sig-name descname">where</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.where" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">where</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.where" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the information about where the exception occurred</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.why">
-<em class="property">static </em><code class="sig-name descname">why</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.why" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">why</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.why" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the likely cause of the exception.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="friendly.console_helpers.Friendly.www">
-<em class="property">static </em><code class="sig-name descname">www</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">python</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.www" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">www</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">python</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.www" title="Permalink to this definition">¶</a></dt>
 <dd><p>This uses the <code class="docutils literal notranslate"><span class="pre">webbrowser</span></code> module to open a tab (or window) in the
 default browser, linking to a specific url.</p>
 <ul>
@@ -464,7 +468,7 @@ Friendly-traceback documentation will open</p></li>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.back">
-<code class="sig-name descname">back</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#back"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.back" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">back</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#back"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.back" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes the last recorded traceback item.</p>
 <p>The intention is to allow recovering from a typo when trying interactively
 to find out specific information about a given exception.</p>
@@ -474,7 +478,7 @@ not change the language in which a given traceback information was recorded.</p>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.debug">
-<code class="sig-name descname">debug</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">flag</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#debug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.debug" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">debug</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#debug"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.debug" title="Permalink to this definition">¶</a></dt>
 <dd><p>This functions displays the true traceback recorded, that
 includes friendly’s own code.
 It also sets a debug flag for the current session.</p>
@@ -482,35 +486,35 @@ It also sets a debug flag for the current session.</p>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.debug_tb">
-<code class="sig-name descname">debug_tb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#debug_tb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.debug_tb" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">debug_tb</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#debug_tb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.debug_tb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the true Python traceback, which includes
 files from friendly itself.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.explain">
-<code class="sig-name descname">explain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">'explain'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#explain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.explain" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">explain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'explain'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#explain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.explain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the previously recorded traceback info again,
 with the specified verbosity level.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.friendly_tb">
-<code class="sig-name descname">friendly_tb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#friendly_tb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.friendly_tb" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">friendly_tb</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#friendly_tb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.friendly_tb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the friendly traceback, which includes the hint/suggestion
 if available.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.get_include">
-<code class="sig-name descname">get_include</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#get_include"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.get_include" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_include</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#get_include"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.get_include" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves the value used to determine what to include in the
 traceback. See <code class="docutils literal notranslate"><span class="pre">set_include()</span></code> for details.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.get_lang">
-<code class="sig-name descname">get_lang</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#get_lang"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.get_lang" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_lang</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#get_lang"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.get_lang" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the current language that had been set for translations.</p>
 <p>Note that the value returned may not reflect truly what is being
 see by the end user: if the translations do not exist for that language,
@@ -519,19 +523,19 @@ the default English strings are used.</p>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.hint">
-<code class="sig-name descname">hint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#hint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.hint" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">hint</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#hint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.hint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows hint/suggestion if available.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.history">
-<code class="sig-name descname">history</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#history"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.history" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">history</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.history" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prints the list of error messages recorded so far.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.more">
-<code class="sig-name descname">more</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#more"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.more" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">more</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#more"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.more" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used to display information additional to the minimal traceback,
 with the exception of the generic information.
 Potentially useful for advanced users.</p>
@@ -539,14 +543,14 @@ Potentially useful for advanced users.</p>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.python_tb">
-<code class="sig-name descname">python_tb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#python_tb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.python_tb" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">python_tb</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#python_tb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.python_tb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the Python traceback, excluding files from friendly
 itself.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.set_formatter">
-<code class="sig-name descname">set_formatter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">formatter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#set_formatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.set_formatter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_formatter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formatter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#set_formatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.set_formatter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the default formatter. If no argument is given, the default
 formatter is used.</p>
 <p>A custom formatter must accept <code class="docutils literal notranslate"><span class="pre">info</span></code> as a required arguments
@@ -556,7 +560,7 @@ See formatters.py for details.</p>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.set_include">
-<code class="sig-name descname">set_include</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#set_include"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.set_include" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_include</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">include</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#set_include"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.set_include" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the information to include in the traceback.</p>
 <p>The allowed values are:</p>
 <blockquote>
@@ -577,7 +581,7 @@ See formatters.py for details.</p>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.set_lang">
-<code class="sig-name descname">set_lang</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">'en'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#set_lang"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.set_lang" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_lang</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'en'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#set_lang"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.set_lang" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the language to be used for the display.</p>
 <p>If no translations exist for that language, the original
 English strings will be used.</p>
@@ -585,14 +589,14 @@ English strings will be used.</p>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.show_info">
-<code class="sig-name descname">show_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#show_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.show_info" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">show_info</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#show_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.show_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Debugging tool: shows the complete content of traceback info.</p>
 <p>Prints <code class="docutils literal notranslate"><span class="pre">None</span></code> for a given item if it is not present.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.show_paths">
-<code class="sig-name descname">show_paths</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/path_info.html#show_paths"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.show_paths" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">show_paths</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/path_info.html#show_paths"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.show_paths" title="Permalink to this definition">¶</a></dt>
 <dd><p>To avoid displaying very long file paths to the user,
 Friendly-traceback tries to shorten them using some easily
 recognized synonyms. This function shows the path synonyms
@@ -601,25 +605,25 @@ currently used.</p>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.what">
-<code class="sig-name descname">what</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pre</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#what"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.what" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">what</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#what"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.what" title="Permalink to this definition">¶</a></dt>
 <dd><p>If known, shows the generic explanation about a given exception.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.where">
-<code class="sig-name descname">where</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#where"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.where" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">where</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#where"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.where" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the information about where the exception occurred</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.why">
-<code class="sig-name descname">why</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#why"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.why" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">why</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#why"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.why" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the likely cause of the exception.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.www">
-<code class="sig-name descname">www</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">python</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#www"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#friendly.console_helpers.www" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">www</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">python</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#www"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.www" title="Permalink to this definition">¶</a></dt>
 <dd><p>This uses the <code class="docutils literal notranslate"><span class="pre">webbrowser</span></code> module to open a tab (or window) in the
 default browser, linking to a specific url.</p>
 <ul>
@@ -661,37 +665,29 @@ Friendly-traceback documentation will open</p></li>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="about_warnings.html" class="btn btn-neutral float-right" title="One last thing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="multiple_tracebacks.html" class="btn btn-neutral float-left" title="Multiple tracebacks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="about_warnings.html" class="btn btn-neutral float-right" title="One last thing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="multiple_tracebacks.html" class="btn btn-neutral float-left" title="Multiple tracebacks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright André Roberge
+        &#169; Copyright André Roberge.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

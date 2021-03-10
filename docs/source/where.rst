@@ -36,7 +36,7 @@ Still, Python tracebacks can be rather too terse looking for
 beginners, making it difficult for them to grasp where the error occurred.
 
 
-Let's see how () can get a bit more information about this::
+Let's see how ``where()`` can get a bit more information about this::
 
     >>> where()
 

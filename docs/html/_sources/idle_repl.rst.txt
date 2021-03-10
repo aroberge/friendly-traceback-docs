@@ -49,7 +49,7 @@ so in the code entered previously, but only in its own output.
 Starting with Python version 3.10.0a5, IDLE's shell allow the
 use of customs ``sys.excepthook()`` to process runtime
 errors (but not syntax errors). So, instead of starting
-a Friendly console using ``start_console()``, Friendly traceback can
+a Friendly console using ``start_console()``, Friendly can
 be "installed" within IDLE's shell and provide information
 for runtime errors. After using the same special
 import statement as before,

@@ -62,8 +62,8 @@ Here's an example:
 
 Notice how I entered the command ``www(python=True)`` at the end:
 this resulted in opening a web browser and doing
-a search for the name of the most recent
-exception raised in the online Python documentation.
+a search in the online Python documentation for the name of the most recent
+exception raised.
 
 .. image:: images/www_python.png
    :scale: 60 %

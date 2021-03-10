@@ -24,7 +24,7 @@ had already been using Friendly.
 
 
 .. image:: images/pip.png
-   :scale: 80 %
+   :scale: 50 %
    :alt: error using pip inside a console
 
 
