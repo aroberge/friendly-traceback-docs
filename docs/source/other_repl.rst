@@ -10,18 +10,9 @@ console within a given REPL, using::
     >>> from friendly import start_console
     >>> start_console()
 
-For example, here is what it looks when using Thonny:
-
-.. image:: images/thonny_repl.png
-   :scale: 60 %
 
 Future work
 ------------
-
-.. todo::
-
-    Ensure that friendly can be integrated within Thonny
-    and used to supplement Thonny's own "Assistant".
 
 
 .. todo::

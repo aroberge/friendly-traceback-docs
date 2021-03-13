@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>friendly tracebacks - in English &mdash; Friendly 0.2.93a documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.0 documentation</title>
   
 
   
@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="friendly SyntaxError tracebacks - in English" href="syntax_tracebacks_en_3.10.html" />
-    <link rel="prev" title="friendly SyntaxError tracebacks - in English" href="syntax_tracebacks_en_3.9.html" /> 
+    <link rel="next" title="Friendly SyntaxError tracebacks - in English" href="syntax_tracebacks_en_3.10.html" />
+    <link rel="prev" title="Friendly SyntaxError tracebacks - in English" href="syntax_tracebacks_en_3.9.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.2.93a
+                0.3.0
               </div>
             
           
@@ -133,7 +133,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
@@ -286,8 +286,8 @@
 </ul>
 <p class="caption"><span class="caption-text">En français</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> friendly tracebacks - en Français</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> friendly SyntaxError tracebacks - en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
 </ul>
 
             
@@ -336,7 +336,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>friendly tracebacks - in English</li>
+      <li>Friendly tracebacks - in English</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -352,10 +352,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="syntax_tracebacks_en_3.10.html" class="btn btn-neutral float-right" title="friendly SyntaxError tracebacks - in English" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="syntax_tracebacks_en_3.10.html" class="btn btn-neutral float-right" title="Friendly SyntaxError tracebacks - in English" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="syntax_tracebacks_en_3.9.html" class="btn btn-neutral float-left" title="friendly SyntaxError tracebacks - in English" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="syntax_tracebacks_en_3.9.html" class="btn btn-neutral float-left" title="Friendly SyntaxError tracebacks - in English" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
       
   </div>
   
@@ -364,16 +364,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This project has recently changed its name.
-Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>, replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.
-This warning will soon be removed, and friendly’s version will be changed
-to 0.3.</p>
-</div>
-<div class="section" id="friendly-tracebacks-in-english">
-<h1>friendly tracebacks - in English<a class="headerlink" href="#friendly-tracebacks-in-english" title="Permalink to this headline">¶</a></h1>
-<p>friendly-traceback aims to provide friendlier feedback when an exception
+  <div class="section" id="friendly-tracebacks-in-english">
+<h1>Friendly tracebacks - in English<a class="headerlink" href="#friendly-tracebacks-in-english" title="Permalink to this headline">¶</a></h1>
+<p>Friendly-traceback aims to provide friendlier feedback when an exception
 is raised than what is done by Python.
 Below, we can find some examples. SyntaxError cases, as well as TabError and
 IndentationError cases, are shown in a separate page.
@@ -386,7 +379,7 @@ C:Usersandregithubfriendly-tracebackteststrb_english.py located in the <code cla
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.</p>
 </div>
-<p>friendly-traceback version: 0.2.92
+<p>Friendly version: 0.3.0
 Python version: 3.10.0a6</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -1042,7 +1035,8 @@ This could be because you misspelled the name of the module
 or because it is not installed on your computer.
 
 The name of the module that could not be imported is `Tkinter`.
-`tkinter` is an existing module that has a similar name.
+The following existing modules have names that are similar
+to the module you tried to import: `tkinter, _tkinter`
 
 Exception raised on line 6 of file TESTS:\runtime\test_module_not_found_error.py.
 
@@ -1179,6 +1173,7 @@ Exception raised on line 6 of file TESTS:\runtime\test_overflow_error.py.
 
        ... More lines not shown. ...
 
+  File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 6, in a
     return a()
   File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 6, in a
     return a()
@@ -1839,7 +1834,7 @@ No information is known about this exception.
 Please report this example to
 https://github.com/aroberge/friendly-traceback/issues
 
-If you are using the friendly console, use `www()` to
+If you are using the Friendly console, use `www()` to
 do an Internet search for this particular case.
 
 Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.
@@ -2130,8 +2125,8 @@ Exception raised on line 112 of file TESTS:\runtime\test_zero_division_error.py.
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="syntax_tracebacks_en_3.10.html" class="btn btn-neutral float-right" title="friendly SyntaxError tracebacks - in English" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="syntax_tracebacks_en_3.9.html" class="btn btn-neutral float-left" title="friendly SyntaxError tracebacks - in English" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="syntax_tracebacks_en_3.10.html" class="btn btn-neutral float-right" title="Friendly SyntaxError tracebacks - in English" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="syntax_tracebacks_en_3.9.html" class="btn btn-neutral float-left" title="Friendly SyntaxError tracebacks - in English" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

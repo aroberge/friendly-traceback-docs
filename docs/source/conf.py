@@ -85,14 +85,14 @@ rst_epilog = """
 .. |france| image:: images/france.png
 """
 
-rst_prolog = """
-.. warning::
+# rst_prolog = """
+# .. warning::
 
-    This project has recently changed its name.
-    Wherever you see ``friendly_traceback``, replace it simply by ``friendly``.
-    This warning will soon be removed, and friendly's version will be changed
-    to 0.3.
-"""
+#     This project has recently changed its name.
+#     Wherever you see ``friendly_traceback``, replace it simply by ``friendly``.
+#     This warning will soon be removed, and friendly's version will be changed
+#     to 0.3.
+# """
 #
 add_module_names = False
 # -- Options for HTML output -------------------------------------------------

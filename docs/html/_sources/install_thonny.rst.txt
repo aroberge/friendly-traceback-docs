@@ -46,3 +46,11 @@ computer, along with many other packages.
    :scale: 80 %
    :alt: thonny manage packages
 
+
+Future work
+------------
+
+.. todo::
+
+    Ensure that friendly can be integrated within Thonny
+    and used to supplement Thonny's own "Assistant".

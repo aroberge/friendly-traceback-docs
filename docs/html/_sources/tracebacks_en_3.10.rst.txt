@@ -1,8 +1,8 @@
 
-friendly tracebacks - in English
+Friendly tracebacks - in English
 ======================================
 
-friendly-traceback aims to provide friendlier feedback when an exception
+Friendly-traceback aims to provide friendlier feedback when an exception
 is raised than what is done by Python.
 Below, we can find some examples. SyntaxError cases, as well as TabError and
 IndentationError cases, are shown in a separate page.
@@ -16,7 +16,7 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-friendly-traceback version: 0.2.92
+Friendly version: 0.3.0
 Python version: 3.10.0a6
 
 
@@ -773,7 +773,8 @@ Standard library module
     or because it is not installed on your computer.
     
     The name of the module that could not be imported is `Tkinter`.
-    `tkinter` is an existing module that has a similar name.
+    The following existing modules have names that are similar 
+    to the module you tried to import: `tkinter, _tkinter`
     
     Exception raised on line 6 of file TESTS:\runtime\test_module_not_found_error.py.
     
@@ -928,6 +929,7 @@ Generic
     
            ... More lines not shown. ...
     
+      File "TESTS:\runtime\test_recursion_error.py", line 6, in a
         return a()
       File "TESTS:\runtime\test_recursion_error.py", line 6, in a
         return a()
@@ -1666,7 +1668,7 @@ Generic
     Please report this example to
     https://github.com/aroberge/friendly-traceback/issues
     
-    If you are using the friendly console, use `www()` to
+    If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
     
     Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.

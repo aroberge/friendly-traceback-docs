@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Custom formatter &mdash; Friendly 0.2.93a documentation</title>
+  <title>Custom formatter &mdash; Friendly 0.3.0 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.2.93a
+                0.3.0
               </div>
             
           
@@ -133,7 +133,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
@@ -180,8 +180,8 @@
 </ul>
 <p class="caption"><span class="caption-text">En français</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> friendly tracebacks - en Français</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> friendly SyntaxError tracebacks - en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
 </ul>
 
             
@@ -258,14 +258,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This project has recently changed its name.
-Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>, replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.
-This warning will soon be removed, and friendly’s version will be changed
-to 0.3.</p>
-</div>
-<div class="section" id="custom-formatter">
+  <div class="section" id="custom-formatter">
 <h1>Custom formatter<a class="headerlink" href="#custom-formatter" title="Permalink to this headline">¶</a></h1>
 <p>friendly comes with various formatters which style
 the information differently based on the environment.
@@ -352,7 +345,7 @@ written to stderr; however this can be changed by the calling program.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">repl()</span></code>: This is used to print the information in a traditional console,
 including that found in IDLE.  The indentation of the traceback itself
 is chosen so as to reproduce that of a normal Python traceback.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pre()</span></code>: this produces output with leading spaces so that it can be
+<li><p><code class="docutils literal notranslate"><span class="pre">docs()</span></code>: this produces output with leading spaces so that it can be
 embedded as a code-block in a file (such as .rst). It can also be used
 to print the information in a traditional console, including that
 found in IDLE.</p></li>

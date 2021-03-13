@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Visual Studio Code’s terminal &mdash; Friendly 0.2.93a documentation</title>
+  <title>Visual Studio Code’s terminal &mdash; Friendly 0.3.0 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.2.93a
+                0.3.0
               </div>
             
           
@@ -133,7 +133,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
@@ -177,8 +177,8 @@
 </ul>
 <p class="caption"><span class="caption-text">En français</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> friendly tracebacks - en Français</a></li>
-<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> friendly SyntaxError tracebacks - en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracebacks_fr.html"> Friendly tracebacks - en Français</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_tracebacks_fr.html"> Friendly SyntaxError tracebacks - en Français</a></li>
 </ul>
 
             
@@ -255,30 +255,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This project has recently changed its name.
-Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>, replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.
-This warning will soon be removed, and friendly’s version will be changed
-to 0.3.</p>
-</div>
-<div class="section" id="visual-studio-code-s-terminal">
+  <div class="section" id="visual-studio-code-s-terminal">
 <h1>Visual Studio Code’s terminal<a class="headerlink" href="#visual-studio-code-s-terminal" title="Permalink to this headline">¶</a></h1>
 <p>You can start the friendly console in Visual Studio Code’s terminal
 in the same way as mentioned before:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">friendly</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="_images/vs_code_repl1.png"><img alt="Screen capture showing VS code terminal in dark mode" src="_images/vs_code_repl1.png" style="width: 641.5px; height: 328.0px;" /></a>
+<a class="reference internal image-reference" href="_images/vs_code_repl1.png"><img alt="Screen capture showing VS code terminal in dark mode" src="_images/vs_code_repl1.png" style="width: 693.0px; height: 398.25px;" /></a>
 <p>This is designed for a dark coloured terminal; the closer the
 background to your chosen VS code theme is to black, the
-better it likely will look.</p>
+better it likely will look. For the theme we use, the background
+colour is #1e1e1e instead of pure black (#000000).
+It is however possible to specify a background
+colour to use, with:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m friendly --background #1e1e1e
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/vs_code_repl2.png"><img alt="Screen capture showing VS code terminal with custom background" src="_images/vs_code_repl2.png" style="width: 725.85px; height: 267.75px;" /></a>
 <p>If you use a light coloured theme, you should use the
 following instead:</p>
 <blockquote>
-<div><p>python -m friendly –style light</p>
+<div><p>python -m friendly –formatter light</p>
 </div></blockquote>
-<a class="reference internal image-reference" href="_images/vs_code_repl2.png"><img alt="Screen capture showing VS code terminal in light mode" src="_images/vs_code_repl2.png" style="width: 718.5px; height: 377.5px;" /></a>
+<p>And here is the result:</p>
+<a class="reference internal image-reference" href="_images/vs_code_repl3.png"><img alt="Screen capture showing VS code terminal in light mode" src="_images/vs_code_repl3.png" style="width: 720.0px; height: 258.3px;" /></a>
+<p>Just like in the previous case, you could specify a background colour
+of your choice.</p>
 </div>
 
 

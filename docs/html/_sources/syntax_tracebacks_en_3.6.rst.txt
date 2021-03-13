@@ -1,8 +1,8 @@
 
-friendly SyntaxError tracebacks - in English
+Friendly SyntaxError tracebacks - in English
 =============================================
 
-friendly-traceback aims to provide friendlier feedback when an exception
+Friendly-traceback aims to provide friendlier feedback when an exception
 is raised than what is done by Python.
 This file contains only examples of SyntaxError and its sub-classes.
 Ideally, an example of each case handled by friendly-traceback
@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-friendly-traceback version: 0.2.92
+Friendly version: 0.3.0
 Python version: 3.6.8
 
 
@@ -2004,7 +2004,7 @@ Parens around multiple exceptions
     with multiple exception types. If that is the case, you must
     surround them with parentheses.
     
-    If you are using a friendly console, you might want to
+    If you are using a Friendly console, you might want to
     use the function `www()` which will open a browser at
     a relevant place in the Python documentation.
     

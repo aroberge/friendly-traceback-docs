@@ -98,14 +98,8 @@ Running the program with the following code will result in
 
     import friendly
 
-    mod_dict = friendly.run(
+    friendly.run(
         "tests/adder.py",
         console=False,
         args=("1", "2.5", "3")
     )
-
-    # after the program is run, we could get access to some local variables
-
-    assert "total" in mod_dict
-    assert mod_dict["total"] == 6.5
-

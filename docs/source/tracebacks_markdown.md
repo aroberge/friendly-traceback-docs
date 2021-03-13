@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly-traceback version: 0.2.92
+Friendly version: 0.3.0
 Python version: 3.8.4
 
 
@@ -1129,6 +1129,7 @@ Traceback (most recent call last):
 
        ... More lines not shown. ...
 
+  File "TESTS:\runtime\test_recursion_error.py", line 6, in a
     return a()
   File "TESTS:\runtime\test_recursion_error.py", line 6, in a
     return a()
