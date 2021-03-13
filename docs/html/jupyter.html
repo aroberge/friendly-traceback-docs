@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>IPython and Jupyter notebooks &mdash; Friendly 0.2.93a documentation</title>
+  <title>Jupyter notebooks &mdash; Friendly 0.2.93a documentation</title>
   
 
   
@@ -133,7 +133,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">IPython and Jupyter notebooks</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Jupyter notebooks</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#jupyterlab-notebook">JupyterLab notebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dark-background">Dark background</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#about-the-hash-digest">About the hash_digest</a></li>
@@ -234,7 +234,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>IPython and Jupyter notebooks</li>
+      <li>Jupyter notebooks</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -269,12 +269,12 @@ Wherever you see <code class="docutils literal notranslate"><span class="pre">fr
 This warning will soon be removed, and friendly’s version will be changed
 to 0.3.</p>
 </div>
-<div class="section" id="ipython-and-jupyter-notebooks">
-<h1>IPython and Jupyter notebooks<a class="headerlink" href="#ipython-and-jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
-<p>friendly supports IPython console and Jupyter notebooks and variants.
+<div class="section" id="jupyter-notebooks">
+<h1>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
+<p>Friendly supports Jupyter notebooks and variants.
 Currently, this has been done more as a proof of concept than anything
-else: we are not aware of anyone else having made use of this feature.
-We also almost never test it; please feel free to report any issues.</p>
+else: I am not aware of anyone else having made use of this feature.
+I also almost never test it; please feel free to report any issues.</p>
 <div class="section" id="jupyterlab-notebook">
 <h2>JupyterLab notebook<a class="headerlink" href="#jupyterlab-notebook" title="Permalink to this headline">¶</a></h2>
 <p>By default, tracebacks in JupyterLab notebooks (or Juypter notebooks)
@@ -285,23 +285,42 @@ displayed in a browser are given a pink background (1).</p>
 and <code class="docutils literal notranslate"><span class="pre">B</span></code> is an internal value (“hash_digest”) of no particular use
 to a end user. This hash_digest is removed by friendly
 as shown below.</p>
-<a class="reference internal image-reference" href="_images/jupyter-lab-default.png"><img alt="_images/jupyter-lab-default.png" src="_images/jupyter-lab-default.png" style="width: 458.4px; height: 823.8px;" /></a>
+<a class="reference internal image-reference" href="_images/jupyter-lab-default.png"><img alt="_images/jupyter-lab-default.png" src="_images/jupyter-lab-default.png" style="width: 645.0px; height: 835.1999999999999px;" /></a>
 <ol class="arabic simple">
-<li><p>Tracebacks shown by friendly do not have a pink background.</p></li>
-<li><p>The <em>formatter</em> value is changed from the default to <code class="docutils literal notranslate"><span class="pre">'repl'</span></code>.</p></li>
-<li><p>This <code class="docutils literal notranslate"><span class="pre">'repl'</span></code> choice results in a plain output on pink background.</p></li>
-<li><p>A different syntax colouring (<code class="docutils literal notranslate"><span class="pre">'rich'</span></code> formatter with <code class="docutils literal notranslate"><span class="pre">'light'</span></code> style)
-is also available. Note that, by default, the default style is <code class="docutils literal notranslate"><span class="pre">'dark'</span></code>.</p></li>
-<li><p>The default formatter is known as <code class="docutils literal notranslate"><span class="pre">'jupyter'</span></code>.</p></li>
+<li><p>To use friendly, we use a special import statement.</p></li>
+<li><p>Tracebacks shown by friendly do not have a pink background. Note how
+the “file” name has been shortened, compared with Jupyter’s default.</p></li>
+<li><p>The <em>formatter</em> value is changed from the default to <code class="docutils literal notranslate"><span class="pre">'bw'</span></code>
+which is meant to be short for “black and white” meaning that no
+special colouring is done..</p></li>
+<li><p>This <code class="docutils literal notranslate"><span class="pre">'bw'</span></code> choice results in a plain output on pink background.</p></li>
+<li><p>A different syntax colouring (<code class="docutils literal notranslate"><span class="pre">'light'</span></code>)
+is also available.</p></li>
+<li><p>The colour scheme with this formatter is fairly similar to the default
+used for Jupyter notebooks.</p></li>
 </ol>
+<p>After changing to the <code class="docutils literal notranslate"><span class="pre">'light'</span></code>, I displayed a more complete
+content displayed with <code class="docutils literal notranslate"><span class="pre">explain()</span></code></p>
+<a class="reference internal image-reference" href="_images/jupyter-lab-default2.png"><img alt="_images/jupyter-lab-default2.png" src="_images/jupyter-lab-default2.png" style="width: 661.6px; height: 376.8px;" /></a>
+<p>When using <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">friendly.jupyter</span> <span class="pre">import</span> <span class="pre">*</span></code>,
+the default formatter is known as <code class="docutils literal notranslate"><span class="pre">'jupyter'</span></code>.</p>
+<a class="reference internal image-reference" href="_images/jupyter-lab-default3.png"><img alt="_images/jupyter-lab-default3.png" src="_images/jupyter-lab-default3.png" style="width: 723.6px; height: 517.8px;" /></a>
 </div>
 <div class="section" id="dark-background">
 <h2>Dark background<a class="headerlink" href="#dark-background" title="Permalink to this headline">¶</a></h2>
-<p>JupyterLab also gives the choice of a dark background theme.</p>
-<a class="reference internal image-reference" href="_images/jupyter-lab-dark.png"><img alt="_images/jupyter-lab-dark.png" src="_images/jupyter-lab-dark.png" style="width: 462.59999999999997px; height: 622.8px;" /></a>
-<p>However, in this case, the <code class="docutils literal notranslate"><span class="pre">'rich'</span></code> formatter might perhaps yield better
-looking tracebacks.</p>
-<a class="reference internal image-reference" href="_images/jupyter-lab-dark-rich.png"><img alt="_images/jupyter-lab-dark-rich.png" src="_images/jupyter-lab-dark-rich.png" style="width: 746.4px; height: 795.6px;" /></a>
+<p>JupyterLab also gives the choice of a dark background theme.
+Here’s how the previous example look with this dark theme.</p>
+<a class="reference internal image-reference" href="_images/jupyter-lab-dark.png"><img alt="_images/jupyter-lab-dark.png" src="_images/jupyter-lab-dark.png" style="width: 658.1999999999999px; height: 813.0px;" /></a>
+<p>As a last step, I changed the formatter to use the <code class="docutils literal notranslate"><span class="pre">'dark'</span></code> option,
+which is the default for the friendly console when used in a terminal.</p>
+<a class="reference internal image-reference" href="_images/jupyter-lab-dark-rich.png"><img alt="_images/jupyter-lab-dark-rich.png" src="_images/jupyter-lab-dark-rich.png" style="width: 662.0px; height: 371.20000000000005px;" /></a>
+<p>Finally, here is the result from changing back to the default
+<code class="docutils literal notranslate"><span class="pre">'jupyter'</span></code> formatter.</p>
+<a class="reference internal image-reference" href="_images/jupyter-lab-dark2.png"><img alt="_images/jupyter-lab-dark2.png" src="_images/jupyter-lab-dark2.png" style="width: 690.6px; height: 519.6px;" /></a>
+<p>For the dark Jupyter theme, some elements, such as numbers and operators,
+are very difficult to read.
+For this reason, I much prefer using the <code class="docutils literal notranslate"><span class="pre">'dark'</span></code> friendly
+formatter in this case.</p>
 <div class="section" id="about-the-hash-digest">
 <h3>About the hash_digest<a class="headerlink" href="#about-the-hash-digest" title="Permalink to this headline">¶</a></h3>
 <p>The hash_digest is meant to uniquely identify the content of a code block.

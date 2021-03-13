@@ -1,10 +1,10 @@
-IPython and Jupyter notebooks
+Jupyter notebooks
 ==============================
 
-friendly supports IPython console and Jupyter notebooks and variants.
+Friendly supports Jupyter notebooks and variants.
 Currently, this has been done more as a proof of concept than anything
-else: we are not aware of anyone else having made use of this feature.
-We also almost never test it; please feel free to report any issues.
+else: I am not aware of anyone else having made use of this feature.
+I also almost never test it; please feel free to report any issues.
 
 JupyterLab notebook
 --------------------
@@ -24,32 +24,64 @@ as shown below.
 .. image:: images/jupyter-lab-default.png
    :scale: 60 %
 
-1. Tracebacks shown by friendly do not have a pink background.
+1. To use friendly, we use a special import statement.
 
-2. The *formatter* value is changed from the default to ``'repl'``.
+2. Tracebacks shown by friendly do not have a pink background. Note how
+   the "file" name has been shortened, compared with Jupyter's default.
 
-3. This ``'repl'`` choice results in a plain output on pink background.
+3. The *formatter* value is changed from the default to ``'bw'``
+   which is meant to be short for "black and white" meaning that no
+   special colouring is done..
 
-4. A different syntax colouring (``'rich'`` formatter with ``'light'`` style)
-   is also available. Note that, by default, the default style is ``'dark'``.
+4. This ``'bw'`` choice results in a plain output on pink background.
 
-5. The default formatter is known as ``'jupyter'``.
+5. A different syntax colouring (``'light'``)
+   is also available.
+
+6. The colour scheme with this formatter is fairly similar to the default
+   used for Jupyter notebooks.
+
+After changing to the ``'light'``, I displayed a more complete
+content displayed with ``explain()``
+
+
+.. image:: images/jupyter-lab-default2.png
+   :scale: 40 %
+
+
+When using ``from friendly.jupyter import *``,
+the default formatter is known as ``'jupyter'``.
+
+.. image:: images/jupyter-lab-default3.png
+   :scale: 60 %
+
 
 
 Dark background
 ----------------
 
 JupyterLab also gives the choice of a dark background theme.
-
+Here's how the previous example look with this dark theme.
 
 .. image:: images/jupyter-lab-dark.png
    :scale: 60 %
 
-However, in this case, the ``'rich'`` formatter might perhaps yield better
-looking tracebacks.
+As a last step, I changed the formatter to use the ``'dark'`` option,
+which is the default for the friendly console when used in a terminal.
 
 .. image:: images/jupyter-lab-dark-rich.png
+   :scale: 40 %
+
+Finally, here is the result from changing back to the default
+``'jupyter'`` formatter.
+
+.. image:: images/jupyter-lab-dark2.png
    :scale: 60 %
+
+For the dark Jupyter theme, some elements, such as numbers and operators,
+are very difficult to read.
+For this reason, I much prefer using the ``'dark'`` friendly
+formatter in this case.
 
 About the hash_digest
 ~~~~~~~~~~~~~~~~~~~~~~
