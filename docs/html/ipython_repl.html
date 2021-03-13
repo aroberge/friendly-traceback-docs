@@ -133,7 +133,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
@@ -264,15 +264,16 @@ to 0.3.</p>
 </div>
 <div class="section" id="ipython-s-console">
 <h1>IPython’s console<a class="headerlink" href="#ipython-s-console" title="Permalink to this headline">¶</a></h1>
-<p>friendly can be used together with IPython when running
-in a standard terminal. Unfortunately, I have not been able to
-find a reliable way to use colours in this situation; as a result,
-the default mode is perhaps not as readable as in other cases.</p>
-<a class="reference internal image-reference" href="_images/ipython-console-repl.png"><img alt="_images/ipython-console-repl.png" src="_images/ipython-console-repl.png" style="width: 501.5px; height: 423.5px;" /></a>
-<p>However, being able to integrate with IPython exception handling
+<p>Friendly can be used together with IPython when running
+in a terminal, by using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly.ipython</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/ipython-console-repl.png"><img alt="_images/ipython-console-repl.png" src="_images/ipython-console-repl.png" style="width: 747.5px; height: 537.5px;" /></a>
+<p>Being able to integrate with IPython exception handling
 means that friendly can be used with Jupyter notebooks.
-Furthermore, as was shown previously, it can also be used with
-Mu’s REPL which is a Jupyter console.</p>
+Furthermore, it can also be used with
+Mu’s REPL which is a Jupyter console based on IPython.</p>
 </div>
 
 

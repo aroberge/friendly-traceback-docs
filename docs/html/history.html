@@ -133,7 +133,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
@@ -264,7 +264,29 @@ to 0.3.</p>
 </div>
 <div class="section" id="history">
 <h1>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h1>
-<p>This needs to be done.</p>
+<p>Earlier, I mentioned that I recommend that beginners use an editor
+instead of a REPL for writing Python code.
+The main reason is that it is easier to correct
+mistakes, and does not require to rewrite entire lines of code.
+At the same time, I recommend the use of friendly’s console to “ask questions”
+when an exception is raised.</p>
+<p>Consider the following situation, with some code that takes
+a long time to execute:</p>
+<a class="reference internal image-reference" href="_images/history1.png"><img alt="_images/history1.png" src="_images/history1.png" style="width: 742.4000000000001px; height: 191.60000000000002px;" /></a>
+<p>Suppose I want to have more details about where the exception
+was raised.</p>
+<a class="reference internal image-reference" href="_images/history2.png"><img alt="_images/history2.png" src="_images/history2.png" style="width: 742.4000000000001px; height: 186.4px;" /></a>
+<p>I made a mistake; no problem, friendly told me how to fix it.</p>
+<a class="reference internal image-reference" href="_images/history3.png"><img alt="_images/history3.png" src="_images/history3.png" style="width: 742.4000000000001px; height: 139.6px;" /></a>
+<p>Unfortunately, this is not the exception I was looking for.</p>
+<p>Instead of having to run the entire program once again, friendly
+has preserved a history of the exceptions seen so far, and allows me
+to discard them one by one, starting with the last one.</p>
+<a class="reference internal image-reference" href="_images/history4.png"><img alt="_images/history4.png" src="_images/history4.png" style="width: 742.4000000000001px; height: 117.2px;" /></a>
+<p>The only exception left is the one of interest.</p>
+<a class="reference internal image-reference" href="_images/history5.png"><img alt="_images/history5.png" src="_images/history5.png" style="width: 742.4000000000001px; height: 368.40000000000003px;" /></a>
+<p>I found the cause of the error: I wrote a string <code class="docutils literal notranslate"><span class="pre">'13'</span></code> instead of an
+integer.</p>
 </div>
 
 
