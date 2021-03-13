@@ -1,36 +1,33 @@
+.. admonition:: Summary
+
+    To use friendly with Mu's REPL, you only need to write the following,
+    preferably as the first statement in the REPL::
+
+        from friendly.mu import *
+
 Mu's REPL
 ==========
 
-Mu includes a REPL that can be started by clicking on a button
-with the image of a keyboard.
-
-.. image:: images/mu_repl1.png
-   :scale: 50 %
-   :alt: Screen capture showing Mu's interface with the REPL started.
-
-
-To use friendly in Mu's REPL, include the following line of code::
-
-    from friendly.mu import *
-
-Here's what it looks like.
-
-.. image:: images/mu_repl2.png
-   :scale: 60 %
-   :alt: Screen capture showing friendly's output in Mu's REPL
-
-
-Future work
------------
-
-The REPL included in MU is known as a *Jupyter QtConsole*.
-Normal tracebacks produced without using friendly are nicely
-coloured.
+Before using friendly, I will show what happens if a
+syntax error is made when entering code in Mu's REPL.
 
 .. image:: images/mu_repl3.png
    :scale: 60 %
    :alt: Screen capture a normal traceback in Mu's REPL.
 
-.. todo::
 
-    Find a way to produce coloured output in Mu's REPL.
+I will now show you what would happens if I first ``import``
+friendly.
+
+.. image:: images/mu_repl1.png
+   :scale: 60 %
+   :alt: Screen capture a friendly traceback in Mu's REPL
+
+In this case, friendly gives a quick hint as to the cause
+of the error. You can find out more details by using ``why()``.
+
+
+.. image:: images/mu_repl2.png
+   :scale: 50 %
+   :alt: Screen capture with the result of why() in Mu's REPL.
+

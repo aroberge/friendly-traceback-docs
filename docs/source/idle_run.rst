@@ -9,7 +9,7 @@ a program with IDLE using the
 "Run -> Run Module" menu item.
 
 .. image:: images/python_idle.png
-   :scale: 50 %
+   :scale: 60 %
    :alt: Screen capture of IDLE
 
 
@@ -36,4 +36,4 @@ completed, I entered more code, making a syntax error.
 
 .. danger::
 
-    Do not name your program ``friendly.py``.
+    Do not name your own program ``friendly.py``.

@@ -1,14 +1,11 @@
 
-Using with Mu
-=============
+Mu: executing a program
+========================
 
-
-Before using friendly with Mu
-----------------------------------------
-
-I have created a test module, called test.py, that raises
-and exception.
-First, I show what happens when I run test.py with Mu.
+For this example, I modified my previous program named test.py
+so that it raises a different exception.
+First, I show what happens when I run test.py with Mu,
+without friendly's help
 
 .. image:: images/test_problem.png
    :scale: 50 %
@@ -17,14 +14,15 @@ First, I show what happens when I run test.py with Mu.
 Using friendly with Mu
 --------------------------------
 
-To use friendly with Mu, I need to use a second,
+To use friendly with Mu when running a program in this way,
+I need to use a second,
 very short program, and run that program instead::
 
     from friendly.mu import run
     run("test.py")
 
 .. image:: images/test_problem_friendly.png
-   :scale: 60 %
+   :scale: 50 %
    :alt: Mu with friendly running test_problem
 
 As should be expected, a traceback is shown, with a hint added.
@@ -36,12 +34,10 @@ You likely will not be surprised to know that
 I can ask friendly to provide explanations in French instead:
 
 .. image:: images/test_problem_fr.png
-   :scale: 60 %
+   :scale: 50 %
    :alt: Mu with friendly running test_problem
 
 
-.. todo::
+.. danger::
 
-    Find a way to produce coloured output in Mu's REPL after code execution.
-    Note that **this REPL** is not a Jupyter QtConsole, unlike what was shown
-    about Mu's REPL before.
+    Do not name your own program ``friendly.py``.

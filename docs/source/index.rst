@@ -89,8 +89,6 @@ English (by default) and French are available.
 
    beginner
    install
-   install_mu
-   install_thonny
    usage
 
 
@@ -120,6 +118,16 @@ English (by default) and French are available.
    idle_repl
    idle_run
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: Mu
+
+   mu_about
+   mu_install
+   mu_repl
+   mu_run
+
 
 .. toctree::
    :maxdepth: 1
@@ -127,7 +135,6 @@ English (by default) and French are available.
    :caption: Other consoles
 
    pyrepl
-   mu_repl
    vs_code_repl
    ipython_repl
    other_repl
@@ -138,8 +145,8 @@ English (by default) and French are available.
    :hidden:
    :caption: Editors and Notebooks
 
+   install_thonny
    editor
-   mu
    jupyter
    vs_code
    colab

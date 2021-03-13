@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>IDLE: using the editor &mdash; Friendly 0.2.92 documentation</title>
+  <title>IDLE: using the editor &mdash; Friendly 0.2.93a documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Using another REPL" href="pyrepl.html" />
+    <link rel="next" title="About Mu" href="mu_about.html" />
     <link rel="prev" title="IDLE’s shell" href="idle_repl.html" /> 
 </head>
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.2.92
+                0.2.93a
               </div>
             
           
@@ -93,8 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="beginner.html">Useful information for beginners</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu: installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">friendly console</span></p>
@@ -113,22 +111,28 @@
 </ul>
 <p class="caption"><span class="caption-text">IDLE</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle.html">About IDLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s shell</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">IDLE: using the editor</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Mu</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mu_about.html">About Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_install.html">Using with Mu: installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_repl.html">Mu’s REPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_run.html">Mu: executing a program</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mu_repl.html">Mu’s REPL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
@@ -239,7 +243,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="pyrepl.html" class="btn btn-neutral float-right" title="Using another REPL" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mu_about.html" class="btn btn-neutral float-right" title="About Mu" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
         <a href="idle_repl.html" class="btn btn-neutral float-left" title="IDLE’s shell" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
@@ -254,8 +258,9 @@
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This project has recently changed its name.
-Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
-replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
+Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>, replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.
+This warning will soon be removed, and friendly’s version will be changed
+to 0.3.</p>
 </div>
 <div class="section" id="idle-using-the-editor">
 <h1>IDLE: using the editor<a class="headerlink" href="#idle-using-the-editor" title="Permalink to this headline">¶</a></h1>
@@ -264,7 +269,7 @@ editor that is used by beginners learning Python.
 Let’s have a look at what happens if we run
 a program with IDLE using the
 “Run -&gt; Run Module” menu item.</p>
-<a class="reference internal image-reference" href="_images/python_idle.png"><img alt="Screen capture of IDLE" src="_images/python_idle.png" style="width: 482.5px; height: 383.0px;" /></a>
+<a class="reference internal image-reference" href="_images/python_idle.png"><img alt="Screen capture of IDLE" src="_images/python_idle.png" style="width: 579.0px; height: 459.59999999999997px;" /></a>
 <p>Below, I did something similar, but using friendly
 as a program launcher, and using French as the default
 language. After the program’s execution had been
@@ -282,7 +287,7 @@ and containing the following:</p>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>Do not name your program <code class="docutils literal notranslate"><span class="pre">friendly.py</span></code>.</p>
+<p>Do not name your own program <code class="docutils literal notranslate"><span class="pre">friendly.py</span></code>.</p>
 </div>
 </div>
 
@@ -292,7 +297,7 @@ and containing the following:</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="pyrepl.html" class="btn btn-neutral float-right" title="Using another REPL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mu_about.html" class="btn btn-neutral float-right" title="About Mu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="idle_repl.html" class="btn btn-neutral float-left" title="IDLE’s shell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

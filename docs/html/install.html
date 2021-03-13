@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Installation &mdash; Friendly 0.2.92 documentation</title>
+  <title>Installation &mdash; Friendly 0.2.93a documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Using with Mu: installation" href="install_mu.html" />
+    <link rel="next" title="Basic usage" href="usage.html" />
     <link rel="prev" title="Useful information for beginners" href="beginner.html" /> 
 </head>
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.2.92
+                0.2.93a
               </div>
             
           
@@ -94,10 +94,9 @@
 <li class="toctree-l1"><a class="reference internal" href="beginner.html">Useful information for beginners</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mistake-to-avoid">Mistake to avoid</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu: installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">friendly console</span></p>
@@ -116,22 +115,28 @@
 </ul>
 <p class="caption"><span class="caption-text">IDLE</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle.html">About IDLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="idle_run.html">IDLE: using the editor</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Mu</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mu_about.html">About Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_install.html">Using with Mu: installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_repl.html">Mu’s REPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_run.html">Mu: executing a program</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mu_repl.html">Mu’s REPL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
@@ -242,7 +247,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="install_mu.html" class="btn btn-neutral float-right" title="Using with Mu: installation" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="usage.html" class="btn btn-neutral float-right" title="Basic usage" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
         <a href="beginner.html" class="btn btn-neutral float-left" title="Useful information for beginners" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
@@ -257,14 +262,16 @@
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This project has recently changed its name.
-Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
-replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
+Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>, replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.
+This warning will soon be removed, and friendly’s version will be changed
+to 0.3.</p>
 </div>
 <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p><img alt="mu_logo" src="_images/mu_logo.png" /> Skip this page if you use Mu.</p>
+<p><img alt="mu_logo" src="_images/mu_logo.png" /> If you use Mu, you should ignore this page as some
+Mu-specific instructions are provided later.</p>
 </div>
 <div class="section" id="id1">
 <h2>Installation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
@@ -272,14 +279,23 @@ replace it simply by <code class="docutils literal notranslate"><span class="pre
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">friendly</span>
 </pre></div>
 </div>
-<p>Of course, if this is the first time you install a package from PyPI,
-you might get some weird error. This is what it might look if you
-had already been using friendly.</p>
-<a class="reference internal image-reference" href="_images/pip.png"><img alt="error using pip inside a console" src="_images/pip.png" style="width: 719.0px; height: 329.0px;" /></a>
-<p>In the command shown above,
+<p>This needs to be done from a terminal.
+In the command shown above,
 <code class="docutils literal notranslate"><span class="pre">python</span></code> refers to whatever you need to type to invoke your
 favourite Python interpreter.
 It could be <code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">python3</span></code>, <code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">-3.8</span></code>, etc.</p>
+<p>Instead of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">...</span></code>, some tutorials might suggest
+to simply write <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">...</span></code>; I do not recommend this as it might
+not install programs in the right “environment” for your computer.</p>
+</div>
+<div class="section" id="mistake-to-avoid">
+<h2>Mistake to avoid<a class="headerlink" href="#mistake-to-avoid" title="Permalink to this headline">¶</a></h2>
+<p>A mistake often made by beginners is
+to try to use <code class="docutils literal notranslate"><span class="pre">pip</span></code> from within Python.</p>
+<a class="reference internal image-reference" href="_images/pip2.png"><img alt="error using pip inside a Python console" src="_images/pip2.png" style="width: 393.0px; height: 185.5px;" /></a>
+<p>The error message is not very helpful.
+This is what it might look if you had already been using friendly.</p>
+<a class="reference internal image-reference" href="_images/pip.png"><img alt="error using pip inside a friendly console" src="_images/pip.png" style="width: 719.0px; height: 329.0px;" /></a>
 </div>
 </div>
 
@@ -289,7 +305,7 @@ It could be <code class="docutils literal notranslate"><span class="pre">python<
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="install_mu.html" class="btn btn-neutral float-right" title="Using with Mu: installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="usage.html" class="btn btn-neutral float-right" title="Basic usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="beginner.html" class="btn btn-neutral float-left" title="Useful information for beginners" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

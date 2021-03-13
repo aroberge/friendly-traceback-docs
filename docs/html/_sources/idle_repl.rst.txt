@@ -8,7 +8,7 @@ IDLE's shell
     It is strongly recommended to use the friendly console by
     using the following two instructions when beginning a session::
 
-        from friendly.idle import *
+        from friendly.idle import start_console
         start_console()
 
 
@@ -38,9 +38,9 @@ As you can see as pointed by (2) on the above image,
 the prompt is in blue as it is "printed"by friendly
 using the ``input()`` function.  
 
-friendly's output within IDLE uses
-three different colours which, in the default IDLE them
-are as follow: black for Python code, red for anything else related
+Friendly's output within IDLE uses
+three different colours which, in the default IDLE theme
+are as follows: black for Python code, red for anything else related
 to a traceback, and blue for everything else. It also adopts
 IDLE's feature of highlighting the location of an error using
 a red background; however, unlike IDLE's itself, it does not do

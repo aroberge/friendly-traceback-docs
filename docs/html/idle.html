@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Introduction to IDLE &mdash; Friendly 0.2.92 documentation</title>
+  <title>About IDLE &mdash; Friendly 0.2.93a documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.2.92
+                0.2.93a
               </div>
             
           
@@ -93,8 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="beginner.html">Useful information for beginners</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu: installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">friendly console</span></p>
@@ -113,22 +111,31 @@
 </ul>
 <p class="caption"><span class="caption-text">IDLE</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to IDLE</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">About IDLE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#colours">Colours</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="idle_run.html">IDLE: using the editor</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Mu</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mu_about.html">About Mu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_install.html">Using with Mu: installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_repl.html">Mu’s REPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu_run.html">Mu: executing a program</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mu_repl.html">Mu’s REPL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
@@ -223,7 +230,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Introduction to IDLE</li>
+      <li>About IDLE</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -254,13 +261,14 @@
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This project has recently changed its name.
-Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
-replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
+Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>, replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.
+This warning will soon be removed, and friendly’s version will be changed
+to 0.3.</p>
 </div>
-<div class="section" id="introduction-to-idle">
-<h1>Introduction to IDLE<a class="headerlink" href="#introduction-to-idle" title="Permalink to this headline">¶</a></h1>
-<p>Since IDLE is part of the standard library, it is often the first
-editor that is used by beginners learning Python.
+<div class="section" id="about-idle">
+<h1>About IDLE<a class="headerlink" href="#about-idle" title="Permalink to this headline">¶</a></h1>
+<p>IDLE is often the first program that is used by beginners
+learning Python since it is installed with Python.
 It includes its own REPL (known as its “shell”) and enable
 users to write code in editors and run them, with the output
 redirected to the shell.</p>
@@ -269,21 +277,29 @@ define their own “exception hook” to modify the information shown to
 a user. Since then, it is possible to have IDLE use a custom
 exception hook <strong>except</strong> when dealing with syntax errors.
 To get the most out of friendly, <strong>I recommend to use
-friendly’s own console instead of IDLE’s shell.</strong></p>
+friendly’s own console instead of IDLE’s shell</strong> as described
+on the next page.</p>
+<div class="section" id="colours">
+<h2>Colours<a class="headerlink" href="#colours" title="Permalink to this headline">¶</a></h2>
+<p>In most other programs where colour output is possible,
+friendly uses pygments, either directly or indirectly
+to add colour. This is not possible when using IDLE.</p>
 <p>Idle provides a few pre-defined element types to which colouring
-can be applied</p>
+can be applied.</p>
 <a class="reference internal image-reference" href="_images/idle_defaults.png"><img alt="Idle color scheme" src="_images/idle_defaults.png" style="width: 405.5px; height: 541.0px;" /></a>
 <p>In the default scheme:</p>
 <ol class="arabic simple">
-<li><p>The default colour is black</p></li>
-<li><p>Anything “printed” normally (<code class="docutils literal notranslate"><span class="pre">print()</span> <span class="pre">--&gt;</span> <span class="pre">sys.stdout</span></code>) is in blue</p></li>
-<li><p>Anything printed following an exception (sent to <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>) is in red</p></li>
+<li><p>The default colour is black.</p></li>
+<li><p>Anything “printed” normally (<code class="docutils literal notranslate"><span class="pre">print()</span> <span class="pre">--&gt;</span> <span class="pre">sys.stdout</span></code>) is in blue.</p></li>
+<li><p>Anything printed following an exception (sent to <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>) is in red.</p></li>
 <li><p>IDLE uses a red background to highlight a specific position of a syntax error
 as identified by Python.</p></li>
 </ol>
-<p>The specific colour used for each of these cases can be changed by
-a user. Friendly makes use of the colours chosen for these four basic
-elements when it formats the information presented to the user.</p>
+<p>Friendly makes use of the colours chosen for these four basic
+elements when it formats the information presented to the user.
+The specific colour used for each of these cases can be changed by
+according to your preferences.</p>
+</div>
 </div>
 
 
