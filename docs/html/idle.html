@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>IDLE: using the editor &mdash; Friendly 0.2.92 documentation</title>
+  <title>Introduction to IDLE &mdash; Friendly 0.2.92 documentation</title>
   
 
   
@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Using with Mu" href="mu.html" />
-    <link rel="prev" title="Using with an editor or IDE" href="editor.html" /> 
+    <link rel="next" title="IDLE’s shell" href="idle_repl.html" />
+    <link rel="prev" title="One last thing" href="about_warnings.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -111,19 +111,23 @@
 <li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
 </ul>
+<p class="caption"><span class="caption-text">IDLE</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to IDLE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_run.html">IDLE: using the editor</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu_repl.html">Mu’s REPL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="other_repl.html">Other repl</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
@@ -219,7 +223,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>IDLE: using the editor</li>
+      <li>Introduction to IDLE</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -235,10 +239,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="mu.html" class="btn btn-neutral float-right" title="Using with Mu" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="idle_repl.html" class="btn btn-neutral float-right" title="IDLE’s shell" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="editor.html" class="btn btn-neutral float-left" title="Using with an editor or IDE" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="about_warnings.html" class="btn btn-neutral float-left" title="One last thing" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
       
   </div>
   
@@ -249,22 +253,37 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This project has changed its name. Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
+<p>This project has recently changed its name.
+Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
 replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
 </div>
-<div class="section" id="idle-using-the-editor">
-<h1>IDLE: using the editor<a class="headerlink" href="#idle-using-the-editor" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction-to-idle">
+<h1>Introduction to IDLE<a class="headerlink" href="#introduction-to-idle" title="Permalink to this headline">¶</a></h1>
 <p>Since IDLE is part of the standard library, it is often the first
 editor that is used by beginners learning Python.
-Let’s have a look at what happens if we run
-a program with IDLE using the
-“Run -&gt; Run Module” menu item.</p>
-<a class="reference internal image-reference" href="_images/python_idle.png"><img alt="Screen capture of IDLE" src="_images/python_idle.png" style="width: 482.5px; height: 383.0px;" /></a>
-<p>Below, I did something similar, but using friendly
-as a program launcher, and using French as the default
-language. After the program’s execution had been
-completed, I entered more code, making a syntax error.</p>
-<a class="reference internal image-reference" href="_images/friendly_idle.png"><img alt="Screen capture of IDLE using friendly to launch a program" src="_images/friendly_idle.png" style="width: 482.0px; height: 672.0px;" /></a>
+It includes its own REPL (known as its “shell”) and enable
+users to write code in editors and run them, with the output
+redirected to the shell.</p>
+<p>Before Python version 3.10.0a5, IDLE did not allow a user to
+define their own “exception hook” to modify the information shown to
+a user. Since then, it is possible to have IDLE use a custom
+exception hook <strong>except</strong> when dealing with syntax errors.
+To get the most out of friendly, <strong>I recommend to use
+friendly’s own console instead of IDLE’s shell.</strong></p>
+<p>Idle provides a few pre-defined element types to which colouring
+can be applied</p>
+<a class="reference internal image-reference" href="_images/idle_defaults.png"><img alt="Idle color scheme" src="_images/idle_defaults.png" style="width: 405.5px; height: 541.0px;" /></a>
+<p>In the default scheme:</p>
+<ol class="arabic simple">
+<li><p>The default colour is black</p></li>
+<li><p>Anything “printed” normally (<code class="docutils literal notranslate"><span class="pre">print()</span> <span class="pre">--&gt;</span> <span class="pre">sys.stdout</span></code>) is in blue</p></li>
+<li><p>Anything printed following an exception (sent to <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>) is in red</p></li>
+<li><p>IDLE uses a red background to highlight a specific position of a syntax error
+as identified by Python.</p></li>
+</ol>
+<p>The specific colour used for each of these cases can be changed by
+a user. Friendly makes use of the colours chosen for these four basic
+elements when it formats the information presented to the user.</p>
 </div>
 
 
@@ -273,8 +292,8 @@ completed, I entered more code, making a syntax error.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="mu.html" class="btn btn-neutral float-right" title="Using with Mu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="editor.html" class="btn btn-neutral float-left" title="Using with an editor or IDE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="idle_repl.html" class="btn btn-neutral float-right" title="IDLE’s shell" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="about_warnings.html" class="btn btn-neutral float-left" title="One last thing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

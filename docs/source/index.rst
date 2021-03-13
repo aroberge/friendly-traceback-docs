@@ -114,10 +114,19 @@ English (by default) and French are available.
 .. toctree::
    :maxdepth: 1
    :hidden:
+   :caption: IDLE
+
+   idle
+   idle_repl
+   idle_run
+
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
    :caption: Other consoles
 
    pyrepl
-   idle_repl
    mu_repl
    vs_code_repl
    ipython_repl
@@ -130,7 +139,6 @@ English (by default) and French are available.
    :caption: Editors and Notebooks
 
    editor
-   idle
    mu
    jupyter
    vs_code

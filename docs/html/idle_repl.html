@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Mu’s REPL" href="mu_repl.html" />
-    <link rel="prev" title="Using another REPL" href="pyrepl.html" /> 
+    <link rel="next" title="IDLE: using the editor" href="idle_run.html" />
+    <link rel="prev" title="IDLE" href="idle.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -111,10 +111,18 @@
 <li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Other consoles</span></p>
+<p class="caption"><span class="caption-text">IDLE</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">IDLE’s shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#latest-idle-version">Latest IDLE version</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="idle_run.html">IDLE: using the editor</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other consoles</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">IDLE’s shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu_repl.html">Mu’s REPL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
@@ -123,7 +131,6 @@
 <p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
@@ -235,10 +242,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="mu_repl.html" class="btn btn-neutral float-right" title="Mu’s REPL" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="idle_run.html" class="btn btn-neutral float-right" title="IDLE: using the editor" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="pyrepl.html" class="btn btn-neutral float-left" title="Using another REPL" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="idle.html" class="btn btn-neutral float-left" title="IDLE" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
       
   </div>
   
@@ -249,7 +256,8 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This project has changed its name. Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
+<p>This project has recently changed its name.
+Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
 replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
 </div>
 <div class="section" id="idle-s-shell">
@@ -264,44 +272,53 @@ using the following two instructions when beginning a session:</p>
 </pre></div>
 </div>
 </div>
-<p>Since it is almost always included with Python,
-IDLE is very often the first editor/IDE that Python beginners use.
-It comes with its own repl (also known as its “shell”) which does
+<p>As I mentioned previously, IDLE comes with its own repl
+(also known as its “shell”) which does
 syntax coloring. By default, it uses blue for anything printed normally
 (to stdout) and red for anything printed as part of an exception (to stderr).
 When a SyntaxError is recognized, the location of that error is
 highlighted, with red background.</p>
 <a class="reference internal image-reference" href="_images/idle.png"><img alt="Screen capture of IDLE's shell" src="_images/idle.png" style="width: 823.1999999999999px; height: 243.6px;" /></a>
-<p>You can use the friendly console within IDLE’s shell by first using
-a special import statement:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly.idle</span> <span class="kn">import</span> <span class="o">*</span>
+<p>You can use the friendly console within IDLE’s shell as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly.idle</span> <span class="kn">import</span> <span class="n">start_console</span>
+<span class="n">start_console</span><span class="p">()</span>  <span class="c1"># or start_console(lang=&quot;fr&quot;)</span>
 </pre></div>
 </div>
-<p>To start the friendly console, you need to then use <code class="docutils literal notranslate"><span class="pre">start_console()</span></code>.</p>
-<a class="reference internal image-reference" href="_images/idle-friendly.png"><img alt="Screen capture of the friendly console within IDLE" src="_images/idle-friendly.png" style="width: 823.1999999999999px; height: 889.8px;" /></a>
-<p>As you can see, the prompt is in blue as it is “printed” using
-the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function.</p>
+<a class="reference internal image-reference" href="_images/idle-friendly.png"><img alt="Screen capture of the friendly console within IDLE" src="_images/idle-friendly.png" style="width: 702.5px; height: 728.5px;" /></a>
+<p>As you can see as pointed by (2) on the above image,
+the prompt is in blue as it is “printed”by friendly
+using the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function.</p>
 <p>friendly’s output within IDLE uses
-three different colours: black for code, red for anything related
+three different colours which, in the default IDLE them
+are as follow: black for Python code, red for anything else related
 to a traceback, and blue for everything else. It also adopts
 IDLE’s feature of highlighting the location of an error using
 a red background; however, unlike IDLE’s itself, it does not do
 so in the code entered previously, but only in its own output.</p>
+<div class="section" id="latest-idle-version">
+<h2>Latest IDLE version<a class="headerlink" href="#latest-idle-version" title="Permalink to this headline">¶</a></h2>
 <p>Starting with Python version 3.10.0a5, IDLE’s shell allow the
 use of customs <code class="docutils literal notranslate"><span class="pre">sys.excepthook()</span></code> to process runtime
-errors (but not syntax errors). So, instead of starting
+errors (but not syntax errors). So, <strong>instead of</strong> starting
 a friendly console using <code class="docutils literal notranslate"><span class="pre">start_console()</span></code>, friendly can
-be “installed” within IDLE’s shell and provide information
-for runtime errors. After using the same special
-import statement as before,</p>
-<p>I used <code class="docutils literal notranslate"><span class="pre">install()</span></code> to replace IDLE’s handling of runtime errors
-by friendly’s version.</p>
-<a class="reference internal image-reference" href="_images/idle-friendly2.png"><img alt="Screen capture of the friendly console within IDLE" src="_images/idle-friendly2.png" style="width: 823.1999999999999px; height: 421.8px;" /></a>
+be <strong>installed</strong> within IDLE’s shell and provide information
+for runtime errors.
+This time, instead of importing a single function,
+“everything” must be imported, so that friendly’s various functions,
+such as <code class="docutils literal notranslate"><span class="pre">why()</span></code> shown below, can be used.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly.idle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">install</span><span class="p">()</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/idle-friendly2.png"><img alt="Screen capture of the friendly console within IDLE" src="_images/idle-friendly2.png" style="width: 775.5000000000001px; height: 452.65000000000003px;" /></a>
+<p>Note how the prompt is not blue as we are not using
+friendly’s own console.</p>
 <p>Unfortunately, since syntax errors cannot (yet) be processed by friendly
 in this mode, I do not recommend to use it in this way.</p>
 <p>IDLE’s developers are aware of this current limitation and might
 provide in a future version a way for friendly to “hook” into IDLE’s
 mechanism for dealing with syntax errors.</p>
+</div>
 </div>
 
 
@@ -310,8 +327,8 @@ mechanism for dealing with syntax errors.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="mu_repl.html" class="btn btn-neutral float-right" title="Mu’s REPL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="pyrepl.html" class="btn btn-neutral float-left" title="Using another REPL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="idle_run.html" class="btn btn-neutral float-right" title="IDLE: using the editor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="idle.html" class="btn btn-neutral float-left" title="IDLE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

@@ -109,10 +109,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../repl_more.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about_warnings.html">One last thing</a></li>
 </ul>
+<p class="caption"><span class="caption-text">IDLE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../idle.html">IDLE:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../idle_repl.html">IDLE’s shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../idle_run.html">IDLE: using the editor</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../pyrepl.html">Using another REPL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../idle_repl.html">IDLE’s shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu_repl.html">Mu’s REPL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vs_code_repl.html">Visual Studio Code’s terminal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ipython_repl.html">IPython’s console</a></li>
@@ -121,7 +126,6 @@
 <p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vs_code.html">Visual Studio Code</a></li>
@@ -368,8 +372,9 @@
     <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">console</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">formatter</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span>
+    <span class="n">formatter</span><span class="o">=</span><span class="s2">&quot;bw&quot;</span><span class="p">,</span>
     <span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">background</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Given a filename (relative or absolute path) ending with the &quot;.py&quot;</span>
 <span class="sd">    extension, this function uses the</span>
@@ -435,7 +440,11 @@
     <span class="p">)</span>
     <span class="k">if</span> <span class="n">console</span><span class="p">:</span>
         <span class="n">start_console</span><span class="p">(</span>
-            <span class="n">local_vars</span><span class="o">=</span><span class="n">module_globals</span><span class="p">,</span> <span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">,</span> <span class="n">banner</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span>
+            <span class="n">local_vars</span><span class="o">=</span><span class="n">module_globals</span><span class="p">,</span>
+            <span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">,</span>
+            <span class="n">banner</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span>
+            <span class="n">background</span><span class="o">=</span><span class="n">background</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">module_globals</span></div>
@@ -464,10 +473,11 @@
 
 <div class="viewcode-block" id="start_console"><a class="viewcode-back" href="../api.html#friendly.start_console">[docs]</a><span class="k">def</span> <span class="nf">start_console</span><span class="p">(</span>
     <span class="n">local_vars</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">formatter</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span>
+    <span class="n">formatter</span><span class="o">=</span><span class="s2">&quot;bw&quot;</span><span class="p">,</span>
     <span class="n">include</span><span class="o">=</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">,</span>
     <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span>
     <span class="n">banner</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">background</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Starts a Friendly console.&quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">console</span>
@@ -478,6 +488,7 @@
         <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span>
         <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span>
         <span class="n">banner</span><span class="o">=</span><span class="n">banner</span><span class="p">,</span>
+        <span class="n">background</span><span class="o">=</span><span class="n">background</span><span class="p">,</span>
     <span class="p">)</span></div>
 
 
@@ -528,7 +539,8 @@
     <span class="n">session</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">)</span></div>
 
 
-<span class="n">set_include</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">set_include</span><span class="o">.</span><span class="vm">__doc__</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">choices</span><span class="o">=</span><span class="n">_include_choices</span><span class="p">())</span>
+<span class="k">if</span> <span class="n">set_include</span><span class="o">.</span><span class="vm">__doc__</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># protect against -OO optimization</span>
+    <span class="n">set_include</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">set_include</span><span class="o">.</span><span class="vm">__doc__</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">choices</span><span class="o">=</span><span class="n">_include_choices</span><span class="p">())</span>
 
 
 <div class="viewcode-block" id="get_include"><a class="viewcode-back" href="../repl_more.html#friendly.get_include">[docs]</a><span class="k">def</span> <span class="nf">get_include</span><span class="p">():</span>

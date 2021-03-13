@@ -88,7 +88,8 @@ rst_epilog = """
 rst_prolog = """
 .. warning::
 
-    This project has changed its name. Wherever you see ``friendly_traceback``,
+    This project has recently changed its name.
+    Wherever you see ``friendly_traceback``,
     replace it simply by ``friendly``.
 """
 #

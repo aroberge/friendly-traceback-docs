@@ -57,7 +57,7 @@ information.  For this reason, friendly cannot be
 start a console using the following::
 
     from friendly import start_console
-    start_console(use_rich=True)
+    start_console(formatter="dark")
 
 
 These two lines of code are shown below (1).
@@ -66,8 +66,11 @@ These two lines of code are shown below (1).
    :scale: 50 %
    :alt: Python's interpreter
 
-For the function ``start_console``, I used the option ``use_rich=True`` (2) so
-that I got the coloured output when using a terminal; some other REPL do not permit
+For the function ``start_console``,
+I used the option ``formatter="dark"`` (2) so
+that I got the coloured output when using a terminal
+which has a dark background. The default would correspond
+to non-coloured text as some other REPL do not permit
 to show coloured output in this way.
 
 Since I am using the friendly console, functions such as ``what()`` (3)

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Basic usage &mdash; Friendly 0.2.92 documentation</title>
+  <title>IDLE: using the editor &mdash; Friendly 0.2.92 documentation</title>
   
 
   
@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Console basics" href="repl.html" />
-    <link rel="prev" title="Information for Thonny" href="install_thonny.html" /> 
+    <link rel="next" title="Using another REPL" href="pyrepl.html" />
+    <link rel="prev" title="IDLE’s shell" href="idle_repl.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,18 +90,12 @@
             
             
               <p class="caption"><span class="caption-text">Begin here</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="beginner.html">Useful information for beginners</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_mu.html">Using with Mu: installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Basic usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#suggestions">Suggestions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#other-ways">Other ways</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">friendly console</span></p>
 <ul>
@@ -118,10 +112,10 @@
 <li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">IDLE</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE:</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="idle_run.html">IDLE: using the editor</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">IDLE: using the editor</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul>
@@ -229,13 +223,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Basic usage</li>
+      <li>IDLE: using the editor</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/usage.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/idle_run.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -245,10 +239,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="repl.html" class="btn btn-neutral float-right" title="Console basics" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pyrepl.html" class="btn btn-neutral float-right" title="Using another REPL" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="install_thonny.html" class="btn btn-neutral float-left" title="Information for Thonny" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="idle_repl.html" class="btn btn-neutral float-left" title="IDLE’s shell" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
       
   </div>
   
@@ -263,99 +257,32 @@
 Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
 replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
 </div>
-<div class="section" id="basic-usage">
-<h1>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
-<p>There are various ways of using friendly.
-I only list here the basic scenarios available from a
-terminal or from within a Python interpreter.
-More options are possible, including running from an editor/IDE
-as described later in this documentation.</p>
-<p>For those that know how to run programs <strong>from a terminal</strong>,
-I recommend using <strong>one of the first three</strong> following options.</p>
-<ol class="arabic">
-<li><p>Execute a Python program, as I have already shown at the beginning:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly example.py
+<div class="section" id="idle-using-the-editor">
+<h1>IDLE: using the editor<a class="headerlink" href="#idle-using-the-editor" title="Permalink to this headline">¶</a></h1>
+<p>Since IDLE is part of the standard library, it is often the first
+editor that is used by beginners learning Python.
+Let’s have a look at what happens if we run
+a program with IDLE using the
+“Run -&gt; Run Module” menu item.</p>
+<a class="reference internal image-reference" href="_images/python_idle.png"><img alt="Screen capture of IDLE" src="_images/python_idle.png" style="width: 482.5px; height: 383.0px;" /></a>
+<p>Below, I did something similar, but using friendly
+as a program launcher, and using French as the default
+language. After the program’s execution had been
+completed, I entered more code, making a syntax error.</p>
+<a class="reference internal image-reference" href="_images/friendly_idle.png"><img alt="Screen capture of IDLE using friendly to launch a program" src="_images/friendly_idle.png" style="width: 719.5px; height: 440.5px;" /></a>
+<div class="admonition-summary admonition">
+<p class="admonition-title">Summary</p>
+<p>To run a program named <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>, create a second Python
+program saved in the same directory
+and containing the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">friendly.idle</span> <span class="kn">import</span> <span class="n">run</span>
+<span class="n">run</span><span class="p">(</span><span class="s2">&quot;hello.py&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</li>
-<li><p>You can also start a friendly console:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m friendly
-</pre></div>
 </div>
-</li>
-<li><p>Combining the two options above by using Python’s <code class="docutils literal notranslate"><span class="pre">-i</span></code> flag
-to start friendly’s console after executing
-a program:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -im friendly example.py
-</pre></div>
-</div>
-</li>
-</ol>
-<p>All of the above assume that you are using a terminal with a dark background.
-If you are using a terminal with a light background, you might want to
-add <code class="docutils literal notranslate"><span class="pre">--style</span> <span class="pre">light</span></code> as a command line option.</p>
-<div class="section" id="suggestions">
-<h2>Suggestions<a class="headerlink" href="#suggestions" title="Permalink to this headline">¶</a></h2>
-<p>If you are a Windows user I <strong>very strongly suggest</strong> that you use the new
-<a class="reference external" href="https://github.com/microsoft/terminal">Windows Terminal</a>
-that you can get from the Windows Store; this is
-what I have used for various screen captures.
-See <a class="reference internal" href="themes.html#themes"><span class="std std-ref">Themes and colours</span></a> for screenshot taken with with other terminals
-on Windows.</p>
-<p>If you are a Mac or Linux user,
-and use friendly with Rich installed,
-I would gladly accept any screenshot that you could provide so that they
-could be included in this documentation.</p>
-<p>If possible, friendly makes use of
-<a class="reference external" href="https://github.com/willmcgugan/rich">Rich</a> to add colour to its output.
-Note however that some programming environments,
-such as IDLE and other IDEs do not support Rich; this does not
-prevent you from using friendly, but the display
-will definitely not look as nice.
-The only editor/IDE capable of <strong>fully</strong> making use of Rich that I know
-of is <a class="reference external" href="https://code.visualstudio.com/">Microsoft Visual Studio Code</a>.
-Jupyter notebooks and JupyterLab can also use Rich.
-Pycharm’s embedded console, at least on Windows, does not fully
-support Rich.</p>
-<div class="section" id="other-ways">
-<h3>Other ways<a class="headerlink" href="#other-ways" title="Permalink to this headline">¶</a></h3>
-<p>The following ways of using friendly are described
-in more details later. I simply list them here as useful
-summary for experienced Python programmers.</p>
-<ol class="arabic" start="4">
-<li><p>You can use friendly as an exception hook:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly</span>
-<span class="n">friendly</span><span class="o">.</span><span class="n">install</span><span class="p">()</span>  <span class="c1"># replaces the default sys.excepthook</span>
-</pre></div>
-</div>
-</li>
-<li><p>Starting the console from any Python interpreter:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">friendly</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">friendly</span><span class="o">.</span><span class="n">start_console</span><span class="p">()</span>
-</pre></div>
-</div>
-</li>
-<li><p>You can also use it to catch exceptions locally:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly</span>
-
-<span class="o">...</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="c1"># Some code</span>
-<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-    <span class="n">friendly</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">()</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<p>All of the above support additional options allowing one
-to select a different language (only French for now) or
-changing the information that is shown by default.</p>
-<p>More information about various additional options is
-provided later in this documentation.
-As a shortcut, you can
-also type <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">friendly</span> <span class="pre">-h</span></code> in a terminal.</p>
-</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Do not name your program <code class="docutils literal notranslate"><span class="pre">friendly.py</span></code>.</p>
 </div>
 </div>
 
@@ -365,8 +292,8 @@ also type <code class="docutils literal notranslate"><span class="pre">python</s
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="repl.html" class="btn btn-neutral float-right" title="Console basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="install_thonny.html" class="btn btn-neutral float-left" title="Information for Thonny" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pyrepl.html" class="btn btn-neutral float-right" title="Using another REPL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="idle_repl.html" class="btn btn-neutral float-left" title="IDLE’s shell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

@@ -111,10 +111,15 @@
 <li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
 </ul>
+<p class="caption"><span class="caption-text">IDLE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idle_run.html">IDLE: using the editor</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pyrepl.html">Using another REPL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="idle_repl.html">IDLE’s shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu_repl.html">Mu’s REPL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code_repl.html">Visual Studio Code’s terminal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython_repl.html">IPython’s console</a></li>
@@ -123,7 +128,6 @@
 <p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
@@ -252,7 +256,8 @@
             
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This project has changed its name. Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
+<p>This project has recently changed its name.
+Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>,
 replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.</p>
 </div>
 <div class="section" id="public-api">
@@ -377,7 +382,7 @@ See set_include() for details.</p>
 
 <dl class="py function">
 <dt id="friendly.run">
-<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">console</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dark'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.run" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">console</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bw'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a filename (relative or absolute path) ending with the “.py”
 extension, this function uses the
 more complex <code class="docutils literal notranslate"><span class="pre">exec_code()</span></code> to run a file.</p>
@@ -464,7 +469,7 @@ in a given language.</p>
 
 <dl class="py function">
 <dt id="friendly.start_console">
-<code class="sig-name descname"><span class="pre">start_console</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_vars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dark'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'friendly_tb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'en'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">banner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#start_console"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.start_console" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">start_console</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_vars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bw'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'friendly_tb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'en'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">banner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#start_console"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.start_console" title="Permalink to this definition">¶</a></dt>
 <dd><p>Starts a Friendly console.</p>
 </dd></dl>
 

@@ -12,9 +12,8 @@ IDLE's shell
         start_console()
 
 
-Since it is almost always included with Python,
-IDLE is very often the first editor/IDE that Python beginners use.
-It comes with its own repl (also known as its "shell") which does
+As I mentioned previously, IDLE comes with its own repl
+(also known as its "shell") which does
 syntax coloring. By default, it uses blue for anything printed normally
 (to stdout) and red for anything printed as part of an exception (to stderr).
 When a SyntaxError is recognized, the location of that error is
@@ -25,46 +24,54 @@ highlighted, with red background.
    :alt: Screen capture of IDLE's shell
 
 
-You can use the friendly console within IDLE's shell by first using
-a special import statement::
+You can use the friendly console within IDLE's shell as follows::
 
-    from friendly.idle import *
+    from friendly.idle import start_console
+    start_console()  # or start_console(lang="fr")
 
-To start the friendly console, you need to then use ``start_console()``.
 
 .. image:: images/idle-friendly.png
-   :scale: 60 %
+   :scale: 50 %
    :alt: Screen capture of the friendly console within IDLE
 
-As you can see, the prompt is in blue as it is "printed" using
-the ``input()`` function.  
+As you can see as pointed by (2) on the above image,
+the prompt is in blue as it is "printed"by friendly
+using the ``input()`` function.  
 
 friendly's output within IDLE uses
-three different colours: black for code, red for anything related
+three different colours which, in the default IDLE them
+are as follow: black for Python code, red for anything else related
 to a traceback, and blue for everything else. It also adopts
 IDLE's feature of highlighting the location of an error using
 a red background; however, unlike IDLE's itself, it does not do
 so in the code entered previously, but only in its own output.
 
+
+Latest IDLE version
+-------------------
+
 Starting with Python version 3.10.0a5, IDLE's shell allow the
 use of customs ``sys.excepthook()`` to process runtime
-errors (but not syntax errors). So, instead of starting
+errors (but not syntax errors). So, **instead of** starting
 a friendly console using ``start_console()``, friendly can
-be "installed" within IDLE's shell and provide information
-for runtime errors. After using the same special
-import statement as before,
+be **installed** within IDLE's shell and provide information
+for runtime errors. 
+This time, instead of importing a single function,
+"everything" must be imported, so that friendly's various functions,
+such as ``why()`` shown below, can be used.
 
-.. code-block::python
+.. code-block:: python
 
     from friendly.idle import *
-
-I used ``install()`` to replace IDLE's handling of runtime errors
-by friendly's version.
+    install()
 
 
 .. image:: images/idle-friendly2.png
-   :scale: 60 %
+   :scale: 55 %
    :alt: Screen capture of the friendly console within IDLE
+
+Note how the prompt is not blue as we are not using
+friendly's own console.
 
 Unfortunately, since syntax errors cannot (yet) be processed by friendly
 in this mode, I do not recommend to use it in this way.

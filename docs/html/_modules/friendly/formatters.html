@@ -109,10 +109,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../repl_more.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about_warnings.html">One last thing</a></li>
 </ul>
+<p class="caption"><span class="caption-text">IDLE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../idle.html">IDLE:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../idle_repl.html">IDLE’s shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../idle_run.html">IDLE: using the editor</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../pyrepl.html">Using another REPL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../idle_repl.html">IDLE’s shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../mu_repl.html">Mu’s REPL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../vs_code_repl.html">Visual Studio Code’s terminal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ipython_repl.html">IPython’s console</a></li>
@@ -121,7 +126,6 @@
 <p class="caption"><span class="caption-text">Editors and Notebooks</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../idle.html">IDLE: using the editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../mu.html">Using with Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyter.html">IPython and Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../vs_code.html">Visual Studio Code</a></li>
@@ -315,7 +319,6 @@
     <span class="s2">&quot;generic&quot;</span><span class="p">,</span>
     <span class="s2">&quot;parsing_error&quot;</span><span class="p">,</span>
     <span class="s2">&quot;parsing_error_source&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;cause_header&quot;</span><span class="p">,</span>
     <span class="s2">&quot;cause&quot;</span><span class="p">,</span>
     <span class="s2">&quot;last_call_header&quot;</span><span class="p">,</span>
     <span class="s2">&quot;last_call_source&quot;</span><span class="p">,</span>
@@ -336,7 +339,6 @@
     <span class="s2">&quot;generic&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
     <span class="s2">&quot;parsing_error&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
     <span class="s2">&quot;parsing_error_source&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;cause_header&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
     <span class="s2">&quot;cause&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
     <span class="s2">&quot;last_call_header&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
     <span class="s2">&quot;last_call_source&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
@@ -541,7 +543,6 @@
         <span class="s2">&quot;generic&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;parsing_error&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;parsing_error_source&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;cause_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;### &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;cause&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;last_call_header&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;## &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
         <span class="s2">&quot;last_call_source&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;```python</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span><span class="p">),</span>
@@ -569,11 +570,7 @@
             <span class="c1"># Rich theme in file friendly_rich.</span>
             <span class="n">content</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
             <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">):</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">rich</span><span class="p">:</span>
-                    <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">item</span> <span class="o">!=</span> <span class="s2">&quot;cause_header&quot;</span><span class="p">:</span>
-                        <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+                <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;message&quot;</span> <span class="ow">and</span> <span class="n">rich</span><span class="p">:</span>
                 <span class="c1"># Ensure that the exception name is highlighted.</span>
                 <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
