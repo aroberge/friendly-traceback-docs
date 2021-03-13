@@ -16,8 +16,8 @@ syntax error is made when entering code in Mu's REPL.
    :alt: Screen capture a normal traceback in Mu's REPL.
 
 
-I will now show you what would happens if I first ``import``
-friendly.
+I will now show you what would happens if I first import
+friendly before doing anything else.
 
 .. image:: images/mu_repl1.png
    :scale: 60 %

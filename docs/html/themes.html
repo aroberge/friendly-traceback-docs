@@ -133,7 +133,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install_thonny.html">Information for Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editor.html">Using with an editor or IDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="jupyter.html">IPython and Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vs_code.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colab.html">Google’s colab</a></li>
 </ul>
@@ -273,23 +273,29 @@ to 0.3.</p>
 </div>
 <div class="section" id="themes-and-colours">
 <span id="themes"></span><h1>Themes and colours<a class="headerlink" href="#themes-and-colours" title="Permalink to this headline">¶</a></h1>
-<p>As mentioned before, friendly can make use of
-<a class="reference external" href="https://github.com/willmcgugan/rich">Rich</a> if it is installed.
+<p>As mentioned before, friendly uses
+<a class="reference external" href="https://github.com/willmcgugan/rich">Rich</a> to add colours.
 Syntax colouring is done by Rich using Pygments.
 While Pygments comes with many different styles (colour schemes),
 most of them do not define colours for all possible parts of
 a Python traceback: depending on the style, we sometimes end up with
 some text with the same colour as the background.</p>
 <p>To ensure that all of friendly’s output would be styled
-properly, friendly includes its own “theme”.
+properly, friendly includes its own “themes”: one suitable for
+light coloured backgrounds, and one for dark coloured backgrounds.
 One problem I had was to figure out
 all the possible styling elements. It turned out that I had “solved”
 this problem in 2008 when I created the Pygments Tango style for
 an old project of mine (Crunchy, done with Johannes Woolard)
 where I did my best to include all
 possible styling elements, while minimizing the numbers of colours
-used. While Tango had been designed for a light coloured background,
-the new style has been designed for a dark coloured background.</p>
+used.</p>
+<div class="sidebar">
+<p class="sidebar-title">Old screenshots</p>
+<p>The screenshots on this page have been taken with an older version of
+friendly. A few changes have been done since, but the conclusion would
+remain the same.</p>
+</div>
 <p>Designing a pygments colour style is one thing; having it faithfully
 displayed in a terminal is something else altogether.
 Below you will see various screenshots: the first one is
@@ -325,7 +331,7 @@ colour scheme.</p>
 by terminals as adding style (colours, font style like bold, italics, or
 underlined, etc.). Some environment cannot interpret these escape
 sequences. Here is what happens if we attempt to use Rich
-together with Python’s IDLE:</p>
+together with Python’s IDLE for the same code as shown above:</p>
 <a class="reference internal image-reference" href="_images/rich_not_supported.png"><img alt="Rich not supported in IDLE" src="_images/rich_not_supported.png" style="width: 548.8000000000001px; height: 200.0px;" /></a>
 </div>
 <div class="section" id="conclusion">
@@ -335,7 +341,9 @@ always welcome, suggested changes to the current default theme
 will likely be ignored since the end result appear to be
 completely dependent on the environment.</p>
 <p>I might consider supporting custom themes, but this will likely
-be a lower priority item.</p>
+be a lower priority item: chances are that using either the
+<code class="docutils literal notranslate"><span class="pre">'light'</span></code> or <code class="docutils literal notranslate"><span class="pre">'dark'</span></code> theme with a custom <code class="docutils literal notranslate"><span class="pre">background</span></code>
+colour will be sufficient in most situations for the time being.</p>
 </div>
 </div>
 

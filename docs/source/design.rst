@@ -78,6 +78,12 @@ as these are more likely to contain the relevant information to the user.
 Variable information
 ---------------------
 
+.. sidebar:: Very old version!
+
+    The screenshots on this page have been done with a very old
+    version of friendly (likely before version 0.1).
+
+
 friendly include the value of all known variables found
 on the lines of code shown; earlier versions, such
 as that shown in the example below, included only variable information
@@ -157,7 +163,7 @@ Other similar projects
 ------------------------
 
 Many other projects do some enhanced traceback formatting, however
-none that we know of aim at
+**none that we know of** aim at
 
 1. making tracebacks easier to understand by beginners
 2. translating traceback information.
