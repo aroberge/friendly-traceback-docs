@@ -16,7 +16,7 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly version: 0.3.0
+Friendly version: 0.3.0a
 Python version: 3.8.4
 
 
@@ -156,7 +156,7 @@ Module attribute typo
         math.cost
     AttributeError: module 'math' has no attribute 'cost'
     
-        Did you mean one of the following: `cos, cosh, acos`?
+        Did you mean `cos`?
         
     An `AttributeError` occurs when the code contains something like
         `object.x`

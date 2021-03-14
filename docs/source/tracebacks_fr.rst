@@ -15,7 +15,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly version: 0.3.0
+Friendly version: 0.3.0a
 Python version: 3.8.4
 
 
@@ -155,7 +155,7 @@ Module attribute typo
         math.cost
     AttributeError: module 'math' has no attribute 'cost'
     
-        Vouliez-vous dire l’un des éléments suivants: `cos, cosh, acos` ?
+        Vouliez-vous dire `cos` ?
         
     Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
         `object.x`

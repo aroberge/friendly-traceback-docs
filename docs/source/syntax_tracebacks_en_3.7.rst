@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly version: 0.3.0
+Friendly version: 0.3.0a
 Python version: 3.7.8
 
 

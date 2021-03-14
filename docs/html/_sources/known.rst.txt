@@ -30,7 +30,7 @@ In the case of ``StopIteration``, see
 ``BaseException``, ``Exception``, and ``ArithmeticError`` are base classes which
 are also not normally seen: some derived classes are normally used instead.
 
-Information compiled using Friendly-traceback version: 0.3.0,
+Information compiled using Friendly-traceback version: 0.3.0a,
 Python version: 3.8.4
 
 

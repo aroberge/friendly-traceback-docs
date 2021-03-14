@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly version: 0.3.0
+Friendly version: 0.3.0a
 Python version: 3.8.4
 
 
