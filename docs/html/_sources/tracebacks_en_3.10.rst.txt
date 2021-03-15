@@ -16,7 +16,7 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly version: 0.3.0a
+Friendly version: 0.3
 Python version: 3.10.0a6
 
 

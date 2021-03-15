@@ -22,7 +22,7 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly version: 0.3.0a
+Friendly version: 0.3
 Python version: 3.8.4
 
 
@@ -3842,9 +3842,7 @@ Content passed continuation line character
 
     Vous utilisez le caractère de continuation `\` en dehors d'une chaîne de caractères,
     et il est suivi par au moins un autre caractère.
-    Je suppose que vous avez oublié de terminer la chaîne par un guillemet
-    ou un apostrophe.
-    
+    Je suppose que vous avez oublié d’enfermer du contenu dans une chaîne de caractères.
     
 
 Unexpected EOF while parsing

@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly version: 0.3.0a
+Friendly version: 0.3
 Python version: 3.8.4
 
 
@@ -4646,7 +4646,6 @@ beyond the location indicated by ^.
 You are using the continuation character `\` outside of a string,
 and it is followed by some other character(s).
 I am guessing that you forgot to enclose some content in a string.
-
 
 ---
 

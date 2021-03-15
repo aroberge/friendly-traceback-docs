@@ -18,7 +18,7 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly version: 0.3.0a
+Friendly version: 0.3
 Python version: 3.10.0a6
 
 
@@ -3858,7 +3858,6 @@ Content passed continuation line character
     You are using the continuation character `\` outside of a string,
     and it is followed by some other character(s).
     I am guessing that you forgot to enclose some content in a string.
-    
     
 
 Unexpected EOF while parsing
