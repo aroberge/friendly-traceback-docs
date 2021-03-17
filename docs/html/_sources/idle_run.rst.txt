@@ -37,3 +37,13 @@ completed, I entered more code, making a syntax error.
 .. danger::
 
     Do not name your own program ``friendly.py``.
+
+
+If you are using Python 3.10 and do not worry about syntax errors,
+you can add the following at the beginning of your
+module and run it as is::
+
+    from friendly.idle import *
+    install()
+
+    # rest of your code

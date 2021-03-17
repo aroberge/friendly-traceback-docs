@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly tracebacks - en Français &mdash; Friendly 0.3.1 documentation</title>
+  <title>Friendly tracebacks - en Français &mdash; Friendly 0.3.3 documentation</title>
   
 
   
@@ -183,6 +183,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#attributeerror">AttributeError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#attribute-from-other-module">Attribute from other module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtin-function">Builtin function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtin-module-with-no-file">Builtin module with no file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Generic</a></li>
@@ -408,6 +409,33 @@ Exception levée à la ligne 9 du fichier TESTS:\runtime\test_arithmetic_error.p
 </div>
 <div class="section" id="attributeerror">
 <h2>AttributeError<a class="headerlink" href="#attributeerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="attribute-from-other-module">
+<h3>Attribute from other module<a class="headerlink" href="#attribute-from-other-module" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 258, in test_Attribute_from_other_module
+    keyword.pi
+AttributeError: module &#39;keyword&#39; has no attribute &#39;pi&#39;
+
+    Vouliez-vous dire `math` ?
+
+Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+    `object.x`
+et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+
+Peut-être vouliez-vous utiliser l’attribut `pi` du
+module `math` au lieu du module `keyword`.
+
+Exception levée à la ligne 258 du fichier TESTS:\runtime\test_attribute_error.py.
+
+   256:
+   257:     try:
+--&gt;258:         keyword.pi
+   259:     except Exception as e:
+
+        keyword: &lt;module keyword&gt; from PYTHON_LIB:\keyword.py
+</pre></div>
+</div>
+</div>
 <div class="section" id="builtin-function">
 <h3>Builtin function<a class="headerlink" href="#builtin-function" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -776,7 +804,7 @@ Exception levée à la ligne 6 du fichier TESTS:\runtime\test_file_not_found_err
     import circular_b
   File &quot;TESTS:\circular_b.py&quot;, line 2, in &lt;module&gt;
     from circular_a import a
-ImportError: cannot import name &#39;a&#39; from partially initialized module &#39;circular_a&#39; (most likely due to a circular import) (C:\Users\andre\github\friendly-traceback\tests\circular_a.py)
+ImportError: cannot import name &#39;a&#39; from partially initialized module &#39;circular_a&#39; (most likely due to a circular import) (C:\Users\andre\github\friendly\tests\circular_a.py)
 
 L&#39;exception `ImportError` indique qu’un certain objet n’a pas pu
 être importé à partir d’un module ou d’un paquet. Très souvent, c’est

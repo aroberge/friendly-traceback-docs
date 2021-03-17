@@ -1641,6 +1641,66 @@ def: positional argument follows keyword argument
     Selon Python, vous avez utilisé des arguments positionnels après des arguments nommés.
     
 
+def: ``*arg`` before /
+----------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_star_arg_before_slash.py", line 1
+        def test(a, *arg, /):
+                          ^
+    SyntaxError: invalid syntax
+    
+        `*arg` doit apparaître après `/` dans une définition de fonction.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_star_arg_before_slash.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test(a, *arg, /):
+                            ^
+
+    `/` indique que les arguments précédents dans une définition de fonction
+    sont des arguments positionnels.
+    `*arg` doit apparaître après `/` dans une définition de fonction.
+    
+
+def: ``*`` used twice
+---------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 42, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_star_used_only_once.py", line 1
+        def test(a, *arg, *, b=1):
+                          ^
+    SyntaxError: invalid syntax
+    
+        Vous ne pouvez utiliser `*` qu’une seule fois dans une définition de fonction.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_star_used_only_once.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test(a, *arg, *, b=1):
+                            ^
+
+    Vous ne pouvez utiliser `*` qu’une seule fois dans une définition de fonction.
+    Ce symbole doit soit être utilisé par lui-même, `..., *, ...`,
+    ou soit sous la forme `..., *args ...`.
+    
+
 Single string used as arg in function def
 -----------------------------------------
 

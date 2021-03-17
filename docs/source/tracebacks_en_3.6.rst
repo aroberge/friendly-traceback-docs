@@ -56,6 +56,37 @@ AttributeError
 --------------
 
 
+Attribute from other module
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_attribute_error.py", line 258, in test_Attribute_from_other_module
+        keyword.pi
+    AttributeError: module 'keyword' has no attribute 'pi'
+    
+        Did you mean `math`?
+        
+    An `AttributeError` occurs when the code contains something like
+        `object.x`
+    and `x` is not a method or attribute (variable) belonging to `object`.
+    
+    Perhaps you meant to use the attribute `pi` of 
+    module `math` instead of module `keyword`.
+    
+    Exception raised on line 258 of file TESTS:\runtime\test_attribute_error.py.
+    
+       256: 
+       257:     try:
+    -->258:         keyword.pi
+       259:     except Exception as e:
+
+            keyword: <module keyword> from PYTHON_LIB:\keyword.py
+        
+
+
 Builtin function
 ~~~~~~~~~~~~~~~~
 

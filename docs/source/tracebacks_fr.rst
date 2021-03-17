@@ -55,6 +55,37 @@ AttributeError
 --------------
 
 
+Attribute from other module
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_attribute_error.py", line 258, in test_Attribute_from_other_module
+        keyword.pi
+    AttributeError: module 'keyword' has no attribute 'pi'
+    
+        Vouliez-vous dire `math` ?
+        
+    Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+        `object.x`
+    et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+    
+    Peut-être vouliez-vous utiliser l’attribut `pi` du 
+    module `math` au lieu du module `keyword`.
+    
+    Exception levée à la ligne 258 du fichier TESTS:\runtime\test_attribute_error.py.
+    
+       256: 
+       257:     try:
+    -->258:         keyword.pi
+       259:     except Exception as e:
+
+            keyword: <module keyword> from PYTHON_LIB:\keyword.py
+        
+
+
 Builtin function
 ~~~~~~~~~~~~~~~~
 
@@ -481,7 +512,7 @@ Circular import
         import circular_b
       File "TESTS:\circular_b.py", line 2, in <module>
         from circular_a import a
-    ImportError: cannot import name 'a' from partially initialized module 'circular_a' (most likely due to a circular import) (C:\Users\andre\github\friendly-traceback\tests\circular_a.py)
+    ImportError: cannot import name 'a' from partially initialized module 'circular_a' (most likely due to a circular import) (C:\Users\andre\github\friendly\tests\circular_a.py)
     
     L'exception `ImportError` indique qu’un certain objet n’a pas pu
     être importé à partir d’un module ou d’un paquet. Très souvent, c’est

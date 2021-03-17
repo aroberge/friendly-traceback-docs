@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly 0.3.1 documentation</title>
+  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly 0.3.3 documentation</title>
   
 
   
@@ -211,6 +211,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#def-non-default-argument-follows-default-argument">def: non-default argument follows default argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#single-number-used-as-arg-in-function-def">Single number used as arg in function def</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-positional-argument-follows-keyword-argument">def: positional argument follows keyword argument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-arg-before">def: <code class="docutils literal notranslate"><span class="pre">*arg</span></code> before /</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-used-twice">def: <code class="docutils literal notranslate"><span class="pre">*</span></code> used twice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#single-string-used-as-arg-in-function-def">Single string used as arg in function def</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-tuple-as-function-argument">def: tuple as function argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-tuple-as-function-argument-2">def: tuple as function argument - 2</a></li>
@@ -1855,6 +1857,60 @@ or a combination of the two
 
 but with the keyword arguments appearing after all the positional ones.
 According to Python, you used positional arguments after keyword ones.
+</pre></div>
+</div>
+</div>
+<div class="section" id="def-arg-before">
+<h2>def: <code class="docutils literal notranslate"><span class="pre">*arg</span></code> before /<a class="headerlink" href="#def-arg-before" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_star_arg_before_slash.py&quot;, line 1
+    def test(a, *arg, /):
+                      ^
+SyntaxError: invalid syntax
+
+    `*arg` must appear after `/` in a function definition.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\def_star_arg_before_slash.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: def test(a, *arg, /):
+                        ^
+
+`/` indicates that the previous arguments in a function definition
+are positional arguments.
+`*arg` must appear after `/` in a function definition.
+</pre></div>
+</div>
+</div>
+<div class="section" id="def-used-twice">
+<h2>def: <code class="docutils literal notranslate"><span class="pre">*</span></code> used twice<a class="headerlink" href="#def-used-twice" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 42, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_star_used_only_once.py&quot;, line 1
+    def test(a, *arg, *, b=1):
+                      ^
+SyntaxError: invalid syntax
+
+    You can only use `*` once in a function definition.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\def_star_used_only_once.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: def test(a, *arg, *, b=1):
+                        ^
+
+You can only use `*` once in a function definition.
+It must either be used by itself, `..., *, ...`,
+or in the form `..., *args ...`, but not both.
 </pre></div>
 </div>
 </div>
