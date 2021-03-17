@@ -582,9 +582,8 @@
                 <span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
 
             <span class="n">prefix</span><span class="p">,</span> <span class="n">suffix</span> <span class="o">=</span> <span class="n">markdown_items</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">documentation</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">prefix</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">):</span>
-                    <span class="n">prefix</span> <span class="o">=</span> <span class="s2">&quot;##&quot;</span> <span class="o">+</span> <span class="n">prefix</span>
+            <span class="k">if</span> <span class="n">documentation</span> <span class="ow">and</span> <span class="n">prefix</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">):</span>
+                <span class="n">prefix</span> <span class="o">=</span> <span class="s2">&quot;##&quot;</span> <span class="o">+</span> <span class="n">prefix</span>
             <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="n">content</span> <span class="o">+</span> <span class="n">suffix</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]:</span>
