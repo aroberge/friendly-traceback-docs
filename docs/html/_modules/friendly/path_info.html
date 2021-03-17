@@ -304,14 +304,12 @@
     <span class="n">EXCLUDED_FILE_PATH</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">full_path</span><span class="p">)</span>
 
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inside path_info:&quot;</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
-
 <span class="k">class</span> <span class="nc">PathUtil</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">python</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
         <span class="n">this_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">friendly_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">this_dir</span><span class="p">,</span> <span class="s2">&quot;..&quot;</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">tests</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tests</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="n">tests</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">friendly_path</span><span class="p">,</span> <span class="s2">&quot;tests&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">tests</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">tests</span> <span class="o">=</span> <span class="n">tests</span>
