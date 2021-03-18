@@ -588,8 +588,10 @@
 
     <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]:</span>
         <span class="k">return</span> <span class="n">no_result</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">include</span> <span class="o">==</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="n">include</span> <span class="o">==</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
     <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 
@@ -600,13 +602,14 @@
     <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
     <span class="k">if</span> <span class="n">include</span> <span class="o">==</span> <span class="s2">&quot;why&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;I have no suggestion to offer.&quot;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">include</span> <span class="o">==</span> <span class="s2">&quot;hint&quot;</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="n">include</span> <span class="o">==</span> <span class="s2">&quot;hint&quot;</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;cause&quot;</span><span class="p">]:</span>
             <span class="k">return</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;I have no suggestion to offer; try `why()`.&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;I have no suggestion to offer.&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Internal error: include = </span><span class="si">{</span><span class="n">include</span><span class="si">}</span><span class="s2"> in formatters.no_result()&quot;</span></div>
+
+        <span class="k">return</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;I have no suggestion to offer.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Internal error: include = </span><span class="si">{</span><span class="n">include</span><span class="si">}</span><span class="s2"> in formatters.no_result()&quot;</span></div>
 
 
 <span class="n">items_groups</span> <span class="o">=</span> <span class="p">{</span>

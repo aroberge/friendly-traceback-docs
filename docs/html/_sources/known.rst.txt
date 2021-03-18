@@ -16,13 +16,10 @@ By "generic information" we mean the information provided using
 
 Some exceptions will never be seen by users of Friendly-traceback.
 
-For exemple, ``SystemExit`` and ``KeyboardInterrupt`` are never
+For example, ``SystemExit`` and ``KeyboardInterrupt`` are never
 intercepted by Friendly-traceback. Furthermore, exceptions such as
-``GeneratorExit``, ``StopIteration``, ``FloatingPointError``, and
+``GeneratorExit``, ``FloatingPointError``, and
 ``StopAsyncIteration``, would likely never be seen.
-
-In the case of ``StopIteration``, see
-`PEP 479 <https://www.python.org/dev/peps/pep-0479/>`_.
 
 ``FloatingPointError`` is actually
 `not used by Python <https://docs.python.org/3.7/library/exceptions.html#FloatingPointError>`_.
@@ -30,7 +27,7 @@ In the case of ``StopIteration``, see
 ``BaseException``, ``Exception``, and ``ArithmeticError`` are base classes which
 are also not normally seen: some derived classes are normally used instead.
 
-Information compiled using Friendly-traceback version: 0.3.3,
+Information compiled using Friendly version: 0.3.3,
 Python version: 3.8.4
 
 

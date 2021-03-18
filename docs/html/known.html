@@ -344,17 +344,15 @@ Friendly-traceback about built-in exceptions.
 By “generic information” we mean the information provided using
 <code class="docutils literal notranslate"><span class="pre">what()</span></code> in a friendly console.</p>
 <p>Some exceptions will never be seen by users of Friendly-traceback.</p>
-<p>For exemple, <code class="docutils literal notranslate"><span class="pre">SystemExit</span></code> and <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code> are never
+<p>For example, <code class="docutils literal notranslate"><span class="pre">SystemExit</span></code> and <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code> are never
 intercepted by Friendly-traceback. Furthermore, exceptions such as
-<code class="docutils literal notranslate"><span class="pre">GeneratorExit</span></code>, <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>, <code class="docutils literal notranslate"><span class="pre">FloatingPointError</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">GeneratorExit</span></code>, <code class="docutils literal notranslate"><span class="pre">FloatingPointError</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">StopAsyncIteration</span></code>, would likely never be seen.</p>
-<p>In the case of <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>, see
-<a class="reference external" href="https://www.python.org/dev/peps/pep-0479/">PEP 479</a>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">FloatingPointError</span></code> is actually
 <a class="reference external" href="https://docs.python.org/3.7/library/exceptions.html#FloatingPointError">not used by Python</a>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">BaseException</span></code>, <code class="docutils literal notranslate"><span class="pre">Exception</span></code>, and <code class="docutils literal notranslate"><span class="pre">ArithmeticError</span></code> are base classes which
 are also not normally seen: some derived classes are normally used instead.</p>
-<p>Information compiled using Friendly-traceback version: 0.3.3,
+<p>Information compiled using Friendly version: 0.3.3,
 Python version: 3.8.4</p>
 <div class="section" id="exceptions">
 <h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
