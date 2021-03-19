@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly 0.3.4 documentation</title>
+  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly 0.3.8 documentation</title>
   
 
   
@@ -195,6 +195,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#copy-paste-from-interpreter">Copy/paste from interpreter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#named-arguments-must-follow-bare">Named arguments must follow bare *</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-misused-as-code-block">def: misused as code block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-dict-as-argument">def: dict as argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-keyword-arg-only-once-in-function-definition">def: Keyword arg only once in function definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#non-identifier-as-a-function-name">Non-identifier as a function name</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-a-string-as-a-function-name">Using a string as a function name</a></li>
@@ -203,6 +204,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#def-keyword-cannot-be-argument-in-def-3">def: keyword cannot be argument in def - 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-keyword-cannot-be-argument-in-def-4">def: keyword cannot be argument in def - 4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-python-keyword-as-function-name">def: Python keyword as function name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-list-as-argument-1">def: list as argument - 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-list-as-argument-2">def: list as argument - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-missing-comma-between-function-args">def: missing comma between function args</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-missing-parentheses">def: missing parentheses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-missing-function-name">def: missing function name</a></li>
@@ -210,6 +213,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#def-non-default-argument-follows-default-argument">def: non-default argument follows default argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#single-number-used-as-arg-in-function-def">Single number used as arg in function def</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-positional-argument-follows-keyword-argument">def: positional argument follows keyword argument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-set-as-argument">def: set as argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-arg-before">def: <code class="docutils literal notranslate"><span class="pre">*arg</span></code> before /</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-used-twice">def: <code class="docutils literal notranslate"><span class="pre">*</span></code> used twice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#single-string-used-as-arg-in-function-def">Single string used as arg in function def</a></li>
@@ -1421,6 +1425,32 @@ The correct syntax is:
 </pre></div>
 </div>
 </div>
+<div class="section" id="def-dict-as-argument">
+<h2>def: dict as argument<a class="headerlink" href="#def-dict-as-argument" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_dict_as_arg.py&quot;, line 1
+    def test({&#39;a&#39;: 1}, y):  # dict as first argument
+             ^
+SyntaxError: invalid syntax
+
+    You cannot have any explicit dict or set as function arguments.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\def_dict_as_arg.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: def test({&#39;a&#39;: 1}, y):  # dict as first argument
+               ^
+
+You cannot have any explicit dict or set as function arguments.
+You can only use identifiers (variable names) as function arguments.
+</pre></div>
+</div>
+</div>
 <div class="section" id="def-keyword-arg-only-once-in-function-definition">
 <h2>def: Keyword arg only once in function definition<a class="headerlink" href="#def-keyword-arg-only-once-in-function-definition" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -1655,6 +1685,58 @@ You tried to use the Python keyword `pass` as a function name.
 </pre></div>
 </div>
 </div>
+<div class="section" id="def-list-as-argument-1">
+<h2>def: list as argument - 1<a class="headerlink" href="#def-list-as-argument-1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_list_as_arg_1.py&quot;, line 1
+    def test([x], y):  # list as first argument
+             ^
+SyntaxError: invalid syntax
+
+    You cannot have explicit lists as function arguments.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\def_list_as_arg_1.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: def test([x], y):  # list as first argument
+               ^
+
+You cannot have explicit lists as function arguments.
+You can only use identifiers (variable names) as function arguments.
+</pre></div>
+</div>
+</div>
+<div class="section" id="def-list-as-argument-2">
+<h2>def: list as argument - 2<a class="headerlink" href="#def-list-as-argument-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_list_as_arg_2.py&quot;, line 1
+    def test(x, [y]):  # list as second argument, after comma
+                ^
+SyntaxError: invalid syntax
+
+    You cannot have explicit lists as function arguments.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\def_list_as_arg_2.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: def test(x, [y]):  # list as second argument, after comma
+                  ^
+
+You cannot have explicit lists as function arguments.
+You can only use identifiers (variable names) as function arguments.
+</pre></div>
+</div>
+</div>
 <div class="section" id="def-missing-comma-between-function-args">
 <h2>def: missing comma between function args<a class="headerlink" href="#def-missing-comma-between-function-args" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -1886,6 +1968,32 @@ or a combination of the two
 
 but with the keyword arguments appearing after all the positional ones.
 According to Python, you used positional arguments after keyword ones.
+</pre></div>
+</div>
+</div>
+<div class="section" id="def-set-as-argument">
+<h2>def: set as argument<a class="headerlink" href="#def-set-as-argument" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_set_as_arg.py&quot;, line 1
+    def test(y, {&#39;a&#39;, &#39;b&#39;}):  # set as second argument, after comma
+                ^
+SyntaxError: invalid syntax
+
+    You cannot have any explicit dict or set as function arguments.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\def_set_as_arg.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: def test(y, {&#39;a&#39;, &#39;b&#39;}):  # set as second argument, after comma
+                  ^
+
+You cannot have any explicit dict or set as function arguments.
+You can only use identifiers (variable names) as function arguments.
 </pre></div>
 </div>
 </div>

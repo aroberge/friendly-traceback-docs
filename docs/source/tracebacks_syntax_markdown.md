@@ -1395,6 +1395,43 @@ The correct syntax is:
 
 ---
 
+## def: dict as argument
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+    __import__(name)
+  File "TESTS:\syntax\def_dict_as_arg.py", line 1
+    def test({'a': 1}, y):  # dict as first argument
+             ^
+SyntaxError: invalid syntax
+
+```
+
+You cannot have any explicit dict or set as function arguments.
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\def_dict_as_arg.py'
+beyond the location indicated by ^.
+
+
+```python
+    -->1: def test({'a': 1}, y):  # dict as first argument
+                   ^
+
+```
+
+You cannot have any explicit dict or set as function arguments.
+You can only use identifiers (variable names) as function arguments.
+
+---
+
 ## def: Keyword arg only once in function definition
 
 
@@ -1707,6 +1744,80 @@ You tried to use the Python keyword `pass` as a function name.
 
 ---
 
+## def: list as argument - 1
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+    __import__(name)
+  File "TESTS:\syntax\def_list_as_arg_1.py", line 1
+    def test([x], y):  # list as first argument
+             ^
+SyntaxError: invalid syntax
+
+```
+
+You cannot have explicit lists as function arguments.
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\def_list_as_arg_1.py'
+beyond the location indicated by ^.
+
+
+```python
+    -->1: def test([x], y):  # list as first argument
+                   ^
+
+```
+
+You cannot have explicit lists as function arguments.
+You can only use identifiers (variable names) as function arguments.
+
+---
+
+## def: list as argument - 2
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+    __import__(name)
+  File "TESTS:\syntax\def_list_as_arg_2.py", line 1
+    def test(x, [y]):  # list as second argument, after comma
+                ^
+SyntaxError: invalid syntax
+
+```
+
+You cannot have explicit lists as function arguments.
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\def_list_as_arg_2.py'
+beyond the location indicated by ^.
+
+
+```python
+    -->1: def test(x, [y]):  # list as second argument, after comma
+                      ^
+
+```
+
+You cannot have explicit lists as function arguments.
+You can only use identifiers (variable names) as function arguments.
+
+---
+
 ## def: missing comma between function args
 
 
@@ -2007,6 +2118,43 @@ or a combination of the two
 
 but with the keyword arguments appearing after all the positional ones.
 According to Python, you used positional arguments after keyword ones.
+
+---
+
+## def: set as argument
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+    __import__(name)
+  File "TESTS:\syntax\def_set_as_arg.py", line 1
+    def test(y, {'a', 'b'}):  # set as second argument, after comma
+                ^
+SyntaxError: invalid syntax
+
+```
+
+You cannot have any explicit dict or set as function arguments.
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\def_set_as_arg.py'
+beyond the location indicated by ^.
+
+
+```python
+    -->1: def test(y, {'a', 'b'}):  # set as second argument, after comma
+                      ^
+
+```
+
+You cannot have any explicit dict or set as function arguments.
+You can only use identifiers (variable names) as function arguments.
 
 ---
 

@@ -1157,6 +1157,35 @@ def: misused as code block
         def nom ( ... ):
     
 
+def: dict as argument
+---------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_dict_as_arg.py", line 1
+        def test({'a': 1}, y):  # dict as first argument
+                 ^
+    SyntaxError: invalid syntax
+    
+        Vous ne pouvez pas avoir des `dict` ou des `set` explicite comme arguments de fonction.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_dict_as_arg.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test({'a': 1}, y):  # dict as first argument
+                   ^
+
+    Vous ne pouvez pas avoir des `dict` ou des `set` explicite comme arguments de fonction.
+    Vous ne pouvez utiliser que des identifiants (noms de variables) comme arguments de fonction.
+    
+
 def: Keyword arg only once in function definition
 -------------------------------------------------
 
@@ -1417,6 +1446,64 @@ def: Python keyword as function name
     
     
 
+def: list as argument - 1
+-------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_list_as_arg_1.py", line 1
+        def test([x], y):  # list as first argument
+                 ^
+    SyntaxError: invalid syntax
+    
+        Vous ne pouvez pas avoir de listes explicites comme arguments de fonction.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_list_as_arg_1.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test([x], y):  # list as first argument
+                   ^
+
+    Vous ne pouvez pas avoir de listes explicites comme arguments de fonction.
+    Vous ne pouvez utiliser que des identifiants (noms de variables) comme arguments de fonction.
+    
+
+def: list as argument - 2
+-------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_list_as_arg_2.py", line 1
+        def test(x, [y]):  # list as second argument, after comma
+                    ^
+    SyntaxError: invalid syntax
+    
+        Vous ne pouvez pas avoir de listes explicites comme arguments de fonction.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_list_as_arg_2.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test(x, [y]):  # list as second argument, after comma
+                      ^
+
+    Vous ne pouvez pas avoir de listes explicites comme arguments de fonction.
+    Vous ne pouvez utiliser que des identifiants (noms de variables) comme arguments de fonction.
+    
+
 def: missing comma between function args
 ----------------------------------------
 
@@ -1669,6 +1756,35 @@ def: positional argument follows keyword argument
     
     mais avec les arguments nommés apparaissant après tous les arguments positionnels.
     Selon Python, vous avez utilisé des arguments positionnels après des arguments nommés.
+    
+
+def: set as argument
+--------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_set_as_arg.py", line 1
+        def test(y, {'a', 'b'}):  # set as second argument, after comma
+                    ^
+    SyntaxError: invalid syntax
+    
+        Vous ne pouvez pas avoir des `dict` ou des `set` explicite comme arguments de fonction.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_set_as_arg.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test(y, {'a', 'b'}):  # set as second argument, after comma
+                      ^
+
+    Vous ne pouvez pas avoir des `dict` ou des `set` explicite comme arguments de fonction.
+    Vous ne pouvez utiliser que des identifiants (noms de variables) comme arguments de fonction.
     
 
 def: ``*arg`` before /
