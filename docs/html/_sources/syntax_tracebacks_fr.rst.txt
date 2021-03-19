@@ -807,6 +807,36 @@ Walrus/Named assignment depending on Python version
     
     
 
+Backslash instead of slash
+--------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\backslash_instead_of_slash.py", line 1
+        a = 3 \ 4.0
+                   ^
+    SyntaxError: unexpected character after line continuation character
+    
+        Voulez-vous diviser par 4.0 ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\backslash_instead_of_slash.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: a = 3 \ 4.0
+                     ^
+
+    Vous utilisez le caractère de continuation `\` en dehors d'une chaîne de caractères,
+    et il est suivi par au moins un autre caractère.
+    Je suppose que vous vouliez diviser par le nombre 4.0
+    et avez écrit \ au lieu de /.
+
 break outside loop
 ------------------
 

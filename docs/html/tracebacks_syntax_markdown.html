@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Syntax errors - markdown_docs format &mdash; Friendly 0.3.3 documentation</title>
+  <title>Syntax errors - markdown_docs format &mdash; Friendly 0.3.4 documentation</title>
   
 
   
@@ -197,6 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#assignment-to-keyword-none">Assignment to keyword (None)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#assign-to-math-operation">Assign to math operation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-named-assignment-depending-on-python-version">Walrus/Named assignment depending on Python version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#backslash-instead-of-slash">Backslash instead of slash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#break-outside-loop">break outside loop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cannot-use-star-operator">Cannot use star operator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cannot-use-double-star-operator">Cannot use double star operator</a></li>
@@ -1066,6 +1067,32 @@ beyond the location indicated by ^.</p>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">True</span></code> is a constant in Python; you cannot assign it a value.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="backslash-instead-of-slash">
+<h2>Backslash instead of slash<a class="headerlink" href="#backslash-instead-of-slash" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">41</span>, in <span class="n">create_tracebacks</span>
+    <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\backslash_instead_of_slash.py&quot;</span>, line <span class="m">1</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span> \ <span class="mf">4.0</span>
+               <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">unexpected character after line continuation character</span>
+</pre></div>
+</div>
+<p>Did you mean to divide by 4.0?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\backslash_instead_of_slash.py’
+beyond the location indicated by ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span> \ <span class="mf">4.0</span>
+                     <span class="o">^</span>
+</pre></div>
+</div>
+<p>You are using the continuation character <code class="docutils literal notranslate"><span class="pre">\</span></code> outside of a string,
+and it is followed by some other character(s).
+I am guessing that you wanted to divide by the number 4.0
+and wrote \ instead of /.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="break-outside-loop">

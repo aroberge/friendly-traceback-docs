@@ -970,6 +970,45 @@ beyond the location indicated by ^.
 
 ---
 
+## Backslash instead of slash
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+    __import__(name)
+  File "TESTS:\syntax\backslash_instead_of_slash.py", line 1
+    a = 3 \ 4.0
+               ^
+SyntaxError: unexpected character after line continuation character
+
+```
+
+Did you mean to divide by 4.0?
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\backslash_instead_of_slash.py'
+beyond the location indicated by ^.
+
+
+```python
+    -->1: a = 3 \ 4.0
+                     ^
+
+```
+
+You are using the continuation character `\` outside of a string,
+and it is followed by some other character(s).
+I am guessing that you wanted to divide by the number 4.0 
+and wrote \ instead of /.
+
+---
+
 ## break outside loop
 
 
