@@ -1317,7 +1317,45 @@ The Python prompt, `>>>`, should not be included in your code.
 
 ---
 
-## Named arguments must follow bare *
+## def: positional arg after kwargs
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+    __import__(name)
+  File "TESTS:\syntax\def_arg_after_kwarg.py", line 1
+    def test(a, **kwargs, b):
+                          ^
+SyntaxError: invalid syntax
+
+```
+
+Positional arguments must come before keyword arguments.
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\def_arg_after_kwarg.py'
+beyond the location indicated by ^.
+
+
+```python
+    -->1: def test(a, **kwargs, b):
+                                ^
+
+```
+
+Positional arguments must come before keyword arguments.
+`b` is a positional argument that appears after one or more
+keyword arguments in your function definition.
+
+---
+
+## def: named arguments must follow bare *
 
 
 ```pytb
@@ -1467,6 +1505,44 @@ You have defined a function repeating the keyword argument
 
     aa
 twice; each keyword argument should appear only once in a function definition.
+
+---
+
+## def: semi-colon after colon
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+    __import__(name)
+  File "TESTS:\syntax\def_extra_semi_colon.py", line 1
+    def test():;
+               ^
+SyntaxError: invalid syntax
+
+```
+
+Did you write something by mistake after the colon?
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\def_extra_semi_colon.py'
+beyond the location indicated by ^.
+
+
+```python
+    -->1: def test():;
+                     ^
+
+```
+
+A function definition statement must end with a colon.
+A block of code must come after the colon.
+Removing `;`, might fix the problem.
 
 ---
 
@@ -1818,6 +1894,42 @@ You can only use identifiers (variable names) as function arguments.
 
 ---
 
+## def: missing colon
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+    __import__(name)
+  File "TESTS:\syntax\def_missing_colon.py", line 1
+    def test()
+              ^
+SyntaxError: invalid syntax
+
+```
+
+Did you forget to write a colon?
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\def_missing_colon.py'
+beyond the location indicated by ^.
+
+
+```python
+    -->1: def test()
+                    ^
+
+```
+
+A function definition statement must end with a colon.
+
+---
+
 ## def: missing comma between function args
 
 
@@ -2118,6 +2230,43 @@ or a combination of the two
 
 but with the keyword arguments appearing after all the positional ones.
 According to Python, you used positional arguments after keyword ones.
+
+---
+
+## def: semi-colon instead of colon
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+    __import__(name)
+  File "TESTS:\syntax\def_semi_colon_instead_of_colon.py", line 1
+    def test();
+              ^
+SyntaxError: invalid syntax
+
+```
+
+Did you forget to write a colon?
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\def_semi_colon_instead_of_colon.py'
+beyond the location indicated by ^.
+
+
+```python
+    -->1: def test();
+                    ^
+
+```
+
+A function definition statement must end with a colon.
+You wrote `;` instead of a colon.
 
 ---
 
@@ -2609,7 +2758,7 @@ beyond the location indicated by ^.
 
 ```
 
-You starting writing a string with a single or double quote
+You started writing a string with a single or double quote
 but never ended the string with another quote on that line.
 
 ---
@@ -5215,7 +5364,7 @@ beyond the location indicated by ^.
 
 ```
 
-You starting writing a string with a single or double quote
+You started writing a string with a single or double quote
 but never ended the string with another quote on that line.
 Perhaps you meant to write the backslash character, `\`
 as the last character in the string and forgot that you

@@ -1093,8 +1093,38 @@ Copy/paste from interpreter
     L’invite Python, `>>>`, ne doit pas être incluse dans votre code.
     
 
-Named arguments must follow bare *
-----------------------------------
+def: positional arg after kwargs
+--------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_arg_after_kwarg.py", line 1
+        def test(a, **kwargs, b):
+                              ^
+    SyntaxError: invalid syntax
+    
+        Les arguments positionnels doivent être avant les arguments nommés.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_arg_after_kwarg.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test(a, **kwargs, b):
+                                ^
+
+    Les arguments positionnels doivent être avant les arguments nommés.
+    `b` est un argument positionnel qui apparaît après un ou plusieurs
+    arguments nommés dans votre définition de fonction.
+    
+
+def: named arguments must follow bare *
+---------------------------------------
 
 .. code-block:: none
 
@@ -1216,6 +1246,36 @@ def: Keyword arg only once in function definition
     
         aa
     deux fois; chaque argument nommé ne doit apparaître qu'une seule fois dans une définition de fonction.
+    
+
+def: semi-colon after colon
+---------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_extra_semi_colon.py", line 1
+        def test():;
+                   ^
+    SyntaxError: invalid syntax
+    
+        Avez-vous écrit quelque chose par erreur après les deux points `:` ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_extra_semi_colon.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test():;
+                     ^
+
+    Une définition de fonction doit se terminer par deux point, `:`.
+    Un bloc de code doit venir après les deux points.
+    Si vous supprimez `;`, cela pourrait possiblement résoudre le problème.
     
 
 Non-identifier as a function name
@@ -1504,6 +1564,34 @@ def: list as argument - 2
     Vous ne pouvez utiliser que des identifiants (noms de variables) comme arguments de fonction.
     
 
+def: missing colon
+------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_missing_colon.py", line 1
+        def test()
+                  ^
+    SyntaxError: invalid syntax
+    
+        Avez-vous oublié d’ajouter les deux points `:` ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_missing_colon.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test()
+                    ^
+
+    Une définition de fonction doit se terminer par deux point, `:`.
+    
+
 def: missing comma between function args
 ----------------------------------------
 
@@ -1756,6 +1844,35 @@ def: positional argument follows keyword argument
     
     mais avec les arguments nommés apparaissant après tous les arguments positionnels.
     Selon Python, vous avez utilisé des arguments positionnels après des arguments nommés.
+    
+
+def: semi-colon instead of colon
+--------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_semi_colon_instead_of_colon.py", line 1
+        def test();
+                  ^
+    SyntaxError: invalid syntax
+    
+        Avez-vous oublié d’ajouter les deux points `:` ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_semi_colon_instead_of_colon.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test();
+                    ^
+
+    Une définition de fonction doit se terminer par deux point, `:`.
+    Tu as écrit `;` au lieu de deux points, `:`.
     
 
 def: set as argument

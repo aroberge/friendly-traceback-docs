@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly 0.3.8 documentation</title>
+  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly 0.3.12 documentation</title>
   
 
   
@@ -210,10 +210,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#comprehension-with-condition-with-else">Comprehension with condition (with else)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#continue-outside-loop">continue outside loop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#copy-paste-from-interpreter">Copy/paste from interpreter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#named-arguments-must-follow-bare">Named arguments must follow bare *</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-positional-arg-after-kwargs">def: positional arg after kwargs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-named-arguments-must-follow-bare">def: named arguments must follow bare *</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-misused-as-code-block">def: misused as code block</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-dict-as-argument">def: dict as argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-keyword-arg-only-once-in-function-definition">def: Keyword arg only once in function definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-semi-colon-after-colon">def: semi-colon after colon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#non-identifier-as-a-function-name">Non-identifier as a function name</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-a-string-as-a-function-name">Using a string as a function name</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-keyword-cannot-be-argument-in-def-1">def: keyword cannot be argument in def - 1</a></li>
@@ -223,6 +225,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#def-python-keyword-as-function-name">def: Python keyword as function name</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-list-as-argument-1">def: list as argument - 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-list-as-argument-2">def: list as argument - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-missing-colon">def: missing colon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-missing-comma-between-function-args">def: missing comma between function args</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-missing-parentheses">def: missing parentheses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-missing-function-name">def: missing function name</a></li>
@@ -230,6 +233,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#def-non-default-argument-follows-default-argument">def: non-default argument follows default argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#single-number-used-as-arg-in-function-def">Single number used as arg in function def</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-positional-argument-follows-keyword-argument">def: positional argument follows keyword argument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-semi-colon-instead-of-colon">def: semi-colon instead of colon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-set-as-argument">def: set as argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-arg-before">def: <code class="docutils literal notranslate"><span class="pre">*arg</span></code> before /</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-used-twice">def: <code class="docutils literal notranslate"><span class="pre">*</span></code> used twice</a></li>
@@ -1370,8 +1374,35 @@ L’invite Python, `&gt;&gt;&gt;`, ne doit pas être incluse dans votre code.
 </pre></div>
 </div>
 </div>
-<div class="section" id="named-arguments-must-follow-bare">
-<h2>Named arguments must follow bare *<a class="headerlink" href="#named-arguments-must-follow-bare" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="def-positional-arg-after-kwargs">
+<h2>def: positional arg after kwargs<a class="headerlink" href="#def-positional-arg-after-kwargs" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_arg_after_kwarg.py&quot;, line 1
+    def test(a, **kwargs, b):
+                          ^
+SyntaxError: invalid syntax
+
+    Les arguments positionnels doivent être avant les arguments nommés.
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\def_arg_after_kwarg.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par ^.
+
+--&gt;1: def test(a, **kwargs, b):
+                            ^
+
+Les arguments positionnels doivent être avant les arguments nommés.
+`b` est un argument positionnel qui apparaît après un ou plusieurs
+arguments nommés dans votre définition de fonction.
+</pre></div>
+</div>
+</div>
+<div class="section" id="def-named-arguments-must-follow-bare">
+<h2>def: named arguments must follow bare *<a class="headerlink" href="#def-named-arguments-must-follow-bare" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
     __import__(name)
@@ -1480,6 +1511,33 @@ Vous avez défini une fonction répétant l&#39;argument nommé
 
     aa
 deux fois; chaque argument nommé ne doit apparaître qu&#39;une seule fois dans une définition de fonction.
+</pre></div>
+</div>
+</div>
+<div class="section" id="def-semi-colon-after-colon">
+<h2>def: semi-colon after colon<a class="headerlink" href="#def-semi-colon-after-colon" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_extra_semi_colon.py&quot;, line 1
+    def test():;
+               ^
+SyntaxError: invalid syntax
+
+    Avez-vous écrit quelque chose par erreur après les deux points `:` ?
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\def_extra_semi_colon.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par ^.
+
+--&gt;1: def test():;
+                 ^
+
+Une définition de fonction doit se terminer par deux point, `:`.
+Un bloc de code doit venir après les deux points.
+Si vous supprimez `;`, cela pourrait possiblement résoudre le problème.
 </pre></div>
 </div>
 </div>
@@ -1741,6 +1799,31 @@ Vous ne pouvez utiliser que des identifiants (noms de variables) comme arguments
 </pre></div>
 </div>
 </div>
+<div class="section" id="def-missing-colon">
+<h2>def: missing colon<a class="headerlink" href="#def-missing-colon" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_missing_colon.py&quot;, line 1
+    def test()
+              ^
+SyntaxError: invalid syntax
+
+    Avez-vous oublié d’ajouter les deux points `:` ?
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\def_missing_colon.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par ^.
+
+--&gt;1: def test()
+                ^
+
+Une définition de fonction doit se terminer par deux point, `:`.
+</pre></div>
+</div>
+</div>
 <div class="section" id="def-missing-comma-between-function-args">
 <h2>def: missing comma between function args<a class="headerlink" href="#def-missing-comma-between-function-args" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -1971,6 +2054,32 @@ ou une combinaison des deux
 
 mais avec les arguments nommés apparaissant après tous les arguments positionnels.
 Selon Python, vous avez utilisé des arguments positionnels après des arguments nommés.
+</pre></div>
+</div>
+</div>
+<div class="section" id="def-semi-colon-instead-of-colon">
+<h2>def: semi-colon instead of colon<a class="headerlink" href="#def-semi-colon-instead-of-colon" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_semi_colon_instead_of_colon.py&quot;, line 1
+    def test();
+              ^
+SyntaxError: invalid syntax
+
+    Avez-vous oublié d’ajouter les deux points `:` ?
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\def_semi_colon_instead_of_colon.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par ^.
+
+--&gt;1: def test();
+                ^
+
+Une définition de fonction doit se terminer par deux point, `:`.
+Tu as écrit `;` au lieu de deux points, `:`.
 </pre></div>
 </div>
 </div>
