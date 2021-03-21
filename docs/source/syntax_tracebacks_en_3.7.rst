@@ -1272,8 +1272,132 @@ def: semi-colon after colon
     Removing `;`, might fix the problem.
     
 
-Non-identifier as a function name
----------------------------------
+def: unspecified keywords before /
+----------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_forward_slash_1.py", line 1
+        def test(a, **kwargs, /):
+                              ^
+    SyntaxError: invalid syntax
+    
+        Function definitions cannot include the symbol `/` in this Python version.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\def_forward_slash_1.py'
+    beyond the location indicated by ^.
+    
+    -->1: def test(a, **kwargs, /):
+                                ^
+
+    `/` indicates that the previous arguments in a function definition
+    are positional arguments.
+    This symbol can only be used with Python versions 3.8.0 or newer.
+    You are using Python version 3.7.8.
+    
+
+def: / before star
+------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_forward_slash_2.py", line 1
+        def test(a, *, b, /):
+                          ^
+    SyntaxError: invalid syntax
+    
+        Function definitions cannot include the symbol `/` in this Python version.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\def_forward_slash_2.py'
+    beyond the location indicated by ^.
+    
+    -->1: def test(a, *, b, /):
+                            ^
+
+    `/` indicates that the previous arguments in a function definition
+    are positional arguments.
+    This symbol can only be used with Python versions 3.8.0 or newer.
+    You are using Python version 3.7.8.
+    
+
+def: / before star arg
+----------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_forward_slash_3.py", line 1
+        def test(a, *arg, /):
+                          ^
+    SyntaxError: invalid syntax
+    
+        Function definitions cannot include the symbol `/` in this Python version.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\def_forward_slash_3.py'
+    beyond the location indicated by ^.
+    
+    -->1: def test(a, *arg, /):
+                            ^
+
+    `/` indicates that the previous arguments in a function definition
+    are positional arguments.
+    This symbol can only be used with Python versions 3.8.0 or newer.
+    You are using Python version 3.7.8.
+    
+
+def: / used twice
+-----------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_forward_slash_4.py", line 1
+        def test(a, /, b, /):
+                    ^
+    SyntaxError: invalid syntax
+    
+        Function definitions cannot include the symbol `/` in this Python version.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\def_forward_slash_4.py'
+    beyond the location indicated by ^.
+    
+    -->1: def test(a, /, b, /):
+                      ^
+
+    `/` indicates that the previous arguments in a function definition
+    are positional arguments.
+    This symbol can only be used with Python versions 3.8.0 or newer.
+    You are using Python version 3.7.8.
+    
+
+def: non-identifier as a function name
+--------------------------------------
 
 .. code-block:: none
 
@@ -1304,8 +1428,8 @@ Non-identifier as a function name
     and which contains only letters, digits or the underscore character.
     
 
-Using a string as a function name
----------------------------------
+def: using a string as a function name
+--------------------------------------
 
 .. code-block:: none
 

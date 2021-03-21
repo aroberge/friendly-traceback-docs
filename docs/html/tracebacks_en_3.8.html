@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.12 documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.16 documentation</title>
   
 
   
@@ -1241,7 +1241,7 @@ Exception raised on line 6 of file TESTS:\runtime\test_recursion_error.py.
 <div class="section" id="bad-type-for-unary-operator">
 <h3>Bad type for unary operator<a class="headerlink" href="#bad-type-for-unary-operator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 348, in test_Bad_type_for_unary_operator
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 349, in test_Bad_type_for_unary_operator
     a =+ &quot;def&quot;
 TypeError: bad operand type for unary +: &#39;str&#39;
 
@@ -1257,20 +1257,20 @@ This operation is not defined for this type of object.
 
 Perhaps you meant to write `+=` instead of `=+`
 
-Exception raised on line 348 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 349 of file TESTS:\runtime\test_type_error.py.
 
-   346:         # fmt: off
-   347:         a = &quot;abc&quot;
---&gt;348:         a =+ &quot;def&quot;
+   347:         # fmt: off
+   348:         a = &quot;abc&quot;
+--&gt;349:         a =+ &quot;def&quot;
                    ^^^^^^^
-   349:         # fmt: on
+   350:         # fmt: on
 </pre></div>
 </div>
 </div>
 <div class="section" id="can-only-concatenate">
 <h3>Can only concatenate<a class="headerlink" href="#can-only-concatenate" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 36, in test_Can_only_concatenate
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 37, in test_Can_only_concatenate
     result = a_tuple + a_list
 TypeError: can only concatenate tuple (not &quot;list&quot;) to tuple
 
@@ -1282,13 +1282,13 @@ or by trying to do an operation not allowed on a given type of object.
 You tried to concatenate (add) two different types of objects:
 a `tuple` and a `list`.
 
-Exception raised on line 36 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 37 of file TESTS:\runtime\test_type_error.py.
 
-   34:         a_tuple = (1, 2, 3)
-   35:         a_list = [1, 2, 3]
---&gt;36:         result = a_tuple + a_list
+   35:         a_tuple = (1, 2, 3)
+   36:         a_list = [1, 2, 3]
+--&gt;37:         result = a_tuple + a_list
                         ^^^^^^^^^^^^^^^^
-   37:     except Exception as e:
+   38:     except Exception as e:
 
         a_tuple: (1, 2, 3)
         a_list: [1, 2, 3]
@@ -1298,7 +1298,7 @@ Exception raised on line 36 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="cannot-convert-dictionary-update-sequence">
 <h3>Cannot convert dictionary update sequence<a class="headerlink" href="#cannot-convert-dictionary-update-sequence" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 742, in test_Cannot_convert_dictionary_update_sequence
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 743, in test_Cannot_convert_dictionary_update_sequence
     dd.update([1, 2, 3])
 TypeError: cannot convert dictionary update sequence element #0 to a sequence
 
@@ -1313,12 +1313,12 @@ or by trying to do an operation not allowed on a given type of object.
 Instead of writing `dd.update([1, 2, 3])`
 perhaps you should use the `dict.fromkeys()` method: `dd.update( dict.fromkeys([1, 2, 3]) )`.
 
-Exception raised on line 742 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 743 of file TESTS:\runtime\test_type_error.py.
 
-   740:     dd = {&quot;a&quot;: &quot;a&quot;}
-   741:     try:
---&gt;742:         dd.update([1, 2, 3])
-   743:     except Exception as e:
+   741:     dd = {&quot;a&quot;: &quot;a&quot;}
+   742:     try:
+--&gt;743:         dd.update([1, 2, 3])
+   744:     except Exception as e:
 
         dd: {&#39;a&#39;: &#39;a&#39;}
 </pre></div>
@@ -1327,7 +1327,7 @@ Exception raised on line 742 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="cannot-multiply-by-non-int">
 <h3>Cannot multiply by non int<a class="headerlink" href="#cannot-multiply-by-non-int" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 546, in test_Cannot_multiply_by_non_int
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 547, in test_Cannot_multiply_by_non_int
     &quot;a&quot; * &quot;2&quot;
 TypeError: can&#39;t multiply sequence by non-int of type &#39;str&#39;
 
@@ -1342,19 +1342,19 @@ You can only multiply sequences, such as list, tuples,
  strings, etc., by integers.
 Perhaps you forgot to convert `&quot;2&quot;` into an integer.
 
-Exception raised on line 546 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 547 of file TESTS:\runtime\test_type_error.py.
 
-   544:
-   545:     try:
---&gt;546:         &quot;a&quot; * &quot;2&quot;
-   547:     except Exception as e:
+   545:
+   546:     try:
+--&gt;547:         &quot;a&quot; * &quot;2&quot;
+   548:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="cannot-unpack-non-iterable-object">
 <h3>Cannot unpack non iterable object<a class="headerlink" href="#cannot-unpack-non-iterable-object" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 714, in test_Cannot_unpack_non_iterable_object
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 715, in test_Cannot_unpack_non_iterable_object
     a, b = 42.0
 TypeError: cannot unpack non-iterable float object
 
@@ -1369,19 +1369,19 @@ An iterable is an object capable of returning its members one at a time.
 Python containers (`list, tuple, dict`, etc.) are iterables,
 but not objects of type `float`.
 
-Exception raised on line 714 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 715 of file TESTS:\runtime\test_type_error.py.
 
-   712: def test_Cannot_unpack_non_iterable_object():
-   713:     try:
---&gt;714:         a, b = 42.0
-   715:     except Exception as e:
+   713: def test_Cannot_unpack_non_iterable_object():
+   714:     try:
+--&gt;715:         a, b = 42.0
+   716:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="comparison-not-supported">
 <h3>Comparison not supported<a class="headerlink" href="#comparison-not-supported" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 298, in test_Comparison_not_supported
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 299, in test_Comparison_not_supported
     b &lt; a
 TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
 
@@ -1394,12 +1394,12 @@ You tried to do an order comparison (&lt;)
 between two incompatible types of objects:
 an integer (`int`) and a string (`str`).
 
-Exception raised on line 298 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 299 of file TESTS:\runtime\test_type_error.py.
 
-   296:         a = &quot;a&quot;
-   297:         b = 42
---&gt;298:         b &lt; a
-   299:     except Exception as e:
+   297:         a = &quot;a&quot;
+   298:         b = 42
+--&gt;299:         b &lt; a
+   300:     except Exception as e:
 
         b: 42
         a: &#39;a&#39;
@@ -1409,7 +1409,7 @@ Exception raised on line 298 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="derive-from-baseexception">
 <h3>Derive from BaseException<a class="headerlink" href="#derive-from-baseexception" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 489, in test_Derive_from_BaseException
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 490, in test_Derive_from_BaseException
     raise &quot;exception&quot;  # noqa
 TypeError: exceptions must derive from BaseException
 
@@ -1420,19 +1420,19 @@ or by trying to do an operation not allowed on a given type of object.
 
 In Python 3, exceptions must be derived from BaseException.
 
-Exception raised on line 489 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 490 of file TESTS:\runtime\test_type_error.py.
 
-   487: def test_Derive_from_BaseException():
-   488:     try:
---&gt;489:         raise &quot;exception&quot;  # noqa
-   490:     except Exception as e:
+   488: def test_Derive_from_BaseException():
+   489:     try:
+--&gt;490:         raise &quot;exception&quot;  # noqa
+   491:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="indices-must-be-integers-or-slices">
 <h3>Indices must be integers or slices<a class="headerlink" href="#indices-must-be-integers-or-slices" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 628, in test_Indices_must_be_integers_or_slices
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 629, in test_Indices_must_be_integers_or_slices
     [1, 2, 3][&quot;2&quot;]
 TypeError: list indices must be integers or slices, not str
 
@@ -1451,19 +1451,19 @@ and you have used a string (`str`) instead.
 
 Perhaps you forgot to convert `&quot;2&quot;` into an integer.
 
-Exception raised on line 628 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 629 of file TESTS:\runtime\test_type_error.py.
 
-   626:
-   627:     try:
---&gt;628:         [1, 2, 3][&quot;2&quot;]
-   629:     except Exception as e:
+   627:
+   628:     try:
+--&gt;629:         [1, 2, 3][&quot;2&quot;]
+   630:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="not-an-integer">
 <h3>Not an integer<a class="headerlink" href="#not-an-integer" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 591, in test_Not_an_integer
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 592, in test_Not_an_integer
     range(c, d)
 TypeError: &#39;str&#39; object cannot be interpreted as an integer
 
@@ -1476,12 +1476,12 @@ or by trying to do an operation not allowed on a given type of object.
 
 You wrote an object of type `str` where an integer was expected.
 Perhaps you forgot to convert `c, d` into integers.
-Exception raised on line 591 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 592 of file TESTS:\runtime\test_type_error.py.
 
-   589:     c, d = &quot;2&quot;, &quot;3&quot;
-   590:     try:
---&gt;591:         range(c, d)
-   592:     except Exception as e:
+   590:     c, d = &quot;2&quot;, &quot;3&quot;
+   591:     try:
+--&gt;592:         range(c, d)
+   593:     except Exception as e:
 
         c: &#39;2&#39;
         d: &#39;3&#39;
@@ -1492,7 +1492,7 @@ Exception raised on line 591 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="not-callable">
 <h3>Not callable<a class="headerlink" href="#not-callable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 476, in test_Not_callable
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 477, in test_Not_callable
     _ = [1, 2](3 + 4)
 TypeError: &#39;list&#39; object is not callable
 
@@ -1512,20 +1512,20 @@ However, `[1, 2]` is a sequence.
 Perhaps you meant to use `[]` instead of `()` and write
 `[1, 2][3 + 4]`
 
-Exception raised on line 476 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 477 of file TESTS:\runtime\test_type_error.py.
 
-   474:
-   475:     try:
---&gt;476:         _ = [1, 2](3 + 4)
+   475:
+   476:     try:
+--&gt;477:         _ = [1, 2](3 + 4)
                     ^^^^^^^^^^^^^
-   477:     except Exception as e:
+   478:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="object-is-not-iterable">
 <h3>Object is not iterable<a class="headerlink" href="#object-is-not-iterable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 700, in test_Object_is_not_iterable
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 701, in test_Object_is_not_iterable
     list(42)
 TypeError: &#39;int&#39; object is not iterable
 
@@ -1538,12 +1538,12 @@ An iterable is an object capable of returning its members one at a time.
 Python containers (`list, tuple, dict`, etc.) are iterables.
 An iterable is required here.
 
-Exception raised on line 700 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 701 of file TESTS:\runtime\test_type_error.py.
 
-   698: def test_Object_is_not_iterable():
-   699:     try:
---&gt;700:         list(42)
-   701:     except Exception as e:
+   699: def test_Object_is_not_iterable():
+   700:     try:
+--&gt;701:         list(42)
+   702:     except Exception as e:
 
         list: &lt;class list&gt;
 </pre></div>
@@ -1552,7 +1552,7 @@ Exception raised on line 700 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="object-is-not-subscriptable">
 <h3>Object is not subscriptable<a class="headerlink" href="#object-is-not-subscriptable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 686, in test_Object_is_not_subscriptable
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 687, in test_Object_is_not_subscriptable
     a = f[1]
 TypeError: &#39;function&#39; object is not subscriptable
 
@@ -1568,13 +1568,13 @@ you can retrieve item using the notation `[...]`.
 
 Perhaps you meant to write `f(1)`.
 
-Exception raised on line 686 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 687 of file TESTS:\runtime\test_type_error.py.
 
-   684:
-   685:     try:
---&gt;686:         a = f[1]
+   685:
+   686:     try:
+--&gt;687:         a = f[1]
                     ^^^^
-   687:     except Exception as e:
+   688:     except Exception as e:
 
         f: &lt;function f&gt; from test_Object_is_not_subscriptable
 </pre></div>
@@ -1583,7 +1583,7 @@ Exception raised on line 686 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="slice-indices-must-be-integers-or-none">
 <h3>Slice indices must be integers or None<a class="headerlink" href="#slice-indices-must-be-integers-or-none" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 642, in test_Slice_indices_must_be_integers_or_None
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 643, in test_Slice_indices_must_be_integers_or_None
     [1, 2, 3][1.0:2.0]
 TypeError: slice indices must be integers or None or have an __index__ method
 
@@ -1598,19 +1598,19 @@ from a sequence, that is something like
 each of `start`, `stop`, `step` must be either an integer, `None`,
 or possibly some other object having an `__index__` method.
 
-Exception raised on line 642 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 643 of file TESTS:\runtime\test_type_error.py.
 
-   640: def test_Slice_indices_must_be_integers_or_None():
-   641:     try:
---&gt;642:         [1, 2, 3][1.0:2.0]
-   643:     except Exception as e:
+   641: def test_Slice_indices_must_be_integers_or_None():
+   642:     try:
+--&gt;643:         [1, 2, 3][1.0:2.0]
+   644:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="too-few-positional-argument">
 <h3>Too few positional argument<a class="headerlink" href="#too-few-positional-argument" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 418, in test_Too_few_positional_argument
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 419, in test_Too_few_positional_argument
     fn(1)
 TypeError: fn() missing 2 required positional arguments: &#39;b&#39; and &#39;c&#39;
 
@@ -1622,12 +1622,12 @@ or by trying to do an operation not allowed on a given type of object.
 You apparently have called the function &#39;fn()&#39; with
 fewer positional arguments than it requires (2 missing).
 
-Exception raised on line 418 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 419 of file TESTS:\runtime\test_type_error.py.
 
-   416:
-   417:     try:
---&gt;418:         fn(1)
-   419:     except Exception as e:
+   417:
+   418:     try:
+--&gt;419:         fn(1)
+   420:     except Exception as e:
 
         fn: &lt;function fn&gt; from test_Too_few_positional_argument
 </pre></div>
@@ -1636,7 +1636,7 @@ Exception raised on line 418 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="too-many-positional-argument">
 <h3>Too many positional argument<a class="headerlink" href="#too-many-positional-argument" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 399, in test_Too_many_positional_argument
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 400, in test_Too_many_positional_argument
     A().f(1)
 TypeError: f() takes 1 positional argument but 2 were given
 
@@ -1652,12 +1652,12 @@ You apparently have called the function `f` with
 such positional argument(s).
 Perhaps you forgot `self` when defining `f`.
 
-Exception raised on line 399 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 400 of file TESTS:\runtime\test_type_error.py.
 
-   397:
-   398:     try:
---&gt;399:         A().f(1)
-   400:     except Exception as e:
+   398:
+   399:     try:
+--&gt;400:         A().f(1)
+   401:     except Exception as e:
 
         A: &lt;class A&gt; from test_type_error.test_Too_many_positional_argument
 </pre></div>
@@ -1666,7 +1666,7 @@ Exception raised on line 399 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="tuple-no-item-assignment">
 <h3>Tuple no item assignment<a class="headerlink" href="#tuple-no-item-assignment" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 366, in test_Tuple_no_item_assignment
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 367, in test_Tuple_no_item_assignment
     a[0] = 0
 TypeError: &#39;tuple&#39; object does not support item assignment
 
@@ -1683,12 +1683,12 @@ You tried change part of such an immutable object: a `tuple`,
 most likely by using an indexing operation.
 Perhaps you meant to use a list instead.
 
-Exception raised on line 366 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 367 of file TESTS:\runtime\test_type_error.py.
 
-   364:     a = (1, 2, 3)
-   365:     try:
---&gt;366:         a[0] = 0
-   367:     except Exception as e:
+   365:     a = (1, 2, 3)
+   366:     try:
+--&gt;367:         a[0] = 0
+   368:     except Exception as e:
 
         a[0]: 1
         a: (1, 2, 3)
@@ -1698,7 +1698,7 @@ Exception raised on line 366 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="unhachable-type">
 <h3>Unhachable type<a class="headerlink" href="#unhachable-type" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 659, in test_Unhachable_type
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 660, in test_Unhachable_type
     {[1, 2]: 1}
 TypeError: unhashable type: &#39;list&#39;
 
@@ -1712,19 +1712,19 @@ as elements of `set` or keys of `dict`.
 Hashable objects are objects that do not change value
 once they have been created.Instead of using a `list`, consider using a `tuple`.
 
-Exception raised on line 659 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 660 of file TESTS:\runtime\test_type_error.py.
 
-   657: def test_Unhachable_type():
-   658:     try:
---&gt;659:         {[1, 2]: 1}
-   660:     except Exception as e:
+   658: def test_Unhachable_type():
+   659:     try:
+--&gt;660:         {[1, 2]: 1}
+   661:     except Exception as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="unsupported-operand-types">
 <h3>Unsupported operand types<a class="headerlink" href="#unsupported-operand-types" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 282, in test_Unsupported_operand_types
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 283, in test_Unsupported_operand_types
     a @= b
 TypeError: unsupported operand type(s) for @=: &#39;str&#39; and &#39;int&#39;
 
@@ -1739,12 +1739,12 @@ a string (`str`) and an integer (`int`).
 This operator is normally used only
 for multiplication of matrices.
 
-Exception raised on line 282 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 283 of file TESTS:\runtime\test_type_error.py.
 
-   280:         a = &quot;a&quot;
-   281:         b = 2
---&gt;282:         a @= b
-   283:     except Exception as e:
+   281:         a = &quot;a&quot;
+   282:         b = 2
+--&gt;283:         a @= b
+   284:     except Exception as e:
 
         a: &#39;a&#39;
         b: 2

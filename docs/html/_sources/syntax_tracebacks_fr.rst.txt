@@ -1278,8 +1278,129 @@ def: semi-colon after colon
     Si vous supprimez `;`, cela pourrait possiblement résoudre le problème.
     
 
-Non-identifier as a function name
----------------------------------
+def: unspecified keywords before /
+----------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_forward_slash_1.py", line 1
+        def test(a, **kwargs, /):
+                              ^
+    SyntaxError: invalid syntax
+    
+        Les arguments nommés doivent apparaître après le symbole `/`.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_forward_slash_1.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test(a, **kwargs, /):
+                                ^
+
+    `/` indique que les arguments précédents dans une définition de fonction
+    sont des arguments positionnels.
+    You have unspecified keyword arguments that appear before
+    the symbol `/`.
+    
+
+def: / before star
+------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_forward_slash_2.py", line 1
+        def test(a, *, b, /):
+                          ^
+    SyntaxError: invalid syntax
+    
+        `*` doit apparaître après `/` dans une définition de fonction.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_forward_slash_2.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test(a, *, b, /):
+                            ^
+
+    `/` indique que les arguments précédents dans une définition de fonction
+    sont des arguments positionnels.
+    Toutefois, `*` indique que les arguments
+    qui suivent doivent être des arguments nommés.
+    Lorsqu’ils sont utilisés ensemble, `/` doit apparaître avant `*`.
+    
+
+def: / before star arg
+----------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_forward_slash_3.py", line 1
+        def test(a, *arg, /):
+                          ^
+    SyntaxError: invalid syntax
+    
+        `*arg` doit apparaître après `/` dans une définition de fonction.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_forward_slash_3.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test(a, *arg, /):
+                            ^
+
+    `/` indique que les arguments précédents dans une définition de fonction
+    sont des arguments positionnels.
+    `*arg` doit apparaître après `/` dans une définition de fonction.
+    
+
+def: / used twice
+-----------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_forward_slash_4.py", line 1
+        def test(a, /, b, /):
+                          ^
+    SyntaxError: invalid syntax
+    
+        Vous ne pouvez utiliser `/` qu’une seule fois dans une définition de fonction.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_forward_slash_4.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test(a, /, b, /):
+                            ^
+
+    Vous ne pouvez utiliser `/` qu’une seule fois dans une définition de fonction.
+    
+
+def: non-identifier as a function name
+--------------------------------------
 
 .. code-block:: none
 
@@ -1310,8 +1431,8 @@ Non-identifier as a function name
     et qui ne contient que des lettres, des chiffres ou le caractère de soulignement.
     
 
-Using a string as a function name
----------------------------------
+def: using a string as a function name
+--------------------------------------
 
 .. code-block:: none
 

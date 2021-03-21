@@ -1546,7 +1546,160 @@ Removing `;`, might fix the problem.
 
 ---
 
-## Non-identifier as a function name
+## def: unspecified keywords before /
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+    __import__(name)
+  File "TESTS:\syntax\def_forward_slash_1.py", line 1
+    def test(a, **kwargs, /):
+                          ^
+SyntaxError: invalid syntax
+
+```
+
+Keyword arguments must appear after the `/` symbol.
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\def_forward_slash_1.py'
+beyond the location indicated by ^.
+
+
+```python
+    -->1: def test(a, **kwargs, /):
+                                ^
+
+```
+
+`/` indicates that the previous arguments in a function definition
+are positional arguments.
+You have unspecified keyword arguments that appear before
+the symbol `/`.
+
+---
+
+## def: / before star
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+    __import__(name)
+  File "TESTS:\syntax\def_forward_slash_2.py", line 1
+    def test(a, *, b, /):
+                      ^
+SyntaxError: invalid syntax
+
+```
+
+`*` must appear after `/` in a function definition.
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\def_forward_slash_2.py'
+beyond the location indicated by ^.
+
+
+```python
+    -->1: def test(a, *, b, /):
+                            ^
+
+```
+
+`/` indicates that the previous arguments in a function definition
+are positional arguments.
+However, `*` indicates that the arguments
+that follow must be keyword arguments.
+When they are used together, `/` must appear before `*`.
+
+---
+
+## def: / before star arg
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+    __import__(name)
+  File "TESTS:\syntax\def_forward_slash_3.py", line 1
+    def test(a, *arg, /):
+                      ^
+SyntaxError: invalid syntax
+
+```
+
+`*arg` must appear after `/` in a function definition.
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\def_forward_slash_3.py'
+beyond the location indicated by ^.
+
+
+```python
+    -->1: def test(a, *arg, /):
+                            ^
+
+```
+
+`/` indicates that the previous arguments in a function definition
+are positional arguments.
+`*arg` must appear after `/` in a function definition.
+
+---
+
+## def: / used twice
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+    __import__(name)
+  File "TESTS:\syntax\def_forward_slash_4.py", line 1
+    def test(a, /, b, /):
+                      ^
+SyntaxError: invalid syntax
+
+```
+
+You can only use `/` once in a function definition.
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\def_forward_slash_4.py'
+beyond the location indicated by ^.
+
+
+```python
+    -->1: def test(a, /, b, /):
+                            ^
+
+```
+
+You can only use `/` once in a function definition.
+
+---
+
+## def: non-identifier as a function name
 
 
 ```pytb
@@ -1586,7 +1739,7 @@ and which contains only letters, digits or the underscore character.
 
 ---
 
-## Using a string as a function name
+## def: using a string as a function name
 
 
 ```pytb
