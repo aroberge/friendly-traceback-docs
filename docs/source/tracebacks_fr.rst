@@ -62,25 +62,25 @@ Attribute from other module
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_attribute_error.py", line 258, in test_Attribute_from_other_module
+      File "TESTS:\runtime\test_attribute_error.py", line 270, in test_Attribute_from_other_module
         keyword.pi
     AttributeError: module 'keyword' has no attribute 'pi'
     
-        Vouliez-vous dire `math` ?
-        
+        Vouliez-vous dire l’un des modules suivants: `math, cmath` ?
     Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
         `object.x`
     et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
     
-    Peut-être vouliez-vous utiliser l’attribut `pi` du 
-    module `math` au lieu du module `keyword`.
+    Au lieu du module `keyword`, peut-être vouliez-vous utiliser l’attribut `pi` de 
+    l'un des modules suivants:
+    `math, cmath` .
     
-    Exception levée à la ligne 258 du fichier TESTS:\runtime\test_attribute_error.py.
+    Exception levée à la ligne 270 du fichier TESTS:\runtime\test_attribute_error.py.
     
-       256: 
-       257:     try:
-    -->258:         keyword.pi
-       259:     except Exception as e:
+       268:     import cmath
+       269:     try:
+    -->270:         keyword.pi
+       271:     except Exception as e:
 
             keyword: <module keyword> from PYTHON_LIB:\keyword.py
         

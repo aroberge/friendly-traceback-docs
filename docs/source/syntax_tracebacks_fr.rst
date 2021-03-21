@@ -1305,8 +1305,8 @@ def: unspecified keywords before /
 
     `/` indique que les arguments précédents dans une définition de fonction
     sont des arguments positionnels.
-    You have unspecified keyword arguments that appear before
-    the symbol `/`.
+    Vous avez quelques arguments nommés arbitraires qui apparaissent avant
+    le symbole `/`.
     
 
 def: / before star

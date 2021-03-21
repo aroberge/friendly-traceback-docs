@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly tracebacks - en Français &mdash; Friendly 0.3.16 documentation</title>
+  <title>Friendly tracebacks - en Français &mdash; Friendly 0.3.18 documentation</title>
   
 
   
@@ -412,25 +412,25 @@ Exception levée à la ligne 9 du fichier TESTS:\runtime\test_arithmetic_error.p
 <div class="section" id="attribute-from-other-module">
 <h3>Attribute from other module<a class="headerlink" href="#attribute-from-other-module" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 258, in test_Attribute_from_other_module
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 270, in test_Attribute_from_other_module
     keyword.pi
 AttributeError: module &#39;keyword&#39; has no attribute &#39;pi&#39;
 
-    Vouliez-vous dire `math` ?
-
+    Vouliez-vous dire l’un des modules suivants: `math, cmath` ?
 Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
     `object.x`
 et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
 
-Peut-être vouliez-vous utiliser l’attribut `pi` du
-module `math` au lieu du module `keyword`.
+Au lieu du module `keyword`, peut-être vouliez-vous utiliser l’attribut `pi` de
+l&#39;un des modules suivants:
+`math, cmath` .
 
-Exception levée à la ligne 258 du fichier TESTS:\runtime\test_attribute_error.py.
+Exception levée à la ligne 270 du fichier TESTS:\runtime\test_attribute_error.py.
 
-   256:
-   257:     try:
---&gt;258:         keyword.pi
-   259:     except Exception as e:
+   268:     import cmath
+   269:     try:
+--&gt;270:         keyword.pi
+   271:     except Exception as e:
 
         keyword: &lt;module keyword&gt; from PYTHON_LIB:\keyword.py
 </pre></div>

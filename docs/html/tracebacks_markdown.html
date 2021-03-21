@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly 0.3.16 documentation</title>
+  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly 0.3.18 documentation</title>
   
 
   
@@ -182,7 +182,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#attributeerror">AttributeError</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#attribute-from-other-module">Attribute from other module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-258-of-file-tests-runtime-test-attribute-error-py">Exception raised on line 258 of file TESTS:\runtime\test_attribute_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-270-of-file-tests-runtime-test-attribute-error-py">Exception raised on line 270 of file TESTS:\runtime\test_attribute_error.py.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#builtin-function">Builtin function</a><ul>
@@ -596,23 +596,24 @@ normally, a more specific exception should have been raised.</p>
 <div class="section" id="attribute-from-other-module">
 <h3>Attribute from other module<a class="headerlink" href="#attribute-from-other-module" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;TESTS:\runtime\test_attribute_error.py&quot;</span>, line <span class="m">258</span>, in <span class="n">test_Attribute_from_other_module</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_attribute_error.py&quot;</span>, line <span class="m">270</span>, in <span class="n">test_Attribute_from_other_module</span>
     <span class="n">keyword</span><span class="o">.</span><span class="n">pi</span>
 <span class="gr">AttributeError</span>: <span class="n">module &#39;keyword&#39; has no attribute &#39;pi&#39;</span>
 </pre></div>
 </div>
-<p>Did you mean <code class="docutils literal notranslate"><span class="pre">math</span></code>?</p>
+<p>Did you mean one of the following modules: <code class="docutils literal notranslate"><span class="pre">math,</span> <span class="pre">cmath</span></code>?</p>
 <p>An <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code> occurs when the code contains something like
 <code class="docutils literal notranslate"><span class="pre">object.x</span></code>
 and <code class="docutils literal notranslate"><span class="pre">x</span></code> is not a method or attribute (variable) belonging to <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
-<p>Perhaps you meant to use the attribute <code class="docutils literal notranslate"><span class="pre">pi</span></code> of
-module <code class="docutils literal notranslate"><span class="pre">math</span></code> instead of module <code class="docutils literal notranslate"><span class="pre">keyword</span></code>.</p>
-<div class="section" id="exception-raised-on-line-258-of-file-tests-runtime-test-attribute-error-py">
-<h4>Exception raised on line 258 of file TESTS:\runtime\test_attribute_error.py.<a class="headerlink" href="#exception-raised-on-line-258-of-file-tests-runtime-test-attribute-error-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">256</span><span class="p">:</span> 
-       <span class="mi">257</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
-    <span class="o">--&gt;</span><span class="mi">258</span><span class="p">:</span>         <span class="n">keyword</span><span class="o">.</span><span class="n">pi</span>
-       <span class="mi">259</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<p>Instead of the module <code class="docutils literal notranslate"><span class="pre">keyword</span></code>, perhaps you wanted to use
+the attribute <code class="docutils literal notranslate"><span class="pre">pi</span></code> of one of the following modules:
+<code class="docutils literal notranslate"><span class="pre">math,</span> <span class="pre">cmath</span></code>.</p>
+<div class="section" id="exception-raised-on-line-270-of-file-tests-runtime-test-attribute-error-py">
+<h4>Exception raised on line 270 of file TESTS:\runtime\test_attribute_error.py.<a class="headerlink" href="#exception-raised-on-line-270-of-file-tests-runtime-test-attribute-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">268</span><span class="p">:</span>     <span class="kn">import</span> <span class="nn">cmath</span>
+       <span class="mi">269</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">270</span><span class="p">:</span>         <span class="n">keyword</span><span class="o">.</span><span class="n">pi</span>
+       <span class="mi">271</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">keyword</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">module</span> <span class="n">keyword</span><span class="o">&gt;</span> <span class="kn">from</span> <span class="nn">PYTHON_LIB</span><span class="p">:</span>\<span class="n">keyword</span><span class="o">.</span><span class="n">py</span>
