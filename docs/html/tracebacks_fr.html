@@ -954,6 +954,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 23 du fichier TESTS:\runtime\te
    24:     except KeyError as e:
 
         d: ChainMap({}, {})
+        d.pop: &lt;bound method ChainMap.pop of ChainMap({}, {})&gt;
 
 Exception levée à la ligne 967 du fichier PYTHON_LIB:\collections\__init__.py.
 
@@ -964,6 +965,7 @@ Exception levée à la ligne 967 du fichier PYTHON_LIB:\collections\__init__.py.
         key: 42
         KeyError: &lt;class KeyError&gt;
         format: &lt;builtin function format&gt;
+        &#39;Key not found in the first mapping: {!r}&#39;.format: &lt;builtin method format of str object&gt;
 </pre></div>
 </div>
 </div>
@@ -1319,6 +1321,7 @@ Exception levée à la ligne 766 du fichier TESTS:\runtime\test_type_error.py.
    767:     except TypeError as e:
 
         dd: {&#39;a&#39;: &#39;a&#39;}
+        dd.update: &lt;builtin method update of dict object&gt;
 </pre></div>
 </div>
 </div>
@@ -1521,9 +1524,9 @@ Exception levée à la ligne 500 du fichier TESTS:\runtime\test_type_error.py.
                     ^^^^^^^^^^^^^
    501:     except TypeError as e:
 
-        a + b: 10
         a: 3
         b: 7
+        a + b: 10
 </pre></div>
 </div>
 </div>
@@ -1694,8 +1697,8 @@ Exception levée à la ligne 389 du fichier TESTS:\runtime\test_type_error.py.
 --&gt;389:         a[0] = 0
    390:     except TypeError as e:
 
-        a[0]: 1
         a: (1, 2, 3)
+        a[0]: 1
 </pre></div>
 </div>
 </div>

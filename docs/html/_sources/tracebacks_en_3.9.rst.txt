@@ -680,6 +680,7 @@ ChainMap
        24:     except KeyError as e:
 
             d: ChainMap({}, {})
+            d.pop: <bound method ChainMap.pop of ChainMap({}, {})>
         
     Exception raised on line 1010 of file PYTHON_LIB:\collections\__init__.py.
     
@@ -687,8 +688,8 @@ ChainMap
        1009:         except KeyError:
     -->1010:             raise KeyError(f'Key not found in the first mapping: {key!r}')
 
-            : 42
             KeyError: <class KeyError>
+            : 'Key not found in the first mapping: '
         
 
 
@@ -1091,6 +1092,7 @@ Cannot convert dictionary update sequence
        767:     except TypeError as e:
 
             dd: {'a': 'a'}
+            dd.update: <builtin method update of dict object>
         
 
 
@@ -1317,9 +1319,9 @@ Not callable
                         ^^^^^^^^^^^^^
        501:     except TypeError as e:
 
-            a + b: 10
             a: 3
             b: 7
+            a + b: 10
         
 
 
@@ -1514,8 +1516,8 @@ Tuple no item assignment
     -->389:         a[0] = 0
        390:     except TypeError as e:
 
-            a[0]: 1
             a: (1, 2, 3)
+            a[0]: 1
         
 
 

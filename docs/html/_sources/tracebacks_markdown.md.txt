@@ -834,6 +834,7 @@ In your program, the key that cannot be found is `42`.
 
 ```python
     d: ChainMap({}, {})
+    d.pop: <bound method ChainMap.pop of ChainMap({}, {})>
 
 ```
 
@@ -851,6 +852,7 @@ In your program, the key that cannot be found is `42`.
     key: 42
     KeyError: <class KeyError>
     format: <builtin function format>
+    'Key not found in the first mapping: {!r}'.format: <builtin method format of str object>
 
 ```
 
@@ -1339,6 +1341,7 @@ perhaps you should use the `dict.fromkeys()` method: `dd.update( dict.fromkeys([
 
 ```python
     dd: {'a': 'a'}
+    dd.update: <builtin method update of dict object>
 
 ```
 
@@ -1616,9 +1619,9 @@ Perhaps you meant to use `[]` instead of `()` and write
 ```
 
 ```python
-    a + b: 10
     a: 3
     b: 7
+    a + b: 10
 
 ```
 
@@ -1859,8 +1862,8 @@ Perhaps you meant to use a list instead.
 ```
 
 ```python
-    a[0]: 1
     a: (1, 2, 3)
+    a[0]: 1
 
 ```
 

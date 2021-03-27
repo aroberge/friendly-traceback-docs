@@ -956,6 +956,7 @@ Execution stopped on line 23 of file TESTS:\runtime\test_key_error.py.
    24:     except KeyError as e:
 
         d: ChainMap({}, {})
+        d.pop: &lt;bound method ChainMap.pop of ChainMap({}, {})&gt;
 
 Exception raised on line 1047 of file PYTHON_LIB:\collections\__init__.py.
 
@@ -963,8 +964,8 @@ Exception raised on line 1047 of file PYTHON_LIB:\collections\__init__.py.
    1046:         except KeyError:
 --&gt;1047:             raise KeyError(f&#39;Key not found in the first mapping: {key!r}&#39;)
 
-        : 42
         KeyError: &lt;class KeyError&gt;
+        : &#39;Key not found in the first mapping: &#39;
 </pre></div>
 </div>
 </div>
@@ -1321,6 +1322,7 @@ Exception raised on line 766 of file TESTS:\runtime\test_type_error.py.
    767:     except TypeError as e:
 
         dd: {&#39;a&#39;: &#39;a&#39;}
+        dd.update: &lt;builtin method update of dict object&gt;
 </pre></div>
 </div>
 </div>
@@ -1523,9 +1525,9 @@ Exception raised on line 500 of file TESTS:\runtime\test_type_error.py.
                     ^^^^^^^^^^^^^
    501:     except TypeError as e:
 
-        a + b: 10
         a: 3
         b: 7
+        a + b: 10
 </pre></div>
 </div>
 </div>
@@ -1697,8 +1699,8 @@ Exception raised on line 389 of file TESTS:\runtime\test_type_error.py.
 --&gt;389:         a[0] = 0
    390:     except TypeError as e:
 
-        a[0]: 1
         a: (1, 2, 3)
+        a[0]: 1
 </pre></div>
 </div>
 </div>
