@@ -1068,7 +1068,7 @@ Cannot convert dictionary update sequence
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 765, in test_Cannot_convert_dictionary_update_sequence
+      File "TESTS:\runtime\test_type_error.py", line 766, in test_Cannot_convert_dictionary_update_sequence
         dd.update([1, 2, 3])
     TypeError: cannot convert dictionary update sequence element #0 to a sequence
     
@@ -1083,12 +1083,12 @@ Cannot convert dictionary update sequence
     Instead of writing `dd.update([1, 2, 3])`
     perhaps you should use the `dict.fromkeys()` method: `dd.update( dict.fromkeys([1, 2, 3]) )`.
     
-    Exception raised on line 765 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 766 of file TESTS:\runtime\test_type_error.py.
     
-       763:     dd = {"a": "a"}
-       764:     try:
-    -->765:         dd.update([1, 2, 3])
-       766:     except TypeError as e:
+       764:     dd = {"a": "a"}
+       765:     try:
+    -->766:         dd.update([1, 2, 3])
+       767:     except TypeError as e:
 
             dd: {'a': 'a'}
         
@@ -1101,7 +1101,7 @@ Cannot multiply by non int
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 569, in test_Cannot_multiply_by_non_int
+      File "TESTS:\runtime\test_type_error.py", line 570, in test_Cannot_multiply_by_non_int
         "a" * "2"
     TypeError: can't multiply sequence by non-int of type 'str'
     
@@ -1116,12 +1116,12 @@ Cannot multiply by non int
      strings, etc., by integers.
     Perhaps you forgot to convert `"2"` into an integer.
     
-    Exception raised on line 569 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 570 of file TESTS:\runtime\test_type_error.py.
     
-       567: 
-       568:     try:
-    -->569:         "a" * "2"
-       570:     except TypeError as e:
+       568: 
+       569:     try:
+    -->570:         "a" * "2"
+       571:     except TypeError as e:
 
 
 Cannot unpack non iterable object
@@ -1131,7 +1131,7 @@ Cannot unpack non iterable object
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 737, in test_Cannot_unpack_non_iterable_object
+      File "TESTS:\runtime\test_type_error.py", line 738, in test_Cannot_unpack_non_iterable_object
         a, b = 42.0
     TypeError: cannot unpack non-iterable float object
     
@@ -1146,12 +1146,12 @@ Cannot unpack non iterable object
     Python containers (`list, tuple, dict`, etc.) are iterables,
     but not objects of type `float`.
     
-    Exception raised on line 737 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 738 of file TESTS:\runtime\test_type_error.py.
     
-       735: def test_Cannot_unpack_non_iterable_object():
-       736:     try:
-    -->737:         a, b = 42.0
-       738:     except TypeError as e:
+       736: def test_Cannot_unpack_non_iterable_object():
+       737:     try:
+    -->738:         a, b = 42.0
+       739:     except TypeError as e:
 
 
 Comparison not supported
@@ -1196,7 +1196,7 @@ Derive from BaseException
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 512, in test_Derive_from_BaseException
+      File "TESTS:\runtime\test_type_error.py", line 513, in test_Derive_from_BaseException
         raise "exception"  # noqa
     TypeError: exceptions must derive from BaseException
     
@@ -1207,12 +1207,12 @@ Derive from BaseException
     
     In Python 3, exceptions must be derived from BaseException.
     
-    Exception raised on line 512 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 513 of file TESTS:\runtime\test_type_error.py.
     
-       510: def test_Derive_from_BaseException():
-       511:     try:
-    -->512:         raise "exception"  # noqa
-       513:     except TypeError as e:
+       511: def test_Derive_from_BaseException():
+       512:     try:
+    -->513:         raise "exception"  # noqa
+       514:     except TypeError as e:
 
 
 Indices must be integers or slices
@@ -1222,7 +1222,7 @@ Indices must be integers or slices
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 651, in test_Indices_must_be_integers_or_slices
+      File "TESTS:\runtime\test_type_error.py", line 652, in test_Indices_must_be_integers_or_slices
         [1, 2, 3]["2"]
     TypeError: list indices must be integers or slices, not str
     
@@ -1241,12 +1241,12 @@ Indices must be integers or slices
     
     Perhaps you forgot to convert `"2"` into an integer.
     
-    Exception raised on line 651 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 652 of file TESTS:\runtime\test_type_error.py.
     
-       649: 
-       650:     try:
-    -->651:         [1, 2, 3]["2"]
-       652:     except TypeError as e:
+       650: 
+       651:     try:
+    -->652:         [1, 2, 3]["2"]
+       653:     except TypeError as e:
 
 
 Not an integer
@@ -1256,7 +1256,7 @@ Not an integer
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 614, in test_Not_an_integer
+      File "TESTS:\runtime\test_type_error.py", line 615, in test_Not_an_integer
         range(c, d)
     TypeError: 'str' object cannot be interpreted as an integer
     
@@ -1269,12 +1269,12 @@ Not an integer
     
     You wrote an object of type `str` where an integer was expected.
     Perhaps you forgot to convert `c, d` into integers.
-    Exception raised on line 614 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 615 of file TESTS:\runtime\test_type_error.py.
     
-       612:     c, d = "2", "3"
-       613:     try:
-    -->614:         range(c, d)
-       615:     except TypeError as e:
+       613:     c, d = "2", "3"
+       614:     try:
+    -->615:         range(c, d)
+       616:     except TypeError as e:
 
             c: '2'
             d: '3'
@@ -1289,33 +1289,38 @@ Not callable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 499, in test_Not_callable
-        _ = [1, 2](3 + 4)
+      File "TESTS:\runtime\test_type_error.py", line 500, in test_Not_callable
+        _ = [1, 2](a + b)
     TypeError: 'list' object is not callable
     
-        Did you mean `[1, 2][3 + 4]`?
+        Did you mean `[1, 2][a + b]`?
         
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-    Because of the surrounding parenthesis, `(3 + 4)` 
+    Because of the surrounding parenthesis, `(a + b)` 
     is interpreted by Python as indicating a function call for 
     `[1, 2]`, which is an object of type `list`
     which cannot be called.
     
     However, `[1, 2]` is a sequence.
     Perhaps you meant to use `[]` instead of `()` and write
-    `[1, 2][3 + 4]`
+    `[1, 2][a + b]`
     
-    Exception raised on line 499 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 500 of file TESTS:\runtime\test_type_error.py.
     
-       497: 
        498:     try:
-    -->499:         _ = [1, 2](3 + 4)
+       499:         a, b = 3, 7
+    -->500:         _ = [1, 2](a + b)
                         ^^^^^^^^^^^^^
-       500:     except TypeError as e:
+       501:     except TypeError as e:
+
+            a + b: 10
+            a: 3
+            b: 7
+        
 
 
 Object is not iterable
@@ -1325,7 +1330,7 @@ Object is not iterable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 723, in test_Object_is_not_iterable
+      File "TESTS:\runtime\test_type_error.py", line 724, in test_Object_is_not_iterable
         list(42)
     TypeError: 'int' object is not iterable
     
@@ -1338,12 +1343,12 @@ Object is not iterable
     Python containers (`list, tuple, dict`, etc.) are iterables.
     An iterable is required here.
     
-    Exception raised on line 723 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 724 of file TESTS:\runtime\test_type_error.py.
     
-       721: def test_Object_is_not_iterable():
-       722:     try:
-    -->723:         list(42)
-       724:     except TypeError as e:
+       722: def test_Object_is_not_iterable():
+       723:     try:
+    -->724:         list(42)
+       725:     except TypeError as e:
 
             list: <class list>
         
@@ -1356,7 +1361,7 @@ Object is not subscriptable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 709, in test_Object_is_not_subscriptable
+      File "TESTS:\runtime\test_type_error.py", line 710, in test_Object_is_not_subscriptable
         a = f[1]
     TypeError: 'function' object is not subscriptable
     
@@ -1372,13 +1377,13 @@ Object is not subscriptable
     
     Perhaps you meant to write `f(1)`.
     
-    Exception raised on line 709 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 710 of file TESTS:\runtime\test_type_error.py.
     
-       707: 
-       708:     try:
-    -->709:         a = f[1]
+       708: 
+       709:     try:
+    -->710:         a = f[1]
                         ^^^^
-       710:     except TypeError as e:
+       711:     except TypeError as e:
 
             f: <function f> from test_Object_is_not_subscriptable
         
@@ -1391,7 +1396,7 @@ Slice indices must be integers or None
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 665, in test_Slice_indices_must_be_integers_or_None
+      File "TESTS:\runtime\test_type_error.py", line 666, in test_Slice_indices_must_be_integers_or_None
         [1, 2, 3][1.0:2.0]
     TypeError: slice indices must be integers or None or have an __index__ method
     
@@ -1406,12 +1411,12 @@ Slice indices must be integers or None
     each of `start`, `stop`, `step` must be either an integer, `None`,
     or possibly some other object having an `__index__` method.
     
-    Exception raised on line 665 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 666 of file TESTS:\runtime\test_type_error.py.
     
-       663: def test_Slice_indices_must_be_integers_or_None():
-       664:     try:
-    -->665:         [1, 2, 3][1.0:2.0]
-       666:     except TypeError as e:
+       664: def test_Slice_indices_must_be_integers_or_None():
+       665:     try:
+    -->666:         [1, 2, 3][1.0:2.0]
+       667:     except TypeError as e:
 
 
 Too few positional argument
@@ -1521,7 +1526,7 @@ Unhachable type
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 682, in test_Unhachable_type
+      File "TESTS:\runtime\test_type_error.py", line 683, in test_Unhachable_type
         {[1, 2]: 1}
     TypeError: unhashable type: 'list'
     
@@ -1535,12 +1540,12 @@ Unhachable type
     Hashable objects are objects that do not change value
     once they have been created.Instead of using a `list`, consider using a `tuple`.
     
-    Exception raised on line 682 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 683 of file TESTS:\runtime\test_type_error.py.
     
-       680: def test_Unhachable_type():
-       681:     try:
-    -->682:         {[1, 2]: 1}
-       683:     except TypeError as e:
+       681: def test_Unhachable_type():
+       682:     try:
+    -->683:         {[1, 2]: 1}
+       684:     except TypeError as e:
 
 
 Unsupported operand types
