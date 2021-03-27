@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly 0.3.18 documentation</title>
+  <title>Friendly SyntaxError tracebacks - in English &mdash; Friendly 0.3.29 documentation</title>
   
 
   
@@ -199,6 +199,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#def-dict-as-argument">def: dict as argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-keyword-arg-only-once-in-function-definition">def: Keyword arg only once in function definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-semi-colon-after-colon">def: semi-colon after colon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-extra-comma">def: extra comma</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-unspecified-keywords-before">def: unspecified keywords before /</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-before-star">def: / before star</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-before-star-arg">def: / before star arg</a></li>
@@ -219,6 +220,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#def-name-is-parameter-and-global">def: name is parameter and global</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-non-default-argument-follows-default-argument">def: non-default argument follows default argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#single-number-used-as-arg-in-function-def">Single number used as arg in function def</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-operator-instead-of-comma">def: operator instead of comma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-operator-instead-of-equal">def: operator instead of equal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-operator-instead-of-name">def: operator instead of name</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-positional-argument-follows-keyword-argument">def: positional argument follows keyword argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-semi-colon-instead-of-colon">def: semi-colon instead of colon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-set-as-argument">def: set as argument</a></li>
@@ -271,6 +275,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#missing-comma-in-a-list">Missing comma in a list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-comma-in-a-set">Missing comma in a set</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-comma-in-a-tuple">Missing comma in a tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-parenthesis-for-range">Missing parenthesis for range</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#name-is-global-and-nonlocal">Name is global and nonlocal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#name-is-parameter-and-nonlocal">Name is parameter and nonlocal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nonlocal-variable-not-found">nonlocal variable not found</a></li>
@@ -1542,6 +1547,34 @@ Removing `;`, might fix the problem.
 </pre></div>
 </div>
 </div>
+<div class="section" id="def-extra-comma">
+<h2>def: extra comma<a class="headerlink" href="#def-extra-comma" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_extra_comma.py&quot;, line 1
+    def test(a,,b):
+               ^
+SyntaxError: invalid syntax
+
+    Did you mean to write `,`?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\def_extra_comma.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: def test(a,,b):
+                 ^
+
+I suspect you made a typo and added `,` by mistake.
+The following statement contains no syntax error:
+
+    def test(a,b):
+</pre></div>
+</div>
+</div>
 <div class="section" id="def-unspecified-keywords-before">
 <h2>def: unspecified keywords before /<a class="headerlink" href="#def-unspecified-keywords-before" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -2127,6 +2160,91 @@ beyond the location indicated by ^.
 
 You used a number as an argument when defining a function.
 You can only use identifiers (variable names) as function arguments.
+</pre></div>
+</div>
+</div>
+<div class="section" id="def-operator-instead-of-comma">
+<h2>def: operator instead of comma<a class="headerlink" href="#def-operator-instead-of-comma" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_operator_instead_of_comma.py&quot;, line 1
+    def test(a + b):
+               ^
+SyntaxError: invalid syntax
+
+    Did you mean to write a comma?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\def_operator_instead_of_comma.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: def test(a + b):
+                 ^
+
+You cannot have operators as function arguments.
+I suspect you made a typo and wrote `+` instead of a comma.
+The following statement contains no syntax error:
+
+    def test(a , b):
+</pre></div>
+</div>
+</div>
+<div class="section" id="def-operator-instead-of-equal">
+<h2>def: operator instead of equal<a class="headerlink" href="#def-operator-instead-of-equal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_operator_instead_of_equal.py&quot;, line 1
+    def test(a, b=3, c+None):
+                      ^
+SyntaxError: invalid syntax
+
+    Did you mean to write an equal sign?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\def_operator_instead_of_equal.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: def test(a, b=3, c+None):
+                        ^
+
+You cannot have operators as function arguments.
+I suspect you made a typo and wrote `+` instead of an equal sign.
+The following statement contains no syntax error:
+
+    def test(a, b=3, c=None):
+</pre></div>
+</div>
+</div>
+<div class="section" id="def-operator-instead-of-name">
+<h2>def: operator instead of name<a class="headerlink" href="#def-operator-instead-of-name" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\def_operator_instead_of_name.py&quot;, line 1
+    def test(a, +, b):
+                ^
+SyntaxError: invalid syntax
+
+    You cannot use `+` as an argument.
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\def_operator_instead_of_name.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: def test(a, +, b):
+                  ^
+
+I suspect you made a typo and wrote `+` by mistake.
+If you replace it by a unique variable name, the result
+will contain no syntax error.
 </pre></div>
 </div>
 </div>
@@ -3673,6 +3791,34 @@ The following lines of code would not cause any `SyntaxError`:
     a = (1, 2 *  3)
 Note: these are just some of the possible choices and that
 some of them might raise other types of exceptions.
+</pre></div>
+</div>
+</div>
+<div class="section" id="missing-parenthesis-for-range">
+<h2>Missing parenthesis for range<a class="headerlink" href="#missing-parenthesis-for-range" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\missing_parens_for_range.py&quot;, line 1
+    for i in range 3:
+                   ^
+SyntaxError: invalid syntax
+
+    Did you forget to write parenthesis?
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+Python could not understand the code in the file
+&#39;TESTS:\syntax\missing_parens_for_range.py&#39;
+beyond the location indicated by ^.
+
+--&gt;1: for i in range 3:
+                     ^
+
+It looks as though you forgot to use to use parenthesis with `range`.
+Perhaps you meant:
+
+    for i in range( 3):
 </pre></div>
 </div>
 </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Syntax errors - markdown_docs format &mdash; Friendly 0.3.18 documentation</title>
+  <title>Syntax errors - markdown_docs format &mdash; Friendly 0.3.29 documentation</title>
   
 
   
@@ -212,6 +212,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#def-dict-as-argument">def: dict as argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-keyword-arg-only-once-in-function-definition">def: Keyword arg only once in function definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-semi-colon-after-colon">def: semi-colon after colon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-extra-comma">def: extra comma</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-unspecified-keywords-before">def: unspecified keywords before /</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-before-star">def: / before star</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-before-star-arg">def: / before star arg</a></li>
@@ -232,6 +233,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#def-name-is-parameter-and-global">def: name is parameter and global</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-non-default-argument-follows-default-argument">def: non-default argument follows default argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#single-number-used-as-arg-in-function-def">Single number used as arg in function def</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-operator-instead-of-comma">def: operator instead of comma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-operator-instead-of-equal">def: operator instead of equal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#def-operator-instead-of-name">def: operator instead of name</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-positional-argument-follows-keyword-argument">def: positional argument follows keyword argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-semi-colon-instead-of-colon">def: semi-colon instead of colon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#def-set-as-argument">def: set as argument</a></li>
@@ -284,6 +288,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#missing-comma-in-a-list">Missing comma in a list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-comma-in-a-set">Missing comma in a set</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-comma-in-a-tuple">Missing comma in a tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-parenthesis-for-range">Missing parenthesis for range</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#name-is-global-and-nonlocal">Name is global and nonlocal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#name-is-parameter-and-nonlocal">Name is parameter and nonlocal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nonlocal-variable-not-found">nonlocal variable not found</a></li>
@@ -1488,6 +1493,33 @@ A block of code must come after the colon.
 Removing <code class="docutils literal notranslate"><span class="pre">;</span></code>, might fix the problem.</p>
 </div>
 <hr class="docutils" />
+<div class="section" id="def-extra-comma">
+<h2>def: extra comma<a class="headerlink" href="#def-extra-comma" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">41</span>, in <span class="n">create_tracebacks</span>
+    <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\def_extra_comma.py&quot;</span>, line <span class="m">1</span>
+    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">a</span><span class="p">,,</span><span class="n">b</span><span class="p">):</span>
+               <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>Did you mean to write <code class="docutils literal notranslate"><span class="pre">,</span></code>?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\def_extra_comma.py’
+beyond the location indicated by ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">a</span><span class="p">,,</span><span class="n">b</span><span class="p">):</span>
+                     <span class="o">^</span>
+</pre></div>
+</div>
+<p>I suspect you made a typo and added <code class="docutils literal notranslate"><span class="pre">,</span></code> by mistake.
+The following statement contains no syntax error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
 <div class="section" id="def-unspecified-keywords-before">
 <h2>def: unspecified keywords before /<a class="headerlink" href="#def-unspecified-keywords-before" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
@@ -2040,6 +2072,87 @@ beyond the location indicated by ^.</p>
 </div>
 <p>You used a number as an argument when defining a function.
 You can only use identifiers (variable names) as function arguments.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="def-operator-instead-of-comma">
+<h2>def: operator instead of comma<a class="headerlink" href="#def-operator-instead-of-comma" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">41</span>, in <span class="n">create_tracebacks</span>
+    <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\def_operator_instead_of_comma.py&quot;</span>, line <span class="m">1</span>
+    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">):</span>
+               <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>Did you mean to write a comma?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\def_operator_instead_of_comma.py’
+beyond the location indicated by ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">):</span>
+                     <span class="o">^</span>
+</pre></div>
+</div>
+<p>You cannot have operators as function arguments.
+I suspect you made a typo and wrote <code class="docutils literal notranslate"><span class="pre">+</span></code> instead of a comma.
+The following statement contains no syntax error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">a</span> <span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="def-operator-instead-of-equal">
+<h2>def: operator instead of equal<a class="headerlink" href="#def-operator-instead-of-equal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">41</span>, in <span class="n">create_tracebacks</span>
+    <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\def_operator_instead_of_equal.py&quot;</span>, line <span class="m">1</span>
+    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="kc">None</span><span class="p">):</span>
+                      <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>Did you mean to write an equal sign?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\def_operator_instead_of_equal.py’
+beyond the location indicated by ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="kc">None</span><span class="p">):</span>
+                            <span class="o">^</span>
+</pre></div>
+</div>
+<p>You cannot have operators as function arguments.
+I suspect you made a typo and wrote <code class="docutils literal notranslate"><span class="pre">+</span></code> instead of an equal sign.
+The following statement contains no syntax error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="def-operator-instead-of-name">
+<h2>def: operator instead of name<a class="headerlink" href="#def-operator-instead-of-name" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">41</span>, in <span class="n">create_tracebacks</span>
+    <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\def_operator_instead_of_name.py&quot;</span>, line <span class="m">1</span>
+    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="o">+</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+                <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>You cannot use <code class="docutils literal notranslate"><span class="pre">+</span></code> as an argument.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\def_operator_instead_of_name.py’
+beyond the location indicated by ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="o">+</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+                      <span class="o">^</span>
+</pre></div>
+</div>
+<p>I suspect you made a typo and wrote <code class="docutils literal notranslate"><span class="pre">+</span></code> by mistake.
+If you replace it by a unique variable name, the result
+will contain no syntax error.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="def-positional-argument-follows-keyword-argument">
@@ -3492,6 +3605,33 @@ The following lines of code would not cause any <code class="docutils literal no
 </div>
 <p>Note: these are just some of the possible choices and that
 some of them might raise other types of exceptions.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="missing-parenthesis-for-range">
+<h2>Missing parenthesis for range<a class="headerlink" href="#missing-parenthesis-for-range" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">41</span>, in <span class="n">create_tracebacks</span>
+    <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\missing_parens_for_range.py&quot;</span>, line <span class="m">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="mi">3</span><span class="p">:</span>
+                   <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>Did you forget to write parenthesis?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\missing_parens_for_range.py’
+beyond the location indicated by ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="mi">3</span><span class="p">:</span>
+                         <span class="o">^</span>
+</pre></div>
+</div>
+<p>It looks as though you forgot to use to use parenthesis with <code class="docutils literal notranslate"><span class="pre">range</span></code>.
+Perhaps you meant:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">3</span><span class="p">):</span>
+</pre></div>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="name-is-global-and-nonlocal">

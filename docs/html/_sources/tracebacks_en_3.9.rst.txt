@@ -46,7 +46,7 @@ Generic
         7:         # Usually, a subclass such as ZeroDivisionError, etc., would
         8:         # likely be raised.
     --> 9:         raise ArithmeticError('error')
-       10:     except Exception as e:
+       10:     except ArithmeticError as e:
 
             ArithmeticError: <class ArithmeticError>
         
@@ -81,7 +81,7 @@ Attribute from other module
        268:     import cmath
        269:     try:
     -->270:         keyword.pi
-       271:     except Exception as e:
+       271:     except AttributeError as e:
 
             keyword: <module keyword> from PYTHON_LIB:\keyword.py
         
@@ -112,7 +112,7 @@ Builtin function
        186:     text = 'Hello world!'
        187:     try:
     -->188:         len.text
-       189:     except Exception as e:
+       189:     except AttributeError as e:
 
             text: 'Hello world!'
             len: <builtin function len>
@@ -142,7 +142,7 @@ Builtin module with no file
        203: 
        204:     try:
     -->205:         sys.foo
-       206:     except Exception as e:
+       206:     except AttributeError as e:
 
             sys: <module sys (builtin)>
         
@@ -170,7 +170,7 @@ Generic
        34:     try:
        35:         a = A()
     -->36:         a.x  # Testing instance
-       37:     except Exception as e:
+       37:     except AttributeError as e:
 
             a: <A object> from test_attribute_error.test_Generic
         
@@ -202,7 +202,7 @@ Module attribute typo
        111: 
        112:     try:
     -->113:         math.cost
-       114:     except Exception as e:
+       114:     except AttributeError as e:
 
             math: <module math (builtin)>
         
@@ -230,7 +230,7 @@ Nonetype
        150:     a = None
        151:     try:
     -->152:         a.b
-       153:     except Exception as e:
+       153:     except AttributeError as e:
 
             a: None
         
@@ -261,7 +261,7 @@ Object attribute typo
        51:         a = [1, 2, 3]
     -->52:         a.appendh(4)
                    ^^^^^^^^^
-       53:     except Exception as e:
+       53:     except AttributeError as e:
 
             a: [1, 2, 3]
         
@@ -327,7 +327,7 @@ Shadow stdlib module
        132: 
        133:     try:
     -->134:         turtle.Pen
-       135:     except Exception as e:
+       135:     except AttributeError as e:
 
             turtle: <module turtle> from TESTS:\turtle.py
         
@@ -361,7 +361,7 @@ Tuple by accident
        239:     try:
     -->240:         something.upper()
                     ^^^^^^^^^^^^^^^
-       241:     except Exception as e:
+       241:     except AttributeError as e:
 
             something: ('abc',)
         
@@ -393,7 +393,7 @@ Use builtin
        67:         a = [1, 2, 3]
     -->68:         a.length()
                    ^^^^^^^^
-       69:     except Exception as e:
+       69:     except AttributeError as e:
 
             a: [1, 2, 3]
         
@@ -426,7 +426,7 @@ Use synonym
        83:         a = [1, 2, 3]
     -->84:         a.add(4)
                    ^^^^^
-       85:     except Exception as e:
+       85:     except AttributeError as e:
 
             a: [1, 2, 3]
         
@@ -457,7 +457,7 @@ Using slots
        223:     f = F()
        224:     try:
     -->225:         f.b = 1
-       226:     except Exception as e:
+       226:     except AttributeError as e:
 
             f: <F object> from test_attribute_error.test_Using_slots
         
@@ -490,7 +490,7 @@ Generic
        4: def test_Generic():
        5:     try:
     -->6:         open("does_not_exist")
-       7:     except Exception as e:
+       7:     except FileNotFoundError as e:
 
             open: <builtin function open>
         
@@ -538,7 +538,7 @@ Circular import
        18: def test_Circular_import():
        19:     try:
     -->20:         import circular_a
-       21:     except Exception as e:
+       21:     except ImportError as e:
 
     Exception raised on line 2 of file TESTS:\circular_b.py.
     
@@ -570,7 +570,7 @@ Simple import error
        4: def test_Simple_import_error():
        5:     try:
     -->6:         from math import Pi
-       7:     except Exception as e:
+       7:     except ImportError as e:
 
 
 IndexError
@@ -602,7 +602,7 @@ Long list
        23:     try:
     -->24:         print(a[50], b[0])
                          ^^^^^
-       25:     except Exception as e:
+       25:     except IndexError as e:
 
             a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
                 len(a): 40
@@ -637,7 +637,7 @@ Short tuple
         7:     try:
     --> 8:         print(a[3], b[2])
                          ^^^^
-        9:     except Exception as e:
+        9:     except IndexError as e:
 
             a: (1, 2, 3)
         
@@ -677,7 +677,7 @@ ChainMap
        21:     d = ChainMap({}, {})
        22:     try:
     -->23:         d.pop(42)
-       24:     except Exception as e:
+       24:     except KeyError as e:
 
             d: ChainMap({}, {})
         
@@ -713,7 +713,7 @@ Generic
        5:     d = {"a": 1, "b": 2}
        6:     try:
     -->7:         d["c"]
-       8:     except Exception as e:
+       8:     except KeyError as e:
 
             d: {'a': 1, 'b': 2}
         
@@ -743,7 +743,7 @@ Generic
         8:         # other than possibly codecs.lookup(), which is why we raise
         9:         # it directly here for our example.
     -->10:         raise LookupError("Fake message")
-       11:     except Exception as e:
+       11:     except LookupError as e:
 
             LookupError: <class LookupError>
         
@@ -782,7 +782,7 @@ Not a package
        39: 
        40:     try:
     -->41:         import os.pathh
-       42:     except Exception as e:
+       42:     except ModuleNotFoundError as e:
 
 
 Standard library module
@@ -811,7 +811,7 @@ Standard library module
        4: def test_Standard_library_module():
        5:     try:
     -->6:         import Tkinter
-       7:     except Exception as e:
+       7:     except ModuleNotFoundError as e:
 
 
 NameError
@@ -853,7 +853,7 @@ Annotated variable
        20:     try:
     -->21:         y = x
                        ^
-       22:     except Exception as e:
+       22:     except NameError as e:
 
 
 Generic
@@ -882,7 +882,7 @@ Generic
        5:     try:
     -->6:         this = something
                          ^^^^^^^^^
-       7:     except Exception as e:
+       7:     except NameError as e:
 
 
 Synonym
@@ -892,7 +892,7 @@ Synonym
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_name_error.py", line 66, in test_Synonym
+      File "TESTS:\runtime\test_name_error.py", line 86, in test_Synonym
         cost  # wrote from math import * above
     NameError: name 'cost' is not defined
     
@@ -908,13 +908,13 @@ Synonym
     Instead of writing `cost`, perhaps you meant one of the following:
     *   Global scope: `cos`, `cosh`, `acos`
     
-    Exception raised on line 66 of file TESTS:\runtime\test_name_error.py.
+    Exception raised on line 86 of file TESTS:\runtime\test_name_error.py.
     
-       64: 
-       65:     try:
-    -->66:         cost  # wrote from math import * above
+       84: 
+       85:     try:
+    -->86:         cost  # wrote from math import * above
                    ^^^^
-       67:     except Exception as e:
+       87:     except NameError as e:
 
 
 OverflowError
@@ -940,7 +940,7 @@ Generic
        4: def test_Generic():
        5:     try:
     -->6:         2.0 ** 1600
-       7:     except Exception as e:
+       7:     except OverflowError as e:
 
 
 RecursionError
@@ -977,7 +977,7 @@ Generic
         6:         return a()
         7:     try:
     --> 8:         a()
-        9:     except Exception as e:
+        9:     except RecursionError as e:
 
             a: <function a> from test_Generic
         
@@ -1004,7 +1004,7 @@ Bad type for unary operator
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 349, in test_Bad_type_for_unary_operator
+      File "TESTS:\runtime\test_type_error.py", line 371, in test_Bad_type_for_unary_operator
         a =+ "def"
     TypeError: bad operand type for unary +: 'str'
     
@@ -1020,13 +1020,13 @@ Bad type for unary operator
     
     Perhaps you meant to write `+=` instead of `=+`
     
-    Exception raised on line 349 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 371 of file TESTS:\runtime\test_type_error.py.
     
-       347:         # fmt: off
-       348:         a = "abc"
-    -->349:         a =+ "def"
+       369:         # fmt: off
+       370:         a = "abc"
+    -->371:         a =+ "def"
                        ^^^^^^^
-       350:         # fmt: on
+       372:         # fmt: on
 
 
 Can only concatenate
@@ -1054,7 +1054,7 @@ Can only concatenate
        36:         a_list = [1, 2, 3]
     -->37:         result = a_tuple + a_list
                             ^^^^^^^^^^^^^^^^
-       38:     except Exception as e:
+       38:     except TypeError as e:
 
             a_tuple: (1, 2, 3)
             a_list: [1, 2, 3]
@@ -1068,7 +1068,7 @@ Cannot convert dictionary update sequence
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 743, in test_Cannot_convert_dictionary_update_sequence
+      File "TESTS:\runtime\test_type_error.py", line 765, in test_Cannot_convert_dictionary_update_sequence
         dd.update([1, 2, 3])
     TypeError: cannot convert dictionary update sequence element #0 to a sequence
     
@@ -1083,12 +1083,12 @@ Cannot convert dictionary update sequence
     Instead of writing `dd.update([1, 2, 3])`
     perhaps you should use the `dict.fromkeys()` method: `dd.update( dict.fromkeys([1, 2, 3]) )`.
     
-    Exception raised on line 743 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 765 of file TESTS:\runtime\test_type_error.py.
     
-       741:     dd = {"a": "a"}
-       742:     try:
-    -->743:         dd.update([1, 2, 3])
-       744:     except Exception as e:
+       763:     dd = {"a": "a"}
+       764:     try:
+    -->765:         dd.update([1, 2, 3])
+       766:     except TypeError as e:
 
             dd: {'a': 'a'}
         
@@ -1101,7 +1101,7 @@ Cannot multiply by non int
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 547, in test_Cannot_multiply_by_non_int
+      File "TESTS:\runtime\test_type_error.py", line 569, in test_Cannot_multiply_by_non_int
         "a" * "2"
     TypeError: can't multiply sequence by non-int of type 'str'
     
@@ -1116,12 +1116,12 @@ Cannot multiply by non int
      strings, etc., by integers.
     Perhaps you forgot to convert `"2"` into an integer.
     
-    Exception raised on line 547 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 569 of file TESTS:\runtime\test_type_error.py.
     
-       545: 
-       546:     try:
-    -->547:         "a" * "2"
-       548:     except Exception as e:
+       567: 
+       568:     try:
+    -->569:         "a" * "2"
+       570:     except TypeError as e:
 
 
 Cannot unpack non iterable object
@@ -1131,7 +1131,7 @@ Cannot unpack non iterable object
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 715, in test_Cannot_unpack_non_iterable_object
+      File "TESTS:\runtime\test_type_error.py", line 737, in test_Cannot_unpack_non_iterable_object
         a, b = 42.0
     TypeError: cannot unpack non-iterable float object
     
@@ -1146,12 +1146,12 @@ Cannot unpack non iterable object
     Python containers (`list, tuple, dict`, etc.) are iterables,
     but not objects of type `float`.
     
-    Exception raised on line 715 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 737 of file TESTS:\runtime\test_type_error.py.
     
-       713: def test_Cannot_unpack_non_iterable_object():
-       714:     try:
-    -->715:         a, b = 42.0
-       716:     except Exception as e:
+       735: def test_Cannot_unpack_non_iterable_object():
+       736:     try:
+    -->737:         a, b = 42.0
+       738:     except TypeError as e:
 
 
 Comparison not supported
@@ -1161,28 +1161,31 @@ Comparison not supported
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 299, in test_Comparison_not_supported
-        b < a
-    TypeError: '<' not supported between instances of 'int' and 'str'
+      File "TESTS:\runtime\test_type_error.py", line 320, in test_Comparison_not_supported
+        b >= a
+    TypeError: '>=' not supported between instances of 'int' and 'str'
     
+        Did you forget to convert the string `a` into an integer (`int`)?
+        
     A `TypeError` is usually caused by trying
     to combine two incompatible types of objects,
     by calling a function with the wrong type of object,
     or by trying to do an operation not allowed on a given type of object.
     
-    You tried to do an order comparison (<)
+    You tried to do an order comparison (>=)
     between two incompatible types of objects:
     an integer (`int`) and a string (`str`).
+    Perhaps you forgot to convert the string `a` into an integer (`int`).
     
-    Exception raised on line 299 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 320 of file TESTS:\runtime\test_type_error.py.
     
-       297:         a = "a"
-       298:         b = 42
-    -->299:         b < a
-       300:     except Exception as e:
+       318:         a = "2"
+       319:         b = 42
+    -->320:         b >= a
+       321:     except TypeError as e:
 
             b: 42
-            a: 'a'
+            a: '2'
         
 
 
@@ -1193,7 +1196,7 @@ Derive from BaseException
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 490, in test_Derive_from_BaseException
+      File "TESTS:\runtime\test_type_error.py", line 512, in test_Derive_from_BaseException
         raise "exception"  # noqa
     TypeError: exceptions must derive from BaseException
     
@@ -1204,12 +1207,12 @@ Derive from BaseException
     
     In Python 3, exceptions must be derived from BaseException.
     
-    Exception raised on line 490 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 512 of file TESTS:\runtime\test_type_error.py.
     
-       488: def test_Derive_from_BaseException():
-       489:     try:
-    -->490:         raise "exception"  # noqa
-       491:     except Exception as e:
+       510: def test_Derive_from_BaseException():
+       511:     try:
+    -->512:         raise "exception"  # noqa
+       513:     except TypeError as e:
 
 
 Indices must be integers or slices
@@ -1219,7 +1222,7 @@ Indices must be integers or slices
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 629, in test_Indices_must_be_integers_or_slices
+      File "TESTS:\runtime\test_type_error.py", line 651, in test_Indices_must_be_integers_or_slices
         [1, 2, 3]["2"]
     TypeError: list indices must be integers or slices, not str
     
@@ -1238,12 +1241,12 @@ Indices must be integers or slices
     
     Perhaps you forgot to convert `"2"` into an integer.
     
-    Exception raised on line 629 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 651 of file TESTS:\runtime\test_type_error.py.
     
-       627: 
-       628:     try:
-    -->629:         [1, 2, 3]["2"]
-       630:     except Exception as e:
+       649: 
+       650:     try:
+    -->651:         [1, 2, 3]["2"]
+       652:     except TypeError as e:
 
 
 Not an integer
@@ -1253,7 +1256,7 @@ Not an integer
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 592, in test_Not_an_integer
+      File "TESTS:\runtime\test_type_error.py", line 614, in test_Not_an_integer
         range(c, d)
     TypeError: 'str' object cannot be interpreted as an integer
     
@@ -1266,12 +1269,12 @@ Not an integer
     
     You wrote an object of type `str` where an integer was expected.
     Perhaps you forgot to convert `c, d` into integers.
-    Exception raised on line 592 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 614 of file TESTS:\runtime\test_type_error.py.
     
-       590:     c, d = "2", "3"
-       591:     try:
-    -->592:         range(c, d)
-       593:     except Exception as e:
+       612:     c, d = "2", "3"
+       613:     try:
+    -->614:         range(c, d)
+       615:     except TypeError as e:
 
             c: '2'
             d: '3'
@@ -1286,7 +1289,7 @@ Not callable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 477, in test_Not_callable
+      File "TESTS:\runtime\test_type_error.py", line 499, in test_Not_callable
         _ = [1, 2](3 + 4)
     TypeError: 'list' object is not callable
     
@@ -1306,13 +1309,13 @@ Not callable
     Perhaps you meant to use `[]` instead of `()` and write
     `[1, 2][3 + 4]`
     
-    Exception raised on line 477 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 499 of file TESTS:\runtime\test_type_error.py.
     
-       475: 
-       476:     try:
-    -->477:         _ = [1, 2](3 + 4)
+       497: 
+       498:     try:
+    -->499:         _ = [1, 2](3 + 4)
                         ^^^^^^^^^^^^^
-       478:     except Exception as e:
+       500:     except TypeError as e:
 
 
 Object is not iterable
@@ -1322,7 +1325,7 @@ Object is not iterable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 701, in test_Object_is_not_iterable
+      File "TESTS:\runtime\test_type_error.py", line 723, in test_Object_is_not_iterable
         list(42)
     TypeError: 'int' object is not iterable
     
@@ -1335,12 +1338,12 @@ Object is not iterable
     Python containers (`list, tuple, dict`, etc.) are iterables.
     An iterable is required here.
     
-    Exception raised on line 701 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 723 of file TESTS:\runtime\test_type_error.py.
     
-       699: def test_Object_is_not_iterable():
-       700:     try:
-    -->701:         list(42)
-       702:     except Exception as e:
+       721: def test_Object_is_not_iterable():
+       722:     try:
+    -->723:         list(42)
+       724:     except TypeError as e:
 
             list: <class list>
         
@@ -1353,7 +1356,7 @@ Object is not subscriptable
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 687, in test_Object_is_not_subscriptable
+      File "TESTS:\runtime\test_type_error.py", line 709, in test_Object_is_not_subscriptable
         a = f[1]
     TypeError: 'function' object is not subscriptable
     
@@ -1369,13 +1372,13 @@ Object is not subscriptable
     
     Perhaps you meant to write `f(1)`.
     
-    Exception raised on line 687 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 709 of file TESTS:\runtime\test_type_error.py.
     
-       685: 
-       686:     try:
-    -->687:         a = f[1]
+       707: 
+       708:     try:
+    -->709:         a = f[1]
                         ^^^^
-       688:     except Exception as e:
+       710:     except TypeError as e:
 
             f: <function f> from test_Object_is_not_subscriptable
         
@@ -1388,7 +1391,7 @@ Slice indices must be integers or None
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 643, in test_Slice_indices_must_be_integers_or_None
+      File "TESTS:\runtime\test_type_error.py", line 665, in test_Slice_indices_must_be_integers_or_None
         [1, 2, 3][1.0:2.0]
     TypeError: slice indices must be integers or None or have an __index__ method
     
@@ -1403,12 +1406,12 @@ Slice indices must be integers or None
     each of `start`, `stop`, `step` must be either an integer, `None`,
     or possibly some other object having an `__index__` method.
     
-    Exception raised on line 643 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 665 of file TESTS:\runtime\test_type_error.py.
     
-       641: def test_Slice_indices_must_be_integers_or_None():
-       642:     try:
-    -->643:         [1, 2, 3][1.0:2.0]
-       644:     except Exception as e:
+       663: def test_Slice_indices_must_be_integers_or_None():
+       664:     try:
+    -->665:         [1, 2, 3][1.0:2.0]
+       666:     except TypeError as e:
 
 
 Too few positional argument
@@ -1418,7 +1421,7 @@ Too few positional argument
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 419, in test_Too_few_positional_argument
+      File "TESTS:\runtime\test_type_error.py", line 441, in test_Too_few_positional_argument
         fn(1)
     TypeError: fn() missing 2 required positional arguments: 'b' and 'c'
     
@@ -1430,12 +1433,12 @@ Too few positional argument
     You apparently have called the function 'fn()' with
     fewer positional arguments than it requires (2 missing).
     
-    Exception raised on line 419 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 441 of file TESTS:\runtime\test_type_error.py.
     
-       417: 
-       418:     try:
-    -->419:         fn(1)
-       420:     except Exception as e:
+       439: 
+       440:     try:
+    -->441:         fn(1)
+       442:     except TypeError as e:
 
             fn: <function fn> from test_Too_few_positional_argument
         
@@ -1448,7 +1451,7 @@ Too many positional argument
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 400, in test_Too_many_positional_argument
+      File "TESTS:\runtime\test_type_error.py", line 422, in test_Too_many_positional_argument
         A().f(1)
     TypeError: f() takes 1 positional argument but 2 were given
     
@@ -1464,12 +1467,12 @@ Too many positional argument
     such positional argument(s).
     Perhaps you forgot `self` when defining `f`.
     
-    Exception raised on line 400 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 422 of file TESTS:\runtime\test_type_error.py.
     
-       398: 
-       399:     try:
-    -->400:         A().f(1)
-       401:     except Exception as e:
+       420: 
+       421:     try:
+    -->422:         A().f(1)
+       423:     except TypeError as e:
 
             A: <class A> from test_type_error.test_Too_many_positional_argument
         
@@ -1482,7 +1485,7 @@ Tuple no item assignment
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 367, in test_Tuple_no_item_assignment
+      File "TESTS:\runtime\test_type_error.py", line 389, in test_Tuple_no_item_assignment
         a[0] = 0
     TypeError: 'tuple' object does not support item assignment
     
@@ -1499,12 +1502,12 @@ Tuple no item assignment
     most likely by using an indexing operation.
     Perhaps you meant to use a list instead.
     
-    Exception raised on line 367 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 389 of file TESTS:\runtime\test_type_error.py.
     
-       365:     a = (1, 2, 3)
-       366:     try:
-    -->367:         a[0] = 0
-       368:     except Exception as e:
+       387:     a = (1, 2, 3)
+       388:     try:
+    -->389:         a[0] = 0
+       390:     except TypeError as e:
 
             a[0]: 1
             a: (1, 2, 3)
@@ -1518,7 +1521,7 @@ Unhachable type
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_type_error.py", line 660, in test_Unhachable_type
+      File "TESTS:\runtime\test_type_error.py", line 682, in test_Unhachable_type
         {[1, 2]: 1}
     TypeError: unhashable type: 'list'
     
@@ -1532,12 +1535,12 @@ Unhachable type
     Hashable objects are objects that do not change value
     once they have been created.Instead of using a `list`, consider using a `tuple`.
     
-    Exception raised on line 660 of file TESTS:\runtime\test_type_error.py.
+    Exception raised on line 682 of file TESTS:\runtime\test_type_error.py.
     
-       658: def test_Unhachable_type():
-       659:     try:
-    -->660:         {[1, 2]: 1}
-       661:     except Exception as e:
+       680: def test_Unhachable_type():
+       681:     try:
+    -->682:         {[1, 2]: 1}
+       683:     except TypeError as e:
 
 
 Unsupported operand types
@@ -1567,7 +1570,7 @@ Unsupported operand types
        281:         a = "a"
        282:         b = 2
     -->283:         a @= b
-       284:     except Exception as e:
+       284:     except TypeError as e:
 
             a: 'a'
             b: 2
@@ -1616,7 +1619,7 @@ Missing global
        25: 
        26:     try:
     -->27:         outer_missing_global()
-       28:     except Exception as e:
+       28:     except UnboundLocalError as e:
 
             global outer_missing_global: <function outer_missing_global>
         
@@ -1668,7 +1671,7 @@ Missing nonlocal
        46: 
        47:     try:
     -->48:         outer_missing_nonlocal()
-       49:     except Exception as e:
+       49:     except UnboundLocalError as e:
 
             global outer_missing_nonlocal: <function outer_missing_nonlocal>
         
@@ -1696,7 +1699,7 @@ Generic
     
     No information is known about this exception.
     Please report this example to
-    https://github.com/aroberge/friendly-traceback/issues
+    https://github.com/aroberge/friendly/issues
     
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
@@ -1740,7 +1743,7 @@ Not enough values to unpack
        26:     d = "ab"
        27:     try:
     -->28:         a, b, c = d
-       29:     except Exception as e:
+       29:     except ValueError as e:
 
             d: 'ab'
         
@@ -1770,7 +1773,7 @@ Too many values to unpack
        41:     c = [1, 2, 3]
        42:     try:
     -->43:         a, b = c
-       44:     except Exception as e:
+       44:     except ValueError as e:
 
             c: [1, 2, 3]
         
@@ -1805,7 +1808,7 @@ Complex division
        95:     zero = 0j
        96:     try:
     -->97:         1 / zero
-       98:     except Exception as e:
+       98:     except ZeroDivisionError as e:
 
             zero: 0j
         
@@ -1836,7 +1839,7 @@ Division operator
        5:     zero = 0
        6:     try:
     -->7:         1 / zero
-       8:     except Exception as e:
+       8:     except ZeroDivisionError as e:
 
             zero: 0
         
@@ -1863,7 +1866,7 @@ Divmod
        50:     zero = 0
        51:     try:
     -->52:         divmod(1, zero)
-       53:     except Exception as e:
+       53:     except ZeroDivisionError as e:
 
             zero: 0
             divmod: <builtin function divmod>
@@ -1895,7 +1898,7 @@ Float division
        80:     zero = 0.
        81:     try:
     -->82:         1 / zero
-       83:     except Exception as e:
+       83:     except ZeroDivisionError as e:
 
             zero: 0.0
         
@@ -1926,7 +1929,7 @@ Float modulo
        65:     zero = 0.
        66:     try:
     -->67:         1 % zero
-       68:     except Exception as e:
+       68:     except ZeroDivisionError as e:
 
             zero: 0.0
         
@@ -1957,7 +1960,7 @@ Integer division operator
        20:     zero = 0
        21:     try:
     -->22:         1 // zero
-       23:     except Exception as e:
+       23:     except ZeroDivisionError as e:
 
             zero: 0
         
@@ -1988,7 +1991,7 @@ Modulo operator
        35:     zero = 0
        36:     try:
     -->37:         1 % zero
-       38:     except Exception as e:
+       38:     except ZeroDivisionError as e:
 
             zero: 0
         
@@ -2016,7 +2019,7 @@ Raise zero negative power
        110:     zero = 0
        111:     try:
     -->112:         zero ** -1
-       113:     except Exception as e:
+       113:     except ZeroDivisionError as e:
 
             zero: 0
         

@@ -1272,6 +1272,36 @@ def: semi-colon after colon
     Removing `;`, might fix the problem.
     
 
+def: extra comma
+----------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_extra_comma.py", line 1
+        def test(a,,b):
+                   ^
+    SyntaxError: invalid syntax
+    
+        Did you mean to write `,`?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\def_extra_comma.py'
+    beyond the location indicated by ^.
+    
+    -->1: def test(a,,b):
+                     ^
+
+    I suspect you made a typo and added `,` by mistake.
+    The following statement contains no syntax error:
+    
+        def test(a,b):
+
 def: unspecified keywords before /
 ----------------------------------
 
@@ -1918,6 +1948,98 @@ Single number used as arg in function def
 
     You used a number as an argument when defining a function.
     You can only use identifiers (variable names) as function arguments.
+    
+
+def: operator instead of comma
+------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_operator_instead_of_comma.py", line 1
+        def test(a + b):
+                   ^
+    SyntaxError: invalid syntax
+    
+        Did you mean to write a comma?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\def_operator_instead_of_comma.py'
+    beyond the location indicated by ^.
+    
+    -->1: def test(a + b):
+                     ^
+
+    You cannot have operators as function arguments.
+    I suspect you made a typo and wrote `+` instead of a comma.
+    The following statement contains no syntax error:
+    
+        def test(a , b):
+
+def: operator instead of equal
+------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_operator_instead_of_equal.py", line 1
+        def test(a, b=3, c+None):
+                          ^
+    SyntaxError: invalid syntax
+    
+        Did you mean to write an equal sign?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\def_operator_instead_of_equal.py'
+    beyond the location indicated by ^.
+    
+    -->1: def test(a, b=3, c+None):
+                            ^
+
+    You cannot have operators as function arguments.
+    I suspect you made a typo and wrote `+` instead of an equal sign.
+    The following statement contains no syntax error:
+    
+        def test(a, b=3, c=None):
+
+def: operator instead of name
+-----------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_operator_instead_of_name.py", line 1
+        def test(a, +, b):
+                    ^
+    SyntaxError: invalid syntax
+    
+        You cannot use `+` as an argument.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\def_operator_instead_of_name.py'
+    beyond the location indicated by ^.
+    
+    -->1: def test(a, +, b):
+                      ^
+
+    I suspect you made a typo and wrote `+` by mistake.
+    If you replace it by a unique variable name, the result
+    will contain no syntax error.
     
 
 def: positional argument follows keyword argument
@@ -3629,6 +3751,38 @@ Missing comma in a tuple
         a = (1, 2 *  3)
     Note: these are just some of the possible choices and that
     some of them might raise other types of exceptions.
+    
+
+Missing parenthesis for range
+-----------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\missing_parens_for_range.py", line 1
+        for i in range 3:
+                       ^
+    SyntaxError: invalid syntax
+    
+        Did you forget to write parenthesis?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\missing_parens_for_range.py'
+    beyond the location indicated by ^.
+    
+    -->1: for i in range 3:
+                         ^
+
+    It looks as though you forgot to use to use parenthesis with `range`.
+    Perhaps you meant:
+    
+        for i in range( 3):
+    
     
 
 Name is global and nonlocal

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.18 documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.29 documentation</title>
   
 
   
@@ -401,7 +401,7 @@ Exception raised on line 9 of file TESTS:\runtime\test_arithmetic_error.py.
     7:         # Usually, a subclass such as ZeroDivisionError, etc., would
     8:         # likely be raised.
 --&gt; 9:         raise ArithmeticError(&#39;error&#39;)
-   10:     except Exception as e:
+   10:     except ArithmeticError as e:
 
         ArithmeticError: &lt;class ArithmeticError&gt;
 </pre></div>
@@ -431,7 +431,7 @@ Exception raised on line 270 of file TESTS:\runtime\test_attribute_error.py.
    268:     import cmath
    269:     try:
 --&gt;270:         keyword.pi
-   271:     except Exception as e:
+   271:     except AttributeError as e:
 
         keyword: &lt;module keyword&gt; from PYTHON_LIB:\keyword.py
 </pre></div>
@@ -458,7 +458,7 @@ Exception raised on line 188 of file TESTS:\runtime\test_attribute_error.py.
    186:     text = &#39;Hello world!&#39;
    187:     try:
 --&gt;188:         len.text
-   189:     except Exception as e:
+   189:     except AttributeError as e:
 
         text: &#39;Hello world!&#39;
         len: &lt;builtin function len&gt;
@@ -484,7 +484,7 @@ Exception raised on line 205 of file TESTS:\runtime\test_attribute_error.py.
    203:
    204:     try:
 --&gt;205:         sys.foo
-   206:     except Exception as e:
+   206:     except AttributeError as e:
 
         sys: &lt;module sys (builtin)&gt;
 </pre></div>
@@ -508,7 +508,7 @@ Exception raised on line 36 of file TESTS:\runtime\test_attribute_error.py.
    34:     try:
    35:         a = A()
 --&gt;36:         a.x  # Testing instance
-   37:     except Exception as e:
+   37:     except AttributeError as e:
 
         a: &lt;A object&gt; from test_attribute_error.test_Generic
 </pre></div>
@@ -536,7 +536,7 @@ Exception raised on line 113 of file TESTS:\runtime\test_attribute_error.py.
    111:
    112:     try:
 --&gt;113:         math.cost
-   114:     except Exception as e:
+   114:     except AttributeError as e:
 
         math: &lt;module math (builtin)&gt;
 </pre></div>
@@ -560,7 +560,7 @@ Exception raised on line 152 of file TESTS:\runtime\test_attribute_error.py.
    150:     a = None
    151:     try:
 --&gt;152:         a.b
-   153:     except Exception as e:
+   153:     except AttributeError as e:
 
         a: None
 </pre></div>
@@ -587,7 +587,7 @@ Exception raised on line 52 of file TESTS:\runtime\test_attribute_error.py.
    51:         a = [1, 2, 3]
 --&gt;52:         a.appendh(4)
                ^^^^^^^^^
-   53:     except Exception as e:
+   53:     except AttributeError as e:
 
         a: [1, 2, 3]
 </pre></div>
@@ -645,7 +645,7 @@ Exception raised on line 134 of file TESTS:\runtime\test_attribute_error.py.
    132:
    133:     try:
 --&gt;134:         turtle.Pen
-   135:     except Exception as e:
+   135:     except AttributeError as e:
 
         turtle: &lt;module turtle&gt; from TESTS:\turtle.py
 </pre></div>
@@ -675,7 +675,7 @@ Exception raised on line 240 of file TESTS:\runtime\test_attribute_error.py.
    239:     try:
 --&gt;240:         something.upper()
                 ^^^^^^^^^^^^^^^
-   241:     except Exception as e:
+   241:     except AttributeError as e:
 
         something: (&#39;abc&#39;,)
 </pre></div>
@@ -703,7 +703,7 @@ Exception raised on line 68 of file TESTS:\runtime\test_attribute_error.py.
    67:         a = [1, 2, 3]
 --&gt;68:         a.length()
                ^^^^^^^^
-   69:     except Exception as e:
+   69:     except AttributeError as e:
 
         a: [1, 2, 3]
 </pre></div>
@@ -732,7 +732,7 @@ Exception raised on line 84 of file TESTS:\runtime\test_attribute_error.py.
    83:         a = [1, 2, 3]
 --&gt;84:         a.add(4)
                ^^^^^
-   85:     except Exception as e:
+   85:     except AttributeError as e:
 
         a: [1, 2, 3]
 </pre></div>
@@ -759,7 +759,7 @@ Exception raised on line 225 of file TESTS:\runtime\test_attribute_error.py.
    223:     f = F()
    224:     try:
 --&gt;225:         f.b = 1
-   226:     except Exception as e:
+   226:     except AttributeError as e:
 
         f: &lt;F object&gt; from test_attribute_error.test_Using_slots
 </pre></div>
@@ -787,7 +787,7 @@ Exception raised on line 6 of file TESTS:\runtime\test_file_not_found_error.py.
    4: def test_Generic():
    5:     try:
 --&gt;6:         open(&quot;does_not_exist&quot;)
-   7:     except Exception as e:
+   7:     except FileNotFoundError as e:
 
         open: &lt;builtin function open&gt;
 </pre></div>
@@ -830,7 +830,7 @@ Execution stopped on line 20 of file TESTS:\runtime\test_import_error.py.
    18: def test_Circular_import():
    19:     try:
 --&gt;20:         import circular_a
-   21:     except Exception as e:
+   21:     except ImportError as e:
 
 Exception raised on line 2 of file TESTS:\circular_b.py.
 
@@ -859,7 +859,7 @@ Exception raised on line 6 of file TESTS:\runtime\test_import_error.py.
    4: def test_Simple_import_error():
    5:     try:
 --&gt;6:         from math import Pi
-   7:     except Exception as e:
+   7:     except ImportError as e:
 </pre></div>
 </div>
 </div>
@@ -887,7 +887,7 @@ Exception raised on line 24 of file TESTS:\runtime\test_index_error.py.
    23:     try:
 --&gt;24:         print(a[50], b[0])
                      ^^^^^
-   25:     except Exception as e:
+   25:     except IndexError as e:
 
         a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
             len(a): 40
@@ -918,7 +918,7 @@ Exception raised on line 8 of file TESTS:\runtime\test_index_error.py.
     7:     try:
 --&gt; 8:         print(a[3], b[2])
                      ^^^^
-    9:     except Exception as e:
+    9:     except IndexError as e:
 
         a: (1, 2, 3)
 </pre></div>
@@ -953,7 +953,7 @@ Execution stopped on line 23 of file TESTS:\runtime\test_key_error.py.
    21:     d = ChainMap({}, {})
    22:     try:
 --&gt;23:         d.pop(42)
-   24:     except Exception as e:
+   24:     except KeyError as e:
 
         d: ChainMap({}, {})
 
@@ -985,7 +985,7 @@ Exception raised on line 7 of file TESTS:\runtime\test_key_error.py.
    5:     d = {&quot;a&quot;: 1, &quot;b&quot;: 2}
    6:     try:
 --&gt;7:         d[&quot;c&quot;]
-   8:     except Exception as e:
+   8:     except KeyError as e:
 
         d: {&#39;a&#39;: 1, &#39;b&#39;: 2}
 </pre></div>
@@ -1010,7 +1010,7 @@ Exception raised on line 10 of file TESTS:\runtime\test_lookup_error.py.
     8:         # other than possibly codecs.lookup(), which is why we raise
     9:         # it directly here for our example.
 --&gt;10:         raise LookupError(&quot;Fake message&quot;)
-   11:     except Exception as e:
+   11:     except LookupError as e:
 
         LookupError: &lt;class LookupError&gt;
 </pre></div>
@@ -1044,7 +1044,7 @@ Exception raised on line 41 of file TESTS:\runtime\test_module_not_found_error.p
    39:
    40:     try:
 --&gt;41:         import os.pathh
-   42:     except Exception as e:
+   42:     except ModuleNotFoundError as e:
 </pre></div>
 </div>
 </div>
@@ -1070,7 +1070,7 @@ Exception raised on line 6 of file TESTS:\runtime\test_module_not_found_error.py
    4: def test_Standard_library_module():
    5:     try:
 --&gt;6:         import Tkinter
-   7:     except Exception as e:
+   7:     except ModuleNotFoundError as e:
 </pre></div>
 </div>
 </div>
@@ -1108,7 +1108,7 @@ Exception raised on line 21 of file TESTS:\runtime\test_name_error.py.
    20:     try:
 --&gt;21:         y = x
                    ^
-   22:     except Exception as e:
+   22:     except NameError as e:
 </pre></div>
 </div>
 </div>
@@ -1134,14 +1134,14 @@ Exception raised on line 6 of file TESTS:\runtime\test_name_error.py.
    5:     try:
 --&gt;6:         this = something
                      ^^^^^^^^^
-   7:     except Exception as e:
+   7:     except NameError as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="synonym">
 <h3>Synonym<a class="headerlink" href="#synonym" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 66, in test_Synonym
+  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 86, in test_Synonym
     cost  # wrote from math import * above
 NameError: name &#39;cost&#39; is not defined
 
@@ -1157,13 +1157,13 @@ In your program, `cost` is an unknown name.
 Instead of writing `cost`, perhaps you meant one of the following:
 *   Global scope: `cos`, `cosh`, `acos`
 
-Exception raised on line 66 of file TESTS:\runtime\test_name_error.py.
+Exception raised on line 86 of file TESTS:\runtime\test_name_error.py.
 
-   64:
-   65:     try:
---&gt;66:         cost  # wrote from math import * above
+   84:
+   85:     try:
+--&gt;86:         cost  # wrote from math import * above
                ^^^^
-   67:     except Exception as e:
+   87:     except NameError as e:
 </pre></div>
 </div>
 </div>
@@ -1185,7 +1185,7 @@ Exception raised on line 6 of file TESTS:\runtime\test_overflow_error.py.
    4: def test_Generic():
    5:     try:
 --&gt;6:         2.0 ** 1600
-   7:     except Exception as e:
+   7:     except OverflowError as e:
 </pre></div>
 </div>
 </div>
@@ -1218,7 +1218,7 @@ Execution stopped on line 8 of file TESTS:\runtime\test_recursion_error.py.
     6:         return a()
     7:     try:
 --&gt; 8:         a()
-    9:     except Exception as e:
+    9:     except RecursionError as e:
 
         a: &lt;function a&gt; from test_Generic
 
@@ -1240,7 +1240,7 @@ Exception raised on line 6 of file TESTS:\runtime\test_recursion_error.py.
 <div class="section" id="bad-type-for-unary-operator">
 <h3>Bad type for unary operator<a class="headerlink" href="#bad-type-for-unary-operator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 349, in test_Bad_type_for_unary_operator
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 371, in test_Bad_type_for_unary_operator
     a =+ &quot;def&quot;
 TypeError: bad operand type for unary +: &#39;str&#39;
 
@@ -1256,13 +1256,13 @@ This operation is not defined for this type of object.
 
 Perhaps you meant to write `+=` instead of `=+`
 
-Exception raised on line 349 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 371 of file TESTS:\runtime\test_type_error.py.
 
-   347:         # fmt: off
-   348:         a = &quot;abc&quot;
---&gt;349:         a =+ &quot;def&quot;
+   369:         # fmt: off
+   370:         a = &quot;abc&quot;
+--&gt;371:         a =+ &quot;def&quot;
                    ^^^^^^^
-   350:         # fmt: on
+   372:         # fmt: on
 </pre></div>
 </div>
 </div>
@@ -1287,7 +1287,7 @@ Exception raised on line 37 of file TESTS:\runtime\test_type_error.py.
    36:         a_list = [1, 2, 3]
 --&gt;37:         result = a_tuple + a_list
                         ^^^^^^^^^^^^^^^^
-   38:     except Exception as e:
+   38:     except TypeError as e:
 
         a_tuple: (1, 2, 3)
         a_list: [1, 2, 3]
@@ -1297,7 +1297,7 @@ Exception raised on line 37 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="cannot-convert-dictionary-update-sequence">
 <h3>Cannot convert dictionary update sequence<a class="headerlink" href="#cannot-convert-dictionary-update-sequence" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 743, in test_Cannot_convert_dictionary_update_sequence
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 765, in test_Cannot_convert_dictionary_update_sequence
     dd.update([1, 2, 3])
 TypeError: cannot convert dictionary update sequence element #0 to a sequence
 
@@ -1312,12 +1312,12 @@ or by trying to do an operation not allowed on a given type of object.
 Instead of writing `dd.update([1, 2, 3])`
 perhaps you should use the `dict.fromkeys()` method: `dd.update( dict.fromkeys([1, 2, 3]) )`.
 
-Exception raised on line 743 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 765 of file TESTS:\runtime\test_type_error.py.
 
-   741:     dd = {&quot;a&quot;: &quot;a&quot;}
-   742:     try:
---&gt;743:         dd.update([1, 2, 3])
-   744:     except Exception as e:
+   763:     dd = {&quot;a&quot;: &quot;a&quot;}
+   764:     try:
+--&gt;765:         dd.update([1, 2, 3])
+   766:     except TypeError as e:
 
         dd: {&#39;a&#39;: &#39;a&#39;}
 </pre></div>
@@ -1326,7 +1326,7 @@ Exception raised on line 743 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="cannot-multiply-by-non-int">
 <h3>Cannot multiply by non int<a class="headerlink" href="#cannot-multiply-by-non-int" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 547, in test_Cannot_multiply_by_non_int
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 569, in test_Cannot_multiply_by_non_int
     &quot;a&quot; * &quot;2&quot;
 TypeError: can&#39;t multiply sequence by non-int of type &#39;str&#39;
 
@@ -1341,19 +1341,19 @@ You can only multiply sequences, such as list, tuples,
  strings, etc., by integers.
 Perhaps you forgot to convert `&quot;2&quot;` into an integer.
 
-Exception raised on line 547 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 569 of file TESTS:\runtime\test_type_error.py.
 
-   545:
-   546:     try:
---&gt;547:         &quot;a&quot; * &quot;2&quot;
-   548:     except Exception as e:
+   567:
+   568:     try:
+--&gt;569:         &quot;a&quot; * &quot;2&quot;
+   570:     except TypeError as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="cannot-unpack-non-iterable-object">
 <h3>Cannot unpack non iterable object<a class="headerlink" href="#cannot-unpack-non-iterable-object" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 715, in test_Cannot_unpack_non_iterable_object
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 737, in test_Cannot_unpack_non_iterable_object
     a, b = 42.0
 TypeError: cannot unpack non-iterable float object
 
@@ -1368,47 +1368,50 @@ An iterable is an object capable of returning its members one at a time.
 Python containers (`list, tuple, dict`, etc.) are iterables,
 but not objects of type `float`.
 
-Exception raised on line 715 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 737 of file TESTS:\runtime\test_type_error.py.
 
-   713: def test_Cannot_unpack_non_iterable_object():
-   714:     try:
---&gt;715:         a, b = 42.0
-   716:     except Exception as e:
+   735: def test_Cannot_unpack_non_iterable_object():
+   736:     try:
+--&gt;737:         a, b = 42.0
+   738:     except TypeError as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="comparison-not-supported">
 <h3>Comparison not supported<a class="headerlink" href="#comparison-not-supported" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 299, in test_Comparison_not_supported
-    b &lt; a
-TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 320, in test_Comparison_not_supported
+    b &gt;= a
+TypeError: &#39;&gt;=&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
+
+    Did you forget to convert the string `a` into an integer (`int`)?
 
 A `TypeError` is usually caused by trying
 to combine two incompatible types of objects,
 by calling a function with the wrong type of object,
 or by trying to do an operation not allowed on a given type of object.
 
-You tried to do an order comparison (&lt;)
+You tried to do an order comparison (&gt;=)
 between two incompatible types of objects:
 an integer (`int`) and a string (`str`).
+Perhaps you forgot to convert the string `a` into an integer (`int`).
 
-Exception raised on line 299 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 320 of file TESTS:\runtime\test_type_error.py.
 
-   297:         a = &quot;a&quot;
-   298:         b = 42
---&gt;299:         b &lt; a
-   300:     except Exception as e:
+   318:         a = &quot;2&quot;
+   319:         b = 42
+--&gt;320:         b &gt;= a
+   321:     except TypeError as e:
 
         b: 42
-        a: &#39;a&#39;
+        a: &#39;2&#39;
 </pre></div>
 </div>
 </div>
 <div class="section" id="derive-from-baseexception">
 <h3>Derive from BaseException<a class="headerlink" href="#derive-from-baseexception" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 490, in test_Derive_from_BaseException
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 512, in test_Derive_from_BaseException
     raise &quot;exception&quot;  # noqa
 TypeError: exceptions must derive from BaseException
 
@@ -1419,19 +1422,19 @@ or by trying to do an operation not allowed on a given type of object.
 
 In Python 3, exceptions must be derived from BaseException.
 
-Exception raised on line 490 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 512 of file TESTS:\runtime\test_type_error.py.
 
-   488: def test_Derive_from_BaseException():
-   489:     try:
---&gt;490:         raise &quot;exception&quot;  # noqa
-   491:     except Exception as e:
+   510: def test_Derive_from_BaseException():
+   511:     try:
+--&gt;512:         raise &quot;exception&quot;  # noqa
+   513:     except TypeError as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="indices-must-be-integers-or-slices">
 <h3>Indices must be integers or slices<a class="headerlink" href="#indices-must-be-integers-or-slices" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 629, in test_Indices_must_be_integers_or_slices
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 651, in test_Indices_must_be_integers_or_slices
     [1, 2, 3][&quot;2&quot;]
 TypeError: list indices must be integers or slices, not str
 
@@ -1450,19 +1453,19 @@ and you have used a string (`str`) instead.
 
 Perhaps you forgot to convert `&quot;2&quot;` into an integer.
 
-Exception raised on line 629 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 651 of file TESTS:\runtime\test_type_error.py.
 
-   627:
-   628:     try:
---&gt;629:         [1, 2, 3][&quot;2&quot;]
-   630:     except Exception as e:
+   649:
+   650:     try:
+--&gt;651:         [1, 2, 3][&quot;2&quot;]
+   652:     except TypeError as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="not-an-integer">
 <h3>Not an integer<a class="headerlink" href="#not-an-integer" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 592, in test_Not_an_integer
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 614, in test_Not_an_integer
     range(c, d)
 TypeError: &#39;str&#39; object cannot be interpreted as an integer
 
@@ -1475,12 +1478,12 @@ or by trying to do an operation not allowed on a given type of object.
 
 You wrote an object of type `str` where an integer was expected.
 Perhaps you forgot to convert `c, d` into integers.
-Exception raised on line 592 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 614 of file TESTS:\runtime\test_type_error.py.
 
-   590:     c, d = &quot;2&quot;, &quot;3&quot;
-   591:     try:
---&gt;592:         range(c, d)
-   593:     except Exception as e:
+   612:     c, d = &quot;2&quot;, &quot;3&quot;
+   613:     try:
+--&gt;614:         range(c, d)
+   615:     except TypeError as e:
 
         c: &#39;2&#39;
         d: &#39;3&#39;
@@ -1491,7 +1494,7 @@ Exception raised on line 592 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="not-callable">
 <h3>Not callable<a class="headerlink" href="#not-callable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 477, in test_Not_callable
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 499, in test_Not_callable
     _ = [1, 2](3 + 4)
 TypeError: &#39;list&#39; object is not callable
 
@@ -1511,20 +1514,20 @@ However, `[1, 2]` is a sequence.
 Perhaps you meant to use `[]` instead of `()` and write
 `[1, 2][3 + 4]`
 
-Exception raised on line 477 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 499 of file TESTS:\runtime\test_type_error.py.
 
-   475:
-   476:     try:
---&gt;477:         _ = [1, 2](3 + 4)
+   497:
+   498:     try:
+--&gt;499:         _ = [1, 2](3 + 4)
                     ^^^^^^^^^^^^^
-   478:     except Exception as e:
+   500:     except TypeError as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="object-is-not-iterable">
 <h3>Object is not iterable<a class="headerlink" href="#object-is-not-iterable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 701, in test_Object_is_not_iterable
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 723, in test_Object_is_not_iterable
     list(42)
 TypeError: &#39;int&#39; object is not iterable
 
@@ -1537,12 +1540,12 @@ An iterable is an object capable of returning its members one at a time.
 Python containers (`list, tuple, dict`, etc.) are iterables.
 An iterable is required here.
 
-Exception raised on line 701 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 723 of file TESTS:\runtime\test_type_error.py.
 
-   699: def test_Object_is_not_iterable():
-   700:     try:
---&gt;701:         list(42)
-   702:     except Exception as e:
+   721: def test_Object_is_not_iterable():
+   722:     try:
+--&gt;723:         list(42)
+   724:     except TypeError as e:
 
         list: &lt;class list&gt;
 </pre></div>
@@ -1551,7 +1554,7 @@ Exception raised on line 701 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="object-is-not-subscriptable">
 <h3>Object is not subscriptable<a class="headerlink" href="#object-is-not-subscriptable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 687, in test_Object_is_not_subscriptable
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 709, in test_Object_is_not_subscriptable
     a = f[1]
 TypeError: &#39;function&#39; object is not subscriptable
 
@@ -1567,13 +1570,13 @@ you can retrieve item using the notation `[...]`.
 
 Perhaps you meant to write `f(1)`.
 
-Exception raised on line 687 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 709 of file TESTS:\runtime\test_type_error.py.
 
-   685:
-   686:     try:
---&gt;687:         a = f[1]
+   707:
+   708:     try:
+--&gt;709:         a = f[1]
                     ^^^^
-   688:     except Exception as e:
+   710:     except TypeError as e:
 
         f: &lt;function f&gt; from test_Object_is_not_subscriptable
 </pre></div>
@@ -1582,7 +1585,7 @@ Exception raised on line 687 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="slice-indices-must-be-integers-or-none">
 <h3>Slice indices must be integers or None<a class="headerlink" href="#slice-indices-must-be-integers-or-none" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 643, in test_Slice_indices_must_be_integers_or_None
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 665, in test_Slice_indices_must_be_integers_or_None
     [1, 2, 3][1.0:2.0]
 TypeError: slice indices must be integers or None or have an __index__ method
 
@@ -1597,19 +1600,19 @@ from a sequence, that is something like
 each of `start`, `stop`, `step` must be either an integer, `None`,
 or possibly some other object having an `__index__` method.
 
-Exception raised on line 643 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 665 of file TESTS:\runtime\test_type_error.py.
 
-   641: def test_Slice_indices_must_be_integers_or_None():
-   642:     try:
---&gt;643:         [1, 2, 3][1.0:2.0]
-   644:     except Exception as e:
+   663: def test_Slice_indices_must_be_integers_or_None():
+   664:     try:
+--&gt;665:         [1, 2, 3][1.0:2.0]
+   666:     except TypeError as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="too-few-positional-argument">
 <h3>Too few positional argument<a class="headerlink" href="#too-few-positional-argument" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 419, in test_Too_few_positional_argument
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 441, in test_Too_few_positional_argument
     fn(1)
 TypeError: fn() missing 2 required positional arguments: &#39;b&#39; and &#39;c&#39;
 
@@ -1621,12 +1624,12 @@ or by trying to do an operation not allowed on a given type of object.
 You apparently have called the function &#39;fn()&#39; with
 fewer positional arguments than it requires (2 missing).
 
-Exception raised on line 419 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 441 of file TESTS:\runtime\test_type_error.py.
 
-   417:
-   418:     try:
---&gt;419:         fn(1)
-   420:     except Exception as e:
+   439:
+   440:     try:
+--&gt;441:         fn(1)
+   442:     except TypeError as e:
 
         fn: &lt;function fn&gt; from test_Too_few_positional_argument
 </pre></div>
@@ -1635,7 +1638,7 @@ Exception raised on line 419 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="too-many-positional-argument">
 <h3>Too many positional argument<a class="headerlink" href="#too-many-positional-argument" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 400, in test_Too_many_positional_argument
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 422, in test_Too_many_positional_argument
     A().f(1)
 TypeError: f() takes 1 positional argument but 2 were given
 
@@ -1651,12 +1654,12 @@ You apparently have called the function `f` with
 such positional argument(s).
 Perhaps you forgot `self` when defining `f`.
 
-Exception raised on line 400 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 422 of file TESTS:\runtime\test_type_error.py.
 
-   398:
-   399:     try:
---&gt;400:         A().f(1)
-   401:     except Exception as e:
+   420:
+   421:     try:
+--&gt;422:         A().f(1)
+   423:     except TypeError as e:
 
         A: &lt;class A&gt; from test_type_error.test_Too_many_positional_argument
 </pre></div>
@@ -1665,7 +1668,7 @@ Exception raised on line 400 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="tuple-no-item-assignment">
 <h3>Tuple no item assignment<a class="headerlink" href="#tuple-no-item-assignment" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 367, in test_Tuple_no_item_assignment
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 389, in test_Tuple_no_item_assignment
     a[0] = 0
 TypeError: &#39;tuple&#39; object does not support item assignment
 
@@ -1682,12 +1685,12 @@ You tried change part of such an immutable object: a `tuple`,
 most likely by using an indexing operation.
 Perhaps you meant to use a list instead.
 
-Exception raised on line 367 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 389 of file TESTS:\runtime\test_type_error.py.
 
-   365:     a = (1, 2, 3)
-   366:     try:
---&gt;367:         a[0] = 0
-   368:     except Exception as e:
+   387:     a = (1, 2, 3)
+   388:     try:
+--&gt;389:         a[0] = 0
+   390:     except TypeError as e:
 
         a[0]: 1
         a: (1, 2, 3)
@@ -1697,7 +1700,7 @@ Exception raised on line 367 of file TESTS:\runtime\test_type_error.py.
 <div class="section" id="unhachable-type">
 <h3>Unhachable type<a class="headerlink" href="#unhachable-type" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 660, in test_Unhachable_type
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 682, in test_Unhachable_type
     {[1, 2]: 1}
 TypeError: unhashable type: &#39;list&#39;
 
@@ -1711,12 +1714,12 @@ as elements of `set` or keys of `dict`.
 Hashable objects are objects that do not change value
 once they have been created.Instead of using a `list`, consider using a `tuple`.
 
-Exception raised on line 660 of file TESTS:\runtime\test_type_error.py.
+Exception raised on line 682 of file TESTS:\runtime\test_type_error.py.
 
-   658: def test_Unhachable_type():
-   659:     try:
---&gt;660:         {[1, 2]: 1}
-   661:     except Exception as e:
+   680: def test_Unhachable_type():
+   681:     try:
+--&gt;682:         {[1, 2]: 1}
+   683:     except TypeError as e:
 </pre></div>
 </div>
 </div>
@@ -1743,7 +1746,7 @@ Exception raised on line 283 of file TESTS:\runtime\test_type_error.py.
    281:         a = &quot;a&quot;
    282:         b = 2
 --&gt;283:         a @= b
-   284:     except Exception as e:
+   284:     except TypeError as e:
 
         a: &#39;a&#39;
         b: 2
@@ -1787,7 +1790,7 @@ Execution stopped on line 27 of file TESTS:\runtime\test_unbound_local_error.py.
    25:
    26:     try:
 --&gt;27:         outer_missing_global()
-   28:     except Exception as e:
+   28:     except UnboundLocalError as e:
 
         global outer_missing_global: &lt;function outer_missing_global&gt;
 
@@ -1835,7 +1838,7 @@ Execution stopped on line 48 of file TESTS:\runtime\test_unbound_local_error.py.
    46:
    47:     try:
 --&gt;48:         outer_missing_nonlocal()
-   49:     except Exception as e:
+   49:     except UnboundLocalError as e:
 
         global outer_missing_nonlocal: &lt;function outer_missing_nonlocal&gt;
 
@@ -1859,7 +1862,7 @@ MyException: Some informative message about an unknown exception.
 
 No information is known about this exception.
 Please report this example to
-https://github.com/aroberge/friendly-traceback/issues
+https://github.com/aroberge/friendly/issues
 
 If you are using the Friendly console, use `www()` to
 do an Internet search for this particular case.
@@ -1898,7 +1901,7 @@ Exception raised on line 28 of file TESTS:\runtime\test_value_error.py.
    26:     d = &quot;ab&quot;
    27:     try:
 --&gt;28:         a, b, c = d
-   29:     except Exception as e:
+   29:     except ValueError as e:
 
         d: &#39;ab&#39;
 </pre></div>
@@ -1924,7 +1927,7 @@ Exception raised on line 43 of file TESTS:\runtime\test_value_error.py.
    41:     c = [1, 2, 3]
    42:     try:
 --&gt;43:         a, b = c
-   44:     except Exception as e:
+   44:     except ValueError as e:
 
         c: [1, 2, 3]
 </pre></div>
@@ -1954,7 +1957,7 @@ Exception raised on line 97 of file TESTS:\runtime\test_zero_division_error.py.
    95:     zero = 0j
    96:     try:
 --&gt;97:         1 / zero
-   98:     except Exception as e:
+   98:     except ZeroDivisionError as e:
 
         zero: 0j
 </pre></div>
@@ -1981,7 +1984,7 @@ Exception raised on line 7 of file TESTS:\runtime\test_zero_division_error.py.
    5:     zero = 0
    6:     try:
 --&gt;7:         1 / zero
-   8:     except Exception as e:
+   8:     except ZeroDivisionError as e:
 
         zero: 0
 </pre></div>
@@ -2004,7 +2007,7 @@ Exception raised on line 52 of file TESTS:\runtime\test_zero_division_error.py.
    50:     zero = 0
    51:     try:
 --&gt;52:         divmod(1, zero)
-   53:     except Exception as e:
+   53:     except ZeroDivisionError as e:
 
         zero: 0
         divmod: &lt;builtin function divmod&gt;
@@ -2032,7 +2035,7 @@ Exception raised on line 82 of file TESTS:\runtime\test_zero_division_error.py.
    80:     zero = 0.
    81:     try:
 --&gt;82:         1 / zero
-   83:     except Exception as e:
+   83:     except ZeroDivisionError as e:
 
         zero: 0.0
 </pre></div>
@@ -2059,7 +2062,7 @@ Exception raised on line 67 of file TESTS:\runtime\test_zero_division_error.py.
    65:     zero = 0.
    66:     try:
 --&gt;67:         1 % zero
-   68:     except Exception as e:
+   68:     except ZeroDivisionError as e:
 
         zero: 0.0
 </pre></div>
@@ -2086,7 +2089,7 @@ Exception raised on line 22 of file TESTS:\runtime\test_zero_division_error.py.
    20:     zero = 0
    21:     try:
 --&gt;22:         1 // zero
-   23:     except Exception as e:
+   23:     except ZeroDivisionError as e:
 
         zero: 0
 </pre></div>
@@ -2113,7 +2116,7 @@ Exception raised on line 37 of file TESTS:\runtime\test_zero_division_error.py.
    35:     zero = 0
    36:     try:
 --&gt;37:         1 % zero
-   38:     except Exception as e:
+   38:     except ZeroDivisionError as e:
 
         zero: 0
 </pre></div>
@@ -2137,7 +2140,7 @@ Exception raised on line 112 of file TESTS:\runtime\test_zero_division_error.py.
    110:     zero = 0
    111:     try:
 --&gt;112:         zero ** -1
-   113:     except Exception as e:
+   113:     except ZeroDivisionError as e:
 
         zero: 0
 </pre></div>

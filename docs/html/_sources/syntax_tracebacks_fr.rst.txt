@@ -1278,6 +1278,36 @@ def: semi-colon after colon
     Si vous supprimez `;`, cela pourrait possiblement résoudre le problème.
     
 
+def: extra comma
+----------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_extra_comma.py", line 1
+        def test(a,,b):
+                   ^
+    SyntaxError: invalid syntax
+    
+        Voulez-vous écrire `,`?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_extra_comma.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test(a,,b):
+                     ^
+
+    Je soupçonne que vous avez écrit `,` par erreur.
+    L’énoncé suivant ne contient aucune erreur de syntaxe :
+    
+        def test(a,b):
+
 def: unspecified keywords before /
 ----------------------------------
 
@@ -1922,6 +1952,98 @@ Single number used as arg in function def
 
     Vous avez utilisé un nombre comme argument lors de la définition d’une fonction.
     Vous ne pouvez utiliser que des identificateurs (noms de variables) comme arguments de fonction.
+    
+
+def: operator instead of comma
+------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_operator_instead_of_comma.py", line 1
+        def test(a + b):
+                   ^
+    SyntaxError: invalid syntax
+    
+        Avez-vous oublié une virgule ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_operator_instead_of_comma.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test(a + b):
+                     ^
+
+    Vous ne pouvez pas avoir d’opérateurs comme arguments de fonction.
+    Je soupçonne que vous avez écrit `+` au lieu d’une virgule.
+    L’énoncé suivant ne contient aucune erreur de syntaxe :
+    
+        def test(a , b):
+
+def: operator instead of equal
+------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_operator_instead_of_equal.py", line 1
+        def test(a, b=3, c+None):
+                          ^
+    SyntaxError: invalid syntax
+    
+        Voulez-vous écrire un signe égal ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_operator_instead_of_equal.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test(a, b=3, c+None):
+                            ^
+
+    Vous ne pouvez pas avoir d’opérateurs comme arguments de fonction.
+    Je soupçonne que vous avez écrit `+` au lieu d’un signe d'égalité.
+    L’énoncé suivant ne contient aucune erreur de syntaxe :
+    
+        def test(a, b=3, c=None):
+
+def: operator instead of name
+-----------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_operator_instead_of_name.py", line 1
+        def test(a, +, b):
+                    ^
+    SyntaxError: invalid syntax
+    
+        Vous ne pouvez pas utiliser `+` comme argument.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_operator_instead_of_name.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: def test(a, +, b):
+                      ^
+
+    Je soupçonne que vous avez écrit `+` par erreur.
+    Si vous le remplacez par un nom de variable unique,
+    le résultat n'aura aucun erreur de syntaxe.
     
 
 def: positional argument follows keyword argument
@@ -3638,6 +3760,38 @@ Missing comma in a tuple
         a = (1, 2 *  3)
     Remarque : ce ne sont là que quelques-uns des choix possibles et
     certains d’entre eux pourraient soulever d’autres types d’exceptions.
+    
+
+Missing parenthesis for range
+-----------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\missing_parens_for_range.py", line 1
+        for i in range 3:
+                       ^
+    SyntaxError: invalid syntax
+    
+        Did you forget to write parenthesis?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\missing_parens_for_range.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: for i in range 3:
+                         ^
+
+    Il semble que vous avez oublié d’utiliser des parenthèses
+    avec `range`. Peut-être que vous vouliez dire:
+    
+        for i in range( 3):
+    
     
 
 Name is global and nonlocal
