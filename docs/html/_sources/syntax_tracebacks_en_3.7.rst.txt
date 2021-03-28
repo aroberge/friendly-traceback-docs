@@ -917,6 +917,38 @@ Cannot use double star operator
     dict unpacking is to be used which does not make sense here.
     
 
+Missing class name
+------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\class_missing_name.py", line 1
+        class:
+             ^
+    SyntaxError: invalid syntax
+    
+        A class needs a name.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\class_missing_name.py'
+    beyond the location indicated by ^.
+    
+    -->1: class:
+               ^
+
+    A `class` statement requires a name:
+    
+        class SomeName:
+            ...
+    
+    
+
 Missing () for tuples in comprehension
 --------------------------------------
 
@@ -1164,6 +1196,8 @@ def: misused as code block
             ^
     SyntaxError: invalid syntax
     
+        A function needs a name.
+        
     A `SyntaxError` occurs when Python cannot understand your code.
     
     Python could not understand the code in the file
@@ -2678,6 +2712,38 @@ f-string with backslash
         f"{... hello ...}"
     
 
+Missing terms in for statement
+------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\for_missing_terms.py", line 1
+        for:
+           ^
+    SyntaxError: invalid syntax
+    
+        A `for` loop requires at least 3 more terms.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\for_missing_terms.py'
+    beyond the location indicated by ^.
+    
+    -->1: for:
+             ^
+
+    A `for` loop is an iteration over a sequence:
+    
+        for element in sequence:
+            ...
+    
+    
+
 Not a chance!
 -------------
 
@@ -2906,6 +2972,38 @@ Space between names
     on the left-hand side of the equal sign which should be
     only used to assign a value to a variable.
     Perhaps you meant to write `a_b` instead of `a-b`
+    
+
+Missing condition in if statement
+---------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\if_missing_condition.py", line 1
+        if:
+          ^
+    SyntaxError: invalid syntax
+    
+        You forgot to add a condition.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\if_missing_condition.py'
+    beyond the location indicated by ^.
+    
+    -->1: if:
+            ^
+
+    An `if` statement requires a condition:
+    
+        if condition:
+            ...
+    
     
 
 use j instead of i
@@ -4722,6 +4820,38 @@ Using the backquote character
     You are using the backquote character.
     Either you meant to write a single quote, ', or copied Python 2 code;
     in this latter case, use the function `repr(x)`.
+
+Missing condition in while statement
+------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\while_missing_condition.py", line 1
+        while:
+             ^
+    SyntaxError: invalid syntax
+    
+        You forgot to add a condition.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\while_missing_condition.py'
+    beyond the location indicated by ^.
+    
+    -->1: while:
+               ^
+
+    A `while` loop requires a condition:
+    
+        while condition:
+            ...
+    
+    
 
 Walrus operator does not exist - yet
 ------------------------------------

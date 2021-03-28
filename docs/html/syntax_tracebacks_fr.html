@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly 0.3.30 documentation</title>
+  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly 0.3.34 documentation</title>
   
 
   
@@ -205,6 +205,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#break-outside-loop">break outside loop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cannot-use-star-operator">Cannot use star operator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cannot-use-double-star-operator">Cannot use double star operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-class-name">Missing class name</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-for-tuples-in-comprehension">Missing () for tuples in comprehension</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#comprehension-with-condition-no-else">Comprehension with condition (no else)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#comprehension-with-condition-with-else">Comprehension with condition (with else)</a></li>
@@ -260,6 +261,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#binary-f-string-not-allowed">Binary f-string not allowed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#f-string-unterminated-string">f-string: unterminated string</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#f-string-with-backslash">f-string with backslash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-terms-in-for-statement">Missing terms in for statement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#not-a-chance">Not a chance!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#do-not-import-from-future">Do not import * from __future__</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#future-at-beginning">__future__ at beginning</a></li>
@@ -267,6 +269,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#unknown-feature-in-future">Unknown feature in __future__</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parenthesis-around-generator-expression">Parenthesis around generator expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#space-between-names">Space between names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-condition-in-if-statement">Missing condition in if statement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#use-j-instead-of-i">use j instead of i</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#import-inversion-import-x-from-y">Import inversion: import X from Y</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-expected-an-indented-block">IndentationError: expected an indented block</a></li>
@@ -323,6 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#taberror">TabError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#eol-unescaped-backslash">EOL unescaped backslash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-the-backquote-character">Using the backquote character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-condition-in-while-statement">Missing condition in while statement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#would-be-variable-declaration">Would-be variable declaration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#would-be-variable-declaration-2">Would-be variable declaration - 2</a></li>
 </ul>
@@ -1231,6 +1235,34 @@ qu&#39;un déballage de `dict` doit être utilisé ce qui n’a pas de sens ici.
 </pre></div>
 </div>
 </div>
+<div class="section" id="missing-class-name">
+<h2>Missing class name<a class="headerlink" href="#missing-class-name" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\class_missing_name.py&quot;, line 1
+    class:
+         ^
+SyntaxError: invalid syntax
+
+    Une classe a besoin d’un nom.
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\class_missing_name.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par ^.
+
+--&gt;1: class:
+           ^
+
+Un énoncé `class` doit inclure un nom :
+
+    class NomQuelconque:
+        ...
+</pre></div>
+</div>
+</div>
 <div class="section" id="missing-for-tuples-in-comprehension">
 <h2>Missing () for tuples in comprehension<a class="headerlink" href="#missing-for-tuples-in-comprehension" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -1449,6 +1481,8 @@ par `*, argument=valeur`.
     def :
         ^
 SyntaxError: invalid syntax
+
+    Une fonction a besoin d’un nom.
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -2822,6 +2856,34 @@ vous pourriez écrire ceci comme
 </pre></div>
 </div>
 </div>
+<div class="section" id="missing-terms-in-for-statement">
+<h2>Missing terms in for statement<a class="headerlink" href="#missing-terms-in-for-statement" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\for_missing_terms.py&quot;, line 1
+    for:
+       ^
+SyntaxError: invalid syntax
+
+    Une boucle `for` doit avoir plus de termes.
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\for_missing_terms.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par ^.
+
+--&gt;1: for:
+         ^
+
+Une boucle `for` est une itération sur une séquence :
+
+    for élément in séquence:
+        ...
+</pre></div>
+</div>
+</div>
 <div class="section" id="not-a-chance">
 <h2>Not a chance!<a class="headerlink" href="#not-a-chance" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -3029,6 +3091,34 @@ Vous avez écrit une expression qui inclut des opérations mathématiques
 du côté gauche du signe d&#39;égalité; ceci devrait être
 utilisé uniquement pour attribuer une valeur à une variable.
 Peut-être que vous vouliez plutôt écrire `a_b` au lieu de `a-b`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="missing-condition-in-if-statement">
+<h2>Missing condition in if statement<a class="headerlink" href="#missing-condition-in-if-statement" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\if_missing_condition.py&quot;, line 1
+    if:
+      ^
+SyntaxError: invalid syntax
+
+    Vous avez oublié d’ajouter une condition.
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\if_missing_condition.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par ^.
+
+--&gt;1: if:
+        ^
+
+Un énoncé `if` doit inclure une condition :
+
+    if condition:
+        ...
 </pre></div>
 </div>
 </div>
@@ -3810,7 +3900,7 @@ certains d’entre eux pourraient soulever d’autres types d’exceptions.
                    ^
 SyntaxError: invalid syntax
 
-    Did you forget to write parenthesis?
+    Avez-vous oublié d’ajouter des parenthèses ?
 
 Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
 
@@ -4680,6 +4770,34 @@ Vous utilisez le charactère d&#39;accent grave.
 Soit que vous vouliez utiliser un apostrophe, &#39;,
 ou que vous avez copié du code de Python 2;
 dans ce dernier cas, utilisez la fonction `repr(x)`.
+</pre></div>
+</div>
+</div>
+<div class="section" id="missing-condition-in-while-statement">
+<h2>Missing condition in while statement<a class="headerlink" href="#missing-condition-in-while-statement" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\while_missing_condition.py&quot;, line 1
+    while:
+         ^
+SyntaxError: invalid syntax
+
+    Vous avez oublié d’ajouter une condition.
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\while_missing_condition.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par ^.
+
+--&gt;1: while:
+           ^
+
+Une boucle `while` doit inclure une condition :
+
+    while condition:
+        ...
 </pre></div>
 </div>
 </div>

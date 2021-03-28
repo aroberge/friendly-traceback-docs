@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Syntax errors - markdown_docs format &mdash; Friendly 0.3.30 documentation</title>
+  <title>Syntax errors - markdown_docs format &mdash; Friendly 0.3.34 documentation</title>
   
 
   
@@ -201,6 +201,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#break-outside-loop">break outside loop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cannot-use-star-operator">Cannot use star operator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cannot-use-double-star-operator">Cannot use double star operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-class-name">Missing class name</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-for-tuples-in-comprehension">Missing () for tuples in comprehension</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#comprehension-with-condition-no-else">Comprehension with condition (no else)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#comprehension-with-condition-with-else">Comprehension with condition (with else)</a></li>
@@ -256,6 +257,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#binary-f-string-not-allowed">Binary f-string not allowed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#f-string-unterminated-string">f-string: unterminated string</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#f-string-with-backslash">f-string with backslash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-terms-in-for-statement">Missing terms in for statement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#not-a-chance">Not a chance!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#do-not-import-from-future">Do not import * from <strong>future</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#future-at-beginning"><strong>future</strong> at beginning</a></li>
@@ -263,6 +265,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#unknown-feature-in-future">Unknown feature in <strong>future</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parenthesis-around-generator-expression">Parenthesis around generator expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#space-between-names">Space between names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-condition-in-if-statement">Missing condition in if statement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#use-j-instead-of-i">use j instead of i</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#import-inversion-import-x-from-y">Import inversion: import X from Y</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-expected-an-indented-block">IndentationError: expected an indented block</a></li>
@@ -319,6 +322,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#taberror">TabError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#eol-unescaped-backslash">EOL unescaped backslash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-the-backquote-character">Using the backquote character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-condition-in-while-statement">Missing condition in while statement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#would-be-variable-declaration">Would-be variable declaration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#would-be-variable-declaration-2">Would-be variable declaration - 2</a></li>
 </ul>
@@ -1186,6 +1190,33 @@ beyond the location indicated by ^.</p>
 dict unpacking is to be used which does not make sense here.</p>
 </div>
 <hr class="docutils" />
+<div class="section" id="missing-class-name">
+<h2>Missing class name<a class="headerlink" href="#missing-class-name" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">41</span>, in <span class="n">create_tracebacks</span>
+    <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\class_missing_name.py&quot;</span>, line <span class="m">1</span>
+    <span class="n">class</span><span class="p">:</span>
+         <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>A class needs a name.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\class_missing_name.py’
+beyond the location indicated by ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="n">class</span><span class="p">:</span>
+               <span class="o">^</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">class</span></code> statement requires a name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeName</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
 <div class="section" id="missing-for-tuples-in-comprehension">
 <h2>Missing () for tuples in comprehension<a class="headerlink" href="#missing-for-tuples-in-comprehension" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
@@ -1398,6 +1429,7 @@ by <code class="docutils literal notranslate"><span class="pre">*,</span> <span 
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
+<p>A function needs a name.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
 <p>Python could not understand the code in the file
 ‘TESTS:\syntax\def_code_block.py’
@@ -2697,6 +2729,33 @@ some variable. For example, suppose that you have an f-string like:</p>
 </div>
 </div>
 <hr class="docutils" />
+<div class="section" id="missing-terms-in-for-statement">
+<h2>Missing terms in for statement<a class="headerlink" href="#missing-terms-in-for-statement" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">41</span>, in <span class="n">create_tracebacks</span>
+    <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\for_missing_terms.py&quot;</span>, line <span class="m">1</span>
+    <span class="k">for</span><span class="p">:</span>
+       <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop requires at least 3 more terms.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\for_missing_terms.py’
+beyond the location indicated by ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="k">for</span><span class="p">:</span>
+             <span class="o">^</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is an iteration over a sequence:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
 <div class="section" id="not-a-chance">
 <h2>Not a chance!<a class="headerlink" href="#not-a-chance" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
@@ -2875,6 +2934,33 @@ beyond the location indicated by ^.</p>
 on the left-hand side of the equal sign which should be
 only used to assign a value to a variable.
 Perhaps you meant to write <code class="docutils literal notranslate"><span class="pre">a_b</span></code> instead of <code class="docutils literal notranslate"><span class="pre">a-b</span></code></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="missing-condition-in-if-statement">
+<h2>Missing condition in if statement<a class="headerlink" href="#missing-condition-in-if-statement" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">41</span>, in <span class="n">create_tracebacks</span>
+    <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\if_missing_condition.py&quot;</span>, line <span class="m">1</span>
+    <span class="k">if</span><span class="p">:</span>
+      <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>You forgot to add a condition.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\if_missing_condition.py’
+beyond the location indicated by ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="k">if</span><span class="p">:</span>
+            <span class="o">^</span>
+</pre></div>
+</div>
+<p>An <code class="docutils literal notranslate"><span class="pre">if</span></code> statement requires a condition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="use-j-instead-of-i">
@@ -4445,6 +4531,33 @@ beyond the location indicated by ^.</p>
 <p>You are using the backquote character.
 Either you meant to write a single quote, ‘, or copied Python 2 code;
 in this latter case, use the function <code class="docutils literal notranslate"><span class="pre">repr(x)</span></code>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="missing-condition-in-while-statement">
+<h2>Missing condition in while statement<a class="headerlink" href="#missing-condition-in-while-statement" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">41</span>, in <span class="n">create_tracebacks</span>
+    <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\while_missing_condition.py&quot;</span>, line <span class="m">1</span>
+    <span class="k">while</span><span class="p">:</span>
+         <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>You forgot to add a condition.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\while_missing_condition.py’
+beyond the location indicated by ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="k">while</span><span class="p">:</span>
+               <span class="o">^</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop requires a condition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="would-be-variable-declaration">

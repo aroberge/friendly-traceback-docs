@@ -923,6 +923,38 @@ Cannot use double star operator
     qu'un déballage de `dict` doit être utilisé ce qui n’a pas de sens ici.
     
 
+Missing class name
+------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\class_missing_name.py", line 1
+        class:
+             ^
+    SyntaxError: invalid syntax
+    
+        Une classe a besoin d’un nom.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\class_missing_name.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: class:
+               ^
+
+    Un énoncé `class` doit inclure un nom :
+    
+        class NomQuelconque:
+            ...
+    
+    
+
 Missing () for tuples in comprehension
 --------------------------------------
 
@@ -1170,6 +1202,8 @@ def: misused as code block
             ^
     SyntaxError: invalid syntax
     
+        Une fonction a besoin d’un nom.
+        
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
     Python peut seulement comprendre le code du fichier
@@ -2682,6 +2716,38 @@ f-string with backslash
         f"{... bonjour ...}"
     
 
+Missing terms in for statement
+------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\for_missing_terms.py", line 1
+        for:
+           ^
+    SyntaxError: invalid syntax
+    
+        Une boucle `for` doit avoir plus de termes.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\for_missing_terms.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: for:
+             ^
+
+    Une boucle `for` est une itération sur une séquence :
+    
+        for élément in séquence:
+            ...
+    
+    
+
 Not a chance!
 -------------
 
@@ -2910,6 +2976,38 @@ Space between names
     du côté gauche du signe d'égalité; ceci devrait être
     utilisé uniquement pour attribuer une valeur à une variable.
     Peut-être que vous vouliez plutôt écrire `a_b` au lieu de `a-b`.
+    
+
+Missing condition in if statement
+---------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\if_missing_condition.py", line 1
+        if:
+          ^
+    SyntaxError: invalid syntax
+    
+        Vous avez oublié d’ajouter une condition.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\if_missing_condition.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: if:
+            ^
+
+    Un énoncé `if` doit inclure une condition :
+    
+        if condition:
+            ...
+    
     
 
 use j instead of i
@@ -3776,7 +3874,7 @@ Missing parenthesis for range
                        ^
     SyntaxError: invalid syntax
     
-        Did you forget to write parenthesis?
+        Avez-vous oublié d’ajouter des parenthèses ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -4735,6 +4833,38 @@ Using the backquote character
     Soit que vous vouliez utiliser un apostrophe, ',
     ou que vous avez copié du code de Python 2;
     dans ce dernier cas, utilisez la fonction `repr(x)`.
+
+Missing condition in while statement
+------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\while_missing_condition.py", line 1
+        while:
+             ^
+    SyntaxError: invalid syntax
+    
+        Vous avez oublié d’ajouter une condition.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\while_missing_condition.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: while:
+               ^
+
+    Une boucle `while` doit inclure une condition :
+    
+        while condition:
+            ...
+    
+    
 
 Would-be variable declaration
 -----------------------------
