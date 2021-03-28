@@ -3594,6 +3594,39 @@ lambda with tuple as argument
     within the body of the function.
     
 
+Assign to literal in for loop
+-----------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\literal_in_for_loop.py", line 1
+        for "char" in "word":
+            ^
+    SyntaxError: cannot assign to literal
+    
+        You can only assign objects to identifiers (variable names).
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\literal_in_for_loop.py'
+    beyond the location indicated by ^.
+    
+    -->1: for "char" in "word":
+              ^
+
+    A for loop must have the form:
+    
+        for ... in sequence:
+    
+    where `...` must contain only identifiers (variable names)
+    and not literals like `"char"`.
+    
+
 IndentationError/SyntaxError depending on version
 -------------------------------------------------
 

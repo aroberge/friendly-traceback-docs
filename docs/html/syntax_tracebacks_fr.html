@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly 0.3.34 documentation</title>
+  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly 0.3.35 documentation</title>
   
 
   
@@ -288,6 +288,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#keyword-as-attribute">Keyword as attribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lambda-with-parentheses-around-arguments">lambda with parentheses around arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lambda-with-tuple-as-argument">lambda with tuple as argument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assign-to-literal-in-for-loop">Assign to literal in for loop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#indentationerror-syntaxerror-depending-on-version">IndentationError/SyntaxError depending on version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-colon-if">Missing colon - if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-colon-while">Missing colon - while</a></li>
@@ -3652,6 +3653,36 @@ jusqu&#39;à l&#39;endroit indiqué par ^.
 Vous ne pouvez pas avoir des tuples explicites comme arguments.
 Attribuez n’importe quel tuple à un paramètre et dépaquetez-le
 dans le corps de la fonction.
+</pre></div>
+</div>
+</div>
+<div class="section" id="assign-to-literal-in-for-loop">
+<h2>Assign to literal in for loop<a class="headerlink" href="#assign-to-literal-in-for-loop" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\literal_in_for_loop.py&quot;, line 1
+    for &quot;char&quot; in &quot;word&quot;:
+        ^
+SyntaxError: cannot assign to literal
+
+    Vous ne pouvez assigner des objets qu’à des identifiants (noms de variables).
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\literal_in_for_loop.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par ^.
+
+--&gt;1: for &quot;char&quot; in &quot;word&quot;:
+          ^
+
+Une boucle for doit avoir la forme:
+
+    for ... in séquence:
+
+où `...` doit contenir seulement des identifiants (noms de variables)
+et non pas des littéraux comme `&quot;char&quot;`.
 </pre></div>
 </div>
 </div>
