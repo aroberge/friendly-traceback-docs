@@ -776,6 +776,36 @@ Assign to math operation
     utilisé uniquement pour attribuer une valeur à une variable.
     
 
+Augmented assignment to literal
+-------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\augmented_assignment_to_literal.py", line 1
+        if "word" := True:
+           ^
+    SyntaxError: cannot use assignment expressions with literal
+    
+        Vous ne pouvez assigner des objets qu’à des identifiants (noms de variables).
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\augmented_assignment_to_literal.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: if "word" := True:
+             ^
+
+    You cannot use the augmented assignment operator `:=`,
+    sometimes called the walrus operator, with literals like `"word"`.
+    You can only assign objects to identifiers (variable names).
+    
+
 Walrus/Named assignment depending on Python version
 ---------------------------------------------------
 

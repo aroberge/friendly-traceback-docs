@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Syntax errors - markdown_docs format &mdash; Friendly 0.3.35 documentation</title>
+  <title>Syntax errors - markdown_docs format &mdash; Friendly 0.3.36 documentation</title>
   
 
   
@@ -196,6 +196,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#assign-to-keyword-else">Assign to keyword else</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#assignment-to-keyword-none">Assignment to keyword (None)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#assign-to-math-operation">Assign to math operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#augmented-assignment-to-literal">Augmented assignment to literal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-named-assignment-depending-on-python-version">Walrus/Named assignment depending on Python version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#backslash-instead-of-slash">Backslash instead of slash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#break-outside-loop">break outside loop</a></li>
@@ -1063,6 +1064,31 @@ beyond the location indicated by ^.</p>
 <p>You wrote an expression that includes some mathematical operations
 on the left-hand side of the equal sign which should be
 only used to assign a value to a variable.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="augmented-assignment-to-literal">
+<h2>Augmented assignment to literal<a class="headerlink" href="#augmented-assignment-to-literal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\trb_syntax_common.py&quot;</span>, line <span class="m">41</span>, in <span class="n">create_tracebacks</span>
+    <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  File <span class="nb">&quot;TESTS:\syntax\augmented_assignment_to_literal.py&quot;</span>, line <span class="m">1</span>
+    <span class="k">if</span> <span class="s2">&quot;word&quot;</span> <span class="o">:=</span> <span class="kc">True</span><span class="p">:</span>
+       <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">cannot use assignment expressions with literal</span>
+</pre></div>
+</div>
+<p>You can only assign objects to identifiers (variable names).</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when Python cannot understand your code.</p>
+<p>Python could not understand the code in the file
+‘TESTS:\syntax\augmented_assignment_to_literal.py’
+beyond the location indicated by ^.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="o">--&gt;</span><span class="mi">1</span><span class="p">:</span> <span class="k">if</span> <span class="s2">&quot;word&quot;</span> <span class="o">:=</span> <span class="kc">True</span><span class="p">:</span>
+             <span class="o">^</span>
+</pre></div>
+</div>
+<p>You cannot use the augmented assignment operator <code class="docutils literal notranslate"><span class="pre">:=</span></code>,
+sometimes called the walrus operator, with literals like <code class="docutils literal notranslate"><span class="pre">&quot;word&quot;</span></code>.
+You can only assign objects to identifiers (variable names).</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="walrus-named-assignment-depending-on-python-version">

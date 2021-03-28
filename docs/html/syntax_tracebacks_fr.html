@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly 0.3.35 documentation</title>
+  <title>Friendly SyntaxError tracebacks - en Français &mdash; Friendly 0.3.36 documentation</title>
   
 
   
@@ -200,6 +200,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#assign-to-keyword-else">Assign to keyword else</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#assignment-to-keyword-none">Assignment to keyword (None)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#assign-to-math-operation">Assign to math operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#augmented-assignment-to-literal">Augmented assignment to literal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#walrus-named-assignment-depending-on-python-version">Walrus/Named assignment depending on Python version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#backslash-instead-of-slash">Backslash instead of slash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#break-outside-loop">break outside loop</a></li>
@@ -1101,6 +1102,33 @@ jusqu&#39;à l&#39;endroit indiqué par ^.
 Vous avez écrit une expression qui inclut des opérations mathématiques
 du côté gauche du signe d&#39;égalité; ceci devrait être
 utilisé uniquement pour attribuer une valeur à une variable.
+</pre></div>
+</div>
+</div>
+<div class="section" id="augmented-assignment-to-literal">
+<h2>Augmented assignment to literal<a class="headerlink" href="#augmented-assignment-to-literal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\trb_syntax_common.py&quot;, line 41, in create_tracebacks
+    __import__(name)
+  File &quot;TESTS:\syntax\augmented_assignment_to_literal.py&quot;, line 1
+    if &quot;word&quot; := True:
+       ^
+SyntaxError: cannot use assignment expressions with literal
+
+    Vous ne pouvez assigner des objets qu’à des identifiants (noms de variables).
+
+Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+
+Python peut seulement comprendre le code du fichier
+&#39;TESTS:\syntax\augmented_assignment_to_literal.py&#39;
+jusqu&#39;à l&#39;endroit indiqué par ^.
+
+--&gt;1: if &quot;word&quot; := True:
+         ^
+
+You cannot use the augmented assignment operator `:=`,
+sometimes called the walrus operator, with literals like `&quot;word&quot;`.
+You can only assign objects to identifiers (variable names).
 </pre></div>
 </div>
 </div>

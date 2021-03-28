@@ -931,6 +931,44 @@ only used to assign a value to a variable.
 
 ---
 
+## Augmented assignment to literal
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+    __import__(name)
+  File "TESTS:\syntax\augmented_assignment_to_literal.py", line 1
+    if "word" := True:
+       ^
+SyntaxError: cannot use assignment expressions with literal
+
+```
+
+You can only assign objects to identifiers (variable names).
+
+
+
+A `SyntaxError` occurs when Python cannot understand your code.
+
+
+Python could not understand the code in the file
+'TESTS:\syntax\augmented_assignment_to_literal.py'
+beyond the location indicated by ^.
+
+
+```python
+    -->1: if "word" := True:
+             ^
+
+```
+
+You cannot use the augmented assignment operator `:=`,
+sometimes called the walrus operator, with literals like `"word"`.
+You can only assign objects to identifiers (variable names).
+
+---
+
 ## Walrus/Named assignment depending on Python version
 
 

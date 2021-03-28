@@ -768,6 +768,36 @@ Assign to math operation
     only used to assign a value to a variable.
     
 
+Augmented assignment to literal
+-------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\augmented_assignment_to_literal.py", line 1
+        if "word" := True:
+                   ^
+    SyntaxError: invalid syntax
+    
+        The augmented assignment operator is not allowed in Python version 3.6.
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\augmented_assignment_to_literal.py'
+    beyond the location indicated by ^.
+    
+    -->1: if "word" := True:
+                     ^
+
+    You appear to be using the operator `:=`, sometimes called
+    the walrus operator. This operator requires the use of
+    Python 3.8 or newer. You are using version 3.6.
+    
+
 Walrus/Named assignment depending on Python version
 ---------------------------------------------------
 
@@ -782,7 +812,7 @@ Walrus/Named assignment depending on Python version
               ^
     SyntaxError: invalid syntax
     
-        Your Python version does not support this f-string feature.
+        The augmented assignment operator is not allowed in Python version 3.6.
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
@@ -4898,7 +4928,7 @@ Walrus operator does not exist - yet
                      ^
     SyntaxError: invalid syntax
     
-        Your Python version does not support this f-string feature.
+        The augmented assignment operator is not allowed in Python version 3.6.
         
     A `SyntaxError` occurs when Python cannot understand your code.
     
