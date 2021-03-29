@@ -31,3 +31,25 @@ of the error. You can find out more details by using ``why()``.
    :scale: 50 %
    :alt: Screen capture with the result of why() in Mu's REPL.
 
+
+Themes
+------
+
+By default, friendly uses a theme with the same background colour
+as that used by Mu in its default "day" theme.
+If you change the theme used by Mu to either "night" or the "high contrast"
+option, the default used by friendly will not blend in nicely.
+However, this can be changed by using `night()`, or `bw()` (for *black and white*),
+or possibly `ft()` (for **f**\ riendly **t**\ heme)
+
+.. image:: images/mu_night.png
+   :scale: 60 %
+   :alt: Screen capture with the result of why() in Mu's REPL.
+
+.. image:: images/mu_bw.png
+    :scale: 60 %
+    :alt: Screen capture with the result of why() in Mu's REPL.
+
+.. image:: images/mu_ft.png
+    :scale: 60 %
+    :alt: Screen capture with the result of why() in Mu's REPL.

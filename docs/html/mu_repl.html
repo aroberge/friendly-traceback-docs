@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Mu’s REPL &mdash; Friendly 0.3.36 documentation</title>
+  <title>Mu’s REPL &mdash; Friendly 0.3.38 documentation</title>
   
 
   
@@ -119,7 +119,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="mu_about.html">About Mu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu_install.html">Using with Mu: installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Mu’s REPL</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mu’s REPL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#themes">Themes</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="mu_run.html">Mu: executing a program</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other consoles</span></p>
@@ -274,6 +277,18 @@ friendly before doing anything else.</p>
 <p>In this case, friendly gives a quick hint as to the cause
 of the error. You can find out more details by using <code class="docutils literal notranslate"><span class="pre">why()</span></code>.</p>
 <a class="reference internal image-reference" href="_images/mu_repl2.png"><img alt="Screen capture with the result of why() in Mu's REPL." src="_images/mu_repl2.png" style="width: 602.0px; height: 173.5px;" /></a>
+<div class="section" id="themes">
+<h2>Themes<a class="headerlink" href="#themes" title="Permalink to this headline">¶</a></h2>
+<p>By default, friendly uses a theme with the same background colour
+as that used by Mu in its default “day” theme.
+If you change the theme used by Mu to either “night” or the “high contrast”
+option, the default used by friendly will not blend in nicely.
+However, this can be changed by using <cite>night()</cite>, or <cite>bw()</cite> (for <em>black and white</em>),
+or possibly <cite>ft()</cite> (for <strong>f</strong>riendly <strong>t</strong>heme)</p>
+<a class="reference internal image-reference" href="_images/mu_night.png"><img alt="Screen capture with the result of why() in Mu's REPL." src="_images/mu_night.png" style="width: 556.8px; height: 567.0px;" /></a>
+<a class="reference internal image-reference" href="_images/mu_bw.png"><img alt="Screen capture with the result of why() in Mu's REPL." src="_images/mu_bw.png" style="width: 556.1999999999999px; height: 581.4px;" /></a>
+<a class="reference internal image-reference" href="_images/mu_ft.png"><img alt="Screen capture with the result of why() in Mu's REPL." src="_images/mu_ft.png" style="width: 556.8px; height: 570.6px;" /></a>
+</div>
 </div>
 
 
