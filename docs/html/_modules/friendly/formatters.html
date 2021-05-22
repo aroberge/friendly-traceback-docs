@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>friendly.formatters &mdash; Friendly 0.3.3 documentation</title>
+  <title>friendly.formatters &mdash; Friendly 0.3.56 documentation</title>
   
 
   
@@ -404,7 +404,7 @@
     <span class="sd">&quot;&quot;&quot;Jupyter formatter using pygments and html format.&quot;&quot;&quot;</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
     <span class="n">css</span> <span class="o">=</span> <span class="n">HtmlFormatter</span><span class="p">()</span><span class="o">.</span><span class="n">get_style_defs</span><span class="p">(</span><span class="s2">&quot;.highlight&quot;</span><span class="p">)</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;style&gt;</span><span class="si">{</span><span class="n">css</span><span class="si">}</span><span class="s2">&lt;/style&gt;&quot;</span><span class="p">))</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;style&gt;</span><span class="si">{</span><span class="n">css</span><span class="si">}</span><span class="s2">&lt;/style&gt;&quot;</span><span class="p">))</span>  <span class="c1"># noqa</span>
     <span class="n">items_to_show</span> <span class="o">=</span> <span class="n">select_items</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>
     <span class="n">result</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items_to_show</span><span class="p">:</span>
@@ -413,18 +413,15 @@
             <span class="k">if</span> <span class="s2">&quot;source&quot;</span> <span class="ow">in</span> <span class="n">item</span> <span class="ow">or</span> <span class="s2">&quot;variable&quot;</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
                 <span class="n">text</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
                 <span class="n">text</span> <span class="o">=</span> <span class="n">highlight</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">PythonLexer</span><span class="p">(),</span> <span class="n">HtmlFormatter</span><span class="p">())</span>
-                <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+                <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># noqa</span>
             <span class="k">elif</span> <span class="s2">&quot;traceback&quot;</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
                 <span class="n">text</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
                 <span class="n">text</span> <span class="o">=</span> <span class="n">highlight</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">PythonTracebackLexer</span><span class="p">(),</span> <span class="n">HtmlFormatter</span><span class="p">())</span>
-                <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+                <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># noqa</span>
             <span class="k">elif</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span>  <span class="c1"># format like last line of traceback</span>
                 <span class="n">content</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
                 <span class="n">error_name</span> <span class="o">=</span> <span class="n">content</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">content</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-                    <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">content</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">content</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">content</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
                 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
                     <span class="p">[</span>
                         <span class="s1">&#39;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;gr&quot;&gt;&#39;</span><span class="p">,</span>
@@ -434,16 +431,16 @@
                         <span class="s2">&quot;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&quot;</span><span class="p">,</span>
                     <span class="p">]</span>
                 <span class="p">)</span>
-                <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+                <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># noqa</span>
             <span class="k">elif</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;suggest&quot;</span><span class="p">:</span>
                 <span class="n">text</span> <span class="o">=</span> <span class="n">html_escape</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">])</span>
-                <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;p&gt;&lt;i&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;i&gt;&lt;p&gt;&quot;</span><span class="p">))</span>
+                <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;p&gt;&lt;i&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;i&gt;&lt;p&gt;&quot;</span><span class="p">))</span>  <span class="c1"># noqa</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">text</span> <span class="o">=</span> <span class="n">html_escape</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">])</span>
                 <span class="k">if</span> <span class="s2">&quot;header&quot;</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
-                    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;p&gt;&lt;b&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/b&gt;&lt;/p&gt;&quot;</span><span class="p">))</span>
+                    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;p&gt;&lt;b&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/b&gt;&lt;/p&gt;&quot;</span><span class="p">))</span>  <span class="c1"># noqa</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;p style=&quot;width: 70ch&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&lt;/p&gt;&#39;</span><span class="p">))</span>
+                    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;p style=&quot;width: 70ch&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&lt;/p&gt;&#39;</span><span class="p">))</span>  <span class="c1"># noqa</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
         <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="k">if</span> <span class="n">include</span> <span class="o">==</span> <span class="s2">&quot;why&quot;</span><span class="p">:</span>
@@ -455,7 +452,7 @@
                 <span class="n">text</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;I have no suggestion to offer.&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="p">:</span>
             <span class="k">return</span> <span class="s2">&quot;&quot;</span>
-        <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;p style=&quot;width: 70ch;&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&lt;/p&gt;&#39;</span><span class="p">))</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;p style=&quot;width: 70ch;&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&lt;/p&gt;&#39;</span><span class="p">))</span>  <span class="c1"># noqa</span>
 
     <span class="k">return</span> <span class="s2">&quot;&quot;</span></div>
 
@@ -644,11 +641,7 @@
 
 <span class="k">def</span> <span class="nf">select_items</span><span class="p">(</span><span class="n">group_name</span><span class="p">):</span>
     <span class="n">items</span> <span class="o">=</span> <span class="n">items_groups</span><span class="p">[</span><span class="n">group_name</span><span class="p">]</span>
-    <span class="n">ordered_items</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items_in_order</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
-            <span class="n">ordered_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">ordered_items</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items_in_order</span> <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
 </pre></div>
 
            </div>

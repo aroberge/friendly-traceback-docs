@@ -22,7 +22,7 @@ Python version: 3.8.4
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\and_in_import_statement.py", line 1
     from math import sin and cos
@@ -57,7 +57,7 @@ Perhaps you meant to write
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\annotated_name_global.py", line 4
     x:int = 1
@@ -93,7 +93,7 @@ as a local variable. It cannot be declared to be a global variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\as_instead_of_comma_in_import.py", line 2
     from math import (sin, cos) as funcs
@@ -134,7 +134,7 @@ renamed on a separate line as follows:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_name_before_global_1.py", line 7
     global p
@@ -171,7 +171,7 @@ before declaring it as a global variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_name_before_global_2.py", line 7
     global r
@@ -208,7 +208,7 @@ before declaring it as a global variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_name_before_nonlocal_1.py", line 9
     nonlocal q
@@ -249,7 +249,7 @@ before declaring it as a nonlocal variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_name_before_nonlocal_2.py", line 9
     nonlocal s
@@ -290,7 +290,7 @@ before declaring it as a nonlocal variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_to_conditional.py", line 3
     a if 1 else b = 1
@@ -332,7 +332,7 @@ A conditional expression has the following form:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_to_debug.py", line 4
     __debug__ = 1
@@ -371,7 +371,7 @@ beyond the location indicated by ^.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_to_f_string.py", line 6
     f'{x}' = 42
@@ -414,7 +414,7 @@ An f-string should only appear on the right-hand side of an equal sign.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_to_function_call_1.py", line 6
     len('a') = 3
@@ -460,7 +460,7 @@ or includes a function call and is not simply the name of a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_to_function_call_2.py", line 6
     func(a, b=3) = 4
@@ -506,7 +506,7 @@ a function call and not the name of a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_to_generator.py", line 3
     (x for x in x) = 1
@@ -545,7 +545,7 @@ generator expression instead of the name of a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_to_literal_dict.py", line 7
     {1 : 2, 2 : 4} = 5
@@ -593,7 +593,7 @@ and is not simply the name of a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_to_literal_int.py", line 3
     1 = a
@@ -639,7 +639,7 @@ Perhaps you meant to write:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_to_literal_int_2.py", line 3
     1 = 2
@@ -683,7 +683,7 @@ and is not simply the name of a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_to_literal_int_3.py", line 4
     1 = a = b
@@ -728,7 +728,7 @@ and is not simply the name of a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_to_literal_set.py", line 7
     {1, 2, 3} = 4
@@ -776,7 +776,7 @@ and is not simply the name of a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_to_keyword_def.py", line 3
     def = 2
@@ -816,7 +816,7 @@ This is not allowed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_to_keyword_else.py", line 3
     else = 1
@@ -856,7 +856,7 @@ This is not allowed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_to_keyword_none.py", line 4
     None = 1
@@ -895,7 +895,7 @@ beyond the location indicated by ^.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\assign_to_operation.py", line 4
     a + 1 = 2
@@ -936,7 +936,7 @@ only used to assign a value to a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\augmented_assignment_to_literal.py", line 1
     if "word" := True:
@@ -974,7 +974,7 @@ You can only assign objects to identifiers (variable names).
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\augmented_assigment_with_true.py", line 4
     (True := 1)
@@ -1013,7 +1013,7 @@ beyond the location indicated by ^.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\backslash_instead_of_slash.py", line 1
     a = 3 \ 4.0
@@ -1052,7 +1052,7 @@ and wrote \ instead of /.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\break_outside_loop.py", line 4
     break
@@ -1087,7 +1087,7 @@ The Python keyword `break` can only be used inside a `for` loop or inside a `whi
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\cannot_use_star.py", line 3
     *a
@@ -1123,7 +1123,7 @@ to each item of an iterable, which does not make sense here.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "<fstring>", line 1
     (**k)
@@ -1147,7 +1147,7 @@ beyond the location indicated by ^.
 ```
 
 The double star operator `**` is likely interpreted to mean that
-dict unpacking is to be used which does not make sense here.
+dict unpacking is to be used which is not allowed or does not make sense here.
 
 ---
 
@@ -1156,7 +1156,7 @@ dict unpacking is to be used which does not make sense here.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\class_missing_name.py", line 1
     class:
@@ -1196,7 +1196,7 @@ A `class` statement requires a name:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\comprehension_missing_tuple_paren.py", line 1
     x = [i, i**2 for i in range(10)]
@@ -1241,7 +1241,7 @@ you would need to write
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\comprehension_with_condition_no_else.py", line 1
     a = [f(x) if condition for x in sequence]
@@ -1284,7 +1284,7 @@ or, if there is no `else`
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\comprehension_with_condition_with_else.py", line 1
     a = [f(x) for x in sequence if condition else other]
@@ -1327,7 +1327,7 @@ or, if there is no `else`
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\continue_outside_loop.py", line 4
     continue
@@ -1362,7 +1362,7 @@ The Python keyword `continue` can only be used inside a `for` loop or inside a `
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\copy_pasted_code.py", line 2
     >>> print("Hello World!")
@@ -1400,7 +1400,7 @@ The Python prompt, `>>>`, should not be included in your code.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_arg_after_kwarg.py", line 1
     def test(a, **kwargs, b):
@@ -1438,7 +1438,7 @@ keyword arguments in your function definition.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_bare_star_arg.py", line 4
     def f(*):
@@ -1479,7 +1479,7 @@ by `*, named_argument=value`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_code_block.py", line 3
     def :
@@ -1520,7 +1520,7 @@ The correct syntax is:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_dict_as_arg.py", line 1
     def test({'a': 1}, y):  # dict as first argument
@@ -1557,7 +1557,7 @@ You can only use identifiers (variable names) as function arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_duplicate_arg.py", line 4
     def f(aa=1, aa=2):
@@ -1595,7 +1595,7 @@ twice; each keyword argument should appear only once in a function definition.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_extra_semi_colon.py", line 1
     def test():;
@@ -1633,7 +1633,7 @@ Removing `;`, might fix the problem.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_extra_comma.py", line 1
     def test(a,,b):
@@ -1672,7 +1672,7 @@ The following statement contains no syntax error:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_forward_slash_1.py", line 1
     def test(a, **kwargs, /):
@@ -1711,7 +1711,7 @@ the symbol `/`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_forward_slash_2.py", line 1
     def test(a, *, b, /):
@@ -1751,7 +1751,7 @@ When they are used together, `/` must appear before `*`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_forward_slash_3.py", line 1
     def test(a, *arg, /):
@@ -1789,7 +1789,7 @@ are positional arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_forward_slash_4.py", line 1
     def test(a, /, b, /):
@@ -1825,7 +1825,7 @@ You can only use `/` once in a function definition.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_function_name_invalid.py", line 3
     def 2be():
@@ -1865,7 +1865,7 @@ and which contains only letters, digits or the underscore character.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_function_name_string.py", line 3
     def "function"():
@@ -1909,7 +1909,7 @@ You attempted to use a string as a function name.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_keyword_as_arg_1.py", line 5
     def f(None=1):
@@ -1947,7 +1947,7 @@ where an identifier (variable name) was expected.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_keyword_as_arg_2.py", line 5
     def f(x, True):
@@ -1985,7 +1985,7 @@ where an identifier (variable name) was expected.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_keyword_as_arg_3.py", line 5
     def f(*None):
@@ -2023,7 +2023,7 @@ where an identifier (variable name) was expected.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_keyword_as_arg_4.py", line 5
     def f(**None):
@@ -2061,7 +2061,7 @@ where an identifier (variable name) was expected.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_keyword_as_name.py", line 3
     def pass():
@@ -2099,7 +2099,7 @@ You tried to use the Python keyword `pass` as a function name.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_list_as_arg_1.py", line 1
     def test([x], y):  # list as first argument
@@ -2136,7 +2136,7 @@ You can only use identifiers (variable names) as function arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_list_as_arg_2.py", line 1
     def test(x, [y]):  # list as second argument, after comma
@@ -2173,7 +2173,7 @@ You can only use identifiers (variable names) as function arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_missing_colon.py", line 1
     def test()
@@ -2209,7 +2209,7 @@ A function definition statement must end with a colon.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_missing_comma.py", line 4
     def a(b, c d):
@@ -2254,7 +2254,7 @@ Perhaps you meant
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_missing_parens.py", line 3
     def name:
@@ -2295,7 +2295,7 @@ You might have meant to write
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_missing_name.py", line 3
     def ( arg )  :
@@ -2332,7 +2332,7 @@ The correct syntax is:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_name_is_parameter_and_global.py", line 6
     global x
@@ -2377,7 +2377,7 @@ inside that function, which is the contrary of what `global` implied.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_non_default_after_default.py", line 5
     def test(a=1, b):
@@ -2426,7 +2426,7 @@ According to Python, you used positional arguments after keyword ones.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_number_as_arg.py", line 1
     def f(1):
@@ -2463,7 +2463,7 @@ You can only use identifiers (variable names) as function arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_operator_instead_of_comma.py", line 1
     def test(a + b):
@@ -2503,7 +2503,7 @@ The following statement contains no syntax error:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_operator_instead_of_equal.py", line 1
     def test(a, b=3, c+None):
@@ -2543,7 +2543,7 @@ The following statement contains no syntax error:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_operator_instead_of_name.py", line 1
     def test(a, +, b):
@@ -2581,7 +2581,7 @@ will contain no syntax error.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_positional_after_keyword_arg.py", line 5
     test(a=1, b)
@@ -2630,7 +2630,7 @@ According to Python, you used positional arguments after keyword ones.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_semi_colon_instead_of_colon.py", line 1
     def test();
@@ -2667,7 +2667,7 @@ You wrote `;` instead of a colon.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_set_as_arg.py", line 1
     def test(y, {'a', 'b'}):  # set as second argument, after comma
@@ -2704,7 +2704,7 @@ You can only use identifiers (variable names) as function arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_star_arg_before_slash.py", line 1
     def test(a, *arg, /):
@@ -2742,7 +2742,7 @@ are positional arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_star_used_only_once.py", line 1
     def test(a, *arg, *, b=1):
@@ -2780,7 +2780,7 @@ or in the form `..., *args ...`, but not both.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_string_as_arg.py", line 1
     def f("1"):
@@ -2817,7 +2817,7 @@ You can only use identifiers (variable names) as function arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_tuple_as_arg_1.py", line 1
     def test((a, b), c):
@@ -2856,7 +2856,7 @@ within the body of the function.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\def_tuple_as_arg_2.py", line 1
     def test(a, (b, c)):
@@ -2895,7 +2895,7 @@ within the body of the function.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\delete_constant_keyword.py", line 1
     del True
@@ -2927,7 +2927,7 @@ You cannot delete the constant `True`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\delete_function_call.py", line 5
     del f(a)
@@ -2968,7 +2968,7 @@ instead of deleting the function's name
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\delete_string_literal.py", line 1
     del "Hello world!"
@@ -3002,7 +3002,7 @@ individual items in a container.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\dot_before_paren.py", line 3
     print(len.('hello'))
@@ -3037,7 +3037,7 @@ Perhaps you need to replace the dot by a comma.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\else_if_instead_of_elif.py", line 5
     else if True:
@@ -3079,7 +3079,7 @@ but wrote `else if` instead.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\elseif_instead_of_elif.py", line 5
     elseif True:
@@ -3121,7 +3121,7 @@ but wrote `elseif` instead.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\eol_string_literal.py", line 3
     alphabet = 'abc
@@ -3160,7 +3160,7 @@ but never ended the string with another quote on that line.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\equal_sign_instead_of_colon.py", line 4
     ages = {'Alice'=22, 'Bob'=24}
@@ -3197,7 +3197,7 @@ before or at the position indicated by ^.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\except_multiple_exceptions.py", line 3
     except NameError, ValueError as err:
@@ -3241,7 +3241,7 @@ a relevant place in the Python documentation.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\f_string_binary.py", line 1
     greet = bf"Hello {name}"
@@ -3278,7 +3278,7 @@ this is not allowed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\f_string_unterminated.py", line 4
     print(f"Bob is {age['Bob]} years old.")
@@ -3319,7 +3319,7 @@ single quote (') or double quote ("), without a matching closing one.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\f_string_with_backslash.py", line 2
     print(f"{'\n'.join(names)}")
@@ -3362,7 +3362,7 @@ you could write this as
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\for_missing_terms.py", line 1
     for:
@@ -3402,7 +3402,7 @@ A `for` loop is an iteration over a sequence:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\future_braces.py", line 1
     from __future__ import braces
@@ -3438,7 +3438,7 @@ their indentation level, and not by using some curly braces, like `{...}`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\future_import_star.py", line 1
     from __future__ import *
@@ -3482,7 +3482,7 @@ The available features are `nested_scopes,
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\future_must_be_first.py", line 3
     from __future__ import generators
@@ -3518,7 +3518,7 @@ It must appear at the beginning of the file.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\future_typo.py", line 1
     from __future__ import divisio
@@ -3554,7 +3554,7 @@ Instead of `divisio`, perhaps you meant to import `division`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\future_unknown.py", line 1
     from __future__ import something
@@ -3597,7 +3597,7 @@ The available features are `nested_scopes,
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\generator_expression_parens.py", line 6
     f(x for x in L, 1)
@@ -3637,7 +3637,7 @@ You must add parentheses enclosing that expression.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\hyphen_instead_of_underscore.py", line 4
     a-b = 2
@@ -3679,7 +3679,7 @@ Perhaps you meant to write `a_b` instead of `a-b`
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\if_missing_condition.py", line 1
     if:
@@ -3719,7 +3719,7 @@ An `if` statement requires a condition:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\imaginary_i.py", line 3
     a = 3.0i
@@ -3762,7 +3762,7 @@ Perhaps you meant to write `3.0j`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\import_from.py", line 3
     import pen from turtle
@@ -3807,7 +3807,7 @@ instead of
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\indentation_error_1.py", line 4
     pass
@@ -3844,7 +3844,7 @@ was expected to begin a new indented block.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\indentation_error_2.py", line 4
     pass
@@ -3880,7 +3880,7 @@ The line identified above is more indented than expected.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\indentation_error_3.py", line 5
     pass
@@ -3917,7 +3917,7 @@ The line identified above is less indented than expected.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\indentation_error_4.py", line 6
     "c"
@@ -3960,7 +3960,7 @@ at the end of line 5.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\integer_with_leading_zero_1.py", line 1
     x = 01
@@ -3998,7 +3998,7 @@ a decimal integer and did not know that it could not start with zeros.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\integer_with_leading_zero_2.py", line 1
     x = 000_123_456
@@ -4035,7 +4035,7 @@ and did not know that it could not start with zeros.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\invalid_character_in_identifier.py", line 6
     🤖 = 'Reeborg'
@@ -4073,7 +4073,7 @@ which is not allowed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\invalid_hexadecimal.py", line 3
     a = 0x123g4
@@ -4117,7 +4117,7 @@ followed by the characters used to represent the value of that integer.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\invalid_identifier.py", line 3
     36abc = 3
@@ -4155,7 +4155,7 @@ Valid names cannot begin with a number.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\invalid_identifier_2.py", line 3
     tau = 2pi
@@ -4195,7 +4195,7 @@ Perhaps you forgot a multiplication operator, `2 * pi`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\invalid_keyword_argument.py", line 7
     a = dict('key'=1)
@@ -4242,7 +4242,7 @@ or contains a period, etc.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\invalid_octal.py", line 3
     b = 0O1876
@@ -4286,7 +4286,7 @@ followed by the characters used to represent the value of that integer.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\keyword_arg_repeated.py", line 4
     f(ad=1, ad=2)
@@ -4322,7 +4322,7 @@ Each keyword argument should appear only once in a function call.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\keyword_as_attribute.py", line 12
     a.pass = 2
@@ -4363,7 +4363,7 @@ You cannot use the Python keyword `pass` as an attribute.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\lambda_with_parens.py", line 2
     x = lambda (a, b): a + b
@@ -4397,7 +4397,7 @@ This was allowed in Python 2 but it not allowed in Python 3.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\lambda_with_tuple_argument.py", line 2
     x = lambda a, (b, c): a + b + b
@@ -4432,7 +4432,7 @@ within the body of the function.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\literal_in_for_loop.py", line 1
     for "char" in "word":
@@ -4473,7 +4473,7 @@ and not literals like `"char"`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\missing_code_block.py", line 4
 SyntaxError: unexpected EOF while parsing
@@ -4508,7 +4508,7 @@ and expected more content.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\missing_colon_if.py", line 3
     if True
@@ -4548,7 +4548,7 @@ You wrote a statement beginning with
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\missing_colon_while.py", line 3
     while True  # a comment
@@ -4588,7 +4588,7 @@ forgot to add a colon `:` at the end
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\missing_comma_in_dict.py", line 5
     'c': 3,
@@ -4636,7 +4636,7 @@ Perhaps you meant
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\missing_comma_in_list.py", line 3
     a = [1, 2  3]
@@ -4686,7 +4686,7 @@ some of them might raise other types of exceptions.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\missing_comma_in_set.py", line 3
     a = {1, 2  3}
@@ -4736,7 +4736,7 @@ some of them might raise other types of exceptions.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\missing_comma_in_tuple.py", line 3
     a = (1, 2  3)
@@ -4787,7 +4787,7 @@ some of them might raise other types of exceptions.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\missing_parens_for_range.py", line 1
     for i in range 3:
@@ -4827,7 +4827,7 @@ Perhaps you meant:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\name_is_global_and_nonlocal.py", line 7
     global xy
@@ -4864,7 +4864,7 @@ A variable can be global, or nonlocal, but not both at the same time.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\name_is_param_and_nonlocal.py", line 5
     nonlocal x
@@ -4902,7 +4902,7 @@ before declaring it also as a nonlocal variable:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\no_binding_for_nonlocal.py", line 5
     nonlocal ab
@@ -4939,7 +4939,7 @@ nonlocal variable but it cannot be found.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\nonlocal_at_module.py", line 4
     nonlocal cd
@@ -4976,7 +4976,7 @@ given a value outside that function.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\pip_install_1.py", line 2
     pip install friendly
@@ -5015,7 +5015,7 @@ not from a Python interpreter.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\pip_install_2.py", line 2
     python -m pip install friendly
@@ -5054,7 +5054,7 @@ not from a Python interpreter.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\print_is_a_function.py", line 2
     print 'hello'
@@ -5096,7 +5096,7 @@ Now, `print` is a function; you need to use parentheses to call it.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\print_is_a_function_2.py", line 2
     print len('hello')
@@ -5134,7 +5134,7 @@ Now, `print` is a function; you need to use parentheses to call it.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\quote_inside_string.py", line 3
     message = 'don't'
@@ -5175,7 +5175,7 @@ that was enclosed in quotes of the same kind.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\raise_multiple_exceptions.py", line 2
     raise X, Y
@@ -5208,7 +5208,7 @@ It looks like you are trying to raise an exception using Python 2 syntax.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\return_outside_function.py", line 3
     return
@@ -5242,7 +5242,7 @@ You can only use a `return` statement inside a function or method.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\single_equal_with_if.py", line 3
     if i % 2 = 0:
@@ -5251,7 +5251,7 @@ SyntaxError: invalid syntax
 
 ```
 
-Perhaps you needed `==` or `:=` instead of `=`.
+Perhaps you needed `==` instead of `=`.
 
 
 
@@ -5271,8 +5271,7 @@ beyond the location indicated by ^.
 
 ```
 
-You used an assignment operator `=`; perhaps you meant to use 
-an equality operator, `==`, or the walrus operator `:=`.
+You likely used an assignment operator `=` instead of an equality operator `==`.
 
 ---
 
@@ -5281,7 +5280,7 @@ an equality operator, `==`, or the walrus operator `:=`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\single_equal_with_elif.py", line 5
     elif i % 2 = 0:
@@ -5290,7 +5289,7 @@ SyntaxError: invalid syntax
 
 ```
 
-Perhaps you needed `==` or `:=` instead of `=`.
+Perhaps you needed `==` instead of `=`.
 
 
 
@@ -5312,8 +5311,7 @@ beyond the location indicated by ^.
 
 ```
 
-You used an assignment operator `=`; perhaps you meant to use 
-an equality operator, `==`, or the walrus operator `:=`.
+You likely used an assignment operator `=` instead of an equality operator `==`.
 
 ---
 
@@ -5322,7 +5320,7 @@ an equality operator, `==`, or the walrus operator `:=`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\single_equal_with_while.py", line 4
     while a = 1:
@@ -5362,7 +5360,7 @@ an equality operator, `==`, or the walrus operator `:=`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "None", line None
 SyntaxError: too many statically nested blocks
@@ -5388,7 +5386,7 @@ consider reducing the number of nested code blocks.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\triple_equal.py", line 3
     x = y === z
@@ -5429,7 +5427,7 @@ the exact same object, use the operator `is`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\unclosed_bracket.py", line 7
     print(foo())
@@ -5468,7 +5466,7 @@ The opening square bracket `[` on line 5 is not closed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\unclosed_paren_1.py", line 3
     if x == 1:
@@ -5505,7 +5503,7 @@ The opening parenthesis `(` on line 2 is not closed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\unclosed_paren_2.py", line 3
     d = a*a
@@ -5542,7 +5540,7 @@ The opening parenthesis `(` on line 2 is not closed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\unclosed_paren_3.py", line 7
     if 2:
@@ -5581,7 +5579,7 @@ The opening parenthesis `(` on line 5 is not closed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\unexpected_after_continuation_character.py", line 5
     print(\t)
@@ -5619,7 +5617,7 @@ I am guessing that you forgot to enclose some content in a string.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\unexpected_eof.py", line 8
 SyntaxError: unexpected EOF while parsing
@@ -5662,7 +5660,7 @@ The opening square bracket `[` on line 5 is not closed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\unicode_quote.py", line 3
     a = « hello »
@@ -5704,7 +5702,7 @@ instead of a normal single or double quote for a string.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\unmatched_closing_paren.py", line 6
     3, 4,))
@@ -5741,7 +5739,7 @@ The closing parenthesis `)` on line 6 does not match anything.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\unmatched_closing_bracket_1.py", line 2
     x = (1, 2, 3]
@@ -5777,7 +5775,7 @@ The closing square bracket `]` on line 2 does not match the opening parenthesis 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\unmatched_closing_bracket_2.py", line 4
     3]
@@ -5817,7 +5815,7 @@ The closing square bracket `]` on line 4 does not match the opening parenthesis 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\unterminated_triple_quote_string.py", line 4
     some_text = """In a land
@@ -5851,7 +5849,7 @@ the triple quotes needed to end the string.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\tab_error.py", line 7
     pass
@@ -5890,7 +5888,7 @@ beyond the location indicated by ^.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\unescaped_backslash.py", line 1
     a = "abc\"
@@ -5930,7 +5928,7 @@ needed to escape it by writing two `\` in a row.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\use_backquote.py", line 3
     a = `1`
@@ -5970,7 +5968,7 @@ in this latter case, use the function `repr(x)`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\while_missing_condition.py", line 1
     while:
@@ -6010,7 +6008,7 @@ A `while` loop requires a condition:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\would_be_type_declaration_1.py", line 3
     if var start := begin < end:
@@ -6050,7 +6048,7 @@ If you remove `var`, you will have a valid Python statement.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 41, in create_tracebacks
+  File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
     __import__(name)
   File "TESTS:\syntax\would_be_type_declaration_2.py", line 5
     var start := begin < end

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Everything about the friendly console &mdash; Friendly 0.3.38 documentation</title>
+  <title>Everything about the friendly console &mdash; Friendly 0.3.56 documentation</title>
   
 
   
@@ -287,21 +287,6 @@ not change the language in which a given traceback information was recorded.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="friendly.console_helpers.Friendly.debug">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">debug</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.debug" title="Permalink to this definition">¶</a></dt>
-<dd><p>This functions displays the true traceback recorded, that
-includes friendly’s own code.
-It also sets a debug flag for the current session.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="friendly.console_helpers.Friendly.debug_tb">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">debug_tb</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.debug_tb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows the true Python traceback, which includes
-files from friendly itself.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt id="friendly.console_helpers.Friendly.explain">
 <em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">explain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'explain'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.explain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the previously recorded traceback info again,
@@ -398,13 +383,6 @@ English strings will be used.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="friendly.console_helpers.Friendly.show_info">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">show_info</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.show_info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Debugging tool: shows the complete content of traceback info.</p>
-<p>Prints <code class="docutils literal notranslate"><span class="pre">None</span></code> for a given item if it is not present.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt id="friendly.console_helpers.Friendly.show_paths">
 <em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">show_paths</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#friendly.console_helpers.Friendly.show_paths" title="Permalink to this definition">¶</a></dt>
 <dd><p>To avoid displaying very long file paths to the user,
@@ -438,7 +416,7 @@ currently used.</p>
 default browser, linking to a specific url.</p>
 <ul>
 <li><p>If no arguments are provided, and no exception has been raised, this opens
-Friendly documentation.</p></li>
+Friendly’s documentation.</p></li>
 <li><p>If no arguments are provided, and an exception has been raised, in most
 cases, an internet search will be done using the exception message as the
 search string. In a few cases, Friendly will link to a
@@ -477,21 +455,6 @@ Friendly documentation will open</p></li>
 to find out specific information about a given exception.</p>
 <p>Note that, if the language is changed at some point, going back in time does
 not change the language in which a given traceback information was recorded.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly.console_helpers.debug">
-<code class="sig-name descname"><span class="pre">debug</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#debug"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.debug" title="Permalink to this definition">¶</a></dt>
-<dd><p>This functions displays the true traceback recorded, that
-includes friendly’s own code.
-It also sets a debug flag for the current session.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="friendly.console_helpers.debug_tb">
-<code class="sig-name descname"><span class="pre">debug_tb</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#debug_tb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.debug_tb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows the true Python traceback, which includes
-files from friendly itself.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -591,13 +554,6 @@ English strings will be used.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="friendly.console_helpers.show_info">
-<code class="sig-name descname"><span class="pre">show_info</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#show_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.show_info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Debugging tool: shows the complete content of traceback info.</p>
-<p>Prints <code class="docutils literal notranslate"><span class="pre">None</span></code> for a given item if it is not present.</p>
-</dd></dl>
-
-<dl class="py function">
 <dt id="friendly.console_helpers.show_paths">
 <code class="sig-name descname"><span class="pre">show_paths</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/path_info.html#show_paths"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.show_paths" title="Permalink to this definition">¶</a></dt>
 <dd><p>To avoid displaying very long file paths to the user,
@@ -631,7 +587,7 @@ currently used.</p>
 default browser, linking to a specific url.</p>
 <ul>
 <li><p>If no arguments are provided, and no exception has been raised, this opens
-Friendly documentation.</p></li>
+Friendly’s documentation.</p></li>
 <li><p>If no arguments are provided, and an exception has been raised, in most
 cases, an internet search will be done using the exception message as the
 search string. In a few cases, Friendly will link to a

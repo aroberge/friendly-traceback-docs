@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Generic information about various exceptions &mdash; Friendly 0.3.38 documentation</title>
+  <title>Generic information about various exceptions &mdash; Friendly 0.3.56 documentation</title>
   
 
   
@@ -352,7 +352,7 @@ intercepted by Friendly-traceback. Furthermore, exceptions such as
 <a class="reference external" href="https://docs.python.org/3.7/library/exceptions.html#FloatingPointError">not used by Python</a>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">BaseException</span></code>, <code class="docutils literal notranslate"><span class="pre">Exception</span></code>, and <code class="docutils literal notranslate"><span class="pre">ArithmeticError</span></code> are base classes which
 are also not normally seen: some derived classes are normally used instead.</p>
-<p>Information compiled using Friendly version: 0.3.36,
+<p>Information compiled using Friendly version: 0.3.56,
 Python version: 3.8.4</p>
 <div class="section" id="exceptions">
 <h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
@@ -367,11 +367,9 @@ normally, a more specific exception should have been raised.
 </div>
 <div class="section" id="assertionerror">
 <h3>AssertionError<a class="headerlink" href="#assertionerror" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>No information is known about this exception.
-Please report this example to
-https://github.com/aroberge/friendly/issues
-If you are using the Friendly console, use `www()` to
-do an Internet search for this particular case.
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>In Python, the keyword `assert` is used in statements of the form
+`assert condition`, to confirm that `condition` is not `False`.
+If `condition` is `False`, an `AssertionError` is raised.
 </pre></div>
 </div>
 </div>
@@ -475,11 +473,8 @@ do an Internet search for this particular case.
 </div>
 <div class="section" id="eoferror">
 <h3>EOFError<a class="headerlink" href="#eoferror" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>No information is known about this exception.
-Please report this example to
-https://github.com/aroberge/friendly/issues
-If you are using the Friendly console, use `www()` to
-do an Internet search for this particular case.
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>An `EOFError` is raised when the `input()` function hits
+an end-of-file condition (EOF) without reading any data.
 </pre></div>
 </div>
 </div>
@@ -568,9 +563,9 @@ not indented (aligned vertically with other lines) as expected.
 </div>
 <div class="section" id="indexerror">
 <h3>IndexError<a class="headerlink" href="#indexerror" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>An `IndexError` occurs when you are try to get an item from a list,
-a tuple, or a similar object (sequence), by using an index which
-does not exists; typically, this is because the index you give
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>An `IndexError` occurs when you try to get an item from a list,
+a tuple, or a similar object (sequence), and use an index which
+does not exist; typically, this happens because the index you give
 is greater than the length of the sequence.
 </pre></div>
 </div>
@@ -747,11 +742,9 @@ do an Internet search for this particular case.
 </div>
 <div class="section" id="stopiteration">
 <h3>StopIteration<a class="headerlink" href="#stopiteration" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>No information is known about this exception.
-Please report this example to
-https://github.com/aroberge/friendly/issues
-If you are using the Friendly console, use `www()` to
-do an Internet search for this particular case.
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`StopIteration` is raised to indicate that an iterator has no more
+item to provide when its `__next__` method is called by
+the `next()` builtin function.
 </pre></div>
 </div>
 </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>friendly.console_helpers &mdash; Friendly 0.3.3 documentation</title>
+  <title>friendly.console_helpers &mdash; Friendly 0.3.56 documentation</title>
   
 
   
@@ -306,7 +306,7 @@
     <span class="n">friendly</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">old_include</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="show_info"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.show_info">[docs]</a><span class="k">def</span> <span class="nf">show_info</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">_show_info</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Debugging tool: shows the complete content of traceback info.</span>
 
 <span class="sd">    Prints ``None`` for a given item if it is not present.</span>
@@ -320,7 +320,17 @@
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   &quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">: None&quot;</span><span class="p">)</span></div>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">: None&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_get_exception</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Debugging tool: returns the exception instance or None if no exception</span>
+<span class="sd">    has been raised.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;_exc_instance&quot;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="more"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.more">[docs]</a><span class="k">def</span> <span class="nf">more</span><span class="p">():</span>
@@ -380,20 +390,20 @@
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;python_tb&quot;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="debug_tb"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.debug_tb">[docs]</a><span class="k">def</span> <span class="nf">debug_tb</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">_debug_tb</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Shows the true Python traceback, which includes</span>
 <span class="sd">    files from friendly itself.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span></div>
+    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="debug"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.debug">[docs]</a><span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="n">flag</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_debug</span><span class="p">(</span><span class="n">flag</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This functions displays the true traceback recorded, that</span>
 <span class="sd">    includes friendly&#39;s own code.</span>
 <span class="sd">    It also sets a debug flag for the current session.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">debug_helper</span><span class="o">.</span><span class="n">DEBUG</span> <span class="o">=</span> <span class="n">flag</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span></div>
+    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_get_statement</span><span class="p">():</span>
@@ -414,7 +424,7 @@
 <span class="sd">    default browser, linking to a specific url.</span>
 
 <span class="sd">    * If no arguments are provided, and no exception has been raised, this opens</span>
-<span class="sd">      Friendly documentation.</span>
+<span class="sd">      Friendly&#39;s documentation.</span>
 
 <span class="sd">    * If no arguments are provided, and an exception has been raised, in most</span>
 <span class="sd">      cases, an internet search will be done using the exception message as the</span>
@@ -460,21 +470,19 @@
     <span class="n">quote</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">quote</span>  <span class="c1"># noqa</span>
 
     <span class="n">ddg_url</span> <span class="o">=</span> <span class="s2">&quot;https://duckduckgo.com?q=&quot;</span>
-    <span class="n">friendly_url</span> <span class="o">=</span> <span class="s2">&quot;https://aroberge.github.io/friendly-docs/docs/html/&quot;</span>
+    <span class="n">friendly_url</span> <span class="o">=</span> <span class="s2">&quot;https://aroberge.github.io/friendly-traceback-docs/docs/html/&quot;</span>
     <span class="n">python_docs_url</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;https://docs.python.org/3/&quot;</span><span class="p">)</span>
     <span class="n">python_search_url</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;https://docs.python.org/3/search.html?q=&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">:</span>
-        <span class="n">info</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">info</span> <span class="o">=</span> <span class="kc">None</span>
-
+    <span class="n">info</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span> <span class="k">else</span> <span class="kc">None</span>
     <span class="k">if</span> <span class="n">search</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">python</span><span class="p">:</span>  <span class="c1"># default search</span>
         <span class="k">if</span> <span class="n">info</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">url</span> <span class="o">=</span> <span class="n">friendly_url</span>
         <span class="k">elif</span> <span class="s2">&quot;python_link&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
             <span class="n">url</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;python_link&quot;</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">message</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span>
+            <span class="c1"># avoid including quotes around variable names as this would</span>
+            <span class="c1"># make them be misinterpreted as important by search engines</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="s2">&quot; (&quot;</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
                 <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">url</span> <span class="o">=</span> <span class="n">ddg_url</span> <span class="o">+</span> <span class="n">quote</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
@@ -494,7 +502,7 @@
 
     <span class="k">try</span><span class="p">:</span>
         <span class="n">webbrowser</span><span class="o">.</span><span class="n">open_new_tab</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># noqa</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;The default web browser cannot be used for searching.&quot;</span><span class="p">))</span></div>
 
 
@@ -516,13 +524,14 @@
     <span class="s2">&quot;set_lang&quot;</span><span class="p">:</span> <span class="n">set_lang</span><span class="p">,</span>
     <span class="s2">&quot;get_include&quot;</span><span class="p">:</span> <span class="n">get_include</span><span class="p">,</span>
     <span class="s2">&quot;set_include&quot;</span><span class="p">:</span> <span class="n">set_include</span><span class="p">,</span>
+    <span class="s2">&quot;_get_exception&quot;</span><span class="p">:</span> <span class="n">_get_exception</span><span class="p">,</span>
     <span class="s2">&quot;hint&quot;</span><span class="p">:</span> <span class="n">hint</span><span class="p">,</span>
     <span class="s2">&quot;friendly_tb&quot;</span><span class="p">:</span> <span class="n">friendly_tb</span><span class="p">,</span>
     <span class="s2">&quot;python_tb&quot;</span><span class="p">:</span> <span class="n">python_tb</span><span class="p">,</span>
-    <span class="s2">&quot;debug_tb&quot;</span><span class="p">:</span> <span class="n">debug_tb</span><span class="p">,</span>
-    <span class="s2">&quot;debug&quot;</span><span class="p">:</span> <span class="n">debug</span><span class="p">,</span>
+    <span class="s2">&quot;_debug_tb&quot;</span><span class="p">:</span> <span class="n">_debug_tb</span><span class="p">,</span>
+    <span class="s2">&quot;_debug&quot;</span><span class="p">:</span> <span class="n">_debug</span><span class="p">,</span>
     <span class="s2">&quot;show_paths&quot;</span><span class="p">:</span> <span class="n">show_paths</span><span class="p">,</span>
-    <span class="s2">&quot;show_info&quot;</span><span class="p">:</span> <span class="n">show_info</span><span class="p">,</span>
+    <span class="s2">&quot;_show_info&quot;</span><span class="p">:</span> <span class="n">_show_info</span><span class="p">,</span>
     <span class="s2">&quot;set_formatter&quot;</span><span class="p">:</span> <span class="n">set_formatter</span><span class="p">,</span>
     <span class="s2">&quot;_get_statement&quot;</span><span class="p">:</span> <span class="n">_get_statement</span><span class="p">,</span>
     <span class="s2">&quot;www&quot;</span><span class="p">:</span> <span class="n">www</span><span class="p">,</span>

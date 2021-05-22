@@ -27,7 +27,7 @@ intercepted by Friendly-traceback. Furthermore, exceptions such as
 ``BaseException``, ``Exception``, and ``ArithmeticError`` are base classes which
 are also not normally seen: some derived classes are normally used instead.
 
-Information compiled using Friendly version: 0.3.36,
+Information compiled using Friendly version: 0.3.56,
 Python version: 3.8.4
 
 
@@ -51,11 +51,9 @@ AssertionError
 
 .. code-block:: none
 
-    No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
-    If you are using the Friendly console, use `www()` to
-    do an Internet search for this particular case.
+    In Python, the keyword `assert` is used in statements of the form
+    `assert condition`, to confirm that `condition` is not `False`.
+    If `condition` is `False`, an `AssertionError` is raised.
 
 AttributeError
 ~~~~~~~~~~~~~~
@@ -170,11 +168,8 @@ EOFError
 
 .. code-block:: none
 
-    No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
-    If you are using the Friendly console, use `www()` to
-    do an Internet search for this particular case.
+    An `EOFError` is raised when the `input()` function hits
+    an end-of-file condition (EOF) without reading any data.
 
 EnvironmentError
 ~~~~~~~~~~~~~~~~
@@ -273,9 +268,9 @@ IndexError
 
 .. code-block:: none
 
-    An `IndexError` occurs when you are try to get an item from a list,
-    a tuple, or a similar object (sequence), by using an index which
-    does not exists; typically, this is because the index you give
+    An `IndexError` occurs when you try to get an item from a list,
+    a tuple, or a similar object (sequence), and use an index which
+    does not exist; typically, this happens because the index you give
     is greater than the length of the sequence.
 
 InterruptedError
@@ -471,11 +466,9 @@ StopIteration
 
 .. code-block:: none
 
-    No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
-    If you are using the Friendly console, use `www()` to
-    do an Internet search for this particular case.
+    `StopIteration` is raised to indicate that an iterator has no more
+    item to provide when its `__next__` method is called by
+    the `next()` builtin function.
 
 SyntaxError
 ~~~~~~~~~~~

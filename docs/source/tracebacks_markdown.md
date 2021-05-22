@@ -47,7 +47,7 @@ normally, a more specific exception should have been raised.
 ```
 
 ```python
-    ArithmeticError: <class ArithmeticError>
+    ArithmeticError:  <class ArithmeticError>
 
 ```
 
@@ -60,7 +60,7 @@ normally, a more specific exception should have been raised.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 270, in test_Attribute_from_other_module
+  File "TESTS:\runtime\test_attribute_error.py", line 299, in test_Attribute_from_other_module
     keyword.pi
 AttributeError: module 'keyword' has no attribute 'pi'
 
@@ -79,19 +79,19 @@ the attribute `pi` of one of the following modules:
 `math, cmath`.
 
 
-#### Exception raised on line 270 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 299 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       268:     import cmath
-       269:     try:
-    -->270:         keyword.pi
-       271:     except AttributeError as e:
+       297:     import cmath
+       298:     try:
+    -->299:         keyword.pi
+       300:     except AttributeError as e:
 
 ```
 
 ```python
-    keyword: <module keyword> from PYTHON_LIB:\keyword.py
+    keyword:  <module keyword> from PYTHON_LIB:\keyword.py
 
 ```
 
@@ -100,7 +100,7 @@ the attribute `pi` of one of the following modules:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 188, in test_Builtin_function
+  File "TESTS:\runtime\test_attribute_error.py", line 217, in test_Builtin_function
     len.text
 AttributeError: 'builtin_function_or_method' object has no attribute 'text'
 
@@ -119,20 +119,20 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 `len(text)`
 
 
-#### Exception raised on line 188 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 217 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       186:     text = 'Hello world!'
-       187:     try:
-    -->188:         len.text
-       189:     except AttributeError as e:
+       215:     text = 'Hello world!'
+       216:     try:
+    -->217:         len.text
+       218:     except AttributeError as e:
 
 ```
 
 ```python
-    text: 'Hello world!'
-    len: <builtin function len>
+    text:  'Hello world!'
+    len:  <builtin function len>
 
 ```
 
@@ -141,7 +141,7 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 205, in test_Builtin_module_with_no_file
+  File "TESTS:\runtime\test_attribute_error.py", line 234, in test_Builtin_module_with_no_file
     sys.foo
 AttributeError: module 'sys' has no attribute 'foo'
 
@@ -156,19 +156,19 @@ Python tells us that no object with name `foo` is
 found in module `sys`.
 
 
-#### Exception raised on line 205 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 234 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       203: 
-       204:     try:
-    -->205:         sys.foo
-       206:     except AttributeError as e:
+       232: 
+       233:     try:
+    -->234:         sys.foo
+       235:     except AttributeError as e:
 
 ```
 
 ```python
-    sys: <module sys (builtin)>
+    sys:  <module sys (builtin)>
 
 ```
 
@@ -177,8 +177,83 @@ found in module `sys`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 36, in test_Generic
-    a.x  # Testing instance
+  File "TESTS:\runtime\test_attribute_error.py", line 24, in test_Generic
+    A.x  # testing type
+AttributeError: type object 'A' has no attribute 'x'
+
+```
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+
+The object `A` has no attribute named `x`.
+
+
+#### Exception raised on line 24 of file TESTS:\runtime\test_attribute_error.py.
+
+
+```python
+       22: 
+       23:     try:
+    -->24:         A.x  # testing type
+       25:     except AttributeError as e:
+
+```
+
+```python
+    A:  <class A> from test_attribute_error.test_Generic
+
+```
+
+### Generic different frame
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_attribute_error.py", line 47, in test_Generic_different_frame
+    a.attr
+AttributeError: 'A' object has no attribute 'attr'
+
+```
+
+Did you mean `attr2`?
+
+
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+
+The object `a` has no attribute named `attr`.
+Perhaps you meant to write `a.attr2` instead of `a.attr`
+
+
+#### Exception raised on line 47 of file TESTS:\runtime\test_attribute_error.py.
+
+
+```python
+       45:     a = f()
+       46:     try:
+    -->47:         a.attr
+       48:     except AttributeError as e:
+
+```
+
+```python
+    a:  <f.A object> from test_attribute_error.test_Generic_different_frame
+
+```
+
+### Generic instance
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_attribute_error.py", line 65, in test_Generic_instance
+    a.x
 AttributeError: 'A' object has no attribute 'x'
 
 ```
@@ -191,19 +266,19 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 The object `a` has no attribute named `x`.
 
 
-#### Exception raised on line 36 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 65 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       34:     try:
-       35:         a = A()
-    -->36:         a.x  # Testing instance
-       37:     except AttributeError as e:
+       63:     a = A()
+       64:     try:
+    -->65:         a.x
+       66:     except AttributeError as e:
 
 ```
 
 ```python
-    a: <A object> from test_attribute_error.test_Generic
+    a:  <A object> from test_attribute_error.test_Generic_instance
 
 ```
 
@@ -212,7 +287,7 @@ The object `a` has no attribute named `x`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 113, in test_Module_attribute_typo
+  File "TESTS:\runtime\test_attribute_error.py", line 142, in test_Module_attribute_typo
     math.cost
 AttributeError: module 'math' has no attribute 'cost'
 
@@ -232,19 +307,19 @@ the following names which are attributes of module `math`:
 `cos, cosh, acos`
 
 
-#### Exception raised on line 113 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 142 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       111: 
-       112:     try:
-    -->113:         math.cost
-       114:     except AttributeError as e:
+       140: 
+       141:     try:
+    -->142:         math.cost
+       143:     except AttributeError as e:
 
 ```
 
 ```python
-    math: <module math (builtin)>
+    math:  <module math (builtin)>
 
 ```
 
@@ -253,7 +328,7 @@ the following names which are attributes of module `math`:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 152, in test_Nonetype
+  File "TESTS:\runtime\test_attribute_error.py", line 181, in test_Nonetype
     a.b
 AttributeError: 'NoneType' object has no attribute 'b'
 
@@ -267,19 +342,19 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 You are attempting to access the attribute `b`
 for a variable whose value is `None`.
 
-#### Exception raised on line 152 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 181 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       150:     a = None
-       151:     try:
-    -->152:         a.b
-       153:     except AttributeError as e:
+       179:     a = None
+       180:     try:
+    -->181:         a.b
+       182:     except AttributeError as e:
 
 ```
 
 ```python
-    a: None
+    a:  None
 
 ```
 
@@ -288,7 +363,7 @@ for a variable whose value is `None`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 52, in test_Object_attribute_typo
+  File "TESTS:\runtime\test_attribute_error.py", line 81, in test_Object_attribute_typo
     a.appendh(4)
 AttributeError: 'list' object has no attribute 'appendh'
 
@@ -303,23 +378,24 @@ An `AttributeError` occurs when the code contains something like
 and `x` is not a method or attribute (variable) belonging to `object`.
 
 
+The object `a` has no attribute named `appendh`.
 Perhaps you meant to write `a.append` instead of `a.appendh`
 
 
-#### Exception raised on line 52 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 81 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       50:     try:
-       51:         a = [1, 2, 3]
-    -->52:         a.appendh(4)
+       79:     try:
+       80:         a = [1, 2, 3]
+    -->81:         a.appendh(4)
                    ^^^^^^^^^
-       53:     except AttributeError as e:
+       82:     except AttributeError as e:
 
 ```
 
 ```python
-    a: [1, 2, 3]
+    a:  [1, 2, 3]
 
 ```
 
@@ -328,7 +404,7 @@ Perhaps you meant to write `a.append` instead of `a.appendh`
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 171, in test_Perhaps_comma
+  File "TESTS:\runtime\test_attribute_error.py", line 200, in test_Perhaps_comma
     a = [abcd
 AttributeError: 'str' object has no attribute 'defg'
 
@@ -349,20 +425,20 @@ Perhaps you wrote a period to separate these two objects,
 instead of using a comma.
 
 
-#### Exception raised on line 171 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 200 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       169:     # fmt: off
-       170:     try:
-    -->171:         a = [abcd
-       172:         .defg]
+       198:     # fmt: off
+       199:     try:
+    -->200:         a = [abcd
+       201:         .defg]
 
 ```
 
 ```python
-    abcd: 'hello'
-    defg: 'world'
+    abcd:  'hello'
+    defg:  'world'
 
 ```
 
@@ -371,7 +447,7 @@ instead of using a comma.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 134, in test_Shadow_stdlib_module
+  File "TESTS:\runtime\test_attribute_error.py", line 163, in test_Shadow_stdlib_module
     turtle.Pen
 AttributeError: module 'turtle' has no attribute 'Pen'
 
@@ -391,19 +467,19 @@ There is also a module named `turtle` in Python's standard library.
 Perhaps you need to rename your module.
 
 
-#### Exception raised on line 134 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 163 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       132: 
-       133:     try:
-    -->134:         turtle.Pen
-       135:     except AttributeError as e:
+       161: 
+       162:     try:
+    -->163:         turtle.Pen
+       164:     except AttributeError as e:
 
 ```
 
 ```python
-    turtle: <module turtle> from TESTS:\turtle.py
+    turtle:  <module turtle> from TESTS:\turtle.py
 
 ```
 
@@ -412,7 +488,7 @@ Perhaps you need to rename your module.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 240, in test_Tuple_by_accident
+  File "TESTS:\runtime\test_attribute_error.py", line 269, in test_Tuple_by_accident
     something.upper()
 AttributeError: 'tuple' object has no attribute 'upper'
 
@@ -433,20 +509,20 @@ Perhaps you added a trailing comma by mistake at the end of the line
 where you defined `something`.
 
 
-#### Exception raised on line 240 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 269 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       238:     something = "abc",  # note trailing comma
-       239:     try:
-    -->240:         something.upper()
+       267:     something = "abc",  # note trailing comma
+       268:     try:
+    -->269:         something.upper()
                     ^^^^^^^^^^^^^^^
-       241:     except AttributeError as e:
+       270:     except AttributeError as e:
 
 ```
 
 ```python
-    something: ('abc',)
+    something:  ('abc',)
 
 ```
 
@@ -455,7 +531,7 @@ where you defined `something`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 68, in test_Use_builtin
+  File "TESTS:\runtime\test_attribute_error.py", line 97, in test_Use_builtin
     a.length()
 AttributeError: 'list' object has no attribute 'length'
 
@@ -474,20 +550,20 @@ The object `a` has no attribute named `length`.
 Perhaps you can use the Python builtin function `len` instead:
 `len(a)`.
 
-#### Exception raised on line 68 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 97 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       66:     try:
-       67:         a = [1, 2, 3]
-    -->68:         a.length()
+       95:     try:
+       96:         a = [1, 2, 3]
+    -->97:         a.length()
                    ^^^^^^^^
-       69:     except AttributeError as e:
+       98:     except AttributeError as e:
 
 ```
 
 ```python
-    a: [1, 2, 3]
+    a:  [1, 2, 3]
 
 ```
 
@@ -496,7 +572,7 @@ Perhaps you can use the Python builtin function `len` instead:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 84, in test_Use_synonym
+  File "TESTS:\runtime\test_attribute_error.py", line 113, in test_Use_synonym
     a.add(4)
 AttributeError: 'list' object has no attribute 'add'
 
@@ -516,20 +592,20 @@ However, `a` has the following attributes with similar meanings:
 `append, extend, insert`.
 
 
-#### Exception raised on line 84 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 113 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       82:     try:
-       83:         a = [1, 2, 3]
-    -->84:         a.add(4)
-                   ^^^^^
-       85:     except AttributeError as e:
+       111:     try:
+       112:         a = [1, 2, 3]
+    -->113:         a.add(4)
+                    ^^^^^
+       114:     except AttributeError as e:
 
 ```
 
 ```python
-    a: [1, 2, 3]
+    a:  [1, 2, 3]
 
 ```
 
@@ -538,7 +614,7 @@ However, `a` has the following attributes with similar meanings:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_attribute_error.py", line 225, in test_Using_slots
+  File "TESTS:\runtime\test_attribute_error.py", line 254, in test_Using_slots
     f.b = 1
 AttributeError: 'F' object has no attribute 'b'
 
@@ -555,19 +631,19 @@ the creation of new attributes.
 The following are some of its known attributes:
 `a`.
 
-#### Exception raised on line 225 of file TESTS:\runtime\test_attribute_error.py.
+#### Exception raised on line 254 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
-       223:     f = F()
-       224:     try:
-    -->225:         f.b = 1
-       226:     except AttributeError as e:
+       252:     f = F()
+       253:     try:
+    -->254:         f.b = 1
+       255:     except AttributeError as e:
 
 ```
 
 ```python
-    f: <F object> from test_attribute_error.test_Using_slots
+    f:  <F object> from test_attribute_error.test_Using_slots
 
 ```
 
@@ -607,7 +683,7 @@ file that cannot be found is `does_not_exist`.
 ```
 
 ```python
-    open: <builtin function open>
+    open:  <builtin function open>
 
 ```
 
@@ -719,9 +795,9 @@ IndexError: list index out of range
 
 ```
 
-An `IndexError` occurs when you are try to get an item from a list,
-a tuple, or a similar object (sequence), by using an index which
-does not exists; typically, this is because the index you give
+An `IndexError` occurs when you try to get an item from a list,
+a tuple, or a similar object (sequence), and use an index which
+does not exist; typically, this happens because the index you give
 is greater than the length of the sequence.
 
 
@@ -742,8 +818,9 @@ a `list` of length `40`.
 ```
 
 ```python
-    a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
+    a:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ...]
         len(a): 40
+
 
 ```
 
@@ -762,15 +839,16 @@ Remember: the first item of a `tuple` is at index 0.
 
 
 
-An `IndexError` occurs when you are try to get an item from a list,
-a tuple, or a similar object (sequence), by using an index which
-does not exists; typically, this is because the index you give
+An `IndexError` occurs when you try to get an item from a list,
+a tuple, or a similar object (sequence), and use an index which
+does not exist; typically, this happens because the index you give
 is greater than the length of the sequence.
 
 
 You have tried to get the item with index `3` of `a`,
 a `tuple` of length `3`.
-The largest valid index of `a` is `2`.
+The valid index values of `a` are integers ranging from
+`-3` to `2`.
 
 
 #### Exception raised on line 8 of file TESTS:\runtime\test_index_error.py.
@@ -786,7 +864,7 @@ The largest valid index of `a` is `2`.
 ```
 
 ```python
-    a: (1, 2, 3)
+    a:  (1, 2, 3)
 
 ```
 
@@ -833,8 +911,8 @@ In your program, the key that cannot be found is `42`.
 ```
 
 ```python
-    d: ChainMap({}, {})
-    d.pop: <bound method ChainMap.pop of ChainMap({}, {})>
+    d:  ChainMap({}, {})
+    d.pop:  <bound method ChainMap.pop of ChainMap({}, {})>
 
 ```
 
@@ -849,10 +927,10 @@ In your program, the key that cannot be found is `42`.
 ```
 
 ```python
-    key: 42
-    KeyError: <class KeyError>
-    format: <builtin function format>
-    'Key not found in the first mapping: {!r}'.format: <builtin method format of str object>
+    key:  42
+    KeyError:  <class KeyError>
+    format:  <builtin function format>
+    'Key not found in the first mapping: {!r}'.format:  <builtin method format of str object>
 
 ```
 
@@ -886,7 +964,7 @@ In your program, the key that cannot be found is `c`.
 ```
 
 ```python
-    d: {'a': 1, 'b': 2}
+    d:  {'a': 1, 'b': 2}
 
 ```
 
@@ -922,7 +1000,7 @@ It can also be raised directly by codecs.lookup().
 ```
 
 ```python
-    LookupError: <class LookupError>
+    LookupError:  <class LookupError>
 
 ```
 
@@ -1014,7 +1092,7 @@ The name of the module that could not be imported is `Tkinter`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_name_error.py", line 21, in test_Annotated_variable
+  File "TESTS:\runtime\test_name_error.py", line 24, in test_Annotated_variable
     y = x
 NameError: name 'x' is not defined
 
@@ -1042,15 +1120,15 @@ instead of
     x = 3
 
 
-#### Exception raised on line 21 of file TESTS:\runtime\test_name_error.py.
+#### Exception raised on line 24 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
-       19: def test_Annotated_variable():
-       20:     try:
-    -->21:         y = x
+       22: def test_Annotated_variable():
+       23:     try:
+    -->24:         y = x
                        ^
-       22:     except NameError as e:
+       25:     except NameError as e:
 
 ```
 
@@ -1059,7 +1137,7 @@ instead of
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_name_error.py", line 6, in test_Generic
+  File "TESTS:\runtime\test_name_error.py", line 9, in test_Generic
     this = something
 NameError: name 'something' is not defined
 
@@ -1076,15 +1154,54 @@ In your program, `something` is an unknown name.
 I have no additional information for you.
 
 
-#### Exception raised on line 6 of file TESTS:\runtime\test_name_error.py.
+#### Exception raised on line 9 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
-       4: def test_Generic():
-       5:     try:
-    -->6:         this = something
-                         ^^^^^^^^^
-       7:     except NameError as e:
+        7: def test_Generic():
+        8:     try:
+    --> 9:         this = something
+                          ^^^^^^^^^
+       10:     except NameError as e:
+
+```
+
+### Missing import
+
+
+```pytb
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_name_error.py", line 103, in test_Missing_import
+    unicodedata.something
+NameError: name 'unicodedata' is not defined
+
+```
+
+Did you forget to import `unicodedata`?
+
+
+
+A `NameError` exception indicates that a variable or
+function name is not known to Python.
+Most often, this is because there is a spelling mistake.
+However, sometimes it is because the name is used
+before being defined or given a value.
+
+
+The name `unicodedata` is not defined in your program.
+Perhaps you forgot to import `unicodedata` which is found
+in Python's standard library.
+
+
+#### Exception raised on line 103 of file TESTS:\runtime\test_name_error.py.
+
+
+```python
+       101: def test_Missing_import():
+       102:     try:
+    -->103:         unicodedata.something
+                    ^^^^^^^^^^^
+       104:     except NameError as e:
 
 ```
 
@@ -1093,7 +1210,7 @@ I have no additional information for you.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\runtime\test_name_error.py", line 86, in test_Synonym
+  File "TESTS:\runtime\test_name_error.py", line 89, in test_Synonym
     cost  # wrote from math import * above
 NameError: name 'cost' is not defined
 
@@ -1115,15 +1232,15 @@ Instead of writing `cost`, perhaps you meant one of the following:
 *   Global scope: `cos`, `cosh`, `acos`
 
 
-#### Exception raised on line 86 of file TESTS:\runtime\test_name_error.py.
+#### Exception raised on line 89 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
-       84: 
-       85:     try:
-    -->86:         cost  # wrote from math import * above
+       87: 
+       88:     try:
+    -->89:         cost  # wrote from math import * above
                    ^^^^
-       87:     except NameError as e:
+       90:     except NameError as e:
 
 ```
 
@@ -1199,7 +1316,7 @@ and that your program would never stop.
 ```
 
 ```python
-    a: <function a> from test_Generic
+    a:  <function a> from test_Generic
 
 ```
 
@@ -1216,7 +1333,7 @@ and that your program would never stop.
 ```
 
 ```python
-    a: <function a> from test_Generic
+    a:  <function a> from test_Generic
 
 ```
 
@@ -1297,8 +1414,8 @@ a `tuple` and a `list`.
 ```
 
 ```python
-    a_tuple: (1, 2, 3)
-    a_list: [1, 2, 3]
+    a_list:  [1, 2, 3]
+    a_tuple:  (1, 2, 3)
 
 ```
 
@@ -1340,8 +1457,8 @@ perhaps you should use the `dict.fromkeys()` method: `dd.update( dict.fromkeys([
 ```
 
 ```python
-    dd: {'a': 'a'}
-    dd.update: <builtin method update of dict object>
+    dd:  {'a': 'a'}
+    dd.update:  <builtin method update of dict object>
 
 ```
 
@@ -1456,8 +1573,8 @@ Perhaps you forgot to convert the string `a` into an integer (`int`).
 ```
 
 ```python
-    b: 42
-    a: '2'
+    a:  '2'
+    b:  42
 
 ```
 
@@ -1569,9 +1686,9 @@ Perhaps you forgot to convert `c, d` into integers.
 ```
 
 ```python
-    c: '2'
-    d: '3'
-    range: <class range>
+    c:  '2'
+    d:  '3'
+    range:  <class range>
 
 ```
 
@@ -1619,9 +1736,9 @@ Perhaps you meant to use `[]` instead of `()` and write
 ```
 
 ```python
-    a: 3
-    b: 7
-    a + b: 10
+    a:  3
+    b:  7
+    a + b:  10
 
 ```
 
@@ -1659,7 +1776,7 @@ An iterable is required here.
 ```
 
 ```python
-    list: <class list>
+    list:  <class list>
 
 ```
 
@@ -1703,7 +1820,7 @@ Perhaps you meant to write `f(1)`.
 ```
 
 ```python
-    f: <function f> from test_Object_is_not_subscriptable
+    f:  <function f> from test_Object_is_not_subscriptable
 
 ```
 
@@ -1775,7 +1892,7 @@ fewer positional arguments than it requires (2 missing).
 ```
 
 ```python
-    fn: <function fn> from test_Too_few_positional_argument
+    fn:  <function fn> from test_Too_few_positional_argument
 
 ```
 
@@ -1818,7 +1935,7 @@ Perhaps you forgot `self` when defining `f`.
 ```
 
 ```python
-    A: <class A> from test_type_error.test_Too_many_positional_argument
+    A:  <class A> from test_type_error.test_Too_many_positional_argument
 
 ```
 
@@ -1862,8 +1979,8 @@ Perhaps you meant to use a list instead.
 ```
 
 ```python
-    a: (1, 2, 3)
-    a[0]: 1
+    a:  (1, 2, 3)
+    a[0]:  1
 
 ```
 
@@ -1937,8 +2054,8 @@ for multiplication of matrices.
 ```
 
 ```python
-    a: 'a'
-    b: 2
+    a:  'a'
+    b:  2
 
 ```
 
@@ -1995,7 +2112,7 @@ should have been included as the first line inside your function.
 ```
 
 ```python
-    global outer_missing_global: <function outer_missing_global>
+    global outer_missing_global:  <function outer_missing_global>
 
 ```
 
@@ -2010,7 +2127,7 @@ should have been included as the first line inside your function.
 ```
 
 ```python
-    global spam_missing_global: 1
+    global spam_missing_global:  1
 
 ```
 
@@ -2063,7 +2180,7 @@ should have been included as the first line inside your function.
 ```
 
 ```python
-    global outer_missing_nonlocal: <function outer_missing_nonlocal>
+    global outer_missing_nonlocal:  <function outer_missing_nonlocal>
 
 ```
 
@@ -2112,7 +2229,7 @@ do an Internet search for this particular case.
 ```
 
 ```python
-    global MyException: <class test_unknown_error.MyException>
+    global MyException:  <class test_unknown_error.MyException>
 
 ```
 
@@ -2153,7 +2270,7 @@ than the length of the iterable, a string (`str`) of length 2.
 ```
 
 ```python
-    d: 'ab'
+    d:  'ab'
 
 ```
 
@@ -2190,7 +2307,7 @@ than the length of the iterable, a `list` of length 3.
 ```
 
 ```python
-    c: [1, 2, 3]
+    c:  [1, 2, 3]
 
 ```
 
@@ -2232,7 +2349,7 @@ which is equal to zero.
 ```
 
 ```python
-    zero: 0j
+    zero:  0j
 
 ```
 
@@ -2270,7 +2387,7 @@ which is equal to zero.
 ```
 
 ```python
-    zero: 0
+    zero:  0
 
 ```
 
@@ -2304,8 +2421,8 @@ The second argument of the `divmod()` function is zero.
 ```
 
 ```python
-    zero: 0
-    divmod: <builtin function divmod>
+    zero:  0
+    divmod:  <builtin function divmod>
 
 ```
 
@@ -2343,7 +2460,7 @@ which is equal to zero.
 ```
 
 ```python
-    zero: 0.0
+    zero:  0.0
 
 ```
 
@@ -2381,7 +2498,7 @@ which is equal to zero.
 ```
 
 ```python
-    zero: 0.0
+    zero:  0.0
 
 ```
 
@@ -2419,7 +2536,7 @@ which is equal to zero.
 ```
 
 ```python
-    zero: 0
+    zero:  0
 
 ```
 
@@ -2457,7 +2574,7 @@ which is equal to zero.
 ```
 
 ```python
-    zero: 0
+    zero:  0
 
 ```
 
@@ -2492,7 +2609,7 @@ which is equivalent to dividing by zero.
 ```
 
 ```python
-    zero: 0
+    zero:  0
 
 ```
 
