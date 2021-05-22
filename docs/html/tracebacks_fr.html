@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly tracebacks - en Français &mdash; Friendly 0.3.56 documentation</title>
+  <title>Friendly tracebacks - en Français &mdash; Friendly 0.3.57 documentation</title>
   
 
   
@@ -923,7 +923,7 @@ Exception levée à la ligne 6 du fichier TESTS:\runtime\test_import_error.py.
 <h3>Long list<a class="headerlink" href="#long-list" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_index_error.py&quot;, line 24, in test_Long_list
-    print(a[50], b[0])
+    print(a[60], b[0])
 IndexError: list index out of range
 
 Une exception `IndexError` se produit lorsque vous essayez d’obtenir un élément
@@ -931,14 +931,15 @@ d&#39;une liste, d&#39;un tuple, ou d&#39;un objet similaire (séquence), à l�
 n’existe pas; typiquement, c’est parce que l’index que vous donnez
 est plus grand que la longueur de la séquence.
 
-Vous avez essayé d’obtenir l’élément avec l’index `50` de `a`,
+Vous avez essayé d’obtenir l’élément avec l’index `60` de `a`,
 une liste (`list`) de longueur `40`.
+Les indices valides de `a` sont les entiers allant de `-40` à `39`.
 
 Exception levée à la ligne 24 du fichier TESTS:\runtime\test_index_error.py.
 
    22:     b = tuple(range(50))
    23:     try:
---&gt;24:         print(a[50], b[0])
+--&gt;24:         print(a[60], b[0])
                      ^^^^^
    25:     except IndexError as e:
 
@@ -954,7 +955,8 @@ Exception levée à la ligne 24 du fichier TESTS:\runtime\test_index_error.py.
     print(a[3], b[2])
 IndexError: tuple index out of range
 
-    N’oubliez pas : le premier élément d&#39;un objet de type `un `tuple`` est à l’indice 0.
+    N’oubliez pas : le premier élément d&#39;un objet de type `un `tuple`` est à l’indice 0
+    et non pas à l&#39;indice 1.
 
 Une exception `IndexError` se produit lorsque vous essayez d’obtenir un élément
 d&#39;une liste, d&#39;un tuple, ou d&#39;un objet similaire (séquence), à l’aide d’un index qui

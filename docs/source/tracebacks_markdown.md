@@ -790,7 +790,7 @@ Perhaps you meant to import `pi` (from `math`) instead of `Pi`
 ```pytb
 Traceback (most recent call last):
   File "TESTS:\runtime\test_index_error.py", line 24, in test_Long_list
-    print(a[50], b[0])
+    print(a[60], b[0])
 IndexError: list index out of range
 
 ```
@@ -801,8 +801,10 @@ does not exist; typically, this happens because the index you give
 is greater than the length of the sequence.
 
 
-You have tried to get the item with index `50` of `a`,
+You have tried to get the item with index `60` of `a`,
 a `list` of length `40`.
+The valid index values of `a` are integers ranging from
+`-40` to `39`.
 
 
 #### Exception raised on line 24 of file TESTS:\runtime\test_index_error.py.
@@ -811,7 +813,7 @@ a `list` of length `40`.
 ```python
        22:     b = tuple(range(50))
        23:     try:
-    -->24:         print(a[50], b[0])
+    -->24:         print(a[60], b[0])
                          ^^^^^
        25:     except IndexError as e:
 
@@ -835,7 +837,7 @@ IndexError: tuple index out of range
 
 ```
 
-Remember: the first item of a `tuple` is at index 0.
+Remember: the first item of a `tuple` is not at index 1 but at index 0.
 
 
 

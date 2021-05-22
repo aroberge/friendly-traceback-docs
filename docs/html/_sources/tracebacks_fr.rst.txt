@@ -643,7 +643,7 @@ Long list
 
     Traceback (most recent call last):
       File "TESTS:\runtime\test_index_error.py", line 24, in test_Long_list
-        print(a[50], b[0])
+        print(a[60], b[0])
     IndexError: list index out of range
     
     Une exception `IndexError` se produit lorsque vous essayez d’obtenir un élément
@@ -651,14 +651,15 @@ Long list
     n’existe pas; typiquement, c’est parce que l’index que vous donnez
     est plus grand que la longueur de la séquence.
     
-    Vous avez essayé d’obtenir l’élément avec l’index `50` de `a`,
+    Vous avez essayé d’obtenir l’élément avec l’index `60` de `a`,
     une liste (`list`) de longueur `40`.
+    Les indices valides de `a` sont les entiers allant de `-40` à `39`.
     
     Exception levée à la ligne 24 du fichier TESTS:\runtime\test_index_error.py.
     
        22:     b = tuple(range(50))
        23:     try:
-    -->24:         print(a[50], b[0])
+    -->24:         print(a[60], b[0])
                          ^^^^^
        25:     except IndexError as e:
 
@@ -679,7 +680,8 @@ Short tuple
         print(a[3], b[2])
     IndexError: tuple index out of range
     
-        N’oubliez pas : le premier élément d'un objet de type `un `tuple`` est à l’indice 0.
+        N’oubliez pas : le premier élément d'un objet de type `un `tuple`` est à l’indice 0
+        et non pas à l'indice 1.
         
     Une exception `IndexError` se produit lorsque vous essayez d’obtenir un élément
     d'une liste, d'un tuple, ou d'un objet similaire (séquence), à l’aide d’un index qui
