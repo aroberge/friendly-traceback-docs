@@ -879,7 +879,7 @@ The valid index values of `a` are integers ranging from
 
 ```pytb
 Traceback (most recent call last):
-  File "C:\Users\andre\AppData\Local\Programs\Python\Python38-32\lib\collections\__init__.py", line 965, in pop
+  File "PYTHON_LIB:\collections\__init__.py", line 965, in pop
     return self.maps[0].pop(key, *args)
 KeyError: 42
 
@@ -1243,6 +1243,82 @@ Instead of writing `cost`, perhaps you meant one of the following:
     -->89:         cost  # wrote from math import * above
                    ^^^^
        90:     except NameError as e:
+
+```
+
+
+---
+
+## OsError
+### Urllib error
+
+
+```pytb
+Traceback (most recent call last):
+  File "PYTHON_LIB:\urllib\request.py", line 1350, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "PYTHON_LIB:\http\client.py", line 1240, in request
+
+       ... More lines not shown. ...
+
+  File "PYTHON_LIB:\socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+    During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "TESTS:\runtime\test_os_error.py", line 7, in test_Urllib_error
+    request.urlopen("http://does_not_exist")
+
+       ... More lines not shown. ...
+
+  File "PYTHON_LIB:\urllib\request.py", line 502, in _call_chain
+    result = func(*args)
+  File "PYTHON_LIB:\urllib\request.py", line 1379, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+  File "PYTHON_LIB:\urllib\request.py", line 1353, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 11001] getaddrinfo failed>
+
+```
+
+An exception of type `URLError` is a subclass of `OSError`.
+An `OSError` exception is usually raised by the Operating System
+to indicate that an operation is not allowed or that
+a resource is not available.
+
+
+#### Execution stopped on line 7 of file TESTS:\runtime\test_os_error.py.
+
+
+```python
+       5:     from urllib import request, error
+       6:     try:
+    -->7:         request.urlopen("http://does_not_exist")
+       8:     except error.URLError as e:
+
+```
+
+```python
+    request:  <module urllib.request> from PYTHON_LIB:\urllib\request.py
+    request.urlopen:  <function urlopen>
+
+```
+
+#### Exception raised on line 1353 of file PYTHON_LIB:\urllib\request.py.
+
+
+```python
+       1351:                           encode_chunked=req.has_header('Transfer-encoding'))
+       1352:             except OSError as err: # timeout error
+    -->1353:                 raise URLError(err)
+       1354:             r = h.getresponse()
+
+```
+
+```python
+    global URLError:  <class urllib.error.URLError>
 
 ```
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.57 documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.58 documentation</title>
   
 
   
@@ -213,6 +213,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#id5">Generic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#missing-import">Missing import</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#synonym">Synonym</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#oserror">OsError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#urllib-error">Urllib error</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#overflowerror">OverflowError</a><ul>
@@ -990,7 +994,7 @@ Exception raised on line 8 of file TESTS:\runtime\test_index_error.py.
 <div class="section" id="chainmap">
 <h3>ChainMap<a class="headerlink" href="#chainmap" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;C:\Users\andre\AppData\Local\Programs\Python\Python36-32\lib\collections\__init__.py&quot;, line 948, in pop
+  File &quot;PYTHON_LIB:\collections\__init__.py&quot;, line 948, in pop
     return self.maps[0].pop(key, *args)
 KeyError: 42
 
@@ -1256,6 +1260,64 @@ Exception raised on line 89 of file TESTS:\runtime\test_name_error.py.
 --&gt;89:         cost  # wrote from math import * above
                ^^^^
    90:     except NameError as e:
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="oserror">
+<h2>OsError<a class="headerlink" href="#oserror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="urllib-error">
+<h3>Urllib error<a class="headerlink" href="#urllib-error" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;PYTHON_LIB:\urllib\request.py&quot;, line 1318, in do_open
+    encode_chunked=req.has_header(&#39;Transfer-encoding&#39;))
+  File &quot;PYTHON_LIB:\http\client.py&quot;, line 1239, in request
+
+       ... More lines not shown. ...
+
+  File &quot;PYTHON_LIB:\socket.py&quot;, line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+    During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_os_error.py&quot;, line 7, in test_Urllib_error
+    request.urlopen(&quot;http://does_not_exist&quot;)
+
+       ... More lines not shown. ...
+
+  File &quot;PYTHON_LIB:\urllib\request.py&quot;, line 504, in _call_chain
+    result = func(*args)
+  File &quot;PYTHON_LIB:\urllib\request.py&quot;, line 1346, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+  File &quot;PYTHON_LIB:\urllib\request.py&quot;, line 1320, in do_open
+    raise URLError(err)
+URLError: &lt;urlopen error [Errno 11001] getaddrinfo failed&gt;
+
+An exception of type `URLError` is a subclass of `OSError`.
+An `OSError` exception is usually raised by the Operating System
+to indicate that an operation is not allowed or that
+a resource is not available.
+
+Execution stopped on line 7 of file TESTS:\runtime\test_os_error.py.
+
+   5:     from urllib import request, error
+   6:     try:
+--&gt;7:         request.urlopen(&quot;http://does_not_exist&quot;)
+   8:     except error.URLError as e:
+
+        request:  &lt;module urllib.request&gt; from PYTHON_LIB:\urllib\request.py
+        request.urlopen:  &lt;function urlopen&gt;
+
+Exception raised on line 1320 of file PYTHON_LIB:\urllib\request.py.
+
+   1318:                           encode_chunked=req.has_header(&#39;Transfer-encoding&#39;))
+   1319:             except OSError as err: # timeout error
+--&gt;1320:                 raise URLError(err)
+   1321:             r = h.getresponse()
+
+        global URLError:  &lt;class urllib.error.URLError&gt;
 </pre></div>
 </div>
 </div>

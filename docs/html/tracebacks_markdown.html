@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly 0.3.57 documentation</title>
+  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly 0.3.58 documentation</title>
   
 
   
@@ -318,6 +318,14 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#synonym">Synonym</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-89-of-file-tests-runtime-test-name-error-py">Exception raised on line 89 of file TESTS:\runtime\test_name_error.py.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#oserror">OsError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#urllib-error">Urllib error</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#execution-stopped-on-line-7-of-file-tests-runtime-test-os-error-py">Execution stopped on line 7 of file TESTS:\runtime\test_os_error.py.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-1353-of-file-python-lib-urllib-request-py">Exception raised on line 1353 of file PYTHON_LIB:\urllib\request.py.</a></li>
 </ul>
 </li>
 </ul>
@@ -1196,7 +1204,7 @@ The valid index values of <code class="docutils literal notranslate"><span class
 <div class="section" id="chainmap">
 <h3>ChainMap<a class="headerlink" href="#chainmap" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;C:\Users\andre\AppData\Local\Programs\Python\Python38-32\lib\collections\__init__.py&quot;</span>, line <span class="m">965</span>, in <span class="n">pop</span>
+  File <span class="nb">&quot;PYTHON_LIB:\collections\__init__.py&quot;</span>, line <span class="m">965</span>, in <span class="n">pop</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
 <span class="gr">KeyError</span>: <span class="n">42</span>
 
@@ -1469,6 +1477,70 @@ Instead of writing <code class="docutils literal notranslate"><span class="pre">
     <span class="o">--&gt;</span><span class="mi">89</span><span class="p">:</span>         <span class="n">cost</span>  <span class="c1"># wrote from math import * above</span>
                    <span class="o">^^^^</span>
        <span class="mi">90</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">NameError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="oserror">
+<h2>OsError<a class="headerlink" href="#oserror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="urllib-error">
+<h3>Urllib error<a class="headerlink" href="#urllib-error" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;PYTHON_LIB:\urllib\request.py&quot;</span>, line <span class="m">1350</span>, in <span class="n">do_open</span>
+    <span class="n">h</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">get_method</span><span class="p">(),</span> <span class="n">req</span><span class="o">.</span><span class="n">selector</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span>
+  File <span class="nb">&quot;PYTHON_LIB:\http\client.py&quot;</span>, line <span class="m">1240</span>, in <span class="n">request</span>
+
+<span class="x">       ... More lines not shown. ...</span>
+
+  File <span class="nb">&quot;PYTHON_LIB:\socket.py&quot;</span>, line <span class="m">918</span>, in <span class="n">getaddrinfo</span>
+    <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">_socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">family</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
+<span class="gr">socket.gaierror</span>: <span class="n">[Errno 11001] getaddrinfo failed</span>
+
+<span class="x">    During handling of the above exception, another exception occurred:</span>
+
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_os_error.py&quot;</span>, line <span class="m">7</span>, in <span class="n">test_Urllib_error</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s2">&quot;http://does_not_exist&quot;</span><span class="p">)</span>
+
+<span class="x">       ... More lines not shown. ...</span>
+
+  File <span class="nb">&quot;PYTHON_LIB:\urllib\request.py&quot;</span>, line <span class="m">502</span>, in <span class="n">_call_chain</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+  File <span class="nb">&quot;PYTHON_LIB:\urllib\request.py&quot;</span>, line <span class="m">1379</span>, in <span class="n">http_open</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_open</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">,</span> <span class="n">req</span><span class="p">)</span>
+  File <span class="nb">&quot;PYTHON_LIB:\urllib\request.py&quot;</span>, line <span class="m">1353</span>, in <span class="n">do_open</span>
+    <span class="k">raise</span> <span class="n">URLError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="gr">URLError</span>: <span class="n">&lt;urlopen error [Errno 11001] getaddrinfo failed&gt;</span>
+</pre></div>
+</div>
+<p>An exception of type <code class="docutils literal notranslate"><span class="pre">URLError</span></code> is a subclass of <code class="docutils literal notranslate"><span class="pre">OSError</span></code>.
+An <code class="docutils literal notranslate"><span class="pre">OSError</span></code> exception is usually raised by the Operating System
+to indicate that an operation is not allowed or that
+a resource is not available.</p>
+<div class="section" id="execution-stopped-on-line-7-of-file-tests-runtime-test-os-error-py">
+<h4>Execution stopped on line 7 of file TESTS:\runtime\test_os_error.py.<a class="headerlink" href="#execution-stopped-on-line-7-of-file-tests-runtime-test-os-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">5</span><span class="p">:</span>     <span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">error</span>
+       <span class="mi">6</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">7</span><span class="p">:</span>         <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s2">&quot;http://does_not_exist&quot;</span><span class="p">)</span>
+       <span class="mi">8</span><span class="p">:</span>     <span class="k">except</span> <span class="n">error</span><span class="o">.</span><span class="n">URLError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">request</span><span class="p">:</span>  <span class="o">&lt;</span><span class="n">module</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">&gt;</span> <span class="kn">from</span> <span class="nn">PYTHON_LIB</span><span class="p">:</span>\<span class="n">urllib</span>\<span class="n">request</span><span class="o">.</span><span class="n">py</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">:</span>  <span class="o">&lt;</span><span class="n">function</span> <span class="n">urlopen</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exception-raised-on-line-1353-of-file-python-lib-urllib-request-py">
+<h4>Exception raised on line 1353 of file PYTHON_LIB:\urllib\request.py.<a class="headerlink" href="#exception-raised-on-line-1353-of-file-python-lib-urllib-request-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1351</span><span class="p">:</span>                           <span class="n">encode_chunked</span><span class="o">=</span><span class="n">req</span><span class="o">.</span><span class="n">has_header</span><span class="p">(</span><span class="s1">&#39;Transfer-encoding&#39;</span><span class="p">))</span>
+       <span class="mi">1352</span><span class="p">:</span>             <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span> <span class="c1"># timeout error</span>
+    <span class="o">--&gt;</span><span class="mi">1353</span><span class="p">:</span>                 <span class="k">raise</span> <span class="n">URLError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+       <span class="mi">1354</span><span class="p">:</span>             <span class="n">r</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">global</span> <span class="n">URLError</span><span class="p">:</span>  <span class="o">&lt;</span><span class="k">class</span> <span class="nc">urllib</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">URLError</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
