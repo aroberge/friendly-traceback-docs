@@ -94,10 +94,8 @@
 <li class="toctree-l1"><a class="reference internal" href="beginner.html">Useful information for beginners</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Basic usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#suggestions">Suggestions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#other-ways">Other ways</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#more-ways-to-use">More ways to use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logging">Logging</a></li>
 </ul>
 </li>
 </ul>
@@ -289,34 +287,18 @@ a program:</p>
 </div>
 </li>
 </ol>
-<p>All of the above assume that you are using a terminal with a dark background.
-If you are using a terminal with a light background, you might want to
-add <code class="docutils literal notranslate"><span class="pre">--style</span> <span class="pre">light</span></code> as a command line option.</p>
-<div class="section" id="suggestions">
-<h2>Suggestions<a class="headerlink" href="#suggestions" title="Permalink to this headline">¶</a></h2>
+<div class="sidebar">
+<p class="sidebar-title">Suggestion</p>
 <p>If you are a Windows user I <strong>very strongly suggest</strong> that you use the new
 <a class="reference external" href="https://github.com/microsoft/terminal">Windows Terminal</a>
 that you can get from the Windows Store; this is
-what I have used for various screen captures.
-See <a class="reference internal" href="themes.html#themes"><span class="std std-ref">Themes and colours</span></a> for screenshot taken with with other terminals
-on Windows.</p>
-<p>If you are a Mac or Linux user,
-and use friendly with Rich installed,
-I would gladly accept any screenshot that you could provide so that they
-could be included in this documentation.</p>
-<p>If possible, friendly makes use of
-<a class="reference external" href="https://github.com/willmcgugan/rich">Rich</a> to add colour to its output.
-Note however that some programming environments,
-such as IDLE and other IDEs do not support Rich; this does not
-prevent you from using friendly, but the display
-will definitely not look as nice.
-The only editor/IDE capable of <strong>fully</strong> making use of Rich that I know
-of is <a class="reference external" href="https://code.visualstudio.com/">Microsoft Visual Studio Code</a>.
-Jupyter notebooks and JupyterLab can also use Rich.
-Pycharm’s embedded console, at least on Windows, does not fully
-support Rich.</p>
-<div class="section" id="other-ways">
-<h3>Other ways<a class="headerlink" href="#other-ways" title="Permalink to this headline">¶</a></h3>
+what I have used for various screen captures.</p>
+</div>
+<p>All of the above assume that you are using a terminal with a dark background.
+If you are using a terminal with a light background, you might want to
+add <code class="docutils literal notranslate"><span class="pre">--style</span> <span class="pre">light</span></code> as a command line option.</p>
+<div class="section" id="more-ways-to-use">
+<h2>More ways to use<a class="headerlink" href="#more-ways-to-use" title="Permalink to this headline">¶</a></h2>
 <p>The following ways of using friendly are described
 in more details later. I simply list them here as useful
 summary for experienced Python programmers.</p>
@@ -353,6 +335,81 @@ changing the information that is shown by default.</p>
 provided later in this documentation.
 As a shortcut, you can
 also type <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">friendly</span> <span class="pre">-h</span></code> in a terminal.</p>
+</div>
+<div class="section" id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
+<p>You can use friendly with the logging module.
+Here’s an example, together with the corresponding
+output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">friendly</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="c1"># Configure as desired before running the code</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;ignore.log&quot;</span><span class="p">)</span>
+<span class="n">friendly</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="s1">&#39;fr&#39;</span><span class="p">)</span>  <span class="c1"># Just as an example :-)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">ignore2</span>
+<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+    <span class="n">friendly</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="s2">&quot;capture&quot;</span><span class="p">)</span>
+    <span class="c1"># Note: friendly often remove some details from tracebacks</span>
+    <span class="c1"># to make them more readable. This can be helpful</span>
+    <span class="c1"># but sometimes we might also need to see the full</span>
+    <span class="c1"># traceback in log files.</span>
+    <span class="c1"># For example, compare the path of ignore2.py shown</span>
+    <span class="c1"># in both tracebacks.</span>
+    <span class="n">log</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot; Friendly traceback</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span>
+              <span class="n">friendly</span><span class="o">.</span><span class="n">get_output</span><span class="p">()</span> <span class="o">+</span>
+              <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">----Original traceback-----</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># exc_info=True below will append the original traceback</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">log</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And here’s the output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ERROR:root: Friendly traceback
+
+Traceback (most recent call last):
+  File &quot;ignore.py&quot;, line 9, in &lt;module&gt;
+    import ignore2
+  File &quot;CWD:\ignore2.py&quot;, line 3, in &lt;module&gt;
+    c = a / b
+ZeroDivisionError: division by zero
+
+    Une exception de type `ZeroDivisionError` se produit lorsque vous essayez de diviser une valeur
+    par zéro soit directement ou en utilisant une autre opération mathématique.
+
+    Vous divisez par le terme suivant
+
+         b
+
+    qui est égal à zéro.
+
+    L&#39;exécution s&#39;est arrêtée à la ligne 9 du fichier ignore.py
+
+        7:
+        8: try:
+    --&gt; 9:     import ignore2
+       10: except Exception:
+
+    Exception levée à la ligne 3 du fichier CWD:\ignore2.py.
+
+       1: a = 1
+       2: b = 0
+    --&gt;3: c = a / b
+              ^^^^^
+
+            a:  1
+            b:  0
+
+
+----Original traceback-----
+Traceback (most recent call last):
+  File &quot;ignore.py&quot;, line 9, in &lt;module&gt;
+    import ignore2
+  File &quot;C:\Users\andre\github\friendly\ignore2.py&quot;, line 3, in &lt;module&gt;
+    c = a / b
+ZeroDivisionError: division by zero
+</pre></div>
 </div>
 </div>
 </div>
