@@ -1489,11 +1489,9 @@ Instead of writing <code class="docutils literal notranslate"><span class="pre">
 <h3>Urllib error<a class="headerlink" href="#urllib-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;PYTHON_LIB:\urllib\request.py&quot;</span>, line <span class="m">1350</span>, in <span class="n">do_open</span>
-    <span class="n">h</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">get_method</span><span class="p">(),</span> <span class="n">req</span><span class="o">.</span><span class="n">selector</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span>
-  File <span class="nb">&quot;PYTHON_LIB:\http\client.py&quot;</span>, line <span class="m">1240</span>, in <span class="n">request</span>
-
-<span class="x">       ... More lines not shown. ...</span>
-
+       <span class="o">...</span> <span class="n">More</span> <span class="n">lines</span> <span class="ow">not</span> <span class="n">shown</span><span class="o">.</span> <span class="o">...</span>
+  File <span class="nb">&quot;PYTHON_LIB:\socket.py&quot;</span>, line <span class="m">787</span>, in <span class="n">create_connection</span>
+    <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">getaddrinfo</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SOCK_STREAM</span><span class="p">):</span>
   File <span class="nb">&quot;PYTHON_LIB:\socket.py&quot;</span>, line <span class="m">918</span>, in <span class="n">getaddrinfo</span>
     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">_socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">family</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
 <span class="gr">socket.gaierror</span>: <span class="n">[Errno 11001] getaddrinfo failed</span>
@@ -1503,11 +1501,7 @@ Instead of writing <code class="docutils literal notranslate"><span class="pre">
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;TESTS:\runtime\test_os_error.py&quot;</span>, line <span class="m">7</span>, in <span class="n">test_Urllib_error</span>
     <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s2">&quot;http://does_not_exist&quot;</span><span class="p">)</span>
-
-<span class="x">       ... More lines not shown. ...</span>
-
-  File <span class="nb">&quot;PYTHON_LIB:\urllib\request.py&quot;</span>, line <span class="m">502</span>, in <span class="n">_call_chain</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+       <span class="o">...</span> <span class="n">More</span> <span class="n">lines</span> <span class="ow">not</span> <span class="n">shown</span><span class="o">.</span> <span class="o">...</span>
   File <span class="nb">&quot;PYTHON_LIB:\urllib\request.py&quot;</span>, line <span class="m">1379</span>, in <span class="n">http_open</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_open</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">,</span> <span class="n">req</span><span class="p">)</span>
   File <span class="nb">&quot;PYTHON_LIB:\urllib\request.py&quot;</span>, line <span class="m">1353</span>, in <span class="n">do_open</span>
@@ -1578,11 +1572,7 @@ is too large to be handled by the computer’s processor.</p>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;TESTS:\runtime\test_recursion_error.py&quot;</span>, line <span class="m">8</span>, in <span class="n">test_Generic</span>
     <span class="n">a</span><span class="p">()</span>
-
-<span class="x">       ... More lines not shown. ...</span>
-
-  File <span class="nb">&quot;TESTS:\runtime\test_recursion_error.py&quot;</span>, line <span class="m">6</span>, in <span class="n">a</span>
-    <span class="k">return</span> <span class="n">a</span><span class="p">()</span>
+       <span class="o">...</span> <span class="n">More</span> <span class="n">lines</span> <span class="ow">not</span> <span class="n">shown</span><span class="o">.</span> <span class="o">...</span>
   File <span class="nb">&quot;TESTS:\runtime\test_recursion_error.py&quot;</span>, line <span class="m">6</span>, in <span class="n">a</span>
     <span class="k">return</span> <span class="n">a</span><span class="p">()</span>
   File <span class="nb">&quot;TESTS:\runtime\test_recursion_error.py&quot;</span>, line <span class="m">6</span>, in <span class="n">a</span>

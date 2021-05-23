@@ -1030,11 +1030,9 @@ Urllib error
 
     Traceback (most recent call last):
       File "PYTHON_LIB:\urllib\request.py", line 1318, in do_open
-        encode_chunked=req.has_header('Transfer-encoding'))
-      File "PYTHON_LIB:\http\client.py", line 1239, in request
-    
            ... More lines not shown. ...
-    
+      File "PYTHON_LIB:\socket.py", line 704, in create_connection
+        for res in getaddrinfo(host, port, 0, SOCK_STREAM):
       File "PYTHON_LIB:\socket.py", line 745, in getaddrinfo
         for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
     socket.gaierror: [Errno 11001] getaddrinfo failed
@@ -1044,11 +1042,7 @@ Urllib error
     Traceback (most recent call last):
       File "TESTS:\runtime\test_os_error.py", line 7, in test_Urllib_error
         request.urlopen("http://does_not_exist")
-    
            ... More lines not shown. ...
-    
-      File "PYTHON_LIB:\urllib\request.py", line 504, in _call_chain
-        result = func(*args)
       File "PYTHON_LIB:\urllib\request.py", line 1346, in http_open
         return self.do_open(http.client.HTTPConnection, req)
       File "PYTHON_LIB:\urllib\request.py", line 1320, in do_open
@@ -1120,11 +1114,7 @@ Generic
     Traceback (most recent call last):
       File "TESTS:\runtime\test_recursion_error.py", line 8, in test_Generic
         a()
-    
            ... More lines not shown. ...
-    
-      File "TESTS:\runtime\test_recursion_error.py", line 6, in a
-        return a()
       File "TESTS:\runtime\test_recursion_error.py", line 6, in a
         return a()
       File "TESTS:\runtime\test_recursion_error.py", line 6, in a

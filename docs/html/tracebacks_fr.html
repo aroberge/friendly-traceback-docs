@@ -1265,11 +1265,9 @@ Exception levée à la ligne 89 du fichier TESTS:\runtime\test_name_error.py.
 <h3>Urllib error<a class="headerlink" href="#urllib-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;PYTHON_LIB:\urllib\request.py&quot;, line 1350, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File &quot;PYTHON_LIB:\http\client.py&quot;, line 1240, in request
-
        ... Plus de lignes non affichées. ...
-
+  File &quot;PYTHON_LIB:\socket.py&quot;, line 787, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
   File &quot;PYTHON_LIB:\socket.py&quot;, line 918, in getaddrinfo
     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
 socket.gaierror: [Errno 11001] getaddrinfo failed
@@ -1279,11 +1277,7 @@ socket.gaierror: [Errno 11001] getaddrinfo failed
 Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_os_error.py&quot;, line 7, in test_Urllib_error
     request.urlopen(&quot;http://does_not_exist&quot;)
-
        ... Plus de lignes non affichées. ...
-
-  File &quot;PYTHON_LIB:\urllib\request.py&quot;, line 502, in _call_chain
-    result = func(*args)
   File &quot;PYTHON_LIB:\urllib\request.py&quot;, line 1379, in http_open
     return self.do_open(http.client.HTTPConnection, req)
   File &quot;PYTHON_LIB:\urllib\request.py&quot;, line 1353, in do_open
@@ -1346,11 +1340,7 @@ Exception levée à la ligne 6 du fichier TESTS:\runtime\test_overflow_error.py.
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 8, in test_Generic
     a()
-
        ... Plus de lignes non affichées. ...
-
-  File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 6, in a
-    return a()
   File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 6, in a
     return a()
   File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 6, in a
