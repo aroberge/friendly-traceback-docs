@@ -1081,6 +1081,12 @@ Urllib error
     pour indiquer qu’une opération n’est pas autorisée ou
     qu'une ressource n’est pas disponible.
     
+    Je soupçonne que vous essayez de vous connecter à un serveur et
+    qu’une connexion ne peut être faite.
+    
+    Si c’est le cas, vérifiez les fautes de frappe dans l’URL
+    et vérifiez votre connectivité Internet.
+    
     L'exécution s'est arrêtée à la ligne 7 du fichier TESTS:\runtime\test_os_error.py
     
        5:     from urllib import request, error
@@ -1208,6 +1214,40 @@ Bad type for unary operator
     -->371:         a =+ "def"
                        ^^^^^^^
        372:         # fmt: on
+
+
+Builtin has no len
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_type_error.py", line 780, in test_Builtin_has_no_len
+        len("Hello world".split)
+    TypeError: object of type 'builtin_function_or_method' has no len()
+    
+        Avez-vous oublié d’invoquer `"Hello world".split` ?
+        
+    Une exception `TypeError` est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    
+    Je soupçonne que vous avez oublié d’ajouter des parenthèses pour invoquer `"Hello world".split`.
+    Vous avez peut-être voulu écrire :
+    `len("Hello world".split())`
+    
+    Exception levée à la ligne 780 du fichier TESTS:\runtime\test_type_error.py.
+    
+       778: def test_Builtin_has_no_len():
+       779:     try:
+    -->780:         len("Hello world".split)
+       781:     except TypeError as e:
+
+            len:  <builtin function len>
+            "Hello world".split:  <builtin method split of str object>
+        
 
 
 Can only concatenate
@@ -1760,6 +1800,40 @@ Unsupported operand types
 
             a:  'a'
             b:  2
+        
+
+
+function has no len
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_type_error.py", line 796, in test_function_has_no_len
+        len(bad)
+    TypeError: object of type 'function' has no len()
+    
+        Avez-vous oublié d’invoquer `bad` ?
+        
+    Une exception `TypeError` est généralement causée une tentative
+    de combiner deux types d’objets incompatibles,
+    en invoquant une fonction avec le mauvais type d’objet,
+    ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
+    
+    Je soupçonne que vous avez oublié d’ajouter des parenthèses pour invoquer `bad`.
+    Vous avez peut-être voulu écrire :
+    `len(bad())`
+    
+    Exception levée à la ligne 796 du fichier TESTS:\runtime\test_type_error.py.
+    
+       794:         pass
+       795:     try:
+    -->796:         len(bad)
+       797:     except TypeError as e:
+
+            bad:  <function bad> from test_function_has_no_len
+            len:  <builtin function len>
         
 
 

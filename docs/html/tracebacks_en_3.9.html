@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.59 documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.60 documentation</title>
   
 
   
@@ -239,6 +239,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror">TypeError</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#bad-type-for-unary-operator">Bad type for unary operator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtin-has-no-len">Builtin has no len</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#can-only-concatenate">Can only concatenate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cannot-convert-dictionary-update-sequence">Cannot convert dictionary update sequence</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cannot-multiply-by-non-int">Cannot multiply by non int</a></li>
@@ -256,6 +257,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#tuple-no-item-assignment">Tuple no item assignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#unhachable-type">Unhachable type</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#unsupported-operand-types">Unsupported operand types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#function-has-no-len">function has no len</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#unboundlocalerror">UnboundLocalError</a><ul>
@@ -1321,6 +1323,12 @@ An `OSError` exception is usually raised by the Operating System
 to indicate that an operation is not allowed or that
 a resource is not available.
 
+I suspect that you are trying to connect to a server and
+that a connection cannot be made.
+
+If that is the case, check for typos in the URL
+and check your internet connectivity.
+
 Execution stopped on line 7 of file TESTS:\runtime\test_os_error.py.
 
    5:     from urllib import request, error
@@ -1434,6 +1442,36 @@ Exception raised on line 371 of file TESTS:\runtime\test_type_error.py.
 --&gt;371:         a =+ &quot;def&quot;
                    ^^^^^^^
    372:         # fmt: on
+</pre></div>
+</div>
+</div>
+<div class="section" id="builtin-has-no-len">
+<h3>Builtin has no len<a class="headerlink" href="#builtin-has-no-len" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 780, in test_Builtin_has_no_len
+    len(&quot;Hello world&quot;.split)
+TypeError: object of type &#39;builtin_function_or_method&#39; has no len()
+
+    Did you forget to call `&quot;Hello world&quot;.split`?
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.
+
+I suspect that you forgot to add parentheses to call `&quot;Hello world&quot;.split`.
+You might have meant to write:
+`len(&quot;Hello world&quot;.split())`
+
+Exception raised on line 780 of file TESTS:\runtime\test_type_error.py.
+
+   778: def test_Builtin_has_no_len():
+   779:     try:
+--&gt;780:         len(&quot;Hello world&quot;.split)
+   781:     except TypeError as e:
+
+        len:  &lt;builtin function len&gt;
+        &quot;Hello world&quot;.split:  &lt;builtin method split of str object&gt;
 </pre></div>
 </div>
 </div>
@@ -1926,6 +1964,36 @@ Exception raised on line 283 of file TESTS:\runtime\test_type_error.py.
 
         a:  &#39;a&#39;
         b:  2
+</pre></div>
+</div>
+</div>
+<div class="section" id="function-has-no-len">
+<h3>function has no len<a class="headerlink" href="#function-has-no-len" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 796, in test_function_has_no_len
+    len(bad)
+TypeError: object of type &#39;function&#39; has no len()
+
+    Did you forget to call `bad`?
+
+A `TypeError` is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.
+
+I suspect that you forgot to add parentheses to call `bad`.
+You might have meant to write:
+`len(bad())`
+
+Exception raised on line 796 of file TESTS:\runtime\test_type_error.py.
+
+   794:         pass
+   795:     try:
+--&gt;796:         len(bad)
+   797:     except TypeError as e:
+
+        bad:  &lt;function bad&gt; from test_function_has_no_len
+        len:  &lt;builtin function len&gt;
 </pre></div>
 </div>
 </div>

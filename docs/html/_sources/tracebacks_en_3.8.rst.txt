@@ -1084,6 +1084,12 @@ Urllib error
     to indicate that an operation is not allowed or that
     a resource is not available.
     
+    I suspect that you are trying to connect to a server and
+    that a connection cannot be made.
+    
+    If that is the case, check for typos in the URL
+    and check your internet connectivity.
+    
     Execution stopped on line 7 of file TESTS:\runtime\test_os_error.py.
     
        5:     from urllib import request, error
@@ -1211,6 +1217,40 @@ Bad type for unary operator
     -->371:         a =+ "def"
                        ^^^^^^^
        372:         # fmt: on
+
+
+Builtin has no len
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_type_error.py", line 780, in test_Builtin_has_no_len
+        len("Hello world".split)
+    TypeError: object of type 'builtin_function_or_method' has no len()
+    
+        Did you forget to call `"Hello world".split`?
+        
+    A `TypeError` is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by trying to do an operation not allowed on a given type of object.
+    
+    I suspect that you forgot to add parentheses to call `"Hello world".split`.
+    You might have meant to write:
+    `len("Hello world".split())`
+    
+    Exception raised on line 780 of file TESTS:\runtime\test_type_error.py.
+    
+       778: def test_Builtin_has_no_len():
+       779:     try:
+    -->780:         len("Hello world".split)
+       781:     except TypeError as e:
+
+            len:  <builtin function len>
+            "Hello world".split:  <builtin method split of str object>
+        
 
 
 Can only concatenate
@@ -1764,6 +1804,40 @@ Unsupported operand types
 
             a:  'a'
             b:  2
+        
+
+
+function has no len
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_type_error.py", line 796, in test_function_has_no_len
+        len(bad)
+    TypeError: object of type 'function' has no len()
+    
+        Did you forget to call `bad`?
+        
+    A `TypeError` is usually caused by trying
+    to combine two incompatible types of objects,
+    by calling a function with the wrong type of object,
+    or by trying to do an operation not allowed on a given type of object.
+    
+    I suspect that you forgot to add parentheses to call `bad`.
+    You might have meant to write:
+    `len(bad())`
+    
+    Exception raised on line 796 of file TESTS:\runtime\test_type_error.py.
+    
+       794:         pass
+       795:     try:
+    -->796:         len(bad)
+       797:     except TypeError as e:
+
+            bad:  <function bad> from test_function_has_no_len
+            len:  <builtin function len>
         
 
 

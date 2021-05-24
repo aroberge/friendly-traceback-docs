@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly 0.3.59 documentation</title>
+  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly 0.3.60 documentation</title>
   
 
   
@@ -357,6 +357,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-371-of-file-tests-runtime-test-type-error-py">Exception raised on line 371 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#builtin-has-no-len">Builtin has no len</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-780-of-file-tests-runtime-test-type-error-py">Exception raised on line 780 of file TESTS:\runtime\test_type_error.py.</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#can-only-concatenate">Can only concatenate</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-37-of-file-tests-runtime-test-type-error-py">Exception raised on line 37 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
@@ -423,6 +427,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#unsupported-operand-types">Unsupported operand types</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-283-of-file-tests-runtime-test-type-error-py">Exception raised on line 283 of file TESTS:\runtime\test_type_error.py.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#function-has-no-len">function has no len</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-796-of-file-tests-runtime-test-type-error-py">Exception raised on line 796 of file TESTS:\runtime\test_type_error.py.</a></li>
 </ul>
 </li>
 </ul>
@@ -1549,6 +1557,10 @@ Instead of writing <code class="docutils literal notranslate"><span class="pre">
 An <code class="docutils literal notranslate"><span class="pre">OSError</span></code> exception is usually raised by the Operating System
 to indicate that an operation is not allowed or that
 a resource is not available.</p>
+<p>I suspect that you are trying to connect to a server and
+that a connection cannot be made.</p>
+<p>If that is the case, check for typos in the URL
+and check your internet connectivity.</p>
 <div class="section" id="execution-stopped-on-line-7-of-file-tests-runtime-test-os-error-py">
 <h4>Execution stopped on line 7 of file TESTS:\runtime\test_os_error.py.<a class="headerlink" href="#execution-stopped-on-line-7-of-file-tests-runtime-test-os-error-py" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">5</span><span class="p">:</span>     <span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">error</span>
@@ -1674,6 +1686,36 @@ This operation is not defined for this type of object.</p>
     <span class="o">--&gt;</span><span class="mi">371</span><span class="p">:</span>         <span class="n">a</span> <span class="o">=+</span> <span class="s2">&quot;def&quot;</span>
                        <span class="o">^^^^^^^</span>
        <span class="mi">372</span><span class="p">:</span>         <span class="c1"># fmt: on</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="builtin-has-no-len">
+<h3>Builtin has no len<a class="headerlink" href="#builtin-has-no-len" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">780</span>, in <span class="n">test_Builtin_has_no_len</span>
+    <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">)</span>
+<span class="gr">TypeError</span>: <span class="n">object of type &#39;builtin_function_or_method&#39; has no len()</span>
+</pre></div>
+</div>
+<p>Did you forget to call <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">world&quot;.split</span></code>?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.</p>
+<p>I suspect that you forgot to add parentheses to call <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">world&quot;.split</span></code>.
+You might have meant to write:
+<code class="docutils literal notranslate"><span class="pre">len(&quot;Hello</span> <span class="pre">world&quot;.split())</span></code></p>
+<div class="section" id="exception-raised-on-line-780-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 780 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-780-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">778</span><span class="p">:</span> <span class="k">def</span> <span class="nf">test_Builtin_has_no_len</span><span class="p">():</span>
+       <span class="mi">779</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">780</span><span class="p">:</span>         <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">)</span>
+       <span class="mi">781</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="nb">len</span><span class="p">:</span>  <span class="o">&lt;</span><span class="n">builtin</span> <span class="n">function</span> <span class="nb">len</span><span class="o">&gt;</span>
+    <span class="s2">&quot;Hello world&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">:</span>  <span class="o">&lt;</span><span class="n">builtin</span> <span class="n">method</span> <span class="n">split</span> <span class="n">of</span> <span class="nb">str</span> <span class="nb">object</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -2166,6 +2208,36 @@ for multiplication of matrices.</p>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">a</span><span class="p">:</span>  <span class="s1">&#39;a&#39;</span>
     <span class="n">b</span><span class="p">:</span>  <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="function-has-no-len">
+<h3>function has no len<a class="headerlink" href="#function-has-no-len" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_type_error.py&quot;</span>, line <span class="m">796</span>, in <span class="n">test_function_has_no_len</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">bad</span><span class="p">)</span>
+<span class="gr">TypeError</span>: <span class="n">object of type &#39;function&#39; has no len()</span>
+</pre></div>
+</div>
+<p>Did you forget to call <code class="docutils literal notranslate"><span class="pre">bad</span></code>?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> is usually caused by trying
+to combine two incompatible types of objects,
+by calling a function with the wrong type of object,
+or by trying to do an operation not allowed on a given type of object.</p>
+<p>I suspect that you forgot to add parentheses to call <code class="docutils literal notranslate"><span class="pre">bad</span></code>.
+You might have meant to write:
+<code class="docutils literal notranslate"><span class="pre">len(bad())</span></code></p>
+<div class="section" id="exception-raised-on-line-796-of-file-tests-runtime-test-type-error-py">
+<h4>Exception raised on line 796 of file TESTS:\runtime\test_type_error.py.<a class="headerlink" href="#exception-raised-on-line-796-of-file-tests-runtime-test-type-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">794</span><span class="p">:</span>         <span class="k">pass</span>
+       <span class="mi">795</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">796</span><span class="p">:</span>         <span class="nb">len</span><span class="p">(</span><span class="n">bad</span><span class="p">)</span>
+       <span class="mi">797</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">bad</span><span class="p">:</span>  <span class="o">&lt;</span><span class="n">function</span> <span class="n">bad</span><span class="o">&gt;</span> <span class="kn">from</span> <span class="nn">test_function_has_no_len</span>
+    <span class="nb">len</span><span class="p">:</span>  <span class="o">&lt;</span><span class="n">builtin</span> <span class="n">function</span> <span class="nb">len</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
