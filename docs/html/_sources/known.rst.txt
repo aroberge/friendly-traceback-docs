@@ -27,7 +27,7 @@ intercepted by Friendly-traceback. Furthermore, exceptions such as
 ``BaseException``, ``Exception``, and ``ArithmeticError`` are base classes which
 are also not normally seen: some derived classes are normally used instead.
 
-Information compiled using Friendly version: 0.3.58,
+Information compiled using Friendly version: 0.3.59,
 Python version: 3.8.4
 
 
@@ -52,8 +52,9 @@ AssertionError
 .. code-block:: none
 
     In Python, the keyword `assert` is used in statements of the form
-    `assert condition`, to confirm that `condition` is not `False`.
-    If `condition` is `False`, an `AssertionError` is raised.
+    `assert condition`, to confirm that `condition` is not `False`,
+    nor equivalent to `False` such as an empty list, etc.
+    If `condition` is `False` or equivalent, an `AssertionError` is raised.
 
 AttributeError
 ~~~~~~~~~~~~~~
@@ -328,11 +329,9 @@ MemoryError
 
 .. code-block:: none
 
-    No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
-    If you are using the Friendly console, use `www()` to
-    do an Internet search for this particular case.
+    Like the name indicates, a `MemoryError` occurs when Python
+    runs out of memory. This can happen if you create an object
+    that is too big, like a list with too many items.
 
 ModuleNotFoundError
 ~~~~~~~~~~~~~~~~~~~

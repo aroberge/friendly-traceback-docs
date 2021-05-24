@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.58 documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.59 documentation</title>
   
 
   
@@ -162,11 +162,15 @@
 <li class="toctree-l3"><a class="reference internal" href="#generic">Generic</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#assertionerror">AssertionError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Generic</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#attributeerror">AttributeError</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#attribute-from-other-module">Attribute from other module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtin-function">Builtin function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtin-module-with-no-file">Builtin module with no file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Generic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Generic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#generic-different-frame">Generic different frame</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#generic-instance">Generic instance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-attribute-typo">Module attribute typo</a></li>
@@ -181,7 +185,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#filenotfounderror">FileNotFoundError</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Generic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Generic</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#importerror">ImportError</a><ul>
@@ -196,11 +200,11 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#keyerror">KeyError</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#chainmap">ChainMap</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Generic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Generic</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#lookuperror">LookupError</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Generic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Generic</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#modulenotfounderror">ModuleNotFoundError</a><ul>
@@ -210,7 +214,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#nameerror">NameError</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#annotated-variable">Annotated variable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Generic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Generic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#missing-import">Missing import</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#synonym">Synonym</a></li>
 </ul>
@@ -220,11 +224,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#overflowerror">OverflowError</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id6">Generic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Generic</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#recursionerror">RecursionError</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id7">Generic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Generic</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#typeerror">TypeError</a><ul>
@@ -254,7 +258,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#unknownerror">UnknownError</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id8">Generic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Generic</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#valueerror">ValueError</a><ul>
@@ -415,6 +419,33 @@ Exception raised on line 9 of file TESTS:\runtime\test_arithmetic_error.py.
 </div>
 </div>
 </div>
+<div class="section" id="assertionerror">
+<h2>AssertionError<a class="headerlink" href="#assertionerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Generic<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_assertion_error.py&quot;, line 8, in test_Generic
+    raise AssertionError(&quot;Fake message&quot;)
+AssertionError: Fake message
+
+In Python, the keyword `assert` is used in statements of the form
+`assert condition`, to confirm that `condition` is not `False`,
+nor equivalent to `False` such as an empty list, etc.
+
+If `condition` is `False` or equivalent, an `AssertionError` is raised.
+
+Exception raised on line 8 of file TESTS:\runtime\test_assertion_error.py.
+
+    6:         # We raise it explicitly, rather than with the keyword assert, since
+    7:         # we don&#39;t want pytest to rewrite out test.
+--&gt; 8:         raise AssertionError(&quot;Fake message&quot;)
+    9:     except AssertionError as e:
+
+        AssertionError:  &lt;class AssertionError&gt;
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="attributeerror">
 <h2>AttributeError<a class="headerlink" href="#attributeerror" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="attribute-from-other-module">
@@ -497,8 +528,8 @@ Exception raised on line 234 of file TESTS:\runtime\test_attribute_error.py.
 </pre></div>
 </div>
 </div>
-<div class="section" id="id1">
-<h3>Generic<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Generic<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 24, in test_Generic
     A.x  # testing type
@@ -827,8 +858,8 @@ Exception raised on line 254 of file TESTS:\runtime\test_attribute_error.py.
 </div>
 <div class="section" id="filenotfounderror">
 <h2>FileNotFoundError<a class="headerlink" href="#filenotfounderror" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>Generic<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Generic<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_file_not_found_error.py&quot;, line 6, in test_Generic
     open(&quot;does_not_exist&quot;)
@@ -1035,8 +1066,8 @@ Exception raised on line 950 of file PYTHON_LIB:\collections\__init__.py.
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3>Generic<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Generic<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_key_error.py&quot;, line 7, in test_Generic
     d[&quot;c&quot;]
@@ -1061,8 +1092,8 @@ Exception raised on line 7 of file TESTS:\runtime\test_key_error.py.
 </div>
 <div class="section" id="lookuperror">
 <h2>LookupError<a class="headerlink" href="#lookuperror" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id4">
-<h3>Generic<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>Generic<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_lookup_error.py&quot;, line 10, in test_Generic
     raise LookupError(&quot;Fake message&quot;)
@@ -1179,8 +1210,8 @@ Exception raised on line 24 of file TESTS:\runtime\test_name_error.py.
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h3>Generic<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>Generic<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_name_error.py&quot;, line 9, in test_Generic
     this = something
@@ -1318,8 +1349,8 @@ Exception raised on line 1320 of file PYTHON_LIB:\urllib\request.py.
 </div>
 <div class="section" id="overflowerror">
 <h2>OverflowError<a class="headerlink" href="#overflowerror" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id6">
-<h3>Generic<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>Generic<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_overflow_error.py&quot;, line 6, in test_Generic
     2.0 ** 1600
@@ -1340,8 +1371,8 @@ Exception raised on line 6 of file TESTS:\runtime\test_overflow_error.py.
 </div>
 <div class="section" id="recursionerror">
 <h2>RecursionError<a class="headerlink" href="#recursionerror" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id7">
-<h3>Generic<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>Generic<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 8, in test_Generic
     a()
@@ -2000,8 +2031,8 @@ Exception raised on line 18 of file TESTS:\runtime\test_unbound_local_error.py.
 </div>
 <div class="section" id="unknownerror">
 <h2>UnknownError<a class="headerlink" href="#unknownerror" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id8">
-<h3>Generic<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>Generic<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_unknown_error.py&quot;, line 10, in test_Generic
     raise MyException(&quot;Some informative message about an unknown exception.&quot;)

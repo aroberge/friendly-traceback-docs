@@ -51,6 +51,38 @@ Generic
         
 
 
+AssertionError
+--------------
+
+
+Generic
+~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_assertion_error.py", line 8, in test_Generic
+        raise AssertionError("Fake message")
+    AssertionError: Fake message
+    
+    Dans Python, le mot clé `assert` est utilisé dans des énoncés ayant la forme
+    `assert condition`, pour confirmer que `condition` n’est pas `False`;
+    ni équivalente à `False` comme une liste vide, etc.
+    
+    Si `condition` est `False` ou son équivalent, une exception de type `AssertionError` est levée.
+    
+    Exception levée à la ligne 8 du fichier TESTS:\runtime\test_assertion_error.py.
+    
+        6:         # We raise it explicitly, rather than with the keyword assert, since
+        7:         # we don't want pytest to rewrite out test.
+    --> 8:         raise AssertionError("Fake message")
+        9:     except AssertionError as e:
+
+            AssertionError:  <class AssertionError>
+        
+
+
 AttributeError
 --------------
 

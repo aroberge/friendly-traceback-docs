@@ -19,9 +19,9 @@ import sys
 import warnings
 warnings.simplefilter("ignore")
 
-sys.path.insert(0, os.path.abspath("../../../friendly-traceback"))
+sys.path.insert(0, os.path.abspath("../../../friendly"))
 
-from friendly.version import doc_version, __version__  # pylint: disable=import-error
+from friendly import _doc_version, __version__  # pylint: disable=import-error
 
 
 # -- Project information -----------------------------------------------------
@@ -32,7 +32,7 @@ author = "André Roberge"
 
 # Sphinx: The short X.Y version
 # This project: we just use one number
-version = doc_version()
+version = _doc_version()
 # The full version, including alpha/beta/rc tags
 release = __version__
 

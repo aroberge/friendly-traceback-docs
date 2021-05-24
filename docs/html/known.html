@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Generic information about various exceptions &mdash; Friendly 0.3.58 documentation</title>
+  <title>Generic information about various exceptions &mdash; Friendly 0.3.59 documentation</title>
   
 
   
@@ -352,7 +352,7 @@ intercepted by Friendly-traceback. Furthermore, exceptions such as
 <a class="reference external" href="https://docs.python.org/3.7/library/exceptions.html#FloatingPointError">not used by Python</a>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">BaseException</span></code>, <code class="docutils literal notranslate"><span class="pre">Exception</span></code>, and <code class="docutils literal notranslate"><span class="pre">ArithmeticError</span></code> are base classes which
 are also not normally seen: some derived classes are normally used instead.</p>
-<p>Information compiled using Friendly version: 0.3.58,
+<p>Information compiled using Friendly version: 0.3.59,
 Python version: 3.8.4</p>
 <div class="section" id="exceptions">
 <h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
@@ -368,8 +368,9 @@ normally, a more specific exception should have been raised.
 <div class="section" id="assertionerror">
 <h3>AssertionError<a class="headerlink" href="#assertionerror" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>In Python, the keyword `assert` is used in statements of the form
-`assert condition`, to confirm that `condition` is not `False`.
-If `condition` is `False`, an `AssertionError` is raised.
+`assert condition`, to confirm that `condition` is not `False`,
+nor equivalent to `False` such as an empty list, etc.
+If `condition` is `False` or equivalent, an `AssertionError` is raised.
 </pre></div>
 </div>
 </div>
@@ -617,11 +618,9 @@ It can also be raised directly by codecs.lookup().
 </div>
 <div class="section" id="memoryerror">
 <h3>MemoryError<a class="headerlink" href="#memoryerror" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>No information is known about this exception.
-Please report this example to
-https://github.com/aroberge/friendly/issues
-If you are using the Friendly console, use `www()` to
-do an Internet search for this particular case.
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Like the name indicates, a `MemoryError` occurs when Python
+runs out of memory. This can happen if you create an object
+that is too big, like a list with too many items.
 </pre></div>
 </div>
 </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>friendly &mdash; Friendly 0.3.56 documentation</title>
+  <title>friendly &mdash; Friendly 0.3.59 documentation</title>
   
 
   
@@ -273,6 +273,8 @@
     <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 
 <span class="k">del</span> <span class="n">valid_version</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.3.59&quot;</span>  <span class="c1"># friendly version</span>
+
 
 <span class="c1"># ===========================================</span>
 
@@ -285,13 +287,20 @@
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">path_info</span>
 <span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">session</span>
 <span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
-<span class="kn">from</span> <span class="nn">.version</span> <span class="kn">import</span> <span class="n">__version__</span>  <span class="c1"># noqa</span>
 
 <span class="c1"># Ensure that warnings are not shown to the end user, as they could</span>
 <span class="c1"># cause confusion.  Eventually, we might want to interpret them like</span>
 <span class="c1"># we do for Exceptions.</span>
 <span class="n">_warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 <span class="k">del</span> <span class="n">_warnings</span>
+
+
+<span class="k">def</span> <span class="nf">_doc_version</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Use this number in the documentation to avoid triggering updates</span>
+<span class="sd">    of the whole documentation each time the last part of the version is</span>
+<span class="sd">    changed.&quot;&quot;&quot;</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="exclude_file_from_traceback"><a class="viewcode-back" href="../api.html#friendly.exclude_file_from_traceback">[docs]</a><span class="k">def</span> <span class="nf">exclude_file_from_traceback</span><span class="p">(</span><span class="n">full_path</span><span class="p">):</span>
