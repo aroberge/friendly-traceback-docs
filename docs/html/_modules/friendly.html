@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>friendly &mdash; Friendly 0.3.60 documentation</title>
+  <title>friendly &mdash; Friendly 0.3.64 documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.3
+                0.3.64
               </div>
             
           
@@ -268,12 +268,12 @@
 
 <span class="n">valid_version</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="o">.</span><span class="n">major</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="o">.</span><span class="n">minor</span> <span class="o">&gt;=</span> <span class="mi">6</span>
 
-<span class="k">if</span> <span class="ow">not</span> <span class="n">valid_version</span><span class="p">:</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">valid_version</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python 3.6 or newer is required.&quot;</span><span class="p">)</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 
 <span class="k">del</span> <span class="n">valid_version</span>
-<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.3.60&quot;</span>  <span class="c1"># friendly version</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.3.64&quot;</span>  <span class="c1"># friendly version</span>
 
 
 <span class="c1"># ===========================================</span>
@@ -294,13 +294,13 @@
 <span class="n">_warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 <span class="k">del</span> <span class="n">_warnings</span>
 
-
-<span class="k">def</span> <span class="nf">_doc_version</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Use this number in the documentation to avoid triggering updates</span>
-<span class="sd">    of the whole documentation each time the last part of the version is</span>
-<span class="sd">    changed.&quot;&quot;&quot;</span>
-    <span class="n">parts</span> <span class="o">=</span> <span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1">#</span>
+<span class="c1"># def _doc_version():</span>
+<span class="c1">#     &quot;&quot;&quot;Use this number in the documentation to avoid triggering updates</span>
+<span class="c1">#     of the whole documentation each time the last part of the version is</span>
+<span class="c1">#     changed.&quot;&quot;&quot;</span>
+<span class="c1">#     parts = __version__.split(&quot;.&quot;)</span>
+<span class="c1">#     return parts[0] + &quot;.&quot; + parts[1]</span>
 
 
 <div class="viewcode-block" id="exclude_file_from_traceback"><a class="viewcode-back" href="../api.html#friendly.exclude_file_from_traceback">[docs]</a><span class="k">def</span> <span class="nf">exclude_file_from_traceback</span><span class="p">(</span><span class="n">full_path</span><span class="p">):</span>
@@ -318,14 +318,6 @@
 <span class="sd">    obtained using &quot;debug_tb&quot;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">path_info</span><span class="o">.</span><span class="n">exclude_directory_from_traceback</span><span class="p">(</span><span class="n">dir_name</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="explain"><a class="viewcode-back" href="../api.html#friendly.explain">[docs]</a><span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Deprecated: Use explain_traceback() instead.&quot;&quot;&quot;</span>
-    <span class="c1"># The reason for removing this is to avoid confusion with</span>
-    <span class="c1"># explain() used in the console.</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;explain() is deprecated; please use explain_traceback().&quot;</span><span class="p">)</span>
-    <span class="n">session</span><span class="o">.</span><span class="n">explain_traceback</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="n">redirect</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="explain_traceback"><a class="viewcode-back" href="../api.html#friendly.explain_traceback">[docs]</a><span class="k">def</span> <span class="nf">explain_traceback</span><span class="p">(</span><span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -455,7 +447,7 @@
     <span class="n">module_globals</span> <span class="o">=</span> <span class="n">editors_helpers</span><span class="o">.</span><span class="n">exec_code</span><span class="p">(</span>
         <span class="n">path</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span>
     <span class="p">)</span>
-    <span class="k">if</span> <span class="n">console</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">console</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
         <span class="n">start_console</span><span class="p">(</span>
             <span class="n">local_vars</span><span class="o">=</span><span class="n">module_globals</span><span class="p">,</span>
             <span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">,</span>
@@ -478,7 +470,7 @@
     <span class="n">session</span><span class="o">.</span><span class="n">set_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="start_console"><a class="viewcode-back" href="../api.html#friendly.start_console">[docs]</a><span class="k">def</span> <span class="nf">start_console</span><span class="p">(</span>
+<div class="viewcode-block" id="start_console"><a class="viewcode-back" href="../api.html#friendly.start_console">[docs]</a><span class="k">def</span> <span class="nf">start_console</span><span class="p">(</span>  <span class="c1"># pragma: no cover</span>
     <span class="n">local_vars</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">formatter</span><span class="o">=</span><span class="s2">&quot;bw&quot;</span><span class="p">,</span>
     <span class="n">include</span><span class="o">=</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">,</span>

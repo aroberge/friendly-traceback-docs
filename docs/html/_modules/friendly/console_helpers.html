@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>friendly.console_helpers &mdash; Friendly 0.3.56 documentation</title>
+  <title>friendly.console_helpers &mdash; Friendly 0.3.64 documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.3
+                0.3.64
               </div>
             
           
@@ -252,13 +252,12 @@
 <span class="sd">Functions that can be used in a friendly console or in other interactive</span>
 <span class="sd">environments such as in a Jupyter notebook.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
+<span class="c1"># NOTE: __all__ is defined at the very bottom of this file</span>
 <span class="kn">import</span> <span class="nn">friendly</span>
 
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">debug_helper</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">debug_helper</span><span class="p">,</span> <span class="n">__version__</span>
 <span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">session</span>
-<span class="kn">from</span> <span class="nn">.formatters</span> <span class="kn">import</span> <span class="n">items_in_order</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">formatters</span>
 <span class="kn">from</span> <span class="nn">.info_generic</span> <span class="kn">import</span> <span class="n">get_generic_explanation</span>
 <span class="kn">from</span> <span class="nn">.path_info</span> <span class="kn">import</span> <span class="n">show_paths</span>
 <span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
@@ -275,25 +274,19 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Nothing to go back to: no exception recorded.&quot;</span><span class="p">))</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Nothing to go back to: no exception recorded.&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">return</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span><span class="o">.</span><span class="n">friendly</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span><span class="o">.</span><span class="n">friendly</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
         <span class="n">debug_helper</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;Problem: saved info is not empty but friendly is&quot;</span><span class="p">)</span>
     <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
     <span class="n">session</span><span class="o">.</span><span class="n">friendly</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="history"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.history">[docs]</a><span class="k">def</span> <span class="nf">history</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Prints the list of error messages recorded so far.&quot;&quot;&quot;</span>
-    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Nothing to show: no exception recorded.&quot;</span><span class="p">))</span>
-        <span class="k">return</span>
-    <span class="n">session</span><span class="o">.</span><span class="n">rich_add_vspace</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">:</span>
-        <span class="n">message</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">formatter</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="s2">&quot;message&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-        <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-    <span class="n">session</span><span class="o">.</span><span class="n">rich_add_vspace</span> <span class="o">=</span> <span class="kc">True</span></div>
+<div class="viewcode-block" id="dark"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.dark">[docs]</a><span class="k">def</span> <span class="nf">dark</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
+    <span class="sd">&quot;&quot;&quot;Synonym of set_formatter(&#39;dark&#39;) designed to be used</span>
+<span class="sd">    within iPython/Jupyter programming environments or at a terminal.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">set_formatter</span><span class="p">(</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="explain"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.explain">[docs]</a><span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">):</span>
@@ -306,31 +299,36 @@
     <span class="n">friendly</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">old_include</span><span class="p">)</span></div>
 
 
-<span class="k">def</span> <span class="nf">_show_info</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Debugging tool: shows the complete content of traceback info.</span>
-
-<span class="sd">    Prints ``None`` for a given item if it is not present.</span>
+<div class="viewcode-block" id="friendly_tb"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.friendly_tb">[docs]</a><span class="k">def</span> <span class="nf">friendly_tb</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Shows the friendly traceback, which includes the hint/suggestion</span>
+<span class="sd">    if available.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">info</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span> <span class="k">else</span> <span class="p">[]</span>
-
-    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items_in_order</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">info</span> <span class="ow">and</span> <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   &quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">()</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">: None&quot;</span><span class="p">)</span>
+    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">)</span></div>
 
 
-<span class="k">def</span> <span class="nf">_get_exception</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Debugging tool: returns the exception instance or None if no exception</span>
-<span class="sd">    has been raised.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="hint"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.hint">[docs]</a><span class="k">def</span> <span class="nf">hint</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Shows hint/suggestion if available.&quot;&quot;&quot;</span>
+    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;hint&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="history"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.history">[docs]</a><span class="k">def</span> <span class="nf">history</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Prints the list of error messages recorded so far.&quot;&quot;&quot;</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">None</span>
-    <span class="n">info</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;_exc_instance&quot;</span><span class="p">]</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Nothing to show: no exception recorded.&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">rich_add_vspace</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">:</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">formatter</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="s2">&quot;message&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">rich_add_vspace</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="light"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.light">[docs]</a><span class="k">def</span> <span class="nf">light</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
+    <span class="sd">&quot;&quot;&quot;Synonym of set_formatter(&#39;light&#39;) designed to be used</span>
+<span class="sd">    within iPython/Jupyter programming environments or at a terminal.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">set_formatter</span><span class="p">(</span><span class="s2">&quot;light&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="more"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.more">[docs]</a><span class="k">def</span> <span class="nf">more</span><span class="p">():</span>
@@ -339,6 +337,13 @@
 <span class="sd">    Potentially useful for advanced users.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;more&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="python_tb"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.python_tb">[docs]</a><span class="k">def</span> <span class="nf">python_tb</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Shows the Python traceback, excluding files from friendly</span>
+<span class="sd">    itself.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;python_tb&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="what"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.what">[docs]</a><span class="k">def</span> <span class="nf">what</span><span class="p">(</span><span class="n">exception</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -351,7 +356,7 @@
         <span class="n">exception</span> <span class="o">=</span> <span class="n">exception</span><span class="o">.</span><span class="vm">__name__</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">get_generic_explanation</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">pre</span><span class="p">:</span>  <span class="c1"># for documentation</span>
+    <span class="k">if</span> <span class="n">pre</span><span class="p">:</span>  <span class="c1"># for documentation # pragma: no cover</span>
         <span class="n">lines</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
             <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="s2">&quot;    &quot;</span> <span class="o">+</span> <span class="n">line</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -371,55 +376,7 @@
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;why&quot;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="hint"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.hint">[docs]</a><span class="k">def</span> <span class="nf">hint</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Shows hint/suggestion if available.&quot;&quot;&quot;</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;hint&quot;</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="friendly_tb"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.friendly_tb">[docs]</a><span class="k">def</span> <span class="nf">friendly_tb</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Shows the friendly traceback, which includes the hint/suggestion</span>
-<span class="sd">    if available.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="python_tb"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.python_tb">[docs]</a><span class="k">def</span> <span class="nf">python_tb</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Shows the Python traceback, excluding files from friendly</span>
-<span class="sd">    itself.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;python_tb&quot;</span><span class="p">)</span></div>
-
-
-<span class="k">def</span> <span class="nf">_debug_tb</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Shows the true Python traceback, which includes</span>
-<span class="sd">    files from friendly itself.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">_debug</span><span class="p">(</span><span class="n">flag</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;This functions displays the true traceback recorded, that</span>
-<span class="sd">    includes friendly&#39;s own code.</span>
-<span class="sd">    It also sets a debug flag for the current session.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">debug_helper</span><span class="o">.</span><span class="n">DEBUG</span> <span class="o">=</span> <span class="n">flag</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">_get_statement</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;This returns a &#39;Statement&#39; instance obtained for SyntaxErrors and</span>
-<span class="sd">    subclasses.</span>
-
-<span class="sd">    This is not intended for end-users but is useful in development.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Nothing to show: no exception recorded.&quot;</span><span class="p">))</span>
-        <span class="k">return</span>
-    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">friendly</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tb_data</span><span class="o">.</span><span class="n">statement</span>
-
-
-<div class="viewcode-block" id="www"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.www">[docs]</a><span class="k">def</span> <span class="nf">www</span><span class="p">(</span><span class="n">search</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">python</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="www"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.www">[docs]</a><span class="k">def</span> <span class="nf">www</span><span class="p">(</span><span class="n">search</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">python</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
     <span class="sd">&quot;&quot;&quot;This uses the ``webbrowser`` module to open a tab (or window) in the</span>
 <span class="sd">    default browser, linking to a specific url.</span>
 
@@ -455,11 +412,11 @@
     <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
 
     <span class="k">if</span> <span class="n">search</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">search</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span>
             <span class="n">_</span><span class="p">(</span><span class="s2">&quot;The first argument of `www()` must be either `None` or a string.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="k">if</span> <span class="n">search</span> <span class="ow">is</span> <span class="kc">True</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">python</span><span class="p">:</span>
-            <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span>
                 <span class="n">_</span><span class="p">(</span>
                     <span class="s2">&quot;If you wish to open Python&#39;s documentation, use</span><span class="se">\n</span><span class="s2">&quot;</span>
                     <span class="s2">&quot;`www(python=True)`.</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -503,7 +460,7 @@
     <span class="k">try</span><span class="p">:</span>
         <span class="n">webbrowser</span><span class="o">.</span><span class="n">open_new_tab</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># noqa</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;The default web browser cannot be used for searching.&quot;</span><span class="p">))</span></div>
+        <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;The default web browser cannot be used for searching.&quot;</span><span class="p">))</span></div>
 
 
 <span class="n">get_lang</span> <span class="o">=</span> <span class="n">friendly</span><span class="o">.</span><span class="n">get_lang</span>
@@ -511,9 +468,10 @@
 <span class="n">get_include</span> <span class="o">=</span> <span class="n">friendly</span><span class="o">.</span><span class="n">get_include</span>
 <span class="n">set_include</span> <span class="o">=</span> <span class="n">friendly</span><span class="o">.</span><span class="n">set_include</span>
 <span class="n">set_formatter</span> <span class="o">=</span> <span class="n">friendly</span><span class="o">.</span><span class="n">set_formatter</span>
-
 <span class="n">helpers</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;back&quot;</span><span class="p">:</span> <span class="n">back</span><span class="p">,</span>
+    <span class="s2">&quot;dark&quot;</span><span class="p">:</span> <span class="n">dark</span><span class="p">,</span>
+    <span class="s2">&quot;light&quot;</span><span class="p">:</span> <span class="n">light</span><span class="p">,</span>
     <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="n">history</span><span class="p">,</span>
     <span class="s2">&quot;explain&quot;</span><span class="p">:</span> <span class="n">explain</span><span class="p">,</span>
     <span class="s2">&quot;what&quot;</span><span class="p">:</span> <span class="n">what</span><span class="p">,</span>
@@ -524,17 +482,111 @@
     <span class="s2">&quot;set_lang&quot;</span><span class="p">:</span> <span class="n">set_lang</span><span class="p">,</span>
     <span class="s2">&quot;get_include&quot;</span><span class="p">:</span> <span class="n">get_include</span><span class="p">,</span>
     <span class="s2">&quot;set_include&quot;</span><span class="p">:</span> <span class="n">set_include</span><span class="p">,</span>
-    <span class="s2">&quot;_get_exception&quot;</span><span class="p">:</span> <span class="n">_get_exception</span><span class="p">,</span>
     <span class="s2">&quot;hint&quot;</span><span class="p">:</span> <span class="n">hint</span><span class="p">,</span>
     <span class="s2">&quot;friendly_tb&quot;</span><span class="p">:</span> <span class="n">friendly_tb</span><span class="p">,</span>
     <span class="s2">&quot;python_tb&quot;</span><span class="p">:</span> <span class="n">python_tb</span><span class="p">,</span>
-    <span class="s2">&quot;_debug_tb&quot;</span><span class="p">:</span> <span class="n">_debug_tb</span><span class="p">,</span>
-    <span class="s2">&quot;_debug&quot;</span><span class="p">:</span> <span class="n">_debug</span><span class="p">,</span>
     <span class="s2">&quot;show_paths&quot;</span><span class="p">:</span> <span class="n">show_paths</span><span class="p">,</span>
-    <span class="s2">&quot;_show_info&quot;</span><span class="p">:</span> <span class="n">_show_info</span><span class="p">,</span>
     <span class="s2">&quot;set_formatter&quot;</span><span class="p">:</span> <span class="n">set_formatter</span><span class="p">,</span>
-    <span class="s2">&quot;_get_statement&quot;</span><span class="p">:</span> <span class="n">_get_statement</span><span class="p">,</span>
     <span class="s2">&quot;www&quot;</span><span class="p">:</span> <span class="n">www</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="c1"># ===== Debugging functions are not unit tested by choice =====</span>
+
+
+<span class="k">def</span> <span class="nf">_debug_tb</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
+    <span class="sd">&quot;&quot;&quot;Shows the true Python traceback, which includes</span>
+<span class="sd">    files from friendly itself.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_get_exception</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
+    <span class="sd">&quot;&quot;&quot;Debugging tool: returns the exception instance or None if no exception</span>
+<span class="sd">    has been raised.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nothing to show: no exception recorded.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;_exc_instance&quot;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_get_frame</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
+    <span class="sd">&quot;&quot;&quot;This returns the frame in which the exception occurred.</span>
+
+<span class="sd">    This is not intended for end-users but is useful in development.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nothing to show: no exception recorded.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;_frame&quot;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_get_statement</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
+    <span class="sd">&quot;&quot;&quot;This returns a &#39;Statement&#39; instance obtained for SyntaxErrors and</span>
+<span class="sd">    subclasses.  Such a Statement instance contains essentially all</span>
+<span class="sd">    the known information about the statement where the error occurred.</span>
+
+<span class="sd">    This is not intended for end-users but is useful in development.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nothing to show: no exception recorded.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;_exc_instance&quot;</span><span class="p">],</span> <span class="ne">SyntaxError</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">friendly</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tb_data</span><span class="o">.</span><span class="n">statement</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No statement: not a SyntaxError.&quot;</span><span class="p">)</span>
+    <span class="k">return</span>
+
+
+<span class="k">def</span> <span class="nf">_get_tb_data</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
+    <span class="sd">&quot;&quot;&quot;This returns the TracebackData instance containing all the</span>
+<span class="sd">    information we have obtained.</span>
+
+<span class="sd">    This is not intended for end-users but is useful in development.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nothing to show: no exception recorded.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;_tb_data&quot;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_set_debug</span><span class="p">(</span><span class="n">flag</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+    <span class="sd">&quot;&quot;&quot;This functions displays the true traceback recorded, that</span>
+<span class="sd">    includes friendly&#39;s own code.</span>
+<span class="sd">    It also sets a debug flag for the current session.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">debug_helper</span><span class="o">.</span><span class="n">DEBUG</span> <span class="o">=</span> <span class="n">flag</span>
+    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;debug_tb&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_show_info</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
+    <span class="sd">&quot;&quot;&quot;Debugging tool: shows the complete content of traceback info.</span>
+
+<span class="sd">    Prints ``None`` for a given item if it is not present.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span> <span class="k">else</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">formatters</span><span class="o">.</span><span class="n">items_in_order</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">info</span> <span class="ow">and</span> <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   &quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">: None&quot;</span><span class="p">)</span>
+
+
+<span class="n">_debug_helpers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;_debug_tb&quot;</span><span class="p">:</span> <span class="n">_debug_tb</span><span class="p">,</span>
+    <span class="s2">&quot;_show_info&quot;</span><span class="p">:</span> <span class="n">_show_info</span><span class="p">,</span>
+    <span class="s2">&quot;_get_exception&quot;</span><span class="p">:</span> <span class="n">_get_exception</span><span class="p">,</span>
+    <span class="s2">&quot;_get_frame&quot;</span><span class="p">:</span> <span class="n">_get_frame</span><span class="p">,</span>
+    <span class="s2">&quot;_get_statement&quot;</span><span class="p">:</span> <span class="n">_get_statement</span><span class="p">,</span>
+    <span class="s2">&quot;_get_tb_data&quot;</span><span class="p">:</span> <span class="n">_get_tb_data</span><span class="p">,</span>
+    <span class="s2">&quot;_set_debug&quot;</span><span class="p">:</span> <span class="n">_set_debug</span><span class="p">,</span>
 <span class="p">}</span>
 
 
@@ -545,11 +597,13 @@
 <span class="sd">    For example, we can write Friendly.explain() as equivalent to explain().</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">pass</span></div>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">__version__</span></div>
 
 
 <span class="k">for</span> <span class="n">helper</span> <span class="ow">in</span> <span class="n">helpers</span><span class="p">:</span>
     <span class="nb">setattr</span><span class="p">(</span><span class="n">Friendly</span><span class="p">,</span> <span class="n">helper</span><span class="p">,</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">helpers</span><span class="p">[</span><span class="n">helper</span><span class="p">]))</span>
+<span class="k">for</span> <span class="n">helper</span> <span class="ow">in</span> <span class="n">_debug_helpers</span><span class="p">:</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">Friendly</span><span class="p">,</span> <span class="n">helper</span><span class="p">,</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">_debug_helpers</span><span class="p">[</span><span class="n">helper</span><span class="p">]))</span>
 
 <span class="n">helpers</span><span class="p">[</span><span class="s2">&quot;Friendly&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Friendly</span>
 

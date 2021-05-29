@@ -15,7 +15,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly version: 0.3
+Friendly version: 0.3.64
 Python version: 3.8.4
 
 
@@ -1979,6 +1979,37 @@ Generic
 
 ValueError
 ----------
+
+
+Date invalid month
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_value_error.py", line 58, in test_Date_invalid_month
+        d = date(2021, 13, 1)
+    ValueError: month must be in 1..12
+    
+        Avez-vous spécifié un mois inexistant ?
+        
+    Une exception `ValueError` indique qu'une fonction ou une opération
+    a reçu un argument du bon type, mais une valeur inappropriée.
+    
+    Je crois que vous avez indiqué une valeur non valide pour le mois
+    dans un objet de type `date`. Les valeurs valides sont les entiers de 1 à 12.
+    
+    Exception levée à la ligne 58 du fichier TESTS:\runtime\test_value_error.py.
+    
+       56:     from datetime import date
+       57:     try:
+    -->58:         d = date(2021, 13, 1)
+                       ^^^^^^^^^^^^^^^^^
+       59:     except ValueError as e:
+
+            date:  <class datetime.date>
+        
 
 
 Not enough values to unpack

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.60 documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.64 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3
+                0.3.64
               </div>
             
           
@@ -270,6 +270,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#valueerror">ValueError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#date-invalid-month">Date invalid month</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#not-enough-values-to-unpack">Not enough values to unpack</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#too-many-values-to-unpack">Too many values to unpack</a></li>
 </ul>
@@ -393,7 +394,7 @@ C:Usersandregithubfriendlyteststrb_english.py located in the <code class="docuti
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.</p>
 </div>
-<p>Friendly version: 0.3
+<p>Friendly version: 0.3.64
 Python version: 3.9.0</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -2125,6 +2126,33 @@ Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.
 </div>
 <div class="section" id="valueerror">
 <h2>ValueError<a class="headerlink" href="#valueerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="date-invalid-month">
+<h3>Date invalid month<a class="headerlink" href="#date-invalid-month" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_value_error.py&quot;, line 58, in test_Date_invalid_month
+    d = date(2021, 13, 1)
+ValueError: month must be in 1..12
+
+    Did you specify an invalid month?
+
+A `ValueError` indicates that a function or an operation
+received an argument of the right type, but an inappropriate value.
+
+I am guessing that you specify an invalid value for a month
+in a `date` object. Valid values are integers, from 1 to 12.
+
+Exception raised on line 58 of file TESTS:\runtime\test_value_error.py.
+
+   56:     from datetime import date
+   57:     try:
+--&gt;58:         d = date(2021, 13, 1)
+                   ^^^^^^^^^^^^^^^^^
+   59:     except ValueError as e:
+
+        date:  &lt;class datetime.date&gt;
+</pre></div>
+</div>
+</div>
 <div class="section" id="not-enough-values-to-unpack">
 <h3>Not enough values to unpack<a class="headerlink" href="#not-enough-values-to-unpack" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):

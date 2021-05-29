@@ -18,19 +18,19 @@ should be included here.
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly version: 0.3
+Friendly version: 0.3.64
 Python version: 3.10.0b1
 
 
 
-Using 'and' in import statement
--------------------------------
+(1) Using 'and' in import statement
+-----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\and_in_import_statement.py", line 1
         from math import sin and cos
@@ -52,14 +52,14 @@ Using 'and' in import statement
     `from math import sin , cos`
     
 
-Annotated name cannot be global
--------------------------------
+(2) Annotated name cannot be global
+-----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\annotated_name_global.py", line 4
         x:int = 1
@@ -82,14 +82,14 @@ Annotated name cannot be global
     as a local variable. It cannot be declared to be a global variable.
     
 
-Incorrect use of 'from module import ... as ...
------------------------------------------------
+(3) Incorrect use of 'from module import ... as ...
+---------------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\as_instead_of_comma_in_import.py", line 2
         from math import (sin, cos) as funcs
@@ -117,14 +117,14 @@ Incorrect use of 'from module import ... as ...
         from math import object_2 as name_2  # if needed
     
 
-Name assigned prior to global declaration
------------------------------------------
+(4) Name assigned prior to global declaration
+---------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_name_before_global_1.py", line 7
         global p
@@ -148,14 +148,14 @@ Name assigned prior to global declaration
     before declaring it as a global variable.
     
 
-Name used prior to global declaration
--------------------------------------
+(5) Name used prior to global declaration
+-----------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_name_before_global_2.py", line 7
         global r
@@ -179,14 +179,14 @@ Name used prior to global declaration
     before declaring it as a global variable.
     
 
-Name used prior to nonlocal declaration
----------------------------------------
+(6) Name used prior to nonlocal declaration
+-------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_name_before_nonlocal_1.py", line 9
         nonlocal q
@@ -212,14 +212,14 @@ Name used prior to nonlocal declaration
     before declaring it as a nonlocal variable.
     
 
-Name assigned prior to nonlocal declaration
--------------------------------------------
+(7) Name assigned prior to nonlocal declaration
+-----------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_name_before_nonlocal_2.py", line 9
         nonlocal s
@@ -245,14 +245,14 @@ Name assigned prior to nonlocal declaration
     before declaring it as a nonlocal variable.
     
 
-Assign to conditional expression
---------------------------------
+(8) Assign to conditional expression
+------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_to_conditional.py", line 3
         a if 1 else b = 1
@@ -278,14 +278,14 @@ Assign to conditional expression
     
         variable = object if condition else other_object
 
-Assignment to keyword (__debug__)
----------------------------------
+(9) Assignment to keyword (__debug__)
+-------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_to_debug.py", line 4
         __debug__ = 1
@@ -309,14 +309,14 @@ Assignment to keyword (__debug__)
     
     
 
-Cannot assign to f-string
--------------------------
+(10) Cannot assign to f-string
+------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_to_f_string.py", line 6
         f'{x}' = 42
@@ -344,14 +344,14 @@ Cannot assign to f-string
     An f-string should only appear on the right-hand side of an equal sign.
     
 
-Cannot assign to function call: single = sign
----------------------------------------------
+(11) Cannot assign to function call: single = sign
+--------------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_to_function_call_1.py", line 6
         len('a') = 3
@@ -382,14 +382,14 @@ Cannot assign to function call: single = sign
     or includes a function call and is not simply the name of a variable.
     
 
-Cannot assign to function call: two = signs
--------------------------------------------
+(12) Cannot assign to function call: two = signs
+------------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_to_function_call_2.py", line 6
         func(a, b=3) = 4
@@ -420,14 +420,14 @@ Cannot assign to function call: two = signs
     a function call and not the name of a variable.
     
 
-Assign to generator expression
-------------------------------
+(13) Assign to generator expression
+-----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_to_generator.py", line 3
         (x for x in x) = 1
@@ -451,14 +451,14 @@ Assign to generator expression
     generator expression instead of the name of a variable.
     
 
-Cannot assign to literal - 4
-----------------------------
+(14) Cannot assign to literal - 4
+---------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_to_literal_dict.py", line 7
         {1 : 2, 2 : 4} = 5
@@ -491,14 +491,14 @@ Cannot assign to literal - 4
     
     
 
-Cannot assign to literal int
-----------------------------
+(15) Cannot assign to literal int
+---------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_to_literal_int.py", line 3
         1 = a
@@ -529,14 +529,14 @@ Cannot assign to literal int
     
     
 
-Cannot assign to literal int - 2
---------------------------------
+(16) Cannot assign to literal int - 2
+-------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_to_literal_int_2.py", line 3
         1 = 2
@@ -565,14 +565,14 @@ Cannot assign to literal int - 2
     
     
 
-Cannot assign to literal - 5
-----------------------------
+(17) Cannot assign to literal - 5
+---------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_to_literal_int_3.py", line 4
         1 = a = b
@@ -602,14 +602,14 @@ Cannot assign to literal - 5
     
     
 
-Cannot assign to literal - 3
-----------------------------
+(18) Cannot assign to literal - 3
+---------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_to_literal_set.py", line 7
         {1, 2, 3} = 4
@@ -642,14 +642,14 @@ Cannot assign to literal - 3
     
     
 
-Assign to keyword def
----------------------
+(19) Assign to keyword def
+--------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_to_keyword_def.py", line 3
         def = 2
@@ -674,14 +674,14 @@ Assign to keyword def
     
     
 
-Assign to keyword else
-----------------------
+(20) Assign to keyword else
+---------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_to_keyword_else.py", line 3
         else = 1
@@ -706,14 +706,14 @@ Assign to keyword else
     
     
 
-Assignment to keyword (None)
-----------------------------
+(21) Assignment to keyword (None)
+---------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_to_keyword_none.py", line 4
         None = 1
@@ -737,14 +737,14 @@ Assignment to keyword (None)
     
     
 
-Assign to math operation
-------------------------
+(22) Assign to math operation
+-----------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\assign_to_operation.py", line 4
         a + 1 = 2
@@ -770,14 +770,14 @@ Assign to math operation
     only used to assign a value to a variable.
     
 
-Augmented assignment to literal
--------------------------------
+(23) Augmented assignment to literal
+------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\augmented_assignment_to_literal.py", line 1
         if "word" := True:
@@ -800,14 +800,14 @@ Augmented assignment to literal
     You can only assign objects to identifiers (variable names).
     
 
-Walrus/Named assignment depending on Python version
----------------------------------------------------
+(24) Walrus/Named assignment depending on Python version
+--------------------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\augmented_assigment_with_true.py", line 4
         (True := 1)
@@ -831,14 +831,14 @@ Walrus/Named assignment depending on Python version
     
     
 
-Backslash instead of slash
---------------------------
+(25) Backslash instead of slash
+-------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\backslash_instead_of_slash.py", line 1
         a = 3 \ 4.0
@@ -861,14 +861,14 @@ Backslash instead of slash
     I am guessing that you wanted to divide by the number 4.0 
     and wrote \ instead of /.
 
-break outside loop
-------------------
+(26) break outside loop
+-----------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\break_outside_loop.py", line 4
         break
@@ -890,14 +890,14 @@ break outside loop
     The Python keyword `break` can only be used inside a `for` loop or inside a `while` loop.
     
 
-Cannot use star operator
-------------------------
+(27) Cannot use star operator
+-----------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\cannot_use_star.py", line 3
         *a
@@ -920,14 +920,14 @@ Cannot use star operator
     to each item of an iterable, which does not make sense here.
     
 
-Cannot use double star operator
--------------------------------
+(28) Cannot use double star operator
+------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\cannot_use_double_star.py", line 4
         (**k)
@@ -950,14 +950,14 @@ Cannot use double star operator
     dict unpacking is to be used which is not allowed or does not make sense here.
     
 
-Missing class name
-------------------
+(29) Missing class name
+-----------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\class_missing_name.py", line 1
         class:
@@ -982,14 +982,14 @@ Missing class name
     
     
 
-Missing () for tuples in comprehension
---------------------------------------
+(30) Missing () for tuples in comprehension
+-------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\comprehension_missing_tuple_paren.py", line 1
         x = [i, i**2 for i in range(10)]
@@ -1019,14 +1019,14 @@ Missing () for tuples in comprehension
     
     
 
-Comprehension with condition (no else)
---------------------------------------
+(31) Comprehension with condition (no else)
+-------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\comprehension_with_condition_no_else.py", line 1
         a = [f(x) if condition for x in sequence]
@@ -1056,14 +1056,14 @@ Comprehension with condition (no else)
     
     
 
-Comprehension with condition (with else)
-----------------------------------------
+(32) Comprehension with condition (with else)
+---------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\comprehension_with_condition_with_else.py", line 1
         a = [f(x) for x in sequence if condition else other]
@@ -1093,14 +1093,14 @@ Comprehension with condition (with else)
     
     
 
-continue outside loop
----------------------
+(33) continue outside loop
+--------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\continue_outside_loop.py", line 4
         continue
@@ -1122,14 +1122,14 @@ continue outside loop
     The Python keyword `continue` can only be used inside a `for` loop or inside a `while` loop.
     
 
-Copy/paste from interpreter
----------------------------
+(34) Copy/paste from interpreter
+--------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\copy_pasted_code.py", line 2
         >>> print("Hello World!")
@@ -1152,14 +1152,14 @@ Copy/paste from interpreter
     The Python prompt, `>>>`, should not be included in your code.
     
 
-def: positional arg after kwargs
---------------------------------
+(35) def: positional arg after kwargs
+-------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_arg_after_kwarg.py", line 1
         def test(a, **kwargs, b):
@@ -1182,14 +1182,14 @@ def: positional arg after kwargs
     keyword arguments in your function definition.
     
 
-def: named arguments must follow bare *
----------------------------------------
+(36) def: named arguments must follow bare *
+--------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_bare_star_arg.py", line 4
         def f(*):
@@ -1215,14 +1215,14 @@ def: named arguments must follow bare *
     by `*, named_argument=value`.
     
 
-def: misused as code block
---------------------------
+(37) def: misused as code block
+-------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_code_block.py", line 3
         def :
@@ -1248,14 +1248,14 @@ def: misused as code block
         def name ( ... ):
     
 
-def: dict as argument
----------------------
+(38) def: dict as argument
+--------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_dict_as_arg.py", line 1
         def test({'a': 1}, y):  # dict as first argument
@@ -1277,14 +1277,14 @@ def: dict as argument
     You can only use identifiers (variable names) as function arguments.
     
 
-def: Keyword arg only once in function definition
--------------------------------------------------
+(39) def: Keyword arg only once in function definition
+------------------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_duplicate_arg.py", line 4
         def f(aa=1, aa=2):
@@ -1309,14 +1309,14 @@ def: Keyword arg only once in function definition
     twice; each keyword argument should appear only once in a function definition.
     
 
-def: semi-colon after colon
----------------------------
+(40) def: semi-colon after colon
+--------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_extra_semi_colon.py", line 1
         def test():;
@@ -1339,14 +1339,14 @@ def: semi-colon after colon
     Removing `;`, might fix the problem.
     
 
-def: extra comma
-----------------
+(41) def: extra comma
+---------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_extra_comma.py", line 1
         def test(a,,b):
@@ -1369,14 +1369,14 @@ def: extra comma
     
         def test(a,b):
 
-def: unspecified keywords before /
-----------------------------------
+(42) def: unspecified keywords before /
+---------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_forward_slash_1.py", line 1
         def test(a, **kwargs, /):
@@ -1400,14 +1400,14 @@ def: unspecified keywords before /
     the symbol `/`.
     
 
-def: / before star
-------------------
+(43) def: / before star
+-----------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_forward_slash_2.py", line 1
         def test(a, *, b, /):
@@ -1432,14 +1432,14 @@ def: / before star
     When they are used together, `/` must appear before `*`.
     
 
-def: / before star arg
-----------------------
+(44) def: / before star arg
+---------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_forward_slash_3.py", line 1
         def test(a, *arg, /):
@@ -1462,14 +1462,14 @@ def: / before star arg
     `*arg` must appear after `/` in a function definition.
     
 
-def: / used twice
------------------
+(45) def: / used twice
+----------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_forward_slash_4.py", line 1
         def test(a, /, b, /):
@@ -1490,14 +1490,14 @@ def: / used twice
     You can only use `/` once in a function definition.
     
 
-def: non-identifier as a function name
---------------------------------------
+(46) def: non-identifier as a function name
+-------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_function_name_invalid.py", line 3
         def 2be():
@@ -1522,14 +1522,14 @@ def: non-identifier as a function name
     and which contains only letters, digits or the underscore character.
     
 
-def: using a string as a function name
---------------------------------------
+(47) def: using a string as a function name
+-------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_function_name_string.py", line 3
         def "function"():
@@ -1558,14 +1558,14 @@ def: using a string as a function name
     You attempted to use a string as a function name.
     
 
-def: keyword cannot be argument in def - 1
-------------------------------------------
+(48) def: keyword cannot be argument in def - 1
+-----------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_keyword_as_arg_1.py", line 5
         def f(None=1):
@@ -1590,14 +1590,14 @@ def: keyword cannot be argument in def - 1
     where an identifier (variable name) was expected.
     
 
-def: keyword cannot be argument in def - 2
-------------------------------------------
+(49) def: keyword cannot be argument in def - 2
+-----------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_keyword_as_arg_2.py", line 5
         def f(x, True):
@@ -1622,14 +1622,14 @@ def: keyword cannot be argument in def - 2
     where an identifier (variable name) was expected.
     
 
-def: keyword cannot be argument in def - 3
-------------------------------------------
+(50) def: keyword cannot be argument in def - 3
+-----------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_keyword_as_arg_3.py", line 5
         def f(*None):
@@ -1654,14 +1654,14 @@ def: keyword cannot be argument in def - 3
     where an identifier (variable name) was expected.
     
 
-def: keyword cannot be argument in def - 4
-------------------------------------------
+(51) def: keyword cannot be argument in def - 4
+-----------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_keyword_as_arg_4.py", line 5
         def f(**None):
@@ -1686,14 +1686,14 @@ def: keyword cannot be argument in def - 4
     where an identifier (variable name) was expected.
     
 
-def: Python keyword as function name
-------------------------------------
+(52) def: Python keyword as function name
+-----------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_keyword_as_name.py", line 3
         def pass():
@@ -1716,14 +1716,14 @@ def: Python keyword as function name
     You tried to use the Python keyword `pass` as a function name.
     
 
-def: list as argument - 1
--------------------------
+(53) def: list as argument - 1
+------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_list_as_arg_1.py", line 1
         def test([x], y):  # list as first argument
@@ -1745,14 +1745,14 @@ def: list as argument - 1
     You can only use identifiers (variable names) as function arguments.
     
 
-def: list as argument - 2
--------------------------
+(54) def: list as argument - 2
+------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_list_as_arg_2.py", line 1
         def test(x, [y]):  # list as second argument, after comma
@@ -1774,14 +1774,14 @@ def: list as argument - 2
     You can only use identifiers (variable names) as function arguments.
     
 
-def: missing colon
-------------------
+(55) def: missing colon
+-----------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_missing_colon.py", line 1
         def test()
@@ -1804,14 +1804,14 @@ def: missing colon
     
     
 
-def: missing comma between function args
-----------------------------------------
+(56) def: missing comma between function args
+---------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_missing_comma.py", line 4
         def a(b, c d):
@@ -1841,14 +1841,14 @@ def: missing comma between function args
         def a(b, c, d):
     
 
-def: missing parentheses
-------------------------
+(57) def: missing parentheses
+-----------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_missing_parens.py", line 3
         def name:
@@ -1874,14 +1874,14 @@ def: missing parentheses
         def name():
     
 
-def: missing function name
---------------------------
+(58) def: missing function name
+-------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_missing_name.py", line 3
         def ( arg )  :
@@ -1905,14 +1905,14 @@ def: missing function name
         def name ( ... ):
     
 
-def: name is parameter and global
----------------------------------
+(59) def: name is parameter and global
+--------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_name_is_parameter_and_global.py", line 6
         global x
@@ -1944,14 +1944,14 @@ def: name is parameter and global
     inside that function, which is the contrary of what `global` implied.
     
 
-def: non-default argument follows default argument
---------------------------------------------------
+(60) def: non-default argument follows default argument
+-------------------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_non_default_after_default.py", line 5
         def test(a=1, b):
@@ -1987,14 +1987,14 @@ def: non-default argument follows default argument
     According to Python, you used positional arguments after keyword ones.
     
 
-Single number used as arg in function def
------------------------------------------
+(61) Single number used as arg in function def
+----------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_number_as_arg.py", line 1
         def f(1):
@@ -2016,14 +2016,14 @@ Single number used as arg in function def
     You can only use identifiers (variable names) as function arguments.
     
 
-def: operator instead of comma
-------------------------------
+(62) def: operator instead of comma
+-----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_operator_instead_of_comma.py", line 1
         def test(a + b):
@@ -2047,14 +2047,14 @@ def: operator instead of comma
     
         def test(a , b):
 
-def: operator instead of equal
-------------------------------
+(63) def: operator instead of equal
+-----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_operator_instead_of_equal.py", line 1
         def test(a, b=3, c+None):
@@ -2078,14 +2078,14 @@ def: operator instead of equal
     
         def test(a, b=3, c=None):
 
-def: operator instead of name
------------------------------
+(64) def: operator instead of name
+----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_operator_instead_of_name.py", line 1
         def test(a, +, b):
@@ -2108,14 +2108,14 @@ def: operator instead of name
     will contain no syntax error.
     
 
-def: positional argument follows keyword argument
--------------------------------------------------
+(65) def: positional argument follows keyword argument
+------------------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_positional_after_keyword_arg.py", line 5
         test(a=1, b)
@@ -2151,14 +2151,14 @@ def: positional argument follows keyword argument
     According to Python, you used positional arguments after keyword ones.
     
 
-def: semi-colon instead of colon
---------------------------------
+(66) def: semi-colon instead of colon
+-------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_semi_colon_instead_of_colon.py", line 1
         def test();
@@ -2180,14 +2180,14 @@ def: semi-colon instead of colon
     You wrote `;` instead of a colon.
     
 
-def: set as argument
---------------------
+(67) def: set as argument
+-------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_set_as_arg.py", line 1
         def test(y, {'a', 'b'}):  # set as second argument, after comma
@@ -2209,14 +2209,14 @@ def: set as argument
     You can only use identifiers (variable names) as function arguments.
     
 
-def: ``*arg`` before /
-----------------------
+(68) def: ``*arg`` before /
+---------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_star_arg_before_slash.py", line 1
         def test(a, *arg, /):
@@ -2239,14 +2239,14 @@ def: ``*arg`` before /
     `*arg` must appear after `/` in a function definition.
     
 
-def: ``*`` used twice
----------------------
+(69) def: ``*`` used twice
+--------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_star_used_only_once.py", line 1
         def test(a, *arg, *, b=1):
@@ -2269,14 +2269,14 @@ def: ``*`` used twice
     or in the form `..., *args ...`, but not both.
     
 
-Single string used as arg in function def
------------------------------------------
+(70) Single string used as arg in function def
+----------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_string_as_arg.py", line 1
         def f("1"):
@@ -2298,14 +2298,14 @@ Single string used as arg in function def
     You can only use identifiers (variable names) as function arguments.
     
 
-def: tuple as function argument
--------------------------------
+(71) def: tuple as function argument
+------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_tuple_as_arg_1.py", line 1
         def test((a, b), c):
@@ -2329,14 +2329,14 @@ def: tuple as function argument
     within the body of the function.
     
 
-def: tuple as function argument - 2
------------------------------------
+(72) def: tuple as function argument - 2
+----------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\def_tuple_as_arg_2.py", line 1
         def test(a, (b, c)):
@@ -2360,14 +2360,14 @@ def: tuple as function argument - 2
     within the body of the function.
     
 
-Deleting constant/keyword
--------------------------
+(73) Deleting constant/keyword
+------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\delete_constant_keyword.py", line 1
         del True
@@ -2386,14 +2386,14 @@ Deleting constant/keyword
     You cannot delete the constant `True`.
     
 
-Cannot delete function call
----------------------------
+(74) Cannot delete function call
+--------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\delete_function_call.py", line 5
         del f(a)
@@ -2421,14 +2421,14 @@ Cannot delete function call
         del f
     
 
-Deleting string literal
------------------------
+(75) Deleting string literal
+----------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\delete_string_literal.py", line 1
         del "Hello world!"
@@ -2449,14 +2449,14 @@ Deleting string literal
     individual items in a container.
     
 
-Dot followed by parenthesis
----------------------------
+(76) Dot followed by parenthesis
+--------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\dot_before_paren.py", line 3
         print(len.('hello'))
@@ -2478,14 +2478,43 @@ Dot followed by parenthesis
     Perhaps you need to replace the dot by a comma.
     
 
-Write elif, not else if
------------------------
+(77) Extra token
+----------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\duplicate_token.py", line 1
+        print(1 , , 2)
+                  ^
+    SyntaxError: invalid syntax
+    
+        Did you write [`,`] twice by mistake?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\duplicate_token.py'
+    beyond the location indicated by ^.
+    
+    -->1: print(1 , , 2)
+                    ^
+
+    I am guessing that you wrote [`,`] twice in a row by mistake.
+    If that is the case, you need to remove the second one.
+    
+
+(78) Write elif, not else if
+----------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\else_if_instead_of_elif.py", line 5
         else if True:
@@ -2515,14 +2544,14 @@ Write elif, not else if
     
     
 
-Write elif, not elseif
-----------------------
+(79) Write elif, not elseif
+---------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\elseif_instead_of_elif.py", line 5
         elseif True:
@@ -2549,14 +2578,14 @@ Write elif, not elseif
     
     
 
-EOL while scanning string literal
----------------------------------
+(80) EOL while scanning string literal
+--------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\eol_string_literal.py", line 3
         alphabet = 'abc
@@ -2580,14 +2609,14 @@ EOL while scanning string literal
     but never ended the string with another quote on that line.
     
 
-Parens around multiple exceptions
----------------------------------
+(81) Parens around multiple exceptions
+--------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\except_multiple_exceptions.py", line 3
         except NameError, ValueError as err:
@@ -2616,14 +2645,43 @@ Parens around multiple exceptions
     a relevant place in the Python documentation.
     
 
-Binary f-string not allowed
----------------------------
+(82) Extra token
+----------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\extra_token.py", line 1
+        print(1 / 2) ==
+                       
+    SyntaxError: invalid syntax
+    
+        Did you write `==` by mistake?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\extra_token.py'
+    beyond the location indicated by ^.
+    
+    -->1: print(1 / 2) ==
+                         ^
+
+    I am guessing that you wrote `==` by mistake.
+    Removing it and writing `print(1 / 2)` seems to fix the error.
+    
+
+(83) Binary f-string not allowed
+--------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\f_string_binary.py", line 1
         greet = bf"Hello {name}"
@@ -2645,14 +2703,14 @@ Binary f-string not allowed
     this is not allowed.
     
 
-f-string: unterminated string
------------------------------
+(84) f-string: unterminated string
+----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\f_string_unterminated.py", line 4
         print(f"Bob is {age['Bob]} years old.")
@@ -2678,14 +2736,14 @@ f-string: unterminated string
     single quote (') or double quote ("), without a matching closing one.
     
 
-f-string with backslash
------------------------
+(85) f-string with backslash
+----------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\f_string_with_backslash.py", line 2
         print(f"{'\n'.join(names)}")
@@ -2715,14 +2773,14 @@ f-string with backslash
         f"{... hello ...}"
     
 
-Missing terms in for statement
-------------------------------
+(86) Missing terms in for statement
+-----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\for_missing_terms.py", line 1
         for:
@@ -2747,14 +2805,14 @@ Missing terms in for statement
     
     
 
-Not a chance!
--------------
+(87) Not a chance!
+------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\future_braces.py", line 1
         from __future__ import braces
@@ -2777,14 +2835,14 @@ Not a chance!
     their indentation level, and not by using some curly braces, like `{...}`.
     
 
-Do not import * from __future__
--------------------------------
+(88) Do not import * from __future__
+------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\future_import_star.py", line 1
         from __future__ import *
@@ -2815,14 +2873,14 @@ Do not import * from __future__
      annotations`.
     
 
-__future__ at beginning
------------------------
+(89) __future__ at beginning
+----------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\future_must_be_first.py", line 3
         from __future__ import generators
@@ -2844,14 +2902,14 @@ __future__ at beginning
     interprets the code in a file.
     It must appear at the beginning of the file.
 
-Typo in __future__
-------------------
+(90) Typo in __future__
+-----------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\future_typo.py", line 1
         from __future__ import divisio
@@ -2872,14 +2930,14 @@ Typo in __future__
     Instead of `divisio`, perhaps you meant to import `division`.
     
 
-Unknown feature in __future__
------------------------------
+(91) Unknown feature in __future__
+----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\future_unknown.py", line 1
         from __future__ import something
@@ -2909,14 +2967,14 @@ Unknown feature in __future__
      annotations`.
     
 
-Parenthesis around generator expression
----------------------------------------
+(92) Parenthesis around generator expression
+--------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\generator_expression_parens.py", line 6
         f(x for x in L, 1)
@@ -2943,14 +3001,14 @@ Parenthesis around generator expression
     You must add parentheses enclosing that expression.
     
 
-Space between names
--------------------
+(93) Space between names
+------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\hyphen_instead_of_underscore.py", line 4
         a-b = 2
@@ -2977,14 +3035,14 @@ Space between names
     Perhaps you meant to write `a_b` instead of `a-b`
     
 
-Missing condition in if statement
----------------------------------
+(94) Missing condition in if statement
+--------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\if_missing_condition.py", line 1
         if:
@@ -3009,14 +3067,14 @@ Missing condition in if statement
     
     
 
-Import inversion: import X from Y
----------------------------------
+(95) Import inversion: import X from Y
+--------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\import_from.py", line 3
         import pen from turtle
@@ -3046,14 +3104,14 @@ Import inversion: import X from Y
     
     
 
-IndentationError: expected an indented block
---------------------------------------------
+(96) IndentationError: expected an indented block
+-------------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\indentation_error_1.py", line 4
         pass
@@ -3077,14 +3135,14 @@ IndentationError: expected an indented block
     was expected to begin a new indented block.
     
 
-IndentationError: unexpected indent
------------------------------------
+(97) IndentationError: unexpected indent
+----------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\indentation_error_2.py", line 4
         pass
@@ -3107,14 +3165,14 @@ IndentationError: unexpected indent
     The line identified above is more indented than expected.
     
 
-IndentationError: unindent does not match ...
----------------------------------------------
+(98) IndentationError: unindent does not match ...
+--------------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\indentation_error_3.py", line 5
         pass
@@ -3138,14 +3196,14 @@ IndentationError: unindent does not match ...
     The line identified above is less indented than expected.
     
 
-IndentationError: missing continuation line
--------------------------------------------
+(99) IndentationError: missing continuation line
+------------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\indentation_error_4.py", line 6
         "c"
@@ -3175,14 +3233,14 @@ IndentationError: missing continuation line
     at the end of line 5.
     
 
-Forgot 'o' for octal
---------------------
+(100) Forgot 'o' for octal
+--------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\integer_with_leading_zero_1.py", line 1
         x = 01
@@ -3205,14 +3263,14 @@ Forgot 'o' for octal
     a decimal integer and did not know that it could not start with zeros.
     
 
-Integer with leading zeros
---------------------------
+(101) Integer with leading zeros
+--------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\integer_with_leading_zero_2.py", line 1
         x = 000_123_456
@@ -3234,14 +3292,14 @@ Integer with leading zeros
     and did not know that it could not start with zeros.
     
 
-Invalid character in identifier
--------------------------------
+(102) Invalid character in identifier
+-------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\invalid_character_in_identifier.py", line 6
         🤖 = 'Reeborg'
@@ -3266,14 +3324,14 @@ Invalid character in identifier
     which is not allowed.
     
 
-Keyword can't be an expression
-------------------------------
+(103) Keyword can't be an expression
+------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\invalid_keyword_argument.py", line 7
         a = dict('key'=1)
@@ -3307,14 +3365,14 @@ Keyword can't be an expression
     
     
 
-Invalid octal number
---------------------
+(104) Invalid octal number
+--------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\invalid_octal.py", line 3
         b = 0O1876
@@ -3343,14 +3401,75 @@ Invalid octal number
     followed by the characters used to represent the value of that integer.
     
 
-Keyword arg only once in function call
---------------------------------------
+(105) Inverted operators 1
+--------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\inverted_operators.py", line 1
+        a =< 3
+           ^
+    SyntaxError: invalid syntax
+    
+        Did you write operators in an incorrect order?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\inverted_operators.py'
+    beyond the location indicated by ^.
+    
+    -->1: a =< 3
+             ^
+
+    It looks like you wrote two operators (`=` and `<`)
+    in the wrong order: `=<` instead of `<=`.
+    
+
+(106) Inverted operators 2
+--------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\inverted_operators_2.py", line 1
+        a =<* 3
+           ^
+    SyntaxError: invalid syntax
+    
+        Did you write operators in an incorrect order?
+        
+    A `SyntaxError` occurs when Python cannot understand your code.
+    
+    Python could not understand the code in the file
+    'TESTS:\syntax\inverted_operators_2.py'
+    beyond the location indicated by ^.
+    
+    -->1: a =<* 3
+             ^
+
+    It looks like you wrote two operators (`=` and `<`)
+    in the wrong order: `=<` instead of `<=`.
+    
+    However, making such a change would still not correct
+    all the syntax errors in the code you wrote.
+    
+
+(107) Keyword arg only once in function call
+--------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\keyword_arg_repeated.py", line 4
         f(ad=1, ad=2)
@@ -3373,14 +3492,14 @@ Keyword arg only once in function call
     Each keyword argument should appear only once in a function call.
     
 
-Keyword as attribute
---------------------
+(108) Keyword as attribute
+--------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\keyword_as_attribute.py", line 12
         a.pass = 2
@@ -3406,14 +3525,14 @@ Keyword as attribute
     
     
 
-lambda with parentheses around arguments
-----------------------------------------
+(109) lambda with parentheses around arguments
+----------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\lambda_with_parens.py", line 2
         x = lambda (a, b): a + b
@@ -3434,14 +3553,14 @@ lambda with parentheses around arguments
     This was allowed in Python 2 but it not allowed in Python 3.
     
 
-lambda with tuple as argument
------------------------------
+(110) lambda with tuple as argument
+-----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\lambda_with_tuple_argument.py", line 2
         x = lambda a, (b, c): a + b + b
@@ -3463,14 +3582,14 @@ lambda with tuple as argument
     within the body of the function.
     
 
-Assign to literal in for loop
------------------------------
+(111) Assign to literal in for loop
+-----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\literal_in_for_loop.py", line 1
         for "char" in "word":
@@ -3496,14 +3615,14 @@ Assign to literal in for loop
     and not literals like `"char"`.
     
 
-IndentationError/SyntaxError depending on version
--------------------------------------------------
+(112) IndentationError/SyntaxError depending on version
+-------------------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\missing_code_block.py", line 4
     IndentationError: expected an indented block after 'for' statement on line 3
@@ -3525,14 +3644,14 @@ IndentationError/SyntaxError depending on version
     was expected to begin a new indented block.
     
 
-Missing colon - if
-------------------
+(113) Missing colon - if
+------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\missing_colon_if.py", line 3
         if True
@@ -3557,14 +3676,14 @@ Missing colon - if
     
     
 
-Missing colon - while
----------------------
+(114) Missing colon - while
+---------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\missing_colon_while.py", line 3
         while True  # a comment
@@ -3589,14 +3708,14 @@ Missing colon - while
     
     
 
-Missing comma in a dict
------------------------
+(115) Missing comma in a dict
+-----------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\missing_comma_in_dict.py", line 4
         'b': 2
@@ -3628,14 +3747,14 @@ Missing comma in a dict
     
     
 
-Missing parenthesis for range
------------------------------
+(116) Missing parenthesis for range
+-----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\missing_parens_for_range.py", line 1
         for i in range 3:
@@ -3663,14 +3782,14 @@ Missing parenthesis for range
     
     
 
-Name is global and nonlocal
----------------------------
+(117) Name is global and nonlocal
+---------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\name_is_global_and_nonlocal.py", line 7
         global xy
@@ -3694,14 +3813,14 @@ Name is global and nonlocal
     A variable can be global, or nonlocal, but not both at the same time.
     
 
-Name is parameter and nonlocal
-------------------------------
+(118) Name is parameter and nonlocal
+------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\name_is_param_and_nonlocal.py", line 5
         nonlocal x
@@ -3726,14 +3845,14 @@ Name is parameter and nonlocal
     `x` cannot be both at the same time.
     
 
-nonlocal variable not found
----------------------------
+(119) nonlocal variable not found
+---------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\no_binding_for_nonlocal.py", line 5
         nonlocal ab
@@ -3757,14 +3876,14 @@ nonlocal variable not found
     nonlocal variable but it cannot be found.
     
 
-nonlocal variable not found at module level
--------------------------------------------
+(120) nonlocal variable not found at module level
+-------------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\nonlocal_at_module.py", line 4
         nonlocal cd
@@ -3787,14 +3906,14 @@ nonlocal variable not found at module level
     The nonlocal keyword refers to a variable inside a function
     given a value outside that function.
 
-Using pip from interpreter
---------------------------
+(121) Using pip from interpreter
+--------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\pip_install_1.py", line 2
         pip install friendly
@@ -3818,14 +3937,14 @@ Using pip from interpreter
     not from a Python interpreter.
     
 
-Using pip from interpreter 2
-----------------------------
+(122) Using pip from interpreter 2
+----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\pip_install_2.py", line 2
         python -m pip install friendly
@@ -3849,14 +3968,14 @@ Using pip from interpreter 2
     not from a Python interpreter.
     
 
-print is a function
--------------------
+(123) print is a function
+-------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\print_is_a_function.py", line 2
         print 'hello'
@@ -3883,14 +4002,14 @@ print is a function
     Now, `print` is a function; you need to use parentheses to call it.
     
 
-Quote inside a string
----------------------
+(124) Quote inside a string
+---------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\quote_inside_string.py", line 3
         message = 'don't'
@@ -3914,14 +4033,14 @@ Quote inside a string
     but never ended the string with another quote on that line.
     
 
-Raising multiple exceptions
----------------------------
+(125) Raising multiple exceptions
+---------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\raise_multiple_exceptions.py", line 2
         raise X, Y
@@ -3941,14 +4060,14 @@ Raising multiple exceptions
     It looks like you are trying to raise an exception using Python 2 syntax.
     
 
-Cannot use return outside function
-----------------------------------
+(126) Cannot use return outside function
+----------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\return_outside_function.py", line 3
         return
@@ -3969,14 +4088,14 @@ Cannot use return outside function
     You can only use a `return` statement inside a function or method.
     
 
-Too many nested blocks
-----------------------
+(127) Too many nested blocks
+----------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\too_many_nested_blocks.py", line 22
         while 22:
@@ -4004,14 +4123,14 @@ Too many nested blocks
     consider reducing the number of nested code blocks.
     
 
-Triple-equal sign
------------------
+(128) Triple-equal sign
+-----------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\triple_equal.py", line 3
         x = y === z
@@ -4037,14 +4156,14 @@ Triple-equal sign
     the exact same object, use the operator `is`.
     
 
-Unclosed bracket
-----------------
+(129) Unclosed bracket
+----------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\unclosed_bracket.py", line 5
         return [1, 2, 3
@@ -4070,14 +4189,14 @@ Unclosed bracket
                       ^
     
 
-Unclosed parenthesis - 1
-------------------------
+(130) Unclosed parenthesis - 1
+------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\unclosed_paren_1.py", line 2
         x = int('1'
@@ -4102,14 +4221,14 @@ Unclosed parenthesis - 1
                   ^
     
 
-Unclosed parenthesis - 2
-------------------------
+(131) Unclosed parenthesis - 2
+------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\unclosed_paren_2.py", line 2
         a = (b+c
@@ -4133,14 +4252,14 @@ Unclosed parenthesis - 2
                ^
     
 
-Unclosed parenthesis - 3
-------------------------
+(132) Unclosed parenthesis - 3
+------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\unclosed_paren_3.py", line 7
         if 2:
@@ -4166,14 +4285,14 @@ Unclosed parenthesis - 3
                         ^
     
 
-Content passed continuation line character
-------------------------------------------
+(133) Content passed continuation line character
+------------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\unexpected_after_continuation_character.py", line 5
         print(\t)
@@ -4198,14 +4317,14 @@ Content passed continuation line character
     I am guessing that you forgot to enclose some content in a string.
     
 
-Unexpected EOF while parsing
-----------------------------
+(134) Unexpected EOF while parsing
+----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\unexpected_eof.py", line 5
         return [1, 2, 3,
@@ -4231,14 +4350,14 @@ Unexpected EOF while parsing
                       ^
     
 
-Invalid character (unicode quote)
----------------------------------
+(135) Invalid character (unicode quote)
+---------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\unicode_quote.py", line 3
         a = « hello »
@@ -4265,14 +4384,14 @@ Invalid character (unicode quote)
     instead of a normal single or double quote for a string.
     
 
-Unmatched closing parenthesis
------------------------------
+(136) Unmatched closing parenthesis
+-----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\unmatched_closing_paren.py", line 6
         3, 4,))
@@ -4296,14 +4415,14 @@ Unmatched closing parenthesis
     The closing parenthesis `)` on line 6 does not match anything.
     
 
-Mismatched brackets - 1
------------------------
+(137) Mismatched brackets - 1
+-----------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\unmatched_closing_bracket_1.py", line 2
         x = (1, 2, 3]
@@ -4326,14 +4445,14 @@ Mismatched brackets - 1
                ^       ^
     
 
-Mismatched brackets - 2
------------------------
+(138) Mismatched brackets - 2
+-----------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\unmatched_closing_bracket_2.py", line 4
         3]
@@ -4360,14 +4479,14 @@ Mismatched brackets - 2
                  ^
     
 
-Unterminated triple quoted string
----------------------------------
+(139) Unterminated triple quoted string
+---------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\unterminated_triple_quote_string.py", line 1
         some_text = """In a land
@@ -4387,14 +4506,14 @@ Unterminated triple quoted string
     the triple quotes needed to end the string.
     
 
-TabError
---------
+(140) TabError
+--------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\tab_error.py", line 7
         pass
@@ -4419,14 +4538,14 @@ TabError
     -->7: 	pass
          ^
 
-EOL unescaped backslash
------------------------
+(141) EOL unescaped backslash
+-----------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\unescaped_backslash.py", line 1
         a = "abc\"
@@ -4451,14 +4570,14 @@ EOL unescaped backslash
     needed to escape it by writing two `\` in a row.
     
 
-Using the backquote character
------------------------------
+(142) Using the backquote character
+-----------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\use_backquote.py", line 3
         a = `1`
@@ -4482,14 +4601,14 @@ Using the backquote character
     Either you meant to write a single quote, ', or copied Python 2 code;
     in this latter case, use the function `repr(x)`.
 
-Missing condition in while statement
-------------------------------------
+(143) Missing condition in while statement
+------------------------------------------
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\trb_syntax_common.py", line 46, in create_tracebacks
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\syntax\while_missing_condition.py", line 1
         while:

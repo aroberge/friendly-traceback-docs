@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly 0.3.60 documentation</title>
+  <title>Friendly tracebacks - markdown_docs format &mdash; Friendly 0.3.64 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3
+                0.3.64
               </div>
             
           
@@ -456,6 +456,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#valueerror">ValueError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#date-invalid-month">Date invalid month</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-58-of-file-tests-runtime-test-value-error-py">Exception raised on line 58 of file TESTS:\runtime\test_value_error.py.</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#not-enough-values-to-unpack">Not enough values to unpack</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-28-of-file-tests-runtime-test-value-error-py">Exception raised on line 28 of file TESTS:\runtime\test_value_error.py.</a></li>
 </ul>
@@ -594,7 +598,7 @@ trb_english_markdown.py located in the <code class="docutils literal notranslate
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.
 </p>
-</div><p>Friendly version: 0.3
+</div><p>Friendly version: 0.3.64
 Python version: 3.8.4</p>
 <hr class="docutils" />
 <div class="section" id="arithmeticerror">
@@ -2379,6 +2383,33 @@ do an Internet search for this particular case.</p>
 <hr class="docutils" />
 <div class="section" id="valueerror">
 <h2>ValueError<a class="headerlink" href="#valueerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="date-invalid-month">
+<h3>Date invalid month<a class="headerlink" href="#date-invalid-month" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_value_error.py&quot;</span>, line <span class="m">58</span>, in <span class="n">test_Date_invalid_month</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gr">ValueError</span>: <span class="n">month must be in 1..12</span>
+</pre></div>
+</div>
+<p>Did you specify an invalid month?</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> indicates that a function or an operation
+received an argument of the right type, but an inappropriate value.</p>
+<p>I am guessing that you specify an invalid value for a month
+in a <code class="docutils literal notranslate"><span class="pre">date</span></code> object. Valid values are integers, from 1 to 12.</p>
+<div class="section" id="exception-raised-on-line-58-of-file-tests-runtime-test-value-error-py">
+<h4>Exception raised on line 58 of file TESTS:\runtime\test_value_error.py.<a class="headerlink" href="#exception-raised-on-line-58-of-file-tests-runtime-test-value-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">56</span><span class="p">:</span>     <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+       <span class="mi">57</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">58</span><span class="p">:</span>         <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                       <span class="o">^^^^^^^^^^^^^^^^^</span>
+       <span class="mi">59</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">date</span><span class="p">:</span>  <span class="o">&lt;</span><span class="k">class</span> <span class="nc">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="not-enough-values-to-unpack">
 <h3>Not enough values to unpack<a class="headerlink" href="#not-enough-values-to-unpack" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>

@@ -16,7 +16,7 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly version: 0.3
+Friendly version: 0.3.64
 Python version: 3.6.8
 
 
@@ -1981,6 +1981,37 @@ Generic
 
 ValueError
 ----------
+
+
+Date invalid month
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_value_error.py", line 58, in test_Date_invalid_month
+        d = date(2021, 13, 1)
+    ValueError: month must be in 1..12
+    
+        Did you specify an invalid month?
+        
+    A `ValueError` indicates that a function or an operation
+    received an argument of the right type, but an inappropriate value.
+    
+    I am guessing that you specify an invalid value for a month
+    in a `date` object. Valid values are integers, from 1 to 12.
+    
+    Exception raised on line 58 of file TESTS:\runtime\test_value_error.py.
+    
+       56:     from datetime import date
+       57:     try:
+    -->58:         d = date(2021, 13, 1)
+                       ^^^^^^^^^^^^^^^^^
+       59:     except ValueError as e:
+
+            date:  <class datetime.date>
+        
 
 
 Not enough values to unpack
