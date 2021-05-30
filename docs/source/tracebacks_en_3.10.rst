@@ -668,6 +668,39 @@ IndexError
 ----------
 
 
+Empty
+~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_index_error.py", line 38, in test_Empty
+        c = a[1]
+    IndexError: list index out of range
+    
+        `a` contains no item.
+        
+    An `IndexError` occurs when you try to get an item from a list,
+    a tuple, or a similar object (sequence), and use an index which
+    does not exist; typically, this happens because the index you give
+    is greater than the length of the sequence.
+    
+    You have tried to get the item with index `1` of `a`,
+    a `list` which contains no item.
+    
+    Exception raised on line 38 of file TESTS:\runtime\test_index_error.py.
+    
+       36:     a = []
+       37:     try:
+    -->38:         c = a[1]
+                       ^^^^
+       39:     except IndexError as e:
+
+            a:  []
+        
+
+
 Long list
 ~~~~~~~~~
 

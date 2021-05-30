@@ -214,6 +214,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#indexerror">IndexError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#empty">Empty</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#long-list">Long list</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#short-tuple">Short tuple</a></li>
 </ul>
@@ -957,6 +958,35 @@ Exception levée à la ligne 6 du fichier TESTS:\runtime\test_import_error.py.
 </div>
 <div class="section" id="indexerror">
 <h2>IndexError<a class="headerlink" href="#indexerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="empty">
+<h3>Empty<a class="headerlink" href="#empty" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_index_error.py&quot;, line 38, in test_Empty
+    c = a[1]
+IndexError: list index out of range
+
+    `a` ne contient aucun élément.
+
+Une exception `IndexError` se produit lorsque vous essayez d’obtenir un élément
+d&#39;une liste, d&#39;un tuple, ou d&#39;un objet similaire (séquence), à l’aide d’un index qui
+n’existe pas; typiquement, c’est parce que l’index que vous donnez
+est plus grand que la longueur de la séquence.
+
+Vous avez essayé d’obtenir l’élément avec l’indice `1` de `a`,
+une liste (`list`) qui ne contient aucun élément.
+
+Exception levée à la ligne 38 du fichier TESTS:\runtime\test_index_error.py.
+
+   36:     a = []
+   37:     try:
+--&gt;38:         c = a[1]
+                   ^^^^
+   39:     except IndexError as e:
+
+        a:  []
+</pre></div>
+</div>
+</div>
 <div class="section" id="long-list">
 <h3>Long list<a class="headerlink" href="#long-list" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):

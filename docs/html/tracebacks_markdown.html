@@ -270,6 +270,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#indexerror">IndexError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#empty">Empty</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-38-of-file-tests-runtime-test-index-error-py">Exception raised on line 38 of file TESTS:\runtime\test_index_error.py.</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#long-list">Long list</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exception-raised-on-line-24-of-file-tests-runtime-test-index-error-py">Exception raised on line 24 of file TESTS:\runtime\test_index_error.py.</a></li>
 </ul>
@@ -1182,6 +1186,35 @@ because the name of the object is not spelled correctly.</p>
 <hr class="docutils" />
 <div class="section" id="indexerror">
 <h2>IndexError<a class="headerlink" href="#indexerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="empty">
+<h3>Empty<a class="headerlink" href="#empty" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;TESTS:\runtime\test_index_error.py&quot;</span>, line <span class="m">38</span>, in <span class="n">test_Empty</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="gr">IndexError</span>: <span class="n">list index out of range</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> contains no item.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> occurs when you try to get an item from a list,
+a tuple, or a similar object (sequence), and use an index which
+does not exist; typically, this happens because the index you give
+is greater than the length of the sequence.</p>
+<p>You have tried to get the item with index <code class="docutils literal notranslate"><span class="pre">1</span></code> of <code class="docutils literal notranslate"><span class="pre">a</span></code>,
+a <code class="docutils literal notranslate"><span class="pre">list</span></code> which contains no item.</p>
+<div class="section" id="exception-raised-on-line-38-of-file-tests-runtime-test-index-error-py">
+<h4>Exception raised on line 38 of file TESTS:\runtime\test_index_error.py.<a class="headerlink" href="#exception-raised-on-line-38-of-file-tests-runtime-test-index-error-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>       <span class="mi">36</span><span class="p">:</span>     <span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+       <span class="mi">37</span><span class="p">:</span>     <span class="k">try</span><span class="p">:</span>
+    <span class="o">--&gt;</span><span class="mi">38</span><span class="p">:</span>         <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                       <span class="o">^^^^</span>
+       <span class="mi">39</span><span class="p">:</span>     <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">a</span><span class="p">:</span>  <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="long-list">
 <h3>Long list<a class="headerlink" href="#long-list" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
