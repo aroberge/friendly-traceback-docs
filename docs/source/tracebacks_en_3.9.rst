@@ -16,8 +16,8 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly version: 0.3.64
-Python version: 3.9.0
+Friendly version: 0.3.85
+Python version: 3.9.5
 
 
 
@@ -1090,7 +1090,7 @@ Urllib error
 
 
     Traceback (most recent call last):
-      File "PYTHON_LIB:\urllib\request.py", line 1342, in do_open
+      File "PYTHON_LIB:\urllib\request.py", line 1346, in do_open
            ... More lines not shown. ...
       File "PYTHON_LIB:\socket.py", line 822, in create_connection
         for res in getaddrinfo(host, port, 0, SOCK_STREAM):
@@ -1104,9 +1104,9 @@ Urllib error
       File "TESTS:\runtime\test_os_error.py", line 7, in test_Urllib_error
         request.urlopen("http://does_not_exist")
            ... More lines not shown. ...
-      File "PYTHON_LIB:\urllib\request.py", line 1371, in http_open
+      File "PYTHON_LIB:\urllib\request.py", line 1375, in http_open
         return self.do_open(http.client.HTTPConnection, req)
-      File "PYTHON_LIB:\urllib\request.py", line 1345, in do_open
+      File "PYTHON_LIB:\urllib\request.py", line 1349, in do_open
         raise URLError(err)
     URLError: <urlopen error [Errno 11001] getaddrinfo failed>
     
@@ -1131,12 +1131,12 @@ Urllib error
             request:  <module urllib.request> from PYTHON_LIB:\urllib\request.py
             request.urlopen:  <function urlopen>
         
-    Exception raised on line 1345 of file PYTHON_LIB:\urllib\request.py.
+    Exception raised on line 1349 of file PYTHON_LIB:\urllib\request.py.
     
-       1343:                           encode_chunked=req.has_header('Transfer-encoding'))
-       1344:             except OSError as err: # timeout error
-    -->1345:                 raise URLError(err)
-       1346:             r = h.getresponse()
+       1347:                           encode_chunked=req.has_header('Transfer-encoding'))
+       1348:             except OSError as err: # timeout error
+    -->1349:                 raise URLError(err)
+       1350:             r = h.getresponse()
 
             global URLError:  <class urllib.error.URLError>
         

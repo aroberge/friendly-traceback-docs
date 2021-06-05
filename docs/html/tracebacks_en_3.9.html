@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.64 documentation</title>
+  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.85 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3.64
+                0.3.85
               </div>
             
           
@@ -395,8 +395,8 @@ C:Usersandregithubfriendlyteststrb_english.py located in the <code class="docuti
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.</p>
 </div>
-<p>Friendly version: 0.3.64
-Python version: 3.9.0</p>
+<p>Friendly version: 0.3.85
+Python version: 3.9.5</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="generic">
@@ -1329,7 +1329,7 @@ Exception raised on line 89 of file TESTS:\runtime\test_name_error.py.
 <div class="section" id="urllib-error">
 <h3>Urllib error<a class="headerlink" href="#urllib-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;PYTHON_LIB:\urllib\request.py&quot;, line 1342, in do_open
+  File &quot;PYTHON_LIB:\urllib\request.py&quot;, line 1346, in do_open
        ... More lines not shown. ...
   File &quot;PYTHON_LIB:\socket.py&quot;, line 822, in create_connection
     for res in getaddrinfo(host, port, 0, SOCK_STREAM):
@@ -1343,9 +1343,9 @@ Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_os_error.py&quot;, line 7, in test_Urllib_error
     request.urlopen(&quot;http://does_not_exist&quot;)
        ... More lines not shown. ...
-  File &quot;PYTHON_LIB:\urllib\request.py&quot;, line 1371, in http_open
+  File &quot;PYTHON_LIB:\urllib\request.py&quot;, line 1375, in http_open
     return self.do_open(http.client.HTTPConnection, req)
-  File &quot;PYTHON_LIB:\urllib\request.py&quot;, line 1345, in do_open
+  File &quot;PYTHON_LIB:\urllib\request.py&quot;, line 1349, in do_open
     raise URLError(err)
 URLError: &lt;urlopen error [Errno 11001] getaddrinfo failed&gt;
 
@@ -1370,12 +1370,12 @@ Execution stopped on line 7 of file TESTS:\runtime\test_os_error.py.
         request:  &lt;module urllib.request&gt; from PYTHON_LIB:\urllib\request.py
         request.urlopen:  &lt;function urlopen&gt;
 
-Exception raised on line 1345 of file PYTHON_LIB:\urllib\request.py.
+Exception raised on line 1349 of file PYTHON_LIB:\urllib\request.py.
 
-   1343:                           encode_chunked=req.has_header(&#39;Transfer-encoding&#39;))
-   1344:             except OSError as err: # timeout error
---&gt;1345:                 raise URLError(err)
-   1346:             r = h.getresponse()
+   1347:                           encode_chunked=req.has_header(&#39;Transfer-encoding&#39;))
+   1348:             except OSError as err: # timeout error
+--&gt;1349:                 raise URLError(err)
+   1350:             r = h.getresponse()
 
         global URLError:  &lt;class urllib.error.URLError&gt;
 </pre></div>

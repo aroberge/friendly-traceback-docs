@@ -22,7 +22,7 @@ tels qu'interprétés par friendly-traceback.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly version: 0.3.64
+Friendly version: 0.3.85
 Python version: 3.8.4
 
 
@@ -309,11 +309,74 @@ Python version: 3.8.4
     -->4: __debug__ = 1
           ^
 
-    `__debug__` est une constante dans python; vous ne pouvez pas lui assigner une valeur.
+    `__debug__` est une constante dans python; vous ne pouvez pas lui assigner une valeur différente.
     
     
 
-(10) Cannot assign to f-string
+(10) Assignment to keyword (__debug__)
+--------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\assign_to_debug2.py", line 4
+        a.__debug__ = 1
+        ^
+    SyntaxError: cannot assign to __debug__
+    
+        Vous ne pouvez pas attribuer une valeur à `__debug__`.
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\assign_to_debug2.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+       1: """Should raise SyntaxError: cannot assign to __debug__ in Py 3.8
+       2:    and assignment to keyword before."""
+       3: 
+    -->4: a.__debug__ = 1
+          ^
+
+    `__debug__` est une constante dans python; vous ne pouvez pas lui assigner une valeur différente.
+    
+    
+
+(11) Assignment to Ellipsis symbol
+----------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\assign_to_ellipsis.py", line 4
+        ... = 1
+        ^
+    SyntaxError: cannot assign to Ellipsis
+    
+        Vous ne pouvez pas attribuer une valeur au symbole 'ellipsis' [`...`].
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\assign_to_ellipsis.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+       1: """Should raise SyntaxError: cannot assign to Ellipsis in Py 3.8
+       2:    and assignment to keyword before."""
+       3: 
+    -->4: ... = 1
+          ^
+
+    Le symbole `...` est une constante dans python; vous ne pouvez pas lui assigner une valeur différente.
+    
+    
+
+(12) Cannot assign to f-string
 ------------------------------
 
 .. code-block:: none
@@ -349,7 +412,7 @@ Python version: 3.8.4
     Une telle chaîne ne doit apparaître que du côté droit d'un signe d’égalité.
     
 
-(11) Cannot assign to function call: single = sign
+(13) Cannot assign to function call: single = sign
 --------------------------------------------------
 
 .. code-block:: none
@@ -388,7 +451,7 @@ Python version: 3.8.4
     et n'est pas simplement le nom d'une variable.
     
 
-(12) Cannot assign to function call: two = signs
+(14) Cannot assign to function call: two = signs
 ------------------------------------------------
 
 .. code-block:: none
@@ -426,7 +489,7 @@ Python version: 3.8.4
     est une fonction et non le nom d’une variable.
     
 
-(13) Assign to generator expression
+(15) Assign to generator expression
 -----------------------------------
 
 .. code-block:: none
@@ -457,7 +520,7 @@ Python version: 3.8.4
     expression génératrice au lieu du nom d'une variable.
     
 
-(14) Cannot assign to literal - 4
+(16) Cannot assign to literal - 4
 ---------------------------------
 
 .. code-block:: none
@@ -497,7 +560,7 @@ Python version: 3.8.4
     
     
 
-(15) Cannot assign to literal int
+(17) Cannot assign to literal int
 ---------------------------------
 
 .. code-block:: none
@@ -535,7 +598,7 @@ Python version: 3.8.4
     
     
 
-(16) Cannot assign to literal int - 2
+(18) Cannot assign to literal int - 2
 -------------------------------------
 
 .. code-block:: none
@@ -571,7 +634,7 @@ Python version: 3.8.4
     
     
 
-(17) Cannot assign to literal - 5
+(19) Cannot assign to literal - 5
 ---------------------------------
 
 .. code-block:: none
@@ -608,7 +671,7 @@ Python version: 3.8.4
     
     
 
-(18) Cannot assign to literal - 3
+(20) Cannot assign to literal - 3
 ---------------------------------
 
 .. code-block:: none
@@ -648,7 +711,7 @@ Python version: 3.8.4
     
     
 
-(19) Assign to keyword def
+(21) Assign to keyword def
 --------------------------
 
 .. code-block:: none
@@ -680,7 +743,7 @@ Python version: 3.8.4
     
     
 
-(20) Assign to keyword else
+(22) Assign to keyword else
 ---------------------------
 
 .. code-block:: none
@@ -712,7 +775,7 @@ Python version: 3.8.4
     
     
 
-(21) Assignment to keyword (None)
+(23) Assignment to keyword (None)
 ---------------------------------
 
 .. code-block:: none
@@ -739,11 +802,11 @@ Python version: 3.8.4
     -->4: None = 1
           ^
 
-    `None` est une constante dans python; vous ne pouvez pas lui assigner une valeur.
+    `None` est une constante dans python; vous ne pouvez pas lui assigner une valeur différente.
     
     
 
-(22) Assign to math operation
+(24) Assign to math operation
 -----------------------------
 
 .. code-block:: none
@@ -776,7 +839,38 @@ Python version: 3.8.4
     utilisé uniquement pour attribuer une valeur à une variable.
     
 
-(23) Augmented assignment to literal
+(25) def: missing parentheses
+-----------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\async_def_missing_parens.py", line 1
+        async def name:
+                      ^
+    SyntaxError: invalid syntax
+    
+        Avez-vous oublié d’ajouter des parenthèses ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\async_def_missing_parens.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: async def name:
+                        ^
+
+    Vous avez peut-être oublié d’inclure des parenthèses.
+    Vous avez peut-être voulu écrire 
+    
+        async def name():
+    
+
+(26) Augmented assignment to literal
 ------------------------------------
 
 .. code-block:: none
@@ -806,7 +900,7 @@ Python version: 3.8.4
     Vous ne pouvez attribuer des objets qu’à des identifiants (noms de variables).
     
 
-(24) Walrus/Named assignment depending on Python version
+(27) Walrus/Named assignment depending on Python version
 --------------------------------------------------------
 
 .. code-block:: none
@@ -833,11 +927,11 @@ Python version: 3.8.4
     -->4: (True := 1)
            ^
 
-    `True` est une constante dans python; vous ne pouvez pas lui assigner une valeur.
+    `True` est une constante dans python; vous ne pouvez pas lui assigner une valeur différente.
     
     
 
-(25) Backslash instead of slash
+(28) Backslash instead of slash
 -------------------------------
 
 .. code-block:: none
@@ -867,7 +961,7 @@ Python version: 3.8.4
     Je suppose que vous vouliez diviser par le nombre 4.0
     et avez écrit \ au lieu de /.
 
-(26) break outside loop
+(29) break outside loop
 -----------------------
 
 .. code-block:: none
@@ -896,7 +990,7 @@ Python version: 3.8.4
     Le mot-clé Python `break` ne peut être utilisé qu'à l'intérieur d'une boucle `for` ou à l'intérieur d'une boucle `while`.
     
 
-(27) Cannot use star operator
+(30) Cannot use star operator
 -----------------------------
 
 .. code-block:: none
@@ -926,7 +1020,7 @@ Python version: 3.8.4
     à chaque élément d’un itérable, ce qui n’a pas de sens ici.
     
 
-(28) Cannot use double star operator
+(31) Cannot use double star operator
 ------------------------------------
 
 .. code-block:: none
@@ -954,7 +1048,7 @@ Python version: 3.8.4
     ou n’a pas de sens ici.
     
 
-(29) Missing class name
+(32) Missing class name
 -----------------------
 
 .. code-block:: none
@@ -986,7 +1080,7 @@ Python version: 3.8.4
     
     
 
-(30) Missing () for tuples in comprehension
+(33) Missing () for tuples in comprehension
 -------------------------------------------
 
 .. code-block:: none
@@ -1023,7 +1117,7 @@ Python version: 3.8.4
     
     
 
-(31) Comprehension with condition (no else)
+(34) Comprehension with condition (no else)
 -------------------------------------------
 
 .. code-block:: none
@@ -1060,7 +1154,7 @@ Python version: 3.8.4
     
     
 
-(32) Comprehension with condition (with else)
+(35) Comprehension with condition (with else)
 ---------------------------------------------
 
 .. code-block:: none
@@ -1097,7 +1191,7 @@ Python version: 3.8.4
     
     
 
-(33) continue outside loop
+(36) continue outside loop
 --------------------------
 
 .. code-block:: none
@@ -1126,7 +1220,7 @@ Python version: 3.8.4
     Le mot-clé Python `continue` ne peut être utilisé qu'à l'intérieur d'une boucle `for` ou à l'intérieur d'une boucle `while`.
     
 
-(34) Copy/paste from interpreter
+(37) Copy/paste from interpreter
 --------------------------------
 
 .. code-block:: none
@@ -1156,7 +1250,7 @@ Python version: 3.8.4
     L’invite Python, `>>>`, ne doit pas être incluse dans votre code.
     
 
-(35) def: positional arg after kwargs
+(38) def: positional arg after kwargs
 -------------------------------------
 
 .. code-block:: none
@@ -1186,7 +1280,7 @@ Python version: 3.8.4
     arguments nommés dans votre définition de fonction.
     
 
-(36) def: named arguments must follow bare *
+(39) def: named arguments must follow bare *
 --------------------------------------------
 
 .. code-block:: none
@@ -1219,7 +1313,7 @@ Python version: 3.8.4
     par `*, argument=valeur`.
     
 
-(37) def: misused as code block
+(40) def: misused as code block
 -------------------------------
 
 .. code-block:: none
@@ -1252,7 +1346,39 @@ Python version: 3.8.4
         def nom ( ... ):
     
 
-(38) def: dict as argument
+(41) def: misused as code block - 2
+-----------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_code_block_2.py", line 2
+        def :
+            ^
+    SyntaxError: invalid syntax
+    
+        Les fonctions et les méthodes ont besoin d’un nom.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_code_block_2.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+       1: class A:
+    -->2:     def :
+                  ^
+
+    Vous vouliez définir une fonction ou une méthode, mais vous avez fait des erreurs de syntaxe.
+    La syntaxe correct est :
+    
+        def nom ( ... ):
+    
+
+(42) def: dict as argument
 --------------------------
 
 .. code-block:: none
@@ -1281,7 +1407,7 @@ Python version: 3.8.4
     Vous ne pouvez utiliser que des identifiants (noms de variables) comme arguments de fonction.
     
 
-(39) def: Keyword arg only once in function definition
+(43) def: Keyword arg only once in function definition
 ------------------------------------------------------
 
 .. code-block:: none
@@ -1304,7 +1430,7 @@ Python version: 3.8.4
        1: """Should raise SyntaxError: duplicate argument 'aa' in function definition"""
        2: 
        3: 
-    -->4: def f(aa=1, aa=2):
+    -->4: def f(aa
           ^
 
     Vous avez défini une fonction répétant l'argument nommé
@@ -1313,7 +1439,7 @@ Python version: 3.8.4
     deux fois; chaque argument nommé ne doit apparaître qu'une seule fois dans une définition de fonction.
     
 
-(40) def: semi-colon after colon
+(44) def: semi-colon after colon
 --------------------------------
 
 .. code-block:: none
@@ -1343,7 +1469,7 @@ Python version: 3.8.4
     Si vous supprimez `;`, cela pourrait possiblement résoudre le problème.
     
 
-(41) def: extra comma
+(45) def: extra comma
 ---------------------
 
 .. code-block:: none
@@ -1373,7 +1499,7 @@ Python version: 3.8.4
     
         def test(a,b):
 
-(42) def: unspecified keywords before /
+(46) def: unspecified keywords before /
 ---------------------------------------
 
 .. code-block:: none
@@ -1404,7 +1530,7 @@ Python version: 3.8.4
     le symbole `/`.
     
 
-(43) def: / before star
+(47) def: / before star
 -----------------------
 
 .. code-block:: none
@@ -1436,7 +1562,7 @@ Python version: 3.8.4
     Lorsqu’ils sont utilisés ensemble, `/` doit apparaître avant `*`.
     
 
-(44) def: / before star arg
+(48) def: / before star arg
 ---------------------------
 
 .. code-block:: none
@@ -1466,7 +1592,7 @@ Python version: 3.8.4
     `*arg` doit apparaître après `/` dans une définition de fonction.
     
 
-(45) def: / used twice
+(49) def: / used twice
 ----------------------
 
 .. code-block:: none
@@ -1494,7 +1620,7 @@ Python version: 3.8.4
     Vous ne pouvez utiliser `/` qu’une seule fois dans une définition de fonction.
     
 
-(46) def: non-identifier as a function name
+(50) def: non-identifier as a function name
 -------------------------------------------
 
 .. code-block:: none
@@ -1526,7 +1652,7 @@ Python version: 3.8.4
     et qui ne contient que des lettres, des chiffres ou le caractère de soulignement.
     
 
-(47) def: using a string as a function name
+(51) def: using a string as a function name
 -------------------------------------------
 
 .. code-block:: none
@@ -1562,7 +1688,7 @@ Python version: 3.8.4
     Vous avez essayé d’utiliser une chaîne de caractères comme nom de fonction.
     
 
-(48) def: keyword cannot be argument in def - 1
+(52) def: keyword cannot be argument in def - 1
 -----------------------------------------------
 
 .. code-block:: none
@@ -1594,7 +1720,7 @@ Python version: 3.8.4
     (nom de variable) était attendu.
     
 
-(49) def: keyword cannot be argument in def - 2
+(53) def: keyword cannot be argument in def - 2
 -----------------------------------------------
 
 .. code-block:: none
@@ -1626,7 +1752,7 @@ Python version: 3.8.4
     (nom de variable) était attendu.
     
 
-(50) def: keyword cannot be argument in def - 3
+(54) def: keyword cannot be argument in def - 3
 -----------------------------------------------
 
 .. code-block:: none
@@ -1658,7 +1784,7 @@ Python version: 3.8.4
     (nom de variable) était attendu.
     
 
-(51) def: keyword cannot be argument in def - 4
+(55) def: keyword cannot be argument in def - 4
 -----------------------------------------------
 
 .. code-block:: none
@@ -1690,7 +1816,7 @@ Python version: 3.8.4
     (nom de variable) était attendu.
     
 
-(52) def: Python keyword as function name
+(56) def: Python keyword as function name
 -----------------------------------------
 
 .. code-block:: none
@@ -1722,7 +1848,7 @@ Python version: 3.8.4
     
     
 
-(53) def: list as argument - 1
+(57) def: list as argument - 1
 ------------------------------
 
 .. code-block:: none
@@ -1751,7 +1877,7 @@ Python version: 3.8.4
     Vous ne pouvez utiliser que des identifiants (noms de variables) comme arguments de fonction.
     
 
-(54) def: list as argument - 2
+(58) def: list as argument - 2
 ------------------------------
 
 .. code-block:: none
@@ -1780,7 +1906,7 @@ Python version: 3.8.4
     Vous ne pouvez utiliser que des identifiants (noms de variables) comme arguments de fonction.
     
 
-(55) def: missing colon
+(59) def: missing colon
 -----------------------
 
 .. code-block:: none
@@ -1808,7 +1934,7 @@ Python version: 3.8.4
     Une définition de fonction doit se terminer par deux point, `:`.
     
 
-(56) def: missing comma between function args
+(60) def: missing comma between function args
 ---------------------------------------------
 
 .. code-block:: none
@@ -1844,7 +1970,7 @@ Python version: 3.8.4
         def a(b, c, d):
     
 
-(57) def: missing parentheses
+(61) def: missing parentheses
 -----------------------------
 
 .. code-block:: none
@@ -1877,7 +2003,39 @@ Python version: 3.8.4
         def name():
     
 
-(58) def: missing function name
+(62) def: missing parentheses around arguments
+----------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\def_missing_parens_2.py", line 2
+        def name a, b:
+                 ^
+    SyntaxError: invalid syntax
+    
+        Avez-vous oublié d’ajouter des parenthèses ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\def_missing_parens_2.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+       1: 
+    -->2: def name a, b:
+                   ^
+
+    Vous avez peut-être oublié d’inclure des parenthèses.
+    Vous avez peut-être voulu écrire 
+    
+        def name (a, b):
+    
+
+(63) def: missing function name
 -------------------------------
 
 .. code-block:: none
@@ -1908,7 +2066,7 @@ Python version: 3.8.4
         def nom ( ... ):
     
 
-(59) def: name is parameter and global
+(64) def: name is parameter and global
 --------------------------------------
 
 .. code-block:: none
@@ -1947,7 +2105,7 @@ Python version: 3.8.4
     à l'intérieur de cette fonction, ce qui est le contraire de ce que `global` sous-entendait.
     
 
-(60) def: non-default argument follows default argument
+(65) def: non-default argument follows default argument
 -------------------------------------------------------
 
 .. code-block:: none
@@ -1990,7 +2148,7 @@ Python version: 3.8.4
     Selon Python, vous avez utilisé des arguments positionnels après des arguments nommés.
     
 
-(61) Single number used as arg in function def
+(66) Single number used as arg in function def
 ----------------------------------------------
 
 .. code-block:: none
@@ -2019,7 +2177,7 @@ Python version: 3.8.4
     Vous ne pouvez utiliser que des identificateurs (noms de variables) comme arguments de fonction.
     
 
-(62) def: operator instead of comma
+(67) def: operator instead of comma
 -----------------------------------
 
 .. code-block:: none
@@ -2050,7 +2208,7 @@ Python version: 3.8.4
     
         def test(a , b):
 
-(63) def: operator instead of equal
+(68) def: operator instead of equal
 -----------------------------------
 
 .. code-block:: none
@@ -2081,7 +2239,7 @@ Python version: 3.8.4
     
         def test(a, b=3, c=None):
 
-(64) def: operator instead of name
+(69) def: operator instead of name
 ----------------------------------
 
 .. code-block:: none
@@ -2111,7 +2269,7 @@ Python version: 3.8.4
     le résultat n'aura aucun erreur de syntaxe.
     
 
-(65) def: positional argument follows keyword argument
+(70) def: positional argument follows keyword argument
 ------------------------------------------------------
 
 .. code-block:: none
@@ -2154,7 +2312,7 @@ Python version: 3.8.4
     Selon Python, vous avez utilisé des arguments positionnels après des arguments nommés.
     
 
-(66) def: semi-colon instead of colon
+(71) def: semi-colon instead of colon
 -------------------------------------
 
 .. code-block:: none
@@ -2183,7 +2341,7 @@ Python version: 3.8.4
     Tu as écrit `;` au lieu de deux points, `:`.
     
 
-(67) def: set as argument
+(72) def: set as argument
 -------------------------
 
 .. code-block:: none
@@ -2212,7 +2370,7 @@ Python version: 3.8.4
     Vous ne pouvez utiliser que des identifiants (noms de variables) comme arguments de fonction.
     
 
-(68) def: ``*arg`` before /
+(73) def: ``*arg`` before /
 ---------------------------
 
 .. code-block:: none
@@ -2242,7 +2400,7 @@ Python version: 3.8.4
     `*arg` doit apparaître après `/` dans une définition de fonction.
     
 
-(69) def: ``*`` used twice
+(74) def: ``*`` used twice
 --------------------------
 
 .. code-block:: none
@@ -2272,7 +2430,7 @@ Python version: 3.8.4
     ou soit sous la forme `..., *args ...`.
     
 
-(70) Single string used as arg in function def
+(75) Single string used as arg in function def
 ----------------------------------------------
 
 .. code-block:: none
@@ -2301,7 +2459,7 @@ Python version: 3.8.4
     Vous ne pouvez utiliser que des identificateurs (noms de variables) comme arguments de fonction.
     
 
-(71) def: tuple as function argument
+(76) def: tuple as function argument
 ------------------------------------
 
 .. code-block:: none
@@ -2332,7 +2490,7 @@ Python version: 3.8.4
     dans le corps de la fonction.
     
 
-(72) def: tuple as function argument - 2
+(77) def: tuple as function argument - 2
 ----------------------------------------
 
 .. code-block:: none
@@ -2363,7 +2521,7 @@ Python version: 3.8.4
     dans le corps de la fonction.
     
 
-(73) Deleting constant/keyword
+(78) Deleting constant/keyword
 ------------------------------
 
 .. code-block:: none
@@ -2389,7 +2547,7 @@ Python version: 3.8.4
     Vous ne pouvez pas supprimer la constante `True`.
     
 
-(74) Cannot delete function call
+(79) Cannot delete function call
 --------------------------------
 
 .. code-block:: none
@@ -2424,7 +2582,7 @@ Python version: 3.8.4
         del f
     
 
-(75) Deleting string literal
+(80) Deleting string literal
 ----------------------------
 
 .. code-block:: none
@@ -2452,7 +2610,35 @@ Python version: 3.8.4
     des items individuels dans un conteneur.
     
 
-(76) Dot followed by parenthesis
+(81) Different operators in a row
+---------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\different_operators_in_a_row.py", line 1
+        3 */ 4
+           ^
+    SyntaxError: invalid syntax
+    
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\different_operators_in_a_row.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: 3 */ 4
+             ^
+
+    Vous ne pouvez pas avoir ces deux opérateurs, `*` et `/`,
+    qui se suivent. Peut-être avez-vous écrit l’un d’eux par erreur
+    ou vous avez oublié d’écrire quelque chose entre les deux.
+    
+
+(82) Dot followed by parenthesis
 --------------------------------
 
 .. code-block:: none
@@ -2481,7 +2667,7 @@ Python version: 3.8.4
     Peut-être que vous devez remplacer le point par une virgule.
     
 
-(77) Extra token
+(83) Extra token
 ----------------
 
 .. code-block:: none
@@ -2495,7 +2681,7 @@ Python version: 3.8.4
                   ^
     SyntaxError: invalid syntax
     
-        Avez-vous écrit [`,`] deux fois par erreur ?
+        Avez-vous écrit `,` deux fois par erreur ?
         
     Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
     
@@ -2506,11 +2692,11 @@ Python version: 3.8.4
     -->1: print(1 , , 2)
                     ^
 
-    Je suppose que vous avez écrit [`,`] deux fois de suite par erreur.
+    Je suppose que vous avez écrit `,` deux fois de suite par erreur.
     Si c’est le cas, vous devez supprimer le second.
     
 
-(78) Write elif, not else if
+(84) Write elif, not else if
 ----------------------------
 
 .. code-block:: none
@@ -2544,7 +2730,7 @@ Python version: 3.8.4
     
     
 
-(79) Write elif, not elseif
+(85) Write elif, not elseif
 ---------------------------
 
 .. code-block:: none
@@ -2578,7 +2764,7 @@ Python version: 3.8.4
     
     
 
-(80) EOL while scanning string literal
+(86) EOL while scanning string literal
 --------------------------------------
 
 .. code-block:: none
@@ -2610,7 +2796,7 @@ Python version: 3.8.4
     terminé la chaîne avec un autre guillemet sur cette ligne.
     
 
-(81) Used equal sign instead of colon
+(87) Used equal sign instead of colon
 -------------------------------------
 
 .. code-block:: none
@@ -2641,7 +2827,7 @@ Python version: 3.8.4
     avant ou exactement à la position indiquée par ^.
     
 
-(82) Parens around multiple exceptions
+(88) Parens around multiple exceptions
 --------------------------------------
 
 .. code-block:: none
@@ -2677,7 +2863,7 @@ Python version: 3.8.4
     une place pertinente dans la documentation Python.
     
 
-(83) Extra token
+(89) Extra token
 ----------------
 
 .. code-block:: none
@@ -2706,7 +2892,7 @@ Python version: 3.8.4
     Écrire simplement `print(1 / 2)` semble corriger l’erreur.
     
 
-(84) Binary f-string not allowed
+(90) Binary f-string not allowed
 --------------------------------
 
 .. code-block:: none
@@ -2731,11 +2917,11 @@ Python version: 3.8.4
     -->1: greet = bf"Hello {name}"
                     ^
 
-    Je devine que vous vouliez une chaîne "f-string" binaire;
+    Je devine que vous vouliez une chaîne de caractères formatés (f-string) binaire;
     ceci n’est pas permis.
     
 
-(85) f-string: unterminated string
+(91) f-string: unterminated string
 ----------------------------------
 
 .. code-block:: none
@@ -2768,7 +2954,7 @@ Python version: 3.8.4
     ou des guillemets ("), mais n'est pas terminé par un autre caractère semblable.
     
 
-(86) f-string with backslash
+(92) f-string with backslash
 ----------------------------
 
 .. code-block:: none
@@ -2792,7 +2978,7 @@ Python version: 3.8.4
     -->2: print(f"{'\n'.join(names)}")
                 ^
 
-    Vous avez écrit une chaîne de caractères formatés dont le contenu `{...}`
+    Vous avez écrit une chaîne de caractères formatés (f-string) dont le contenu `{...}`
     comprend une barre oblique inverse; ce n’est pas permis.
     Peut-être pouvez-vous remplacer la partie qui contient une barre oblique inverse par
     une variable. Par exemple, supposons que vous avez une chaîne comme suit :
@@ -2805,7 +2991,7 @@ Python version: 3.8.4
         f"{... bonjour ...}"
     
 
-(87) Missing terms in for statement
+(93) Missing terms in for statement
 -----------------------------------
 
 .. code-block:: none
@@ -2837,7 +3023,7 @@ Python version: 3.8.4
     
     
 
-(88) Not a chance!
+(94) Not a chance!
 ------------------
 
 .. code-block:: none
@@ -2867,7 +3053,7 @@ Python version: 3.8.4
     leur niveau d’indentation, et non pas en utilisant des accolades, comme `{...}`.
     
 
-(89) Do not import * from __future__
+(95) Do not import * from __future__
 ------------------------------------
 
 .. code-block:: none
@@ -2905,7 +3091,7 @@ Python version: 3.8.4
      annotations`.
     
 
-(90) __future__ at beginning
+(96) __future__ at beginning
 ----------------------------
 
 .. code-block:: none
@@ -2934,7 +3120,7 @@ Python version: 3.8.4
     interprète le code dans un fichier.
     Une telle instruction doit apparaître au début du fichier.
 
-(91) Typo in __future__
+(97) Typo in __future__
 -----------------------
 
 .. code-block:: none
@@ -2962,7 +3148,7 @@ Python version: 3.8.4
     Au lieu de `divisio`, peut-être que vous vouliez plutôt importer `division`.
     
 
-(92) Unknown feature in __future__
+(98) Unknown feature in __future__
 ----------------------------------
 
 .. code-block:: none
@@ -2999,7 +3185,7 @@ Python version: 3.8.4
      annotations`.
     
 
-(93) Parenthesis around generator expression
+(99) Parenthesis around generator expression
 --------------------------------------------
 
 .. code-block:: none
@@ -3033,8 +3219,8 @@ Python version: 3.8.4
     Vous devez ajouter des parenthèses qui entourent cette expression.
     
 
-(94) Space between names
-------------------------
+(100) Space between names
+-------------------------
 
 .. code-block:: none
 
@@ -3067,8 +3253,8 @@ Python version: 3.8.4
     Peut-être que vous vouliez plutôt écrire `a_b` au lieu de `a-b`.
     
 
-(95) Missing condition in if statement
---------------------------------------
+(101) Missing condition in if statement
+---------------------------------------
 
 .. code-block:: none
 
@@ -3099,8 +3285,8 @@ Python version: 3.8.4
     
     
 
-(96) use j instead of i
------------------------
+(102) use j instead of i
+------------------------
 
 .. code-block:: none
 
@@ -3134,8 +3320,8 @@ Python version: 3.8.4
     Peut-être que vous vouliez écrire `3.0j`.
     
 
-(97) Import inversion: import X from Y
---------------------------------------
+(103) Import inversion: import X from Y
+---------------------------------------
 
 .. code-block:: none
 
@@ -3168,8 +3354,8 @@ Python version: 3.8.4
     
     
 
-(98) IndentationError: expected an indented block
--------------------------------------------------
+(104) IndentationError: expected an indented block
+--------------------------------------------------
 
 .. code-block:: none
 
@@ -3200,8 +3386,8 @@ Python version: 3.8.4
     normalement commencer un nouveau bloc de code indenté.
     
 
-(99) IndentationError: unexpected indent
-----------------------------------------
+(105) IndentationError: unexpected indent
+-----------------------------------------
 
 .. code-block:: none
 
@@ -3231,7 +3417,7 @@ Python version: 3.8.4
     La ligne indiquée ci-dessus par --> est plus indentée que prévu.
     
 
-(100) IndentationError: unindent does not match ...
+(106) IndentationError: unindent does not match ...
 ---------------------------------------------------
 
 .. code-block:: none
@@ -3263,7 +3449,7 @@ Python version: 3.8.4
     La ligne indiquée ci-dessus par --> est moins indentée que prévu.
     
 
-(101) IndentationError: missing continuation line
+(107) IndentationError: missing continuation line
 -------------------------------------------------
 
 .. code-block:: none
@@ -3301,7 +3487,7 @@ Python version: 3.8.4
     à la fin de la ligne 5.
     
 
-(102) Forgot 'o' for octal
+(108) Forgot 'o' for octal
 --------------------------
 
 .. code-block:: none
@@ -3331,7 +3517,7 @@ Python version: 3.8.4
     un entier décimal et ne saviez pas qu’il ne pouvait pas commencer par des zéros.
     
 
-(103) Integer with leading zeros
+(109) Integer with leading zeros
 --------------------------------
 
 .. code-block:: none
@@ -3360,7 +3546,7 @@ Python version: 3.8.4
     et ne saviez pas qu’il ne pouvait pas commencer par des zéros.
     
 
-(104) Invalid character in identifier
+(110) Invalid character in identifier
 -------------------------------------
 
 .. code-block:: none
@@ -3392,7 +3578,7 @@ Python version: 3.8.4
     ce qui n’est pas permis.
     
 
-(105) Invalid hexadecimal number
+(111) Invalid hexadecimal number
 --------------------------------
 
 .. code-block:: none
@@ -3428,7 +3614,7 @@ Python version: 3.8.4
     suivi des caractères utilisés pour représenter la valeur du nombre.
     
 
-(106) Valid names cannot begin with a number
+(112) Valid names cannot begin with a number
 --------------------------------------------
 
 .. code-block:: none
@@ -3458,8 +3644,8 @@ Python version: 3.8.4
     Les noms valides ne peuvent pas commencer par un chiffre.
     
 
-(107) Forgot a multiplication operator
---------------------------------------
+(113) Valid names cannot begin with a number - 2
+------------------------------------------------
 
 .. code-block:: none
 
@@ -3490,7 +3676,99 @@ Python version: 3.8.4
     
     
 
-(108) Keyword can't be an expression
+(114) Valid names cannot begin with a number - 3
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\invalid_identifier_3.py", line 1
+        3job  # could be entered in a repl
+          ^
+    SyntaxError: invalid syntax
+    
+        Peut-être avez-vous oublié un opérateur de multiplication, `3 * job`.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\invalid_identifier_3.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: 3job  # could be entered in a repl
+            ^
+
+    Les noms valides ne peuvent pas commencer par un chiffre.
+    Peut-être avez-vous oublié un opérateur de multiplication, `3 * job`.
+    
+    [N.B.: `3j * ob` serait également valide
+    puisque `3j` est un nombre complexe.]
+    
+
+(115) Valid names cannot begin with a number - 4
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\invalid_identifier_4.py", line 1
+        3job = 1
+          ^
+    SyntaxError: invalid syntax
+    
+        Les noms valides ne peuvent pas commencer par un chiffre.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\invalid_identifier_4.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: 3job = 1
+            ^
+
+    Les noms valides ne peuvent pas commencer par un chiffre.
+    
+
+(116) Valid names cannot begin with a number - 5
+------------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\invalid_identifier_5.py", line 1
+        print(42java)
+                 ^
+    SyntaxError: invalid syntax
+    
+        Peut-être avez-vous oublié un opérateur de multiplication, `42 * java`.
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\invalid_identifier_5.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: print(42java)
+                   ^
+
+    Les noms valides ne peuvent pas commencer par un chiffre.
+    Peut-être avez-vous oublié un opérateur de multiplication, `42 * java`.
+    
+    [N.B.: `42j * ava` serait également valide
+    puisque `42j` est un nombre complexe.]
+    
+
+(117) Keyword can't be an expression
 ------------------------------------
 
 .. code-block:: none
@@ -3532,7 +3810,7 @@ Python version: 3.8.4
     
     
 
-(109) Invalid octal number
+(118) Invalid octal number
 --------------------------
 
 .. code-block:: none
@@ -3568,7 +3846,7 @@ Python version: 3.8.4
     suivi des caractères utilisés pour représenter la valeur de cet entier.
     
 
-(110) Inverted operators 1
+(119) Inverted operators 1
 --------------------------
 
 .. code-block:: none
@@ -3597,7 +3875,7 @@ Python version: 3.8.4
     dans le mauvais ordre: `=<` au lieu de `<=`.
     
 
-(111) Inverted operators 2
+(120) Inverted operators 2
 --------------------------
 
 .. code-block:: none
@@ -3629,7 +3907,7 @@ Python version: 3.8.4
     toutes les erreurs de syntaxe dans le code que vous avez écrit.
     
 
-(112) Keyword arg only once in function call
+(121) Keyword arg only once in function call
 --------------------------------------------
 
 .. code-block:: none
@@ -3659,7 +3937,7 @@ Python version: 3.8.4
     Chaque argument de ce type ne peut apparaître qu'une seule fois.
     
 
-(113) Keyword as attribute
+(122) Keyword as attribute
 --------------------------
 
 .. code-block:: none
@@ -3694,7 +3972,7 @@ Python version: 3.8.4
     
     
 
-(114) lambda with parentheses around arguments
+(123) lambda with parentheses around arguments
 ----------------------------------------------
 
 .. code-block:: none
@@ -3722,7 +4000,7 @@ Python version: 3.8.4
     Cela était permis dans Python 2, mais il ne l'est plus dans Python 3.
     
 
-(115) lambda with tuple as argument
+(124) lambda with tuple as argument
 -----------------------------------
 
 .. code-block:: none
@@ -3751,7 +4029,7 @@ Python version: 3.8.4
     dans le corps de la fonction.
     
 
-(116) Assign to literal in for loop
+(125) Assign to literal in for loop
 -----------------------------------
 
 .. code-block:: none
@@ -3784,7 +4062,7 @@ Python version: 3.8.4
     et non pas des littéraux comme `"char"`.
     
 
-(117) IndentationError/SyntaxError depending on version
+(126) IndentationError/SyntaxError depending on version
 -------------------------------------------------------
 
 .. code-block:: none
@@ -3813,7 +4091,7 @@ Python version: 3.8.4
     
     
 
-(118) Missing colon - if
+(127) Missing colon - if
 ------------------------
 
 .. code-block:: none
@@ -3845,7 +4123,7 @@ Python version: 3.8.4
     
     
 
-(119) Missing colon - while
+(128) Missing colon - while
 ---------------------------
 
 .. code-block:: none
@@ -3877,7 +4155,7 @@ Python version: 3.8.4
     
     
 
-(120) Missing comma in a dict
+(129) Missing comma in a dict
 -----------------------------
 
 .. code-block:: none
@@ -3917,7 +4195,46 @@ Python version: 3.8.4
     }
     
 
-(121) Missing comma in a list
+(130) Missing comma between strings in a dict
+---------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\missing_comma_in_dict_2.py", line 4
+        'c': '3',
+           ^
+    SyntaxError: invalid syntax
+    
+        Avez-vous oublié une virgule ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\missing_comma_in_dict_2.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+       1: 
+       2: a = {'a': '1',
+       3:      'b': '2'
+    -->4:      'c': '3',
+                  ^
+       5: }
+
+    Je crois que vous avez oublié une virgule entre deux chaînes de caractères
+    lors de la définition d’un dictionnaire.
+    
+    ```
+    a = {'a': '1',
+         'b': '2'
+          «,» 'c': '3',
+    }
+    ```
+
+(131) Missing comma in a list
 -----------------------------
 
 .. code-block:: none
@@ -3959,7 +4276,7 @@ Python version: 3.8.4
     certains d’entre eux pourraient soulever d’autres types d’exceptions.
     
 
-(122) Missing comma in a set
+(132) Missing comma in a set
 ----------------------------
 
 .. code-block:: none
@@ -4001,7 +4318,7 @@ Python version: 3.8.4
     certains d’entre eux pourraient soulever d’autres types d’exceptions.
     
 
-(123) Missing comma in a tuple
+(133) Missing comma in a tuple
 ------------------------------
 
 .. code-block:: none
@@ -4043,7 +4360,39 @@ Python version: 3.8.4
     certains d’entre eux pourraient soulever d’autres types d’exceptions.
     
 
-(124) Missing parenthesis for range
+(134) For loop missing 'in' operator
+------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\missing_in_with_for.py", line 1
+        for x range(4):
+              ^
+    SyntaxError: invalid syntax
+    
+        Avez-vous oublié d’écrire `in` ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\missing_in_with_for.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: for x range(4):
+                ^
+
+    Il semble que vous avez oublié d’utiliser le mot clé `in »
+    dans énoncé `for`. Peut-être que vous vouliez dire:
+    
+        for x in range(4):
+    
+    
+
+(135) Missing parenthesis for range
 -----------------------------------
 
 .. code-block:: none
@@ -4075,7 +4424,7 @@ Python version: 3.8.4
     
     
 
-(125) Name is global and nonlocal
+(136) Name is global and nonlocal
 ---------------------------------
 
 .. code-block:: none
@@ -4106,7 +4455,7 @@ Python version: 3.8.4
     Une variable peut être d'un seul type à la fois: soit globale, soit non locale, ou soit locale.
     
 
-(126) Name is parameter and nonlocal
+(137) Name is parameter and nonlocal
 ------------------------------------
 
 .. code-block:: none
@@ -4138,7 +4487,7 @@ Python version: 3.8.4
     `x` ne peut pas être les deux en même temps.
     
 
-(127) nonlocal variable not found
+(138) nonlocal variable not found
 ---------------------------------
 
 .. code-block:: none
@@ -4169,7 +4518,7 @@ Python version: 3.8.4
     mais elle n'existe pas ailleurs.
     
 
-(128) nonlocal variable not found at module level
+(139) nonlocal variable not found at module level
 -------------------------------------------------
 
 .. code-block:: none
@@ -4199,7 +4548,35 @@ Python version: 3.8.4
     Le mot clé nonlocal fait référence à une variable à l'intérieur d'une fonction
     qui a une valeur attribuée à l'extérieur de cette fonction.
 
-(129) Using pip from interpreter
+(140) Same operator twice in a row
+----------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\operator_twice_in_a_row.py", line 1
+        4****5
+           ^
+    SyntaxError: invalid syntax
+    
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\operator_twice_in_a_row.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: 4****5
+             ^
+
+    Vous ne pouvez pas écrire le même opérateur, `**`, deux fois de suite.
+    Peut-être avez-vous écrit l’un d’eux par erreur
+    ou vous avez oublié d’écrire quelque chose entre les deux.
+    
+
+(141) Using pip from interpreter
 --------------------------------
 
 .. code-block:: none
@@ -4230,7 +4607,7 @@ Python version: 3.8.4
     pas dans un interprète Python.
     
 
-(130) Using pip from interpreter 2
+(142) Using pip from interpreter 2
 ----------------------------------
 
 .. code-block:: none
@@ -4261,7 +4638,7 @@ Python version: 3.8.4
     pas dans un interprète Python.
     
 
-(131) print is a function
+(143) print is a function
 -------------------------
 
 .. code-block:: none
@@ -4295,7 +4672,7 @@ Python version: 3.8.4
     Maintenant, `print` est une fonction; vous devez utiliser des parenthèses pour l'invoquer.
     
 
-(132) print is a function 2
+(144) print is a function 2
 ---------------------------
 
 .. code-block:: none
@@ -4325,7 +4702,166 @@ Python version: 3.8.4
     Maintenant, `print` est une fonction; vous devez utiliser des parenthèses pour l'invoquer.
     
 
-(133) Quote inside a string
+(145) print is a function 3
+---------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\print_is_a_function_3.py", line 1
+        print """This is a very long string which results in a very long error message."""
+              ^
+    SyntaxError: Missing parentheses in call to 'print'. Did you mean print("""This is a very long string which results in a very long error message.""")?
+    
+        Vouliez-vous dire `print("""This is a very long st ... )` ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\print_is_a_function_3.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: print """This is a very long string which results in a very long error message."""
+                ^
+
+    Peut-être que vous avez besoin d'écrire
+    
+         print("""This is a very long st ... )
+    
+    Dans l'ancienne version de Python, `print` était un mot clé.
+    Maintenant, `print` est une fonction; vous devez utiliser des parenthèses pour l'invoquer.
+    
+
+(146) print is a function 4
+---------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\print_is_a_function_4.py", line 2
+        print len("""This is a long string
+              ^
+    SyntaxError: invalid syntax
+    
+        Vouliez-vous dire `print(...)` ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\print_is_a_function_4.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+    -->2: print len("""This is a long string
+                ^
+       3:           that spans multiple lines.""")
+
+    Dans l'ancienne version de Python, `print` était un mot clé.
+    Maintenant, `print` est une fonction; vous devez utiliser des parenthèses pour l'invoquer.
+    
+
+(147) print is a function 5
+---------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\print_is_a_function_5.py", line 2
+        print len('This is a long string that fits on a single line.')
+              ^
+    SyntaxError: invalid syntax
+    
+        Vouliez-vous dire `print(len('This ... line.'))` ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\print_is_a_function_5.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+       1: """Should raise SyntaxError: invalid syntax"""
+    -->2: print len('This is a long string that fits on a single line.')
+                ^
+
+    Dans l'ancienne version de Python, `print` était un mot clé.
+    Maintenant, `print` est une fonction; vous devez utiliser des parenthèses pour l'invoquer.
+    
+
+(148) Calling python from interpreter
+-------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\python_interpreter.py", line 1
+        python -i friendly
+                  ^
+    SyntaxError: invalid syntax
+    
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\python_interpreter.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: python -i friendly
+                    ^
+
+    Je suppose que vous essayez d’utiliser Python pour exécuter un programme.
+    Vous devez le faire à partir d’un terminal et non d’un interprète Python.
+    
+
+(149) problem with assigning a variable to Python
+-------------------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\python_not_interpreter.py", line 1
+        python = a b
+                   ^
+    SyntaxError: invalid syntax
+    
+        Avez-vous oublié quelque chose entre `a` et `b` ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\python_not_interpreter.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: python = a b
+                     ^
+
+    Python indique que l’erreur est causée par `b` écrit tout juste après `a`.
+    Peut-être que vous vouliez insérer un opérateur comme `+; -; *; ,`
+    entre `a` et `b`.
+    Les lignes de code suivantes ne causeraient pas des `SyntaxError :
+    
+        python = a + b
+        python = a - b
+        python = a * b
+        python = a, b
+    Remarque : ce ne sont là que quelques-uns des choix possibles et
+    certains d’entre eux pourraient soulever d’autres types d’exceptions.
+    
+
+(150) Quote inside a string
 ---------------------------
 
 .. code-block:: none
@@ -4358,7 +4894,7 @@ Python version: 3.8.4
     à l'intérieur d'une chaîne qui était délimitée par ces mêmes caractères.
     
 
-(134) Raising multiple exceptions
+(151) Raising multiple exceptions
 ---------------------------------
 
 .. code-block:: none
@@ -4385,7 +4921,7 @@ Python version: 3.8.4
     Je crois que vous essayez de lever une exception en utilisant la syntaxe de Python 2.
     
 
-(135) Cannot use return outside function
+(152) Cannot use return outside function
 ----------------------------------------
 
 .. code-block:: none
@@ -4413,7 +4949,94 @@ Python version: 3.8.4
     Vous ne pouvez utiliser un énoncé `return` qu'à l’intérieur d’une fonction ou d’une méthode.
     
 
-(136) Single = instead of double == with if
+(153) Semi-colon instead of comma - 1
+-------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\semi_colon_instead_of_comma_1.py", line 1
+        a = [1, 2; 3]
+                 ^
+    SyntaxError: invalid syntax
+    
+        Avez-vous oublié une virgule ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\semi_colon_instead_of_comma_1.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: a = [1, 2; 3]
+                   ^
+
+    Vous avez écrit un point-virgule, `;`, au lieu d'une virgule.
+    
+    
+
+(154) Semi-colon instead of commas - 2
+--------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\semi_colon_instead_of_comma_2.py", line 1
+        a = [1; 2; 3]
+              ^
+    SyntaxError: invalid syntax
+    
+        Vouliez-vous écrire des virgules ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\semi_colon_instead_of_comma_2.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: a = [1; 2; 3]
+                ^
+
+    Vous avez écrit des points-virgules, `;`, au lieu de virgules.
+    
+    
+
+(155) Semi-colon instead of commas - 3
+--------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\semi_colon_instead_of_comma_3.py", line 1
+        a = [1; 2; 3];
+              ^
+    SyntaxError: invalid syntax
+    
+        Vouliez-vous écrire des virgules ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\semi_colon_instead_of_comma_3.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: a = [1; 2; 3];
+                ^
+
+    Vous avez écrit des points-virgules, `;`, au lieu de virgules.
+    
+    
+
+(156) Single = instead of double == with if
 -------------------------------------------
 
 .. code-block:: none
@@ -4443,7 +5066,7 @@ Python version: 3.8.4
     Vous avez utilisé un opérateur d’affectation `=` au lieu d’un opérateur d'égalité `==` 
     
 
-(137) Single = instead of double == with elif
+(157) Single = instead of double == with elif
 ---------------------------------------------
 
 .. code-block:: none
@@ -4475,7 +5098,7 @@ Python version: 3.8.4
     Vous avez utilisé un opérateur d’affectation `=` au lieu d’un opérateur d'égalité `==` 
     
 
-(138) Single = instead of double == with while
+(158) Single = instead of double == with while
 ----------------------------------------------
 
 .. code-block:: none
@@ -4507,7 +5130,95 @@ Python version: 3.8.4
     un opérateur d'égalité, `==`, ou l'opérateur `:=`.
     
 
-(139) Too many nested blocks
+(159) Space between operators 1
+-------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\space_between_operators_1.py", line 1
+        a = 2 * * 5
+                ^
+    SyntaxError: invalid syntax
+    
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\space_between_operators_1.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: a = 2 * * 5
+                  ^
+
+    Vous ne pouvez pas écrire le même opérateur, `*`, deux fois de suite.
+    Peut-être avez-vous écrit l’un d’eux par erreur
+    ou vous avez oublié d’écrire quelque chose entre les deux.
+    Ou peut-être avez-vous inclus un espace par erreur entre les deux opérateurs
+    et vouliez écrire l'opérateur `**`.
+    
+
+(160) Space between operators 2
+-------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\space_between_operators_2.py", line 1
+        a / = b
+            ^
+    SyntaxError: invalid syntax
+    
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\space_between_operators_2.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: a / = b
+              ^
+
+    Vous ne pouvez pas avoir ces deux opérateurs, `/` et `=`,
+    qui se suivent. Peut-être avez-vous écrit l’un d’eux par erreur
+    ou vous avez oublié d’écrire quelque chose entre les deux.
+    Ou peut-être avez-vous inclus un espace par erreur entre les deux opérateurs
+    et vouliez écrire l'opérateur `/=`.
+    
+
+(161) Space in variable name
+----------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\space_in_variable_name.py", line 1
+        my name = André
+           ^
+    SyntaxError: invalid syntax
+    
+        Vouliez-vous dire `my_name` ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\space_in_variable_name.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: my name = André
+             ^
+
+    Vous ne pouvez pas avoir d’espaces dans les identifiants (noms de variables).
+    
+
+(162) Too many nested blocks
 ----------------------------
 
 .. code-block:: none
@@ -4529,7 +5240,7 @@ Python version: 3.8.4
     songez à réduire le nombre de blocs de code imbriqués.
     
 
-(140) Triple-equal sign
+(163) Triple-equal sign
 -----------------------
 
 .. code-block:: none
@@ -4562,7 +5273,7 @@ Python version: 3.8.4
     exactement le même objet, utilisez l’opérateur `is`.
     
 
-(141) Unclosed bracket
+(164) Unclosed bracket
 ----------------------
 
 .. code-block:: none
@@ -4595,7 +5306,7 @@ Python version: 3.8.4
                       ^
     
 
-(142) Unclosed parenthesis - 1
+(165) Unclosed parenthesis - 1
 ------------------------------
 
 .. code-block:: none
@@ -4619,6 +5330,7 @@ Python version: 3.8.4
        2: x = int('1'
     -->3: if x == 1:
                    ^
+       4:     print('yes')
 
     Le symbole parenthèse `(` à la ligne 2 n'est pas fermé par le symbole correspondant.
     
@@ -4626,7 +5338,7 @@ Python version: 3.8.4
                   ^
     
 
-(143) Unclosed parenthesis - 2
+(166) Unclosed parenthesis - 2
 ------------------------------
 
 .. code-block:: none
@@ -4657,7 +5369,7 @@ Python version: 3.8.4
                ^
     
 
-(144) Unclosed parenthesis - 3
+(167) Unclosed parenthesis - 3
 ------------------------------
 
 .. code-block:: none
@@ -4677,20 +5389,53 @@ Python version: 3.8.4
     'TESTS:\syntax\unclosed_paren_3.py'
     jusqu'à l'endroit indiqué par ^.
     
-       3: if 3:
        4:     if 1:
        5:         print(((123))
        6: 
     -->7: if 2:
               ^
+       8:     print(123))
 
     Le symbole parenthèse `(` à la ligne 5 n'est pas fermé par le symbole correspondant.
     
         5:         print(((123))
                         ^
+    Si cela est incorrect, veuillez signaler ce cas.
     
 
-(145) Content passed continuation line character
+(168) Unclosed parenthesis - 4
+------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\unclosed_paren_4.py", line 4
+        def test():
+        ^
+    SyntaxError: invalid syntax
+    
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\unclosed_paren_4.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+       1: # equal number of ( and ) in file
+       2: print('hello'
+       3: 
+    -->4: def
+          ^
+
+    Le symbole parenthèse `(` à la ligne 2 n'est pas fermé par le symbole correspondant.
+    
+        2: print('hello'
+                ^
+    
+
+(169) Content passed continuation line character
 ------------------------------------------------
 
 .. code-block:: none
@@ -4722,7 +5467,7 @@ Python version: 3.8.4
     Je suppose que vous avez oublié d’enfermer du contenu dans une chaîne de caractères.
     
 
-(146) Unexpected EOF while parsing
+(170) Unexpected EOF while parsing
 ----------------------------------
 
 .. code-block:: none
@@ -4760,7 +5505,7 @@ Python version: 3.8.4
                       ^
     
 
-(147) Invalid character (unicode quote)
+(171) Invalid character (unicode quote)
 ---------------------------------------
 
 .. code-block:: none
@@ -4794,7 +5539,38 @@ Python version: 3.8.4
     au lieu d'un guillemet normal (simple ou double) pour une chaîne de caractères.
     
 
-(148) Unmatched closing parenthesis
+(172) Unmatched closing curly bracket
+-------------------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\unmatched_closing_curly.py", line 6
+        3, 4,}}
+              ^
+    SyntaxError: unmatched '}'
+    
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\unmatched_closing_curly.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+       1: """Should raise SyntaxError: invalid syntax for Python < 3.8
+       2:    otherwise, SyntaxError: unmatched ')'
+       3: """
+       4: a = {1,
+       5:     2,
+    -->6:     3, 4,}}
+                    ^
+
+    Le symbole accolade `}` à la ligne 6 n'a pas de symbole ouvrant qui lui correspond.
+    
+
+(173) Unmatched closing parenthesis
 -----------------------------------
 
 .. code-block:: none
@@ -4825,7 +5601,7 @@ Python version: 3.8.4
     Le symbole parenthèse `)` à la ligne 6 n'a pas de symbole ouvrant qui lui correspond.
     
 
-(149) Mismatched brackets - 1
+(174) Mismatched brackets - 1
 -----------------------------
 
 .. code-block:: none
@@ -4855,7 +5631,7 @@ Python version: 3.8.4
                ^       ^
     
 
-(150) Mismatched brackets - 2
+(175) Mismatched brackets - 2
 -----------------------------
 
 .. code-block:: none
@@ -4889,7 +5665,35 @@ Python version: 3.8.4
                  ^
     
 
-(151) Unterminated triple quoted string
+(176) Unmatched brackets - 3
+----------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\unmatched_closing_bracket_3.py", line 3
+        3]]
+          ^
+    SyntaxError: unmatched ']'
+    
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\unmatched_closing_bracket_3.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+       1: x = [1,
+       2:      2,
+    -->3:      3]]
+                 ^
+
+    Le symbole crochet `]` à la ligne 3 n'a pas de symbole ouvrant qui lui correspond.
+    
+
+(177) Unterminated triple quoted string
 ---------------------------------------
 
 .. code-block:: none
@@ -4909,7 +5713,6 @@ Python version: 3.8.4
     
     Python ne peut pas comprendre le code du fichier
     'TESTS:\syntax\unterminated_triple_quote_string.py'
-    pour une raison non spécifiée.
     
        1: some_text =
 
@@ -4917,7 +5720,7 @@ Python version: 3.8.4
     sans inclure les triples guillemets nécessaires pour mettre fin à la chaîne.
     
 
-(152) TabError
+(178) TabError
 --------------
 
 .. code-block:: none
@@ -4950,7 +5753,7 @@ Python version: 3.8.4
     -->7: 	pass
                ^
 
-(153) EOL unescaped backslash
+(179) EOL unescaped backslash
 -----------------------------
 
 .. code-block:: none
@@ -4983,7 +5786,7 @@ Python version: 3.8.4
     deviez en écrire deux `\` d’affilée.
     
 
-(154) Using the backquote character
+(180) Using the backquote character
 -----------------------------------
 
 .. code-block:: none
@@ -5015,7 +5818,36 @@ Python version: 3.8.4
     ou que vous avez copié du code de Python 2;
     dans ce dernier cas, utilisez la fonction `repr(x)`.
 
-(155) Missing condition in while statement
+(181) Walrus instead of equal
+-----------------------------
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+        __import__(name)
+      File "TESTS:\syntax\walrus_instead_of_equal.py", line 1
+        a := 3
+          ^
+    SyntaxError: invalid syntax
+    
+        Voulez-vous utiliser `=` ?
+        
+    Une exception de type `SyntaxError` se produit lorsque Python ne peut pas comprendre votre code.
+    
+    Python peut seulement comprendre le code du fichier
+    'TESTS:\syntax\walrus_instead_of_equal.py'
+    jusqu'à l'endroit indiqué par ^.
+    
+    -->1: a := 3
+            ^
+
+    Vous utilisez l’opérateur d’affectation augmentée `:=` là où
+    l’opérateur d’affectation normal `=` était requis.
+    
+
+(182) Missing condition in while statement
 ------------------------------------------
 
 .. code-block:: none
@@ -5047,7 +5879,7 @@ Python version: 3.8.4
     
     
 
-(156) Would-be variable declaration
+(183) Would-be variable declaration
 -----------------------------------
 
 .. code-block:: none
@@ -5079,7 +5911,7 @@ Python version: 3.8.4
     Si vous supprimez `var`, vous aurez une instruction Python valide.
     
 
-(157) Would-be variable declaration - 2
+(184) Would-be variable declaration - 2
 ---------------------------------------
 
 .. code-block:: none
@@ -5106,9 +5938,10 @@ Python version: 3.8.4
        4: if (
     -->5:     var start := begin < end
                   ^
-       6:    ):
+       6:    )
 
     Il semble que vous essayiez de déclarer que `start` est
     une variable utilisant le mot `var`.
-    Si vous supprimez `var`, vous aurez une instruction Python valide.
+    Toutefois, même si vous supprimez `var`, il y aurait encore
+    au moins une autre erreur de syntaxe.
     

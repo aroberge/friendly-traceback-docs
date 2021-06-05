@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>friendly.path_info &mdash; Friendly 0.3.57 documentation</title>
+  <title>friendly.path_info &mdash; Friendly 0.3.85 documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.3
+                0.3.85
               </div>
             
           
@@ -254,10 +254,11 @@
 <span class="sd">it might be desirable to exclude additional files.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">rich</span>  <span class="c1"># Only use it to find site-packages</span>
 
 <span class="n">EXCLUDED_FILE_PATH</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="n">EXCLUDED_DIR_NAMES</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-<span class="n">SITE_PACKAGES</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">SITE_PACKAGES</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">rich</span><span class="o">.</span><span class="vm">__file__</span><span class="p">),</span> <span class="s2">&quot;..&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">exclude_file_from_traceback</span><span class="p">(</span><span class="n">full_path</span><span class="p">):</span>
@@ -338,31 +339,23 @@
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">python</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
         <span class="n">this_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">friendly_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">this_dir</span><span class="p">,</span> <span class="s2">&quot;..&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tests</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-        <span class="n">tests</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">friendly_path</span><span class="p">,</span> <span class="s2">&quot;tests&quot;</span><span class="p">)</span>
+        <span class="n">friendly_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">this_dir</span><span class="p">,</span> <span class="s2">&quot;..&quot;</span><span class="p">))</span>
+        <span class="n">tests</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">friendly_path</span><span class="p">,</span> <span class="s2">&quot;tests&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">tests</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">tests</span> <span class="o">=</span> <span class="n">tests</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">shorten_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-        <span class="k">global</span> <span class="n">SITE_PACKAGES</span>
+    <span class="k">def</span> <span class="nf">shorten_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
         <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># can happen in some rare cases</span>
             <span class="k">return</span> <span class="n">path</span>
         <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>  <span class="c1"># We might get passed a path repr</span>
         <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
         <span class="n">path_lower</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>  <span class="c1"># make sure it is up to date</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tests</span> <span class="ow">and</span> <span class="n">path_lower</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tests</span><span class="o">.</span><span class="n">lower</span><span class="p">()):</span>
             <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;TESTS:&quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tests</span><span class="p">)</span> <span class="p">:]</span>
-        <span class="k">elif</span> <span class="n">path_lower</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">friendly_path</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span> <span class="ow">and</span> <span class="n">path_lower</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span>
-            <span class="s2">&quot;-packages&quot;</span>
-        <span class="p">):</span>
-            <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;INSTALLED:&quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">friendly_path</span><span class="p">)</span> <span class="p">:]</span>
-            <span class="n">SITE_PACKAGES</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">friendly_path</span>
-        <span class="k">elif</span> <span class="n">path_lower</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cwd</span><span class="o">.</span><span class="n">lower</span><span class="p">()):</span>
-            <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;CWD:&quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cwd</span><span class="p">)</span> <span class="p">:]</span>
+        <span class="k">elif</span> <span class="n">path_lower</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">SITE_PACKAGES</span><span class="o">.</span><span class="n">lower</span><span class="p">()):</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;LOCAL:&quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">SITE_PACKAGES</span><span class="p">)</span> <span class="p">:]</span>
         <span class="k">elif</span> <span class="n">path_lower</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">lower</span><span class="p">()):</span>
             <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;PYTHON_LIB:&quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">python</span><span class="p">)</span> <span class="p">:]</span>
         <span class="k">elif</span> <span class="n">path_lower</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">lower</span><span class="p">()):</span>
@@ -376,19 +369,17 @@
 <span class="n">path_utils</span> <span class="o">=</span> <span class="n">PathUtil</span><span class="p">()</span>
 
 
-<div class="viewcode-block" id="show_paths"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.show_paths">[docs]</a><span class="k">def</span> <span class="nf">show_paths</span><span class="p">():</span>
+<div class="viewcode-block" id="show_paths"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.show_paths">[docs]</a><span class="k">def</span> <span class="nf">show_paths</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
     <span class="sd">&quot;&quot;&quot;To avoid displaying very long file paths to the user,</span>
 <span class="sd">    Friendly-traceback tries to shorten them using some easily</span>
 <span class="sd">    recognized synonyms. This function shows the path synonyms</span>
 <span class="sd">    currently used.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CWD =&quot;</span><span class="p">,</span> <span class="n">path_utils</span><span class="o">.</span><span class="n">cwd</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HOME =&quot;</span><span class="p">,</span> <span class="n">path_utils</span><span class="o">.</span><span class="n">home</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">SITE_PACKAGES</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INSTALLED =&quot;</span><span class="p">,</span> <span class="n">path_utils</span><span class="o">.</span><span class="n">friendly_path</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LOCAL =&quot;</span><span class="p">,</span> <span class="n">SITE_PACKAGES</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PYTHON_LIB =&quot;</span><span class="p">,</span> <span class="n">path_utils</span><span class="o">.</span><span class="n">python</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">path_utils</span><span class="o">.</span><span class="n">tests</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TESTS =&quot;</span><span class="p">,</span> <span class="n">path_utils</span><span class="o">.</span><span class="n">tests</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PYTHON_LIB =&quot;</span><span class="p">,</span> <span class="n">path_utils</span><span class="o">.</span><span class="n">python</span><span class="p">)</span></div>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TESTS =&quot;</span><span class="p">,</span> <span class="n">path_utils</span><span class="o">.</span><span class="n">tests</span><span class="p">)</span></div>
 </pre></div>
 
            </div>
