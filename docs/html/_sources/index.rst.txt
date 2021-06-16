@@ -20,21 +20,21 @@ designed with beginners in mind.
     as I believe that they are more easily understandable by most users.
     Occasionally, I write some examples as text so that they
     can provide the required information to people relying on screen readers.
-    If you are such a user and need help because the use of screenshots
+    If you rely on screen readers and need help because the use of screenshots
     prevents you from understanding the explanations, please do not hesitate to
     reach out to me: andre.roberge@gmail.com
 
 
-To be more specific, while friendly 
+To be more specific, while **friendly**
 can be useful for advanced programmers,
 it strives to present the information in a way that is easily
 understood by beginners and/or by users
 who would like to get information about traceback in their own language.
-friendly can give more detailed information as to
+**friendly** can give more detailed information as to
 **where** an exception occurred, **what** a given exception means and
 **why** it might have occurred (sometimes adding suggestions as to how to fix it.)
 
-Even though friendly can be used on its own with a specially
+Even though **friendly** can be used on its own with a specially
 designed console, a better option might be to use it together with
 GUI-based editors/IDE including JupyterLab and Jupyter notebooks.
 I explain how to do so later.

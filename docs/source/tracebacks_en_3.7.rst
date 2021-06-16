@@ -2,12 +2,11 @@
 Friendly tracebacks - in English
 ======================================
 
-Friendly-traceback aims to provide friendlier feedback when an exception
+Friendly aims to provide friendlier feedback when an exception
 is raised than what is done by Python.
 Below, we can find some examples. SyntaxError cases, as well as TabError and
 IndentationError cases, are shown in a separate page.
-Ideally, an example of each case handled by friendly-traceback
-should be included here.
+Not all cases handled by friendly are included here.
 
 .. note::
 
@@ -16,7 +15,7 @@ should be included here.
      This needs to be done explicitly, independently of updating the
      documentation using Sphinx.
 
-Friendly version: 0.3.89
+Friendly version: 0.3.100
 Python version: 3.7.8
 
 

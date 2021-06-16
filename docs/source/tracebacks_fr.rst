@@ -2,10 +2,8 @@
 |france| Friendly tracebacks - en Français
 ===========================================
 
-Le but principal de friendly-traceback est de fournir des rétroactions plus
+Le but principal de friendly est de fournir des rétroactions plus
 conviviales que les fameux **tracebacks** de Python lorsqu'une exception survient.
-Ci-dessous, on peut voir quelques exemples. Le but éventuel est de documenter
-ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
 
 .. note::
 
@@ -15,7 +13,7 @@ ici tous les exemples possibles tels qu'interprétés par friendly-traceback.
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly version: 0.3.89
+Friendly version: 0.3.100
 Python version: 3.8.4
 
 
@@ -1229,7 +1227,7 @@ Bad type for unary operator
     TypeError: bad operand type for unary +: 'str'
     
         Peut-être que vous vouliez plutôt écrire `+=` au lieu de `=+`
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1262,7 +1260,7 @@ Builtin has no len
     
         Avez-vous oublié d’invoquer `"Hello world".split` ?
         
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1294,7 +1292,7 @@ Can only concatenate
         result = a_tuple + a_list
     TypeError: can only concatenate tuple (not "list") to tuple
     
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1328,7 +1326,7 @@ Cannot convert dictionary update sequence
     
         Peut-être que vous vouliez plutôt utiliser la méthode `dict.fromkeys()`.
         
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1362,7 +1360,7 @@ Cannot multiply by non int
     
         Avez-vous oublié de convertir `"2"` en un entier ?
         
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1390,7 +1388,7 @@ Cannot unpack non iterable object
         a, b = 42.0
     TypeError: cannot unpack non-iterable float object
     
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1422,7 +1420,7 @@ Comparison not supported
     
         Avez-vous oublié de convertir `a` en un entier (`int`) ?
         
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1455,7 +1453,7 @@ Derive from BaseException
         raise "exception"  # noqa
     TypeError: exceptions must derive from BaseException
     
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1483,7 +1481,7 @@ Indices must be integers or slices
     
         Avez-vous oublié de convertir `"2"` en un entier ?
         
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1517,7 +1515,7 @@ Not an integer
     
         Avez-vous oublié de convertir `c, d` en entiers ?
         
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1550,7 +1548,7 @@ Not callable
     
         Vouliez-vous dire `[1, 2][a + b]` ?
         
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1589,7 +1587,7 @@ Object is not iterable
         list(42)
     TypeError: 'int' object is not iterable
     
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1622,7 +1620,7 @@ Object is not subscriptable
     
         Vouliez-vous dire `f(1)` ?
         
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1655,7 +1653,7 @@ Slice indices must be integers or None
         [1, 2, 3][1.0:2.0]
     TypeError: slice indices must be integers or None or have an __index__ method
     
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1685,7 +1683,7 @@ Too few positional argument
         fn(1)
     TypeError: fn() missing 2 required positional arguments: 'b' and 'c'
     
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1717,7 +1715,7 @@ Too many positional argument
     
         Peut-être avez-vous oublié `self` lors de la définition de `f`.
         
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1750,7 +1748,7 @@ Tuple no item assignment
     
         Voulez-vous utiliser une liste?
         
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1784,7 +1782,7 @@ Unhachable type
         {[1, 2]: 1}
     TypeError: unhashable type: 'list'
     
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1813,7 +1811,7 @@ Unsupported operand types
         a @= b
     TypeError: unsupported operand type(s) for @=: 'str' and 'int'
     
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.
@@ -1849,7 +1847,7 @@ function has no len
     
         Avez-vous oublié d’invoquer `bad` ?
         
-    Une exception `TypeError` est généralement causée une tentative
+    Une exception `TypeError` est généralement causée par une tentative
     de combiner deux types d’objets incompatibles,
     en invoquant une fonction avec le mauvais type d’objet,
     ou en tentant d'effectuer une opération non permise sur un type d'objet donné.

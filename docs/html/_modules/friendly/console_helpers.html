@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>friendly.console_helpers &mdash; Friendly 0.3.64 documentation</title>
+  <title>friendly.console_helpers &mdash; Friendly 0.3.99 documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.3.64
+                0.3.99
               </div>
             
           
@@ -255,12 +255,19 @@
 <span class="c1"># NOTE: __all__ is defined at the very bottom of this file</span>
 <span class="kn">import</span> <span class="nn">friendly</span>
 
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">debug_helper</span><span class="p">,</span> <span class="n">__version__</span>
+<span class="kn">from</span> <span class="nn">friendly</span> <span class="kn">import</span> <span class="n">debug_helper</span><span class="p">,</span> <span class="n">formatters</span><span class="p">,</span> <span class="n">__version__</span>
 <span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">session</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">formatters</span>
 <span class="kn">from</span> <span class="nn">.info_generic</span> <span class="kn">import</span> <span class="n">get_generic_explanation</span>
 <span class="kn">from</span> <span class="nn">.path_info</span> <span class="kn">import</span> <span class="n">show_paths</span>
 <span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
+
+
+<span class="k">def</span> <span class="nf">_show_paths_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Shows the paths corresponding to synonyms used.&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="n">show_paths</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_show_paths_repr</span>
 
 
 <div class="viewcode-block" id="back"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.back">[docs]</a><span class="k">def</span> <span class="nf">back</span><span class="p">():</span>
@@ -282,11 +289,12 @@
     <span class="n">session</span><span class="o">.</span><span class="n">friendly</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="dark"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.dark">[docs]</a><span class="k">def</span> <span class="nf">dark</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
-    <span class="sd">&quot;&quot;&quot;Synonym of set_formatter(&#39;dark&#39;) designed to be used</span>
-<span class="sd">    within iPython/Jupyter programming environments or at a terminal.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">set_formatter</span><span class="p">(</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span></div>
+<span class="k">def</span> <span class="nf">_back_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Removes the last recorded traceback item.&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="n">back</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_back_repr</span>
 
 
 <div class="viewcode-block" id="explain"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.explain">[docs]</a><span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">):</span>
@@ -299,11 +307,27 @@
     <span class="n">friendly</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">old_include</span><span class="p">)</span></div>
 
 
+<span class="k">def</span> <span class="nf">_explain_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Shows all the information about the last traceback.&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="n">explain</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_explain_repr</span>
+
+
 <div class="viewcode-block" id="friendly_tb"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.friendly_tb">[docs]</a><span class="k">def</span> <span class="nf">friendly_tb</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Shows the friendly traceback, which includes the hint/suggestion</span>
 <span class="sd">    if available.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_friendly_tb_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Shows a simplified Python traceback&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="n">friendly_tb</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_friendly_tb_repr</span>
 
 
 <div class="viewcode-block" id="hint"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.hint">[docs]</a><span class="k">def</span> <span class="nf">hint</span><span class="p">():</span>
@@ -324,11 +348,12 @@
     <span class="n">session</span><span class="o">.</span><span class="n">rich_add_vspace</span> <span class="o">=</span> <span class="kc">True</span></div>
 
 
-<div class="viewcode-block" id="light"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.light">[docs]</a><span class="k">def</span> <span class="nf">light</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
-    <span class="sd">&quot;&quot;&quot;Synonym of set_formatter(&#39;light&#39;) designed to be used</span>
-<span class="sd">    within iPython/Jupyter programming environments or at a terminal.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">set_formatter</span><span class="p">(</span><span class="s2">&quot;light&quot;</span><span class="p">)</span></div>
+<span class="k">def</span> <span class="nf">_history_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Shows a list of recorded traceback messages.&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="n">history</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_history_repr</span>
 
 
 <div class="viewcode-block" id="more"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.more">[docs]</a><span class="k">def</span> <span class="nf">more</span><span class="p">():</span>
@@ -339,11 +364,27 @@
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;more&quot;</span><span class="p">)</span></div>
 
 
+<span class="k">def</span> <span class="nf">_more_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Equivalent to what() + where() + why().&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="n">more</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_more_repr</span>
+
+
 <div class="viewcode-block" id="python_tb"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.python_tb">[docs]</a><span class="k">def</span> <span class="nf">python_tb</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Shows the Python traceback, excluding files from friendly</span>
 <span class="sd">    itself.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;python_tb&quot;</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_python_tb_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Shows a normal Python traceback&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="n">python_tb</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_python_tb_repr</span>
 
 
 <div class="viewcode-block" id="what"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.what">[docs]</a><span class="k">def</span> <span class="nf">what</span><span class="p">(</span><span class="n">exception</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -366,14 +407,38 @@
     <span class="k">return</span></div>
 
 
+<span class="k">def</span> <span class="nf">_what_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Shows the generic meaning of a given exception&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="n">what</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_what_repr</span>
+
+
 <div class="viewcode-block" id="where"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.where">[docs]</a><span class="k">def</span> <span class="nf">where</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Shows the information about where the exception occurred&quot;&quot;&quot;</span>
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;where&quot;</span><span class="p">)</span></div>
 
 
+<span class="k">def</span> <span class="nf">_where_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Shows where an exception was raised.&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="n">where</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_where_repr</span>
+
+
 <div class="viewcode-block" id="why"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.why">[docs]</a><span class="k">def</span> <span class="nf">why</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Shows the likely cause of the exception.&quot;&quot;&quot;</span>
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;why&quot;</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_why_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Shows the likely cause of the exception.&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="n">why</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_why_repr</span>
 
 
 <div class="viewcode-block" id="www"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.www">[docs]</a><span class="k">def</span> <span class="nf">www</span><span class="p">(</span><span class="n">search</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">python</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
@@ -463,33 +528,53 @@
         <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;The default web browser cannot be used for searching.&quot;</span><span class="p">))</span></div>
 
 
+<span class="k">def</span> <span class="nf">_www_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Opens a web browser at a useful location.&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="n">www</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_www_repr</span>
+
+
 <span class="n">get_lang</span> <span class="o">=</span> <span class="n">friendly</span><span class="o">.</span><span class="n">get_lang</span>
 <span class="n">set_lang</span> <span class="o">=</span> <span class="n">friendly</span><span class="o">.</span><span class="n">set_lang</span>
 <span class="n">get_include</span> <span class="o">=</span> <span class="n">friendly</span><span class="o">.</span><span class="n">get_include</span>
 <span class="n">set_include</span> <span class="o">=</span> <span class="n">friendly</span><span class="o">.</span><span class="n">set_include</span>
 <span class="n">set_formatter</span> <span class="o">=</span> <span class="n">friendly</span><span class="o">.</span><span class="n">set_formatter</span>
-<span class="n">helpers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;back&quot;</span><span class="p">:</span> <span class="n">back</span><span class="p">,</span>
-    <span class="s2">&quot;dark&quot;</span><span class="p">:</span> <span class="n">dark</span><span class="p">,</span>
-    <span class="s2">&quot;light&quot;</span><span class="p">:</span> <span class="n">light</span><span class="p">,</span>
-    <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="n">history</span><span class="p">,</span>
-    <span class="s2">&quot;explain&quot;</span><span class="p">:</span> <span class="n">explain</span><span class="p">,</span>
-    <span class="s2">&quot;what&quot;</span><span class="p">:</span> <span class="n">what</span><span class="p">,</span>
-    <span class="s2">&quot;where&quot;</span><span class="p">:</span> <span class="n">where</span><span class="p">,</span>
-    <span class="s2">&quot;why&quot;</span><span class="p">:</span> <span class="n">why</span><span class="p">,</span>
-    <span class="s2">&quot;more&quot;</span><span class="p">:</span> <span class="n">more</span><span class="p">,</span>
-    <span class="s2">&quot;get_lang&quot;</span><span class="p">:</span> <span class="n">get_lang</span><span class="p">,</span>
-    <span class="s2">&quot;set_lang&quot;</span><span class="p">:</span> <span class="n">set_lang</span><span class="p">,</span>
-    <span class="s2">&quot;get_include&quot;</span><span class="p">:</span> <span class="n">get_include</span><span class="p">,</span>
-    <span class="s2">&quot;set_include&quot;</span><span class="p">:</span> <span class="n">set_include</span><span class="p">,</span>
-    <span class="s2">&quot;hint&quot;</span><span class="p">:</span> <span class="n">hint</span><span class="p">,</span>
-    <span class="s2">&quot;friendly_tb&quot;</span><span class="p">:</span> <span class="n">friendly_tb</span><span class="p">,</span>
-    <span class="s2">&quot;python_tb&quot;</span><span class="p">:</span> <span class="n">python_tb</span><span class="p">,</span>
-    <span class="s2">&quot;show_paths&quot;</span><span class="p">:</span> <span class="n">show_paths</span><span class="p">,</span>
-    <span class="s2">&quot;set_formatter&quot;</span><span class="p">:</span> <span class="n">set_formatter</span><span class="p">,</span>
-    <span class="s2">&quot;www&quot;</span><span class="p">:</span> <span class="n">www</span><span class="p">,</span>
-<span class="p">}</span>
 
+
+<span class="k">def</span> <span class="nf">_get_lang_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Returns the language currently used.&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="k">def</span> <span class="nf">_set_lang_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Sets the language to be used.&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="k">def</span> <span class="nf">_get_include_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Returns the current value used for items to include by default.&quot;</span><span class="p">),</span>
+    <span class="p">)</span>  <span class="c1"># noqa</span>
+
+
+<span class="k">def</span> <span class="nf">_set_include_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Sets the items to show when an exception is raised.&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="k">def</span> <span class="nf">_set_formatter_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Sets the formatter to use for display.&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="n">get_include</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_get_include_repr</span>
+<span class="n">set_include</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_set_include_repr</span>
+<span class="n">get_lang</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_get_lang_repr</span>
+<span class="n">set_lang</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_set_lang_repr</span>
+<span class="n">set_formatter</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_set_formatter_repr</span>
 
 <span class="c1"># ===== Debugging functions are not unit tested by choice =====</span>
 
@@ -579,6 +664,31 @@
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">: None&quot;</span><span class="p">)</span>
 
 
+<span class="n">basic_helpers</span> <span class="o">=</span> <span class="p">{</span>  <span class="c1"># Will appear in basic help</span>
+    <span class="s2">&quot;back&quot;</span><span class="p">:</span> <span class="n">back</span><span class="p">,</span>
+    <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="n">history</span><span class="p">,</span>
+    <span class="s2">&quot;explain&quot;</span><span class="p">:</span> <span class="n">explain</span><span class="p">,</span>
+    <span class="s2">&quot;what&quot;</span><span class="p">:</span> <span class="n">what</span><span class="p">,</span>
+    <span class="s2">&quot;where&quot;</span><span class="p">:</span> <span class="n">where</span><span class="p">,</span>
+    <span class="s2">&quot;why&quot;</span><span class="p">:</span> <span class="n">why</span><span class="p">,</span>
+    <span class="s2">&quot;more&quot;</span><span class="p">:</span> <span class="n">more</span><span class="p">,</span>
+    <span class="s2">&quot;set_lang&quot;</span><span class="p">:</span> <span class="n">set_lang</span><span class="p">,</span>
+    <span class="s2">&quot;friendly_tb&quot;</span><span class="p">:</span> <span class="n">friendly_tb</span><span class="p">,</span>
+    <span class="s2">&quot;python_tb&quot;</span><span class="p">:</span> <span class="n">python_tb</span><span class="p">,</span>
+    <span class="s2">&quot;show_paths&quot;</span><span class="p">:</span> <span class="n">show_paths</span><span class="p">,</span>
+    <span class="s2">&quot;www&quot;</span><span class="p">:</span> <span class="n">www</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">other_helpers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;hint&quot;</span><span class="p">:</span> <span class="n">hint</span><span class="p">,</span>
+    <span class="s2">&quot;get_lang&quot;</span><span class="p">:</span> <span class="n">get_lang</span><span class="p">,</span>
+    <span class="s2">&quot;get_include&quot;</span><span class="p">:</span> <span class="n">get_include</span><span class="p">,</span>
+    <span class="s2">&quot;set_include&quot;</span><span class="p">:</span> <span class="n">set_include</span><span class="p">,</span>
+    <span class="s2">&quot;set_formatter&quot;</span><span class="p">:</span> <span class="n">set_formatter</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">helpers</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">basic_helpers</span><span class="p">,</span> <span class="o">**</span><span class="n">other_helpers</span><span class="p">}</span>
+
 <span class="n">_debug_helpers</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;_debug_tb&quot;</span><span class="p">:</span> <span class="n">_debug_tb</span><span class="p">,</span>
     <span class="s2">&quot;_show_info&quot;</span><span class="p">:</span> <span class="n">_show_info</span><span class="p">,</span>
@@ -590,24 +700,93 @@
 <span class="p">}</span>
 
 
-<div class="viewcode-block" id="Friendly"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.Friendly">[docs]</a><span class="k">class</span> <span class="nc">Friendly</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">FriendlyHelpers</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Helper class which can be used in a console if one of the</span>
 <span class="sd">    helper functions gets redefined.</span>
 
 <span class="sd">    For example, we can write Friendly.explain() as equivalent to explain().</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">version</span> <span class="o">=</span> <span class="n">__version__</span></div>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">__version__</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color_schemes</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">_include</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">basic_helpers</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">color_schemes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_include</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">color_schemes</span><span class="p">)</span>
+        <span class="n">_include</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">_include</span><span class="p">)</span>  <span class="c1"># first alphabetically</span>
+        <span class="c1"># then by word length, as it is easier to read.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">include_in_rich_repr</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">_include</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Friendly&quot;</span>  <span class="c1"># For a nicer Rich repr</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Shows a brief description in the default language of what</span>
+<span class="sd">        each &#39;basic&#39; function/method does.</span>
+
+<span class="sd">        &#39;Advanced&#39; and debugging helper functions are not included</span>
+<span class="sd">        in the display.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Use `help(Friendly)` and `dir(Friendly)` for more information.&quot;</span><span class="p">)</span>
+        <span class="n">parts</span> <span class="o">=</span> <span class="p">[</span><span class="n">text</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">include_in_rich_repr</span><span class="p">:</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span> <span class="o">+</span> <span class="s2">&quot;(): &quot;</span><span class="p">)</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">Friendly</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span><span class="o">.</span><span class="n">__rich_repr__</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
 
 
-<span class="k">for</span> <span class="n">helper</span> <span class="ow">in</span> <span class="n">helpers</span><span class="p">:</span>
-    <span class="nb">setattr</span><span class="p">(</span><span class="n">Friendly</span><span class="p">,</span> <span class="n">helper</span><span class="p">,</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">helpers</span><span class="p">[</span><span class="n">helper</span><span class="p">]))</span>
 <span class="k">for</span> <span class="n">helper</span> <span class="ow">in</span> <span class="n">_debug_helpers</span><span class="p">:</span>
-    <span class="nb">setattr</span><span class="p">(</span><span class="n">Friendly</span><span class="p">,</span> <span class="n">helper</span><span class="p">,</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">_debug_helpers</span><span class="p">[</span><span class="n">helper</span><span class="p">]))</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">FriendlyHelpers</span><span class="p">,</span> <span class="n">helper</span><span class="p">,</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">_debug_helpers</span><span class="p">[</span><span class="n">helper</span><span class="p">]))</span>
+<span class="k">for</span> <span class="n">helper</span> <span class="ow">in</span> <span class="n">helpers</span><span class="p">:</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">FriendlyHelpers</span><span class="p">,</span> <span class="n">helper</span><span class="p">,</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">helpers</span><span class="p">[</span><span class="n">helper</span><span class="p">]))</span>
+
+<span class="c1"># == Local version; this may need to be removed/modified in</span>
+<span class="c1"># some programming environments (e.g. Mu, Idle, etc.) which do not support Rich.</span>
+
+
+<span class="k">class</span> <span class="nc">_FriendlyHelpers</span><span class="p">(</span><span class="n">FriendlyHelpers</span><span class="p">):</span>  <span class="c1"># local version</span>
+    <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="dark"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.dark">[docs]</a><span class="k">def</span> <span class="nf">dark</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
+    <span class="sd">&quot;&quot;&quot;Synonym of set_formatter(&#39;dark&#39;) designed to be used</span>
+<span class="sd">    within iPython/Jupyter programming environments or at a terminal.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">set_formatter</span><span class="p">(</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_dark_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Colour scheme designed for a black background.&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="n">dark</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_dark_repr</span>
+
+
+<div class="viewcode-block" id="light"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.light">[docs]</a><span class="k">def</span> <span class="nf">light</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
+    <span class="sd">&quot;&quot;&quot;Synonym of set_formatter(&#39;light&#39;) designed to be used</span>
+<span class="sd">    within iPython/Jupyter programming environments or at a terminal.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">set_formatter</span><span class="p">(</span><span class="s2">&quot;light&quot;</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_light_repr</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Colour scheme designed for a white background.&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
+
+
+<span class="n">light</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_light_repr</span>
+
+<span class="n">default_color_schemes</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;dark&quot;</span><span class="p">:</span> <span class="n">dark</span><span class="p">,</span> <span class="s2">&quot;light&quot;</span><span class="p">:</span> <span class="n">light</span><span class="p">}</span>
+
+<span class="n">Friendly</span> <span class="o">=</span> <span class="n">_FriendlyHelpers</span><span class="p">(</span><span class="n">default_color_schemes</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">scheme</span> <span class="ow">in</span> <span class="n">default_color_schemes</span><span class="p">:</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">_FriendlyHelpers</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">default_color_schemes</span><span class="p">[</span><span class="n">scheme</span><span class="p">]))</span>
 
 <span class="n">helpers</span><span class="p">[</span><span class="s2">&quot;Friendly&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Friendly</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">helpers</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">__all__</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">default_color_schemes</span><span class="p">))</span>
 </pre></div>
 
            </div>
