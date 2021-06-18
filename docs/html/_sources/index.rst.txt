@@ -67,15 +67,16 @@ making use of
 `Rich <https://github.com/willmcgugan/rich>`_ to produce a colourful output.
 
 .. image:: images/friendly_indexerror_en.png
-   :scale: 40 %
+   :scale: 50 %
    :alt: friendly IndexError example in English
 
 One unique feature of friendly is that all the information
 it provides can be translated into another language; currently, only
-English (by default) and French are available.
+English (by default) and French are available but other languages
+could easily be added.
 
 .. image:: images/friendly_indexerror_fr.png
-   :scale: 40 %
+   :scale: 50 %
    :alt: friendly IndexError in French
 
 
@@ -98,15 +99,15 @@ English (by default) and French are available.
    :caption: friendly console
 
    repl
-   what
    why
+   what
    where
    explain
-   more
    www
    history
+   friendly_object
    multiple_tracebacks
-   repl_more
+   repl_api
    about_warnings
 
 .. toctree::
@@ -212,13 +213,3 @@ English (by default) and French are available.
 
    tracebacks_fr
    syntax_tracebacks_fr
-
-
-To do
-------
-
-I sometimes add notes about planned changes or additions to the documentation
-in various sections. Any such note is listed below as a visible reminder,
-mostly for my own purpose.
-
-.. todolist::

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>friendly.formatters &mdash; Friendly 0.3.64 documentation</title>
+  <title>friendly.formatters &mdash; Friendly 0.3.103 documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.3.64
+                0.3.103
               </div>
             
           
@@ -96,15 +96,16 @@
 <p class="caption"><span class="caption-text">friendly console</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../repl.html">Console basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../where.html">where()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../explain.html">explain()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../www.html">www()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../history.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../history.html">history() and back()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../friendly_object.html">Friendly object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../friendly_object.html#everything-about-the-friendly-console">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../multiple_tracebacks.html">Multiple tracebacks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../repl_more.html">Everything about the friendly console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../repl_api.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about_warnings.html">One last thing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">IDLE</span></p>
@@ -607,17 +608,15 @@
 
         <span class="k">return</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;I have no suggestion to offer.&quot;</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
-        <span class="n">debug_helper</span><span class="o">.</span><span class="n">log</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;Internal error: include = </span><span class="si">{</span><span class="n">include</span><span class="si">}</span><span class="s2"> in formatters.no_result()&quot;</span>
-        <span class="p">)</span></div>
+    <span class="n">debug_helper</span><span class="o">.</span><span class="n">log</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Internal error: include = </span><span class="si">{</span><span class="n">include</span><span class="si">}</span><span class="s2"> in formatters.no_result()&quot;</span>
+    <span class="p">)</span>  <span class="c1"># pragma: no cover</span></div>
 
 
 <span class="n">items_groups</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">},</span>  <span class="c1"># Also included as last line of traceback</span>
     <span class="s2">&quot;hint&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;suggest&quot;</span><span class="p">},</span>
-    <span class="s2">&quot;generic&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;generic&quot;</span><span class="p">},</span>
-    <span class="s2">&quot;what&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="s2">&quot;generic&quot;</span><span class="p">},</span>  <span class="c1"># Only include &quot;message&quot; here.</span>
+    <span class="s2">&quot;what&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;generic&quot;</span><span class="p">},</span>
     <span class="s2">&quot;why&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;cause&quot;</span><span class="p">},</span>
     <span class="s2">&quot;where&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;parsing_error&quot;</span><span class="p">,</span>
@@ -633,13 +632,13 @@
     <span class="s2">&quot;python_tb&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;simulated_python_traceback&quot;</span><span class="p">},</span>
     <span class="s2">&quot;debug_tb&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;original_python_traceback&quot;</span><span class="p">},</span>
 <span class="p">}</span>
-<span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;more&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;why&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;where&quot;</span><span class="p">])</span>
 <span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;explain&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">]</span>
-    <span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;generic&quot;</span><span class="p">])</span>
-    <span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;more&quot;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;what&quot;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;why&quot;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;where&quot;</span><span class="p">])</span>
 <span class="p">)</span>
-<span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;no_tb&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;explain&quot;</span><span class="p">]</span>
+<span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;no_tb&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;explain&quot;</span><span class="p">]</span>  <span class="c1"># used in check_syntax()</span>
 <span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;no_tb&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">items_groups</span><span class="p">[</span><span class="s2">&quot;friendly_tb&quot;</span><span class="p">])</span>
 
 

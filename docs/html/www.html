@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>www() &mdash; Friendly 0.3.100 documentation</title>
+  <title>www() &mdash; Friendly 0.3.103 documentation</title>
   
 
   
@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="History" href="history.html" />
-    <link rel="prev" title="more()" href="more.html" /> 
+    <link rel="next" title="history() and back()" href="history.html" />
+    <link rel="prev" title="explain()" href="explain.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3.100
+                0.3.103
               </div>
             
           
@@ -98,15 +98,19 @@
 <p class="caption"><span class="caption-text">friendly console</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="where.html">where()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">www()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="history.html">History</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">www()</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#optional-arguments">Optional arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">history() and back()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="friendly_object.html">Friendly object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="friendly_object.html#everything-about-the-friendly-console">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the friendly console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repl_api.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">IDLE</span></p>
@@ -243,10 +247,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="history.html" class="btn btn-neutral float-right" title="History" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="history.html" class="btn btn-neutral float-right" title="history() and back()" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="more.html" class="btn btn-neutral float-left" title="more()" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="explain.html" class="btn btn-neutral float-left" title="explain()" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
       
   </div>
   
@@ -263,19 +267,32 @@ or a given message associated with that exception:</p>
 </pre></div>
 </div>
 <p>In this case, you can use the function <code class="docutils literal notranslate"><span class="pre">www()</span></code> which will open
-your default web browser and do an internet search for <code class="docutils literal notranslate"><span class="pre">&quot;SomeError:</span> <span class="pre">never</span> <span class="pre">seen</span> <span class="pre">before&quot;</span></code>
-using DuckDuckGo.</p>
-<p>In some cases, friendly will not only recognize
-the exception and the specific message, but have included a link thought
-to be particularly useful. In such cases, <code class="docutils literal notranslate"><span class="pre">www()</span></code> will open your web browser
-at the page, and possibly the exact location on that page, corresponding
-to the link.</p>
-<p><code class="docutils literal notranslate"><span class="pre">www()</span></code> can also take some arguments, which can change its behaviour.
-You can use <code class="docutils literal notranslate"><span class="pre">help(www)</span></code> in a friendly console
-to find out more about this function or look at the console API <a class="reference internal" href="repl_more.html#console-api"><span class="std std-ref">Everything about the friendly console</span></a>
-in this documentation.</p>
+your default web browser and do an internet search for
+<code class="docutils literal notranslate"><span class="pre">&quot;SomeError:</span> <span class="pre">never</span> <span class="pre">seen</span> <span class="pre">before&quot;</span></code> using DuckDuckGo.</p>
+<p>The same is true if you find that the explanation given by <strong>friendly</strong>
+is not enough for you.</p>
+<a class="reference internal image-reference" href="_images/www_ddg.png"><img alt="Searching using DDG" src="_images/www_ddg.png" style="width: 658.1999999999999px; height: 396.59999999999997px;" /></a>
+<p>If no exception has been raised, calling <code class="docutils literal notranslate"><span class="pre">www()</span></code> will open
+<strong>friendly</strong>’s documentation instead.</p>
+<div class="section" id="optional-arguments">
+<h2>Optional arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">www()</span></code> is a convenience function that uses Python’s webbrowser
+module to open a page in the default web browser.
+It can also take one of the following optional arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">www('friendly')</span></code>: go to <strong>friendly</strong>’s documentation site.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">www('python')</span></code>: go to Python’s documentation site for the Python
+version currently used by the program from which it is invoked.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">www('bug')</span></code>: go to the Github’s issue page for <strong>friendly</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">www('email')</span></code>: uses the default browser configuration to invoke
+an email app to start a new email to be sent to me
+(<a class="reference external" href="mailto:andre&#46;roberge&#37;&#52;&#48;gmail&#46;com">andre<span>&#46;</span>roberge<span>&#64;</span>gmail<span>&#46;</span>com</a>). If you do not have a Github account,
+you can definitely use this option to communicate with me.</p></li>
+</ul>
+<p>All string arguments passed to <code class="docutils literal notranslate"><span class="pre">why()</span></code> are case-insensitive.</p>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">www()</span></code> is a recent addition to friendly and that
 its behaviour is subject to change based on received feedback.</p>
+</div>
 </div>
 
 
@@ -284,8 +301,8 @@ its behaviour is subject to change based on received feedback.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="history.html" class="btn btn-neutral float-right" title="History" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="more.html" class="btn btn-neutral float-left" title="more()" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="history.html" class="btn btn-neutral float-right" title="history() and back()" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="explain.html" class="btn btn-neutral float-left" title="explain()" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

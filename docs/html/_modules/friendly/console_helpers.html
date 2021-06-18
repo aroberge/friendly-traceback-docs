@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>friendly.console_helpers &mdash; Friendly 0.3.99 documentation</title>
+  <title>friendly.console_helpers &mdash; Friendly 0.3.103 documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.3.99
+                0.3.103
               </div>
             
           
@@ -96,15 +96,16 @@
 <p class="caption"><span class="caption-text">friendly console</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../repl.html">Console basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../where.html">where()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../explain.html">explain()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../www.html">www()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../history.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../history.html">history() and back()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../friendly_object.html">Friendly object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../friendly_object.html#everything-about-the-friendly-console">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../multiple_tracebacks.html">Multiple tracebacks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../repl_more.html">Everything about the friendly console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../repl_api.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about_warnings.html">One last thing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">IDLE</span></p>
@@ -253,6 +254,7 @@
 <span class="sd">environments such as in a Jupyter notebook.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="c1"># NOTE: __all__ is defined at the very bottom of this file</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">friendly</span>
 
 <span class="kn">from</span> <span class="nn">friendly</span> <span class="kn">import</span> <span class="n">debug_helper</span><span class="p">,</span> <span class="n">formatters</span><span class="p">,</span> <span class="n">__version__</span>
@@ -270,7 +272,7 @@
 <span class="n">show_paths</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_show_paths_repr</span>
 
 
-<div class="viewcode-block" id="back"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.back">[docs]</a><span class="k">def</span> <span class="nf">back</span><span class="p">():</span>
+<div class="viewcode-block" id="back"><a class="viewcode-back" href="../../repl_api.html#friendly.console_helpers.back">[docs]</a><span class="k">def</span> <span class="nf">back</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Removes the last recorded traceback item.</span>
 
 <span class="sd">    The intention is to allow recovering from a typo when trying interactively</span>
@@ -297,9 +299,10 @@
 <span class="n">back</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_back_repr</span>
 
 
-<div class="viewcode-block" id="explain"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.explain">[docs]</a><span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="explain"><a class="viewcode-back" href="../../repl_api.html#friendly.console_helpers.explain">[docs]</a><span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Shows the previously recorded traceback info again,</span>
-<span class="sd">    with the specified verbosity level.</span>
+<span class="sd">    with the option to specify different items to include.</span>
+<span class="sd">    For example, ``explain(&quot;why&quot;)`` is equivalent to ``why()``.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">old_include</span> <span class="o">=</span> <span class="n">friendly</span><span class="o">.</span><span class="n">get_include</span><span class="p">()</span>
     <span class="n">friendly</span><span class="o">.</span><span class="n">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>
@@ -315,7 +318,7 @@
 <span class="n">explain</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_explain_repr</span>
 
 
-<div class="viewcode-block" id="friendly_tb"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.friendly_tb">[docs]</a><span class="k">def</span> <span class="nf">friendly_tb</span><span class="p">():</span>
+<div class="viewcode-block" id="friendly_tb"><a class="viewcode-back" href="../../repl_api.html#friendly.console_helpers.friendly_tb">[docs]</a><span class="k">def</span> <span class="nf">friendly_tb</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Shows the friendly traceback, which includes the hint/suggestion</span>
 <span class="sd">    if available.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -330,12 +333,12 @@
 <span class="n">friendly_tb</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_friendly_tb_repr</span>
 
 
-<div class="viewcode-block" id="hint"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.hint">[docs]</a><span class="k">def</span> <span class="nf">hint</span><span class="p">():</span>
+<div class="viewcode-block" id="hint"><a class="viewcode-back" href="../../repl_api.html#friendly.console_helpers.hint">[docs]</a><span class="k">def</span> <span class="nf">hint</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Shows hint/suggestion if available.&quot;&quot;&quot;</span>
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;hint&quot;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="history"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.history">[docs]</a><span class="k">def</span> <span class="nf">history</span><span class="p">():</span>
+<div class="viewcode-block" id="history"><a class="viewcode-back" href="../../repl_api.html#friendly.console_helpers.history">[docs]</a><span class="k">def</span> <span class="nf">history</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Prints the list of error messages recorded so far.&quot;&quot;&quot;</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">:</span>
@@ -356,23 +359,7 @@
 <span class="n">history</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_history_repr</span>
 
 
-<div class="viewcode-block" id="more"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.more">[docs]</a><span class="k">def</span> <span class="nf">more</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Used to display information additional to the minimal traceback,</span>
-<span class="sd">    with the exception of the generic information.</span>
-<span class="sd">    Potentially useful for advanced users.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;more&quot;</span><span class="p">)</span></div>
-
-
-<span class="k">def</span> <span class="nf">_more_repr</span><span class="p">():</span>
-    <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Equivalent to what() + where() + why().&quot;</span><span class="p">),)</span>  <span class="c1"># noqa</span>
-
-
-<span class="n">more</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_more_repr</span>
-
-
-<div class="viewcode-block" id="python_tb"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.python_tb">[docs]</a><span class="k">def</span> <span class="nf">python_tb</span><span class="p">():</span>
+<div class="viewcode-block" id="python_tb"><a class="viewcode-back" href="../../repl_api.html#friendly.console_helpers.python_tb">[docs]</a><span class="k">def</span> <span class="nf">python_tb</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Shows the Python traceback, excluding files from friendly</span>
 <span class="sd">    itself.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -387,8 +374,13 @@
 <span class="n">python_tb</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_python_tb_repr</span>
 
 
-<div class="viewcode-block" id="what"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.what">[docs]</a><span class="k">def</span> <span class="nf">what</span><span class="p">(</span><span class="n">exception</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;If known, shows the generic explanation about a given exception.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="what"><a class="viewcode-back" href="../../repl_api.html#friendly.console_helpers.what">[docs]</a><span class="k">def</span> <span class="nf">what</span><span class="p">(</span><span class="n">exception</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;If known, shows the generic explanation about a given exception.</span>
+
+<span class="sd">    If the ``pre`` argument is set to ``True``, the output is</span>
+<span class="sd">    formatted in a way that is suitable for inclusion in the</span>
+<span class="sd">    documentation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">exception</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;what&quot;</span><span class="p">)</span>
         <span class="k">return</span>
@@ -415,7 +407,7 @@
 <span class="n">what</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_what_repr</span>
 
 
-<div class="viewcode-block" id="where"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.where">[docs]</a><span class="k">def</span> <span class="nf">where</span><span class="p">():</span>
+<div class="viewcode-block" id="where"><a class="viewcode-back" href="../../repl_api.html#friendly.console_helpers.where">[docs]</a><span class="k">def</span> <span class="nf">where</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Shows the information about where the exception occurred&quot;&quot;&quot;</span>
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;where&quot;</span><span class="p">)</span></div>
 
@@ -428,7 +420,7 @@
 <span class="n">where</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_where_repr</span>
 
 
-<div class="viewcode-block" id="why"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.why">[docs]</a><span class="k">def</span> <span class="nf">why</span><span class="p">():</span>
+<div class="viewcode-block" id="why"><a class="viewcode-back" href="../../repl_api.html#friendly.console_helpers.why">[docs]</a><span class="k">def</span> <span class="nf">why</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Shows the likely cause of the exception.&quot;&quot;&quot;</span>
     <span class="n">explain</span><span class="p">(</span><span class="s2">&quot;why&quot;</span><span class="p">)</span></div>
 
@@ -441,91 +433,75 @@
 <span class="n">why</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_why_repr</span>
 
 
-<div class="viewcode-block" id="www"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.www">[docs]</a><span class="k">def</span> <span class="nf">www</span><span class="p">(</span><span class="n">search</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">python</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
-    <span class="sd">&quot;&quot;&quot;This uses the ``webbrowser`` module to open a tab (or window) in the</span>
-<span class="sd">    default browser, linking to a specific url.</span>
+<div class="viewcode-block" id="www"><a class="viewcode-back" href="../../repl_api.html#friendly.console_helpers.www">[docs]</a><span class="k">def</span> <span class="nf">www</span><span class="p">(</span><span class="n">site</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+    <span class="sd">&quot;&quot;&quot;This uses the ``webbrowser`` module to open a tab (or window)</span>
+<span class="sd">     in the default browser, linking to a specific url</span>
+<span class="sd">     or opening the default email client.</span>
 
-<span class="sd">    * If no arguments are provided, and no exception has been raised, this opens</span>
-<span class="sd">      Friendly&#39;s documentation.</span>
+<span class="sd">    * If the argument &#39;site&#39; is not specified,</span>
+<span class="sd">      and an exception has been raised,</span>
+<span class="sd">      an internet search will be done using</span>
+<span class="sd">      the exception message as the search string.</span>
 
-<span class="sd">    * If no arguments are provided, and an exception has been raised, in most</span>
-<span class="sd">      cases, an internet search will be done using the exception message as the</span>
-<span class="sd">      search string. In a few cases, Friendly will link to a</span>
-<span class="sd">      specific site based on its determination of the cause of the exception.</span>
+<span class="sd">    * If the argument &#39;site&#39; is not specified,</span>
+<span class="sd">      and NO exception has been raised,</span>
+<span class="sd">      Friendly&#39;s documentation will open.</span>
 
-<span class="sd">    * If no search argument is provided, but ``python`` is specified to be ``True``,</span>
-<span class="sd">      we will have the following:</span>
+<span class="sd">    * If the argument &#39;site&#39; == &quot;friendly&quot;,</span>
+<span class="sd">      Friendly&#39;s documentation will open.</span>
 
-<span class="sd">        * If no exception has been raised, this opens the Python documentation</span>
+<span class="sd">    * If the argument &#39;site&#39; == &quot;python&quot;, Python&#39;s documentation site</span>
+<span class="sd">      will open with the currently used Python version.</span>
 
-<span class="sd">        * If an exception has been raised, in most cases a search of the Python</span>
-<span class="sd">          documentation will be done using the exception name as the search term.</span>
-<span class="sd">          In a few cases, Friendly will link to a</span>
-<span class="sd">          specific site based on its determination of the cause of the exception.</span>
+<span class="sd">    * If the argument &#39;site&#39; == &quot;bug&quot;,</span>
+<span class="sd">      the Issues page for Friendly on Github will open.</span>
 
-<span class="sd">    * If a search (string) argument is provided, we have three possibilities:</span>
-
-<span class="sd">      * If the ``python`` argument is ``True``, a search will be done in the</span>
-<span class="sd">        Python documentation site; otherwise</span>
-<span class="sd">      * if the search term contains the string &quot;friendly&quot; (independent of case),</span>
-<span class="sd">        Friendly documentation will open</span>
-<span class="sd">      * otherwise, an internet search will be done using the search string provided.</span>
+<span class="sd">    * If the argument &#39;site&#39; == &quot;email&quot;,</span>
+<span class="sd">      the default email client should open with Friendly&#39;s</span>
+<span class="sd">      developer&#39;s address already filled in.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">urllib</span>
     <span class="kn">import</span> <span class="nn">webbrowser</span>
 
     <span class="n">_</span> <span class="o">=</span> <span class="n">current_lang</span><span class="o">.</span><span class="n">translate</span>
-
-    <span class="k">if</span> <span class="n">search</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">search</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">urls</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;friendly&quot;</span><span class="p">:</span> <span class="s2">&quot;https://aroberge.github.io/friendly-traceback-docs/docs/html/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;python&quot;</span><span class="p">:</span> <span class="s2">&quot;https://docs.python.org/3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bug&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/aroberge/friendly/issues/new&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;mailto:andre.roberge@gmail.com&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">site</span> <span class="o">=</span> <span class="n">site</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># noqa</span>
+        <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">site</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">urls</span> <span class="ow">and</span> <span class="n">site</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span>
-            <span class="n">_</span><span class="p">(</span><span class="s2">&quot;The first argument of `www()` must be either `None` or a string.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">_</span><span class="p">(</span>
+                <span class="s2">&quot;Invalid argument for `www()`.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="s2">&quot;Valid arguments include `None` or one of `</span><span class="si">{sites}</span><span class="s2">`.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sites</span><span class="o">=</span><span class="nb">repr</span><span class="p">(</span><span class="n">urls</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
         <span class="p">)</span>
-        <span class="k">if</span> <span class="n">search</span> <span class="ow">is</span> <span class="kc">True</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">python</span><span class="p">:</span>
-            <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span>
-                <span class="n">_</span><span class="p">(</span>
-                    <span class="s2">&quot;If you wish to open Python&#39;s documentation, use</span><span class="se">\n</span><span class="s2">&quot;</span>
-                    <span class="s2">&quot;`www(python=True)`.</span><span class="se">\n</span><span class="s2">&quot;</span>
-                <span class="p">)</span>
-            <span class="p">)</span>
         <span class="k">return</span>
 
-    <span class="n">quote</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">quote</span>  <span class="c1"># noqa</span>
-
-    <span class="n">ddg_url</span> <span class="o">=</span> <span class="s2">&quot;https://duckduckgo.com?q=&quot;</span>
-    <span class="n">friendly_url</span> <span class="o">=</span> <span class="s2">&quot;https://aroberge.github.io/friendly-traceback-docs/docs/html/&quot;</span>
-    <span class="n">python_docs_url</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;https://docs.python.org/3/&quot;</span><span class="p">)</span>
-    <span class="n">python_search_url</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;https://docs.python.org/3/search.html?q=&quot;</span><span class="p">)</span>
     <span class="n">info</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">saved_info</span> <span class="k">else</span> <span class="kc">None</span>
-    <span class="k">if</span> <span class="n">search</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">python</span><span class="p">:</span>  <span class="c1"># default search</span>
-        <span class="k">if</span> <span class="n">info</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="n">friendly_url</span>
-        <span class="k">elif</span> <span class="s2">&quot;python_link&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;python_link&quot;</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># avoid including quotes around variable names as this would</span>
-            <span class="c1"># make them be misinterpreted as important by search engines</span>
-            <span class="n">message</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="s2">&quot; (&quot;</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
-                <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="n">ddg_url</span> <span class="o">+</span> <span class="n">quote</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">search</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">info</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;python_link&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;python_link&quot;</span><span class="p">]</span>
-        <span class="k">elif</span> <span class="n">info</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># an exception has been raised</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="n">python_search_url</span> <span class="o">+</span> <span class="n">session</span><span class="o">.</span><span class="n">friendly</span><span class="o">.</span><span class="n">tb_data</span><span class="o">.</span><span class="n">exception_name</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="n">python_docs_url</span>
-    <span class="k">elif</span> <span class="n">python</span><span class="p">:</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="n">python_search_url</span> <span class="o">+</span> <span class="n">quote</span><span class="p">(</span><span class="n">search</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="s2">&quot;friendly&quot;</span> <span class="ow">in</span> <span class="n">search</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="n">friendly_url</span>
+    <span class="k">if</span> <span class="n">site</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">info</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot; (&quot;</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://duckduckgo.com?q=&quot;</span> <span class="o">+</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>  <span class="c1"># noqa</span>
+    <span class="k">elif</span> <span class="n">site</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">urls</span><span class="p">[</span><span class="s2">&quot;friendly&quot;</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="n">ddg_url</span> <span class="o">+</span> <span class="n">quote</span><span class="p">(</span><span class="n">search</span><span class="p">)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">urls</span><span class="p">[</span><span class="n">site</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">site</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;.</span><span class="si">{</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="o">.</span><span class="n">minor</span><span class="si">}</span><span class="s2">/&quot;</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="n">webbrowser</span><span class="o">.</span><span class="n">open_new_tab</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># noqa</span>
-        <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;The default web browser cannot be used for searching.&quot;</span><span class="p">))</span></div>
+        <span class="n">session</span><span class="o">.</span><span class="n">write_err</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;The default web browser cannot be used for searching.&quot;</span><span class="p">))</span>
+        <span class="k">return</span></div>
 
 
 <span class="k">def</span> <span class="nf">_www_repr</span><span class="p">():</span>
@@ -671,7 +647,6 @@
     <span class="s2">&quot;what&quot;</span><span class="p">:</span> <span class="n">what</span><span class="p">,</span>
     <span class="s2">&quot;where&quot;</span><span class="p">:</span> <span class="n">where</span><span class="p">,</span>
     <span class="s2">&quot;why&quot;</span><span class="p">:</span> <span class="n">why</span><span class="p">,</span>
-    <span class="s2">&quot;more&quot;</span><span class="p">:</span> <span class="n">more</span><span class="p">,</span>
     <span class="s2">&quot;set_lang&quot;</span><span class="p">:</span> <span class="n">set_lang</span><span class="p">,</span>
     <span class="s2">&quot;friendly_tb&quot;</span><span class="p">:</span> <span class="n">friendly_tb</span><span class="p">,</span>
     <span class="s2">&quot;python_tb&quot;</span><span class="p">:</span> <span class="n">python_tb</span><span class="p">,</span>
@@ -710,13 +685,17 @@
     <span class="n">version</span> <span class="o">=</span> <span class="n">__version__</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color_schemes</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="n">_include</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">basic_helpers</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__include</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">basic_helpers</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">color_schemes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">_include</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">color_schemes</span><span class="p">)</span>
-        <span class="n">_include</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">_include</span><span class="p">)</span>  <span class="c1"># first alphabetically</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__include</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">color_schemes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__include</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__include</span><span class="p">)</span>  <span class="c1"># first alphabetically</span>
         <span class="c1"># then by word length, as it is easier to read.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">include_in_rich_repr</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">_include</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">include_in_rich_repr</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__include</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Friendly&quot;</span>  <span class="c1"># For a nicer Rich repr</span>
+
+    <span class="k">def</span> <span class="fm">__dir__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Only include useful friendly methods.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__include</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">other_helpers</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">_debug_helpers</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Shows a brief description in the default language of what</span>
@@ -748,7 +727,7 @@
     <span class="k">pass</span>
 
 
-<div class="viewcode-block" id="dark"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.dark">[docs]</a><span class="k">def</span> <span class="nf">dark</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
+<div class="viewcode-block" id="dark"><a class="viewcode-back" href="../../repl_api.html#friendly.console_helpers.dark">[docs]</a><span class="k">def</span> <span class="nf">dark</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
     <span class="sd">&quot;&quot;&quot;Synonym of set_formatter(&#39;dark&#39;) designed to be used</span>
 <span class="sd">    within iPython/Jupyter programming environments or at a terminal.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -763,7 +742,7 @@
 <span class="n">dark</span><span class="o">.</span><span class="n">__rich_repr__</span> <span class="o">=</span> <span class="n">_dark_repr</span>
 
 
-<div class="viewcode-block" id="light"><a class="viewcode-back" href="../../repl_more.html#friendly.console_helpers.light">[docs]</a><span class="k">def</span> <span class="nf">light</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
+<div class="viewcode-block" id="light"><a class="viewcode-back" href="../../repl_api.html#friendly.console_helpers.light">[docs]</a><span class="k">def</span> <span class="nf">light</span><span class="p">():</span>  <span class="c1"># pragma: no cover</span>
     <span class="sd">&quot;&quot;&quot;Synonym of set_formatter(&#39;light&#39;) designed to be used</span>
 <span class="sd">    within iPython/Jupyter programming environments or at a terminal.</span>
 <span class="sd">    &quot;&quot;&quot;</span>

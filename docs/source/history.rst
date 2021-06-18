@@ -1,5 +1,5 @@
-History
-========
+history() and back()
+=====================
 
 Earlier, I mentioned that I recommend that beginners use an editor
 instead of a REPL for writing Python code.

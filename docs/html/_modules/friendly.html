@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>friendly &mdash; Friendly 0.3.100 documentation</title>
+  <title>friendly &mdash; Friendly 0.3.103 documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.3.100
+                0.3.103
               </div>
             
           
@@ -96,15 +96,16 @@
 <p class="caption"><span class="caption-text">friendly console</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../repl.html">Console basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../where.html">where()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../explain.html">explain()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../www.html">www()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../history.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">history() and back()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../friendly_object.html">Friendly object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../friendly_object.html#everything-about-the-friendly-console">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../multiple_tracebacks.html">Multiple tracebacks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repl_more.html">Everything about the friendly console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../repl_api.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about_warnings.html">One last thing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">IDLE</span></p>
@@ -273,7 +274,7 @@
     <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 
 <span class="k">del</span> <span class="n">valid_version</span>
-<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.3.100&quot;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.3.103&quot;</span>
 
 
 <span class="c1"># ===========================================</span>
@@ -459,7 +460,7 @@
         <span class="k">return</span> <span class="n">module_globals</span></div>
 
 
-<div class="viewcode-block" id="set_formatter"><a class="viewcode-back" href="../repl_more.html#friendly.set_formatter">[docs]</a><span class="k">def</span> <span class="nf">set_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="set_formatter"><a class="viewcode-back" href="../repl_api.html#friendly.set_formatter">[docs]</a><span class="k">def</span> <span class="nf">set_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Sets the default formatter. If no argument is given, the default</span>
 <span class="sd">    formatter is used.</span>
 
@@ -503,7 +504,7 @@
 <span class="c1"># =========================================================================</span>
 
 
-<div class="viewcode-block" id="set_lang"><a class="viewcode-back" href="../repl_more.html#friendly.set_lang">[docs]</a><span class="k">def</span> <span class="nf">set_lang</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="set_lang"><a class="viewcode-back" href="../repl_api.html#friendly.set_lang">[docs]</a><span class="k">def</span> <span class="nf">set_lang</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Sets the language to be used for the display.</span>
 
 <span class="sd">    If no translations exist for that language, the original</span>
@@ -512,7 +513,7 @@
     <span class="n">session</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="get_lang"><a class="viewcode-back" href="../repl_more.html#friendly.get_lang">[docs]</a><span class="k">def</span> <span class="nf">get_lang</span><span class="p">():</span>
+<div class="viewcode-block" id="get_lang"><a class="viewcode-back" href="../repl_api.html#friendly.get_lang">[docs]</a><span class="k">def</span> <span class="nf">get_lang</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Returns the current language that had been set for translations.</span>
 
 <span class="sd">    Note that the value returned may not reflect truly what is being</span>
@@ -528,7 +529,7 @@
     <span class="k">return</span> <span class="s2">&quot;,</span><span class="se">\n</span><span class="s2">        &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">choices</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="set_include"><a class="viewcode-back" href="../repl_more.html#friendly.set_include">[docs]</a><span class="k">def</span> <span class="nf">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">):</span>
+<div class="viewcode-block" id="set_include"><a class="viewcode-back" href="../repl_api.html#friendly.set_include">[docs]</a><span class="k">def</span> <span class="nf">set_include</span><span class="p">(</span><span class="n">include</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Specifies the information to include in the traceback.</span>
 
 <span class="sd">    The allowed values are:</span>
@@ -542,7 +543,7 @@
     <span class="n">set_include</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">set_include</span><span class="o">.</span><span class="vm">__doc__</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">choices</span><span class="o">=</span><span class="n">_include_choices</span><span class="p">())</span>
 
 
-<div class="viewcode-block" id="get_include"><a class="viewcode-back" href="../repl_more.html#friendly.get_include">[docs]</a><span class="k">def</span> <span class="nf">get_include</span><span class="p">():</span>
+<div class="viewcode-block" id="get_include"><a class="viewcode-back" href="../repl_api.html#friendly.get_include">[docs]</a><span class="k">def</span> <span class="nf">get_include</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Retrieves the value used to determine what to include in the</span>
 <span class="sd">    traceback. See ``set_include()`` for details.</span>
 <span class="sd">    &quot;&quot;&quot;</span>

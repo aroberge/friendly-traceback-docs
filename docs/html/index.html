@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨 &mdash; Friendly 0.3.100 documentation</title>
+  <title>Bienvenue 환영합니다 Bienvenido - ようこそ Welcome 歡迎光臨 &mdash; Friendly 0.3.103 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.3.100
+                0.3.103
               </div>
             
           
@@ -97,15 +97,16 @@
 <p class="caption"><span class="caption-text">friendly console</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="where.html">where()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="history.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">history() and back()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="friendly_object.html">Friendly object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="friendly_object.html#everything-about-the-friendly-console">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the friendly console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repl_api.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">IDLE</span></p>
@@ -303,11 +304,12 @@ to run this program.</p>
 <p>Here’s the corresponding version with full explanation from friendly,
 making use of
 <a class="reference external" href="https://github.com/willmcgugan/rich">Rich</a> to produce a colourful output.</p>
-<a class="reference internal image-reference" href="_images/friendly_indexerror_en.png"><img alt="friendly IndexError example in English" src="_images/friendly_indexerror_en.png" style="width: 740.0px; height: 602.8000000000001px;" /></a>
+<a class="reference internal image-reference" href="_images/friendly_indexerror_en.png"><img alt="friendly IndexError example in English" src="_images/friendly_indexerror_en.png" style="width: 620.0px; height: 569.5px;" /></a>
 <p>One unique feature of friendly is that all the information
 it provides can be translated into another language; currently, only
-English (by default) and French are available.</p>
-<a class="reference internal image-reference" href="_images/friendly_indexerror_fr.png"><img alt="friendly IndexError in French" src="_images/friendly_indexerror_fr.png" style="width: 740.0px; height: 613.2px;" /></a>
+English (by default) and French are available but other languages
+could easily be added.</p>
+<a class="reference internal image-reference" href="_images/friendly_indexerror_fr.png"><img alt="friendly IndexError in French" src="_images/friendly_indexerror_fr.png" style="width: 620.0px; height: 600.0px;" /></a>
 <p><strong>Keep reading if you want to find out more.</strong></p>
 <div class="toctree-wrapper compound">
 </div>
@@ -333,27 +335,6 @@ English (by default) and French are available.</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>
-</div>
-<div class="section" id="to-do">
-<h2>To do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h2>
-<p>I sometimes add notes about planned changes or additions to the documentation
-in various sections. Any such note is listed below as a visible reminder,
-mostly for my own purpose.</p>
-<div class="admonition-todo admonition">
-<p class="admonition-title">Todo</p>
-<p>Ensure that friendly can be integrated within Thonny
-and used to supplement Thonny’s own “Assistant”.</p>
-</div>
-<p class="todo-source">(The <a class="reference internal" href="install_thonny.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\install_thonny.rst, line 53.)</p>
-<div class="admonition-todo admonition">
-<p class="admonition-title">Todo</p>
-<p>Determine if there would be interest in integrating friendly
-with <a class="reference external" href="https://github.com/prompt-toolkit/ptpython">ptpython</a>.
-This might perhaps be done by monkey-patching
-<a class="reference external" href="https://github.com/prompt-toolkit/ptpython/blob/caff15a461b64dee36c22608d36170830cafd5f3/ptpython/repl.py#L497">_handle_exception</a>
-or by having ptpython’s developer enable custom <code class="docutils literal notranslate"><span class="pre">sys.excepthook</span></code>.</p>
-</div>
-<p class="todo-source">(The <a class="reference internal" href="other_repl.html#id1"><em>original entry</em></a> is located in C:\Users\andre\github\friendly-traceback-docs\docs\source\other_repl.rst, line 18.)</p>
 </div>
 </div>
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Everything about the friendly console &mdash; Friendly 0.3.100 documentation</title>
+  <title>Everything about the friendly console &mdash; Friendly 0.3.103 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3.100
+                0.3.103
               </div>
             
           
@@ -98,13 +98,14 @@
 <p class="caption"><span class="caption-text">friendly console</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="where.html">where()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="history.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">history() and back()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="friendly_object.html">Friendly object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="friendly_object.html#everything-about-the-friendly-console">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Everything about the friendly console</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#console-helpers-py">console_helpers.py</a></li>
@@ -236,7 +237,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/repl_more.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/repl_api.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -260,12 +261,16 @@
             
   <div class="section" id="everything-about-the-friendly-console">
 <span id="console-api"></span><h1>Everything about the friendly console<a class="headerlink" href="#everything-about-the-friendly-console" title="Permalink to this headline">¶</a></h1>
-<p>What happens if someone uses an object with the same name
-as a friendly helper function?</p>
-<a class="reference internal image-reference" href="_images/friendly_why.png"><img alt="why as a static method" src="_images/friendly_why.png" style="width: 695.0px; height: 241.5px;" /></a>
-<p>As you can see, these functions are also available as static
-methods of a <code class="docutils literal notranslate"><span class="pre">friendly</span></code> class.  All available such
-functions are listed below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The hand-written documentation about the console
+might not reflect the latest version of the code.
+This page documents the relevant API by automatically
+extracting information from the code.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">dark()</span></code> and <code class="docutils literal notranslate"><span class="pre">light()</span></code> might not be
+available in some environments (for example, when using
+IDLE or Mu.)</p>
+</div>
 <span class="target" id="module-friendly.console_helpers"></span><div class="section" id="console-helpers-py">
 <h2>console_helpers.py<a class="headerlink" href="#console-helpers-py" title="Permalink to this headline">¶</a></h2>
 <p>Functions that can be used in a friendly console or in other interactive
@@ -291,7 +296,8 @@ within iPython/Jupyter programming environments or at a terminal.</p>
 <dt id="friendly.console_helpers.explain">
 <code class="sig-name descname"><span class="pre">explain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'explain'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#explain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.explain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the previously recorded traceback info again,
-with the specified verbosity level.</p>
+with the option to specify different items to include.
+For example, <code class="docutils literal notranslate"><span class="pre">explain(&quot;why&quot;)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">why()</span></code>.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -337,14 +343,6 @@ within iPython/Jupyter programming environments or at a terminal.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="friendly.console_helpers.more">
-<code class="sig-name descname"><span class="pre">more</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#more"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.more" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used to display information additional to the minimal traceback,
-with the exception of the generic information.
-Potentially useful for advanced users.</p>
-</dd></dl>
-
-<dl class="py function">
 <dt id="friendly.console_helpers.python_tb">
 <code class="sig-name descname"><span class="pre">python_tb</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#python_tb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.python_tb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the Python traceback, excluding files from friendly
@@ -369,14 +367,12 @@ See formatters.py for details.</p>
 <blockquote>
 <div><p>‘message’,
 ‘hint’,
-‘generic’,
 ‘what’,
 ‘why’,
 ‘where’,
 ‘friendly_tb’,
 ‘python_tb’,
 ‘debug_tb’,
-‘more’,
 ‘explain’,
 ‘no_tb’</p>
 </div></blockquote>
@@ -403,6 +399,9 @@ currently used.</p>
 <dt id="friendly.console_helpers.what">
 <code class="sig-name descname"><span class="pre">what</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#what"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.what" title="Permalink to this definition">¶</a></dt>
 <dd><p>If known, shows the generic explanation about a given exception.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">pre</span></code> argument is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, the output is
+formatted in a way that is suitable for inclusion in the
+documentation.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -419,37 +418,29 @@ currently used.</p>
 
 <dl class="py function">
 <dt id="friendly.console_helpers.www">
-<code class="sig-name descname"><span class="pre">www</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">python</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#www"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.www" title="Permalink to this definition">¶</a></dt>
-<dd><p>This uses the <code class="docutils literal notranslate"><span class="pre">webbrowser</span></code> module to open a tab (or window) in the
-default browser, linking to a specific url.</p>
-<ul>
-<li><p>If no arguments are provided, and no exception has been raised, this opens
-Friendly’s documentation.</p></li>
-<li><p>If no arguments are provided, and an exception has been raised, in most
-cases, an internet search will be done using the exception message as the
-search string. In a few cases, Friendly will link to a
-specific site based on its determination of the cause of the exception.</p></li>
-<li><p>If no search argument is provided, but <code class="docutils literal notranslate"><span class="pre">python</span></code> is specified to be <code class="docutils literal notranslate"><span class="pre">True</span></code>,
-we will have the following:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>If no exception has been raised, this opens the Python documentation</p></li>
-<li><p>If an exception has been raised, in most cases a search of the Python
-documentation will be done using the exception name as the search term.
-In a few cases, Friendly will link to a
-specific site based on its determination of the cause of the exception.</p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>If a search (string) argument is provided, we have three possibilities:</p>
+<code class="sig-name descname"><span class="pre">www</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">site</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#www"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.www" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>This uses the <code class="docutils literal notranslate"><span class="pre">webbrowser</span></code> module to open a tab (or window)</dt><dd><p>in the default browser, linking to a specific url
+or opening the default email client.</p>
+</dd>
+</dl>
 <ul class="simple">
-<li><p>If the <code class="docutils literal notranslate"><span class="pre">python</span></code> argument is <code class="docutils literal notranslate"><span class="pre">True</span></code>, a search will be done in the
-Python documentation site; otherwise</p></li>
-<li><p>if the search term contains the string “friendly” (independent of case),
-Friendly documentation will open</p></li>
-<li><p>otherwise, an internet search will be done using the search string provided.</p></li>
-</ul>
-</li>
+<li><p>If the argument ‘site’ is not specified,
+and an exception has been raised,
+an internet search will be done using
+the exception message as the search string.</p></li>
+<li><p>If the argument ‘site’ is not specified,
+and NO exception has been raised,
+Friendly’s documentation will open.</p></li>
+<li><p>If the argument ‘site’ == “friendly”,
+Friendly’s documentation will open.</p></li>
+<li><p>If the argument ‘site’ == “python”, Python’s documentation site
+will open with the currently used Python version.</p></li>
+<li><p>If the argument ‘site’ == “bug”,
+the Issues page for Friendly on Github will open.</p></li>
+<li><p>If the argument ‘site’ == “email”,
+the default email client should open with Friendly’s
+developer’s address already filled in.</p></li>
 </ul>
 </dd></dl>
 

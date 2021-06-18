@@ -1,5 +1,6 @@
-.. _console_api:
 
+Friendly object
+================
 
 Everything about the friendly console
 =======================================
@@ -12,9 +13,9 @@ as a friendly helper function?
    :alt: why as a static method
 
 As you can see, these functions are also available as static
-methods of a ``friendly`` class.  All available such
-functions are listed below.
+methods of a ``Friendly`` object.
 
 
-.. automodule:: friendly.console_helpers
-   :members:
+.. todo::
+
+   Add more documentation about this

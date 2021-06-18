@@ -27,7 +27,9 @@ Structure of this project
 -------------------------
 
 Below, I make references to various files. Here's a simplified view of the
-directory structure of this project, showing only a few relevant files::
+directory structure of this project, showing only a few relevant files:
+
+.. code-block:: none
 
     friendly/
         demos/
@@ -35,12 +37,14 @@ directory structure of this project, showing only a few relevant files::
             locales/
                 fr/
                     LC_MESSAGES/
-                        fr.mo
-                        fr.po
+                        friendly.mo
+                        friendly.po
                 friendly.pot
+            __init__.py
+            ...
+            make_pot.bat  <-- not in repository
             my_gettext.py
-            session.py
-            make_pot.bat
+            ...
         tests/
         setup.py
 
@@ -101,7 +105,8 @@ which executes the content of ``make_pot.bat`` (I'm using Windows)::
   containing strings to be translated is located.
 - I use ``python filename.py`` instead of simply ``filename.py`` as I set my
   computer default to open ``.py`` files with my preferred editor instead of
-  executing them.
+  executing them. If you are not using Windows, you might need to use
+  ``python3`` instead of ``python``.
 - The ``-p locales`` option specifies that the template file is going to be
   created (or updated) in the ``locales/`` directory
   (see above for the directory structure).

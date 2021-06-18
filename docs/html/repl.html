@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Console basics &mdash; Friendly 0.3.100 documentation</title>
+  <title>Console basics &mdash; Friendly 0.3.103 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="what()" href="what.html" />
+    <link rel="next" title="why()" href="why.html" />
     <link rel="prev" title="Basic usage" href="usage.html" /> 
 </head>
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3.100
+                0.3.103
               </div>
             
           
@@ -98,15 +98,16 @@
 <p class="caption"><span class="caption-text">friendly console</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Console basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="where.html">where()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="history.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">history() and back()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="friendly_object.html">Friendly object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="friendly_object.html#everything-about-the-friendly-console">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the friendly console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repl_api.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">IDLE</span></p>
@@ -243,7 +244,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="what.html" class="btn btn-neutral float-right" title="what()" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="why.html" class="btn btn-neutral float-right" title="why()" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
         <a href="usage.html" class="btn btn-neutral float-left" title="Basic usage" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
@@ -258,7 +259,7 @@
   <div class="section" id="console-basics">
 <span id="using-repl"></span><h1>Console basics<a class="headerlink" href="#console-basics" title="Permalink to this headline">¶</a></h1>
 <p>As a rule, I do not recommend that beginners write their programs
-in a console (repl) but that they use an editor instead or a
+in a console (REPL) but that they use an editor instead or a
 notebook environment as it is easier to edit and correct mistakes.
 However, using a console is useful to demonstrate various
 features of friendly which can be made available
@@ -283,22 +284,20 @@ following content:</p>
 <p>to run this file, I will add an additional <code class="docutils literal notranslate"><span class="pre">i</span></code> flag so that <code class="docutils literal notranslate"><span class="pre">-m</span></code> become <code class="docutils literal notranslate"><span class="pre">-im</span></code>;
 as a result, a friendly console will be available after the program ends
 so that we can execute more Python commands.</p>
-<a class="reference internal image-reference" href="_images/friendly_interactive_indexerror_en.png"><img alt="friendly IndexError interactive example in English" src="_images/friendly_interactive_indexerror_en.png" style="width: 598.8px; height: 255.0px;" /></a>
+<a class="reference internal image-reference" href="_images/friendly_interactive_indexerror_en.png"><img alt="friendly IndexError interactive example in English" src="_images/friendly_interactive_indexerror_en.png" style="width: 585.6px; height: 252.6px;" /></a>
 <p>In the image above, the red arrow points to the the interactive prompt
-where we can type more command.</p>
+where we can type more command. the part identified by (1) is essentially the normal Python traceback. Depending on how long it gets, it can get shortened
+by friendly as is explained later [<a class="reference internal" href="multiple_tracebacks.html#multiple-tracebacks"><span class="std std-ref">Multiple tracebacks</span></a>].</p>
+<p>Part (2) is a “hint” <strong>occasionally</strong> provided by friendly and which
+can be useful in identifying the cause of the problem. You will see
+shortly how to get friendly to give additional information
+as to the possible cause of this error.</p>
 <p>Let’s do this again but choosing French as the default language
 with the <code class="docutils literal notranslate"><span class="pre">--lang</span> <span class="pre">fr</span></code> option: this will
 help to better identify various parts and compare what information
 is obtained from Python (as it won’t be translated) and what additional
 information is provided by friendly.</p>
-<a class="reference internal image-reference" href="_images/friendly_interactive_indexerror_fr.png"><img alt="friendly IndexError interactive example in French" src="_images/friendly_interactive_indexerror_fr.png" style="width: 601.1999999999999px; height: 272.4px;" /></a>
-<p>In the image above, the part identified by (1) is essentially the normal
-Python traceback. Depending on how long it gets, it can get shortened
-by friendly as is explained later [<a class="reference internal" href="multiple_tracebacks.html#multiple-tracebacks"><span class="std std-ref">Multiple tracebacks</span></a>].</p>
-<p>Part (2) is a “hint” <strong>occasionally</strong> provided by friendly
-that can be useful in identifying the cause of the problem. You will see
-shortly how to get friendly to give additional information
-as to the possible cause of this error.</p>
+<a class="reference internal image-reference" href="_images/friendly_interactive_indexerror_fr.png"><img alt="friendly IndexError interactive example in French" src="_images/friendly_interactive_indexerror_fr.png" style="width: 604.1999999999999px; height: 268.8px;" /></a>
 </div>
 
 
@@ -307,7 +306,7 @@ as to the possible cause of this error.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="what.html" class="btn btn-neutral float-right" title="what()" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="why.html" class="btn btn-neutral float-right" title="why()" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="usage.html" class="btn btn-neutral float-left" title="Basic usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

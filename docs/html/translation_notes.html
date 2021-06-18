@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Notes on translations - using gettext &mdash; Friendly 0.3.100 documentation</title>
+  <title>Notes on translations - using gettext &mdash; Friendly 0.3.103 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3.100
+                0.3.103
               </div>
             
           
@@ -98,15 +98,16 @@
 <p class="caption"><span class="caption-text">friendly console</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="why.html">why()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what.html">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="where.html">where()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="history.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">history() and back()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="friendly_object.html">Friendly object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="friendly_object.html#everything-about-the-friendly-console">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the friendly console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repl_api.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">IDLE</span></p>
@@ -287,20 +288,22 @@ to the user in their preferred language.</p>
 <h2>Structure of this project<a class="headerlink" href="#structure-of-this-project" title="Permalink to this headline">¶</a></h2>
 <p>Below, I make references to various files. Here’s a simplified view of the
 directory structure of this project, showing only a few relevant files:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">friendly</span><span class="o">/</span>
-    <span class="n">demos</span><span class="o">/</span>
-    <span class="n">friendly</span><span class="o">/</span>
-        <span class="n">locales</span><span class="o">/</span>
-            <span class="n">fr</span><span class="o">/</span>
-                <span class="n">LC_MESSAGES</span><span class="o">/</span>
-                    <span class="n">fr</span><span class="o">.</span><span class="n">mo</span>
-                    <span class="n">fr</span><span class="o">.</span><span class="n">po</span>
-            <span class="n">friendly</span><span class="o">.</span><span class="n">pot</span>
-        <span class="n">my_gettext</span><span class="o">.</span><span class="n">py</span>
-        <span class="n">session</span><span class="o">.</span><span class="n">py</span>
-        <span class="n">make_pot</span><span class="o">.</span><span class="n">bat</span>
-    <span class="n">tests</span><span class="o">/</span>
-    <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>friendly/
+    demos/
+    friendly/
+        locales/
+            fr/
+                LC_MESSAGES/
+                    friendly.mo
+                    friendly.po
+            friendly.pot
+        __init__.py
+        ...
+        make_pot.bat  &lt;-- not in repository
+        my_gettext.py
+        ...
+    tests/
+    setup.py
 </pre></div>
 </div>
 <p>If you look at the repository on Github (or cloned locally), you will not
@@ -356,7 +359,8 @@ which executes the content of <code class="docutils literal notranslate"><span c
 containing strings to be translated is located.</p></li>
 <li><p>I use <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">filename.py</span></code> instead of simply <code class="docutils literal notranslate"><span class="pre">filename.py</span></code> as I set my
 computer default to open <code class="docutils literal notranslate"><span class="pre">.py</span></code> files with my preferred editor instead of
-executing them.</p></li>
+executing them. If you are not using Windows, you might need to use
+<code class="docutils literal notranslate"><span class="pre">python3</span></code> instead of <code class="docutils literal notranslate"><span class="pre">python</span></code>.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">locales</span></code> option specifies that the template file is going to be
 created (or updated) in the <code class="docutils literal notranslate"><span class="pre">locales/</span></code> directory
 (see above for the directory structure).</p></li>

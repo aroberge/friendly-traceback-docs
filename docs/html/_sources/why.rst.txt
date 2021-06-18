@@ -3,7 +3,7 @@
 why()
 ======
 
-You are a beginner reading some code found in a tutorial on the web
+You read some interesting code found in a tutorial on the web
 and decide to try it out by copy-pasting it.
 
 .. image:: images/why_1.png
@@ -20,25 +20,7 @@ that provided by the terse hint shown after the traceback.
     used a fancy unicode quotation mark instead of a normal single or double
     quote for a string. This can happen if you copy-pasted code.
 
-More generally, ``why()`` attempts to find the exact cause of an
-exception and suggest some ways to fix the code.
+When you call ``why()``, **friendly** attempts to analyze the code you
+entered and figure out what exactly went wrong, and quite often makes
+suggestions as to how to fix it.
 
-
-Using www()
------------
-
-Occasionally, friendly will be unable to give you an explanation,
-or you will find that the explanation it gave is not sufficient.
-If that is the case, you can use ``www()`` with no arguments
-to automatically open your browser and
-do a search using the error message given by Python.
-
-.. image:: images/www_ddg.png
-   :scale: 60 %
-   :alt: Screen capture of search using DuckDuckGo
-
-Not always a search
--------------------
-
-In some cases, as discussed later, instead of a search for the error message,
-a specific page will be open when calling ``www()``.

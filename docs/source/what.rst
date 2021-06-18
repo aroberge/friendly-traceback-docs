@@ -48,31 +48,3 @@ by contributors::
     indentée (c'est-à-dire alignée verticalement avec les autres lignes) de la façon
     attendue.
 
-
-www(python=True)
-------------------
-
-You will occasionally see errors that are not known by friendly.
-Here's an example:
-
-.. image:: images/what_www.png
-   :scale: 60 %
-   :alt: Screen capture of unknown error
-
-
-Notice how I entered the command ``www(python=True)`` at the end:
-this resulted in opening a web browser and doing
-a search in the online Python documentation for the name of the most recent
-exception raised.
-
-.. image:: images/www_python.png
-   :scale: 60 %
-   :alt: Screen capture of search on Python documentation
-
-The search will always be done on the most recent Python version
-(3.9.2 in the above). If this is not the version you are using, you
-can select the correct one from the dropdown selector at the top
-of the Python documentation page.
-If I had set the language to French instead of
-English [which could have been done with ``set_lang('fr')``], the search
-would have been done in the French version of the Python documentation.

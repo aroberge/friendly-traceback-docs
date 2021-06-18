@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>what() &mdash; Friendly 0.3.100 documentation</title>
+  <title>what() &mdash; Friendly 0.3.103 documentation</title>
   
 
   
@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="why()" href="why.html" />
-    <link rel="prev" title="Console basics" href="repl.html" /> 
+    <link rel="next" title="where()" href="where.html" />
+    <link rel="prev" title="why()" href="why.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3.100
+                0.3.103
               </div>
             
           
@@ -98,18 +98,16 @@
 <p class="caption"><span class="caption-text">friendly console</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="repl.html">Console basics</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">what()</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#www-python-true">www(python=True)</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="why.html">why()</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">what()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="where.html">where()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="explain.html">explain()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="more.html">more()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="www.html">www()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="history.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">history() and back()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="friendly_object.html">Friendly object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="friendly_object.html#everything-about-the-friendly-console">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repl_more.html">Everything about the friendly console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repl_api.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">IDLE</span></p>
@@ -246,10 +244,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="why.html" class="btn btn-neutral float-right" title="why()" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="where.html" class="btn btn-neutral float-right" title="where()" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="repl.html" class="btn btn-neutral float-left" title="Console basics" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="why.html" class="btn btn-neutral float-left" title="why()" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
       
   </div>
   
@@ -268,7 +266,7 @@ in spite of the hint provided by friendly.
 Rather than heading to StackOverflow to ask a question and have it
 immediately closed as being a duplicate, you simply ask <code class="docutils literal notranslate"><span class="pre">what()</span></code>
 and friendly tries to help you.</p>
-<a class="reference internal image-reference" href="_images/greet_what_2.png"><img alt="Screen capture of explanation about unbound local error" src="_images/greet_what_2.png" style="width: 666.0px; height: 215.4px;" /></a>
+<a class="reference internal image-reference" href="_images/greet_what_2.png"><img alt="Screen capture of explanation about unbound local error" src="_images/greet_what_2.png" style="width: 666.0px; height: 183.0px;" /></a>
 <p><code class="docutils literal notranslate"><span class="pre">what()</span></code> only gives here some generic information about what an <code class="docutils literal notranslate"><span class="pre">UnboundLocalError</span></code> is.
 Later, you will see how friendly can often give more useful
 information regarding the exact cause of the exception, and how to fix it.</p>
@@ -295,24 +293,6 @@ by contributors:</p>
 <span class="go">attendue.</span>
 </pre></div>
 </div>
-<div class="section" id="www-python-true">
-<h2>www(python=True)<a class="headerlink" href="#www-python-true" title="Permalink to this headline">¶</a></h2>
-<p>You will occasionally see errors that are not known by friendly.
-Here’s an example:</p>
-<a class="reference internal image-reference" href="_images/what_www.png"><img alt="Screen capture of unknown error" src="_images/what_www.png" style="width: 679.8px; height: 289.8px;" /></a>
-<p>Notice how I entered the command <code class="docutils literal notranslate"><span class="pre">www(python=True)</span></code> at the end:
-this resulted in opening a web browser and doing
-a search in the online Python documentation for the name of the most recent
-exception raised.</p>
-<a class="reference internal image-reference" href="_images/www_python.png"><img alt="Screen capture of search on Python documentation" src="_images/www_python.png" style="width: 696.0px; height: 494.4px;" /></a>
-<p>The search will always be done on the most recent Python version
-(3.9.2 in the above). If this is not the version you are using, you
-can select the correct one from the dropdown selector at the top
-of the Python documentation page.
-If I had set the language to French instead of
-English [which could have been done with <code class="docutils literal notranslate"><span class="pre">set_lang('fr')</span></code>], the search
-would have been done in the French version of the Python documentation.</p>
-</div>
 </div>
 
 
@@ -321,8 +301,8 @@ would have been done in the French version of the Python documentation.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="why.html" class="btn btn-neutral float-right" title="why()" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="repl.html" class="btn btn-neutral float-left" title="Console basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="where.html" class="btn btn-neutral float-right" title="where()" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="why.html" class="btn btn-neutral float-left" title="why()" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

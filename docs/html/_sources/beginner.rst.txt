@@ -22,7 +22,8 @@ this code, interprets what it means, and might "print" (show) some
 result before showing another prompt waiting for us to enter
 more code.
 
-Other synonyms of REPL are "console", "shell", and "interpreter".
+Other words sometimes used instead of the REPL acronym are
+"console", "shell", and "interpreter".
 
 .. image:: images/python_terminal.png
    :scale: 50 %
@@ -68,12 +69,12 @@ For example, some of you might be familiar with Mu:
 Summary
 -------
 
-You can run Python programs by typing ``python ...`` in a terminal
-or by using and editor with a built-in menu for running Python programs.
+You can run Python programs by typing ``python ...`` or ``python3 ...``
+in a terminal or by using and editor with a built-in menu
+for running Python programs.
 
 In the early part of this documentation, the examples I will use
-will be mostly done using ``python ...`` in a terminal.
+will be mostly done using ``python ...`` in a Windows terminal.
 Even if this is not the way that you normally run Python programs,
 it would be most helpful if you tried to follow along by doing
 something similar to what I show.
-
