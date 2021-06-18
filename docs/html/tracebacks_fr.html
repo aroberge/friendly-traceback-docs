@@ -405,7 +405,7 @@ Python version: 3.8.4</p>
 <div class="section" id="generic">
 <h3>Generic<a class="headerlink" href="#generic" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_arithmetic_error.py&quot;, line 9, in test_Generic
+  File &quot;TESTS:\runtime\test_arithmetic_error.py&quot;, line 9, in test_Generic
     raise ArithmeticError(&#39;error&#39;)
 ArithmeticError: error
 
@@ -414,7 +414,7 @@ qui sont soulevées pour diverses erreurs arithmétiques.
 Il est inhabituel que vous voyiez cette exception;
 normalement, une exception plus spécifique aurait dû être soulevée.
 
-Exception levée à la ligne 9 du fichier HOME:\github\friendly\tests\runtime\test_arithmetic_error.py.
+Exception levée à la ligne 9 du fichier TESTS:\runtime\test_arithmetic_error.py.
 
     7:         # Usually, a subclass such as ZeroDivisionError, etc., would
     8:         # likely be raised.
@@ -431,7 +431,7 @@ Exception levée à la ligne 9 du fichier HOME:\github\friendly\tests\runtime\te
 <div class="section" id="id1">
 <h3>Generic<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_assertion_error.py&quot;, line 8, in test_Generic
+  File &quot;TESTS:\runtime\test_assertion_error.py&quot;, line 8, in test_Generic
     raise AssertionError(&quot;Fake message&quot;)
 AssertionError: Fake message
 
@@ -441,7 +441,7 @@ ni équivalente à `False` comme une liste vide, etc.
 
 Si `condition` est `False` ou son équivalent, une exception de type `AssertionError` est levée.
 
-Exception levée à la ligne 8 du fichier HOME:\github\friendly\tests\runtime\test_assertion_error.py.
+Exception levée à la ligne 8 du fichier TESTS:\runtime\test_assertion_error.py.
 
     6:         # We raise it explicitly, rather than with the keyword assert, since
     7:         # we don&#39;t want pytest to rewrite out test.
@@ -458,7 +458,7 @@ Exception levée à la ligne 8 du fichier HOME:\github\friendly\tests\runtime\te
 <div class="section" id="attribute-from-other-module">
 <h3>Attribute from other module<a class="headerlink" href="#attribute-from-other-module" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_attribute_error.py&quot;, line 299, in test_Attribute_from_other_module
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 299, in test_Attribute_from_other_module
     keyword.pi
 AttributeError: module &#39;keyword&#39; has no attribute &#39;pi&#39;
 
@@ -471,7 +471,7 @@ Au lieu du module `keyword`, peut-être vouliez-vous utiliser l’attribut `pi` 
 l&#39;un des modules suivants:
 `math, cmath` .
 
-Exception levée à la ligne 299 du fichier HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+Exception levée à la ligne 299 du fichier TESTS:\runtime\test_attribute_error.py.
 
    297:     import cmath
    298:     try:
@@ -485,7 +485,7 @@ Exception levée à la ligne 299 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="builtin-function">
 <h3>Builtin function<a class="headerlink" href="#builtin-function" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_attribute_error.py&quot;, line 217, in test_Builtin_function
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 217, in test_Builtin_function
     len.text
 AttributeError: &#39;builtin_function_or_method&#39; object has no attribute &#39;text&#39;
 
@@ -498,7 +498,7 @@ et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`
 `len` est une fonction. Peut-être que vous vouliez écrire
 `len(text)`
 
-Exception levée à la ligne 217 du fichier HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+Exception levée à la ligne 217 du fichier TESTS:\runtime\test_attribute_error.py.
 
    215:     text = &#39;Hello world!&#39;
    216:     try:
@@ -513,7 +513,7 @@ Exception levée à la ligne 217 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="builtin-module-with-no-file">
 <h3>Builtin module with no file<a class="headerlink" href="#builtin-module-with-no-file" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_attribute_error.py&quot;, line 234, in test_Builtin_module_with_no_file
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 234, in test_Builtin_module_with_no_file
     sys.foo
 AttributeError: module &#39;sys&#39; has no attribute &#39;foo&#39;
 
@@ -524,7 +524,7 @@ et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`
 Python nous dit qu’aucun objet avec le nom `foo` n’est
 dans le module `sys`.
 
-Exception levée à la ligne 234 du fichier HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+Exception levée à la ligne 234 du fichier TESTS:\runtime\test_attribute_error.py.
 
    232:
    233:     try:
@@ -538,7 +538,7 @@ Exception levée à la ligne 234 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="id2">
 <h3>Generic<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_attribute_error.py&quot;, line 24, in test_Generic
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 24, in test_Generic
     A.x  # testing type
 AttributeError: type object &#39;A&#39; has no attribute &#39;x&#39;
 
@@ -548,7 +548,7 @@ et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`
 
 L’objet `A` n’a pas d’attribut nommé `x`.
 
-Exception levée à la ligne 24 du fichier HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+Exception levée à la ligne 24 du fichier TESTS:\runtime\test_attribute_error.py.
 
    22:
    23:     try:
@@ -562,7 +562,7 @@ Exception levée à la ligne 24 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="generic-different-frame">
 <h3>Generic different frame<a class="headerlink" href="#generic-different-frame" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_attribute_error.py&quot;, line 47, in test_Generic_different_frame
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 47, in test_Generic_different_frame
     a.attr
 AttributeError: &#39;A&#39; object has no attribute &#39;attr&#39;
 
@@ -575,7 +575,7 @@ et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`
 L’objet `a` n’a pas d’attribut nommé `attr`.
 Peut-être que vous vouliez plutôt écrire : `a.attr2` au lieu de `a.attr`.
 
-Exception levée à la ligne 47 du fichier HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+Exception levée à la ligne 47 du fichier TESTS:\runtime\test_attribute_error.py.
 
    45:     a = f()
    46:     try:
@@ -589,7 +589,7 @@ Exception levée à la ligne 47 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="generic-instance">
 <h3>Generic instance<a class="headerlink" href="#generic-instance" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_attribute_error.py&quot;, line 65, in test_Generic_instance
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 65, in test_Generic_instance
     a.x
 AttributeError: &#39;A&#39; object has no attribute &#39;x&#39;
 
@@ -599,7 +599,7 @@ et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`
 
 L’objet `a` n’a pas d’attribut nommé `x`.
 
-Exception levée à la ligne 65 du fichier HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+Exception levée à la ligne 65 du fichier TESTS:\runtime\test_attribute_error.py.
 
    63:     a = A()
    64:     try:
@@ -613,7 +613,7 @@ Exception levée à la ligne 65 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="module-attribute-typo">
 <h3>Module attribute typo<a class="headerlink" href="#module-attribute-typo" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_attribute_error.py&quot;, line 142, in test_Module_attribute_typo
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 142, in test_Module_attribute_typo
     math.cost
 AttributeError: module &#39;math&#39; has no attribute &#39;cost&#39;
 
@@ -627,7 +627,7 @@ Au lieu d’écrire `math.cost`, peut-être que vous vouliez écrire
 l&#39;un des attributs suivants du module `math` :
 cos, cosh, acos
 
-Exception levée à la ligne 142 du fichier HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+Exception levée à la ligne 142 du fichier TESTS:\runtime\test_attribute_error.py.
 
    140:
    141:     try:
@@ -641,7 +641,7 @@ Exception levée à la ligne 142 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="nonetype">
 <h3>Nonetype<a class="headerlink" href="#nonetype" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_attribute_error.py&quot;, line 181, in test_Nonetype
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 181, in test_Nonetype
     a.b
 AttributeError: &#39;NoneType&#39; object has no attribute &#39;b&#39;
 
@@ -651,7 +651,7 @@ et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`
 
 Vous tentez d’accéder à l’attribut `b`
 pour une variable dont la valeur est `None`.
-Exception levée à la ligne 181 du fichier HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+Exception levée à la ligne 181 du fichier TESTS:\runtime\test_attribute_error.py.
 
    179:     a = None
    180:     try:
@@ -665,7 +665,7 @@ Exception levée à la ligne 181 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="object-attribute-typo">
 <h3>Object attribute typo<a class="headerlink" href="#object-attribute-typo" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_attribute_error.py&quot;, line 81, in test_Object_attribute_typo
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 81, in test_Object_attribute_typo
     a.appendh(4)
 AttributeError: &#39;list&#39; object has no attribute &#39;appendh&#39;
 
@@ -678,7 +678,7 @@ et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`
 L’objet `a` n’a pas d’attribut nommé `appendh`.
 Peut-être que vous vouliez plutôt écrire : `a.append` au lieu de `a.appendh`.
 
-Exception levée à la ligne 81 du fichier HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+Exception levée à la ligne 81 du fichier TESTS:\runtime\test_attribute_error.py.
 
    79:     try:
    80:         a = [1, 2, 3]
@@ -693,7 +693,7 @@ Exception levée à la ligne 81 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="perhaps-comma">
 <h3>Perhaps comma<a class="headerlink" href="#perhaps-comma" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_attribute_error.py&quot;, line 200, in test_Perhaps_comma
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 200, in test_Perhaps_comma
     a = [abcd
 AttributeError: &#39;str&#39; object has no attribute &#39;defg&#39;
 
@@ -708,7 +708,7 @@ Cependant, les objets `abcd` et `defg` sont des objets connus.
 Peut-être avez-vous écrit une période pour séparer ces deux objets,
 au lieu d’utiliser une virgule.
 
-Exception levée à la ligne 200 du fichier HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+Exception levée à la ligne 200 du fichier TESTS:\runtime\test_attribute_error.py.
 
    198:     # fmt: off
    199:     try:
@@ -723,7 +723,7 @@ Exception levée à la ligne 200 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="shadow-stdlib-module">
 <h3>Shadow stdlib module<a class="headerlink" href="#shadow-stdlib-module" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_attribute_error.py&quot;, line 163, in test_Shadow_stdlib_module
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 163, in test_Shadow_stdlib_module
     turtle.Pen
 AttributeError: module &#39;turtle&#39; has no attribute &#39;Pen&#39;
 
@@ -733,25 +733,25 @@ Une exception `AttributeError` se produit lorsque le code contient quelque chose
     `object.x`
 et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
 
-Vous avez importé un module nommé `turtle` de `HOME:\github\friendly\tests\turtle.py`.
+Vous avez importé un module nommé `turtle` de `TESTS:\turtle.py`.
 Il y a aussi un module nommé `turtle` dans la bibliothèque standard de Python.
 Peut-être avez-vous besoin de renommer votre module.
 
-Exception levée à la ligne 163 du fichier HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+Exception levée à la ligne 163 du fichier TESTS:\runtime\test_attribute_error.py.
 
    161:
    162:     try:
 --&gt;163:         turtle.Pen
    164:     except AttributeError as e:
 
-        turtle:  &lt;module turtle&gt; from HOME:\github\friendly\tests\turtle.py
+        turtle:  &lt;module turtle&gt; from TESTS:\turtle.py
 </pre></div>
 </div>
 </div>
 <div class="section" id="tuple-by-accident">
 <h3>Tuple by accident<a class="headerlink" href="#tuple-by-accident" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_attribute_error.py&quot;, line 269, in test_Tuple_by_accident
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 269, in test_Tuple_by_accident
     something.upper()
 AttributeError: &#39;tuple&#39; object has no attribute &#39;upper&#39;
 
@@ -766,7 +766,7 @@ ayant `upper` comme attribut.
 Peut-être avez-vous ajouté une virgule par erreur à la fin de la ligne
 lorsque vous avez défini `something`.
 
-Exception levée à la ligne 269 du fichier HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+Exception levée à la ligne 269 du fichier TESTS:\runtime\test_attribute_error.py.
 
    267:     something = &quot;abc&quot;,  # note trailing comma
    268:     try:
@@ -781,7 +781,7 @@ Exception levée à la ligne 269 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="use-builtin">
 <h3>Use builtin<a class="headerlink" href="#use-builtin" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_attribute_error.py&quot;, line 97, in test_Use_builtin
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 97, in test_Use_builtin
     a.length()
 AttributeError: &#39;list&#39; object has no attribute &#39;length&#39;
 
@@ -794,7 +794,7 @@ et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`
 L’objet `a` n’a pas d’attribut nommé `length`.
 Peut-être pouvez-vous utiliser la fonction Python builtin `len` à la place:
 `len(a)`.
-Exception levée à la ligne 97 du fichier HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+Exception levée à la ligne 97 du fichier TESTS:\runtime\test_attribute_error.py.
 
    95:     try:
    96:         a = [1, 2, 3]
@@ -809,7 +809,7 @@ Exception levée à la ligne 97 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="use-synonym">
 <h3>Use synonym<a class="headerlink" href="#use-synonym" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_attribute_error.py&quot;, line 113, in test_Use_synonym
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 113, in test_Use_synonym
     a.add(4)
 AttributeError: &#39;list&#39; object has no attribute &#39;add&#39;
 
@@ -823,7 +823,7 @@ L’objet `a` n’a pas d’attribut nommé `add`.
 Toutefois, `a` a les attributs suivants avec des sens similaires:
 &#39;append, extend, insert&#39;.
 
-Exception levée à la ligne 113 du fichier HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+Exception levée à la ligne 113 du fichier TESTS:\runtime\test_attribute_error.py.
 
    111:     try:
    112:         a = [1, 2, 3]
@@ -838,7 +838,7 @@ Exception levée à la ligne 113 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="using-slots">
 <h3>Using slots<a class="headerlink" href="#using-slots" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_attribute_error.py&quot;, line 254, in test_Using_slots
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 254, in test_Using_slots
     f.b = 1
 AttributeError: &#39;F&#39; object has no attribute &#39;b&#39;
 
@@ -851,7 +851,7 @@ Notez que l’objet `f` utilise `__slots__` qui empêche
 la création de nouveaux attributs.
 Voici quelques-uns de ses attributs connus :
 `a`.
-Exception levée à la ligne 254 du fichier HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+Exception levée à la ligne 254 du fichier TESTS:\runtime\test_attribute_error.py.
 
    252:     f = F()
    253:     try:
@@ -868,7 +868,7 @@ Exception levée à la ligne 254 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="id3">
 <h3>Generic<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_file_not_found_error.py&quot;, line 6, in test_Generic
+  File &quot;TESTS:\runtime\test_file_not_found_error.py&quot;, line 6, in test_Generic
     open(&quot;does_not_exist&quot;)
 FileNotFoundError: [Errno 2] No such file or directory: &#39;does_not_exist&#39;
 
@@ -879,7 +879,7 @@ Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 
 Dans votre programme, le nom du fichier inconnu est `does_not_exist`.
 
-Exception levée à la ligne 6 du fichier HOME:\github\friendly\tests\runtime\test_file_not_found_error.py.
+Exception levée à la ligne 6 du fichier TESTS:\runtime\test_file_not_found_error.py.
 
    4: def test_Generic():
    5:     try:
@@ -896,11 +896,11 @@ Exception levée à la ligne 6 du fichier HOME:\github\friendly\tests\runtime\te
 <div class="section" id="circular-import">
 <h3>Circular import<a class="headerlink" href="#circular-import" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_import_error.py&quot;, line 20, in test_Circular_import
+  File &quot;TESTS:\runtime\test_import_error.py&quot;, line 20, in test_Circular_import
     import circular_a
-  File &quot;HOME:\github\friendly\tests\circular_a.py&quot;, line 2, in &lt;module&gt;
+  File &quot;TESTS:\circular_a.py&quot;, line 2, in &lt;module&gt;
     import circular_b
-  File &quot;HOME:\github\friendly\tests\circular_b.py&quot;, line 2, in &lt;module&gt;
+  File &quot;TESTS:\circular_b.py&quot;, line 2, in &lt;module&gt;
     from circular_a import a
 ImportError: cannot import name &#39;a&#39; from partially initialized module &#39;circular_a&#39; (most likely due to a circular import) (C:\Users\andre\github\friendly\tests\circular_a.py)
 
@@ -913,22 +913,22 @@ Le module ou le paquet d&#39;où il devait être importé est `circular_a`.
 
 Le problème a probablement été causé par ce qu’on appelle une « importation circulaire ».
 Tout d’abord, Python a importé et a commencé à exécuter le code dans le fichier
-   &#39;HOME:\github\friendly\tests\runtime\test_import_error.py&#39;.
+   &#39;TESTS:\runtime\test_import_error.py&#39;.
 qui importe le module `circular_a`.
 Au cours de ce processus, le code d’un autre fichier,
-   &#39;HOME:\github\friendly\tests\circular_b.py&#39;
+   &#39;TESTS:\circular_b.py&#39;
 a été exécuté. Toutefois, dans ce dernier dossier, une tentative a été
 pour importer le module d’origine `circular_a`
 une deuxième fois, avant que Python n’ait terminé la première importation.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 20 du fichier HOME:\github\friendly\tests\runtime\test_import_error.py
+L&#39;exécution s&#39;est arrêtée à la ligne 20 du fichier TESTS:\runtime\test_import_error.py
 
    18: def test_Circular_import():
    19:     try:
 --&gt;20:         import circular_a
    21:     except ImportError as e:
 
-Exception levée à la ligne 2 du fichier HOME:\github\friendly\tests\circular_b.py.
+Exception levée à la ligne 2 du fichier TESTS:\circular_b.py.
 
    1: &quot;&quot;&quot;File used in for test_circular_import() in test_import_error.py&quot;&quot;&quot;
 --&gt;2: from circular_a import a
@@ -938,7 +938,7 @@ Exception levée à la ligne 2 du fichier HOME:\github\friendly\tests\circular_b
 <div class="section" id="simple-import-error">
 <h3>Simple import error<a class="headerlink" href="#simple-import-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_import_error.py&quot;, line 6, in test_Simple_import_error
+  File &quot;TESTS:\runtime\test_import_error.py&quot;, line 6, in test_Simple_import_error
     from math import Pi
 ImportError: cannot import name &#39;Pi&#39; from &#39;math&#39; (unknown location)
 
@@ -950,7 +950,7 @@ parce que le nom de l’objet n’est pas écrit correctement.
 
 Peut-être que vous vouliez importer `pi` (de `math`) au lieu de `Pi`.
 
-Exception levée à la ligne 6 du fichier HOME:\github\friendly\tests\runtime\test_import_error.py.
+Exception levée à la ligne 6 du fichier TESTS:\runtime\test_import_error.py.
 
    4: def test_Simple_import_error():
    5:     try:
@@ -965,7 +965,7 @@ Exception levée à la ligne 6 du fichier HOME:\github\friendly\tests\runtime\te
 <div class="section" id="empty">
 <h3>Empty<a class="headerlink" href="#empty" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_index_error.py&quot;, line 38, in test_Empty
+  File &quot;TESTS:\runtime\test_index_error.py&quot;, line 38, in test_Empty
     c = a[1]
 IndexError: list index out of range
 
@@ -979,7 +979,7 @@ est plus grand que la longueur de la séquence.
 Vous avez essayé d’obtenir l’élément avec l’indice `1` de `a`,
 une liste (`list`) qui ne contient aucun élément.
 
-Exception levée à la ligne 38 du fichier HOME:\github\friendly\tests\runtime\test_index_error.py.
+Exception levée à la ligne 38 du fichier TESTS:\runtime\test_index_error.py.
 
    36:     a = []
    37:     try:
@@ -994,7 +994,7 @@ Exception levée à la ligne 38 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="long-list">
 <h3>Long list<a class="headerlink" href="#long-list" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_index_error.py&quot;, line 24, in test_Long_list
+  File &quot;TESTS:\runtime\test_index_error.py&quot;, line 24, in test_Long_list
     print(a[60], b[0])
 IndexError: list index out of range
 
@@ -1007,7 +1007,7 @@ Vous avez essayé d’obtenir l’élément avec l’indice `60` de `a`,
 une liste (`list`) de longueur `40`.
 Les indices valides de `a` sont les entiers allant de `-40` à `39`.
 
-Exception levée à la ligne 24 du fichier HOME:\github\friendly\tests\runtime\test_index_error.py.
+Exception levée à la ligne 24 du fichier TESTS:\runtime\test_index_error.py.
 
    22:     b = tuple(range(50))
    23:     try:
@@ -1023,7 +1023,7 @@ Exception levée à la ligne 24 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="short-tuple">
 <h3>Short tuple<a class="headerlink" href="#short-tuple" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_index_error.py&quot;, line 8, in test_Short_tuple
+  File &quot;TESTS:\runtime\test_index_error.py&quot;, line 8, in test_Short_tuple
     print(a[3], b[2])
 IndexError: tuple index out of range
 
@@ -1039,7 +1039,7 @@ Vous avez essayé d’obtenir l’élément avec l’indice `3` de `a`,
 un `tuple` de longueur `3`.
 Les indices valides de `a` sont les entiers allant de `-3` à `2`.
 
-Exception levée à la ligne 8 du fichier HOME:\github\friendly\tests\runtime\test_index_error.py.
+Exception levée à la ligne 8 du fichier TESTS:\runtime\test_index_error.py.
 
     6:     b = [1, 2, 3]
     7:     try:
@@ -1064,7 +1064,7 @@ KeyError: 42
     During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_key_error.py&quot;, line 23, in test_ChainMap
+  File &quot;TESTS:\runtime\test_key_error.py&quot;, line 23, in test_ChainMap
     d.pop(42)
   File &quot;PYTHON_LIB:\collections\__init__.py&quot;, line 967, in pop
     raise KeyError(&#39;Key not found in the first mapping: {!r}&#39;.format(key))
@@ -1075,7 +1075,7 @@ en tant que clé dans un dictionnaire (dict) Python.
 
 Dans votre programme, la clé inconnue est `42`.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 23 du fichier HOME:\github\friendly\tests\runtime\test_key_error.py
+L&#39;exécution s&#39;est arrêtée à la ligne 23 du fichier TESTS:\runtime\test_key_error.py
 
    21:     d = ChainMap({}, {})
    22:     try:
@@ -1101,7 +1101,7 @@ Exception levée à la ligne 967 du fichier PYTHON_LIB:\collections\__init__.py.
 <div class="section" id="id4">
 <h3>Generic<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_key_error.py&quot;, line 7, in test_Generic
+  File &quot;TESTS:\runtime\test_key_error.py&quot;, line 7, in test_Generic
     d[&quot;c&quot;]
 KeyError: &#39;c&#39;
 
@@ -1110,7 +1110,7 @@ en tant que clé dans un dictionnaire (dict) Python.
 
 Dans votre programme, la clé inconnue est `c`.
 
-Exception levée à la ligne 7 du fichier HOME:\github\friendly\tests\runtime\test_key_error.py.
+Exception levée à la ligne 7 du fichier TESTS:\runtime\test_key_error.py.
 
    5:     d = {&quot;a&quot;: 1, &quot;b&quot;: 2}
    6:     try:
@@ -1127,7 +1127,7 @@ Exception levée à la ligne 7 du fichier HOME:\github\friendly\tests\runtime\te
 <div class="section" id="id5">
 <h3>Generic<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_lookup_error.py&quot;, line 10, in test_Generic
+  File &quot;TESTS:\runtime\test_lookup_error.py&quot;, line 10, in test_Generic
     raise LookupError(&quot;Fake message&quot;)
 LookupError: Fake message
 
@@ -1135,7 +1135,7 @@ LookupError: Fake message
 lorsqu’une clé ou un indice utilisé sur un tableau de correspondance ou une séquence est invalide.
 Elle peut également être levée directement par codecs.lookup().
 
-Exception levée à la ligne 10 du fichier HOME:\github\friendly\tests\runtime\test_lookup_error.py.
+Exception levée à la ligne 10 du fichier TESTS:\runtime\test_lookup_error.py.
 
     8:         # other than possibly codecs.lookup(), which is why we raise
     9:         # it directly here for our example.
@@ -1152,7 +1152,7 @@ Exception levée à la ligne 10 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="need-to-install-module">
 <h3>Need to install module<a class="headerlink" href="#need-to-install-module" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_module_not_found_error.py&quot;, line 76, in test_Need_to_install_module
+  File &quot;TESTS:\runtime\test_module_not_found_error.py&quot;, line 76, in test_Need_to_install_module
     import alphabet
 ModuleNotFoundError: No module named &#39;alphabet&#39;
 
@@ -1164,7 +1164,7 @@ Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 Aucun module nommé `alphabet` ne peut être importé.
 Vous devez peut-être l&#39;installer.
 
-Exception levée à la ligne 76 du fichier HOME:\github\friendly\tests\runtime\test_module_not_found_error.py.
+Exception levée à la ligne 76 du fichier TESTS:\runtime\test_module_not_found_error.py.
 
    74: def test_Need_to_install_module():
    75:     try:
@@ -1176,7 +1176,7 @@ Exception levée à la ligne 76 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="not-a-package">
 <h3>Not a package<a class="headerlink" href="#not-a-package" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_module_not_found_error.py&quot;, line 22, in test_Not_a_package
+  File &quot;TESTS:\runtime\test_module_not_found_error.py&quot;, line 22, in test_Not_a_package
     import os.xxx
 ModuleNotFoundError: No module named &#39;os.xxx&#39;; &#39;os&#39; is not a package
 
@@ -1188,7 +1188,7 @@ Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 `xxx` ne peut pas être importé de `os`.
 
 
-Exception levée à la ligne 22 du fichier HOME:\github\friendly\tests\runtime\test_module_not_found_error.py.
+Exception levée à la ligne 22 du fichier TESTS:\runtime\test_module_not_found_error.py.
 
    20:
    21:     try:
@@ -1200,7 +1200,7 @@ Exception levée à la ligne 22 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="not-a-package-similar-name">
 <h3>Not a package similar name<a class="headerlink" href="#not-a-package-similar-name" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_module_not_found_error.py&quot;, line 36, in test_Not_a_package_similar_name
+  File &quot;TESTS:\runtime\test_module_not_found_error.py&quot;, line 36, in test_Not_a_package_similar_name
     import os.pathh
 ModuleNotFoundError: No module named &#39;os.pathh&#39;; &#39;os&#39; is not a package
 
@@ -1217,7 +1217,7 @@ peut être importé de `os`.
 D’autres objets avec des noms similaires qui font partie de
 `os` comprennent `fspath`.
 
-Exception levée à la ligne 36 du fichier HOME:\github\friendly\tests\runtime\test_module_not_found_error.py.
+Exception levée à la ligne 36 du fichier TESTS:\runtime\test_module_not_found_error.py.
 
    34: def test_Not_a_package_similar_name():
    35:     try:
@@ -1229,7 +1229,7 @@ Exception levée à la ligne 36 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="object-not-module">
 <h3>Object not module<a class="headerlink" href="#object-not-module" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_module_not_found_error.py&quot;, line 49, in test_Object_not_module
+  File &quot;TESTS:\runtime\test_module_not_found_error.py&quot;, line 49, in test_Object_not_module
     import os.open
 ModuleNotFoundError: No module named &#39;os.open&#39;; &#39;os&#39; is not a package
 
@@ -1242,7 +1242,7 @@ Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 
 `open` n’est pas un module distinct, mais un objet qui fait partie de `os`.
 
-Exception levée à la ligne 49 du fichier HOME:\github\friendly\tests\runtime\test_module_not_found_error.py.
+Exception levée à la ligne 49 du fichier TESTS:\runtime\test_module_not_found_error.py.
 
    47: def test_Object_not_module():
    48:     try:
@@ -1256,7 +1256,7 @@ Exception levée à la ligne 49 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="similar-object-not-module">
 <h3>Similar object not module<a class="headerlink" href="#similar-object-not-module" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_module_not_found_error.py&quot;, line 62, in test_Similar_object_not_module
+  File &quot;TESTS:\runtime\test_module_not_found_error.py&quot;, line 62, in test_Similar_object_not_module
     import os.opend
 ModuleNotFoundError: No module named &#39;os.opend&#39;; &#39;os&#39; is not a package
 
@@ -1273,7 +1273,7 @@ peut être importé de `os`.
 D’autres objets avec des noms similaires qui font partie de
 `os` comprennent `popen, fdopen`.
 
-Exception levée à la ligne 62 du fichier HOME:\github\friendly\tests\runtime\test_module_not_found_error.py.
+Exception levée à la ligne 62 du fichier TESTS:\runtime\test_module_not_found_error.py.
 
    60: def test_Similar_object_not_module():
    61:     try:
@@ -1285,7 +1285,7 @@ Exception levée à la ligne 62 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="standard-library-module">
 <h3>Standard library module<a class="headerlink" href="#standard-library-module" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_module_not_found_error.py&quot;, line 7, in test_Standard_library_module
+  File &quot;TESTS:\runtime\test_module_not_found_error.py&quot;, line 7, in test_Standard_library_module
     import Tkinter
 ModuleNotFoundError: No module named &#39;Tkinter&#39;
 
@@ -1300,7 +1300,7 @@ Aucun module nommé `Tkinter` ne peut être importé.
 Vous devez peut-être l&#39;installer.
 `tkinter` est un module existant qui a un nom similaire.
 
-Exception levée à la ligne 7 du fichier HOME:\github\friendly\tests\runtime\test_module_not_found_error.py.
+Exception levée à la ligne 7 du fichier TESTS:\runtime\test_module_not_found_error.py.
 
    5: def test_Standard_library_module():
    6:     try:
@@ -1312,7 +1312,7 @@ Exception levée à la ligne 7 du fichier HOME:\github\friendly\tests\runtime\te
 <div class="section" id="no-curses">
 <h3>no curses<a class="headerlink" href="#no-curses" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_module_not_found_error.py&quot;, line 92, in test_no_curses
+  File &quot;TESTS:\runtime\test_module_not_found_error.py&quot;, line 92, in test_no_curses
     import curses
   File &quot;PYTHON_LIB:\curses\__init__.py&quot;, line 13, in &lt;module&gt;
     from _curses import *
@@ -1328,7 +1328,7 @@ Cela pourrait être parce que vous fait une faute d&#39;orthographe en
 Vous avez essayé d’importer le module curses.
 Le module curses est rarement installé avec Python sur Windows.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 92 du fichier HOME:\github\friendly\tests\runtime\test_module_not_found_error.py
+L&#39;exécution s&#39;est arrêtée à la ligne 92 du fichier TESTS:\runtime\test_module_not_found_error.py
 
    90:     def test_no_curses():
    91:         try:
@@ -1350,7 +1350,7 @@ Exception levée à la ligne 13 du fichier PYTHON_LIB:\curses\__init__.py.
 <div class="section" id="annotated-variable">
 <h3>Annotated variable<a class="headerlink" href="#annotated-variable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_name_error.py&quot;, line 24, in test_Annotated_variable
+  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 24, in test_Annotated_variable
     y = x
 NameError: name &#39;x&#39; is not defined
 
@@ -1372,7 +1372,7 @@ au lieu de
 
     x = 3
 
-Exception levée à la ligne 24 du fichier HOME:\github\friendly\tests\runtime\test_name_error.py.
+Exception levée à la ligne 24 du fichier TESTS:\runtime\test_name_error.py.
 
    22: def test_Annotated_variable():
    23:     try:
@@ -1385,7 +1385,7 @@ Exception levée à la ligne 24 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="id6">
 <h3>Generic<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_name_error.py&quot;, line 9, in test_Generic
+  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 9, in test_Generic
     this = something
 NameError: name &#39;something&#39; is not defined
 
@@ -1398,7 +1398,7 @@ utilisé avant qu&#39;on ne lui ait associé une valeur.
 Dans votre programme, `something` est un nom inconnu.
 Je n’ai pas d’informations supplémentaires pour vous.
 
-Exception levée à la ligne 9 du fichier HOME:\github\friendly\tests\runtime\test_name_error.py.
+Exception levée à la ligne 9 du fichier TESTS:\runtime\test_name_error.py.
 
     7: def test_Generic():
     8:     try:
@@ -1411,7 +1411,7 @@ Exception levée à la ligne 9 du fichier HOME:\github\friendly\tests\runtime\te
 <div class="section" id="missing-import">
 <h3>Missing import<a class="headerlink" href="#missing-import" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_name_error.py&quot;, line 103, in test_Missing_import
+  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 103, in test_Missing_import
     unicodedata.something
 NameError: name &#39;unicodedata&#39; is not defined
 
@@ -1427,7 +1427,7 @@ Le nom `unicodedata` n’est pas défini dans votre programme.
 Peut-être avez-vous oublié d’importer `unicodedata` qui se trouve
 dans la bibliothèque standard de Python.
 
-Exception levée à la ligne 103 du fichier HOME:\github\friendly\tests\runtime\test_name_error.py.
+Exception levée à la ligne 103 du fichier TESTS:\runtime\test_name_error.py.
 
    101: def test_Missing_import():
    102:     try:
@@ -1440,7 +1440,7 @@ Exception levée à la ligne 103 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="synonym">
 <h3>Synonym<a class="headerlink" href="#synonym" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_name_error.py&quot;, line 89, in test_Synonym
+  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 89, in test_Synonym
     cost  # wrote from math import * above
 NameError: name &#39;cost&#39; is not defined
 
@@ -1456,7 +1456,7 @@ Dans votre programme, `cost` est un nom inconnu.
 Au lieu d’écrire `cost`, peut-être que vous vouliez écrire l&#39;un des noms suivants :
 *    Portée globale : `cos`, `cosh`, `acos`
 
-Exception levée à la ligne 89 du fichier HOME:\github\friendly\tests\runtime\test_name_error.py.
+Exception levée à la ligne 89 du fichier TESTS:\runtime\test_name_error.py.
 
    87:
    88:     try:
@@ -1483,7 +1483,7 @@ socket.gaierror: [Errno 11001] getaddrinfo failed
     During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_os_error.py&quot;, line 7, in test_Urllib_error
+  File &quot;TESTS:\runtime\test_os_error.py&quot;, line 7, in test_Urllib_error
     request.urlopen(&quot;http://does_not_exist&quot;)
        ... Plus de lignes non affichées. ...
   File &quot;PYTHON_LIB:\urllib\request.py&quot;, line 1379, in http_open
@@ -1503,7 +1503,7 @@ qu’une connexion ne peut être faite.
 Si c’est le cas, vérifiez les fautes de frappe dans l’URL
 et vérifiez votre connectivité Internet.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 7 du fichier HOME:\github\friendly\tests\runtime\test_os_error.py
+L&#39;exécution s&#39;est arrêtée à la ligne 7 du fichier TESTS:\runtime\test_os_error.py
 
    5:     from urllib import request, error
    6:     try:
@@ -1530,14 +1530,14 @@ Exception levée à la ligne 1353 du fichier PYTHON_LIB:\urllib\request.py.
 <div class="section" id="id7">
 <h3>Generic<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_overflow_error.py&quot;, line 6, in test_Generic
+  File &quot;TESTS:\runtime\test_overflow_error.py&quot;, line 6, in test_Generic
     2.0 ** 1600
 OverflowError: (34, &#39;Result too large&#39;)
 
 Une exception de type `OverflowError` est levée lorsque le résultat d’une opération arithmétique
 est trop grand pour être manipulé par le processeur de l’ordinateur.
 
-Exception levée à la ligne 6 du fichier HOME:\github\friendly\tests\runtime\test_overflow_error.py.
+Exception levée à la ligne 6 du fichier TESTS:\runtime\test_overflow_error.py.
 
    4: def test_Generic():
    5:     try:
@@ -1552,12 +1552,12 @@ Exception levée à la ligne 6 du fichier HOME:\github\friendly\tests\runtime\te
 <div class="section" id="id8">
 <h3>Generic<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_recursion_error.py&quot;, line 8, in test_Generic
+  File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 8, in test_Generic
     a()
        ... Plus de lignes non affichées. ...
-  File &quot;HOME:\github\friendly\tests\runtime\test_recursion_error.py&quot;, line 6, in a
+  File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 6, in a
     return a()
-  File &quot;HOME:\github\friendly\tests\runtime\test_recursion_error.py&quot;, line 6, in a
+  File &quot;TESTS:\runtime\test_recursion_error.py&quot;, line 6, in a
     return a()
 RecursionError: maximum recursion depth exceeded
 
@@ -1566,7 +1566,7 @@ directement ou indirectement, trop de fois.
 Cette exception indique presque toujours que vous avez fait une erreur dans votre code
 et que votre programme ne terminerait jamais.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 8 du fichier HOME:\github\friendly\tests\runtime\test_recursion_error.py
+L&#39;exécution s&#39;est arrêtée à la ligne 8 du fichier TESTS:\runtime\test_recursion_error.py
 
     6:         return a()
     7:     try:
@@ -1575,7 +1575,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 8 du fichier HOME:\github\frien
 
         a:  &lt;function a&gt; from test_Generic
 
-Exception levée à la ligne 6 du fichier HOME:\github\friendly\tests\runtime\test_recursion_error.py.
+Exception levée à la ligne 6 du fichier TESTS:\runtime\test_recursion_error.py.
 
    4: def test_Generic():
    5:     def a():
@@ -1593,7 +1593,7 @@ Exception levée à la ligne 6 du fichier HOME:\github\friendly\tests\runtime\te
 <div class="section" id="bad-type-for-unary-operator">
 <h3>Bad type for unary operator<a class="headerlink" href="#bad-type-for-unary-operator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 371, in test_Bad_type_for_unary_operator
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 371, in test_Bad_type_for_unary_operator
     a =+ &quot;def&quot;
 TypeError: bad operand type for unary +: &#39;str&#39;
 
@@ -1609,7 +1609,7 @@ Cette opération n’est pas définie pour ce type d’objet.
 
 Peut-être que vous vouliez plutôt écrire `+=` au lieu de `=+`
 
-Exception levée à la ligne 371 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 371 du fichier TESTS:\runtime\test_type_error.py.
 
    369:         # fmt: off
    370:         a = &quot;abc&quot;
@@ -1622,7 +1622,7 @@ Exception levée à la ligne 371 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="builtin-has-no-len">
 <h3>Builtin has no len<a class="headerlink" href="#builtin-has-no-len" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 780, in test_Builtin_has_no_len
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 780, in test_Builtin_has_no_len
     len(&quot;Hello world&quot;.split)
 TypeError: object of type &#39;builtin_function_or_method&#39; has no len()
 
@@ -1637,7 +1637,7 @@ Je soupçonne que vous avez oublié d’ajouter des parenthèses pour invoquer `
 Vous avez peut-être voulu écrire :
 `len(&quot;Hello world&quot;.split())`
 
-Exception levée à la ligne 780 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 780 du fichier TESTS:\runtime\test_type_error.py.
 
    778: def test_Builtin_has_no_len():
    779:     try:
@@ -1652,7 +1652,7 @@ Exception levée à la ligne 780 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="can-only-concatenate">
 <h3>Can only concatenate<a class="headerlink" href="#can-only-concatenate" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 37, in test_Can_only_concatenate
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 37, in test_Can_only_concatenate
     result = a_tuple + a_list
 TypeError: can only concatenate tuple (not &quot;list&quot;) to tuple
 
@@ -1664,7 +1664,7 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 Vous avez essayé de concaténer (additionner) deux types d’objets différents:
 un `tuple` et une liste (`list`).
 
-Exception levée à la ligne 37 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 37 du fichier TESTS:\runtime\test_type_error.py.
 
    35:         a_tuple = (1, 2, 3)
    36:         a_list = [1, 2, 3]
@@ -1680,7 +1680,7 @@ Exception levée à la ligne 37 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="cannot-convert-dictionary-update-sequence">
 <h3>Cannot convert dictionary update sequence<a class="headerlink" href="#cannot-convert-dictionary-update-sequence" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 766, in test_Cannot_convert_dictionary_update_sequence
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 766, in test_Cannot_convert_dictionary_update_sequence
     dd.update([1, 2, 3])
 TypeError: cannot convert dictionary update sequence element #0 to a sequence
 
@@ -1695,7 +1695,7 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 Au lieu d’écrire `dd.update([1, 2, 3])`
 peut-être devriez-vous utiliser la méthode `dict.fromkeys()` : `dd.update( dict.fromkeys([1, 2, 3]) )`.
 
-Exception levée à la ligne 766 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 766 du fichier TESTS:\runtime\test_type_error.py.
 
    764:     dd = {&quot;a&quot;: &quot;a&quot;}
    765:     try:
@@ -1710,7 +1710,7 @@ Exception levée à la ligne 766 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="cannot-multiply-by-non-int">
 <h3>Cannot multiply by non int<a class="headerlink" href="#cannot-multiply-by-non-int" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 570, in test_Cannot_multiply_by_non_int
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 570, in test_Cannot_multiply_by_non_int
     &quot;a&quot; * &quot;2&quot;
 TypeError: can&#39;t multiply sequence by non-int of type &#39;str&#39;
 
@@ -1725,7 +1725,7 @@ Vous ne pouvez multiplier les séquences, telles que
 les listes, les tuples, les chaînes, etc., que par des entiers.
 Peut-être avez-vous oublié de convertir `&quot;2&quot;` en un entier.
 
-Exception levée à la ligne 570 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 570 du fichier TESTS:\runtime\test_type_error.py.
 
    568:
    569:     try:
@@ -1737,7 +1737,7 @@ Exception levée à la ligne 570 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="cannot-unpack-non-iterable-object">
 <h3>Cannot unpack non iterable object<a class="headerlink" href="#cannot-unpack-non-iterable-object" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 738, in test_Cannot_unpack_non_iterable_object
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 738, in test_Cannot_unpack_non_iterable_object
     a, b = 42.0
 TypeError: cannot unpack non-iterable float object
 
@@ -1752,7 +1752,7 @@ Un itérable est un objet capable de renvoyer ses membres un à la fois.
 Les contenants python (`list, tuple, dict`, etc.) sont itérables,
 mais pas les objets de type `float`.
 
-Exception levée à la ligne 738 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 738 du fichier TESTS:\runtime\test_type_error.py.
 
    736: def test_Cannot_unpack_non_iterable_object():
    737:     try:
@@ -1764,7 +1764,7 @@ Exception levée à la ligne 738 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="comparison-not-supported">
 <h3>Comparison not supported<a class="headerlink" href="#comparison-not-supported" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 320, in test_Comparison_not_supported
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 320, in test_Comparison_not_supported
     b &gt;= a
 TypeError: &#39;&gt;=&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
 
@@ -1780,7 +1780,7 @@ deux types d’objets incompatibles:
 un entier (`int`) et une chaîne de caractères (`str`).
 Peut-être avez-vous oublié de convertir `a` en un entier (`int`).
 
-Exception levée à la ligne 320 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 320 du fichier TESTS:\runtime\test_type_error.py.
 
    318:         a = &quot;2&quot;
    319:         b = 42
@@ -1795,7 +1795,7 @@ Exception levée à la ligne 320 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="derive-from-baseexception">
 <h3>Derive from BaseException<a class="headerlink" href="#derive-from-baseexception" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 513, in test_Derive_from_BaseException
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 513, in test_Derive_from_BaseException
     raise &quot;exception&quot;  # noqa
 TypeError: exceptions must derive from BaseException
 
@@ -1806,7 +1806,7 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
 Dans Python 3, les exceptions doivent être dérivées de BaseException.
 
-Exception levée à la ligne 513 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 513 du fichier TESTS:\runtime\test_type_error.py.
 
    511: def test_Derive_from_BaseException():
    512:     try:
@@ -1818,7 +1818,7 @@ Exception levée à la ligne 513 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="indices-must-be-integers-or-slices">
 <h3>Indices must be integers or slices<a class="headerlink" href="#indices-must-be-integers-or-slices" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 652, in test_Indices_must_be_integers_or_slices
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 652, in test_Indices_must_be_integers_or_slices
     [1, 2, 3][&quot;2&quot;]
 TypeError: list indices must be integers or slices, not str
 
@@ -1837,7 +1837,7 @@ et vous l’avez utilisé une chaîne de caractères (`str`) la place.
 
 Peut-être avez-vous oublié de convertir `&quot;2&quot;` en un entier.
 
-Exception levée à la ligne 652 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 652 du fichier TESTS:\runtime\test_type_error.py.
 
    650:
    651:     try:
@@ -1849,7 +1849,7 @@ Exception levée à la ligne 652 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="not-an-integer">
 <h3>Not an integer<a class="headerlink" href="#not-an-integer" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 615, in test_Not_an_integer
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 615, in test_Not_an_integer
     range(c, d)
 TypeError: &#39;str&#39; object cannot be interpreted as an integer
 
@@ -1862,7 +1862,7 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 
 Vous avez écrit un objet de type `str` là où un entier était attendu.
 Peut-être avez-vous oublié de convertir `c, d` en entiers.
-Exception levée à la ligne 615 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 615 du fichier TESTS:\runtime\test_type_error.py.
 
    613:     c, d = &quot;2&quot;, &quot;3&quot;
    614:     try:
@@ -1878,7 +1878,7 @@ Exception levée à la ligne 615 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="not-callable">
 <h3>Not callable<a class="headerlink" href="#not-callable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 500, in test_Not_callable
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 500, in test_Not_callable
     _ = [1, 2](a + b)
 TypeError: &#39;list&#39; object is not callable
 
@@ -1898,7 +1898,7 @@ Cependant, `[1, 2]` est une séquence.
 Peut-être que vous vouliez utiliser `[]` au lieu de `()` et écrire
 `[1, 2][a + b]`
 
-Exception levée à la ligne 500 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 500 du fichier TESTS:\runtime\test_type_error.py.
 
    498:     try:
    499:         a, b = 3, 7
@@ -1915,7 +1915,7 @@ Exception levée à la ligne 500 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="object-is-not-iterable">
 <h3>Object is not iterable<a class="headerlink" href="#object-is-not-iterable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 724, in test_Object_is_not_iterable
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 724, in test_Object_is_not_iterable
     list(42)
 TypeError: &#39;int&#39; object is not iterable
 
@@ -1928,7 +1928,7 @@ Un itérable est un objet capable de renvoyer ses membres un à la fois.
 Les contenants python (`list, tuple, dict`, etc.) sont itérables.
 Une itérable est requis ici.
 
-Exception levée à la ligne 724 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 724 du fichier TESTS:\runtime\test_type_error.py.
 
    722: def test_Object_is_not_iterable():
    723:     try:
@@ -1942,7 +1942,7 @@ Exception levée à la ligne 724 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="object-is-not-subscriptable">
 <h3>Object is not subscriptable<a class="headerlink" href="#object-is-not-subscriptable" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 710, in test_Object_is_not_subscriptable
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 710, in test_Object_is_not_subscriptable
     a = f[1]
 TypeError: &#39;function&#39; object is not subscriptable
 
@@ -1958,7 +1958,7 @@ desquels on peut tirer des éléments en utilisant la notation `[...]`.
 
 Peut-être que vous vouliez plutôt écrire `f(1)`.
 
-Exception levée à la ligne 710 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 710 du fichier TESTS:\runtime\test_type_error.py.
 
    708:
    709:     try:
@@ -1973,7 +1973,7 @@ Exception levée à la ligne 710 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="slice-indices-must-be-integers-or-none">
 <h3>Slice indices must be integers or None<a class="headerlink" href="#slice-indices-must-be-integers-or-none" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 666, in test_Slice_indices_must_be_integers_or_None
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 666, in test_Slice_indices_must_be_integers_or_None
     [1, 2, 3][1.0:2.0]
 TypeError: slice indices must be integers or None or have an __index__ method
 
@@ -1988,7 +1988,7 @@ d’une séquence, c’est-à-dire quelque chose comme
 chacune des variables `start`, `stop`, et `step` doit être soit un entier, soit `None`,
 ou possiblement un autre objet ayant une méthode `__index__`.
 
-Exception levée à la ligne 666 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 666 du fichier TESTS:\runtime\test_type_error.py.
 
    664: def test_Slice_indices_must_be_integers_or_None():
    665:     try:
@@ -2000,7 +2000,7 @@ Exception levée à la ligne 666 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="too-few-positional-argument">
 <h3>Too few positional argument<a class="headerlink" href="#too-few-positional-argument" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 441, in test_Too_few_positional_argument
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 441, in test_Too_few_positional_argument
     fn(1)
 TypeError: fn() missing 2 required positional arguments: &#39;b&#39; and &#39;c&#39;
 
@@ -2012,7 +2012,7 @@ ou en tentant d&#39;effectuer une opération non permise sur un type d&#39;objet
 Vous avez apparemment invoqué la fonction &#39;fn()&#39; avec
 moins d&#39;arguments positionnels qu&#39;il n&#39;en faut (2 manquent).
 
-Exception levée à la ligne 441 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 441 du fichier TESTS:\runtime\test_type_error.py.
 
    439:
    440:     try:
@@ -2026,7 +2026,7 @@ Exception levée à la ligne 441 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="too-many-positional-argument">
 <h3>Too many positional argument<a class="headerlink" href="#too-many-positional-argument" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 422, in test_Too_many_positional_argument
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 422, in test_Too_many_positional_argument
     A().f(1)
 TypeError: f() takes 1 positional argument but 2 were given
 
@@ -2041,7 +2041,7 @@ Vous avez apparemment invoqué la fonction `f` avec
 2 arguments positionnels alors qu&#39;elle en requiert 1.
 Peut-être avez-vous oublié `self` lors de la définition de `f`.
 
-Exception levée à la ligne 422 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 422 du fichier TESTS:\runtime\test_type_error.py.
 
    420:
    421:     try:
@@ -2055,7 +2055,7 @@ Exception levée à la ligne 422 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="tuple-no-item-assignment">
 <h3>Tuple no item assignment<a class="headerlink" href="#tuple-no-item-assignment" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 389, in test_Tuple_no_item_assignment
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 389, in test_Tuple_no_item_assignment
     a[0] = 0
 TypeError: &#39;tuple&#39; object does not support item assignment
 
@@ -2072,7 +2072,7 @@ Vous avez essayé de modifier une partie d’un tel objet immuable: un `tuple`,
 probablement en utilisant une opération d’indexation.
 Peut-être que vous vouliez plutôt utiliser une liste.
 
-Exception levée à la ligne 389 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 389 du fichier TESTS:\runtime\test_type_error.py.
 
    387:     a = (1, 2, 3)
    388:     try:
@@ -2087,7 +2087,7 @@ Exception levée à la ligne 389 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="unhachable-type">
 <h3>Unhachable type<a class="headerlink" href="#unhachable-type" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 683, in test_Unhachable_type
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 683, in test_Unhachable_type
     {[1, 2]: 1}
 TypeError: unhashable type: &#39;list&#39;
 
@@ -2101,7 +2101,7 @@ comme éléments de `set` ou des clés de `dict`.
 Les objets hachables sont des objets qui ne changent pas de valeur
 une fois qu’ils ont été créés.Au lieu d’utiliser une liste (`list`), envisagez d’utiliser un `tuple`.
 
-Exception levée à la ligne 683 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 683 du fichier TESTS:\runtime\test_type_error.py.
 
    681: def test_Unhachable_type():
    682:     try:
@@ -2113,7 +2113,7 @@ Exception levée à la ligne 683 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="unsupported-operand-types">
 <h3>Unsupported operand types<a class="headerlink" href="#unsupported-operand-types" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 283, in test_Unsupported_operand_types
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 283, in test_Unsupported_operand_types
     a @= b
 TypeError: unsupported operand type(s) for @=: &#39;str&#39; and &#39;int&#39;
 
@@ -2128,7 +2128,7 @@ une chaîne de caractères (`str`) et un entier (`int`).
 Cet opérateur est normalement utilisé uniquement
 pour la multiplication des matrices.
 
-Exception levée à la ligne 283 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 283 du fichier TESTS:\runtime\test_type_error.py.
 
    281:         a = &quot;a&quot;
    282:         b = 2
@@ -2143,7 +2143,7 @@ Exception levée à la ligne 283 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="function-has-no-len">
 <h3>function has no len<a class="headerlink" href="#function-has-no-len" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_type_error.py&quot;, line 796, in test_function_has_no_len
+  File &quot;TESTS:\runtime\test_type_error.py&quot;, line 796, in test_function_has_no_len
     len(bad)
 TypeError: object of type &#39;function&#39; has no len()
 
@@ -2158,7 +2158,7 @@ Je soupçonne que vous avez oublié d’ajouter des parenthèses pour invoquer `
 Vous avez peut-être voulu écrire :
 `len(bad())`
 
-Exception levée à la ligne 796 du fichier HOME:\github\friendly\tests\runtime\test_type_error.py.
+Exception levée à la ligne 796 du fichier TESTS:\runtime\test_type_error.py.
 
    794:         pass
    795:     try:
@@ -2176,11 +2176,11 @@ Exception levée à la ligne 796 du fichier HOME:\github\friendly\tests\runtime\
 <div class="section" id="missing-global">
 <h3>Missing global<a class="headerlink" href="#missing-global" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_unbound_local_error.py&quot;, line 27, in test_Missing_global
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 27, in test_Missing_global
     outer_missing_global()
-  File &quot;HOME:\github\friendly\tests\runtime\test_unbound_local_error.py&quot;, line 11, in outer_missing_global
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 11, in outer_missing_global
     inner()
-  File &quot;HOME:\github\friendly\tests\runtime\test_unbound_local_error.py&quot;, line 9, in inner
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 9, in inner
     spam_missing_global += 1
 UnboundLocalError: local variable &#39;spam_missing_global&#39; referenced before assignment
 
@@ -2203,7 +2203,7 @@ Peut-être la déclaration
 
 aurait dû être incluse comme première ligne à l’intérieur de votre fonction.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 27 du fichier HOME:\github\friendly\tests\runtime\test_unbound_local_error.py
+L&#39;exécution s&#39;est arrêtée à la ligne 27 du fichier TESTS:\runtime\test_unbound_local_error.py
 
    25:
    26:     try:
@@ -2212,7 +2212,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 27 du fichier HOME:\github\frie
 
         global outer_missing_global:  &lt;function outer_missing_global&gt;
 
-Exception levée à la ligne 9 du fichier HOME:\github\friendly\tests\runtime\test_unbound_local_error.py.
+Exception levée à la ligne 9 du fichier TESTS:\runtime\test_unbound_local_error.py.
 
     7: def outer_missing_global():
     8:     def inner():
@@ -2225,11 +2225,11 @@ Exception levée à la ligne 9 du fichier HOME:\github\friendly\tests\runtime\te
 <div class="section" id="missing-nonlocal">
 <h3>Missing nonlocal<a class="headerlink" href="#missing-nonlocal" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_unbound_local_error.py&quot;, line 48, in test_Missing_nonlocal
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 48, in test_Missing_nonlocal
     outer_missing_nonlocal()
-  File &quot;HOME:\github\friendly\tests\runtime\test_unbound_local_error.py&quot;, line 20, in outer_missing_nonlocal
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 20, in outer_missing_nonlocal
     inner()
-  File &quot;HOME:\github\friendly\tests\runtime\test_unbound_local_error.py&quot;, line 18, in inner
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 18, in inner
     spam_missing_nonlocal += 1
 UnboundLocalError: local variable &#39;spam_missing_nonlocal&#39; referenced before assignment
 
@@ -2252,7 +2252,7 @@ Peut-être la déclaration
 
 aurait dû être incluse comme première ligne à l’intérieur de votre fonction.
 
-L&#39;exécution s&#39;est arrêtée à la ligne 48 du fichier HOME:\github\friendly\tests\runtime\test_unbound_local_error.py
+L&#39;exécution s&#39;est arrêtée à la ligne 48 du fichier TESTS:\runtime\test_unbound_local_error.py
 
    46:
    47:     try:
@@ -2261,7 +2261,7 @@ L&#39;exécution s&#39;est arrêtée à la ligne 48 du fichier HOME:\github\frie
 
         global outer_missing_nonlocal:  &lt;function outer_missing_nonlocal&gt;
 
-Exception levée à la ligne 18 du fichier HOME:\github\friendly\tests\runtime\test_unbound_local_error.py.
+Exception levée à la ligne 18 du fichier TESTS:\runtime\test_unbound_local_error.py.
 
    16:
    17:     def inner():
@@ -2275,7 +2275,7 @@ Exception levée à la ligne 18 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="id9">
 <h3>Generic<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_unknown_error.py&quot;, line 10, in test_Generic
+  File &quot;TESTS:\runtime\test_unknown_error.py&quot;, line 10, in test_Generic
     raise MyException(&quot;Some informative message about an unknown exception.&quot;)
 MyException: Some informative message about an unknown exception.
 
@@ -2286,7 +2286,7 @@ https://github.com/aroberge/friendly/issues
 Si vous utilisez la console Friendly, utilisez `www()` pour
 faire une recherche sur Internet pour ce cas particulier.
 
-Exception levée à la ligne 10 du fichier HOME:\github\friendly\tests\runtime\test_unknown_error.py.
+Exception levée à la ligne 10 du fichier TESTS:\runtime\test_unknown_error.py.
 
     8: def test_Generic():
     9:     try:
@@ -2303,7 +2303,7 @@ Exception levée à la ligne 10 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="date-invalid-month">
 <h3>Date invalid month<a class="headerlink" href="#date-invalid-month" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_value_error.py&quot;, line 58, in test_Date_invalid_month
+  File &quot;TESTS:\runtime\test_value_error.py&quot;, line 58, in test_Date_invalid_month
     d = date(2021, 13, 1)
 ValueError: month must be in 1..12
 
@@ -2315,7 +2315,7 @@ a reçu un argument du bon type, mais une valeur inappropriée.
 Je crois que vous avez indiqué une valeur non valide pour le mois
 dans un objet de type `date`. Les valeurs valides sont les entiers de 1 à 12.
 
-Exception levée à la ligne 58 du fichier HOME:\github\friendly\tests\runtime\test_value_error.py.
+Exception levée à la ligne 58 du fichier TESTS:\runtime\test_value_error.py.
 
    56:     from datetime import date
    57:     try:
@@ -2330,7 +2330,7 @@ Exception levée à la ligne 58 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="not-enough-values-to-unpack">
 <h3>Not enough values to unpack<a class="headerlink" href="#not-enough-values-to-unpack" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_value_error.py&quot;, line 28, in test_Not_enough_values_to_unpack
+  File &quot;TESTS:\runtime\test_value_error.py&quot;, line 28, in test_Not_enough_values_to_unpack
     a, b, c = d
 ValueError: not enough values to unpack (expected 3, got 2)
 
@@ -2342,7 +2342,7 @@ Le dépaquetage (&#39;unpack&#39;) est un moyen pratique d’attribuer un nom
 Dans ce cas-ci, il y a plus de noms (3)
 que la longueur de l’itérable, une chaîne de caractères (`str`) de longueur 2.
 
-Exception levée à la ligne 28 du fichier HOME:\github\friendly\tests\runtime\test_value_error.py.
+Exception levée à la ligne 28 du fichier TESTS:\runtime\test_value_error.py.
 
    26:     d = &quot;ab&quot;
    27:     try:
@@ -2356,7 +2356,7 @@ Exception levée à la ligne 28 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="too-many-values-to-unpack">
 <h3>Too many values to unpack<a class="headerlink" href="#too-many-values-to-unpack" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_value_error.py&quot;, line 43, in test_Too_many_values_to_unpack
+  File &quot;TESTS:\runtime\test_value_error.py&quot;, line 43, in test_Too_many_values_to_unpack
     a, b = c
 ValueError: too many values to unpack (expected 2)
 
@@ -2368,7 +2368,7 @@ Le dépaquetage (&#39;unpack&#39;) est un moyen pratique d’attribuer un nom
 Dans ce cas-ci, il y a moins de noms (2)
 que la longueur de l’itérable, une liste (`list`) de longueur 3.
 
-Exception levée à la ligne 43 du fichier HOME:\github\friendly\tests\runtime\test_value_error.py.
+Exception levée à la ligne 43 du fichier TESTS:\runtime\test_value_error.py.
 
    41:     c = [1, 2, 3]
    42:     try:
@@ -2385,7 +2385,7 @@ Exception levée à la ligne 43 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="complex-division">
 <h3>Complex division<a class="headerlink" href="#complex-division" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_zero_division_error.py&quot;, line 97, in test_Complex_division
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 97, in test_Complex_division
     1 / zero
 ZeroDivisionError: complex division by zero
 
@@ -2398,7 +2398,7 @@ Vous divisez par le terme suivant
 
 qui est égal à zéro.
 
-Exception levée à la ligne 97 du fichier HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+Exception levée à la ligne 97 du fichier TESTS:\runtime\test_zero_division_error.py.
 
    95:     zero = 0j
    96:     try:
@@ -2412,7 +2412,7 @@ Exception levée à la ligne 97 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="division-operator">
 <h3>Division operator<a class="headerlink" href="#division-operator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_zero_division_error.py&quot;, line 7, in test_Division_operator
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 7, in test_Division_operator
     1 / zero
 ZeroDivisionError: division by zero
 
@@ -2425,7 +2425,7 @@ Vous divisez par le terme suivant
 
 qui est égal à zéro.
 
-Exception levée à la ligne 7 du fichier HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+Exception levée à la ligne 7 du fichier TESTS:\runtime\test_zero_division_error.py.
 
    5:     zero = 0
    6:     try:
@@ -2439,7 +2439,7 @@ Exception levée à la ligne 7 du fichier HOME:\github\friendly\tests\runtime\te
 <div class="section" id="divmod">
 <h3>Divmod<a class="headerlink" href="#divmod" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_zero_division_error.py&quot;, line 52, in test_Divmod
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 52, in test_Divmod
     divmod(1, zero)
 ZeroDivisionError: integer division or modulo by zero
 
@@ -2448,7 +2448,7 @@ par zéro soit directement ou en utilisant une autre opération mathématique.
 
 Le deuxième argument de la fonction `divmod()` est égal à zéro.
 
-Exception levée à la ligne 52 du fichier HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+Exception levée à la ligne 52 du fichier TESTS:\runtime\test_zero_division_error.py.
 
    50:     zero = 0
    51:     try:
@@ -2463,7 +2463,7 @@ Exception levée à la ligne 52 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="float-division">
 <h3>Float division<a class="headerlink" href="#float-division" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_zero_division_error.py&quot;, line 82, in test_Float_division
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 82, in test_Float_division
     1 / zero
 ZeroDivisionError: float division by zero
 
@@ -2476,7 +2476,7 @@ Vous divisez par le terme suivant
 
 qui est égal à zéro.
 
-Exception levée à la ligne 82 du fichier HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+Exception levée à la ligne 82 du fichier TESTS:\runtime\test_zero_division_error.py.
 
    80:     zero = 0.
    81:     try:
@@ -2490,7 +2490,7 @@ Exception levée à la ligne 82 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="float-modulo">
 <h3>Float modulo<a class="headerlink" href="#float-modulo" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_zero_division_error.py&quot;, line 67, in test_Float_modulo
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 67, in test_Float_modulo
     1 % zero
 ZeroDivisionError: float modulo
 
@@ -2503,7 +2503,7 @@ En utilisant l’opérateur modulo, vous divisez par le terme suivant
 
 qui est égal à zéro.
 
-Exception levée à la ligne 67 du fichier HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+Exception levée à la ligne 67 du fichier TESTS:\runtime\test_zero_division_error.py.
 
    65:     zero = 0.
    66:     try:
@@ -2517,7 +2517,7 @@ Exception levée à la ligne 67 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="integer-division-operator">
 <h3>Integer division operator<a class="headerlink" href="#integer-division-operator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_zero_division_error.py&quot;, line 22, in test_Integer_division_operator
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 22, in test_Integer_division_operator
     1 // zero
 ZeroDivisionError: integer division or modulo by zero
 
@@ -2530,7 +2530,7 @@ Vous divisez par le terme suivant
 
 qui est égal à zéro.
 
-Exception levée à la ligne 22 du fichier HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+Exception levée à la ligne 22 du fichier TESTS:\runtime\test_zero_division_error.py.
 
    20:     zero = 0
    21:     try:
@@ -2544,7 +2544,7 @@ Exception levée à la ligne 22 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="modulo-operator">
 <h3>Modulo operator<a class="headerlink" href="#modulo-operator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_zero_division_error.py&quot;, line 37, in test_Modulo_operator
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 37, in test_Modulo_operator
     1 % zero
 ZeroDivisionError: integer division or modulo by zero
 
@@ -2557,7 +2557,7 @@ En utilisant l’opérateur modulo, vous divisez par le terme suivant
 
 qui est égal à zéro.
 
-Exception levée à la ligne 37 du fichier HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+Exception levée à la ligne 37 du fichier TESTS:\runtime\test_zero_division_error.py.
 
    35:     zero = 0
    36:     try:
@@ -2571,7 +2571,7 @@ Exception levée à la ligne 37 du fichier HOME:\github\friendly\tests\runtime\t
 <div class="section" id="raise-zero-negative-power">
 <h3>Raise zero negative power<a class="headerlink" href="#raise-zero-negative-power" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;HOME:\github\friendly\tests\runtime\test_zero_division_error.py&quot;, line 112, in test_Raise_zero_negative_power
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 112, in test_Raise_zero_negative_power
     zero ** -1
 ZeroDivisionError: 0.0 cannot be raised to a negative power
 
@@ -2581,7 +2581,7 @@ par zéro soit directement ou en utilisant une autre opération mathématique.
 Vous essayez d&#39;élever le nombre 0 à une puissance négative
 ce qui équivaut à diviser par zéro.
 
-Exception levée à la ligne 112 du fichier HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+Exception levée à la ligne 112 du fichier TESTS:\runtime\test_zero_division_error.py.
 
    110:     zero = 0
    111:     try:

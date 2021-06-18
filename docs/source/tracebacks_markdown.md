@@ -23,7 +23,7 @@ Python version: 3.8.4
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_arithmetic_error.py", line 9, in test_Generic
+  File "TESTS:\runtime\test_arithmetic_error.py", line 9, in test_Generic
     raise ArithmeticError('error')
 ArithmeticError: error
 
@@ -35,7 +35,7 @@ It is unusual that you are seeing this exception;
 normally, a more specific exception should have been raised.
 
 
-#### Exception raised on line 9 of file HOME:\github\friendly\tests\runtime\test_arithmetic_error.py.
+#### Exception raised on line 9 of file TESTS:\runtime\test_arithmetic_error.py.
 
 
 ```python
@@ -60,7 +60,7 @@ normally, a more specific exception should have been raised.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_assertion_error.py", line 8, in test_Generic
+  File "TESTS:\runtime\test_assertion_error.py", line 8, in test_Generic
     raise AssertionError("Fake message")
 AssertionError: Fake message
 
@@ -73,7 +73,7 @@ nor equivalent to `False` such as an empty list, etc.
 If `condition` is `False` or equivalent, an `AssertionError` is raised.
 
 
-#### Exception raised on line 8 of file HOME:\github\friendly\tests\runtime\test_assertion_error.py.
+#### Exception raised on line 8 of file TESTS:\runtime\test_assertion_error.py.
 
 
 ```python
@@ -98,7 +98,7 @@ If `condition` is `False` or equivalent, an `AssertionError` is raised.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_attribute_error.py", line 299, in test_Attribute_from_other_module
+  File "TESTS:\runtime\test_attribute_error.py", line 299, in test_Attribute_from_other_module
     keyword.pi
 AttributeError: module 'keyword' has no attribute 'pi'
 
@@ -117,7 +117,7 @@ the attribute `pi` of one of the following modules:
 `math, cmath`.
 
 
-#### Exception raised on line 299 of file HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+#### Exception raised on line 299 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
@@ -138,7 +138,7 @@ the attribute `pi` of one of the following modules:
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_attribute_error.py", line 217, in test_Builtin_function
+  File "TESTS:\runtime\test_attribute_error.py", line 217, in test_Builtin_function
     len.text
 AttributeError: 'builtin_function_or_method' object has no attribute 'text'
 
@@ -157,7 +157,7 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 `len(text)`
 
 
-#### Exception raised on line 217 of file HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+#### Exception raised on line 217 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
@@ -179,7 +179,7 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_attribute_error.py", line 234, in test_Builtin_module_with_no_file
+  File "TESTS:\runtime\test_attribute_error.py", line 234, in test_Builtin_module_with_no_file
     sys.foo
 AttributeError: module 'sys' has no attribute 'foo'
 
@@ -194,7 +194,7 @@ Python tells us that no object with name `foo` is
 found in module `sys`.
 
 
-#### Exception raised on line 234 of file HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+#### Exception raised on line 234 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
@@ -215,7 +215,7 @@ found in module `sys`.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_attribute_error.py", line 24, in test_Generic
+  File "TESTS:\runtime\test_attribute_error.py", line 24, in test_Generic
     A.x  # testing type
 AttributeError: type object 'A' has no attribute 'x'
 
@@ -229,7 +229,7 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 The object `A` has no attribute named `x`.
 
 
-#### Exception raised on line 24 of file HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+#### Exception raised on line 24 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
@@ -250,7 +250,7 @@ The object `A` has no attribute named `x`.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_attribute_error.py", line 47, in test_Generic_different_frame
+  File "TESTS:\runtime\test_attribute_error.py", line 47, in test_Generic_different_frame
     a.attr
 AttributeError: 'A' object has no attribute 'attr'
 
@@ -269,7 +269,7 @@ The object `a` has no attribute named `attr`.
 Perhaps you meant to write `a.attr2` instead of `a.attr`
 
 
-#### Exception raised on line 47 of file HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+#### Exception raised on line 47 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
@@ -290,7 +290,7 @@ Perhaps you meant to write `a.attr2` instead of `a.attr`
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_attribute_error.py", line 65, in test_Generic_instance
+  File "TESTS:\runtime\test_attribute_error.py", line 65, in test_Generic_instance
     a.x
 AttributeError: 'A' object has no attribute 'x'
 
@@ -304,7 +304,7 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 The object `a` has no attribute named `x`.
 
 
-#### Exception raised on line 65 of file HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+#### Exception raised on line 65 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
@@ -325,7 +325,7 @@ The object `a` has no attribute named `x`.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_attribute_error.py", line 142, in test_Module_attribute_typo
+  File "TESTS:\runtime\test_attribute_error.py", line 142, in test_Module_attribute_typo
     math.cost
 AttributeError: module 'math' has no attribute 'cost'
 
@@ -345,7 +345,7 @@ the following names which are attributes of module `math`:
 `cos, cosh, acos`
 
 
-#### Exception raised on line 142 of file HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+#### Exception raised on line 142 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
@@ -366,7 +366,7 @@ the following names which are attributes of module `math`:
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_attribute_error.py", line 181, in test_Nonetype
+  File "TESTS:\runtime\test_attribute_error.py", line 181, in test_Nonetype
     a.b
 AttributeError: 'NoneType' object has no attribute 'b'
 
@@ -380,7 +380,7 @@ and `x` is not a method or attribute (variable) belonging to `object`.
 You are attempting to access the attribute `b`
 for a variable whose value is `None`.
 
-#### Exception raised on line 181 of file HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+#### Exception raised on line 181 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
@@ -401,7 +401,7 @@ for a variable whose value is `None`.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_attribute_error.py", line 81, in test_Object_attribute_typo
+  File "TESTS:\runtime\test_attribute_error.py", line 81, in test_Object_attribute_typo
     a.appendh(4)
 AttributeError: 'list' object has no attribute 'appendh'
 
@@ -420,7 +420,7 @@ The object `a` has no attribute named `appendh`.
 Perhaps you meant to write `a.append` instead of `a.appendh`
 
 
-#### Exception raised on line 81 of file HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+#### Exception raised on line 81 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
@@ -442,7 +442,7 @@ Perhaps you meant to write `a.append` instead of `a.appendh`
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_attribute_error.py", line 200, in test_Perhaps_comma
+  File "TESTS:\runtime\test_attribute_error.py", line 200, in test_Perhaps_comma
     a = [abcd
 AttributeError: 'str' object has no attribute 'defg'
 
@@ -463,7 +463,7 @@ Perhaps you wrote a period to separate these two objects,
 instead of using a comma.
 
 
-#### Exception raised on line 200 of file HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+#### Exception raised on line 200 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
@@ -485,7 +485,7 @@ instead of using a comma.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_attribute_error.py", line 163, in test_Shadow_stdlib_module
+  File "TESTS:\runtime\test_attribute_error.py", line 163, in test_Shadow_stdlib_module
     turtle.Pen
 AttributeError: module 'turtle' has no attribute 'Pen'
 
@@ -500,12 +500,12 @@ An `AttributeError` occurs when the code contains something like
 and `x` is not a method or attribute (variable) belonging to `object`.
 
 
-You imported a module named `turtle` from `HOME:\github\friendly\tests\turtle.py`.
+You imported a module named `turtle` from `TESTS:\turtle.py`.
 There is also a module named `turtle` in Python's standard library.
 Perhaps you need to rename your module.
 
 
-#### Exception raised on line 163 of file HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+#### Exception raised on line 163 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
@@ -517,7 +517,7 @@ Perhaps you need to rename your module.
 ```
 
 ```python
-    turtle:  <module turtle> from HOME:\github\friendly\tests\turtle.py
+    turtle:  <module turtle> from TESTS:\turtle.py
 
 ```
 
@@ -526,7 +526,7 @@ Perhaps you need to rename your module.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_attribute_error.py", line 269, in test_Tuple_by_accident
+  File "TESTS:\runtime\test_attribute_error.py", line 269, in test_Tuple_by_accident
     something.upper()
 AttributeError: 'tuple' object has no attribute 'upper'
 
@@ -547,7 +547,7 @@ Perhaps you added a trailing comma by mistake at the end of the line
 where you defined `something`.
 
 
-#### Exception raised on line 269 of file HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+#### Exception raised on line 269 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
@@ -569,7 +569,7 @@ where you defined `something`.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_attribute_error.py", line 97, in test_Use_builtin
+  File "TESTS:\runtime\test_attribute_error.py", line 97, in test_Use_builtin
     a.length()
 AttributeError: 'list' object has no attribute 'length'
 
@@ -588,7 +588,7 @@ The object `a` has no attribute named `length`.
 Perhaps you can use the Python builtin function `len` instead:
 `len(a)`.
 
-#### Exception raised on line 97 of file HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+#### Exception raised on line 97 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
@@ -610,7 +610,7 @@ Perhaps you can use the Python builtin function `len` instead:
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_attribute_error.py", line 113, in test_Use_synonym
+  File "TESTS:\runtime\test_attribute_error.py", line 113, in test_Use_synonym
     a.add(4)
 AttributeError: 'list' object has no attribute 'add'
 
@@ -630,7 +630,7 @@ However, `a` has the following attributes with similar meanings:
 `append, extend, insert`.
 
 
-#### Exception raised on line 113 of file HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+#### Exception raised on line 113 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
@@ -652,7 +652,7 @@ However, `a` has the following attributes with similar meanings:
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_attribute_error.py", line 254, in test_Using_slots
+  File "TESTS:\runtime\test_attribute_error.py", line 254, in test_Using_slots
     f.b = 1
 AttributeError: 'F' object has no attribute 'b'
 
@@ -669,7 +669,7 @@ the creation of new attributes.
 The following are some of its known attributes:
 `a`.
 
-#### Exception raised on line 254 of file HOME:\github\friendly\tests\runtime\test_attribute_error.py.
+#### Exception raised on line 254 of file TESTS:\runtime\test_attribute_error.py.
 
 
 ```python
@@ -694,7 +694,7 @@ The following are some of its known attributes:
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_file_not_found_error.py", line 6, in test_Generic
+  File "TESTS:\runtime\test_file_not_found_error.py", line 6, in test_Generic
     open("does_not_exist")
 FileNotFoundError: [Errno 2] No such file or directory: 'does_not_exist'
 
@@ -709,7 +709,7 @@ In your program, the name of the
 file that cannot be found is `does_not_exist`.
 
 
-#### Exception raised on line 6 of file HOME:\github\friendly\tests\runtime\test_file_not_found_error.py.
+#### Exception raised on line 6 of file TESTS:\runtime\test_file_not_found_error.py.
 
 
 ```python
@@ -734,11 +734,11 @@ file that cannot be found is `does_not_exist`.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_import_error.py", line 20, in test_Circular_import
+  File "TESTS:\runtime\test_import_error.py", line 20, in test_Circular_import
     import circular_a
-  File "HOME:\github\friendly\tests\circular_a.py", line 2, in <module>
+  File "TESTS:\circular_a.py", line 2, in <module>
     import circular_b
-  File "HOME:\github\friendly\tests\circular_b.py", line 2, in <module>
+  File "TESTS:\circular_b.py", line 2, in <module>
     from circular_a import a
 ImportError: cannot import name 'a' from partially initialized module 'circular_a' (most likely due to a circular import) (C:\Users\andre\github\friendly\tests\circular_a.py)
 
@@ -755,16 +755,16 @@ expected to be found is `circular_a`.
 
 The problem was likely caused by what is known as a 'circular import'.
 First, Python imported and started executing the code in file
-   'HOME:\github\friendly\tests\runtime\test_import_error.py'.
+   'TESTS:\runtime\test_import_error.py'.
 which imports module `circular_a`.
 During this process, the code in another file,
-   'HOME:\github\friendly\tests\circular_b.py'
+   'TESTS:\circular_b.py'
 was executed. However in this last file, an attempt was made
 to import the original module `circular_a`
 a second time, before Python had completed the first import.
 
 
-#### Execution stopped on line 20 of file HOME:\github\friendly\tests\runtime\test_import_error.py.
+#### Execution stopped on line 20 of file TESTS:\runtime\test_import_error.py.
 
 
 ```python
@@ -775,7 +775,7 @@ a second time, before Python had completed the first import.
 
 ```
 
-#### Exception raised on line 2 of file HOME:\github\friendly\tests\circular_b.py.
+#### Exception raised on line 2 of file TESTS:\circular_b.py.
 
 
 ```python
@@ -789,7 +789,7 @@ a second time, before Python had completed the first import.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_import_error.py", line 6, in test_Simple_import_error
+  File "TESTS:\runtime\test_import_error.py", line 6, in test_Simple_import_error
     from math import Pi
 ImportError: cannot import name 'Pi' from 'math' (unknown location)
 
@@ -807,7 +807,7 @@ because the name of the object is not spelled correctly.
 Perhaps you meant to import `pi` (from `math`) instead of `Pi`
 
 
-#### Exception raised on line 6 of file HOME:\github\friendly\tests\runtime\test_import_error.py.
+#### Exception raised on line 6 of file TESTS:\runtime\test_import_error.py.
 
 
 ```python
@@ -827,7 +827,7 @@ Perhaps you meant to import `pi` (from `math`) instead of `Pi`
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_index_error.py", line 38, in test_Empty
+  File "TESTS:\runtime\test_index_error.py", line 38, in test_Empty
     c = a[1]
 IndexError: list index out of range
 
@@ -847,7 +847,7 @@ You have tried to get the item with index `1` of `a`,
 a `list` which contains no item.
 
 
-#### Exception raised on line 38 of file HOME:\github\friendly\tests\runtime\test_index_error.py.
+#### Exception raised on line 38 of file TESTS:\runtime\test_index_error.py.
 
 
 ```python
@@ -869,7 +869,7 @@ a `list` which contains no item.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_index_error.py", line 24, in test_Long_list
+  File "TESTS:\runtime\test_index_error.py", line 24, in test_Long_list
     print(a[60], b[0])
 IndexError: list index out of range
 
@@ -887,7 +887,7 @@ The valid index values of `a` are integers ranging from
 `-40` to `39`.
 
 
-#### Exception raised on line 24 of file HOME:\github\friendly\tests\runtime\test_index_error.py.
+#### Exception raised on line 24 of file TESTS:\runtime\test_index_error.py.
 
 
 ```python
@@ -911,7 +911,7 @@ The valid index values of `a` are integers ranging from
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_index_error.py", line 8, in test_Short_tuple
+  File "TESTS:\runtime\test_index_error.py", line 8, in test_Short_tuple
     print(a[3], b[2])
 IndexError: tuple index out of range
 
@@ -933,7 +933,7 @@ The valid index values of `a` are integers ranging from
 `-3` to `2`.
 
 
-#### Exception raised on line 8 of file HOME:\github\friendly\tests\runtime\test_index_error.py.
+#### Exception raised on line 8 of file TESTS:\runtime\test_index_error.py.
 
 
 ```python
@@ -966,7 +966,7 @@ KeyError: 42
     During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_key_error.py", line 23, in test_ChainMap
+  File "TESTS:\runtime\test_key_error.py", line 23, in test_ChainMap
     d.pop(42)
   File "PYTHON_LIB:\collections\__init__.py", line 967, in pop
     raise KeyError('Key not found in the first mapping: {!r}'.format(key))
@@ -981,7 +981,7 @@ key in a Python dict.
 In your program, the key that cannot be found is `42`.
 
 
-#### Execution stopped on line 23 of file HOME:\github\friendly\tests\runtime\test_key_error.py.
+#### Execution stopped on line 23 of file TESTS:\runtime\test_key_error.py.
 
 
 ```python
@@ -1021,7 +1021,7 @@ In your program, the key that cannot be found is `42`.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_key_error.py", line 7, in test_Generic
+  File "TESTS:\runtime\test_key_error.py", line 7, in test_Generic
     d["c"]
 KeyError: 'c'
 
@@ -1034,7 +1034,7 @@ key in a Python dict.
 In your program, the key that cannot be found is `c`.
 
 
-#### Exception raised on line 7 of file HOME:\github\friendly\tests\runtime\test_key_error.py.
+#### Exception raised on line 7 of file TESTS:\runtime\test_key_error.py.
 
 
 ```python
@@ -1059,7 +1059,7 @@ In your program, the key that cannot be found is `c`.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_lookup_error.py", line 10, in test_Generic
+  File "TESTS:\runtime\test_lookup_error.py", line 10, in test_Generic
     raise LookupError("Fake message")
 LookupError: Fake message
 
@@ -1070,7 +1070,7 @@ when a key or index used on a mapping or sequence is invalid.
 It can also be raised directly by codecs.lookup().
 
 
-#### Exception raised on line 10 of file HOME:\github\friendly\tests\runtime\test_lookup_error.py.
+#### Exception raised on line 10 of file TESTS:\runtime\test_lookup_error.py.
 
 
 ```python
@@ -1095,7 +1095,7 @@ It can also be raised directly by codecs.lookup().
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_module_not_found_error.py", line 76, in test_Need_to_install_module
+  File "TESTS:\runtime\test_module_not_found_error.py", line 76, in test_Need_to_install_module
     import alphabet
 ModuleNotFoundError: No module named 'alphabet'
 
@@ -1111,7 +1111,7 @@ No module named `alphabet` can be imported.
 Perhaps you need to install it.
 
 
-#### Exception raised on line 76 of file HOME:\github\friendly\tests\runtime\test_module_not_found_error.py.
+#### Exception raised on line 76 of file TESTS:\runtime\test_module_not_found_error.py.
 
 
 ```python
@@ -1127,7 +1127,7 @@ Perhaps you need to install it.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_module_not_found_error.py", line 22, in test_Not_a_package
+  File "TESTS:\runtime\test_module_not_found_error.py", line 22, in test_Not_a_package
     import os.xxx
 ModuleNotFoundError: No module named 'os.xxx'; 'os' is not a package
 
@@ -1142,7 +1142,7 @@ or because it is not installed on your computer.
 `xxx` cannot be imported from `os`.
 
 
-#### Exception raised on line 22 of file HOME:\github\friendly\tests\runtime\test_module_not_found_error.py.
+#### Exception raised on line 22 of file TESTS:\runtime\test_module_not_found_error.py.
 
 
 ```python
@@ -1158,7 +1158,7 @@ or because it is not installed on your computer.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_module_not_found_error.py", line 36, in test_Not_a_package_similar_name
+  File "TESTS:\runtime\test_module_not_found_error.py", line 36, in test_Not_a_package_similar_name
     import os.pathh
 ModuleNotFoundError: No module named 'os.pathh'; 'os' is not a package
 
@@ -1181,7 +1181,7 @@ Other objects with similar names that are part of
  `os` include `fspath`.
 
 
-#### Exception raised on line 36 of file HOME:\github\friendly\tests\runtime\test_module_not_found_error.py.
+#### Exception raised on line 36 of file TESTS:\runtime\test_module_not_found_error.py.
 
 
 ```python
@@ -1197,7 +1197,7 @@ Other objects with similar names that are part of
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_module_not_found_error.py", line 49, in test_Object_not_module
+  File "TESTS:\runtime\test_module_not_found_error.py", line 49, in test_Object_not_module
     import os.open
 ModuleNotFoundError: No module named 'os.open'; 'os' is not a package
 
@@ -1216,7 +1216,7 @@ or because it is not installed on your computer.
 `open` is not a separate module but an object that is part of `os`.
 
 
-#### Exception raised on line 49 of file HOME:\github\friendly\tests\runtime\test_module_not_found_error.py.
+#### Exception raised on line 49 of file TESTS:\runtime\test_module_not_found_error.py.
 
 
 ```python
@@ -1237,7 +1237,7 @@ or because it is not installed on your computer.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_module_not_found_error.py", line 62, in test_Similar_object_not_module
+  File "TESTS:\runtime\test_module_not_found_error.py", line 62, in test_Similar_object_not_module
     import os.opend
 ModuleNotFoundError: No module named 'os.opend'; 'os' is not a package
 
@@ -1260,7 +1260,7 @@ Other objects with similar names that are part of
  `os` include `popen, fdopen`.
 
 
-#### Exception raised on line 62 of file HOME:\github\friendly\tests\runtime\test_module_not_found_error.py.
+#### Exception raised on line 62 of file TESTS:\runtime\test_module_not_found_error.py.
 
 
 ```python
@@ -1276,7 +1276,7 @@ Other objects with similar names that are part of
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_module_not_found_error.py", line 7, in test_Standard_library_module
+  File "TESTS:\runtime\test_module_not_found_error.py", line 7, in test_Standard_library_module
     import Tkinter
 ModuleNotFoundError: No module named 'Tkinter'
 
@@ -1297,7 +1297,7 @@ Perhaps you need to install it.
 `tkinter` is an existing module that has a similar name.
 
 
-#### Exception raised on line 7 of file HOME:\github\friendly\tests\runtime\test_module_not_found_error.py.
+#### Exception raised on line 7 of file TESTS:\runtime\test_module_not_found_error.py.
 
 
 ```python
@@ -1313,7 +1313,7 @@ Perhaps you need to install it.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_module_not_found_error.py", line 92, in test_no_curses
+  File "TESTS:\runtime\test_module_not_found_error.py", line 92, in test_no_curses
     import curses
   File "PYTHON_LIB:\curses\__init__.py", line 13, in <module>
     from _curses import *
@@ -1335,7 +1335,7 @@ You have tried to import the curses module.
 The curses module is rarely installed with Python on Windows.
 
 
-#### Execution stopped on line 92 of file HOME:\github\friendly\tests\runtime\test_module_not_found_error.py.
+#### Execution stopped on line 92 of file TESTS:\runtime\test_module_not_found_error.py.
 
 
 ```python
@@ -1366,7 +1366,7 @@ The curses module is rarely installed with Python on Windows.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_name_error.py", line 24, in test_Annotated_variable
+  File "TESTS:\runtime\test_name_error.py", line 24, in test_Annotated_variable
     y = x
 NameError: name 'x' is not defined
 
@@ -1394,7 +1394,7 @@ instead of
     x = 3
 
 
-#### Exception raised on line 24 of file HOME:\github\friendly\tests\runtime\test_name_error.py.
+#### Exception raised on line 24 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
@@ -1411,7 +1411,7 @@ instead of
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_name_error.py", line 9, in test_Generic
+  File "TESTS:\runtime\test_name_error.py", line 9, in test_Generic
     this = something
 NameError: name 'something' is not defined
 
@@ -1428,7 +1428,7 @@ In your program, `something` is an unknown name.
 I have no additional information for you.
 
 
-#### Exception raised on line 9 of file HOME:\github\friendly\tests\runtime\test_name_error.py.
+#### Exception raised on line 9 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
@@ -1445,7 +1445,7 @@ I have no additional information for you.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_name_error.py", line 103, in test_Missing_import
+  File "TESTS:\runtime\test_name_error.py", line 103, in test_Missing_import
     unicodedata.something
 NameError: name 'unicodedata' is not defined
 
@@ -1467,7 +1467,7 @@ Perhaps you forgot to import `unicodedata` which is found
 in Python's standard library.
 
 
-#### Exception raised on line 103 of file HOME:\github\friendly\tests\runtime\test_name_error.py.
+#### Exception raised on line 103 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
@@ -1484,7 +1484,7 @@ in Python's standard library.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_name_error.py", line 89, in test_Synonym
+  File "TESTS:\runtime\test_name_error.py", line 89, in test_Synonym
     cost  # wrote from math import * above
 NameError: name 'cost' is not defined
 
@@ -1506,7 +1506,7 @@ Instead of writing `cost`, perhaps you meant one of the following:
 *   Global scope: `cos`, `cosh`, `acos`
 
 
-#### Exception raised on line 89 of file HOME:\github\friendly\tests\runtime\test_name_error.py.
+#### Exception raised on line 89 of file TESTS:\runtime\test_name_error.py.
 
 
 ```python
@@ -1538,7 +1538,7 @@ socket.gaierror: [Errno 11001] getaddrinfo failed
     During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_os_error.py", line 7, in test_Urllib_error
+  File "TESTS:\runtime\test_os_error.py", line 7, in test_Urllib_error
     request.urlopen("http://does_not_exist")
        ... More lines not shown. ...
   File "PYTHON_LIB:\urllib\request.py", line 1379, in http_open
@@ -1562,7 +1562,7 @@ If that is the case, check for typos in the URL
 and check your internet connectivity.
 
 
-#### Execution stopped on line 7 of file HOME:\github\friendly\tests\runtime\test_os_error.py.
+#### Execution stopped on line 7 of file TESTS:\runtime\test_os_error.py.
 
 
 ```python
@@ -1604,7 +1604,7 @@ and check your internet connectivity.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_overflow_error.py", line 6, in test_Generic
+  File "TESTS:\runtime\test_overflow_error.py", line 6, in test_Generic
     2.0 ** 1600
 OverflowError: (34, 'Result too large')
 
@@ -1614,7 +1614,7 @@ An `OverflowError` is raised when the result of an arithmetic operation
 is too large to be handled by the computer's processor.
 
 
-#### Exception raised on line 6 of file HOME:\github\friendly\tests\runtime\test_overflow_error.py.
+#### Exception raised on line 6 of file TESTS:\runtime\test_overflow_error.py.
 
 
 ```python
@@ -1634,12 +1634,12 @@ is too large to be handled by the computer's processor.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_recursion_error.py", line 8, in test_Generic
+  File "TESTS:\runtime\test_recursion_error.py", line 8, in test_Generic
     a()
        ... More lines not shown. ...
-  File "HOME:\github\friendly\tests\runtime\test_recursion_error.py", line 6, in a
+  File "TESTS:\runtime\test_recursion_error.py", line 6, in a
     return a()
-  File "HOME:\github\friendly\tests\runtime\test_recursion_error.py", line 6, in a
+  File "TESTS:\runtime\test_recursion_error.py", line 6, in a
     return a()
 RecursionError: maximum recursion depth exceeded
 
@@ -1651,7 +1651,7 @@ It almost always indicates that you made an error in your code
 and that your program would never stop.
 
 
-#### Execution stopped on line 8 of file HOME:\github\friendly\tests\runtime\test_recursion_error.py.
+#### Execution stopped on line 8 of file TESTS:\runtime\test_recursion_error.py.
 
 
 ```python
@@ -1667,7 +1667,7 @@ and that your program would never stop.
 
 ```
 
-#### Exception raised on line 6 of file HOME:\github\friendly\tests\runtime\test_recursion_error.py.
+#### Exception raised on line 6 of file TESTS:\runtime\test_recursion_error.py.
 
 
 ```python
@@ -1693,7 +1693,7 @@ and that your program would never stop.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 371, in test_Bad_type_for_unary_operator
+  File "TESTS:\runtime\test_type_error.py", line 371, in test_Bad_type_for_unary_operator
     a =+ "def"
 TypeError: bad operand type for unary +: 'str'
 
@@ -1715,7 +1715,7 @@ This operation is not defined for this type of object.
 Perhaps you meant to write `+=` instead of `=+`
 
 
-#### Exception raised on line 371 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 371 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -1732,7 +1732,7 @@ Perhaps you meant to write `+=` instead of `=+`
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 780, in test_Builtin_has_no_len
+  File "TESTS:\runtime\test_type_error.py", line 780, in test_Builtin_has_no_len
     len("Hello world".split)
 TypeError: object of type 'builtin_function_or_method' has no len()
 
@@ -1753,7 +1753,7 @@ You might have meant to write:
 `len("Hello world".split())`
 
 
-#### Exception raised on line 780 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 780 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -1775,7 +1775,7 @@ You might have meant to write:
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 37, in test_Can_only_concatenate
+  File "TESTS:\runtime\test_type_error.py", line 37, in test_Can_only_concatenate
     result = a_tuple + a_list
 TypeError: can only concatenate tuple (not "list") to tuple
 
@@ -1791,7 +1791,7 @@ You tried to concatenate (add) two different types of objects:
 a `tuple` and a `list`.
 
 
-#### Exception raised on line 37 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 37 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -1814,7 +1814,7 @@ a `tuple` and a `list`.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 766, in test_Cannot_convert_dictionary_update_sequence
+  File "TESTS:\runtime\test_type_error.py", line 766, in test_Cannot_convert_dictionary_update_sequence
     dd.update([1, 2, 3])
 TypeError: cannot convert dictionary update sequence element #0 to a sequence
 
@@ -1835,7 +1835,7 @@ Instead of writing `dd.update([1, 2, 3])`
 perhaps you should use the `dict.fromkeys()` method: `dd.update( dict.fromkeys([1, 2, 3]) )`.
 
 
-#### Exception raised on line 766 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 766 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -1857,7 +1857,7 @@ perhaps you should use the `dict.fromkeys()` method: `dd.update( dict.fromkeys([
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 570, in test_Cannot_multiply_by_non_int
+  File "TESTS:\runtime\test_type_error.py", line 570, in test_Cannot_multiply_by_non_int
     "a" * "2"
 TypeError: can't multiply sequence by non-int of type 'str'
 
@@ -1878,7 +1878,7 @@ You can only multiply sequences, such as list, tuples,
 Perhaps you forgot to convert `"2"` into an integer.
 
 
-#### Exception raised on line 570 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 570 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -1894,7 +1894,7 @@ Perhaps you forgot to convert `"2"` into an integer.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 738, in test_Cannot_unpack_non_iterable_object
+  File "TESTS:\runtime\test_type_error.py", line 738, in test_Cannot_unpack_non_iterable_object
     a, b = 42.0
 TypeError: cannot unpack non-iterable float object
 
@@ -1913,7 +1913,7 @@ Python containers (`list, tuple, dict`, etc.) are iterables,
 but not objects of type `float`.
 
 
-#### Exception raised on line 738 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 738 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -1929,7 +1929,7 @@ but not objects of type `float`.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 320, in test_Comparison_not_supported
+  File "TESTS:\runtime\test_type_error.py", line 320, in test_Comparison_not_supported
     b >= a
 TypeError: '>=' not supported between instances of 'int' and 'str'
 
@@ -1951,7 +1951,7 @@ an integer (`int`) and a string (`str`).
 Perhaps you forgot to convert the string `a` into an integer (`int`).
 
 
-#### Exception raised on line 320 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 320 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -1973,7 +1973,7 @@ Perhaps you forgot to convert the string `a` into an integer (`int`).
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 513, in test_Derive_from_BaseException
+  File "TESTS:\runtime\test_type_error.py", line 513, in test_Derive_from_BaseException
     raise "exception"  # noqa
 TypeError: exceptions must derive from BaseException
 
@@ -1988,7 +1988,7 @@ or by trying to do an operation not allowed on a given type of object.
 In Python 3, exceptions must be derived from BaseException.
 
 
-#### Exception raised on line 513 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 513 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -2004,7 +2004,7 @@ In Python 3, exceptions must be derived from BaseException.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 652, in test_Indices_must_be_integers_or_slices
+  File "TESTS:\runtime\test_type_error.py", line 652, in test_Indices_must_be_integers_or_slices
     [1, 2, 3]["2"]
 TypeError: list indices must be integers or slices, not str
 
@@ -2029,7 +2029,7 @@ and you have used a string (`str`) instead.
 Perhaps you forgot to convert `"2"` into an integer.
 
 
-#### Exception raised on line 652 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 652 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -2045,7 +2045,7 @@ Perhaps you forgot to convert `"2"` into an integer.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 615, in test_Not_an_integer
+  File "TESTS:\runtime\test_type_error.py", line 615, in test_Not_an_integer
     range(c, d)
 TypeError: 'str' object cannot be interpreted as an integer
 
@@ -2064,7 +2064,7 @@ or by trying to do an operation not allowed on a given type of object.
 You wrote an object of type `str` where an integer was expected.
 Perhaps you forgot to convert `c, d` into integers.
 
-#### Exception raised on line 615 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 615 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -2087,7 +2087,7 @@ Perhaps you forgot to convert `c, d` into integers.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 500, in test_Not_callable
+  File "TESTS:\runtime\test_type_error.py", line 500, in test_Not_callable
     _ = [1, 2](a + b)
 TypeError: 'list' object is not callable
 
@@ -2113,7 +2113,7 @@ Perhaps you meant to use `[]` instead of `()` and write
 `[1, 2][a + b]`
 
 
-#### Exception raised on line 500 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 500 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -2137,7 +2137,7 @@ Perhaps you meant to use `[]` instead of `()` and write
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 724, in test_Object_is_not_iterable
+  File "TESTS:\runtime\test_type_error.py", line 724, in test_Object_is_not_iterable
     list(42)
 TypeError: 'int' object is not iterable
 
@@ -2154,7 +2154,7 @@ Python containers (`list, tuple, dict`, etc.) are iterables.
 An iterable is required here.
 
 
-#### Exception raised on line 724 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 724 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -2175,7 +2175,7 @@ An iterable is required here.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 710, in test_Object_is_not_subscriptable
+  File "TESTS:\runtime\test_type_error.py", line 710, in test_Object_is_not_subscriptable
     a = f[1]
 TypeError: 'function' object is not subscriptable
 
@@ -2197,7 +2197,7 @@ you can retrieve item using the notation `[...]`.
 Perhaps you meant to write `f(1)`.
 
 
-#### Exception raised on line 710 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 710 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -2219,7 +2219,7 @@ Perhaps you meant to write `f(1)`.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 666, in test_Slice_indices_must_be_integers_or_None
+  File "TESTS:\runtime\test_type_error.py", line 666, in test_Slice_indices_must_be_integers_or_None
     [1, 2, 3][1.0:2.0]
 TypeError: slice indices must be integers or None or have an __index__ method
 
@@ -2238,7 +2238,7 @@ each of `start`, `stop`, `step` must be either an integer, `None`,
 or possibly some other object having an `__index__` method.
 
 
-#### Exception raised on line 666 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 666 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -2254,7 +2254,7 @@ or possibly some other object having an `__index__` method.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 441, in test_Too_few_positional_argument
+  File "TESTS:\runtime\test_type_error.py", line 441, in test_Too_few_positional_argument
     fn(1)
 TypeError: fn() missing 2 required positional arguments: 'b' and 'c'
 
@@ -2270,7 +2270,7 @@ You apparently have called the function 'fn()' with
 fewer positional arguments than it requires (2 missing).
 
 
-#### Exception raised on line 441 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 441 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -2291,7 +2291,7 @@ fewer positional arguments than it requires (2 missing).
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 422, in test_Too_many_positional_argument
+  File "TESTS:\runtime\test_type_error.py", line 422, in test_Too_many_positional_argument
     A().f(1)
 TypeError: f() takes 1 positional argument but 2 were given
 
@@ -2313,7 +2313,7 @@ such positional argument(s).
 Perhaps you forgot `self` when defining `f`.
 
 
-#### Exception raised on line 422 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 422 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -2334,7 +2334,7 @@ Perhaps you forgot `self` when defining `f`.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 389, in test_Tuple_no_item_assignment
+  File "TESTS:\runtime\test_type_error.py", line 389, in test_Tuple_no_item_assignment
     a[0] = 0
 TypeError: 'tuple' object does not support item assignment
 
@@ -2357,7 +2357,7 @@ most likely by using an indexing operation.
 Perhaps you meant to use a list instead.
 
 
-#### Exception raised on line 389 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 389 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -2379,7 +2379,7 @@ Perhaps you meant to use a list instead.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 683, in test_Unhachable_type
+  File "TESTS:\runtime\test_type_error.py", line 683, in test_Unhachable_type
     {[1, 2]: 1}
 TypeError: unhashable type: 'list'
 
@@ -2397,7 +2397,7 @@ Hashable objects are objects that do not change value
 once they have been created.Instead of using a `list`, consider using a `tuple`.
 
 
-#### Exception raised on line 683 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 683 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -2413,7 +2413,7 @@ once they have been created.Instead of using a `list`, consider using a `tuple`.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 283, in test_Unsupported_operand_types
+  File "TESTS:\runtime\test_type_error.py", line 283, in test_Unsupported_operand_types
     a @= b
 TypeError: unsupported operand type(s) for @=: 'str' and 'int'
 
@@ -2432,7 +2432,7 @@ This operator is normally used only
 for multiplication of matrices.
 
 
-#### Exception raised on line 283 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 283 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -2454,7 +2454,7 @@ for multiplication of matrices.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_type_error.py", line 796, in test_function_has_no_len
+  File "TESTS:\runtime\test_type_error.py", line 796, in test_function_has_no_len
     len(bad)
 TypeError: object of type 'function' has no len()
 
@@ -2475,7 +2475,7 @@ You might have meant to write:
 `len(bad())`
 
 
-#### Exception raised on line 796 of file HOME:\github\friendly\tests\runtime\test_type_error.py.
+#### Exception raised on line 796 of file TESTS:\runtime\test_type_error.py.
 
 
 ```python
@@ -2501,11 +2501,11 @@ You might have meant to write:
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_unbound_local_error.py", line 27, in test_Missing_global
+  File "TESTS:\runtime\test_unbound_local_error.py", line 27, in test_Missing_global
     outer_missing_global()
-  File "HOME:\github\friendly\tests\runtime\test_unbound_local_error.py", line 11, in outer_missing_global
+  File "TESTS:\runtime\test_unbound_local_error.py", line 11, in outer_missing_global
     inner()
-  File "HOME:\github\friendly\tests\runtime\test_unbound_local_error.py", line 9, in inner
+  File "TESTS:\runtime\test_unbound_local_error.py", line 9, in inner
     spam_missing_global += 1
 UnboundLocalError: local variable 'spam_missing_global' referenced before assignment
 
@@ -2533,7 +2533,7 @@ Perhaps the statement
 should have been included as the first line inside your function.
 
 
-#### Execution stopped on line 27 of file HOME:\github\friendly\tests\runtime\test_unbound_local_error.py.
+#### Execution stopped on line 27 of file TESTS:\runtime\test_unbound_local_error.py.
 
 
 ```python
@@ -2549,7 +2549,7 @@ should have been included as the first line inside your function.
 
 ```
 
-#### Exception raised on line 9 of file HOME:\github\friendly\tests\runtime\test_unbound_local_error.py.
+#### Exception raised on line 9 of file TESTS:\runtime\test_unbound_local_error.py.
 
 
 ```python
@@ -2569,11 +2569,11 @@ should have been included as the first line inside your function.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_unbound_local_error.py", line 48, in test_Missing_nonlocal
+  File "TESTS:\runtime\test_unbound_local_error.py", line 48, in test_Missing_nonlocal
     outer_missing_nonlocal()
-  File "HOME:\github\friendly\tests\runtime\test_unbound_local_error.py", line 20, in outer_missing_nonlocal
+  File "TESTS:\runtime\test_unbound_local_error.py", line 20, in outer_missing_nonlocal
     inner()
-  File "HOME:\github\friendly\tests\runtime\test_unbound_local_error.py", line 18, in inner
+  File "TESTS:\runtime\test_unbound_local_error.py", line 18, in inner
     spam_missing_nonlocal += 1
 UnboundLocalError: local variable 'spam_missing_nonlocal' referenced before assignment
 
@@ -2601,7 +2601,7 @@ Perhaps the statement
 should have been included as the first line inside your function.
 
 
-#### Execution stopped on line 48 of file HOME:\github\friendly\tests\runtime\test_unbound_local_error.py.
+#### Execution stopped on line 48 of file TESTS:\runtime\test_unbound_local_error.py.
 
 
 ```python
@@ -2617,7 +2617,7 @@ should have been included as the first line inside your function.
 
 ```
 
-#### Exception raised on line 18 of file HOME:\github\friendly\tests\runtime\test_unbound_local_error.py.
+#### Exception raised on line 18 of file TESTS:\runtime\test_unbound_local_error.py.
 
 
 ```python
@@ -2636,7 +2636,7 @@ should have been included as the first line inside your function.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_unknown_error.py", line 10, in test_Generic
+  File "TESTS:\runtime\test_unknown_error.py", line 10, in test_Generic
     raise MyException("Some informative message about an unknown exception.")
 MyException: Some informative message about an unknown exception.
 
@@ -2650,7 +2650,7 @@ If you are using the Friendly console, use `www()` to
 do an Internet search for this particular case.
 
 
-#### Exception raised on line 10 of file HOME:\github\friendly\tests\runtime\test_unknown_error.py.
+#### Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.
 
 
 ```python
@@ -2675,7 +2675,7 @@ do an Internet search for this particular case.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_value_error.py", line 58, in test_Date_invalid_month
+  File "TESTS:\runtime\test_value_error.py", line 58, in test_Date_invalid_month
     d = date(2021, 13, 1)
 ValueError: month must be in 1..12
 
@@ -2693,7 +2693,7 @@ I am guessing that you specify an invalid value for a month
 in a `date` object. Valid values are integers, from 1 to 12.
 
 
-#### Exception raised on line 58 of file HOME:\github\friendly\tests\runtime\test_value_error.py.
+#### Exception raised on line 58 of file TESTS:\runtime\test_value_error.py.
 
 
 ```python
@@ -2715,7 +2715,7 @@ in a `date` object. Valid values are integers, from 1 to 12.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_value_error.py", line 28, in test_Not_enough_values_to_unpack
+  File "TESTS:\runtime\test_value_error.py", line 28, in test_Not_enough_values_to_unpack
     a, b, c = d
 ValueError: not enough values to unpack (expected 3, got 2)
 
@@ -2731,7 +2731,7 @@ In this instance, there are more names (3)
 than the length of the iterable, a string (`str`) of length 2.
 
 
-#### Exception raised on line 28 of file HOME:\github\friendly\tests\runtime\test_value_error.py.
+#### Exception raised on line 28 of file TESTS:\runtime\test_value_error.py.
 
 
 ```python
@@ -2752,7 +2752,7 @@ than the length of the iterable, a string (`str`) of length 2.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_value_error.py", line 43, in test_Too_many_values_to_unpack
+  File "TESTS:\runtime\test_value_error.py", line 43, in test_Too_many_values_to_unpack
     a, b = c
 ValueError: too many values to unpack (expected 2)
 
@@ -2768,7 +2768,7 @@ In this instance, there are fewer names (2)
 than the length of the iterable, a `list` of length 3.
 
 
-#### Exception raised on line 43 of file HOME:\github\friendly\tests\runtime\test_value_error.py.
+#### Exception raised on line 43 of file TESTS:\runtime\test_value_error.py.
 
 
 ```python
@@ -2793,7 +2793,7 @@ than the length of the iterable, a `list` of length 3.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_zero_division_error.py", line 97, in test_Complex_division
+  File "TESTS:\runtime\test_zero_division_error.py", line 97, in test_Complex_division
     1 / zero
 ZeroDivisionError: complex division by zero
 
@@ -2810,7 +2810,7 @@ You are dividing by the following term
 which is equal to zero.
 
 
-#### Exception raised on line 97 of file HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+#### Exception raised on line 97 of file TESTS:\runtime\test_zero_division_error.py.
 
 
 ```python
@@ -2831,7 +2831,7 @@ which is equal to zero.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_zero_division_error.py", line 7, in test_Division_operator
+  File "TESTS:\runtime\test_zero_division_error.py", line 7, in test_Division_operator
     1 / zero
 ZeroDivisionError: division by zero
 
@@ -2848,7 +2848,7 @@ You are dividing by the following term
 which is equal to zero.
 
 
-#### Exception raised on line 7 of file HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+#### Exception raised on line 7 of file TESTS:\runtime\test_zero_division_error.py.
 
 
 ```python
@@ -2869,7 +2869,7 @@ which is equal to zero.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_zero_division_error.py", line 52, in test_Divmod
+  File "TESTS:\runtime\test_zero_division_error.py", line 52, in test_Divmod
     divmod(1, zero)
 ZeroDivisionError: integer division or modulo by zero
 
@@ -2882,7 +2882,7 @@ by zero either directly or by using some other mathematical operation.
 The second argument of the `divmod()` function is zero.
 
 
-#### Exception raised on line 52 of file HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+#### Exception raised on line 52 of file TESTS:\runtime\test_zero_division_error.py.
 
 
 ```python
@@ -2904,7 +2904,7 @@ The second argument of the `divmod()` function is zero.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_zero_division_error.py", line 82, in test_Float_division
+  File "TESTS:\runtime\test_zero_division_error.py", line 82, in test_Float_division
     1 / zero
 ZeroDivisionError: float division by zero
 
@@ -2921,7 +2921,7 @@ You are dividing by the following term
 which is equal to zero.
 
 
-#### Exception raised on line 82 of file HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+#### Exception raised on line 82 of file TESTS:\runtime\test_zero_division_error.py.
 
 
 ```python
@@ -2942,7 +2942,7 @@ which is equal to zero.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_zero_division_error.py", line 67, in test_Float_modulo
+  File "TESTS:\runtime\test_zero_division_error.py", line 67, in test_Float_modulo
     1 % zero
 ZeroDivisionError: float modulo
 
@@ -2959,7 +2959,7 @@ Using the modulo operator, you are dividing by the following term
 which is equal to zero.
 
 
-#### Exception raised on line 67 of file HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+#### Exception raised on line 67 of file TESTS:\runtime\test_zero_division_error.py.
 
 
 ```python
@@ -2980,7 +2980,7 @@ which is equal to zero.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_zero_division_error.py", line 22, in test_Integer_division_operator
+  File "TESTS:\runtime\test_zero_division_error.py", line 22, in test_Integer_division_operator
     1 // zero
 ZeroDivisionError: integer division or modulo by zero
 
@@ -2997,7 +2997,7 @@ You are dividing by the following term
 which is equal to zero.
 
 
-#### Exception raised on line 22 of file HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+#### Exception raised on line 22 of file TESTS:\runtime\test_zero_division_error.py.
 
 
 ```python
@@ -3018,7 +3018,7 @@ which is equal to zero.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_zero_division_error.py", line 37, in test_Modulo_operator
+  File "TESTS:\runtime\test_zero_division_error.py", line 37, in test_Modulo_operator
     1 % zero
 ZeroDivisionError: integer division or modulo by zero
 
@@ -3035,7 +3035,7 @@ Using the modulo operator, you are dividing by the following term
 which is equal to zero.
 
 
-#### Exception raised on line 37 of file HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+#### Exception raised on line 37 of file TESTS:\runtime\test_zero_division_error.py.
 
 
 ```python
@@ -3056,7 +3056,7 @@ which is equal to zero.
 
 ```pytb
 Traceback (most recent call last):
-  File "HOME:\github\friendly\tests\runtime\test_zero_division_error.py", line 112, in test_Raise_zero_negative_power
+  File "TESTS:\runtime\test_zero_division_error.py", line 112, in test_Raise_zero_negative_power
     zero ** -1
 ZeroDivisionError: 0.0 cannot be raised to a negative power
 
@@ -3070,7 +3070,7 @@ You are attempting to raise the number 0 to a negative power
 which is equivalent to dividing by zero.
 
 
-#### Exception raised on line 112 of file HOME:\github\friendly\tests\runtime\test_zero_division_error.py.
+#### Exception raised on line 112 of file TESTS:\runtime\test_zero_division_error.py.
 
 
 ```python
