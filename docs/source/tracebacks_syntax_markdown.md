@@ -10,7 +10,7 @@ documentation using Sphinx.
 </p>
 </div>
 
-Friendly version: 0.3.100
+Friendly version: 0.3.108
 Python version: 3.8.4
 
 
@@ -22,9 +22,9 @@ Python version: 3.8.4
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\and_in_import_statement.py", line 1
+  File "HOME:\github\friendly\tests\syntax\and_in_import_statement.py", line 1
     from math import sin and cos
                          ^
 SyntaxError: invalid syntax
@@ -35,7 +35,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\and_in_import_statement.py'
+'HOME:\github\friendly\tests\syntax\and_in_import_statement.py'
 beyond the location indicated by ^.
 
 
@@ -57,9 +57,9 @@ Perhaps you meant to write
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\and_in_import_statement_2.py", line 1
+  File "HOME:\github\friendly\tests\syntax\and_in_import_statement_2.py", line 1
     from math import sin, tan, and cos
                                ^
 SyntaxError: invalid syntax
@@ -70,7 +70,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\and_in_import_statement_2.py'
+'HOME:\github\friendly\tests\syntax\and_in_import_statement_2.py'
 beyond the location indicated by ^.
 
 
@@ -92,9 +92,9 @@ Perhaps you meant to write
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\annotated_name_global.py", line 4
+  File "HOME:\github\friendly\tests\syntax\annotated_name_global.py", line 4
     x:int = 1
     ^
 SyntaxError: annotated name 'x' can't be global
@@ -105,7 +105,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\annotated_name_global.py'
+'HOME:\github\friendly\tests\syntax\annotated_name_global.py'
 beyond the location indicated by ^.
 
 
@@ -128,9 +128,9 @@ as a local variable. It cannot be declared to be a global variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\as_instead_of_comma_in_import.py", line 2
+  File "HOME:\github\friendly\tests\syntax\as_instead_of_comma_in_import.py", line 2
     from math import (sin, cos) as funcs
                                 ^
 SyntaxError: invalid syntax
@@ -141,7 +141,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\as_instead_of_comma_in_import.py'
+'HOME:\github\friendly\tests\syntax\as_instead_of_comma_in_import.py'
 beyond the location indicated by ^.
 
 
@@ -169,9 +169,9 @@ renamed on a separate line as follows:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_name_before_global_1.py", line 7
+  File "HOME:\github\friendly\tests\syntax\assign_name_before_global_1.py", line 7
     global p
     ^
 SyntaxError: name 'p' is assigned to before global declaration
@@ -182,7 +182,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_name_before_global_1.py'
+'HOME:\github\friendly\tests\syntax\assign_name_before_global_1.py'
 beyond the location indicated by ^.
 
 
@@ -206,9 +206,9 @@ before declaring it as a global variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_name_before_global_2.py", line 7
+  File "HOME:\github\friendly\tests\syntax\assign_name_before_global_2.py", line 7
     global r
     ^
 SyntaxError: name 'r' is used prior to global declaration
@@ -219,7 +219,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_name_before_global_2.py'
+'HOME:\github\friendly\tests\syntax\assign_name_before_global_2.py'
 beyond the location indicated by ^.
 
 
@@ -243,9 +243,9 @@ before declaring it as a global variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_name_before_nonlocal_1.py", line 9
+  File "HOME:\github\friendly\tests\syntax\assign_name_before_nonlocal_1.py", line 9
     nonlocal q
     ^
 SyntaxError: name 'q' is used prior to nonlocal declaration
@@ -260,7 +260,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_name_before_nonlocal_1.py'
+'HOME:\github\friendly\tests\syntax\assign_name_before_nonlocal_1.py'
 beyond the location indicated by ^.
 
 
@@ -284,9 +284,9 @@ before declaring it as a nonlocal variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_name_before_nonlocal_2.py", line 9
+  File "HOME:\github\friendly\tests\syntax\assign_name_before_nonlocal_2.py", line 9
     nonlocal s
     ^
 SyntaxError: name 's' is assigned to before nonlocal declaration
@@ -301,7 +301,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_name_before_nonlocal_2.py'
+'HOME:\github\friendly\tests\syntax\assign_name_before_nonlocal_2.py'
 beyond the location indicated by ^.
 
 
@@ -325,9 +325,9 @@ before declaring it as a nonlocal variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_conditional.py", line 3
+  File "HOME:\github\friendly\tests\syntax\assign_to_conditional.py", line 3
     a if 1 else b = 1
     ^
 SyntaxError: cannot assign to conditional expression
@@ -342,7 +342,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_conditional.py'
+'HOME:\github\friendly\tests\syntax\assign_to_conditional.py'
 beyond the location indicated by ^.
 
 
@@ -367,9 +367,9 @@ A conditional expression has the following form:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_debug.py", line 4
+  File "HOME:\github\friendly\tests\syntax\assign_to_debug.py", line 4
     __debug__ = 1
     ^
 SyntaxError: cannot assign to __debug__
@@ -383,7 +383,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_debug.py'
+'HOME:\github\friendly\tests\syntax\assign_to_debug.py'
 beyond the location indicated by ^.
 
 
@@ -405,9 +405,9 @@ beyond the location indicated by ^.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_debug2.py", line 4
+  File "HOME:\github\friendly\tests\syntax\assign_to_debug2.py", line 4
     a.__debug__ = 1
     ^
 SyntaxError: cannot assign to __debug__
@@ -421,7 +421,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_debug2.py'
+'HOME:\github\friendly\tests\syntax\assign_to_debug2.py'
 beyond the location indicated by ^.
 
 
@@ -443,9 +443,9 @@ beyond the location indicated by ^.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_ellipsis.py", line 4
+  File "HOME:\github\friendly\tests\syntax\assign_to_ellipsis.py", line 4
     ... = 1
     ^
 SyntaxError: cannot assign to Ellipsis
@@ -460,7 +460,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_ellipsis.py'
+'HOME:\github\friendly\tests\syntax\assign_to_ellipsis.py'
 beyond the location indicated by ^.
 
 
@@ -482,9 +482,9 @@ The ellipsis symbol `...` is a constant in Python;you cannot assign it a differe
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_f_string.py", line 6
+  File "HOME:\github\friendly\tests\syntax\assign_to_f_string.py", line 6
     f'{x}' = 42
     ^
 SyntaxError: cannot assign to f-string expression
@@ -499,7 +499,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_f_string.py'
+'HOME:\github\friendly\tests\syntax\assign_to_f_string.py'
 beyond the location indicated by ^.
 
 
@@ -525,9 +525,9 @@ An f-string should only appear on the right-hand side of an equal sign.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_function_call_1.py", line 6
+  File "HOME:\github\friendly\tests\syntax\assign_to_function_call_1.py", line 6
     len('a') = 3
     ^
 SyntaxError: cannot assign to function call
@@ -542,7 +542,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_function_call_1.py'
+'HOME:\github\friendly\tests\syntax\assign_to_function_call_1.py'
 beyond the location indicated by ^.
 
 
@@ -571,9 +571,9 @@ or includes a function call and is not simply the name of a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_function_call_2.py", line 6
+  File "HOME:\github\friendly\tests\syntax\assign_to_function_call_2.py", line 6
     func(a, b=3) = 4
     ^
 SyntaxError: cannot assign to function call
@@ -588,7 +588,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_function_call_2.py'
+'HOME:\github\friendly\tests\syntax\assign_to_function_call_2.py'
 beyond the location indicated by ^.
 
 
@@ -617,9 +617,9 @@ a function call and not the name of a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_generator.py", line 3
+  File "HOME:\github\friendly\tests\syntax\assign_to_generator.py", line 3
     (x for x in x) = 1
     ^
 SyntaxError: cannot assign to generator expression
@@ -634,7 +634,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_generator.py'
+'HOME:\github\friendly\tests\syntax\assign_to_generator.py'
 beyond the location indicated by ^.
 
 
@@ -656,9 +656,9 @@ generator expression instead of the name of a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_literal_dict.py", line 7
+  File "HOME:\github\friendly\tests\syntax\assign_to_literal_dict.py", line 7
     {1 : 2, 2 : 4} = 5
     ^
 SyntaxError: cannot assign to dict display
@@ -673,7 +673,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_literal_dict.py'
+'HOME:\github\friendly\tests\syntax\assign_to_literal_dict.py'
 beyond the location indicated by ^.
 
 
@@ -704,9 +704,9 @@ and is not simply the name of a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_literal_int.py", line 3
+  File "HOME:\github\friendly\tests\syntax\assign_to_literal_int.py", line 3
     1 = a
     ^
 SyntaxError: cannot assign to literal
@@ -720,7 +720,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_literal_int.py'
+'HOME:\github\friendly\tests\syntax\assign_to_literal_int.py'
 beyond the location indicated by ^.
 
 
@@ -750,9 +750,9 @@ Perhaps you meant to write:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_literal_int_2.py", line 3
+  File "HOME:\github\friendly\tests\syntax\assign_to_literal_int_2.py", line 3
     1 = 2
     ^
 SyntaxError: cannot assign to literal
@@ -767,7 +767,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_literal_int_2.py'
+'HOME:\github\friendly\tests\syntax\assign_to_literal_int_2.py'
 beyond the location indicated by ^.
 
 
@@ -794,9 +794,9 @@ and is not simply the name of a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_literal_int_3.py", line 4
+  File "HOME:\github\friendly\tests\syntax\assign_to_literal_int_3.py", line 4
     1 = a = b
     ^
 SyntaxError: cannot assign to literal
@@ -811,7 +811,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_literal_int_3.py'
+'HOME:\github\friendly\tests\syntax\assign_to_literal_int_3.py'
 beyond the location indicated by ^.
 
 
@@ -839,9 +839,9 @@ and is not simply the name of a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_literal_set.py", line 7
+  File "HOME:\github\friendly\tests\syntax\assign_to_literal_set.py", line 7
     {1, 2, 3} = 4
     ^
 SyntaxError: cannot assign to set display
@@ -856,7 +856,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_literal_set.py'
+'HOME:\github\friendly\tests\syntax\assign_to_literal_set.py'
 beyond the location indicated by ^.
 
 
@@ -887,9 +887,9 @@ and is not simply the name of a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_keyword_def.py", line 3
+  File "HOME:\github\friendly\tests\syntax\assign_to_keyword_def.py", line 3
     def = 2
         ^
 SyntaxError: invalid syntax
@@ -904,7 +904,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_keyword_def.py'
+'HOME:\github\friendly\tests\syntax\assign_to_keyword_def.py'
 beyond the location indicated by ^.
 
 
@@ -927,9 +927,9 @@ This is not allowed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_keyword_else.py", line 3
+  File "HOME:\github\friendly\tests\syntax\assign_to_keyword_else.py", line 3
     else = 1
     ^
 SyntaxError: invalid syntax
@@ -944,7 +944,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_keyword_else.py'
+'HOME:\github\friendly\tests\syntax\assign_to_keyword_else.py'
 beyond the location indicated by ^.
 
 
@@ -967,9 +967,9 @@ This is not allowed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_keyword_none.py", line 4
+  File "HOME:\github\friendly\tests\syntax\assign_to_keyword_none.py", line 4
     None = 1
     ^
 SyntaxError: cannot assign to None
@@ -983,7 +983,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_keyword_none.py'
+'HOME:\github\friendly\tests\syntax\assign_to_keyword_none.py'
 beyond the location indicated by ^.
 
 
@@ -1005,9 +1005,9 @@ beyond the location indicated by ^.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\assign_to_operation.py", line 4
+  File "HOME:\github\friendly\tests\syntax\assign_to_operation.py", line 4
     a + 1 = 2
     ^
 SyntaxError: cannot assign to operator
@@ -1022,7 +1022,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\assign_to_operation.py'
+'HOME:\github\friendly\tests\syntax\assign_to_operation.py'
 beyond the location indicated by ^.
 
 
@@ -1046,9 +1046,9 @@ only used to assign a value to a variable.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\async_def_missing_parens.py", line 1
+  File "HOME:\github\friendly\tests\syntax\async_def_missing_parens.py", line 1
     async def name:
                   ^
 SyntaxError: invalid syntax
@@ -1063,7 +1063,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\async_def_missing_parens.py'
+'HOME:\github\friendly\tests\syntax\async_def_missing_parens.py'
 beyond the location indicated by ^.
 
 
@@ -1085,9 +1085,9 @@ You might have meant to write
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\augmented_assignment_to_literal.py", line 1
+  File "HOME:\github\friendly\tests\syntax\augmented_assignment_to_literal.py", line 1
     if "word" := True:
        ^
 SyntaxError: cannot use assignment expressions with literal
@@ -1102,7 +1102,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\augmented_assignment_to_literal.py'
+'HOME:\github\friendly\tests\syntax\augmented_assignment_to_literal.py'
 beyond the location indicated by ^.
 
 
@@ -1123,9 +1123,9 @@ You can only assign objects to identifiers (variable names).
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\augmented_assigment_with_true.py", line 4
+  File "HOME:\github\friendly\tests\syntax\augmented_assigment_with_true.py", line 4
     (True := 1)
      ^
 SyntaxError: cannot use assignment expressions with True
@@ -1139,7 +1139,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\augmented_assigment_with_true.py'
+'HOME:\github\friendly\tests\syntax\augmented_assigment_with_true.py'
 beyond the location indicated by ^.
 
 
@@ -1161,9 +1161,9 @@ beyond the location indicated by ^.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\backslash_instead_of_slash.py", line 1
+  File "HOME:\github\friendly\tests\syntax\backslash_instead_of_slash.py", line 1
     a = 3 \ 4.0
                ^
 SyntaxError: unexpected character after line continuation character
@@ -1178,7 +1178,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\backslash_instead_of_slash.py'
+'HOME:\github\friendly\tests\syntax\backslash_instead_of_slash.py'
 beyond the location indicated by ^.
 
 
@@ -1200,9 +1200,9 @@ and wrote \ instead of /.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\break_outside_loop.py", line 4
+  File "HOME:\github\friendly\tests\syntax\break_outside_loop.py", line 4
     break
     ^
 SyntaxError: 'break' outside loop
@@ -1213,7 +1213,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\break_outside_loop.py'
+'HOME:\github\friendly\tests\syntax\break_outside_loop.py'
 beyond the location indicated by ^.
 
 
@@ -1235,9 +1235,9 @@ The Python keyword `break` can only be used inside a `for` loop or inside a `whi
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\cannot_guess_the_cause.py", line 1
+  File "HOME:\github\friendly\tests\syntax\cannot_guess_the_cause.py", line 1
     SyntaxErrors can be annoying!
                  ^
 SyntaxError: invalid syntax
@@ -1248,7 +1248,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\cannot_guess_the_cause.py'
+'HOME:\github\friendly\tests\syntax\cannot_guess_the_cause.py'
 beyond the location indicated by ^.
 
 
@@ -1276,9 +1276,9 @@ https://github.com/aroberge/friendly/issues
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\cannot_use_star.py", line 3
+  File "HOME:\github\friendly\tests\syntax\cannot_use_star.py", line 3
     *a
     ^
 SyntaxError: can't use starred expression here
@@ -1289,7 +1289,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\cannot_use_star.py'
+'HOME:\github\friendly\tests\syntax\cannot_use_star.py'
 beyond the location indicated by ^.
 
 
@@ -1312,7 +1312,7 @@ to each item of an iterable, which does not make sense here.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
   File "<fstring>", line 1
     (**k)
@@ -1345,9 +1345,9 @@ dict unpacking is to be used which is not allowed or does not make sense here.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\class_missing_name.py", line 1
+  File "HOME:\github\friendly\tests\syntax\class_missing_name.py", line 1
     class:
          ^
 SyntaxError: invalid syntax
@@ -1362,7 +1362,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\class_missing_name.py'
+'HOME:\github\friendly\tests\syntax\class_missing_name.py'
 beyond the location indicated by ^.
 
 
@@ -1385,9 +1385,9 @@ A `class` statement requires a name:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\comprehension_missing_tuple_paren.py", line 1
+  File "HOME:\github\friendly\tests\syntax\comprehension_missing_tuple_paren.py", line 1
     x = [i, i**2 for i in range(10)]
                  ^
 SyntaxError: invalid syntax
@@ -1402,7 +1402,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\comprehension_missing_tuple_paren.py'
+'HOME:\github\friendly\tests\syntax\comprehension_missing_tuple_paren.py'
 beyond the location indicated by ^.
 
 
@@ -1430,9 +1430,9 @@ you would need to write
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\comprehension_with_condition_no_else.py", line 1
+  File "HOME:\github\friendly\tests\syntax\comprehension_with_condition_no_else.py", line 1
     a = [f(x) if condition for x in sequence]
                            ^
 SyntaxError: invalid syntax
@@ -1443,7 +1443,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\comprehension_with_condition_no_else.py'
+'HOME:\github\friendly\tests\syntax\comprehension_with_condition_no_else.py'
 beyond the location indicated by ^.
 
 
@@ -1473,9 +1473,9 @@ or, if there is no `else`
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\comprehension_with_condition_with_else.py", line 1
+  File "HOME:\github\friendly\tests\syntax\comprehension_with_condition_with_else.py", line 1
     a = [f(x) for x in sequence if condition else other]
                                              ^
 SyntaxError: invalid syntax
@@ -1486,7 +1486,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\comprehension_with_condition_with_else.py'
+'HOME:\github\friendly\tests\syntax\comprehension_with_condition_with_else.py'
 beyond the location indicated by ^.
 
 
@@ -1516,9 +1516,9 @@ or, if there is no `else`
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\continue_outside_loop.py", line 4
+  File "HOME:\github\friendly\tests\syntax\continue_outside_loop.py", line 4
     continue
     ^
 SyntaxError: 'continue' not properly in loop
@@ -1529,7 +1529,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\continue_outside_loop.py'
+'HOME:\github\friendly\tests\syntax\continue_outside_loop.py'
 beyond the location indicated by ^.
 
 
@@ -1551,9 +1551,9 @@ The Python keyword `continue` can only be used inside a `for` loop or inside a `
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\copy_pasted_code.py", line 2
+  File "HOME:\github\friendly\tests\syntax\copy_pasted_code.py", line 2
     >>> print("Hello World!")
     ^
 SyntaxError: invalid syntax
@@ -1568,7 +1568,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\copy_pasted_code.py'
+'HOME:\github\friendly\tests\syntax\copy_pasted_code.py'
 beyond the location indicated by ^.
 
 
@@ -1589,9 +1589,9 @@ The Python prompt, `>>>`, should not be included in your code.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\copy_pasted_code_2.py", line 2
+  File "HOME:\github\friendly\tests\syntax\copy_pasted_code_2.py", line 2
     ... print("Hello World!")
         ^
 SyntaxError: invalid syntax
@@ -1606,7 +1606,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\copy_pasted_code_2.py'
+'HOME:\github\friendly\tests\syntax\copy_pasted_code_2.py'
 beyond the location indicated by ^.
 
 
@@ -1627,9 +1627,9 @@ The Python prompt, `...`, should not be included in your code.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_arg_after_kwarg.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_arg_after_kwarg.py", line 1
     def test(a, **kwargs, b):
                           ^
 SyntaxError: invalid syntax
@@ -1644,7 +1644,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_arg_after_kwarg.py'
+'HOME:\github\friendly\tests\syntax\def_arg_after_kwarg.py'
 beyond the location indicated by ^.
 
 
@@ -1665,9 +1665,9 @@ keyword arguments in your function definition.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_bare_star_arg.py", line 4
+  File "HOME:\github\friendly\tests\syntax\def_bare_star_arg.py", line 4
     def f(*):
           ^
 SyntaxError: named arguments must follow bare *
@@ -1682,7 +1682,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_bare_star_arg.py'
+'HOME:\github\friendly\tests\syntax\def_bare_star_arg.py'
 beyond the location indicated by ^.
 
 
@@ -1706,9 +1706,9 @@ by `*, named_argument=value`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_code_block.py", line 3
+  File "HOME:\github\friendly\tests\syntax\def_code_block.py", line 3
     def :
         ^
 SyntaxError: invalid syntax
@@ -1723,7 +1723,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_code_block.py'
+'HOME:\github\friendly\tests\syntax\def_code_block.py'
 beyond the location indicated by ^.
 
 
@@ -1747,9 +1747,9 @@ The correct syntax is:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_code_block_2.py", line 2
+  File "HOME:\github\friendly\tests\syntax\def_code_block_2.py", line 2
     def :
         ^
 SyntaxError: invalid syntax
@@ -1764,7 +1764,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_code_block_2.py'
+'HOME:\github\friendly\tests\syntax\def_code_block_2.py'
 beyond the location indicated by ^.
 
 
@@ -1787,9 +1787,9 @@ The correct syntax is:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_dotted_argument.py", line 3
+  File "HOME:\github\friendly\tests\syntax\def_dotted_argument.py", line 3
     def test(x.y):
               ^
 SyntaxError: invalid syntax
@@ -1804,7 +1804,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_dotted_argument.py'
+'HOME:\github\friendly\tests\syntax\def_dotted_argument.py'
 beyond the location indicated by ^.
 
 
@@ -1826,9 +1826,9 @@ Perhaps you meant to write a comma.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_dotted_argument_2.py", line 2
+  File "HOME:\github\friendly\tests\syntax\def_dotted_argument_2.py", line 2
     def test(x., y):
               ^
 SyntaxError: invalid syntax
@@ -1843,7 +1843,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_dotted_argument_2.py'
+'HOME:\github\friendly\tests\syntax\def_dotted_argument_2.py'
 beyond the location indicated by ^.
 
 
@@ -1863,9 +1863,9 @@ You cannot use dotted names as function arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_dotted_function_name.py", line 3
+  File "HOME:\github\friendly\tests\syntax\def_dotted_function_name.py", line 3
     def test.x():
             ^
 SyntaxError: invalid syntax
@@ -1880,7 +1880,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_dotted_function_name.py'
+'HOME:\github\friendly\tests\syntax\def_dotted_function_name.py'
 beyond the location indicated by ^.
 
 
@@ -1901,9 +1901,9 @@ You cannot use dots in function names.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_dict_as_arg.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_dict_as_arg.py", line 1
     def test({'a': 1}, y):  # dict as first argument
              ^
 SyntaxError: invalid syntax
@@ -1918,7 +1918,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_dict_as_arg.py'
+'HOME:\github\friendly\tests\syntax\def_dict_as_arg.py'
 beyond the location indicated by ^.
 
 
@@ -1938,9 +1938,9 @@ You can only use identifiers (variable names) as function arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_duplicate_arg.py", line 4
+  File "HOME:\github\friendly\tests\syntax\def_duplicate_arg.py", line 4
     def f(aa=1, aa=2):
     ^
 SyntaxError: duplicate argument 'aa' in function definition
@@ -1951,7 +1951,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_duplicate_arg.py'
+'HOME:\github\friendly\tests\syntax\def_duplicate_arg.py'
 beyond the location indicated by ^.
 
 
@@ -1976,9 +1976,9 @@ twice; each keyword argument should appear only once in a function definition.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_extra_semi_colon.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_extra_semi_colon.py", line 1
     def test():;
                ^
 SyntaxError: invalid syntax
@@ -1993,7 +1993,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_extra_semi_colon.py'
+'HOME:\github\friendly\tests\syntax\def_extra_semi_colon.py'
 beyond the location indicated by ^.
 
 
@@ -2014,9 +2014,9 @@ Removing `;`, might fix the problem.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_extra_comma.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_extra_comma.py", line 1
     def test(a,,b):
                ^
 SyntaxError: invalid syntax
@@ -2031,7 +2031,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_extra_comma.py'
+'HOME:\github\friendly\tests\syntax\def_extra_comma.py'
 beyond the location indicated by ^.
 
 
@@ -2053,9 +2053,9 @@ The following statement contains no syntax error:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_forward_slash_1.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_forward_slash_1.py", line 1
     def test(a, **kwargs, /):
                           ^
 SyntaxError: invalid syntax
@@ -2070,7 +2070,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_forward_slash_1.py'
+'HOME:\github\friendly\tests\syntax\def_forward_slash_1.py'
 beyond the location indicated by ^.
 
 
@@ -2092,9 +2092,9 @@ the symbol `/`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_forward_slash_2.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_forward_slash_2.py", line 1
     def test(a, *, b, /):
                       ^
 SyntaxError: invalid syntax
@@ -2109,7 +2109,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_forward_slash_2.py'
+'HOME:\github\friendly\tests\syntax\def_forward_slash_2.py'
 beyond the location indicated by ^.
 
 
@@ -2132,9 +2132,9 @@ When they are used together, `/` must appear before `*`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_forward_slash_3.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_forward_slash_3.py", line 1
     def test(a, *arg, /):
                       ^
 SyntaxError: invalid syntax
@@ -2149,7 +2149,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_forward_slash_3.py'
+'HOME:\github\friendly\tests\syntax\def_forward_slash_3.py'
 beyond the location indicated by ^.
 
 
@@ -2170,9 +2170,9 @@ are positional arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_forward_slash_4.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_forward_slash_4.py", line 1
     def test(a, /, b, /):
                       ^
 SyntaxError: invalid syntax
@@ -2187,7 +2187,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_forward_slash_4.py'
+'HOME:\github\friendly\tests\syntax\def_forward_slash_4.py'
 beyond the location indicated by ^.
 
 
@@ -2206,9 +2206,9 @@ You can only use `/` once in a function definition.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_function_name_invalid.py", line 3
+  File "HOME:\github\friendly\tests\syntax\def_function_name_invalid.py", line 3
     def 2be():
         ^
 SyntaxError: invalid syntax
@@ -2223,7 +2223,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_function_name_invalid.py'
+'HOME:\github\friendly\tests\syntax\def_function_name_invalid.py'
 beyond the location indicated by ^.
 
 
@@ -2246,9 +2246,9 @@ and which contains only letters, digits or the underscore character.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_function_name_string.py", line 3
+  File "HOME:\github\friendly\tests\syntax\def_function_name_string.py", line 3
     def "function"():
         ^
 SyntaxError: invalid syntax
@@ -2266,7 +2266,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_function_name_string.py'
+'HOME:\github\friendly\tests\syntax\def_function_name_string.py'
 beyond the location indicated by ^.
 
 
@@ -2290,9 +2290,9 @@ You attempted to use a string as a function name.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_keyword_as_arg_1.py", line 5
+  File "HOME:\github\friendly\tests\syntax\def_keyword_as_arg_1.py", line 5
     def f(None=1):
           ^
 SyntaxError: invalid syntax
@@ -2303,7 +2303,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_keyword_as_arg_1.py'
+'HOME:\github\friendly\tests\syntax\def_keyword_as_arg_1.py'
 beyond the location indicated by ^.
 
 
@@ -2328,9 +2328,9 @@ where an identifier (variable name) was expected.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_keyword_as_arg_2.py", line 5
+  File "HOME:\github\friendly\tests\syntax\def_keyword_as_arg_2.py", line 5
     def f(x, True):
              ^
 SyntaxError: invalid syntax
@@ -2341,7 +2341,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_keyword_as_arg_2.py'
+'HOME:\github\friendly\tests\syntax\def_keyword_as_arg_2.py'
 beyond the location indicated by ^.
 
 
@@ -2366,9 +2366,9 @@ where an identifier (variable name) was expected.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_keyword_as_arg_3.py", line 5
+  File "HOME:\github\friendly\tests\syntax\def_keyword_as_arg_3.py", line 5
     def f(*None):
            ^
 SyntaxError: invalid syntax
@@ -2379,7 +2379,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_keyword_as_arg_3.py'
+'HOME:\github\friendly\tests\syntax\def_keyword_as_arg_3.py'
 beyond the location indicated by ^.
 
 
@@ -2404,9 +2404,9 @@ where an identifier (variable name) was expected.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_keyword_as_arg_4.py", line 5
+  File "HOME:\github\friendly\tests\syntax\def_keyword_as_arg_4.py", line 5
     def f(**None):
             ^
 SyntaxError: invalid syntax
@@ -2417,7 +2417,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_keyword_as_arg_4.py'
+'HOME:\github\friendly\tests\syntax\def_keyword_as_arg_4.py'
 beyond the location indicated by ^.
 
 
@@ -2442,9 +2442,9 @@ where an identifier (variable name) was expected.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_keyword_as_name.py", line 3
+  File "HOME:\github\friendly\tests\syntax\def_keyword_as_name.py", line 3
     def pass():
         ^
 SyntaxError: invalid syntax
@@ -2459,7 +2459,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_keyword_as_name.py'
+'HOME:\github\friendly\tests\syntax\def_keyword_as_name.py'
 beyond the location indicated by ^.
 
 
@@ -2480,9 +2480,9 @@ You tried to use the Python keyword `pass` as a function name.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_list_as_arg_1.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_list_as_arg_1.py", line 1
     def test([x], y):  # list as first argument
              ^
 SyntaxError: invalid syntax
@@ -2497,7 +2497,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_list_as_arg_1.py'
+'HOME:\github\friendly\tests\syntax\def_list_as_arg_1.py'
 beyond the location indicated by ^.
 
 
@@ -2517,9 +2517,9 @@ You can only use identifiers (variable names) as function arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_list_as_arg_2.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_list_as_arg_2.py", line 1
     def test(x, [y]):  # list as second argument, after comma
                 ^
 SyntaxError: invalid syntax
@@ -2534,7 +2534,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_list_as_arg_2.py'
+'HOME:\github\friendly\tests\syntax\def_list_as_arg_2.py'
 beyond the location indicated by ^.
 
 
@@ -2554,9 +2554,9 @@ You can only use identifiers (variable names) as function arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_missing_colon.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_missing_colon.py", line 1
     def test()
               ^
 SyntaxError: invalid syntax
@@ -2571,7 +2571,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_missing_colon.py'
+'HOME:\github\friendly\tests\syntax\def_missing_colon.py'
 beyond the location indicated by ^.
 
 
@@ -2590,9 +2590,9 @@ A function definition statement must end with a colon.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_missing_comma.py", line 4
+  File "HOME:\github\friendly\tests\syntax\def_missing_comma.py", line 4
     def a(b, c d):
                ^
 SyntaxError: invalid syntax
@@ -2607,7 +2607,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_missing_comma.py'
+'HOME:\github\friendly\tests\syntax\def_missing_comma.py'
 beyond the location indicated by ^.
 
 
@@ -2635,9 +2635,9 @@ Perhaps you meant
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_missing_parens.py", line 3
+  File "HOME:\github\friendly\tests\syntax\def_missing_parens.py", line 3
     def name:
             ^
 SyntaxError: invalid syntax
@@ -2652,7 +2652,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_missing_parens.py'
+'HOME:\github\friendly\tests\syntax\def_missing_parens.py'
 beyond the location indicated by ^.
 
 
@@ -2676,9 +2676,9 @@ You might have meant to write
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_missing_parens_2.py", line 2
+  File "HOME:\github\friendly\tests\syntax\def_missing_parens_2.py", line 2
     def name a, b:
              ^
 SyntaxError: invalid syntax
@@ -2693,7 +2693,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_missing_parens_2.py'
+'HOME:\github\friendly\tests\syntax\def_missing_parens_2.py'
 beyond the location indicated by ^.
 
 
@@ -2716,9 +2716,9 @@ You might have meant to write
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_missing_name.py", line 3
+  File "HOME:\github\friendly\tests\syntax\def_missing_name.py", line 3
     def ( arg )  :
         ^
 SyntaxError: invalid syntax
@@ -2729,7 +2729,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_missing_name.py'
+'HOME:\github\friendly\tests\syntax\def_missing_name.py'
 beyond the location indicated by ^.
 
 
@@ -2753,9 +2753,9 @@ The correct syntax is:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_name_is_parameter_and_global.py", line 6
+  File "HOME:\github\friendly\tests\syntax\def_name_is_parameter_and_global.py", line 6
     global x
     ^
 SyntaxError: name 'x' is parameter and global
@@ -2766,7 +2766,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_name_is_parameter_and_global.py'
+'HOME:\github\friendly\tests\syntax\def_name_is_parameter_and_global.py'
 beyond the location indicated by ^.
 
 
@@ -2798,9 +2798,9 @@ inside that function, which is the contrary of what `global` implied.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_non_default_after_default.py", line 5
+  File "HOME:\github\friendly\tests\syntax\def_non_default_after_default.py", line 5
     def test(a=1, b):
              ^
 SyntaxError: non-default argument follows default argument
@@ -2811,7 +2811,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_non_default_after_default.py'
+'HOME:\github\friendly\tests\syntax\def_non_default_after_default.py'
 beyond the location indicated by ^.
 
 
@@ -2847,9 +2847,9 @@ According to Python, you used positional arguments after keyword ones.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_number_as_arg.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_number_as_arg.py", line 1
     def f(1):
           ^
 SyntaxError: invalid syntax
@@ -2864,7 +2864,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_number_as_arg.py'
+'HOME:\github\friendly\tests\syntax\def_number_as_arg.py'
 beyond the location indicated by ^.
 
 
@@ -2884,9 +2884,9 @@ You can only use identifiers (variable names) as function arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_operator_after_2star.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_operator_after_2star.py", line 1
     def test(**):
                ^
 SyntaxError: invalid syntax
@@ -2897,7 +2897,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_operator_after_2star.py'
+'HOME:\github\friendly\tests\syntax\def_operator_after_2star.py'
 beyond the location indicated by ^.
 
 
@@ -2916,9 +2916,9 @@ The `**` operator needs to be followed by an identifier (variable name).
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_operator_instead_of_comma.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_operator_instead_of_comma.py", line 1
     def test(a + b):
                ^
 SyntaxError: invalid syntax
@@ -2933,7 +2933,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_operator_instead_of_comma.py'
+'HOME:\github\friendly\tests\syntax\def_operator_instead_of_comma.py'
 beyond the location indicated by ^.
 
 
@@ -2956,9 +2956,9 @@ The following statement contains no syntax error:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_operator_instead_of_equal.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_operator_instead_of_equal.py", line 1
     def test(a, b=3, c+None):
                       ^
 SyntaxError: invalid syntax
@@ -2973,7 +2973,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_operator_instead_of_equal.py'
+'HOME:\github\friendly\tests\syntax\def_operator_instead_of_equal.py'
 beyond the location indicated by ^.
 
 
@@ -2996,9 +2996,9 @@ The following statement contains no syntax error:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_operator_instead_of_name.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_operator_instead_of_name.py", line 1
     def test(a, +, b):
                 ^
 SyntaxError: invalid syntax
@@ -3013,7 +3013,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_operator_instead_of_name.py'
+'HOME:\github\friendly\tests\syntax\def_operator_instead_of_name.py'
 beyond the location indicated by ^.
 
 
@@ -3034,9 +3034,9 @@ will contain no syntax error.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_positional_after_keyword_arg.py", line 5
+  File "HOME:\github\friendly\tests\syntax\def_positional_after_keyword_arg.py", line 5
     test(a=1, b)
               ^
 SyntaxError: positional argument follows keyword argument
@@ -3047,7 +3047,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_positional_after_keyword_arg.py'
+'HOME:\github\friendly\tests\syntax\def_positional_after_keyword_arg.py'
 beyond the location indicated by ^.
 
 
@@ -3083,9 +3083,9 @@ According to Python, you used positional arguments after keyword ones.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_semi_colon_instead_of_colon.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_semi_colon_instead_of_colon.py", line 1
     def test();
               ^
 SyntaxError: invalid syntax
@@ -3100,7 +3100,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_semi_colon_instead_of_colon.py'
+'HOME:\github\friendly\tests\syntax\def_semi_colon_instead_of_colon.py'
 beyond the location indicated by ^.
 
 
@@ -3120,9 +3120,9 @@ You wrote `;` instead of a colon.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_set_as_arg.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_set_as_arg.py", line 1
     def test(y, {'a', 'b'}):  # set as second argument, after comma
                 ^
 SyntaxError: invalid syntax
@@ -3137,7 +3137,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_set_as_arg.py'
+'HOME:\github\friendly\tests\syntax\def_set_as_arg.py'
 beyond the location indicated by ^.
 
 
@@ -3157,9 +3157,9 @@ You can only use identifiers (variable names) as function arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_star_arg_before_slash.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_star_arg_before_slash.py", line 1
     def test(a, *arg, /):
                       ^
 SyntaxError: invalid syntax
@@ -3174,7 +3174,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_star_arg_before_slash.py'
+'HOME:\github\friendly\tests\syntax\def_star_arg_before_slash.py'
 beyond the location indicated by ^.
 
 
@@ -3195,9 +3195,9 @@ are positional arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_star_used_only_once.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_star_used_only_once.py", line 1
     def test(a, *arg, *, b=1):
                       ^
 SyntaxError: invalid syntax
@@ -3212,7 +3212,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_star_used_only_once.py'
+'HOME:\github\friendly\tests\syntax\def_star_used_only_once.py'
 beyond the location indicated by ^.
 
 
@@ -3233,9 +3233,9 @@ or in the form `*arg`, but not both.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_star_used_only_once_1.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_star_used_only_once_1.py", line 1
     def test(a, *, *):
                    ^
 SyntaxError: invalid syntax
@@ -3250,7 +3250,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_star_used_only_once_1.py'
+'HOME:\github\friendly\tests\syntax\def_star_used_only_once_1.py'
 beyond the location indicated by ^.
 
 
@@ -3269,9 +3269,9 @@ You can only use `*` once in a function definition.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_star_used_only_once_2.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_star_used_only_once_2.py", line 1
     def test(a, *arg, *other):
                       ^
 SyntaxError: invalid syntax
@@ -3286,7 +3286,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_star_used_only_once_2.py'
+'HOME:\github\friendly\tests\syntax\def_star_used_only_once_2.py'
 beyond the location indicated by ^.
 
 
@@ -3306,9 +3306,9 @@ You have used it twice, with `*arg` and `*other`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_star_after_2star.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_star_after_2star.py", line 1
     def test(**kw, *arg):
                    ^
 SyntaxError: invalid syntax
@@ -3323,7 +3323,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_star_after_2star.py'
+'HOME:\github\friendly\tests\syntax\def_star_after_2star.py'
 beyond the location indicated by ^.
 
 
@@ -3342,9 +3342,9 @@ beyond the location indicated by ^.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_star_after_2star_2.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_star_after_2star_2.py", line 1
     def test(**kw, *):
                    ^
 SyntaxError: invalid syntax
@@ -3359,7 +3359,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_star_after_2star_2.py'
+'HOME:\github\friendly\tests\syntax\def_star_after_2star_2.py'
 beyond the location indicated by ^.
 
 
@@ -3378,9 +3378,9 @@ beyond the location indicated by ^.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_string_as_arg.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_string_as_arg.py", line 1
     def f("1"):
           ^
 SyntaxError: invalid syntax
@@ -3395,7 +3395,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_string_as_arg.py'
+'HOME:\github\friendly\tests\syntax\def_string_as_arg.py'
 beyond the location indicated by ^.
 
 
@@ -3415,9 +3415,9 @@ You can only use identifiers (variable names) as function arguments.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_tuple_as_arg_1.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_tuple_as_arg_1.py", line 1
     def test((a, b), c):
              ^
 SyntaxError: invalid syntax
@@ -3432,7 +3432,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_tuple_as_arg_1.py'
+'HOME:\github\friendly\tests\syntax\def_tuple_as_arg_1.py'
 beyond the location indicated by ^.
 
 
@@ -3454,9 +3454,9 @@ within the body of the function.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\def_tuple_as_arg_2.py", line 1
+  File "HOME:\github\friendly\tests\syntax\def_tuple_as_arg_2.py", line 1
     def test(a, (b, c)):
                 ^
 SyntaxError: invalid syntax
@@ -3471,7 +3471,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\def_tuple_as_arg_2.py'
+'HOME:\github\friendly\tests\syntax\def_tuple_as_arg_2.py'
 beyond the location indicated by ^.
 
 
@@ -3493,9 +3493,9 @@ within the body of the function.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\delete_constant_keyword.py", line 1
+  File "HOME:\github\friendly\tests\syntax\delete_constant_keyword.py", line 1
     del True
         ^
 SyntaxError: cannot delete True
@@ -3506,7 +3506,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\delete_constant_keyword.py'
+'HOME:\github\friendly\tests\syntax\delete_constant_keyword.py'
 beyond the location indicated by ^.
 
 
@@ -3525,9 +3525,9 @@ You cannot delete the constant `True`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\delete_function_call.py", line 5
+  File "HOME:\github\friendly\tests\syntax\delete_function_call.py", line 5
     del f(a)
         ^
 SyntaxError: cannot delete function call
@@ -3538,7 +3538,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\delete_function_call.py'
+'HOME:\github\friendly\tests\syntax\delete_function_call.py'
 beyond the location indicated by ^.
 
 
@@ -3566,9 +3566,9 @@ instead of deleting the function's name
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\delete_string_literal.py", line 1
+  File "HOME:\github\friendly\tests\syntax\delete_string_literal.py", line 1
     del "Hello world!"
         ^
 SyntaxError: cannot delete literal
@@ -3579,7 +3579,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\delete_string_literal.py'
+'HOME:\github\friendly\tests\syntax\delete_string_literal.py'
 beyond the location indicated by ^.
 
 
@@ -3600,9 +3600,9 @@ individual items in a container.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\different_operators_in_a_row.py", line 1
+  File "HOME:\github\friendly\tests\syntax\different_operators_in_a_row.py", line 1
     3 */ 4
        ^
 SyntaxError: invalid syntax
@@ -3613,7 +3613,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\different_operators_in_a_row.py'
+'HOME:\github\friendly\tests\syntax\different_operators_in_a_row.py'
 beyond the location indicated by ^.
 
 
@@ -3634,9 +3634,9 @@ or forgot to write something between them.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\dot_before_paren.py", line 3
+  File "HOME:\github\friendly\tests\syntax\dot_before_paren.py", line 3
     print(len.('hello'))
               ^
 SyntaxError: invalid syntax
@@ -3647,7 +3647,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\dot_before_paren.py'
+'HOME:\github\friendly\tests\syntax\dot_before_paren.py'
 beyond the location indicated by ^.
 
 
@@ -3669,9 +3669,9 @@ Perhaps you need to replace the dot by a comma.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\duplicate_token.py", line 1
+  File "HOME:\github\friendly\tests\syntax\duplicate_token.py", line 1
     print(1 , , 2)
               ^
 SyntaxError: invalid syntax
@@ -3686,7 +3686,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\duplicate_token.py'
+'HOME:\github\friendly\tests\syntax\duplicate_token.py'
 beyond the location indicated by ^.
 
 
@@ -3706,9 +3706,9 @@ If that is the case, you need to remove the second one.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\else_if_instead_of_elif.py", line 5
+  File "HOME:\github\friendly\tests\syntax\else_if_instead_of_elif.py", line 5
     else if True:
          ^
 SyntaxError: invalid syntax
@@ -3723,7 +3723,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\else_if_instead_of_elif.py'
+'HOME:\github\friendly\tests\syntax\else_if_instead_of_elif.py'
 beyond the location indicated by ^.
 
 
@@ -3748,9 +3748,9 @@ but wrote `else if` instead.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\elseif_instead_of_elif.py", line 5
+  File "HOME:\github\friendly\tests\syntax\elseif_instead_of_elif.py", line 5
     elseif True:
            ^
 SyntaxError: invalid syntax
@@ -3765,7 +3765,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\elseif_instead_of_elif.py'
+'HOME:\github\friendly\tests\syntax\elseif_instead_of_elif.py'
 beyond the location indicated by ^.
 
 
@@ -3790,9 +3790,9 @@ but wrote `elseif` instead.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\eol_string_literal.py", line 3
+  File "HOME:\github\friendly\tests\syntax\eol_string_literal.py", line 3
     alphabet = 'abc
                    ^
 SyntaxError: EOL while scanning string literal
@@ -3807,7 +3807,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\eol_string_literal.py'
+'HOME:\github\friendly\tests\syntax\eol_string_literal.py'
 beyond the location indicated by ^.
 
 
@@ -3829,9 +3829,9 @@ but never ended the string with another quote on that line.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\equal_sign_instead_of_colon.py", line 4
+  File "HOME:\github\friendly\tests\syntax\equal_sign_instead_of_colon.py", line 4
     ages = {'Alice'=22, 'Bob'=24}
                    ^
 SyntaxError: invalid syntax
@@ -3842,7 +3842,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\equal_sign_instead_of_colon.py'
+'HOME:\github\friendly\tests\syntax\equal_sign_instead_of_colon.py'
 beyond the location indicated by ^.
 
 
@@ -3866,9 +3866,9 @@ before or at the position indicated by ^.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\except_multiple_exceptions.py", line 3
+  File "HOME:\github\friendly\tests\syntax\except_multiple_exceptions.py", line 3
     except NameError, ValueError as err:
                     ^
 SyntaxError: invalid syntax
@@ -3883,7 +3883,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\except_multiple_exceptions.py'
+'HOME:\github\friendly\tests\syntax\except_multiple_exceptions.py'
 beyond the location indicated by ^.
 
 
@@ -3899,10 +3899,6 @@ I am guessing that you wanted to use an `except` statement
 with multiple exception types. If that is the case, you must
 surround them with parentheses.
 
-If you are using a Friendly console, you might want to
-use the function `www()` which will open a browser at
-a relevant place in the Python documentation.
-
 ---
 
 ## (100) Extra token
@@ -3910,9 +3906,9 @@ a relevant place in the Python documentation.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\extra_token.py", line 1
+  File "HOME:\github\friendly\tests\syntax\extra_token.py", line 1
     print(1 / 2) ==
                    ^
 SyntaxError: invalid syntax
@@ -3927,7 +3923,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\extra_token.py'
+'HOME:\github\friendly\tests\syntax\extra_token.py'
 beyond the location indicated by ^.
 
 
@@ -3947,9 +3943,9 @@ Removing it and writing `print(1 / 2)` seems to fix the error.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\f_string_binary.py", line 1
+  File "HOME:\github\friendly\tests\syntax\f_string_binary.py", line 1
     greet = bf"Hello {name}"
               ^
 SyntaxError: invalid syntax
@@ -3964,7 +3960,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\f_string_binary.py'
+'HOME:\github\friendly\tests\syntax\f_string_binary.py'
 beyond the location indicated by ^.
 
 
@@ -3984,9 +3980,9 @@ this is not allowed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\f_string_unterminated.py", line 4
+  File "HOME:\github\friendly\tests\syntax\f_string_unterminated.py", line 4
     print(f"Bob is {age['Bob]} years old.")
           ^
 SyntaxError: f-string: unterminated string
@@ -4001,7 +3997,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\f_string_unterminated.py'
+'HOME:\github\friendly\tests\syntax\f_string_unterminated.py'
 beyond the location indicated by ^.
 
 
@@ -4025,9 +4021,9 @@ single quote (') or double quote ("), without a matching closing one.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\f_string_with_backslash.py", line 2
+  File "HOME:\github\friendly\tests\syntax\f_string_with_backslash.py", line 2
     print(f"{'\n'.join(names)}")
           ^
 SyntaxError: f-string expression part cannot include a backslash
@@ -4038,7 +4034,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\f_string_with_backslash.py'
+'HOME:\github\friendly\tests\syntax\f_string_with_backslash.py'
 beyond the location indicated by ^.
 
 
@@ -4068,9 +4064,9 @@ you could write this as
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\for_missing_terms.py", line 1
+  File "HOME:\github\friendly\tests\syntax\for_missing_terms.py", line 1
     for:
        ^
 SyntaxError: invalid syntax
@@ -4085,7 +4081,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\for_missing_terms.py'
+'HOME:\github\friendly\tests\syntax\for_missing_terms.py'
 beyond the location indicated by ^.
 
 
@@ -4108,9 +4104,9 @@ A `for` loop is an iteration over a sequence:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\future_braces.py", line 1
+  File "HOME:\github\friendly\tests\syntax\future_braces.py", line 1
     from __future__ import braces
     ^
 SyntaxError: not a chance
@@ -4121,7 +4117,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\future_braces.py'
+'HOME:\github\friendly\tests\syntax\future_braces.py'
 beyond the location indicated by ^.
 
 
@@ -4144,9 +4140,9 @@ their indentation level, and not by using some curly braces, like `{...}`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\future_import_star.py", line 1
+  File "HOME:\github\friendly\tests\syntax\future_import_star.py", line 1
     from __future__ import *
     ^
 SyntaxError: future feature * is not defined
@@ -4157,7 +4153,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\future_import_star.py'
+'HOME:\github\friendly\tests\syntax\future_import_star.py'
 beyond the location indicated by ^.
 
 
@@ -4188,9 +4184,9 @@ The available features are `nested_scopes,
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\future_must_be_first.py", line 3
+  File "HOME:\github\friendly\tests\syntax\future_must_be_first.py", line 3
     from __future__ import generators
     ^
 SyntaxError: from __future__ imports must occur at the beginning of the file
@@ -4201,7 +4197,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\future_must_be_first.py'
+'HOME:\github\friendly\tests\syntax\future_must_be_first.py'
 beyond the location indicated by ^.
 
 
@@ -4224,9 +4220,9 @@ It must appear at the beginning of the file.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\future_typo.py", line 1
+  File "HOME:\github\friendly\tests\syntax\future_typo.py", line 1
     from __future__ import divisio
     ^
 SyntaxError: future feature divisio is not defined
@@ -4241,7 +4237,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\future_typo.py'
+'HOME:\github\friendly\tests\syntax\future_typo.py'
 beyond the location indicated by ^.
 
 
@@ -4260,9 +4256,9 @@ Instead of `divisio`, perhaps you meant to import `division`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\future_unknown.py", line 1
+  File "HOME:\github\friendly\tests\syntax\future_unknown.py", line 1
     from __future__ import something
     ^
 SyntaxError: future feature something is not defined
@@ -4273,7 +4269,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\future_unknown.py'
+'HOME:\github\friendly\tests\syntax\future_unknown.py'
 beyond the location indicated by ^.
 
 
@@ -4303,9 +4299,9 @@ The available features are `nested_scopes,
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\generator_expression_parens.py", line 6
+  File "HOME:\github\friendly\tests\syntax\generator_expression_parens.py", line 6
     f(x for x in L, 1)
       ^
 SyntaxError: Generator expression must be parenthesized
@@ -4316,7 +4312,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\generator_expression_parens.py'
+'HOME:\github\friendly\tests\syntax\generator_expression_parens.py'
 beyond the location indicated by ^.
 
 
@@ -4343,9 +4339,9 @@ You must add parentheses enclosing that expression.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\hyphen_instead_of_underscore.py", line 4
+  File "HOME:\github\friendly\tests\syntax\hyphen_instead_of_underscore.py", line 4
     a-b = 2
     ^
 SyntaxError: cannot assign to operator
@@ -4360,7 +4356,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\hyphen_instead_of_underscore.py'
+'HOME:\github\friendly\tests\syntax\hyphen_instead_of_underscore.py'
 beyond the location indicated by ^.
 
 
@@ -4385,9 +4381,9 @@ Perhaps you meant to write `a_b` instead of `a-b`
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\if_missing_condition.py", line 1
+  File "HOME:\github\friendly\tests\syntax\if_missing_condition.py", line 1
     if:
       ^
 SyntaxError: invalid syntax
@@ -4402,7 +4398,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\if_missing_condition.py'
+'HOME:\github\friendly\tests\syntax\if_missing_condition.py'
 beyond the location indicated by ^.
 
 
@@ -4425,9 +4421,9 @@ An `if` statement requires a condition:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\imaginary_i.py", line 3
+  File "HOME:\github\friendly\tests\syntax\imaginary_i.py", line 3
     a = 3.0i
            ^
 SyntaxError: invalid syntax
@@ -4442,7 +4438,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\imaginary_i.py'
+'HOME:\github\friendly\tests\syntax\imaginary_i.py'
 beyond the location indicated by ^.
 
 
@@ -4468,9 +4464,9 @@ Perhaps you meant to write `3.0j`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\import_from.py", line 3
+  File "HOME:\github\friendly\tests\syntax\import_from.py", line 3
     import pen from turtle
                ^
 SyntaxError: invalid syntax
@@ -4485,7 +4481,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\import_from.py'
+'HOME:\github\friendly\tests\syntax\import_from.py'
 beyond the location indicated by ^.
 
 
@@ -4513,9 +4509,9 @@ instead of
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\indentation_error_1.py", line 4
+  File "HOME:\github\friendly\tests\syntax\indentation_error_1.py", line 4
     pass
     ^
 IndentationError: expected an indented block
@@ -4527,7 +4523,7 @@ not indented (aligned vertically with other lines) as expected.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\indentation_error_1.py'
+'HOME:\github\friendly\tests\syntax\indentation_error_1.py'
 beyond the location indicated by ^.
 
 
@@ -4550,9 +4546,9 @@ was expected to begin a new indented block.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\indentation_error_2.py", line 4
+  File "HOME:\github\friendly\tests\syntax\indentation_error_2.py", line 4
     pass
    ^
 IndentationError: unexpected indent
@@ -4564,7 +4560,7 @@ not indented (aligned vertically with other lines) as expected.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\indentation_error_2.py'
+'HOME:\github\friendly\tests\syntax\indentation_error_2.py'
 beyond the location indicated by ^.
 
 
@@ -4586,9 +4582,9 @@ The line identified above is more indented than expected.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\indentation_error_3.py", line 5
+  File "HOME:\github\friendly\tests\syntax\indentation_error_3.py", line 5
     pass
         ^
 IndentationError: unindent does not match any outer indentation level
@@ -4600,7 +4596,7 @@ not indented (aligned vertically with other lines) as expected.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\indentation_error_3.py'
+'HOME:\github\friendly\tests\syntax\indentation_error_3.py'
 beyond the location indicated by ^.
 
 
@@ -4623,9 +4619,9 @@ The line identified above is less indented than expected.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\indentation_error_4.py", line 6
+  File "HOME:\github\friendly\tests\syntax\indentation_error_4.py", line 6
     "c"
    ^
 IndentationError: unexpected indent
@@ -4637,7 +4633,7 @@ not indented (aligned vertically with other lines) as expected.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\indentation_error_4.py'
+'HOME:\github\friendly\tests\syntax\indentation_error_4.py'
 beyond the location indicated by ^.
 
 
@@ -4666,9 +4662,9 @@ at the end of line 5.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\integer_with_leading_zero_1.py", line 1
+  File "HOME:\github\friendly\tests\syntax\integer_with_leading_zero_1.py", line 1
     x = 01
          ^
 SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
@@ -4683,7 +4679,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\integer_with_leading_zero_1.py'
+'HOME:\github\friendly\tests\syntax\integer_with_leading_zero_1.py'
 beyond the location indicated by ^.
 
 
@@ -4704,9 +4700,9 @@ a decimal integer and did not know that it could not start with zeros.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\integer_with_leading_zero_2.py", line 1
+  File "HOME:\github\friendly\tests\syntax\integer_with_leading_zero_2.py", line 1
     x = 000_123_456
                   ^
 SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
@@ -4721,7 +4717,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\integer_with_leading_zero_2.py'
+'HOME:\github\friendly\tests\syntax\integer_with_leading_zero_2.py'
 beyond the location indicated by ^.
 
 
@@ -4741,9 +4737,9 @@ and did not know that it could not start with zeros.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\invalid_character_in_identifier.py", line 6
+  File "HOME:\github\friendly\tests\syntax\invalid_character_in_identifier.py", line 6
     🤖 = 'Reeborg'
     ^
 SyntaxError: invalid character in identifier
@@ -4754,7 +4750,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\invalid_character_in_identifier.py'
+'HOME:\github\friendly\tests\syntax\invalid_character_in_identifier.py'
 beyond the location indicated by ^.
 
 
@@ -4779,9 +4775,9 @@ which is not allowed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\invalid_encoding.py", line 2, in <module>
+  File "HOME:\github\friendly\tests\syntax\invalid_encoding.py", line 2, in <module>
     compile(source, filename="example.py", mode="exec")
   File "example.py", line 0
 SyntaxError: encoding problem: utf8 with BOM
@@ -4804,9 +4800,9 @@ The encoding of the file was not valid.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\invalid_hexadecimal.py", line 3
+  File "HOME:\github\friendly\tests\syntax\invalid_hexadecimal.py", line 3
     a = 0x123g4
              ^
 SyntaxError: invalid syntax
@@ -4821,7 +4817,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\invalid_hexadecimal.py'
+'HOME:\github\friendly\tests\syntax\invalid_hexadecimal.py'
 beyond the location indicated by ^.
 
 
@@ -4848,9 +4844,9 @@ followed by the characters used to represent the value of that integer.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\invalid_identifier.py", line 3
+  File "HOME:\github\friendly\tests\syntax\invalid_identifier.py", line 3
     36abc = 3
       ^
 SyntaxError: invalid syntax
@@ -4865,7 +4861,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\invalid_identifier.py'
+'HOME:\github\friendly\tests\syntax\invalid_identifier.py'
 beyond the location indicated by ^.
 
 
@@ -4886,9 +4882,9 @@ Valid names cannot begin with a number.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\invalid_identifier_2.py", line 3
+  File "HOME:\github\friendly\tests\syntax\invalid_identifier_2.py", line 3
     tau = 2pi
            ^
 SyntaxError: invalid syntax
@@ -4903,7 +4899,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\invalid_identifier_2.py'
+'HOME:\github\friendly\tests\syntax\invalid_identifier_2.py'
 beyond the location indicated by ^.
 
 
@@ -4926,9 +4922,9 @@ Perhaps you forgot a multiplication operator, `2 * pi`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\invalid_identifier_3.py", line 1
+  File "HOME:\github\friendly\tests\syntax\invalid_identifier_3.py", line 1
     3job  # could be entered in a repl
       ^
 SyntaxError: invalid syntax
@@ -4943,7 +4939,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\invalid_identifier_3.py'
+'HOME:\github\friendly\tests\syntax\invalid_identifier_3.py'
 beyond the location indicated by ^.
 
 
@@ -4966,9 +4962,9 @@ since `3j` is a complex number.]
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\invalid_identifier_4.py", line 1
+  File "HOME:\github\friendly\tests\syntax\invalid_identifier_4.py", line 1
     3job = 1
       ^
 SyntaxError: invalid syntax
@@ -4983,7 +4979,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\invalid_identifier_4.py'
+'HOME:\github\friendly\tests\syntax\invalid_identifier_4.py'
 beyond the location indicated by ^.
 
 
@@ -5002,9 +4998,9 @@ Valid names cannot begin with a number.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\invalid_identifier_5.py", line 1
+  File "HOME:\github\friendly\tests\syntax\invalid_identifier_5.py", line 1
     print(42java)
              ^
 SyntaxError: invalid syntax
@@ -5019,7 +5015,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\invalid_identifier_5.py'
+'HOME:\github\friendly\tests\syntax\invalid_identifier_5.py'
 beyond the location indicated by ^.
 
 
@@ -5042,9 +5038,9 @@ since `42j` is a complex number.]
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\invalid_keyword_argument.py", line 7
+  File "HOME:\github\friendly\tests\syntax\invalid_keyword_argument.py", line 7
     a = dict('key'=1)
              ^
 SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
@@ -5055,7 +5051,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\invalid_keyword_argument.py'
+'HOME:\github\friendly\tests\syntax\invalid_keyword_argument.py'
 beyond the location indicated by ^.
 
 
@@ -5089,9 +5085,9 @@ or contains a period, etc.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\invalid_octal.py", line 3
+  File "HOME:\github\friendly\tests\syntax\invalid_octal.py", line 3
     b = 0O1876
            ^
 SyntaxError: invalid digit '8' in octal literal
@@ -5106,7 +5102,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\invalid_octal.py'
+'HOME:\github\friendly\tests\syntax\invalid_octal.py'
 beyond the location indicated by ^.
 
 
@@ -5133,9 +5129,9 @@ followed by the characters used to represent the value of that integer.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\inverted_operators.py", line 1
+  File "HOME:\github\friendly\tests\syntax\inverted_operators.py", line 1
     a =< 3
        ^
 SyntaxError: invalid syntax
@@ -5150,7 +5146,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\inverted_operators.py'
+'HOME:\github\friendly\tests\syntax\inverted_operators.py'
 beyond the location indicated by ^.
 
 
@@ -5170,9 +5166,9 @@ in the wrong order: `=<` instead of `<=`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\inverted_operators_2.py", line 1
+  File "HOME:\github\friendly\tests\syntax\inverted_operators_2.py", line 1
     a =<* 3
        ^
 SyntaxError: invalid syntax
@@ -5187,7 +5183,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\inverted_operators_2.py'
+'HOME:\github\friendly\tests\syntax\inverted_operators_2.py'
 beyond the location indicated by ^.
 
 
@@ -5210,9 +5206,9 @@ all the syntax errors in the code you wrote.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\keyword_arg_repeated.py", line 4
+  File "HOME:\github\friendly\tests\syntax\keyword_arg_repeated.py", line 4
     f(ad=1, ad=2)
             ^
 SyntaxError: keyword argument repeated
@@ -5223,7 +5219,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\keyword_arg_repeated.py'
+'HOME:\github\friendly\tests\syntax\keyword_arg_repeated.py'
 beyond the location indicated by ^.
 
 
@@ -5246,9 +5242,9 @@ Each keyword argument should appear only once in a function call.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\keyword_as_attribute.py", line 12
+  File "HOME:\github\friendly\tests\syntax\keyword_as_attribute.py", line 12
     a.pass = 2
       ^
 SyntaxError: invalid syntax
@@ -5263,7 +5259,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\keyword_as_attribute.py'
+'HOME:\github\friendly\tests\syntax\keyword_as_attribute.py'
 beyond the location indicated by ^.
 
 
@@ -5287,9 +5283,9 @@ You cannot use the Python keyword `pass` as an attribute.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\lambda_with_parens.py", line 2
+  File "HOME:\github\friendly\tests\syntax\lambda_with_parens.py", line 2
     x = lambda (a, b): a + b
                ^
 SyntaxError: invalid syntax
@@ -5300,7 +5296,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\lambda_with_parens.py'
+'HOME:\github\friendly\tests\syntax\lambda_with_parens.py'
 beyond the location indicated by ^.
 
 
@@ -5321,9 +5317,9 @@ This was allowed in Python 2 but it not allowed in Python 3.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\lambda_with_tuple_argument.py", line 2
+  File "HOME:\github\friendly\tests\syntax\lambda_with_tuple_argument.py", line 2
     x = lambda a, (b, c): a + b + b
                   ^
 SyntaxError: invalid syntax
@@ -5334,7 +5330,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\lambda_with_tuple_argument.py'
+'HOME:\github\friendly\tests\syntax\lambda_with_tuple_argument.py'
 beyond the location indicated by ^.
 
 
@@ -5356,9 +5352,9 @@ within the body of the function.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\literal_in_for_loop.py", line 1
+  File "HOME:\github\friendly\tests\syntax\literal_in_for_loop.py", line 1
     for "char" in "word":
         ^
 SyntaxError: cannot assign to literal
@@ -5373,7 +5369,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\literal_in_for_loop.py'
+'HOME:\github\friendly\tests\syntax\literal_in_for_loop.py'
 beyond the location indicated by ^.
 
 
@@ -5397,9 +5393,9 @@ and not literals like `"char"`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\missing_code_block.py", line 4
+  File "HOME:\github\friendly\tests\syntax\missing_code_block.py", line 4
 SyntaxError: unexpected EOF while parsing
 
 ```
@@ -5408,7 +5404,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\missing_code_block.py'
+'HOME:\github\friendly\tests\syntax\missing_code_block.py'
 beyond the location indicated by ^.
 
 
@@ -5432,9 +5428,9 @@ and expected more content.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\missing_colon_if.py", line 3
+  File "HOME:\github\friendly\tests\syntax\missing_colon_if.py", line 3
     if True
            ^
 SyntaxError: invalid syntax
@@ -5449,7 +5445,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\missing_colon_if.py'
+'HOME:\github\friendly\tests\syntax\missing_colon_if.py'
 beyond the location indicated by ^.
 
 
@@ -5472,9 +5468,9 @@ You wrote a statement beginning with
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\missing_colon_while.py", line 3
+  File "HOME:\github\friendly\tests\syntax\missing_colon_while.py", line 3
     while True  # a comment
                 ^
 SyntaxError: invalid syntax
@@ -5489,7 +5485,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\missing_colon_while.py'
+'HOME:\github\friendly\tests\syntax\missing_colon_while.py'
 beyond the location indicated by ^.
 
 
@@ -5512,9 +5508,9 @@ forgot to add a colon `:` at the end
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\missing_comma_in_dict.py", line 5
+  File "HOME:\github\friendly\tests\syntax\missing_comma_in_dict.py", line 5
     'c': 3,
     ^
 SyntaxError: invalid syntax
@@ -5529,7 +5525,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\missing_comma_in_dict.py'
+'HOME:\github\friendly\tests\syntax\missing_comma_in_dict.py'
 beyond the location indicated by ^.
 
 
@@ -5560,9 +5556,9 @@ Perhaps you meant
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\missing_comma_in_dict_2.py", line 4
+  File "HOME:\github\friendly\tests\syntax\missing_comma_in_dict_2.py", line 4
     'c': '3',
        ^
 SyntaxError: invalid syntax
@@ -5577,7 +5573,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\missing_comma_in_dict_2.py'
+'HOME:\github\friendly\tests\syntax\missing_comma_in_dict_2.py'
 beyond the location indicated by ^.
 
 
@@ -5608,9 +5604,9 @@ a = {'a': '1',
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\missing_comma_in_list.py", line 3
+  File "HOME:\github\friendly\tests\syntax\missing_comma_in_list.py", line 3
     a = [1, 2  3]
                ^
 SyntaxError: invalid syntax
@@ -5625,7 +5621,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\missing_comma_in_list.py'
+'HOME:\github\friendly\tests\syntax\missing_comma_in_list.py'
 beyond the location indicated by ^.
 
 
@@ -5658,9 +5654,9 @@ some of them might raise other types of exceptions.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\missing_comma_in_set.py", line 3
+  File "HOME:\github\friendly\tests\syntax\missing_comma_in_set.py", line 3
     a = {1, 2  3}
                ^
 SyntaxError: invalid syntax
@@ -5675,7 +5671,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\missing_comma_in_set.py'
+'HOME:\github\friendly\tests\syntax\missing_comma_in_set.py'
 beyond the location indicated by ^.
 
 
@@ -5708,9 +5704,9 @@ some of them might raise other types of exceptions.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\missing_comma_in_tuple.py", line 3
+  File "HOME:\github\friendly\tests\syntax\missing_comma_in_tuple.py", line 3
     a = (1, 2  3)
                ^
 SyntaxError: invalid syntax
@@ -5725,7 +5721,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\missing_comma_in_tuple.py'
+'HOME:\github\friendly\tests\syntax\missing_comma_in_tuple.py'
 beyond the location indicated by ^.
 
 
@@ -5759,9 +5755,9 @@ some of them might raise other types of exceptions.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\missing_in_with_for.py", line 1
+  File "HOME:\github\friendly\tests\syntax\missing_in_with_for.py", line 1
     for x range(4):
           ^
 SyntaxError: invalid syntax
@@ -5776,7 +5772,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\missing_in_with_for.py'
+'HOME:\github\friendly\tests\syntax\missing_in_with_for.py'
 beyond the location indicated by ^.
 
 
@@ -5799,9 +5795,9 @@ as part of a `for` statement. Perhaps you meant:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\missing_parens_for_range.py", line 1
+  File "HOME:\github\friendly\tests\syntax\missing_parens_for_range.py", line 1
     for i in range 3:
                    ^
 SyntaxError: invalid syntax
@@ -5816,7 +5812,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\missing_parens_for_range.py'
+'HOME:\github\friendly\tests\syntax\missing_parens_for_range.py'
 beyond the location indicated by ^.
 
 
@@ -5839,9 +5835,9 @@ Perhaps you meant:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\misspelled_keyword.py", line 2
+  File "HOME:\github\friendly\tests\syntax\misspelled_keyword.py", line 2
     is i in range(3):
     ^
 SyntaxError: invalid syntax
@@ -5856,7 +5852,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\misspelled_keyword.py'
+'HOME:\github\friendly\tests\syntax\misspelled_keyword.py'
 beyond the location indicated by ^.
 
 
@@ -5877,9 +5873,9 @@ The correct line might be `if i in range(3):`
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\name_is_global_and_nonlocal.py", line 7
+  File "HOME:\github\friendly\tests\syntax\name_is_global_and_nonlocal.py", line 7
     global xy
     ^
 SyntaxError: name 'xy' is nonlocal and global
@@ -5890,7 +5886,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\name_is_global_and_nonlocal.py'
+'HOME:\github\friendly\tests\syntax\name_is_global_and_nonlocal.py'
 beyond the location indicated by ^.
 
 
@@ -5914,9 +5910,9 @@ A variable can be global, or nonlocal, but not both at the same time.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\name_is_param_and_nonlocal.py", line 5
+  File "HOME:\github\friendly\tests\syntax\name_is_param_and_nonlocal.py", line 5
     nonlocal x
     ^
 SyntaxError: name 'x' is parameter and nonlocal
@@ -5927,7 +5923,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\name_is_param_and_nonlocal.py'
+'HOME:\github\friendly\tests\syntax\name_is_param_and_nonlocal.py'
 beyond the location indicated by ^.
 
 
@@ -5952,9 +5948,9 @@ before declaring it also as a nonlocal variable:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\no_binding_for_nonlocal.py", line 5
+  File "HOME:\github\friendly\tests\syntax\no_binding_for_nonlocal.py", line 5
     nonlocal ab
     ^
 SyntaxError: no binding for nonlocal 'ab' found
@@ -5965,7 +5961,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\no_binding_for_nonlocal.py'
+'HOME:\github\friendly\tests\syntax\no_binding_for_nonlocal.py'
 beyond the location indicated by ^.
 
 
@@ -5989,9 +5985,9 @@ nonlocal variable but it cannot be found.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\nonlocal_at_module.py", line 4
+  File "HOME:\github\friendly\tests\syntax\nonlocal_at_module.py", line 4
     nonlocal cd
     ^
 SyntaxError: nonlocal declaration not allowed at module level
@@ -6002,7 +5998,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\nonlocal_at_module.py'
+'HOME:\github\friendly\tests\syntax\nonlocal_at_module.py'
 beyond the location indicated by ^.
 
 
@@ -6026,9 +6022,9 @@ given a value outside that function.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\operator_twice_in_a_row.py", line 1
+  File "HOME:\github\friendly\tests\syntax\operator_twice_in_a_row.py", line 1
     4****5
        ^
 SyntaxError: invalid syntax
@@ -6039,7 +6035,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\operator_twice_in_a_row.py'
+'HOME:\github\friendly\tests\syntax\operator_twice_in_a_row.py'
 beyond the location indicated by ^.
 
 
@@ -6060,9 +6056,9 @@ or forgot to write something between them.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\pip_install_1.py", line 2
+  File "HOME:\github\friendly\tests\syntax\pip_install_1.py", line 2
     pip install friendly
         ^
 SyntaxError: invalid syntax
@@ -6077,7 +6073,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\pip_install_1.py'
+'HOME:\github\friendly\tests\syntax\pip_install_1.py'
 beyond the location indicated by ^.
 
 
@@ -6099,9 +6095,9 @@ not from a Python interpreter.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\pip_install_2.py", line 2
+  File "HOME:\github\friendly\tests\syntax\pip_install_2.py", line 2
     python -m pip install friendly
               ^
 SyntaxError: invalid syntax
@@ -6116,7 +6112,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\pip_install_2.py'
+'HOME:\github\friendly\tests\syntax\pip_install_2.py'
 beyond the location indicated by ^.
 
 
@@ -6138,9 +6134,9 @@ not from a Python interpreter.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\print_is_a_function.py", line 2
+  File "HOME:\github\friendly\tests\syntax\print_is_a_function.py", line 2
     print 'hello'
           ^
 SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello')?
@@ -6155,7 +6151,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\print_is_a_function.py'
+'HOME:\github\friendly\tests\syntax\print_is_a_function.py'
 beyond the location indicated by ^.
 
 
@@ -6180,9 +6176,9 @@ Now, `print` is a function; you need to use parentheses to call it.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\print_is_a_function_2.py", line 2
+  File "HOME:\github\friendly\tests\syntax\print_is_a_function_2.py", line 2
     print len('hello')
           ^
 SyntaxError: invalid syntax
@@ -6197,7 +6193,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\print_is_a_function_2.py'
+'HOME:\github\friendly\tests\syntax\print_is_a_function_2.py'
 beyond the location indicated by ^.
 
 
@@ -6218,9 +6214,9 @@ Now, `print` is a function; you need to use parentheses to call it.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\print_is_a_function_3.py", line 1
+  File "HOME:\github\friendly\tests\syntax\print_is_a_function_3.py", line 1
     print """This is a very long string which results in a very long error message."""
           ^
 SyntaxError: Missing parentheses in call to 'print'. Did you mean print("""This is a very long string which results in a very long error message.""")?
@@ -6235,7 +6231,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\print_is_a_function_3.py'
+'HOME:\github\friendly\tests\syntax\print_is_a_function_3.py'
 beyond the location indicated by ^.
 
 
@@ -6259,9 +6255,9 @@ Now, `print` is a function; you need to use parentheses to call it.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\print_is_a_function_4.py", line 2
+  File "HOME:\github\friendly\tests\syntax\print_is_a_function_4.py", line 2
     print len("""This is a long string
           ^
 SyntaxError: invalid syntax
@@ -6276,7 +6272,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\print_is_a_function_4.py'
+'HOME:\github\friendly\tests\syntax\print_is_a_function_4.py'
 beyond the location indicated by ^.
 
 
@@ -6298,9 +6294,9 @@ Now, `print` is a function; you need to use parentheses to call it.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\print_is_a_function_5.py", line 2
+  File "HOME:\github\friendly\tests\syntax\print_is_a_function_5.py", line 2
     print len('This is a long string that fits on a single line.')
           ^
 SyntaxError: invalid syntax
@@ -6315,7 +6311,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\print_is_a_function_5.py'
+'HOME:\github\friendly\tests\syntax\print_is_a_function_5.py'
 beyond the location indicated by ^.
 
 
@@ -6336,9 +6332,9 @@ Now, `print` is a function; you need to use parentheses to call it.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\python_interpreter.py", line 1
+  File "HOME:\github\friendly\tests\syntax\python_interpreter.py", line 1
     python -i friendly
               ^
 SyntaxError: invalid syntax
@@ -6349,7 +6345,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\python_interpreter.py'
+'HOME:\github\friendly\tests\syntax\python_interpreter.py'
 beyond the location indicated by ^.
 
 
@@ -6369,9 +6365,9 @@ You must do so from a terminal and not from a Python interpreter.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\python_not_interpreter.py", line 1
+  File "HOME:\github\friendly\tests\syntax\python_not_interpreter.py", line 1
     python = a b
                ^
 SyntaxError: invalid syntax
@@ -6386,7 +6382,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\python_not_interpreter.py'
+'HOME:\github\friendly\tests\syntax\python_not_interpreter.py'
 beyond the location indicated by ^.
 
 
@@ -6415,9 +6411,9 @@ some of them might raise other types of exceptions.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\quote_inside_string.py", line 3
+  File "HOME:\github\friendly\tests\syntax\quote_inside_string.py", line 3
     message = 'don't'
                    ^
 SyntaxError: invalid syntax
@@ -6432,7 +6428,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\quote_inside_string.py'
+'HOME:\github\friendly\tests\syntax\quote_inside_string.py'
 beyond the location indicated by ^.
 
 
@@ -6456,9 +6452,9 @@ that was enclosed in quotes of the same kind.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\raise_multiple_exceptions.py", line 2
+  File "HOME:\github\friendly\tests\syntax\raise_multiple_exceptions.py", line 2
     raise X, Y
            ^
 SyntaxError: invalid syntax
@@ -6469,7 +6465,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\raise_multiple_exceptions.py'
+'HOME:\github\friendly\tests\syntax\raise_multiple_exceptions.py'
 beyond the location indicated by ^.
 
 
@@ -6489,9 +6485,9 @@ It looks like you are trying to raise an exception using Python 2 syntax.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\return_outside_function.py", line 3
+  File "HOME:\github\friendly\tests\syntax\return_outside_function.py", line 3
     return
     ^
 SyntaxError: 'return' outside function
@@ -6502,7 +6498,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\return_outside_function.py'
+'HOME:\github\friendly\tests\syntax\return_outside_function.py'
 beyond the location indicated by ^.
 
 
@@ -6523,9 +6519,9 @@ You can only use a `return` statement inside a function or method.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\semi_colon_instead_of_comma_1.py", line 1
+  File "HOME:\github\friendly\tests\syntax\semi_colon_instead_of_comma_1.py", line 1
     a = [1, 2; 3]
              ^
 SyntaxError: invalid syntax
@@ -6540,7 +6536,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\semi_colon_instead_of_comma_1.py'
+'HOME:\github\friendly\tests\syntax\semi_colon_instead_of_comma_1.py'
 beyond the location indicated by ^.
 
 
@@ -6559,9 +6555,9 @@ You wrote a semi-colon, `;`, where a comma was expected.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\semi_colon_instead_of_comma_2.py", line 1
+  File "HOME:\github\friendly\tests\syntax\semi_colon_instead_of_comma_2.py", line 1
     a = [1; 2; 3]
           ^
 SyntaxError: invalid syntax
@@ -6576,7 +6572,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\semi_colon_instead_of_comma_2.py'
+'HOME:\github\friendly\tests\syntax\semi_colon_instead_of_comma_2.py'
 beyond the location indicated by ^.
 
 
@@ -6595,9 +6591,9 @@ You wrote semi-colons, `;`, where commas were expected.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\semi_colon_instead_of_comma_3.py", line 1
+  File "HOME:\github\friendly\tests\syntax\semi_colon_instead_of_comma_3.py", line 1
     a = [1; 2; 3];
           ^
 SyntaxError: invalid syntax
@@ -6612,7 +6608,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\semi_colon_instead_of_comma_3.py'
+'HOME:\github\friendly\tests\syntax\semi_colon_instead_of_comma_3.py'
 beyond the location indicated by ^.
 
 
@@ -6631,9 +6627,9 @@ You wrote semi-colons, `;`, where commas were expected.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\single_equal_with_if.py", line 3
+  File "HOME:\github\friendly\tests\syntax\single_equal_with_if.py", line 3
     if i % 2 = 0:
              ^
 SyntaxError: invalid syntax
@@ -6648,7 +6644,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\single_equal_with_if.py'
+'HOME:\github\friendly\tests\syntax\single_equal_with_if.py'
 beyond the location indicated by ^.
 
 
@@ -6669,9 +6665,9 @@ You likely used an assignment operator `=` instead of an equality operator `==`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\single_equal_with_elif.py", line 5
+  File "HOME:\github\friendly\tests\syntax\single_equal_with_elif.py", line 5
     elif i % 2 = 0:
                ^
 SyntaxError: invalid syntax
@@ -6686,7 +6682,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\single_equal_with_elif.py'
+'HOME:\github\friendly\tests\syntax\single_equal_with_elif.py'
 beyond the location indicated by ^.
 
 
@@ -6709,9 +6705,9 @@ You likely used an assignment operator `=` instead of an equality operator `==`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\single_equal_with_while.py", line 4
+  File "HOME:\github\friendly\tests\syntax\single_equal_with_while.py", line 4
     while a = 1:
             ^
 SyntaxError: invalid syntax
@@ -6726,7 +6722,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\single_equal_with_while.py'
+'HOME:\github\friendly\tests\syntax\single_equal_with_while.py'
 beyond the location indicated by ^.
 
 
@@ -6749,9 +6745,9 @@ an equality operator, `==`, or the walrus operator `:=`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\space_between_operators_1.py", line 1
+  File "HOME:\github\friendly\tests\syntax\space_between_operators_1.py", line 1
     a = 2 * * 5
             ^
 SyntaxError: invalid syntax
@@ -6762,7 +6758,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\space_between_operators_1.py'
+'HOME:\github\friendly\tests\syntax\space_between_operators_1.py'
 beyond the location indicated by ^.
 
 
@@ -6785,9 +6781,9 @@ and meant to write `**` as a single operator.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\space_between_operators_2.py", line 1
+  File "HOME:\github\friendly\tests\syntax\space_between_operators_2.py", line 1
     a / = b
         ^
 SyntaxError: invalid syntax
@@ -6798,7 +6794,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\space_between_operators_2.py'
+'HOME:\github\friendly\tests\syntax\space_between_operators_2.py'
 beyond the location indicated by ^.
 
 
@@ -6821,9 +6817,9 @@ and meant to write `/=` as a single operator.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\space_in_variable_name.py", line 1
+  File "HOME:\github\friendly\tests\syntax\space_in_variable_name.py", line 1
     my name = André
        ^
 SyntaxError: invalid syntax
@@ -6838,7 +6834,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\space_in_variable_name.py'
+'HOME:\github\friendly\tests\syntax\space_in_variable_name.py'
 beyond the location indicated by ^.
 
 
@@ -6857,7 +6853,7 @@ You cannot have spaces in identifiers (variable names).
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
   File "None", line None
 SyntaxError: too many statically nested blocks
@@ -6883,9 +6879,9 @@ consider reducing the number of nested code blocks.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\triple_equal.py", line 3
+  File "HOME:\github\friendly\tests\syntax\triple_equal.py", line 3
     x = y === z
             ^
 SyntaxError: invalid syntax
@@ -6900,7 +6896,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\triple_equal.py'
+'HOME:\github\friendly\tests\syntax\triple_equal.py'
 beyond the location indicated by ^.
 
 
@@ -6924,9 +6920,9 @@ the exact same object, use the operator `is`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\unclosed_bracket.py", line 7
+  File "HOME:\github\friendly\tests\syntax\unclosed_bracket.py", line 7
     print(foo())
     ^
 SyntaxError: invalid syntax
@@ -6937,7 +6933,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\unclosed_bracket.py'
+'HOME:\github\friendly\tests\syntax\unclosed_bracket.py'
 beyond the location indicated by ^.
 
 
@@ -6963,9 +6959,9 @@ The opening square bracket `[` on line 5 is not closed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\unclosed_paren_1.py", line 3
+  File "HOME:\github\friendly\tests\syntax\unclosed_paren_1.py", line 3
     if x == 1:
              ^
 SyntaxError: invalid syntax
@@ -6976,7 +6972,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\unclosed_paren_1.py'
+'HOME:\github\friendly\tests\syntax\unclosed_paren_1.py'
 beyond the location indicated by ^.
 
 
@@ -7001,9 +6997,9 @@ The opening parenthesis `(` on line 2 is not closed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\unclosed_paren_2.py", line 3
+  File "HOME:\github\friendly\tests\syntax\unclosed_paren_2.py", line 3
     d = a*a
     ^
 SyntaxError: invalid syntax
@@ -7014,7 +7010,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\unclosed_paren_2.py'
+'HOME:\github\friendly\tests\syntax\unclosed_paren_2.py'
 beyond the location indicated by ^.
 
 
@@ -7038,9 +7034,9 @@ The opening parenthesis `(` on line 2 is not closed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\unclosed_paren_3.py", line 7
+  File "HOME:\github\friendly\tests\syntax\unclosed_paren_3.py", line 7
     if 2:
         ^
 SyntaxError: invalid syntax
@@ -7051,7 +7047,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\unclosed_paren_3.py'
+'HOME:\github\friendly\tests\syntax\unclosed_paren_3.py'
 beyond the location indicated by ^.
 
 
@@ -7078,9 +7074,9 @@ If this is incorrect, please report this case.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\unclosed_paren_4.py", line 4
+  File "HOME:\github\friendly\tests\syntax\unclosed_paren_4.py", line 4
     def test():
     ^
 SyntaxError: invalid syntax
@@ -7091,7 +7087,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\unclosed_paren_4.py'
+'HOME:\github\friendly\tests\syntax\unclosed_paren_4.py'
 beyond the location indicated by ^.
 
 
@@ -7116,9 +7112,9 @@ The opening parenthesis `(` on line 2 is not closed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\unexpected_after_continuation_character.py", line 5
+  File "HOME:\github\friendly\tests\syntax\unexpected_after_continuation_character.py", line 5
     print(\t)
              ^
 SyntaxError: unexpected character after line continuation character
@@ -7129,7 +7125,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\unexpected_after_continuation_character.py'
+'HOME:\github\friendly\tests\syntax\unexpected_after_continuation_character.py'
 beyond the location indicated by ^.
 
 
@@ -7154,9 +7150,9 @@ I am guessing that you forgot to enclose some content in a string.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\unexpected_eof.py", line 8
+  File "HOME:\github\friendly\tests\syntax\unexpected_eof.py", line 8
 SyntaxError: unexpected EOF while parsing
 
 ```
@@ -7165,7 +7161,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\unexpected_eof.py'
+'HOME:\github\friendly\tests\syntax\unexpected_eof.py'
 beyond the location indicated by ^.
 
 
@@ -7197,9 +7193,9 @@ The opening square bracket `[` on line 5 is not closed.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\unicode_quote.py", line 3
+  File "HOME:\github\friendly\tests\syntax\unicode_quote.py", line 3
     a = « hello »
         ^
 SyntaxError: invalid character in identifier
@@ -7214,7 +7210,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\unicode_quote.py'
+'HOME:\github\friendly\tests\syntax\unicode_quote.py'
 beyond the location indicated by ^.
 
 
@@ -7239,9 +7235,9 @@ instead of a normal single or double quote for a string.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\unmatched_closing_curly.py", line 6
+  File "HOME:\github\friendly\tests\syntax\unmatched_closing_curly.py", line 6
     3, 4,}}
           ^
 SyntaxError: unmatched '}'
@@ -7252,7 +7248,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\unmatched_closing_curly.py'
+'HOME:\github\friendly\tests\syntax\unmatched_closing_curly.py'
 beyond the location indicated by ^.
 
 
@@ -7276,9 +7272,9 @@ The closing curly bracket `}` on line 6 does not match anything.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\unmatched_closing_paren.py", line 6
+  File "HOME:\github\friendly\tests\syntax\unmatched_closing_paren.py", line 6
     3, 4,))
           ^
 SyntaxError: unmatched ')'
@@ -7289,7 +7285,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\unmatched_closing_paren.py'
+'HOME:\github\friendly\tests\syntax\unmatched_closing_paren.py'
 beyond the location indicated by ^.
 
 
@@ -7313,9 +7309,9 @@ The closing parenthesis `)` on line 6 does not match anything.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\unmatched_closing_bracket_1.py", line 2
+  File "HOME:\github\friendly\tests\syntax\unmatched_closing_bracket_1.py", line 2
     x = (1, 2, 3]
                 ^
 SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
@@ -7326,7 +7322,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\unmatched_closing_bracket_1.py'
+'HOME:\github\friendly\tests\syntax\unmatched_closing_bracket_1.py'
 beyond the location indicated by ^.
 
 
@@ -7349,9 +7345,9 @@ The closing square bracket `]` on line 2 does not match the opening parenthesis 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\unmatched_closing_bracket_2.py", line 4
+  File "HOME:\github\friendly\tests\syntax\unmatched_closing_bracket_2.py", line 4
     3]
      ^
 SyntaxError: closing parenthesis ']' does not match opening parenthesis '(' on line 2
@@ -7362,7 +7358,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\unmatched_closing_bracket_2.py'
+'HOME:\github\friendly\tests\syntax\unmatched_closing_bracket_2.py'
 beyond the location indicated by ^.
 
 
@@ -7389,9 +7385,9 @@ The closing square bracket `]` on line 4 does not match the opening parenthesis 
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\unmatched_closing_bracket_3.py", line 3
+  File "HOME:\github\friendly\tests\syntax\unmatched_closing_bracket_3.py", line 3
     3]]
       ^
 SyntaxError: unmatched ']'
@@ -7402,7 +7398,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\unmatched_closing_bracket_3.py'
+'HOME:\github\friendly\tests\syntax\unmatched_closing_bracket_3.py'
 beyond the location indicated by ^.
 
 
@@ -7423,9 +7419,9 @@ The closing square bracket `]` on line 3 does not match anything.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\unterminated_triple_quote_string.py", line 4
+  File "HOME:\github\friendly\tests\syntax\unterminated_triple_quote_string.py", line 4
     some_text = """In a land
 populated by weird animals,
 a ...
@@ -7438,7 +7434,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\unterminated_triple_quote_string.py'.
+'HOME:\github\friendly\tests\syntax\unterminated_triple_quote_string.py'.
 
 
 ```python
@@ -7456,9 +7452,9 @@ the triple quotes needed to end the string.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\tab_error.py", line 7
+  File "HOME:\github\friendly\tests\syntax\tab_error.py", line 7
     pass
         ^
 TabError: inconsistent use of tabs and spaces in indentation
@@ -7474,7 +7470,7 @@ Python's recommendation is to always use spaces to indent your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\tab_error.py'
+'HOME:\github\friendly\tests\syntax\tab_error.py'
 beyond the location indicated by ^.
 
 
@@ -7495,9 +7491,9 @@ beyond the location indicated by ^.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\unescaped_backslash.py", line 1
+  File "HOME:\github\friendly\tests\syntax\unescaped_backslash.py", line 1
     a = "abc\"
               ^
 SyntaxError: EOL while scanning string literal
@@ -7512,7 +7508,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\unescaped_backslash.py'
+'HOME:\github\friendly\tests\syntax\unescaped_backslash.py'
 beyond the location indicated by ^.
 
 
@@ -7535,9 +7531,9 @@ needed to escape it by writing two `\` in a row.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\use_backquote.py", line 3
+  File "HOME:\github\friendly\tests\syntax\use_backquote.py", line 3
     a = `1`
         ^
 SyntaxError: invalid syntax
@@ -7552,7 +7548,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\use_backquote.py'
+'HOME:\github\friendly\tests\syntax\use_backquote.py'
 beyond the location indicated by ^.
 
 
@@ -7575,9 +7571,9 @@ in this latter case, use the function `repr(x)`.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\walrus_instead_of_equal.py", line 1
+  File "HOME:\github\friendly\tests\syntax\walrus_instead_of_equal.py", line 1
     a := 3
       ^
 SyntaxError: invalid syntax
@@ -7592,7 +7588,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\walrus_instead_of_equal.py'
+'HOME:\github\friendly\tests\syntax\walrus_instead_of_equal.py'
 beyond the location indicated by ^.
 
 
@@ -7612,9 +7608,9 @@ the normal assignment operator `=` was required.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\while_missing_condition.py", line 1
+  File "HOME:\github\friendly\tests\syntax\while_missing_condition.py", line 1
     while:
          ^
 SyntaxError: invalid syntax
@@ -7629,7 +7625,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\while_missing_condition.py'
+'HOME:\github\friendly\tests\syntax\while_missing_condition.py'
 beyond the location indicated by ^.
 
 
@@ -7652,9 +7648,9 @@ A `while` loop requires a condition:
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\would_be_type_declaration_1.py", line 3
+  File "HOME:\github\friendly\tests\syntax\would_be_type_declaration_1.py", line 3
     if var start := begin < end:
            ^
 SyntaxError: invalid syntax
@@ -7669,7 +7665,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\would_be_type_declaration_1.py'
+'HOME:\github\friendly\tests\syntax\would_be_type_declaration_1.py'
 beyond the location indicated by ^.
 
 
@@ -7692,9 +7688,9 @@ If you remove `var`, you will have a valid Python statement.
 
 ```pytb
 Traceback (most recent call last):
-  File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
+  File "HOME:\github\friendly\tests\trb_syntax_common.py", line 49, in create_tracebacks
     __import__(name)
-  File "TESTS:\syntax\would_be_type_declaration_2.py", line 5
+  File "HOME:\github\friendly\tests\syntax\would_be_type_declaration_2.py", line 5
     var start := begin < end
         ^
 SyntaxError: invalid syntax
@@ -7709,7 +7705,7 @@ A `SyntaxError` occurs when Python cannot understand your code.
 
 
 Python could not understand the code in the file
-'TESTS:\syntax\would_be_type_declaration_2.py'
+'HOME:\github\friendly\tests\syntax\would_be_type_declaration_2.py'
 beyond the location indicated by ^.
 
 
