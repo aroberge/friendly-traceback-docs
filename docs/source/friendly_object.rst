@@ -1,3 +1,4 @@
+.. _Friendly_object:
 
 Friendly object
 ================
@@ -18,4 +19,5 @@ methods of a ``Friendly`` object.
 
 .. todo::
 
-   Add more documentation about this
+   Add more documentation about this including about
+   ``repr(Friendly)`` and ``dir(Friendly)``.

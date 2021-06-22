@@ -113,6 +113,13 @@ could easily be added.
 .. toctree::
    :maxdepth: 1
    :hidden:
+   :caption: Why import *?
+
+   import_all
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
    :caption: IDLE
 
    idle

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>friendly &mdash; Friendly 0.3.108 documentation</title>
+  <title>friendly &mdash; Friendly 0.3.113 documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.3.108
+                0.3.113
               </div>
             
           
@@ -107,6 +107,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../multiple_tracebacks.html">Multiple tracebacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../repl_api.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about_warnings.html">One last thing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Why ``import *``?</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../import_all.html">Why <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">*</span></code>?</a></li>
 </ul>
 <p class="caption"><span class="caption-text">IDLE</span></p>
 <ul>
@@ -274,7 +278,7 @@
     <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 
 <span class="k">del</span> <span class="n">valid_version</span>
-<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.3.108&quot;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.3.113&quot;</span>
 
 
 <span class="c1"># ===========================================</span>
@@ -283,6 +287,7 @@
 <span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">debug_helper</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">editors_helpers</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">formatters</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">path_info</span>
@@ -351,7 +356,7 @@
     <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get_captured</span><span class="p">(</span><span class="n">flush</span><span class="o">=</span><span class="n">flush</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="install"><a class="viewcode-back" href="../api.html#friendly.install">[docs]</a><span class="k">def</span> <span class="nf">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="install"><a class="viewcode-back" href="../api.html#friendly.install">[docs]</a><span class="k">def</span> <span class="nf">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">,</span> <span class="n">_debug</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Replaces ``sys.excepthook`` by friendly&#39;s own version.</span>
 <span class="sd">    Intercepts, and provides an explanation for all Python exceptions except</span>
@@ -368,6 +373,8 @@
 <span class="sd">        include: controls the amount of information displayed.</span>
 <span class="sd">        See set_include() for details.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">_debug</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">debug_helper</span><span class="o">.</span><span class="n">DEBUG</span> <span class="o">=</span> <span class="n">_debug</span>
     <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="n">redirect</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">)</span></div>
 
 
@@ -478,6 +485,7 @@
     <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span>
     <span class="n">banner</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">background</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">displayhook</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Starts a Friendly console.&quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">console</span>
@@ -489,6 +497,7 @@
         <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span>
         <span class="n">banner</span><span class="o">=</span><span class="n">banner</span><span class="p">,</span>
         <span class="n">background</span><span class="o">=</span><span class="n">background</span><span class="p">,</span>
+        <span class="n">displayhook</span><span class="o">=</span><span class="n">displayhook</span><span class="p">,</span>
     <span class="p">)</span></div>
 
 

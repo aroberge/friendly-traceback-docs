@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Public API &mdash; Friendly 0.3.108 documentation</title>
+  <title>Public API &mdash; Friendly 0.3.113 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3.108
+                0.3.113
               </div>
             
           
@@ -109,6 +109,10 @@
 <li class="toctree-l1"><a class="reference internal" href="multiple_tracebacks.html">Multiple tracebacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="repl_api.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Why ``import *``?</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="import_all.html">Why <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">*</span></code>?</a></li>
 </ul>
 <p class="caption"><span class="caption-text">IDLE</span></p>
 <ul>
@@ -359,7 +363,7 @@ However, this can be overridden if desired.</p>
 
 <dl class="py function">
 <dt id="friendly.install">
-<code class="sig-name descname"><span class="pre">install</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'explain'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#install"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.install" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">install</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'explain'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#install"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.install" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces <code class="docutils literal notranslate"><span class="pre">sys.excepthook</span></code> by friendly’s own version.
 Intercepts, and provides an explanation for all Python exceptions except
 for <code class="docutils literal notranslate"><span class="pre">SystemExist</span></code> and <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code>.</p>
@@ -460,7 +464,7 @@ output is saved and can be later retrieved by <code class="docutils literal notr
 
 <dl class="py function">
 <dt id="friendly.start_console">
-<code class="sig-name descname"><span class="pre">start_console</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_vars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bw'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'friendly_tb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'en'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">banner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#start_console"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.start_console" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">start_console</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_vars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bw'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'friendly_tb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'en'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">banner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">displayhook</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly.html#start_console"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.start_console" title="Permalink to this definition">¶</a></dt>
 <dd><p>Starts a Friendly console.</p>
 </dd></dl>
 
