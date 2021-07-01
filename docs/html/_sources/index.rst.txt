@@ -208,14 +208,6 @@ could easily be added.
 .. toctree::
    :maxdepth: 1
    :hidden:
-   :caption: Markdown examples
-
-   tracebacks_markdown
-   tracebacks_syntax_markdown
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
    :caption: En français
 
    tracebacks_fr

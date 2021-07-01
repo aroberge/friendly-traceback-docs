@@ -88,8 +88,11 @@ rst_prolog = """
 .. warning::
 
     This project is being split into 3 separate projects:
-    ``friendly_traceback``, ``friendly``, and ``friendly_idle``.
-    Wherever you see ``friendly_traceback``, replace it simply by ``friendly``.
+
+    - ``friendly_traceback``,
+    - ``friendly``, and
+    - ``friendly_idle``.
+
     The documentation does not reflect this change.
 
     If you are a end-user, just install ``friendly`` until further notice.
