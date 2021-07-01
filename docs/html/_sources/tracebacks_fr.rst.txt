@@ -13,8 +13,8 @@ conviviales que les fameux **tracebacks** de Python lorsqu'une exception survien
      faire des corrections ou des ajouts, avant de faire la mise
      à jour du reste de la documentation avec Sphinx.
 
-Friendly version: 0.3.108
-Python version: 3.8.4
+Friendly version: 0.3.142
+Python version: 3.8.10
 
 
 
@@ -174,6 +174,89 @@ Builtin module with no file
        235:     except AttributeError as e:
 
             sys:  <module sys (builtin)>
+        
+
+
+Circular import
+~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_attribute_error.py", line 329, in test_Circular_import
+        import my_turtle1
+      File "TESTS:\my_turtle1.py", line 4, in <module>
+        a = my_turtle1.something
+    AttributeError: partially initialized module 'my_turtle1' has no attribute 'something' (most likely due to a circular import)
+    
+        Avez-vous donné à votre programme le même nom qu’un module Python ?
+        
+    Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+        `object.x`
+    et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+    
+    Je soupçonne que vous avez utilisé le nom `my_turtle1.py` pour votre programme
+    et que vous vouliez aussi importer un module du même nom
+    de la bibliothèque standard de Python.
+    Si c’est le cas, vous devriez utiliser un nom différent pour votre programme.
+    
+    L'exécution s'est arrêtée à la ligne 329 du fichier TESTS:\runtime\test_attribute_error.py
+    
+       327:     stdlib_modules.names.append("my_turtle1")
+       328:     try:
+    -->329:        import my_turtle1
+       330:     except AttributeError as e:
+
+    Exception levée à la ligne 4 du fichier TESTS:\my_turtle1.py.
+    
+       2: import my_turtle1
+       3: 
+    -->4: a = my_turtle1.something
+              ^^^^^^^^^^^^^^^^^^^^
+
+            my_turtle1:  <module my_turtle1> from TESTS:\my_turtle1.py
+        
+
+
+Circular import b
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_attribute_error.py", line 346, in test_Circular_import_b
+        import circular_c
+      File "TESTS:\circular_c.py", line 4, in <module>
+        a = circular_c.something
+    AttributeError: partially initialized module 'circular_c' has no attribute 'something' (most likely due to a circular import)
+    
+        Vous avez une importation circulaire.
+        
+    Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+        `object.x`
+    et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+    
+    Python a indiqué que le module `{module}` n'était pas complètement importé.
+    Cela peut se produire si, pendant l'exécution du code du module `circular_c`
+    une tentative est faite d'importer à nouveau le même module.
+    
+    L'exécution s'est arrêtée à la ligne 346 du fichier TESTS:\runtime\test_attribute_error.py
+    
+       344: def test_Circular_import_b():
+       345:     try:
+    -->346:         import circular_c
+       347:     except AttributeError as e:
+
+    Exception levée à la ligne 4 du fichier TESTS:\circular_c.py.
+    
+       2: import circular_c
+       3: 
+    -->4: a = circular_c.something
+              ^^^^^^^^^^^^^^^^^^^^
+
+            circular_c:  <module circular_c> from TESTS:\circular_c.py
         
 
 
@@ -488,6 +571,35 @@ Use builtin
         
 
 
+Use join with str
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_attribute_error.py", line 313, in test_Use_join_with_str
+        a = ['a', '2'].join('abc') + ['b', '3'].join('\n')
+    AttributeError: 'list' object has no attribute 'join'
+    
+        Voulez-vous dire `'abc'.join(['a', '2'])` ?
+        
+    Une exception `AttributeError` se produit lorsque le code contient quelque chose comme
+        `object.x`
+    et `x` n’est pas une méthode ou un attribut (variable) appartenant à `objet`.
+    
+    L’objet `['a', '2']` n’a pas d’attribut nommé `join`.
+    Vous vouliez peut-être plutôt écrire quelque chose comme `'...'.join(['a', '2'])`.
+    
+    Exception levée à la ligne 313 du fichier TESTS:\runtime\test_attribute_error.py.
+    
+       311: def test_Use_join_with_str():
+       312:     try:
+    -->313:         a = ['a', '2'].join('abc') + ['b', '3'].join('\n')
+                        ^^^^^^^^^^^^^^^
+       314:     except AttributeError as e:
+
+
 Use synonym
 ~~~~~~~~~~~
 
@@ -596,13 +708,13 @@ Circular import
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_import_error.py", line 20, in test_Circular_import
+      File "TESTS:\runtime\test_import_error.py", line 58, in test_Circular_import
         import circular_a
       File "TESTS:\circular_a.py", line 2, in <module>
         import circular_b
       File "TESTS:\circular_b.py", line 2, in <module>
         from circular_a import a
-    ImportError: cannot import name 'a' from partially initialized module 'circular_a' (most likely due to a circular import) (C:\Users\andre\github\friendly\tests\circular_a.py)
+    ImportError: cannot import name 'a' from partially initialized module 'circular_a' (most likely due to a circular import) (C:\Users\andre\github\friendly-traceback\tests\circular_a.py)
     
     L'exception `ImportError` indique qu’un certain objet n’a pas pu
     être importé à partir d’un module ou d’un paquet. Très souvent, c’est
@@ -621,12 +733,12 @@ Circular import
     pour importer le module d’origine `circular_a`
     une deuxième fois, avant que Python n’ait terminé la première importation.
     
-    L'exécution s'est arrêtée à la ligne 20 du fichier TESTS:\runtime\test_import_error.py
+    L'exécution s'est arrêtée à la ligne 58 du fichier TESTS:\runtime\test_import_error.py
     
-       18: def test_Circular_import():
-       19:     try:
-    -->20:         import circular_a
-       21:     except ImportError as e:
+       56: def test_Circular_import():
+       57:     try:
+    -->58:         import circular_a
+       59:     except ImportError as e:
 
     Exception levée à la ligne 2 du fichier TESTS:\circular_b.py.
     
@@ -641,7 +753,7 @@ Simple import error
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_import_error.py", line 6, in test_Simple_import_error
+      File "TESTS:\runtime\test_import_error.py", line 44, in test_Simple_import_error
         from math import Pi
     ImportError: cannot import name 'Pi' from 'math' (unknown location)
     
@@ -653,12 +765,12 @@ Simple import error
     
     Peut-être que vous vouliez importer `pi` (de `math`) au lieu de `Pi`.
     
-    Exception levée à la ligne 6 du fichier TESTS:\runtime\test_import_error.py.
+    Exception levée à la ligne 44 du fichier TESTS:\runtime\test_import_error.py.
     
-       4: def test_Simple_import_error():
-       5:     try:
-    -->6:         from math import Pi
-       7:     except ImportError as e:
+       42: 
+       43:     try:
+    -->44:         from math import Pi
+       45:     except ImportError as e:
 
 
 IndexError
@@ -785,23 +897,23 @@ ChainMap
         During handling of the above exception, another exception occurred:
     
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_key_error.py", line 23, in test_ChainMap
+      File "TESTS:\runtime\test_key_error.py", line 62, in test_ChainMap
         d.pop(42)
       File "PYTHON_LIB:\collections\__init__.py", line 967, in pop
         raise KeyError('Key not found in the first mapping: {!r}'.format(key))
     KeyError: 'Key not found in the first mapping: 42'
     
-    Une exception `KeyError` est levée lorsqu’une valeur n’est pas trouvée
-    en tant que clé dans un dictionnaire (dict) Python.
+    Une `KeyError` est levée lorsqu'une valeur n'est pas trouvée en tant que
+    clé dans un dict Python ou dans un objet similaire.
     
-    Dans votre programme, la clé inconnue est `42`.
+    La clé `42` est introuvable dans `d`, un objet de type `ChainMap`.
     
-    L'exécution s'est arrêtée à la ligne 23 du fichier TESTS:\runtime\test_key_error.py
+    L'exécution s'est arrêtée à la ligne 62 du fichier TESTS:\runtime\test_key_error.py
     
-       21:     d = ChainMap({}, {})
-       22:     try:
-    -->23:         d.pop(42)
-       24:     except KeyError as e:
+       60:     d = ChainMap({}, {})
+       61:     try:
+    -->62:         d.pop(42)
+       63:     except KeyError as e:
 
             d:  ChainMap({}, {})
             d.pop:  <bound method ChainMap.pop of ChainMap({}, {})>
@@ -819,30 +931,203 @@ ChainMap
         
 
 
-Generic
-~~~~~~~
+Forgot to convert to string
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_key_error.py", line 7, in test_Generic
+      File "TESTS:\runtime\test_key_error.py", line 115, in test_Forgot_to_convert_to_string
+        print(squares[2])
+    KeyError: 2
+    
+        Avez-vous oublié de convertir `2` en une chaîne ?
+        
+    Une `KeyError` est levée lorsqu'une valeur n'est pas trouvée en tant que
+    clé dans un dict Python ou dans un objet similaire.
+    
+    La clé `2` est introuvable dans le dict `squares`.
+    `squares` contient une clé identique à `str(2)`.
+    Peut-être avez-vous oublié de convertir la clé en une chaîne.
+    
+    Exception levée à la ligne 115 du fichier TESTS:\runtime\test_key_error.py.
+    
+       113:     squares = {"1": 1, "2": 4, "3": 9}
+       114:     try:
+    -->115:         print(squares[2])
+                          ^^^^^^^^^^
+       116:     except KeyError as e:
+
+            squares:  {'1': 1, '2': 4, '3': 9}
+        
+
+
+Generic key error
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_key_error.py", line 44, in test_Generic_key_error
         d["c"]
     KeyError: 'c'
     
-    Une exception `KeyError` est levée lorsqu’une valeur n’est pas trouvée
-    en tant que clé dans un dictionnaire (dict) Python.
+    Une `KeyError` est levée lorsqu'une valeur n'est pas trouvée en tant que
+    clé dans un dict Python ou dans un objet similaire.
     
-    Dans votre programme, la clé inconnue est `c`.
+    La clé `'c'` est introuvable dans le dict `d`.
     
-    Exception levée à la ligne 7 du fichier TESTS:\runtime\test_key_error.py.
+    Exception levée à la ligne 44 du fichier TESTS:\runtime\test_key_error.py.
     
-       5:     d = {"a": 1, "b": 2}
-       6:     try:
-    -->7:         d["c"]
-       8:     except KeyError as e:
+       42:     d = {"a": 1, "b": 2}
+       43:     try:
+    -->44:         d["c"]
+       45:     except KeyError as e:
 
             d:  {'a': 1, 'b': 2}
+        
+
+
+Popitem empty ChainMap
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "PYTHON_LIB:\collections\__init__.py", line 958, in popitem
+        return self.maps[0].popitem()
+    KeyError: 'popitem(): dictionary is empty'
+    
+        During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_key_error.py", line 26, in test_Popitem_empty_ChainMap
+        alpha.popitem()
+      File "PYTHON_LIB:\collections\__init__.py", line 960, in popitem
+        raise KeyError('No keys found in the first mapping.')
+    KeyError: 'No keys found in the first mapping.'
+    
+        `alpha` est une `ChainMap` vide.
+        
+    Une `KeyError` est levée lorsqu'une valeur n'est pas trouvée en tant que
+    clé dans un dict Python ou dans un objet similaire.
+    
+    Vous avez essayé de récupérer un élément de `alpha` qui est une `ChainMap` vide.
+    
+    L'exécution s'est arrêtée à la ligne 26 du fichier TESTS:\runtime\test_key_error.py
+    
+       24:     alpha = ChainMap({}, {})
+       25:     try:
+    -->26:         alpha.popitem()
+       27:     except KeyError as e:
+
+            alpha:  ChainMap({}, {})
+            alpha.popitem:  <bound method ChainMap.popitem of ChainMap({}, {})>
+        
+    Exception levée à la ligne 960 du fichier PYTHON_LIB:\collections\__init__.py.
+    
+       958:             return self.maps[0].popitem()
+       959:         except KeyError:
+    -->960:             raise KeyError('No keys found in the first mapping.')
+
+            KeyError:  <class KeyError>
+        
+
+
+Popitem empty dict
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_key_error.py", line 8, in test_Popitem_empty_dict
+        d.popitem()
+    KeyError: 'popitem(): dictionary is empty'
+    
+        `d` est un `dict` vide.
+        
+    Une `KeyError` est levée lorsqu'une valeur n'est pas trouvée en tant que
+    clé dans un dict Python ou dans un objet similaire.
+    
+    Vous avez essayé de récupérer un élément de `d` qui est un `dict` vide.
+    
+    Exception levée à la ligne 8 du fichier TESTS:\runtime\test_key_error.py.
+    
+        6:     d = {}
+        7:     try:
+    --> 8:         d.popitem()
+        9:     except KeyError as e:
+
+            d:  {}
+            d.popitem:  <builtin method popitem of dict object>
+        
+
+
+Similar names
+~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_key_error.py", line 145, in test_Similar_names
+        a = second["alpha"]
+    KeyError: 'alpha'
+    
+        Vouliez-vous dire `'alpha0'` ?
+        
+    Une `KeyError` est levée lorsqu'une valeur n'est pas trouvée en tant que
+    clé dans un dict Python ou dans un objet similaire.
+    
+    La clé `'alpha'` est introuvable dans le dict `second`.
+    `second` a quelques clés similaires à `'alpha'` dont :
+    `'alpha0', 'alpha12', 'alpha11'`.
+    
+    Exception levée à la ligne 145 du fichier TESTS:\runtime\test_key_error.py.
+    
+       143:     second = {"alpha0": 1, "alpha11": 2, "alpha12": 3}
+       144:     try:
+    -->145:         a = second["alpha"]
+                        ^^^^^^^^^^^^^^^
+       146:     except KeyError as e:
+
+            second:  {'alpha0': 1, 'alpha11': 2, 'alpha12': 3}
+        
+
+
+String by mistake
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_key_error.py", line 98, in test_String_by_mistake
+        d["(0, 0)"]
+    KeyError: '(0, 0)'
+    
+        Avez-vous converti `(0, 0)` en une chaîne par erreur ?
+        
+    Une `KeyError` est levée lorsqu'une valeur n'est pas trouvée en tant que
+    clé dans un dict Python ou dans un objet similaire.
+    
+    La clé `'(0, 0)'` est introuvable dans le dict `d`.
+    `'(0, 0)'` est une chaîne de caractères.
+    Il y a une clé de `d` dont la représentation en une chaîne
+    est identique à `'(0, 0)'`.
+    
+    Exception levée à la ligne 98 du fichier TESTS:\runtime\test_key_error.py.
+    
+        96:     d = {(0, 0): "origin"}
+        97:     try:
+    --> 98:         d["(0, 0)"]
+        99:     except KeyError as e:
+
+            d:  {(0, 0): 'origin'}
         
 
 
@@ -1120,7 +1405,7 @@ Annotated variable
     Cependant, cela peut également indiquer que le nom a été
     utilisé avant qu'on ne lui ait associé une valeur.
     
-    Dans votre programme, `x` est un nom inconnu.
+    Dans votre programme, aucun objet portant le nom `x` n'existe.
     Une annotation de type a été trouvée pour `x` dans la portée 'global'
     Peut-être que vous aviez utilisé deux points au lieu d’un signe égal et écrit
     
@@ -1137,6 +1422,77 @@ Annotated variable
     -->24:         y = x
                        ^
        25:     except NameError as e:
+
+
+Custom name
+~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_name_error.py", line 163, in test_Custom_name
+        python
+    NameError: name 'python' is not defined
+    
+        Vous utilisez déjà Python!
+    Une exception `NameError` indique que le nom d'une variable
+    ou d'une fonction n'est pas connue par Python.
+    Habituellement, ceci indique une simple faute d'orthographe.
+    Cependant, cela peut également indiquer que le nom a été
+    utilisé avant qu'on ne lui ait associé une valeur.
+    
+    Vous utilisez déjà Python!
+    Exception levée à la ligne 163 du fichier TESTS:\runtime\test_name_error.py.
+    
+       161: def test_Custom_name():
+       162:     try:
+    -->163:         python
+                    ^^^^^^
+       164:     except NameError as e:
+
+
+Free variable referenced
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_name_error.py", line 149, in test_Free_variable_referenced
+        outer()
+      File "TESTS:\runtime\test_name_error.py", line 145, in outer
+        inner()
+      File "TESTS:\runtime\test_name_error.py", line 144, in inner
+        return var
+    NameError: free variable 'var' referenced before assignment in enclosing scope
+    
+    Une exception `NameError` indique que le nom d'une variable
+    ou d'une fonction n'est pas connue par Python.
+    Habituellement, ceci indique une simple faute d'orthographe.
+    Cependant, cela peut également indiquer que le nom a été
+    utilisé avant qu'on ne lui ait associé une valeur.
+    
+    Dans votre programme, `var` est un nom inconnu
+    qui existe dans une portée englobante,
+    mais qui n'a pas encore reçu de valeur.
+    
+    L'exécution s'est arrêtée à la ligne 149 du fichier TESTS:\runtime\test_name_error.py
+    
+       147: 
+       148:     try:
+    -->149:         outer()
+       150:     except NameError as e:
+
+            outer:  <function outer> from test_Free_variable_referenced
+        
+    Exception levée à la ligne 144 du fichier TESTS:\runtime\test_name_error.py.
+    
+       142:     def outer():
+       143:         def inner():
+    -->144:             return var
+                               ^^^
+       145:         inner()
 
 
 Generic
@@ -1156,7 +1512,7 @@ Generic
     Cependant, cela peut également indiquer que le nom a été
     utilisé avant qu'on ne lui ait associé une valeur.
     
-    Dans votre programme, `something` est un nom inconnu.
+    Dans votre programme, aucun objet portant le nom `something` n'existe.
     Je n’ai pas d’informations supplémentaires pour vous.
     
     Exception levée à la ligne 9 du fichier TESTS:\runtime\test_name_error.py.
@@ -1175,7 +1531,7 @@ Missing import
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_name_error.py", line 103, in test_Missing_import
+      File "TESTS:\runtime\test_name_error.py", line 129, in test_Missing_import
         unicodedata.something
     NameError: name 'unicodedata' is not defined
     
@@ -1191,13 +1547,13 @@ Missing import
     Peut-être avez-vous oublié d’importer `unicodedata` qui se trouve
     dans la bibliothèque standard de Python.
     
-    Exception levée à la ligne 103 du fichier TESTS:\runtime\test_name_error.py.
+    Exception levée à la ligne 129 du fichier TESTS:\runtime\test_name_error.py.
     
-       101: def test_Missing_import():
-       102:     try:
-    -->103:         unicodedata.something
+       127: 
+       128:     try:
+    -->129:         unicodedata.something
                     ^^^^^^^^^^^
-       104:     except NameError as e:
+       130:     except NameError as e:
 
 
 Synonym
@@ -1219,7 +1575,7 @@ Synonym
     Cependant, cela peut également indiquer que le nom a été
     utilisé avant qu'on ne lui ait associé une valeur.
     
-    Dans votre programme, `cost` est un nom inconnu.
+    Dans votre programme, aucun objet portant le nom `cost` n'existe.
     Au lieu d’écrire `cost`, peut-être que vous vouliez écrire l'un des noms suivants :
     *    Portée globale : `cos`, `cosh`, `acos`
     
@@ -1243,7 +1599,7 @@ Urllib error
 
 
     Traceback (most recent call last):
-      File "PYTHON_LIB:\urllib\request.py", line 1350, in do_open
+      File "PYTHON_LIB:\urllib\request.py", line 1354, in do_open
            ... Plus de lignes non affichées. ...
       File "PYTHON_LIB:\socket.py", line 787, in create_connection
         for res in getaddrinfo(host, port, 0, SOCK_STREAM):
@@ -1257,9 +1613,9 @@ Urllib error
       File "TESTS:\runtime\test_os_error.py", line 7, in test_Urllib_error
         request.urlopen("http://does_not_exist")
            ... Plus de lignes non affichées. ...
-      File "PYTHON_LIB:\urllib\request.py", line 1379, in http_open
+      File "PYTHON_LIB:\urllib\request.py", line 1383, in http_open
         return self.do_open(http.client.HTTPConnection, req)
-      File "PYTHON_LIB:\urllib\request.py", line 1353, in do_open
+      File "PYTHON_LIB:\urllib\request.py", line 1357, in do_open
         raise URLError(err)
     URLError: <urlopen error [Errno 11001] getaddrinfo failed>
     
@@ -1284,12 +1640,12 @@ Urllib error
             request:  <module urllib.request> from PYTHON_LIB:\urllib\request.py
             request.urlopen:  <function urlopen>
         
-    Exception levée à la ligne 1353 du fichier PYTHON_LIB:\urllib\request.py.
+    Exception levée à la ligne 1357 du fichier PYTHON_LIB:\urllib\request.py.
     
-       1351:                           encode_chunked=req.has_header('Transfer-encoding'))
-       1352:             except OSError as err: # timeout error
-    -->1353:                 raise URLError(err)
-       1354:             r = h.getresponse()
+       1355:                           encode_chunked=req.has_header('Transfer-encoding'))
+       1356:             except OSError as err: # timeout error
+    -->1357:                 raise URLError(err)
+       1358:             r = h.getresponse()
 
             global URLError:  <class urllib.error.URLError>
         
@@ -2028,6 +2384,66 @@ UnboundLocalError
 -----------------
 
 
+Missing both
+~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_unbound_local_error.py", line 61, in test_Missing_both
+        outer_missing_both()
+      File "TESTS:\runtime\test_unbound_local_error.py", line 22, in outer_missing_both
+        inner()
+      File "TESTS:\runtime\test_unbound_local_error.py", line 21, in inner
+        spam_missing_both += 1
+    UnboundLocalError: local variable 'spam_missing_both' referenced before assignment
+    
+        Avez-vous oublié d’ajouter soit `global spam_missing_both` ou 
+        `nonlocal spam_missing_both` ?
+        
+    En Python, les variables utilisées à l’intérieur d’une fonction sont appelées
+    variables «locales».
+    Avant d’utiliser une variable locale, une valeur doit lui être attribuée.
+    Une variable utilisée avant l’attribution d’une valeur est supposée
+    être définie en dehors de cette fonction;
+    elle est connu comme une variable «globale» (`global` ou parfois `nonlocal`).
+    Vous ne pouvez pas assigner une valeur à une telle variable globale
+    à l’intérieur d’une fonction sans d’abord confirmer à python
+    qu’il s’agit d’une variable globale, sinon vous verrez une exception `UnboundLocalError`.
+    
+    Le nom `spam_missing_both` existe à la fois dans la portée globale et non locale.
+    Cela peut être assez déroutant et n’est pas recommandé.
+    Selon la variable à laquelle vous vouliez vous référer, vous deviez ajouter
+    
+        global spam_missing_both
+    
+    ou
+    
+        nonlocal spam_missing_both
+    
+    comme la première ligne à l’intérieur de votre fonction.
+    
+    L'exécution s'est arrêtée à la ligne 61 du fichier TESTS:\runtime\test_unbound_local_error.py
+    
+       59: def test_Missing_both():
+       60:     try:
+    -->61:         outer_missing_both()
+       62:     except UnboundLocalError as e:
+
+            global outer_missing_both:  <function outer_missing_both>
+        
+    Exception levée à la ligne 21 du fichier TESTS:\runtime\test_unbound_local_error.py.
+    
+       19:     spam_missing_both = 2
+       20:     def inner():
+    -->21:         spam_missing_both += 1
+       22:     inner()
+
+            global spam_missing_both:  1
+        
+
+
 Missing global
 ~~~~~~~~~~~~~~
 
@@ -2037,7 +2453,7 @@ Missing global
     Traceback (most recent call last):
       File "TESTS:\runtime\test_unbound_local_error.py", line 27, in test_Missing_global
         outer_missing_global()
-      File "TESTS:\runtime\test_unbound_local_error.py", line 11, in outer_missing_global
+      File "TESTS:\runtime\test_unbound_local_error.py", line 10, in outer_missing_global
         inner()
       File "TESTS:\runtime\test_unbound_local_error.py", line 9, in inner
         spam_missing_global += 1
@@ -2064,7 +2480,7 @@ Missing global
     
     L'exécution s'est arrêtée à la ligne 27 du fichier TESTS:\runtime\test_unbound_local_error.py
     
-       25: 
+       25: def test_Missing_global():
        26:     try:
     -->27:         outer_missing_global()
        28:     except UnboundLocalError as e:
@@ -2076,6 +2492,7 @@ Missing global
         7: def outer_missing_global():
         8:     def inner():
     --> 9:         spam_missing_global += 1
+       10:     inner()
 
             global spam_missing_global:  1
         
@@ -2088,11 +2505,11 @@ Missing nonlocal
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_unbound_local_error.py", line 48, in test_Missing_nonlocal
+      File "TESTS:\runtime\test_unbound_local_error.py", line 44, in test_Missing_nonlocal
         outer_missing_nonlocal()
-      File "TESTS:\runtime\test_unbound_local_error.py", line 20, in outer_missing_nonlocal
+      File "TESTS:\runtime\test_unbound_local_error.py", line 16, in outer_missing_nonlocal
         inner()
-      File "TESTS:\runtime\test_unbound_local_error.py", line 18, in inner
+      File "TESTS:\runtime\test_unbound_local_error.py", line 15, in inner
         spam_missing_nonlocal += 1
     UnboundLocalError: local variable 'spam_missing_nonlocal' referenced before assignment
     
@@ -2115,20 +2532,65 @@ Missing nonlocal
     
     aurait dû être incluse comme première ligne à l’intérieur de votre fonction.
     
-    L'exécution s'est arrêtée à la ligne 48 du fichier TESTS:\runtime\test_unbound_local_error.py
+    L'exécution s'est arrêtée à la ligne 44 du fichier TESTS:\runtime\test_unbound_local_error.py
     
-       46: 
-       47:     try:
-    -->48:         outer_missing_nonlocal()
-       49:     except UnboundLocalError as e:
+       42: def test_Missing_nonlocal():
+       43:     try:
+    -->44:         outer_missing_nonlocal()
+       45:     except UnboundLocalError as e:
 
             global outer_missing_nonlocal:  <function outer_missing_nonlocal>
         
-    Exception levée à la ligne 18 du fichier TESTS:\runtime\test_unbound_local_error.py.
+    Exception levée à la ligne 15 du fichier TESTS:\runtime\test_unbound_local_error.py.
     
-       16: 
-       17:     def inner():
-    -->18:         spam_missing_nonlocal += 1
+       13:     spam_missing_nonlocal = 1
+       14:     def inner():
+    -->15:         spam_missing_nonlocal += 1
+       16:     inner()
+
+
+Typo in local
+~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_unbound_local_error.py", line 97, in test_Typo_in_local
+        test2()
+      File "TESTS:\runtime\test_unbound_local_error.py", line 94, in test2
+        alpha3 += 1
+    UnboundLocalError: local variable 'alpha3' referenced before assignment
+    
+        Vouliez-vous dire `alpha2` ?
+        
+    En Python, les variables utilisées à l’intérieur d’une fonction sont appelées
+    variables «locales».
+    Avant d’utiliser une variable locale, une valeur doit lui être attribuée.
+    Une variable utilisée avant l’attribution d’une valeur est supposée
+    être définie en dehors de cette fonction;
+    elle est connu comme une variable «globale» (`global` ou parfois `nonlocal`).
+    Vous ne pouvez pas assigner une valeur à une telle variable globale
+    à l’intérieur d’une fonction sans d’abord confirmer à python
+    qu’il s’agit d’une variable globale, sinon vous verrez une exception `UnboundLocalError`.
+    
+    Au lieu d’écrire `alpha3`, peut-être que vous vouliez écrire l'un des noms suivants :
+    *    Portée locale : `alpha2`, `alpha1`
+    
+    L'exécution s'est arrêtée à la ligne 97 du fichier TESTS:\runtime\test_unbound_local_error.py
+    
+       95: 
+       96:     try:
+    -->97:         test2()
+       98:     except UnboundLocalError as e:
+
+            test2:  <function test2> from test_Typo_in_local
+        
+    Exception levée à la ligne 94 du fichier TESTS:\runtime\test_unbound_local_error.py.
+    
+       92:         alpha1 = 1
+       93:         alpha2 = 1
+    -->94:         alpha3 += 1
 
 
 UnknownError
@@ -2142,23 +2604,23 @@ Generic
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_unknown_error.py", line 10, in test_Generic
+      File "TESTS:\runtime\test_unknown_error.py", line 12, in test_Generic
         raise MyException("Some informative message about an unknown exception.")
     MyException: Some informative message about an unknown exception.
     
     Aucune information n’est disponible au sujet de cette exception.
-    Veuillez signaler cet exemple à
-    https://github.com/aroberge/friendly/issues
+    Veuillez signaler cet exemple à https://github.com/aroberge/friendly/issues.
+    Si vous utilisez un REPL, utilisez `www('bug')` pour le faire.
     
     Si vous utilisez la console Friendly, utilisez `www()` pour
     faire une recherche sur Internet pour ce cas particulier.
     
-    Exception levée à la ligne 10 du fichier TESTS:\runtime\test_unknown_error.py.
+    Exception levée à la ligne 12 du fichier TESTS:\runtime\test_unknown_error.py.
     
-        8: def test_Generic():
-        9:     try:
-    -->10:         raise MyException("Some informative message about an unknown exception.")
-       11:     except Exception as e:
+       10:     friendly_traceback.debug_helper.DEBUG = False
+       11:     try:
+    -->12:         raise MyException("Some informative message about an unknown exception.")
+       13:     except Exception as e:
 
             global MyException:  <class test_unknown_error.MyException>
         
@@ -2270,7 +2732,7 @@ Complex division
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_zero_division_error.py", line 97, in test_Complex_division
+      File "TESTS:\runtime\test_zero_division_error.py", line 155, in test_Complex_division
         1 / zero
     ZeroDivisionError: complex division by zero
     
@@ -2283,15 +2745,39 @@ Complex division
     
     qui est égal à zéro.
     
-    Exception levée à la ligne 97 du fichier TESTS:\runtime\test_zero_division_error.py.
+    Exception levée à la ligne 155 du fichier TESTS:\runtime\test_zero_division_error.py.
     
-       95:     zero = 0j
-       96:     try:
-    -->97:         1 / zero
-       98:     except ZeroDivisionError as e:
+       153:     zero = 0j
+       154:     try:
+    -->155:         1 / zero
+       156:     except ZeroDivisionError as e:
 
             zero:  0j
         
+
+
+Division by zero literal
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_zero_division_error.py", line 199, in test_Division_by_zero_literal
+        1. / 0
+    ZeroDivisionError: float division by zero
+    
+    Une exception de type `ZeroDivisionError` se produit lorsque vous essayez de diviser une valeur
+    par zéro soit directement ou en utilisant une autre opération mathématique.
+    
+    Vous divisez par zéro.
+    
+    Exception levée à la ligne 199 du fichier TESTS:\runtime\test_zero_division_error.py.
+    
+       197: 
+       198:     try:
+    -->199:         1. / 0
+       200:     except ZeroDivisionError as e:
 
 
 Division operator
@@ -2301,7 +2787,7 @@ Division operator
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_zero_division_error.py", line 7, in test_Division_operator
+      File "TESTS:\runtime\test_zero_division_error.py", line 17, in test_Division_operator
         1 / zero
     ZeroDivisionError: division by zero
     
@@ -2314,12 +2800,12 @@ Division operator
     
     qui est égal à zéro.
     
-    Exception levée à la ligne 7 du fichier TESTS:\runtime\test_zero_division_error.py.
+    Exception levée à la ligne 17 du fichier TESTS:\runtime\test_zero_division_error.py.
     
-       5:     zero = 0
-       6:     try:
-    -->7:         1 / zero
-       8:     except ZeroDivisionError as e:
+       15: 
+       16:     try:
+    -->17:         1 / zero
+       18:     except ZeroDivisionError as e:
 
             zero:  0
         
@@ -2332,7 +2818,7 @@ Divmod
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_zero_division_error.py", line 52, in test_Divmod
+      File "TESTS:\runtime\test_zero_division_error.py", line 82, in test_Divmod
         divmod(1, zero)
     ZeroDivisionError: integer division or modulo by zero
     
@@ -2341,12 +2827,12 @@ Divmod
     
     Le deuxième argument de la fonction `divmod()` est égal à zéro.
     
-    Exception levée à la ligne 52 du fichier TESTS:\runtime\test_zero_division_error.py.
+    Exception levée à la ligne 82 du fichier TESTS:\runtime\test_zero_division_error.py.
     
-       50:     zero = 0
-       51:     try:
-    -->52:         divmod(1, zero)
-       53:     except ZeroDivisionError as e:
+       80:     zero = 0
+       81:     try:
+    -->82:         divmod(1, zero)
+       83:     except ZeroDivisionError as e:
 
             zero:  0
             divmod:  <builtin function divmod>
@@ -2360,7 +2846,7 @@ Float division
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_zero_division_error.py", line 82, in test_Float_division
+      File "TESTS:\runtime\test_zero_division_error.py", line 125, in test_Float_division
         1 / zero
     ZeroDivisionError: float division by zero
     
@@ -2373,14 +2859,42 @@ Float division
     
     qui est égal à zéro.
     
-    Exception levée à la ligne 82 du fichier TESTS:\runtime\test_zero_division_error.py.
+    Exception levée à la ligne 125 du fichier TESTS:\runtime\test_zero_division_error.py.
     
-       80:     zero = 0.
-       81:     try:
-    -->82:         1 / zero
-       83:     except ZeroDivisionError as e:
+       123:     zero = 0.
+       124:     try:
+    -->125:         1 / zero
+       126:     except ZeroDivisionError as e:
 
             zero:  0.0
+        
+
+
+Float divmod
+~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_zero_division_error.py", line 140, in test_Float_divmod
+        divmod(1, zero)
+    ZeroDivisionError: float divmod()
+    
+    Une exception de type `ZeroDivisionError` se produit lorsque vous essayez de diviser une valeur
+    par zéro soit directement ou en utilisant une autre opération mathématique.
+    
+    Le deuxième argument de la fonction `divmod()` est égal à zéro.
+    
+    Exception levée à la ligne 140 du fichier TESTS:\runtime\test_zero_division_error.py.
+    
+       138:     zero = 0.
+       139:     try:
+    -->140:         divmod(1, zero)
+       141:     except ZeroDivisionError as e:
+
+            zero:  0.0
+            divmod:  <builtin function divmod>
         
 
 
@@ -2391,7 +2905,7 @@ Float modulo
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_zero_division_error.py", line 67, in test_Float_modulo
+      File "TESTS:\runtime\test_zero_division_error.py", line 110, in test_Float_modulo
         1 % zero
     ZeroDivisionError: float modulo
     
@@ -2404,12 +2918,12 @@ Float modulo
     
     qui est égal à zéro.
     
-    Exception levée à la ligne 67 du fichier TESTS:\runtime\test_zero_division_error.py.
+    Exception levée à la ligne 110 du fichier TESTS:\runtime\test_zero_division_error.py.
     
-       65:     zero = 0.
-       66:     try:
-    -->67:         1 % zero
-       68:     except ZeroDivisionError as e:
+       108: 
+       109:     try:
+    -->110:         1 % zero
+       111:     except ZeroDivisionError as e:
 
             zero:  0.0
         
@@ -2422,7 +2936,7 @@ Integer division operator
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_zero_division_error.py", line 22, in test_Integer_division_operator
+      File "TESTS:\runtime\test_zero_division_error.py", line 42, in test_Integer_division_operator
         1 // zero
     ZeroDivisionError: integer division or modulo by zero
     
@@ -2435,14 +2949,45 @@ Integer division operator
     
     qui est égal à zéro.
     
-    Exception levée à la ligne 22 du fichier TESTS:\runtime\test_zero_division_error.py.
+    Exception levée à la ligne 42 du fichier TESTS:\runtime\test_zero_division_error.py.
     
-       20:     zero = 0
-       21:     try:
-    -->22:         1 // zero
-       23:     except ZeroDivisionError as e:
+       40: 
+       41:     try:
+    -->42:         1 // zero
+       43:     except ZeroDivisionError as e:
 
             zero:  0
+        
+
+
+Mixed operations
+~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+
+    Traceback (most recent call last):
+      File "TESTS:\runtime\test_zero_division_error.py", line 212, in test_Mixed_operations
+        a = divmod(8, 1 // 2)
+    ZeroDivisionError: integer division or modulo by zero
+    
+    Une exception de type `ZeroDivisionError` se produit lorsque vous essayez de diviser une valeur
+    par zéro soit directement ou en utilisant une autre opération mathématique.
+    
+    L’expression mathématique suivante inclut une division par zéro :
+    
+        divmod(8, 1 // 2)
+    
+    Exception levée à la ligne 212 du fichier TESTS:\runtime\test_zero_division_error.py.
+    
+       210: def test_Mixed_operations():
+       211:     try:
+    -->212:         a = divmod(8, 1 // 2)
+                        ^^^^^^^^^^^^^^^^^
+       213:     except ZeroDivisionError as e:
+
+            divmod:  <builtin function divmod>
+            1 // 2:  0
         
 
 
@@ -2453,7 +2998,7 @@ Modulo operator
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_zero_division_error.py", line 37, in test_Modulo_operator
+      File "TESTS:\runtime\test_zero_division_error.py", line 67, in test_Modulo_operator
         1 % zero
     ZeroDivisionError: integer division or modulo by zero
     
@@ -2466,12 +3011,12 @@ Modulo operator
     
     qui est égal à zéro.
     
-    Exception levée à la ligne 37 du fichier TESTS:\runtime\test_zero_division_error.py.
+    Exception levée à la ligne 67 du fichier TESTS:\runtime\test_zero_division_error.py.
     
-       35:     zero = 0
-       36:     try:
-    -->37:         1 % zero
-       38:     except ZeroDivisionError as e:
+       65: 
+       66:     try:
+    -->67:         1 % zero
+       68:     except ZeroDivisionError as e:
 
             zero:  0
         
@@ -2484,7 +3029,7 @@ Raise zero negative power
 
 
     Traceback (most recent call last):
-      File "TESTS:\runtime\test_zero_division_error.py", line 112, in test_Raise_zero_negative_power
+      File "TESTS:\runtime\test_zero_division_error.py", line 170, in test_Raise_zero_negative_power
         zero ** -1
     ZeroDivisionError: 0.0 cannot be raised to a negative power
     
@@ -2494,12 +3039,12 @@ Raise zero negative power
     Vous essayez d'élever le nombre 0 à une puissance négative
     ce qui équivaut à diviser par zéro.
     
-    Exception levée à la ligne 112 du fichier TESTS:\runtime\test_zero_division_error.py.
+    Exception levée à la ligne 170 du fichier TESTS:\runtime\test_zero_division_error.py.
     
-       110:     zero = 0
-       111:     try:
-    -->112:         zero ** -1
-       113:     except ZeroDivisionError as e:
+       168:     zero = 0
+       169:     try:
+    -->170:         zero ** -1
+       171:     except ZeroDivisionError as e:
 
             zero:  0
         

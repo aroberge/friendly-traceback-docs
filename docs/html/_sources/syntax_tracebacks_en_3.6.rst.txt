@@ -18,7 +18,7 @@ but they are may be included to ensure more complete test coverage..
      instead to run make_trb.bat in the root directory as it will create
      similar files for all languages *and* update the documentation.
 
-Friendly version: 0.3.108
+Friendly version: 0.3.142
 Python version: 3.6.8
 
 
@@ -5575,7 +5575,6 @@ Python version: 3.6.8
 .. code-block:: none
 
 
-    Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\None", line TESTS:\None

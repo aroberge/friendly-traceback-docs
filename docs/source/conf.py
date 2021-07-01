@@ -19,14 +19,14 @@ import sys
 import warnings
 warnings.simplefilter("ignore")
 
-sys.path.insert(0, os.path.abspath("../../../friendly"))
+sys.path.insert(0, os.path.abspath("../../../friendly-traceback"))
 
-from friendly import __version__  # pylint: disable=import-error
+from friendly_traceback import __version__  # pylint: disable=import-error
 
 
 # -- Project information -----------------------------------------------------
 
-project = "Friendly"
+project = "friendly-traceback"
 copyright = "André Roberge"
 author = "André Roberge"
 
@@ -84,14 +84,16 @@ rst_epilog = """
 .. |france| image:: images/france.png
 """
 
-# rst_prolog = """
-# .. warning::
+rst_prolog = """
+.. warning::
 
-#     This project has recently changed its name.
-#     Wherever you see ``friendly_traceback``, replace it simply by ``friendly``.
-#     This warning will soon be removed, and friendly's version will be changed
-#     to 0.3.
-# """
+    This project is being split into 3 separate projects:
+    ``friendly_traceback``, ``friendly``, and ``friendly_idle``.
+    Wherever you see ``friendly_traceback``, replace it simply by ``friendly``.
+    The documentation does not reflect this change.
+
+    If you are a end-user, just install ``friendly`` until further notice.
+"""
 #
 add_module_names = False
 # -- Options for HTML output -------------------------------------------------

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Comparing Exception messages between Python versions &mdash; Friendly 0.3.113 documentation</title>
+  <title>Comparing Exception messages between Python versions &mdash; friendly-traceback 0.3.142 documentation</title>
   
 
   
@@ -54,7 +54,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Friendly
+            <a href="index.html" class="icon icon-home"> friendly-traceback
           
 
           
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3.113
+                0.3.142
               </div>
             
           
@@ -110,7 +110,7 @@
 <li class="toctree-l1"><a class="reference internal" href="repl_api.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Why ``import *``?</span></p>
+<p class="caption"><span class="caption-text">Why import *?</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="import_all.html">Why <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">*</span></code>?</a></li>
 </ul>
@@ -199,7 +199,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly</a>
+          <a href="index.html">friendly-traceback</a>
         
       </nav>
 
@@ -260,7 +260,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="comparing-exception-messages-between-python-versions">
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This project is being split into 3 separate projects:
+<code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>, <code class="docutils literal notranslate"><span class="pre">friendly</span></code>, and <code class="docutils literal notranslate"><span class="pre">friendly_idle</span></code>.
+Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>, replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.
+The documentation does not reflect this change.</p>
+<p>If you are a end-user, just install <code class="docutils literal notranslate"><span class="pre">friendly</span></code> until further notice.</p>
+</div>
+<div class="section" id="comparing-exception-messages-between-python-versions">
 <h1>Comparing Exception messages between Python versions<a class="headerlink" href="#comparing-exception-messages-between-python-versions" title="Permalink to this headline">¶</a></h1>
 <p>In this file, we highlight differences between the
 messages provided by Python for all Exceptions excluding <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>
@@ -274,9 +282,14 @@ afterwards, we only show the differences between 3.7 and 3.8.</p>
 <div class='filename-header'>
 Circular import</div>
 <pre class='highlight friendly-small-pre'><b>3.6: </b>cannot import name 'a'
-<b>3.7: </b>cannot import name 'a' from 'circular_a' (C:\Users\andre\github\friendly\tests\circular_a.py)
+<b>3.7: </b>cannot import name 'a' from 'circular_a' (C:\Users\andre\github\friendly-traceback\tests\circular_a.py)
 </pre>
-<pre class='highlight friendly-small-pre'><b>3.8: </b>cannot import name 'a' from partially initialized module 'circular_a' (most likely due to a circular import) (C:\Users\andre\github\friendly\tests\circular_a.py)
+<pre class='highlight friendly-small-pre'><b>3.8: </b>cannot import name 'a' from partially initialized module 'circular_a' (most likely due to a circular import) (C:\Users\andre\github\friendly-traceback\tests\circular_a.py)
+</pre>
+<div class='filename-header'>
+Circular import b</div>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>module 'circular_c' has no attribute 'something'
+<b>3.8: </b>partially initialized module 'circular_c' has no attribute 'something' (most likely due to a circular import)
 </pre>
 <div class='filename-header'>
 Simple import error</div>

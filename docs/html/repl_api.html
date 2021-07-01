@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Everything about the friendly console &mdash; Friendly 0.3.113 documentation</title>
+  <title>Everything about the friendly console &mdash; friendly-traceback 0.3.142 documentation</title>
   
 
   
@@ -54,7 +54,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Friendly
+            <a href="index.html" class="icon icon-home"> friendly-traceback
           
 
           
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3.113
+                0.3.142
               </div>
             
           
@@ -202,7 +202,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly</a>
+          <a href="index.html">friendly-traceback</a>
         
       </nav>
 
@@ -263,7 +263,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="everything-about-the-friendly-console">
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This project is being split into 3 separate projects:
+<code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>, <code class="docutils literal notranslate"><span class="pre">friendly</span></code>, and <code class="docutils literal notranslate"><span class="pre">friendly_idle</span></code>.
+Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>, replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.
+The documentation does not reflect this change.</p>
+<p>If you are a end-user, just install <code class="docutils literal notranslate"><span class="pre">friendly</span></code> until further notice.</p>
+</div>
+<div class="section" id="everything-about-the-friendly-console">
 <span id="console-api"></span><h1>Everything about the friendly console<a class="headerlink" href="#everything-about-the-friendly-console" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -305,8 +313,8 @@ For example, <code class="docutils literal notranslate"><span class="pre">explai
 <dl class="py function">
 <dt id="friendly.console_helpers.friendly_tb">
 <code class="sig-name descname"><span class="pre">friendly_tb</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/friendly/console_helpers.html#friendly_tb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#friendly.console_helpers.friendly_tb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shows the friendly traceback, which includes the hint/suggestion
-if available.</p>
+<dd><p>Shows the a simplified Python traceback,
+which includes the hint/suggestion if available.</p>
 </dd></dl>
 
 <dl class="py function">

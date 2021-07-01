@@ -27,8 +27,8 @@ intercepted by Friendly-traceback. Furthermore, exceptions such as
 ``BaseException``, ``Exception``, and ``ArithmeticError`` are base classes which
 are also not normally seen: some derived classes are normally used instead.
 
-Information compiled using Friendly version: 0.3.108,
-Python version: 3.8.4
+Information compiled using Friendly version: 0.3.142,
+Python version: 3.8.10
 
 
 
@@ -71,8 +71,8 @@ BaseException
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -82,8 +82,8 @@ BlockingIOError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -93,8 +93,8 @@ BrokenPipeError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -104,8 +104,8 @@ BufferError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -115,8 +115,8 @@ ChildProcessError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -126,8 +126,8 @@ ConnectionAbortedError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -137,8 +137,8 @@ ConnectionError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -148,8 +148,8 @@ ConnectionRefusedError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -159,8 +159,8 @@ ConnectionResetError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -178,8 +178,8 @@ EnvironmentError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -189,8 +189,8 @@ Exception
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -200,8 +200,8 @@ FileExistsError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -220,8 +220,8 @@ FloatingPointError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -231,8 +231,8 @@ GeneratorExit
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -242,8 +242,8 @@ IOError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -280,8 +280,8 @@ InterruptedError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -291,8 +291,8 @@ IsADirectoryError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -302,7 +302,7 @@ KeyError
 .. code-block:: none
 
     A `KeyError` is raised when a value is not found as a
-    key in a Python dict.
+    key in a Python dict or in a similar object.
 
 KeyboardInterrupt
 ~~~~~~~~~~~~~~~~~
@@ -310,8 +310,8 @@ KeyboardInterrupt
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -360,8 +360,8 @@ NotADirectoryError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -371,8 +371,8 @@ NotImplementedError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -381,11 +381,9 @@ OSError
 
 .. code-block:: none
 
-    No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
-    If you are using the Friendly console, use `www()` to
-    do an Internet search for this particular case.
+    An `OSError` exception is usually raised by the Operating System
+    to indicate that an operation is not allowed or that
+    a resource is not available.
 
 OverflowError
 ~~~~~~~~~~~~~
@@ -401,8 +399,8 @@ PermissionError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -412,8 +410,8 @@ ProcessLookupError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -433,8 +431,8 @@ ReferenceError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -444,8 +442,8 @@ RuntimeError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -455,8 +453,8 @@ StopAsyncIteration
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -482,8 +480,8 @@ SystemError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -493,8 +491,8 @@ SystemExit
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -516,8 +514,8 @@ TimeoutError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -551,8 +549,8 @@ UnicodeDecodeError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -562,8 +560,8 @@ UnicodeEncodeError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -573,8 +571,8 @@ UnicodeError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -584,8 +582,8 @@ UnicodeTranslateError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 
@@ -603,8 +601,8 @@ WindowsError
 .. code-block:: none
 
     No information is known about this exception.
-    Please report this example to
-    https://github.com/aroberge/friendly/issues
+    Please report this example to https://github.com/aroberge/friendly/issues.
+    If you are using a REPL, use `www('bug')` to do so.
     If you are using the Friendly console, use `www()` to
     do an Internet search for this particular case.
 

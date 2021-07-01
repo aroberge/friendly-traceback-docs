@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>friendly.formatters &mdash; Friendly 0.3.103 documentation</title>
+  <title>friendly.formatters &mdash; friendly-traceback 0.3.142 documentation</title>
   
 
   
@@ -52,7 +52,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Friendly
+            <a href="../../index.html" class="icon icon-home"> friendly-traceback
           
 
           
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.3.103
+                0.3.142
               </div>
             
           
@@ -107,6 +107,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../multiple_tracebacks.html">Multiple tracebacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../repl_api.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about_warnings.html">One last thing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Why import *?</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../import_all.html">Why <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">*</span></code>?</a></li>
 </ul>
 <p class="caption"><span class="caption-text">IDLE</span></p>
 <ul>
@@ -193,7 +197,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Friendly</a>
+          <a href="../../index.html">friendly-traceback</a>
         
       </nav>
 
@@ -294,10 +298,12 @@
 <span class="kn">from</span> <span class="nn">.my_gettext</span> <span class="kn">import</span> <span class="n">current_lang</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">debug_helper</span>
 
-<span class="kn">from</span> <span class="nn">pygments</span> <span class="kn">import</span> <span class="n">highlight</span>
-<span class="kn">from</span> <span class="nn">pygments.lexers</span> <span class="kn">import</span> <span class="n">PythonLexer</span><span class="p">,</span> <span class="n">PythonTracebackLexer</span>  <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">pygments.formatters</span> <span class="kn">import</span> <span class="n">HtmlFormatter</span>  <span class="c1"># noqa</span>
-
+<span class="k">try</span><span class="p">:</span>  <span class="c1"># allow to use without installing pygments.</span>
+    <span class="kn">from</span> <span class="nn">pygments</span> <span class="kn">import</span> <span class="n">highlight</span>  <span class="c1"># noqa</span>
+    <span class="kn">from</span> <span class="nn">pygments.lexers</span> <span class="kn">import</span> <span class="n">PythonLexer</span><span class="p">,</span> <span class="n">PythonTracebackLexer</span>  <span class="c1"># noqa</span>
+    <span class="kn">from</span> <span class="nn">pygments.formatters</span> <span class="kn">import</span> <span class="n">HtmlFormatter</span>  <span class="c1"># noqa</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="k">pass</span>
 
 <span class="n">ipython_available</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="k">try</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
@@ -560,12 +566,9 @@
 
     <span class="n">items_to_show</span> <span class="o">=</span> <span class="n">select_items</span><span class="p">(</span><span class="n">include</span><span class="p">)</span>  <span class="c1"># tb_items_to_show(level=level)</span>
     <span class="k">if</span> <span class="n">rich</span> <span class="ow">and</span> <span class="n">include</span> <span class="o">==</span> <span class="s2">&quot;explain&quot;</span><span class="p">:</span>
-        <span class="n">items_to_show</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;header&quot;</span><span class="p">)</span>
+        <span class="n">RICH_HEADER</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Skip it here; handled by session.py</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items_to_show</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">rich</span> <span class="ow">and</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;header&quot;</span><span class="p">:</span>  <span class="c1"># Skip it here; handled by session.py</span>
-            <span class="n">RICH_HEADER</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="k">continue</span>
         <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">info</span> <span class="ow">and</span> <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
             <span class="c1"># With normal markdown formatting, it does not make sense to have a</span>
             <span class="c1"># header end with a colon.</span>

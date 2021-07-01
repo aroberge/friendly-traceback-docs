@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Friendly tracebacks - in English &mdash; Friendly 0.3.113 documentation</title>
+  <title>Friendly tracebacks - in English &mdash; friendly-traceback 0.3.142 documentation</title>
   
 
   
@@ -54,7 +54,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Friendly
+            <a href="index.html" class="icon icon-home"> friendly-traceback
           
 
           
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3.113
+                0.3.142
               </div>
             
           
@@ -110,7 +110,7 @@
 <li class="toctree-l1"><a class="reference internal" href="repl_api.html">Everything about the friendly console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about_warnings.html">One last thing</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Why ``import *``?</span></p>
+<p class="caption"><span class="caption-text">Why import *?</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="import_all.html">Why <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">*</span></code>?</a></li>
 </ul>
@@ -177,6 +177,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#attribute-from-other-module">Attribute from other module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtin-function">Builtin function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtin-module-with-no-file">Builtin module with no file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#circular-import">Circular import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#circular-import-b">Circular import b</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">Generic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#generic-different-frame">Generic different frame</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#generic-instance">Generic instance</a></li>
@@ -187,6 +189,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#shadow-stdlib-module">Shadow stdlib module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tuple-by-accident">Tuple by accident</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-builtin">Use builtin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-join-with-str">Use join with str</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-synonym">Use synonym</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-slots">Using slots</a></li>
 </ul>
@@ -196,7 +199,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#importerror">ImportError</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#circular-import">Circular import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Circular import</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simple-import-error">Simple import error</a></li>
 </ul>
 </li>
@@ -208,7 +211,12 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#keyerror">KeyError</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#chainmap">ChainMap</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Generic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#forgot-to-convert-to-string">Forgot to convert to string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generic-key-error">Generic key error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#popitem-empty-chainmap">Popitem empty ChainMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#popitem-empty-dict">Popitem empty dict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#similar-names">Similar names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#string-by-mistake">String by mistake</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#lookuperror">LookupError</a><ul>
@@ -227,6 +235,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#nameerror">NameError</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#annotated-variable">Annotated variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-name">Custom name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#free-variable-referenced">Free variable referenced</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id6">Generic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#missing-import">Missing import</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#synonym">Synonym</a></li>
@@ -268,8 +278,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#unboundlocalerror">UnboundLocalError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#missing-both">Missing both</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#missing-global">Missing global</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#missing-nonlocal">Missing nonlocal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#typo-in-local">Typo in local</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#unknownerror">UnknownError</a><ul>
@@ -284,11 +296,14 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#zerodivisionerror">ZeroDivisionError</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#complex-division">Complex division</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#division-by-zero-literal">Division by zero literal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#division-operator">Division operator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#divmod">Divmod</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#float-division">Float division</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#float-divmod">Float divmod</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#float-modulo">Float modulo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#integer-division-operator">Integer division operator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mixed-operations">Mixed operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#modulo-operator">Modulo operator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#raise-zero-negative-power">Raise zero negative power</a></li>
 </ul>
@@ -329,7 +344,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Friendly</a>
+          <a href="index.html">friendly-traceback</a>
         
       </nav>
 
@@ -390,7 +405,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="friendly-tracebacks-in-english">
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This project is being split into 3 separate projects:
+<code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>, <code class="docutils literal notranslate"><span class="pre">friendly</span></code>, and <code class="docutils literal notranslate"><span class="pre">friendly_idle</span></code>.
+Wherever you see <code class="docutils literal notranslate"><span class="pre">friendly_traceback</span></code>, replace it simply by <code class="docutils literal notranslate"><span class="pre">friendly</span></code>.
+The documentation does not reflect this change.</p>
+<p>If you are a end-user, just install <code class="docutils literal notranslate"><span class="pre">friendly</span></code> until further notice.</p>
+</div>
+<div class="section" id="friendly-tracebacks-in-english">
 <h1>Friendly tracebacks - in English<a class="headerlink" href="#friendly-tracebacks-in-english" title="Permalink to this headline">¶</a></h1>
 <p>Friendly aims to provide friendlier feedback when an exception
 is raised than what is done by Python.
@@ -404,7 +427,7 @@ trb_english.py located in the <code class="docutils literal notranslate"><span c
 This needs to be done explicitly, independently of updating the
 documentation using Sphinx.</p>
 </div>
-<p>Friendly version: 0.3.108
+<p>Friendly version: 0.3.142
 Python version: 3.7.8</p>
 <div class="section" id="arithmeticerror">
 <h2>ArithmeticError<a class="headerlink" href="#arithmeticerror" title="Permalink to this headline">¶</a></h2>
@@ -538,6 +561,84 @@ Exception raised on line 234 of file TESTS:\runtime\test_attribute_error.py.
    235:     except AttributeError as e:
 
         sys:  &lt;module sys (builtin)&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="circular-import">
+<h3>Circular import<a class="headerlink" href="#circular-import" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 329, in test_Circular_import
+    import my_turtle1
+  File &quot;TESTS:\my_turtle1.py&quot;, line 4, in &lt;module&gt;
+    a = my_turtle1.something
+AttributeError: module &#39;my_turtle1&#39; has no attribute &#39;something&#39;
+
+    Did you give your program the same name as a Python module?
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+This should not happen:
+Python tells us that module `my_turtle1` does not have an attribute named `something`.
+However, it does not appear that module `my_turtle1` was imported.
+I suspect that you used the name `my_turtle1.py` for your program
+and that you also wanted to import a module with the same name
+from Python&#39;s standard library.
+If so, you should use a different name for your program.
+
+Execution stopped on line 329 of file TESTS:\runtime\test_attribute_error.py.
+
+   327:     stdlib_modules.names.append(&quot;my_turtle1&quot;)
+   328:     try:
+--&gt;329:        import my_turtle1
+   330:     except AttributeError as e:
+
+Exception raised on line 4 of file TESTS:\my_turtle1.py.
+
+   2: import my_turtle1
+   3:
+--&gt;4: a = my_turtle1.something
+          ^^^^^^^^^^^^^^^^^^^^
+
+        my_turtle1:  &lt;module my_turtle1&gt; from TESTS:\my_turtle1.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="circular-import-b">
+<h3>Circular import b<a class="headerlink" href="#circular-import-b" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 346, in test_Circular_import_b
+    import circular_c
+  File &quot;TESTS:\circular_c.py&quot;, line 4, in &lt;module&gt;
+    a = circular_c.something
+AttributeError: module &#39;circular_c&#39; has no attribute &#39;something&#39;
+
+    You likely have a circular import.
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+You likely have a circular import.
+This can occur if, during the execution of the code in module `circular_c`
+an attempt is made to import the same module again.
+
+Execution stopped on line 346 of file TESTS:\runtime\test_attribute_error.py.
+
+   344: def test_Circular_import_b():
+   345:     try:
+--&gt;346:         import circular_c
+   347:     except AttributeError as e:
+
+Exception raised on line 4 of file TESTS:\circular_c.py.
+
+   2: import circular_c
+   3:
+--&gt;4: a = circular_c.something
+          ^^^^^^^^^^^^^^^^^^^^
+
+        circular_c:  &lt;module circular_c&gt; from TESTS:\circular_c.py
 </pre></div>
 </div>
 </div>
@@ -812,6 +913,32 @@ Exception raised on line 97 of file TESTS:\runtime\test_attribute_error.py.
 </pre></div>
 </div>
 </div>
+<div class="section" id="use-join-with-str">
+<h3>Use join with str<a class="headerlink" href="#use-join-with-str" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_attribute_error.py&quot;, line 313, in test_Use_join_with_str
+    a = [&#39;a&#39;, &#39;2&#39;].join(&#39;abc&#39;) + [&#39;b&#39;, &#39;3&#39;].join(&#39;\n&#39;)
+AttributeError: &#39;list&#39; object has no attribute &#39;join&#39;
+
+    Did you mean `&#39;abc&#39;.join([&#39;a&#39;, &#39;2&#39;])`?
+
+An `AttributeError` occurs when the code contains something like
+    `object.x`
+and `x` is not a method or attribute (variable) belonging to `object`.
+
+The object `[&#39;a&#39;, &#39;2&#39;]` has no attribute named `join`.
+Perhaps you wanted something like `&#39;abc&#39;.join([&#39;a&#39;, &#39;2&#39;])`.
+
+Exception raised on line 313 of file TESTS:\runtime\test_attribute_error.py.
+
+   311: def test_Use_join_with_str():
+   312:     try:
+--&gt;313:         a = [&#39;a&#39;, &#39;2&#39;].join(&#39;abc&#39;) + [&#39;b&#39;, &#39;3&#39;].join(&#39;\n&#39;)
+                    ^^^^^^^^^^^^^^^
+   314:     except AttributeError as e:
+</pre></div>
+</div>
+</div>
 <div class="section" id="use-synonym">
 <h3>Use synonym<a class="headerlink" href="#use-synonym" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -899,16 +1026,16 @@ Exception raised on line 6 of file TESTS:\runtime\test_file_not_found_error.py.
 </div>
 <div class="section" id="importerror">
 <h2>ImportError<a class="headerlink" href="#importerror" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="circular-import">
-<h3>Circular import<a class="headerlink" href="#circular-import" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Circular import<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_import_error.py&quot;, line 20, in test_Circular_import
+  File &quot;TESTS:\runtime\test_import_error.py&quot;, line 58, in test_Circular_import
     import circular_a
   File &quot;TESTS:\circular_a.py&quot;, line 2, in &lt;module&gt;
     import circular_b
   File &quot;TESTS:\circular_b.py&quot;, line 2, in &lt;module&gt;
     from circular_a import a
-ImportError: cannot import name &#39;a&#39; from &#39;circular_a&#39; (C:\Users\andre\github\friendly\tests\circular_a.py)
+ImportError: cannot import name &#39;a&#39; from &#39;circular_a&#39; (C:\Users\andre\github\friendly-traceback\tests\circular_a.py)
 
     You have a circular import.
 
@@ -930,12 +1057,12 @@ was executed. However in this last file, an attempt was made
 to import the original module `circular_a`
 a second time, before Python had completed the first import.
 
-Execution stopped on line 20 of file TESTS:\runtime\test_import_error.py.
+Execution stopped on line 58 of file TESTS:\runtime\test_import_error.py.
 
-   18: def test_Circular_import():
-   19:     try:
---&gt;20:         import circular_a
-   21:     except ImportError as e:
+   56: def test_Circular_import():
+   57:     try:
+--&gt;58:         import circular_a
+   59:     except ImportError as e:
 
 Exception raised on line 2 of file TESTS:\circular_b.py.
 
@@ -947,7 +1074,7 @@ Exception raised on line 2 of file TESTS:\circular_b.py.
 <div class="section" id="simple-import-error">
 <h3>Simple import error<a class="headerlink" href="#simple-import-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_import_error.py&quot;, line 6, in test_Simple_import_error
+  File &quot;TESTS:\runtime\test_import_error.py&quot;, line 44, in test_Simple_import_error
     from math import Pi
 ImportError: cannot import name &#39;Pi&#39; from &#39;math&#39; (unknown location)
 
@@ -959,12 +1086,12 @@ because the name of the object is not spelled correctly.
 
 Perhaps you meant to import `pi` (from `math`) instead of `Pi`
 
-Exception raised on line 6 of file TESTS:\runtime\test_import_error.py.
+Exception raised on line 44 of file TESTS:\runtime\test_import_error.py.
 
-   4: def test_Simple_import_error():
-   5:     try:
---&gt;6:         from math import Pi
-   7:     except ImportError as e:
+   42:
+   43:     try:
+--&gt;44:         from math import Pi
+   45:     except ImportError as e:
 </pre></div>
 </div>
 </div>
@@ -1074,23 +1201,23 @@ KeyError: 42
     During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_key_error.py&quot;, line 23, in test_ChainMap
+  File &quot;TESTS:\runtime\test_key_error.py&quot;, line 62, in test_ChainMap
     d.pop(42)
   File &quot;PYTHON_LIB:\collections\__init__.py&quot;, line 986, in pop
     raise KeyError(&#39;Key not found in the first mapping: {!r}&#39;.format(key))
 KeyError: &#39;Key not found in the first mapping: 42&#39;
 
 A `KeyError` is raised when a value is not found as a
-key in a Python dict.
+key in a Python dict or in a similar object.
 
-In your program, the key that cannot be found is `42`.
+The key `42` cannot be found in `d`, an object of type `ChainMap`.
 
-Execution stopped on line 23 of file TESTS:\runtime\test_key_error.py.
+Execution stopped on line 62 of file TESTS:\runtime\test_key_error.py.
 
-   21:     d = ChainMap({}, {})
-   22:     try:
---&gt;23:         d.pop(42)
-   24:     except KeyError as e:
+   60:     d = ChainMap({}, {})
+   61:     try:
+--&gt;62:         d.pop(42)
+   63:     except KeyError as e:
 
         d:  ChainMap({}, {})
         d.pop:  &lt;bound method ChainMap.pop of ChainMap({}, {})&gt;
@@ -1108,26 +1235,179 @@ Exception raised on line 986 of file PYTHON_LIB:\collections\__init__.py.
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h3>Generic<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="forgot-to-convert-to-string">
+<h3>Forgot to convert to string<a class="headerlink" href="#forgot-to-convert-to-string" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_key_error.py&quot;, line 7, in test_Generic
+  File &quot;TESTS:\runtime\test_key_error.py&quot;, line 115, in test_Forgot_to_convert_to_string
+    print(squares[2])
+KeyError: 2
+
+    Did you forget to convert `2` into a string?
+
+A `KeyError` is raised when a value is not found as a
+key in a Python dict or in a similar object.
+
+The key `2` cannot be found in the dict `squares`.
+`squares` contains a string key which is identical to `str(2)`.
+Perhaps you forgot to convert the key into a string.
+
+Exception raised on line 115 of file TESTS:\runtime\test_key_error.py.
+
+   113:     squares = {&quot;1&quot;: 1, &quot;2&quot;: 4, &quot;3&quot;: 9}
+   114:     try:
+--&gt;115:         print(squares[2])
+                      ^^^^^^^^^^
+   116:     except KeyError as e:
+
+        squares:  {&#39;1&#39;: 1, &#39;2&#39;: 4, &#39;3&#39;: 9}
+</pre></div>
+</div>
+</div>
+<div class="section" id="generic-key-error">
+<h3>Generic key error<a class="headerlink" href="#generic-key-error" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_key_error.py&quot;, line 44, in test_Generic_key_error
     d[&quot;c&quot;]
 KeyError: &#39;c&#39;
 
 A `KeyError` is raised when a value is not found as a
-key in a Python dict.
+key in a Python dict or in a similar object.
 
-In your program, the key that cannot be found is `c`.
+The key `&#39;c&#39;` cannot be found in the dict `d`.
 
-Exception raised on line 7 of file TESTS:\runtime\test_key_error.py.
+Exception raised on line 44 of file TESTS:\runtime\test_key_error.py.
 
-   5:     d = {&quot;a&quot;: 1, &quot;b&quot;: 2}
-   6:     try:
---&gt;7:         d[&quot;c&quot;]
-   8:     except KeyError as e:
+   42:     d = {&quot;a&quot;: 1, &quot;b&quot;: 2}
+   43:     try:
+--&gt;44:         d[&quot;c&quot;]
+   45:     except KeyError as e:
 
         d:  {&#39;a&#39;: 1, &#39;b&#39;: 2}
+</pre></div>
+</div>
+</div>
+<div class="section" id="popitem-empty-chainmap">
+<h3>Popitem empty ChainMap<a class="headerlink" href="#popitem-empty-chainmap" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;PYTHON_LIB:\collections\__init__.py&quot;, line 977, in popitem
+    return self.maps[0].popitem()
+KeyError: &#39;popitem(): dictionary is empty&#39;
+
+    During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_key_error.py&quot;, line 26, in test_Popitem_empty_ChainMap
+    alpha.popitem()
+  File &quot;PYTHON_LIB:\collections\__init__.py&quot;, line 979, in popitem
+    raise KeyError(&#39;No keys found in the first mapping.&#39;)
+KeyError: &#39;No keys found in the first mapping.&#39;
+
+    `alpha` is an empty `ChainMap`.
+
+A `KeyError` is raised when a value is not found as a
+key in a Python dict or in a similar object.
+
+You tried to retrieve an item from `alpha` which is an empty `ChainMap`.
+
+Execution stopped on line 26 of file TESTS:\runtime\test_key_error.py.
+
+   24:     alpha = ChainMap({}, {})
+   25:     try:
+--&gt;26:         alpha.popitem()
+   27:     except KeyError as e:
+
+        alpha:  ChainMap({}, {})
+        alpha.popitem:  &lt;bound method ChainMap.popitem of ChainMap({}, {})&gt;
+
+Exception raised on line 979 of file PYTHON_LIB:\collections\__init__.py.
+
+   977:             return self.maps[0].popitem()
+   978:         except KeyError:
+--&gt;979:             raise KeyError(&#39;No keys found in the first mapping.&#39;)
+
+        KeyError:  &lt;class KeyError&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="popitem-empty-dict">
+<h3>Popitem empty dict<a class="headerlink" href="#popitem-empty-dict" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_key_error.py&quot;, line 8, in test_Popitem_empty_dict
+    d.popitem()
+KeyError: &#39;popitem(): dictionary is empty&#39;
+
+    `d` is an empty `dict`.
+
+A `KeyError` is raised when a value is not found as a
+key in a Python dict or in a similar object.
+
+You tried to retrieve an item from `d` which is an empty `dict`.
+
+Exception raised on line 8 of file TESTS:\runtime\test_key_error.py.
+
+    6:     d = {}
+    7:     try:
+--&gt; 8:         d.popitem()
+    9:     except KeyError as e:
+
+        d:  {}
+        d.popitem:  &lt;builtin method popitem of dict object&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="similar-names">
+<h3>Similar names<a class="headerlink" href="#similar-names" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_key_error.py&quot;, line 145, in test_Similar_names
+    a = second[&quot;alpha&quot;]
+KeyError: &#39;alpha&#39;
+
+    Did you mean `&#39;alpha0&#39;`?
+
+A `KeyError` is raised when a value is not found as a
+key in a Python dict or in a similar object.
+
+The key `&#39;alpha&#39;` cannot be found in the dict `second`.
+`second` has some keys similar to `&#39;alpha&#39;` including:
+`&#39;alpha0&#39;, &#39;alpha12&#39;, &#39;alpha11&#39;`.
+
+Exception raised on line 145 of file TESTS:\runtime\test_key_error.py.
+
+   143:     second = {&quot;alpha0&quot;: 1, &quot;alpha11&quot;: 2, &quot;alpha12&quot;: 3}
+   144:     try:
+--&gt;145:         a = second[&quot;alpha&quot;]
+                    ^^^^^^^^^^^^^^^
+   146:     except KeyError as e:
+
+        second:  {&#39;alpha0&#39;: 1, &#39;alpha11&#39;: 2, &#39;alpha12&#39;: 3}
+</pre></div>
+</div>
+</div>
+<div class="section" id="string-by-mistake">
+<h3>String by mistake<a class="headerlink" href="#string-by-mistake" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_key_error.py&quot;, line 98, in test_String_by_mistake
+    d[&quot;(0, 0)&quot;]
+KeyError: &#39;(0, 0)&#39;
+
+    Did you convert `(0, 0)` into a string by mistake?
+
+A `KeyError` is raised when a value is not found as a
+key in a Python dict or in a similar object.
+
+The key `&#39;(0, 0)&#39;` cannot be found in the dict `d`.
+`&#39;(0, 0)&#39;` is a string.
+There is a key of `d` whose string representation
+is identical to `&#39;(0, 0)&#39;`.
+
+Exception raised on line 98 of file TESTS:\runtime\test_key_error.py.
+
+    96:     d = {(0, 0): &quot;origin&quot;}
+    97:     try:
+--&gt; 98:         d[&quot;(0, 0)&quot;]
+    99:     except KeyError as e:
+
+        d:  {(0, 0): &#39;origin&#39;}
 </pre></div>
 </div>
 </div>
@@ -1371,7 +1651,7 @@ Most often, this is because there is a spelling mistake.
 However, sometimes it is because the name is used
 before being defined or given a value.
 
-In your program, `x` is an unknown name.
+In your program, no object with the name `x` exists.
 A type hint found for `x` in the global scope.
 Perhaps you had used a colon instead of an equal sign and wrote
 
@@ -1391,6 +1671,71 @@ Exception raised on line 24 of file TESTS:\runtime\test_name_error.py.
 </pre></div>
 </div>
 </div>
+<div class="section" id="custom-name">
+<h3>Custom name<a class="headerlink" href="#custom-name" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 163, in test_Custom_name
+    python
+NameError: name &#39;python&#39; is not defined
+
+    You are already using Python!
+A `NameError` exception indicates that a variable or
+function name is not known to Python.
+Most often, this is because there is a spelling mistake.
+However, sometimes it is because the name is used
+before being defined or given a value.
+
+You are already using Python!
+Exception raised on line 163 of file TESTS:\runtime\test_name_error.py.
+
+   161: def test_Custom_name():
+   162:     try:
+--&gt;163:         python
+                ^^^^^^
+   164:     except NameError as e:
+</pre></div>
+</div>
+</div>
+<div class="section" id="free-variable-referenced">
+<h3>Free variable referenced<a class="headerlink" href="#free-variable-referenced" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 149, in test_Free_variable_referenced
+    outer()
+  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 145, in outer
+    inner()
+  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 144, in inner
+    return var
+NameError: free variable &#39;var&#39; referenced before assignment in enclosing scope
+
+A `NameError` exception indicates that a variable or
+function name is not known to Python.
+Most often, this is because there is a spelling mistake.
+However, sometimes it is because the name is used
+before being defined or given a value.
+
+In your program, `var` is an unknown name
+that exists in an enclosing scope,
+but has not yet been assigned a value.
+
+Execution stopped on line 149 of file TESTS:\runtime\test_name_error.py.
+
+   147:
+   148:     try:
+--&gt;149:         outer()
+   150:     except NameError as e:
+
+        outer:  &lt;function outer&gt; from test_Free_variable_referenced
+
+Exception raised on line 144 of file TESTS:\runtime\test_name_error.py.
+
+   142:     def outer():
+   143:         def inner():
+--&gt;144:             return var
+                           ^^^
+   145:         inner()
+</pre></div>
+</div>
+</div>
 <div class="section" id="id6">
 <h3>Generic<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -1404,7 +1749,7 @@ Most often, this is because there is a spelling mistake.
 However, sometimes it is because the name is used
 before being defined or given a value.
 
-In your program, `something` is an unknown name.
+In your program, no object with the name `something` exists.
 I have no additional information for you.
 
 Exception raised on line 9 of file TESTS:\runtime\test_name_error.py.
@@ -1420,7 +1765,7 @@ Exception raised on line 9 of file TESTS:\runtime\test_name_error.py.
 <div class="section" id="missing-import">
 <h3>Missing import<a class="headerlink" href="#missing-import" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 103, in test_Missing_import
+  File &quot;TESTS:\runtime\test_name_error.py&quot;, line 129, in test_Missing_import
     unicodedata.something
 NameError: name &#39;unicodedata&#39; is not defined
 
@@ -1436,13 +1781,13 @@ The name `unicodedata` is not defined in your program.
 Perhaps you forgot to import `unicodedata` which is found
 in Python&#39;s standard library.
 
-Exception raised on line 103 of file TESTS:\runtime\test_name_error.py.
+Exception raised on line 129 of file TESTS:\runtime\test_name_error.py.
 
-   101: def test_Missing_import():
-   102:     try:
---&gt;103:         unicodedata.something
+   127:
+   128:     try:
+--&gt;129:         unicodedata.something
                 ^^^^^^^^^^^
-   104:     except NameError as e:
+   130:     except NameError as e:
 </pre></div>
 </div>
 </div>
@@ -1461,7 +1806,7 @@ Most often, this is because there is a spelling mistake.
 However, sometimes it is because the name is used
 before being defined or given a value.
 
-In your program, `cost` is an unknown name.
+In your program, no object with the name `cost` exists.
 Instead of writing `cost`, perhaps you meant one of the following:
 *   Global scope: `cos`, `cosh`, `acos`
 
@@ -2183,12 +2528,67 @@ Exception raised on line 796 of file TESTS:\runtime\test_type_error.py.
 </div>
 <div class="section" id="unboundlocalerror">
 <h2>UnboundLocalError<a class="headerlink" href="#unboundlocalerror" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="missing-both">
+<h3>Missing both<a class="headerlink" href="#missing-both" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 61, in test_Missing_both
+    outer_missing_both()
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 22, in outer_missing_both
+    inner()
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 21, in inner
+    spam_missing_both += 1
+UnboundLocalError: local variable &#39;spam_missing_both&#39; referenced before assignment
+
+    Did you forget to add either `global spam_missing_both` or
+    `nonlocal spam_missing_both`?
+
+In Python, variables that are used inside a function are known as
+local variables. Before they are used, they must be assigned a value.
+A variable that is used before it is assigned a value is assumed to
+be defined outside that function; it is known as a `global`
+(or sometimes `nonlocal`) variable. You cannot assign a value to such
+a global variable inside a function without first indicating to
+Python that this is a global variable, otherwise you will see
+an `UnboundLocalError`.
+
+The name `spam_missing_both` exists in both the global and nonlocal scope.
+This can be rather confusing and is not recommended.
+Depending on which variable you wanted to refer to, you needed to add either
+
+    global spam_missing_both
+
+or
+
+    nonlocal spam_missing_both
+
+as the first line inside your function.
+
+Execution stopped on line 61 of file TESTS:\runtime\test_unbound_local_error.py.
+
+   59: def test_Missing_both():
+   60:     try:
+--&gt;61:         outer_missing_both()
+   62:     except UnboundLocalError as e:
+
+        global outer_missing_both:  &lt;function outer_missing_both&gt;
+
+Exception raised on line 21 of file TESTS:\runtime\test_unbound_local_error.py.
+
+   19:     spam_missing_both = 2
+   20:     def inner():
+--&gt;21:         spam_missing_both += 1
+   22:     inner()
+
+        global spam_missing_both:  1
+</pre></div>
+</div>
+</div>
 <div class="section" id="missing-global">
 <h3>Missing global<a class="headerlink" href="#missing-global" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 27, in test_Missing_global
     outer_missing_global()
-  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 11, in outer_missing_global
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 10, in outer_missing_global
     inner()
   File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 9, in inner
     spam_missing_global += 1
@@ -2214,7 +2614,7 @@ should have been included as the first line inside your function.
 
 Execution stopped on line 27 of file TESTS:\runtime\test_unbound_local_error.py.
 
-   25:
+   25: def test_Missing_global():
    26:     try:
 --&gt;27:         outer_missing_global()
    28:     except UnboundLocalError as e:
@@ -2226,6 +2626,7 @@ Exception raised on line 9 of file TESTS:\runtime\test_unbound_local_error.py.
     7: def outer_missing_global():
     8:     def inner():
 --&gt; 9:         spam_missing_global += 1
+   10:     inner()
 
         global spam_missing_global:  1
 </pre></div>
@@ -2234,11 +2635,11 @@ Exception raised on line 9 of file TESTS:\runtime\test_unbound_local_error.py.
 <div class="section" id="missing-nonlocal">
 <h3>Missing nonlocal<a class="headerlink" href="#missing-nonlocal" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 48, in test_Missing_nonlocal
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 44, in test_Missing_nonlocal
     outer_missing_nonlocal()
-  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 20, in outer_missing_nonlocal
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 16, in outer_missing_nonlocal
     inner()
-  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 18, in inner
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 15, in inner
     spam_missing_nonlocal += 1
 UnboundLocalError: local variable &#39;spam_missing_nonlocal&#39; referenced before assignment
 
@@ -2260,20 +2661,61 @@ Perhaps the statement
 
 should have been included as the first line inside your function.
 
-Execution stopped on line 48 of file TESTS:\runtime\test_unbound_local_error.py.
+Execution stopped on line 44 of file TESTS:\runtime\test_unbound_local_error.py.
 
-   46:
-   47:     try:
---&gt;48:         outer_missing_nonlocal()
-   49:     except UnboundLocalError as e:
+   42: def test_Missing_nonlocal():
+   43:     try:
+--&gt;44:         outer_missing_nonlocal()
+   45:     except UnboundLocalError as e:
 
         global outer_missing_nonlocal:  &lt;function outer_missing_nonlocal&gt;
 
-Exception raised on line 18 of file TESTS:\runtime\test_unbound_local_error.py.
+Exception raised on line 15 of file TESTS:\runtime\test_unbound_local_error.py.
 
-   16:
-   17:     def inner():
---&gt;18:         spam_missing_nonlocal += 1
+   13:     spam_missing_nonlocal = 1
+   14:     def inner():
+--&gt;15:         spam_missing_nonlocal += 1
+   16:     inner()
+</pre></div>
+</div>
+</div>
+<div class="section" id="typo-in-local">
+<h3>Typo in local<a class="headerlink" href="#typo-in-local" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 97, in test_Typo_in_local
+    test2()
+  File &quot;TESTS:\runtime\test_unbound_local_error.py&quot;, line 94, in test2
+    alpha3 += 1
+UnboundLocalError: local variable &#39;alpha3&#39; referenced before assignment
+
+    Did you mean `alpha2`?
+
+In Python, variables that are used inside a function are known as
+local variables. Before they are used, they must be assigned a value.
+A variable that is used before it is assigned a value is assumed to
+be defined outside that function; it is known as a `global`
+(or sometimes `nonlocal`) variable. You cannot assign a value to such
+a global variable inside a function without first indicating to
+Python that this is a global variable, otherwise you will see
+an `UnboundLocalError`.
+
+Instead of writing `alpha3`, perhaps you meant one of the following:
+*   Local scope: `alpha2`, `alpha1`
+
+Execution stopped on line 97 of file TESTS:\runtime\test_unbound_local_error.py.
+
+   95:
+   96:     try:
+--&gt;97:         test2()
+   98:     except UnboundLocalError as e:
+
+        test2:  &lt;function test2&gt; from test_Typo_in_local
+
+Exception raised on line 94 of file TESTS:\runtime\test_unbound_local_error.py.
+
+   92:         alpha1 = 1
+   93:         alpha2 = 1
+--&gt;94:         alpha3 += 1
 </pre></div>
 </div>
 </div>
@@ -2283,23 +2725,23 @@ Exception raised on line 18 of file TESTS:\runtime\test_unbound_local_error.py.
 <div class="section" id="id9">
 <h3>Generic<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_unknown_error.py&quot;, line 10, in test_Generic
+  File &quot;TESTS:\runtime\test_unknown_error.py&quot;, line 12, in test_Generic
     raise MyException(&quot;Some informative message about an unknown exception.&quot;)
 MyException: Some informative message about an unknown exception.
 
 No information is known about this exception.
-Please report this example to
-https://github.com/aroberge/friendly/issues
+Please report this example to https://github.com/aroberge/friendly/issues.
+If you are using a REPL, use `www(&#39;bug&#39;)` to do so.
 
 If you are using the Friendly console, use `www()` to
 do an Internet search for this particular case.
 
-Exception raised on line 10 of file TESTS:\runtime\test_unknown_error.py.
+Exception raised on line 12 of file TESTS:\runtime\test_unknown_error.py.
 
-    8: def test_Generic():
-    9:     try:
---&gt;10:         raise MyException(&quot;Some informative message about an unknown exception.&quot;)
-   11:     except Exception as e:
+   10:     friendly_traceback.debug_helper.DEBUG = False
+   11:     try:
+--&gt;12:         raise MyException(&quot;Some informative message about an unknown exception.&quot;)
+   13:     except Exception as e:
 
         global MyException:  &lt;class test_unknown_error.MyException&gt;
 </pre></div>
@@ -2393,7 +2835,7 @@ Exception raised on line 43 of file TESTS:\runtime\test_value_error.py.
 <div class="section" id="complex-division">
 <h3>Complex division<a class="headerlink" href="#complex-division" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 97, in test_Complex_division
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 155, in test_Complex_division
     1 / zero
 ZeroDivisionError: complex division by zero
 
@@ -2406,21 +2848,42 @@ You are dividing by the following term
 
 which is equal to zero.
 
-Exception raised on line 97 of file TESTS:\runtime\test_zero_division_error.py.
+Exception raised on line 155 of file TESTS:\runtime\test_zero_division_error.py.
 
-   95:     zero = 0j
-   96:     try:
---&gt;97:         1 / zero
-   98:     except ZeroDivisionError as e:
+   153:     zero = 0j
+   154:     try:
+--&gt;155:         1 / zero
+   156:     except ZeroDivisionError as e:
 
         zero:  0j
+</pre></div>
+</div>
+</div>
+<div class="section" id="division-by-zero-literal">
+<h3>Division by zero literal<a class="headerlink" href="#division-by-zero-literal" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 199, in test_Division_by_zero_literal
+    1. / 0
+ZeroDivisionError: float division by zero
+
+A `ZeroDivisionError` occurs when you are attempting to divide a value
+by zero either directly or by using some other mathematical operation.
+
+You are dividing by zero.
+
+Exception raised on line 199 of file TESTS:\runtime\test_zero_division_error.py.
+
+   197:
+   198:     try:
+--&gt;199:         1. / 0
+   200:     except ZeroDivisionError as e:
 </pre></div>
 </div>
 </div>
 <div class="section" id="division-operator">
 <h3>Division operator<a class="headerlink" href="#division-operator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 7, in test_Division_operator
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 17, in test_Division_operator
     1 / zero
 ZeroDivisionError: division by zero
 
@@ -2433,12 +2896,12 @@ You are dividing by the following term
 
 which is equal to zero.
 
-Exception raised on line 7 of file TESTS:\runtime\test_zero_division_error.py.
+Exception raised on line 17 of file TESTS:\runtime\test_zero_division_error.py.
 
-   5:     zero = 0
-   6:     try:
---&gt;7:         1 / zero
-   8:     except ZeroDivisionError as e:
+   15:
+   16:     try:
+--&gt;17:         1 / zero
+   18:     except ZeroDivisionError as e:
 
         zero:  0
 </pre></div>
@@ -2447,7 +2910,7 @@ Exception raised on line 7 of file TESTS:\runtime\test_zero_division_error.py.
 <div class="section" id="divmod">
 <h3>Divmod<a class="headerlink" href="#divmod" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 52, in test_Divmod
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 82, in test_Divmod
     divmod(1, zero)
 ZeroDivisionError: integer division or modulo by zero
 
@@ -2456,12 +2919,12 @@ by zero either directly or by using some other mathematical operation.
 
 The second argument of the `divmod()` function is zero.
 
-Exception raised on line 52 of file TESTS:\runtime\test_zero_division_error.py.
+Exception raised on line 82 of file TESTS:\runtime\test_zero_division_error.py.
 
-   50:     zero = 0
-   51:     try:
---&gt;52:         divmod(1, zero)
-   53:     except ZeroDivisionError as e:
+   80:     zero = 0
+   81:     try:
+--&gt;82:         divmod(1, zero)
+   83:     except ZeroDivisionError as e:
 
         zero:  0
         divmod:  &lt;builtin function divmod&gt;
@@ -2471,7 +2934,7 @@ Exception raised on line 52 of file TESTS:\runtime\test_zero_division_error.py.
 <div class="section" id="float-division">
 <h3>Float division<a class="headerlink" href="#float-division" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 82, in test_Float_division
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 125, in test_Float_division
     1 / zero
 ZeroDivisionError: float division by zero
 
@@ -2484,21 +2947,45 @@ You are dividing by the following term
 
 which is equal to zero.
 
-Exception raised on line 82 of file TESTS:\runtime\test_zero_division_error.py.
+Exception raised on line 125 of file TESTS:\runtime\test_zero_division_error.py.
 
-   80:     zero = 0.
-   81:     try:
---&gt;82:         1 / zero
-   83:     except ZeroDivisionError as e:
+   123:     zero = 0.
+   124:     try:
+--&gt;125:         1 / zero
+   126:     except ZeroDivisionError as e:
 
         zero:  0.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="float-divmod">
+<h3>Float divmod<a class="headerlink" href="#float-divmod" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 140, in test_Float_divmod
+    divmod(1, zero)
+ZeroDivisionError: float divmod()
+
+A `ZeroDivisionError` occurs when you are attempting to divide a value
+by zero either directly or by using some other mathematical operation.
+
+The second argument of the `divmod()` function is equal to zero.
+
+Exception raised on line 140 of file TESTS:\runtime\test_zero_division_error.py.
+
+   138:     zero = 0.
+   139:     try:
+--&gt;140:         divmod(1, zero)
+   141:     except ZeroDivisionError as e:
+
+        zero:  0.0
+        divmod:  &lt;builtin function divmod&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="float-modulo">
 <h3>Float modulo<a class="headerlink" href="#float-modulo" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 67, in test_Float_modulo
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 110, in test_Float_modulo
     1 % zero
 ZeroDivisionError: float modulo
 
@@ -2511,12 +2998,12 @@ Using the modulo operator, you are dividing by the following term
 
 which is equal to zero.
 
-Exception raised on line 67 of file TESTS:\runtime\test_zero_division_error.py.
+Exception raised on line 110 of file TESTS:\runtime\test_zero_division_error.py.
 
-   65:     zero = 0.
-   66:     try:
---&gt;67:         1 % zero
-   68:     except ZeroDivisionError as e:
+   108:
+   109:     try:
+--&gt;110:         1 % zero
+   111:     except ZeroDivisionError as e:
 
         zero:  0.0
 </pre></div>
@@ -2525,7 +3012,7 @@ Exception raised on line 67 of file TESTS:\runtime\test_zero_division_error.py.
 <div class="section" id="integer-division-operator">
 <h3>Integer division operator<a class="headerlink" href="#integer-division-operator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 22, in test_Integer_division_operator
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 42, in test_Integer_division_operator
     1 // zero
 ZeroDivisionError: integer division or modulo by zero
 
@@ -2538,21 +3025,48 @@ You are dividing by the following term
 
 which is equal to zero.
 
-Exception raised on line 22 of file TESTS:\runtime\test_zero_division_error.py.
+Exception raised on line 42 of file TESTS:\runtime\test_zero_division_error.py.
 
-   20:     zero = 0
-   21:     try:
---&gt;22:         1 // zero
-   23:     except ZeroDivisionError as e:
+   40:
+   41:     try:
+--&gt;42:         1 // zero
+   43:     except ZeroDivisionError as e:
 
         zero:  0
+</pre></div>
+</div>
+</div>
+<div class="section" id="mixed-operations">
+<h3>Mixed operations<a class="headerlink" href="#mixed-operations" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 212, in test_Mixed_operations
+    a = divmod(8, 1 // 2)
+ZeroDivisionError: integer division or modulo by zero
+
+A `ZeroDivisionError` occurs when you are attempting to divide a value
+by zero either directly or by using some other mathematical operation.
+
+The following mathematical expression includes a division by zero:
+
+    divmod(8, 1 // 2)
+
+Exception raised on line 212 of file TESTS:\runtime\test_zero_division_error.py.
+
+   210: def test_Mixed_operations():
+   211:     try:
+--&gt;212:         a = divmod(8, 1 // 2)
+                    ^^^^^^^^^^^^^^^^^
+   213:     except ZeroDivisionError as e:
+
+        divmod:  &lt;builtin function divmod&gt;
+        1 // 2:  0
 </pre></div>
 </div>
 </div>
 <div class="section" id="modulo-operator">
 <h3>Modulo operator<a class="headerlink" href="#modulo-operator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 37, in test_Modulo_operator
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 67, in test_Modulo_operator
     1 % zero
 ZeroDivisionError: integer division or modulo by zero
 
@@ -2565,12 +3079,12 @@ Using the modulo operator, you are dividing by the following term
 
 which is equal to zero.
 
-Exception raised on line 37 of file TESTS:\runtime\test_zero_division_error.py.
+Exception raised on line 67 of file TESTS:\runtime\test_zero_division_error.py.
 
-   35:     zero = 0
-   36:     try:
---&gt;37:         1 % zero
-   38:     except ZeroDivisionError as e:
+   65:
+   66:     try:
+--&gt;67:         1 % zero
+   68:     except ZeroDivisionError as e:
 
         zero:  0
 </pre></div>
@@ -2579,7 +3093,7 @@ Exception raised on line 37 of file TESTS:\runtime\test_zero_division_error.py.
 <div class="section" id="raise-zero-negative-power">
 <h3>Raise zero negative power<a class="headerlink" href="#raise-zero-negative-power" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 112, in test_Raise_zero_negative_power
+  File &quot;TESTS:\runtime\test_zero_division_error.py&quot;, line 170, in test_Raise_zero_negative_power
     zero ** -1
 ZeroDivisionError: 0.0 cannot be raised to a negative power
 
@@ -2589,12 +3103,12 @@ by zero either directly or by using some other mathematical operation.
 You are attempting to raise the number 0 to a negative power
 which is equivalent to dividing by zero.
 
-Exception raised on line 112 of file TESTS:\runtime\test_zero_division_error.py.
+Exception raised on line 170 of file TESTS:\runtime\test_zero_division_error.py.
 
-   110:     zero = 0
-   111:     try:
---&gt;112:         zero ** -1
-   113:     except ZeroDivisionError as e:
+   168:     zero = 0
+   169:     try:
+--&gt;170:         zero ** -1
+   171:     except ZeroDivisionError as e:
 
         zero:  0
 </pre></div>

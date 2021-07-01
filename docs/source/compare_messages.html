@@ -2,9 +2,14 @@
 <div class='filename-header'>
 Circular import</div>
 <pre class='highlight friendly-small-pre'><b>3.6: </b>cannot import name 'a'
-<b>3.7: </b>cannot import name 'a' from 'circular_a' (C:\Users\andre\github\friendly\tests\circular_a.py)
+<b>3.7: </b>cannot import name 'a' from 'circular_a' (C:\Users\andre\github\friendly-traceback\tests\circular_a.py)
 </pre>
-<pre class='highlight friendly-small-pre'><b>3.8: </b>cannot import name 'a' from partially initialized module 'circular_a' (most likely due to a circular import) (C:\Users\andre\github\friendly\tests\circular_a.py)
+<pre class='highlight friendly-small-pre'><b>3.8: </b>cannot import name 'a' from partially initialized module 'circular_a' (most likely due to a circular import) (C:\Users\andre\github\friendly-traceback\tests\circular_a.py)
+</pre>
+<div class='filename-header'>
+Circular import b</div>
+<pre class='highlight friendly-small-pre'><b>3.7: </b>module 'circular_c' has no attribute 'something'
+<b>3.8: </b>partially initialized module 'circular_c' has no attribute 'something' (most likely due to a circular import)
 </pre>
 <div class='filename-header'>
 Simple import error</div>

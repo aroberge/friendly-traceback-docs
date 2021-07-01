@@ -8,7 +8,7 @@ Ci-dessous, on peut voir plusieurs exemples, uniquement pour les
 exceptions de type SyntaxError et des classes dérivées;
 les autres sont couvertes dans une autre page.
 Le but est de documenter ici tous les exemples possibles
-tels qu'interprétés par friendly.
+tels qu'interprétés par friendly_traceback.
 
 .. note::
 
@@ -22,8 +22,8 @@ tels qu'interprétés par friendly.
      du répertoire de fichier. Si vous faites ceci, la documentation pour
      toutes les langues sera automatiquement mise à jour.
 
-Friendly version: 0.3.108
-Python version: 3.8.4
+Friendly version: 0.3.142
+Python version: 3.8.10
 
 
 
@@ -5595,7 +5595,6 @@ Python version: 3.8.4
 .. code-block:: none
 
 
-    Traceback (most recent call last):
       File "TESTS:\trb_syntax_common.py", line 49, in create_tracebacks
         __import__(name)
       File "TESTS:\None", line TESTS:\None
